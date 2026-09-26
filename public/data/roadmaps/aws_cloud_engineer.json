@@ -85,7 +85,7 @@
       "id": "aws_cloud_engineer_foundations",
       "name": "Foundations and Core Concepts",
       "tag": "essential",
-      "description": "Establish a strong understanding of cloud computing principles, AWS global infrastructure, account management, and fundamental networking concepts essential for an AWS Cloud Engineer.",
+      "description": "Establish an unshakeable cloud foundation: master the AWS Global Infrastructure, shared responsibility security boundaries, cost allocation tags, and Linux systems administration via the AWS CLI v2.",
       "resources": [
         {
           "title": "AWS Documentation",
@@ -113,7 +113,7 @@
           "id": "aws_cloud_engineer_intro_cloud",
           "name": "Introduction to Cloud Computing & AWS",
           "tag": "essential",
-          "description": "Understand the definition, benefits, service models (IaaS, PaaS, SaaS), deployment models, and the value proposition of AWS in the cloud landscape.",
+          "description": "Understand cloud computing models from an engineering perspective: IaaS, PaaS, SaaS, total cost of ownership (TCO) vs capital expense (CapEx), cloud migration patterns (the 6 R's: Rehost, Replatform, Repurchase, Refactor, Retire, Retain), and the AWS Well-Architected Framework pillars.",
           "resources": [
             {
               "title": "Introduction to Cloud Computing - AWS Training",
@@ -135,13 +135,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_intro_cloud.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 14
         },
         {
           "id": "aws_cloud_engineer_global_infra",
           "name": "AWS Global Infrastructure",
           "tag": "essential",
-          "description": "Learn about AWS Regions, Availability Zones, Edge Locations, and how they contribute to high availability, fault tolerance, and low latency.",
+          "description": "Deep dive into AWS physical and logical architecture: Regions, Availability Zones (AZs with distinct power and networking), Local Zones, Wavelength Zones, Point of Presence (PoP) Edge Locations, and data sovereignty compliance.",
           "resources": [
             {
               "title": "AWS Global Infrastructure Overview",
@@ -158,13 +160,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_global_infra.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "aws_cloud_engineer_account_billing",
           "name": "AWS Account Management & Billing",
           "tag": "essential",
-          "description": "Master AWS account creation, root user best practices, AWS Organizations, consolidated billing, and basic cost management tools.",
+          "description": "Master enterprise multi-account governance and billing: AWS Organizations, Consolidated Billing, Cost Allocation Tags, AWS Cost Explorer, AWS Budgets alerting, Cost and Usage Reports (CUR), and Savings Plans vs Reserved Instances.",
           "resources": [
             {
               "title": "Managing Your AWS Account and Billing",
@@ -186,13 +190,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_account_billing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "aws_cloud_engineer_networking_basics",
           "name": "Networking Fundamentals",
           "tag": "essential",
-          "description": "Acquire foundational knowledge of TCP/IP, DNS, CIDR, subnets, routing, and common network protocols essential for configuring AWS networking.",
+          "description": "Master foundational networking protocols for cloud engineers: IPv4/IPv6 CIDR subnetting calculations, TCP three-way handshake, UDP, DNS resolution records (A, AAAA, CNAME, ALIAS, PTR, TXT), TLS/SSL handshakes, and OSI model Layer 4 vs Layer 7 traffic routing.",
           "resources": [
             {
               "title": "Cyber Security Full Course for Beginner",
@@ -204,13 +210,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_networking_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 13
         },
         {
           "id": "aws_cloud_engineer_linux_cli",
           "name": "Linux & Command Line Basics",
           "tag": "essential",
-          "description": "Develop proficiency in Linux commands, shell scripting, and using the AWS Command Line Interface (CLI) for interacting with AWS services.",
+          "description": "Master systems automation using the AWS CLI v2: configuring profiles (`~/.aws/credentials`), querying output with JMESPath (`--query`), automating administrative tasks with Bash/Python (Boto3), and managing Linux instances over SSH and SSM Session Manager.",
           "resources": [
             {
               "title": "What is the AWS CLI?",
@@ -232,15 +240,19 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_linux_cli.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 14
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 11
     },
     {
       "id": "aws_cloud_engineer_core_services",
       "name": "Core AWS Services & Infrastructure",
       "tag": "essential",
-      "description": "Dive deep into the fundamental AWS services, learning their architecture, configuration, and best practices for building robust cloud infrastructure.",
+      "description": "Master the core compute, networking, identity, and storage services that form the backbone of all AWS infrastructure architectures.",
       "resources": [
         {
           "title": "AWS Well-Architected Framework",
@@ -268,7 +280,7 @@
           "id": "aws_cloud_engineer_iam",
           "name": "Identity and Access Management (IAM)",
           "tag": "essential",
-          "description": "Understand IAM users, groups, roles, policies, multi-factor authentication, and apply least privilege principles for secure access control.",
+          "description": "Master AWS Identity and Access Management (IAM): principle of least privilege, IAM policies (identity-based, resource-based, permission boundaries), Service Control Policies (SCPs) in AWS Organizations, temporary credentials via AWS STS (`sts:AssumeRole`), session tags, cross-account access, and policy evaluation logic (explicit deny precedence).",
           "resources": [
             {
               "title": "How to Get Started with Jobs for AWS IoT Device Management",
@@ -280,13 +292,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_iam.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 17
         },
         {
           "id": "aws_cloud_engineer_vpc",
           "name": "Virtual Private Cloud (VPC)",
           "tag": "essential",
-          "description": "Configure custom VPCs, subnets, route tables, Internet Gateways, NAT Gateways, Security Groups, Network ACLs, and VPC Peering to build isolated network environments.",
+          "description": "Architect enterprise Virtual Private Clouds (VPCs): public, private, and isolated database subnets spanning multiple AZs, Internet Gateways (IGW), NAT Gateways (HA placement and cost optimization), Route Tables, Network Access Control Lists (NACL stateless filtering), Security Groups (stateful firewall rules), VPC Peering, Transit Gateway (TGW) hub-and-spoke networks, and VPC Endpoints (Gateway and PrivateLink Interface endpoints).",
           "resources": [
             {
               "title": "Mastering AWS VPC in 3 Hours",
@@ -298,13 +312,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_vpc.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "aws_cloud_engineer_ec2",
           "name": "Compute Services: EC2, Elastic Load Balancing & Auto Scaling",
           "tag": "essential",
-          "description": "Launch and manage EC2 instances, understand instance types, AMIs, EBS volumes. Configure Elastic Load Balancers (ALB, NLB, GWLB) for traffic distribution, and set up Auto Scaling Groups for elasticity and high availability.",
+          "description": "Master Amazon EC2 compute engineering: instance families (compute, memory, storage optimized), AWS Nitro System architecture, mandating Instance Metadata Service Version 2 (IMDSv2) with hop limit 1 to prevent SSRF credential theft, Launch Templates, Auto Scaling Groups (ASG) with dynamic target tracking and predictive scaling policies, and Spot Instance fleet allocation strategies.",
           "resources": [
             {
               "title": "AWS EC2 Master Class - The Most Complete EC2 Course!",
@@ -321,13 +337,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_ec2.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 19
         },
         {
           "id": "aws_cloud_engineer_elb",
           "name": "Elastic Load Balancing (ELB)",
           "tag": "essential",
-          "description": "Understand and configure Application Load Balancers (ALB), Network Load Balancers (NLB), and Gateway Load Balancers (GWLB) for distributing incoming application traffic across multiple targets.",
+          "description": "Deploy and tune Elastic Load Balancers: Application Load Balancer (ALB Layer 7 routing rules, path/host based routing, mutual TLS, target group health checks), Network Load Balancer (NLB Layer 4 ultra-low latency, static IP allocation, TCP/UDP termination), and Gateway Load Balancers (GWLB) for third-party security appliances.",
           "resources": [
             {
               "title": "AWS ALB (Application Load Balancer) - Step By Step Tutorial (Part -9)",
@@ -344,13 +362,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_elb.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "aws_cloud_engineer_ebs",
           "name": "Elastic Block Store (EBS)",
           "tag": "essential",
-          "description": "Learn about different EBS volume types (gp2, gp3, io1, io2, st1, sc1), creating snapshots, managing volumes, and their use cases with EC2 instances.",
+          "description": "Engineer block storage with Elastic Block Store (EBS): volume types (gp3 baseline IOPS/throughput tuning, io2 Block Express for mission-critical databases), multi-attach EBS volumes, EBS encryption using customer-managed KMS keys, lifecycle management with Data Lifecycle Manager (DLM), and Fast Snapshot Restore (FSR).",
           "resources": [
             {
               "title": "AWS EBS Explained | Elastic Block Store Tutorial",
@@ -362,13 +382,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_ebs.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 17
         },
         {
           "id": "aws_cloud_engineer_s3",
           "name": "Storage Services: Object, File & Archive",
           "tag": "essential",
-          "description": "Work with S3 buckets for highly durable object storage, manage object lifecycle, versioning, access control, and explore Glacier for cost-effective archiving. Learn about EFS and FSx for managed file systems.",
+          "description": "Master Amazon S3 object storage: storage classes (Standard, Intelligent-Tiering, Glacier Flexible/Deep Archive), S3 Lifecycle configurations, Cross-Region Replication (CRR) and Same-Region Replication (SRR), S3 Object Lock for WORM compliance, S3 Versioning, Bucket Policies, and Block Public Access governance.",
           "resources": [
             {
               "title": "AWS S3 Tutorial for Beginners | Amazon S3 Simply Explained (Theory and Demo)",
@@ -380,13 +402,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_s3.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 17
         },
         {
           "id": "aws_cloud_engineer_efs_fsx",
           "name": "File Storage: EFS & FSx",
           "tag": "advanced",
-          "description": "Explore Amazon Elastic File System (EFS) for scalable NFS file storage for EC2 instances and AWS FSx for Windows File Server or Lustre for specialized file system needs.",
+          "description": "Deploy shared cloud file systems: Amazon Elastic File System (EFS) for POSIX-compliant multi-AZ shared storage with lifecycle tiering to infrequent access, and Amazon FSx (FSx for Windows File Server, FSx for Lustre for high-performance compute and machine learning workloads).",
           "resources": [
             {
               "title": "AWS EFS Explained (Elastic File System)",
@@ -403,13 +427,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_efs_fsx.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         },
         {
           "id": "aws_cloud_engineer_databases",
           "name": "Database Services: Relational, NoSQL, Caching & Data Warehousing",
           "tag": "essential",
-          "description": "Set up and manage relational databases with RDS (Multi-AZ, Read Replicas) and Aurora. Explore DynamoDB for NoSQL applications, ElastiCache for in-memory caching, and Redshift for analytical data warehousing.",
+          "description": "Architect scalable database tiers: Amazon RDS multi-AZ deployments with automated failover, read replica connection routing, and automated snapshots.",
           "resources": [
             {
               "title": "AWS RDS for Beginners",
@@ -426,13 +452,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_databases.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 17
         },
         {
           "id": "aws_cloud_engineer_aurora",
           "name": "Amazon Aurora",
           "tag": "essential",
-          "description": "Understand Amazon Aurora, a MySQL and PostgreSQL-compatible relational database built for the cloud, offering high performance and availability.",
+          "description": "Master Amazon Aurora PostgreSQL and MySQL: decoupled storage engine with 6-way replication across 3 AZs, Aurora Serverless v2 dynamic scaling, Aurora Global Databases for cross-region read replicas and sub-second replication, and automated storage auto-repair.",
           "resources": [
             {
               "title": "What is Amazon Aurora?",
@@ -449,13 +477,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_aurora.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "aws_cloud_engineer_elasticache",
           "name": "Amazon ElastiCache",
           "tag": "advanced",
-          "description": "Implement in-memory caching solutions using Amazon ElastiCache (Redis and Memcached) to improve application performance and reduce database load.",
+          "description": "Implement in-memory caching with Amazon ElastiCache for Redis / Valkey: cluster mode enabled, multi-AZ with automatic failover, read replicas, Redis keyspace notifications, cache-aside implementation, and in-transit/at-rest encryption.",
           "resources": [
             {
               "title": "AWS ElastiCache for Beginners",
@@ -472,13 +502,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_elasticache.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         },
         {
           "id": "aws_cloud_engineer_redshift",
           "name": "Amazon Redshift",
           "tag": "advanced",
-          "description": "Explore Amazon Redshift, a fully managed, petabyte-scale data warehouse service, for complex analytical queries and business intelligence.",
+          "description": "Architect cloud data warehouses with Amazon Redshift: RA3 node types with managed storage, columnar data storage, distribution styles (AUTO, KEY, ALL, EVEN), sort keys, Redshift Serverless, and data sharing across accounts.",
           "resources": [
             {
               "title": "AWS Redshift Explained: What is Amazon Redshift?",
@@ -490,13 +522,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_redshift.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 24
         },
         {
           "id": "aws_cloud_engineer_serverless",
           "name": "Serverless Computing: Lambda & API Gateway",
           "tag": "essential",
-          "description": "Develop and deploy serverless functions using AWS Lambda, configure triggers, integrate with API Gateway, and understand serverless architectures.",
+          "description": "Build enterprise event-driven serverless architectures: AWS Lambda (execution environment lifecycle, provisioned concurrency, SnapStart for Java, VPC ENI attachment, dead-letter queues), Amazon API Gateway (REST vs HTTP APIs, throttling, usage plans, authorizers), and AWS Step Functions distributed workflows.",
           "resources": [
             {
               "title": "Docker Tutorial for Beginners [Full Course in 3 Hours]",
@@ -513,13 +547,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_serverless.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "aws_cloud_engineer_dns_route53",
           "name": "DNS & Traffic Management: Route 53",
           "tag": "essential",
-          "description": "Utilize Amazon Route 53 for domain registration, various DNS record types, health checks, and advanced routing policies (e.g., Weighted, Latency, Failover).",
+          "description": "Master global traffic routing with Amazon Route 53: public and private hosted zones, routing policies (Simple, Weighted, Latency-based, Failover, Geolocation, Geoproximity, Multi-Value Answer), Route 53 Health Checks, and DNSSEC validation.",
           "resources": [
             {
               "title": "AZ-900 Episode 22 | User-defined Routes (UDR) with Route Tables",
@@ -536,13 +572,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_dns_route53.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "aws_cloud_engineer_iac",
           "name": "Infrastructure as Code (IaC): CloudFormation & Terraform",
           "tag": "essential",
-          "description": "Learn to define, provision, and manage AWS infrastructure resources using AWS CloudFormation templates. Explore other industry-standard IaC tools like Terraform for multi-cloud and advanced deployments.",
+          "description": "Automate infrastructure provisioning with Infrastructure as Code (IaC): AWS CloudFormation templates, parameters, outputs, intrinsic functions, Change Sets, and AWS Cloud Development Kit (CDK v2) using TypeScript/Python to generate synthesized CloudFormation stacks.",
           "resources": [
             {
               "title": "Learn Terraform with Google Cloud Platform – Infrastructure as Code Course",
@@ -559,13 +597,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_iac.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "aws_cloud_engineer_terraform",
           "name": "Terraform for AWS",
           "tag": "advanced",
-          "description": "Master HashiCorp Terraform for defining, provisioning, and managing AWS infrastructure as code, covering providers, resources, data sources, and modules.",
+          "description": "Master HashiCorp Terraform on AWS: state file management with S3 backend and DynamoDB table locking, writing reusable modules, managing multi-environment workspaces, and integrating `tflint` and `checkov` security scans.",
           "resources": [
             {
               "title": "Terraform Crash Course - AWS Provisioning",
@@ -577,13 +617,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_terraform.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 18
         },
         {
           "id": "aws_cloud_engineer_containerization",
           "name": "Containerization: ECR, ECS & EKS",
           "tag": "advanced",
-          "description": "Understand container fundamentals and deploy containerized applications using Amazon Elastic Container Registry (ECR) for image storage, Elastic Container Service (ECS) for orchestration, and Elastic Kubernetes Service (EKS) for Kubernetes deployments.",
+          "description": "Orchestrate containers on AWS: Amazon Elastic Container Service (ECS) with Fargate serverless compute, task definitions, service autoscaling, and Amazon Elastic Kubernetes Service (EKS) managed control plane with Karpenter autoscaling and AWS IAM Roles for Service Accounts (IRSA).",
           "resources": [
             {
               "title": "AWS ECR, ECS, Fargate - Containers on AWS Explained",
@@ -600,13 +642,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_containerization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         },
         {
           "id": "aws_cloud_engineer_messaging",
           "name": "Messaging & Streaming: SQS, SNS & Kinesis",
           "tag": "essential",
-          "description": "Implement asynchronous communication patterns using Amazon Simple Queue Service (SQS) for message queues and Simple Notification Service (SNS) for pub/sub messaging. Explore Kinesis for real-time data streaming.",
+          "description": "Implement asynchronous decoupled architectures: Amazon Simple Queue Service (SQS standard vs FIFO queues, visibility timeout, dead-letter queues), Amazon Simple Notification Service (SNS fan-out to SQS/Lambda), and Amazon EventBridge event bus with content-based schema filtering.",
           "resources": [
             {
               "title": "AWS SQS, SNS, Kinesis Explained (Theory + Demos)",
@@ -618,13 +662,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_messaging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 17
         },
         {
           "id": "aws_cloud_engineer_cdn",
           "name": "Content Delivery Network: CloudFront",
           "tag": "essential",
-          "description": "Distribute web content globally with low latency using Amazon CloudFront, configuring distributions, origins, caching behaviors, and security features.",
+          "description": "Accelerate global content delivery with Amazon CloudFront: CDN distributions, Origin Shield, cache behaviors, edge lambdas (Lambda@Edge vs CloudFront Functions), custom SSL certificates with AWS Certificate Manager (ACM), and integration with AWS WAF.",
           "resources": [
             {
               "title": "AWS VPC Beginner to Pro - Virtual Private Cloud Tutorial",
@@ -641,15 +687,19 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_cdn.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 10
     },
     {
       "id": "aws_cloud_engineer_operations",
       "name": "Operations, Monitoring, & Automation",
       "tag": "essential",
-      "description": "Implement robust operational practices including monitoring, logging, automation, security, and cost optimization to maintain healthy and efficient AWS environments.",
+      "description": "Ensure enterprise operational excellence: full-stack CloudWatch monitoring, automated patching, distributed tracing, and compliance auditing.",
       "resources": [
         {
           "title": "AWS Skill Builder",
@@ -677,7 +727,7 @@
           "id": "aws_cloud_engineer_monitoring_logging",
           "name": "Observability & Monitoring: CloudWatch, CloudTrail & X-Ray",
           "tag": "essential",
-          "description": "Configure CloudWatch for metrics, logs, and alarms. Utilize CloudTrail for auditing AWS API calls and AWS X-Ray for end-to-end tracing of distributed applications to gain deep operational insights.",
+          "description": "Master cloud observability with Amazon CloudWatch: metric alarms, CloudWatch Logs Insights query syntax, custom embedded metric format (EMF), and CloudWatch Synthetics canaries for continuous endpoint health verification.",
           "resources": [
             {
               "title": "Monitoring, Logging, and Auditing on AWS: CloudWatch, CloudTrail, and X-Ray",
@@ -689,13 +739,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_monitoring_logging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 13
         },
         {
           "id": "aws_cloud_engineer_xray",
           "name": "Distributed Tracing: AWS X-Ray",
           "tag": "advanced",
-          "description": "Implement AWS X-Ray to analyze and debug production, distributed applications, providing insights into performance bottlenecks and service issues.",
+          "description": "Implement distributed application tracing with AWS X-Ray: active tracing instrumentation, service map visualization, tracing calls across API Gateway, Lambda, ECS, and DynamoDB, and debugging upstream latency bottlenecks.",
           "resources": [
             {
               "title": "AWS X-Ray Explained",
@@ -707,13 +759,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_xray.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 24
         },
         {
           "id": "aws_cloud_engineer_ci_cd",
           "name": "CI/CD with AWS Developer Tools",
           "tag": "advanced",
-          "description": "Build automated continuous integration and continuous delivery pipelines using AWS CodeCommit, CodeBuild, CodeDeploy, and CodePipeline.",
+          "description": "Build continuous integration and delivery pipelines: AWS CodePipeline orchestration, AWS CodeBuild containerized testing, and AWS CodeDeploy deployment configurations (Canary, Linear, All-at-Once) with automatic CloudWatch rollback alarms.",
           "resources": [
             {
               "title": "GitHub Actions Tutorial - Basic Concepts and CI/CD Pipeline with Docker",
@@ -730,13 +784,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_ci_cd.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "aws_cloud_engineer_security_best_practices",
           "name": "Security Management & Compliance",
           "tag": "essential",
-          "description": "Implement comprehensive security practices across AWS services. Leverage AWS security services for threat detection, configuration management, network protection, and managing encryption keys and secrets.",
+          "description": "Implement defense-in-depth cloud security: zero-trust IAM policies, network isolation, infrastructure compliance auditing, and automated vulnerability scanning.",
           "resources": [
             {
               "title": "AWS Well-Architected Framework - Security Pillar",
@@ -758,13 +814,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_security_best_practices.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 14
         },
         {
           "id": "aws_cloud_engineer_security_services_detect",
           "name": "Threat Detection & Configuration: GuardDuty, Security Hub & Config",
           "tag": "advanced",
-          "description": "Utilize Amazon GuardDuty for intelligent threat detection, AWS Security Hub for centralized security posture management, and AWS Config for continuous monitoring and compliance auditing of resource configurations.",
+          "description": "Deploy intelligent threat detection: Amazon GuardDuty machine learning threat intelligence (analyzing CloudTrail, VPC Flow Logs, DNS logs, and EKS audit logs), AWS Security Hub automated CIS compliance benchmarks, and Amazon Inspector continuous container and EC2 vulnerability scanning.",
           "resources": [
             {
               "title": "AWS GuardDuty, Security Hub & Config Explained",
@@ -776,13 +834,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_security_services_detect.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 24
         },
         {
           "id": "aws_cloud_engineer_security_services_protect",
           "name": "Network & Application Protection: WAF, Shield & Firewall Manager",
           "tag": "advanced",
-          "description": "Deploy AWS WAF (Web Application Firewall) to protect web applications from common web exploits, configure AWS Shield for DDoS protection, and manage security policies across accounts with Firewall Manager.",
+          "description": "Protect edge and web workloads: AWS WAF (Web Application Firewall) managing rate-based rules, SQL injection and XSS rule groups, AWS Shield Advanced for managed DDoS mitigation, and AWS Network Firewall for centralized stateful traffic inspection.",
           "resources": [
             {
               "title": "AWS WAF Explained | What is a Web Application Firewall?",
@@ -799,13 +859,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_security_services_protect.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         },
         {
           "id": "aws_cloud_engineer_kms_secrets",
           "name": "Key & Secret Management: KMS & Secrets Manager",
           "tag": "essential",
-          "description": "Securely manage cryptographic keys with AWS Key Management Service (KMS) and automate the rotation, management, and retrieval of database credentials, API keys, and other secrets with AWS Secrets Manager.",
+          "description": "Master cryptographic key and secret management: AWS Key Management Service (KMS) envelope encryption with Customer Managed Keys (CMKs), key policies vs IAM policies, automatic annual key rotation, and AWS Secrets Manager with automated Lambda credential rotation for RDS.",
           "resources": [
             {
               "title": "AWS KMS - Key Management Service explained",
@@ -822,13 +884,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_kms_secrets.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "aws_cloud_engineer_cost_optimization",
           "name": "Cost Management & Optimization",
           "tag": "advanced",
-          "description": "Learn to analyze and optimize AWS costs using services like Cost Explorer, AWS Budgets, Reserved Instances, Savings Plans, and Tagging strategies.",
+          "description": "Execute FinOps cost optimization: rightsizing compute instances with AWS Compute Optimizer, leveraging Graviton ARM-based instances (saving up to 40%), analyzing S3 Storage Lens metrics, and purchasing Savings Plans and Reserved Instances.",
           "resources": [
             {
               "title": "AWS Cost Optimization: The Complete Guide",
@@ -840,13 +904,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_cost_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 24
         },
         {
           "id": "aws_cloud_engineer_disaster_recovery",
           "name": "High Availability & Disaster Recovery",
           "tag": "advanced",
-          "description": "Design and implement highly available and disaster-resilient architectures using Multi-AZ deployments, backups, snapshots, and recovery strategies.",
+          "description": "Architect disaster recovery (DR) strategies: Backup & Restore, Pilot Light, Warm Standby, and Multi-Site Active-Active across AWS Regions, calculating and testing Recovery Time Objective (RTO) and Recovery Point Objective (RPO) with AWS Elastic Disaster Recovery (DRS).",
           "resources": [
             {
               "title": "AWS Well-Architected Framework - Reliability Pillar",
@@ -863,13 +929,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_disaster_recovery.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         },
         {
           "id": "aws_cloud_engineer_automation_scripting",
           "name": "Automation & Configuration Management: Python/Boto3 & SSM",
           "tag": "advanced",
-          "description": "Automate operational tasks using Python with Boto3 for programmatic interaction with AWS services. Leverage AWS Systems Manager (SSM) for instance management, patch management, and running automation documents across your fleet.",
+          "description": "Automate cloud fleet management with Python (Boto3): authoring serverless event-driven automation for instance scheduling, automated snapshot cleanup, and security compliance auto-remediation via EventBridge rules.",
           "resources": [
             {
               "title": "Automate AWS with Python and Boto3",
@@ -886,13 +954,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_automation_scripting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         },
         {
           "id": "aws_cloud_engineer_ssm",
           "name": "AWS Systems Manager (SSM)",
           "tag": "essential",
-          "description": "Utilize AWS Systems Manager for operational insights, simplifying resource management, automating operational tasks, and maintaining security and compliance across your AWS infrastructure.",
+          "description": "Master AWS Systems Manager (SSM): Session Manager for secure, port-less shell access without public IPs or open port 22, Parameter Store for hierarchical configuration management, and Patch Manager for automated OS maintenance.",
           "resources": [
             {
               "title": "AWS Systems Manager Explained (SSM) in 10 minutes",
@@ -909,13 +979,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_ssm.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "aws_cloud_engineer_troubleshooting",
           "name": "Troubleshooting & Incident Response",
           "tag": "advanced",
-          "description": "Develop skills to diagnose and resolve common AWS issues, understand incident response procedures, and utilize AWS diagnostic tools.",
+          "description": "Troubleshoot complex cloud incidents: analyzing VPC Flow Logs with Athena, debugging EC2 launch failures and status checks, diagnosing IAM permission denials using CloudTrail `dry-run` and error codes, and resolving Lambda timeout and cold-start spikes.",
           "resources": [
             {
               "title": "AWS Cloud Troubleshooting Basics",
@@ -932,15 +1004,19 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_troubleshooting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 11
     },
     {
       "id": "aws_cloud_engineer_projects_career",
       "name": "Project Work & Career Readiness",
       "tag": "advanced",
-      "description": "Apply learned skills to real-world projects, build a strong portfolio, prepare for AWS certifications, and effectively position yourself for an AWS Cloud Engineer role.",
+      "description": "Build enterprise-grade cloud projects, prepare for AWS Certified Solutions Architect / SysOps Administrator certifications, and master cloud systems architecture interviews.",
       "resources": [
         {
           "title": "AWS Documentation",
@@ -978,7 +1054,7 @@
           "id": "aws_cloud_engineer_project_portfolio",
           "name": "Project: Build a Scalable Web Application on AWS",
           "tag": "advanced",
-          "description": "Design and deploy a multi-tier web application using VPC, EC2, Auto Scaling, Load Balancer, RDS, S3, and implement CI/CD with AWS Developer Tools. Document the architecture, challenges, and solutions.",
+          "description": "Portfolio Project 1: Build a Highly Available, Fault-Tolerant Multi-Tier Web Architecture on AWS: multi-AZ VPC, Auto Scaling Group with EC2/ALB, Aurora PostgreSQL database, Route 53 failover, CloudFront CDN, and complete provisioning with Terraform.",
           "resources": [
             {
               "title": "Deploy a Scalable React App to AWS Elastic Beanstalk (freeCodeCamp.org)",
@@ -995,13 +1071,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_project_portfolio.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 58
         },
         {
           "id": "aws_cloud_engineer_project_serverless_api",
           "name": "Project: Serverless Data Processing Pipeline",
           "tag": "advanced",
-          "description": "Create a serverless backend for data ingestion and processing using S3, Lambda, API Gateway, DynamoDB, and CloudWatch for monitoring.",
+          "description": "Portfolio Project 2: Engineer an Event-Driven Serverless Microservice Platform: API Gateway, AWS Lambda with Python/Node.js, DynamoDB single-table design, SQS/SNS event fan-out, Cognito JWT authentication, and automated CI/CD deployment via GitHub Actions.",
           "resources": [
             {
               "title": "Build a Serverless API with AWS Lambda, API Gateway, DynamoDB",
@@ -1018,13 +1096,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_project_serverless_api.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 58
         },
         {
           "id": "aws_cloud_engineer_case_study",
           "name": "Case Study & Documentation",
           "tag": "advanced",
-          "description": "Document your projects as concise case studies, detailing problems, chosen AWS services, architectural decisions, implementation steps, and outcomes.",
+          "description": "Author a Cloud Architecture Case Study: document the migration of a legacy monolithic application to a containerized microservices platform on Amazon EKS, analyzing architectural decisions, cost reductions, high availability metrics, and security compliance.",
           "resources": [
             {
               "title": "Crafting Effective Case Studies for Your Portfolio",
@@ -1041,13 +1121,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_case_study.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         },
         {
           "id": "aws_cloud_engineer_cert_prep",
           "name": "AWS Certification Preparation",
           "tag": "advanced",
-          "description": "Prepare for relevant AWS certifications like AWS Certified Solutions Architect - Associate or AWS Certified SysOps Administrator - Associate to validate your skills.",
+          "description": "Prepare for AWS Certifications: focused study for AWS Certified Solutions Architect Associate (SAA-C03) or SysOps Administrator Associate (SOA-C02), mastering scenario-based questions, exam time management, and hands-on lab exercises.",
           "resources": [
             {
               "title": "AWS Certifications Overview",
@@ -1064,13 +1146,15 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_cert_prep.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         },
         {
           "id": "aws_cloud_engineer_interview_prep",
           "name": "Interview & Career Strategy",
           "tag": "advanced",
-          "description": "Develop interview skills, practice technical questions, and learn to articulate your AWS project experience effectively for Cloud Engineer roles.",
+          "description": "Excel in cloud engineering technical interviews: whiteboard cloud architecture design (scalability, security, resilience, cost), troubleshooting broken infrastructure live, and articulating trade-offs between serverless, containers, and virtual machines.",
           "resources": [
             {
               "title": "AWS Cloud Engineer Interview Questions and Answers",
@@ -1087,9 +1171,14 @@
               "url": "/data/docs/aws_cloud_engineer/aws_cloud_engineer_interview_prep.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 42
     }
-  ]
+  ],
+  "total_exp": 1000
 }

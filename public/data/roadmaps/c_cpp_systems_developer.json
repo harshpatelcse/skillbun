@@ -48,25 +48,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "High-Frequency Order Matching Engine & Limit Order Book",
+        "title": "High-Frequency Limit Order Book & Order Matching Engine",
         "tech_stack": [
-          "C++20",
-          "CMake",
-          "POSIX Sockets",
-          "Google Benchmark",
-          "Valgrind"
-        ],
-        "description": "Build a lock-free, zero-allocation limit order matching engine processing 1,000,000 orders/sec with sub-microsecond latency."
-      },
-      {
-        "title": "High-Frequency Lock-Free Ring Buffer & Trading Engine",
-        "tech_stack": [
-          "C++20",
-          "Linux epoll",
-          "CMake",
+          "Modern C++20",
+          "Lock-Free Ring Buffer",
+          "Zero-Copy Sockets",
+          "SIMD",
           "Google Benchmark"
         ],
-        "description": "Implement an ultra-low latency order matching engine using lock-free ring buffers, cache-line aligned data structures, SIMD vectorization, and zero-allocation networking."
+        "description": "Construct an ultra-low-latency order matching engine processing FIFO limit and market orders with microsecond execution and lock-free memory management."
+      },
+      {
+        "title": "High-Performance Multithreaded In-Memory Key-Value Store with LSM-Tree",
+        "tech_stack": [
+          "C++17",
+          "epoll",
+          "Write-Ahead Logging (WAL)",
+          "MemTable",
+          "Google Test"
+        ],
+        "description": "Engineer an in-memory key-value database featuring an LSM-tree storage engine, background compaction, WAL durability, and asynchronous Linux epoll networking."
       }
     ],
     "certifications": [
@@ -75,10 +76,11 @@
       "Linux Foundation Certified System Administrator (LFCS)"
     ],
     "interview_focus": [
-      "Virtual Memory, Page Faults & TLB Caching",
-      "Move Semantics vs Copy Semantics Implementation",
-      "Virtual Functions & Vtable Memory Overhead",
-      "Lock-Free Programming with std::atomic and Memory Orders"
+      "C++ Memory Model, std::atomic & Memory Ordering (acquire-release vs sequential consistency)",
+      "Move Semantics, Rvalue References & Perfect Forwarding (std::forward, std::move)",
+      "RAII, Smart Pointers (std::unique_ptr vs std::shared_ptr control block) & Custom Deleters",
+      "Virtual Function Tables (vtable), Dynamic Dispatch Overhead & Cache Locality",
+      "Undefined Behavior, AddressSanitizer (ASan), Valgrind & Zero-Cost Abstractions"
     ]
   },
   "format": "tree",
@@ -87,7 +89,7 @@
       "id": "c_cpp_systems_developer_foundations",
       "name": "Foundations of C/C++ & Systems Context",
       "tag": "essential",
-      "description": "Establish a strong understanding of core C and C++ language features, effective memory management techniques, and fundamental operating system concepts essential for robust systems development.",
+      "description": "Establish an uncompromising low-level foundation: master ISO C memory models and pointers, modern C++ (C++20/C++23) RAII semantics and zero-cost abstractions, hardware register-level execution, virtual memory paging, and OS kernel boundaries.",
       "resources": [
         {
           "title": "Operating Systems: Three Easy Pieces",
@@ -105,7 +107,7 @@
           "id": "c_programming_essentials",
           "name": "Core C Programming & Memory Model",
           "tag": "essential",
-          "description": "Master the fundamental syntax, data types, control structures, preprocessor directives, `typedef`, `struct`, `union`, function pointers, file I/O, storage classes, bit manipulation, and the C memory model including stack, heap, data sections, pointers, arrays, dynamic allocation, `volatile`, and `restrict` keywords.",
+          "description": "Master the ISO C memory model and low-level mechanics: stack vs heap allocation, pointer arithmetic, structure alignment and padding, packing with `__attribute__((packed))`, function pointer dispatch tables, bitwise manipulation for hardware bitmasks, storage classes (`static`, `extern`, `inline`), `volatile` and `restrict` semantics, memory safety hazards (buffer overruns, use-after-free, double frees), and undefined behavior traps (signed integer overflow, strict aliasing violations).",
           "resources": [
             {
               "title": "The C Programming Language (K&R)",
@@ -122,13 +124,15 @@
               "url": "/data/docs/c_cpp_systems_developer/c_programming_essentials.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         },
         {
           "id": "cpp_language_fundamentals",
           "name": "Modern C++ Language & STL",
           "tag": "essential",
-          "description": "Learn the basics of C++ including object-oriented programming (classes, inheritance, polymorphism), templates, RAII (Resource Acquisition Is Initialization), exception handling, and modern C++ features (C++11/14/17/20 basics like smart pointers (`std::unique_ptr`, `std::shared_ptr`), lambdas, move semantics, `constexpr`, `std::optional`, `std::variant`). Understand `const` correctness, the Rule of Zero/Three/Five. Explore the Standard Template Library (STL) including containers, algorithms, iterators, and utility libraries like `std::chrono` and `std::filesystem`.",
+          "description": "Master modern C++ (C++17/C++20/C++23) design: Resource Acquisition Is Initialization (RAII), Rule of 0/3/5, rvalue references and move semantics (`std::move`, `std::forward`), perfect forwarding, copy elision (RVO/NRVO), smart pointers (`std::unique_ptr` zero-cost abstraction vs `std::shared_ptr` atomic control block overhead and weak cycles), templates and C++20 concepts for compile-time constraints, `constexpr`/`consteval` metaprogramming, and STL cache-friendly layout (`std::vector` contiguous storage vs fragmented node containers).",
           "resources": [
             {
               "title": "C++ Reference",
@@ -155,13 +159,15 @@
               "url": "/data/docs/c_cpp_systems_developer/cpp_language_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         },
         {
           "id": "os_arch_concepts",
           "name": "Operating System Internals & Computer Architecture",
           "tag": "essential",
-          "description": "Understand core operating system concepts such as processes, threads, virtual memory, scheduling, system calls, kernel mode vs user mode, and basic computer architecture principles including CPU registers, assembly basics, memory hierarchy (caches), I/O devices, instruction sets, and interrupts. Learn how user-space programs interact with the kernel and the impact of compiler optimizations on hardware.",
+          "description": "Understand operating systems and CPU microarchitecture from bare metal: user vs kernel mode transitions (Ring 3 to Ring 0 via `syscall`), context switching overhead, virtual memory management (MMU, multi-level page tables, TLB shootdowns, demand paging, HugePages), CPU cache hierarchies (L1i/L1d, L2, unified L3 cache lines, false sharing, cache line bouncing), out-of-order execution, branch prediction misprediction penalties, hardware interrupts, and device drivers.",
           "resources": [
             {
               "title": "Operating Systems: Three Easy Pieces",
@@ -188,15 +194,19 @@
               "url": "/data/docs/c_cpp_systems_developer/os_arch_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 27
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 34
     },
     {
       "id": "c_cpp_systems_developer_core_skills",
       "name": "Core Tooling and Development Workflow",
       "tag": "essential",
-      "description": "Master the essential tools and workflows for C/C++ systems development, including compilers, build systems, version control, debugging techniques, and testing frameworks.",
+      "description": "Master the production toolchain for native engineering: the complete compilation pipeline (GCC/Clang), modern CMake target architectures, low-level hardware debugging with GDB/LLDB, and automated memory sanitizer instrumentation in continuous integration.",
       "resources": [
         {
           "title": "CMake Tutorial",
@@ -234,7 +244,7 @@
           "id": "compilers_linkers_libs",
           "name": "Compilers, Linkers & Libraries (GCC, Clang)",
           "tag": "essential",
-          "description": "Deep dive into the compilation process (preprocessor, compiler, assembler, linker), understanding how source code becomes an executable binary. Learn about static and dynamic linking, shared libraries, symbol resolution, relocation, the Application Binary Interface (ABI), position-independent code (PIC), and the role of GCC and Clang.",
+          "description": "Deep dive into the compilation pipeline: preprocessing, AST generation, LLVM IR/machine emission, optimization passes (`-O2`, `-O3`, `-Os`, `-flto`), and linking. Master the ELF binary format (header, `.text`, `.rodata`, `.data`, `.bss` sections), static archives (`.a`) vs shared libraries (`.so`), symbol resolution, relocation tables, Position Independent Code (`-fPIC`), Global Offset Tables (GOT), Procedure Linkage Tables (PLT), dynamic loader execution (`ld.so`, `RPATH`, `RUNPATH`, `LD_PRELOAD`), and C++ ABI name mangling.",
           "resources": [
             {
               "title": "Linkers and Loaders (John R. Levine)",
@@ -251,13 +261,15 @@
               "url": "/data/docs/c_cpp_systems_developer/compilers_linkers_libs.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "build_systems_make_cmake",
           "name": "Build Systems (Make & CMake)",
           "tag": "essential",
-          "description": "Learn to manage complex C/C++ projects using Makefiles for basic build automation and CMake for advanced, cross-platform project generation and build system configuration. Explore dependency management tools like `pkg-config`, `vcpkg`, or `Conan`.",
+          "description": "Master production native build engineering: modern target-centric CMake (avoiding directory-level variables; using `target_include_directories`, `target_link_libraries` with `PRIVATE`/`PUBLIC`/`INTERFACE` visibility), generator expressions, multi-configuration builds, generating `compile_commands.json` for clangd language servers, cross-compilation toolchains (musl, ARM64), and modern C++ package managers (vcpkg in manifest mode, Conan 2.0).",
           "resources": [
             {
               "title": "CMake Tutorial",
@@ -284,13 +296,15 @@
               "url": "/data/docs/c_cpp_systems_developer/build_systems_make_cmake.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 21
         },
         {
           "id": "git_version_control",
           "name": "Version Control with Git",
           "tag": "essential",
-          "description": "Implement best practices for source code management and collaboration using Git, including branching strategies, merging, rebasing, pull requests, and distributed workflows.",
+          "description": "Apply disciplined Git workflows for large-scale native repositories: Git submodules vs CMake FetchContent, large binary asset management with Git LFS, commit squashing, interactive rebasing, bisecting kernel and engine regressions using `git bisect run`, and atomic feature branch PR reviews.",
           "resources": [
             {
               "title": "Pro Git Book",
@@ -307,13 +321,15 @@
               "url": "/data/docs/c_cpp_systems_developer/git_version_control.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "debugging_diagnostic_tools",
           "name": "Debugging & Memory Error Detection",
           "tag": "essential",
-          "description": "Develop strong debugging skills using GDB/LLDB to inspect program state, set breakpoints, trace execution, analyze stack traces, and work with core dumps. Learn to use memory error detection tools like Valgrind and compiler sanitizers (AddressSanitizer, UndefinedBehaviorSanitizer, ThreadSanitizer) to identify and resolve common issues like memory leaks, corrupted memory, and data races.",
+          "description": "Master low-level debugging and memory diagnostics: GDB/LLDB interactive debugging, core dump analysis with debug symbols (DWARF), setting hardware watchpoints, inspecting register state, stack frame unwinding, and running LLVM Sanitizers in CI pipelines: AddressSanitizer (ASan) for buffer overflows and use-after-free, ThreadSanitizer (TSan) for data races, UndefinedBehaviorSanitizer (UBSan), and MemorySanitizer (MSan) for uninitialized memory reads.",
           "resources": [
             {
               "title": "GDB Documentation",
@@ -345,13 +361,15 @@
               "url": "/data/docs/c_cpp_systems_developer/debugging_diagnostic_tools.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "testing_frameworks",
           "name": "Unit & Integration Testing Frameworks",
           "tag": "essential",
-          "description": "Learn to write robust unit and integration tests for C/C++ code using popular frameworks such as Google Test or Catch2 to ensure code correctness and maintainability. Understand test-driven development (TDD) principles and explore mocking frameworks like Google Mock for isolating dependencies.",
+          "description": "Implement rigorous automated testing for native systems: writing unit and parameterized tests with GoogleTest or Catch2, deterministic mocking with GoogleMock, snapshot testing, property-based testing, and test coverage profiling using `gcov`/`lcov` with target coverage gates in CI.",
           "resources": [
             {
               "title": "Google Test User's Guide",
@@ -383,15 +401,19 @@
               "url": "/data/docs/c_cpp_systems_developer/testing_frameworks.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 24
     },
     {
       "id": "c_cpp_systems_developer_production_collaboration",
       "name": "Advanced Systems Programming & Production Practices",
       "tag": "advanced",
-      "description": "Dive into advanced systems programming topics like concurrency, network programming, inter-process communication, and performance optimization. Learn practices for building robust, secure, and production-ready applications.",
+      "description": "Engineer mission-critical, high-throughput systems: custom memory allocators, lock-free concurrency, kernel event multiplexing (`epoll`/`io_uring`), zero-copy IPC, CPU profiling with Linux `perf`, and hardened defensive programming.",
       "resources": [
         {
           "title": "C++ Reference",
@@ -429,7 +451,7 @@
           "id": "advanced_memory_management",
           "name": "Advanced Memory Management",
           "tag": "advanced",
-          "description": "Explore custom allocators, memory pools, slab allocators, and advanced techniques for efficient and safe memory handling beyond standard `new`/`delete` and `malloc`/`free`. Understand memory alignment, placement new, custom container allocators, memory mapping (`mmap`), and basic concepts of virtual memory page tables.",
+          "description": "Design and implement high-performance custom memory allocators: bump/arena allocators for request-scoped workloads, freelist and slab allocators for uniform object pools, buddy allocators for dynamic block splitting, memory-mapped I/O (`mmap` with `MAP_SHARED`/`MAP_ANONYMOUS`, `madvise` and `MADV_HUGEPAGE`), cache line alignment (`alignas(64)` to eliminate false sharing), and NUMA-aware allocation using `libnuma`.",
           "resources": [
             {
               "title": "The Memory Management Field Guide",
@@ -446,13 +468,15 @@
               "url": "/data/docs/c_cpp_systems_developer/advanced_memory_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         },
         {
           "id": "concurrency_parallelism",
           "name": "Concurrency & Parallelism",
           "tag": "advanced",
-          "description": "Master multi-threading with C++11 `<thread>` and POSIX threads (pthreads). Understand synchronization primitives (mutexes, condition variables, semaphores), atomic operations, thread-safe data structures, thread pools, futures and promises (`std::future`, `std::promise`), and parallel programming models. Explore basics of lock-free programming and parallel algorithms from the STL (e.g., C++17 execution policies). Gain exposure to external libraries like OpenMP or TBB.",
+          "description": "Master systems concurrency and synchronization: POSIX threads (`pthreads`) and C++ `std::jthread`, mutexes, reader-writer locks (`std::shared_mutex`), condition variables and spurious wakeups, the C++11 memory model (sequentially consistent vs acquire-release vs relaxed atomic operations), hardware memory barriers, lock-free single-producer single-consumer (SPSC) ring buffers, Compare-And-Swap (CAS) loops, and ABA problem mitigation using tagged pointers or hazard pointers.",
           "resources": [
             {
               "title": "C++ Concurrency in Action",
@@ -479,13 +503,15 @@
               "url": "/data/docs/c_cpp_systems_developer/concurrency_parallelism.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 60
         },
         {
           "id": "network_programming",
           "name": "Network Programming with Sockets",
           "tag": "advanced",
-          "description": "Learn to build networked applications using Berkeley sockets. Understand different I/O models (blocking, non-blocking, multiplexing with `select`/`poll`/`epoll`/`kqueue`), TCP/UDP protocols, socket options, basic client-server communication, and event-driven programming models (e.g., libuv, or raw `epoll` usage). Explore basic network protocol design, serialization, and deserialization.",
+          "description": "Build ultra-high-throughput network engines using Berkeley sockets: non-blocking socket state machines, event demultiplexing with Linux `epoll` (edge-triggered `EPOLLET` vs level-triggered), next-generation Linux `io_uring` submission and completion queue rings for zero-syscall asynchronous I/O, TCP socket kernel tuning (`SO_REUSEPORT`, `TCP_NODELAY`, `SO_RCVBUF`/`SO_SNDBUF`), backpressure handling, and binary wire protocol framing.",
           "resources": [
             {
               "title": "Beej's Guide to Network Programming",
@@ -507,13 +533,15 @@
               "url": "/data/docs/c_cpp_systems_developer/network_programming.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 60
         },
         {
           "id": "inter_process_communication",
           "name": "Inter-Process Communication (IPC)",
           "tag": "advanced",
-          "description": "Explore various mechanisms for processes to communicate and synchronize, including pipes (named/unnamed), message queues, shared memory, semaphores, and mutexes. Understand Unix domain sockets, basic concepts of Message Passing Interface (MPI) for distributed systems, and Remote Procedure Call (RPC) frameworks. Analyze their trade-offs and appropriate use cases.",
+          "description": "Implement high-bandwidth, low-latency inter-process communication: POSIX shared memory (`shm_open`, `mmap`) coupled with inter-process semaphores, Unix domain sockets (UDS) with ancillary file descriptor passing (`SCM_RIGHTS`), bidirectional POSIX pipes, and zero-copy binary serialization using FlatBuffers or Cap'n Proto.",
           "resources": [
             {
               "title": "Linux IPC Mechanisms Tutorial",
@@ -535,13 +563,15 @@
               "url": "/data/docs/c_cpp_systems_developer/inter_process_communication.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         },
         {
           "id": "performance_profiling",
           "name": "Performance Optimization & Profiling",
           "tag": "advanced",
-          "description": "Identify performance bottlenecks using profiling tools like `perf`, Valgrind/Callgrind, and Intel VTune. Learn to optimize code for CPU caches (cache locality, false sharing), branch prediction, memory access patterns, and apply modern C++ features for maximum efficiency. Explore basics of SIMD (Single Instruction, Multiple Data) intrinsics and compiler intrinsics for specific architectures.",
+          "description": "Profile and eliminate performance bottlenecks from software to silicon: Linux `perf` CPU sampling, generating interactive FlameGraphs, analyzing hardware performance counters (instructions per cycle, branch misses, L1/L3 cache misses), cache line profiling with Cachegrind, SIMD vectorization (AVX2/AVX-512 intrinsics using `_mm256_*`), branchless programming, and optimizing data layout (Structure of Arrays vs Array of Structures).",
           "resources": [
             {
               "title": "Optimizing C++ Code (Agner Fog)",
@@ -573,13 +603,15 @@
               "url": "/data/docs/c_cpp_systems_developer/performance_profiling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 60
         },
         {
           "id": "quality_static_analysis",
           "name": "Code Quality, Static Analysis & Fuzzing",
           "tag": "advanced",
-          "description": "Utilize static analysis tools like Clang-Tidy, Cppcheck, and linters to enforce code style, detect potential bugs, and improve maintainability. Employ code formatters like `clang-format`. Establish code review processes, integrate code coverage tools (`gcov`, `lcov`), and explore basics of fuzz testing (e.g., libFuzzer, AFL++) to find vulnerabilities and edge cases.",
+          "description": "Enforce strict automated code quality and correctness: static analysis with Clang-Tidy (modernize, performance, bugprone, cert checks) and Cppcheck, formatting automation with `.clang-format`, coverage tracking, and coverage-guided fuzz testing with LLVM `libFuzzer` and AFL++ to discover unhandled edge cases and memory corruption vulnerabilities.",
           "resources": [
             {
               "title": "Clang-Tidy Checks",
@@ -611,13 +643,15 @@
               "url": "/data/docs/c_cpp_systems_developer/quality_static_analysis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         },
         {
           "id": "secure_coding_practices",
           "name": "Secure C/C++ Coding Practices",
           "tag": "advanced",
-          "description": "Understand common vulnerabilities in C/C++ (e.g., buffer overflows, integer overflows, use-after-free, format string bugs, race conditions). Implement defensive programming techniques, input validation, output encoding, privilege separation (Principle of Least Privilege), secure error handling, and basic sandboxing techniques to build robust and secure systems.",
+          "description": "Engineer memory-safe systems software: understanding low-level exploit mechanics (stack-based buffer overflows, return-to-libc, ROP chains), and implementing compiler and kernel mitigations: Stack Canaries (`-fstack-protector-strong`), ASLR, Data Execution Prevention (DEP/NX), Control Flow Integrity (Clang `-fsanitize=cfi`), `_FORTIFY_SOURCE=3`, safe integer arithmetic (preventing integer truncation and wraparound), and sandboxing with Linux seccomp-bpf.",
           "resources": [
             {
               "title": "CERT C++ Secure Coding Standard",
@@ -639,13 +673,15 @@
               "url": "/data/docs/c_cpp_systems_developer/secure_coding_practices.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 66
         },
         {
           "id": "ci_cd_systems",
           "name": "Continuous Integration/Delivery (CI/CD) for Systems",
           "tag": "advanced",
-          "description": "Set up automated build, test, and deployment pipelines specifically for C/C++ projects using tools like Jenkins, GitLab CI, or GitHub Actions. Learn to leverage containerization (Docker) for consistent build environments, reproducible results, artifact management, dependency caching, and cross-compilation environments.",
+          "description": "Architect enterprise CI/CD pipelines for native systems: reproducible multi-platform Docker build environments, caching compiler artifacts with ccache, running static analysis, executing parallel sanitizer test matrices (ASan, TSan, UBSan), and packaging deb/rpm/tarball release artifacts.",
           "resources": [
             {
               "title": "CI/CD for C++ Projects with GitLab CI",
@@ -677,15 +713,19 @@
               "url": "/data/docs/c_cpp_systems_developer/ci_cd_systems.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 50
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 60
     },
     {
       "id": "c_cpp_systems_developer_portfolio_career",
       "name": "Portfolio, Projects & Career Path",
       "tag": "advanced",
-      "description": "Apply your C/C++ systems development skills to build impactful projects, create a compelling portfolio, and prepare for technical interviews to launch your career.",
+      "description": "Demonstrate systems engineering mastery: build production-grade systems software (custom allocators, concurrent key-value stores, event-driven servers), showcase benchmark-backed GitHub repositories, and master systems design and low-level technical interviews.",
       "resources": [
         {
           "title": "How to Get a C++ Job in 2024 (A Programmer's Guide)",
@@ -708,7 +748,7 @@
           "id": "project_based_learning",
           "name": "Project-Based Learning & Practical Application",
           "tag": "advanced",
-          "description": "Engage in hands-on projects, such as building a custom shell, a simple network server/client, a memory allocator, a custom data structure library, a concurrent queue, a simple file system utility, or a small command-line utility, to solidify your understanding and gain practical experience. Focus on applying learned concepts from memory management, concurrency, and networking.",
+          "description": "Build foundational systems projects from scratch: a custom Unix shell with job control, signal handling, and I/O redirection; a POSIX-compliant memory allocator replacing `malloc`/`free`; a multithreaded HTTP/1.1 static file server using raw POSIX sockets and non-blocking I/O; and a concurrent lock-free queue with comprehensive stress tests.",
           "resources": [
             {
               "title": "Socket Programming in C - A Detailed Guide (TCP/IP)",
@@ -725,13 +765,15 @@
               "url": "/data/docs/c_cpp_systems_developer/project_based_learning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 85
         },
         {
           "id": "capstone_systems_app",
           "name": "Capstone Project: A Complex Systems Application",
           "tag": "advanced",
-          "description": "Design, implement, test, and thoroughly document a significant, portfolio-grade systems project that showcases your comprehensive C/C++ development capabilities. This project should integrate multiple advanced topics like multi-threading, network communication, robust error handling, and possibly interaction with underlying OS features. Consider projects such as a high-performance logging library, a custom RPC framework, or a distributed key-value store.",
+          "description": "Capstone: Engineer an ultra-low-latency, lock-free in-memory key-value database in C++20: custom arena memory allocator with zero fragmentation, Linux `io_uring` and `epoll` event-driven network engine, multi-threaded worker pool with CPU core pinning (`pthread_setaffinity_np`), lock-free concurrent hash index with atomic compare-and-swap, append-only write-ahead log (WAL) for crash recovery, and automated benchmarking demonstrating sub-millisecond p99 latencies under 500,000 requests per second.",
           "resources": [
             {
               "title": "C++ Concurrency Tutorial - Threads, Mutexes, and More",
@@ -748,13 +790,15 @@
               "url": "/data/docs/c_cpp_systems_developer/capstone_systems_app.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 85
         },
         {
           "id": "career_dev_interview_prep",
           "name": "Career Development & Interview Preparation",
           "tag": "advanced",
-          "description": "Craft an impressive resume and GitHub portfolio. Prepare for technical interviews covering data structures, algorithms, advanced system design questions, and low-level C/C++ specific topics (e.g., memory model, concurrency, ABI). Develop effective communication skills for technical discussions and navigate the C/C++ job market effectively.",
+          "description": "Excel in systems engineering interviews: deep preparation on OS internals (virtual memory, schedulers, file systems), the C++ object and memory model (vtable mechanics, move semantics, atomics, memory orders), systems design (designing a distributed cache, log-structured merge tree, or packet broker), and writing clean, defensive, real-time code under rigorous whiteboard/pair-programming constraints.",
           "resources": [
             {
               "title": "Cracking the Coding Interview",
@@ -786,9 +830,14 @@
               "url": "/data/docs/c_cpp_systems_developer/career_dev_interview_prep.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 52
     }
-  ]
+  ],
+  "total_exp": 1000
 }

@@ -86,7 +86,7 @@
       "id": "ai_research_engineer_foundational_skills",
       "name": "Foundational Skills for AI Research",
       "tag": "essential",
-      "description": "Build a strong theoretical and practical base in mathematics, programming, and core machine learning concepts essential for effective AI research.",
+      "description": "Build rigorous mathematical foundations and research workflows required to formulate, evaluate, and publish novel machine learning theories and architectures.",
       "resources": [
         {
           "title": "Deep Learning Specialization (Coursera by Andrew Ng)",
@@ -119,7 +119,7 @@
           "id": "ai_research_engineer_math_stats",
           "name": "Mathematics and Statistics for ML",
           "tag": "essential",
-          "description": "Master the core mathematical and statistical concepts crucial for understanding and developing AI algorithms, including linear algebra, calculus, probability, and optimization theory.",
+          "description": "Master advanced multivariable calculus, linear algebra (singular value decomposition, spectral theory), probability theory, measure theory, Bayesian inference, and information theory (KL divergence, mutual information).",
           "resources": [
             {
               "title": "Linear Algebra (Khan Academy)",
@@ -146,13 +146,15 @@
               "url": "/data/docs/ai_research_engineer/ai_research_engineer_math_stats.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "ai_research_engineer_prog_essentials",
           "name": "Programming Essentials for AI",
           "tag": "essential",
-          "description": "Develop strong programming skills in Python, including advanced data structures, algorithms, object-oriented programming, and best practices for scientific computing using libraries like NumPy, SciPy, and Pandas.",
+          "description": "Master scientific computing in Python and C++: Vectorized operations, custom CUDA kernels, memory-efficient data structures, and algorithmic complexity analysis for high-performance tensor computing.",
           "resources": [
             {
               "title": "Python for Data Science Handbook (Jake VanderPlas)",
@@ -184,13 +186,15 @@
               "url": "/data/docs/ai_research_engineer/ai_research_engineer_prog_essentials.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "ai_research_engineer_ml_fundamentals",
           "name": "Machine Learning Fundamentals",
           "tag": "essential",
-          "description": "Understand the foundational concepts of machine learning, including supervised/unsupervised learning, regression, classification, model evaluation metrics, and classic algorithms.",
+          "description": "Deep dive into statistical learning theory: Empirical risk minimization, PAC learnability, VC dimension, bias-variance tradeoff, regularization theory, and kernel methods (SVMs, RKHS).",
           "resources": [
             {
               "title": "Machine Learning (Stanford University by Andrew Ng)",
@@ -212,13 +216,15 @@
               "url": "/data/docs/ai_research_engineer/ai_research_engineer_ml_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 24
         },
         {
           "id": "ai_research_engineer_research_landscape",
           "name": "AI Research Landscape & Ethics",
           "tag": "essential",
-          "description": "Gain an overview of the AI research ecosystem, common challenges, different types of research roles, and critical ethical considerations in AI development.",
+          "description": "Survey premier AI research venues (NeurIPS, ICML, ICLR, CVPR, ACL). Analyze peer-review standards, institutional AI safety frameworks, and ethical implications of dual-use models.",
           "resources": [
             {
               "title": "AI Ethics Course (Elements of AI)",
@@ -245,13 +251,15 @@
               "url": "/data/docs/ai_research_engineer/ai_research_engineer_research_landscape.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "ai_research_engineer_dev_environment",
           "name": "Development Environment & Version Control",
           "tag": "essential",
-          "description": "Set up an efficient development environment, master Git for version control, and understand command-line tools for AI research workflows, including virtual environments.",
+          "description": "Configure reproducible research environments: Linux GPU clusters, SLURM job scheduling, containerized Docker environments with NVIDIA Container Toolkit, and Git LFS for large checkpoint tracking.",
           "resources": [
             {
               "title": "Git Handbook (GitHub Guides)",
@@ -283,13 +291,15 @@
               "url": "/data/docs/ai_research_engineer/ai_research_engineer_dev_environment.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 19
         },
         {
           "id": "ai_research_engineer_software_engineering_ml",
           "name": "Software Engineering Principles for ML",
           "tag": "essential",
-          "description": "Apply software engineering best practices, including modular design, testing, debugging, code review, and performance profiling, tailored for machine learning projects and research prototypes.",
+          "description": "Apply software engineering principles to research code: Modular PyTorch design, strict type hinting, automated unit tests for tensor shapes and gradient backprop, and continuous integration pipelines.",
           "resources": [
             {
               "title": "Clean Code (Robert C. Martin)",
@@ -316,15 +326,19 @@
               "url": "/data/docs/ai_research_engineer/ai_research_engineer_software_engineering_ml.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 18
     },
     {
       "id": "ai_research_engineer_deep_learning_core",
       "name": "Deep Learning Core & Frameworks",
       "tag": "essential",
-      "description": "Dive deep into the principles of deep learning, popular architectures, and gain hands-on proficiency with a leading framework like PyTorch.",
+      "description": "Architect deep neural networks from foundational principles: Custom autograd functions, backward-pass computational graphs, and distributed training paradigms.",
       "resources": [
         {
           "title": "PyTorch Documentation and Tutorials",
@@ -352,7 +366,7 @@
           "id": "ai_research_engineer_pytorch_mastery",
           "name": "PyTorch Mastery",
           "tag": "essential",
-          "description": "Become proficient in PyTorch, covering tensors, autograd, building neural networks with nn.Module, custom datasets, data loaders, and optimizers.",
+          "description": "Master PyTorch internals: Custom C++/CUDA extensions, TorchScript, `torch.compile`, native mixed-precision (AMP), memory profiling via PyTorch Profiler, and distributed data parallel (DDP).",
           "resources": [
             {
               "title": "Deep Learning with PyTorch: A 60 Minute Blitz",
@@ -374,13 +388,15 @@
               "url": "/data/docs/ai_research_engineer/ai_research_engineer_pytorch_mastery.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         },
         {
           "id": "ai_research_engineer_nn_architectures",
           "name": "Neural Network Architectures",
           "tag": "essential",
-          "description": "Explore and implement various deep learning architectures, including CNNs, RNNs, LSTMs, Transformers, autoencoders, and generative models (GANs, VAEs).",
+          "description": "Analyze the inductive biases of core architectures: Multi-layer perceptrons, convolutional networks, attention mechanisms, graph neural networks (GNNs), and state-space models (Mamba/S4).",
           "resources": [
             {
               "title": "Deep Learning (Ian Goodfellow, Yoshua Bengio, Aaron Courville)",
@@ -407,13 +423,15 @@
               "url": "/data/docs/ai_research_engineer/ai_research_engineer_nn_architectures.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "ai_research_engineer_data_pipelines_dl",
           "name": "Data Pipelines for Deep Learning",
           "tag": "essential",
-          "description": "Learn techniques for efficient data loading, preprocessing, augmentation, and handling diverse data types (images, text, audio) for deep learning models, focusing on research data.",
+          "description": "Engineer high-throughput data loading pipelines: Custom PyTorch `IterableDataset`, WebDataset streaming for petabyte datasets, pre-fetching, memory-pinning, and GPU-accelerated decoding with NVIDIA DALI.",
           "resources": [
             {
               "title": "Albumentations Documentation",
@@ -440,13 +458,15 @@
               "url": "/data/docs/ai_research_engineer/ai_research_engineer_data_pipelines_dl.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "ai_research_engineer_training_optimization",
           "name": "Deep Learning Training & Optimization",
           "tag": "essential",
-          "description": "Master advanced training strategies, including different optimizers, learning rate schedules, regularization techniques (dropout, batch normalization), and transfer learning.",
+          "description": "Optimize non-convex loss surfaces: Stochastic gradient descent dynamics, adaptive optimizers (AdamW, Lion, Sophia), learning rate scheduling, warmup dynamics, gradient clipping, and sharp minima exploration.",
           "resources": [
             {
               "title": "An overview of gradient descent optimization algorithms (Sebastian Ruder)",
@@ -473,15 +493,19 @@
               "url": "/data/docs/ai_research_engineer/ai_research_engineer_training_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 28
     },
     {
       "id": "ai_research_engineer_research_methodology",
       "name": "AI Research Methodology & Experimentation",
       "tag": "advanced",
-      "description": "Acquire the essential skills for conducting rigorous AI research, from systematic literature review and experiment design to robust evaluation and analysis.",
+      "description": "Formulate hypothesis-driven experimental methodologies: Designing null hypotheses, controlling confounders, managing compute budgets, and ensuring statistical significance across random seeds.",
       "resources": [
         {
           "title": "How to Read a Paper (S. Keshav)",
@@ -509,7 +533,7 @@
           "id": "ai_research_engineer_literature_review_skills",
           "name": "Systematic Literature Review",
           "tag": "advanced",
-          "description": "Develop skills in identifying, critically analyzing, and synthesizing existing research papers, identifying research gaps, and formulating novel research questions.",
+          "description": "Execute systematic literature reviews: Synthesizing SOTA benchmarks on arXiv, tracking citation graphs via Connected Papers, identifying methodological gaps, and dissecting seminal proof techniques.",
           "resources": [
             {
               "title": "Connected Papers",
@@ -536,13 +560,15 @@
               "url": "/data/docs/ai_research_engineer/ai_research_engineer_literature_review_skills.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         },
         {
           "id": "ai_research_engineer_experiment_design_control",
           "name": "Experiment Design & Control",
           "tag": "advanced",
-          "description": "Learn to design reproducible and statistically sound experiments, establish strong baselines, and control for confounding variables in AI research to ensure valid results.",
+          "description": "Design rigorous multi-variable experiments: Establish baseline controls, isolate hyperparameter sensitivities using factorial designs, and run Bayesian optimization for fair model comparison.",
           "resources": [
             {
               "title": "The Scientific Method in Machine Learning (Google Research)",
@@ -564,13 +590,15 @@
               "url": "/data/docs/ai_research_engineer/ai_research_engineer_experiment_design_control.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         },
         {
           "id": "ai_research_engineer_reproducibility_mlops",
           "name": "Reproducibility & Research MLOps",
           "tag": "advanced",
-          "description": "Implement best practices for reproducible research, including code and environment management, data versioning, and using experiment tracking platforms (W&B, MLflow, DVC).",
+          "description": "Enforce strict scientific reproducibility: Deterministic seeding, environment snapshots (Poetry/Conda lockfiles), experiment logging with Weights & Biases / MLflow, and artifact hash verification.",
           "resources": [
             {
               "title": "DVC (Data Version Control) Documentation",
@@ -602,13 +630,15 @@
               "url": "/data/docs/ai_research_engineer/ai_research_engineer_reproducibility_mlops.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         },
         {
           "id": "ai_research_engineer_model_evaluation_advanced",
           "name": "Advanced Model Evaluation & Statistics",
           "tag": "advanced",
-          "description": "Go beyond basic metrics to understand statistical significance, confidence intervals, error analysis, calibration, and methods for evaluating model robustness and fairness in research.",
+          "description": "Evaluate models beyond raw accuracy: Bootstrapping, non-parametric statistical hypothesis testing (Wilcoxon signed-rank), calibration error (ECE), out-of-distribution detection, and robust generalization bounds.",
           "resources": [
             {
               "title": "Interpretable Machine Learning (Christoph Molnar)",
@@ -635,13 +665,15 @@
               "url": "/data/docs/ai_research_engineer/ai_research_engineer_model_evaluation_advanced.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         },
         {
           "id": "ai_research_engineer_benchmarking_ablations",
           "name": "Benchmarking & Ablation Studies",
           "tag": "advanced",
-          "description": "Learn to rigorously benchmark models against state-of-the-art results and design effective ablation studies to understand the contribution of individual components to model performance.",
+          "description": "Conduct rigorous ablation studies: Systematic component removal, parameter-matched controls, compute-normalized Pareto frontier analysis, and standardized benchmarking against GLUE, SuperGLUE, or ImageNet.",
           "resources": [
             {
               "title": "Papers with Code",
@@ -663,15 +695,19 @@
               "url": "/data/docs/ai_research_engineer/ai_research_engineer_benchmarking_ablations.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 30
     },
     {
       "id": "ai_research_engineer_advanced_research_topics",
       "name": "Advanced Research Topics & Specialization",
       "tag": "advanced",
-      "description": "Explore cutting-edge areas within AI research, develop specialized expertise, and understand advanced techniques and challenges to push the boundaries of current AI capabilities.",
+      "description": "Investigate frontier AI research domains: Foundation model scaling laws, diffusion thermodynamics, state space models, reinforcement learning from human feedback (RLHF), and mechanistic interpretability.",
       "resources": [
         {
           "title": "Hugging Face Transformers Documentation",
@@ -704,7 +740,7 @@
           "id": "ai_research_engineer_llms_nlp_advanced",
           "name": "Large Language Models & Advanced NLP",
           "tag": "advanced",
-          "description": "Deep dive into LLMs, their architectures, pre-training, fine-tuning, prompt engineering, Retrieval-Augmented Generation (RAG), and ethical considerations in natural language processing research.",
+          "description": "Research large language model architectures: Rotary positional embeddings (RoPE), FlashAttention-2/3, mixture-of-experts (MoE) routing, speculative decoding, and long-context scaling laws.",
           "resources": [
             {
               "title": "The Illustrated Transformer (Jay Alammar)",
@@ -731,13 +767,15 @@
               "url": "/data/docs/ai_research_engineer/ai_research_engineer_llms_nlp_advanced.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         },
         {
           "id": "ai_research_engineer_generative_ai_cv_advanced",
           "name": "Generative AI & Advanced Computer Vision",
           "tag": "advanced",
-          "description": "Study advanced topics in computer vision, including object detection, semantic segmentation, image generation (diffusion models), and understanding multimodal AI, with practical implementations.",
+          "description": "Explore generative visual modeling: Score-based generative models, continuous-time diffusion SDEs, flow matching, latent diffusion (Stable Diffusion), and neural radiance fields (NeRFs / 3D Gaussian Splatting).",
           "resources": [
             {
               "title": "Diffusion Models Beat GANs on Image Synthesis (OpenAI Blog)",
@@ -764,13 +802,15 @@
               "url": "/data/docs/ai_research_engineer/ai_research_engineer_generative_ai_cv_advanced.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         },
         {
           "id": "ai_research_engineer_efficient_ai_optimization",
           "name": "Efficient AI & Resource Optimization",
           "tag": "advanced",
-          "description": "Learn techniques for model compression, quantization, pruning, knowledge distillation, and distributed training to optimize AI models for performance and resource efficiency.",
+          "description": "Pioneer resource-efficient model training: Activation checkpointing, ZeRO-1/2/3 memory stages, tensor parallelism (Megatron-LM), pipeline parallelism, and post-training quantization (GPTQ, AWQ).",
           "resources": [
             {
               "title": "Hugging Face Optimum",
@@ -797,13 +837,15 @@
               "url": "/data/docs/ai_research_engineer/ai_research_engineer_efficient_ai_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         },
         {
           "id": "ai_research_engineer_causal_ai_interpretability",
           "name": "Causal AI & Interpretability",
           "tag": "advanced",
-          "description": "Understand the fundamentals of causal inference and techniques for interpreting complex AI models (Explainable AI - XAI), crucial for trustworthiness and debugging in research.",
+          "description": "Analyze causal inference and mechanistic interpretability: Pearl's do-calculus, structural equation models, sparse autoencoders (SAEs) for polysemantic neurons, and activation patching in transformers.",
           "resources": [
             {
               "title": "Causal Inference for The Brave and True",
@@ -830,13 +872,15 @@
               "url": "/data/docs/ai_research_engineer/ai_research_engineer_causal_ai_interpretability.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         },
         {
           "id": "ai_research_engineer_federated_learning_privacy",
           "name": "Federated Learning & Privacy-Preserving AI",
           "tag": "advanced",
-          "description": "Explore methods for training AI models on decentralized datasets while preserving data privacy, including federated learning and secure multi-party computation.",
+          "description": "Implement privacy-preserving learning: Federated averaging (FedAvg), differential privacy guarantees (DP-SGD), secure multi-party computation (SMPC), and homomorphic encryption in distributed training.",
           "resources": [
             {
               "title": "Towards Federated Learning at Scale (Google AI Blog)",
@@ -863,15 +907,19 @@
               "url": "/data/docs/ai_research_engineer/ai_research_engineer_federated_learning_privacy.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 56
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 32
     },
     {
       "id": "ai_research_engineer_research_communication_impact",
       "name": "Research Communication & Open Science",
       "tag": "advanced",
-      "description": "Develop the crucial skills to effectively communicate research findings, contribute to the scientific community, and share knowledge through publications and presentations.",
+      "description": "Disseminate peer-reviewed research findings: Authoring camera-ready LaTeX manuscripts in Overleaf, presenting poster sessions, and releasing reproducible open-source artifacts.",
       "resources": [
         {
           "title": "Nature Masterclasses: Scientific Writing and Publishing",
@@ -899,7 +947,7 @@
           "id": "ai_research_engineer_scientific_writing_publication",
           "name": "Scientific Writing & Publication",
           "tag": "advanced",
-          "description": "Master the art of writing clear, concise, and impactful research papers, technical reports, and proposals for conferences and journals following academic standards.",
+          "description": "Master academic writing in LaTeX: Crafting precise mathematical proofs, structuring introduction-methods-results-discussion (IMRAD), designing publication-quality vector figures in Matplotlib/TikZ.",
           "resources": [
             {
               "title": "Writing a Scientific Paper (Scitable by Nature Education)",
@@ -926,13 +974,15 @@
               "url": "/data/docs/ai_research_engineer/ai_research_engineer_scientific_writing_publication.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 27
         },
         {
           "id": "ai_research_engineer_presentation_storytelling",
           "name": "Research Presentation & Storytelling",
           "tag": "advanced",
-          "description": "Craft compelling presentations for conferences, workshops, and internal reviews, effectively communicating complex research to diverse technical and non-technical audiences.",
+          "description": "Deliver compelling conference presentations: Visualizing ablation tradeoffs, pacing technical narratives, and articulating novel scientific contributions during Q&A sessions at top-tier conferences.",
           "resources": [
             {
               "title": "Presentation Skills for Academics (University of Melbourne)",
@@ -959,13 +1009,15 @@
               "url": "/data/docs/ai_research_engineer/ai_research_engineer_presentation_storytelling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         },
         {
           "id": "ai_research_engineer_open_source_contribution",
           "name": "Open-Source Contributions & Collaboration",
           "tag": "advanced",
-          "description": "Learn how to contribute effectively to open-source AI projects, publish research code, and engage with the broader scientific community to foster collaboration and impact.",
+          "description": "Contribute to premier open-source AI frameworks: Submitting pull requests to Hugging Face Transformers, PyTorch, vLLM, or FlashAttention, and documenting research code with thorough unit tests.",
           "resources": [
             {
               "title": "How To Contribute To Open Source (GitHub Guides)",
@@ -987,15 +1039,19 @@
               "url": "/data/docs/ai_research_engineer/ai_research_engineer_open_source_contribution.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 28
     },
     {
       "id": "ai_research_engineer_career_showcase_growth",
       "name": "Career Showcase & Continuous Growth",
       "tag": "advanced",
-      "description": "Transform your research skills into a compelling professional profile, excel in interviews, and foster a mindset of continuous learning in the fast-evolving AI field.",
+      "description": "Position yourself for research lab and academia roles: Building an authoritative Google Scholar and GitHub presence, engaging with arXiv sanity feeds, and navigating research scientist interviews.",
       "resources": [
         {
           "title": "Building a Machine Learning Portfolio (Towards Data Science)",
@@ -1023,7 +1079,7 @@
           "id": "ai_research_engineer_portfolio_development",
           "name": "Research Portfolio Development",
           "tag": "advanced",
-          "description": "Curate a strong portfolio showcasing your research projects, code, publications, and contributions, demonstrating your expertise and research impact to potential employers.",
+          "description": "Curate a competitive research portfolio: Host reproducible model checkpoints on Hugging Face Hub, publish interactive Gradio/W&B research demos, and maintain technical research blogs.",
           "resources": [
             {
               "title": "GitHub Profile README guide",
@@ -1050,13 +1106,15 @@
               "url": "/data/docs/ai_research_engineer/ai_research_engineer_portfolio_development.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "ai_research_engineer_interview_prep_research",
           "name": "Interview Strategies for Research Roles",
           "tag": "advanced",
-          "description": "Prepare for technical interviews, whiteboard coding, research proposal discussions, and behavioral questions specific to AI Research Engineer positions at top-tier labs and companies.",
+          "description": "Excel in research scientist interviews: Derive backpropagation and optimization algorithms on a whiteboard, present past research papers, and solve theoretical probability and machine learning coding challenges.",
           "resources": [
             {
               "title": "Cracking the Coding Interview (Gayle Laakmann McDowell)",
@@ -1083,13 +1141,15 @@
               "url": "/data/docs/ai_research_engineer/ai_research_engineer_interview_prep_research.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         },
         {
           "id": "ai_research_engineer_continuous_learning_trends",
           "name": "Continuous Learning & Staying Current",
           "tag": "advanced",
-          "description": "Develop strategies for continuously learning, tracking new publications, attending conferences, and engaging with AI research communities to stay at the forefront of the field.",
+          "description": "Track cutting-edge AI breakthroughs: Review daily arXiv papers, follow research discussions on X/Bluesky and Lab Discords, and engage in peer review for international workshops and conferences.",
           "resources": [
             {
               "title": "ArXiv Sanity Preserver",
@@ -1116,9 +1176,14 @@
               "url": "/data/docs/ai_research_engineer/ai_research_engineer_continuous_learning_trends.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 31
     }
-  ]
+  ],
+  "total_exp": 1000
 }

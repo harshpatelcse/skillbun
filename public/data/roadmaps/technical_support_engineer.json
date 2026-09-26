@@ -47,32 +47,34 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Automated Log Diagnostics & Ticket Triage Tool",
+        "title": "Automated Tier-2 Diagnostics CLI & Customer Log Parsing Tool",
         "tech_stack": [
           "Python",
-          "Zendesk API",
-          "Regex",
-          "Postman"
+          "Click",
+          "Regular Expressions",
+          "SQLite",
+          "REST APIs"
         ],
-        "description": "Build an automated utility that parses customer error log attachments, identifies known stack traces, and suggests instant solutions."
+        "description": "Build an automated troubleshooting utility that parses customer error logs, extracts stack traces and HTTP error patterns, and maps them to known engineering runbooks."
       },
       {
-        "title": "Automated Tier-2 Diagnostic Script & Escalation System",
+        "title": "Automated Customer Knowledge Base & Escalation Webhook System",
         "tech_stack": [
-          "Bash",
-          "Python",
-          "Wireshark",
-          "Zendesk API",
-          "Linux"
+          "Node.js",
+          "Zendesk / Jira Service Desk API",
+          "Slack Webhooks",
+          "Docker",
+          "Express"
         ],
-        "description": "Write automated diagnostic shell scripts that verify network latency, inspect DNS records, check system resource starvation, and triage customer issue tickets."
+        "description": "Develop a middleware service capturing incoming support tickets, categorizing severity via sentiment analysis, and dispatching automated engineering incident alerts."
       }
     ],
     "interview_focus": [
-      "Systematic Troubleshooting Methodology for Intermittent Bugs",
-      "Interpreting HTTP Status Codes (401 vs 403, 502 vs 504)",
-      "De-escalating Frustrated High-Value Customers",
-      "Writing High-Quality Bug Reports for Engineering Teams"
+      "Systematic Troubleshooting Methodology (OSI Model Layer Isolation, Divide-and-Conquer)",
+      "Customer Communication & Managing Frustrated Enterprise Stakeholders during Outages",
+      "Debugging Network Connectivity (ping, traceroute, nslookup, curl with verbose headers)",
+      "Log Analysis & Incident Reproduction in Staging / Sandbox Environments",
+      "Creating Effective Runbooks, Internal Knowledge Base Articles & Bug Escalations"
     ],
     "certifications": [
       "ITIL 4 Foundation Certification",
@@ -85,7 +87,7 @@
       "id": "it_support_foundations",
       "name": "IT Support Foundations: Core Systems & Networking",
       "tag": "essential",
-      "description": "Master the core concepts of IT infrastructure, including operating systems, computer hardware, networking fundamentals, command line interfaces, and basic virtualization, coupled with structured problem-solving methodologies.",
+      "description": "Master IT Support fundamentals: Computer architecture, operating systems (Windows, macOS, Linux), hardware diagnostics, and enterprise network troubleshooting.",
       "resources": [
         {
           "title": "Google IT Support Professional Certificate",
@@ -118,7 +120,7 @@
           "id": "os_fundamentals_advanced",
           "name": "Operating System Architecture & Troubleshooting",
           "tag": "essential",
-          "description": "Gain proficiency in core OS concepts (processes, memory, file systems), user management, and common troubleshooting for Windows (Client/Server), macOS, and various Linux distributions (e.g., Ubuntu, CentOS).",
+          "description": "Troubleshoot operating systems: Windows internals (Registry, Task Manager, Event Viewer, Services), macOS recovery and Console logs, and Linux systemd services and `/var/log`.",
           "resources": [
             {
               "title": "Microsoft Learn: Windows Server Introduction",
@@ -150,13 +152,15 @@
               "url": "/data/docs/technical_support_engineer/os_fundamentals_advanced.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         },
         {
           "id": "computer_hardware_diagnostics",
           "name": "Computer Hardware & Peripheral Diagnostics",
           "tag": "essential",
-          "description": "Identify, diagnose, and resolve common hardware issues in desktops, laptops (CPU, RAM, Storage, Motherboard), and peripherals (printers, monitors, input devices). Understand component compatibility and upgrade paths.",
+          "description": "Diagnose computer hardware: POST error codes, RAM testing with MemTest86, thermal throttling, motherboard component replacement, and storage diagnostics (SMART attributes).",
           "resources": [
             {
               "title": "Common Printer Problems and Solutions",
@@ -183,13 +187,15 @@
               "url": "/data/docs/technical_support_engineer/computer_hardware_diagnostics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 35
         },
         {
           "id": "networking_tcpip_dns_dhcp",
           "name": "Networking Essentials: TCP/IP, DNS, DHCP & Wi-Fi",
           "tag": "essential",
-          "description": "Grasp essential networking concepts including the OSI model, TCP/IP stack, DNS resolution, DHCP, common protocols (HTTP/S, FTP, SSH), network devices (routers, switches, firewalls), and wireless technologies. Troubleshoot connectivity issues using tools like ping, tracert, ipconfig/ifconfig, netstat.",
+          "description": "Troubleshoot enterprise networking: OSI model troubleshooting, TCP/IP stack, DHCP lease renewal (`ipconfig /renew`), DNS flush, subnetting, Wi-Fi 6/WPA3 enterprise authentication, and ping/traceroute.",
           "resources": [
             {
               "title": "Introduction to Networking (Cisco)",
@@ -221,13 +227,15 @@
               "url": "/data/docs/technical_support_engineer/networking_tcpip_dns_dhcp.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 40
         },
         {
           "id": "cli_powershell_bash",
           "name": "Command Line Interface (CLI): PowerShell & Bash",
           "tag": "essential",
-          "description": "Learn to navigate file systems, manage processes, configure network settings, and execute commands efficiently using the command line in both Windows (Command Prompt, PowerShell) and Linux/macOS (Bash, Zsh).",
+          "description": "Automate support tasks via CLI: PowerShell scripting for Windows administration (WMI/CIM queries, service management), and Bash shell scripting for Linux workstation maintenance.",
           "resources": [
             {
               "title": "PowerShell Tutorial for Beginners",
@@ -259,13 +267,15 @@
               "url": "/data/docs/technical_support_engineer/cli_powershell_bash.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 36
         },
         {
           "id": "virtualization_container_basics",
           "name": "Virtualization & Containerization Basics",
           "tag": "essential",
-          "description": "Understand the concepts of virtualization (VMs, hypervisors) and containerization (Docker basics). Learn to identify and troubleshoot issues related to virtual machines in desktop and server environments (e.g., VirtualBox, VMware Workstation).",
+          "description": "Support virtualized environments: VirtualBox, Hyper-V, VMware Workstation, understanding virtual networking (bridged vs NAT), and basic Docker desktop troubleshooting.",
           "resources": [
             {
               "title": "What is Virtualization?",
@@ -292,15 +302,19 @@
               "url": "/data/docs/technical_support_engineer/virtualization_container_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 25
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 21
     },
     {
       "id": "customer_excellence_itsm",
       "name": "Customer Excellence & IT Service Management (ITSM)",
       "tag": "essential",
-      "description": "Develop exceptional customer service skills, efficient ticketing system management, effective communication strategies, and an understanding of IT Service Management (ITSM) principles for various support scenarios.",
+      "description": "Master IT Service Management (ITSM) and customer service: ITIL v4 frameworks, incident management, ticket categorization, and de-escalation.",
       "resources": [
         {
           "title": "Zendesk Customer Service Guide",
@@ -338,7 +352,7 @@
           "id": "ticketing_systems_slas",
           "name": "Ticketing System Management & SLAs",
           "tag": "essential",
-          "description": "Learn to use industry-standard ticketing systems (e.g., Zendesk, Jira Service Management, ServiceNow). Understand ticket lifecycle, categorization, prioritization, Service Level Agreements (SLAs), and escalation procedures in an ITIL-aligned context.",
+          "description": "Manage ticketing workflows: ServiceNow, Jira Service Management, Zendesk; managing SLA timers, prioritization matrices (Impact x Urgency), and first-contact resolution (FCR).",
           "resources": [
             {
               "title": "Atlassian ITSM Guide",
@@ -370,13 +384,15 @@
               "url": "/data/docs/technical_support_engineer/ticketing_systems_slas.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 35
         },
         {
           "id": "customer_comm_de_escalation",
           "name": "Customer Communication, Empathy & De-escalation",
           "tag": "essential",
-          "description": "Master active listening, clear and concise verbal/written communication, empathy, expectation setting, and advanced de-escalation techniques for challenging customers and high-pressure situations. Focus on building positive customer relationships.",
+          "description": "Master professional customer communication: Active listening, empathetic de-escalation of frustrated executives, non-technical translation of technical jargon, and setting clear expectations.",
           "resources": [
             {
               "title": "Active Listening in Customer Service",
@@ -403,13 +419,15 @@
               "url": "/data/docs/technical_support_engineer/customer_comm_de_escalation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 39
         },
         {
           "id": "technical_documentation_reporting",
           "name": "Technical Documentation & Reporting for Support",
           "tag": "essential",
-          "description": "Write comprehensive ticket notes, incident reports, and internal documentation (runbooks, FAQs). Learn to collect, structure, and report relevant information, identify recurring issues, and contribute to knowledge base articles for problem management.",
+          "description": "Author technical documentation: Writing clear knowledge base articles (KCS - Knowledge-Centered Service), user self-service guides, and incident post-mortems.",
           "resources": [
             {
               "title": "Technical Writing for Support Engineers",
@@ -436,13 +454,15 @@
               "url": "/data/docs/technical_support_engineer/technical_documentation_reporting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 32
         },
         {
           "id": "practice_incident_resolution_workflow",
           "name": "Practice Lab: Incident Resolution Workflow",
           "tag": "essential",
-          "description": "Hands-on practice prioritizing, diagnosing, escalating, and resolving simulated customer incidents. Focus on adhering to SLAs, effective communication, thorough documentation, and leveraging available resources throughout the support workflow.",
+          "description": "Practice Lab: End-to-end incident resolution: Receive Sev-2 ticket for broken VPN access, triage network logs, isolate DNS cache corruption, resolve via PowerShell script, and document RCA.",
           "resources": [
             {
               "title": "Linux for Beginners Full Course (freeCodeCamp)",
@@ -459,15 +479,19 @@
               "url": "/data/docs/technical_support_engineer/practice_incident_resolution_workflow.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 38
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 25
     },
     {
       "id": "advanced_technical_troubleshooting_deep_dive",
       "name": "Advanced Technical Troubleshooting & Modern IT",
       "tag": "advanced",
-      "description": "Dive into advanced diagnostic techniques for complex software applications, cloud infrastructure, security incidents, and specific product environments, including comprehensive log analysis, API debugging, database querying, and leveraging scripting for automation.",
+      "description": "Execute advanced technical troubleshooting: Software debugging, cloud service support, cybersecurity posture, and database queries.",
       "resources": [
         {
           "title": "CompTIA Network+ Certification Training",
@@ -500,7 +524,7 @@
           "id": "software_application_debugging",
           "name": "Software & Web Application Debugging",
           "tag": "advanced",
-          "description": "Diagnose complex issues with desktop, web, and mobile applications. Understand common software errors, dependencies, installation challenges, configuration problems, and use browser developer tools (console, network, elements) for effective debugging.",
+          "description": "Debug application crashes: Windows Event Viewer application crash dumps, browser DevTools network tab, inspecting HTTP status codes, and resolving DLL dependency errors.",
           "resources": [
             {
               "title": "Debugging Web Applications with Chrome DevTools",
@@ -532,13 +556,15 @@
               "url": "/data/docs/technical_support_engineer/software_application_debugging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 48
         },
         {
           "id": "cloud_infrastructure_support",
           "name": "Cloud Infrastructure & Services Support (AWS, Azure, GCP)",
           "tag": "advanced",
-          "description": "Understand core services (compute, storage, networking, databases) on major cloud platforms (AWS, Azure, GCP). Learn to identify and troubleshoot common cloud-related issues, manage access (IAM), and understand cloud billing basics from a support perspective.",
+          "description": "Support cloud services: Microsoft 365 / Entra ID administration (password resets, MFA resets, license assignment), Google Workspace, and AWS/Azure VM restart triage.",
           "resources": [
             {
               "title": "AWS Cloud Practitioner Essentials",
@@ -570,13 +596,15 @@
               "url": "/data/docs/technical_support_engineer/cloud_infrastructure_support.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 47
         },
         {
           "id": "system_security_basics_support",
           "name": "System Security Fundamentals for Support",
           "tag": "advanced",
-          "description": "Understand common security threats (malware, phishing, ransomware), basic cybersecurity best practices, user access management (MFA, SSO), endpoint protection (antivirus, EDR), and initial incident response steps for security-related issues.",
+          "description": "Enforce endpoint security: Antivirus/EDR agent status (CrowdStrike, Defender), phishing triage, identifying malware indicators of compromise, and isolating infected endpoints.",
           "resources": [
             {
               "title": "Introduction to Cybersecurity (IBM)",
@@ -608,13 +636,15 @@
               "url": "/data/docs/technical_support_engineer/system_security_basics_support.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 50
         },
         {
           "id": "advanced_diagnostic_tools_log_api_db",
           "name": "Advanced Diagnostic Tools: Logs, APIs, Databases & Monitoring",
           "tag": "advanced",
-          "description": "Master analysis of system, application, and network logs. Inspect API requests/responses using tools like Postman/Insomnia. Query databases (SQL, NoSQL basics) for troubleshooting complex software and integration issues. Understand basic monitoring dashboards (e.g., Splunk, Grafana).",
+          "description": "Utilize advanced diagnostics: Sysinternals suite (Process Explorer, Procmon), inspecting REST API errors with Postman, querying SQL databases for corrupted user profiles, and Wireshark.",
           "resources": [
             {
               "title": "Postman Learning Center",
@@ -646,13 +676,15 @@
               "url": "/data/docs/technical_support_engineer/advanced_diagnostic_tools_log_api_db.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 71
         },
         {
           "id": "scripting_automation_for_efficiency",
           "name": "Scripting & Automation for Support Efficiency",
           "tag": "advanced",
-          "description": "Develop intermediate scripting skills in Bash, PowerShell, or Python to automate repetitive support tasks, generate diagnostic reports, manage system configurations, and build simple utilities to streamline workflows and reduce manual effort.",
+          "description": "Automate repetitive IT tasks: Writing automated workstation onboarding scripts in PowerShell/Bash to install software silently, map network drives, and configure printers.",
           "resources": [
             {
               "title": "Automate the Boring Stuff with Python",
@@ -684,15 +716,19 @@
               "url": "/data/docs/technical_support_engineer/scripting_automation_for_efficiency.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 48
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 34
     },
     {
       "id": "operational_excellence_strategic_growth",
       "name": "Operational Excellence & Strategic Career Growth",
       "tag": "advanced",
-      "description": "Enhance support operations through advanced IT Service Management (ITSM) practices, robust knowledge management strategies, performance analytics, and planning for continuous professional development and career specialization.",
+      "description": "Drive operational excellence: Problem management, IT change advisory boards (CAB), support KPI analytics, and career growth.",
       "resources": [
         {
           "title": "ITIL 4 Managing Professional Learning Journey",
@@ -725,7 +761,7 @@
           "id": "advanced_knowledge_management_self_service",
           "name": "Advanced Knowledge Management & Self-Service Portals",
           "tag": "advanced",
-          "description": "Design, implement, and maintain comprehensive internal and external knowledge bases. Develop strategies for content creation, curation, discoverability, and promotion of self-service portals to empower users and reduce support volume.",
+          "description": "Scale self-service knowledge management: Building searchable internal wikis, automated chatbots, and measuring self-service deflection rates.",
           "resources": [
             {
               "title": "Diataxis Documentation Framework",
@@ -757,13 +793,15 @@
               "url": "/data/docs/technical_support_engineer/advanced_knowledge_management_self_service.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         },
         {
           "id": "itsm_problem_change_management",
           "name": "ITSM Deep Dive: Problem, Change & Service Request Management",
           "tag": "advanced",
-          "description": "Beyond incident management, delve into structured Problem Management to identify root causes, Change Management to control service modifications, and Service Request Management to streamline routine service delivery, all within an ITIL framework.",
+          "description": "Master ITIL Problem and Change Management: Distinguishing recurring incidents from underlying root-cause problems, participating in CAB change reviews, and disaster recovery.",
           "resources": [
             {
               "title": "What is Problem Management?",
@@ -795,13 +833,15 @@
               "url": "/data/docs/technical_support_engineer/itsm_problem_change_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 49
         },
         {
           "id": "support_kpis_analytics_reporting",
           "name": "Support KPIs, Service Analytics & Strategic Reporting",
           "tag": "advanced",
-          "description": "Learn to define, track, and analyze key performance indicators (KPIs) such as FCR, AHT, CSAT, NPS, and SLA adherence. Generate insightful reports, identify trends, predict issues, and use data to drive continuous improvement in support quality and efficiency.",
+          "description": "Analyze support performance: Mean Time to Detect (MTTD), Mean Time to Resolve (MTTR), Customer Satisfaction (CSAT), ticket backlog volume trends, and agent utilization.",
           "resources": [
             {
               "title": "Key Customer Service Metrics",
@@ -828,13 +868,15 @@
               "url": "/data/docs/technical_support_engineer/support_kpis_analytics_reporting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 48
         },
         {
           "id": "career_development_specialization_paths",
           "name": "Career Development & Specialization Paths",
           "tag": "advanced",
-          "description": "Explore potential career trajectories within technical support (L2/L3, Product Support, SRE, DevOps). Identify opportunities for specialization (e.g., cloud support, security support) and develop a plan for continuous learning and professional growth.",
+          "description": "Advance in technical support: Pathways to L3 escalation engineer, Cloud Support Specialist, Systems Administrator, SRE, or IT Support Manager.",
           "resources": [
             {
               "title": "Technical Support Career Paths",
@@ -861,13 +903,15 @@
               "url": "/data/docs/technical_support_engineer/career_development_specialization_paths.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         },
         {
           "id": "capstone_project_full_stack_support",
           "name": "Capstone Project: Full-Stack Support Simulation",
           "tag": "advanced",
-          "description": "Undertake a comprehensive simulation involving complex, multi-layered incidents across various technologies (OS, network, cloud, application). Apply advanced troubleshooting, scripting, ITSM principles, and detailed reporting to achieve end-to-end resolution and improve system reliability.",
+          "description": "Build a technical support capstone: End-to-end IT support infrastructure simulation: configure enterprise Active Directory / Entra ID domain, deploy ticketing portal, write automation scripts, and resolve 5 complex tiered outage scenarios.",
           "resources": [
             {
               "title": "Linux for Beginners Full Course (freeCodeCamp)",
@@ -884,9 +928,14 @@
               "url": "/data/docs/technical_support_engineer/capstone_project_full_stack_support.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 130
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 34
     }
-  ]
+  ],
+  "total_exp": 1000
 }

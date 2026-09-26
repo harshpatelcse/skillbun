@@ -84,7 +84,7 @@
       "id": "cd_foundations",
       "name": "Foundations of Content Design",
       "tag": "essential",
-      "description": "Understand the core discipline of Content Design, its problems, value, and foundational concepts before deep diving into practical skills.",
+      "description": "Master content design fundamentals: Human-centered information architecture, user-focused microcopy, cognitive accessibility, and content strategy in digital products.",
       "resources": [
         {
           "title": "What is Content Design?",
@@ -117,7 +117,7 @@
           "id": "cd_intro_core_concepts",
           "name": "Introduction to Content Design & Core UX Concepts",
           "tag": "essential",
-          "description": "Grasp the core principles, methodologies, and value proposition of Content Design, its role within the broader UX landscape, and fundamental user experience concepts relevant to creating impactful product content and user journeys.",
+          "description": "Understand content design principles: Content as an interface, plain language principles, reading psychology on digital screens (F-shaped scanning pattern), and progressive disclosure.",
           "resources": [
             {
               "title": "GOV.UK Content Design",
@@ -149,13 +149,15 @@
               "url": "/data/docs/content_designer/cd_intro_core_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 23
         },
         {
           "id": "cd_content_design_disciplines_distinction",
           "name": "Content Design, UX Writing & Content Strategy: Disentangled",
           "tag": "essential",
-          "description": "Clearly define the roles, responsibilities, and overlap between Content Design, UX Writing, and broader Content Strategy, understanding where each discipline contributes to the product lifecycle and organizational goals.",
+          "description": "Differentiate disciplines: Clarifying roles and intersections between Content Design, UX Writing, Copywriting, Technical Writing, and Content Strategy.",
           "resources": [
             {
               "title": "What's the difference between UX writing and content design?",
@@ -182,13 +184,15 @@
               "url": "/data/docs/content_designer/cd_content_design_disciplines_distinction.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "cd_user_centered_content_research",
           "name": "User-Centered Research for Content Design",
           "tag": "essential",
-          "description": "Learn to plan, conduct, and analyze user research methods (e.g., content audits, competitive analysis, user interviews, surveys, usability testing) specifically to inform, validate, and iterate on content decisions and strategy.",
+          "description": "Conduct research for content: Cloze testing for readability, highlighter testing, card sorting for terminology, search keyword analysis, and customer service ticket auditing.",
           "resources": [
             {
               "title": "Content Audits and Inventories: A Guide",
@@ -220,13 +224,15 @@
               "url": "/data/docs/content_designer/cd_user_centered_content_research.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "cd_content_inventory_audit_structuring",
           "name": "Content Inventory, Audit & Information Structuring",
           "tag": "essential",
-          "description": "Learn to systematically conduct content inventories and audits to assess existing content, identify gaps, and then apply principles of information structuring, taxonomy, and content classification to organize product content effectively for user findability and comprehension.",
+          "description": "Audit and structure content: Content inventories, qualitative content audits, ROT analysis (Redundant, Outdated, Trivial), and gap analysis.",
           "resources": [
             {
               "title": "Content Inventory and Audit: A Step-by-Step Guide",
@@ -258,13 +264,15 @@
               "url": "/data/docs/content_designer/cd_content_inventory_audit_structuring.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "cd_content_design_tools_ecosystem",
           "name": "Content Design Tools & Ecosystem",
           "tag": "essential",
-          "description": "Explore and gain proficiency in essential tools and platforms for content designers, including collaborative design tools (e.g., Figma, Sketch), content management systems (CMS), prototyping tools, style guide platforms, and basic analytics dashboards for content performance tracking.",
+          "description": "Utilize content design tools: Figma, FigJam, Hemingway App, Readable.io, Frontitude / Ditto for copy component management, and dictionary databases.",
           "resources": [
             {
               "title": "Figma for UX Writers: A Beginner's Guide",
@@ -296,13 +304,15 @@
               "url": "/data/docs/content_designer/cd_content_design_tools_ecosystem.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "cd_content_in_design_systems",
           "name": "Content in Design Systems",
           "tag": "essential",
-          "description": "Understand the critical role of content within design systems, learning how to define content principles, contribute reusable text components, establish voice and tone guidelines, and ensure content consistency and scalability across multiple products and platforms.",
+          "description": "Integrate content into design systems: Content guidelines, component copy patterns (button labels, empty state formulas), and terminology glossaries in Storybook/Figma.",
           "resources": [
             {
               "title": "Designing with Content-First in Mind: An Introduction",
@@ -329,15 +339,19 @@
               "url": "/data/docs/content_designer/cd_content_in_design_systems.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 18
     },
     {
       "id": "cd_crafting_content",
       "name": "Crafting Product Content: UX Writing & IA",
       "tag": "essential",
-      "description": "Develop practical skills in structuring information, writing effective microcopy, applying brand voice and tone, and mapping user journeys to create intuitive and impactful digital product experiences.",
+      "description": "Craft product content: UX writing, microcopy, information architecture, and voice/tone design.",
       "resources": [
         {
           "title": "Everyday Information Architecture",
@@ -365,7 +379,7 @@
           "id": "cd_info_architecture_product_content",
           "name": "Information Architecture for Product Content",
           "tag": "essential",
-          "description": "Master the principles of content organization, navigation structures, labeling systems, and taxonomy design to ensure users can intuitively find, understand, and interact with information within digital products, optimizing for clarity and usability.",
+          "description": "Structure product content: Navigational labeling, taxonomies, hierarchy, and structuring complex workflows with intuitive mental models.",
           "resources": [
             {
               "title": "Information Architecture Basics",
@@ -397,13 +411,15 @@
               "url": "/data/docs/content_designer/cd_info_architecture_product_content.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 23
         },
         {
           "id": "cd_ux_writing_microcopy_fundamentals",
           "name": "UX Writing & Microcopy Fundamentals",
           "tag": "essential",
-          "description": "Learn the principles of crafting clear, concise, and helpful microcopy for various UI elements, including error messages, calls to action, onboarding flows, empty states, notifications, and form labels, focusing on usability, empathy, and user guidance.",
+          "description": "Master microcopy writing: Clear, concise, useful, and human; crafting button CTAs, input placeholders, tooltip explanations, and success confirmations.",
           "resources": [
             {
               "title": "Mailchimp Content Style Guide",
@@ -435,13 +451,15 @@
               "url": "/data/docs/content_designer/cd_ux_writing_microcopy_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 19
         },
         {
           "id": "cd_brand_voice_tone_content_guidelines",
           "name": "Brand Voice, Tone & Content Guidelines",
           "tag": "essential",
-          "description": "Define, document, and consistently apply a unique brand voice and tone across all product content to reflect brand personality, build trust, and ensure consistency. Develop comprehensive content style guides that serve as a single source of truth for content creators.",
+          "description": "Establish voice and tone frameworks: Core brand voice dimensions, contextual tone modulation (celebratory vs empathetic/serious during errors), and content style guides.",
           "resources": [
             {
               "title": "Readability Guidelines",
@@ -473,13 +491,15 @@
               "url": "/data/docs/content_designer/cd_brand_voice_tone_content_guidelines.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         },
         {
           "id": "cd_content_for_user_flows_journeys",
           "name": "Content for User Flows & Journeys",
           "tag": "essential",
-          "description": "Design content that guides users seamlessly through multi-step processes, product features, and end-to-end user journeys. Focus on creating coherent narratives, managing context, and optimizing content for different stages of the user experience, from discovery to completion.",
+          "description": "Write for end-to-end user flows: Onboarding sequences, multi-step checkout funnels, permission request rationale, and transactional notification copy.",
           "resources": [
             {
               "title": "Mapping Content to User Journeys",
@@ -506,13 +526,15 @@
               "url": "/data/docs/content_designer/cd_content_for_user_flows_journeys.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "cd_content_prototyping_design_collaboration",
           "name": "Content Prototyping & Collaboration in Design Tools",
           "tag": "essential",
-          "description": "Translate content into interactive prototypes and mockups using design tools (e.g., Figma, Sketch) to visualize user flows, gather feedback, and collaborate effectively with UI/UX designers, ensuring content seamlessly integrates into the product interface and contributes to overall UX.",
+          "description": "Prototype content in design tools: Pairing with product designers in Figma, writing real copy instead of lorem ipsum, and testing copy variations in prototypes.",
           "resources": [
             {
               "title": "Figma for Content Designers: Workflows and Best Practices",
@@ -539,13 +561,15 @@
               "url": "/data/docs/content_designer/cd_content_prototyping_design_collaboration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "cd_structured_content_modeling",
           "name": "Structured Content & Content Modeling",
           "tag": "advanced",
-          "description": "Understand how to deconstruct content into reusable, granular components and design structured content models for flexibility, scalability, and efficient omnichannel delivery, facilitating headless CMS implementations and future-proofing content.",
+          "description": "Model structured content: Headless CMS schemas (Contentful, Sanity), content modeling, modular content blocks, and metadata taxonomies.",
           "resources": [
             {
               "title": "An Introduction to Content Modeling",
@@ -577,15 +601,19 @@
               "url": "/data/docs/content_designer/cd_structured_content_modeling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 20
     },
     {
       "id": "cd_advanced_practices",
       "name": "Advanced Content Design Practices",
       "tag": "advanced",
-      "description": "Explore specialized content design areas like accessibility, localization, rigorous testing, content strategy, governance, and the integration of emerging technologies.",
+      "description": "Master advanced content design: Accessibility, localization, experimentation, AI integration, and content governance.",
       "resources": [
         {
           "title": "Content Strategy for the Web (Book)",
@@ -608,7 +636,7 @@
           "id": "cd_inclusive_accessible_content_design",
           "name": "Inclusive & Accessible Content Design",
           "tag": "essential",
-          "description": "Design content that is usable and understandable by everyone, adhering to WCAG guidelines, applying plain language principles, and employing inclusive writing practices to support diverse user needs and abilities, ensuring equitable product experiences.",
+          "description": "Design accessible content: WCAG 2.1 AA readability standards, descriptive hyperlink text, accessible alt-text formulas, screen reader phonetic clarity, and plain language compliance.",
           "resources": [
             {
               "title": "Web Content Accessibility Guidelines (WCAG) Overview",
@@ -635,13 +663,15 @@
               "url": "/data/docs/content_designer/cd_inclusive_accessible_content_design.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 30
         },
         {
           "id": "cd_globalization_localization_content_strategy",
           "name": "Content Globalization & Localization Strategy",
           "tag": "advanced",
-          "description": "Prepare content for diverse global audiences, considering cultural nuances, regional specificities, translation management workflows, and internationalization best practices to ensure global readiness, relevance, and a consistent brand experience across markets.",
+          "description": "Plan for localization and translation: Internationalization (i18n) copy rules, accommodating text expansion (up to 40% in German), avoiding cultural idioms, and pseudo-localization.",
           "resources": [
             {
               "title": "Introduction to Content Localization",
@@ -668,13 +698,15 @@
               "url": "/data/docs/content_designer/cd_globalization_localization_content_strategy.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 42
         },
         {
           "id": "cd_content_testing_validation_metrics",
           "name": "Content Testing, Validation & Performance Metrics",
           "tag": "advanced",
-          "description": "Learn to test content efficacy through various methods like usability testing, A/B testing, card sorting, and tree testing. Analyze content performance metrics (e.g., engagement, conversion, bounce rates, task completion) to inform iterations, optimize user experience, and demonstrate content value with data.",
+          "description": "Test and validate content: A/B testing copy variants, tracking engagement metrics (click-through rates, task completion, error recovery rates), and comprehension testing.",
           "resources": [
             {
               "title": "How to Conduct a Content Usability Test",
@@ -706,13 +738,15 @@
               "url": "/data/docs/content_designer/cd_content_testing_validation_metrics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         },
         {
           "id": "cd_holistic_content_strategy_governance",
           "name": "Holistic Content Strategy & Governance",
           "tag": "advanced",
-          "description": "Develop and implement comprehensive content strategies that align with business goals. Define content lifecycles, establish content governance models, manage content quality, compliance, and scalability across the organization, ensuring content remains valuable and current.",
+          "description": "Establish enterprise content governance: Content review workflows, editorial guidelines, style guide maintenance, and content lifecycle deprecation policies.",
           "resources": [
             {
               "title": "What is Content Strategy?",
@@ -744,13 +778,15 @@
               "url": "/data/docs/content_designer/cd_holistic_content_strategy_governance.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         },
         {
           "id": "cd_ai_ml_generative_content_design",
           "name": "AI, ML & Generative Content Design",
           "tag": "advanced",
-          "description": "Explore the applications of Artificial Intelligence and Machine Learning in content design, including AI-powered content generation, personalization, dynamic content delivery, and automation. Understand the ethical considerations and best practices for leveraging these technologies responsibly.",
+          "description": "Leverage AI in content workflows: Prompt engineering for content ideation, automated tone-of-voice checking, managing LLM hallucinations, and writing AI system prompt guardrails.",
           "resources": [
             {
               "title": "Generative AI for UX Writing: A Practical Guide",
@@ -782,13 +818,15 @@
               "url": "/data/docs/content_designer/cd_ai_ml_generative_content_design.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "cd_seo_for_product_content",
           "name": "SEO for Product Content & Discoverability",
           "tag": "advanced",
-          "description": "Understand how SEO principles apply to product content for both internal product search and external search engines. Learn to optimize content for keywords, structured data, and user intent to improve discoverability, drive engagement, and support product growth.",
+          "description": "Optimize product discoverability: On-page SEO best practices, structured schema markup, search intent alignment, and keyword integration in product landing experiences.",
           "resources": [
             {
               "title": "SEO for UX Writers: The Basics",
@@ -815,15 +853,19 @@
               "url": "/data/docs/content_designer/cd_seo_for_product_content.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 27
     },
     {
       "id": "cd_operations_collaboration",
       "name": "Content Operations & Collaboration",
       "tag": "advanced",
-      "description": "Master the art of collaborating with cross-functional teams, managing content workflows, and advocating for content design within an organization.",
+      "description": "Drive Content Operations (ContentOps) and cross-functional advocacy.",
       "resources": [
         {
           "title": "Content Ops: Bridging Strategy and Execution",
@@ -851,7 +893,7 @@
           "id": "cd_cross_functional_content_collaboration",
           "name": "Cross-Functional Collaboration for Content",
           "tag": "essential",
-          "description": "Master effective communication and collaboration strategies with product managers, UX/UI designers, researchers, engineers, and marketers throughout the entire product development lifecycle, integrating content design seamlessly into agile and iterative processes.",
+          "description": "Collaborate cross-functionally: Embedding content designers in product squads, pairing with product managers on specs, and partnering with legal/compliance teams.",
           "resources": [
             {
               "title": "Content Designer & Product Designer Collaboration",
@@ -883,13 +925,15 @@
               "url": "/data/docs/content_designer/cd_cross_functional_content_collaboration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "cd_content_workflow_management_automation",
           "name": "Content Workflow Management & Automation",
           "tag": "advanced",
-          "description": "Implement efficient content creation, review, approval, publishing, and archival workflows. Utilize project management tools (e.g., Jira, Asana) and explore automation opportunities to streamline content operations, improve delivery speed, and maintain content quality at scale.",
+          "description": "Scale ContentOps: Streamlining copy review requests, centralizing string management with translation management systems (TMS), and automated copy linting.",
           "resources": [
             {
               "title": "Managing Content Workflows Effectively",
@@ -921,13 +965,15 @@
               "url": "/data/docs/content_designer/cd_content_workflow_management_automation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         },
         {
           "id": "cd_stakeholder_engagement_advocacy",
           "name": "Stakeholder Engagement & Content Advocacy",
           "tag": "advanced",
-          "description": "Build strong relationships with key stakeholders, articulate content design value, present content recommendations effectively, and champion a content-first approach within the organization to secure resources and buy-in for content initiatives.",
+          "description": "Advocate for content design: Educating teams on the business ROI of content design, presenting copy rationale with research backing, and leading writing workshops.",
           "resources": [
             {
               "title": "How to Get Buy-In for Content Strategy",
@@ -959,13 +1005,15 @@
               "url": "/data/docs/content_designer/cd_stakeholder_engagement_advocacy.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         },
         {
           "id": "cd_legal_ethical_content_principles",
           "name": "Legal & Ethical Content Principles",
           "tag": "advanced",
-          "description": "Understand fundamental legal considerations (e.g., copyright, intellectual property, data privacy regulations like GDPR, CCPA) and ethical responsibilities in content design (e.g., avoiding dark patterns, ensuring transparency, responsible AI content generation) to ensure compliant and user-centric content.",
+          "description": "Navigate legal and compliance standards: Transparent privacy disclosures, terms of service clarity, truth in advertising, and eliminating dark pattern microcopy.",
           "resources": [
             {
               "title": "Ethical UX Writing: Designing for Good",
@@ -997,15 +1045,19 @@
               "url": "/data/docs/content_designer/cd_legal_ethical_content_principles.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 27
     },
     {
       "id": "cd_portfolio_career",
       "name": "Portfolio & Career Development",
       "tag": "advanced",
-      "description": "Showcase your content design skills through a strong portfolio, prepare for job applications, and continuously grow your career in the field.",
+      "description": "Build an elite content design portfolio: Deep-dive case studies, interview mastery, and career growth.",
       "resources": [
         {
           "title": "Building Your UX Writing Portfolio",
@@ -1033,7 +1085,7 @@
           "id": "cd_portfolio_case_studies",
           "name": "Building a Content Design Portfolio with Case Studies",
           "tag": "advanced",
-          "description": "Develop a compelling content design portfolio by crafting detailed case studies that showcase your process, critical thinking, design decisions, and measurable impact on real-world content projects, emphasizing problem-solving and user outcomes.",
+          "description": "Author content design case studies: Showcasing problem statement, research discovery, before/after copy comparisons with rationale, and measurable user/business impact.",
           "resources": [
             {
               "title": "How to Write a UX Case Study",
@@ -1060,13 +1112,15 @@
               "url": "/data/docs/content_designer/cd_portfolio_case_studies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         },
         {
           "id": "cd_applied_content_design_capstone_project",
           "name": "Applied Content Design Capstone Project",
           "tag": "advanced",
-          "description": "Undertake a comprehensive, end-to-end content design project, applying all learned skills from user research and IA to UX writing, accessibility, and testing. Create a portfolio-ready artifact with thorough documentation, demonstrated outcomes, and reflective insights.",
+          "description": "Build an enterprise content design capstone: End-to-end redesign of a complex user journey (e.g. loan application or B2B SaaS onboarding) with copy audit, voice/tone guide, and tested prototype.",
           "resources": [
             {
               "title": "Content Design Portfolio Project Ideas",
@@ -1088,13 +1142,15 @@
               "url": "/data/docs/content_designer/cd_applied_content_design_capstone_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 99
         },
         {
           "id": "cd_job_search_interview_mastery",
           "name": "Job Search Strategy & Interview Mastery",
           "tag": "advanced",
-          "description": "Prepare thoroughly for content design interviews, including technical assessments, whiteboarding challenges, and behavioral questions. Refine your resume and LinkedIn profile, and develop effective strategies for networking and navigating the content design job market.",
+          "description": "Master content design interviews: Portfolio walkthrough presentations, live writing exercises, app critique sessions, and fielding pushback questions.",
           "resources": [
             {
               "title": "Top Content Design Interview Questions",
@@ -1126,13 +1182,15 @@
               "url": "/data/docs/content_designer/cd_job_search_interview_mastery.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         },
         {
           "id": "cd_continuous_learning_industry_foresight",
           "name": "Continuous Learning & Industry Foresight",
           "tag": "advanced",
-          "description": "Cultivate a habit of continuous learning, staying abreast of emerging trends, AI advancements, new tools, and evolving best practices in content design, UX writing, and content strategy through professional development, community engagement, and industry conferences.",
+          "description": "Track content design trends: Conversational UI design, voice interfaces, AI prompt design, and engaging with content design communities (Button, UX Content Association).",
           "resources": [
             {
               "title": "Top Content Design Blogs to Follow",
@@ -1159,9 +1217,14 @@
               "url": "/data/docs/content_designer/cd_continuous_learning_industry_foresight.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 27
     }
-  ]
+  ],
+  "total_exp": 1000
 }

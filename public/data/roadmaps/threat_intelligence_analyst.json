@@ -47,26 +47,27 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Automated Threat Intelligence Feed Aggregator & Enricher",
+        "title": "Automated Threat Intelligence Feed Aggregator & Enricher with OpenCTI",
         "tech_stack": [
-          "Python",
-          "MISP API",
-          "Shodan API",
-          "AlienVault OTX",
-          "Elasticsearch"
-        ],
-        "description": "Build an automated CTI pipeline that ingests indicators from open threat feeds, deduplicates them, and scores them for SOC alerting."
-      },
-      {
-        "title": "Automated Threat Intel Feed Aggregator & YARA Hunt Engine",
-        "tech_stack": [
+          "OpenCTI",
           "Python",
           "MISP",
-          "YARA",
-          "OpenCTI",
-          "AlienVault OTX"
+          "STIX 2.1 / TAXII",
+          "VirusTotal API",
+          "Shodan API"
         ],
-        "description": "Ingest and normalize threat intelligence feeds into OpenCTI, correlate indicators of compromise (IOCs) with internal network logs, and produce actionable advisories."
+        "description": "Build an automated cyber threat intelligence pipeline ingesting OSINT feeds, normalizing observables to STIX 2.1, and correlating indicators of compromise (IOCs)."
+      },
+      {
+        "title": "Adversary Infrastructure Tracking & YARA Rule Hunting Engine",
+        "tech_stack": [
+          "YARA",
+          "Python",
+          "Censys API",
+          "URLhaus",
+          "MITRE ATT&CK Matrix"
+        ],
+        "description": "Design an automated threat hunting harness discovering adversary C2 infrastructure across IPv4 space, tracking threat actor TTPs, and generating actionable intelligence reports."
       }
     ],
     "certifications": [
@@ -74,10 +75,11 @@
       "Certified Threat Intelligence Analyst (CTIA)"
     ],
     "interview_focus": [
-      "Tactical vs Operational vs Strategic Threat Intelligence",
-      "The Diamond Model of Intrusion Analysis",
-      "Traffic Light Protocol (TLP) Information Sharing Standards",
-      "Pyramid of Pain: Why TTPs Hurt Adversaries More than Hashes"
+      "The Threat Intelligence Lifecycle (Planning, Collection, Processing, Analysis, Dissemination)",
+      "Cyber Threat Frameworks (Diamond Model, MITRE ATT&CK, Cyber Kill Chain)",
+      "STIX 2.1 & TAXII Standards for Threat Intelligence Sharing and Automation",
+      "Strategic vs Operational vs Tactical vs Technical Threat Intelligence",
+      "Assessing Source Reliability & Information Credibility (Admiralty Code / NATO System)"
     ]
   },
   "format": "tree",
@@ -86,7 +88,7 @@
       "id": "ti_foundations_context",
       "name": "Foundations and Strategic Context of CTI",
       "tag": "essential",
-      "description": "Establish a robust understanding of Cyber Threat Intelligence (CTI), its strategic value, the full intelligence cycle, and the critical frameworks that underpin effective threat analysis and decision-making.",
+      "description": "Master the strategic, operational, and tactical tiers of Cyber Threat Intelligence (CTI). Establish structured intelligence collection plans, define Priority Intelligence Requirements (PIRs) aligned with organizational risk, and build intelligence-driven defensive postures.",
       "resources": [
         {
           "title": "Introduction to Cyber Threat Intelligence (Recorded Future)",
@@ -119,7 +121,7 @@
           "id": "ti_cybersecurity_fundamentals",
           "name": "Cybersecurity Fundamentals & Network Basics",
           "tag": "essential",
-          "description": "Review foundational cybersecurity concepts, networking protocols (TCP/IP), operating system basics (Windows/Linux), and common security controls crucial for understanding threat context.",
+          "description": "Analyze enterprise network and host architectures through an intelligence lens. Master OSI/TCP-IP packet structures, protocol abuse (DNS tunneling, ICMP covert channels, HTTP/3 QUIC exfiltration), and enterprise authentication mechanisms (Kerberos, OAuth, SAML).",
           "resources": [
             {
               "title": "CompTIA Security+ Certification Course",
@@ -141,13 +143,15 @@
               "url": "/data/docs/threat_intelligence_analyst/ti_cybersecurity_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 31
         },
         {
           "id": "ti_introduction_cti_role",
           "name": "Introduction to CTI, Value & Role Definition",
           "tag": "essential",
-          "description": "Define Cyber Threat Intelligence, articulate its critical value proposition across different organizational levels, distinguish it from raw data and information, and detail the day-to-day responsibilities of a Threat Intelligence Analyst.",
+          "description": "Differentiate raw data, telemetry, and actionable threat intelligence. Define concrete deliverables and SLAs for executive leadership, SOC detection engineers, vulnerability management teams, and incident response units.",
           "resources": [
             {
               "title": "The Threat Intelligence Analyst Role: A Day in the Life",
@@ -169,13 +173,15 @@
               "url": "/data/docs/threat_intelligence_analyst/ti_introduction_cti_role.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 25
         },
         {
           "id": "ti_intelligence_cycle_reqs",
           "name": "The Intelligence Cycle & Requirements (PIRs)",
           "tag": "essential",
-          "description": "Master the phases of the intelligence cycle (Planning & Direction, Collection, Processing & Exploitation, Analysis & Production, Dissemination, Feedback) and learn to define Priority Intelligence Requirements (PIRs) and Specific Information Requirements (SIRs).",
+          "description": "Implement the six-phase Intelligence Cycle: Planning and Direction, Collection, Processing, Analysis and Production, Dissemination, and Feedback. Translate stakeholder business risks into Specific Intelligence Requirements (SIRs) and Indicators of Compromise (IOCs).",
           "resources": [
             {
               "title": "The Intelligence Cycle Explained in Detail",
@@ -202,13 +208,15 @@
               "url": "/data/docs/threat_intelligence_analyst/ti_intelligence_cycle_reqs.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "ti_intelligence_frameworks",
           "name": "Intelligence Frameworks & Models",
           "tag": "essential",
-          "description": "Learn key frameworks like MITRE ATT&CK (Enterprise, Mobile, ICS), the Cyber Kill Chain, the Diamond Model of Intrusion Analysis, VERIS, and the Unified Kill Chain to structure threat understanding and analysis.",
+          "description": "Operationalize core threat modeling and intrusion frameworks: Lockheed Martin Cyber Kill Chain, the Diamond Model of Intrusion Analysis (Adversary, Capability, Infrastructure, Victim), MITRE ATT&CK Matrix, and David Bianco's Pyramid of Pain.",
           "resources": [
             {
               "title": "MITRE ATT&CK Framework",
@@ -245,13 +253,15 @@
               "url": "/data/docs/threat_intelligence_analyst/ti_intelligence_frameworks.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "ti_threat_landscape_actors",
           "name": "Global Threat Landscape & Adversary Types",
           "tag": "essential",
-          "description": "Explore the current global cyber threat landscape, different types of cyber threats, common adversary categories (nation-state, cybercrime, hacktivism, insiders), their motivations, and capabilities.",
+          "description": "Profile diverse adversary types across the global threat landscape: Nation-state Advanced Persistent Threats (APTs), financially motivated eCrime syndicates (RaaS operators), initial access brokers (IABs), and hacktivist collectives.",
           "resources": [
             {
               "title": "Understanding the Cyber Threat Landscape (ENISA)",
@@ -278,13 +288,15 @@
               "url": "/data/docs/threat_intelligence_analyst/ti_threat_landscape_actors.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "ti_ethical_legal_considerations",
           "name": "Ethical and Legal Considerations in CTI",
           "tag": "essential",
-          "description": "Understand the ethical boundaries, privacy concerns, data protection regulations (e.g., GDPR, CCPA), and legal implications when collecting, analyzing, and sharing threat intelligence, including appropriate disclosure practices.",
+          "description": "Navigate legal and operational security boundaries: Computer Fraud and Abuse Act (CFAA), GDPR indicator privacy mandates, non-attribution infrastructure setup, VPN/Tor routing, and OPSEC protocols when researching adversary dark web forums.",
           "resources": [
             {
               "title": "Ethics in Cyber Threat Intelligence (Recorded Future)",
@@ -311,15 +323,19 @@
               "url": "/data/docs/threat_intelligence_analyst/ti_ethical_legal_considerations.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 18
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 21
     },
     {
       "id": "ti_core_analysis_techniques",
       "name": "Core Threat Intelligence Analysis & Enrichment",
       "tag": "essential",
-      "description": "Develop practical skills for collecting, processing, enriching, and analyzing raw threat data to identify Indicators of Compromise (IoCs), Tactics, Techniques, and Procedures (TTPs), and adversary intent.",
+      "description": "Execute rigorous analytical tradecraft: Infrastructure pivoting, JARM and JA3/JA3S TLS fingerprinting, SSL certificate hash clustering, passive DNS (pDNS) correlation, and temporal timeline reconstruction.",
       "resources": [
         {
           "title": "The Art of Cyber Intelligence Analysis (SANS GCTI Course Overview)",
@@ -347,7 +363,7 @@
           "id": "ti_osint_collection_advanced",
           "name": "Advanced Open-Source Intelligence (OSINT) Collection",
           "tag": "essential",
-          "description": "Master advanced techniques for gathering intelligence from publicly available sources including deep web searches, social media analysis, dark web monitoring, technical blogs, open databases, and specialized OSINT tools and frameworks.",
+          "description": "Execute automated Open Source Intelligence (OSINT) collection: Querying Shodan, Censys, SecurityTrails, RiskIQ, and crt.sh certificate transparency logs; crafting GitHub and Google dorks; and monitoring paste sites and underground Telegram channels.",
           "resources": [
             {
               "title": "OSINT Framework",
@@ -379,13 +395,15 @@
               "url": "/data/docs/threat_intelligence_analyst/ti_osint_collection_advanced.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         },
         {
           "id": "ti_data_sources_feeds",
           "name": "Diverse Threat Data Sources & Feeds",
           "tag": "essential",
-          "description": "Identify and utilize various internal and external threat intelligence sources: commercial feeds, government/ISAC sharing, vulnerability databases, malware repositories, and security blogs/research.",
+          "description": "Evaluate and normalize commercial vs open-source threat feeds (AlienVault OTX, URLhaus, AbuseIPDB, Feodo Tracker). Implement feed scoring, automated deduplication, false positive pruning, and confidence weighting.",
           "resources": [
             {
               "title": "Top Threat Intelligence Feeds and Platforms",
@@ -417,13 +435,15 @@
               "url": "/data/docs/threat_intelligence_analyst/ti_data_sources_feeds.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "ti_indicator_enrichment_correlation",
           "name": "Indicator Analysis, Enrichment & Correlation",
           "tag": "essential",
-          "description": "Analyze various types of IoCs (IPs, domains, hashes, file paths, registry keys, YARA rules) to understand their significance, context, and relationships. Learn to enrich IoCs using external data sources and correlate them across incidents.",
+          "description": "Build automated indicator enrichment pipelines: Querying VirusTotal Enterprise API, Hybrid Analysis, URLScan.io, and WHOIS historical databases to cluster disposable infrastructure and correlate IOCs with known campaigns.",
           "resources": [
             {
               "title": "Understanding IoCs and Their Lifecycle",
@@ -450,13 +470,15 @@
               "url": "/data/docs/threat_intelligence_analyst/ti_indicator_enrichment_correlation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "ti_ttp_mapping_adversary_profiling",
           "name": "TTP Mapping & Adversary Profiling",
           "tag": "essential",
-          "description": "Map observed TTPs (Tactics, Techniques, Procedures) to frameworks like MITRE ATT&CK. Develop comprehensive adversary profiles, including their motivations, capabilities, infrastructure, and historical activities.",
+          "description": "Dissect adversary tradecraft and map observed incident telemetry to MITRE ATT&CK sub-techniques. Build comprehensive adversary threat dossiers, track infrastructure shifts, and generate ATT&CK Navigator heatmaps.",
           "resources": [
             {
               "title": "Mapping to MITRE ATT&CK Techniques",
@@ -483,13 +505,15 @@
               "url": "/data/docs/threat_intelligence_analyst/ti_ttp_mapping_adversary_profiling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "ti_malware_triage_analysis_basics",
           "name": "Malware Triage & Analysis Fundamentals",
           "tag": "essential",
-          "description": "Gain foundational knowledge of malware analysis concepts, types of malware (ransomware, trojans, worms), common delivery mechanisms, and perform basic static and dynamic analysis to extract IoCs and behavioral patterns.",
+          "description": "Perform rapid malware triage for intelligence extraction: Compute cryptographic and fuzzy hashes (MD5, SHA256, SSDEEP, TLSH), calculate imphash, inspect PE sections, and extract hardcoded C2 domains, user-agents, and encryption keys.",
           "resources": [
             {
               "title": "Introduction to Malware Analysis (SANS)",
@@ -516,13 +540,15 @@
               "url": "/data/docs/threat_intelligence_analyst/ti_malware_triage_analysis_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 25
         },
         {
           "id": "ti_vulnerability_exploitation_concepts",
           "name": "Vulnerability Intelligence & Exploitation Concepts",
           "tag": "essential",
-          "description": "Track and prioritize vulnerabilities (CVEs) relevant to your organization's assets. Understand common exploitation techniques and how vulnerabilities are leveraged by adversaries in the wild.",
+          "description": "Prioritize zero-day and n-day vulnerabilities using CVE, CVSS v3.1/v4 metrics, Exploit Prediction Scoring System (EPSS) probabilities, and CISA's Known Exploited Vulnerabilities (KEV) catalog. Track underground exploit trading.",
           "resources": [
             {
               "title": "Vulnerability Management Best Practices",
@@ -549,13 +575,15 @@
               "url": "/data/docs/threat_intelligence_analyst/ti_vulnerability_exploitation_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "ti_structured_analytical_techniques",
           "name": "Structured Analytical Techniques (SATs)",
           "tag": "advanced",
-          "description": "Apply structured analytical techniques like Analysis of Competing Hypotheses (ACH), Devil's Advocate, Brainstorming, and Key Assumptions Check to improve the rigor, reduce bias, and enhance the objectivity of intelligence assessments.",
+          "description": "Apply CIA Structured Analytical Techniques (SATs): Analysis of Competing Hypotheses (ACH), Devil's Advocacy, Key Assumptions Check, and Red Team challenge analysis to eliminate cognitive biases and premature closure.",
           "resources": [
             {
               "title": "Structured Analytic Techniques for Intelligence Analysis (Book by Richards Heuer)",
@@ -582,13 +610,15 @@
               "url": "/data/docs/threat_intelligence_analyst/ti_structured_analytical_techniques.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         },
         {
           "id": "ti_cyber_attribution",
           "name": "Cyber Attribution & Threat Group Tracking",
           "tag": "advanced",
-          "description": "Learn methodologies for attributing cyber attacks to specific threat actors or groups. Understand the challenges and nuances of attribution and how to track evolving adversary campaigns.",
+          "description": "Establish rigorous evidentiary standards for cyber attribution: Evaluate malware code reuse, compile timestamps, language artifacts, infrastructure overlap, and identify intentional false-flag deception techniques.",
           "resources": [
             {
               "title": "The Challenges of Cyber Attribution",
@@ -615,13 +645,15 @@
               "url": "/data/docs/threat_intelligence_analyst/ti_cyber_attribution.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         },
         {
           "id": "ti_threat_modeling_basics",
           "name": "Threat Modeling Fundamentals",
           "tag": "advanced",
-          "description": "Apply threat modeling techniques (e.g., STRIDE, DREAD) to identify potential threats to systems and applications, helping prioritize intelligence collection and defensive efforts based on an organization's specific risk profile.",
+          "description": "Formulate threat models using STRIDE and PASTA methodologies. Translate intelligence-driven threat profiles into threat trees, identifying exploitable architectural attack vectors before adversaries weaponize them.",
           "resources": [
             {
               "title": "Introduction to Threat Modeling",
@@ -648,15 +680,19 @@
               "url": "/data/docs/threat_intelligence_analyst/ti_threat_modeling_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 21
     },
     {
       "id": "ti_production_dissemination",
       "name": "Intelligence Production & Effective Dissemination",
       "tag": "essential",
-      "description": "Learn to produce clear, concise, and actionable intelligence reports tailored for diverse audiences, and effectively disseminate them using appropriate formats, standards, and communication channels, ensuring feedback loops are established.",
+      "description": "Standardize intelligence dissemination pipelines: Structure tactical flash alerts for immediate blocking, operational reports with actionable detection rules (YARA, Sigma, Snort), and strategic quarterly threat briefings for executive teams.",
       "resources": [
         {
           "title": "Threat Intelligence Reporting Best Practices (SANS)",
@@ -689,7 +725,7 @@
           "id": "ti_data_standardization_sharing",
           "name": "Data Standardization & Sharing (STIX/TAXII)",
           "tag": "essential",
-          "description": "Understand and utilize industry standards like STIX (Structured Threat Information eXpression) for structured data representation and TAXII (Trusted Automated eXchange of Intelligence Information) for automated data exchange, crucial for interoperability.",
+          "description": "Standardize threat data exchange using STIX 2.1 JSON specifications (Observables, Attack Patterns, Malware, Campaign, Identity) and TAXII 2.1 RESTful protocols. Enforce Traffic Light Protocol (TLP 2.0) sharing restrictions.",
           "resources": [
             {
               "title": "STIX 2.x Primer",
@@ -716,13 +752,15 @@
               "url": "/data/docs/threat_intelligence_analyst/ti_data_standardization_sharing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "ti_platforms_tools_management",
           "name": "Threat Intelligence Platforms (TIPs) & Management Tools",
           "tag": "essential",
-          "description": "Gain hands-on experience with Threat Intelligence Platforms like MISP, OpenCTI, and other relevant tools for ingesting, managing, enriching, correlating, and sharing threat data effectively.",
+          "description": "Deploy, configure, and maintain Threat Intelligence Platforms (TIPs) such as MISP (Malware Information Sharing Platform) and OpenCTI. Ingest feeds, model intrusion sets, and automate bidirectional synchronization with SIEM/EDR.",
           "resources": [
             {
               "title": "MISP Documentation & Tutorials",
@@ -754,13 +792,15 @@
               "url": "/data/docs/threat_intelligence_analyst/ti_platforms_tools_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "ti_intelligence_report_writing_audiences",
           "name": "Intelligence Report Writing for Diverse Audiences",
           "tag": "essential",
-          "description": "Develop skills in writing clear, concise, and actionable intelligence reports. Learn to tailor content and level of detail for different stakeholders (strategic for executives, operational for security management, tactical for analysts).",
+          "description": "Author polished technical and strategic intelligence products: Executive 1-page impact briefs, deep-dive technical research papers, and IOC dissemination packages with clear confidence levels and actionable recommendations.",
           "resources": [
             {
               "title": "How to Write Actionable Threat Intelligence Reports",
@@ -787,13 +827,15 @@
               "url": "/data/docs/threat_intelligence_analyst/ti_intelligence_report_writing_audiences.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "ti_stakeholder_briefing_comm",
           "name": "Stakeholder Briefing & Executive Communication",
           "tag": "advanced",
-          "description": "Master the art of presenting complex threat intelligence findings to technical and non-technical audiences, including executive leadership. Focus on tailoring content, visualizations, and delivery for maximum impact and informed decision-making.",
+          "description": "Deliver high-impact verbal and visual threat briefings to CISOs, boards, and engineering leadership. Quantify probability and uncertainty using ICD 203 analytical standards and business risk metrics.",
           "resources": [
             {
               "title": "Effective Communication for Cyber Professionals (Course)",
@@ -820,13 +862,15 @@
               "url": "/data/docs/threat_intelligence_analyst/ti_stakeholder_briefing_comm.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "ti_feedback_loop_evaluation",
           "name": "Intelligence Feedback Loops & Evaluation",
           "tag": "advanced",
-          "description": "Implement mechanisms for gathering feedback on intelligence products to continuously improve relevance, accuracy, and utility. Understand how to measure the effectiveness and impact of disseminated intelligence.",
+          "description": "Establish continuous feedback loops with SOC tier-2/3 analysts, incident responders, and detection engineers. Measure IOC false positive rates, time-to-detection gains, and adjust collection priorities accordingly.",
           "resources": [
             {
               "title": "Establishing a Threat Intelligence Feedback Loop",
@@ -853,15 +897,19 @@
               "url": "/data/docs/threat_intelligence_analyst/ti_feedback_loop_evaluation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 21
     },
     {
       "id": "ti_advanced_ops_automation",
       "name": "Advanced CTI Operations & Automation",
       "tag": "advanced",
-      "description": "Explore advanced aspects of CTI operations, including seamless integration of intelligence into security operations, leveraging automation for efficiency, proactive threat hunting, and quantifying program effectiveness.",
+      "description": "Architect automated intelligence workflows: Event-driven webhooks, enrichment microservices, dynamic firewall blocklist generation, and automated SOAR playbook triggering for automated adversary containment.",
       "resources": [
         {
           "title": "Automating Threat Intelligence Workflows (Recorded Future)",
@@ -894,7 +942,7 @@
           "id": "ti_integration_soc_ir",
           "name": "Integration with SOC & Incident Response",
           "tag": "advanced",
-          "description": "Understand how threat intelligence feeds into and supports Security Operations Centers (SOC) and Incident Response (IR) teams, improving threat detection, prioritization, and response capabilities across the incident lifecycle.",
+          "description": "Bridge intelligence with SOC operations and Digital Forensics & Incident Response (DFIR). Provide real-time adversary campaign context during active breaches and rapidly correlate intrusion artifacts with known threat groups.",
           "resources": [
             {
               "title": "How Threat Intelligence Powers Your SOC",
@@ -921,13 +969,15 @@
               "url": "/data/docs/threat_intelligence_analyst/ti_integration_soc_ir.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 54
         },
         {
           "id": "ti_automation_scripting_python",
           "name": "Automation & Scripting for CTI (Python)",
           "tag": "advanced",
-          "description": "Learn to automate common CTI tasks such as data collection, parsing, enrichment, correlation, and integration with security tools using scripting languages, primarily Python, including working with REST APIs.",
+          "description": "Develop custom CTI automation scripts using Python: Leverage `requests`, `stix2`, `taxii2-client`, and `pymisp` libraries to parse structured JSON/XML feeds, extract observables, and automate threat tracking.",
           "resources": [
             {
               "title": "Python for Cyber Security: Threat Intelligence Automation (Course)",
@@ -954,13 +1004,15 @@
               "url": "/data/docs/threat_intelligence_analyst/ti_automation_scripting_python.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         },
         {
           "id": "ti_threat_hunting_proactive",
           "name": "Threat Hunting & Proactive Defense",
           "tag": "advanced",
-          "description": "Leverage actionable threat intelligence to perform proactive threat hunting, identify hidden threats, discover suspicious activities, and develop preventative measures before incidents escalate.",
+          "description": "Drive hypothesis-based threat hunting campaigns: Formulate threat hypotheses based on newly emerged adversary TTPs, query enterprise SIEM/EDR data lakes (Splunk, Microsoft Sentinel KQL), and hunt for silent persistence.",
           "resources": [
             {
               "title": "Threat Hunting with Cyber Threat Intelligence (CrowdStrike)",
@@ -987,13 +1039,15 @@
               "url": "/data/docs/threat_intelligence_analyst/ti_threat_hunting_proactive.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         },
         {
           "id": "ti_cloud_threat_intelligence",
           "name": "Cloud Threat Intelligence",
           "tag": "advanced",
-          "description": "Understand unique threat landscapes and attack vectors in cloud environments (AWS, Azure, GCP). Learn to apply CTI principles to cloud security, identify cloud-specific IoCs and TTPs, and integrate cloud logs into intelligence pipelines.",
+          "description": "Analyze cloud-native threat actor tradecraft: Track abuse of AWS IAM credentials, Azure Entra ID token theft, GCP service account pivoting, metadata service (IMDSv2) attacks, and unauthorized S3/Blob data exfiltration.",
           "resources": [
             {
               "title": "Cloud Threat Intelligence: An Introduction",
@@ -1020,13 +1074,15 @@
               "url": "/data/docs/threat_intelligence_analyst/ti_cloud_threat_intelligence.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         },
         {
           "id": "ti_measuring_effectiveness",
           "name": "Measuring CTI Effectiveness & ROI",
           "tag": "advanced",
-          "description": "Define key performance indicators (KPIs) and metrics to assess the value, impact, and return on investment (ROI) of threat intelligence operations. Implement CTI program maturity models and continuous improvement processes.",
+          "description": "Establish quantitative CTI metrics: Track Mean Time to Detect (MTTD) reduction, percentage of alerts enriched with threat context, detection rule fidelity, and coverage ratio across organization-specific MITRE ATT&CK techniques.",
           "resources": [
             {
               "title": "Measuring the ROI of Threat Intelligence (Forrester)",
@@ -1053,15 +1109,19 @@
               "url": "/data/docs/threat_intelligence_analyst/ti_measuring_effectiveness.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 46
     },
     {
       "id": "ti_portfolio_career_readiness",
       "name": "Portfolio Building and Career Readiness",
       "tag": "advanced",
-      "description": "Consolidate your learning into tangible proof of skills through practical projects and compelling case studies. Prepare effectively for interviews and strategically position yourself for a successful career as a Threat Intelligence Analyst.",
+      "description": "Assemble a public threat intelligence portfolio: Publish technical threat intelligence reports, contribute YARA/Sigma detection rules to open-source repositories, and document malware family tracking research.",
       "resources": [
         {
           "title": "Building a Strong Cyber Security Portfolio (SANS)",
@@ -1094,7 +1154,7 @@
           "id": "ti_capstone_project",
           "name": "Capstone Project: End-to-End Threat Intelligence Workflow",
           "tag": "advanced",
-          "description": "Execute a full threat intelligence project from start to finish: define PIRs for a simulated organization, collect OSINT and other data, perform detailed analysis, produce a finished intelligence report, and deliver a stakeholder briefing.",
+          "description": "Execute an end-to-end CTI capstone project: Ingest multi-source feed telemetry, track a simulated APT campaign, map TTPs in ATT&CK Navigator, author STIX 2.1 bundles, write Sigma detection rules, and present an executive threat briefing.",
           "resources": [
             {
               "title": "Project Idea: Building a Simple Threat Feed Integrator with Python",
@@ -1121,13 +1181,15 @@
               "url": "/data/docs/threat_intelligence_analyst/ti_capstone_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 76
         },
         {
           "id": "ti_case_study_creation",
           "name": "Creating Impactful Case Studies & Technical Write-ups",
           "tag": "advanced",
-          "description": "Learn to document your projects, analytical work, and research as compelling case studies or detailed technical write-ups. Clearly articulate the problem, your methodology, key findings, and the actionable impact of your intelligence.",
+          "description": "Publish exhaustive post-mortem case studies dissecting landmark cyber attacks (SolarWinds SUNBURST, NotPetya, Colonial Pipeline), analyzing root-cause access, supply chain mechanisms, and defensive lessons learned.",
           "resources": [
             {
               "title": "How to Write a Technical Case Study for Your Portfolio",
@@ -1154,13 +1216,15 @@
               "url": "/data/docs/threat_intelligence_analyst/ti_case_study_creation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         },
         {
           "id": "ti_interview_job_prep",
           "name": "Interview Preparation & Strategic Job Search",
           "tag": "advanced",
-          "description": "Prepare for technical and behavioral interviews specific to CTI roles. Understand common job requirements, practice articulating your skills and project experience, and develop a strategic approach to the job search.",
+          "description": "Prepare for technical CTI interviews: Master mock analytical pivoting challenges on Maltego/VirusTotal, defend attribution hypotheses, answer scenario-based PIR questions, and target certifications (GCTI, CTIA, CISSP).",
           "resources": [
             {
               "title": "Resume & Cover Letter Tips for CTI Roles",
@@ -1182,9 +1246,14 @@
               "url": "/data/docs/threat_intelligence_analyst/ti_interview_job_prep.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 30
     }
-  ]
+  ],
+  "total_exp": 1000
 }

@@ -86,7 +86,7 @@
       "id": "ca_cloud_foundations",
       "name": "Cloud Foundations & Core Services",
       "tag": "essential",
-      "description": "Gain a comprehensive understanding of cloud computing models, global infrastructure, core compute, storage, networking, and identity services, along with pricing, the shared responsibility model, and foundational monitoring practices.",
+      "description": "Establish an uncompromised cloud architecture foundation: master cloud service delivery models, multi-region global backbones, shared responsibility trust models, and cross-cutting architectural pillars.",
       "resources": [
         {
           "title": "AWS Cloud Complete Bootcamp Course (freeCodeCamp)",
@@ -119,7 +119,7 @@
           "id": "ca_cloud_concepts",
           "name": "Cloud Computing Concepts",
           "tag": "essential",
-          "description": "Explore IaaS, PaaS, SaaS, serverless, public, private, and hybrid cloud models, their benefits, and challenges. Understand fundamental concepts like virtualization, containers, and serverless computing paradigms.",
+          "description": "Evaluate strategic cloud computing models: trade-offs between Public, Private, Hybrid, and Multi-Cloud architectures; comparing IaaS, PaaS, Serverless (FaaS), and Container-as-a-Service (CaaS); and assessing business agility vs vendor lock-in risks.",
           "resources": [
             {
               "title": "What is IaaS, PaaS, and SaaS?",
@@ -141,13 +141,15 @@
               "url": "/data/docs/cloud_architect/ca_cloud_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "ca_global_infra_shared_responsibility",
           "name": "Global Infrastructure & Shared Responsibility",
           "tag": "essential",
-          "description": "Understand cloud provider global infrastructure including regions, availability zones, and edge locations. Deep dive into the shared responsibility model, clearly defining customer and provider obligations for security and compliance.",
+          "description": "Analyze global cloud infrastructure and security boundaries: evaluating cross-region latency, data residency and sovereignty regulations (GDPR, HIPAA), physical datacenter security, and deconstructing the Shared Responsibility Model across all cloud service abstractions.",
           "resources": [
             {
               "title": "AWS Global Infrastructure",
@@ -169,13 +171,15 @@
               "url": "/data/docs/cloud_architect/ca_global_infra_shared_responsibility.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "ca_core_compute_services",
           "name": "Core Compute Services",
           "tag": "essential",
-          "description": "Compare IaaS (VMs, bare metal), PaaS (App Services, Elastic Beanstalk), containers (ECS, EKS, AKS, GKE, Cloud Run), and FaaS (Lambda, Azure Functions, Cloud Functions). Understand their lifecycle management, scaling, and specific use cases, including fundamental container orchestration concepts with Kubernetes and introduction to service mesh concepts.",
+          "description": "Architect scalable compute platforms: selecting optimal compute abstractions (virtual machines, elastic container clusters, serverless functions) based on workload predictability, latency tolerance, statefulness, and cost efficiency curves.",
           "resources": [
             {
               "title": "AWS Compute Services Overview",
@@ -197,13 +201,15 @@
               "url": "/data/docs/cloud_architect/ca_core_compute_services.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "ca_core_storage_data_services",
           "name": "Core Storage & Data Services",
           "tag": "essential",
-          "description": "Differentiate between object storage (S3, Blob Storage, Cloud Storage), block storage (EBS, Azure Disks, Persistent Disk), file storage (EFS, Azure Files, Filestore), and backup/archive solutions (Glacier, Azure Archive). Explore managed database services including relational (RDS, Azure SQL), NoSQL (DynamoDB, Cosmos DB), data warehouses (Redshift, Synapse), and data lakes.",
+          "description": "Design enterprise cloud data tiers: matching workload access patterns to appropriate storage mechanisms (block, file, object, columnar data warehouses, and distributed transactional NoSQL stores) while enforcing data lifecycle management policies.",
           "resources": [
             {
               "title": "AWS Storage Services",
@@ -225,13 +231,15 @@
               "url": "/data/docs/cloud_architect/ca_core_storage_data_services.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 33
         },
         {
           "id": "ca_core_networking_fundamentals",
           "name": "Core Networking Fundamentals",
           "tag": "essential",
-          "description": "Understand basic cloud networking concepts: Virtual Private Clouds (VPCs)/Virtual Networks (VNets), subnets (public/private), IP addressing, route tables, network gateways (Internet Gateway, NAT Gateway), and basic load balancing (L4). Learn about DNS resolution fundamentals (Route 53, Azure DNS, Cloud DNS) and network security groups (NSGs).",
+          "description": "Master foundational cloud networking: designing multi-tier Virtual Private Clouds (VPCs/VNets), IP address management (IPAM), subnet routing, public/private isolation, Layer 4 vs Layer 7 load balancing architectures, and border gateway routing.",
           "resources": [
             {
               "title": "AWS VPC Concepts",
@@ -253,13 +261,15 @@
               "url": "/data/docs/cloud_architect/ca_core_networking_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 20
         },
         {
           "id": "ca_identity_access_mgmt",
           "name": "Identity & Access Management (IAM)",
           "tag": "essential",
-          "description": "Design least-privilege roles, policies, service accounts, and integrate with enterprise identity providers (Active Directory, Okta). Implement federated identity, single sign-on (SSO), multi-factor authentication (MFA), conditional access, Role-Based Access Control (RBAC), and temporary/just-in-time credentials. Understand secrets management (Secrets Manager, Key Vault) and privileged access management (PAM) principles.",
+          "description": "Architect enterprise identity and access control: Zero Trust architecture principles, centralized identity providers (IdP via SAML 2.0 and OIDC), role-based access control (RBAC), attribute-based access control (ABAC), least-privilege permission boundaries, and workload identity federation.",
           "resources": [
             {
               "title": "AWS IAM User Guide",
@@ -281,13 +291,15 @@
               "url": "/data/docs/cloud_architect/ca_identity_access_mgmt.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "ca_cloud_economics_fundamentals",
           "name": "Cloud Economics & FinOps Fundamentals",
           "tag": "essential",
-          "description": "Understand cloud pricing models (on-demand, reserved instances, savings plans, spot instances), cost calculators, budgets, alerts, and basic Total Cost of Ownership (TCO) analysis. Introduce FinOps principles (Inform, Optimize, Operate), including fundamental concepts of cost allocation, chargeback, and showback.",
+          "description": "Master cloud financial management (FinOps): total cost of ownership (TCO) modeling, calculating CapEx to OpEx transitions, analyzing unit economics, and establishing cost allocation tagging governance across business units.",
           "resources": [
             {
               "title": "AWS Pricing Overview",
@@ -309,13 +321,15 @@
               "url": "/data/docs/cloud_architect/ca_cloud_economics_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 20
         },
         {
           "id": "ca_monitoring_logging_fundamentals",
           "name": "Monitoring & Logging Fundamentals",
           "tag": "essential",
-          "description": "Configure essential metrics, logs, and alarms for basic system health monitoring. Design effective dashboards and basic alerting strategies. Utilize cloud-native tools (CloudWatch, Azure Monitor, Cloud Monitoring) for initial observability setups. Understand structured logging and basic log aggregation.",
+          "description": "Establish foundational enterprise observability: centralized telemetry aggregation, defining actionable operational metrics, log retention compliance, and automated infrastructure alerting thresholds.",
           "resources": [
             {
               "title": "Azure Monitor Documentation",
@@ -337,15 +351,19 @@
               "url": "/data/docs/cloud_architect/ca_monitoring_logging_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 31
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 22
     },
     {
       "id": "ca_networking_security",
       "name": "Cloud Networking & Security",
       "tag": "essential",
-      "description": "Design secure, resilient, and high-performance network architectures, implementing comprehensive security controls and compliance practices across various cloud providers.",
+      "description": "Architect defense-in-depth security perimeters: multi-VPC hub-and-spoke topologies, hybrid cloud interconnects, cryptographic data protection, and regulatory compliance governance.",
       "resources": [
         {
           "title": "AWS VPC Documentation",
@@ -373,7 +391,7 @@
           "id": "ca_advanced_vpc_vnet_design",
           "name": "Advanced VPC/VNet Design & Connectivity",
           "tag": "essential",
-          "description": "Plan multi-VPC/VNet architectures, CIDR ranges, public/private subnets, network gateways (Internet Gateway, NAT Gateway), advanced routing, VPC peering, Transit Gateways/Hub-and-Spoke, and hybrid connectivity (Direct Connect, ExpressRoute, Cloud Interconnect). Implement various load balancing types (ALB, NLB, Azure Load Balancer, Google Load Balancer, Global Load Balancer) and robust network segmentation strategies.",
+          "description": "Design scalable enterprise network topologies: Hub-and-Spoke networks with AWS Transit Gateway, Azure Virtual WAN, and GCP Shared VPC; hybrid connectivity via dedicated direct connects (ExpressRoute, Direct Connect) with redundant IPSec VPN failover; and private service endpoints.",
           "resources": [
             {
               "title": "AWS VPC Getting Started",
@@ -395,13 +413,15 @@
               "url": "/data/docs/cloud_architect/ca_advanced_vpc_vnet_design.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         },
         {
           "id": "ca_network_security_controls_advanced",
           "name": "Advanced Network Security Controls",
           "tag": "essential",
-          "description": "Implement Security Groups, Network ACLs, cloud-native firewalls (e.g., AWS Network Firewall, Azure Firewall, Cloud Firewall), Web Application Firewalls (WAF), Distributed Denial of Service (DDoS) protection, VPNs, Endpoint Security, and Intrusion Detection/Prevention Systems (IDS/IPS). Secure API Gateways, microservices communication, and implement perimeter defenses using next-generation firewalls and security appliances.",
+          "description": "Implement advanced network security perimeters: centralized stateful firewalls, deep packet inspection (DPI), Intrusion Detection and Prevention Systems (IDPS), Web Application Firewalls (WAF) with OWASP Top 10 mitigations, and volumetric DDoS mitigation.",
           "resources": [
             {
               "title": "AWS Network Security Best Practices",
@@ -423,13 +443,15 @@
               "url": "/data/docs/cloud_architect/ca_network_security_controls_advanced.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         },
         {
           "id": "ca_data_protection_encryption",
           "name": "Data Protection, Encryption & Lifecycle Management",
           "tag": "essential",
-          "description": "Apply encryption at rest and in transit using industry best practices. Utilize key management services (KMS, Key Vault, Cloud KMS) for cryptographic key generation, storage, and rotation. Implement secrets management for application credentials. Understand data residency, data classification, data loss prevention (DLP), and data lifecycle management policies for compliance.",
+          "description": "Architect end-to-end data encryption: encryption at rest and in transit (TLS 1.3), envelope encryption with Hardware Security Modules (Cloud HSM), Customer-Managed Encryption Keys (CMEK), key rotation policies, and cryptographically secure data sanitization.",
           "resources": [
             {
               "title": "AWS Key Management Service (KMS)",
@@ -461,13 +483,15 @@
               "url": "/data/docs/cloud_architect/ca_data_protection_encryption.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 33
         },
         {
           "id": "ca_application_security_cloud",
           "name": "Application Security in Cloud",
           "tag": "advanced",
-          "description": "Implement security best practices for cloud-native applications, including secure coding principles, API security gateways, container image scanning and runtime protection, serverless function security, and supply chain security for CI/CD pipelines. Address common vulnerabilities (e.g., OWASP Top 10) in cloud environments.",
+          "description": "Secure cloud-native application architectures: secure software development lifecycles (DevSecOps), container image vulnerability scanning, software supply chain security (SBOM, cosign), runtime threat detection, and API security gateways.",
           "resources": [
             {
               "title": "AWS Security Hub",
@@ -499,13 +523,15 @@
               "url": "/data/docs/cloud_architect/ca_application_security_cloud.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 46
         },
         {
           "id": "ca_security_governance_risk_compliance",
           "name": "Security Governance, Risk & Compliance",
           "tag": "advanced",
-          "description": "Understand industry compliance standards (PCI-DSS, HIPAA, GDPR, ISO 27001), regulatory requirements, audit logging, and security policy enforcement. Implement Cloud Security Posture Management (CSPM), Cloud Workload Protection Platforms (CWPP), and security automation. Introduce threat modeling, Security Information and Event Management (SIEM)/Security Orchestration, Automation, and Response (SOAR) concepts, and continuous compliance frameworks.",
+          "description": "Enforce enterprise governance, risk, and compliance: implementing preventative and detective guardrails (AWS Control Tower, Azure Policy, GCP Organization Policies), and auditing against SOC 2, ISO 27001, PCI-DSS, and CIS benchmarks.",
           "resources": [
             {
               "title": "AWS Compliance Programs",
@@ -527,13 +553,15 @@
               "url": "/data/docs/cloud_architect/ca_security_governance_risk_compliance.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         },
         {
           "id": "ca_network_automation_policy",
           "name": "Network Automation & Policy as Code",
           "tag": "advanced",
-          "description": "Automate network configuration and policy enforcement using Infrastructure as Code (IaC) tools like Terraform or cloud-native IaC for networking. Implement Policy as Code (PaC) for security and compliance across network resources. Explore network service mesh concepts and their role in microservices networking, traffic management, and security policies.",
+          "description": "Automate network infrastructure and policies: Infrastructure as Code for network provisioning, automated routing table updates, declarative network policy enforcement, and continuous network connectivity validation.",
           "resources": [
             {
               "title": "Automating AWS Network with Terraform",
@@ -565,15 +593,19 @@
               "url": "/data/docs/cloud_architect/ca_network_automation_policy.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 20
     },
     {
       "id": "ca_reliability_perf_cost",
       "name": "Reliability, Performance, & Cost Optimization",
       "tag": "advanced",
-      "description": "Implement architectural patterns for high availability, disaster recovery, performance scaling, comprehensive observability, and effective cost management to ensure robust and efficient cloud solutions.",
+      "description": "Architect resilient, high-performance, cost-optimized cloud platforms: multi-region active-active architectures, advanced observability, SRE practices, and FinOps.",
       "resources": [
         {
           "title": "AWS Well-Architected Framework",
@@ -601,7 +633,7 @@
           "id": "ca_high_availability_disaster_recovery",
           "name": "High Availability & Disaster Recovery",
           "tag": "advanced",
-          "description": "Design multi-AZ/multi-region systems, implement auto-scaling, advanced load balancing, backups, snapshotting, and replication strategies for databases and storage. Define and achieve stringent Recovery Time Objective (RTO) and Recovery Point Objective (RPO) objectives. Develop comprehensive failover/failback strategies, implement graceful degradation, and employ chaos engineering principles to proactively test system resilience.",
+          "description": "Design mission-critical disaster recovery: architecting Multi-Region Active-Active and Active-Passive (Warm Standby/Pilot Light) failover topologies, calculating and proving Recovery Time Objective (RTO) and Recovery Point Objective (RPO), and automated global DNS failover.",
           "resources": [
             {
               "title": "AWS Reliability Pillar",
@@ -623,13 +655,15 @@
               "url": "/data/docs/cloud_architect/ca_high_availability_disaster_recovery.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         },
         {
           "id": "ca_performance_scalability_optimization",
           "name": "Performance, Scalability & Optimization",
           "tag": "advanced",
-          "description": "Implement advanced caching strategies (CDN, in-memory caches like Redis, Memcached, serverless caching). Optimize database performance, fine-tune queries, implement read replicas and sharding. Address serverless cold start optimization, optimize container image sizes, and ensure efficient network performance (e.g., using private endpoints, faster interconnects). Explore edge computing, content delivery strategies, and performance benchmarking.",
+          "description": "Optimize distributed system performance: horizontal autoscaling strategies, global Anycast Content Delivery Networks (CDNs), multi-tier caching architectures (Redis, Memcached), asynchronous message decoupling, and eliminating database IOPS bottlenecks.",
           "resources": [
             {
               "title": "AWS Performance Efficiency Pillar",
@@ -661,13 +695,15 @@
               "url": "/data/docs/cloud_architect/ca_performance_scalability_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 47
         },
         {
           "id": "ca_advanced_observability_distributed_tracing",
           "name": "Advanced Observability & Distributed Tracing",
           "tag": "advanced",
-          "description": "Implement advanced observability practices including distributed tracing (Jaeger, Zipkin), correlation IDs, advanced log analysis, and custom metrics. Design sophisticated alerting and notification systems, and integrate with incident management platforms. Explore AIOps concepts, synthetic monitoring, and Real User Monitoring (RUM) for a holistic view of system performance and user experience.",
+          "description": "Architect enterprise observability platforms: distributed request tracing with OpenTelemetry (OTel), correlating metrics, logs, and traces, real-time service dependency graph visualization, and automated anomaly detection.",
           "resources": [
             {
               "title": "Introduction to Distributed Tracing",
@@ -699,13 +735,15 @@
               "url": "/data/docs/cloud_architect/ca_advanced_observability_distributed_tracing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         },
         {
           "id": "ca_cost_management_finops_advanced",
           "name": "Cost Management & Advanced FinOps",
           "tag": "advanced",
-          "description": "Deep dive into cloud cost estimation, advanced right-sizing resources, implementing budgets with automated actions, and detecting resource waste. Leverage Reserved Instances/Savings Plans, Spot Instances, and enterprise discount programs. Implement advanced FinOps practices including chargeback/showback, cost allocation tags, anomaly detection, forecasting, and continuous cost optimization loops aligned with business value.",
+          "description": "Execute advanced FinOps strategies: automated instance rightsizing, leveraging commitment-based discounts (Savings Plans, Committed Use Discounts), Spot instance orchestration for fault-tolerant batch workloads, and implementing anomaly detection alerts for cloud spend.",
           "resources": [
             {
               "title": "AWS Cost Optimization Pillar",
@@ -737,13 +775,15 @@
               "url": "/data/docs/cloud_architect/ca_cost_management_finops_advanced.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         },
         {
           "id": "ca_sre_principles_cloud",
           "name": "Site Reliability Engineering (SRE) Principles for Cloud",
           "tag": "advanced",
-          "description": "Apply SRE principles like error budgets, Service Level Objectives (SLOs), Service Level Indicators (SLIs), and post-mortems to improve cloud system reliability. Implement practices for incident management, on-call rotations, automation for operational tasks, and proactive problem solving through blameless post-mortems and continuous improvement cycles.",
+          "description": "Embed Site Reliability Engineering (SRE) principles into cloud architecture: defining user-centric Service Level Indicators (SLIs) and Service Level Objectives (SLOs), managing Error Budgets to balance feature velocity with system stability, and conducting chaos engineering experiments.",
           "resources": [
             {
               "title": "Site Reliability Engineering (Google Book)",
@@ -775,15 +815,19 @@
               "url": "/data/docs/cloud_architect/ca_sre_principles_cloud.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 25
     },
     {
       "id": "ca_architecture_design_practice",
       "name": "Cloud Architecture Design & Practice",
       "tag": "advanced",
-      "description": "Master the art of designing, documenting, and implementing robust cloud architectures, including strategic migration planning, robust governance, and seamless DevOps integration.",
+      "description": "Master enterprise solution architecture practice: cloud architectural design patterns, migration strategies, Architecture Decision Records (ADRs), and enterprise landing zones.",
       "resources": [
         {
           "title": "Azure Architecture Center",
@@ -811,7 +855,7 @@
           "id": "ca_architecture_patterns_design_principles",
           "name": "Cloud Architecture Patterns & Design Principles",
           "tag": "advanced",
-          "description": "Explore common cloud architecture patterns (microservices, event-driven architectures, serverless, N-tier, data mesh, data lakes, streaming architectures) and advanced design principles for scalability, resilience, fault tolerance, loose coupling, and maintainability. Introduce enterprise integration patterns, advanced data architecture patterns (e.g., data virtualization, data fabric), and Domain-Driven Design (DDD) in cloud contexts.",
+          "description": "Apply proven cloud architectural design patterns: Microservices vs Modular Monolith, Event-Driven Architecture (EDA), CQRS (Command Query Responsibility Segregation), Event Sourcing, Strangler Fig pattern for legacy decomposition, and the Saga pattern for distributed transactions.",
           "resources": [
             {
               "title": "AWS Architecture Blog - Design Patterns",
@@ -843,13 +887,15 @@
               "url": "/data/docs/cloud_architect/ca_architecture_patterns_design_principles.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 66
         },
         {
           "id": "ca_iac_cloud_devops",
           "name": "Infrastructure as Code & Cloud DevOps",
           "tag": "advanced",
-          "description": "Model cloud environments using Infrastructure as Code (IaC) tools like Terraform, CloudFormation, Azure Resource Manager (ARM Templates), or Google Cloud Deployment Manager. Integrate IaC into CI/CD pipelines, implement GitOps for declarative infrastructure management, and automate deployments. Understand container orchestration with Kubernetes (EKS, AKS, GKE) and configuration management tools (Ansible, Chef, Puppet). Implement Policy as Code (PaC) using tools like Open Policy Agent (OPA) or cloud-native guardrails for continuous compliance and security.",
+          "description": "Standardize enterprise Infrastructure as Code (IaC): modular Terraform/OpenTofu architecture, automated CI/CD deployment pipelines with GitOps, policy-as-code validation (OPA/Checkov), and drift detection.",
           "resources": [
             {
               "title": "Terraform Tutorials",
@@ -881,13 +927,15 @@
               "url": "/data/docs/cloud_architect/ca_iac_cloud_devops.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         },
         {
           "id": "ca_cloud_migration_modernization_strategies",
           "name": "Cloud Migration & Modernization Strategies",
           "tag": "advanced",
-          "description": "Understand the 6 R's of migration (Rehost, Replatform, Refactor, Repurchase, Retain, Retire) and advanced migration strategies. Evaluate different migration tools and services (AWS Migration Hub, Azure Migrate, Google Cloud Migrate for Compute Engine). Develop comprehensive migration plans, conduct thorough application assessments, execute phased migrations, and perform post-migration optimization and modernization, including re-architecture considerations for cloud-native adoption.",
+          "description": "Formulate cloud migration and modernization roadmaps: application portfolio assessment using the 7 R's (Rehost, Replatform, Refactor, Repurchase, Retain, Retire, Relocate), database migration with Change Data Capture (CDC), and phased cutover strategies.",
           "resources": [
             {
               "title": "AWS Cloud Migration Strategies",
@@ -914,13 +962,15 @@
               "url": "/data/docs/cloud_architect/ca_cloud_migration_modernization_strategies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         },
         {
           "id": "ca_architecture_documentation_communication",
           "name": "Architecture Documentation & Communication",
           "tag": "advanced",
-          "description": "Conduct effective architecture design reviews, document architectural decisions using Architecture Decision Records (ADRs), create clear architecture diagrams (e.g., C4 model, UML, ArchiMate), and communicate complex designs to diverse stakeholders (technical and non-technical) effectively through presentations and written reports. Develop skills in technical leadership, influencing, negotiation, and articulating business value of architectural decisions.",
+          "description": "Communicate architecture effectively to technical and executive stakeholders: authoring Architecture Decision Records (ADRs), creating C4 model diagrams (Context, Containers, Components, Code), presenting cost-benefit trade-off analyses, and building executive alignment.",
           "resources": [
             {
               "title": "Architecture Decision Records (ADR)",
@@ -952,13 +1002,15 @@
               "url": "/data/docs/cloud_architect/ca_architecture_documentation_communication.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         },
         {
           "id": "ca_cloud_governance_enterprise_strategy",
           "name": "Cloud Governance & Enterprise Strategy",
           "tag": "advanced",
-          "description": "Develop and implement comprehensive cloud governance frameworks including policy enforcement, resource tagging strategies, cost allocation, security baselines, and service catalog management. Understand multi-account/multi-subscription strategies and organizational best practices for large-scale cloud adoption. Integrate with enterprise architecture roadmaps, manage organizational change, and establish a Cloud Center of Excellence (CCoE) to drive cloud adoption and innovation.",
+          "description": "Design multi-account enterprise landing zones: AWS Organizations with Control Tower, Azure Enterprise Scale Landing Zones, or GCP Landing Zones, establishing multi-tenant resource boundaries, billing segregation, and centralized security logging.",
           "resources": [
             {
               "title": "AWS Cloud Adoption Framework (CAF)",
@@ -990,13 +1042,15 @@
               "url": "/data/docs/cloud_architect/ca_cloud_governance_enterprise_strategy.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 46
         },
         {
           "id": "ca_capstone_project_solution_design",
           "name": "Capstone Project: End-to-End Cloud Solution Design",
           "tag": "advanced",
-          "description": "Apply all learned principles to design a secure, scalable, highly available, performant, and cost-optimized end-to-end cloud product architecture. This includes gathering requirements, creating detailed architecture diagrams, developing an IaC skeleton, defining a comprehensive DR plan, and presenting the solution to technical and business stakeholders, justifying architectural decisions and trade-offs.",
+          "description": "Capstone Project: Design and Document an Enterprise Multi-Region Cloud Solution Architecture: complete C4 architecture documentation, multi-region active-active database replication with sub-second RPO, zero-trust network topology with centralized inspection, automated landing zone provisioning via Terraform, and an executive trade-off matrix.",
           "resources": [
             {
               "title": "Cloud Architecture Case Studies",
@@ -1028,9 +1082,14 @@
               "url": "/data/docs/cloud_architect/ca_capstone_project_solution_design.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 80
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 27
     }
-  ]
+  ],
+  "total_exp": 1000
 }

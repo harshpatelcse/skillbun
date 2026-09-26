@@ -47,25 +47,27 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Enterprise Multi-Environment Multi-Cloud Module Suite",
+        "title": "Reusable Enterprise Multi-Cloud Terraform Module Library with Terratest",
         "tech_stack": [
-          "Terraform",
-          "OpenTofu",
-          "Terragrunt",
-          "AWS",
+          "Terraform 1.9",
+          "Go",
+          "Terratest",
+          "TFLint",
+          "Trivy",
           "GitHub Actions"
         ],
-        "description": "Build an enterprise module library provisioning VPCs, EKS clusters, and databases across dev/staging/prod with zero code duplication."
+        "description": "Develop an enterprise-grade library of hardened Terraform modules provisioning VPCs, EKS clusters, and RDS databases with automated Terratest validation in CI."
       },
       {
-        "title": "Reusable Multi-Cloud Terraform Module Library with Terratest",
+        "title": "Zero-Downtime Infrastructure Drift Detection & Auto-Remediation Engine",
         "tech_stack": [
-          "Terraform",
-          "Terratest (Go)",
-          "GitHub Actions",
-          "TFLint"
+          "Terraform Cloud",
+          "AWS EventBridge",
+          "Lambda",
+          "Slack Notifications",
+          "Infracost"
         ],
-        "description": "Develop an enterprise-grade repository of hardened, modular Terraform modules tested automatically with Go-based Terratest and semantic release versioning."
+        "description": "Engineer an automated drift monitoring workflow checking cloud state every 6 hours, calculating pull request cost impact with Infracost, and alerting engineers."
       }
     ],
     "certifications": [
@@ -73,10 +75,11 @@
       "AWS Certified Solutions Architect - Associate"
     ],
     "interview_focus": [
-      "Terraform State File Corruption Recovery & State Migration",
-      "Managing Drift between Real Infrastructure and Code",
-      "Dynamic Blocks vs Count vs For_Each",
-      "Preventing Resource Destruction with Lifecycle Rules"
+      "Terraform State Management, Locking Mechanisms & Remote State Storage in S3/DynamoDB",
+      "Terraform Module Architecture, Input Validation Rules & Output Design",
+      "Managing State Migrations, Imports & Refactoring (terraform state mv, import blocks)",
+      "Infrastructure Testing Strategies (Static Analysis with TFLint/Checkov vs Terratest Integration)",
+      "Terraform Workspaces vs Directory-Based Multi-Environment Separation (Terragrunt)"
     ]
   },
   "format": "tree",
@@ -85,7 +88,7 @@
       "id": "terraform_iac_engineer_foundations",
       "name": "Foundations and Role Context",
       "tag": "essential",
-      "description": "Understand what Terraform/IaC Engineer work looks like, which problems it solves, and the baseline concepts needed before building.",
+      "description": "Establish an unshakeable Infrastructure as Code foundation: declarative state modeling, immutable infrastructure paradigms, directed acyclic graph (DAG) dependency resolution, and disciplined Git collaboration.",
       "resources": [
         {
           "title": "Study Guide & Notes",
@@ -113,7 +116,7 @@
           "id": "iac_principles_terraform_introduction",
           "name": "IaC Principles & Terraform Introduction",
           "tag": "essential",
-          "description": "Explore the core principles, benefits, and common challenges of Infrastructure as Code. Understand declarative vs. imperative IaC and introduce Terraform's role in the IaC ecosystem, including basic HCL syntax and structure.",
+          "description": "Master the fundamentals of Infrastructure as Code: declarative vs imperative provisioning, idempotency guarantees, the infrastructure lifecycle (init, plan, apply, destroy), the Terraform core engine (provider plugins, schema generation, and resource dependency graph construction), and understanding configuration drift.",
           "resources": [
             {
               "title": "Study Guide & Notes",
@@ -140,13 +143,15 @@
               "url": "https://developer.hashicorp.com/terraform/language",
               "type": "article"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 40
         },
         {
           "id": "terraform_cli_essentials_git_workflow",
           "name": "Terraform CLI Essentials & Git Workflow",
           "tag": "essential",
-          "description": "Set up the local Terraform development environment. Master essential Terraform CLI commands (init, plan, apply, destroy, fmt, validate) and establish robust version control (Git) best practices for collaborative IaC development.",
+          "description": "Master the Terraform CLI and Git workflows: configuring variable precedence (CLI flags, `.tfvars` files, environment variables `TF_VAR_`), selective targeting (`-target`) and its dangers, JSON output parsing, enforcing code formatting with `terraform fmt -check`, `terraform validate`, and establishing trunk-based development with automated pre-commit hooks.",
           "resources": [
             {
               "title": "Study Guide & Notes",
@@ -178,15 +183,19 @@
               "url": "https://developer.hashicorp.com/terraform/cli",
               "type": "article"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 40
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 47
     },
     {
       "id": "terraform_iac_engineer_core_skills",
       "name": "Core Skills and Implementation",
       "tag": "essential",
-      "description": "Build the practical skill stack for Terraform/IaC Engineer through small exercises, realistic constraints, and repeatable workflows.",
+      "description": "Master production Terraform engineering: advanced HCL2 language features, enterprise remote state management, and automated unit/integration testing frameworks.",
       "resources": [
         {
           "title": "Study Guide & Notes",
@@ -214,7 +223,7 @@
           "id": "hcl_language_features_terraform_modules",
           "name": "HCL Language Features & Terraform Modules",
           "tag": "essential",
-          "description": "Deep dive into advanced HCL constructs: variables, locals, outputs, data sources, conditional logic, and looping with for_each and count. Learn to design, build, and consume reusable Terraform modules from the Registry or local sources to manage complex, scalable infrastructure.",
+          "description": "Master advanced HashiCorp Configuration Language (HCL2): dynamic blocks, iterating with `for_each` over sets and maps (avoiding brittle index shifting from `count`), splat expressions, ternary conditionals, custom variable validation rules with descriptive error messages, and designing modular, reusable, and composable Terraform modules following standard repository structure.",
           "resources": [
             {
               "title": "Study Guide & Notes",
@@ -246,13 +255,15 @@
               "url": "https://developer.hashicorp.com/terraform/language/data-sources",
               "type": "article"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 54
         },
         {
           "id": "terraform_state_management",
           "name": "Terraform State Management",
           "tag": "essential",
-          "description": "Gain mastery over Terraform state: its purpose, remote backend configurations (e.g., S3, Azure Blob, GCS), state locking for concurrency, managing state drift, and leveraging workspaces. Cover advanced state operations like terraform import and state refactoring.",
+          "description": "Master enterprise Terraform state architecture: configuring remote backends (AWS S3 with DynamoDB state locking, Azure Blob Storage with leases, GCP Cloud Storage), inspecting state with `terraform state list/show`, safely refactoring resources with `terraform state mv` and `terraform state rm`, modern declarative resource importing with `import` blocks (Terraform 1.5+), and disaster recovery for corrupted state files.",
           "resources": [
             {
               "title": "Study Guide & Notes",
@@ -284,13 +295,15 @@
               "url": "https://developer.hashicorp.com/terraform/cli/workspaces",
               "type": "article"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 54
         },
         {
           "id": "iac_testing_validation_compliance",
           "name": "IaC Testing, Validation & Compliance",
           "tag": "advanced",
-          "description": "Implement comprehensive testing strategies for Terraform configurations. This includes unit testing with terraform test, integration testing with tools like Terratest, security scanning with tfsec/Checkov, linting with tflint, and policy enforcement with Sentinel or OPA to ensure quality, security, and compliance.",
+          "description": "Implement rigorous automated testing and compliance guardrails: writing unit and integration tests with the native `terraform test` framework (mocking providers, creating synthetic run blocks, and asserting output values), static analysis with `tflint`, security scanning with `checkov` / `tfsec`, and enforcing policy-as-code guardrails using Open Policy Agent (OPA/Rego) or HashiCorp Sentinel.",
           "resources": [
             {
               "title": "Study Guide & Notes",
@@ -322,15 +335,19 @@
               "url": "https://aquasecurity.github.io/tfsec/",
               "type": "article"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 94
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 45
     },
     {
       "id": "terraform_iac_engineer_production_collaboration",
       "name": "Production, Collaboration, and Operations",
       "tag": "advanced",
-      "description": "Move beyond tutorials into maintainable work: reliability, handoff, monitoring, security, stakeholder communication, and lifecycle ownership.",
+      "description": "Orchestrate enterprise IaC operations: automated CI/CD execution pipelines, secure secrets lifecycles, multi-cloud architectures, and enterprise platform governance.",
       "resources": [
         {
           "title": "Study Guide & Notes",
@@ -358,7 +375,7 @@
           "id": "automated_cicd_terraform_pipelines",
           "name": "Automated CI/CD for Terraform Pipelines",
           "tag": "advanced",
-          "description": "Automate Terraform workflows by designing and implementing robust CI/CD pipelines. Integrate with popular platforms like GitHub Actions, GitLab CI, Azure DevOps, and Jenkins, incorporating stages for plan, apply, approval gates, and destroy operations. Explore GitOps practices with tools like Atlantis.",
+          "description": "Build enterprise GitOps pipelines for Terraform: automated pull request plan generation using Atlantis or GitHub Actions, posting speculative plan diffs to PR comments, concurrency locks to prevent overlapping applies, and automated execution on branch merge.",
           "resources": [
             {
               "title": "Study Guide & Notes",
@@ -385,13 +402,15 @@
               "url": "https://developer.hashicorp.com/terraform/tutorials/automation/automate-terraform",
               "type": "course"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 76
         },
         {
           "id": "secure_secrets_lifecycle_management",
           "name": "Secure & Reliable IaC with Secrets Management",
           "tag": "advanced",
-          "description": "Implement industry best practices for securing infrastructure provisioned by Terraform. Focus on credential management (IAM roles/service principals), robust secrets management solutions (HashiCorp Vault, cloud-native secret managers), least privilege access, drift detection, and ensuring idempotency and reliability in production deployments.",
+          "description": "Master zero-trust secrets management in Terraform: eliminating hard-coded and plaintext secrets from state files, masking sensitive variables (`sensitive = true`), integrating with HashiCorp Vault for dynamic short-lived cloud credentials, and integrating cloud secrets managers.",
           "resources": [
             {
               "title": "Study Guide & Notes",
@@ -418,13 +437,15 @@
               "url": "https://developer.hashicorp.com/terraform/cloud-docs/security-best-practices",
               "type": "article"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 57
         },
         {
           "id": "multi_cloud_iac_patterns",
           "name": "Multi-Cloud & Hybrid Cloud IaC Patterns",
           "tag": "advanced",
-          "description": "Master the design and implementation of Terraform solutions across multi-cloud (e.g., AWS, Azure, GCP) and hybrid cloud environments. Address complexities such as cross-provider data sharing, consistent module design for abstraction, and challenges in identity, networking, and security across disparate cloud providers.",
+          "description": "Design scalable multi-cloud and multi-region infrastructure: abstracting provider implementations across AWS, Azure, and GCP, managing multiple provider instances with provider aliases, cross-stack parameter sharing with `terraform_remote_state` data sources, and maintaining environment parity across dev, staging, and production.",
           "resources": [
             {
               "title": "Study Guide & Notes",
@@ -451,13 +472,15 @@
               "url": "https://www.hashicorp.com/resources/terraform-for-multi-cloud-deployments",
               "type": "article"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 57
         },
         {
           "id": "terraform_cloud_enterprise_operations",
           "name": "Terraform Cloud/Enterprise Operations",
           "tag": "advanced",
-          "description": "Utilize HashiCorp Terraform Cloud or Terraform Enterprise for advanced team collaboration, centralized state management, policy enforcement (Sentinel), cost estimation, private module registry, run environments, and robust governance to enhance operational efficiency in large-scale IaC environments.",
+          "description": "Operate enterprise platforms with HCP Terraform (Terraform Cloud) / Terraform Enterprise: workspace management and RBAC, VCS-driven execution runs, private module registries, automated speculative plans, run tasks, and cloud spend cost estimation.",
           "resources": [
             {
               "title": "Study Guide & Notes",
@@ -484,15 +507,19 @@
               "url": "https://developer.hashicorp.com/terraform/enterprise-docs",
               "type": "article"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 76
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 52
     },
     {
       "id": "terraform_iac_engineer_portfolio_career",
       "name": "Portfolio and Career Readiness",
       "tag": "advanced",
-      "description": "Turn your Terraform/IaC Engineer learning into proof: case studies, GitHub artifacts, demos, interview stories, and clear role positioning.",
+      "description": "Demonstrate Infrastructure as Code mastery: author production-grade modular landing zones, write technical case studies, and excel in HashiCorp Certified Terraform Associate exams and technical systems interviews.",
       "resources": [
         {
           "title": "Study Guide & Notes",
@@ -530,7 +557,7 @@
           "id": "technical_case_study_creation",
           "name": "Technical Case Study Creation",
           "tag": "advanced",
-          "description": "Develop compelling technical case studies that articulate real-world problems, project constraints, design decisions, implementation details, validation processes, measurable outcomes, and proposed future improvements. This demonstrates problem-solving and communication skills.",
+          "description": "Author an IaC Engineering Case Study: document a zero-downtime migration of a complex enterprise cloud footprint from manual console configurations to fully automated Terraform modules, detailing state drift remediation, security policy enforcement, and operational efficiency gains.",
           "resources": [
             {
               "title": "Study Guide & Notes",
@@ -547,13 +574,15 @@
               "url": "https://www.simplilearn.com/ice-breaker-guide-to-writing-a-technical-case-study-article",
               "type": "article"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 76
         },
         {
           "id": "terraform_iac_engineer_project_capstone",
           "name": "Project: Terraform/IaC Engineer Portfolio Capstone",
           "tag": "advanced",
-          "description": "Construct a comprehensive, portfolio-grade Terraform/IaC capstone project. Include a detailed README, architectural diagrams/screenshots, implemented tests/policy checks, clear deployment/demo instructions, and a reflections section on lessons learned and future enhancements. Focus on solving a realistic infrastructure challenge.",
+          "description": "Capstone Project: Architect and Deploy an Enterprise Multi-Cloud Landing Zone with Terraform: modular root and child modules for AWS/Azure, remote backend with state locking, native `terraform test` integration tests, automated Atlantis PR workflow, Checkov security compliance gates, and dynamic Vault credential rotation.",
           "resources": [
             {
               "title": "Study Guide & Notes",
@@ -575,9 +604,14 @@
               "url": "https://github.com/learn-terraform-btp/terraform-aws-ec2-cluster",
               "type": "article"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 166
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 66
     }
-  ]
+  ],
+  "total_exp": 1000
 }

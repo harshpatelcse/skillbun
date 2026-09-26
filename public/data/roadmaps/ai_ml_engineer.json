@@ -87,7 +87,7 @@
       "id": "ai_foundations",
       "name": "Programming and Math Foundations",
       "tag": "essential",
-      "description": "Establish a robust foundation in Python programming, data manipulation, visualization, and the core mathematical concepts (linear algebra, calculus, probability, and statistics) crucial for understanding and implementing AI/ML algorithms.",
+      "description": "Establish an unshakeable mathematical and programming foundation for artificial intelligence: vectorized scientific computing, linear algebra transformations, multivariate calculus for backpropagation, and rigorous probability theory.",
       "resources": [
         {
           "title": "Python for Everybody",
@@ -120,7 +120,7 @@
           "id": "ai_python_fundamentals",
           "name": "Python Programming Fundamentals",
           "tag": "essential",
-          "description": "Master core Python syntax, fundamental data structures (lists, dictionaries, sets, tuples), control flow, functions, object-oriented programming (OOP) principles, error handling, modular programming, file I/O, virtual environments, and basic command-line usage for reproducible development.",
+          "description": "Master vectorized Python programming for machine learning. Deep dive into NumPy array memory layouts (C-contiguous vs Fortran-contiguous, strides, views vs copies), broadcasting rules, memory-efficient data loading, and profiling code bottlenecks using cProfile and line_profiler.",
           "resources": [
             {
               "title": "Python Official Tutorial",
@@ -152,13 +152,15 @@
               "url": "/data/docs/ai_ml_engineer/ai_python_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 29
         },
         {
           "id": "ai_data_manipulation_viz",
           "name": "Data Manipulation & Visualization",
           "tag": "essential",
-          "description": "Learn to effectively use NumPy for numerical operations and array manipulation, Pandas for efficient data loading, cleaning, transformation (e.g., handling missing values, categorical encoding), aggregation, and merging datasets. Master Matplotlib/Seaborn for exploratory data analysis, statistical plotting, and presentation-ready visualizations.",
+          "description": "Master high-performance tabular data engineering with Polars (lazy execution, multi-threaded SIMD processing) and Pandas 2.0 (PyArrow backend). Clean messy real-world datasets, handle missing data without leakage, and create insightful statistical visualizations with Seaborn and Plotly.",
           "resources": [
             {
               "title": "Pandas Getting Started",
@@ -190,13 +192,15 @@
               "url": "/data/docs/ai_ml_engineer/ai_data_manipulation_viz.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "ai_linear_algebra",
           "name": "Linear Algebra for ML",
           "tag": "essential",
-          "description": "Understand vectors, matrices, their operations (addition, multiplication), concepts like determinants, inverse matrices, eigenvalues, eigenvectors, and matrix decompositions (SVD, QR). These are vital for data representation, dimensionality reduction, and algorithm optimization.",
+          "description": "Master the linear algebra that powers neural networks and representations: vector spaces, dot products and projections, matrix multiplication complexity, matrix decompositions (SVD, Eigenvalues/Eigenvectors, QR decomposition), and high-dimensional latent embeddings.",
           "resources": [
             {
               "title": "Khan Academy Linear Algebra",
@@ -213,13 +217,15 @@
               "url": "/data/docs/ai_ml_engineer/ai_linear_algebra.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "ai_calculus",
           "name": "Calculus for ML",
           "tag": "essential",
-          "description": "Grasp derivatives, gradients, partial derivatives, chain rule, and optimization techniques. Understand how these concepts are applied in loss functions and optimization algorithms like gradient descent, crucial for training machine learning models.",
+          "description": "Master multivariable calculus for deep learning optimization: partial derivatives, gradients, directional derivatives, Jacobian and Hessian matrices, the multivariate chain rule (the mathematical foundation of backpropagation), and gradient descent optimization dynamics (SGD with Momentum, AdamW).",
           "resources": [
             {
               "title": "Khan Academy Differential Calculus",
@@ -241,13 +247,15 @@
               "url": "/data/docs/ai_ml_engineer/ai_calculus.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "ai_prob_stats",
           "name": "Probability and Statistics for ML",
           "tag": "essential",
-          "description": "Learn probability theory (conditional probability, Bayes' theorem), common probability distributions (Bernoulli, Binomial, Poisson, Normal), hypothesis testing, confidence intervals, and descriptive statistics (mean, median, variance, standard deviation) for data analysis and model evaluation.",
+          "description": "Master statistical inference and probability theory: common distributions (Gaussian, Bernoulli, Poisson), Maximum Likelihood Estimation (MLE), Maximum A Posteriori (MAP), Bayesian inference, hypothesis testing, and evaluating models under extreme class imbalance (PR-AUC vs ROC-AUC, F-beta).",
           "resources": [
             {
               "title": "Khan Academy Statistics and Probability",
@@ -269,15 +277,19 @@
               "url": "/data/docs/ai_ml_engineer/ai_prob_stats.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 25
     },
     {
       "id": "ai_classical_ml",
       "name": "Classical Machine Learning",
       "tag": "essential",
-      "description": "Dive into traditional machine learning algorithms, covering supervised and unsupervised learning, feature engineering, model validation, and basic interpretability techniques.",
+      "description": "Master classical machine learning algorithms, rigorous cross-validation pipelines, feature engineering, hyperparameter optimization, and explainable AI techniques.",
       "resources": [
         {
           "title": "Google Machine Learning Crash Course",
@@ -315,7 +327,7 @@
           "id": "ai_supervised_learning",
           "name": "Supervised Learning Algorithms",
           "tag": "essential",
-          "description": "Explore and implement various regression (Linear, Polynomial, Ridge, Lasso, ElasticNet) and classification (Logistic Regression, SVMs, Decision Trees, K-Nearest Neighbors, Naive Bayes) models. Deep dive into ensemble methods like Random Forest, Gradient Boosting (XGBoost, LightGBM, CatBoost). Understand bias-variance trade-off, model assumptions, and practical considerations like handling imbalanced datasets.",
+          "description": "Master supervised learning algorithms: Linear and Logistic Regression with L1/L2 regularization, Support Vector Machines (kernel trick), and gradient-boosted decision trees (XGBoost, LightGBM, CatBoost). Understand loss function optimization and handling heterogeneous tabular data.",
           "resources": [
             {
               "title": "Scikit-learn Supervised Learning",
@@ -337,13 +349,15 @@
               "url": "/data/docs/ai_ml_engineer/ai_supervised_learning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "ai_unsupervised_dr",
           "name": "Unsupervised Learning & Dim. Reduction",
           "tag": "essential",
-          "description": "Understand clustering algorithms (K-Means, Hierarchical Clustering, DBSCAN, Gaussian Mixtures) for pattern discovery and segmentation. Learn dimensionality reduction techniques (PCA, t-SNE, UMAP) for data compression, visualization, and noise reduction. Explore anomaly detection methods.",
+          "description": "Master unsupervised learning and dimensionality reduction: clustering algorithms (K-Means, DBSCAN, Gaussian Mixture Models) and projection techniques (PCA for multicollinearity reduction, t-SNE and UMAP for high-dimensional latent space exploration and visualization).",
           "resources": [
             {
               "title": "Scikit-learn Unsupervised Learning",
@@ -365,13 +379,15 @@
               "url": "/data/docs/ai_ml_engineer/ai_unsupervised_dr.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "ai_feature_eng_selection",
           "name": "Feature Engineering & Selection",
           "tag": "essential",
-          "description": "Master techniques for creating new features, transforming existing ones (e.g., numerical scaling - standardization, normalization; categorical encoding - one-hot, label, target; handling outliers, missing values, date/time features), and selecting relevant features (e.g., filter, wrapper, embedded methods). Understand the impact of feature choices on different algorithms and model performance.",
+          "description": "Engineer high-signal features without data leakage. Master target encoding with out-of-fold cross-validation, cyclical feature encoding for time, robust scaling (RobustScaler, QuantileTransformer), and automated feature selection techniques (Recursive Feature Elimination, SHAP-based selection).",
           "resources": [
             {
               "title": "Feature Engineering for Machine Learning (O'Reilly book/course)",
@@ -393,13 +409,15 @@
               "url": "/data/docs/ai_ml_engineer/ai_feature_eng_selection.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "ai_model_validation_hpt",
           "name": "Model Validation & Hyperparameter Tuning",
           "tag": "essential",
-          "description": "Implement robust model validation strategies (k-fold cross-validation, stratified cross-validation, time series cross-validation) and choose appropriate evaluation metrics for classification (accuracy, precision, recall, F1-score, ROC-AUC, PR-AUC) and regression (MAE, MSE, RMSE, R²). Optimize model hyperparameters using techniques like Grid Search, Random Search, Bayesian Optimization, and genetic algorithms.",
+          "description": "Implement leak-free model evaluation and tuning. Design stratified K-fold and TimeSeriesSplit cross-validation strategies, and optimize hyperparameters efficiently using Bayesian optimization with Optuna (Tree-structured Parzen Estimator / TPE and Hyperband pruning).",
           "resources": [
             {
               "title": "Scikit-learn Model Selection and Evaluation",
@@ -426,13 +444,15 @@
               "url": "/data/docs/ai_ml_engineer/ai_model_validation_hpt.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         },
         {
           "id": "ai_model_interpretability",
           "name": "Model Interpretability (XAI)",
           "tag": "advanced",
-          "description": "Learn methods to understand and explain model predictions, including global interpretability (feature importance, Partial Dependence Plots (PDP), Individual Conditional Expectation (ICE) plots) and local interpretability (SHAP (SHapley Additive exPlanations), LIME (Local Interpretable Model-agnostic Explanations)). Crucial for building trust, debugging models, and ensuring fairness and regulatory compliance.",
+          "description": "Implement Explainable AI (XAI) in production models. Leverage SHAP (SHapley Additive exPlanations) for global and local feature importance, TreeSHAP for fast tree-based explanations, and partial dependence plots to ensure model decisions comply with regulatory and audit standards.",
           "resources": [
             {
               "title": "Interpretable Machine Learning Book",
@@ -459,13 +479,15 @@
               "url": "/data/docs/ai_ml_engineer/ai_model_interpretability.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         },
         {
           "id": "ai_advanced_ml_project",
           "name": "Practice: Advanced Classical ML Project",
           "tag": "essential",
-          "description": "Apply classical ML techniques to a complex real-world dataset, focusing on end-to-end workflow from data preprocessing, rigorous feature engineering, model selection, robust validation, to performance evaluation. Participate in Kaggle competitions or complete a capstone project to demonstrate proficiency.",
+          "description": "Practice Project: Architect an end-to-end production tabular predictive pipeline using Scikit-Learn Pipeline and ColumnTransformer. Integrate automated feature preprocessing, hyperparameter optimization with Optuna, leak-free cross-validation, and export to ONNX format.",
           "resources": [
             {
               "title": "Kaggle Learn - Intro to Machine Learning",
@@ -487,15 +509,19 @@
               "url": "/data/docs/ai_ml_engineer/ai_advanced_ml_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 63
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 19
     },
     {
       "id": "ai_deep_learning_modern_ai",
       "name": "Deep Learning and Modern AI",
       "tag": "advanced",
-      "description": "Progress from foundational neural networks to advanced architectures like CNNs, RNNs, and the latest in Large Language Models (LLMs) and generative AI, covering their practical applications.",
+      "description": "Master modern deep learning: neural network architectures, PyTorch autograd engine, computer vision CNNs, attention mechanisms, Transformers, and Large Language Model fine-tuning.",
       "resources": [
         {
           "title": "Deep Learning Specialization (Coursera - Andrew Ng)",
@@ -528,7 +554,7 @@
           "id": "ai_nn_fundamentals",
           "name": "Neural Network Fundamentals & PyTorch",
           "tag": "essential",
-          "description": "Understand perceptrons, activation functions, feedforward networks, backpropagation, and various optimization algorithms (SGD, Adam, RMSprop). Implement basic NNs using PyTorch, covering tensors, datasets, data loaders, autograd, regularization techniques (dropout, batch normalization), and effective training loops. Gain familiarity with TensorFlow/Keras as an alternative.",
+          "description": "Build deep neural networks with PyTorch. Understand the forward and backward propagation passes, activation functions (GELU, Swish, ReLU), weight initialization (He, Xavier), custom PyTorch nn.Module architecture, autograd computation graphs, and mixed-precision training (torch.amp).",
           "resources": [
             {
               "title": "PyTorch Learn the Basics",
@@ -555,13 +581,15 @@
               "url": "/data/docs/ai_ml_engineer/ai_nn_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 21
         },
         {
           "id": "ai_cnns",
           "name": "Convolutional Neural Networks (CNNs)",
           "tag": "advanced",
-          "description": "Explore fundamental CNN architectures (LeNet, AlexNet, VGG, ResNet, Inception), convolutional layers, pooling, data augmentation, and transfer learning with pre-trained models. Apply CNNs to computer vision tasks like image classification, object detection (R-CNN, YOLO, SSD), and semantic segmentation.",
+          "description": "Master Convolutional Neural Networks and modern computer vision architectures: convolution operations, receptive fields, residual skip connections (ResNet, ConvNeXt), and Vision Transformers (ViT). Implement advanced data augmentation pipelines with Albumentations.",
           "resources": [
             {
               "title": "Stanford CS231n: Convolutional Neural Networks for Visual Recognition",
@@ -583,13 +611,15 @@
               "url": "/data/docs/ai_ml_engineer/ai_cnns.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         },
         {
           "id": "ai_rnns_sequence",
           "name": "Recurrent Neural Networks (RNNs) & Sequence Models",
           "tag": "advanced",
-          "description": "Learn about Recurrent Neural Networks (RNNs), Long Short-Term Memory (LSTMs), Gated Recurrent Units (GRUs), and various word embedding techniques (Word2Vec, GloVe, FastText) for processing sequential data. Understand encoder-decoder architectures for sequence-to-sequence tasks. Apply them to tasks such as sentiment analysis, machine translation, and time series prediction.",
+          "description": "Master sequence modeling and recurrent networks: LSTMs and GRUs, vanishing and exploding gradients, gated cell architectures, bidirectional sequence processing, and sequence-to-sequence models with encoder-decoder mechanisms for time-series forecasting.",
           "resources": [
             {
               "title": "Understanding LSTMs (Colah's Blog)",
@@ -616,13 +646,15 @@
               "url": "/data/docs/ai_ml_engineer/ai_rnns_sequence.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         },
         {
           "id": "ai_attention_transformers",
           "name": "Attention Mechanisms & Transformers",
           "tag": "advanced",
-          "description": "Deep dive into the attention mechanism, self-attention, multi-head attention, and the groundbreaking Transformer architecture. Learn to use pre-trained models (BERT, GPT, T5) and the Hugging Face ecosystem for various Natural Language Processing (NLP) tasks including text classification, question answering, and text generation.",
+          "description": "Deep dive into the Transformer architecture: Scaled Dot-Product Attention, Multi-Head Attention, Positional Encodings (Sinusoidal vs RoPE), Layer Normalization (Pre-LN vs RMSNorm), and the operational differences between encoder-only (BERT), decoder-only (GPT), and encoder-decoder (T5) models.",
           "resources": [
             {
               "title": "Hugging Face NLP/LLM Course",
@@ -644,13 +676,15 @@
               "url": "/data/docs/ai_ml_engineer/ai_attention_transformers.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         },
         {
           "id": "ai_llms_generative_ai",
           "name": "Large Language Models (LLMs) & Generative AI",
           "tag": "advanced",
-          "description": "Explore foundational LLM architectures, pretraining objectives, prompt engineering techniques (zero-shot, few-shot, chain-of-thought, self-consistency), advanced fine-tuning techniques (LoRA, QLoRA, Reinforcement Learning from Human Feedback - RLHF), Retrieval Augmented Generation (RAG), and robust evaluation strategies for modern generative AI applications. Gain exposure to other generative models like Generative Adversarial Networks (GANs) and Variational Autoencoders (VAEs) for image and data generation.",
+          "description": "Master Large Language Models and generative AI: pre-training datasets, instruction fine-tuning, Parameter-Efficient Fine-Tuning (LoRA, QLoRA), quantization methods (AWQ, GPTQ, GGUF), KV-caching for low-latency generation, and building production RAG pipelines with vector databases.",
           "resources": [
             {
               "title": "LLM University",
@@ -682,13 +716,15 @@
               "url": "/data/docs/ai_ml_engineer/ai_llms_generative_ai.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         },
         {
           "id": "ai_responsible_ai",
           "name": "Responsible AI & Ethics",
           "tag": "advanced",
-          "description": "Understand key considerations in responsible AI development, including fairness (bias detection and mitigation), explainability, privacy-preserving techniques (federated learning, differential privacy), robustness, security, data governance, and ethical implications of AI systems. Learn to identify and address societal impacts and establish guardrails for AI deployment.",
+          "description": "Implement ethical and safe AI engineering: measuring model bias and demographic parity, adversarial robustness, mitigating hallucinations using guardrails (Llama Guard), watermarking AI-generated outputs, and implementing privacy-preserving techniques like differential privacy.",
           "resources": [
             {
               "title": "Google's AI Principles",
@@ -715,15 +751,19 @@
               "url": "/data/docs/ai_ml_engineer/ai_responsible_ai.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 30
     },
     {
       "id": "ai_mlops_deployment_portfolio",
       "name": "MLOps, Deployment & Portfolio",
       "tag": "advanced",
-      "description": "Learn to design, build, deploy, monitor, and maintain machine learning systems in production. Develop an industry-standard portfolio and prepare for ML engineering interviews.",
+      "description": "Deploy, monitor, and scale machine learning systems in production. Master ML system design, low-latency model serving, feature stores, continuous monitoring, and automated retraining pipelines.",
       "resources": [
         {
           "title": "MLOps Community",
@@ -761,7 +801,7 @@
           "id": "ai_ml_system_design",
           "name": "ML System Design & Architecture",
           "tag": "advanced",
-          "description": "Understand principles for designing scalable, reliable, and efficient ML systems, including data ingestion pipelines, feature stores, model registries, online vs. batch inference patterns, API design for serving, and system architecture considerations for different use cases (e.g., real-time predictions, recommendation engines).",
+          "description": "Design scalable machine learning systems: resolve training-serving skew, evaluate online vs offline inference trade-offs, architect feature stores (Feast) for sub-millisecond retrieval, and design two-stage recommendation and search systems (candidate retrieval + deep ranking).",
           "resources": [
             {
               "title": "Designing Machine Learning Systems Book",
@@ -783,13 +823,15 @@
               "url": "/data/docs/ai_ml_engineer/ai_ml_system_design.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         },
         {
           "id": "ai_model_deployment_serving",
           "name": "Model Deployment & Serving",
           "tag": "advanced",
-          "description": "Build and expose machine learning models via RESTful APIs using frameworks like FastAPI or Flask. Containerize applications with Docker and orchestrate with Docker Compose. Understand concepts of deploying to cloud platforms (e.g., AWS Sagemaker, GCP Vertex AI, Azure ML, or general compute like EC2, GKE, AKS) and leveraging Kubernetes for scalable and resilient serving. Explore serverless options (AWS Lambda, Google Cloud Functions).",
+          "description": "Serve models with high throughput and low latency: Triton Inference Server, vLLM / TensorRT-LLM, model compilation with TensorRT and ONNX Runtime, dynamic batching, and building resilient model microservices with FastAPI and Docker.",
           "resources": [
             {
               "title": "FastAPI Tutorial",
@@ -816,13 +858,15 @@
               "url": "/data/docs/ai_ml_engineer/ai_model_deployment_serving.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 62
         },
         {
           "id": "ai_experiment_tracking_versioning",
           "name": "Experiment Tracking & Versioning",
           "tag": "advanced",
-          "description": "Implement tools like MLflow, DVC (Data Version Control), or Weights & Biases for tracking experiments, managing datasets and model versions, and ensuring reproducibility of results. Master code version control with Git and understand best practices for branching, merging, and pull requests in an ML context. Integrate with CI/CD systems.",
+          "description": "Maintain reproducibility across the ML lifecycle. Track experiments, parameters, and metrics with MLflow or Weights & Biases, version large training datasets and model artifacts with DVC, and manage model lifecycle transitions in an enterprise Model Registry.",
           "resources": [
             {
               "title": "MLflow Documentation",
@@ -854,13 +898,15 @@
               "url": "/data/docs/ai_ml_engineer/ai_experiment_tracking_versioning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         },
         {
           "id": "ai_model_monitoring",
           "name": "Model Monitoring & Maintenance",
           "tag": "advanced",
-          "description": "Set up continuous monitoring for deployed models to detect data drift, concept drift, performance degradation, and operational issues. Implement alerting mechanisms, build dashboards (e.g., with Grafana, Prometheus), analyze logs, and design automated retraining strategies. Understand A/B testing, canary deployments, and shadow deployments for model updates and improvements.",
+          "description": "Detect model decay in production: monitor data drift (Kolmogorov-Smirnov test) and concept drift (Population Stability Index / PSI) using Evidently AI, monitor p99 latency and inference throughput with Prometheus and Grafana, and trigger automated retraining alerts.",
           "resources": [
             {
               "title": "Evidently AI Documentation",
@@ -882,13 +928,15 @@
               "url": "/data/docs/ai_ml_engineer/ai_model_monitoring.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         },
         {
           "id": "ai_end_to_end_mlops",
           "name": "Project: End-to-End MLOps Pipeline",
           "tag": "advanced",
-          "description": "Develop a complete AI application from data ingestion and processing to model training, deployment, and monitoring, incorporating MLOps best practices. Implement CI/CD pipelines for ML, automated testing (unit, integration, model validation), and showcase the project with a robust README, clear documentation, and an interactive demo UI (e.g., Streamlit, Gradio).",
+          "description": "Capstone Project: Construct an automated end-to-end MLOps pipeline. Ingest streaming data, validate schema with Great Expectations, train and track models with MLflow, version datasets with DVC, deploy to Triton Inference Server on Kubernetes, and monitor drift in real time.",
           "resources": [
             {
               "title": "Gradio Quickstart",
@@ -915,13 +963,15 @@
               "url": "/data/docs/ai_ml_engineer/ai_end_to_end_mlops.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 88
         },
         {
           "id": "ai_career_interview_prep",
           "name": "Career & Interview Preparation",
           "tag": "advanced",
-          "description": "Prepare for ML Engineering and Data Scientist roles by building a compelling portfolio of diverse projects, crafting an impactful resume and LinkedIn profile, mastering technical (coding, ML fundamentals) and behavioral interview questions, practicing ML system design discussions, and networking effectively. Understand different career paths and required skill sets in the AI/ML industry.",
+          "description": "Prepare for senior AI/ML engineering interviews: live PyTorch coding drills (implementing attention or custom loss functions from scratch), machine learning system design scenarios (designing a real-time fraud detector or feed ranker), and technical deep dives into model trade-offs.",
           "resources": [
             {
               "title": "Cracking the Coding Interview (for general tech)",
@@ -953,9 +1003,14 @@
               "url": "/data/docs/ai_ml_engineer/ai_career_interview_prep.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 32
     }
-  ]
+  ],
+  "total_exp": 1000
 }

@@ -47,26 +47,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "End-to-End Automated Continuous Retraining Pipeline",
-        "tech_stack": [
-          "Python",
-          "MLflow",
-          "Airflow",
-          "DVC",
-          "Docker",
-          "Kubernetes"
-        ],
-        "description": "Build an automated pipeline that detects model performance degradation, triggers retraining, logs metrics, and registers candidate models."
-      },
-      {
-        "title": "Production Feature Store & Automated Model Retraining Pipeline",
+        "title": "Real-Time Feature Store & Low-Latency Model Inference Serving Platform",
         "tech_stack": [
           "Feast",
-          "Kubeflow",
-          "MLflow",
-          "Triton Inference Server"
+          "Redis",
+          "Triton Inference Server",
+          "ONNX Runtime",
+          "Prometheus"
         ],
-        "description": "Architect an enterprise MLOps platform featuring an online/offline feature store, automated data drift retraining triggers, and zero-downtime model rollouts."
+        "description": "Deploy an enterprise feature store syncing offline parquet features to an in-memory Redis cluster for sub-10ms Triton model scoring with automated latency metrics."
+      },
+      {
+        "title": "End-to-End Automated Continuous Training & Model Drift Pipeline",
+        "tech_stack": [
+          "Kubeflow Pipelines",
+          "MLflow",
+          "Great Expectations",
+          "Evidently AI",
+          "Docker"
+        ],
+        "description": "Construct an automated MLOps pipeline detecting data drift with Evidently AI, validating datasets via Great Expectations, and triggering automated model retraining."
       }
     ],
     "certifications": [
@@ -74,10 +74,11 @@
       "Databricks Certified Machine Learning Professional"
     ],
     "interview_focus": [
-      "Data Drift vs Concept Drift Detection Algorithms",
-      "Feature Store Architecture (Online vs Offline Stores)",
-      "Zero-Downtime Model Deployment (Shadow, Canary, Blue/Green)",
-      "Data Lineage and Reproducibility Guarantees"
+      "Feature Store Architecture (Online Low-Latency Store vs Offline Historical Point-in-Time Join)",
+      "Model Serving Infrastructures (Triton Inference Server vs TorchServe vs FastAPI)",
+      "Model Serialization Formats (ONNX, TorchScript, TensorRT, PMML)",
+      "Data & Concept Drift Detection Algorithms (Kolmogorov-Smirnov Test, Population Stability Index / PSI)",
+      "A/B Testing, Shadow Deployments & Canary Releases for Machine Learning Models"
     ]
   },
   "format": "tree",
@@ -86,7 +87,7 @@
       "id": "mlops_fundamentals",
       "name": "Fundamentals for MLOps",
       "tag": "essential",
-      "description": "Build a strong base in software engineering, machine learning principles, foundational systems knowledge, and data engineering concepts required for MLOps.",
+      "description": "Master software engineering fundamentals, distributed systems, Linux environments, and core DevOps practices required to operationalize machine learning at enterprise scale.",
       "resources": [
         {
           "title": "Clean Code in Python",
@@ -124,7 +125,7 @@
           "id": "mlops_se_essentials",
           "name": "Software Engineering Essentials",
           "tag": "essential",
-          "description": "Master Python programming, project structuring, dependency management (Poetry, pip-tools), unit testing (pytest), structured logging, and version control with Git.",
+          "description": "Write production-grade Python: Object-oriented programming, clean design patterns, modular architecture, strict type annotations with MyPy, and automated testing with PyTest.",
           "resources": [
             {
               "title": "Python Packaging User Guide",
@@ -156,13 +157,15 @@
               "url": "/data/docs/mlops_engineer/mlops_se_essentials.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         },
         {
           "id": "mlops_linux_cli_basics",
           "name": "Linux & Command Line Interface Basics",
           "tag": "essential",
-          "description": "Understand fundamental Linux commands, shell scripting, environment variables, process management, and file system navigation essential for automation and server interaction.",
+          "description": "Master Linux system administration for ML: Process management (htop, systemd), Bash automation, GPU monitoring (nvidia-smi), disk I/O profiling, and SSH remote management.",
           "resources": [
             {
               "title": "Linux Command Line Basics",
@@ -189,13 +192,15 @@
               "url": "/data/docs/mlops_engineer/mlops_linux_cli_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 25
         },
         {
           "id": "mlops_networking_basics",
           "name": "Networking & Distributed Systems Basics",
           "tag": "essential",
-          "description": "Learn about TCP/IP, HTTP/HTTPS, DNS, Load Balancing concepts, and fundamental principles of distributed systems like fault tolerance and consistency, critical for understanding deployed ML services.",
+          "description": "Understand enterprise networking: DNS resolution, TCP/IP, TLS/SSL encryption, reverse proxies (Nginx), VPC subnets, and distributed RPC communication.",
           "resources": [
             {
               "title": "Networking Basics for Beginners",
@@ -217,13 +222,15 @@
               "url": "/data/docs/mlops_engineer/mlops_networking_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 21
         },
         {
           "id": "mlops_ml_core_concepts",
           "name": "Machine Learning Core Concepts & System Design",
           "tag": "essential",
-          "description": "Grasp the ML lifecycle, data types, model training, evaluation metrics, overfitting, underfitting, bias, ethics, basic model explainability (e.g., LIME, SHAP), and principles of designing scalable and reliable ML systems.",
+          "description": "Bridge machine learning theory with production constraints: Training-serving skew, latency vs throughput tradeoffs, batch vs streaming inference, and model degradation.",
           "resources": [
             {
               "title": "Scikit-learn User Guide",
@@ -255,13 +262,15 @@
               "url": "/data/docs/mlops_engineer/mlops_ml_core_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 24
         },
         {
           "id": "mlops_data_eng_basics",
           "name": "Data Engineering Fundamentals",
           "tag": "essential",
-          "description": "Understand data storage (SQL, NoSQL, object storage), ETL/ELT concepts, data warehousing basics, data quality, and schema management for robust ML data pipelines.",
+          "description": "Master data engineering for MLOps: Ingestion pipelines with Apache Airflow / Prefect, Parquet columnar storage, DuckDB transformations, and data validation with Great Expectations.",
           "resources": [
             {
               "title": "Data Engineering for Everyone",
@@ -288,13 +297,15 @@
               "url": "/data/docs/mlops_engineer/mlops_data_eng_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 19
         },
         {
           "id": "mlops_devops_intro",
           "name": "Introduction to DevOps Principles",
           "tag": "essential",
-          "description": "Familiarize yourself with core DevOps concepts like continuous integration, continuous delivery, infrastructure as code, configuration management, and site reliability engineering (SRE).",
+          "description": "Adopt core DevOps principles: Continuous Integration, Continuous Delivery, automated testing, Git branching workflows (GitFlow, trunk-based), and infrastructure automation.",
           "resources": [
             {
               "title": "The DevOps Handbook",
@@ -321,15 +332,19 @@
               "url": "/data/docs/mlops_engineer/mlops_devops_intro.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 18
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 22
     },
     {
       "id": "mlops_exp_data_model_mgmt",
       "name": "Experimentation, Data & Model Management",
       "tag": "essential",
-      "description": "Implement robust systems for tracking experiments, versioning datasets, and managing model artifacts to ensure reproducibility, auditability, and collaboration across the ML lifecycle.",
+      "description": "Establish structured experiment tracking, reproducible data versioning, and centralized model registries across the machine learning lifecycle.",
       "resources": [
         {
           "title": "MLflow Tracking Quickstart",
@@ -357,7 +372,7 @@
           "id": "mlops_exp_tracking_principles",
           "name": "Experiment Tracking Principles",
           "tag": "essential",
-          "description": "Understand the necessity of logging experiment runs, parameters, metrics, code versions, data versions, and model artifacts for effective iteration, debugging, and comparison. Learn about reproducibility in ML.",
+          "description": "Implement rigorous experiment tracking: Logging hyperparameters, loss curves, confusion matrices, compute resource utilization, and git commit hashes in MLflow or Weights & Biases.",
           "resources": [
             {
               "title": "Why Experiment Tracking Matters",
@@ -379,13 +394,15 @@
               "url": "/data/docs/mlops_engineer/mlops_exp_tracking_principles.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "mlops_data_versioning_management",
           "name": "Data Versioning & Management",
           "tag": "essential",
-          "description": "Learn strategies for versioning datasets, managing data lineage, handling large files efficiently, and ensuring data integrity for reproducible training and validation.",
+          "description": "Version large-scale datasets and models using DVC (Data Version Control): Linking remote S3/GCS blob storage with Git commit metadata to guarantee full data lineage.",
           "resources": [
             {
               "title": "What is Data Version Control?",
@@ -412,13 +429,15 @@
               "url": "/data/docs/mlops_engineer/mlops_data_versioning_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "mlops_model_artifact_management",
           "name": "Model Artifact & Registry Management",
           "tag": "essential",
-          "description": "Manage model binaries, associated pre-processing logic, model metadata, and promote models through different lifecycle stages (staging, production) using a model registry.",
+          "description": "Manage enterprise model registries: Tracking model lifecycle stages (Staging, Production, Archived), semantic versioning, artifact hashing, and schema validation.",
           "resources": [
             {
               "title": "MLflow Model Registry Documentation",
@@ -445,13 +464,15 @@
               "url": "/data/docs/mlops_engineer/mlops_model_artifact_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "mlops_mlflow_deep_dive",
           "name": "Tool Deep Dive: MLflow",
           "tag": "essential",
-          "description": "Practical application of MLflow for experiment tracking, model logging, artifact storage, and managing a comprehensive model registry, including advanced features like MLflow Projects.",
+          "description": "Master MLflow end-to-end: Tracking server deployment, MLflow Projects for packaging reproducible runs, MLflow Models with pyfunc flavors, and the MLflow Model Registry.",
           "resources": [
             {
               "title": "MLflow Documentation",
@@ -478,13 +499,15 @@
               "url": "/data/docs/mlops_engineer/mlops_mlflow_deep_dive.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "mlops_dvc_deep_dive",
           "name": "Tool Deep Dive: DVC",
           "tag": "essential",
-          "description": "Practical application of DVC for versioning data and large model files, integrating with Git, and building reproducible ML pipelines that track dependencies and outputs.",
+          "description": "Master DVC pipelines: Defining `dvc.yaml` stages with dependencies and outputs, caching data artifacts across compute nodes, and orchestrating reproducible data science runs.",
           "resources": [
             {
               "title": "Get Started with DVC",
@@ -506,13 +529,15 @@
               "url": "/data/docs/mlops_engineer/mlops_dvc_deep_dive.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "mlops_practice_reproducible_run",
           "name": "Practice Lab: Reproducible ML Workflow",
           "tag": "essential",
-          "description": "Implement a fully reproducible ML workflow, versioning data with DVC, tracking experiments with MLflow, and comparing model versions end-to-end. Focus on making the entire process auditable and shareable.",
+          "description": "Lab: Build a 100% reproducible training pipeline: Clone repository, pull versioned dataset with DVC, trigger parameterized training run with MLflow tracking, and register the winning model artifact.",
           "resources": [
             {
               "title": "MLOps Zoomcamp Homework 2",
@@ -534,15 +559,19 @@
               "url": "/data/docs/mlops_engineer/mlops_practice_reproducible_run.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 18
     },
     {
       "id": "mlops_cicd_model_serving",
       "name": "CI/CD and Model Serving",
       "tag": "essential",
-      "description": "Automate the build, test, and deployment process for ML models, ensuring robust, scalable, and secure serving infrastructure with proper integration and continuous delivery practices.",
+      "description": "Automate CI/CD pipelines for machine learning models and deploy scalable, low-latency prediction APIs.",
       "resources": [
         {
           "title": "GitHub Actions Documentation",
@@ -570,7 +599,7 @@
           "id": "mlops_containerization_docker_pro",
           "name": "Containerization with Docker",
           "tag": "essential",
-          "description": "Master Docker for packaging ML models and their dependencies into portable containers, including Dockerfile best practices, multi-stage builds, efficient image layering, and Docker Compose for local orchestration.",
+          "description": "Containerize ML applications with Docker: Multi-stage builds for minimal image size, non-root security contexts, CUDA base images, and docker-compose for multi-service environments.",
           "resources": [
             {
               "title": "Docker Documentation",
@@ -602,13 +631,15 @@
               "url": "/data/docs/mlops_engineer/mlops_containerization_docker_pro.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 32
         },
         {
           "id": "mlops_model_serving_patterns",
           "name": "Model Serving Patterns & Prediction APIs",
           "tag": "essential",
-          "description": "Explore different model serving architectures (REST, gRPC, batch, real-time), build efficient prediction APIs with frameworks like FastAPI or Flask, implement health checks, handle concurrency, and manage model dependencies.",
+          "description": "Implement production model serving patterns: Synchronous REST APIs (FastAPI), high-throughput gRPC services, asynchronous batch scoring, and event-driven streaming with Apache Kafka.",
           "resources": [
             {
               "title": "FastAPI Tutorial",
@@ -640,13 +671,15 @@
               "url": "/data/docs/mlops_engineer/mlops_model_serving_patterns.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 45
         },
         {
           "id": "mlops_ci_cd_for_ml_systems",
           "name": "CI/CD for Machine Learning Systems",
           "tag": "essential",
-          "description": "Design and implement robust CI/CD pipelines specific to ML, including automated code testing (unit, integration), data validation, model validation, performance testing, and artifact promotion across environments.",
+          "description": "Design CI/CD pipelines for ML: Automated linting (Ruff), unit testing (PyTest), dataset integrity checks, automated model training triggers, and container image publishing to registry.",
           "resources": [
             {
               "title": "MLOps CI/CD Best Practices",
@@ -668,13 +701,15 @@
               "url": "/data/docs/mlops_engineer/mlops_ci_cd_for_ml_systems.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 33
         },
         {
           "id": "mlops_github_actions_ci_cd",
           "name": "Tool Deep Dive: GitHub Actions for MLOps",
           "tag": "essential",
-          "description": "Configure and manage CI/CD pipelines using GitHub Actions for automating ML workflows, from code commit, data validation, model training, testing, to model deployment and release.",
+          "description": "Implement GitHub Actions workflows: Building automated MLOps pipelines with CML (Continuous Machine Learning) to generate pull request performance comparison reports and deploy models.",
           "resources": [
             {
               "title": "GitHub Actions for MLOps (End-to-End)",
@@ -696,13 +731,15 @@
               "url": "/data/docs/mlops_engineer/mlops_github_actions_ci_cd.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "mlops_model_validation_testing",
           "name": "Model Validation & Testing in CI",
           "tag": "advanced",
-          "description": "Implement robust testing for ML models including data quality checks, statistical model performance tests, fairness assessments, explainability tests, and integration tests within CI pipelines to prevent regressions.",
+          "description": "Automate model validation in CI: Evaluating candidate models against production champion baselines on holdout benchmarks, latency limits, and data distribution tests.",
           "resources": [
             {
               "title": "Great Expectations Documentation",
@@ -729,13 +766,15 @@
               "url": "/data/docs/mlops_engineer/mlops_model_validation_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "mlops_deployment_strategies_ml",
           "name": "ML Deployment Strategies",
           "tag": "advanced",
-          "description": "Understand and implement various deployment strategies like Blue/Green, Canary releases, Shadow Deployment, and A/B testing for ML models in production environments to minimize risk and enable gradual rollouts.",
+          "description": "Execute zero-downtime deployment strategies: Shadow deployments for production traffic mirroring, Canary releases with incremental traffic shifting, and Blue/Green switches.",
           "resources": [
             {
               "title": "ML Model Deployment Strategies",
@@ -762,13 +801,15 @@
               "url": "/data/docs/mlops_engineer/mlops_deployment_strategies_ml.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         },
         {
           "id": "mlops_api_gateway_load_balancing",
           "name": "API Gateways & Load Balancing",
           "tag": "advanced",
-          "description": "Learn to configure API Gateways and Load Balancers for exposing ML models, managing traffic, enforcing security, rate limiting, and ensuring high availability and scalability of prediction services.",
+          "description": "Deploy production API gateways: Kong, Traefik, or AWS ALB for SSL termination, rate limiting, request validation, and routing across replicated inference workers.",
           "resources": [
             {
               "title": "AWS API Gateway Concepts",
@@ -795,15 +836,19 @@
               "url": "/data/docs/mlops_engineer/mlops_api_gateway_load_balancing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 17
     },
     {
       "id": "mlops_cloud_orchestration_monitoring",
       "name": "Cloud Deployment, Orchestration & Monitoring",
       "tag": "advanced",
-      "description": "Operate and scale ML services in cloud environments using container orchestration, ensuring high availability, robust monitoring, proactive issue resolution, cost efficiency, and strong security posture.",
+      "description": "Scale ML workloads on cloud infrastructure with Kubernetes, feature stores, and comprehensive observability.",
       "resources": [
         {
           "title": "MLOps Course Resources (Made With ML)",
@@ -836,7 +881,7 @@
           "id": "mlops_cloud_platform_basics",
           "name": "Cloud Platform Fundamentals (AWS/GCP/Azure)",
           "tag": "essential",
-          "description": "Understand core cloud services (compute - EC2/GCE/VMs, storage - S3/GCS/Blob, networking - VPC/VNet, IAM, serverless functions - Lambda/Cloud Functions), regional deployments, and cost management principles relevant to ML workloads.",
+          "description": "Deploy ML infrastructure on AWS/GCP/Azure: Cloud storage buckets, IAM least-privilege roles, GPU compute instances, and cost-effective Spot instance orchestration.",
           "resources": [
             {
               "title": "AWS Cloud Practitioner Essentials",
@@ -863,13 +908,15 @@
               "url": "/data/docs/mlops_engineer/mlops_cloud_platform_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 23
         },
         {
           "id": "mlops_infrastructure_as_code",
           "name": "Infrastructure as Code (IaC)",
           "tag": "advanced",
-          "description": "Master IaC principles and tools like Terraform or AWS CloudFormation/GCP Deployment Manager for provisioning and managing cloud resources (VMs, networks, databases, Kubernetes clusters) in a version-controlled and automated manner.",
+          "description": "Provision ML cloud infrastructure using Terraform: Defining VPCs, Kubernetes clusters (EKS/GKE), S3 buckets, and RDS instances with declarative, version-controlled code.",
           "resources": [
             {
               "title": "Terraform Documentation",
@@ -896,13 +943,15 @@
               "url": "/data/docs/mlops_engineer/mlops_infrastructure_as_code.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         },
         {
           "id": "mlops_container_orchestration_k8s",
           "name": "Container Orchestration with Kubernetes",
           "tag": "advanced",
-          "description": "Deploy and manage containerized ML services using Kubernetes, covering fundamental concepts (Pods, Deployments, Services, Ingress, Persistent Volumes), autoscaling, Helm charts for package management, and interacting with managed Kubernetes services (EKS, GKE, AKS).",
+          "description": "Orchestrate ML workloads on Kubernetes: Deployments, Services, Horizontal Pod Autoscalers (HPA) based on GPU utilization, Persistent Volume Claims, and KServe / Seldon Core.",
           "resources": [
             {
               "title": "Kubernetes Documentation",
@@ -934,13 +983,15 @@
               "url": "/data/docs/mlops_engineer/mlops_container_orchestration_k8s.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         },
         {
           "id": "mlops_managed_ml_services",
           "name": "Managed ML Platforms & Services",
           "tag": "advanced",
-          "description": "Explore and utilize managed ML platforms like AWS SageMaker, GCP Vertex AI, or Azure ML for streamlined development, training, tuning, and deployment of ML models, including managed inference endpoints and batch prediction services.",
+          "description": "Evaluate managed ML platforms: AWS SageMaker, Google Cloud Vertex AI, and Azure ML for managed training jobs, hyperparameter tuning, and serverless endpoints.",
           "resources": [
             {
               "title": "AWS SageMaker Developer Guide",
@@ -967,13 +1018,15 @@
               "url": "/data/docs/mlops_engineer/mlops_managed_ml_services.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         },
         {
           "id": "mlops_feature_stores",
           "name": "Feature Stores & Online/Offline Serving",
           "tag": "advanced",
-          "description": "Understand the architecture and benefits of feature stores (e.g., Feast, Tecton) for managing, transforming, and serving features consistently across training and inference, including online and offline feature serving patterns.",
+          "description": "Deploy enterprise Feature Stores with Feast: Maintaining point-in-time correct historical features for training and ultra-low-latency Redis key-value stores for real-time online inference.",
           "resources": [
             {
               "title": "What is a Feature Store?",
@@ -1000,13 +1053,15 @@
               "url": "/data/docs/mlops_engineer/mlops_feature_stores.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         },
         {
           "id": "mlops_observability_metrics_logging",
           "name": "Observability: Metrics, Logging & Tracing",
           "tag": "advanced",
-          "description": "Implement comprehensive observability for ML systems using structured logging, metrics collection (Prometheus, Grafana), and distributed tracing (OpenTelemetry) for monitoring system health, performance, and troubleshooting complex issues.",
+          "description": "Implement full-stack observability: Prometheus metric collection (request latency, p99, error rates), Grafana visualization dashboards, and structured logging with Loki/ELK.",
           "resources": [
             {
               "title": "Prometheus Documentation",
@@ -1038,13 +1093,15 @@
               "url": "/data/docs/mlops_engineer/mlops_observability_metrics_logging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         },
         {
           "id": "mlops_ml_monitoring_drift_detection",
           "name": "ML Monitoring & Drift Detection",
           "tag": "advanced",
-          "description": "Set up monitoring for data drift, concept drift, model performance degradation, data quality issues, anomalous behavior, and explainability in production ML models to ensure their continued quality, reliability, and fairness.",
+          "description": "Detect production ML degradation: Monitoring data drift (KS-test, Wasserstein distance), concept drift, and prediction drift using Evidently AI and Whylogs with automated alerting.",
           "resources": [
             {
               "title": "Evidently AI Documentation",
@@ -1071,13 +1128,15 @@
               "url": "/data/docs/mlops_engineer/mlops_ml_monitoring_drift_detection.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         },
         {
           "id": "mlops_ml_pipeline_orchestration",
           "name": "ML Pipeline Orchestration (Airflow/Kubeflow)",
           "tag": "advanced",
-          "description": "Orchestrate complex, multi-stage ML pipelines using tools like Apache Airflow or Kubeflow Pipelines for scheduling, dependency management, error handling, resource allocation, and reproducibility of entire ML workflows.",
+          "description": "Orchestrate complex DAG workflows: Building directed acyclic graphs in Apache Airflow, Prefect, or Kubeflow Pipelines for automated scheduled re-training and evaluation.",
           "resources": [
             {
               "title": "Apache Airflow Documentation",
@@ -1109,13 +1168,15 @@
               "url": "/data/docs/mlops_engineer/mlops_ml_pipeline_orchestration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         },
         {
           "id": "mlops_security_governance_ml",
           "name": "Security & Governance in MLOps",
           "tag": "advanced",
-          "description": "Address critical security concerns in ML systems, including data privacy (encryption, anonymization), model access control, compliance (GDPR, HIPAA, SOC2), responsible AI principles, MLOps auditing, and ethical considerations.",
+          "description": "Secure ML systems and enforce compliance: Container vulnerability scanning (Trivy), model artifact signing (Cosign), role-based access control (RBAC), and SOC 2 data auditability.",
           "resources": [
             {
               "title": "NIST AI Risk Management Framework",
@@ -1147,13 +1208,15 @@
               "url": "/data/docs/mlops_engineer/mlops_security_governance_ml.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         },
         {
           "id": "mlops_capstone_production_ml",
           "name": "Capstone Project: End-to-End Production ML Pipeline",
           "tag": "advanced",
-          "description": "Build and deploy an end-to-end ML pipeline on a cloud platform, incorporating all MLOps best practices: data/model versioning, CI/CD, scalable serving with Kubernetes, infrastructure as code, and comprehensive monitoring and drift detection.",
+          "description": "Build an enterprise MLOps capstone project: End-to-end automated pipeline incorporating DVC data versioning, MLflow tracking, GitHub Actions CI/CD, Kubernetes deployment with KServe, and drift-alerting Grafana dashboards.",
           "resources": [
             {
               "title": "MLOps Zoomcamp Course",
@@ -1175,9 +1238,14 @@
               "url": "/data/docs/mlops_engineer/mlops_capstone_production_ml.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 92
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 24
     }
-  ]
+  ],
+  "total_exp": 1000
 }

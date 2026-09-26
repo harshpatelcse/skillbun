@@ -47,33 +47,34 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Real-Time Low-Latency Streaming Transcription Engine",
+        "title": "Real-Time Low-Latency Streaming Speech-to-Text Pipeline",
         "tech_stack": [
-          "Python",
-          "Whisper",
+          "Whisper / Conformer",
+          "PyTorch",
+          "WebSockets",
           "WebRTC",
-          "FastAPI",
-          "Docker"
+          "ONNX Runtime"
         ],
-        "description": "Build a streaming speech-to-text service that streams audio via WebRTC and delivers real-time partial transcripts with under 250ms latency."
+        "description": "Build a streaming ASR server processing microphone audio chunks via WebRTC, performing voice activity detection (VAD), and streaming transcriptions with sub-200ms latency."
       },
       {
-        "title": "Streaming Automatic Speech Recognition (ASR) Pipeline",
+        "title": "Neural Text-to-Speech (TTS) Voice Synthesis & Cloning Model",
         "tech_stack": [
+          "FastSpeech 2 / VITS",
+          "HiFi-GAN Vocoder",
           "PyTorch",
-          "Whisper",
-          "WebSockets",
-          "FastAPI",
-          "FFmpeg"
+          "Torchaudio",
+          "FastAPI"
         ],
-        "description": "Build a real-time speech-to-text service that ingests streaming microphone audio over WebSockets and generates low-latency timestamped transcription."
+        "description": "Train and optimize a neural TTS pipeline synthesizing expressive speech from text, implementing speaker embeddings for zero-shot voice cloning and TensorRT acceleration."
       }
     ],
     "interview_focus": [
-      "Fourier Transform (FFT) & Mel-Frequency Cepstral Coefficients (MFCC)",
-      "CTC Loss Alignment Mechanics",
-      "Teacher-Forced vs Non-Autoregressive Speech Synthesis",
-      "Noise Reduction & Audio Normalization Pipelines"
+      "Acoustic Feature Extraction (Mel-Spectrograms, MFCCs, Short-Time Fourier Transform / STFT)",
+      "ASR Model Architectures (Connectionist Temporal Classification / CTC, RNN-T, Whisper Attention)",
+      "Neural Vocoders (HiFi-GAN, WaveGlow, Diffusion Vocoders) & Speech Synthesis Tradeoffs",
+      "Streaming Latency Optimization (Chunk-Based Inference, KV-Cache Reuse, Model Quantization)",
+      "Voice Activity Detection (VAD) Algorithms & Acoustic Noise Suppression Techniques"
     ],
     "certifications": [
       "DeepLearning.AI Audio & Speech Processing Specialization",
@@ -86,7 +87,7 @@
       "id": "speech_ai_engineer_foundations",
       "name": "Foundational Knowledge for Speech AI",
       "tag": "essential",
-      "description": "Establish a strong understanding of digital audio, signal processing, and the core programming and deep learning concepts crucial for Speech AI.",
+      "description": "Master acoustic phonetics, digital signal processing (DSP), audio sampling theory, and deep neural architectures for speech.",
       "resources": [
         {
           "title": "Hugging Face Audio Course",
@@ -114,7 +115,7 @@
           "id": "speech_ai_engineer_digital_audio_basics",
           "name": "Digital Audio Fundamentals & DSP",
           "tag": "essential",
-          "description": "Learn about sound waves, sampling, quantization, Nyquist theorem, Fourier Transform, filters (FIR, IIR), windowing functions, convolution, and basic audio processing techniques. Understand psychoacoustics and human perception of sound.",
+          "description": "Master digital audio fundamentals: Sampling theorem (Nyquist-Shannon), bit depth, quantization noise, Fast Fourier Transform (FFT), Short-Time Fourier Transform (STFT), and spectrograms.",
           "resources": [
             {
               "title": "The Scientist and Engineer's Guide to Digital Signal Processing",
@@ -141,13 +142,15 @@
               "url": "/data/docs/speech_ai_engineer/speech_ai_engineer_digital_audio_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 32
         },
         {
           "id": "speech_ai_engineer_programming_dl_essentials",
           "name": "Programming & Deep Learning Essentials",
           "tag": "essential",
-          "description": "Master Python for data science, core libraries (NumPy, SciPy, Pandas, Matplotlib), and audio-specific libraries (Librosa, Pydub, SoundFile). Grasp foundational deep learning concepts (neural networks, backpropagation, CNNs, RNNs, attention mechanisms, Transformers) with PyTorch or TensorFlow.",
+          "description": "Master audio programming in Python: High-performance audio manipulation with Librosa, Torchaudio, SoundFile, and PyTorch tensor operations.",
           "resources": [
             {
               "title": "Deep Learning Specialization (Coursera)",
@@ -174,13 +177,15 @@
               "url": "/data/docs/speech_ai_engineer/speech_ai_engineer_programming_dl_essentials.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "speech_ai_engineer_introduction_speech_ai",
           "name": "Introduction to Speech AI & Applications",
           "tag": "essential",
-          "description": "Understand the history, challenges, main tasks (ASR, TTS, Diarization, SLU, etc.), and real-world applications of Speech AI. Explore common speech datasets (LibriSpeech, Common Voice, LJSpeech) and ethical considerations in voice technology.",
+          "description": "Survey speech technology domains: Automatic Speech Recognition (ASR), Text-to-Speech (TTS), Voice Conversion, Speaker Diarization, and Voice Activity Detection (VAD).",
           "resources": [
             {
               "title": "Speech and Language Processing (3rd ed. draft) by Jurafsky and Martin",
@@ -207,15 +212,19 @@
               "url": "/data/docs/speech_ai_engineer/speech_ai_engineer_introduction_speech_ai.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 22
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 21
     },
     {
       "id": "speech_ai_engineer_core_speech_processing",
       "name": "Core Speech Processing & Feature Engineering",
       "tag": "essential",
-      "description": "Develop skills in handling audio data, extracting meaningful acoustic features, and preparing data for machine learning models, crucial for building robust speech systems.",
+      "description": "Master acoustic feature engineering and audio data augmentation for robust deep speech models.",
       "resources": [
         {
           "title": "Librosa: Audio and Music Analysis in Python",
@@ -248,7 +257,7 @@
           "id": "speech_ai_engineer_audio_data_handling",
           "name": "Audio Data Handling & Augmentation",
           "tag": "essential",
-          "description": "Learn to load, manipulate, resample, normalize, segment, and save audio data using various formats (WAV, FLAC, MP3). Explore techniques for silence removal (VAD), audio segmentation, and data augmentation specific to speech (e.g., noise injection, speed perturbation, reverberation, pitch shifting).",
+          "description": "Build audio data pipelines: Managing variable-length utterances, dynamic padding, bucketing by audio length, and data augmentation with SpecAugment, pitch shifting, and background noise mixing.",
           "resources": [
             {
               "title": "Deep Learning for Audio with Python (practical introduction)",
@@ -280,13 +289,15 @@
               "url": "/data/docs/speech_ai_engineer/speech_ai_engineer_audio_data_handling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 33
         },
         {
           "id": "speech_ai_engineer_acoustic_feature_extraction",
           "name": "Acoustic Feature Extraction",
           "tag": "essential",
-          "description": "Master the extraction of key acoustic features such as Spectrograms, Mel-spectrograms, MFCCs (Mel-Frequency Cepstral Coefficients), Perceptual Linear Prediction (PLP), Linear Predictive Coding (LPC), and prosodic features (pitch, energy, duration). Understand their properties, delta and delta-delta coefficients, and applications in speech modeling.",
+          "description": "Extract standard acoustic representations: Mel-scale filterbanks, Mel-Frequency Cepstral Coefficients (MFCCs), linear spectrograms, and pitch (F0) tracking.",
           "resources": [
             {
               "title": "An Intuitive Explanation of Mel-Frequency Cepstral Coefficients (MFCCs)",
@@ -318,15 +329,19 @@
               "url": "/data/docs/speech_ai_engineer/speech_ai_engineer_acoustic_feature_extraction.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 21
     },
     {
       "id": "speech_ai_engineer_automatic_speech_recognition",
       "name": "Automatic Speech Recognition (ASR)",
       "tag": "essential",
-      "description": "Dive deep into ASR systems, covering fundamental architectures, training methodologies, decoding algorithms, and evaluation metrics for converting spoken language into text.",
+      "description": "Architect and train modern Automatic Speech Recognition (ASR) systems from raw audio to transcriptions.",
       "resources": [
         {
           "title": "SpeechBrain Documentation",
@@ -359,7 +374,7 @@
           "id": "speech_ai_engineer_asr_architectures",
           "name": "ASR Architectures & Modern Models",
           "tag": "essential",
-          "description": "Explore traditional HMM-DNN models, Connectionist Temporal Classification (CTC), attention-based seq2seq models, RNN-Transducers (RNN-T), and modern end-to-end Transformer/Conformer architectures (e.g., Whisper, Google Chirp). Understand the role of self-supervised learning for pre-training (e.g., Wav2Vec 2.0, HuBERT, data2vec).",
+          "description": "Master ASR neural architectures: Connectionist Temporal Classification (CTC) models (Wav2Vec 2.0, HuBERT), Recurrent Neural Network Transducer (RNN-T), and Transformer-based Whisper models.",
           "resources": [
             {
               "title": "End-to-End ASR: CTC, Attention, RNN-T (IBM Research Blog)",
@@ -391,13 +406,15 @@
               "url": "/data/docs/speech_ai_engineer/speech_ai_engineer_asr_architectures.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 33
         },
         {
           "id": "speech_ai_engineer_asr_training_decoding",
           "name": "ASR Training & Decoding Strategies",
           "tag": "essential",
-          "description": "Understand loss functions specific to ASR (CTC loss, RNN-T loss), optimization techniques, learning rate schedules, and regularization. Master decoding algorithms like greedy decoding, beam search, and advanced language model integration for improved ASR accuracy and fluency.",
+          "description": "Train and decode ASR models: Joint CTC/Attention decoding, beam search decoding with n-gram KenLM language models, byte-pair subword tokenization, and multi-GPU training.",
           "resources": [
             {
               "title": "Beam Search for Speech Recognition",
@@ -429,13 +446,15 @@
               "url": "/data/docs/speech_ai_engineer/speech_ai_engineer_asr_training_decoding.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "speech_ai_engineer_asr_evaluation",
           "name": "ASR Evaluation & Error Analysis",
           "tag": "essential",
-          "description": "Learn to evaluate ASR systems using standard metrics like Word Error Rate (WER), Character Error Rate (CER), and other specialized metrics (e.g., Jaccard Error Rate). Understand techniques for analyzing and debugging transcription errors, including error categorization and segment-level analysis.",
+          "description": "Evaluate speech recognition performance: Word Error Rate (WER), Character Error Rate (CER), text normalization pipelines (whisper-normalizer), and analyzing phoneme-level substitutions/deletions.",
           "resources": [
             {
               "title": "Word Error Rate (WER) in ASR",
@@ -467,15 +486,19 @@
               "url": "/data/docs/speech_ai_engineer/speech_ai_engineer_asr_evaluation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 34
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 21
     },
     {
       "id": "speech_ai_engineer_text_to_speech",
       "name": "Text-to-Speech (TTS) Synthesis",
       "tag": "essential",
-      "description": "Master the art of generating natural-sounding speech from text, covering various architectures, vocoders, and evaluation methods for high-fidelity speech synthesis.",
+      "description": "Architect modern neural Text-to-Speech (TTS) synthesis and high-fidelity waveform generation systems.",
       "resources": [
         {
           "title": "Tacotron 2 and WaveNet for TTS Explained",
@@ -508,7 +531,7 @@
           "id": "speech_ai_engineer_tts_architectures",
           "name": "TTS Architectures & End-to-End Models",
           "tag": "essential",
-          "description": "Explore traditional concatenative and parametric TTS systems, and modern end-to-end deep learning architectures like Tacotron, Transformer TTS, FastSpeech, VITS, and diffusion models for speech synthesis. Understand how they generate mel-spectrograms or directly synthesize speech from text inputs.",
+          "description": "Master end-to-end TTS architectures: Tacotron 2, FastSpeech 2 (non-autoregressive with duration predictors), VITS (Variational Inference with adversarial learning), and diffusion-based TTS (Grad-TTS).",
           "resources": [
             {
               "title": "A Survey of Text-to-Speech Synthesis",
@@ -540,13 +563,15 @@
               "url": "/data/docs/speech_ai_engineer/speech_ai_engineer_tts_architectures.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 35
         },
         {
           "id": "speech_ai_engineer_vocoders_waveform_gen",
           "name": "Vocoders & Waveform Generation",
           "tag": "essential",
-          "description": "Learn about classic vocoders (e.g., Griffin-Lim, WORLD) and neural vocoders (e.g., WaveNet, WaveGlow, Parallel WaveGAN, MelGAN, Multi-band MelGAN, Hifi-GAN) that convert acoustic features (mel-spectrograms) into high-fidelity audio waveforms. Understand the trade-offs between quality, speed, and computational cost.",
+          "description": "Synthesize high-fidelity audio with neural vocoders: HiFi-GAN, WaveGlow, BigVGAN, and mel-spectrogram inversion with multi-period / multi-scale discriminators.",
           "resources": [
             {
               "title": "Hifi-GAN: Generative Adversarial Networks for Efficient and High Fidelity Speech Synthesis",
@@ -578,13 +603,15 @@
               "url": "/data/docs/speech_ai_engineer/speech_ai_engineer_vocoders_waveform_gen.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         },
         {
           "id": "speech_ai_engineer_tts_evaluation_voice_cloning",
           "name": "TTS Quality, Voice Cloning & Adaptation",
           "tag": "advanced",
-          "description": "Evaluate TTS quality using objective (e.g., MOS prediction, MCD) and subjective (e.g., MOS score) metrics. Explore advanced techniques for voice cloning, speaker adaptation, emotion control, style transfer, and multi-speaker TTS in synthesized speech. Address challenges in expressivity and naturalness.",
+          "description": "Evaluate TTS quality and voice cloning: Mean Opinion Score (MOS), speaker similarity scoring with cosine embeddings, few-shot voice cloning, and zero-shot cross-lingual transfer.",
           "resources": [
             {
               "title": "OpenVoice: A Versatile Instant Voice Cloning System",
@@ -616,15 +643,19 @@
               "url": "/data/docs/speech_ai_engineer/speech_ai_engineer_tts_evaluation_voice_cloning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 43
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 20
     },
     {
       "id": "speech_ai_engineer_advanced_speech_tasks",
       "name": "Advanced Speech Technologies & Applications",
       "tag": "advanced",
-      "description": "Explore specialized speech tasks beyond ASR and TTS, including identifying speakers, enhancing audio quality, recognizing emotions or intent, and understanding spoken language for complex interactions.",
+      "description": "Implement advanced speech processing systems: Speaker identification, source separation, and spoken language understanding.",
       "resources": [
         {
           "title": "Speaker Diarization with PyTorch (PyTorch Official Tutorial)",
@@ -652,7 +683,7 @@
           "id": "speech_ai_engineer_speaker_diarization_recognition",
           "name": "Speaker Diarization & Recognition",
           "tag": "essential",
-          "description": "Learn to identify 'who spoke when' (diarization) and 'who spoke' (recognition/verification). Cover Voice Activity Detection (VAD), speaker embedding extraction (i-vectors, x-vectors, ECAPA-TDNN, RawNet), clustering algorithms (e.g., agglomerative hierarchical clustering), and speaker verification pipelines.",
+          "description": "Implement speaker identification and diarization: X-vectors, ECAPA-TDNN speaker embeddings, spectral clustering, pyannote.audio, and multi-speaker overlapping speech handling.",
           "resources": [
             {
               "title": "Pyannote.audio: Neural Building Blocks for Speaker Diarization",
@@ -684,13 +715,15 @@
               "url": "/data/docs/speech_ai_engineer/speech_ai_engineer_speaker_diarization_recognition.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 30
         },
         {
           "id": "speech_ai_engineer_speech_enhancement_separation",
           "name": "Speech Enhancement & Separation",
           "tag": "advanced",
-          "description": "Techniques for noise reduction, dereverberation, and separating mixed speech signals using traditional methods (e.g., Wiener filter, spectral subtraction, beamforming) and deep learning methods (e.g., masking networks, Conv-TasNet, DPRNN-TasNet, neural beamformers).",
+          "description": "Enhance speech quality in noisy environments: Deep neural denoising (Demucs, DTLN), acoustic echo cancellation, and speaker separation with Conv-TasNet.",
           "resources": [
             {
               "title": "A Review of Deep Learning for Speech Enhancement",
@@ -722,13 +755,15 @@
               "url": "/data/docs/speech_ai_engineer/speech_ai_engineer_speech_enhancement_separation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         },
         {
           "id": "speech_ai_engineer_speech_emotion_intent",
           "name": "Speech Emotion & Intent Recognition",
           "tag": "advanced",
-          "description": "Extract prosodic and paralinguistic features and build models to detect emotional states (e.g., happy, sad, angry) or infer user intent and sentiment from spoken utterances. Understand multimodal approaches combining audio and text, and the challenges with datasets and generalization.",
+          "description": "Classify prosodic and emotional speech cues: Acoustic feature extraction for emotion recognition (SER), paralinguistic analysis, and classifying speaker intent.",
           "resources": [
             {
               "title": "Joint Intent Detection and Slot Filling with BERT",
@@ -755,13 +790,15 @@
               "url": "/data/docs/speech_ai_engineer/speech_ai_engineer_speech_emotion_intent.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         },
         {
           "id": "speech_ai_engineer_spoken_language_understanding",
           "name": "Spoken Language Understanding (SLU)",
           "tag": "advanced",
-          "description": "Develop skills in processing ASR output for downstream natural language understanding (NLU) tasks, including intent detection, slot filling, dialogue state tracking, and spoken question answering. Understand the integration of speech and language models, and handling ASR errors in NLU pipelines.",
+          "description": "Build end-to-end Spoken Language Understanding (SLU): Direct speech-to-intent and speech-to-slot filling without intermediate textual transcription errors.",
           "resources": [
             {
               "title": "Spoken Language Understanding: History and Future",
@@ -788,15 +825,19 @@
               "url": "/data/docs/speech_ai_engineer/speech_ai_engineer_spoken_language_understanding.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 29
     },
     {
       "id": "speech_ai_engineer_mlops_deployment",
       "name": "Speech AI MLOps & Deployment",
       "tag": "advanced",
-      "description": "Learn to deploy, monitor, optimize, and manage Speech AI models in production environments, ensuring reliability, scalability, low latency, and adherence to ethical considerations.",
+      "description": "Deploy speech AI systems at enterprise scale: Latency profiling, streaming inference, and edge audio hardware optimization.",
       "resources": [
         {
           "title": "MLOps Best Practices for Voice AI",
@@ -829,7 +870,7 @@
           "id": "speech_ai_engineer_data_management_pipelines",
           "name": "Data Management & MLOps Pipelines",
           "tag": "essential",
-          "description": "Implement robust data versioning (e.g., DVC), experiment tracking (e.g., MLflow, Weights & Biases), model registry, and automated CI/CD pipelines for Speech AI models. Focus on handling large-scale audio datasets, data annotation workflows, and ensuring data quality and governance.",
+          "description": "Manage massive speech corpora: Common Voice, LibriSpeech, VoxCeleb; automated transcript alignment with CTC segmentation; and dataset versioning with DVC.",
           "resources": [
             {
               "title": "DVC (Data Version Control) for MLOps",
@@ -861,13 +902,15 @@
               "url": "/data/docs/speech_ai_engineer/speech_ai_engineer_data_management_pipelines.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "speech_ai_engineer_model_optimization_deployment",
           "name": "Model Optimization & Deployment",
           "tag": "advanced",
-          "description": "Optimize models for real-time inference, low latency, and high throughput using techniques like quantization (post-training, quantization-aware training), pruning, knowledge distillation, and mixed-precision training. Learn to deploy models on cloud platforms (AWS Sagemaker, GCP AI Platform, Azure ML), edge devices, or using inference servers (e.g., NVIDIA Triton Inference Server, TorchServe).",
+          "description": "Optimize speech inference: Quantizing ASR models (INT8 with faster-whisper/CTranslate2), TensorRT-LLM acceleration, real-time chunk-based streaming ASR with Silero VAD.",
           "resources": [
             {
               "title": "TensorRT: Optimize, Deploy, and Run AI",
@@ -899,13 +942,15 @@
               "url": "/data/docs/speech_ai_engineer/speech_ai_engineer_model_optimization_deployment.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "speech_ai_engineer_monitoring_ethics",
           "name": "Monitoring, Bias & Responsible AI",
           "tag": "advanced",
-          "description": "Implement robust model monitoring (drift detection, performance tracking, anomaly detection), A/B testing, and feedback loops for production Speech AI systems. Address fairness, bias (e.g., demographic bias in ASR), privacy, and security concerns (e.g., adversarial attacks) in speech systems. Understand explainable AI (XAI) for speech models and privacy-preserving techniques (e.g., federated learning, data anonymization).",
+          "description": "Ensure responsible speech AI: Mitigating accent and dialect bias, detecting synthetic deepfake voices, watermarking generated speech, and protecting voice biometric privacy.",
           "resources": [
             {
               "title": "Fairness and Bias in ASR Systems",
@@ -937,15 +982,19 @@
               "url": "/data/docs/speech_ai_engineer/speech_ai_engineer_monitoring_ethics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 42
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 29
     },
     {
       "id": "speech_ai_engineer_capstone_career",
       "name": "Capstone Projects & Career Readiness",
       "tag": "advanced",
-      "description": "Apply all acquired skills to build a comprehensive Speech AI project, understand the latest research, and prepare for a successful career in the field.",
+      "description": "Build an industry-standard Speech AI portfolio: Publish open-source models, author technical case studies, and prepare for speech scientist interviews.",
       "resources": [
         {
           "title": "Hugging Face Audio Course (for practical application)",
@@ -978,7 +1027,7 @@
           "id": "speech_ai_engineer_project_capstone",
           "name": "Project: Full-Stack Speech AI System",
           "tag": "advanced",
-          "description": "Build an end-to-end Speech AI project (e.g., a multi-speaker ASR, a custom TTS voice, a real-time speech assistant, or an audio intelligence pipeline) incorporating data pipelines, model training, evaluation, optimization, and deployment considerations. Focus on integrating multiple speech AI components.",
+          "description": "Execute an enterprise Speech AI capstone: Build a real-time conversational voice bot integrating streaming Silero VAD, faster-whisper ASR, LLM response generation, and streaming VITS/XTTS synthesis.",
           "resources": [
             {
               "title": "ESPnet End-to-End Speech Processing Toolkit",
@@ -1005,13 +1054,15 @@
               "url": "/data/docs/speech_ai_engineer/speech_ai_engineer_project_capstone.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 106
         },
         {
           "id": "speech_ai_engineer_research_sota",
           "name": "Research Trends & State-of-the-Art",
           "tag": "advanced",
-          "description": "Stay updated with the latest advancements in Speech AI research, including self-supervised learning, multimodal speech processing, robust speech recognition in challenging environments, low-resource speech processing, and new model architectures (e.g., diffusion models for speech). Read and summarize recent papers from major conferences (Interspeech, ICASSP, NeurIPS, ACL, EMNLP).",
+          "description": "Track frontier speech research: Survey INTERSPEECH and ICASSP proceedings, explore multimodal audio-language models (AudioPaLM, Gemini Audio), and unified speech foundation models.",
           "resources": [
             {
               "title": "Papers With Code - Speech Recognition",
@@ -1043,13 +1094,15 @@
               "url": "/data/docs/speech_ai_engineer/speech_ai_engineer_research_sota.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         },
         {
           "id": "speech_ai_engineer_portfolio_interview_prep",
           "name": "Portfolio Building & Interview Preparation",
           "tag": "advanced",
-          "description": "Curate a strong portfolio with project case studies (including deployed systems), code samples, and clear documentation of your Speech AI work. Prepare for technical interviews by practicing coding (Python, algorithms, data structures), system design (for speech systems), machine learning fundamentals, and behavioral questions tailored to Speech AI Engineer roles.",
+          "description": "Prepare for speech AI technical interviews: Derive STFT and Mel-scale mathematics, whiteboard CTC loss alignment forward-backward equations, and design scalable streaming voice pipelines.",
           "resources": [
             {
               "title": "Structuring Your Data Science Portfolio",
@@ -1081,9 +1134,14 @@
               "url": "/data/docs/speech_ai_engineer/speech_ai_engineer_portfolio_interview_prep.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 45
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 70
     }
-  ]
+  ],
+  "total_exp": 1000
 }

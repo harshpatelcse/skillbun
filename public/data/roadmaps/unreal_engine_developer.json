@@ -47,33 +47,34 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Multiplayer Co-Op Tactical Shooter in Unreal Engine 5",
+        "title": "Multiplayer Co-Op Tactical Shooter with Gameplay Ability System (GAS)",
         "tech_stack": [
-          "Unreal Engine 5",
+          "Unreal Engine 5.4",
           "C++",
-          "Blueprints",
-          "Enhanced Input",
+          "Gameplay Ability System (GAS)",
+          "Replication",
           "Lumen"
         ],
-        "description": "Build a multiplayer tactical shooter featuring networked weapon replication, health sync, dynamic lighting via Lumen, and smart enemy AI."
+        "description": "Engineer a networked tactical shooter featuring weapon attributes and cooldowns driven by GAS, predictive client replication, and dynamic lighting via Lumen."
       },
       {
-        "title": "High-Fidelity Vehicle Dynamics Simulation with Chaos Physics",
+        "title": "Realistic Vehicle Kinematics & Physics Simulation with Chaos Physics",
         "tech_stack": [
           "Unreal Engine 5",
-          "C++",
           "Chaos Physics",
-          "Lumen",
+          "C++",
+          "Custom Telemetry HUD",
           "Nanite"
         ],
-        "description": "Implement realistic vehicle kinematics, tire friction models, customizable suspension, and real-time damage deformation using Unreal Engine's Chaos solver."
+        "description": "Build a high-fidelity vehicle simulation featuring custom suspension geometry, tire friction curves, telemetry data logging, and destructible Nanite meshes."
       }
     ],
     "interview_focus": [
-      "UObject Reflection System & Garbage Collection in Unreal",
-      "Actor Replication & Network RPCs (Server, Client, NetMulticast)",
-      "C++ vs Blueprint Division of Responsibilities",
-      "Lumen and Nanite Performance Considerations"
+      "Unreal Engine Memory Management (UObject Garbage Collection, Smart Pointers TSharedPtr, TWeakObjectPtr)",
+      "Network Replication in UE5 (Actor Replication, Property Replication, RPCs: Server, Client, NetMulticast)",
+      "Gameplay Ability System (GAS) Architecture (Gameplay Abilities, Gameplay Attributes, Gameplay Effects, Tags)",
+      "C++ vs Blueprints Best Practices (Performance Boundaries, UFUNCTION, UPROPERTY Macro Specifiers)",
+      "Rendering Architecture (Nanite Virtualized Geometry, Lumen Global Illumination, RenderDoc Profiling)"
     ],
     "certifications": [
       "Epic Games Unreal Engine Associate Badge",
@@ -86,7 +87,7 @@
       "id": "ue_foundations_editor_setup",
       "name": "Unreal Engine Foundations & Editor Setup",
       "tag": "essential",
-      "description": "Establish a strong understanding of the Unreal Engine ecosystem, navigate the editor, grasp core game development concepts, and configure a professional development environment.",
+      "description": "Master Unreal Engine 5 architecture: The Unreal Editor, asset pipelines, project settings, and version control integration.",
       "resources": [
         {
           "title": "Unreal Engine Documentation: Getting Started",
@@ -114,7 +115,7 @@
           "id": "ue_intro_editor_concepts",
           "name": "Introduction to Unreal Editor & Core Concepts",
           "tag": "essential",
-          "description": "Explore the Unreal Editor interface, essential components like Actors, Components, Worlds, Levels, Blueprints, C++, and the overall game development workflow.",
+          "description": "Navigate Unreal Editor: Viewport navigation, World Outliner, Details panel, Content Browser, Place Actors, and coordinate axes (Z-up).",
           "resources": [
             {
               "title": "Unreal Online Learning: Getting Started with UE5",
@@ -141,13 +142,15 @@
               "url": "/data/docs/unreal_engine_developer/ue_intro_editor_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 16
         },
         {
           "id": "ue_dev_environment_config",
           "name": "Setting Up Your Development Environment & Source Control",
           "tag": "essential",
-          "description": "Configure Unreal Engine, integrate Visual Studio/Rider for C++ development, understand the project structure, and establish robust source control practices using Git or Perforce.",
+          "description": "Configure UE5 development environment: Visual Studio 2022 / JetBrains Rider setup, UnrealVS extension, and version control with Git LFS or Perforce (P4).",
           "resources": [
             {
               "title": "Unreal Engine C++ Programming",
@@ -174,13 +177,15 @@
               "url": "/data/docs/unreal_engine_developer/ue_dev_environment_config.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 19
         },
         {
           "id": "ue_asset_management_content_browser",
           "name": "Asset Management & Content Browser",
           "tag": "essential",
-          "description": "Learn to organize, import, and manage various asset types within the Content Browser, including static meshes, textures, sounds, and Blueprints, ensuring efficient project structure.",
+          "description": "Organize game assets: Content Browser directory conventions, asset naming standards, primary vs secondary assets, and reference viewers.",
           "resources": [
             {
               "title": "Unreal Engine Documentation: Content Browser",
@@ -202,15 +207,19 @@
               "url": "/data/docs/unreal_engine_developer/ue_asset_management_content_browser.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 22
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 14
     },
     {
       "id": "ue_core_gameplay_programming",
       "name": "Core Gameplay Programming with Blueprints & C++",
       "tag": "essential",
-      "description": "Master the fundamental programming and design tools within Unreal Engine, including Blueprints for rapid prototyping and C++ for robust, performant systems.",
+      "description": "Master gameplay programming with Blueprints visual scripting and native C++.",
       "resources": [
         {
           "title": "Unreal Online Learning: C++ Fundamentals",
@@ -238,7 +247,7 @@
           "id": "ue_blueprint_visual_scripting_deep_dive",
           "name": "Blueprint Visual Scripting Deep Dive",
           "tag": "essential",
-          "description": "Learn to rapidly prototype and build gameplay mechanics, UI, and complex logic using Unreal Engine's visual scripting system. Understand event graphs, functions, macros, and interfaces.",
+          "description": "Master Blueprint visual scripting: Event graph, function graphs, macros, pure vs impure nodes, variables, structures, and Blueprint interfaces.",
           "resources": [
             {
               "title": "Unreal Engine Documentation: Blueprints",
@@ -260,13 +269,15 @@
               "url": "/data/docs/unreal_engine_developer/ue_blueprint_visual_scripting_deep_dive.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 17
         },
         {
           "id": "ue_cpp_programming_fundamentals_ue",
           "name": "C++ Programming Fundamentals in Unreal Engine",
           "tag": "essential",
-          "description": "Understand the deep integration of C++ with Unreal Engine, essential C++ classes (AActor, UComponent, AGameModeBase), and the Unreal reflection system (UCLASS, UPROPERTY, UFUNCTION).",
+          "description": "Master C++ in Unreal Engine: UObject ecosystem, UCLASS, UPROPERTY, UFUNCTION reflection macros, memory management with garbage collection, and smart pointers.",
           "resources": [
             {
               "title": "Unreal Engine C++ Programming",
@@ -288,13 +299,15 @@
               "url": "/data/docs/unreal_engine_developer/ue_cpp_programming_fundamentals_ue.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 19
         },
         {
           "id": "ue_gameplay_framework_architecture",
           "name": "Unreal Gameplay Framework Architecture",
           "tag": "essential",
-          "description": "Dive into essential gameplay classes like GameMode, PlayerController, Pawn, Character, GameState, PlayerState, and Controllers to structure your game logic effectively.",
+          "description": "Master the Unreal Gameplay Framework: GameModeBase, GameStateBase, PlayerController, Character / Pawn, PlayerState, and GameInstance persistence.",
           "resources": [
             {
               "title": "Unreal Engine Documentation: Gameplay Framework",
@@ -316,13 +329,15 @@
               "url": "/data/docs/unreal_engine_developer/ue_gameplay_framework_architecture.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 23
         },
         {
           "id": "ue_enhanced_input_umg_events",
           "name": "Enhanced Input System, UI (UMG) & Event Handling",
           "tag": "essential",
-          "description": "Implement robust player input actions using the Enhanced Input System, design intuitive user interfaces with UMG, and manage events, delegates, and interfaces for seamless interactions.",
+          "description": "Implement inputs and UI: Enhanced Input System (Input Actions, Input Mapping Contexts, Modifiers/Triggers) and Unreal Motion Graphics (UMG) UI widgets.",
           "resources": [
             {
               "title": "Unreal Engine Documentation: Enhanced Input System",
@@ -349,13 +364,15 @@
               "url": "/data/docs/unreal_engine_developer/ue_enhanced_input_umg_events.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "ue_data_tables_assets_config",
           "name": "Data-Driven Design: Data Tables & Data Assets",
           "tag": "essential",
-          "description": "Implement data-driven gameplay using Data Tables for structured data storage and Data Assets for configurable object settings, promoting flexibility and rapid iteration.",
+          "description": "Design data-driven gameplay: Data Tables, Primary Data Assets, Curve Tables, and config file (`.ini`) initialization.",
           "resources": [
             {
               "title": "Unreal Engine Documentation: Data Tables",
@@ -382,15 +399,19 @@
               "url": "/data/docs/unreal_engine_developer/ue_data_tables_assets_config.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 22
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 19
     },
     {
       "id": "ue_graphics_vfx_audio",
       "name": "Graphics, VFX & Audio Systems",
       "tag": "essential",
-      "description": "Deepen your expertise by exploring Unreal Engine's systems for visual fidelity, real-time rendering, dynamic visual effects, and immersive audio experiences.",
+      "description": "Create AAA graphics: PBR materials, Nanite geometry, Lumen lighting, Niagara visual effects, and MetaSound audio.",
       "resources": [
         {
           "title": "Unreal Engine Documentation: Graphics & Rendering",
@@ -418,7 +439,7 @@
           "id": "ue_materials_shaders_pbr",
           "name": "Materials, Shaders & PBR Fundamentals",
           "tag": "essential",
-          "description": "Create realistic and stylized visuals using Unreal's material editor, understand Physically Based Rendering (PBR) workflows, and optimize material performance.",
+          "description": "Master PBR materials: Material Editor, PBR attributes (BaseColor, Metallic, Roughness, Normal), Material Instances, Material Parameter Collections, and dynamic materials.",
           "resources": [
             {
               "title": "Unreal Engine Documentation: Materials",
@@ -440,13 +461,15 @@
               "url": "/data/docs/unreal_engine_developer/ue_materials_shaders_pbr.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 21
         },
         {
           "id": "ue_lighting_reflections_post_process",
           "name": "Lighting, Reflections & Post-Processing",
           "tag": "essential",
-          "description": "Master various lighting techniques (static, dynamic, Lumen, Nanite), reflection captures, Sky Atmosphere, Volumetric Fog, and manipulate post-processing volumes for atmospheric and stylistic effects.",
+          "description": "Master lighting with Lumen: Real-time global illumination, Lumen reflections, Virtual Shadow Maps (VSM), directional sun lights, SkyLight, and Post-Process Volumes.",
           "resources": [
             {
               "title": "Unreal Engine Documentation: Lighting the Environment",
@@ -473,13 +496,15 @@
               "url": "/data/docs/unreal_engine_developer/ue_lighting_reflections_post_process.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "ue_world_building_landscapes_foliage",
           "name": "World Building: Landscapes, Foliage & Level Streaming",
           "tag": "essential",
-          "description": "Utilize Unreal's tools to sculpt terrains, paint foliage, and manage large open worlds efficiently using World Partition, Data Layers, and Level Streaming techniques.",
+          "description": "Build expansive worlds: Landscape sculpting, landscape auto-materials with layer blend nodes, foliage painting, and World Partition with One File Per Actor (OFPA).",
           "resources": [
             {
               "title": "Unreal Engine Documentation: Landscapes",
@@ -506,13 +531,15 @@
               "url": "/data/docs/unreal_engine_developer/ue_world_building_landscapes_foliage.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "ue_animation_rigging_montages",
           "name": "Animation Systems, Rigging & Montages",
           "tag": "essential",
-          "description": "Work with skeletal meshes, create and manage Animation Blueprints, utilize Animation Montages for dynamic actions, and understand animation retargeting and blending.",
+          "description": "Animate characters: Skeletal meshes, Animation Blueprints, State Machines, Blend Spaces, Animation Montages, Control Rig, and Full-Body IK (FBIK).",
           "resources": [
             {
               "title": "Unreal Engine Documentation: Animation",
@@ -539,13 +566,15 @@
               "url": "/data/docs/unreal_engine_developer/ue_animation_rigging_montages.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "ue_vfx_niagara_systems",
           "name": "Visual Effects with Niagara Systems",
           "tag": "advanced",
-          "description": "Design and implement complex particle effects, environmental effects, and dynamic visual spectacles using Unreal's powerful Niagara visual effects system.",
+          "description": "Author particle effects in Niagara: Emitters, particle simulations, GPU particles, collision events, ribbon renderers, and parameter bindings.",
           "resources": [
             {
               "title": "Unreal Engine Documentation: Niagara",
@@ -567,13 +596,15 @@
               "url": "/data/docs/unreal_engine_developer/ue_vfx_niagara_systems.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         },
         {
           "id": "ue_audio_sound_design_integration",
           "name": "Audio & Sound Design Integration",
           "tag": "essential",
-          "description": "Integrate sound effects, background music, and environmental audio using Sound Cues, Attenuation, Concurrency, and explore MetaSounds for advanced sound design.",
+          "description": "Design audio with MetaSounds: Procedural audio synthesis, audio graphs, attenuation settings, sound cues, and music transitions.",
           "resources": [
             {
               "title": "Unreal Engine Documentation: Audio",
@@ -600,15 +631,19 @@
               "url": "/data/docs/unreal_engine_developer/ue_audio_sound_design_integration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 22
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 30
     },
     {
       "id": "ue_advanced_gameplay_ai_systems",
       "name": "Advanced Gameplay, AI & Core Systems",
       "tag": "advanced",
-      "description": "Develop sophisticated gameplay mechanics, implement intelligent AI, and understand advanced engine systems for creating dynamic and engaging interactive experiences.",
+      "description": "Engineer advanced gameplay: PhysX / Chaos physics, AI behavior trees, Gameplay Ability System (GAS), and save systems.",
       "resources": [
         {
           "title": "Unreal Engine Documentation: Gameplay Ability System",
@@ -636,7 +671,7 @@
           "id": "ue_physics_collision_tracing_advanced",
           "name": "Physics, Collision & Tracing Systems",
           "tag": "essential",
-          "description": "Work with Unreal's physics engine, set up intricate collision profiles and complex physical materials, and utilize line traces, shape traces, and overlap events for precise gameplay interactions.",
+          "description": "Simulate Chaos physics: Collision channels, object responses, physical materials, ray traces (LineTraceSingle/Multi), and physics constraints.",
           "resources": [
             {
               "title": "Unreal Engine Documentation: Physics",
@@ -663,13 +698,15 @@
               "url": "/data/docs/unreal_engine_developer/ue_physics_collision_tracing_advanced.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "ue_ai_navigation_behavior_trees",
           "name": "AI, Navigation & Behavior Trees",
           "tag": "advanced",
-          "description": "Implement intelligent agent behaviors using AI controllers, navigation meshes (NavMesh), behavior trees, Environmental Query System (EQS), and AI Perception for dynamic AI.",
+          "description": "Program intelligent AI: NavMesh bounds, AIController, Blackboards, Behavior Trees (Tasks, Decorators, Services), and Environment Query System (EQS).",
           "resources": [
             {
               "title": "Unreal Engine Documentation: Artificial Intelligence",
@@ -696,13 +733,15 @@
               "url": "/data/docs/unreal_engine_developer/ue_ai_navigation_behavior_trees.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         },
         {
           "id": "ue_gameplay_ability_system_foundations",
           "name": "Gameplay Ability System (GAS) Foundations",
           "tag": "advanced",
-          "description": "Understand the architecture and core concepts of the Gameplay Ability System for implementing robust, scalable abilities, attributes, and effects (GEs/GAs) in complex games.",
+          "description": "Implement the Gameplay Ability System (GAS): Gameplay Abilities, Gameplay Attributes, Gameplay Effects, and Gameplay Tags for complex RPG combat systems.",
           "resources": [
             {
               "title": "Unreal Engine Documentation: Gameplay Ability System",
@@ -724,13 +763,15 @@
               "url": "/data/docs/unreal_engine_developer/ue_gameplay_ability_system_foundations.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         },
         {
           "id": "ue_save_load_persistence_systems",
           "name": "Save/Load & Persistence Systems",
           "tag": "essential",
-          "description": "Implement robust save and load functionalities, understand persistent data management, and design modular save game systems for different game states.",
+          "description": "Implement persistence: USaveGame objects, asynchronous save/load (`AsyncSaveGameToSlot`), serializing complex structs, and checkpoint systems.",
           "resources": [
             {
               "title": "Unreal Engine Documentation: SaveGame Objects",
@@ -752,13 +793,15 @@
               "url": "/data/docs/unreal_engine_developer/ue_save_load_persistence_systems.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "ue_sequencer_cinematics",
           "name": "Sequencer & Cinematics",
           "tag": "advanced",
-          "description": "Create stunning in-game cinematics, cutscenes, and animated sequences using Unreal's powerful Sequencer tool for storytelling and presentation.",
+          "description": "Direct cinematics with Sequencer: Camera rigs, focal length animation, shot tracks, audio tracks, and triggering events from cinematics.",
           "resources": [
             {
               "title": "Unreal Engine Documentation: Sequencer",
@@ -780,15 +823,19 @@
               "url": "/data/docs/unreal_engine_developer/ue_sequencer_cinematics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 27
     },
     {
       "id": "ue_optimization_multiplayer_pipelines",
       "name": "Optimization, Multiplayer & Production Pipelines",
       "tag": "advanced",
-      "description": "Learn to optimize, package, and deploy Unreal Engine projects efficiently, implement robust multiplayer systems, and understand best practices for robust team collaboration and automated pipelines.",
+      "description": "Optimize performance, build multiplayer networking, and automate production pipelines.",
       "resources": [
         {
           "title": "Unreal Engine Documentation: Performance & Profiling",
@@ -816,7 +863,7 @@
           "id": "ue_performance_optimization_profiling_deep_dive",
           "name": "Performance Optimization & Profiling Deep Dive",
           "tag": "essential",
-          "description": "Identify and resolve performance bottlenecks using Unreal's profiling tools (Stat Commands, Unreal Insights, GPUView) across CPU, GPU, memory, and draw calls. Implement optimization strategies for assets and code.",
+          "description": "Profile and optimize UE5: Unreal Insights, `stat unit`, `stat rhi`, GPU Visualizer, Nanite/Lumen performance budgets, and draw call reduction.",
           "resources": [
             {
               "title": "Unreal Engine Documentation: Profiling for Performance",
@@ -843,13 +890,15 @@
               "url": "/data/docs/unreal_engine_developer/ue_performance_optimization_profiling_deep_dive.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         },
         {
           "id": "ue_multiplayer_networking_replication",
           "name": "Multiplayer & Networking: Replication & RPCs",
           "tag": "advanced",
-          "description": "Understand the core principles of Unreal's multiplayer framework, master actor and property replication, Remote Procedure Calls (RPCs), and network authority for online gameplay.",
+          "description": "Architect multiplayer games: Authoritative dedicated server model, Actor replication, variable replication (`ReplicatedUsing`), and RPCs (Server, Client, NetMulticast).",
           "resources": [
             {
               "title": "Unreal Engine Documentation: Networking and Multiplayer",
@@ -876,13 +925,15 @@
               "url": "/data/docs/unreal_engine_developer/ue_multiplayer_networking_replication.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         },
         {
           "id": "ue_packaging_deployment_platforms_shipping",
           "name": "Packaging, Deployment & Platform Shipping",
           "tag": "essential",
-          "description": "Prepare your project for release by understanding packaging settings, build configurations, and handling platform-specific deployments for PC, consoles, and mobile. Learn about cook and build processes.",
+          "description": "Package and ship games: Build configurations (Debug, Development, Shipping), cook settings, project packaging for Windows/consoles, and crash reporting.",
           "resources": [
             {
               "title": "Unreal Engine Documentation: Packaging Projects",
@@ -909,13 +960,15 @@
               "url": "/data/docs/unreal_engine_developer/ue_packaging_deployment_platforms_shipping.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "ue_automated_testing_ci_cd",
           "name": "Automated Testing & CI/CD Pipelines",
           "tag": "advanced",
-          "description": "Implement automated testing frameworks within Unreal Engine (Automation Tests) and integrate with Continuous Integration/Continuous Deployment (CI/CD) pipelines for efficient development and reliable releases.",
+          "description": "Automate testing: Unreal Automation Testing framework, functional tests, and automating builds via command line with Unreal Automation Tool (UAT).",
           "resources": [
             {
               "title": "Unreal Engine Documentation: Automation System",
@@ -942,13 +995,15 @@
               "url": "/data/docs/unreal_engine_developer/ue_automated_testing_ci_cd.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "ue_plugin_module_development",
           "name": "Plugin & Module Development",
           "tag": "advanced",
-          "description": "Extend Unreal Engine's functionality by developing custom plugins and modules, understanding the modular architecture, and integrating third-party libraries.",
+          "description": "Develop custom plugins and modules: C++ module structure, creating editor extensions, and packaging standalone plugins.",
           "resources": [
             {
               "title": "Unreal Engine Documentation: Modular Programming",
@@ -975,15 +1030,19 @@
               "url": "/data/docs/unreal_engine_developer/ue_plugin_module_development.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 27
     },
     {
       "id": "ue_professional_development_portfolio",
       "name": "Professional Development & Portfolio",
       "tag": "advanced",
-      "description": "Translate your Unreal Engine development expertise into a compelling professional profile: build impressive case studies, robust GitHub artifacts, compelling demos, and prepare for industry interviews.",
+      "description": "Build a competitive Unreal Engine developer portfolio: Commercial-grade game projects, clean C++ codebases, and technical interview readiness.",
       "resources": [
         {
           "title": "Unreal Engine Documentation",
@@ -1016,7 +1075,7 @@
           "id": "ue_project_showcase_tech_docs",
           "name": "Project Showcase & Technical Documentation",
           "tag": "advanced",
-          "description": "Document your projects effectively, create captivating demos, and articulate your technical decisions and problem-solving approaches in a clear, concise manner for a professional audience.",
+          "description": "Document technical architecture: Creating gameplay flowcharts, C++ class hierarchy diagrams, and recording 4K 60fps gameplay demonstrations.",
           "resources": [
             {
               "title": "Unreal Engine 5 Full Course (freeCodeCamp)",
@@ -1033,13 +1092,15 @@
               "url": "/data/docs/unreal_engine_developer/ue_project_showcase_tech_docs.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 70
         },
         {
           "id": "ue_capstone_portfolio_project_advanced",
           "name": "Advanced Unreal Engine Capstone Portfolio Project",
           "tag": "advanced",
-          "description": "Develop a substantial, portfolio-grade Unreal Engine project applying all acquired skills from design, advanced implementation, optimization, and deployment, ready for showcasing to potential employers.",
+          "description": "Build an enterprise Unreal Engine 5 capstone: 3D third-person action game featuring C++ and Blueprint gameplay, Chaos physics combat, Niagara VFX, Lumen lighting, and packaged for shipping.",
           "resources": [
             {
               "title": "Unreal Engine C++ Programming",
@@ -1061,13 +1122,15 @@
               "url": "/data/docs/unreal_engine_developer/ue_capstone_portfolio_project_advanced.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 94
         },
         {
           "id": "ue_job_search_interview_preparation",
           "name": "Job Search & Interview Preparation",
           "tag": "advanced",
-          "description": "Prepare for technical interviews specific to Unreal Engine developer roles, understand common industry challenges, build a strong professional network, and refine your resume and portfolio.",
+          "description": "Master Unreal Engine technical interviews: Memory management in UObjects, replication lifecycle, tick groups, and solving live C++ gameplay challenges.",
           "resources": [
             {
               "title": "Unreal Engine 5 : New Nanite and Lumen Technology (Coreb Games)",
@@ -1084,13 +1147,15 @@
               "url": "/data/docs/unreal_engine_developer/ue_job_search_interview_preparation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         },
         {
           "id": "ue_community_contributions_networking",
           "name": "Community Contributions & Professional Networking",
           "tag": "advanced",
-          "description": "Engage with the Unreal Engine community through forums, Discord, and events. Explore opportunities for open-source contributions, fostering professional growth and connections.",
+          "description": "Engage with the Unreal developer community: Unreal Developer Network (UDN), participating in Epic MegaJams, and contributing to open-source UE plugins.",
           "resources": [
             {
               "title": "Unreal Engine Developer Community",
@@ -1117,9 +1182,14 @@
               "url": "/data/docs/unreal_engine_developer/ue_community_contributions_networking.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 28
     }
-  ]
+  ],
+  "total_exp": 1000
 }

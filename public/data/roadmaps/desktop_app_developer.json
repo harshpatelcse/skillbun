@@ -84,7 +84,7 @@
       "id": "desktop_app_developer_foundations",
       "name": "Foundations of Desktop Application Development",
       "tag": "essential",
-      "description": "Explore the landscape of desktop applications, understand their core characteristics, user expectations, and the fundamental architectural considerations for building robust, performant, and user-friendly software.",
+      "description": "Master desktop application development foundations: Operating system architectures, native windowing, process lifecycles, and cross-platform UI engineering.",
       "resources": [
         {
           "title": "What is a Desktop Application? (GeeksforGeeks)",
@@ -117,7 +117,7 @@
           "id": "desktop_app_developer_desktop_ecosystem_overview",
           "name": "Desktop Ecosystem and Application Architectures",
           "tag": "essential",
-          "description": "Understand the various types of desktop applications (native, hybrid, web-based, Electron, Tauri), their typical use cases, architectural patterns, and how underlying operating system differences (Windows, macOS, Linux) influence development decisions.",
+          "description": "Compare desktop architectures: Native frameworks (WinUI, AppKit/SwiftUI) vs cross-platform runtimes (Electron, Tauri, Qt, Flutter Desktop); memory, disk footprint, and performance.",
           "resources": [
             {
               "title": "Choosing Your Desktop App Framework (Smashing Magazine)",
@@ -144,13 +144,15 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_desktop_ecosystem_overview.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         },
         {
           "id": "desktop_app_developer_core_programming_concepts",
           "name": "Core Programming Principles and Design Patterns",
           "tag": "essential",
-          "description": "Reinforce fundamental programming concepts, including data structures, algorithms, object-oriented programming (OOP) or functional programming paradigms, and common software design patterns crucial for building scalable and maintainable desktop applications.",
+          "description": "Apply desktop design patterns: Model-View-ViewModel (MVVM), Model-View-Controller (MVC), event-driven messaging, dependency injection, and thread safety.",
           "resources": [
             {
               "title": "Programming Paradigms Explained (freeCodeCamp)",
@@ -182,13 +184,15 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_core_programming_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "desktop_app_developer_desktop_os_fundamentals",
           "name": "Desktop Operating System Fundamentals",
           "tag": "essential",
-          "description": "Gain a deeper understanding of how operating systems (Windows, macOS, Linux) manage processes, memory, file systems, permissions, and native APIs, which is vital for developing applications that integrate seamlessly and securely with the OS.",
+          "description": "Master OS internals: Window management, system events, file system access, registry / plist configuration, environment variables, and OS notification daemons.",
           "resources": [
             {
               "title": "File System Basics Across OS (Linux Journey)",
@@ -210,13 +214,15 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_desktop_os_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 18
         },
         {
           "id": "desktop_app_developer_ui_ux_patterns_accessibility",
           "name": "Desktop UI/UX Patterns and Accessibility",
           "tag": "essential",
-          "description": "Learn common desktop UI patterns, interaction models, modern design systems (e.g., Fluent, Apple HIG), responsive design principles, and comprehensive accessibility considerations to design intuitive, inclusive, and visually appealing user experiences across platforms.",
+          "description": "Design native desktop UX: Window menus, contextual right-click menus, system tray integration, keyboard shortcuts (accelerators), and WCAG / OS accessibility guidelines.",
           "resources": [
             {
               "title": "Apple Human Interface Guidelines",
@@ -248,13 +254,15 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_ui_ux_patterns_accessibility.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "desktop_app_developer_dev_environment_tooling",
           "name": "Development Environment Setup and Tooling",
           "tag": "essential",
-          "description": "Set up a robust development machine with essential tools like IDEs (VS Code), Node.js, Rust, C++ (if needed), package managers (npm, Cargo), and version control (Git). Establish an efficient, productive, and consistent coding workflow for cross-platform desktop development.",
+          "description": "Set up desktop toolchains: Node.js, Rust toolchains, native compilers (MSVC, Xcode command line tools, GCC), and IDE integration.",
           "resources": [
             {
               "title": "Setting up VS Code for Modern Development (Code With Mosh)",
@@ -276,15 +284,19 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_dev_environment_tooling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 16
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 21
     },
     {
       "id": "desktop_app_developer_core_skills",
       "name": "Core Cross-Platform Development Skills",
       "tag": "essential",
-      "description": "Master the essential technical skills required to build functional, performant, and maintainable cross-platform desktop applications, with a focus on modern frameworks like Electron and Tauri.",
+      "description": "Master core cross-platform frameworks: Electron Chromium/Node.js architecture and Tauri Rust/system webview architecture.",
       "resources": [
         {
           "title": "Tauri vs Electron: Which is Better? (Fireship)",
@@ -312,7 +324,7 @@
           "id": "desktop_app_developer_electron_deep_dive",
           "name": "Framework Deep Dive: Electron",
           "tag": "essential",
-          "description": "Learn Electron's multi-process architecture (main and renderer processes), how to create windows, manage the application lifecycle, and handle basic UI with web technologies, emphasizing security best practices and performance considerations.",
+          "description": "Master Electron internals: Main process vs Renderer process, `BrowserWindow` lifecycle, security best practices (context isolation, nodeIntegration: false), and preload scripts.",
           "resources": [
             {
               "title": "Electron Quick Start Guide (Electron Docs)",
@@ -334,13 +346,15 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_electron_deep_dive.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "desktop_app_developer_tauri_deep_dive",
           "name": "Framework Deep Dive: Tauri",
           "tag": "essential",
-          "description": "Explore Tauri's Rust-based backend and web frontend, setting up projects, understanding its secure command and event system, and leveraging its lightweight architecture for highly performant and secure desktop applications.",
+          "description": "Master Tauri 2.0: Rust backend architecture, native OS webviews (WebView2, WebKit), zero-overhead binary packaging, IPC commands, and granular security permissions.",
           "resources": [
             {
               "title": "Tauri Getting Started Guide (Tauri Docs)",
@@ -362,13 +376,15 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_tauri_deep_dive.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "desktop_app_developer_ui_frameworks_styling",
           "name": "User Interface Frameworks and Styling",
           "tag": "essential",
-          "description": "Implement responsive and interactive user interfaces using modern web frameworks (e.g., React, Vue, Svelte) and associated UI libraries (e.g., Material UI, Ant Design, Tailwind CSS) within Electron/Tauri applications, including custom theming and styling.",
+          "description": "Build desktop user interfaces: React, Vue, Svelte; desktop-focused CSS, responsive multi-window layouts, and native window vibrancy / dark mode styling.",
           "resources": [
             {
               "title": "React Tutorial for Beginners (Programming with Mosh)",
@@ -390,13 +406,15 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_ui_frameworks_styling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "desktop_app_developer_data_persistence_management",
           "name": "Local Data Storage and Persistence Management",
           "tag": "essential",
-          "description": "Learn robust strategies for storing and managing application data locally, including file system operations, embedded databases (SQLite, IndexedDB), secure credential storage (keychain/secrets manager), and managing user configurations.",
+          "description": "Manage local persistence: SQLite databases with encryption (SQLCipher), embedded key-value stores, local file caching, and offline-first data sync.",
           "resources": [
             {
               "title": "Working with the File System in Electron (Electron Docs)",
@@ -418,13 +436,15 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_data_persistence_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "desktop_app_developer_ipc_native_integrations",
           "name": "Inter-Process Communication (IPC) & Native OS Integrations",
           "tag": "essential",
-          "description": "Understand and implement secure communication patterns between main/renderer processes (Electron) or frontend/backend (Tauri). Integrate with native OS features like notifications, file dialogs, system tray, context menus, custom URL schemes, and clipboard access.",
+          "description": "Implement secure Inter-Process Communication (IPC): ContextBridge API in Electron, `invoke` handlers in Tauri, and executing native OS commands safely.",
           "resources": [
             {
               "title": "Electron Interprocess Communication (IPC) (Electron Docs)",
@@ -446,13 +466,15 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_ipc_native_integrations.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "desktop_app_developer_state_management_patterns",
           "name": "Application State Management Patterns",
           "tag": "essential",
-          "description": "Implement effective and scalable state management patterns (e.g., Redux, Zustand, Pinia, Context API) to ensure data consistency, predictable application behavior, and improved maintainability across complex desktop applications.",
+          "description": "Manage complex desktop application state: Redux Toolkit, Zustand, or MobX; persisting state across app restarts, and multi-window state synchronization.",
           "resources": [
             {
               "title": "Introduction to Zustand (Zustand GitHub)",
@@ -474,13 +496,15 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_state_management_patterns.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "desktop_app_developer_networking_api_integration",
           "name": "Networking and External API Integration",
           "tag": "essential",
-          "description": "Learn how to securely interact with external web services and APIs (REST, GraphQL), handle authentication (OAuth, API Keys), manage network requests, implement retry mechanisms, and design for offline capabilities.",
+          "description": "Integrate network services: Resilient REST/GraphQL client requests, WebSockets for live data, background downloading with pause/resume, and offline queues.",
           "resources": [
             {
               "title": "Introduction to REST APIs (MDN Web Docs)",
@@ -502,13 +526,15 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_networking_api_integration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 30
         },
         {
           "id": "desktop_app_developer_asynchronous_programming",
           "name": "Asynchronous Programming and Concurrency",
           "tag": "essential",
-          "description": "Master asynchronous programming patterns (callbacks, Promises, async/await in JavaScript; Futures, async/await in Rust) to build responsive desktop applications, handle long-running operations, and prevent UI freezing.",
+          "description": "Handle concurrency in desktop applications: Offloading heavy computation to background worker threads / Rust tasks to ensure 60fps main UI responsiveness.",
           "resources": [
             {
               "title": "JavaScript Async/Await Tutorial (freeCodeCamp)",
@@ -530,13 +556,15 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_asynchronous_programming.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "desktop_app_developer_error_handling_logging_debugging",
           "name": "Robust Error Handling, Logging, and Debugging",
           "tag": "essential",
-          "description": "Develop robust error handling strategies, utilize debugging tools specific to desktop applications (Chrome DevTools, VS Code debugger, Rust's `dbg!`), and implement comprehensive logging mechanisms for both development and production environments.",
+          "description": "Debug desktop applications: DevTools integration, inspecting memory leaks, file-based logging with electron-log / tracing, and handling uncaught exceptions.",
           "resources": [
             {
               "title": "Debugging Electron Applications (Electron Docs)",
@@ -558,15 +586,19 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_error_handling_logging_debugging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 18
     },
     {
       "id": "desktop_app_developer_quality_assurance",
       "name": "Quality Assurance and Testing",
       "tag": "essential",
-      "description": "Ensure the reliability, performance, and user-friendliness of desktop applications through comprehensive testing, quality checks, adherence to security standards, and optimization techniques.",
+      "description": "Implement rigorous testing: Unit testing, automated UI integration testing, and cross-platform validation.",
       "resources": [
         {
           "title": "Introduction to Software Testing (Guru99)",
@@ -589,7 +621,7 @@
           "id": "desktop_app_developer_unit_integration_testing_basics",
           "name": "Unit and Integration Testing Fundamentals",
           "tag": "essential",
-          "description": "Write effective unit tests for individual components and functions, and implement integration tests to verify interactions between different parts of your desktop application's logic, ensuring code correctness and module compatibility.",
+          "description": "Unit test desktop modules: Writing isolated unit tests for business logic, data persistence models, and mock native system APIs using Vitest or Jest.",
           "resources": [
             {
               "title": "Getting Started with Jest (Jest Docs)",
@@ -611,13 +643,15 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_unit_integration_testing_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 29
         },
         {
           "id": "desktop_app_developer_e2e_cross_platform_testing",
           "name": "End-to-End and Cross-Platform Testing",
           "tag": "advanced",
-          "description": "Implement end-to-end tests to simulate real user interactions and ensure the entire application flow works as expected across different desktop operating systems (Windows, macOS, Linux) and various configurations.",
+          "description": "Automate end-to-end desktop testing: Playwright for Electron, WebDriverIO, or Appium to automate cross-platform UI workflows across Windows, macOS, and Linux.",
           "resources": [
             {
               "title": "End-to-End Testing Electron Apps with Playwright (Playwright Docs)",
@@ -639,13 +673,15 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_e2e_cross_platform_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         },
         {
           "id": "desktop_app_developer_performance_profiling_optimization",
           "name": "Performance Profiling and Optimization",
           "tag": "advanced",
-          "description": "Identify and resolve performance bottlenecks using profiling tools, optimize application startup times, reduce memory usage, improve UI responsiveness, and ensure a smooth, efficient user experience across different hardware specifications.",
+          "description": "Profile desktop performance: Minimizing startup time (Time to Interactive), memory profiling, analyzing CPU usage, and reducing binary bundle sizes.",
           "resources": [
             {
               "title": "Optimizing Electron App Performance (Electron Docs)",
@@ -667,13 +703,15 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_performance_profiling_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         },
         {
           "id": "desktop_app_developer_accessibility_security_audits",
           "name": "Accessibility and Security Audits & Best Practices",
           "tag": "essential",
-          "description": "Design and implement desktop applications that are accessible to all users, including those with disabilities, and secure against common vulnerabilities. Conduct security audits, implement secure coding practices, and protect user data and system integrity.",
+          "description": "Harden desktop security: Content Security Policy (CSP), ASLR / DEP compiler flags, code sandboxing, and keyboard accessibility audits.",
           "resources": [
             {
               "title": "Web Content Accessibility Guidelines (WCAG)",
@@ -695,13 +733,15 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_accessibility_security_audits.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "desktop_app_developer_user_acceptance_testing",
           "name": "User Acceptance Testing (UAT)",
           "tag": "advanced",
-          "description": "Understand the principles and practices of User Acceptance Testing. Plan, execute, and analyze UAT cycles to validate that the application meets business requirements and user expectations in a real-world environment before release.",
+          "description": "Conduct user acceptance testing: Beta distribution channels, gathering telemetry, and validating keyboard navigation across diverse display resolutions.",
           "resources": [
             {
               "title": "What is User Acceptance Testing? (BrowserStack)",
@@ -723,15 +763,19 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_user_acceptance_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 18
     },
     {
       "id": "desktop_app_developer_deployment_maintenance",
       "name": "Deployment, Distribution, and Maintenance",
       "tag": "advanced",
-      "description": "Learn how to package, distribute, and maintain desktop applications professionally across various operating systems, including update mechanisms, continuous delivery pipelines, and post-release support.",
+      "description": "Package, distribute, and maintain desktop applications: Cross-platform installers, code signing, and auto-updating.",
       "resources": [
         {
           "title": "The Software Release Process (TechTarget)",
@@ -754,7 +798,7 @@
           "id": "desktop_app_developer_packaging_cross_platform",
           "name": "Cross-Platform Packaging and Distribution",
           "tag": "essential",
-          "description": "Master the process of packaging desktop applications for Windows (exe, MSI), macOS (dmg, pkg), and Linux (deb, AppImage, Snap). Learn about code signing, notarization, and preparing applications for different distribution channels (app stores, direct downloads).",
+          "description": "Package native installers: Electron-builder / cargo-tauri generating MSI/EXE (Windows), DMG/PKG (macOS), and AppImage/DEB/RPM (Linux).",
           "resources": [
             {
               "title": "Electron Builder Documentation (Electron Builder Docs)",
@@ -776,13 +820,15 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_packaging_cross_platform.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "desktop_app_developer_auto_update_implementation",
           "name": "Robust Auto-Updating Mechanisms",
           "tag": "advanced",
-          "description": "Implement robust and secure auto-update systems to seamlessly deliver new features, bug fixes, and security patches to users. Understand differential updates, update server configuration, and rollback strategies.",
+          "description": "Implement seamless background auto-updates: Electron autoUpdater, Tauri updater with cryptographic signature verification, delta updates, and user prompts.",
           "resources": [
             {
               "title": "Electron Auto Updater (Electron Docs)",
@@ -804,13 +850,15 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_auto_update_implementation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "desktop_app_developer_ci_cd_workflows",
           "name": "CI/CD Workflows for Desktop Applications",
           "tag": "advanced",
-          "description": "Set up Continuous Integration and Continuous Delivery (CI/CD) pipelines (e.g., GitHub Actions, GitLab CI) to automate building, testing, code signing, and releasing desktop applications across multiple platforms, ensuring consistent and rapid deployments.",
+          "description": "Automate desktop CI/CD: GitHub Actions multi-runner matrices (Windows, macOS, Ubuntu), automated code signing, and publishing GitHub Releases.",
           "resources": [
             {
               "title": "Building Electron Apps with GitHub Actions (Electron Community)",
@@ -832,13 +880,15 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_ci_cd_workflows.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         },
         {
           "id": "desktop_app_developer_crash_reporting_analytics",
           "name": "Crash Reporting and Application Analytics",
           "tag": "advanced",
-          "description": "Integrate crash reporting tools (e.g., Sentry, Bugsnag) and anonymous usage analytics to monitor application stability, identify issues in production, and gather data for informed development decisions and user experience improvements.",
+          "description": "Track production telemetry: Integrating Sentry for crash reporting, symbolication with minidump parsing, and privacy-first product usage telemetry.",
           "resources": [
             {
               "title": "Sentry Integration for Electron (Sentry Docs)",
@@ -860,13 +910,15 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_crash_reporting_analytics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         },
         {
           "id": "desktop_app_developer_internationalization_localization",
           "name": "Internationalization and Localization (i18n & l10n)",
           "tag": "advanced",
-          "description": "Learn how to design and implement desktop applications that can be adapted to different languages, regional settings, and cultural norms, enabling a global reach for your software.",
+          "description": "Localize desktop software: Multi-language support with i18next, RTL layouts, date/time localization, and OS locale detection.",
           "resources": [
             {
               "title": "Introduction to Internationalization (MDN Web Docs)",
@@ -888,15 +940,19 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_internationalization_localization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 29
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 25
     },
     {
       "id": "desktop_app_developer_collaboration_operations",
       "name": "Collaboration, Handoff, and Lifecycle Management",
       "tag": "advanced",
-      "description": "Understand the operational aspects of managing a desktop application, including effective team collaboration workflows, stakeholder communication, comprehensive documentation, and long-term maintenance strategies.",
+      "description": "Manage desktop software lifecycles: Deprecation schedules, OS compatibility roadmaps, and stakeholder release reviews.",
       "resources": [
         {
           "title": "Agile Methodologies Explained (Atlassian)",
@@ -919,7 +975,7 @@
           "id": "desktop_app_developer_agile_development_practices",
           "name": "Agile Development and Team Practices",
           "tag": "advanced",
-          "description": "Work effectively in a team environment using agile methodologies (Scrum, Kanban), version control best practices (branching strategies, pull requests), code reviews, and issue tracking systems (Jira, GitHub Issues) for efficient project management.",
+          "description": "Execute desktop agile workflows: Feature branching, sprint planning for multi-platform releases, and release retrospectives.",
           "resources": [
             {
               "title": "Git Branching Strategies (Atlassian)",
@@ -941,13 +997,15 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_agile_development_practices.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 29
         },
         {
           "id": "desktop_app_developer_documentation_communication",
           "name": "Technical Documentation and Stakeholder Communication",
           "tag": "advanced",
-          "description": "Communicate effectively with non-technical stakeholders, write clear and concise release notes, and maintain comprehensive documentation for internal development teams, API consumers, and end-users, covering installation, usage, and troubleshooting.",
+          "description": "Document desktop software: Architecture diagrams, user manuals, troubleshooting guides, and API integration specifications.",
           "resources": [
             {
               "title": "Writing Effective Release Notes (GitLab Docs)",
@@ -969,13 +1027,15 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_documentation_communication.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 29
         },
         {
           "id": "desktop_app_developer_legacy_code_maintenance_upgrades",
           "name": "Long-Term Maintenance, Upgrades, and Legacy Code",
           "tag": "advanced",
-          "description": "Plan for the long-term maintenance, security updates, and feature evolution of desktop applications. Learn strategies for managing technical debt, dealing with legacy codebases, adapting to new OS versions, and ensuring backward compatibility and future adaptability.",
+          "description": "Maintain legacy desktop code: Migrating from Win32 / WPF to modern WinUI, or migrating Electron apps to Tauri to cut RAM consumption by 80%.",
           "resources": [
             {
               "title": "Software Maintenance Best Practices (IBM Docs)",
@@ -997,15 +1057,19 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_legacy_code_maintenance_upgrades.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 25
     },
     {
       "id": "desktop_app_developer_portfolio_career",
       "name": "Portfolio and Career Readiness",
       "tag": "advanced",
-      "description": "Showcase your desktop app development skills through compelling projects, build a strong professional brand, and prepare for successful career opportunities in the field.",
+      "description": "Build a competitive desktop developer portfolio: Demonstrating production-ready cross-platform applications and interview readiness.",
       "resources": [
         {
           "title": "Building a Strong Tech Portfolio (Google Careers)",
@@ -1028,7 +1092,7 @@
           "id": "desktop_app_developer_capstone_project",
           "name": "Capstone Project: End-to-End Desktop Application",
           "tag": "advanced",
-          "description": "Develop a substantial, real-world desktop application from conception to deployment. This project should demonstrate proficiency across all phases of development, including advanced UI, complex data management, native integration, comprehensive testing, and professional packaging.",
+          "description": "Build an enterprise desktop capstone: Cross-platform productivity suite built in Tauri 2.0 (Rust) + React, local SQLite sync, system tray menus, auto-updates, and GitHub Actions CI.",
           "resources": [
             {
               "title": "Ideas for Desktop App Projects (Medium)",
@@ -1050,13 +1114,15 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_capstone_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 85
         },
         {
           "id": "desktop_app_developer_portfolio_case_studies",
           "name": "Creating a Professional Developer Portfolio and Case Studies",
           "tag": "advanced",
-          "description": "Document your projects effectively with clear, detailed case studies, well-organized GitHub repositories, engaging live demos, and concise technical explanations to highlight your skills and problem-solving abilities to potential employers and clients.",
+          "description": "Author technical case studies: Documenting memory reduction from 300MB to 35MB, cold start speedup, and cross-platform build pipeline design.",
           "resources": [
             {
               "title": "How to Write a Technical Case Study (Udemy Blog)",
@@ -1078,13 +1144,15 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_portfolio_case_studies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         },
         {
           "id": "desktop_app_developer_interview_career_strategies",
           "name": "Interview Preparation and Career Strategies for Desktop Developers",
           "tag": "advanced",
-          "description": "Prepare for technical interviews by practicing common questions related to desktop application architecture, specific framework knowledge (Electron, Tauri), debugging, system design, and problem-solving scenarios. Develop strategies for job searching, networking, and long-term career growth.",
+          "description": "Master desktop development interviews: Explaining process isolation, IPC serialization bottlenecks, code signing certificates, and memory profiling.",
           "resources": [
             {
               "title": "Common Software Engineering Interview Questions (GeeksforGeeks)",
@@ -1106,9 +1174,14 @@
               "url": "/data/docs/desktop_app_developer/desktop_app_developer_interview_career_strategies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 25
     }
-  ]
+  ],
+  "total_exp": 1000
 }

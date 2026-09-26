@@ -47,25 +47,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "End-to-End Automated Invoice Processing Bot with REFramework",
+        "title": "Enterprise Invoice Processing Bot with UiPath REFramework & AI OCR",
         "tech_stack": [
-          "UiPath",
-          "REFramework",
-          "OCR",
+          "UiPath Studio",
+          "Robotic Enterprise Framework",
+          "Document Understanding",
           "Excel",
           "Orchestrator"
         ],
-        "description": "Build an unattended robot that downloads PDF invoices from emails, extracts tabular line items using OCR, and enters them into an ERP system."
+        "description": "Build an enterprise invoice automation bot using REFramework with state machine architecture, intelligent document OCR parsing, and queue transaction handling."
       },
       {
-        "title": "End-to-End Invoice Processing Bot with OCR & Exception Handling",
+        "title": "Cross-System Employee Onboarding & ERP Automation Bot with Python & Playwright",
         "tech_stack": [
-          "UiPath Studio",
-          "Document Understanding",
-          "ReFramework",
-          "Excel"
+          "Python",
+          "Robocorp / OpenRPA",
+          "Playwright",
+          "REST APIs",
+          "Secure Vault"
         ],
-        "description": "Build an unattended RPA robot utilizing robotic enterprise framework (ReFramework) to extract invoice line items, handle exceptions gracefully, and update ERP databases."
+        "description": "Engineer a headless RPA bot orchestrating multi-system employee provisioning across legacy desktop software, web portals, and directory services with error recovery."
       }
     ],
     "certifications": [
@@ -73,10 +74,11 @@
       "UiPath Certified Professional Automation Developer (UiARD)"
     ],
     "interview_focus": [
-      "UiPath REFramework State Machine Architecture",
-      "Handling Dynamic and Unreliable UI Selectors",
-      "Orchestrator Queue Item Status Lifecycles",
-      "Exception Handling: Business Rule Exceptions vs System Exceptions"
+      "UiPath Robotic Enterprise Framework (REFramework) State Machine Lifecycle",
+      "Queue Transactions, Business Rule Exceptions vs System Exceptions & Auto-Retries",
+      "Robust UI Selectors (Fuzzy Selectors, Anchor Base, Computer Vision Selectors in Citrix)",
+      "Security Best Practices in RPA (Credential Assets, Encryption at Rest, Role-Based Access)",
+      "Orchestrator Management (Trigger Schedules, SLA Monitoring, Unattended vs Attended Bots)"
     ]
   },
   "format": "tree",
@@ -85,7 +87,7 @@
       "id": "rpa_foundations",
       "name": "RPA and Process Foundations",
       "tag": "essential",
-      "description": "Establish a strong understanding of Robotic Process Automation principles, its business value, suitability for various processes, and the foundational techniques for process analysis and basic scripting.",
+      "description": "Master Robotic Process Automation (RPA) fundamentals: Enterprise automation lifecycles, business process identification, attended vs unattended robots, and architecture.",
       "resources": [
         {
           "title": "UiPath Academy Foundation Courses",
@@ -113,7 +115,7 @@
           "id": "rpa_process_analysis_design",
           "name": "Process Analysis and Design",
           "tag": "essential",
-          "description": "Learn methodologies for identifying automation opportunities, documenting 'as-is' and 'to-be' processes, creating Process Definition Documents (PDD) and Solution Design Documents (SDD), calculating ROI, and understanding process re-engineering principles and business process modeling notation (BPMN).",
+          "description": "Analyze business processes: Process mining, identifying automation feasibility, calculating Return on Investment (ROI), and authoring Process Definition Documents (PDD).",
           "resources": [
             {
               "title": "Business Process Modeling Notation (BPMN)",
@@ -150,13 +152,15 @@
               "url": "/data/docs/rpa_developer/rpa_process_analysis_design.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 35
         },
         {
           "id": "rpa_programming_data_essentials",
           "name": "Programming & Data Manipulation Essentials",
           "tag": "essential",
-          "description": "Master foundational programming concepts (variables, data types, operators, control flow, functions), essential data structures (arrays, dictionaries, data tables), regular expressions for pattern matching, advanced file system operations (CSV, Excel, Text, JSON, XML), basic email automation, and fundamental API interaction concepts (REST, SOAP) for integrating with various systems.",
+          "description": "Master programming for RPA: Data manipulation in VB.NET / C# and Python, String manipulation, Regular Expressions (Regex), and handling JSON/XML payloads.",
           "resources": [
             {
               "title": "Python for Everybody (Basic Programming)",
@@ -188,15 +192,19 @@
               "url": "/data/docs/rpa_developer/rpa_programming_data_essentials.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 23
     },
     {
       "id": "rpa_core_bot_development",
       "name": "Core Bot Development",
       "tag": "essential",
-      "description": "Dive into building robust RPA bots using industry-leading platforms, focusing on UI automation, data extraction, orchestrator integration, and developing reusable components for efficiency.",
+      "description": "Develop enterprise bots using leading RPA platforms: UiPath Studio, Microsoft Power Automate Desktop, and Automation Anywhere.",
       "resources": [
         {
           "title": "UiPath Academy Developer Path",
@@ -229,7 +237,7 @@
           "id": "uipath_platform_mastery",
           "name": "UiPath Platform Mastery",
           "tag": "essential",
-          "description": "Gain expertise in UiPath Studio features: UI/Image/Text automation, robust selectors (dynamic, fuzzy, partial), data scraping, screen scraping, Orchestrator asset/queue integration, package/library publishing, and utilizing the Robotic Enterprise Framework (REFramework).",
+          "description": "Master UiPath Studio: Sequences, Flowcharts, State Machines, Robotic Enterprise (REFramework) architecture, and selector tuning (UI Explorer, fuzzy selectors).",
           "resources": [
             {
               "title": "UiPath Academy - UI Automation",
@@ -261,13 +269,15 @@
               "url": "/data/docs/rpa_developer/uipath_platform_mastery.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 32
         },
         {
           "id": "power_automate_platform_mastery",
           "name": "Power Automate Platform Mastery",
           "tag": "essential",
-          "description": "Develop proficiency in Power Automate, including creating Cloud flows, Desktop flows, UI flows, integrating AI Builder, using custom connectors, setting up data gateways, managing approvals, configuring scheduling, and leveraging Microsoft 365 services.",
+          "description": "Master Microsoft Power Automate Desktop: Cloud flows vs desktop flows, UI automation, web automation, Excel manipulation, and integrating with Microsoft 365.",
           "resources": [
             {
               "title": "Power Automate Documentation",
@@ -299,13 +309,15 @@
               "url": "/data/docs/rpa_developer/power_automate_platform_mastery.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 32
         },
         {
           "id": "rpa_advanced_automation_techniques",
           "name": "Advanced Automation Techniques",
           "tag": "advanced",
-          "description": "Explore advanced UI interaction strategies beyond basic selectors, including native Citrix/RDP automation, virtual machine automation, background automation, keyboard shortcuts, image and advanced OCR automation (fine-tuning engines, anchor base), advanced data extraction methods (relative scraping, data mining), and integrating complex external systems via REST/SOAP APIs and direct database connections (SQL).",
+          "description": "Implement advanced automation patterns: Surface automation with Computer Vision (CV), virtual desktop interface (VDI/Citrix) automation, and API-led robotic integration.",
           "resources": [
             {
               "title": "UiPath - Advanced UI Automation",
@@ -342,13 +354,15 @@
               "url": "/data/docs/rpa_developer/rpa_advanced_automation_techniques.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 60
         },
         {
           "id": "rpa_ai_ml_integration",
           "name": "Integrating AI/ML Capabilities",
           "tag": "advanced",
-          "description": "Learn to leverage pre-built AI/ML models and services within RPA platforms (e.g., UiPath AI Center, Power Automate AI Builder) for tasks like document understanding, sentiment analysis, language translation, and image recognition to enhance bot intelligence and automate unstructured data processing.",
+          "description": "Incorporate AI into RPA: Intelligent Document Processing (IDP), Optical Character Recognition (OCR with Tesseract / Google Vision), UiPath Document Understanding, and sentiment analysis.",
           "resources": [
             {
               "title": "UiPath AI Center Overview",
@@ -380,13 +394,15 @@
               "url": "/data/docs/rpa_developer/rpa_ai_ml_integration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 53
         },
         {
           "id": "rpa_version_control",
           "name": "Version Control with Git",
           "tag": "essential",
-          "description": "Understand the importance of version control in team development. Learn basic Git commands for branching, committing, merging, and collaborating on RPA projects with platforms like GitHub or Azure DevOps.",
+          "description": "Manage RPA code in version control: Git integration in UiPath Studio / Power Automate, branching strategies, and automated peer reviews.",
           "resources": [
             {
               "title": "Git - The Simple Guide",
@@ -413,15 +429,19 @@
               "url": "/data/docs/rpa_developer/rpa_version_control.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 24
     },
     {
       "id": "rpa_reliability",
       "name": "Robustness, Reliability, and Production Support",
       "tag": "advanced",
-      "description": "Build resilient bots capable of handling real-world exceptions, implement effective logging, monitoring, and develop comprehensive support strategies for maintaining automations in production environments.",
+      "description": "Build resilient automation: Robust exception handling, retry logic, centralized logging, and workload queue distribution.",
       "resources": [
         {
           "title": "UiPath Academy - Advanced Exception Handling",
@@ -454,7 +474,7 @@
           "id": "rpa_exception_logging",
           "name": "Exception Handling and Logging",
           "tag": "advanced",
-          "description": "Implement structured exception handling (Try-Catch-Finally, Global Exception Handler), manage business and system exceptions, design robust retry mechanisms, capture screenshots on error, and develop detailed logging strategies (event logs, custom logs, diagnostic tools) for effective troubleshooting.",
+          "description": "Implement enterprise error handling: System exceptions vs Business Rule exceptions, Try-Catch-Finally blocks, automated screenshot capture on error, and transaction retries.",
           "resources": [
             {
               "title": "UiPath - Global Exception Handler",
@@ -481,13 +501,15 @@
               "url": "/data/docs/rpa_developer/rpa_exception_logging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 50
         },
         {
           "id": "rpa_queues_workload",
           "name": "Queue Management and Workload Orchestration",
           "tag": "advanced",
-          "description": "Understand and implement queues for managing transactional processes, setting item priorities, processing deadlines, handling failed items, configuring retries, and designing scalable workload distribution solutions across multiple bots and environments.",
+          "description": "Orchestrate queues: UiPath Orchestrator Queues, queue items, transaction deadlines, priorities, auto-retry configurations, and dispatcher-performer design patterns.",
           "resources": [
             {
               "title": "UiPath Orchestrator Queues",
@@ -514,13 +536,15 @@
               "url": "/data/docs/rpa_developer/rpa_queues_workload.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 47
         },
         {
           "id": "rpa_testing_debugging",
           "name": "Testing and Debugging Methodologies",
           "tag": "advanced",
-          "description": "Develop comprehensive test cases (unit, integration, UAT), create synthetic test data, utilize platform-specific debugging tools and techniques (breakpoints, watch panels, step-by-step execution), identify performance bottlenecks, and implement effective troubleshooting strategies for RPA bots.",
+          "description": "Test and debug RPA automations: UiPath Test Suite, unit testing workflows with mock data, activity-level breakpoints, and step-into debugging.",
           "resources": [
             {
               "title": "UiPath Test Suite Overview",
@@ -552,13 +576,15 @@
               "url": "/data/docs/rpa_developer/rpa_testing_debugging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "rpa_monitoring_support",
           "name": "Monitoring, Alerts, and Production Support",
           "tag": "advanced",
-          "description": "Set up bot monitoring dashboards, configure alerts for failures and performance issues, establish incident management procedures, create support runbooks, define escalation matrices, and implement rollback strategies for production environments to ensure business continuity.",
+          "description": "Operate production bots: Real-time bot health monitoring, Orchestrator alerts, SLA tracking, and tier-2 incident response runbooks.",
           "resources": [
             {
               "title": "UiPath Orchestrator Monitoring and Alerting",
@@ -585,13 +611,15 @@
               "url": "/data/docs/rpa_developer/rpa_monitoring_support.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         },
         {
           "id": "rpa_developer_practice_lab_advanced",
           "name": "Practice Project: Advanced Exception Handling",
           "tag": "advanced",
-          "description": "Design and implement a complex bot flow that robustly handles various scenarios: missing input data, application crashes, invalid data formats, API call failures, configurable retries, and automatic escalation procedures using logs and email notifications, adhering to REFramework principles.",
+          "description": "Practice Project: Build an advanced transactional bot using REFramework with dynamic queue loading, PDF invoice data extraction, and ERP data entry.",
           "resources": [
             {
               "title": "UiPath - Advanced REFramework Practice",
@@ -613,15 +641,19 @@
               "url": "/data/docs/rpa_developer/rpa_developer_practice_lab_advanced.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 93
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 34
     },
     {
       "id": "rpa_enterprise_rpa_governance",
       "name": "Enterprise RPA Governance and Solution Delivery",
       "tag": "advanced",
-      "description": "Understand the principles of deploying, securing, and governing RPA solutions within an enterprise context, including project methodologies, security best practices, and demonstrating long-term business value.",
+      "description": "Establish enterprise RPA governance: Security compliance, credential vaults, deployment pipelines, and Solution Design Documents (SDD).",
       "resources": [
         {
           "title": "UiPath - RPA Governance Guide",
@@ -654,7 +686,7 @@
           "id": "rpa_security_compliance",
           "name": "Security, Compliance, and Credential Management",
           "tag": "advanced",
-          "description": "Implement secure credential storage (e.g., UiPath Orchestrator Assets, Azure Key Vault), manage bot permissions and roles, understand audit logs, handle Personally Identifiable Information (PII) securely, and ensure compliance with organizational security policies and regulatory requirements (e.g., GDPR, HIPAA).",
+          "description": "Secure bot operations: Credential management using CyberArk / Azure Key Vault / UiPath Orchestrator Assets, role-based access control (RBAC), and SOC 2 / GDPR compliance.",
           "resources": [
             {
               "title": "UiPath Orchestrator Security",
@@ -686,13 +718,15 @@
               "url": "/data/docs/rpa_developer/rpa_security_compliance.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 49
         },
         {
           "id": "rpa_deployment_lifecycle",
           "name": "Deployment Lifecycle and Version Management",
           "tag": "advanced",
-          "description": "Learn CI/CD principles for RPA, managing package versions, environment promotion strategies (Development, Test, Production), implementing rollback procedures, and integrating effectively with version control systems (e.g., Git, Azure DevOps) and orchestrator deployments.",
+          "description": "Manage RPA deployments: Dev-Test-Prod release promotion, package versioning via NuGet, unattended bot scheduling, and continuous delivery.",
           "resources": [
             {
               "title": "UiPath Deployment Best Practices",
@@ -724,13 +758,15 @@
               "url": "/data/docs/rpa_developer/rpa_deployment_lifecycle.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         },
         {
           "id": "rpa_project_lifecycle",
           "name": "RPA Project Lifecycle and Documentation",
           "tag": "advanced",
-          "description": "Understand the end-to-end RPA project lifecycle (discovery, design, development, UAT, deployment, hypercare, maintenance). Master creating comprehensive Solution Design Documents (SDD), Process Definition Documents (PDD), Test Plans, and User Manuals, aligning with Agile/Scrum methodologies for RPA.",
+          "description": "Document RPA solutions: Authoring Solution Design Documents (SDD), Operational Handover Documents (OHD), and maintenance playbooks.",
           "resources": [
             {
               "title": "UiPath Solution Design Document (SDD) Template",
@@ -762,13 +798,15 @@
               "url": "/data/docs/rpa_developer/rpa_project_lifecycle.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 86
         },
         {
           "id": "rpa_performance_scalability",
           "name": "Performance Optimization and Scalability",
           "tag": "advanced",
-          "description": "Learn strategies for optimizing bot performance (e.g., efficient selectors, reduced UI interactions, parallel processing, asynchronous operations), managing resource utilization (CPU, memory, network), and designing scalable RPA solutions to handle increasing transaction volumes and diverse workloads across multiple robots and orchestrators.",
+          "description": "Optimize bot execution speed: Minimizing selector timeouts, parallel execution across virtual machines, and optimizing API calls over UI clicks.",
           "resources": [
             {
               "title": "UiPath - Performance Considerations",
@@ -795,13 +833,15 @@
               "url": "/data/docs/rpa_developer/rpa_performance_scalability.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "rpa_capstone_project",
           "name": "Capstone Project: End-to-End Business Process Automation",
           "tag": "advanced",
-          "description": "Design, develop, test, and document a comprehensive RPA solution for a significant real-world business process (e.g., invoice processing with OCR, HR onboarding, data migration between systems). Incorporate best practices in exception handling, logging, scalability, security, and demonstrate tangible business value (ROI) in a simulated production environment.",
+          "description": "Build an enterprise RPA capstone: End-to-end automated invoice processing robot built on UiPath REFramework, extracting tabular data from PDF invoices using Document Understanding, and updating database.",
           "resources": [
             {
               "title": "UiPath Academy - Build Your First Automation (Project based)",
@@ -828,9 +868,14 @@
               "url": "/data/docs/rpa_developer/rpa_capstone_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 128
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 34
     }
-  ]
+  ],
+  "total_exp": 1000
 }

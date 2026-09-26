@@ -47,23 +47,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Agile Team Turnaround & Retrospective Playbook",
+        "title": "Agile Team Turnaround Playbook & Sprint Health Metric Dashboard",
         "tech_stack": [
-          "Jira Software",
-          "Miro",
-          "Agile Metrics Suite"
+          "Jira",
+          "Confluence",
+          "Scrum Framework",
+          "Velocity & Burndown Analytics",
+          "Miro"
         ],
-        "description": "Document a comprehensive agile transformation playbook resolving sprint carryover, reducing cycle times by 30%, and coaching a struggling squad."
+        "description": "Document an organizational agile coaching turnaround resolving sprint anti-patterns, establishing team working agreements, and tracking flow metrics."
       },
       {
-        "title": "Agile Team Transformation Playbook & Velocity Dashboard",
+        "title": "Enterprise Multi-Team Agile Scaling Framework Implementation (SAFe / LeSS)",
         "tech_stack": [
-          "Jira Software",
-          "Confluence",
-          "Mural",
-          "Scrum Metrics"
+          "SAFe / LeSS",
+          "PI Planning Facilitation",
+          "Dependency Matrix",
+          "OKRs",
+          "Value Stream Mapping"
         ],
-        "description": "Design an organizational agile maturity assessment, sprint cadence playbook, definition-of-done standards, and burn-down analytics dashboard for cross-functional squads."
+        "description": "Design an organizational agile maturity blueprint facilitating multi-team PI Planning, cross-team dependency mapping, and outcome-oriented OKR alignment."
       }
     ],
     "certifications": [
@@ -71,10 +74,11 @@
       "Professional Scrum Master (PSM I / PSM II)"
     ],
     "interview_focus": [
-      "How to Handle an Engineer Who Refuses to Attend Standups",
-      "Coaching a Product Owner Who Keeps Changing Sprint Scope",
-      "Velocity vs Throughput: Why Velocity is Not a Productivity Metric",
-      "Structuring Retrospectives that Lead to Real Actionable Change"
+      "Scrum Theory, Values, Events & Artifacts (Sprint Planning, Daily Scrum, Review, Retrospective)",
+      "Facilitating Productive Retrospectives & Overcoming Agile Anti-Patterns (Zombie Scrum)",
+      "Agile Flow Metrics (Cycle Time, Lead Time, Throughput, Cumulative Flow Diagrams / CFD)",
+      "Cross-Team Scaling Frameworks (SAFe vs LeSS vs Spotify Model Tradeoffs)",
+      "Conflict Resolution, Psychological Safety & Coaching High-Performance Engineering Teams"
     ]
   },
   "format": "tree",
@@ -83,7 +87,7 @@
       "id": "agile_foundations_mindset",
       "name": "Agile Foundations & Mindset",
       "tag": "essential",
-      "description": "Build a robust understanding of Agile principles, values, and mindsets. Master core frameworks like Scrum and Kanban, and explore foundational tools and concepts essential for any agile practitioner.",
+      "description": "Master Agile foundations: Agile Manifesto values and principles, empirical process control (Transparency, Inspection, Adaptation), and servant leadership.",
       "resources": [
         {
           "title": "The Agile Manifesto",
@@ -111,7 +115,7 @@
           "id": "agile_manifesto_values_principles",
           "name": "Agile Manifesto: Values & Principles",
           "tag": "essential",
-          "description": "Dive deep into the Agile Manifesto: its four core values and twelve supporting principles that guide agile approaches to software development and beyond, fostering an adaptive and customer-centric mindset.",
+          "description": "Deconstruct the Agile Manifesto: 4 core values and 12 principles; moving from rigid plan-driven delivery to adaptive, human-centric collaboration.",
           "resources": [
             {
               "title": "What is the Agile Manifesto?",
@@ -133,13 +137,15 @@
               "url": "/data/docs/scrum_master_agile_coach/agile_manifesto_values_principles.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "agile_mindset_empiricism",
           "name": "Agile Mindset & Empiricism",
           "tag": "essential",
-          "description": "Cultivate the core agile mindset, embracing iterative and incremental development, customer collaboration, and a deep understanding of empiricism – learning from experience and making decisions based on observed facts.",
+          "description": "Embrace empiricism: Hypothesis-driven iterations, rapid feedback loops, learning from failures, and psychological safety in teams.",
           "resources": [
             {
               "title": "What is an Agile Mindset?",
@@ -166,13 +172,15 @@
               "url": "/data/docs/scrum_master_agile_coach/agile_mindset_empiricism.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 19
         },
         {
           "id": "scrum_framework_deep_dive",
           "name": "Scrum Framework Deep Dive",
           "tag": "essential",
-          "description": "Master the Scrum framework, understanding its empirical pillars (transparency, inspection, adaptation), roles (Scrum Master, Product Owner, Developers), events (Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective), and artifacts (Product Backlog, Sprint Backlog, Increment).",
+          "description": "Master the Scrum Guide: Scrum accountabilities (Scrum Master, Product Owner, Developers), artifacts (Product Backlog, Sprint Backlog, Increment), and commitments (Product Goal, Sprint Goal, Definition of Done).",
           "resources": [
             {
               "title": "The Scrum Guide",
@@ -194,13 +202,15 @@
               "url": "/data/docs/scrum_master_agile_coach/scrum_framework_deep_dive.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 38
         },
         {
           "id": "kanban_method_fundamentals",
           "name": "Kanban Method Fundamentals",
           "tag": "essential",
-          "description": "Grasp the core principles and practices of the Kanban method: visualizing workflow, limiting Work in Progress (WIP), managing flow, making policies explicit, implementing feedback loops, and improving collaboratively for predictable delivery.",
+          "description": "Master Kanban principles: Visualizing workflow, limiting Work in Progress (WIP), managing flow, making process policies explicit, and continuous improvement (Kaizen).",
           "resources": [
             {
               "title": "Kanban Guide",
@@ -227,13 +237,15 @@
               "url": "/data/docs/scrum_master_agile_coach/kanban_method_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 23
         },
         {
           "id": "lean_thinking_for_agile",
           "name": "Lean Thinking for Agile",
           "tag": "essential",
-          "description": "Explore Lean principles such as identifying and eliminating waste, empowering the team, delivering value fast, optimizing the whole system, building quality in, and deferring commitment, and how they apply to agile environments.",
+          "description": "Apply Lean thinking: Eliminating 7 wastes (Muda), value stream mapping, pull systems, optimizing flow efficiency, and continuous delivery.",
           "resources": [
             {
               "title": "The Principles of Lean Thinking for Agile Development",
@@ -255,13 +267,15 @@
               "url": "/data/docs/scrum_master_agile_coach/lean_thinking_for_agile.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "agile_pm_tools",
           "name": "Agile Project Management Tools",
           "tag": "essential",
-          "description": "Become proficient with popular agile project management tools like Jira, Azure DevOps, Trello, and Asana for effective backlog management, task tracking, visualizing team progress, and creating essential reports.",
+          "description": "Configure Agile tooling: Jira Software, Azure DevOps, Trello, Miro; setting up Scrum/Kanban boards, WIP limits, burndown charts, and release roadmaps.",
           "resources": [
             {
               "title": "Top Agile Project Management Tools",
@@ -283,15 +297,19 @@
               "url": "/data/docs/scrum_master_agile_coach/agile_pm_tools.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 24
     },
     {
       "id": "scrum_master_coaching_facilitation",
       "name": "Scrum Master: Coaching & Facilitation",
       "tag": "essential",
-      "description": "Develop the practical skills of a Scrum Master and an emerging Agile Coach, focusing on expert facilitation, effective coaching techniques, conflict resolution, servant leadership, and fostering high-performing teams.",
+      "description": "Coach and facilitate high-performing Scrum teams: Facilitation techniques, active listening, and conflict resolution.",
       "resources": [
         {
           "title": "Atlassian Agile Coach",
@@ -319,7 +337,7 @@
           "id": "expert_scrum_event_facilitation",
           "name": "Expert Scrum Event Facilitation",
           "tag": "essential",
-          "description": "Master advanced techniques for effectively facilitating all Scrum events (Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective) and other agile meetings, ensuring engagement, psychological safety, focus, and desired outcomes.",
+          "description": "Facilitate Scrum events with mastery: Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective (using diverse formats like Sailboat, 4Ls), and Backlog Refinement.",
           "resources": [
             {
               "title": "Facilitation Guide for Scrum Masters",
@@ -341,13 +359,15 @@
               "url": "/data/docs/scrum_master_agile_coach/expert_scrum_event_facilitation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "effective_communication_active_listening",
           "name": "Effective Communication & Active Listening",
           "tag": "essential",
-          "description": "Develop strong communication skills, including active listening, powerful questioning, and non-verbal communication, essential for building trust, understanding team needs, and facilitating productive dialogues.",
+          "description": "Master coaching communication: Active listening, powerful questioning, clean language, non-violent communication, and emotional intelligence.",
           "resources": [
             {
               "title": "Active Listening: The Key to Effective Communication",
@@ -374,13 +394,15 @@
               "url": "/data/docs/scrum_master_agile_coach/effective_communication_active_listening.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "agile_coaching_mentoring_teaching",
           "name": "Agile Coaching, Mentoring & Teaching",
           "tag": "essential",
-          "description": "Learn the basics of agile coaching, including active listening, powerful questioning, providing effective feedback. Understand and practice different coaching stances (coaching, mentoring, teaching, facilitating) to guide individuals, teams, and Product Owners.",
+          "description": "Apply coaching stances: Deciding when to teach, mentor, coach, or facilitate; coaching individuals vs teams vs enterprise leadership.",
           "resources": [
             {
               "title": "Agile Coaching Fundamentals",
@@ -407,13 +429,15 @@
               "url": "/data/docs/scrum_master_agile_coach/agile_coaching_mentoring_teaching.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "building_high_performing_teams",
           "name": "Building High-Performing Teams",
           "tag": "essential",
-          "description": "Understand team dynamics using models like Tuckman's stages (forming, storming, norming, performing) and develop strategies for building high-performing, self-managing teams. Foster psychological safety, handle conflicts constructively, and promote collaboration.",
+          "description": "Build team autonomy: Tuckman's model (Forming, Storming, Norming, Performing), creating team working agreements, and establishing psychological safety.",
           "resources": [
             {
               "title": "Dealing with Conflict as a Scrum Master",
@@ -440,13 +464,15 @@
               "url": "/data/docs/scrum_master_agile_coach/building_high_performing_teams.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         },
         {
           "id": "servant_leadership_empowerment",
           "name": "Servant Leadership & Empowerment",
           "tag": "essential",
-          "description": "Embrace the mindset of a servant leader, focusing on empowering the team, fostering self-organization, and protecting the team from external interference. Learn to create an environment where the team can thrive and take ownership.",
+          "description": "Embody servant leadership: Empowering self-managing teams, shielding developers from external interruptions, and fostering ownership.",
           "resources": [
             {
               "title": "Servant Leadership in Agile",
@@ -468,13 +494,15 @@
               "url": "/data/docs/scrum_master_agile_coach/servant_leadership_empowerment.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "proactive_impediment_resolution",
           "name": "Proactive Impediment Resolution",
           "tag": "essential",
-          "description": "Learn systematic approaches to proactively identify, track, escalate, and resolve impediments that hinder team progress. Develop skills in systemic thinking to address root causes, not just symptoms, ensuring a smooth and efficient workflow.",
+          "description": "Resolve team impediments: Identifying systemic organizational blockers, escalation pathways, root-cause analysis, and eliminating cross-team friction.",
           "resources": [
             {
               "title": "How to Remove Impediments as a Scrum Master",
@@ -496,15 +524,19 @@
               "url": "/data/docs/scrum_master_agile_coach/proactive_impediment_resolution.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 22
     },
     {
       "id": "organizational_agility_metrics_scaling",
       "name": "Organizational Agility, Metrics & Scaling",
       "tag": "advanced",
-      "description": "Expand your influence beyond single teams to foster organizational agility. Master stakeholder management, leverage data through advanced agile metrics, drive continuous improvement at scale, and support Product Owners effectively.",
+      "description": "Scale Agile across the enterprise: Agile metrics, value stream optimization, and scaling frameworks (SAFe, LeSS, Scrum@Scale).",
       "resources": [
         {
           "title": "Kanban Guide",
@@ -532,7 +564,7 @@
           "id": "stakeholder_engagement_management",
           "name": "Stakeholder Engagement & Management",
           "tag": "essential",
-          "description": "Develop advanced skills in identifying key stakeholders, engaging them effectively, managing expectations, fostering transparent communication, and collaboratively managing resistance during agile adoption and transformation efforts.",
+          "description": "Engage business stakeholders: Transparent communication, managing executive expectations, educating stakeholders on Agile delivery, and sprint reviews.",
           "resources": [
             {
               "title": "Stakeholder Engagement in Agile",
@@ -554,13 +586,15 @@
               "url": "/data/docs/scrum_master_agile_coach/stakeholder_engagement_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "product_owner_support_coaching",
           "name": "Product Owner Support & Coaching",
           "tag": "essential",
-          "description": "Learn to effectively support and coach Product Owners in their critical role. This includes backlog refinement, vision articulation, stakeholder collaboration, understanding business value, and navigating product discovery.",
+          "description": "Support the Product Owner: Coaching on backlog refinement, writing crisp user stories, value-based prioritization, and defining clear Sprint Goals.",
           "resources": [
             {
               "title": "Scrum Master and Product Owner: The Dynamic Duo",
@@ -587,13 +621,15 @@
               "url": "/data/docs/scrum_master_agile_coach/product_owner_support_coaching.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "agile_metrics_value_delivery",
           "name": "Agile Metrics & Value Delivery",
           "tag": "essential",
-          "description": "Understand and expertly utilize key agile metrics such as Velocity, Cycle Time, Lead Time, Burndown/Burnup charts, and Cumulative Flow Diagrams. Learn to use metrics for informed decision-making, forecasting, and continuous improvement, emphasizing value delivery and avoiding misuse for micromanagement.",
+          "description": "Measure meaningful Agile metrics: Velocity vs throughput, cycle time, lead time, Cumulative Flow Diagrams (CFD), and avoiding vanity metrics.",
           "resources": [
             {
               "title": "Agile Metrics and Reporting",
@@ -620,13 +656,15 @@
               "url": "/data/docs/scrum_master_agile_coach/agile_metrics_value_delivery.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "systemic_continuous_improvement",
           "name": "Systemic Continuous Improvement",
           "tag": "essential",
-          "description": "Cultivate a culture of continuous learning and adaptation within teams and across the organization. Explore advanced techniques like Systems Thinking, Kaizen events, A3 problem-solving, and establishing robust feedback loops for ongoing process and value stream enhancement.",
+          "description": "Drive continuous improvement: Retrospective action item tracking, Kaizen culture, running experiments, and celebrating incremental quality gains.",
           "resources": [
             {
               "title": "Retrospective Techniques for Scrum Masters",
@@ -653,13 +691,15 @@
               "url": "/data/docs/scrum_master_agile_coach/systemic_continuous_improvement.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "introduction_scaling_agile_frameworks",
           "name": "Introduction to Scaling Agile Frameworks",
           "tag": "advanced",
-          "description": "Gain a foundational understanding of popular frameworks for scaling agile beyond a single team, such as SAFe (Scaled Agile Framework), LeSS (Large-Scale Scrum), Nexus, and Scrum@Scale. Learn their core principles, common challenges, and potential benefits.",
+          "description": "Navigate scaling frameworks: Comparing Scaled Agile Framework (SAFe), Large-Scale Scrum (LeSS), Spotify model, and Nexus for multi-team coordination.",
           "resources": [
             {
               "title": "What is SAFe? The Scaled Agile Framework Explained",
@@ -691,13 +731,15 @@
               "url": "/data/docs/scrum_master_agile_coach/introduction_scaling_agile_frameworks.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 28
         },
         {
           "id": "value_stream_mapping_optimization",
           "name": "Value Stream Mapping & Optimization",
           "tag": "advanced",
-          "description": "Understand and apply Value Stream Mapping (VSM) to identify waste, bottlenecks, and opportunities for optimization within end-to-end value delivery processes, from ideation to customer delivery.",
+          "description": "Map value streams: Identifying waste, handoffs, queue delays, measuring process cycle efficiency, and streamlining end-to-end delivery.",
           "resources": [
             {
               "title": "Value Stream Mapping in Agile",
@@ -724,13 +766,15 @@
               "url": "/data/docs/scrum_master_agile_coach/value_stream_mapping_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         },
         {
           "id": "agile_organizational_change_leadership",
           "name": "Agile Organizational Change Leadership",
           "tag": "advanced",
-          "description": "Develop the capabilities to lead and guide organizations through agile transformations. Understand change models (e.g., Kotter's 8-Step Change Model, ADKAR), identify patterns of resistance, and devise strategies for fostering sustainable agile adoption at an organizational level.",
+          "description": "Lead organizational change: Kotter's 8-step change model, managing resistance to change, and transforming traditional enterprise mindsets.",
           "resources": [
             {
               "title": "Leading Change: Why Transformation Efforts Fail (John Kotter)",
@@ -757,15 +801,19 @@
               "url": "/data/docs/scrum_master_agile_coach/agile_organizational_change_leadership.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 30
     },
     {
       "id": "advanced_agile_leadership_professional_growth",
       "name": "Advanced Agile Leadership & Professional Growth",
       "tag": "advanced",
-      "description": "Elevate your expertise to an advanced agile leadership level. Focus on enterprise-level coaching, fostering organizational learning, ethical practices, building a professional brand, and strategic career positioning.",
+      "description": "Advance as an Enterprise Agile Coach: Mentoring coaches, agile communities of practice, ethics, and certifications.",
       "resources": [
         {
           "title": "The Scrum Guide",
@@ -803,7 +851,7 @@
           "id": "enterprise_agile_coaching_mastery",
           "name": "Enterprise Agile Coaching Mastery",
           "tag": "advanced",
-          "description": "Evolve your coaching beyond team-level to become an enterprise-level Agile Coach. Learn to apply systems thinking, coach multiple teams, product leadership, senior management, and executives across various organizational structures.",
+          "description": "Coach executive leadership: Overcoming executive resistance, aligning business strategy with Agile execution, and enterprise portfolio management.",
           "resources": [
             {
               "title": "The Agile Coach Competency Framework",
@@ -825,13 +873,15 @@
               "url": "/data/docs/scrum_master_agile_coach/enterprise_agile_coaching_mastery.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         },
         {
           "id": "agile_ethics_professional_conduct",
           "name": "Agile Ethics & Professional Conduct",
           "tag": "advanced",
-          "description": "Understand and adhere to ethical guidelines and professional conduct expectations for agile coaches and Scrum Masters. Address confidentiality, conflict of interest, bias, and the boundaries of your role in organizational settings.",
+          "description": "Adhere to the Agile Coaching Code of Ethical Conduct: Confidentiality, avoiding conflicts of interest, competence boundaries, and professional integrity.",
           "resources": [
             {
               "title": "Agile Coaching Ethics",
@@ -858,13 +908,15 @@
               "url": "/data/docs/scrum_master_agile_coach/agile_ethics_professional_conduct.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         },
         {
           "id": "building_agile_communities_of_practice",
           "name": "Building Agile Communities of Practice",
           "tag": "advanced",
-          "description": "Design and establish thriving Communities of Practice (CoPs) and Guilds to facilitate knowledge sharing, peer learning, and cross-pollination of agile best practices across departments and organizational boundaries.",
+          "description": "Foster Communities of Practice (CoP): Launching internal agile learning meetups, cross-pollinating best practices, and mentoring apprentice Scrum Masters.",
           "resources": [
             {
               "title": "Communities of Practice: The Secret Sauce for Agile Success",
@@ -886,13 +938,15 @@
               "url": "/data/docs/scrum_master_agile_coach/building_agile_communities_of_practice.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         },
         {
           "id": "agile_storytelling_impact_showcasing",
           "name": "Agile Storytelling & Impact Showcasing",
           "tag": "advanced",
-          "description": "Master the art of articulating your experiences, successes, challenges, and lessons learned as a Scrum Master/Agile Coach. Develop compelling narratives for your portfolio, presentations, and interviews that clearly showcase your impact and value delivered.",
+          "description": "Showcase Agile transformation impact: Storytelling with metrics (lead time reduction, employee engagement scores, defect rate drop), and executive case presentations.",
           "resources": [
             {
               "title": "Kanban Methodology Full Course (Simplilearn)",
@@ -909,13 +963,15 @@
               "url": "/data/docs/scrum_master_agile_coach/agile_storytelling_impact_showcasing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 42
         },
         {
           "id": "agile_transformation_leadership_project",
           "name": "Capstone Project: Agile Transformation Leadership",
           "tag": "advanced",
-          "description": "Undertake a comprehensive project simulating an agile transformation within an organization. Apply all learned principles, frameworks, and coaching techniques to identify challenges, design solutions, guide teams, and measure impact. Document the journey, including a detailed retrospective and lessons learned.",
+          "description": "Build an Agile Transformation capstone: Design an end-to-end transformation playbook for a 50-person department, including team launch plans, metrics dashboard, and coaching plan.",
           "resources": [
             {
               "title": "Agile Project Simulation Game",
@@ -937,13 +993,15 @@
               "url": "/data/docs/scrum_master_agile_coach/agile_transformation_leadership_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 101
         },
         {
           "id": "personal_branding_thought_leadership",
           "name": "Personal Branding & Thought Leadership",
           "tag": "advanced",
-          "description": "Develop your personal brand as an Agile leader. Learn to share insights, contribute to the agile community through blogs, presentations, or meetups, and establish yourself as a thought leader in the agile space.",
+          "description": "Establish Agile thought leadership: Writing blogs, speaking at Agile conferences, hosting webinars, and active contribution to agile forums.",
           "resources": [
             {
               "title": "How to Build Your Personal Brand as an Agile Coach",
@@ -965,13 +1023,15 @@
               "url": "/data/docs/scrum_master_agile_coach/personal_branding_thought_leadership.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         },
         {
           "id": "professional_certifications_pathways",
           "name": "Professional Certifications & Pathways",
           "tag": "advanced",
-          "description": "Explore various professional certifications for Scrum Masters and Agile Coaches (e.g., PSM, CSM, SAFe, KMP, ICP-ACC). Understand their value, preparation strategies, and how they align with career progression.",
+          "description": "Target recognized credentials: PSM I/II/III (Scrum.org), CSM/A-CSM/CSP-SM (Scrum Alliance), ICP-ACC, and SAFe Practice Consultant (SPC).",
           "resources": [
             {
               "title": "Which Scrum Master Certification Should I Get?",
@@ -998,13 +1058,15 @@
               "url": "/data/docs/scrum_master_agile_coach/professional_certifications_pathways.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         },
         {
           "id": "career_advancement_interview_strategies",
           "name": "Career Advancement & Interview Strategies",
           "tag": "advanced",
-          "description": "Prepare comprehensively for advanced Scrum Master and Agile Coach roles. Understand common behavioral and technical interview questions, craft compelling answers, and effectively position your skills, experience, and leadership potential to secure desired roles.",
+          "description": "Master Scrum Master interviews: Scenario-based coaching questions, resolving hypothetical team conflicts, explaining metrics misuse, and executive presence.",
           "resources": [
             {
               "title": "Scrum Master Interview Questions and Answers",
@@ -1031,9 +1093,14 @@
               "url": "/data/docs/scrum_master_agile_coach/career_advancement_interview_strategies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 30
     }
-  ]
+  ],
+  "total_exp": 1000
 }

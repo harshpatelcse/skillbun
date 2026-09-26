@@ -112,7 +112,9 @@
               "url": "/data/docs/cybersecurity/cs_networking_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 31
         },
         {
           "id": "cs_os_linux_security",
@@ -140,7 +142,9 @@
               "url": "/data/docs/cybersecurity/cs_os_linux_security.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 52
         },
         {
           "id": "cs_os_windows_security",
@@ -163,7 +167,9 @@
               "url": "/data/docs/cybersecurity/cs_os_windows_security.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 52
         },
         {
           "id": "cs_python_security_scripting",
@@ -191,7 +197,9 @@
               "url": "/data/docs/cybersecurity/cs_python_security_scripting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 42
         },
         {
           "id": "cs_virtualization_lab_setup",
@@ -219,14 +227,19 @@
               "url": "/data/docs/cybersecurity/cs_virtualization_lab_setup.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 52
         }
       ],
       "project": {
         "title": "Secure Network Configuration & Basic Monitoring",
         "description": "Set up a virtual network with Linux and Windows servers. Configure basic firewall rules, secure SSH/RDP access, and implement basic log collection and analysis to identify potential anomalies.",
-        "url": "https://www.netacad.com/courses/packet-tracer"
-      }
+        "url": "https://www.netacad.com/courses/packet-tracer",
+        "difficulty": "advanced",
+        "exp": 50
+      },
+      "description": "Build deep foundational mastery over computer networking protocols, operating system internals (Linux and Windows), and hardware security perimeters."
     },
     {
       "step": 2,
@@ -263,7 +276,9 @@
               "url": "/data/docs/cybersecurity/cs_security_principles.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 42
         },
         {
           "id": "cs_vulnerability_management",
@@ -296,7 +311,9 @@
               "url": "/data/docs/cybersecurity/cs_vulnerability_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 42
         },
         {
           "id": "cs_web_app_security",
@@ -329,7 +346,9 @@
               "url": "/data/docs/cybersecurity/cs_web_app_security.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 54
         },
         {
           "id": "cs_cryptography_essentials",
@@ -357,7 +376,9 @@
               "url": "/data/docs/cybersecurity/cs_cryptography_essentials.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 41
         },
         {
           "id": "cs_cloud_security_fundamentals",
@@ -385,14 +406,19 @@
               "url": "/data/docs/cybersecurity/cs_cloud_security_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         }
       ],
       "project": {
         "title": "Web Application Penetration Test & Professional Report",
         "description": "Conduct a comprehensive penetration test on a deliberately vulnerable web application (e.g., OWASP Juice Shop or WebGoat). Identify, exploit, and document vulnerabilities, then write a detailed professional report including findings, impact, and precise remediation steps.",
-        "url": "https://owasp.org/www-project-juice-shop/"
-      }
+        "url": "https://owasp.org/www-project-juice-shop/",
+        "difficulty": "advanced",
+        "exp": 50
+      },
+      "description": "Master defensive engineering, cryptographic algorithms, vulnerability identification, endpoint hardening, and zero-trust identity architectures."
     },
     {
       "step": 3,
@@ -419,7 +445,9 @@
               "url": "/data/docs/cybersecurity/cs_pentest_methodology.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "cs_network_security_devices_controls",
@@ -447,7 +475,9 @@
               "url": "/data/docs/cybersecurity/cs_network_security_devices_controls.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 41
         },
         {
           "id": "cs_soc_fundamentals",
@@ -475,7 +505,9 @@
               "url": "/data/docs/cybersecurity/cs_soc_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 31
         },
         {
           "id": "cs_incident_response_forensics",
@@ -503,7 +535,9 @@
               "url": "/data/docs/cybersecurity/cs_incident_response_forensics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 65
         },
         {
           "id": "cs_container_devsecops_security",
@@ -531,7 +565,9 @@
               "url": "/data/docs/cybersecurity/cs_container_devsecops_security.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 73
         },
         {
           "id": "cs_malware_reverse_eng_basics",
@@ -564,7 +600,9 @@
               "url": "/data/docs/cybersecurity/cs_malware_reverse_eng_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 95
         },
         {
           "id": "cs_certifications_career",
@@ -592,7 +630,9 @@
               "url": "/data/docs/cybersecurity/cs_certifications_career.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 41
         },
         {
           "id": "cs_bug_bounty_responsible_disclosure",
@@ -620,14 +660,606 @@
               "url": "/data/docs/cybersecurity/cs_bug_bounty_responsible_disclosure.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 58
         }
       ],
       "project": {
         "title": "Simulated Incident Response & Forensic Analysis",
         "description": "Respond to a simulated cyber attack scenario, executing a full incident response lifecycle. This involves detection, analysis of compromised systems (logs, memory, disk images), containment, eradication, recovery, and generation of a comprehensive incident report.",
-        "url": "https://github.com/sbousseaden/detect-respond-lab"
-      }
+        "url": "https://github.com/sbousseaden/detect-respond-lab",
+        "difficulty": "advanced",
+        "exp": 50
+      },
+      "description": "Execute enterprise security operations, real-time intrusion detection, incident handling workflows, digital forensics, and compliance governance."
     }
-  ]
+  ],
+  "format": "tree",
+  "tree": [
+    {
+      "id": "cybersecurity_stage_1",
+      "name": "Foundation & Infrastructure Security",
+      "tag": "essential",
+      "description": "Build deep foundational mastery over computer networking protocols, operating system internals (Linux and Windows), security scripting with Python, and virtualized isolation environments.",
+      "resources": [],
+      "children": [
+        {
+          "id": "cs_networking_fundamentals",
+          "name": "Networking Fundamentals & Services",
+          "tag": "essential",
+          "description": "Master network protocols from a security perspective: dissect packets with Wireshark and tcpdump, analyze TCP 3-way handshakes and TCP flag anomalies, understand ARP spoofing/poisoning, DNS tunneling, BGP hijacking, subnets, VLAN segmentation, and firewall rule evaluation.",
+          "resources": [
+            {
+              "title": "The TCP/IP Guide - Forouzan",
+              "url": "https://www.amazon.in/TCPIP-Guide-Ch-Forouzan-Behrouz/dp/0070636773",
+              "type": "article"
+            },
+            {
+              "title": "Computer Networking Course - Network Engineering [CompTIA Network+ Exam Prep] (freeCodeCamp.org)",
+              "url": "https://www.youtube.com/watch?v=qiQR5rTSshw",
+              "type": "video"
+            },
+            {
+              "title": "Computer Networking Course - Network Engineering [CompTIA Network+ Exam Prep] (freeCodeCamp.org)",
+              "url": "https://www.youtube.com/watch?v=qiQR5rTSshw",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/cybersecurity/cs_networking_fundamentals.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "beginner",
+          "exp": 31
+        },
+        {
+          "id": "cs_os_linux_security",
+          "name": "Linux OS Fundamentals & Security",
+          "tag": "essential",
+          "description": "Master Linux kernel and operating system security: file permissions, setuid/setgid privilege escalation vectors, Linux capabilities, Pluggable Authentication Modules (PAM), kernel auditing with auditd, Mandatory Access Control (SELinux / AppArmor), and SSH hardening.",
+          "resources": [
+            {
+              "title": "The Linux Command Line: A Complete Introduction",
+              "url": "https://www.amazon.in/Linux-Command-Line-Complete-Introduction/dp/1593279523",
+              "type": "article"
+            },
+            {
+              "title": "Linux for Hackers EP 1 (NetworkChuck)",
+              "url": "https://www.youtube.com/watch?v=VbEx7B_PTOE",
+              "type": "video"
+            },
+            {
+              "title": "Introduction to Linux – Full Course for Beginners (freeCodeCamp.org)",
+              "url": "https://www.youtube.com/watch?v=sWbUDq4S6Y8",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/cybersecurity/cs_os_linux_security.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "beginner",
+          "exp": 52
+        },
+        {
+          "id": "cs_os_windows_security",
+          "name": "Windows OS Fundamentals & Security",
+          "tag": "essential",
+          "description": "Master Windows OS and Active Directory security: Kerberos ticket-granting architecture, NTLM relay attacks, SAM database encryption, LSASS process memory protection (Credential Guard), UAC bypass techniques, and auditing Windows Event Logs with Sysmon.",
+          "resources": [
+            {
+              "title": "Full Ethical Hacking Course - Network Penetration Testing for Beginners (2019) (freeCodeCamp.org)",
+              "url": "https://www.youtube.com/watch?v=3Kq1MIfTWCE",
+              "type": "video"
+            },
+            {
+              "title": "How to Build an Active Directory Hacking Lab (The Cyber Mentors)",
+              "url": "https://www.youtube.com/watch?v=xftEuVQ7kY0",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/cybersecurity/cs_os_windows_security.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "beginner",
+          "exp": 52
+        },
+        {
+          "id": "cs_python_security_scripting",
+          "name": "Python for Security Scripting & Automation",
+          "tag": "essential",
+          "description": "Author defensive and offensive security scripts in Python: craft raw packets with Scapy, build automated port and banner scanners, automate threat intelligence lookups via VirusTotal and Shodan APIs, parse PCAP files, and automate vulnerability triage.",
+          "resources": [
+            {
+              "title": "Black Hat Python: Python Programming for Hackers and Pentesters",
+              "url": "https://www.amazon.in/Black-Hat-Python-Programming-Pentesters/dp/1593275900",
+              "type": "article"
+            },
+            {
+              "title": "Python for Hackers Full Course (Ryan John)",
+              "url": "https://www.youtube.com/watch?v=XWuP5Yf5ILI",
+              "type": "video"
+            },
+            {
+              "title": "Python for Hackers FULL Course | Bug Bounty & Ethical Hacking (Ryan John)",
+              "url": "https://www.youtube.com/watch?v=XWuP5Yf5ILI",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/cybersecurity/cs_python_security_scripting.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 42
+        },
+        {
+          "id": "cs_virtualization_lab_setup",
+          "name": "Virtualization & Security Lab Setup",
+          "tag": "essential",
+          "description": "Build isolated security testing environments: configure VMware / VirtualBox / Proxmox hypervisors, set up isolated host-only virtual networks, deploy vulnerable targets (Active Directory labs, Metasploitable), and manage snapshot states for safe exploit testing.",
+          "resources": [
+            {
+              "title": "Kali Linux Official Documentation",
+              "url": "https://www.kali.org/docs/",
+              "type": "article"
+            },
+            {
+              "title": "How to Build an Active Directory Hacking Lab (The Cyber Mentors)",
+              "url": "https://www.youtube.com/watch?v=xftEuVQ7kY0",
+              "type": "video"
+            },
+            {
+              "title": "Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers (freeCodeCamp.org)",
+              "url": "https://www.youtube.com/watch?v=fqMOX6JJhGo",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/cybersecurity/cs_virtualization_lab_setup.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "beginner",
+          "exp": 52
+        }
+      ],
+      "difficulty": "beginner",
+      "exp": 28
+    },
+    {
+      "id": "cybersecurity_stage_2",
+      "name": "Core Cybersecurity Concepts & Web Application Security",
+      "tag": "essential",
+      "description": "Master core cybersecurity principles: threat modeling frameworks, enterprise vulnerability management, OWASP Top 10 web security, cryptographic algorithms, and cloud workload defense.",
+      "resources": [],
+      "children": [
+        {
+          "id": "cs_security_principles",
+          "name": "Information Security Principles & Frameworks",
+          "tag": "essential",
+          "description": "Master the theoretical pillars of information security: CIA triad, Defense-in-Depth, Zero Trust Architecture (ZTA), threat modeling methodologies (STRIDE, DREAD, Attack Trees), and major security governance frameworks (NIST CSF, ISO 27001, SOC 2).",
+          "resources": [
+            {
+              "title": "NIST Cybersecurity Framework Overview",
+              "url": "https://www.nist.gov/cyberframework",
+              "type": "article"
+            },
+            {
+              "title": "Threat Modeling: Designing for Security",
+              "url": "https://www.amazon.in/Threat-Modeling-Designing-Adam-Shostack/dp/1118809998",
+              "type": "article"
+            },
+            {
+              "title": "What Is Cyber Security | How It Works? | Cyber Security In 7 Minutes | Cyber Security | Simplilearn (Simplilearn)",
+              "url": "https://www.youtube.com/watch?v=inWWhr5tnEA",
+              "type": "video"
+            },
+            {
+              "title": "What Is Cyber Security | How It Works? | Cyber Security In 7 Minutes | Cyber Security | Simplilearn (Simplilearn)",
+              "url": "https://www.youtube.com/watch?v=inWWhr5tnEA",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/cybersecurity/cs_security_principles.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 42
+        },
+        {
+          "id": "cs_vulnerability_management",
+          "name": "Vulnerability Assessment & Management",
+          "tag": "essential",
+          "description": "Manage enterprise vulnerability lifecycles: conduct automated scans with Nessus / OpenVAS, evaluate CVSS v3.1 / v4.0 metrics, prioritize remediation using the Exploit Prediction Scoring System (EPSS), manage patch deployment schedules, and handle zero-day disclosures.",
+          "resources": [
+            {
+              "title": "Nmap: From Basics to Advanced Use",
+              "url": "https://nmap.org/book/man.html",
+              "type": "article"
+            },
+            {
+              "title": "Practical Vulnerability Management Course",
+              "url": "https://www.udemy.com/course/practical-vulnerability-management/",
+              "type": "course"
+            },
+            {
+              "title": "CompTIA Security+ Full Course for Beginners - Module 8 - Vulnerability Management (BurningIceTech)",
+              "url": "https://www.youtube.com/watch?v=AwKuIqkkxks",
+              "type": "video"
+            },
+            {
+              "title": "Nmap Tutorial to find Network Vulnerabilities (NetworkChuck)",
+              "url": "https://www.youtube.com/watch?v=4t4kBkMsDbQ",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/cybersecurity/cs_vulnerability_management.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 42
+        },
+        {
+          "id": "cs_web_app_security",
+          "name": "Web Application Security (OWASP Top 10 Deep Dive)",
+          "tag": "essential",
+          "description": "Deep dive into the OWASP Top 10 vulnerabilities: SQL injection (Union, Error, Blind time-based), Server-Side Request Forgery (SSRF) targeting cloud metadata services (IMDSv2), Cross-Site Scripting (XSS), IDOR / BOLA, and testing web applications with Burp Suite Professional.",
+          "resources": [
+            {
+              "title": "OWASP Top 10 Explained",
+              "url": "https://owasp.org/www-project-top-ten/",
+              "type": "article"
+            },
+            {
+              "title": "Web Security Academy (PortSwigger)",
+              "url": "https://portswigger.net/web-security",
+              "type": "course"
+            },
+            {
+              "title": "OWASP Top 10 2025: Your complete guide to securing your applications (Aikido Security)",
+              "url": "https://www.youtube.com/watch?v=Jzr0Jdnq_EI",
+              "type": "video"
+            },
+            {
+              "title": "Bugcrowd University - Introduction to Burp Suite (Bugcrowd)",
+              "url": "https://www.youtube.com/watch?v=h2duGBZLEek",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/cybersecurity/cs_web_app_security.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 54
+        },
+        {
+          "id": "cs_cryptography_essentials",
+          "name": "Cryptography Fundamentals",
+          "tag": "essential",
+          "description": "Master applied cryptography: symmetric encryption (AES-256-GCM), asymmetric key exchange (RSA, ECC / Ed25519), cryptographic hashing (SHA-256, SHA-3) and password hashing (Argon2id, bcrypt), TLS 1.3 handshakes, Public Key Infrastructure (PKI), and digital certificates.",
+          "resources": [
+            {
+              "title": "Cryptography I (Stanford Online)",
+              "url": "https://www.coursera.org/learn/cryptography",
+              "type": "course"
+            },
+            {
+              "title": "Cryptography: Crash Course Computer Science #33 (CrashCourse)",
+              "url": "https://www.youtube.com/watch?v=jhXCTbFnK8o",
+              "type": "video"
+            },
+            {
+              "title": "SSL, TLS, HTTPS Explained (ByteByteGo)",
+              "url": "https://www.youtube.com/watch?v=j9QmMEWmcfo",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/cybersecurity/cs_cryptography_essentials.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "beginner",
+          "exp": 41
+        },
+        {
+          "id": "cs_cloud_security_fundamentals",
+          "name": "Cloud Security Fundamentals",
+          "tag": "advanced",
+          "description": "Secure cloud workloads across AWS, GCP, and Azure: Shared Responsibility Model, IAM least privilege, Cloud Security Posture Management (CSPM), remediating S3/GCS bucket public exposures, and detecting lateral movement within cloud environments.",
+          "resources": [
+            {
+              "title": "Introduction to Cloud Security (AWS Training)",
+              "url": "https://aws.amazon.com/training/course-descriptions/introduction-to-cloud-security/",
+              "type": "course"
+            },
+            {
+              "title": "Azure Security Fundamentals (Microsoft Learn)",
+              "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-security-engineer/",
+              "type": "course"
+            },
+            {
+              "title": "What Is Cloud Security? | Cloud Security Fundamentals | Cloud Computing Tutorial | Simplilearn (Simplilearn)",
+              "url": "https://www.youtube.com/watch?v=Qt9lhzFhW_c",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/cybersecurity/cs_cloud_security_fundamentals.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "advanced",
+          "exp": 44
+        }
+      ],
+      "difficulty": "beginner",
+      "exp": 28
+    },
+    {
+      "id": "cybersecurity_stage_3",
+      "name": "Ethical Hacking, Incident Response & Career Readiness",
+      "tag": "essential",
+      "description": "Execute practical security operations: penetration testing methodologies, perimeter defense controls, SOC SIEM detection engineering, digital forensics and incident response, and container security.",
+      "resources": [],
+      "children": [
+        {
+          "id": "cs_pentest_methodology",
+          "name": "Advanced Penetration Testing Methodology",
+          "tag": "essential",
+          "description": "Execute structured penetration tests following the PTES framework: OSINT reconnaissance (Amass, Shodan), vulnerability scanning, weaponization, exploitation (Metasploit, manual proof-of-concept exploits), post-exploitation (BloodHound, Mimikatz), and executive reporting.",
+          "resources": [
+            {
+              "title": "Penetration Testing Execution Standard (PTES)",
+              "url": "http://www.pentest-standard.org/index.php/Main_Page",
+              "type": "article"
+            },
+            {
+              "title": "Network Penetration Testing for Beginners (freeCodeCamp)",
+              "url": "https://www.youtube.com/watch?v=3Kq1MIfTWCE",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/cybersecurity/cs_pentest_methodology.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "advanced",
+          "exp": 41
+        },
+        {
+          "id": "cs_network_security_devices_controls",
+          "name": "Network Security Devices & Access Controls",
+          "tag": "essential",
+          "description": "Deploy and configure enterprise perimeter defenses: Next-Generation Firewalls (NGFW), Intrusion Detection and Prevention Systems (Suricata, Snort), Web Application Firewalls (WAF), network DMZs, and 802.1X network access control.",
+          "resources": [
+            {
+              "title": "Introduction to Network Security Devices",
+              "url": "https://www.geeksforgeeks.org/introduction-to-network-security-devices/",
+              "type": "article"
+            },
+            {
+              "title": "How to use AWS WAF (Web application firewall)/Web ACL? - Step By Step Tutorial (Part-11)#aws #devops (Rahul Wagh)",
+              "url": "https://www.youtube.com/watch?v=FHRXXrQ765M",
+              "type": "video"
+            },
+            {
+              "title": "Azure Networking Basics: VNet, Subnets, NSG, Peering, VPN, ExpressRoute & Virtual WAN [AZ-900] (Vikram Kumar)",
+              "url": "https://www.youtube.com/watch?v=KFNyLv6H9-M",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/cybersecurity/cs_network_security_devices_controls.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 41
+        },
+        {
+          "id": "cs_soc_fundamentals",
+          "name": "SOC Fundamentals & SIEM",
+          "tag": "essential",
+          "description": "Operate inside a Security Operations Center (SOC): configure SIEM architectures (Elasticsearch, Wazuh, Splunk), ingest and normalize security event logs, author detection rules using Sigma and YARA, and automate incident alerts via SOAR playbooks.",
+          "resources": [
+            {
+              "title": "Getting Started with Splunk (Splunk Education)",
+              "url": "https://www.splunk.com/en_us/training/free-courses/splunk-fundamentals-1.html",
+              "type": "course"
+            },
+            {
+              "title": "Security Operations 101 (The Cyber Mentor)",
+              "url": "https://www.youtube.com/watch?v=56NDgBOSpUg",
+              "type": "video"
+            },
+            {
+              "title": "What is SIEM? | Security Information and Event Management Explained (The ByteWise)",
+              "url": "https://www.youtube.com/watch?v=9cbFRJLsKG0",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/cybersecurity/cs_soc_fundamentals.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "beginner",
+          "exp": 31
+        },
+        {
+          "id": "cs_incident_response_forensics",
+          "name": "Incident Response & Digital Forensics Basics",
+          "tag": "essential",
+          "description": "Execute incident response workflows (NIST SP 800-61): Identification, Containment, Eradication, and Recovery. Conduct digital forensics: memory analysis with Volatility 3, disk artifact analysis with Eric Zimmerman Tools, timeline reconstruction with Plaso, and maintaining chain of custody.",
+          "resources": [
+            {
+              "title": "NIST Computer Security Incident Handling Guide",
+              "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf",
+              "type": "article"
+            },
+            {
+              "title": "Introduction to Memory Forensics with Volatility 3 (DFIRScience)",
+              "url": "https://www.youtube.com/watch?v=Uk3DEgY5Ue8",
+              "type": "video"
+            },
+            {
+              "title": "Cybersecurity IDR: Incident Detection & Response | Google Cybersecurity Certificate (Grow with Google)",
+              "url": "https://www.youtube.com/watch?v=MsGl6lX-YaI",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/cybersecurity/cs_incident_response_forensics.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "beginner",
+          "exp": 65
+        },
+        {
+          "id": "cs_container_devsecops_security",
+          "name": "Container Security & DevSecOps Fundamentals",
+          "tag": "advanced",
+          "description": "Secure cloud-native containerized environments: scan container images for CVEs with Trivy, enforce Kubernetes admission policies with OPA Gatekeeper, detect runtime container anomalies using Falco, and embed security verification gates into CI/CD pipelines.",
+          "resources": [
+            {
+              "title": "OWASP DevSecOps Guideline",
+              "url": "https://owasp.org/www-project-devsecops-guideline/",
+              "type": "article"
+            },
+            {
+              "title": "Kubernetes Security Best Practices you need to know | THE Guide for securing your K8s cluster! (TechWorld with Nana)",
+              "url": "https://www.youtube.com/watch?v=oBf5lrmquYI",
+              "type": "video"
+            },
+            {
+              "title": "What is DevSecOps? DevSecOps explained in 8 Mins (TechWorld with Nana)",
+              "url": "https://www.youtube.com/watch?v=nrhxNNH5lt0",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/cybersecurity/cs_container_devsecops_security.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "advanced",
+          "exp": 73
+        },
+        {
+          "id": "cs_malware_reverse_eng_basics",
+          "name": "Malware Analysis & Reverse Engineering Basics",
+          "tag": "advanced",
+          "description": "Analyze malicious binaries safely: perform static analysis (PE headers, imports/exports, strings with FLOSS), decompile code in Ghidra, execute dynamic behavioral analysis in isolated sandboxes, detect process injection techniques, and author resilient YARA detection rules.",
+          "resources": [
+            {
+              "title": "Practical Malware Analysis Book",
+              "url": "https://www.amazon.in/Practical-Malware-Analysis-Dissecting-Malicious/dp/1593272909",
+              "type": "article"
+            },
+            {
+              "title": "Malware Analysis Fundamentals Course (Cybrary)",
+              "url": "https://www.cybrary.it/course/malware-analysis-fundamentals/",
+              "type": "course"
+            },
+            {
+              "title": "Malware Analysis Crash Course - Analysis lab setup (dzuma)",
+              "url": "https://www.youtube.com/watch?v=jLhHc_m0TE4",
+              "type": "video"
+            },
+            {
+              "title": "Malware Analysis Crash Course - Analysis lab setup (dzuma)",
+              "url": "https://www.youtube.com/watch?v=jLhHc_m0TE4",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/cybersecurity/cs_malware_reverse_eng_basics.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "advanced",
+          "exp": 95
+        },
+        {
+          "id": "cs_certifications_career",
+          "name": "Cybersecurity Certifications & Career Pathways",
+          "tag": "essential",
+          "description": "Navigate professional cybersecurity certifications and career tracks: compare foundational credentials (CompTIA Security+, Network+), hands-on offensive certifications (OSCP, CEH Practical), blue team certifications (BTL1, CySA+, GCIH), and align skills with industry roles.",
+          "resources": [
+            {
+              "title": "Top Cybersecurity Certifications (Simplilearn)",
+              "url": "https://www.simplilearn.com/cyber-security-certifications-article",
+              "type": "article"
+            },
+            {
+              "title": "How to Pass the Security+ Exam (Professor Messer)",
+              "url": "https://www.youtube.com/watch?v=9NE33fpQuw8",
+              "type": "video"
+            },
+            {
+              "title": "How to Get Your First Cybersecurity Job in 2026 (Bitten Tech)",
+              "url": "https://www.youtube.com/watch?v=h55R_lbIaeU",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/cybersecurity/cs_certifications_career.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 41
+        },
+        {
+          "id": "cs_bug_bounty_responsible_disclosure",
+          "name": "Bug Bounty Hunting & Responsible Disclosure",
+          "tag": "advanced",
+          "description": "Participate in responsible vulnerability disclosure: navigate bug bounty platforms (HackerOne, Bugcrowd), author professional, reproducible proof-of-concept vulnerability reports, calculate CVSS scores, and operate strictly within legal and ethical safe harbor boundaries.",
+          "resources": [
+            {
+              "title": "HackerOne Hacker Fundamentals",
+              "url": "https://www.hackerone.com/resources/hacker-fundamentals",
+              "type": "article"
+            },
+            {
+              "title": "How to Get Started in Bug Bounty (STOK)",
+              "url": "https://www.youtube.com/watch?v=CU9Iafc-Igs",
+              "type": "video"
+            },
+            {
+              "title": "Web Application Ethical Hacking - Penetration Testing Course for Beginners (freeCodeCamp.org)",
+              "url": "https://www.youtube.com/watch?v=X4eRbHgRawI",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/cybersecurity/cs_bug_bounty_responsible_disclosure.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "advanced",
+          "exp": 58
+        }
+      ],
+      "difficulty": "advanced",
+      "exp": 47
+    }
+  ],
+  "total_exp": 1000
 }

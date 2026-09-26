@@ -84,7 +84,7 @@
       "id": "azure_fundamentals_core",
       "name": "Azure Fundamentals & Core Concepts",
       "tag": "essential",
-      "description": "Establish a strong foundation in cloud computing principles, Azure's global infrastructure, core services, and foundational concepts essential for any Azure Cloud Engineer.",
+      "description": "Establish an unshakeable Microsoft Azure foundation: cloud architectural paradigms, Azure global infrastructure, cloud economics, and modern management tooling.",
       "resources": [
         {
           "title": "AZ-900 Azure Fundamentals Full Course",
@@ -107,7 +107,7 @@
           "id": "cloud_computing_intro",
           "name": "Introduction to Cloud Computing",
           "tag": "essential",
-          "description": "Understand the core concepts of cloud computing, its benefits, service models (IaaS, PaaS, SaaS), and deployment models (public, private, hybrid).",
+          "description": "Understand enterprise cloud architectures: comparing IaaS, PaaS, SaaS, and serverless compute models; evaluating Capex vs Opex financial models; and assessing cloud scalability, elastic provisioning, and high availability SLAs.",
           "resources": [
             {
               "title": "What is cloud computing?",
@@ -124,13 +124,15 @@
               "url": "/data/docs/azure_cloud_engineer/cloud_computing_intro.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 10
         },
         {
           "id": "azure_architecture_overview",
           "name": "Azure Architecture & Services Overview",
           "tag": "essential",
-          "description": "Explore Azure's global infrastructure including regions, availability zones, resource groups, subscriptions, and an overview of core compute, network, and storage services.",
+          "description": "Master the Azure global backbone: Geographies, paired Regions (data residency and cross-region recovery), Availability Zones (AZs), fault domains and update domains within datacenters, and edge locations.",
           "resources": [
             {
               "title": "Explore Azure architectural components",
@@ -147,13 +149,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_architecture_overview.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 10
         },
         {
           "id": "azure_management_tools",
           "name": "Azure Management Tools & Interfaces",
           "tag": "essential",
-          "description": "Learn to interact with Azure using the Azure Portal for graphical management, Azure CLI for command-line operations, and Azure PowerShell for scripting and automation.",
+          "description": "Master enterprise Azure administration: Azure Portal, Azure CLI (`az` commands with JMESPath query filtering), Azure PowerShell (`Az` module), and Azure Resource Manager (ARM) declarative control plane.",
           "resources": [
             {
               "title": "Azure Portal overview",
@@ -175,13 +179,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_management_tools.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 13
         },
         {
           "id": "azure_pricing_slas_support",
           "name": "Azure Pricing, SLAs, and Support",
           "tag": "essential",
-          "description": "Understand Azure's pricing models, cost optimization strategies, service level agreements (SLAs) for different services, and available support options for enterprises.",
+          "description": "Master Azure cost estimation and financial governance: Azure Pricing Calculator, Total Cost of Ownership (TCO) calculator, understanding composite Service Level Agreements (SLAs), and selecting enterprise support tiers.",
           "resources": [
             {
               "title": "Predict and optimize costs with Azure Cost Management and Billing",
@@ -198,15 +204,19 @@
               "url": "/data/docs/azure_cloud_engineer/azure_pricing_slas_support.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 14
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 7
     },
     {
       "id": "azure_identity_access_management",
       "name": "Azure Identity & Access Management",
       "tag": "essential",
-      "description": "Learn to manage identities, control access to resources, and implement robust authentication and authorization measures across your Azure environment.",
+      "description": "Master enterprise zero-trust identity and access control: Microsoft Entra ID (formerly Azure AD), role-based access control, privileged identity lifecycles, and secure credential storage.",
       "resources": [
         {
           "title": "Implement identity and access management",
@@ -229,7 +239,7 @@
           "id": "azure_ad_core_identity",
           "name": "Azure Active Directory Fundamentals",
           "tag": "essential",
-          "description": "Understand the core concepts of Azure AD, manage users, groups, and devices, and configure enterprise application registrations for single sign-on (SSO).",
+          "description": "Deep dive into Microsoft Entra ID: users, security groups, administrative units, tenant boundaries, application registrations, and service principals for workload identities.",
           "resources": [
             {
               "title": "Introduction to Azure Active Directory",
@@ -246,13 +256,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_ad_core_identity.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 9
         },
         {
           "id": "azure_rbac_mfa",
           "name": "Role-Based Access Control (RBAC) & Multi-Factor Authentication (MFA)",
           "tag": "essential",
-          "description": "Implement granular access control using Azure RBAC to define permissions, and enforce strong authentication using Azure AD Multi-Factor Authentication.",
+          "description": "Implement granular Role-Based Access Control (Azure RBAC): built-in roles (Owner, Contributor, Reader) vs custom roles, inheritance across Management Group, Subscription, Resource Group, and Resource scopes, and enforcing phishing-resistant Multi-Factor Authentication (MFA).",
           "resources": [
             {
               "title": "What is Azure role-based access control (Azure RBAC)?",
@@ -269,13 +281,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_rbac_mfa.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 14
         },
         {
           "id": "azure_ad_hybrid_identity",
           "name": "Hybrid Identity with Azure AD Connect",
           "tag": "essential",
-          "description": "Implement and manage hybrid identity solutions to synchronize on-premises Active Directory with Azure AD using Azure AD Connect, enabling seamless user experiences.",
+          "description": "Architect hybrid identity federation: Microsoft Entra Connect sync (password hash synchronization, pass-through authentication, and Active Directory Federation Services ADFS), and seamless single sign-on (SSO).",
           "resources": [
             {
               "title": "What is Azure AD Connect?",
@@ -292,13 +306,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_ad_hybrid_identity.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 14
         },
         {
           "id": "azure_ad_conditional_access",
           "name": "Azure AD Conditional Access",
           "tag": "essential",
-          "description": "Configure Conditional Access policies to enforce specific conditions for accessing resources, enhancing security and compliance based on user, device, location, and application context.",
+          "description": "Design zero-trust Conditional Access policies: evaluating user risk, sign-in risk, device compliance (Intune), IP locations, and client apps to enforce MFA, block access, or require compliant devices.",
           "resources": [
             {
               "title": "What is Conditional Access?",
@@ -315,13 +331,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_ad_conditional_access.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 13
         },
         {
           "id": "azure_managed_identities",
           "name": "Managed Identities for Azure Resources",
           "tag": "essential",
-          "description": "Learn to use Managed Identities to provide Azure services with an automatically managed identity in Azure AD, eliminating the need to manage credentials.",
+          "description": "Eliminate hard-coded credentials using Azure Managed Identities: System-Assigned vs User-Assigned Managed Identities, authenticating Azure compute workloads (VMs, App Services, Functions, AKS) directly against Azure Key Vault, Azure SQL, and Storage.",
           "resources": [
             {
               "title": "What are managed identities for Azure resources?",
@@ -348,13 +366,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_managed_identities.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 14
         },
         {
           "id": "azure_key_vault",
           "name": "Azure Key Vault for Secrets Management",
           "tag": "essential",
-          "description": "Securely store and manage cryptographic keys, certificates, and secrets using Azure Key Vault, integrating it with applications and other Azure services.",
+          "description": "Secure cryptographic assets with Azure Key Vault: managing HSM-backed encryption keys, database connection strings, and TLS certificates, configuring RBAC-based access models, automated certificate renewal, and soft-delete/purge protection.",
           "resources": [
             {
               "title": "About Azure Key Vault",
@@ -371,13 +391,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_key_vault.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 14
         },
         {
           "id": "azure_ad_identity_protection_governance",
           "name": "Azure AD Identity Protection & Governance",
           "tag": "advanced",
-          "description": "Utilize Azure AD Identity Protection to detect and remediate identity-based risks, and explore Identity Governance features like Privileged Identity Management (PIM) and Access Reviews.",
+          "description": "Implement Privileged Identity Management (PIM): just-in-time (JIT) role activation with approval workflows, time-bound access, access reviews, identity risk detection, and automated governance.",
           "resources": [
             {
               "title": "What is Identity Protection?",
@@ -394,15 +416,19 @@
               "url": "/data/docs/azure_cloud_engineer/azure_ad_identity_protection_governance.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 18
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 11
     },
     {
       "id": "azure_networking_services",
       "name": "Azure Networking Services",
       "tag": "essential",
-      "description": "Design, implement, and manage secure and scalable network architectures within Azure, connecting resources and ensuring reliable communication across hybrid environments.",
+      "description": "Architect secure, isolated enterprise virtual networks: hybrid connectivity, micro-segmentation, traffic routing, and perimeter security.",
       "resources": [
         {
           "title": "Configure and manage virtual networking",
@@ -425,7 +451,7 @@
           "id": "vnets_subnets",
           "name": "Virtual Networks (VNets) & Subnets",
           "tag": "essential",
-          "description": "Create and configure virtual networks, subnets, and IP addressing schemes for isolated and connected resources, understanding CIDR notation and network segmentation.",
+          "description": "Design Azure Virtual Networks (VNets): CIDR IP address planning, subnet segmentation (web, app, data, gateway, and bastion subnets), and public vs private IP allocation.",
           "resources": [
             {
               "title": "What is Azure Virtual Network?",
@@ -442,13 +468,15 @@
               "url": "/data/docs/azure_cloud_engineer/vnets_subnets.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 11
         },
         {
           "id": "azure_network_security_nsg_firewall",
           "name": "Azure Network Security (NSG, ASG, Azure Firewall)",
           "tag": "essential",
-          "description": "Implement network-level security using Network Security Groups (NSGs) for granular traffic control, Application Security Groups (ASGs) for simplified rule management, and Azure Firewall for centralized network protection.",
+          "description": "Implement network traffic inspection: stateful Network Security Groups (NSGs), Application Security Groups (ASGs) for micro-segmentation, and Azure Firewall Premium (IDPS, TLS inspection, URL filtering, FQDN tagging).",
           "resources": [
             {
               "title": "Network security groups",
@@ -480,13 +508,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_network_security_nsg_firewall.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 14
         },
         {
           "id": "azure_load_balancing_traffic",
           "name": "Load Balancing & Traffic Management (LB, AGW, AFD, TM)",
           "tag": "essential",
-          "description": "Distribute network traffic and ensure high availability and performance using Azure Load Balancer, Application Gateway (with WAF capabilities), Azure Front Door, and Traffic Manager.",
+          "description": "Configure Layer 4 and Layer 7 traffic distribution: Azure Load Balancer (Standard SKU, ultra-low latency, backend pools, health probes), Azure Application Gateway with WAF v2 (URL-based routing, SSL offloading, cookie-based affinity), and Azure Front Door for global Anycast routing.",
           "resources": [
             {
               "title": "What is Azure Load Balancer?",
@@ -508,13 +538,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_load_balancing_traffic.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 14
         },
         {
           "id": "azure_hybrid_network_connectivity",
           "name": "Hybrid Network Connectivity (VPN Gateway & ExpressRoute)",
           "tag": "essential",
-          "description": "Establish secure and reliable connections between on-premises networks and Azure virtual networks using Azure VPN Gateway (Site-to-Site, Point-to-Site) and Azure ExpressRoute for high-bandwidth, low-latency hybrid cloud scenarios.",
+          "description": "Establish secure hybrid enterprise connectivity: Site-to-Site (S2S) VPN, Point-to-Site (P2S) VPN, and dedicated Azure ExpressRoute private high-throughput peering with redundant circuit failover.",
           "resources": [
             {
               "title": "What is VPN Gateway?",
@@ -531,13 +563,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_hybrid_network_connectivity.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 13
         },
         {
           "id": "azure_dns_cdn",
           "name": "Azure DNS & Content Delivery Network (CDN)",
           "tag": "essential",
-          "description": "Manage domain names and DNS resolution with Azure DNS for public and private zones and accelerate content delivery to users globally with Azure CDN.",
+          "description": "Manage global domain names and static asset acceleration: Azure DNS public and private hosted zones (automatic registration), and Azure Content Delivery Network (CDN) with origin shielding and custom domain SSL.",
           "resources": [
             {
               "title": "What is Azure DNS?",
@@ -554,13 +588,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_dns_cdn.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 14
         },
         {
           "id": "azure_vnet_peering_routing_udr",
           "name": "VNet Peering & Custom Routing (UDRs)",
           "tag": "essential",
-          "description": "Configure VNet peering to connect virtual networks within Azure and implement User-Defined Routes (UDRs) to control network traffic flow and integrate Network Virtual Appliances (NVAs).",
+          "description": "Design Hub-and-Spoke network topologies: VNet Peering (regional and global), custom User Defined Routes (UDRs) forcing traffic through central firewalls, and Azure Virtual Network Gateway route propagation.",
           "resources": [
             {
               "title": "Virtual network peering",
@@ -587,13 +623,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_vnet_peering_routing_udr.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 14
         },
         {
           "id": "azure_private_link_service_endpoints",
           "name": "Azure Private Link & Service Endpoints",
           "tag": "essential",
-          "description": "Securely connect to Azure platform services (PaaS) using private endpoints with Azure Private Link, and secure your service endpoints for direct connectivity from virtual networks.",
+          "description": "Eliminate exposure to the public internet: Service Endpoints for subnet-level access, and Azure Private Link / Private Endpoints securing PaaS services (Azure SQL, Storage, Key Vault) with private IP addresses in your VNet.",
           "resources": [
             {
               "title": "What is Azure Private Link?",
@@ -620,13 +658,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_private_link_service_endpoints.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 14
         },
         {
           "id": "azure_ddos_protection",
           "name": "Azure DDoS Protection",
           "tag": "essential",
-          "description": "Protect your Azure applications and resources from distributed denial-of-service (DDoS) attacks with Azure DDoS Protection Standard.",
+          "description": "Mitigate volumetric network attacks: Azure DDoS Protection Network IP Protection, adaptive attack tuning, real-time telemetry, and rapid response support integration.",
           "resources": [
             {
               "title": "What is Azure DDoS Protection?",
@@ -643,15 +683,19 @@
               "url": "/data/docs/azure_cloud_engineer/azure_ddos_protection.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 11
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 8
     },
     {
       "id": "azure_compute_services",
       "name": "Azure Compute Services",
       "tag": "essential",
-      "description": "Deploy and manage various compute resources, from virtual machines and containers to serverless functions, to host your applications and microservices efficiently.",
+      "description": "Deploy, scale, and orchestrate enterprise compute workloads: virtual machines, PaaS application runtimes, serverless microservices, and Kubernetes clusters.",
       "resources": [
         {
           "title": "Implement and manage compute resources",
@@ -669,7 +713,7 @@
           "id": "virtual_machines_scale_sets",
           "name": "Azure Virtual Machines (VMs) & VM Scale Sets",
           "tag": "essential",
-          "description": "Provision and manage Windows/Linux virtual machines, configure availability options (Availability Sets, Availability Zones), and scale out applications automatically using VM Scale Sets.",
+          "description": "Engineer scalable infrastructure with Azure VMs and VMSS: sizing instance series (B, D, E, F series), availability sets, Virtual Machine Scale Sets with autoscale rules (CPU, memory, custom metrics), and Azure Bastion for secure, port-less management.",
           "resources": [
             {
               "title": "What is Azure Virtual Machines?",
@@ -691,13 +735,15 @@
               "url": "/data/docs/azure_cloud_engineer/virtual_machines_scale_sets.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 14
         },
         {
           "id": "azure_app_service",
           "name": "Azure App Service (Web Apps, API Apps)",
           "tag": "essential",
-          "description": "Deploy, configure, and scale web applications, REST APIs, and mobile backends with Azure App Service, including deployment slots, custom domains, and integration with other services.",
+          "description": "Deploy enterprise web applications with Azure App Service: deployment slots with zero-downtime swaps, App Service Plans, regional VNet integration for private outbound access, custom domains, and auto-scaling.",
           "resources": [
             {
               "title": "Azure App Service overview",
@@ -714,13 +760,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_app_service.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 14
         },
         {
           "id": "serverless_compute",
           "name": "Azure Functions & Logic Apps (Serverless Compute)",
           "tag": "essential",
-          "description": "Develop event-driven serverless applications with Azure Functions for executing code on demand, and build automated workflows with Azure Logic Apps for integration across services and systems.",
+          "description": "Build event-driven microservices with Azure Functions: consumption vs premium plans, isolated worker process model (.NET 8/Python/Node.js), event triggers (Blob, Service Bus, Cosmos DB, Event Grid), and durable functions for stateful orchestration.",
           "resources": [
             {
               "title": "An introduction to Azure Functions",
@@ -737,13 +785,15 @@
               "url": "/data/docs/azure_cloud_engineer/serverless_compute.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 23
         },
         {
           "id": "azure_containers_fundamentals",
           "name": "Azure Containers Fundamentals (ACI & Container Apps)",
           "tag": "essential",
-          "description": "Understand containerization concepts and deploy isolated, burstable container workloads with Azure Container Instances (ACI) and learn to build and deploy modern apps and microservices with Azure Container Apps.",
+          "description": "Run containerized applications: Azure Container Registry (ACR) with geo-replication, vulnerability scanning, and Azure Container Apps (ACA) built on KEDA (Kubernetes Event-driven Autoscaling) and Envoy proxy.",
           "resources": [
             {
               "title": "Introduction to Docker containers",
@@ -775,13 +825,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_containers_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 22
         },
         {
           "id": "azure_kubernetes_service_fundamentals",
           "name": "Azure Kubernetes Service (AKS) Fundamentals",
           "tag": "essential",
-          "description": "Get started with Azure Kubernetes Service (AKS): deploy, manage, and scale containerized applications using Kubernetes orchestration, including basic networking, storage integration, and cluster management.",
+          "description": "Master Azure Kubernetes Service (AKS): managed control plane, Azure CNI vs Kubenet networking, Azure Entra ID integration with Kubernetes RBAC, system and user node pools, cluster autoscaler, and deploying with Helm.",
           "resources": [
             {
               "title": "Introduction to Azure Kubernetes Service",
@@ -798,15 +850,19 @@
               "url": "/data/docs/azure_cloud_engineer/azure_kubernetes_service_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 10
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 8
     },
     {
       "id": "azure_storage_data_services",
       "name": "Azure Storage & Data Services",
       "tag": "essential",
-      "description": "Understand and implement various data storage solutions and database offerings in Azure, catering to different data types, access patterns, and scalability requirements.",
+      "description": "Engineer resilient, high-throughput cloud storage and database tiers: object, file, relational, and NoSQL storage engines.",
       "resources": [
         {
           "title": "Implement and manage storage",
@@ -829,7 +885,7 @@
           "id": "azure_storage_accounts",
           "name": "Azure Storage Accounts (Blob, File, Table, Queue)",
           "tag": "essential",
-          "description": "Utilize Azure Storage Accounts for various data storage needs: Blobs for unstructured data, Files for shared storage, Tables for NoSQL, and Queues for messaging, including access tiers, security, and data redundancy options.",
+          "description": "Master Azure Storage Accounts: Blob storage tiers (Hot, Cool, Cold, Archive), lifecycle management policies, immutability (WORM compliance), redundancy models (LRS, ZRS, GRS, GZRS), and Shared Access Signatures (SAS) with stored access policies.",
           "resources": [
             {
               "title": "Introduction to Azure storage",
@@ -846,13 +902,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_storage_accounts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 14
         },
         {
           "id": "azure_managed_disks",
           "name": "Azure Managed Disks & Snapshots",
           "tag": "essential",
-          "description": "Understand and manage persistent block storage for Azure Virtual Machines with Managed Disks (OS and Data disks), including disk types (Standard HDD, SSD, Premium SSD, Ultra Disk), snapshots, and encryption.",
+          "description": "Configure Azure Managed Disks: Ultra Disks, Premium SSD v2, Standard SSD, disk encryption sets with customer-managed keys (CMK), and incremental disk snapshots.",
           "resources": [
             {
               "title": "Introduction to Azure managed disks",
@@ -869,13 +927,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_managed_disks.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 11
         },
         {
           "id": "azure_relational_dbs",
           "name": "Azure Relational Databases (SQL DB, MySQL, PostgreSQL)",
           "tag": "essential",
-          "description": "Deploy and manage fully managed relational databases compatible with SQL Server (Azure SQL Database, SQL Managed Instance) and popular open-source databases (Azure Database for PostgreSQL, MySQL).",
+          "description": "Deploy scalable relational databases: Azure SQL Database (vCore model, Hyperscale, Elastic Pools, Active Geo-Replication, Auto-Failover Groups), and Azure Database for PostgreSQL Flexible Server with high availability.",
           "resources": [
             {
               "title": "What is Azure SQL Database?",
@@ -897,13 +957,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_relational_dbs.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 17
         },
         {
           "id": "azure_nosql_dbs",
           "name": "Azure NoSQL Databases & Caching (Cosmos DB, Redis Cache)",
           "tag": "advanced",
-          "description": "Explore Azure Cosmos DB, Microsoft's globally distributed, multi-model NoSQL database service for high-performance applications, and Azure Cache for Redis for high-throughput, low-latency data caching.",
+          "description": "Architect globally distributed NoSQL databases with Azure Cosmos DB: multi-region writes, partition key selection, 5 consistency levels (Strong, Bounded Staleness, Session, Consistent Prefix, Eventual), and NoSQL/MongoDB APIs.",
           "resources": [
             {
               "title": "Welcome to Azure Cosmos DB",
@@ -920,13 +982,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_nosql_dbs.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         },
         {
           "id": "azure_files_sync_netapp_files",
           "name": "Azure File Sync & Azure NetApp Files",
           "tag": "advanced",
-          "description": "Implement Azure File Sync to centralize your organization's file shares in Azure Storage while maintaining the flexibility, performance, and compatibility of an on-premises file server. Explore Azure NetApp Files for high-performance, enterprise-grade file storage.",
+          "description": "Deploy enterprise file sharing: Azure Files SMB/NFS shares, Azure File Sync for on-premises server tiering, and Azure NetApp Files for ultra-high performance enterprise storage.",
           "resources": [
             {
               "title": "What is Azure File Sync?",
@@ -953,13 +1017,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_files_sync_netapp_files.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 16
         },
         {
           "id": "azure_data_migration_services",
           "name": "Azure Data Migration Services",
           "tag": "advanced",
-          "description": "Understand strategies and tools for migrating databases and data to Azure, including Azure Migrate, Azure Data Box, and Azure Database Migration Service for various scenarios.",
+          "description": "Execute database and data migrations: Azure Database Migration Service (DMS), Azure Data Factory ETL pipelines, and Azure Storage Data Movement libraries.",
           "resources": [
             {
               "title": "What is Azure Migrate?",
@@ -981,15 +1047,19 @@
               "url": "/data/docs/azure_cloud_engineer/azure_data_migration_services.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 14
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 10
     },
     {
       "id": "azure_monitoring_cost_management",
       "name": "Azure Monitoring & Cost Management",
       "tag": "essential",
-      "description": "Implement robust monitoring, gain insights into resource performance and health, and manage cloud spend for efficient and optimized Azure environments.",
+      "description": "Implement enterprise observability and FinOps governance: distributed metrics, logs, diagnostic settings, and proactive cost controls.",
       "resources": [
         {
           "title": "Monitor Azure resources",
@@ -1012,7 +1082,7 @@
           "id": "azure_monitor_logs_app_insights",
           "name": "Azure Monitor, Log Analytics & Application Insights",
           "tag": "essential",
-          "description": "Collect, analyze, and act on telemetry data from your Azure and on-premises environments using Azure Monitor, query logs with KQL in Log Analytics workspaces, and monitor application performance and availability with Application Insights.",
+          "description": "Master observability with Azure Monitor: Log Analytics workspaces, writing analytical queries using Kusto Query Language (KQL), and Application Insights distributed tracing, exception tracking, and live metrics stream.",
           "resources": [
             {
               "title": "Azure Monitor overview",
@@ -1034,13 +1104,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_monitor_logs_app_insights.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 14
         },
         {
           "id": "azure_alerts_actions",
           "name": "Azure Alerts, Action Groups & Dashboards",
           "tag": "essential",
-          "description": "Configure alerts based on metrics, logs, and activity events, automate responses with action groups (notifications, automation), and visualize monitoring data using custom Azure dashboards.",
+          "description": "Configure proactive alerting: metric alerts, log search alerts with KQL, Action Groups (email, SMS, webhooks, Azure Functions), and automated remediation runbooks.",
           "resources": [
             {
               "title": "Create, view, and manage metric alerts in Azure Monitor",
@@ -1057,13 +1129,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_alerts_actions.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 11
         },
         {
           "id": "azure_resource_service_health",
           "name": "Azure Resource Health & Service Health",
           "tag": "essential",
-          "description": "Monitor the health of your individual Azure resources with Azure Resource Health and stay informed about Azure service outages, planned maintenance, and health advisories with Azure Service Health.",
+          "description": "Track infrastructure health: Azure Service Health (service issues, planned maintenance, health advisories), Resource Health, and configuring automated notification alerts.",
           "resources": [
             {
               "title": "Azure Resource Health overview",
@@ -1080,13 +1154,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_resource_service_health.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 11
         },
         {
           "id": "azure_cost_management",
           "name": "Azure Cost Management & Billing",
           "tag": "essential",
-          "description": "Monitor, analyze, and optimize your cloud spend with Azure Cost Management and Billing tools, implementing budgets, cost alerts, and recommendations for financial governance.",
+          "description": "Execute FinOps cost governance: Azure Cost Management + Billing, budget thresholds with automated email alerts, cost allocation tags, Azure Advisor cost recommendations, and Azure Reservations and Savings Plans.",
           "resources": [
             {
               "title": "What is Cost Management + Billing?",
@@ -1103,15 +1179,19 @@
               "url": "/data/docs/azure_cloud_engineer/azure_cost_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 14
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 8
     },
     {
       "id": "azure_governance_compliance",
       "name": "Azure Governance & Compliance",
       "tag": "essential",
-      "description": "Implement policies, manage resource hierarchies, and ensure compliance with organizational standards and regulatory requirements across your Azure estate.",
+      "description": "Enforce enterprise governance and compliance: hierarchical resource organization, policy guardrails, and compliance tracking.",
       "resources": [
         {
           "title": "Implement governance and compliance solutions",
@@ -1134,7 +1214,7 @@
           "id": "azure_management_groups_subscriptions",
           "name": "Azure Management Groups & Subscriptions",
           "tag": "essential",
-          "description": "Organize your Azure resources into management groups and subscriptions for scalable governance, access management, and cost reporting, creating a logical hierarchy.",
+          "description": "Design enterprise resource hierarchies: Root Management Group, child Management Groups, Subscriptions (production, staging, sandbox), and Resource Groups for lifecycle isolation.",
           "resources": [
             {
               "title": "What are Azure management groups?",
@@ -1151,13 +1231,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_management_groups_subscriptions.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 12
         },
         {
           "id": "azure_policy_blueprints",
           "name": "Azure Policy & Azure Blueprints",
           "tag": "essential",
-          "description": "Enforce organizational standards, assess compliance, and automate policy enforcement at scale using Azure Policy. Compose governed subscriptions with Azure Blueprints for repeatable deployments of compliant environments.",
+          "description": "Enforce organizational guardrails with Azure Policy: custom JSON policy definitions, initiatives (policy sets), effects (Deny, Audit, AuditIfNotExists, Modify), and remediating non-compliant resources.",
           "resources": [
             {
               "title": "What is Azure Policy?",
@@ -1174,13 +1256,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_policy_blueprints.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 13
         },
         {
           "id": "azure_resource_tags_locks",
           "name": "Azure Resource Tags & Locks",
           "tag": "essential",
-          "description": "Implement resource tagging for organization, cost management, and automation. Apply resource locks to prevent accidental deletion or modification of critical Azure resources, enhancing operational safety.",
+          "description": "Implement resource governance: standardized tag schemas (Environment, CostCenter, Owner) and Resource Locks (CanNotDelete, ReadOnly) to prevent accidental deletion of critical infrastructure.",
           "resources": [
             {
               "title": "Use tags to organize your Azure resources and management hierarchy",
@@ -1197,13 +1281,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_resource_tags_locks.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 9
         },
         {
           "id": "azure_compliance_auditing",
           "name": "Azure Compliance & Auditing",
           "tag": "advanced",
-          "description": "Understand Azure's compliance offerings, audit logs (Azure Activity Logs, Diagnostic Logs), and security baselines to meet regulatory requirements and maintain a secure cloud posture through continuous monitoring and reporting.",
+          "description": "Audit regulatory compliance: Microsoft Defender for Cloud Regulatory Compliance dashboard (CIS Azure Foundations, NIST, ISO 27001), and Azure Activity Log auditing.",
           "resources": [
             {
               "title": "Introduction to Azure security, privacy, and compliance",
@@ -1220,15 +1306,19 @@
               "url": "/data/docs/azure_cloud_engineer/azure_compliance_auditing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 15
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 8
     },
     {
       "id": "azure_automation_iac",
       "name": "Azure Automation & Infrastructure as Code (IaC)",
       "tag": "essential",
-      "description": "Automate routine cloud management tasks and provision Azure resources consistently and repeatably using Infrastructure as Code (IaC) tools and principles.",
+      "description": "Automate cloud infrastructure and configuration: declarative templates, Infrastructure as Code, and automated state configuration.",
       "resources": [
         {
           "title": "Automate Azure tasks by using runbooks and Azure Automation",
@@ -1251,7 +1341,7 @@
           "id": "azure_automation_runbooks",
           "name": "Azure Automation (Runbooks, State Configuration)",
           "tag": "essential",
-          "description": "Automate routine cloud management tasks, orchestrate operational processes with runbooks (PowerShell, Python), and manage configuration using Azure Automation State Configuration (DSC).",
+          "description": "Automate cloud operations with Azure Automation: PowerShell and Python runbooks, hybrid runbook workers, and scheduled execution.",
           "resources": [
             {
               "title": "What is Azure Automation?",
@@ -1268,13 +1358,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_automation_runbooks.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 9
         },
         {
           "id": "iac_bicep_terraform",
           "name": "Infrastructure as Code (IaC) with ARM/Bicep/Terraform",
           "tag": "essential",
-          "description": "Automate the provisioning and deployment of Azure resources using Infrastructure as Code (IaC) principles with Azure Resource Manager (ARM) Templates, Bicep for declarative Azure deployments, and HashiCorp Terraform for multi-cloud IaC.",
+          "description": "Master Infrastructure as Code on Azure: Bicep domain-specific language (modules, parameters, outputs, target scopes) and HashiCorp Terraform (AzureRM provider, remote backend with Azure Blob Storage and state lease locking, and CI/CD validation).",
           "resources": [
             {
               "title": "What are ARM templates?",
@@ -1296,13 +1388,15 @@
               "url": "/data/docs/azure_cloud_engineer/iac_bicep_terraform.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 14
         },
         {
           "id": "configuration_management_dsc",
           "name": "Configuration Management & Desired State Configuration (DSC)",
           "tag": "advanced",
-          "description": "Learn to maintain server configurations consistently across hybrid environments using Desired State Configuration (DSC) and integrate with Azure Automation State Configuration for continuous compliance.",
+          "description": "Automate server state configuration: Azure Automanage Machine Configuration (formerly Azure Automation State Configuration / PowerShell DSC) for consistent OS baseline configuration.",
           "resources": [
             {
               "title": "Azure Automation State Configuration overview",
@@ -1319,15 +1413,19 @@
               "url": "/data/docs/azure_cloud_engineer/configuration_management_dsc.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 17
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 8
     },
     {
       "id": "azure_devops_cicd",
       "name": "Azure DevOps & CI/CD",
       "tag": "advanced",
-      "description": "Integrate DevOps practices and implement Continuous Integration/Continuous Delivery (CI/CD) pipelines to streamline software development and infrastructure deployment workflows on Azure.",
+      "description": "Implement enterprise continuous integration and deployment: Azure Repos, multi-stage pipelines, and artifact management.",
       "resources": [
         {
           "title": "Introduction to Azure DevOps",
@@ -1350,7 +1448,7 @@
           "id": "azure_devops_overview",
           "name": "Introduction to Azure DevOps Services",
           "tag": "advanced",
-          "description": "Understand the core components of Azure DevOps (Boards, Repos, Pipelines, Test Plans, Artifacts) and their role in the modern software delivery lifecycle and cloud operations.",
+          "description": "Master the Azure DevOps suite: Azure Boards (agile sprint planning), Azure Repos, Azure Pipelines, Azure Test Plans, and Azure Artifacts.",
           "resources": [
             {
               "title": "Azure DevOps documentation",
@@ -1362,13 +1460,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_devops_overview.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 9
         },
         {
           "id": "git_version_control_azure_repos",
           "name": "Git & Version Control for Azure Projects",
           "tag": "advanced",
-          "description": "Master Git for source code management, branching strategies (e.g., GitFlow, GitHub Flow), and integrating with Azure Repos or GitHub for collaborative development and IaC management.",
+          "description": "Implement enterprise Git workflows in Azure Repos: branch protection policies, PR code reviews, build validation triggers, and commit signing.",
           "resources": [
             {
               "title": "Learn Git",
@@ -1385,13 +1485,15 @@
               "url": "/data/docs/azure_cloud_engineer/git_version_control_azure_repos.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 13
         },
         {
           "id": "azure_ci_cd_pipelines",
           "name": "Building & Managing CI/CD Pipelines (Azure Pipelines)",
           "tag": "advanced",
-          "description": "Design and implement continuous integration (CI) and continuous delivery (CD) pipelines to automate application builds, tests, and deployments to Azure resources, including multi-stage YAML pipelines and release gates.",
+          "description": "Build multi-stage YAML pipelines in Azure Pipelines: build stages, test automation, self-hosted vs Microsoft-hosted build agents, variable groups with Azure Key Vault integration, and container image generation.",
           "resources": [
             {
               "title": "Key concepts for Azure Pipelines",
@@ -1408,13 +1510,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_ci_cd_pipelines.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 19
         },
         {
           "id": "release_management_strategies",
           "name": "Release Management & Deployment Strategies",
           "tag": "advanced",
-          "description": "Explore advanced deployment strategies like blue-green deployments, canary releases, feature flags, and progressive rollouts for safe, reliable, and progressive software delivery in Azure.",
+          "description": "Deploy zero-downtime releases: deployment environments with manual approval checks, deployment gates (querying Azure Monitor alerts), blue/green deployments, and canary rollouts.",
           "resources": [
             {
               "title": "Deployment strategies (Microsoft Learn)",
@@ -1431,13 +1535,15 @@
               "url": "/data/docs/azure_cloud_engineer/release_management_strategies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 17
         },
         {
           "id": "azure_artifact_registry",
           "name": "Artifact Management & Container Registries",
           "tag": "advanced",
-          "description": "Manage package feeds using Azure Artifacts for various package types (NuGet, npm, Maven, Python) and container images with Azure Container Registry (ACR) for efficient storage and distribution of build artifacts and Docker images.",
+          "description": "Manage package feeds: publishing and consuming private NuGet, npm, Maven, and Python packages via Azure Artifacts with upstream sources.",
           "resources": [
             {
               "title": "Get started with Azure Artifacts",
@@ -1454,15 +1560,19 @@
               "url": "/data/docs/azure_cloud_engineer/azure_artifact_registry.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 13
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 11
     },
     {
       "id": "azure_advanced_operations_design",
       "name": "Advanced Operations & Solution Design",
       "tag": "advanced",
-      "description": "Explore advanced Azure services, security operations, design patterns, and best practices for building highly available, resilient, and optimized solutions.",
+      "description": "Architect resilient, mission-critical systems: disaster recovery, multi-region failover, cloud migration, and advanced threat protection.",
       "resources": [
         {
           "title": "Azure Well-Architected Framework",
@@ -1485,7 +1595,7 @@
           "id": "high_availability_dr",
           "name": "High Availability & Disaster Recovery Strategies",
           "tag": "advanced",
-          "description": "Design and implement highly available and disaster-resilient solutions using Azure features like Availability Sets, Availability Zones, cross-region replication, and Azure Site Recovery services for business continuity.",
+          "description": "Architect enterprise disaster recovery: multi-region active-active vs active-passive failover, calculating RTO and RPO, and global traffic routing with Azure Front Door.",
           "resources": [
             {
               "title": "High availability for Azure applications",
@@ -1502,13 +1612,15 @@
               "url": "/data/docs/azure_cloud_engineer/high_availability_dr.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 16
         },
         {
           "id": "azure_backup_recovery_services",
           "name": "Azure Backup & Recovery Services",
           "tag": "advanced",
-          "description": "Implement robust data protection strategies using Azure Backup for various workloads (VMs, databases, files) and manage recovery services vaults for centralized backup and restore operations.",
+          "description": "Manage enterprise backup: Azure Backup Vault and Recovery Services Vault, backing up Azure VMs, Azure SQL, and Azure Files, with Cross-Region Restore (CRR) capabilities.",
           "resources": [
             {
               "title": "What is Azure Backup?",
@@ -1535,13 +1647,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_backup_recovery_services.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 16
         },
         {
           "id": "hybrid_cloud_multi_cloud_management",
           "name": "Hybrid & Multi-cloud Management (Azure Arc, Stack HCI)",
           "tag": "advanced",
-          "description": "Connect and manage on-premises and multi-cloud environments with Azure services using Azure Arc, extending Azure management to any infrastructure, and explore hybrid infrastructure solutions with Azure Stack HCI.",
+          "description": "Manage hybrid and multi-cloud infrastructure: Azure Arc for servers, Kubernetes, and data services outside Azure, providing unified governance and monitoring.",
           "resources": [
             {
               "title": "What is Azure Arc?",
@@ -1558,13 +1672,15 @@
               "url": "/data/docs/azure_cloud_engineer/hybrid_cloud_multi_cloud_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 15
         },
         {
           "id": "advanced_data_platform_operations",
           "name": "Advanced Data Platform Operations",
           "tag": "advanced",
-          "description": "Understand the operational aspects of key Azure services for data platforms, including deploying and managing Azure Data Lake Storage, Azure Synapse Analytics workspaces, Azure Data Factory pipelines, and related data services.",
+          "description": "Architect modern data platforms: Azure Synapse Analytics, Azure Databricks, and Azure Data Lake Storage Gen2 (hierarchical namespace).",
           "resources": [
             {
               "title": "Introduction to Azure Data Lake Storage Gen2",
@@ -1591,13 +1707,15 @@
               "url": "/data/docs/azure_cloud_engineer/advanced_data_platform_operations.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 13
         },
         {
           "id": "cloud_migration_strategies",
           "name": "Cloud Migration Strategies & Tools",
           "tag": "advanced",
-          "description": "Understand different cloud migration strategies (rehost, refactor, re-architect, rebuild, replace) and leverage Azure tools like Azure Migrate to plan and execute comprehensive migrations to Azure.",
+          "description": "Execute enterprise cloud migrations: Azure Migrate discovery, assessment, dependency mapping, and agentless replication for VMware and Hyper-V workloads.",
           "resources": [
             {
               "title": "Common cloud migration strategies",
@@ -1614,13 +1732,15 @@
               "url": "/data/docs/azure_cloud_engineer/cloud_migration_strategies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 14
         },
         {
           "id": "azure_messaging_event_services",
           "name": "Azure Messaging & Event Services",
           "tag": "advanced",
-          "description": "Implement robust messaging solutions with Azure Service Bus for enterprise messaging, Azure Event Hubs for big data streaming and real-time analytics, and Azure Event Grid for reactive, event-driven architectures.",
+          "description": "Build enterprise event-driven architectures: Azure Service Bus (queues, topics, subscriptions, sessions, dead-letter queues), Azure Event Grid (reactive pub/sub routing), and Azure Event Hubs (high-throughput big data streaming).",
           "resources": [
             {
               "title": "What is Azure Service Bus?",
@@ -1642,13 +1762,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_messaging_event_services.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         },
         {
           "id": "advanced_network_security",
           "name": "Advanced Network Security & Threat Protection",
           "tag": "advanced",
-          "description": "Implement advanced network security features like Azure Web Application Firewall (WAF) for web application protection, Network Virtual Appliances (NVAs) for advanced routing and security, and understand DDoS protection strategies.",
+          "description": "Harden network perimeters: Azure Virtual WAN, zero-trust network architectures, securing hybrid connections with ExpressRoute MACsec, and centralized egress filtering.",
           "resources": [
             {
               "title": "What is Azure Web Application Firewall?",
@@ -1670,13 +1792,15 @@
               "url": "/data/docs/azure_cloud_engineer/advanced_network_security.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 16
         },
         {
           "id": "azure_defender_for_cloud_sentinel",
           "name": "Azure Defender for Cloud & Microsoft Sentinel",
           "tag": "advanced",
-          "description": "Utilize Microsoft Defender for Cloud to strengthen your security posture, protect hybrid workloads, and identify threats across your environment. Integrate with Microsoft Sentinel for cloud-native Security Information and Event Management (SIEM) and Security Orchestration, Automation, and Response (SOAR).",
+          "description": "Deploy cloud-native security operations: Microsoft Defender for Cloud (Cloud Security Posture Management CSPM and Cloud Workload Protection CWPP), and Microsoft Sentinel SIEM/SOAR (KQL analytics rules, incident response playbooks).",
           "resources": [
             {
               "title": "What is Microsoft Defender for Cloud?",
@@ -1703,13 +1827,15 @@
               "url": "/data/docs/azure_cloud_engineer/azure_defender_for_cloud_sentinel.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 19
         },
         {
           "id": "azure_well_architected_framework",
           "name": "Azure Well-Architected Framework & Best Practices",
           "tag": "advanced",
-          "description": "Learn to design, build, and operate secure, high-performing, resilient, and cost-effective applications in the cloud by applying the five pillars of the Azure Well-Architected Framework (Cost Optimization, Operational Excellence, Performance Efficiency, Reliability, Security).",
+          "description": "Apply the Azure Well-Architected Framework: Reliability, Security, Cost Optimization, Operational Excellence, and Performance Efficiency.",
           "resources": [
             {
               "title": "Azure Well-Architected Framework overview",
@@ -1726,15 +1852,19 @@
               "url": "/data/docs/azure_cloud_engineer/azure_well_architected_framework.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 13
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 11
     },
     {
       "id": "azure_project_career",
       "name": "Project & Career Readiness",
       "tag": "advanced",
-      "description": "Consolidate your learning through a hands-on capstone project and prepare for real-world job applications, technical interviews, and relevant industry certifications.",
+      "description": "Build an enterprise portfolio, author operational runbooks, prepare for AZ-104 and AZ-305 certifications, and excel in Azure engineering interviews.",
       "resources": [
         {
           "title": "AZ-104: Microsoft Azure Administrator Certification Prep Guide",
@@ -1752,7 +1882,7 @@
           "id": "capstone_project",
           "name": "Azure Cloud Engineer Capstone Project",
           "tag": "advanced",
-          "description": "Design, implement, deploy, and monitor a multi-service Azure solution, documenting architectural decisions, infrastructure as code, and operational procedures for a realistic scenario, demonstrating end-to-end cloud engineering skills.",
+          "description": "Capstone Project: Architect and deploy an Enterprise Azure Landing Zone: Hub-and-Spoke network with Azure Firewall, Azure Kubernetes Service (AKS), Azure SQL Failover Group, Azure Key Vault, Azure Front Door, provisioned via Terraform/Bicep with Azure DevOps CI/CD.",
           "resources": [
             {
               "title": "Azure Architecture Center",
@@ -1769,13 +1899,15 @@
               "url": "/data/docs/azure_cloud_engineer/capstone_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 43
         },
         {
           "id": "documentation_runbook_creation",
           "name": "Technical Documentation & Runbook Creation",
           "tag": "advanced",
-          "description": "Learn best practices for creating clear, comprehensive technical documentation, including architecture diagrams, operational runbooks, post-mortems, and troubleshooting guides, crucial for any cloud professional.",
+          "description": "Author professional engineering runbooks: documenting failover procedures, disaster recovery drills, incident triage checklists, and architecture decision records (ADRs).",
           "resources": [
             {
               "title": "Azure Well-Architected Framework - Operational Excellence",
@@ -1797,13 +1929,15 @@
               "url": "/data/docs/azure_cloud_engineer/documentation_runbook_creation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 16
         },
         {
           "id": "troubleshooting_performance_tuning",
           "name": "Advanced Troubleshooting & Performance Tuning",
           "tag": "advanced",
-          "description": "Develop skills in identifying, diagnosing, and resolving complex issues in Azure environments, along with techniques for optimizing performance, resilience, and cost of solutions through monitoring and analysis.",
+          "description": "Troubleshoot complex Azure infrastructure issues: analyzing Network Watcher packet captures, debugging VM boot diagnostics, and optimizing database performance with Azure SQL Query Performance Insight.",
           "resources": [
             {
               "title": "Troubleshooting applications in Azure",
@@ -1830,13 +1964,15 @@
               "url": "/data/docs/azure_cloud_engineer/troubleshooting_performance_tuning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 23
         },
         {
           "id": "certification_interview_prep",
           "name": "Certification & Interview Preparation",
           "tag": "advanced",
-          "description": "Prepare for technical interviews with common Azure Cloud Engineer questions, mock interviews, and understand the path to relevant industry certifications like AZ-104 (Azure Administrator Associate) and AZ-305 (Azure Solutions Architect Expert).",
+          "description": "Prepare for Microsoft Certified Azure Administrator (AZ-104) and Solutions Architect Expert (AZ-305) exams, and master cloud system design interviews.",
           "resources": [
             {
               "title": "Exam AZ-104: Microsoft Azure Administrator",
@@ -1863,9 +1999,14 @@
               "url": "/data/docs/azure_cloud_engineer/certification_interview_prep.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 14
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 24
     }
-  ]
+  ],
+  "total_exp": 1000
 }

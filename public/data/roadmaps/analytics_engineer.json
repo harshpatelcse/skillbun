@@ -47,24 +47,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Production dbt Analytics Warehouse with CI/CD",
-        "tech_stack": [
-          "dbt Core",
-          "Snowflake/BigQuery",
-          "GitHub Actions",
-          "SQLFluff"
-        ],
-        "description": "Build an enterprise dbt project with automated pull-request validation, documentation generation, and production data testing."
-      },
-      {
-        "title": "Enterprise Modern Data Stack with dbt & Semantic Layer",
+        "title": "Production dbt Analytics Warehouse with Snowflake & CI/CD",
         "tech_stack": [
           "dbt Core",
           "Snowflake",
-          "Cube.js",
-          "Airflow"
+          "GitHub Actions",
+          "Elementary Data",
+          "SQL"
         ],
-        "description": "Build an end-to-end data transformation pipeline featuring Kimball dimensional modeling, automated schema regression tests, CI/CD with dbt Cloud, and unified semantic metrics."
+        "description": "Architect a modular analytics data warehouse utilizing dbt Core, automated CI testing with Slim CI, semantic layer definitions, and Elementary anomaly alerting."
+      },
+      {
+        "title": "Real-Time Streaming Analytics & Semantic Layer Platform",
+        "tech_stack": [
+          "Cube.js",
+          "Apache Kafka",
+          "ClickHouse",
+          "DuckDB",
+          "Apache Superset"
+        ],
+        "description": "Construct a high-throughput real-time analytical pipeline feeding a Cube.js semantic layer with sub-second query latency and role-based data access."
       }
     ],
     "certifications": [
@@ -73,10 +75,11 @@
       "Databricks Certified Data Engineer Associate"
     ],
     "interview_focus": [
-      "dbt Incremental Strategy (merge vs delete+insert)",
-      "Slowly Changing Dimensions (SCD Type 1 vs Type 2)",
-      "Data Warehouse Performance & Clustering Keys",
-      "Semantic Layer Consistency"
+      "dbt Incremental Models (Merge vs Append Strategies & Unique Keys)",
+      "Data Modeling (Kimball Dimensional Modeling vs One Big Table / OBT)",
+      "Snowflake Clustering Keys, Micro-Partitions & Warehouse Sizing",
+      "Data Quality Frameworks (dbt tests, Elementary anomaly monitoring, Great Expectations)",
+      "Semantic Layer Architecture (Metrics definitions & BI caching layers)"
     ]
   },
   "format": "tree",
@@ -85,7 +88,7 @@
       "id": "ae_intro_data_fundamentals",
       "name": "Introduction to Analytics Engineering & Data Fundamentals",
       "tag": "essential",
-      "description": "Establish a strong foundation by understanding the Analytics Engineer role, core data concepts, and essential tools like advanced SQL and Git.",
+      "description": "Establish an unshakeable analytics engineering foundation: master the Modern Data Stack (MDS), advanced analytical SQL, cloud data warehouse mechanics, and disciplined version control.",
       "resources": [
         {
           "title": "What is Analytics Engineering?",
@@ -118,7 +121,7 @@
           "id": "ae_role_context",
           "name": "Understanding the Analytics Engineer Role",
           "tag": "essential",
-          "description": "Define the Analytics Engineer's responsibilities, its place in the modern data stack, and how it differs from Data Engineering and Data Science.",
+          "description": "Understand the Analytics Engineer role in modern data organizations: bridging the gap between Data Engineers (infrastructure and ingestion) and Data Analysts/Business Stakeholders (insights and reporting); applying software engineering best practices to data transformation.",
           "resources": [
             {
               "title": "The Analytics Engineer Explained",
@@ -140,13 +143,15 @@
               "url": "/data/docs/analytics_engineer/ae_role_context.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         },
         {
           "id": "ae_sql_proficiency",
           "name": "Advanced SQL Proficiency",
           "tag": "essential",
-          "description": "Master complex SQL concepts crucial for data transformation, including window functions, CTEs, subqueries, and initial performance considerations.",
+          "description": "Master advanced analytical SQL: complex multi-stage CTE architectures, analytical window functions (`DENSE_RANK`, `PERCENT_RANK`, `LEAD`, `LAG`), conditional aggregations (`CASE WHEN`), pivoting, array manipulation (`UNNEST`/`FLATTEN`), and query plan cost optimization.",
           "resources": [
             {
               "title": "SQL Window Functions Tutorial",
@@ -173,13 +178,15 @@
               "url": "/data/docs/analytics_engineer/ae_sql_proficiency.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "ae_data_warehousing_basics",
           "name": "Data Warehousing & Lakehouse Concepts",
           "tag": "essential",
-          "description": "Learn about traditional data warehousing (Kimball/Inmon), modern cloud data warehouses (Snowflake, BigQuery, Redshift), and data lakehouse architectures.",
+          "description": "Master modern cloud analytical warehouses: Snowflake, Google BigQuery, and Databricks SQL; understanding micro-partitioning, partition pruning, clustering keys, columnar execution engines, and compute warehouse sizing.",
           "resources": [
             {
               "title": "Kimball Dimensional Modeling Techniques",
@@ -211,13 +218,15 @@
               "url": "/data/docs/analytics_engineer/ae_data_warehousing_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         },
         {
           "id": "ae_data_ingestion_etl_concepts",
           "name": "Data Ingestion & ELT Concepts",
           "tag": "essential",
-          "description": "Understand various data ingestion patterns (batch, streaming), the distinction between ETL and ELT processes, and familiarity with common tools for moving raw data into the data warehouse (e.g., Fivetran, Stitch, Airbyte, custom loaders/APIs). Focus on understanding source system integration.",
+          "description": "Understand modern ELT ingestion architectures: extracting and loading raw data with Fivetran, Airbyte, or custom connectors; raw schema staging; handling semi-structured JSON payloads; and maintaining ingestion idempotency.",
           "resources": [
             {
               "title": "ELT vs. ETL: What's the Difference?",
@@ -249,13 +258,15 @@
               "url": "/data/docs/analytics_engineer/ae_data_ingestion_etl_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         },
         {
           "id": "ae_version_control_git",
           "name": "Version Control with Git",
           "tag": "essential",
-          "description": "Learn essential Git commands, branching strategies, collaborative workflows, and best practices for managing dbt projects.",
+          "description": "Implement disciplined Git workflows for analytics code: trunk-based development, branch naming conventions, atomic commits, pull request reviews with automated CI testing, and semantic tagging.",
           "resources": [
             {
               "title": "Git Handbook",
@@ -282,15 +293,19 @@
               "url": "/data/docs/analytics_engineer/ae_version_control_git.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 18
     },
     {
       "id": "ae_data_modeling_dbt",
       "name": "Data Modeling and Transformation with dbt",
       "tag": "essential",
-      "description": "Develop core skills in data modeling, building robust data transformations using dbt, and ensuring data quality and comprehensive documentation.",
+      "description": "Master analytics engineering with dbt (data build tool): dimensional modeling, incremental materializations, data testing frameworks, semantic layers, and automated CI/CD.",
       "resources": [
         {
           "title": "dbt Fundamentals Course",
@@ -313,7 +328,7 @@
           "id": "ae_dbt_introduction",
           "name": "Introduction to dbt",
           "tag": "essential",
-          "description": "Understand dbt's architecture, project setup, CLI commands, and the core concepts of models, sources, and tests for efficient data transformation.",
+          "description": "Master dbt Core and dbt Cloud fundamentals: project structure (`dbt_project.yml`, `profiles.yml`), model creation, dependency graphs using the `ref()` function, source definitions using `source()`, and running models with `dbt run`.",
           "resources": [
             {
               "title": "dbt Docs: Getting Started",
@@ -335,13 +350,15 @@
               "url": "/data/docs/analytics_engineer/ae_dbt_introduction.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 23
         },
         {
           "id": "ae_dimensional_modeling_dbt",
           "name": "Dimensional Modeling in dbt",
           "tag": "essential",
-          "description": "Apply dimensional modeling principles (star schema, fact/dimension tables, SCDs) within dbt to create clean, consumable data marts.",
+          "description": "Implement Ralph Kimball dimensional modeling in dbt: architecting clean multi-layer transformation pipelines (Staging `stg_`, Intermediate `int_`, and Marts `fct_` and `dim_`), surrogate key generation with `dbt_utils.generate_surrogate_key`, and managing Slowly Changing Dimensions with `dbt snapshot` (SCD Type 2 timestamp and check strategies).",
           "resources": [
             {
               "title": "Modeling Data with dbt",
@@ -368,13 +385,15 @@
               "url": "/data/docs/analytics_engineer/ae_dimensional_modeling_dbt.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         },
         {
           "id": "ae_complex_sql_patterns_dbt",
           "name": "Complex SQL Patterns for dbt Transformations",
           "tag": "essential",
-          "description": "Master advanced SQL techniques specifically for data transformation within dbt. This includes recursive CTEs for hierarchical data, pivot/unpivot operations, sophisticated window functions for ranking, lead/lag, deduplication, and handling temporal data (e.g., snapshotting logic, date series generation).",
+          "description": "Author clean, modular dbt transformations: writing reusable Jinja macros, looping over columns with Jinja control structures, custom schema naming macros, and integrating community packages via `packages.yml` (`dbt-utils`, `dbt-expectations`).",
           "resources": [
             {
               "title": "SQL PIVOT and UNPIVOT Operators Explained",
@@ -401,13 +420,15 @@
               "url": "/data/docs/analytics_engineer/ae_complex_sql_patterns_dbt.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 41
         },
         {
           "id": "ae_dbt_models_materializations",
           "name": "Building Advanced dbt Models & Materializations",
           "tag": "essential",
-          "description": "Master different dbt materializations (views, tables, incremental, ephemeral), Jinja templating, and macros for reusable transformation logic.",
+          "description": "Master dbt materialization strategies: views for lightweight abstractions, tables for performant querying, ephemeral models for inline CTEs, and high-efficiency incremental models (`materialized='incremental'`) configured with `unique_key` and optimal merge strategies.",
           "resources": [
             {
               "title": "dbt Materializations Guide",
@@ -434,13 +455,15 @@
               "url": "/data/docs/analytics_engineer/ae_dbt_models_materializations.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "ae_data_quality_testing",
           "name": "Data Quality, Testing, and Validation",
           "tag": "essential",
-          "description": "Implement dbt's native tests, custom schema tests, and leverage data quality frameworks to ensure data integrity and reliability of transformations.",
+          "description": "Enforce rigorous automated data quality: built-in generic tests (`unique`, `not_null`, `relationships`, `accepted_values`), custom singular SQL tests, advanced statistical assertions with `dbt-expectations`, and configuring test severity thresholds (warn vs error).",
           "resources": [
             {
               "title": "dbt Docs: Testing Your Data",
@@ -472,13 +495,15 @@
               "url": "/data/docs/analytics_engineer/ae_data_quality_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 39
         },
         {
           "id": "ae_documentation_lineage",
           "name": "Documentation, Lineage, and Discovery",
           "tag": "essential",
-          "description": "Generate comprehensive dbt documentation, understand data lineage, and expose data assets for easier discovery and consumption by stakeholders.",
+          "description": "Build automated enterprise data catalogs: documenting models and columns in YAML manifests, generating and serving interactive dbt documentation (`dbt docs generate`), visualizing end-to-end Directed Acyclic Graph (DAG) data lineage, and tracking column-level dependencies.",
           "resources": [
             {
               "title": "dbt Docs: Documenting Your Project",
@@ -505,15 +530,19 @@
               "url": "/data/docs/analytics_engineer/ae_documentation_lineage.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 28
     },
     {
       "id": "ae_advanced_dbt_operations",
       "name": "Advanced dbt, Performance & Operations",
       "tag": "advanced",
-      "description": "Learn to deploy, orchestrate, monitor, and optimize dbt projects in production environments, ensuring reliability, scalability, and cost-efficiency.",
+      "description": "Master advanced dbt operations: implementing the dbt Semantic Layer (MetricFlow) for defining centralized, reusable business metrics, dbt hooks (pre-hook, post-hook for granting permissions), custom materializations, and exposure definitions.",
       "resources": [
         {
           "title": "Operationalizing dbt",
@@ -541,7 +570,7 @@
           "id": "ae_dbt_performance_tuning",
           "name": "dbt & Data Warehouse Performance Tuning",
           "tag": "advanced",
-          "description": "Optimize dbt models and underlying data warehouse queries for speed, resource efficiency, and cost management. This involves understanding query execution plans, indexing, partitioning, clustering, materialization strategies, and cloud-specific cost optimization techniques (e.g., Snowflake credit usage, BigQuery slot management, Redshift concurrency scaling).",
+          "description": "Profile and optimize warehouse query costs: analyzing compilation times, tuning incremental model filter conditions, optimizing clustering keys in Snowflake/BigQuery, and eliminating redundant intermediate joins.",
           "resources": [
             {
               "title": "Optimizing dbt Performance",
@@ -573,13 +602,15 @@
               "url": "/data/docs/analytics_engineer/ae_dbt_performance_tuning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         },
         {
           "id": "ae_data_orchestration",
           "name": "Data Orchestration & Scheduling",
           "tag": "advanced",
-          "description": "Integrate dbt with orchestration tools like Airflow, Prefect, or Dagster for scheduled runs, dependency management, and workflow automation in production.",
+          "description": "Orchestrate dbt pipelines in production: integrating dbt with modern orchestrators (Astronomer Cosmos for Airflow, Dagster Software-Defined Assets, or dbt Cloud Jobs), scheduling hourly/daily runs, and managing execution dependencies.",
           "resources": [
             {
               "title": "Running dbt with Airflow",
@@ -601,13 +632,15 @@
               "url": "/data/docs/analytics_engineer/ae_data_orchestration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         },
         {
           "id": "ae_cicd_deployment",
           "name": "CI/CD for dbt Projects",
           "tag": "advanced",
-          "description": "Implement Continuous Integration and Continuous Deployment pipelines for dbt, enabling automated testing, code reviews, and deployments for reliability.",
+          "description": "Implement cost-efficient CI/CD with Slim CI: automated GitHub Actions pipelines running dbt Slim CI (`dbt build --select state:modified+`) comparing against production artifacts to run and test only changed models, reducing CI warehouse spend by over 80%.",
           "resources": [
             {
               "title": "dbt Cloud CI Jobs",
@@ -634,13 +667,15 @@
               "url": "/data/docs/analytics_engineer/ae_cicd_deployment.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         },
         {
           "id": "ae_monitoring_alerting",
           "name": "Monitoring, Alerting, and Observability",
           "tag": "advanced",
-          "description": "Set up robust monitoring for dbt runs, data freshness, and data quality. Configure alerts to proactively identify and address issues in your data pipelines.",
+          "description": "Monitor data freshness and pipeline health: configuring source freshness tests (`dbt source freshness`), setting up Slack / PagerDuty alerts on test failures, and tracking pipeline execution duration metrics.",
           "resources": [
             {
               "title": "Data Observability with dbt",
@@ -667,13 +702,15 @@
               "url": "/data/docs/analytics_engineer/ae_monitoring_alerting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 55
         },
         {
           "id": "ae_data_governance_security",
           "name": "Data Governance & Security Best Practices",
           "tag": "advanced",
-          "description": "Address data security, privacy (PII), access control, data masking, and compliance within the analytics engineering workflow and data platform.",
+          "description": "Implement enterprise data governance: data classification tagging, column-level masking policies (hashing PII emails/names), row-level security policies, and managing role-based access control (RBAC) grants in dbt.",
           "resources": [
             {
               "title": "Data Governance Frameworks Explained",
@@ -700,15 +737,19 @@
               "url": "/data/docs/analytics_engineer/ae_data_governance_security.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 38
     },
     {
       "id": "ae_stakeholder_collaboration_career",
       "name": "Stakeholder Collaboration & Career Readiness",
       "tag": "advanced",
-      "description": "Develop strong communication skills, effectively collaborate with stakeholders, and build a compelling portfolio for career advancement.",
+      "description": "Bridge technical data models with business stakeholders: requirements gathering, semantic layer integration, and technical interview preparation.",
       "resources": [
         {
           "title": "Communicating Technical Concepts to Non-Technical Audiences",
@@ -741,7 +782,7 @@
           "id": "ae_requirements_gathering",
           "name": "Requirements Gathering & Stakeholder Communication",
           "tag": "advanced",
-          "description": "Learn to effectively translate business questions into technical data models, manage expectations, and present analytical solutions clearly.",
+          "description": "Translate ambiguous business questions into rigorous data schemas: conducting stakeholder discovery interviews, defining single sources of truth, documenting data contracts, and mapping entity relationship diagrams.",
           "resources": [
             {
               "title": "The Art of Asking Good Questions in Data Projects",
@@ -768,13 +809,15 @@
               "url": "/data/docs/analytics_engineer/ae_requirements_gathering.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         },
         {
           "id": "ae_bi_tool_integration",
           "name": "BI Tool Integration & Semantic Layer",
           "tag": "advanced",
-          "description": "Connect dbt models to various BI tools (Looker, Tableau, Power BI) and understand the concept and implementation of a semantic layer for consistent metrics.",
+          "description": "Connect modeled data marts to modern Business Intelligence platforms: Looker (LookML modeling), Tableau, Power BI, or Lightdash; optimizing BI query performance, and eliminating disparate definitions of core KPIs.",
           "resources": [
             {
               "title": "dbt Exposures and BI Tools",
@@ -801,13 +844,15 @@
               "url": "/data/docs/analytics_engineer/ae_bi_tool_integration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         },
         {
           "id": "ae_data_storytelling_viz",
           "name": "Data Storytelling & Visualization Principles",
           "tag": "advanced",
-          "description": "Develop the ability to translate complex data models and analytical findings into clear, concise, and actionable insights for non-technical stakeholders. Learn principles of effective data visualization, choosing appropriate chart types, and constructing compelling data narratives.",
+          "description": "Communicate insights effectively: building executive dashboards, choosing appropriate visual encodings, and presenting data model changes alongside quantified business impact.",
           "resources": [
             {
               "title": "Storytelling with Data: A Data Visualization Guide",
@@ -834,13 +879,15 @@
               "url": "/data/docs/analytics_engineer/ae_data_storytelling_viz.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         },
         {
           "id": "ae_portfolio_project",
           "name": "Analytics Engineering Capstone Project",
           "tag": "advanced",
-          "description": "Build a comprehensive, portfolio-ready analytics engineering project, demonstrating end-to-end skills from data ingestion and transformation to BI consumption.",
+          "description": "Portfolio Project: Build an End-to-End Enterprise Analytics Platform: raw ingestion with Airbyte/Fivetran, full dimensional model in dbt (staging, intermediate, dimension and fact marts), automated Slim CI on GitHub Actions, dbt-expectations tests, and an interactive BI dashboard.",
           "resources": [
             {
               "title": "Example dbt Projects on GitHub",
@@ -862,13 +909,15 @@
               "url": "/data/docs/analytics_engineer/ae_portfolio_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 96
         },
         {
           "id": "ae_interview_prep",
           "name": "Interview Preparation & Industry Trends",
           "tag": "advanced",
-          "description": "Prepare for Analytics Engineer interviews, including SQL, data modeling, dbt, system design questions, and stay updated on industry trends.",
+          "description": "Excel in Analytics Engineering technical interviews: live SQL data transformation challenges (window functions, deduplication), dimensional modeling case studies (designing an e-commerce or subscription SaaS data mart), and deep dbt architecture questions.",
           "resources": [
             {
               "title": "Analytics Engineer Interview Questions",
@@ -895,13 +944,15 @@
               "url": "/data/docs/analytics_engineer/ae_interview_prep.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         },
         {
           "id": "ae_case_study_documentation",
           "name": "Case Study & Project Documentation",
           "tag": "advanced",
-          "description": "Develop compelling case studies for your projects, highlighting problem, solution, impact, and lessons learned. Focus on clear READMEs and diagrams for presentation.",
+          "description": "Author a Technical Case Study: document a transformation initiative where messy, un-modeled spaghetti SQL queries were refactored into a modular, tested, and documented dbt repository, detailing warehouse cost savings, improved data freshness, and stakeholder trust.",
           "resources": [
             {
               "title": "Writing a Technical Case Study: A Guide",
@@ -928,9 +979,14 @@
               "url": "/data/docs/analytics_engineer/ae_case_study_documentation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 27
     }
-  ]
+  ],
+  "total_exp": 1000
 }

@@ -47,23 +47,25 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Enterprise B2B Workflow Usability Study & Synthesis Report",
+        "title": "Comprehensive Mixed-Methods B2B SaaS Usability Study & Synthesis",
         "tech_stack": [
+          "Semi-Structured Interviews",
           "Usability Testing",
-          "Miro Affinity Mapping",
-          "Survey Analysis"
+          "SUS Scoring",
+          "Miro Synthesis",
+          "Dovetail"
         ],
-        "description": "Conduct a comprehensive study of an enterprise analytics workflow, identify critical friction points, and deliver an actionable insights report."
+        "description": "Conduct generative interviews and remote unmoderated usability tests on an enterprise analytics tool, calculating System Usability Scale (SUS) scores and recommendations."
       },
       {
-        "title": "Comprehensive Mixed-Methods Usability Study & Research Repository",
+        "title": "Enterprise Information Architecture & Tree Testing Audit",
         "tech_stack": [
-          "Dovetail",
-          "UserTesting",
-          "Miro",
-          "Qualtrics"
+          "OptimalSort Card Sorting",
+          "Treejack",
+          "Quantitative Task Analysis",
+          "Executive Reports"
         ],
-        "description": "Conduct generative user interviews and remote unmoderated usability tests on a SaaS platform, synthesizing thematic findings, journey friction points, and UX recommendations."
+        "description": "Execute open and closed card sorts combined with tree testing to restructure a complex enterprise documentation hierarchy, reducing task navigation errors by 50%."
       }
     ],
     "certifications": [
@@ -71,10 +73,11 @@
       "Interaction Design Foundation (IxDF) User Research Specialist"
     ],
     "interview_focus": [
-      "Designing Research Plans to Address Ambiguous Business Questions",
-      "Avoiding Leading Questions in User Interviews",
-      "Triangulating Qualitative Insights with Quantitative Product Telemetry",
-      "Presenting Surprising User Insights to Skeptical Stakeholders"
+      "Research Methodology Selection (When to use Qualitative vs Quantitative, Generative vs Evaluative)",
+      "Writing Unbiased Research Questions & Moderating User Testing Sessions Without Leading",
+      "Synthesizing Research Findings into Actionable Insights (Affinity Mapping, Thematic Analysis)",
+      "Quantitative Usability Metrics (Task Completion Rate, Time on Task, SUS, SEQ, NPS)",
+      "Managing Stakeholder Resistance & Demonstrating Business ROI from UX Research"
     ]
   },
   "format": "tree",
@@ -83,7 +86,7 @@
       "id": "ux_researcher_foundations",
       "name": "Foundations of UX Research & HCD",
       "tag": "essential",
-      "description": "Understand the core principles of User Experience, the role of a UX Researcher, ethical considerations, fundamental research types, and the human-centered design process.",
+      "description": "Master UX research fundamentals: Epistemological foundations, mixed-methods paradigms, ethical human-subject protections, and research planning.",
       "resources": [
         {
           "title": "Nielsen Norman UX Research Methods",
@@ -116,7 +119,7 @@
           "id": "ux_researcher_intro_ux_hcd",
           "name": "Introduction to UX, HCD & Core Principles",
           "tag": "essential",
-          "description": "Learn the fundamental concepts of User Experience, its importance, the iterative nature of Human-Centered Design, and key UX principles and heuristics.",
+          "description": "Understand user research in product development: Informing strategic product vision, de-risking roadmap bets, and grounding product decisions in empirical human behavior.",
           "resources": [
             {
               "title": "Usability.gov Methods",
@@ -138,13 +141,15 @@
               "url": "/data/docs/ux_researcher/ux_researcher_intro_ux_hcd.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 18
         },
         {
           "id": "ux_researcher_role_ethics",
           "name": "Role of a UX Researcher & Ethical Conduct",
           "tag": "essential",
-          "description": "Define the responsibilities and value of a UX Researcher, understand ethical guidelines, informed consent, data privacy, and considerations for vulnerable populations.",
+          "description": "Enforce research ethics: Informed consent, participant data privacy (GDPR, HIPAA), avoiding researcher coercion, managing PII, and trauma-informed research protocols.",
           "resources": [
             {
               "title": "Maze UX Research Guides",
@@ -166,13 +171,15 @@
               "url": "/data/docs/ux_researcher/ux_researcher_role_ethics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "ux_researcher_methods_paradigms",
           "name": "Understanding Research Methodologies & Paradigms",
           "tag": "essential",
-          "description": "Differentiate between qualitative and quantitative, attitudinal vs. behavioral, and generative vs. evaluative research, along with common research frameworks and when to apply them.",
+          "description": "Navigate qualitative vs quantitative paradigms: Inductive vs deductive reasoning, behavioral vs attitudinal research, and triangulating multi-method findings.",
           "resources": [
             {
               "title": "Nielsen Norman UX Research Methods",
@@ -194,13 +201,15 @@
               "url": "/data/docs/ux_researcher/ux_researcher_methods_paradigms.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 22
         },
         {
           "id": "ux_researcher_planning_recruitment",
           "name": "Strategic Research Planning & Participant Recruitment",
           "tag": "essential",
-          "description": "Learn to define clear research questions and objectives, create comprehensive research plans, select appropriate methods, develop participant screening criteria, and manage recruitment processes.",
+          "description": "Plan research and recruit participants: Crafting comprehensive research plans, defining recruitment screeners, incentivization strategies, and panel sourcing (User Interviews, Respondent).",
           "resources": [
             {
               "title": "Maze UX Research Guides",
@@ -222,13 +231,15 @@
               "url": "/data/docs/ux_researcher/ux_researcher_planning_recruitment.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "ux_researcher_research_tooling",
           "name": "Essential Research Tooling",
           "tag": "essential",
-          "description": "Familiarize yourself with common research tools including survey platforms, interview recording software, transcription services, and participant management systems.",
+          "description": "Master the UX research tech stack: UserTesting, Maze, Optimal Workshop, Dovetail, Qualtrics, Lookback, and transcription tools (Otter.ai).",
           "resources": [
             {
               "title": "User Testing: Why & How (Jakob Nielsen) (NNgroup)",
@@ -245,15 +256,19 @@
               "url": "/data/docs/ux_researcher/ux_researcher_research_tooling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 13
     },
     {
       "id": "ux_researcher_qualitative_skills",
       "name": "Core Qualitative Research Skills",
       "tag": "essential",
-      "description": "Master the techniques and execution of various qualitative research methods to gather rich, in-depth user insights into behaviors, motivations, and pain points.",
+      "description": "Master qualitative research methodologies: In-depth interviews, observational studies, contextual inquiry, and usability moderation.",
       "resources": [
         {
           "title": "A/B Testing for UX (Google)",
@@ -276,7 +291,7 @@
           "id": "ux_researcher_interviews_moderation",
           "name": "In-depth Interviews & Moderation Techniques",
           "tag": "essential",
-          "description": "Conduct effective one-on-one and semi-structured interviews, build rapport, practice active listening, probe effectively, and minimize interviewer bias.",
+          "description": "Master in-depth user interviewing: Active listening, laddering techniques, open-ended probing, managing participant silence, and avoiding leading questions.",
           "resources": [
             {
               "title": "Usability.gov Methods",
@@ -298,13 +313,15 @@
               "url": "/data/docs/ux_researcher/ux_researcher_interviews_moderation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 22
         },
         {
           "id": "ux_researcher_focus_groups",
           "name": "Focus Groups & Group Facilitation",
           "tag": "advanced",
-          "description": "Learn to plan and facilitate focus groups to gather diverse perspectives and dynamic discussions, managing group dynamics and synthesizing collective insights.",
+          "description": "Facilitate group discussions: Managing group dynamics, mitigating groupthink, encouraging quiet participants, and conducting co-design participatory workshops.",
           "resources": [
             {
               "title": "Nielsen Norman UX Research Methods",
@@ -326,13 +343,15 @@
               "url": "/data/docs/ux_researcher/ux_researcher_focus_groups.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "ux_researcher_usability_testing",
           "name": "Usability Testing: Moderated & Unmoderated",
           "tag": "essential",
-          "description": "Plan, execute, and analyze usability tests, including task design, script writing, conducting remote and in-person sessions, and identifying critical usability issues.",
+          "description": "Conduct moderated and unmoderated usability testing: Defining realistic task scenarios, collecting think-aloud data, measuring task success, and identifying critical usability blockers.",
           "resources": [
             {
               "title": "User Testing: Why & How (Jakob Nielsen) (NNgroup)",
@@ -349,13 +368,15 @@
               "url": "/data/docs/ux_researcher/ux_researcher_usability_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "ux_researcher_contextual_observation",
           "name": "Contextual Inquiry & Observational Studies",
           "tag": "advanced",
-          "description": "Observe users in their natural environments, collect rich field notes, and conduct semi-structured interviews in context to understand real-world behaviors and workflows.",
+          "description": "Execute contextual inquiry: Observing users in their authentic operational environments, shadow studies, artifact analysis, and capturing environmental workarounds.",
           "resources": [
             {
               "title": "Nielsen Norman UX Research Methods",
@@ -377,13 +398,15 @@
               "url": "/data/docs/ux_researcher/ux_researcher_contextual_observation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         },
         {
           "id": "ux_researcher_diary_studies",
           "name": "Diary Studies & Longitudinal Research",
           "tag": "advanced",
-          "description": "Utilize diary studies to capture user experiences over extended periods, track behavioral changes, and understand habits and routines.",
+          "description": "Run longitudinal research: Diary study design, prompt scheduling, participant engagement retention, and analyzing behavioral habits over weeks.",
           "resources": [
             {
               "title": "Usability.gov Methods",
@@ -405,13 +428,15 @@
               "url": "/data/docs/ux_researcher/ux_researcher_diary_studies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 28
         },
         {
           "id": "ux_researcher_card_sorting",
           "name": "Card Sorting & Information Architecture Research",
           "tag": "essential",
-          "description": "Apply card sorting techniques (open, closed, hybrid) to understand users' mental models and inform the design of intuitive information architectures.",
+          "description": "Conduct information architecture studies: Open card sorting for category generation, closed card sorting for validation, and hybrid card sorts using Optimal Workshop.",
           "resources": [
             {
               "title": "Usability.gov Methods",
@@ -433,15 +458,19 @@
               "url": "/data/docs/ux_researcher/ux_researcher_card_sorting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 23
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 17
     },
     {
       "id": "ux_researcher_quantitative_skills",
       "name": "Core Quantitative Research Skills",
       "tag": "essential",
-      "description": "Develop proficiency in quantitative methods to measure user behavior, identify statistical trends, and validate qualitative findings.",
+      "description": "Execute quantitative research: Survey design, product analytics interpretation, statistical analysis, and quantitative IA benchmarking.",
       "resources": [
         {
           "title": "Maze UX Research Guides",
@@ -469,7 +498,7 @@
           "id": "ux_researcher_survey_design",
           "name": "Survey Design, Sampling & Distribution",
           "tag": "essential",
-          "description": "Design unbiased and effective surveys, select appropriate question types and scales, understand sampling strategies, and manage distribution for reliable data collection.",
+          "description": "Design rigorous surveys: Writing unbiased survey questions, avoiding double-barreled questions, Likert scale design, survey logic branching, and sample size power calculations.",
           "resources": [
             {
               "title": "Nielsen Norman UX Research Methods",
@@ -491,13 +520,15 @@
               "url": "/data/docs/ux_researcher/ux_researcher_survey_design.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "ux_researcher_web_analytics",
           "name": "Web & Product Analytics Interpretation",
           "tag": "advanced",
-          "description": "Understand key product metrics, interpret data from web analytics tools (e.g., Google Analytics, Mixpanel, Amplitude), identify behavioral patterns, and form hypotheses.",
+          "description": "Interpret product analytics: Correlating qualitative findings with quantitative telemetry in Amplitude / Mixpanel; analyzing drop-off funnels and user paths.",
           "resources": [
             {
               "title": "Maze UX Research Guides",
@@ -519,13 +550,15 @@
               "url": "/data/docs/ux_researcher/ux_researcher_web_analytics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "ux_researcher_ab_testing",
           "name": "A/B Testing & Experimentation",
           "tag": "advanced",
-          "description": "Learn the principles of A/B testing, formulate testable hypotheses, set up experiments, interpret results, and understand statistical significance for data-driven decisions.",
+          "description": "Analyze experimentation: Partnering with data scientists on A/B test hypotheses, interpreting p-values, confidence intervals, and evaluating statistical power.",
           "resources": [
             {
               "title": "Maze UX Research Guides",
@@ -547,13 +580,15 @@
               "url": "/data/docs/ux_researcher/ux_researcher_ab_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "ux_researcher_ia_quant_eval",
           "name": "Information Architecture Quantitative Evaluation",
           "tag": "advanced",
-          "description": "Utilize quantitative methods to evaluate the effectiveness of information architecture and navigation systems.",
+          "description": "Evaluate information architecture quantitatively: Benchmarking navigation structures, measuring cognitive load, and calculating information scent.",
           "resources": [
             {
               "title": "Usability.gov Methods",
@@ -575,13 +610,15 @@
               "url": "/data/docs/ux_researcher/ux_researcher_ia_quant_eval.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 29
         },
         {
           "id": "ux_researcher_tree_testing",
           "name": "Tree Testing",
           "tag": "advanced",
-          "description": "Conduct tree tests to evaluate the findability of topics within a website's or application's hierarchical structure without visual design cues.",
+          "description": "Execute tree testing: Treejack testing to validate navigation menus without visual styling distraction, calculating directness, and task success rates.",
           "resources": [
             {
               "title": "A/B Testing for UX (Google)",
@@ -598,13 +635,15 @@
               "url": "/data/docs/ux_researcher/ux_researcher_tree_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         },
         {
           "id": "ux_researcher_first_click_testing",
           "name": "First Click Testing",
           "tag": "advanced",
-          "description": "Perform first-click tests to determine if users can instinctively find what they are looking for, evaluating the effectiveness of navigation and labeling.",
+          "description": "Conduct first-click testing: Measuring Bob Bailey's First Click Law (users who get the first click right are 2-3x more likely to succeed), and analyzing click heatmaps.",
           "resources": [
             {
               "title": "Card Sorting: Why & When (NNgroup)",
@@ -621,13 +660,15 @@
               "url": "/data/docs/ux_researcher/ux_researcher_first_click_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "ux_researcher_basic_stats",
           "name": "Basic Statistical Analysis for UX",
           "tag": "advanced",
-          "description": "Learn fundamental statistical concepts relevant to UX research, including descriptive statistics, basic inferential tests (e.g., t-tests, chi-square), significance, and confidence intervals.",
+          "description": "Apply statistics for UX: Descriptive statistics, t-tests, Mann-Whitney U tests, Chi-Square tests for survey significance, and calculating margin of error.",
           "resources": [
             {
               "title": "User research Introduction & Basics | UX Design (Design & UX)",
@@ -644,15 +685,19 @@
               "url": "/data/docs/ux_researcher/ux_researcher_basic_stats.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 23
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 17
     },
     {
       "id": "ux_researcher_synthesis_analysis_comm",
       "name": "Data Synthesis, Analysis & Communication",
       "tag": "essential",
-      "description": "Transform raw qualitative and quantitative data into actionable insights and effectively communicate findings to influence product decisions.",
+      "description": "Synthesize data, uncover deep insights, and communicate findings to product stakeholders.",
       "resources": [
         {
           "title": "Nielsen Norman UX Research Methods",
@@ -680,7 +725,7 @@
           "id": "ux_researcher_affinity_thematic",
           "name": "Qualitative Data Synthesis: Affinity Mapping & Thematic Analysis",
           "tag": "essential",
-          "description": "Organize and make sense of qualitative data using affinity diagramming, thematic coding, and other techniques to identify patterns, themes, and key insights.",
+          "description": "Synthesize qualitative data: Affinity diagramming, inductive thematic analysis, coding interview transcripts in Dovetail, and identifying recurring behavioral patterns.",
           "resources": [
             {
               "title": "Usability.gov Methods",
@@ -702,13 +747,15 @@
               "url": "/data/docs/ux_researcher/ux_researcher_affinity_thematic.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "ux_researcher_journey_personas",
           "name": "Insight Generation: User Journey Maps & Personas",
           "tag": "essential",
-          "description": "Create compelling user journey maps (current and future state), empathy maps, and data-driven personas to articulate user experiences and foster empathy within product teams.",
+          "description": "Build user insight artifacts: Data-backed customer personas, empathy maps, mental model diagrams, and experience journey maps with emotional highs/lows.",
           "resources": [
             {
               "title": "Maze UX Research Guides",
@@ -730,13 +777,15 @@
               "url": "/data/docs/ux_researcher/ux_researcher_journey_personas.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "ux_researcher_data_viz_storytelling",
           "name": "Visualizing Data & Storytelling for Impact",
           "tag": "essential",
-          "description": "Apply principles of effective data visualization, choose appropriate charts and graphs, and craft compelling narratives to make research insights memorable and actionable.",
+          "description": "Visualize research data: Designing clear data charts, highlighting user quote soundbites, and constructing persuasive storytelling narratives.",
           "resources": [
             {
               "title": "User research Introduction & Basics | UX Design (Design & UX)",
@@ -753,13 +802,15 @@
               "url": "/data/docs/ux_researcher/ux_researcher_data_viz_storytelling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 20
         },
         {
           "id": "ux_researcher_reporting_deliverables",
           "name": "Crafting Research Reports & Deliverables",
           "tag": "essential",
-          "description": "Develop skills in structuring comprehensive research reports, executive summaries, insight briefs, and other deliverables tailored for different stakeholders and project phases.",
+          "description": "Author actionable research deliverables: Executive 1-page summaries, visual slide decks, loom video summaries, and searchable insight atomization in research repositories.",
           "resources": [
             {
               "title": "Nielsen Norman UX Research Methods",
@@ -781,13 +832,15 @@
               "url": "/data/docs/ux_researcher/ux_researcher_reporting_deliverables.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "ux_researcher_presenting_workshops",
           "name": "Presenting Insights & Facilitating Stakeholder Workshops",
           "tag": "essential",
-          "description": "Master the art of presenting research findings to diverse audiences, adapting communication style, advocating for user needs, and facilitating workshops to collaboratively define solutions.",
+          "description": "Facilitate stakeholder synthesis workshops: Ideation workshops, insight walkthroughs, empathy immersion sessions, and collaborative prioritization.",
           "resources": [
             {
               "title": "A/B Testing for UX (Google)",
@@ -804,13 +857,15 @@
               "url": "/data/docs/ux_researcher/ux_researcher_presenting_workshops.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "ux_researcher_research_rigor",
           "name": "Ensuring Research Quality: Rigor, Reliability & Validity",
           "tag": "advanced",
-          "description": "Understand concepts of research bias, sampling methods, reliability, and various types of validity (internal, external, construct) to ensure the credibility and trustworthiness of research findings.",
+          "description": "Ensure research rigor and validity: Triangulating multi-method data sources, identifying cognitive biases (confirmation bias, observer expectancy), and documenting limitations.",
           "resources": [
             {
               "title": "Card Sorting: Why & When (NNgroup)",
@@ -827,15 +882,19 @@
               "url": "/data/docs/ux_researcher/ux_researcher_research_rigor.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 17
     },
     {
       "id": "ux_researcher_strategic_impact",
       "name": "Strategic Impact & Research Operations (ResearchOps)",
       "tag": "advanced",
-      "description": "Learn to integrate research seamlessly into product development, manage stakeholders, and ensure ethical, efficient, and scalable research operations.",
+      "description": "Operationalize research and scale impact: ResearchOps, research repository management, and integrating research across the product lifecycle.",
       "resources": [
         {
           "title": "User research Introduction & Basics | UX Design (Design & UX)",
@@ -858,7 +917,7 @@
           "id": "ux_researcher_research_pdlc",
           "name": "Research Integration Across the Product Lifecycle",
           "tag": "advanced",
-          "description": "Understand how UX research fits into agile and lean product development cycles, from early discovery and ideation to iterative testing and post-launch evaluation.",
+          "description": "Embed research across the PDLC: Generative discovery research, formative iterative testing, and evaluative post-launch benchmarking.",
           "resources": [
             {
               "title": "Nielsen Norman UX Research Methods",
@@ -880,13 +939,15 @@
               "url": "/data/docs/ux_researcher/ux_researcher_research_pdlc.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 27
         },
         {
           "id": "ux_researcher_stakeholder_influence",
           "name": "Stakeholder Engagement & Influencing Product Decisions",
           "tag": "advanced",
-          "description": "Develop strategies for collaborating effectively with product managers, designers, engineers, and leadership to ensure research insights drive product strategy and execution.",
+          "description": "Influence product strategy: Translating research findings into prioritized product requirements, aligning insights with company business objectives, and tracking recommendation implementation.",
           "resources": [
             {
               "title": "Maze UX Research Guides",
@@ -908,13 +969,15 @@
               "url": "/data/docs/ux_researcher/ux_researcher_stakeholder_influence.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         },
         {
           "id": "ux_researcher_research_ops",
           "name": "Research Operations (ResearchOps) Fundamentals",
           "tag": "advanced",
-          "description": "Learn the principles of ResearchOps, standardizing research processes, managing research tools (e.g., participant recruitment, scheduling, consent, incentives), and building a scalable research practice.",
+          "description": "Scale ResearchOps: Establishing participant recruitment pipelines, template libraries, vendor tooling management, and research governance.",
           "resources": [
             {
               "title": "Card Sorting: Why & When (NNgroup)",
@@ -931,13 +994,15 @@
               "url": "/data/docs/ux_researcher/ux_researcher_research_ops.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 20
         },
         {
           "id": "ux_researcher_ethical_data_governance",
           "name": "Advanced Ethical Data Governance & Compliance",
           "tag": "advanced",
-          "description": "Implement best practices for data collection, secure storage, anonymization, and privacy, ensuring compliance with global regulations (e.g., GDPR, CCPA, HIPAA) and internal data policies.",
+          "description": "Govern research data: GDPR/CCPA compliance, participant consent management, data retention schedules, and secure storage of audio/video recordings.",
           "resources": [
             {
               "title": "Usability.gov Methods",
@@ -959,13 +1024,15 @@
               "url": "/data/docs/ux_researcher/ux_researcher_ethical_data_governance.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 29
         },
         {
           "id": "ux_researcher_research_repos",
           "name": "Developing & Maintaining Research Repositories",
           "tag": "advanced",
-          "description": "Learn to create and manage accessible research repositories for efficient insight sharing, historical context, discoverability, and fostering organizational learning (e.g., using tools like Dovetail, EnjoyHQ).",
+          "description": "Maintain research repositories: Dovetail or EnjoyHQ repositories, tagging taxonomies, atomic research units, and democratizing research insights across the organization.",
           "resources": [
             {
               "title": "User Testing: Why & How (Jakob Nielsen) (NNgroup)",
@@ -982,15 +1049,19 @@
               "url": "/data/docs/ux_researcher/ux_researcher_research_repos.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 24
     },
     {
       "id": "ux_researcher_portfolio_career",
       "name": "Portfolio & Career Development",
       "tag": "advanced",
-      "description": "Showcase your expertise through impactful case studies, prepare for interviews, and strategically advance your career as a UX Researcher.",
+      "description": "Build a competitive UX Research portfolio: Rigorous case studies, methodological defense, and career advancement.",
       "resources": [
         {
           "title": "Nielsen Norman UX Research Methods",
@@ -1028,7 +1099,7 @@
           "id": "ux_researcher_case_study",
           "name": "Crafting Impactful Research Case Studies",
           "tag": "advanced",
-          "description": "Learn to structure and write engaging case studies that highlight your research process, methods, key insights, recommendations, and the measurable impact on product decisions.",
+          "description": "Author impactful research case studies: Detailing business challenge, methodology justification, sample composition, synthesis process, findings, and product impact.",
           "resources": [
             {
               "title": "Nielsen Norman UX Research Methods",
@@ -1050,13 +1121,15 @@
               "url": "/data/docs/ux_researcher/ux_researcher_case_study.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         },
         {
           "id": "ux_researcher_portfolio_building",
           "name": "Building a Professional UX Research Portfolio",
           "tag": "advanced",
-          "description": "Assemble a professional UX research portfolio (e.g., website, PDF) that effectively showcases your skills, diverse projects, and detailed thought process to potential employers.",
+          "description": "Curate an elite research portfolio: Showcasing 3-4 diverse case studies (generative discovery, quantitative survey, usability test) with clear artifact visuals.",
           "resources": [
             {
               "title": "Maze UX Research Guides",
@@ -1078,13 +1151,15 @@
               "url": "/data/docs/ux_researcher/ux_researcher_portfolio_building.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "ux_researcher_interview_negotiation",
           "name": "Interviewing, Networking & Salary Negotiation",
           "tag": "advanced",
-          "description": "Prepare for behavioral and technical interviews, practice portfolio walkthroughs, build a professional network within the UX research community, and understand salary negotiation strategies.",
+          "description": "Master UX research interviews: Past-work presentations, live research design whiteboard challenges, defending methodological choices, and salary negotiation.",
           "resources": [
             {
               "title": "User Testing: Why & How (Jakob Nielsen) (NNgroup)",
@@ -1101,13 +1176,15 @@
               "url": "/data/docs/ux_researcher/ux_researcher_interview_negotiation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "ux_researcher_career_growth",
           "name": "Career Growth & Specializations in UXR",
           "tag": "advanced",
-          "description": "Explore different career paths within UX research (e.g., generalist, specialist, manager, research ops), continuous learning strategies, and contributing to the UXR community.",
+          "description": "Advance in UX research: Senior/Staff researcher pathways, research management, quantitative research specialization, and staying current with industry research trends.",
           "resources": [
             {
               "title": "A/B Testing for UX (Google)",
@@ -1124,9 +1201,14 @@
               "url": "/data/docs/ux_researcher/ux_researcher_career_growth.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 23
     }
-  ]
+  ],
+  "total_exp": 1000
 }

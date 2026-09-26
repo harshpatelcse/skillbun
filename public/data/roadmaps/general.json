@@ -105,7 +105,9 @@
               "url": "/data/docs/general/gt_cs_how_computers_work.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         },
         {
           "id": "gt_internet_web_essentials",
@@ -133,7 +135,9 @@
               "url": "/data/docs/general/gt_internet_web_essentials.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 50
         },
         {
           "id": "gt_version_control_git_github",
@@ -161,7 +165,9 @@
               "url": "/data/docs/general/gt_version_control_git_github.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 50
         },
         {
           "id": "gt_intro_logic_discrete_math",
@@ -189,14 +195,19 @@
               "url": "/data/docs/general/gt_intro_logic_discrete_math.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 37
         }
       ],
       "project": {
         "title": "Foundational Concepts Learning Journal",
         "description": "Create a GitHub repository containing your notes, simplified diagrams, explanations of concepts (e.g., 'How DNS works'), and small code snippets illustrating foundational principles. Include weekly reflections.",
-        "url": "https://github.com/new"
-      }
+        "url": "https://github.com/new",
+        "difficulty": "advanced",
+        "exp": 50
+      },
+      "description": "Understand universal computer science principles: binary data representation, CPU execution cycles, memory management, and operating system kernels."
     },
     {
       "step": 2,
@@ -228,7 +239,9 @@
               "url": "/data/docs/general/gt_programming_core_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 37
         },
         {
           "id": "gt_dsa_foundations",
@@ -256,7 +269,9 @@
               "url": "/data/docs/general/gt_dsa_foundations.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 50
         },
         {
           "id": "gt_intro_object_oriented_programming",
@@ -279,7 +294,9 @@
               "url": "/data/docs/general/gt_intro_object_oriented_programming.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 37
         },
         {
           "id": "gt_practical_coding_challenges",
@@ -312,14 +329,19 @@
               "url": "/data/docs/general/gt_practical_coding_challenges.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 50
         }
       ],
       "project": {
         "title": "Personal CLI Toolkit & Problem Solver",
         "description": "Develop a collection of 3-5 command-line tools that demonstrate core programming concepts and problem-solving skills. Each tool should have a clear README, usage instructions, and documented code. Include solutions to 5-10 fundamental DSA problems.",
-        "url": "https://docs.python.org/3/howto/argparse.html"
-      }
+        "url": "https://docs.python.org/3/howto/argparse.html",
+        "difficulty": "advanced",
+        "exp": 50
+      },
+      "description": "Master fundamental algorithmic problem solving, time and space complexity analysis (Big-O), and essential data structures."
     },
     {
       "step": 3,
@@ -356,7 +378,9 @@
               "url": "/data/docs/general/gt_web_frontend_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 33
         },
         {
           "id": "gt_web_backend_database_intro",
@@ -384,7 +408,9 @@
               "url": "/data/docs/general/gt_web_backend_database_intro.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 65
         },
         {
           "id": "gt_data_science_ai_overview",
@@ -412,7 +438,9 @@
               "url": "/data/docs/general/gt_data_science_ai_overview.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 37
         },
         {
           "id": "gt_cloud_fundamentals",
@@ -445,7 +473,9 @@
               "url": "/data/docs/general/gt_cloud_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 34
         },
         {
           "id": "gt_cybersecurity_intro",
@@ -473,14 +503,19 @@
               "url": "/data/docs/general/gt_cybersecurity_intro.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 87
         }
       ],
       "project": {
         "title": "Multi-Track Tech Sampler Portfolio",
         "description": "Develop three mini-projects, one for each major track: a simple interactive web page (frontend + backend API call), a data analysis notebook with visualizations and a basic ML model, and a cloud-based 'hello world' application or a basic security lab setup. Document your learnings and preferences.",
-        "url": "https://www.freecodecamp.org/news/full-stack-developer-roadmap/"
-      }
+        "url": "https://www.freecodecamp.org/news/full-stack-developer-roadmap/",
+        "difficulty": "advanced",
+        "exp": 50
+      },
+      "description": "Learn core software engineering tools: Unix/Linux command-line navigation, Git version control, collaborative workflows, and code hygiene."
     },
     {
       "step": 4,
@@ -517,7 +552,9 @@
               "url": "/data/docs/general/gt_career_self_assessment.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 50
         },
         {
           "id": "gt_tech_industry_roles_trends",
@@ -550,7 +587,9 @@
               "url": "/data/docs/general/gt_tech_industry_roles_trends.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 50
         },
         {
           "id": "gt_portfolio_storytelling",
@@ -578,7 +617,9 @@
               "url": "/data/docs/general/gt_portfolio_storytelling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 50
         },
         {
           "id": "gt_career_path_research_planning",
@@ -611,7 +652,9 @@
               "url": "/data/docs/general/gt_career_path_research_planning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 50
         },
         {
           "id": "gt_networking_community_engagement",
@@ -644,14 +687,632 @@
               "url": "/data/docs/general/gt_networking_community_engagement.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 70
         }
       ],
       "project": {
         "title": "Personal Specialization Roadmap & Portfolio Strategy",
         "description": "Develop a detailed 30-day learning plan for your chosen specialization, including weekly outcomes and a proposed core portfolio project. Outline a strategy for how you will present your existing 'discovery' projects and future specialized work to demonstrate your skills and progress.",
-        "url": "/quiz"
-      }
+        "url": "/quiz",
+        "difficulty": "advanced",
+        "exp": 50
+      },
+      "description": "Explore modern technology domains, distributed web architecture, cloud primitives, and map a personalized strategic engineering career trajectory."
     }
-  ]
+  ],
+  "format": "tree",
+  "tree": [
+    {
+      "id": "general_stage_1",
+      "name": "Computer Science Foundations",
+      "tag": "essential",
+      "description": "Build an unshakeable computer science foundation: understand computer hardware and operating systems, the architecture of the internet, collaborative version control with Git, and mathematical logic.",
+      "resources": [],
+      "children": [
+        {
+          "id": "gt_cs_how_computers_work",
+          "name": "How Computers Work: Architecture & OS Basics",
+          "tag": "essential",
+          "description": "Understand computer architecture and operating systems from the metal up: binary representation, the CPU instruction cycle (Fetch-Decode-Execute), memory hierarchy (L1/L2/L3 caches, RAM, virtual memory paging), operating system kernels, processes vs threads, and file system organization.",
+          "resources": [
+            {
+              "title": "Code: The Hidden Language of Computer Hardware and Software",
+              "url": "https://www.goodreads.com/book/show/44882.Code",
+              "type": "article"
+            },
+            {
+              "title": "Computer Science Full Course for Beginners",
+              "url": "https://www.youtube.com/watch?v=zOjov-2OZ0E",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/general/gt_cs_how_computers_work.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "advanced",
+          "exp": 37
+        },
+        {
+          "id": "gt_internet_web_essentials",
+          "name": "Internet & Web Essentials: Protocols & Client-Server",
+          "tag": "essential",
+          "description": "Understand the mechanics of the internet: IP addressing (IPv4/IPv6), DNS resolution pathways, TCP vs UDP transport protocols, the HTTP/HTTPS request-response lifecycle, client-server architectures, and how web browsers parse and render pages.",
+          "resources": [
+            {
+              "title": "HTTP: The Protocol Every Web Developer Must Know",
+              "url": "https://medium.com/swlh/http-the-protocol-every-web-developer-must-know-3b68018e6c7d",
+              "type": "article"
+            },
+            {
+              "title": "How the Internet Works in 5 Minutes (Aaron)",
+              "url": "https://www.youtube.com/watch?v=7_LPdttKXPc",
+              "type": "video"
+            },
+            {
+              "title": "HTTP Crash Course & Exploration (Traversy Media)",
+              "url": "https://www.youtube.com/watch?v=iYM2zFP3Zn0",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/general/gt_internet_web_essentials.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 50
+        },
+        {
+          "id": "gt_version_control_git_github",
+          "name": "Version Control: Git and GitHub for Collaboration",
+          "tag": "essential",
+          "description": "Master collaborative version control with Git and GitHub: understanding the working directory, staging area, and commit history, creating feature branches, executing pull requests, resolving merge conflicts, and navigating open-source repositories.",
+          "resources": [
+            {
+              "title": "Git Handbook",
+              "url": "https://guides.github.com/introduction/git-handbook/",
+              "type": "article"
+            },
+            {
+              "title": "Git and GitHub for Beginners - Crash Course (freeCodeCamp.org)",
+              "url": "https://www.youtube.com/watch?v=RGOj5yH7evk",
+              "type": "video"
+            },
+            {
+              "title": "Git and GitHub for Beginners - Crash Course",
+              "url": "https://www.youtube.com/watch?v=RGOj5yH7evk",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/general/gt_version_control_git_github.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 50
+        },
+        {
+          "id": "gt_intro_logic_discrete_math",
+          "name": "Introduction to Logic and Discrete Mathematics",
+          "tag": "essential",
+          "description": "Master foundational mathematical logic for computer science: Boolean algebra and truth tables, set theory, functions, combinatorics, mathematical induction, and elementary graph theory concepts essential for algorithmic problem solving.",
+          "resources": [
+            {
+              "title": "Discrete Math for Computer Science",
+              "url": "https://www.udemy.com/course/discrete-math-for-computer-science/",
+              "type": "course"
+            },
+            {
+              "title": "Discrete Mathematics Course for Beginners (freeCodeCamp.org)",
+              "url": "https://www.youtube.com/watch?v=G9JxuWk7BDA",
+              "type": "video"
+            },
+            {
+              "title": "Maths for Programmers: Introduction (What Is Discrete Mathematics?) (freeCodeCamp.org)",
+              "url": "https://www.youtube.com/watch?v=1FfX2xW3104",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/general/gt_intro_logic_discrete_math.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "beginner",
+          "exp": 37
+        }
+      ],
+      "difficulty": "beginner",
+      "exp": 36
+    },
+    {
+      "id": "general_stage_2",
+      "name": "Programming and Problem Solving",
+      "tag": "essential",
+      "description": "Master algorithmic thinking and software development: programming fundamentals in Python, core data structures, object-oriented architecture, and structured problem solving.",
+      "resources": [],
+      "children": [
+        {
+          "id": "gt_programming_core_concepts",
+          "name": "Programming Core Concepts (e.g., Python)",
+          "tag": "essential",
+          "description": "Master core programming concepts in Python: variables, primitive and collection data types, control flow structures (loops, conditionals), function definitions and variable scope, modular programming, and robust error handling using try-except blocks.",
+          "resources": [
+            {
+              "title": "Python for Everybody",
+              "url": "https://www.py4e.com/",
+              "type": "course"
+            },
+            {
+              "title": "Automate the Boring Stuff with Python",
+              "url": "https://automatetheboringstuff.com/",
+              "type": "course"
+            },
+            {
+              "title": "Learn Python - Full Course for Beginners [Tutorial]",
+              "url": "https://www.youtube.com/watch?v=rfscVS0vtbw",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/general/gt_programming_core_concepts.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "beginner",
+          "exp": 37
+        },
+        {
+          "id": "gt_dsa_foundations",
+          "name": "Data Structures and Algorithms Foundations",
+          "tag": "essential",
+          "description": "Master essential data structures and algorithms: Arrays, Linked Lists, Stacks, Queues, Hash Tables, and Binary Search Trees. Analyze algorithm efficiency using Big-O notation for time and space complexity, and master linear vs binary search and sorting algorithms.",
+          "resources": [
+            {
+              "title": "CS50x - Introduction to Computer Science",
+              "url": "https://cs50.harvard.edu/x/",
+              "type": "course"
+            },
+            {
+              "title": "Grokking Algorithms: An illustrated guide for programmers and other curious people",
+              "url": "https://www.manning.com/books/grokking-algorithms",
+              "type": "article"
+            },
+            {
+              "title": "Algorithms and Data Structures Tutorial - Full Course for Beginners (freeCodeCamp.org)",
+              "url": "https://www.youtube.com/watch?v=8hly31xKli0",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/general/gt_dsa_foundations.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 50
+        },
+        {
+          "id": "gt_intro_object_oriented_programming",
+          "name": "Introduction to Object-Oriented Programming (OOP)",
+          "tag": "essential",
+          "description": "Master Object-Oriented Programming (OOP) principles: classes and instances, encapsulation of state, abstraction of complex operations, inheritance hierarchies, polymorphism, and composition patterns for writing modular, reusable code.",
+          "resources": [
+            {
+              "title": "What is Object-Oriented Programming?",
+              "url": "https://www.freecodecamp.org/news/object-oriented-programming-in-python/",
+              "type": "article"
+            },
+            {
+              "title": "Python OOP Tutorial 1: Classes and Instances (Corey Schafer)",
+              "url": "https://www.youtube.com/watch?v=ZDa-Z5JzLYM",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/general/gt_intro_object_oriented_programming.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "beginner",
+          "exp": 37
+        },
+        {
+          "id": "gt_practical_coding_challenges",
+          "name": "Practice: Build Small Programs & Solve Challenges",
+          "tag": "essential",
+          "description": "Develop structured technical problem-solving skills: dissecting ambiguous project requirements into algorithmic steps, writing pseudocode, identifying edge cases (empty inputs, boundary limits), writing unit assertions, and debugging code systematically.",
+          "resources": [
+            {
+              "title": "Exercism Python Track",
+              "url": "https://exercism.org/tracks/python",
+              "type": "course"
+            },
+            {
+              "title": "100 Python Projects for Beginners",
+              "url": "https://www.freecodecamp.org/news/python-projects-for-beginners/",
+              "type": "article"
+            },
+            {
+              "title": "Getting Started Building a Python CLI With argparse (Real Python)",
+              "url": "https://www.youtube.com/watch?v=znuocj_7PMc",
+              "type": "video"
+            },
+            {
+              "title": "5 Problem Solving Tips for Cracking Coding Interview Questions (CS Dojo)",
+              "url": "https://www.youtube.com/watch?v=GBuHSRDGZBY",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/general/gt_practical_coding_challenges.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 50
+        }
+      ],
+      "difficulty": "beginner",
+      "exp": 23
+    },
+    {
+      "id": "general_stage_3",
+      "name": "Explore Major Tech Tracks",
+      "tag": "essential",
+      "description": "Explore major technical engineering specializations: frontend client engineering, backend service architecture, data science and artificial intelligence, cloud infrastructure, and cybersecurity.",
+      "resources": [],
+      "children": [
+        {
+          "id": "gt_web_frontend_basics",
+          "name": "Web Development Taste Test: Frontend Basics",
+          "tag": "essential",
+          "description": "Explore frontend web development: semantic HTML5 markup, responsive styling with modern CSS Flexbox and Grid, and client-side interactivity and DOM manipulation using modern JavaScript.",
+          "resources": [
+            {
+              "title": "MDN Learn Web Development - Front-end basics",
+              "url": "https://developer.mozilla.org/en-US/docs/Learn/Front-end_web_developer",
+              "type": "course"
+            },
+            {
+              "title": "Introduction To Responsive Web Design - HTML & CSS Tutorial (freeCodeCamp.org)",
+              "url": "https://www.youtube.com/watch?v=srvUrASNj0s",
+              "type": "video"
+            },
+            {
+              "title": "Learn HTML5 and CSS3 From Scratch - Full Course (freeCodeCamp.org)",
+              "url": "https://www.youtube.com/watch?v=mU6anWqZJcc",
+              "type": "video"
+            },
+            {
+              "title": "JavaScript Crash Course For Beginners (Traversy Media)",
+              "url": "https://www.youtube.com/watch?v=hdI2bqOjy3c",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/general/gt_web_frontend_basics.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "beginner",
+          "exp": 33
+        },
+        {
+          "id": "gt_web_backend_database_intro",
+          "name": "Web Development Taste Test: Backend & Database Intro",
+          "tag": "essential",
+          "description": "Explore backend web development: designing RESTful APIs, handling HTTP request methods, querying relational databases with SQL (tables, keys, queries), NoSQL document storage, and server-side data persistence.",
+          "resources": [
+            {
+              "title": "Introduction to Databases and SQL",
+              "url": "https://www.datacamp.com/courses/introduction-to-databases-in-python",
+              "type": "course"
+            },
+            {
+              "title": "Learn Flask for Python - Full Tutorial (freeCodeCamp.org)",
+              "url": "https://www.youtube.com/watch?v=Z1RJmh_OqeA",
+              "type": "video"
+            },
+            {
+              "title": "Node.js and Express.js - Full Course (freeCodeCamp.org)",
+              "url": "https://www.youtube.com/watch?v=Oe421EPjeBE",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/general/gt_web_backend_database_intro.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "beginner",
+          "exp": 65
+        },
+        {
+          "id": "gt_data_science_ai_overview",
+          "name": "Data Science & AI Taste Test: Analysis & Basic ML",
+          "tag": "essential",
+          "description": "Explore data science and artificial intelligence: tabular data analysis with Python and Pandas, statistical charting, the fundamentals of supervised and unsupervised machine learning, and modern generative AI models.",
+          "resources": [
+            {
+              "title": "Google Machine Learning Crash Course",
+              "url": "https://developers.google.com/machine-learning/crash-course",
+              "type": "course"
+            },
+            {
+              "title": "Data Analysis with Python (freeCodeCamp)",
+              "url": "https://www.youtube.com/watch?v=r-uOLxNrNk8",
+              "type": "video"
+            },
+            {
+              "title": "SQL Tutorial - Full Database Course for Beginners (freeCodeCamp.org)",
+              "url": "https://www.youtube.com/watch?v=HXV3zeQKqGY",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/general/gt_data_science_ai_overview.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "beginner",
+          "exp": 37
+        },
+        {
+          "id": "gt_cloud_fundamentals",
+          "name": "Cloud Computing Fundamentals",
+          "tag": "essential",
+          "description": "Explore cloud computing and infrastructure: virtualization, cloud service models (IaaS, PaaS, Serverless), major cloud providers (AWS, GCP, Azure), and containerization concepts with Docker.",
+          "resources": [
+            {
+              "title": "AWS Cloud Quest: Cloud Practitioner",
+              "url": "https://aws.amazon.com/training/digital/aws-cloud-quest/",
+              "type": "course"
+            },
+            {
+              "title": "What is Cloud Computing?",
+              "url": "https://azure.microsoft.com/en-us/overview/what-is-cloud-computing/",
+              "type": "article"
+            },
+            {
+              "title": "AWS Certified Cloud Practitioner Certification Course 2026 (CLF-C02) - Pass the Exam! (freeCodeCamp.org)",
+              "url": "https://www.youtube.com/watch?v=7HKot-brXFE",
+              "type": "video"
+            },
+            {
+              "title": "Docker Crash Course for Absolute Beginners [NEW] (TechWorld with Nana)",
+              "url": "https://www.youtube.com/watch?v=pg19Z8LL06w",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/general/gt_cloud_fundamentals.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "beginner",
+          "exp": 34
+        },
+        {
+          "id": "gt_cybersecurity_intro",
+          "name": "Cybersecurity Fundamentals and Best Practices",
+          "tag": "advanced",
+          "description": "Explore cybersecurity fundamentals: the CIA triad (Confidentiality, Integrity, Availability), authentication vs authorization, password security, common social engineering and phishing vectors, and defensive safe coding practices.",
+          "resources": [
+            {
+              "title": "Introduction to Cybersecurity (IBM)",
+              "url": "https://www.coursera.org/learn/introduction-to-cybersecurity-for-everyone",
+              "type": "course"
+            },
+            {
+              "title": "OWASP Top 10 Web Application Security Risks",
+              "url": "https://owasp.org/www-project-top-ten/",
+              "type": "article"
+            },
+            {
+              "title": "Full Ethical Hacking Course - Network Penetration Testing for Beginners (2019) (freeCodeCamp.org)",
+              "url": "https://www.youtube.com/watch?v=3Kq1MIfTWCE",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/general/gt_cybersecurity_intro.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "advanced",
+          "exp": 87
+        }
+      ],
+      "difficulty": "beginner",
+      "exp": 35
+    },
+    {
+      "id": "general_stage_4",
+      "name": "Career Choice and Portfolio Direction",
+      "tag": "essential",
+      "description": "Chart a strategic career trajectory: personal self-assessment, navigating tech industry roles, building a compelling engineering portfolio, and engaging with technical communities.",
+      "resources": [],
+      "children": [
+        {
+          "id": "gt_career_self_assessment",
+          "name": "Self-Assessment: Interests, Strengths, and Work Style",
+          "tag": "essential",
+          "description": "Assess technical strengths and preferences: evaluating visual user-interface focus vs deep systems logic vs mathematical data analysis, identifying preferred problem domains, and selecting a primary technical career track.",
+          "resources": [
+            {
+              "title": "SkillBun Tech Career Interest Quiz",
+              "url": "/quiz",
+              "type": "article"
+            },
+            {
+              "title": "What Kind of Developer Are You?",
+              "url": "https://www.freecodecamp.org/news/what-kind-of-developer-are-you/",
+              "type": "article"
+            },
+            {
+              "title": "How to Start Your Dream Career in Tech in 7 Steps (with Susan Clark) (CareerFoundry)",
+              "url": "https://www.youtube.com/watch?v=niz7o7LF8zQ",
+              "type": "video"
+            },
+            {
+              "title": "How to Start Your Dream Career in Tech in 7 Steps (with Susan Clark) (CareerFoundry)",
+              "url": "https://www.youtube.com/watch?v=niz7o7LF8zQ",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/general/gt_career_self_assessment.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 50
+        },
+        {
+          "id": "gt_tech_industry_roles_trends",
+          "name": "Exploring Tech Industry Roles and Trends",
+          "tag": "essential",
+          "description": "Analyze technical roles and industry hiring demands: Software Engineer, Frontend Developer, Backend Developer, Full Stack Engineer, DevOps Engineer, Data Scientist, and Security Analyst, understanding daily responsibilities and required competencies.",
+          "resources": [
+            {
+              "title": "Tech Roles Explained: A Guide",
+              "url": "https://builtin.com/tech-jobs/common-tech-roles-explained",
+              "type": "article"
+            },
+            {
+              "title": "Hired 2024 State of Tech Salaries Report",
+              "url": "https://hired.com/blog/hired-blog/2024-state-of-tech-salaries/",
+              "type": "article"
+            },
+            {
+              "title": "Top Tech Jobs for 2025: High Demand & High Pay (Programming with Mosh)",
+              "url": "https://www.youtube.com/watch?v=zVEH7Zt1j9A",
+              "type": "video"
+            },
+            {
+              "title": "Top Tech Jobs for 2025: High Demand & High Pay (Programming with Mosh)",
+              "url": "https://www.youtube.com/watch?v=zVEH7Zt1j9A",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/general/gt_tech_industry_roles_trends.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 50
+        },
+        {
+          "id": "gt_portfolio_storytelling",
+          "name": "Crafting an Impactful Portfolio & Storytelling",
+          "tag": "essential",
+          "description": "Build a compelling technical engineering portfolio: curating high-impact projects on GitHub, authoring professional README documentation explaining architecture and design decisions, providing live deployed project demos, and demonstrating problem-solving maturity.",
+          "resources": [
+            {
+              "title": "GitHub Docs - About READMEs",
+              "url": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes",
+              "type": "article"
+            },
+            {
+              "title": "Learn HTML5 and CSS3 From Scratch - Full Course (freeCodeCamp.org)",
+              "url": "https://www.youtube.com/watch?v=mU6anWqZJcc",
+              "type": "video"
+            },
+            {
+              "title": "GitHub Profile Tips to standout (& stay secure) | GitHub tutorial (GitHub)",
+              "url": "https://www.youtube.com/watch?v=T_PKBNImooA",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/general/gt_portfolio_storytelling.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 50
+        },
+        {
+          "id": "gt_career_path_research_planning",
+          "name": "Personal Career Path Research & Planning",
+          "tag": "essential",
+          "description": "Formulate a structured engineering learning roadmap: setting quarterly milestones, selecting depth-first technical stacks to master, scheduling technical interview practice, and systematically tracking skill acquisition.",
+          "resources": [
+            {
+              "title": "SkillBun Roadmaps: Explore Your Path",
+              "url": "/roadmap/general",
+              "type": "article"
+            },
+            {
+              "title": "How to Create a 30-60-90 Day Plan",
+              "url": "https://www.themuse.com/advice/30-60-90-day-plan",
+              "type": "article"
+            },
+            {
+              "title": "The Complete Backend Developer Roadmap (Programming with Mosh)",
+              "url": "https://www.youtube.com/watch?v=OeEHJgzqS1k",
+              "type": "video"
+            },
+            {
+              "title": "How to Build an Effective Career Plan (Top 5 Tips) (CareerAddict)",
+              "url": "https://www.youtube.com/watch?v=jVssNpBk37k",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/general/gt_career_path_research_planning.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 50
+        },
+        {
+          "id": "gt_networking_community_engagement",
+          "name": "Networking and Community Engagement",
+          "tag": "advanced",
+          "description": "Build professional connections in technology: contributing to open-source software on GitHub, participating in technical hackathons, attending developer conferences and meetups, and building genuine collaborative peer relationships.",
+          "resources": [
+            {
+              "title": "The Power of Professional Networking",
+              "url": "https://www.forbes.com/sites/forbescoachescouncil/2023/07/20/the-power-of-professional-networking/",
+              "type": "article"
+            },
+            {
+              "title": "How to use LinkedIn for job hunting (LinkedIn Learning)",
+              "url": "https://www.linkedin.com/learning/paths/how-to-use-linkedin-for-job-hunting",
+              "type": "course"
+            },
+            {
+              "title": "How to Network with ZERO Working Experience! (Jeff Su)",
+              "url": "https://www.youtube.com/watch?v=AA4lVbiRlGw",
+              "type": "video"
+            },
+            {
+              "title": "5 LinkedIn Profile Tips that Get You Hired (backed by data) (Jeff Su)",
+              "url": "https://www.youtube.com/watch?v=OKF7ZeWNrfg",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/general/gt_networking_community_engagement.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "advanced",
+          "exp": 70
+        }
+      ],
+      "difficulty": "beginner",
+      "exp": 32
+    }
+  ],
+  "total_exp": 1000
 }

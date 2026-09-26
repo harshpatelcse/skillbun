@@ -84,7 +84,7 @@
       "id": "dg_foundations",
       "name": "Foundations and Role Context",
       "tag": "essential",
-      "description": "Understand the core concepts, frameworks, and ethical considerations that form the bedrock of data governance, and define the specialist's role within an organization.",
+      "description": "Master Data Governance fundamentals: Establishing data trustworthiness, compliance, privacy, metadata management, and enterprise data stewardship.",
       "resources": [
         {
           "title": "The DAMA Guide to the Data Management Body of Knowledge (DMBOK2)",
@@ -107,7 +107,7 @@
           "id": "dg_foundations_role_overview",
           "name": "Understanding the Data Governance Specialist Role",
           "tag": "essential",
-          "description": "Explore the responsibilities, required skills, common career paths, and organizational impact of a Data Governance Specialist. Understand why data governance is critical for data-driven decision-making.",
+          "description": "Define the Data Governance Specialist role: Bridging data engineering, legal compliance, and business analytics; establishing data accountability and value realization.",
           "resources": [
             {
               "title": "Data Governance: A Comprehensive Guide",
@@ -134,13 +134,15 @@
               "url": "/data/docs/data_governance_specialist/dg_foundations_role_overview.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 35
         },
         {
           "id": "dg_foundations_principles_concepts",
           "name": "Core Data Governance Principles & Concepts",
           "tag": "essential",
-          "description": "Dive into fundamental data governance concepts including data strategy, data assets, data domains, data policies, data standards, business glossaries, data definitions, data lifecycle management, data literacy, and fostering a data-driven culture.",
+          "description": "Master core data governance principles: DAMA-DMBOK framework, data as an enterprise asset, data democratization vs data security, and single version of truth.",
           "resources": [
             {
               "title": "What is Data Governance? (IBM Cloud Education)",
@@ -167,13 +169,15 @@
               "url": "/data/docs/data_governance_specialist/dg_foundations_principles_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 33
         },
         {
           "id": "dg_foundations_frameworks_models",
           "name": "Data Governance Frameworks & Operating Models",
           "tag": "essential",
-          "description": "Learn about various data governance frameworks (e.g., DAMA-DMBOK, CDMC, DCAM) and operating models (centralized, decentralized, federated). Understand how to design and implement an effective DG program structure.",
+          "description": "Deploy operating models: Centralized, decentralized, and federated data governance models; data councils, stewardship committees, and domain data ownership.",
           "resources": [
             {
               "title": "DAMA-DMBOK Chapter 10: Data Governance",
@@ -200,13 +204,15 @@
               "url": "/data/docs/data_governance_specialist/dg_foundations_frameworks_models.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 32
         },
         {
           "id": "dg_foundations_regulatory_ethics",
           "name": "Regulatory Landscape & Data Ethics",
           "tag": "essential",
-          "description": "Examine key data privacy regulations (GDPR, CCPA, HIPAA, LGPD) and industry-specific compliance requirements. Understand ethical considerations in data handling, usage, and responsible AI.",
+          "description": "Navigate regulatory mandates: GDPR, CCPA/CPRA, HIPAA, BCBS 239, Sarbanes-Oxley (SOX), and ethical AI principles regarding training data fairness.",
           "resources": [
             {
               "title": "GDPR Compliance: A Simple Guide",
@@ -233,13 +239,15 @@
               "url": "/data/docs/data_governance_specialist/dg_foundations_regulatory_ethics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 30
         },
         {
           "id": "dg_foundations_emerging_regulations",
           "name": "Emerging Data Regulations & AI Governance",
           "tag": "essential",
-          "description": "Explore new and evolving data regulations (e.g., EU Data Act, Digital Markets Act, sector-specific mandates like financial services or healthcare data directives) and their implications for data governance. Understand principles of AI governance, bias detection, fairness, explainability, and ethical AI development within a data governance context.",
+          "description": "Govern emerging technology risks: EU AI Act compliance, governance of Large Language Model training datasets, prompt logging compliance, and synthetic data policies.",
           "resources": [
             {
               "title": "The EU AI Act: What it Means for Businesses",
@@ -271,15 +279,19 @@
               "url": "/data/docs/data_governance_specialist/dg_foundations_emerging_regulations.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 34
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 20
     },
     {
       "id": "dg_core_skills",
       "name": "Core Skills and Implementation",
       "tag": "essential",
-      "description": "Build the practical skill stack for a Data Governance Specialist by understanding and implementing key governance capabilities through exercises and realistic scenarios.",
+      "description": "Execute core data governance capabilities: Data catalogs, automated lineage, quality management, stewardship, and access controls.",
       "resources": [
         {
           "title": "Data Governance Implementation Best Practices",
@@ -312,7 +324,7 @@
           "id": "dg_core_data_catalog_metadata",
           "name": "Data Catalog & Metadata Management",
           "tag": "essential",
-          "description": "Master the principles of data cataloging, active vs. passive metadata management, data classification, tagging, business glossary creation, and technical metadata extraction. Learn to use tools for discovery, understanding, and linking data assets across the enterprise.",
+          "description": "Deploy enterprise data catalogs: Alation, Collibra, Apache Atlas, OpenMetadata; managing technical, operational, and business metadata glossaries.",
           "resources": [
             {
               "title": "Microsoft Purview Documentation",
@@ -339,13 +351,15 @@
               "url": "/data/docs/data_governance_specialist/dg_core_data_catalog_metadata.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 30
         },
         {
           "id": "dg_core_data_lineage_traceability",
           "name": "Data Lineage & Traceability",
           "tag": "essential",
-          "description": "Understand how to map data flows, track data transformations, and establish end-to-end data lineage. Explore the importance of lineage for impact analysis, regulatory compliance, and troubleshooting.",
+          "description": "Track end-to-end data lineage: Automated column-level lineage from source databases through ETL/ELT pipelines to BI dashboards with dbt and OpenLineage.",
           "resources": [
             {
               "title": "OpenLineage Documentation",
@@ -372,13 +386,15 @@
               "url": "/data/docs/data_governance_specialist/dg_core_data_lineage_traceability.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 32
         },
         {
           "id": "dg_core_data_quality_management",
           "name": "Data Quality Management",
           "tag": "essential",
-          "description": "Learn to define, measure, monitor, and improve data quality. Cover data profiling, data quality rules, validation techniques, data cleansing, and the role of data quality in decision-making.",
+          "description": "Implement Data Quality (DQ) dimensions: Accuracy, completeness, consistency, timeliness, validity, and uniqueness; profiling data with Great Expectations / Soda.",
           "resources": [
             {
               "title": "Great Expectations Documentation",
@@ -400,13 +416,15 @@
               "url": "/data/docs/data_governance_specialist/dg_core_data_quality_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 34
         },
         {
           "id": "dg_core_data_ownership_stewardship",
           "name": "Data Ownership & Stewardship",
           "tag": "essential",
-          "description": "Establish clear roles and responsibilities for data assets within an organization. Define data owners, data stewards, and their functions in managing data definitions, quality, security, and access.",
+          "description": "Operationalize data stewardship: Defining domain data owners, technical stewards, business stewards, and formalizing data access approval workflows.",
           "resources": [
             {
               "title": "Data Ownership vs. Data Stewardship: What's the Difference?",
@@ -433,13 +451,15 @@
               "url": "/data/docs/data_governance_specialist/dg_core_data_ownership_stewardship.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         },
         {
           "id": "dg_core_data_access_security",
           "name": "Data Access Control & Security Policies",
           "tag": "essential",
-          "description": "Design and implement policies for secure data access, role-based access control (RBAC), and attribute-based access control (ABAC). Understand data masking, encryption, and anonymization concepts for sensitive data.",
+          "description": "Enforce granular access control policies: Role-Based (RBAC) and Attribute-Based (ABAC) access control, dynamic data masking, row-level security, and tokenization with Immuta/Privacera.",
           "resources": [
             {
               "title": "Implementing Data Access Controls",
@@ -466,13 +486,15 @@
               "url": "/data/docs/data_governance_specialist/dg_core_data_access_security.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 38
         },
         {
           "id": "dg_core_data_retention_archiving",
           "name": "Data Retention & Archiving Policies",
           "tag": "essential",
-          "description": "Develop and enforce data retention schedules compliant with legal, regulatory, and business requirements. Understand data archiving strategies, data disposal best practices, and data lifecycle management.",
+          "description": "Manage data lifecycles: Enterprise retention policies, automated legal hold workflows, cold storage archiving to Glacier, and defensible data disposal.",
           "resources": [
             {
               "title": "Data Retention Policy Best Practices",
@@ -499,13 +521,15 @@
               "url": "/data/docs/data_governance_specialist/dg_core_data_retention_archiving.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         },
         {
           "id": "dg_core_master_data_management",
           "name": "Master Data Management (MDM) & Reference Data",
           "tag": "essential",
-          "description": "Learn the principles and importance of Master Data Management (MDM) for creating a single, consistent, and accurate view of critical business entities (e.g., customers, products, suppliers). Understand reference data management, data consolidation strategies, data hierarchy management, and how MDM programs are structured to support enterprise data governance.",
+          "description": "Master Data Management (MDM): Golden record creation, entity resolution, deduplication algorithms, and reference data management across enterprise ERP/CRM systems.",
           "resources": [
             {
               "title": "What is Master Data Management (MDM)?",
@@ -527,13 +551,15 @@
               "url": "/data/docs/data_governance_specialist/dg_core_master_data_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 34
         },
         {
           "id": "dg_core_data_architecture_concepts",
           "name": "Data Architecture Fundamentals & Modern Data Platforms",
           "tag": "essential",
-          "description": "Understand foundational data architecture concepts including traditional data warehouses, modern data lakes, data meshes, and data fabrics. Learn how data governance principles and controls are applied across different architectural patterns, cloud data platforms (e.g., AWS, Azure, GCP), and streaming data environments. Explore the governance implications of microservices and APIs.",
+          "description": "Govern modern data architectures: Data Mesh governance (federated computational governance), Data Lakehouse governance (Unity Catalog, Iceberg metadata), and cloud data warehouses.",
           "resources": [
             {
               "title": "Data Architecture Explained: Concepts & Best Practices",
@@ -565,15 +591,19 @@
               "url": "/data/docs/data_governance_specialist/dg_core_data_architecture_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 28
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 25
     },
     {
       "id": "dg_production_ops",
       "name": "Production, Collaboration, and Operations",
       "tag": "advanced",
-      "description": "Move beyond theoretical knowledge into the operational aspects of data governance: managing programs, automating workflows, ensuring continuous compliance, and resolving incidents in a production environment.",
+      "description": "Operate data governance programs: Automated controls, incident resolution, program metrics, and executive reporting.",
       "resources": [
         {
           "title": "Operationalizing Data Governance",
@@ -601,7 +631,7 @@
           "id": "dg_ops_implementing_controls",
           "name": "Implementing Data Governance Controls & Monitoring",
           "tag": "advanced",
-          "description": "Translate data governance policies into practical, enforceable controls within data platforms, databases, APIs, and applications. Implement monitoring mechanisms for policy adherence, data quality, access patterns, data loss prevention (DLP), and compliance reporting across the data landscape.",
+          "description": "Implement continuous data controls: Automated quality checks in CI/CD data pipelines, automated schema drift alerts, and unauthorized data access monitoring.",
           "resources": [
             {
               "title": "How to Implement Data Governance Policies",
@@ -623,13 +653,15 @@
               "url": "/data/docs/data_governance_specialist/dg_ops_implementing_controls.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 59
         },
         {
           "id": "dg_ops_automated_workflows",
           "name": "Automated Governance Workflows & Tools",
           "tag": "advanced",
-          "description": "Explore how to automate data governance tasks using specialized tools and platforms. Focus on integrating data catalogs, lineage tools, and quality checks into CI/CD pipelines for data assets, data platforms, and orchestration tools for continuous governance and streamlined operations.",
+          "description": "Automate governance workflows: JIRA / ServiceNow integration for data access requests, automated metadata harvesting, and automated privacy scanning.",
           "resources": [
             {
               "title": "Automating Data Governance with Azure Purview",
@@ -656,13 +688,15 @@
               "url": "/data/docs/data_governance_specialist/dg_ops_automated_workflows.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 43
         },
         {
           "id": "dg_ops_dg_program_management",
           "name": "Data Governance Program Management & Stakeholder Engagement",
           "tag": "advanced",
-          "description": "Manage data governance initiatives from planning to execution. Learn effective communication strategies, stakeholder management, change management principles, and conflict resolution for successful DG adoption across the enterprise.",
+          "description": "Lead governance program roadmaps: Establishing data governance maturity roadmaps, business stakeholder change management, and executive steering meetings.",
           "resources": [
             {
               "title": "Managing a Data Governance Program",
@@ -689,13 +723,15 @@
               "url": "/data/docs/data_governance_specialist/dg_ops_dg_program_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 45
         },
         {
           "id": "dg_ops_incident_resolution",
           "name": "Data Governance Incident Management & Issue Resolution",
           "tag": "advanced",
-          "description": "Develop robust processes for identifying, reporting, triaging, and resolving data governance incidents, such as data breaches, policy violations, data quality issues, or compliance failures. Focus on root cause analysis and preventative measures.",
+          "description": "Manage data quality incidents: Data incident response playbooks, root-cause analysis (RCA), notifying downstream dashboard consumers, and remediation SLAs.",
           "resources": [
             {
               "title": "Data Incident Response Plan Guide",
@@ -717,13 +753,15 @@
               "url": "/data/docs/data_governance_specialist/dg_ops_incident_resolution.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 45
         },
         {
           "id": "dg_ops_metrics_reporting",
           "name": "Data Governance Metrics, KPIs, and Value Realization",
           "tag": "advanced",
-          "description": "Develop strategies for defining, tracking, and reporting on key performance indicators (KPIs) for data governance initiatives. Learn how to measure the effectiveness of DG programs, demonstrate tangible business value, quantify risk reduction, and create compelling dashboards and reports for executive stakeholders and continuous improvement.",
+          "description": "Measure data governance value: Tracking data quality scores (% clean records), data catalog adoption rate, data access request turnaround time, and compliance audit pass rates.",
           "resources": [
             {
               "title": "Measuring the Success of Data Governance Programs",
@@ -755,15 +793,19 @@
               "url": "/data/docs/data_governance_specialist/dg_ops_metrics_reporting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 51
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 34
     },
     {
       "id": "dg_portfolio_career",
       "name": "Portfolio and Career Readiness",
       "tag": "advanced",
-      "description": "Translate your data governance expertise into tangible proof points: compelling case studies, practical demonstrations, and clear role positioning for career advancement.",
+      "description": "Build a demonstrable Data Governance portfolio: Policy documentation packages, catalog implementation case studies, and interview readiness.",
       "resources": [
         {
           "title": "Building a Strong Data Governance Portfolio",
@@ -791,7 +833,7 @@
           "id": "dg_portfolio_case_studies",
           "name": "Crafting Data Governance Case Studies",
           "tag": "advanced",
-          "description": "Document your data governance projects into compelling case studies. Highlight the problem, the solutions implemented (policies, tools, processes), challenges overcome, and the measurable business impact and outcomes.",
+          "description": "Author data governance case studies: Documenting how metadata management reduced data discovery time by 75% and eliminated regulatory non-compliance fines.",
           "resources": [
             {
               "title": "How to Write a Technical Case Study",
@@ -818,13 +860,15 @@
               "url": "/data/docs/data_governance_specialist/dg_portfolio_case_studies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 45
         },
         {
           "id": "dg_portfolio_capstone_project",
           "name": "Capstone Project: End-to-End Data Governance Implementation",
           "tag": "advanced",
-          "description": "Design and implement a comprehensive data governance solution for a simulated or real-world dataset. This includes defining policies, implementing a data catalog (e.g., using open-source tools), establishing lineage, and setting up data quality checks. Document thoroughly with a README, diagrams, and a lessons-learned section.",
+          "description": "Build an enterprise Data Governance capstone: Deploy OpenMetadata or DataHub, configure automated dbt column-level lineage, define DQ test suites with Great Expectations, and document access policies.",
           "resources": [
             {
               "title": "Designing a Data Governance Architecture",
@@ -851,13 +895,15 @@
               "url": "/data/docs/data_governance_specialist/dg_portfolio_capstone_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 128
         },
         {
           "id": "dg_portfolio_interview_prep",
           "name": "Interview Preparation & Role Positioning",
           "tag": "advanced",
-          "description": "Prepare for interviews by articulating your data governance experience effectively, demonstrating problem-solving skills, and understanding common interview scenarios related to data privacy, quality, and compliance. Position yourself as a strategic DG expert.",
+          "description": "Master Data Governance interviews: Defend federated vs centralized governance tradeoffs, explain column-level lineage mechanics, and solve data ownership conflicts.",
           "resources": [
             {
               "title": "Top Data Governance Interview Questions",
@@ -884,9 +930,14 @@
               "url": "/data/docs/data_governance_specialist/dg_portfolio_interview_prep.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 48
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 35
     }
-  ]
+  ],
+  "total_exp": 1000
 }

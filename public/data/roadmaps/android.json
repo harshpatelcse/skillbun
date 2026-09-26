@@ -111,7 +111,9 @@
               "url": "/data/docs/android/an_kotlin.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 29
         },
         {
           "id": "an_coroutines",
@@ -139,7 +141,9 @@
               "url": "/data/docs/android/an_coroutines.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 39
         },
         {
           "id": "an_android_studio_essentials",
@@ -167,7 +171,9 @@
               "url": "/data/docs/android/an_android_studio_essentials.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 39
         },
         {
           "id": "an_android_core_components",
@@ -200,7 +206,9 @@
               "url": "/data/docs/android/an_android_core_components.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 39
         },
         {
           "id": "an_app_resources_permissions",
@@ -233,14 +241,19 @@
               "url": "/data/docs/android/an_app_resources_permissions.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 39
         }
       ],
       "project": {
         "title": "Interactive Unit Converter App",
         "description": "Build an interactive Android application that converts between various units. Implement multiple screens, handle activity lifecycles, manage UI state, perform input validation, use different types of resources, and demonstrate basic navigation using Intents.",
-        "url": "https://developer.android.com/courses"
-      }
+        "url": "https://developer.android.com/courses",
+        "difficulty": "advanced",
+        "exp": 50
+      },
+      "description": "Establish a rigorous foundation in modern Kotlin syntax, functional idioms, coroutine basics, and fundamental Android application components."
     },
     {
       "step": 2,
@@ -277,7 +290,9 @@
               "url": "/data/docs/android/an_xml_legacy_ui.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 37
         },
         {
           "id": "an_jetpack_compose_fundamentals",
@@ -305,7 +320,9 @@
               "url": "/data/docs/android/an_jetpack_compose_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 29
         },
         {
           "id": "an_compose_advanced_ui",
@@ -338,7 +355,9 @@
               "url": "/data/docs/android/an_compose_advanced_ui.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         },
         {
           "id": "an_compose_testing_preview",
@@ -371,7 +390,9 @@
               "url": "/data/docs/android/an_compose_testing_preview.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "an_advanced_compose_patterns",
@@ -404,14 +425,19 @@
               "url": "/data/docs/android/an_advanced_compose_patterns.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 55
         }
       ],
       "project": {
         "title": "Expense Tracker UI with Compose",
         "description": "Develop a modern Expense Tracker application focusing on a clean Jetpack Compose UI. Implement lists of transactions, filters, basic charts for visualization, empty states, and integrate local preview data to demonstrate full UI functionality.",
-        "url": "https://developer.android.com/jetpack/compose"
-      }
+        "url": "https://developer.android.com/jetpack/compose",
+        "difficulty": "advanced",
+        "exp": 50
+      },
+      "description": "Master declarative UI engineering with Jetpack Compose, state management (StateFlow, SharedFlow), and Android Lifecycle architecture components."
     },
     {
       "step": 3,
@@ -448,7 +474,9 @@
               "url": "/data/docs/android/an_app_architecture_patterns.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         },
         {
           "id": "an_dependency_injection",
@@ -476,7 +504,9 @@
               "url": "/data/docs/android/an_dependency_injection.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 39
         },
         {
           "id": "an_network_comm_rest",
@@ -504,7 +534,9 @@
               "url": "/data/docs/android/an_network_comm_rest.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 39
         },
         {
           "id": "an_local_data_persistence",
@@ -537,7 +569,9 @@
               "url": "/data/docs/android/an_local_data_persistence.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 49
         },
         {
           "id": "an_background_work_workers",
@@ -565,14 +599,19 @@
               "url": "/data/docs/android/an_background_work_workers.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 55
         }
       ],
       "project": {
         "title": "Offline-First News Reader",
         "description": "Build an offline-first news application that fetches articles from a public API, caches them using Room, and displays them with a Jetpack Compose UI. Implement features like saving articles, searching, and robust error recovery for network failures.",
-        "url": "https://developer.android.com/topic/architecture"
-      }
+        "url": "https://developer.android.com/topic/architecture",
+        "difficulty": "advanced",
+        "exp": 50
+      },
+      "description": "Engineer robust local persistence with Room database, asynchronous networking with Retrofit/Ktor, and dependency injection with Hilt."
     },
     {
       "step": 4,
@@ -609,7 +648,9 @@
               "url": "/data/docs/android/an_unit_integration_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 39
         },
         {
           "id": "an_ui_instrumentation_testing",
@@ -642,7 +683,9 @@
               "url": "/data/docs/android/an_ui_instrumentation_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 54
         },
         {
           "id": "an_app_performance_optimization",
@@ -675,7 +718,9 @@
               "url": "/data/docs/android/an_app_performance_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 54
         },
         {
           "id": "an_security_best_practices",
@@ -708,7 +753,9 @@
               "url": "/data/docs/android/an_security_best_practices.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 54
         },
         {
           "id": "an_release_distribution_playstore",
@@ -736,7 +783,9 @@
               "url": "/data/docs/android/an_release_distribution_playstore.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 39
         },
         {
           "id": "an_monitoring_analytics",
@@ -769,14 +818,762 @@
               "url": "/data/docs/android/an_monitoring_analytics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 54
         }
       ],
       "project": {
         "title": "Production-Ready Habit Tracker",
         "description": "Build, test, and prepare a polished habit tracker application for release. Implement features like local persistence, notifications, analytics-ready events, and a robust release build. Document the app's architecture and features, creating a Play Store-style listing with screenshots and privacy notes.",
-        "url": "https://developer.android.com/distribute"
-      }
+        "url": "https://developer.android.com/distribute",
+        "difficulty": "advanced",
+        "exp": 50
+      },
+      "description": "Implement production-grade testing (JUnit, MockK, Compose UI tests), CI/CD automation, ProGuard/R8 obfuscation, and Google Play Store publishing."
     }
-  ]
+  ],
+  "format": "tree",
+  "tree": [
+    {
+      "id": "android_stage_1",
+      "name": "Kotlin and Android Foundations",
+      "tag": "essential",
+      "description": "Establish an unshakeable foundation in Kotlin syntax, functional idioms, coroutine asynchronous mechanics, Gradle build system configuration, and fundamental Android application components.",
+      "resources": [],
+      "children": [
+        {
+          "id": "an_kotlin",
+          "name": "Kotlin Language Fundamentals",
+          "tag": "essential",
+          "description": "Master idiomatic Kotlin for native Android development: strict null safety, data classes, sealed classes and interfaces for UI state, higher-order functions and lambdas, extension functions, inline value classes, and property delegation (by lazy, custom delegates).",
+          "resources": [
+            {
+              "title": "Kotlin Official Documentation",
+              "url": "https://kotlinlang.org/docs/home.html",
+              "type": "article"
+            },
+            {
+              "title": "Full 2025 Kotlin Crash Course For Beginners (Philipp Lackner)",
+              "url": "https://www.youtube.com/watch?v=dzUc9vrsldM",
+              "type": "video"
+            },
+            {
+              "title": "Kotlin Course - Tutorial for Beginners",
+              "url": "https://www.youtube.com/watch?v=F9UC9DY-vIU",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/android/an_kotlin.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "beginner",
+          "exp": 29
+        },
+        {
+          "id": "an_coroutines",
+          "name": "Asynchronous Programming with Coroutines",
+          "tag": "essential",
+          "description": "Master asynchronous Kotlin Coroutines and reactive streams: CoroutineScope, Dispatchers (Main, IO, Default), structured concurrency, exception propagation with CoroutineExceptionHandler, supervisorScope, and reactive state streaming using StateFlow and SharedFlow.",
+          "resources": [
+            {
+              "title": "Kotlin Coroutines on Android",
+              "url": "https://developer.android.com/kotlin/coroutines",
+              "type": "article"
+            },
+            {
+              "title": "Understand Kotlin Coroutines on Android (Google I/O'19) (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=BOHK_w09pVA",
+              "type": "video"
+            },
+            {
+              "title": "Understand Kotlin Coroutines on Android (Google I/O'19) (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=BOHK_w09pVA",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/android/an_coroutines.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 39
+        },
+        {
+          "id": "an_android_studio_essentials",
+          "name": "Android Studio & Build System Fundamentals",
+          "tag": "essential",
+          "description": "Master modern Android build engineering: Gradle Kotlin DSL (build.gradle.kts), Version Catalogs (libs.versions.toml) for dependency management, configuring build variants (debug, release, staging), ProGuard/R8 minification rules, and profiling builds with Gradle build scan.",
+          "resources": [
+            {
+              "title": "Meet Android Studio",
+              "url": "https://developer.android.com/studio/intro",
+              "type": "article"
+            },
+            {
+              "title": "Configure your build",
+              "url": "https://developer.android.com/studio/build",
+              "type": "article"
+            },
+            {
+              "title": "Introduction to Android Studio (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=uY3lsHP7GvM",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/android/an_android_studio_essentials.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "beginner",
+          "exp": 39
+        },
+        {
+          "id": "an_android_core_components",
+          "name": "Core Android Application Components",
+          "tag": "essential",
+          "description": "Master core Android OS components: Activity lifecycles under configuration changes and OS process death (handling state with SavedStateHandle), Single-Activity architecture, Foreground Services with ongoing notifications, and BroadcastReceivers with modern scoped broadcasts.",
+          "resources": [
+            {
+              "title": "Android App Components",
+              "url": "https://developer.android.com/guide/components",
+              "type": "article"
+            },
+            {
+              "title": "Understand the Activity Lifecycle",
+              "url": "https://developer.android.com/guide/components/activities/activity-lifecycle",
+              "type": "article"
+            },
+            {
+              "title": "Activities & the Activity Lifecycle - Android Basics 2023 (Philipp Lackner)",
+              "url": "https://www.youtube.com/watch?v=SJw3Nu_h8kk",
+              "type": "video"
+            },
+            {
+              "title": "Activities & the Activity Lifecycle - Android Basics 2023 (Philipp Lackner)",
+              "url": "https://www.youtube.com/watch?v=SJw3Nu_h8kk",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/android/an_android_core_components.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 39
+        },
+        {
+          "id": "an_app_resources_permissions",
+          "name": "App Resources, Permissions & Manifest",
+          "tag": "essential",
+          "description": "Manage app resources and runtime security: configure AndroidManifest.xml, implement modern runtime permission requests (including rationale dialogs and settings redirections), manage localized string resources, dynamic color theming, and adapt to modern scoped storage requirements.",
+          "resources": [
+            {
+              "title": "App Resources Overview",
+              "url": "https://developer.android.com/guide/topics/resources/providing-resources",
+              "type": "article"
+            },
+            {
+              "title": "Request App Permissions",
+              "url": "https://developer.android.com/training/permissions/requesting",
+              "type": "article"
+            },
+            {
+              "title": "Introduction to Android Studio (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=uY3lsHP7GvM",
+              "type": "video"
+            },
+            {
+              "title": "Foster user trust by adopting privacy-respecting permission workflows (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=rtdRQ1QT1pU",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/android/an_app_resources_permissions.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 39
+        }
+      ],
+      "difficulty": "beginner",
+      "exp": 20
+    },
+    {
+      "id": "android_stage_2",
+      "name": "Modern Android UI",
+      "tag": "essential",
+      "description": "Master modern Android UI engineering with Jetpack Compose: declarative layouts, recomposition optimization, type-safe navigation, custom design systems, and accessible components.",
+      "resources": [],
+      "children": [
+        {
+          "id": "an_xml_legacy_ui",
+          "name": "XML Layouts and Traditional Views (Legacy Context)",
+          "tag": "essential",
+          "description": "Understand legacy Android View architecture: ViewBinding, XML layout inflation, custom views, and seamless interoperability between legacy Views and modern Compose using AndroidView and ComposeView.",
+          "resources": [
+            {
+              "title": "Build a responsive UI with ConstraintLayout",
+              "url": "https://developer.android.com/develop/ui/views/layout/constraint-layout",
+              "type": "article"
+            },
+            {
+              "title": "Create dynamic lists with RecyclerView",
+              "url": "https://developer.android.com/develop/ui/views/layout/recyclerview",
+              "type": "article"
+            },
+            {
+              "title": "Android View System (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=_n1X-cH9Kyo",
+              "type": "video"
+            },
+            {
+              "title": "Android View System (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=_n1X-cH9Kyo",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/android/an_xml_legacy_ui.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 37
+        },
+        {
+          "id": "an_jetpack_compose_fundamentals",
+          "name": "Jetpack Compose Fundamentals",
+          "tag": "essential",
+          "description": "Master declarative UI with Jetpack Compose: @Composable functions, recomposition execution models, slot APIs, layout primitives (Column, Row, Box), modifier chaining order, state hoisting, and remember / rememberSaveable state survival across configuration changes.",
+          "resources": [
+            {
+              "title": "Jetpack Compose Documentation",
+              "url": "https://developer.android.com/jetpack/compose/documentation",
+              "type": "article"
+            },
+            {
+              "title": "Kotlin Course - Tutorial for Beginners",
+              "url": "https://www.youtube.com/watch?v=F9UC9DY-vIU",
+              "type": "video"
+            },
+            {
+              "title": "Intro to Jetpack Compose (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=IuDkRDBy84k",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/android/an_jetpack_compose_fundamentals.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "beginner",
+          "exp": 29
+        },
+        {
+          "id": "an_compose_advanced_ui",
+          "name": "Advanced Compose UI & Navigation",
+          "tag": "essential",
+          "description": "Build complex Compose interfaces: Navigation with Compose using type-safe routes, shared element transitions, gesture handling (drag, swipe, pinch-to-zoom), and rendering large datasets with LazyColumn and LazyGrid utilizing stable unique keys.",
+          "resources": [
+            {
+              "title": "Compose Navigation documentation",
+              "url": "https://developer.android.com/jetpack/compose/navigation",
+              "type": "article"
+            },
+            {
+              "title": "Material Design in Compose",
+              "url": "https://developer.android.com/jetpack/compose/themes/material",
+              "type": "article"
+            },
+            {
+              "title": "Introduction to Navigation and Cupcake App (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=FCNw4887T9o",
+              "type": "video"
+            },
+            {
+              "title": "Introduction to Material Design with Compose (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=4XAeSx7ZJUU",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/android/an_compose_advanced_ui.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "advanced",
+          "exp": 39
+        },
+        {
+          "id": "an_compose_testing_preview",
+          "name": "Compose Previews & Basic UI Testing",
+          "tag": "advanced",
+          "description": "Accelerate UI development with Compose Previews: configure multi-device previews (dark mode, screen orientations, font scales), screenshot testing for UI regressions, and authoring Compose UI tests with createComposeRule().",
+          "resources": [
+            {
+              "title": "Previewing Composables",
+              "url": "https://developer.android.com/jetpack/compose/tooling/previews",
+              "type": "article"
+            },
+            {
+              "title": "Test your Compose UI",
+              "url": "https://developer.android.com/jetpack/compose/testing",
+              "type": "article"
+            },
+            {
+              "title": "Compose Preview | Jetpack Compose Tips (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=UnHTlNlzJPw",
+              "type": "video"
+            },
+            {
+              "title": "Write your first Compose UI test (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=JyUJZvJ-OV8",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/android/an_compose_testing_preview.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "advanced",
+          "exp": 41
+        },
+        {
+          "id": "an_advanced_compose_patterns",
+          "name": "Advanced Compose UI Patterns & Accessibility",
+          "tag": "advanced",
+          "description": "Optimize Compose rendering performance: enforce @Stable and @Immutable contracts on data models, leverage derivedStateOf to prevent unnecessary recompositions, use rememberUpdatedState in launched effects, and implement accessibility semantics (contentDescription, click labels).",
+          "resources": [
+            {
+              "title": "Jetpack Compose Samples",
+              "url": "https://github.com/android/compose-samples",
+              "type": "article"
+            },
+            {
+              "title": "Accessibility in Compose",
+              "url": "https://developer.android.com/jetpack/compose/accessibility",
+              "type": "article"
+            },
+            {
+              "title": "Custom layouts and graphics in Compose (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=xcfEQO0k_gU",
+              "type": "video"
+            },
+            {
+              "title": "Build more accessible UIs with Jetpack Compose (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=80qkStdDWXQ",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/android/an_advanced_compose_patterns.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "advanced",
+          "exp": 55
+        }
+      ],
+      "difficulty": "beginner",
+      "exp": 25
+    },
+    {
+      "id": "android_stage_3",
+      "name": "Architecture, APIs, and Data",
+      "tag": "essential",
+      "description": "Architect scalable Android applications: Unidirectional Data Flow, dependency injection with Hilt, resilient local database persistence with Room, asynchronous networking, and background work.",
+      "resources": [],
+      "children": [
+        {
+          "id": "an_app_architecture_patterns",
+          "name": "App Architecture Patterns & MVVM",
+          "tag": "essential",
+          "description": "Implement modern Android Architecture (MVVM/MVI): Unidirectional Data Flow (UDF), modeling UI state as sealed interfaces, managing ViewModel lifecycles, and enforcing Clean Architecture separation between UI, Domain Use Cases, and Data Repositories.",
+          "resources": [
+            {
+              "title": "Guide to App Architecture",
+              "url": "https://developer.android.com/topic/architecture",
+              "type": "article"
+            },
+            {
+              "title": "ViewModel overview",
+              "url": "https://developer.android.com/topic/libraries/architecture/viewmodel",
+              "type": "article"
+            },
+            {
+              "title": "Intro to app architecture (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=AfCzIEwt_i4",
+              "type": "video"
+            },
+            {
+              "title": "Architecture: The UI layer - MAD Skills (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=p9VR8KbmzEE",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/android/an_app_architecture_patterns.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "advanced",
+          "exp": 39
+        },
+        {
+          "id": "an_dependency_injection",
+          "name": "Dependency Injection with Hilt",
+          "tag": "essential",
+          "description": "Master dependency injection with Hilt: @HiltAndroidApp, @AndroidEntryPoint, configuring Hilt Modules with @Provides and @Binds, component scopes (@Singleton, @ViewModelScoped), and assisted injection (@AssistedInject) for dynamic runtime parameters.",
+          "resources": [
+            {
+              "title": "Dependency injection with Hilt",
+              "url": "https://developer.android.com/training/dependency-injection/hilt-android",
+              "type": "article"
+            },
+            {
+              "title": "Hilt - Android Dependency Injection (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=B56oV3IHMxg",
+              "type": "video"
+            },
+            {
+              "title": "Introduction to Hilt - MAD Skills (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=mnMCgjuMJPA",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/android/an_dependency_injection.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 39
+        },
+        {
+          "id": "an_network_comm_rest",
+          "name": "Network Communication & RESTful APIs",
+          "tag": "essential",
+          "description": "Build resilient network layers with Retrofit 2 and OkHttp: configure interceptors (logging, auth token injection, automatic 401 token refresh), parse JSON with Kotlinx Serialization, handle network timeouts, and model network errors into domain Result types.",
+          "resources": [
+            {
+              "title": "Retrofit Documentation",
+              "url": "https://square.github.io/retrofit/",
+              "type": "article"
+            },
+            {
+              "title": "Consuming REST APIs in Android using Retrofit (Mitch Tabian)",
+              "url": "https://codingwithmitch.com/courses/android-rest-api/consuming-rest-apis-android-retrofit/",
+              "type": "article"
+            },
+            {
+              "title": "Create offline-first apps (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=jaZ2gLMGUsM",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/android/an_network_comm_rest.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 39
+        },
+        {
+          "id": "an_local_data_persistence",
+          "name": "Local Data Persistence: Room & DataStore",
+          "tag": "essential",
+          "description": "Engineer offline-first storage with Room and DataStore: define Entities, DAOs, and relations, manage database schema migrations (Migration and AutoMigration), observe reactive data streams with Flow, and migrate legacy SharedPreferences to Jetpack DataStore.",
+          "resources": [
+            {
+              "title": "Room Persistence Library",
+              "url": "https://developer.android.com/training/data-storage/room",
+              "type": "article"
+            },
+            {
+              "title": "Jetpack DataStore",
+              "url": "https://developer.android.com/topic/libraries/architecture/datastore",
+              "type": "article"
+            },
+            {
+              "title": "Kotlin: Using Room Kotlin APIs - MAD Skills (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=vsDkhRTMdA0",
+              "type": "video"
+            },
+            {
+              "title": "Introduction to DataStore - MAD Skills (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=mdQjuZbLv9Y",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/android/an_local_data_persistence.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 49
+        },
+        {
+          "id": "an_background_work_workers",
+          "name": "Reliable Background Work with WorkManager",
+          "tag": "advanced",
+          "description": "Execute reliable background tasks with WorkManager: enforce constraints (network unmetered, device charging), schedule periodic work, handle expedited work requests, manage unique work policies (KEEP, REPLACE), and adapt to aggressive OEM battery optimization restrictions.",
+          "resources": [
+            {
+              "title": "WorkManager basics",
+              "url": "https://developer.android.com/guide/background/getting-started",
+              "type": "article"
+            },
+            {
+              "title": "Mastering Android Background Tasks with WorkManager (Mindorks)",
+              "url": "https://blog.mindorks.com/mastering-android-background-tasks-with-workmanager-tutorial",
+              "type": "article"
+            },
+            {
+              "title": "Implementing WorkManager (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=hIWikOo0Yhw",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/android/an_background_work_workers.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "advanced",
+          "exp": 55
+        }
+      ],
+      "difficulty": "advanced",
+      "exp": 27
+    },
+    {
+      "id": "android_stage_4",
+      "name": "Testing, Performance, and Release",
+      "tag": "essential",
+      "description": "Test, profile, optimize, secure, and release production Android applications: unit and UI testing, memory leak profiling with LeakCanary, R8 obfuscation, and Google Play Store distribution.",
+      "resources": [],
+      "children": [
+        {
+          "id": "an_unit_integration_testing",
+          "name": "Unit & Integration Testing",
+          "tag": "essential",
+          "description": "Author robust unit and integration tests: test business logic with JUnit 5 and MockK, test asynchronous Kotlin Flows with Turbine, and control coroutine execution using TestDispatcher and StandardTestDispatcher.",
+          "resources": [
+            {
+              "title": "Test Apps on Android",
+              "url": "https://developer.android.com/training/testing",
+              "type": "article"
+            },
+            {
+              "title": "Test your ViewModel",
+              "url": "https://developer.android.com/training/dependency-injection/test-dependencies",
+              "type": "article"
+            },
+            {
+              "title": "Test at scale with Gradle managed devices (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=LQFataWfTXI",
+              "type": "video"
+            },
+            {
+              "title": "Test at scale with Gradle managed devices (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=LQFataWfTXI",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/android/an_unit_integration_testing.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 39
+        },
+        {
+          "id": "an_ui_instrumentation_testing",
+          "name": "UI & Instrumentation Testing",
+          "tag": "advanced",
+          "description": "Execute automated UI instrumentation tests on emulators and physical devices: author end-to-end user journey tests using ComposeTestRule and Espresso, verifying navigation flows, form validations, and asynchronous UI state transitions.",
+          "resources": [
+            {
+              "title": "Automate UI tests with Espresso",
+              "url": "https://developer.android.com/training/testing/espresso",
+              "type": "article"
+            },
+            {
+              "title": "Test your Compose UI",
+              "url": "https://developer.android.com/jetpack/compose/testing",
+              "type": "article"
+            },
+            {
+              "title": "UI testing with Espresso - Android Testing Patterns #2 (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=kL3MCQV2M2s",
+              "type": "video"
+            },
+            {
+              "title": "5 ways Compose improves UI testing (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=svYgbT2nQw8",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/android/an_ui_instrumentation_testing.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "advanced",
+          "exp": 54
+        },
+        {
+          "id": "an_app_performance_optimization",
+          "name": "App Performance Optimization",
+          "tag": "advanced",
+          "description": "Optimize Android app performance: profile memory allocations and detect activity/context leaks using LeakCanary, generate Baseline Profiles with Macrobenchmark to reduce cold startup times by 40%, and eliminate UI frame drops to maintain a silky-smooth 60/120fps.",
+          "resources": [
+            {
+              "title": "Android App Performance",
+              "url": "https://developer.android.com/topic/performance",
+              "type": "article"
+            },
+            {
+              "title": "Analyze app performance with Android Profiler",
+              "url": "https://developer.android.com/studio/profile",
+              "type": "article"
+            },
+            {
+              "title": "Making apps blazing fast with Baseline Profiles (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=yJm5On5Gp4c",
+              "type": "video"
+            },
+            {
+              "title": "Accurately measure app performance with profileable builds (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=7950XHZh4Ek",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/android/an_app_performance_optimization.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "advanced",
+          "exp": 54
+        },
+        {
+          "id": "an_security_best_practices",
+          "name": "Security Best Practices",
+          "tag": "advanced",
+          "description": "Harden Android applications: store cryptographic keys securely in the hardware-backed Android Keystore, encrypt sensitive local storage with EncryptedSharedPreferences/SQLCipher, enforce SSL/TLS Certificate Pinning with OkHttp, and obfuscate code with R8/ProGuard.",
+          "resources": [
+            {
+              "title": "Security Best Practices",
+              "url": "https://developer.android.com/training/articles/security-tips",
+              "type": "article"
+            },
+            {
+              "title": "Configure network security policy",
+              "url": "https://developer.android.com/training/articles/security-ssl",
+              "type": "article"
+            },
+            {
+              "title": "FULL Guide to Encryption & Decryption in Android (Keystore, Ciphers and more) (Philipp Lackner)",
+              "url": "https://www.youtube.com/watch?v=aaSck7jBDbw",
+              "type": "video"
+            },
+            {
+              "title": "Boost Android app performance with the R8 optimizer | Spotlight Week (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=QqO2jZ-NZko",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/android/an_security_best_practices.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "advanced",
+          "exp": 54
+        },
+        {
+          "id": "an_release_distribution_playstore",
+          "name": "App Release & Play Store Distribution",
+          "tag": "essential",
+          "description": "Deploy applications to the Google Play Store: build optimized Android App Bundles (AAB), sign releases with Play App Signing, manage staged rollout percentages, configure internal testing tracks, and adhere to target SDK privacy and permission mandates.",
+          "resources": [
+            {
+              "title": "Launch Checklist",
+              "url": "https://developer.android.com/distribute/best-practices/launch/launch-checklist",
+              "type": "article"
+            },
+            {
+              "title": "Upload your app to Google Play Console",
+              "url": "https://developer.android.com/distribute/console/overview",
+              "type": "article"
+            },
+            {
+              "title": "Make your app shine for all devices on Google Play (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=xLecR6zYiFY",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/android/an_release_distribution_playstore.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 39
+        },
+        {
+          "id": "an_monitoring_analytics",
+          "name": "Monitoring & Analytics",
+          "tag": "advanced",
+          "description": "Monitor production application health: integrate Firebase Crashlytics for fatal and non-fatal crash reporting, track ANR (Application Not Responding) rates in the Google Play Console, and analyze app startup latency and HTTP network performance.",
+          "resources": [
+            {
+              "title": "Firebase for Android",
+              "url": "https://firebase.google.com/docs/android/setup",
+              "type": "article"
+            },
+            {
+              "title": "Add Firebase Crashlytics to your Android app",
+              "url": "https://firebase.google.com/docs/crashlytics/get-started?platform=android",
+              "type": "article"
+            },
+            {
+              "title": "Address Firebase Crashlytics reports faster from Android Studio (Android Developers)",
+              "url": "https://www.youtube.com/watch?v=i66ZTIMcqrc",
+              "type": "video"
+            },
+            {
+              "title": "Getting started with Firebase on Android (Firebase)",
+              "url": "https://www.youtube.com/watch?v=jbHfJpoOzkI",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/android/an_monitoring_analytics.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "advanced",
+          "exp": 54
+        }
+      ],
+      "difficulty": "beginner",
+      "exp": 27
+    }
+  ],
+  "total_exp": 1000
 }

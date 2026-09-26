@@ -248,6 +248,9 @@
 .sk-pill { font-size: 0.5rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; padding: 0.12rem 0.45rem; border-radius: 4px; }
 .sk-pill.ess { background: rgba(46,204,113,0.1); color: var(--green); border: 1px solid rgba(46,204,113,0.2); }
 .sk-pill.adv { background: rgba(248,81,73,0.08); color: #f85149; border: 1px solid rgba(248,81,73,0.18); }
+.sk-pill.exp { background: rgba(255, 215, 0, 0.12); color: #d97706; border: 1px solid rgba(217, 119, 6, 0.28); font-weight: 800; }
+[data-theme='dark'] .sk-pill.exp { background: rgba(255, 215, 0, 0.14); color: #ffd700; border: 1px solid rgba(255, 215, 0, 0.32); }
+
 
 .sk-node-actions { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; flex-shrink: 0; }
 .sk-check {

@@ -47,26 +47,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Social Community & Audio Streaming App",
+        "title": "High-Performance Cross-Platform Social Audio & Streaming App",
         "tech_stack": [
           "React Native",
-          "Expo",
-          "TypeScript",
+          "Expo SDK 51",
           "Reanimated 3",
-          "Supabase"
+          "Zustand",
+          "WebRTC"
         ],
-        "description": "Develop a modern audio streaming mobile app with background playback controls, fluid gesture drawers, and real-time community chat."
+        "description": "Build a 60fps audio streaming client with fluid gesture-driven UI animations, background audio playback, and peer-to-peer audio rooms via WebRTC."
       },
       {
-        "title": "Real-Time Fitness Tracker with Bluetooth Low Energy (BLE)",
+        "title": "Real-Time Offline-First Bluetooth Low Energy (BLE) Health Tracker",
         "tech_stack": [
           "React Native",
-          "TypeScript",
-          "Expo",
-          "BLE Library",
-          "Zustand"
+          "react-native-ble-plx",
+          "WatermelonDB",
+          "HealthKit",
+          "TypeScript"
         ],
-        "description": "Build a production iOS/Android mobile fitness companion that connects to BLE heart rate monitors, plots live telemetry charts, and tracks GPS routes in background."
+        "description": "Develop an offline-first fitness application connecting to BLE heart-rate monitors, syncing telemetry with SQLite, and integrating Apple HealthKit & Health Connect."
       }
     ],
     "certifications": [
@@ -74,10 +74,11 @@
       "Meta Front-End Developer Professional Certificate"
     ],
     "interview_focus": [
-      "React Native New Architecture (JSI, Fabric, TurboModules)",
-      "JavaScript Thread vs UI Thread Synchronization",
-      "Gesture Handling & Reanimated Worklets",
-      "Memory & Image Caching in React Native"
+      "React Native Architecture (New Architecture: TurboModules, Fabric Renderer, JSI, Yoga)",
+      "Performance Optimization (Reanimated 3 Worklets, FlashList vs FlatList, Bridge Bottlenecks)",
+      "Offline Data Synchronization & SQLite Local Storage (WatermelonDB / MMKV)",
+      "Native Module Integration (Creating Custom Swift/Kotlin Bridges with JSI)",
+      "Memory Leaks & Profiling in React Native (Flipper, Xcode Instruments, Android Profiler)"
     ]
   },
   "format": "tree",
@@ -86,7 +87,7 @@
       "id": "rn_foundations",
       "name": "React Native Fundamentals & Core Development",
       "tag": "essential",
-      "description": "Master the core concepts of modern JavaScript, TypeScript, React, and fundamental React Native building blocks to create cross-platform mobile user interfaces with a strong understanding of component architecture and styling.",
+      "description": "Establish an unshakeable cross-platform mobile foundation: master React Native's New Architecture (Fabric, TurboModules, JSI), the Hermes JavaScript engine, TypeScript typing, and modern component design.",
       "resources": [
         {
           "title": "React Native Docs: Getting Started",
@@ -119,7 +120,7 @@
           "id": "rn_environment_setup",
           "name": "Environment Setup & Tooling",
           "tag": "essential",
-          "description": "Set up development environments for React Native with Expo CLI and React Native CLI. Understand package managers (npm/yarn/pnpm), version control (Git), essential developer tools like Metro Bundler, and the basic roles of Xcode/Android Studio in bare workflow projects. Grasp the differences between Expo Go, Development Builds, and Bare Workflow.",
+          "description": "Master the modern React Native toolchain: Expo Application Services (EAS), Expo Development Builds (`expo-dev-client`) replacing legacy bare workflows, Config Plugins for native manifest modification without ejecting, Metro bundler configuration, and Xcode/Android Studio simulator orchestration.",
           "resources": [
             {
               "title": "Setting up the development environment",
@@ -151,13 +152,15 @@
               "url": "/data/docs/react_native_developer/rn_environment_setup.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 32
         },
         {
           "id": "rn_js_typescript_react_core",
           "name": "Modern JavaScript, TypeScript & React Core",
           "tag": "essential",
-          "description": "Master ES6+ features, asynchronous programming, React hooks (useState, useEffect, useContext, useRef, useMemo, useCallback), props, state management within components, and the component lifecycle. Embrace TypeScript for type-safe and robust React Native development, including basic types, interfaces, and integrating with JSX.",
+          "description": "Master modern React for mobile: React 18/19 hooks, concurrent transitions, custom hooks, and strict TypeScript integration (typing component props, native events, navigation routes, and global theme definitions).",
           "resources": [
             {
               "title": "React Learn",
@@ -189,13 +192,15 @@
               "url": "/data/docs/react_native_developer/rn_js_typescript_react_core.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 32
         },
         {
           "id": "rn_core_components",
           "name": "React Native Core Components & Styling",
           "tag": "essential",
-          "description": "Build responsive UIs using fundamental components like View, Text, Image, ScrollView, FlatList, SectionList, TextInput, Button, Pressable. Master Flexbox for layout, StyleSheet API, and platform-specific styling to create adaptive interfaces.",
+          "description": "Master native component primitives and layout: View, Text, Pressable with interactive press states, ScrollView, TextInput, and building responsive, adaptive flexbox layouts with Yoga layout engine.",
           "resources": [
             {
               "title": "React Native Core Components & APIs",
@@ -227,13 +232,15 @@
               "url": "/data/docs/react_native_developer/rn_core_components.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 23
         },
         {
           "id": "rn_component_design_patterns",
           "name": "Component Design Patterns & Reusability",
           "tag": "essential",
-          "description": "Understand best practices for structuring and organizing React Native components. Explore patterns like component composition, higher-order components (HOCs), render props, and prop drilling vs. Context API for managing component communication and fostering reusability.",
+          "description": "Implement clean component design patterns: compound components, render props, slot patterns, custom hook abstractions, and establishing an enterprise-wide mobile design system.",
           "resources": [
             {
               "title": "React Context API",
@@ -260,13 +267,15 @@
               "url": "/data/docs/react_native_developer/rn_component_design_patterns.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "rn_responsive_styling_theming",
           "name": "Responsive Styling & Theming",
           "tag": "essential",
-          "description": "Implement complex layouts with absolute/relative positioning, custom components, and advanced styling techniques. Explore responsive design patterns (Dimensions API, hooks) and popular UI libraries/design systems like NativeBase, React Native Paper, Tamagui, or styling solutions like Styled Components / Tailwind CSS for accelerated development and consistent theming.",
+          "description": "Design scalable mobile styling architectures: NativeWind (Tailwind CSS for React Native compiling to native styles), StyleSheet caching, safe area insets with `react-native-safe-area-context`, and dynamic dark/light mode switching.",
           "resources": [
             {
               "title": "React Native Styling & Theming",
@@ -298,15 +307,19 @@
               "url": "/data/docs/react_native_developer/rn_responsive_styling_theming.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 32
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 20
     },
     {
       "id": "rn_data_app_arch",
       "name": "Data Management & Application Architecture",
       "tag": "essential",
-      "description": "Design robust application structures, manage complex global state, integrate with various APIs, handle user input, and implement secure authentication and efficient data persistence strategies for mobile applications.",
+      "description": "Architect enterprise mobile data lifecycles: file-based native routing, server state synchronization, ultra-fast local persistence, and offline-first synchronization.",
       "resources": [
         {
           "title": "React Navigation Docs",
@@ -334,7 +347,7 @@
           "id": "rn_navigation",
           "name": "React Navigation & Routing",
           "tag": "essential",
-          "description": "Implement robust navigation patterns including Stack, Tab, Drawer navigators. Understand authentication flows, deep linking, screen lifecycle events, and explore Expo Router for file-system-based routing to create seamless user journeys.",
+          "description": "Master file-based mobile navigation with Expo Router: stack navigation, native bottom tabs, modal presentation screens, universal deep linking (custom schemes and universal links/app links), and typed route navigation.",
           "resources": [
             {
               "title": "React Navigation Essentials",
@@ -366,13 +379,15 @@
               "url": "/data/docs/react_native_developer/rn_navigation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 32
         },
         {
           "id": "rn_state_management",
           "name": "Advanced State Management",
           "tag": "essential",
-          "description": "Manage complex application state using both React's built-in Context API for local or shared state, and global state libraries like Redux Toolkit, Zustand, Jotai, or Recoil. Understand concepts like selectors, actions, reducers, and performance considerations for large-scale applications.",
+          "description": "Master scalable state management: lightweight global state with Zustand, atomic state with Jotai, and avoiding unnecessary component re-renders with selective state subscriptions.",
           "resources": [
             {
               "title": "Redux Toolkit Getting Started",
@@ -404,13 +419,15 @@
               "url": "/data/docs/react_native_developer/rn_state_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 27
         },
         {
           "id": "rn_data_fetching_forms_auth",
           "name": "Data Fetching, Forms & Authentication",
           "tag": "essential",
-          "description": "Integrate RESTful and GraphQL APIs using libraries like Axios or TanStack Query for efficient data fetching, caching, and synchronization. Implement robust form handling with libraries like Formik/React Hook Form and validation (Yup/Zod). Secure user authentication (JWT, OAuth) and token management strategies.",
+          "description": "Master asynchronous data fetching and form management: TanStack Query v5 (automatic background re-fetching, optimistic mutations, offline query persistence), React Hook Form with Zod validation schemas, and managing JWT access/refresh token lifecycles.",
           "resources": [
             {
               "title": "TanStack Query React Native",
@@ -442,13 +459,15 @@
               "url": "/data/docs/react_native_developer/rn_data_fetching_forms_auth.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 40
         },
         {
           "id": "rn_backend_as_a_service",
           "name": "Backend-as-a-Service (BaaS) Integration",
           "tag": "essential",
-          "description": "Integrate with popular Backend-as-a-Service (BaaS) platforms for rapid backend development. Utilize solutions like Firebase (Firestore, Authentication, Cloud Functions, Storage) or Supabase (Postgres, Auth, Realtime) for robust data management, authentication, and serverless functionalities.",
+          "description": "Integrate full-stack mobile backends: Supabase / Firebase authentication, real-time database listeners, row-level security (RLS), and push notifications via Expo Push Service / Firebase Cloud Messaging (FCM).",
           "resources": [
             {
               "title": "Firebase React Native Setup",
@@ -475,13 +494,15 @@
               "url": "/data/docs/react_native_developer/rn_backend_as_a_service.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 41
         },
         {
           "id": "rn_local_data_persistance",
           "name": "Local Data Persistence",
           "tag": "essential",
-          "description": "Store and manage local data efficiently using AsyncStorage for simple key-value pairs, or more structured solutions like SQLite (e.g., SQLite Storage, Expo SQLite), Realm, or WatermelonDB. Implement offline capabilities and data synchronization strategies for a seamless user experience.",
+          "description": "Implement ultra-fast mobile storage: synchronous C++ backed storage with `react-native-mmkv` (up to 30x faster than AsyncStorage), relational SQLite database persistence with Expo SQLite or WatermelonDB for offline-first data sync, and secure storage with `expo-secure-store`.",
           "resources": [
             {
               "title": "AsyncStorage Documentation",
@@ -513,15 +534,19 @@
               "url": "/data/docs/react_native_developer/rn_local_data_persistance.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 32
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 22
     },
     {
       "id": "rn_native_features_quality",
       "name": "Native Features, Performance & Quality Assurance",
       "tag": "advanced",
-      "description": "Leverage advanced device capabilities, implement complex animations, ensure app quality through rigorous testing, optimize performance, handle native-specific complexities, and secure your applications for production.",
+      "description": "Master advanced device hardware integrations, 60/120 FPS UI thread animations, automated testing, and runtime profiling.",
       "resources": [
         {
           "title": "Expo Documentation",
@@ -549,7 +574,7 @@
           "id": "rn_device_features",
           "name": "Device & Platform APIs",
           "tag": "advanced",
-          "description": "Utilize native device capabilities: Camera, Location (GPS), Notifications (Push, Local), File System, Biometrics, Permissions, Deep Linking, and background tasks using the Expo SDK or bare workflow APIs to build rich, interactive mobile experiences.",
+          "description": "Access native device hardware APIs: high-performance camera with VisionCamera / Expo Camera, location and geofencing, accelerometer and gyroscope sensors, haptic feedback, and local biometric authentication (FaceID/Fingerprint).",
           "resources": [
             {
               "title": "Expo SDK Documentation",
@@ -581,13 +606,15 @@
               "url": "/data/docs/react_native_developer/rn_device_features.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 45
         },
         {
           "id": "rn_animations_gestures",
           "name": "Advanced Animations & User Interaction",
           "tag": "advanced",
-          "description": "Create fluid and engaging user experiences with advanced animations using the React Native Animated API, React Native Reanimated (v2+), and Lottie. Implement sophisticated gesture handling with React Native Gesture Handler and explore haptic feedback for enhanced interactivity.",
+          "description": "Build fluid, uninterrupted 60/120 FPS animations: React Native Reanimated v3 (worklets executing directly on the UI thread), shared element transitions between screens, and continuous gesture handling with React Native Gesture Handler v2 (`GestureDetector`).",
           "resources": [
             {
               "title": "React Native Reanimated",
@@ -619,13 +646,15 @@
               "url": "/data/docs/react_native_developer/rn_animations_gestures.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 45
         },
         {
           "id": "rn_native_module_linking",
           "name": "Native Module Development & Bridging",
           "tag": "advanced",
-          "description": "Extend React Native functionality by writing custom native modules and UI components for Android (Java/Kotlin) and iOS (Objective-C/Swift). Understand effective communication between JavaScript and native threads, and how to link existing native libraries for complex requirements.",
+          "description": "Bridge native iOS and Android code: authoring custom native modules using the Expo Modules API (writing native Swift for iOS and Kotlin for Android), and understanding the JavaScript Interface (JSI) for direct synchronous C++ memory access.",
           "resources": [
             {
               "title": "React Native Native Modules Guide (Android)",
@@ -657,13 +686,15 @@
               "url": "/data/docs/react_native_developer/rn_native_module_linking.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         },
         {
           "id": "rn_testing_strategies",
           "name": "Testing Strategies & Frameworks",
           "tag": "advanced",
-          "description": "Implement comprehensive testing strategies across your mobile application. Cover Unit testing with Jest, Component testing with React Native Testing Library, Integration testing, and End-to-End (E2E) testing with frameworks like Detox or Maestro. Understand mocking, snapshots, and setting up CI-friendly tests.",
+          "description": "Implement comprehensive mobile automated testing: unit and component tests with Jest and React Native Testing Library, mocking native modules, and end-to-end (E2E) testing on real devices/simulators using Maestro or Detox.",
           "resources": [
             {
               "title": "Detox Testing Guide",
@@ -695,13 +726,15 @@
               "url": "/data/docs/react_native_developer/rn_testing_strategies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         },
         {
           "id": "rn_performance_optimization",
           "name": "Performance Optimization & Profiling",
           "tag": "advanced",
-          "description": "Identify and resolve performance bottlenecks in React Native applications. Optimize list rendering (FlatList, SectionList), reduce re-renders, implement memoization (useMemo, useCallback), lazy loading, bundle size optimization, and understand native performance profiling tools like Flipper's Performance Monitor and Xcode/Android Studio profilers.",
+          "description": "Eliminate mobile bottlenecks: recycling view memory using Shopify FlashList (`@shopify/flash-list` replacing FlatList), image optimization and blurhash placeholders with `expo-image`, profiling JS thread vs UI thread with Hermes profiling, and eliminating bridge bottlenecks.",
           "resources": [
             {
               "title": "React Native Performance Guide",
@@ -733,13 +766,15 @@
               "url": "/data/docs/react_native_developer/rn_performance_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         },
         {
           "id": "rn_debugging_troubleshooting",
           "name": "Debugging & Troubleshooting",
           "tag": "advanced",
-          "description": "Master advanced debugging techniques for React Native apps using Flipper, React Native Debugger, Chrome DevTools, and VS Code debugger extensions. Learn to effectively troubleshoot common issues related to Metro Bundler, native module linking, Android/iOS build errors, and runtime exceptions.",
+          "description": "Master mobile debugging workflows: Chrome DevTools, React Native DevTools, inspecting network traffic, debugging native crashes in Xcode and Android Studio, and diagnosing memory leaks.",
           "resources": [
             {
               "title": "Debugging React Native Apps",
@@ -771,13 +806,15 @@
               "url": "/data/docs/react_native_developer/rn_debugging_troubleshooting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         },
         {
           "id": "rn_error_monitoring",
           "name": "Error Handling & Crash Reporting",
           "tag": "advanced",
-          "description": "Implement robust error handling strategies across the application (e.g., Error Boundaries). Integrate crash reporting and performance monitoring tools like Sentry, Firebase Crashlytics, or Bugsnag to proactively identify, track, and diagnose issues in production environments, ensuring app stability and reliability.",
+          "description": "Implement production error tracking: Sentry for React Native (capturing JS exceptions, native iOS/Android crashes, breadcrumbs, and source-map symbolication in CI), and Datadog mobile telemetry.",
           "resources": [
             {
               "title": "Sentry for React Native",
@@ -804,13 +841,15 @@
               "url": "/data/docs/react_native_developer/rn_error_monitoring.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 42
         },
         {
           "id": "rn_security_best_practices",
           "name": "Security Best Practices for Mobile Apps",
           "tag": "advanced",
-          "description": "Implement essential security best practices for mobile applications. Cover secure storage of sensitive data (Keychain, Android Keystore), secure API key management, code obfuscation and minification, network security (HTTPS, SSL Pinning), and protection against common mobile vulnerabilities like insecure data storage and improper session management.",
+          "description": "Harden mobile application security: SSL/TLS certificate pinning, protecting API keys against reverse engineering, preventing screen capture on sensitive financial screens, root and jailbreak detection, and code shrinking with ProGuard/R8.",
           "resources": [
             {
               "title": "OWASP Mobile Security Testing Guide",
@@ -842,15 +881,19 @@
               "url": "/data/docs/react_native_developer/rn_security_best_practices.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 56
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 25
     },
     {
       "id": "rn_deployment_devops",
       "name": "Deployment, DevOps & Portfolio",
       "tag": "advanced",
-      "description": "Understand the full lifecycle of a React Native application, from continuous integration and deployment to app store release, maintenance, and showcasing your work through effective portfolio projects.",
+      "description": "Automate mobile CI/CD pipelines, Over-The-Air (OTA) runtime updates, and app store deployment.",
       "resources": [
         {
           "title": "Expo Application Services (EAS)",
@@ -878,7 +921,7 @@
           "id": "rn_release_workflow",
           "name": "Build, Release & Updates Workflow",
           "tag": "advanced",
-          "description": "Master the app build and release process for Android (APK/AAB) and iOS (IPA) using tools like EAS Build, Fastlane, or manual Xcode/Android Studio setups. Implement Over-The-Air (OTA) updates with CodePush or EAS Update, and manage app versioning, signing configurations, and pre-release testing tracks.",
+          "description": "Master release engineering: generating cryptographic signing keys (iOS Distribution Certificates, Android Keystore), managing build variants (development, staging, production), and version increment automation.",
           "resources": [
             {
               "title": "EAS Build Introduction",
@@ -910,13 +953,15 @@
               "url": "/data/docs/react_native_developer/rn_release_workflow.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         },
         {
           "id": "rn_ci_cd",
           "name": "CI/CD for Mobile Applications",
           "tag": "advanced",
-          "description": "Automate the build, test, and deployment pipelines for your mobile applications using Continuous Integration/Continuous Deployment (CI/CD) services like GitHub Actions, GitLab CI, Bitrise, Azure DevOps, or App Center. Ensure consistent, reliable, and frequent releases, including automated testing and distribution to internal testers.",
+          "description": "Automate builds with EAS Build and GitHub Actions: cloud compilation of native iOS/Android binaries, automated PR test runs, and Over-The-Air (OTA) runtime JavaScript bundle patching with EAS Update to fix bugs instantly without app store review.",
           "resources": [
             {
               "title": "GitHub Actions for React Native",
@@ -948,13 +993,15 @@
               "url": "/data/docs/react_native_developer/rn_ci_cd.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         },
         {
           "id": "rn_app_store_optimization",
           "name": "App Store Optimization & Analytics",
           "tag": "advanced",
-          "description": "Understand the principles of App Store Optimization (ASO) for Google Play Store and Apple App Store to improve visibility, discoverability, and conversion rates. Integrate analytics tools like Firebase Analytics, Google Analytics, or Mixpanel to track user engagement, app performance, user behavior, and inform future development decisions for continuous improvement.",
+          "description": "Publish and optimize store presence: automated submission via EAS Submit to Apple App Store Connect and Google Play Console, managing phased releases, and tracking app store vitals (ANRs and crash rates).",
           "resources": [
             {
               "title": "Introduction to App Store Optimization",
@@ -986,13 +1033,15 @@
               "url": "/data/docs/react_native_developer/rn_app_store_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         },
         {
           "id": "rn_project_capstone",
           "name": "Capstone Project: Real-world Application Development",
           "tag": "advanced",
-          "description": "Apply all learned skills to develop a complete, production-ready React Native application. This comprehensive project should include advanced features, robust state and data management, complex API interactions, local data persistence, comprehensive testing, and preparation for app store release, forming a strong and impactful portfolio piece.",
+          "description": "Capstone Project: Architect and Deploy a Production Cross-Platform Social Commerce App in React Native: Expo Router file-based navigation, Shopify FlashList infinite feeds, Reanimated 3 gesture interactions, TanStack Query with MMKV offline cache, Stripe payments, and automated EAS Build & Update pipelines.",
           "resources": [
             {
               "title": "React Native Showcase",
@@ -1019,9 +1068,14 @@
               "url": "/data/docs/react_native_developer/rn_project_capstone.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 98
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 25
     }
-  ]
+  ],
+  "total_exp": 1000
 }

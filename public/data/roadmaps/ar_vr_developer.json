@@ -86,7 +86,7 @@
       "id": "foundational_skills",
       "name": "Foundational Skills for XR Development",
       "tag": "essential",
-      "description": "Master C# programming, Unity engine fundamentals, 3D graphics concepts, and core XR design principles to build a strong base for immersive applications.",
+      "description": "Master spatial computing foundations: 3D coordinate mathematics, stereoscopic rendering, immersive UX design, and C# scripting in Unity.",
       "resources": [
         {
           "title": "Unity Learn",
@@ -114,7 +114,7 @@
           "id": "csharp_for_unity",
           "name": "C# Programming for Unity",
           "tag": "essential",
-          "description": "Develop robust gameplay systems using C# with Unity, covering MonoBehaviours, events, delegates, coroutines, ScriptableObjects, state machines, and asynchronous programming patterns.",
+          "description": "Master C# for XR development: Asynchronous operations with async/await, memory allocation optimization to prevent frame drops, delegates, and event-driven architectures.",
           "resources": [
             {
               "title": "Microsoft C# Documentation",
@@ -136,13 +136,15 @@
               "url": "/data/docs/ar_vr_developer/csharp_for_unity.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 38
         },
         {
           "id": "unity_engine_core",
           "name": "Unity Engine Core Concepts",
           "tag": "essential",
-          "description": "Deep dive into Unity's architecture including GameObjects, Components, Prefabs, Scene Management, Physics, Lighting, Animation, Scripting Lifecycle, Input Systems, and UI Systems (Canvas, UGUI).",
+          "description": "Master Unity for immersive spatial computing: Scene management, lighting pipelines (URP), physics interactions, and spatial audio integration.",
           "resources": [
             {
               "title": "Unity User Manual",
@@ -164,13 +166,15 @@
               "url": "/data/docs/ar_vr_developer/unity_engine_core.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 24
         },
         {
           "id": "software_architecture_patterns_unity",
           "name": "Software Architecture & Design Patterns in Unity",
           "tag": "essential",
-          "description": "Apply common software design principles (SOLID) and architectural patterns (MVC, MVVM, Dependency Injection, Service Locators, State Machines) to create scalable, maintainable, and robust Unity projects for XR.",
+          "description": "Architect modular XR systems: State machines for interaction states, ScriptableObject event architectures, and separating XR hardware input from game logic.",
           "resources": [
             {
               "title": "Game Programming Patterns",
@@ -197,13 +201,15 @@
               "url": "/data/docs/ar_vr_developer/software_architecture_patterns_unity.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         },
         {
           "id": "3d_graphics_math_fundamentals",
           "name": "3D Graphics & Linear Algebra for Games",
           "tag": "essential",
-          "description": "Understand basic 3D math (vectors, matrices, quaternions), coordinate systems, transformations, camera projections, rendering pipelines (SRP/URP/HDRP basics), and fundamental graphics concepts essential for XR development.",
+          "description": "Master 3D spatial mathematics: Quaternions for 6-DOF tracking, frustum culling, raycasting for spatial selection, and pose matrix transformations.",
           "resources": [
             {
               "title": "3D Math Primer for Graphics and Game Development",
@@ -230,13 +236,15 @@
               "url": "/data/docs/ar_vr_developer/3d_graphics_math_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 33
         },
         {
           "id": "xr_design_principles",
           "name": "XR Design Principles & Spatial UX",
           "tag": "essential",
-          "description": "Learn core principles of designing for XR: comfort, presence, immersion, spatial UI/UX patterns, locomotion mechanics, interaction models, affordances, wayfinding, and mitigating motion sickness and simulator sickness.",
+          "description": "Design spatial user experiences: Minimizing simulator sickness (vestibular mismatch), ergonomic virtual interactable placement, physical scale, and diegetic UI.",
           "resources": [
             {
               "title": "Meta Quest Design Guidelines",
@@ -263,15 +271,19 @@
               "url": "/data/docs/ar_vr_developer/xr_design_principles.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 36
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 27
     },
     {
       "id": "core_xr_development",
       "name": "Core AR/VR Development",
       "tag": "essential",
-      "description": "Implement foundational AR and VR experiences using Unity's XR packages, including environmental tracking, spatial interactions, locomotion systems, and platform-specific considerations.",
+      "description": "Develop immersive AR and VR applications using AR Foundation and the XR Interaction Toolkit.",
       "resources": [
         {
           "title": "Unity XR Manual",
@@ -299,7 +311,7 @@
           "id": "ar_foundation_development",
           "name": "AR Foundation & Mobile AR",
           "tag": "essential",
-          "description": "Develop robust mobile AR applications with Unity AR Foundation, covering plane detection, image/object tracking, face tracking, cloud anchors, light estimation, session management, and platform integration (ARKit/ARCore specific features).",
+          "description": "Build mobile AR applications with AR Foundation: Plane detection, feature point tracking, raycasting on real-world surfaces, image tracking, and environment probes (ARKit/ARCore).",
           "resources": [
             {
               "title": "Unity AR Foundation Manual",
@@ -321,13 +333,15 @@
               "url": "/data/docs/ar_vr_developer/ar_foundation_development.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 30
         },
         {
           "id": "vr_interaction_toolkit",
           "name": "VR Interaction Toolkit & Locomotion",
           "tag": "essential",
-          "description": "Implement diverse VR interactions using Unity's XR Interaction Toolkit: direct and indirect interaction, grab mechanics, UI interaction, haptic feedback, and various locomotion systems (teleportation, smooth locomotion, snap turning, continuous turning).",
+          "description": "Implement VR interactions using Unity XR Interaction Toolkit (XRI): Direct grab, ray interactors, socket interactors, teleporters, continuous locomotion, and snap turning.",
           "resources": [
             {
               "title": "XR Interaction Toolkit Manual",
@@ -354,13 +368,15 @@
               "url": "/data/docs/ar_vr_developer/vr_interaction_toolkit.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 39
         },
         {
           "id": "spatial_audio_xr",
           "name": "Spatial Audio & Audio Design for XR",
           "tag": "essential",
-          "description": "Implement immersive audio environments using Unity's audio system, spatializers (HRTF), audio zones, sound occlusion, and dynamic audio effects to enhance presence and user experience in AR/VR.",
+          "description": "Implement binaural spatial audio: Head-Related Transfer Functions (HRTF), room acoustic resonance, occlusion/obstruction filtering, and positional 3D sound cues.",
           "resources": [
             {
               "title": "Unity Manual: Spatial Audio",
@@ -377,13 +393,15 @@
               "url": "/data/docs/ar_vr_developer/spatial_audio_xr.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 36
         },
         {
           "id": "building_first_xr_app",
           "name": "Project: Building Your First XR Application",
           "tag": "essential",
-          "description": "Apply learned fundamentals to create a basic AR or VR scene, incorporating simple interactions, environmental setup, and testing on a device emulator or real hardware to solidify core concepts.",
+          "description": "Project: Build your first interactive XR experience: Combine 6-DOF hand tracking, object manipulation, physics throwing, and spatial UI menus.",
           "resources": [
             {
               "title": "Make an AR App in 15 Minutes (immersive insiders)",
@@ -400,13 +418,15 @@
               "url": "/data/docs/ar_vr_developer/building_first_xr_app.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 71
         },
         {
           "id": "xr_platform_integration",
           "name": "XR Platform Integration (OpenXR, Meta, etc.)",
           "tag": "advanced",
-          "description": "Understand and integrate with major XR platforms and APIs using OpenXR, Meta Quest SDK, SteamVR, or other relevant device-specific SDKs for advanced features, performance optimization, and broader device compatibility.",
+          "description": "Integrate cross-platform XR runtimes: OpenXR standard API, Meta Quest SDK (Oculus Integration / Meta XR Core SDK), Apple visionOS, and HTC Vive.",
           "resources": [
             {
               "title": "OpenXR Specification",
@@ -433,13 +453,15 @@
               "url": "/data/docs/ar_vr_developer/xr_platform_integration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 45
         },
         {
           "id": "advanced_xr_features",
           "name": "Advanced XR Features",
           "tag": "advanced",
-          "description": "Explore and implement advanced immersive functionalities such as hand tracking, eye tracking, passthrough AR, mixed reality blending, persistent anchors, body tracking, and multiplayer XR experiences using relevant SDKs and Unity services.",
+          "description": "Implement advanced spatial capabilities: Hand tracking gestures, spatial anchors, passthrough mixed reality (MR), and eye/face tracking.",
           "resources": [
             {
               "title": "Meta Quest Hand Tracking Documentation",
@@ -466,15 +488,19 @@
               "url": "/data/docs/ar_vr_developer/advanced_xr_features.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 43
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 27
     },
     {
       "id": "production_readiness",
       "name": "Production Readiness: Performance & Assets",
       "tag": "advanced",
-      "description": "Optimize XR applications for performance, manage 3D assets efficiently, and prepare professional-grade immersive demos, ensuring high fidelity and smooth user experiences.",
+      "description": "Optimize XR applications for mobile standalone headsets: Achieving fixed 72/90/120fps frame rates, thermal limits, and battery efficiency.",
       "resources": [
         {
           "title": "Unity Optimization",
@@ -502,7 +528,7 @@
           "id": "performance_optimization",
           "name": "XR Performance Optimization",
           "tag": "essential",
-          "description": "Implement comprehensive strategies to achieve high frame rates and maintain user comfort in XR, covering draw call reduction, batching, occlusion culling, LODs, texture compression, lighting optimization, and efficient garbage collection.",
+          "description": "Optimize XR performance: Fixed Foveated Rendering (FFR), Single-Pass Stereo Instanced rendering, draw call reduction, dynamic resolution scaling, and occlusion culling.",
           "resources": [
             {
               "title": "Unity Manual: Optimize graphics performance",
@@ -529,13 +555,15 @@
               "url": "/data/docs/ar_vr_developer/performance_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 38
         },
         {
           "id": "profiling_debugging",
           "name": "Profiling & Debugging XR Applications",
           "tag": "essential",
-          "description": "Utilize Unity Profiler, Frame Debugger, Memory Profiler, XR diagnostic tools, and platform-specific debuggers to identify and resolve performance bottlenecks, visual glitches, and runtime errors in immersive applications.",
+          "description": "Profile XR headsets: Meta Quest Developer Hub (MQDH), RenderDoc for frame inspection, Unity Profiler for GPU bottlenecks, and tracking frame drops (Application SpaceWarp).",
           "resources": [
             {
               "title": "Unity Profiler",
@@ -562,13 +590,15 @@
               "url": "/data/docs/ar_vr_developer/profiling_debugging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 39
         },
         {
           "id": "3d_asset_pipeline",
           "name": "3D Asset Pipeline & Management",
           "tag": "essential",
-          "description": "Manage 3D models, textures, and animations effectively for XR. Understand import settings, mesh optimization, poly count reduction, PBR materials, texture atlasing, skeletal animation, and asset bundling strategies for various platforms.",
+          "description": "Optimize 3D assets for XR: Low-poly modeling guidelines, texture atlasing, LOD (Level of Detail) groups, and PBR material setup for mobile GPU architectures.",
           "resources": [
             {
               "title": "Unity Manual: Importing Assets",
@@ -595,13 +625,15 @@
               "url": "/data/docs/ar_vr_developer/3d_asset_pipeline.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 27
         },
         {
           "id": "shader_development_urp_hdrp",
           "name": "Shader Development & Visual Effects (URP/HDRP)",
           "tag": "advanced",
-          "description": "Craft custom shaders using Unity's Shader Graph or HLSL, focusing on optimized rendering for XR, creating visual effects, and integrating with Universal Render Pipeline (URP) and High Definition Render Pipeline (HDRP).",
+          "description": "Author XR-optimized shaders: Shader Graph for mobile VR, avoiding expensive alpha blending, matcap shaders, and stylized post-processing.",
           "resources": [
             {
               "title": "Unity Manual: Shader Graph",
@@ -633,13 +665,15 @@
               "url": "/data/docs/ar_vr_developer/shader_development_urp_hdrp.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 43
         },
         {
           "id": "webxr_development",
           "name": "WebXR Development (Optional Path)",
           "tag": "advanced",
-          "description": "Explore browser-based immersive experiences using WebXR, Three.js, Babylon.js, or A-Frame, understanding device API access, progressive enhancement for web-based AR/VR, and deployment to web servers.",
+          "description": "Develop browser-based XR: WebXR Device API, Three.js / Babylon.js / A-Frame, delivering lightweight zero-install immersive web experiences.",
           "resources": [
             {
               "title": "MDN WebXR Device API",
@@ -666,13 +700,15 @@
               "url": "/data/docs/ar_vr_developer/webxr_development.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         },
         {
           "id": "capstone_project",
           "name": "Capstone Project: Professional XR Demo",
           "tag": "advanced",
-          "description": "Develop a polished AR product viewer, VR training simulation, or an interactive mixed reality experience from concept to completion. Focus on robust interactions, performance optimization, and professional presentation suitable for a portfolio.",
+          "description": "Build an enterprise XR capstone: Mixed Reality training simulator featuring passthrough, hand tracking, spatial anchors, physics interactions, and Meta Quest deployment.",
           "resources": [
             {
               "title": "Unity Connect (Portfolio Showcase)",
@@ -694,15 +730,19 @@
               "url": "/data/docs/ar_vr_developer/capstone_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 117
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 38
     },
     {
       "id": "deployment_professional_practice",
       "name": "Deployment & Professional Practice",
       "tag": "advanced",
-      "description": "Learn how to rigorously test, debug, and deploy XR applications across various platforms, ensuring a high-quality user experience and successful distribution to app stores or clients.",
+      "description": "Test, package, and distribute XR applications across enterprise and consumer stores.",
       "resources": [
         {
           "title": "Unity Build Settings",
@@ -730,7 +770,7 @@
           "id": "xr_usability_testing",
           "name": "Immersive Usability & QA Testing",
           "tag": "advanced",
-          "description": "Conduct thorough usability and quality assurance testing for XR, focusing on comfort, interaction clarity, onboarding effectiveness, motion sickness mitigation, accessibility, and identifying session-breaking bugs through user studies and technical QA.",
+          "description": "Conduct immersive QA testing: Ergonomic playtesting sessions, motion sickness evaluation questionnaires, and recording inside-out tracking failure recovery.",
           "resources": [
             {
               "title": "XR Accessibility Project",
@@ -747,13 +787,15 @@
               "url": "/data/docs/ar_vr_developer/xr_usability_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 49
         },
         {
           "id": "device_builds_store_prep",
           "name": "Device Builds & Store Submission",
           "tag": "advanced",
-          "description": "Configure and create release builds for target platforms (Android, iOS, Meta Quest, PCVR, etc.), manage signing keys, handle runtime permissions, prepare store listings (descriptions, screenshots, trailers), and navigate the submission and review processes for major app stores.",
+          "description": "Package for XR stores: Meta Quest Store / App Lab submission, visionOS App Store guidelines, Android manifest permissions, and VRC (Virtual Reality Checks) compliance.",
           "resources": [
             {
               "title": "Meta Quest Store Submission Guidelines",
@@ -775,13 +817,15 @@
               "url": "/data/docs/ar_vr_developer/device_builds_store_prep.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 53
         },
         {
           "id": "version_control_collaboration",
           "name": "Version Control & Collaboration",
           "tag": "essential",
-          "description": "Utilize Git and Git LFS for efficient version control, manage large binary assets common in game development, and implement collaborative workflows for team-based XR development projects, including branching and merging strategies.",
+          "description": "Collaborate in XR teams: Git LFS for 3D binary models, maintaining cross-platform XR build configurations, and continuous delivery.",
           "resources": [
             {
               "title": "Git SCM Documentation",
@@ -808,9 +852,14 @@
               "url": "/data/docs/ar_vr_developer/version_control_collaboration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 37
     }
-  ]
+  ],
+  "total_exp": 1000
 }

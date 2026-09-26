@@ -86,7 +86,7 @@
       "id": "da_foundational_concepts",
       "name": "Foundational Data Concepts & Spreadsheet Mastery",
       "tag": "essential",
-      "description": "Lay the groundwork by understanding the data analytics lifecycle, business problem framing, and mastering spreadsheet tools for data organization, manipulation, and initial analysis.",
+      "description": "Establish an unshakeable analytical foundation: master structured business problem solving, advanced financial and operational spreadsheet modeling, and data ethics governance.",
       "resources": [
         {
           "title": "What is Data Analytics? (IBM)",
@@ -114,7 +114,7 @@
           "id": "da_business_problem_solving",
           "name": "Business Acumen & Analytical Problem Solving",
           "tag": "essential",
-          "description": "Develop critical thinking to translate ambiguous business challenges into clear, actionable data questions. Learn to define key performance indicators (KPIs), establish analytical objectives, understand stakeholder needs, and navigate the complete data analytics lifecycle from problem to solution.",
+          "description": "Master structured hypothesis-driven problem solving: constructing Mutually Exclusive and Collectively Exhaustive (MECE) issue trees, translating ambiguous business challenges into quantifiable analytical hypotheses, and mapping KPI metric trees.",
           "resources": [
             {
               "title": "Google Data Analytics Certificate",
@@ -136,13 +136,15 @@
               "url": "/data/docs/data_analyst/da_business_problem_solving.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 41
         },
         {
           "id": "da_excel_data_analysis",
           "name": "Excel/Google Sheets for Advanced Data Analysis",
           "tag": "essential",
-          "description": "Master advanced spreadsheet functions for data manipulation (VLOOKUP, INDEX-MATCH, XLOOKUP, SUMIFS), pivot tables, data validation, conditional formatting, and dynamic array formulas. Utilize Power Query (or Get & Transform) for robust data cleaning, shaping, and combining data from various sources, including basic ETL processes.",
+          "description": "Master advanced spreadsheet modeling for enterprise analysis: nested `XLOOKUP` and dynamic array formulas (`FILTER`, `SORT`, `UNIQUE`), Power Query (M) data shaping, multi-table Pivot Tables using the Excel Data Model, and sensitivity scenario modeling.",
           "resources": [
             {
               "title": "Excel Video Training (Microsoft)",
@@ -174,13 +176,15 @@
               "url": "/data/docs/data_analyst/da_excel_data_analysis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "da_data_types_structures",
           "name": "Introduction to Data Types and Structures",
           "tag": "essential",
-          "description": "Understand different data types (numerical, categorical, temporal, boolean, text) and common data structures (tables, time series, hierarchical data, JSON, XML) encountered in analytics. Learn principles of data integrity, data profiling, and initial data quality assessment.",
+          "description": "Understand data formats and types: discrete vs continuous variables, nominal, ordinal, interval, and ratio scales, and managing missingness, anomalies, and structural integrity in analytical datasets.",
           "resources": [
             {
               "title": "Data Types Explained (Tableau)",
@@ -202,13 +206,15 @@
               "url": "/data/docs/data_analyst/da_data_types_structures.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 29
         },
         {
           "id": "da_data_ethics_privacy",
           "name": "Data Ethics, Privacy & Governance Basics",
           "tag": "essential",
-          "description": "Understand ethical considerations in data collection, storage, analysis, and reporting. Learn about key data privacy regulations (e.g., GDPR, CCPA, HIPAA) and fundamental data governance principles, including data security, bias mitigation, and responsible AI usage.",
+          "description": "Adhere to data ethics and privacy standards: anonymization and aggregation techniques, identifying sampling and algorithmic bias, and complying with regulatory standards (GDPR, CCPA) regarding customer PII.",
           "resources": [
             {
               "title": "The Handbook of Data Ethics",
@@ -235,13 +241,15 @@
               "url": "/data/docs/data_analyst/da_data_ethics_privacy.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 30
         },
         {
           "id": "da_data_warehousing_basics_intro",
           "name": "Introduction to Data Warehousing & OLAP Concepts",
           "tag": "essential",
-          "description": "Grasp fundamental concepts of data warehousing, data marts, ETL/ELT processes, and star/snowflake schemas. Understand OLAP (Online Analytical Processing) cubes and their role in enabling efficient multi-dimensional analysis for business reporting.",
+          "description": "Understand analytical data warehouse architectures: differences between transactional databases (OLTP) and analytical warehouses (OLAP), star schemas, fact tables, dimension tables, and cloud warehouse concepts (Snowflake, BigQuery).",
           "resources": [
             {
               "title": "Data Warehouse Concepts Explained",
@@ -268,15 +276,19 @@
               "url": "/data/docs/data_analyst/da_data_warehousing_basics_intro.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 30
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 30
     },
     {
       "id": "da_core_analysis_engine",
       "name": "Relational Databases, Statistics & Scripting with Python",
       "tag": "essential",
-      "description": "Build a robust analysis engine by mastering database querying with SQL, understanding statistical principles for data interpretation, and automating tasks with Python for data manipulation and exploratory analysis.",
+      "description": "Master the core analytical engine: advanced SQL querying, inferential statistics, exploratory data analysis with Python, and reproducible version control.",
       "resources": [
         {
           "title": "Mode SQL Tutorial",
@@ -309,7 +321,7 @@
           "id": "da_sql_core_advanced",
           "name": "Advanced SQL for Data Querying & Performance",
           "tag": "essential",
-          "description": "Proficiently query relational databases using advanced SQL constructs: various types of joins, grouping, Common Table Expressions (CTEs), window functions, subqueries, complex CASE statements, and stored procedures. Understand basic database design, normalization, indexing strategies, and query optimization techniques for efficient data retrieval from large datasets.",
+          "description": "Master advanced analytical SQL: window functions (`DENSE_RANK`, `LEAD`, `LAG`, rolling moving averages with `ROWS BETWEEN`), cohort retention matrices, multi-step customer funnel drop-off analysis, user sessionization, and query execution plan optimization.",
           "resources": [
             {
               "title": "Mode SQL Tutorial",
@@ -336,13 +348,15 @@
               "url": "/data/docs/data_analyst/da_sql_core_advanced.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "da_statistical_foundations",
           "name": "Statistical Foundations for Data-Driven Decisions",
           "tag": "essential",
-          "description": "Grasp descriptive statistics (mean, median, mode, variance, standard deviation), probability distributions, sampling techniques, confidence intervals, and hypothesis testing (t-tests, ANOVA, Chi-squared tests). Understand correlation vs. causation, basic linear regression, and principles of A/B testing and experimental design. Identify common statistical fallacies and biases in real-world data.",
+          "description": "Master inferential statistics for decision making: probability distributions, central limit theorem, hypothesis testing (two-sample t-tests, ANOVA, Chi-square tests), statistical significance ($p$-values), confidence intervals, and rigorous A/B testing design (sample size calculation, statistical power, MDE).",
           "resources": [
             {
               "title": "OpenIntro Statistics",
@@ -369,13 +383,15 @@
               "url": "/data/docs/data_analyst/da_statistical_foundations.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 41
         },
         {
           "id": "da_python_data_wrangling_eda",
           "name": "Python for Data Manipulation, EDA & Basic Automation",
           "tag": "essential",
-          "description": "Learn Python fundamentals, data structures, and control flow. Leverage essential libraries like NumPy for numerical operations, Pandas for robust data loading, cleaning, transformation, merging, aggregation, and initial exploratory data analysis. Utilize Matplotlib and Seaborn for basic data visualization. Introduce basic scripting for automating repetitive data tasks.",
+          "description": "Perform deep Exploratory Data Analysis (EDA) in Python: data cleaning and aggregation with Pandas 2.0 and Polars, vectorized transformations, multivariate statistical charting with Seaborn, and interactive visual exploration with Plotly.",
           "resources": [
             {
               "title": "Pandas User Guide",
@@ -402,13 +418,15 @@
               "url": "/data/docs/data_analyst/da_python_data_wrangling_eda.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 30
         },
         {
           "id": "da_version_control_git",
           "name": "Version Control with Git and GitHub Basics",
           "tag": "essential",
-          "description": "Understand the importance of version control in collaborative data projects. Learn fundamental Git commands (init, add, commit, push, pull, branch, merge) and how to manage projects on platforms like GitHub for tracking changes, collaboration, and showcasing work.",
+          "description": "Implement disciplined version control for analytical code: managing Jupyter Notebooks and SQL repositories with Git, commit discipline, branching strategies, and collaborative peer code review.",
           "resources": [
             {
               "title": "Git and GitHub for Data Science (Towards Data Science)",
@@ -430,13 +448,15 @@
               "url": "/data/docs/data_analyst/da_version_control_git.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 28
         },
         {
           "id": "da_sql_python_project_sprint",
           "name": "Practical Project: SQL & Python Data Analysis Sprint",
           "tag": "essential",
-          "description": "Work through a comprehensive real-world dataset: extract data efficiently using advanced SQL, perform thorough data cleaning and transformation with Python (Pandas), conduct preliminary statistical analysis and exploratory data analysis, and present initial key findings using basic visualizations.",
+          "description": "Analytics Sprint Project: perform end-to-end customer churn analysis using SQL data extraction and Python statistical modeling, identifying significant behavioral drivers and presenting findings in an analytical report.",
           "resources": [
             {
               "title": "Kaggle SQL Project Examples",
@@ -458,15 +478,19 @@
               "url": "/data/docs/data_analyst/da_sql_python_project_sprint.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 89
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 26
     },
     {
       "id": "da_viz_bi",
       "name": "Data Visualization, Storytelling & Business Intelligence",
       "tag": "essential",
-      "description": "Transform raw data into compelling visual narratives and interactive dashboards that drive business decisions, communicate insights effectively, and empower users with self-service analytics.",
+      "description": "Master visual data communication, modern Business Intelligence dashboards, and executive data storytelling.",
       "resources": [
         {
           "title": "Tableau Desktop Training",
@@ -494,7 +518,7 @@
           "id": "da_effective_data_viz",
           "name": "Principles of Effective Data Visualization",
           "tag": "essential",
-          "description": "Understand core principles of visual perception and cognitive load. Learn to select appropriate chart types, apply visual encoding effectively, and adhere to best practices for creating clear, accurate, and impactful data visualizations that avoid misrepresentation and effectively highlight insights.",
+          "description": "Apply cognitive science and design principles to data visualization: Gestalt principles of visual perception, pre-attentive visual attributes (color, size, orientation), maximizing data-ink ratio, and avoiding misleading axes and distorted scales.",
           "resources": [
             {
               "title": "Data Visualization Catalogue",
@@ -526,13 +550,15 @@
               "url": "/data/docs/data_analyst/da_effective_data_viz.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 41
         },
         {
           "id": "da_bi_tool_mastery_advanced",
           "name": "BI Tools: Data Modeling, Dashboard Design & Advanced Features",
           "tag": "essential",
-          "description": "Gain hands-on experience with a leading BI tool (e.g., Power BI, Tableau, Looker). Master data connection, advanced ETL with Power Query (or equivalent), robust data modeling (star schemas, relationships), creating complex calculated measures (DAX or similar), building interactive and performant dashboards, implementing drill-downs, dynamic filters, and publishing/sharing reports with appropriate access controls and security.",
+          "description": "Master enterprise BI platforms (Power BI / Tableau): building robust star schema data models, writing DAX measures (`CALCULATE`, time intelligence) or Tableau Level of Detail (LOD) expressions, report page tooltips, and interactive drill-through paths.",
           "resources": [
             {
               "title": "Power BI Learning Overview (Microsoft)",
@@ -559,13 +585,15 @@
               "url": "/data/docs/data_analyst/da_bi_tool_mastery_advanced.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "da_cloud_data_platforms_overview",
           "name": "Cloud Data Platforms Overview (AWS, Azure, GCP)",
           "tag": "essential",
-          "description": "Gain an understanding of common cloud data ecosystems. Learn about cloud-based data warehouses (e.g., Snowflake, Google BigQuery, AWS Redshift), data lakes (e.g., S3, ADLS), and how data analysts connect to and query data in these environments. Explore concepts of cloud scalability and managed services.",
+          "description": "Query modern cloud analytical platforms: querying enterprise datasets in Snowflake and Google BigQuery, leveraging partitioned tables, and connecting cloud warehouses directly to BI dashboards.",
           "resources": [
             {
               "title": "Introduction to Cloud Data Warehouses",
@@ -597,13 +625,15 @@
               "url": "/data/docs/data_analyst/da_cloud_data_platforms_overview.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 28
         },
         {
           "id": "da_advanced_data_storytelling",
           "name": "Advanced Data Storytelling & Executive Presentation",
           "tag": "advanced",
-          "description": "Develop sophisticated skills in constructing compelling narratives from data insights. Learn to tailor presentations to diverse audiences (technical vs. executive), effectively communicate complex recommendations, and confidently handle challenging questions and objections, driving tangible business impact and strategic alignment.",
+          "description": "Craft persuasive executive data narratives: structuring presentations using the Minto Pyramid Principle (Lead with the Recommendation), contextualizing data insights with business financial impact, and driving stakeholder action.",
           "resources": [
             {
               "title": "Make Your Data Speak: A Practical Guide to Data Storytelling (Harvard Business Review)",
@@ -630,15 +660,19 @@
               "url": "/data/docs/data_analyst/da_advanced_data_storytelling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 57
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 23
     },
     {
       "id": "da_career_readiness",
       "name": "Portfolio Building, Domain Expertise & Career Readiness",
       "tag": "advanced",
-      "description": "Translate theoretical knowledge into practical, demonstrable skills through real-world projects, specialize in business domains, and prepare comprehensively for job search, interviews, and continuous professional growth.",
+      "description": "Master domain KPIs, foundational machine learning concepts for analysts, portfolio curation, and technical interview excellence.",
       "resources": [
         {
           "title": "How to Build a Data Analyst Portfolio to Get Hired",
@@ -661,7 +695,7 @@
           "id": "da_domain_kpis",
           "name": "Domain-Specific Analytics & Key Performance Indicators (KPIs)",
           "tag": "advanced",
-          "description": "Deep dive into analytical challenges, common datasets, and crucial key performance indicators (KPIs) relevant to specific industries such as Marketing Analytics, Financial Analytics, Product Analytics, Sales Analytics, or Operations Analytics. Understand how business context profoundly shapes data analysis and decision-making.",
+          "description": "Master critical domain performance metrics: SaaS metrics (ARR, MRR, Net Revenue Retention NRR, Customer Acquisition Cost CAC, LTV), E-Commerce metrics (Conversion Rate, Average Order Value AOV, Cart Abandonment), and Fintech operational metrics.",
           "resources": [
             {
               "title": "Amplitude Product Analytics Resources",
@@ -693,13 +727,15 @@
               "url": "/data/docs/data_analyst/da_domain_kpis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 57
         },
         {
           "id": "da_intro_ml_for_analysts",
           "name": "Introduction to Machine Learning Concepts for Analysts",
           "tag": "advanced",
-          "description": "Understand basic machine learning concepts relevant to data analysis: supervised vs. unsupervised learning, regression vs. classification. Get familiar with common algorithms (e.g., linear regression, logistic regression, k-means clustering) and their business applications. Learn to interpret model results and limitations, and understand when to leverage ML specialists.",
+          "description": "Understand foundational machine learning models for analysts: linear regression for trend forecasting, logistic regression for propensity scoring, k-means clustering for customer segmentation, and evaluating model metrics ($R^2$, Precision, Recall, AUC-ROC).",
           "resources": [
             {
               "title": "Machine Learning for Absolute Beginners (Towards Data Science)",
@@ -721,13 +757,15 @@
               "url": "/data/docs/data_analyst/da_intro_ml_for_analysts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 43
         },
         {
           "id": "da_portfolio_building",
           "name": "Building a Comprehensive Data Analyst Portfolio",
           "tag": "essential",
-          "description": "Curate a compelling portfolio of projects showcasing end-to-end data analysis: SQL queries, Python notebooks (cleaning, EDA, basic modeling), interactive dashboards, and well-written analysis reports. Learn to document projects effectively, articulate your role and impact, and host them on platforms like GitHub or personal websites, emphasizing the business value derived.",
+          "description": "Curate a professional Data Analytics portfolio: documenting end-to-end business cases on GitHub, publishing interactive dashboards on Tableau Public or NovyPro, and authoring clear problem-solution-impact READMEs.",
           "resources": [
             {
               "title": "GitHub Portfolio for Data Scientists and Analysts",
@@ -749,13 +787,15 @@
               "url": "/data/docs/data_analyst/da_portfolio_building.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 40
         },
         {
           "id": "da_capstone_project",
           "name": "Capstone Project: End-to-End Business Case Study",
           "tag": "advanced",
-          "description": "Execute a full-cycle data analysis project from problem definition and data acquisition, through cleaning, exploration, statistical analysis, visualization, to developing and presenting actionable business recommendations. Document the entire process as a detailed case study, demonstrating business value, technical proficiency, and communication skills.",
+          "description": "Capstone Project: Deliver a Comprehensive Product Analytics & Customer Lifetime Value (LTV) Optimization Initiative: SQL cohort retention analysis, Python statistical hypothesis testing of conversion drivers, interactive Power BI/Tableau executive dashboard, and an executive summary deck with quantified revenue growth recommendations.",
           "resources": [
             {
               "title": "Power BI Sample Datasets",
@@ -787,13 +827,15 @@
               "url": "/data/docs/data_analyst/da_capstone_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 125
         },
         {
           "id": "da_interview_career",
           "name": "Resume, Interview & Networking Strategies",
           "tag": "advanced",
-          "description": "Prepare a professional, impact-driven resume and compelling cover letter. Practice for technical interviews (SQL, Python, BI tools, case studies) and behavioral questions. Develop effective networking strategies, understand salary negotiation, and plan for continuous learning and career advancement in the data analytics field.",
+          "description": "Excel in Data Analyst interviews: live SQL technical challenges (aggregations, window functions, joins), business case analysis (diagnosing sudden KPI drops), defending statistical methodologies, and behavioral storytelling.",
           "resources": [
             {
               "title": "Data Analyst Interview Questions (CareerFoundry)",
@@ -825,9 +867,14 @@
               "url": "/data/docs/data_analyst/da_interview_career.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 57
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 32
     }
-  ]
+  ],
+  "total_exp": 1000
 }

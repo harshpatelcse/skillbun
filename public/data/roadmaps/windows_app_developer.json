@@ -47,26 +47,27 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Fluent Markdown Notes & Task Manager",
-        "tech_stack": [
-          "C#",
-          "WinUI 3",
-          "XAML",
-          "SQLite",
-          "MSIX"
-        ],
-        "description": "Build a sleek Windows app embracing Mica material, tabbed windows, markdown rendering, and local SQLite data persistence."
-      },
-      {
-        "title": "Modern Windows 11 Fluent System Utility with WinUI 3",
+        "title": "Modern Windows 11 Fluent System Utility with WinUI 3 & Windows App SDK",
         "tech_stack": [
           "C#",
           "WinUI 3",
           "Windows App SDK",
-          ".NET 8",
-          "XAML"
+          "Mica Material",
+          "CommunityToolkit.Mvvm"
         ],
-        "description": "Develop a native Windows 11 utility adhering to Fluent Design guidelines, featuring Mica backdrop materials, asynchronous file operations, and MSIX packaging."
+        "description": "Develop a native Windows 11 utility adhering to Fluent Design guidelines, featuring Mica material backdrops, responsive WinUI 3 controls, and MVVM architecture."
+      },
+      {
+        "title": "Local-First Developer Workspace with SQLite & High-Performance Async I/O",
+        "tech_stack": [
+          "C#",
+          ".NET 8",
+          "WPF / WinUI",
+          "SQLite",
+          "FileSystemWatcher",
+          "MSIX"
+        ],
+        "description": "Engineer a native developer scratchpad and log analyzer with multi-threaded file indexing, low-memory SQLite caching, and MSIX desktop packaging."
       }
     ],
     "certifications": [
@@ -74,10 +75,11 @@
       "Microsoft Certified: Azure Developer Associate (AZ-204)"
     ],
     "interview_focus": [
-      "XAML Data Binding (x:Bind vs Binding)",
-      "MVVM Property Notification & Command Handling",
-      "Windows App SDK Process Architecture",
-      "MSIX Packaging & Sandbox Isolation"
+      "Windows App SDK & WinUI 3 Architecture vs WPF and UWP Differences",
+      "The MVVM Pattern (INotifyPropertyChanged, ICommand, CommunityToolkit.Mvvm Source Generators)",
+      "Windows 11 Fluent Design System (Mica, Acrylic Materials, NavigationView, Dark/Light Theming)",
+      "Asynchronous Programming in .NET (async/await, Task Parallel Library, SynchronizationContext)",
+      "Windows Application Packaging & Deployment (MSIX, App Installer, Desktop Bridge)"
     ]
   },
   "format": "tree",
@@ -86,7 +88,7 @@
       "id": "windows_app_dev_foundations",
       "name": "Foundations and Ecosystem Context",
       "tag": "essential",
-      "description": "Understand the Windows development landscape, historical context, modern technologies like WinUI and Windows App SDK, and set up your foundational development environment.",
+      "description": "Master Windows application engineering: Windows App SDK, WinUI 3, .NET, Win32 subsystems, and modern Fluent Design principles.",
       "resources": [
         {
           "title": "Introduction to Windows app development",
@@ -119,7 +121,7 @@
           "id": "windows_app_dev_ecosystem_overview",
           "name": "Windows Ecosystem & App Landscape",
           "tag": "essential",
-          "description": "Explore the evolution of Windows development (UWP, WPF, WinForms), understand the role of WinUI 3 and Windows App SDK in modern app development, and identify target platforms.",
+          "description": "Navigate the Windows app landscape: Comparing WinUI 3, WPF, WinForms, and UWP; Win32 APIs vs Windows Runtime (WinRT); and enterprise adoption paths.",
           "resources": [
             {
               "title": "Why choose Windows App SDK?",
@@ -141,13 +143,15 @@
               "url": "/data/docs/windows_app_developer/windows_app_dev_ecosystem_overview.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "windows_app_dev_dev_environment",
           "name": "Development Environment Setup",
           "tag": "essential",
-          "description": "Set up Visual Studio, install the .NET SDK and Windows App SDK, configure debugging tools, and establish a basic project structure.",
+          "description": "Configure Windows development tools: Visual Studio 2022, Windows App SDK workloads, Windows 11 Developer Mode, and Windows Terminal.",
           "resources": [
             {
               "title": "Install tools for the Windows App SDK",
@@ -174,13 +178,15 @@
               "url": "/data/docs/windows_app_developer/windows_app_dev_dev_environment.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 17
         },
         {
           "id": "windows_app_dev_csharp_dotnet_fundamentals",
           "name": "C# and .NET Fundamentals",
           "tag": "essential",
-          "description": "Master C# syntax, object-oriented programming concepts, basic data structures, exception handling, async/await basics, and an introduction to the .NET runtime, garbage collection, and CLI.",
+          "description": "Master C# and .NET for Windows: Object-oriented architecture, generics, asynchronous tasks, memory management, and dependency injection.",
           "resources": [
             {
               "title": "C# fundamentals for absolute beginners",
@@ -207,13 +213,15 @@
               "url": "/data/docs/windows_app_developer/windows_app_dev_csharp_dotnet_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 17
         },
         {
           "id": "windows_app_dev_xaml_introduction",
           "name": "XAML and UI Layout Introduction",
           "tag": "essential",
-          "description": "Learn the Extensible Application Markup Language (XAML) for declarative UI definition, understand common layout panels (Grid, StackPanel, RelativePanel, UniformGrid), and basic UI controls.",
+          "description": "Master Extensible Application Markup Language (XAML): Logical trees, visual trees, layout containers (Grid, StackPanel, RelativePanel), and XAML compilation.",
           "resources": [
             {
               "title": "XAML overview",
@@ -240,13 +248,15 @@
               "url": "/data/docs/windows_app_developer/windows_app_dev_xaml_introduction.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 20
         },
         {
           "id": "windows_app_dev_ui_ux_principles",
           "name": "Introduction to UI/UX Design Principles",
           "tag": "essential",
-          "description": "Understand fundamental UI/UX design concepts, user-centered design, usability heuristics, and principles of effective visual design for desktop applications. Learn to apply Microsoft's Fluent Design System guidelines.",
+          "description": "Apply Windows Fluent Design: Mica and Acrylic material translucency, responsive typography, subtle animations, and system accent colors.",
           "resources": [
             {
               "title": "Fluent Design System overview",
@@ -273,15 +283,19 @@
               "url": "/data/docs/windows_app_developer/windows_app_dev_ui_ux_principles.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 17
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 20
     },
     {
       "id": "windows_app_dev_core_ui_logic",
       "name": "Building Interactive Applications with WinUI",
       "tag": "essential",
-      "description": "Build interactive user interfaces using WinUI 3, implement robust application logic, manage data, and master essential architectural patterns for scalable Windows applications.",
+      "description": "Build interactive Windows apps: WinUI 3 controls, input event handling, and decoupled UI architecture.",
       "resources": [
         {
           "title": "WinUI 3 controls gallery",
@@ -309,7 +323,7 @@
           "id": "windows_app_dev_common_ui_controls",
           "name": "Common UI Controls and Interaction Patterns",
           "tag": "essential",
-          "description": "Work with a comprehensive set of WinUI controls (buttons, text inputs, lists, data grids, navigation views, dialogs), understand their properties and events, and implement standard interaction patterns.",
+          "description": "Master WinUI 3 controls: NavigationView, ItemsRepeater, ContentDialog, CommandBar, TreeView, and custom user controls.",
           "resources": [
             {
               "title": "Controls and patterns for WinUI 3 apps",
@@ -336,13 +350,15 @@
               "url": "/data/docs/windows_app_developer/windows_app_dev_common_ui_controls.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "windows_app_dev_xaml_styling_theming",
           "name": "XAML Styling, Theming, and Resources",
           "tag": "essential",
-          "description": "Deep dive into XAML resources, styles, control templates, and visual states. Learn to apply light/dark themes, custom branding, and manage UI assets effectively.",
+          "description": "Theme Windows applications: Resource dictionaries, ThemeResource bindings, supporting seamless Windows Light/Dark mode transitions, and high-contrast modes.",
           "resources": [
             {
               "title": "Styling and templating for WinUI 3 apps",
@@ -369,13 +385,15 @@
               "url": "/data/docs/windows_app_developer/windows_app_dev_xaml_styling_theming.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "windows_app_dev_responsive_adaptive_ui",
           "name": "Responsive Layouts and Adaptive UI",
           "tag": "essential",
-          "description": "Design UIs that adapt to different screen sizes and orientations using adaptive techniques like `VisualStateManager`, fluid layouts, and responsive panels (Grid, RelativePanel, VariableSizedWrapGrid).",
+          "description": "Design adaptive layouts: VisualStateManager, AdaptiveTriggers, window resizing behaviors, and multi-monitor DPI scaling handling.",
           "resources": [
             {
               "title": "Layout panels in WinUI 3",
@@ -402,13 +420,15 @@
               "url": "/data/docs/windows_app_developer/windows_app_dev_responsive_adaptive_ui.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "windows_app_dev_data_binding_mvvm",
           "name": "Data Binding and MVVM Architecture",
           "tag": "essential",
-          "description": "Deep dive into data binding modes (OneWay, TwoWay, OneTime), implement `INotifyPropertyChanged` and `ICommand`, and apply the Model-View-ViewModel (MVVM) pattern using the MVVM Toolkit for robust separation of concerns and testability.",
+          "description": "Master the MVVM pattern with CommunityToolkit.Mvvm: Two-way `{x:Bind}` data binding, `ObservableProperty`, `RelayCommand`, and clean separation of view and model.",
           "resources": [
             {
               "title": "Data binding in WinUI 3",
@@ -435,13 +455,15 @@
               "url": "/data/docs/windows_app_developer/windows_app_dev_data_binding_mvvm.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 28
         },
         {
           "id": "windows_app_dev_navigation_state_management",
           "name": "App Navigation, Lifecycle & State Management",
           "tag": "essential",
-          "description": "Implement multi-page navigation using `Frame` and `NavigationView`, understand the application lifecycle (launch, suspend, resume), handle application state changes, and implement strategies for saving/restoring user state.",
+          "description": "Manage application lifecycles: Frame navigation, page caching, suspend/resume lifecycle events, and window state persistence.",
           "resources": [
             {
               "title": "Navigation in WinUI 3 apps",
@@ -468,13 +490,15 @@
               "url": "/data/docs/windows_app_developer/windows_app_dev_navigation_state_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "windows_app_dev_data_persistence",
           "name": "Data Persistence and Local Storage",
           "tag": "essential",
-          "description": "Learn to store and retrieve application data using `ApplicationData.Current.LocalSettings`, local files (JSON, XML), and embedded databases like SQLite, including ORM libraries like Entity Framework Core.",
+          "description": "Store local data: ApplicationData containers, SQLite databases with EF Core, and secure credential storage in Windows Credential Locker.",
           "resources": [
             {
               "title": "Store and retrieve settings and other app data",
@@ -506,13 +530,15 @@
               "url": "/data/docs/windows_app_developer/windows_app_dev_data_persistence.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "windows_app_dev_networking_apis",
           "name": "Networking and Web API Integration",
           "tag": "essential",
-          "description": "Perform asynchronous HTTP requests using `HttpClient`, handle authentication with OAuth/JWT, parse JSON data, integrate with RESTful web services, and manage network connectivity states.",
+          "description": "Integrate network services: `HttpClientFactory`, asynchronous JSON serialization with `System.Text.Json`, handling network connectivity changes, and REST APIs.",
           "resources": [
             {
               "title": "HttpClient Class",
@@ -539,13 +565,15 @@
               "url": "/data/docs/windows_app_developer/windows_app_dev_networking_apis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 34
         },
         {
           "id": "windows_app_dev_dependency_injection",
           "name": "Dependency Injection and Services",
           "tag": "advanced",
-          "description": "Understand the principles of Dependency Injection (DI) and Inversion of Control (IoC). Implement DI frameworks (e.g., Microsoft.Extensions.DependencyInjection) to build loosely coupled and testable applications.",
+          "description": "Architect with Dependency Injection: Registering services and view models using `Microsoft.Extensions.DependencyInjection`, and constructor injection.",
           "resources": [
             {
               "title": "Dependency injection in .NET",
@@ -572,13 +600,15 @@
               "url": "/data/docs/windows_app_developer/windows_app_dev_dependency_injection.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         },
         {
           "id": "windows_app_dev_asynchronous_programming",
           "name": "Asynchronous Programming and Concurrency",
           "tag": "advanced",
-          "description": "Master `async`/`await` patterns for responsive UIs, understand `Task` Parallel Library (TPL), handle cancellation tokens, and apply techniques for managing concurrent operations and background tasks efficiently.",
+          "description": "Handle concurrency: Async/await patterns, DispatcherQueue for updating UI threads from background worker threads, and avoiding UI freezes.",
           "resources": [
             {
               "title": "Asynchronous programming with async and await",
@@ -605,13 +635,15 @@
               "url": "/data/docs/windows_app_developer/windows_app_dev_asynchronous_programming.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "windows_app_dev_testing_debugging",
           "name": "Unit, Integration, and UI Testing",
           "tag": "advanced",
-          "description": "Write comprehensive unit tests for application logic using xUnit/MSTest, perform integration tests for data and service layers, and introduce UI testing strategies using tools like WinAppDriver or Playwright for desktop apps.",
+          "description": "Test and debug Windows applications: Unit testing with MSTest/xUnit, UI automation testing with WinAppDriver, and Visual Studio Live Visual Tree debugging.",
           "resources": [
             {
               "title": "Unit test C# in .NET",
@@ -638,13 +670,15 @@
               "url": "/data/docs/windows_app_developer/windows_app_dev_testing_debugging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         },
         {
           "id": "windows_app_dev_project_mid_app",
           "name": "Mid-Project: Feature-Rich Application",
           "tag": "essential",
-          "description": "Develop a moderately complex Windows application demonstrating UI design, MVVM, data persistence (local or remote), networking, and basic navigation. Examples: a recipe manager, a media player interface, or a personal finance tracker.",
+          "description": "Mid-Project: Build a multi-window productivity tool using WinUI 3, CommunityToolkit.Mvvm, and local SQLite persistence.",
           "resources": [
             {
               "title": "Build a WinUI 3 PhotoStore app",
@@ -671,15 +705,19 @@
               "url": "/data/docs/windows_app_developer/windows_app_dev_project_mid_app.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 51
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 20
     },
     {
       "id": "windows_app_dev_deployment_advanced_production",
       "name": "Deployment, Advanced Features, and Production Readiness",
       "tag": "advanced",
-      "description": "Prepare Windows applications for production environments, including robust packaging, secure deployment, deep system integrations, performance optimization, and ongoing maintenance.",
+      "description": "Package, distribute, and operate production Windows applications: MSIX packaging, Microsoft Store submission, and system interoperability.",
       "resources": [
         {
           "title": "Publish your WinUI 3 app with MSIX",
@@ -712,7 +750,7 @@
           "id": "windows_app_dev_packaging_deployment",
           "name": "App Packaging and Deployment with MSIX",
           "tag": "essential",
-          "description": "Understand MSIX packaging, create app packages for distribution, and learn about various deployment methods including sideloading, web installation, and automatic updates for both packaged and unpackaged apps.",
+          "description": "Package applications with MSIX: Packaging desktop apps, declaration of capabilities, identity, file type associations, and signing with code-signing certificates.",
           "resources": [
             {
               "title": "Overview of MSIX",
@@ -739,13 +777,15 @@
               "url": "/data/docs/windows_app_developer/windows_app_dev_packaging_deployment.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         },
         {
           "id": "windows_app_dev_store_submission_monetization",
           "name": "Microsoft Store Submission and Monetization",
           "tag": "advanced",
-          "description": "Navigate the Microsoft Partner Center, prepare and submit apps to the Microsoft Store, understand store certification policies, and explore monetization strategies like in-app purchases, subscriptions, and advertisements.",
+          "description": "Distribute via Microsoft Store: Partner Center submission, store certification policies, in-app purchases, and auto-updates.",
           "resources": [
             {
               "title": "Publish your Windows app",
@@ -772,13 +812,15 @@
               "url": "/data/docs/windows_app_developer/windows_app_dev_store_submission_monetization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "windows_app_dev_accessibility_globalization",
           "name": "Accessibility, Localization, and Globalization",
           "tag": "essential",
-          "description": "Design and implement accessible UIs for users with disabilities (screen readers, keyboard navigation, high contrast), localize applications for multiple languages and cultures, and ensure compliance with accessibility standards.",
+          "description": "Ensure accessibility and globalization: UI Automation (UIA) properties, screen reader (Narrator) support, resource strings (.resw) localization, and RTL layouts.",
           "resources": [
             {
               "title": "Accessibility in Windows applications",
@@ -805,13 +847,15 @@
               "url": "/data/docs/windows_app_developer/windows_app_dev_accessibility_globalization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "windows_app_dev_advanced_sdk_features",
           "name": "Advanced Windows App SDK Features",
           "tag": "advanced",
-          "description": "Explore and integrate powerful Windows App SDK features such as toast notifications, widgets, app services for inter-process communication, multi-window support, and extending the shell.",
+          "description": "Leverage advanced Windows App SDK features: Windows notifications (AppNotificationManager), background tasks, and system tray integration.",
           "resources": [
             {
               "title": "Notifications in Windows apps",
@@ -838,13 +882,15 @@
               "url": "/data/docs/windows_app_developer/windows_app_dev_advanced_sdk_features.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "windows_app_dev_native_interop_p_invoke",
           "name": "Native System Interoperability (P/Invoke, WinRT)",
           "tag": "advanced",
-          "description": "Leverage WinRT APIs for deep OS integration, understand Platform Invoke (P/Invoke) for calling native C/C++ functions (DLLs), and explore COM interop for integrating with legacy Windows components.",
+          "description": "Interoperate with native Windows APIs: Platform Invoke (P/Invoke) to call Win32 C/C++ APIs, C#/WinRT projections, and handling unmanaged memory.",
           "resources": [
             {
               "title": "Call Windows Runtime APIs in desktop apps",
@@ -871,13 +917,15 @@
               "url": "/data/docs/windows_app_developer/windows_app_dev_native_interop_p_invoke.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         },
         {
           "id": "windows_app_dev_performance_profiling",
           "name": "Performance Profiling and Optimization",
           "tag": "advanced",
-          "description": "Identify and resolve performance bottlenecks using Visual Studio's profiling tools (CPU Usage, Memory Usage, UI Debugging Tools). Optimize UI responsiveness, startup time, and resource consumption.",
+          "description": "Profile Windows performance: Visual Studio Diagnostics Tools, analyzing memory leaks, CPU sampling, and optimizing startup time.",
           "resources": [
             {
               "title": "Analyze CPU usage in Visual Studio",
@@ -904,13 +952,15 @@
               "url": "/data/docs/windows_app_developer/windows_app_dev_performance_profiling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "windows_app_dev_security_authentication",
           "name": "Security and User Authentication",
           "tag": "advanced",
-          "description": "Implement secure coding practices, protect sensitive data, understand Windows security features, and integrate authentication mechanisms using Microsoft Identity Platform (Azure AD), OAuth 2.0, or Windows Hello.",
+          "description": "Secure Windows applications: Windows Hello biometrics authentication, DPAPI (Data Protection API) encryption, and secure token storage.",
           "resources": [
             {
               "title": "Security for Windows applications",
@@ -937,13 +987,15 @@
               "url": "/data/docs/windows_app_developer/windows_app_dev_security_authentication.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 42
         },
         {
           "id": "windows_app_dev_telemetry_crash_reporting",
           "name": "Telemetry, Logging, and Crash Reporting",
           "tag": "advanced",
-          "description": "Integrate telemetry for usage analytics (e.g., Application Insights), implement robust logging (e.g., Serilog), and set up crash reporting mechanisms (e.g., App Center, WER) for monitoring and improving application stability.",
+          "description": "Implement production telemetry: App Center / Sentry for Windows crash reporting, Event Tracing for Windows (ETW), and structured logging.",
           "resources": [
             {
               "title": "Serilog for .NET",
@@ -965,13 +1017,15 @@
               "url": "/data/docs/windows_app_developer/windows_app_dev_telemetry_crash_reporting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "windows_app_dev_cicd_collaboration",
           "name": "CI/CD Pipelines and Team Collaboration",
           "tag": "advanced",
-          "description": "Implement Continuous Integration/Continuous Deployment (CI/CD) pipelines for Windows apps using Azure DevOps or GitHub Actions, manage version control (Git), and practice effective team collaboration workflows.",
+          "description": "Automate Windows CI/CD: GitHub Actions Windows runners, building MSIX packages, signing with Azure Trusted Signing, and releasing via GitHub.",
           "resources": [
             {
               "title": "Build your WinUI 3 desktop app with Azure DevOps",
@@ -998,15 +1052,19 @@
               "url": "/data/docs/windows_app_developer/windows_app_dev_cicd_collaboration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 29
     },
     {
       "id": "windows_app_dev_portfolio_career",
       "name": "Portfolio and Career Readiness",
       "tag": "advanced",
-      "description": "Translate your technical skills into tangible proof: build a robust portfolio, document your projects, and prepare for career opportunities in Windows app development.",
+      "description": "Build a competitive Windows developer portfolio: Modern Fluent apps, open-source contributions, and technical interview readiness.",
       "resources": [
         {
           "title": "Create Your First WinUI App",
@@ -1034,7 +1092,7 @@
           "id": "windows_app_dev_professional_practices",
           "name": "Professional Development Practices",
           "tag": "advanced",
-          "description": "Learn best practices for writing clean, maintainable, and performant code. Understand code review processes, documentation standards, and effective use of design patterns.",
+          "description": "Follow enterprise development practices: Clean Architecture, code reviews, and maintaining long-term Windows API backward compatibility.",
           "resources": [
             {
               "title": "Clean Code principles",
@@ -1061,13 +1119,15 @@
               "url": "/data/docs/windows_app_developer/windows_app_dev_professional_practices.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "windows_app_dev_case_study_writing",
           "name": "Case Study and Project Documentation",
           "tag": "advanced",
-          "description": "Develop compelling case studies for your projects, detailing the problem, solution, technologies used, architectural decisions, challenges faced, and measurable outcomes. Create professional READMEs and project wikis.",
+          "description": "Author Windows case studies: Documenting modern WinUI 3 migration, UI performance optimization, and architectural decisions.",
           "resources": [
             {
               "title": "How to write a case study (HubSpot)",
@@ -1094,13 +1154,15 @@
               "url": "/data/docs/windows_app_developer/windows_app_dev_case_study_writing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         },
         {
           "id": "windows_app_dev_project_capstone",
           "name": "Capstone Project: Professional Windows Application",
           "tag": "advanced",
-          "description": "Design and build a comprehensive, portfolio-grade Windows application. This project should integrate a wide range of skills, from advanced UI/UX design, data management, complex business logic, advanced Windows App SDK features, and deployment readiness. Include professional documentation, architectural diagrams, and a retrospective.",
+          "description": "Build an enterprise Windows capstone: Feature-complete WinUI 3 desktop dashboard with Fluent design, MVVM toolkit, EF Core SQLite storage, Windows Hello auth, and MSIX packaging.",
           "resources": [
             {
               "title": "WinUI 3 Gallery - Reference app showcasing WinUI controls",
@@ -1127,9 +1189,14 @@
               "url": "/data/docs/windows_app_developer/windows_app_dev_project_capstone.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 93
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 28
     }
-  ]
+  ],
+  "total_exp": 1000
 }

@@ -47,24 +47,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "End-to-End Mobile FinTech Experience Case Study",
+        "title": "End-to-End Fintech Mobile Banking Design System & Usability Audit",
         "tech_stack": [
           "Figma",
-          "Prototyping",
-          "User Research",
-          "Design System"
+          "Design Tokens",
+          "Auto Layout 5",
+          "User Testing",
+          "WCAG 2.2 AA"
         ],
-        "description": "Conduct user research, design wireframes, build an interactive prototype, and conduct usability tests for a personal wealth management app."
+        "description": "Design an accessible, high-conversion mobile banking application with complete interactive prototypes, design token variables, and documented usability findings."
       },
       {
-        "title": "End-to-End Mobile Fintech Design System & Prototype",
+        "title": "Complex B2B Enterprise Data Visualization Studio Redesign",
         "tech_stack": [
           "Figma",
-          "Protopie",
-          "Maze User Testing",
-          "WCAG Guidelines"
+          "Information Architecture",
+          "Heuristic Evaluation",
+          "Design Tokens",
+          "Prototyping"
         ],
-        "description": "Conduct user research, synthesize journey maps, design an accessible atomic design token system, and build an interactive micro-animated mobile prototype."
+        "description": "Execute an end-to-end redesign of a complex data analysis dashboard, reducing user cognitive load and streamlining workflow execution times by 40%."
       }
     ],
     "certifications": [
@@ -72,10 +74,11 @@
       "Nielsen Norman Group UX Master Certified"
     ],
     "interview_focus": [
-      "Articulating the Design Process in Case Study Presentations",
-      "Balancing Business Constraints with User Advocacy",
-      "Conducting and Synthesizing Usability Testing Feedback",
-      "Design System Token Handoff with Frontend Developers"
+      "Design Thinking Process & Double Diamond Methodology",
+      "Information Architecture (Card Sorting, Tree Testing, Mental Models vs Conceptual Models)",
+      "Design System Scalability (Variables, Modes, Component Variants, Slot Patterns in Figma)",
+      "Accessibility Standards (WCAG 2.2 Level AA/AAA, Contrast Ratios, Focus Order, Touch Targets)",
+      "Cross-Functional Collaboration (Dev Hand-Off, Design QA, Measuring Design System Adoption)"
     ]
   },
   "format": "tree",
@@ -84,7 +87,7 @@
       "id": "product_designer_foundations",
       "name": "Foundational Concepts & Role Definition",
       "tag": "essential",
-      "description": "Establish a strong understanding of product design principles, its history, ethical considerations, and the product designer's role within an organization.",
+      "description": "Master the end-to-end Product Designer role: Merging UX research, UI craft, business strategy, product analytics, and cross-functional leadership.",
       "resources": [
         {
           "title": "What is Product Design?",
@@ -117,7 +120,7 @@
           "id": "pd_product_designer_role_and_evolution",
           "name": "Product Designer Role & Evolution",
           "tag": "essential",
-          "description": "Understand the core responsibilities, historical evolution, and the strategic impact of a Product Designer across different organizational structures and product development stages. Explore the distinctions and overlaps with UX, UI, and Product Management roles.",
+          "description": "Navigate the product design evolution: Moving beyond wireframes to business partner, influencing product roadmaps, and balancing user needs with commercial profitability.",
           "resources": [
             {
               "title": "Product Designer vs UX Designer vs UI Designer",
@@ -139,13 +142,15 @@
               "url": "/data/docs/product_designer/pd_product_designer_role_and_evolution.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 22
         },
         {
           "id": "pd_core_design_principles_cognitive_psychology_ethics",
           "name": "Core Design Principles, Cognitive Psychology & Ethics",
           "tag": "essential",
-          "description": "Delve into fundamental design theories, universal principles of good design (e.g., Gestalt, Norman's principles), relevant cognitive psychology concepts (e.g., mental models, Hick's Law), and ethical considerations in design.",
+          "description": "Apply cognitive psychology to product design: Mental models, cognitive load theory, behavioral economics (nudges, loss aversion), and ethical product design.",
           "resources": [
             {
               "title": "Design Thinking: A Quick Introduction",
@@ -177,13 +182,15 @@
               "url": "/data/docs/product_designer/pd_core_design_principles_cognitive_psychology_ethics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "pd_product_development_lifecycle_business_models",
           "name": "Product Development Lifecycle & Business Models",
           "tag": "essential",
-          "description": "Gain a solid understanding of the end-to-end product development lifecycle, different business models (e.g., SaaS, marketplace), and how product design integrates with business objectives and market forces.",
+          "description": "Master the product development lifecycle: Navigating discovery vs delivery phases, business model mechanics (SaaS, marketplace, freemium), and cross-functional feature planning.",
           "resources": [
             {
               "title": "The Product Lifecycle: A Complete Guide",
@@ -205,13 +212,15 @@
               "url": "/data/docs/product_designer/pd_product_development_lifecycle_business_models.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "pd_design_tools_collaborative_workflows_setup",
           "name": "Design Tools & Collaborative Workflow Setup",
           "tag": "essential",
-          "description": "Master industry-standard design tools like Figma, focusing on advanced features, plugin integration, team libraries, file organization, and efficient collaborative workflows for a multi-designer environment.",
+          "description": "Set up enterprise design tooling: Figma organizational teams, FigJam whiteboard workspaces, design system libraries, and version-controlled branching workflows.",
           "resources": [
             {
               "title": "Figma Learn: Getting Started",
@@ -233,15 +242,19 @@
               "url": "/data/docs/product_designer/pd_design_tools_collaborative_workflows_setup.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 16
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 17
     },
     {
       "id": "product_designer_user_research",
       "name": "User Research & Strategy",
       "tag": "essential",
-      "description": "Master techniques to understand user needs, behaviors, motivations, and pain points to inform design decisions and product strategy.",
+      "description": "Lead user research discovery: Qualitative and quantitative discovery methodologies, recruiting representative users, and uncovering unmet customer needs.",
       "resources": [
         {
           "title": "A Guide to User Research Methods",
@@ -274,7 +287,7 @@
           "id": "pd_diverse_user_research_methods_planning",
           "name": "Diverse User Research Methods & Planning",
           "tag": "essential",
-          "description": "Explore a wide array of qualitative (e.g., in-depth interviews, ethnographic studies, diary studies, contextual inquiry) and quantitative (e.g., surveys, analytics, A/B testing setup) research methods. Learn to plan, scope, and select appropriate methodologies for various project needs.",
+          "description": "Plan user research: Crafting research plans, conducting generative interviews, field contextual observations, and unmoderated usability tests.",
           "resources": [
             {
               "title": "User Research Methods: A Comprehensive Guide",
@@ -301,13 +314,15 @@
               "url": "/data/docs/product_designer/pd_diverse_user_research_methods_planning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "pd_user_data_synthesis_insights_artifacts",
           "name": "User Data Synthesis, Insights & Artifacts",
           "tag": "essential",
-          "description": "Develop skills in synthesizing raw research data into actionable insights. Create foundational user experience artifacts such as detailed personas, empathy maps, mental models, user journey maps, and service blueprints to communicate findings effectively.",
+          "description": "Synthesize research data: Thematic coding, affinity mapping, user personas, customer journey maps, and framing actionable problem statements.",
           "resources": [
             {
               "title": "Creating User Personas",
@@ -339,13 +354,15 @@
               "url": "/data/docs/product_designer/pd_user_data_synthesis_insights_artifacts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "pd_market_competitive_landscape_analysis",
           "name": "Market & Competitive Landscape Analysis",
           "tag": "essential",
-          "description": "Conduct thorough market research to understand industry trends, identify emerging opportunities, and perform competitive UX analysis to benchmark against competitors and uncover strategic advantages.",
+          "description": "Analyze competitive markets: Direct and indirect competitor heuristic audits, feature matrix comparisons, value proposition mapping, and identifying white space opportunities.",
           "resources": [
             {
               "title": "Conducting a Competitive UX Analysis",
@@ -367,13 +384,15 @@
               "url": "/data/docs/product_designer/pd_market_competitive_landscape_analysis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "pd_product_vision_strategy_problem_framing",
           "name": "Product Vision, Strategy & Problem Framing",
           "tag": "essential",
-          "description": "Articulate compelling product visions, define robust product strategies, set clear product goals, and establish success metrics. Master techniques like problem framing, 'jobs-to-be-done,' and hypothesis generation to focus design efforts on the right problems.",
+          "description": "Frame product strategy: Translating company vision into quarterly product roadmaps, opportunity solution trees, and formulating measurable OKRs.",
           "resources": [
             {
               "title": "Product Vision vs Product Strategy",
@@ -400,13 +419,15 @@
               "url": "/data/docs/product_designer/pd_product_vision_strategy_problem_framing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "pd_experiment_design_planning",
           "name": "Experiment Design & Research Planning",
           "tag": "essential",
-          "description": "Learn to design structured research experiments, formulate clear hypotheses, define success metrics, and manage the logistics of user research studies, ensuring valid and reliable data collection.",
+          "description": "Design product experiments: Formulating falsifiable product hypotheses, defining primary/guardrail metrics, and collaborating on A/B test parameter setup.",
           "resources": [
             {
               "title": "How to Design a UX Research Study",
@@ -428,13 +449,15 @@
               "url": "/data/docs/product_designer/pd_experiment_design_planning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 15
         },
         {
           "id": "pd_user_feedback_tools_platforms",
           "name": "User Feedback Tools & Platforms",
           "tag": "advanced",
-          "description": "Gain practical experience with various tools and platforms for conducting remote user research, usability testing, surveys, and collecting in-app feedback (e.g., UserTesting, Hotjar, Qualtrics, SurveyMonkey).",
+          "description": "Collect continuous customer feedback: In-app feedback widgets, Net Promoter Score (NPS) surveys, customer review mining, and Hotjar session recording analysis.",
           "resources": [
             {
               "title": "Best Usability Testing Tools",
@@ -456,15 +479,19 @@
               "url": "/data/docs/product_designer/pd_user_feedback_tools_platforms.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 29
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 18
     },
     {
       "id": "product_designer_ia_ixd",
       "name": "Information Architecture & Interaction Design",
       "tag": "essential",
-      "description": "Structure content effectively and design intuitive user interactions to ensure ease of use and navigation across digital products.",
+      "description": "Architect information structures and interaction flows: Designing navigation mental models, task flows, wireframes, and responsive layout foundations.",
       "resources": [
         {
           "title": "Information Architecture Basics for UX Designers",
@@ -497,7 +524,7 @@
           "id": "pd_information_architecture_content_strategy",
           "name": "Information Architecture & Content Strategy",
           "tag": "essential",
-          "description": "Master the principles of organizing, structuring, and labeling content effectively. Develop skills in creating sitemaps, user flows, navigation systems, and conducting card sorting/tree testing. Understand the basics of content strategy in relation to IA.",
+          "description": "Structure product information: Content models, taxonomic hierarchies, object-oriented UX (OOUX), and plain language content strategy.",
           "resources": [
             {
               "title": "Sitemaps and User Flows in UX Design",
@@ -529,13 +556,15 @@
               "url": "/data/docs/product_designer/pd_information_architecture_content_strategy.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 18
         },
         {
           "id": "pd_interaction_design_heuristics_patterns",
           "name": "Interaction Design Principles, Heuristics & Patterns",
           "tag": "essential",
-          "description": "Apply fundamental interaction design principles (e.g., feedback, consistency, learnability, affordance) and Nielsen's Usability Heuristics. Explore common interaction patterns for various UI elements and user scenarios.",
+          "description": "Apply interaction design heuristics: Nielsen Norman Group usability heuristics, progressive disclosure, system feedback, and resilient error recovery patterns.",
           "resources": [
             {
               "title": "Shneiderman's Eight Golden Rules of Interface Design",
@@ -562,13 +591,15 @@
               "url": "/data/docs/product_designer/pd_interaction_design_heuristics_patterns.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "pd_wireframing_low_fidelity_prototyping_ideation",
           "name": "Wireframing, Low-Fidelity Prototyping & Ideation",
           "tag": "essential",
-          "description": "Develop proficiency in rapid ideation techniques (e.g., sketching, crazy eights). Create basic structural layouts using wireframes and build low-fidelity, clickable prototypes to quickly visualize user flows and test core functionality early in the design process.",
+          "description": "Create low-fidelity wireframes: Divergent sketch ideation (Crazy Eights), paper prototypes, interactive wireframes in Figma, and rapid concept validation.",
           "resources": [
             {
               "title": "Wireframing Guide: Best Practices",
@@ -600,13 +631,15 @@
               "url": "/data/docs/product_designer/pd_wireframing_low_fidelity_prototyping_ideation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 20
         },
         {
           "id": "pd_advanced_interaction_patterns",
           "name": "Advanced Interaction Patterns & Complex UI",
           "tag": "advanced",
-          "description": "Dive into designing complex interaction patterns for data visualization, forms, search, filtering, and dynamic content. Address challenges in designing for enterprise applications, dashboards, and rich internet applications.",
+          "description": "Design advanced interaction patterns: Complex data tables with filtering/sorting, drag-and-drop interfaces, dashboard analytics, and conversational UI.",
           "resources": [
             {
               "title": "Designing Data Visualizations",
@@ -628,13 +661,15 @@
               "url": "/data/docs/product_designer/pd_advanced_interaction_patterns.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 28
         },
         {
           "id": "pd_accessibility_interaction_patterns",
           "name": "Accessibility in Interaction Design",
           "tag": "essential",
-          "description": "Ensure interactive elements are accessible by designing for keyboard navigation, screen reader compatibility, focus management, and touch targets. Understand ARIA attributes and their role in enhancing interactive accessibility.",
+          "description": "Design accessible interactions: Keyboard navigation flows, screen reader friendly modal dialogs, non-modal alerts, and ARIA interaction states.",
           "resources": [
             {
               "title": "WAI-ARIA Authoring Practices Guide",
@@ -656,15 +691,19 @@
               "url": "/data/docs/product_designer/pd_accessibility_interaction_patterns.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 17
     },
     {
       "id": "product_designer_ui_visual_design",
       "name": "UI & Visual Design",
       "tag": "essential",
-      "description": "Develop visually appealing and consistent user interfaces that enhance usability, brand identity, and user engagement.",
+      "description": "Execute visual craft: Typography scales, spatial systems, design systems architecture, and micro-interactions.",
       "resources": [
         {
           "title": "Refactoring UI by Adam Wathan & Steve Schoger",
@@ -697,7 +736,7 @@
           "id": "pd_visual_design_foundations_branding_identity",
           "name": "Visual Design Foundations, Branding & Identity",
           "tag": "essential",
-          "description": "Master core visual design elements: typography, color theory, layout, grid systems, visual hierarchy, iconography, and imagery. Understand how to apply these principles to establish or reinforce brand identity within a product's interface.",
+          "description": "Establish visual brand language: Brand identity translation into UI, typography hierarchy, elevation/shadow systems, and consistent visual rhythm.",
           "resources": [
             {
               "title": "Visual Design Principles for UI",
@@ -729,13 +768,15 @@
               "url": "/data/docs/product_designer/pd_visual_design_foundations_branding_identity.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "pd_ui_patterns_component_design",
           "name": "UI Patterns & Component Design",
           "tag": "essential",
-          "description": "Understand common UI patterns (e.g., navigation, forms, data display, alerts) and learn to design reusable, modular UI components. Explore how to leverage and customize existing component libraries (e.g., Material Design, Apple HIG) effectively.",
+          "description": "Design reusable UI patterns: Navigation bars, cards, interactive modals, tabs, forms, and progressive onboarding flows.",
           "resources": [
             {
               "title": "UI Patterns",
@@ -762,13 +803,15 @@
               "url": "/data/docs/product_designer/pd_ui_patterns_component_design.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         },
         {
           "id": "pd_design_systems_architecture_governance",
           "name": "Design Systems: Architecture & Governance",
           "tag": "advanced",
-          "description": "Go beyond the basics to understand the architecture of a design system. Learn to define design tokens, create comprehensive component libraries, document usage guidelines, and establish governance models for maintaining consistency and scalability across products.",
+          "description": "Architect scalable design systems: Design tokens, Figma component libraries, multi-brand theming, and cross-functional design system governance councils.",
           "resources": [
             {
               "title": "What is a Design System?",
@@ -795,13 +838,15 @@
               "url": "/data/docs/product_designer/pd_design_systems_architecture_governance.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 28
         },
         {
           "id": "pd_inclusive_design_accessibility_standards",
           "name": "Inclusive Design & Accessibility Standards",
           "tag": "essential",
-          "description": "Design products that are usable by the widest possible audience, including people with diverse abilities. Deep dive into WCAG guidelines, ARIA specifications, and inclusive design principles, integrating them throughout the design process.",
+          "description": "Enforce WCAG 2.1 AA compliance: Color contrast, target sizes, accessible focus management, and designing for neurodiverse user segments.",
           "resources": [
             {
               "title": "WCAG 2.1 Overview",
@@ -828,13 +873,15 @@
               "url": "/data/docs/product_designer/pd_inclusive_design_accessibility_standards.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         },
         {
           "id": "pd_motion_animation_design",
           "name": "Motion & Animation Design for UI",
           "tag": "advanced",
-          "description": "Learn the principles of effective motion design to enhance user experience, provide feedback, guide attention, and add delight. Explore tools and techniques for creating micro-interactions, transitions, and animations in UI.",
+          "description": "Design functional UI animation: Spatial orientation transitions, choreography of loading states, micro-interactions in Principle/Protopie, and reduced-motion states.",
           "resources": [
             {
               "title": "Designing Interface Animation: Improving Product Experience & Usability",
@@ -856,13 +903,15 @@
               "url": "/data/docs/product_designer/pd_motion_animation_design.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         },
         {
           "id": "pd_responsive_adaptive_design",
           "name": "Responsive & Adaptive Design Principles",
           "tag": "essential",
-          "description": "Master designing for multiple screen sizes and devices. Understand the differences between responsive and adaptive design, mobile-first approaches, and techniques for creating flexible layouts and scalable components.",
+          "description": "Design adaptive cross-platform experiences: Breakpoint strategies, touch-first responsive web apps, and native iOS / Android responsive considerations.",
           "resources": [
             {
               "title": "Responsive Web Design Basics",
@@ -884,15 +933,19 @@
               "url": "/data/docs/product_designer/pd_responsive_adaptive_design.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 20
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 16
     },
     {
       "id": "product_designer_prototyping_testing",
       "name": "Prototyping, Testing & Iteration",
       "tag": "essential",
-      "description": "Build interactive prototypes, conduct rigorous usability testing, and iterate on designs based on feedback and data to refine user experience.",
+      "description": "Validate product hypotheses: High-fidelity prototypes, usability testing, heuristic evaluations, and A/B experimentation.",
       "resources": [
         {
           "title": "Figma Learn: Prototyping Basics",
@@ -925,7 +978,7 @@
           "id": "pd_high_fidelity_prototyping_microinteractions_tools",
           "name": "High-Fidelity Prototyping, Micro-interactions & Advanced Tools",
           "tag": "essential",
-          "description": "Create highly realistic and interactive prototypes that simulate the final product experience. Learn to implement intricate micro-interactions, advanced animations, and complex states using tools like Figma, Principle, or ProtoPie.",
+          "description": "Build advanced interactive prototypes in ProtoPie or Figma: Variables, conditional logic, formula calculations, hardware sensors, and realistic API mocking.",
           "resources": [
             {
               "title": "ProtoPie for Advanced Prototyping",
@@ -947,13 +1000,15 @@
               "url": "/data/docs/product_designer/pd_high_fidelity_prototyping_microinteractions_tools.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 15
         },
         {
           "id": "pd_usability_testing_planning_moderation_analysis",
           "name": "Usability Testing: Planning, Moderation & Analysis",
           "tag": "essential",
-          "description": "Gain expertise in planning, recruiting for, moderating, and analyzing various usability tests (e.g., moderated, unmoderated, remote, in-person). Learn to identify critical usability issues and translate findings into design recommendations.",
+          "description": "Conduct rigorous usability testing: Crafting test protocols, moderating remote sessions, calculating completion rates and time on task, and error analysis.",
           "resources": [
             {
               "title": "Usability Testing 101",
@@ -980,13 +1035,15 @@
               "url": "/data/docs/product_designer/pd_usability_testing_planning_moderation_analysis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 20
         },
         {
           "id": "pd_heuristic_evaluation_cognitive_walkthrough",
           "name": "Heuristic Evaluation & Cognitive Walkthrough",
           "tag": "essential",
-          "description": "Conduct expert-based evaluations using Nielsen's heuristics and cognitive walkthroughs to identify usability problems early in the design cycle, before involving actual users. Learn to document findings and provide constructive feedback.",
+          "description": "Evaluate interfaces systematically: Expert heuristic evaluations using Nielsen's 10 heuristics, cognitive walkthroughs, and severity scoring matrices.",
           "resources": [
             {
               "title": "How to Conduct a Heuristic Evaluation",
@@ -1008,13 +1065,15 @@
               "url": "/data/docs/product_designer/pd_heuristic_evaluation_cognitive_walkthrough.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 20
         },
         {
           "id": "pd_experimentation_ab_multivariate_testing",
           "name": "Experimentation: A/B, Multivariate Testing & Metrics",
           "tag": "advanced",
-          "description": "Understand the principles of experimental design for product features. Learn to set up, run, and interpret A/B and multivariate tests to quantitatively validate design hypotheses, measure impact on key performance indicators (KPIs), and make data-driven decisions.",
+          "description": "Design product experiments: Formulating test hypotheses, power analysis, running A/B tests with Optimizely/LaunchDarkly, and analyzing statistical significance.",
           "resources": [
             {
               "title": "A/B Testing for UX: A Guide",
@@ -1041,13 +1100,15 @@
               "url": "/data/docs/product_designer/pd_experimentation_ab_multivariate_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         },
         {
           "id": "pd_design_sprints_agile_iteration_cycles",
           "name": "Design Sprints & Agile Iteration Cycles",
           "tag": "essential",
-          "description": "Integrate user feedback, usability test results, and stakeholder input into rapid design iteration cycles. Explore frameworks like Design Sprints for accelerated problem-solving and validation, ensuring continuous improvement.",
+          "description": "Facilitate Design Sprints: 5-day Google Ventures design sprint methodology (Understand, Sketch, Decide, Prototype, Test) to validate high-risk concepts rapidly.",
           "resources": [
             {
               "title": "The Importance of Iterative Design",
@@ -1079,15 +1140,19 @@
               "url": "/data/docs/product_designer/pd_design_sprints_agile_iteration_cycles.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 16
     },
     {
       "id": "product_designer_collaboration_handoff",
       "name": "Cross-functional Collaboration & Handoff",
       "tag": "advanced",
-      "description": "Learn to effectively prepare designs for development, collaborate with engineers and product managers, and ensure successful implementation and product launch.",
+      "description": "Drive cross-functional collaboration, developer handoffs, design operations, and storytelling across engineering squads.",
       "resources": [
         {
           "title": "Design Handoff Best Practices",
@@ -1120,7 +1185,7 @@
           "id": "pd_design_handoff_specifications_developer_collaboration",
           "name": "Design Handoff, Specifications & Developer Collaboration",
           "tag": "essential",
-          "description": "Master the art of preparing designs for development. Create comprehensive design specifications, asset libraries, and interactive prototypes for developers. Utilize tools like Figma's Inspect mode, Zeplin, or Storybook for seamless collaboration and efficient implementation.",
+          "description": "Deliver engineering specifications: Figma Dev Mode handoff, interaction specs, edge case documentation, token mapping, and pair-designing with developers.",
           "resources": [
             {
               "title": "Figma's Developer Handoff Features",
@@ -1147,13 +1212,15 @@
               "url": "/data/docs/product_designer/pd_design_handoff_specifications_developer_collaboration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 20
         },
         {
           "id": "pd_stakeholder_management_cross_functional_communication",
           "name": "Stakeholder Management & Cross-functional Communication",
           "tag": "essential",
-          "description": "Develop strong communication and collaboration strategies to work effectively with product managers, engineers, marketing, and other stakeholders. Learn to manage expectations, negotiate design decisions, and build consensus throughout the product lifecycle.",
+          "description": "Manage executive stakeholders: Managing pushback, building consensus across product/engineering/sales, and presenting design proposals in business terms.",
           "resources": [
             {
               "title": "Product Design Collaboration Best Practices",
@@ -1180,13 +1247,15 @@
               "url": "/data/docs/product_designer/pd_stakeholder_management_cross_functional_communication.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 20
         },
         {
           "id": "pd_integrating_design_agile_scrum_kanban",
           "name": "Integrating Design in Agile, Scrum & Kanban",
           "tag": "advanced",
-          "description": "Seamlessly integrate design activities into agile, scrum, and Kanban development methodologies. Learn to participate effectively in sprint planning, stand-ups, reviews, and retrospectives, ensuring design is an integral part of iterative development.",
+          "description": "Embed design in Agile sprints: Dual-track Agile (Discovery sprint + Delivery sprint), sprint planning participation, and story point sizing for design tasks.",
           "resources": [
             {
               "title": "Agile Development for Designers",
@@ -1213,13 +1282,15 @@
               "url": "/data/docs/product_designer/pd_integrating_design_agile_scrum_kanban.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 29
         },
         {
           "id": "pd_design_system_maintenance_contribution",
           "name": "Design System Maintenance & Contribution",
           "tag": "advanced",
-          "description": "Actively contribute new components, patterns, and documentation to an existing design system. Understand the processes for proposing changes, maintaining standards, and ensuring the system evolves effectively with product needs and technological advancements.",
+          "description": "Contribute to design system lifecycles: Submitting component RFCs, participating in design reviews, and auditing component parity in production builds.",
           "resources": [
             {
               "title": "Building a Design System",
@@ -1241,13 +1312,15 @@
               "url": "/data/docs/product_designer/pd_design_system_maintenance_contribution.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 28
         },
         {
           "id": "pd_design_operations_strategy_scalability",
           "name": "Design Operations (DesignOps) Strategy & Scalability",
           "tag": "advanced",
-          "description": "Understand DesignOps principles to streamline design workflows, optimize toolchains, manage resources, and foster a healthy design culture. Learn how DesignOps enables design teams to scale their impact and efficiency across an organization.",
+          "description": "Implement DesignOps: Design tooling standardization, design research repositories, onboarding playbooks, and tracking designer happiness and velocity.",
           "resources": [
             {
               "title": "What is DesignOps?",
@@ -1269,13 +1342,15 @@
               "url": "/data/docs/product_designer/pd_design_operations_strategy_scalability.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 28
         },
         {
           "id": "pd_design_presentation_storytelling",
           "name": "Design Presentation & Storytelling",
           "tag": "essential",
-          "description": "Develop strong presentation and storytelling skills to effectively communicate design rationale, present solutions to stakeholders, and advocate for user needs. Learn to articulate design decisions based on research and business goals.",
+          "description": "Master design storytelling: Presenting vision decks, framing customer problem narratives, showing quantifiable business impact, and fielding executive Q&A.",
           "resources": [
             {
               "title": "Storytelling for Designers",
@@ -1297,15 +1372,19 @@
               "url": "/data/docs/product_designer/pd_design_presentation_storytelling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 20
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 22
     },
     {
       "id": "product_designer_career_readiness",
       "name": "Portfolio & Career Advancement",
       "tag": "advanced",
-      "description": "Prepare for a successful career by building a compelling portfolio, mastering interview skills, and understanding professional development strategies.",
+      "description": "Advance your product design career: Crafting deep case studies, whiteboard challenge mastery, and building personal brand.",
       "resources": [
         {
           "title": "How to Build a Product Design Portfolio",
@@ -1338,7 +1417,7 @@
           "id": "pd_crafting_impactful_design_case_studies",
           "name": "Crafting Impactful Design Case Studies",
           "tag": "essential",
-          "description": "Master the art of creating compelling case studies that showcase your design process, problem-solving abilities, design decisions, challenges overcome, and the measurable impact of your work, tailored for various audiences.",
+          "description": "Author industry-leading case studies: Highlighting strategic problem discovery, iterative validation, metrics moved (conversion, retention), and retrospective learnings.",
           "resources": [
             {
               "title": "Writing a Great UX Case Study",
@@ -1360,13 +1439,15 @@
               "url": "/data/docs/product_designer/pd_crafting_impactful_design_case_studies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 22
         },
         {
           "id": "pd_interview_preparation_whiteboard_challenges_system_design",
           "name": "Interview Preparation, Whiteboard Challenges & System Design",
           "tag": "essential",
-          "description": "Prepare thoroughly for product design interviews, including portfolio reviews, behavioral questions (STAR method), live whiteboard challenges, and product sense/system design questions. Develop strategies for clear communication under pressure.",
+          "description": "Master product design interviews: Live whiteboard design exercises, past-work presentations, app critique sessions, and behavioral leadership questions.",
           "resources": [
             {
               "title": "Product Design Interview Questions",
@@ -1398,13 +1479,15 @@
               "url": "/data/docs/product_designer/pd_interview_preparation_whiteboard_challenges_system_design.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 20
         },
         {
           "id": "pd_building_professional_online_portfolio",
           "name": "Building a Professional Online Portfolio",
           "tag": "essential",
-          "description": "Design and develop a clean, user-friendly online portfolio website that effectively curates and presents your best design projects and case studies, reflecting your personal brand and skills.",
+          "description": "Curate an elite design portfolio: Clean responsive personal website showcasing 3 flagship end-to-end case studies with clear visual artifacts.",
           "resources": [
             {
               "title": "Best Product Design Portfolio Examples",
@@ -1426,13 +1509,15 @@
               "url": "/data/docs/product_designer/pd_building_professional_online_portfolio.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "pd_personal_branding_networking_mentorship",
           "name": "Personal Branding, Networking & Mentorship",
           "tag": "advanced",
-          "description": "Cultivate a strong personal brand within the design community, engage in professional networking, and seek out mentorship opportunities to foster continuous growth and open doors to new career paths.",
+          "description": "Build professional presence: Mentoring junior designers on ADPList, publishing thought leadership articles, and active participation in design communities.",
           "resources": [
             {
               "title": "Building Your Personal Brand as a Designer",
@@ -1454,13 +1539,15 @@
               "url": "/data/docs/product_designer/pd_personal_branding_networking_mentorship.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 29
         },
         {
           "id": "pd_end_to_end_capstone_project_showcase",
           "name": "Capstone Project: End-to-End Product Design & Showcase",
           "tag": "essential",
-          "description": "Undertake a comprehensive, portfolio-ready product design project from initial research, problem definition, ideation, and design to high-fidelity prototyping, testing, and design specifications, culminating in a polished presentation.",
+          "description": "Build an enterprise product design capstone: Complete SaaS product from 0 to 1 featuring strategic discovery, user testing, design system, interactive ProtoPie prototype, and business impact modeling.",
           "resources": [
             {
               "title": "Product Design Project Ideas",
@@ -1482,13 +1569,15 @@
               "url": "/data/docs/product_designer/pd_end_to_end_capstone_project_showcase.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 58
         },
         {
           "id": "pd_continuous_learning_emerging_trends",
           "name": "Continuous Learning & Emerging Design Trends",
           "tag": "advanced",
-          "description": "Stay abreast of the latest trends, technologies (e.g., AI in design, AR/VR UX), and methodologies in product design. Foster a mindset of continuous learning and adaptation to drive innovation in your career.",
+          "description": "Track emerging design paradigms: AI-assisted product design, spatial computing interfaces (visionOS), multi-modal input design, and design automation.",
           "resources": [
             {
               "title": "AI in Design: A Designer's Guide",
@@ -1510,9 +1599,14 @@
               "url": "/data/docs/product_designer/pd_continuous_learning_emerging_trends.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 28
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 22
     }
-  ]
+  ],
+  "total_exp": 1000
 }

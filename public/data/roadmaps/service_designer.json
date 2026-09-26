@@ -47,30 +47,33 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Complete Omnichannel Healthcare / Airport Service Blueprint",
+        "title": "Omnichannel Healthcare Patient Experience Service Blueprint",
         "tech_stack": [
-          "Miro/Figma",
           "Service Blueprinting",
-          "Qualitative Research Synthesis"
+          "Frontstage / Backstage Mapping",
+          "Persona Journeys",
+          "Miro",
+          "Figma"
         ],
-        "description": "Design an exhaustive end-to-end service blueprint mapping patient touchpoints, nursing actions, backstage database calls, and fail points."
+        "description": "Design an exhaustive end-to-end service blueprint mapping patient touchpoints, clinical backstage systems, digital records handoffs, and critical moments of truth."
       },
       {
-        "title": "Omnichannel Customer Service Blueprint & Ecosystem Map",
+        "title": "Airport Passenger Digital Journey & Service Ecosystem Transformation",
         "tech_stack": [
-          "Service Blueprinting",
-          "Figma",
-          "Qualitative Research",
-          "Miro"
+          "Touchpoint Matrix",
+          "Stakeholder Ecosystem Mapping",
+          "Service Failure Recovery SOPs",
+          "Qualitative Research"
         ],
-        "description": "Map the complete end-to-end frontstage and backstage customer journey for an omnichannel service, identifying systemic bottlenecks and service interventions."
+        "description": "Map the complete physical-to-digital passenger travel lifecycle, designing fail-safe service recovery interventions, line-of-visibility touchpoints, and staff training SOPs."
       }
     ],
     "interview_focus": [
-      "Service Blueprint vs User Journey Map Distinction",
-      "Aligning Frontstage UX with Legacy Backstage Systems",
-      "Facilitating Co-Design Workshops with Resistant Stakeholders",
-      "Measuring Return on Investment for Service Design Changes"
+      "Service Blueprint Components (Line of Interaction, Line of Visibility, Frontstage vs Backstage)",
+      "Translating Customer Journey Insights into Actionable Backend Operational Changes",
+      "Facilitating Multi-Stakeholder Co-Creation Workshops Across Business Silos",
+      "Service Prototyping Techniques (Role Playing, Wizard of Oz, Tabletop Walkthroughs)",
+      "Measuring Service Design Impact (Customer Effort Score / CES, CSAT, Operational Efficiency)"
     ],
     "certifications": [
       "Service Design Network (SDN) Accredited Practitioner",
@@ -83,7 +86,7 @@
       "id": "sd_foundations",
       "name": "Foundations of Service Design",
       "tag": "essential",
-      "description": "Establish a strong understanding of what Service Design is, its core principles, and how it differentiates from other design disciplines, emphasizing its business value.",
+      "description": "Master Service Design fundamentals: Holistically orchestrating people, infrastructure, communication, and material components to improve frontstage customer experiences and backstage operations.",
       "resources": [
         {
           "title": "What is Service Design? An Introduction (NN/g)",
@@ -116,7 +119,7 @@
           "id": "sd_foundations_intro_concepts",
           "name": "Introduction to Core Concepts & Terminology",
           "tag": "essential",
-          "description": "Learn the fundamental vocabulary, principles, and value proposition of Service Design, including its distinction from UX or Product Design and its multi-channel nature.",
+          "description": "Understand service design terminology: Frontstage touchpoints, backstage operations, line of visibility, line of internal interaction, and service ecology.",
           "resources": [
             {
               "title": "Service Design vs. UX Design: What's the Difference? (UX Collective)",
@@ -148,13 +151,15 @@
               "url": "/data/docs/service_designer/sd_foundations_intro_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 22
         },
         {
           "id": "sd_foundations_mindset",
           "name": "Service Design Thinking & Mindset",
           "tag": "essential",
-          "description": "Cultivate a systems-thinking, human-centered, holistic, and collaborative mindset crucial for approaching complex service challenges across various touchpoints and organizational silos.",
+          "description": "Adopt the service design mindset: Holistic systems thinking, co-creative facilitation, iterative prototyping of intangible services, and user-centered transformation.",
           "resources": [
             {
               "title": "Systems Thinking for Service Design (SDN Academy)",
@@ -181,13 +186,15 @@
               "url": "/data/docs/service_designer/sd_foundations_mindset.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         },
         {
           "id": "sd_foundations_biz_value",
           "name": "The Business Value & Impact of Service Design",
           "tag": "essential",
-          "description": "Understand how service design drives business value through improved customer experience, operational efficiency, innovation, and competitive advantage.",
+          "description": "Articulate the business value of service design: Breaking organizational silos, eliminating backstage operational waste, reducing customer churn, and aligning cross-departmental operations.",
           "resources": [
             {
               "title": "Measuring the ROI of Service Design (SDN Academy)",
@@ -214,15 +221,19 @@
               "url": "/data/docs/service_designer/sd_foundations_biz_value.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 35
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 24
     },
     {
       "id": "sd_strategic_research",
       "name": "Strategic Service Research & Insight Generation",
       "tag": "essential",
-      "description": "Master the art of uncovering deep user needs, stakeholder motivations, and existing service realities through comprehensive, ethically conducted research methods.",
+      "description": "Execute strategic service research: Ethnographic field observations, shadowing frontline service staff, contextual inquiry, and stakeholder ecosystem mapping.",
       "resources": [
         {
           "title": "User Research Fundamentals (NN/g)",
@@ -255,7 +266,7 @@
           "id": "sd_research_planning_ethics",
           "name": "Research Planning & Ethical Conduct",
           "tag": "essential",
-          "description": "Learn to define clear research questions, select appropriate methodologies (qualitative, quantitative, mixed), and conduct research ethically, ensuring consent, privacy, and bias mitigation.",
+          "description": "Plan service research: Designing research protocols for complex multi-stakeholder environments, ethical data handling, and informed consent across customer touchpoints.",
           "resources": [
             {
               "title": "Planning User Research (NN/g)",
@@ -282,13 +293,15 @@
               "url": "/data/docs/service_designer/sd_research_planning_ethics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 32
         },
         {
           "id": "sd_research_users_stakeholders",
           "name": "Understanding Users, Stakeholders & Context",
           "tag": "essential",
-          "description": "Master techniques for gathering insights from users (interviews, observations, surveys) and stakeholders (interviews, workshops), mapping their relationships, and analyzing their motivations and pain points.",
+          "description": "Analyze multi-stakeholder ecosystems: Frontline employees, support operations, vendor partners, end users, and mapping power/influence dynamics.",
           "resources": [
             {
               "title": "Mastering User Interviews (UX Mastery)",
@@ -320,13 +333,15 @@
               "url": "/data/docs/service_designer/sd_research_users_stakeholders.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "sd_research_current_state_mapping",
           "name": "Current State Service Mapping & Analysis",
           "tag": "essential",
-          "description": "Develop skills in visually representing existing service journeys, processes, and ecosystems to identify current pain points, opportunities, and dependencies across channels and departments.",
+          "description": "Map current state services: Documenting existing touchpoint pain points, operational bottlenecks, service failures, and customer emotional trajectories.",
           "resources": [
             {
               "title": "Customer Journey Mapping 101 (NN/g)",
@@ -358,13 +373,15 @@
               "url": "/data/docs/service_designer/sd_research_current_state_mapping.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "sd_research_synthesis_framing",
           "name": "Synthesizing Insights & Problem Framing",
           "tag": "essential",
-          "description": "Learn to synthesize vast amounts of research data into actionable insights using methods like affinity diagramming, create personas, and articulate clear problem statements and opportunity areas.",
+          "description": "Synthesize service insights: Thematic clustering, service archetypes, empathy mapping for employees and customers, and framing strategic Opportunity Areas.",
           "resources": [
             {
               "title": "Affinity Diagramming for Research Synthesis (NN/g)",
@@ -396,15 +413,19 @@
               "url": "/data/docs/service_designer/sd_research_synthesis_framing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 26
     },
     {
       "id": "sd_ideation_concept",
       "name": "Ideation, Concept Development & Co-creation",
       "tag": "essential",
-      "description": "Translate synthesized research insights and framed problems into innovative, human-centered service concepts through collaborative ideation and structured concept development.",
+      "description": "Facilitate co-creation and concept development: Multi-disciplinary co-design workshops, participatory design methods, and generating future-state service concepts.",
       "resources": [
         {
           "title": "The Art of Ideation (IDEO U)",
@@ -437,7 +458,7 @@
           "id": "sd_concept_vision_value",
           "name": "Defining Service Vision & Value Proposition",
           "tag": "essential",
-          "description": "Learn to articulate a compelling future service vision, develop robust value propositions that resonate with users and stakeholders, and define key hypotheses for new service offerings.",
+          "description": "Define service vision and value proposition: Formulating core service offerings, value exchange models, and aligning with strategic enterprise goals.",
           "resources": [
             {
               "title": "Value Proposition Canvas Explained (Strategyzer)",
@@ -464,13 +485,15 @@
               "url": "/data/docs/service_designer/sd_concept_vision_value.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         },
         {
           "id": "sd_concept_co_creation",
           "name": "Co-creation & Advanced Ideation Techniques",
           "tag": "essential",
-          "description": "Facilitate engaging co-creation workshops with diverse groups, applying advanced ideation methods like SCAMPER, 'How Might We' statements, and design games to collaboratively generate innovative service solutions.",
+          "description": "Lead co-creation workshops: Designing collaborative workshop canvases, liberating structures, participatory brainstorming, and aligning divergent department agendas.",
           "resources": [
             {
               "title": "Facilitation Guide: Co-Creation Workshops (Practical Service Design)",
@@ -497,13 +520,15 @@
               "url": "/data/docs/service_designer/sd_concept_co_creation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "sd_concept_development_scenarios",
           "name": "Developing Service Concepts & Scenarios",
           "tag": "essential",
-          "description": "Learn to concretize abstract ideas into tangible service concepts, using storytelling, scenario mapping, concept cards, and experience narratives to communicate the proposed future service.",
+          "description": "Develop future service scenarios: Storyboarding end-to-end customer journeys, speculative service futures, and drafting service charters.",
           "resources": [
             {
               "title": "Storyboarding for Service Design (This is HCD)",
@@ -530,15 +555,19 @@
               "url": "/data/docs/service_designer/sd_concept_development_scenarios.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 27
     },
     {
       "id": "sd_prototyping_validation",
       "name": "Service Prototyping & Validation",
       "tag": "essential",
-      "description": "Develop and test service concepts rapidly using various fidelity prototypes to gather actionable feedback, validate assumptions, and iteratively refine solutions before full-scale implementation.",
+      "description": "Prototype and test intangible services: Desktop walkthroughs, service role-playing, wizard-of-oz testing, physical space mockups, and pilot testing.",
       "resources": [
         {
           "title": "Prototyping Services: From Concept to Reality (IxDF)",
@@ -566,7 +595,7 @@
           "id": "sd_prototyping_methods",
           "name": "Prototyping for Services: Methods & Fidelity",
           "tag": "essential",
-          "description": "Explore diverse prototyping methods tailored for services, including role-playing, desktop walkthroughs, physical mock-ups, digital simulations, and 'Wizard of Oz' techniques across different fidelities.",
+          "description": "Apply service prototyping methods: Role-playing frontstage interactions, cardboard mockups of physical service desks, and simulated digital app interactions.",
           "resources": [
             {
               "title": "Low-Fidelity Prototyping for Services (This is HCD)",
@@ -598,13 +627,15 @@
               "url": "/data/docs/service_designer/sd_prototyping_methods.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "sd_prototyping_testing",
           "name": "User & Stakeholder Testing",
           "tag": "essential",
-          "description": "Plan and conduct effective testing sessions with target users and internal stakeholders, gather qualitative and quantitative feedback, and identify areas for improvement in service concepts.",
+          "description": "Test service prototypes with real users: Moderating live service simulations with customers and frontline staff, observing friction points, and gathering feedback.",
           "resources": [
             {
               "title": "Conducting Usability Tests for Services (NN/g)",
@@ -631,13 +662,15 @@
               "url": "/data/docs/service_designer/sd_prototyping_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         },
         {
           "id": "sd_prototyping_measurement",
           "name": "Measuring Prototype Effectiveness & Iteration",
           "tag": "essential",
-          "description": "Define clear success metrics for prototypes, analyze test results, synthesize findings, and apply insights to iterate and refine service concepts, making data-driven design decisions.",
+          "description": "Measure prototype effectiveness: Task completion rates, user emotional state tracking, cognitive load assessments, and qualitative feedback synthesis.",
           "resources": [
             {
               "title": "Design Iteration: The Path to Great Products and Services (IxDF)",
@@ -659,15 +692,19 @@
               "url": "/data/docs/service_designer/sd_prototyping_measurement.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 24
     },
     {
       "id": "sd_detailed_design",
       "name": "Detailed Service Design & Architecture",
       "tag": "advanced",
-      "description": "Translate validated concepts into detailed service designs, considering operational realities, inclusive principles, technology integration, and policy constraints for a holistic service ecosystem.",
+      "description": "Author detailed service specifications: Service blueprints, touchpoint orchestration, ecosystem architecture, and ethical considerations.",
       "resources": [
         {
           "title": "Designing for Service Delivery (SDN Academy)",
@@ -700,7 +737,7 @@
           "id": "sd_detailed_future_mapping",
           "name": "Future State Service Journey & Blueprinting",
           "tag": "essential",
-          "description": "Design detailed future-state customer journey maps and service blueprints, articulating desired user experiences, internal processes, and the front-stage/back-stage interactions necessary for delivery.",
+          "description": "Author future-state journey maps: Visualizing ideal customer experiences, emotional highs/lows, and identifying critical service moments that matter.",
           "resources": [
             {
               "title": "Designing a Future Customer Journey Map (NN/g)",
@@ -727,13 +764,15 @@
               "url": "/data/docs/service_designer/sd_detailed_future_mapping.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         },
         {
           "id": "sd_detailed_touchpoints",
           "name": "Designing Service Touchpoints & Interactions",
           "tag": "essential",
-          "description": "Create detailed designs for all service touchpoints, including digital interfaces (UI/UX), physical environments, human interactions, and communication channels, ensuring consistency and seamless transitions.",
+          "description": "Orchestrate multi-channel touchpoints: Aligning digital web/mobile apps, physical retail/office spaces, call centers, and print collateral into a unified journey.",
           "resources": [
             {
               "title": "Designing Service Touchpoints (IxDF)",
@@ -765,13 +804,15 @@
               "url": "/data/docs/service_designer/sd_detailed_touchpoints.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 30
         },
         {
           "id": "sd_detailed_architecture",
           "name": "Service Architecture & System Design",
           "tag": "advanced",
-          "description": "Understand and design the underlying architecture of a service, including technology systems, data flows, organizational structures, roles, and processes that enable seamless service delivery.",
+          "description": "Build comprehensive Service Blueprints: Frontstage customer actions, backstage employee actions, support processes, physical evidence, and digital systems integrations.",
           "resources": [
             {
               "title": "Service System Design: Connecting the Dots (This is HCD)",
@@ -798,13 +839,15 @@
               "url": "/data/docs/service_designer/sd_detailed_architecture.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         },
         {
           "id": "sd_detailed_inclusivity_ethics",
           "name": "Designing for Inclusivity, Ethics & Regulations",
           "tag": "essential",
-          "description": "Integrate accessibility, inclusive design principles, ethical considerations (e.g., algorithmic bias), data privacy regulations (GDPR, CCPA), and policy constraints into the core service design.",
+          "description": "Ensure service accessibility and ethics: Inclusive service design for vulnerable customers, physical space accessibility, and ethical privacy safeguards.",
           "resources": [
             {
               "title": "Introduction to Web Accessibility (W3C)",
@@ -836,15 +879,19 @@
               "url": "/data/docs/service_designer/sd_detailed_inclusivity_ethics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 31
     },
     {
       "id": "sd_implementation_ops",
       "name": "Service Implementation, Operations & Measurement",
       "tag": "advanced",
-      "description": "Plan for successful service launch, manage organizational change, enable efficient operations, and define robust metrics for continuous monitoring and improvement of service performance.",
+      "description": "Drive service implementation and operations: Organizational change management, pilot rollout roadmaps, service governance, and metrics.",
       "resources": [
         {
           "title": "Change Management in Service Design (SDN Academy)",
@@ -877,7 +924,7 @@
           "id": "sd_implementation_change",
           "name": "Organizational Change & Stakeholder Enablement",
           "tag": "advanced",
-          "description": "Develop strategies for fostering organizational readiness, managing change resistance, gaining buy-in from key stakeholders, and effectively communicating new service models internally.",
+          "description": "Lead operational change management: Overcoming internal organizational inertia, training frontline teams on new service procedures, and internal advocacy.",
           "resources": [
             {
               "title": "Kotter's 8-Step Change Model (MindTools)",
@@ -904,13 +951,15 @@
               "url": "/data/docs/service_designer/sd_implementation_change.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "sd_implementation_rollout",
           "name": "Service Rollout & Pilot Programs",
           "tag": "advanced",
-          "description": "Plan and execute phased service rollouts, manage pilot programs, and coordinate launch activities, ensuring smooth transitions and effective initial delivery of the new service.",
+          "description": "Execute phased service rollouts: Minimum Viable Service (MVS) launches, regional pilot testing, feedback collection, and scaling nationwide.",
           "resources": [
             {
               "title": "How to Launch a New Service (Harvard Business Review)",
@@ -937,13 +986,15 @@
               "url": "/data/docs/service_designer/sd_implementation_rollout.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         },
         {
           "id": "sd_implementation_operations",
           "name": "Service Operations & Management",
           "tag": "advanced",
-          "description": "Understand principles of service operations management, including resource allocation, process optimization, incident management, and continuous improvement frameworks like ITIL or Lean Service.",
+          "description": "Establish service governance: Defining Service Level Agreements (SLAs), operational runbooks, and maintaining living service blueprints across product squads.",
           "resources": [
             {
               "title": "Introduction to Service Operations Management (Coursera)",
@@ -970,13 +1021,15 @@
               "url": "/data/docs/service_designer/sd_implementation_operations.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 42
         },
         {
           "id": "sd_implementation_metrics",
           "name": "Defining & Tracking Service Performance Metrics",
           "tag": "essential",
-          "description": "Establish key performance indicators (KPIs), objectives and key results (OKRs), and feedback mechanisms to continuously monitor service performance, customer satisfaction, and operational efficiency post-launch.",
+          "description": "Track service performance metrics: Customer Effort Score (CES), Net Promoter Score (NPS), employee satisfaction (eNPS), operational cost per transaction, and service health dashboards.",
           "resources": [
             {
               "title": "Metrics for Service Design Success (SDN Academy)",
@@ -1003,15 +1056,19 @@
               "url": "/data/docs/service_designer/sd_implementation_metrics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 35
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 31
     },
     {
       "id": "sd_advanced_professional",
       "name": "Advanced Practice & Professional Growth",
       "tag": "advanced",
-      "description": "Develop a strong professional presence by mastering service design tools, building an impactful portfolio, leading strategic initiatives, and continually advancing your skills in emerging areas.",
+      "description": "Advance as a Senior Service Designer: Design leadership, executive stakeholder influence, and portfolio career readiness.",
       "resources": [
         {
           "title": "Building a Service Design Portfolio (SDN Academy)",
@@ -1044,7 +1101,7 @@
           "id": "sd_professional_tools",
           "name": "Essential Tools & Technologies",
           "tag": "essential",
-          "description": "Become proficient with digital whiteboards (Miro, Mural), diagramming software, prototyping tools (Figma, Adobe XD), and research platforms commonly used in modern service design practice.",
+          "description": "Master service design toolchains: Miro, Mural, FigJam, Smaply for journey mapping, and Notion for service repositories.",
           "resources": [
             {
               "title": "Miro Academy: Getting Started with Miro",
@@ -1071,13 +1128,15 @@
               "url": "/data/docs/service_designer/sd_professional_tools.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "sd_professional_portfolio",
           "name": "Building a Compelling Service Design Portfolio",
           "tag": "essential",
-          "description": "Learn to craft compelling service design case studies, showcase your process and impact, and prepare for interviews with confidence, highlighting your strategic thinking and collaborative skills.",
+          "description": "Build a competitive Service Design portfolio: Detailed end-to-end service case studies highlighting research rigor, ecosystem mapping, service blueprints, and business impact.",
           "resources": [
             {
               "title": "How to Structure a Service Design Case Study (UX Design Institute)",
@@ -1104,13 +1163,15 @@
               "url": "/data/docs/service_designer/sd_professional_portfolio.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 33
         },
         {
           "id": "sd_professional_leadership_impact",
           "name": "Leading Service Design & Driving Strategic Impact",
           "tag": "advanced",
-          "description": "Develop leadership skills to champion service design within organizations, build and scale design practices, influence strategic decision-making, and measure the long-term impact of service initiatives.",
+          "description": "Drive design leadership: Influencing C-level executives, championing service design culture, and guiding enterprise organizational transformation.",
           "resources": [
             {
               "title": "Strategic Service Design (SDN Academy)",
@@ -1142,13 +1203,15 @@
               "url": "/data/docs/service_designer/sd_professional_leadership_impact.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         },
         {
           "id": "sd_professional_continuous_learning",
           "name": "Continuous Learning & Emerging Trends",
           "tag": "advanced",
-          "description": "Stay at the forefront of the field by exploring advanced topics, emerging technologies (e.g., AI, VR/AR in services), sustainable design, ethical AI, and specialized domains like public service design or healthcare.",
+          "description": "Track service design trends: Public sector service design, circular economy services, AI-augmented service operations, and engaging with the Service Design Network (SDN).",
           "resources": [
             {
               "title": "Sustainable Service Design (SDN Academy)",
@@ -1175,9 +1238,14 @@
               "url": "/data/docs/service_designer/sd_professional_continuous_learning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 45
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 31
     }
-  ]
+  ],
+  "total_exp": 1000
 }

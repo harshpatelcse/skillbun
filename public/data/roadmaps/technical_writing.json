@@ -47,24 +47,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Complete Developer Documentation Portal with Docusaurus",
+        "title": "Interactive Developer Portal & OpenAPI Reference with Docusaurus",
         "tech_stack": [
-          "Docusaurus",
-          "Markdown",
-          "OpenAPI/Swagger",
-          "GitHub Pages"
+          "Docusaurus 3",
+          "Markdown / MDX",
+          "OpenAPI / Swagger",
+          "Mermaid.js",
+          "Algolia"
         ],
-        "description": "Build and deploy an interactive developer portal featuring quickstart guides, interactive API endpoints, and dark/light mode."
+        "description": "Build and deploy an enterprise developer documentation hub featuring interactive API explorers, clear architecture diagrams, and instant Algolia DocSearch."
       },
       {
-        "title": "Developer Documentation Portal & Interactive OpenAPI Docs",
+        "title": "End-to-End Enterprise API Quickstart Guide & Multi-Language SDK Samples",
         "tech_stack": [
-          "Markdown",
-          "OpenAPI / Swagger",
-          "Docusaurus",
-          "Git"
+          "Postman Collections",
+          "cURL",
+          "Python / Node.js Snippets",
+          "Diátaxis Framework",
+          "GitHub"
         ],
-        "description": "Author comprehensive developer documentation from scratch, including conceptual architectural overviews, quickstart guides, and an interactive OpenAPI reference."
+        "description": "Author a frictionless 5-minute developer onboarding quickstart using the Diátaxis framework, including functional code samples, error recovery guides, and sample apps."
       }
     ],
     "certifications": [
@@ -72,10 +74,11 @@
       "Google Technical Writing Certified Credential"
     ],
     "interview_focus": [
-      "Structuring API Documentation for Maximum Developer Adoption",
-      "Maintaining Accuracy across Rapid Engineering Release Cycles",
-      "Docs-as-Code Pull Request Review Workflows",
-      "Auditing Documentation for Accessibility and Inclusivity"
+      "The Diátaxis Documentation Framework (Tutorials, How-To Guides, Reference, Explanation)",
+      "Docs-as-Code Workflow (Markdown, Git Version Control, CI/CD Automated Linting with Vale)",
+      "Creating High-Quality REST & GraphQL API Documentation (Endpoints, Parameters, Error Codes)",
+      "Information Architecture & Structuring Navigable Technical Portals",
+      "Translating Complex Engineering Specs into Actionable Developer Documentation"
     ]
   },
   "format": "tree",
@@ -84,7 +87,7 @@
       "id": "tw_core_writing_comm_skills",
       "name": "Core Writing & Communication Skills",
       "tag": "essential",
-      "description": "Master the fundamental principles of clear, concise, and effective technical communication for diverse audiences, laying the groundwork for all documentation efforts.",
+      "description": "Master technical communication fundamentals: Plain language principles, cognitive load theory for readers, audience analysis, and information architecture.",
       "resources": [
         {
           "title": "Google Technical Writing Courses",
@@ -117,7 +120,7 @@
           "id": "tw_audience_info_architecture",
           "name": "Audience Analysis & Information Architecture",
           "tag": "essential",
-          "description": "Identify target audiences, understand their needs, and structure information logically for discoverability and usability. Cover principles of content organization and navigation.",
+          "description": "Analyze technical audiences: Profiling beginner vs senior developer readers, creating reader personas, and designing logical document navigation hierarchies.",
           "resources": [
             {
               "title": "Google Technical Writing One: Principles",
@@ -144,13 +147,15 @@
               "url": "/data/docs/technical_writing/tw_audience_info_architecture.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         },
         {
           "id": "tw_clarity_conciseness",
           "name": "Clarity, Conciseness & Plain Language",
           "tag": "essential",
-          "description": "Apply principles of plain language, active voice, task orientation, consistent terminology, and appropriate tone and voice to ensure easily understandable and actionable content across all documentation.",
+          "description": "Master clear and concise writing: Active voice over passive voice, eliminating jargon, sentence length discipline (< 25 words), parallel structure, and scannable formatting.",
           "resources": [
             {
               "title": "Google Technical Writing One: Style",
@@ -177,13 +182,15 @@
               "url": "/data/docs/technical_writing/tw_clarity_conciseness.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "tw_editing_proofing_standards",
           "name": "Editing, Proofreading & Style Guides",
           "tag": "essential",
-          "description": "Develop robust editing and proofreading skills for accuracy, grammar, consistency, and adherence to established style guides. Understand the importance of accessibility and inclusive language.",
+          "description": "Apply editorial standards: Microsoft Writing Style Guide, Google Developer Documentation Style Guide, copyediting for precision, and proofreading checklists.",
           "resources": [
             {
               "title": "Write the Docs Guide",
@@ -210,13 +217,15 @@
               "url": "/data/docs/technical_writing/tw_editing_proofing_standards.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "tw_research_gathering",
           "name": "Research & Information Gathering",
           "tag": "essential",
-          "description": "Learn effective methods for researching technical topics, interviewing Subject Matter Experts (SMEs), and validating information for accuracy and completeness, crucial for credible documentation.",
+          "description": "Conduct technical research: Interviewing Subject Matter Experts (SMEs), reading source code, experimenting with alpha APIs, and analyzing technical specifications.",
           "resources": [
             {
               "title": "Working with SMEs: A Practical Guide",
@@ -238,15 +247,19 @@
               "url": "/data/docs/technical_writing/tw_research_gathering.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 16
     },
     {
       "id": "tw_dev_fundamentals",
       "name": "Technical & Developer Fundamentals",
       "tag": "essential",
-      "description": "Acquire foundational technical knowledge to confidently understand, communicate with, and document for developers and technical users, covering core concepts of software development.",
+      "description": "Master developer foundations for technical writers: Command line, networking basics, Git version control, and understanding code syntax.",
       "resources": [
         {
           "title": "MDN Web Docs Learn",
@@ -279,7 +292,7 @@
           "id": "tw_cli_os_basics",
           "name": "Command Line & Operating System Basics",
           "tag": "essential",
-          "description": "Understand fundamental command-line operations (Linux/macOS/Windows PowerShell) and basic operating system concepts relevant to software development and tooling.",
+          "description": "Navigate operating systems via CLI: Terminal commands (Bash, zsh, PowerShell), package managers, environment variables, and file permissions.",
           "resources": [
             {
               "title": "The Linux Command Line Tutorial",
@@ -301,13 +314,15 @@
               "url": "/data/docs/technical_writing/tw_cli_os_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 17
         },
         {
           "id": "tw_web_networking_basics",
           "name": "Web & Networking Fundamentals",
           "tag": "essential",
-          "description": "Grasp core internet concepts like HTTP/HTTPS, client-server architecture, URLs, and basic web technologies (HTML/CSS/JavaScript concepts) essential for documenting web-based products.",
+          "description": "Understand web architecture: Client-server models, HTTP request/response headers, status codes, JSON/XML payloads, and DNS resolution.",
           "resources": [
             {
               "title": "How the Web Works: A Primer",
@@ -334,13 +349,15 @@
               "url": "/data/docs/technical_writing/tw_web_networking_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 16
         },
         {
           "id": "tw_data_serialization_config",
           "name": "Data Serialization & Configuration Formats",
           "tag": "essential",
-          "description": "Understand the structure, syntax, and common use cases for JSON, XML, and YAML in data exchange, configuration files, and API communication.",
+          "description": "Master configuration and serialization formats: JSON, YAML, TOML, Markdown, and XML; validating syntax and documenting complex nested schemas.",
           "resources": [
             {
               "title": "JSON Tutorial",
@@ -372,13 +389,15 @@
               "url": "/data/docs/technical_writing/tw_data_serialization_config.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 17
         },
         {
           "id": "tw_git_version_control",
           "name": "Git & Version Control Systems",
           "tag": "essential",
-          "description": "Learn Git fundamentals: repositories, commits, branches, merges, pull requests, and collaborative workflows with platforms like GitHub/GitLab, crucial for Docs-as-Code.",
+          "description": "Master Git for documentation: Branching, pull requests, resolving merge conflicts, and collaborating with software engineers in GitHub / GitLab.",
           "resources": [
             {
               "title": "GitHub Docs",
@@ -400,13 +419,15 @@
               "url": "/data/docs/technical_writing/tw_git_version_control.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "tw_sdlc_agile",
           "name": "Software Development Lifecycle & Agile Methodologies",
           "tag": "essential",
-          "description": "Understand the stages of the Software Development Lifecycle (SDLC) and common Agile methodologies (Scrum, Kanban), recognizing the technical writer's role and integration points within these processes.",
+          "description": "Integrate writing into the SDLC: Embedding technical writers into Agile/Scrum sprints, reviewing engineering user stories, and aligning docs releases with software deployments.",
           "resources": [
             {
               "title": "What is SDLC?",
@@ -433,13 +454,15 @@
               "url": "/data/docs/technical_writing/tw_sdlc_agile.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         },
         {
           "id": "tw_api_fundamentals",
           "name": "API Fundamentals (REST, GraphQL, gRPC)",
           "tag": "essential",
-          "description": "Grasp core concepts of different API architectural styles including RESTful services, GraphQL, and an introduction to gRPC, understanding their request/response patterns, authentication, and common use cases.",
+          "description": "Master API concepts: RESTful API design, GraphQL schemas, gRPC Protocol Buffers, authentication mechanisms (API keys, OAuth 2.0, Bearer tokens), and rate limiting.",
           "resources": [
             {
               "title": "REST API Tutorial",
@@ -471,13 +494,15 @@
               "url": "/data/docs/technical_writing/tw_api_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 40
         },
         {
           "id": "tw_api_spec_languages",
           "name": "API Description Languages (OpenAPI/Swagger, AsyncAPI)",
           "tag": "advanced",
-          "description": "Learn to read, interpret, and potentially contribute to API specification files like OpenAPI (Swagger) for REST APIs and AsyncAPI for event-driven architectures, understanding their role in generating documentation.",
+          "description": "Author API specifications: OpenAPI 3.1 (Swagger) YAML/JSON documents, AsyncAPI for event-driven webhooks, and validating specifications with Spectral.",
           "resources": [
             {
               "title": "OpenAPI Specification Introduction",
@@ -504,13 +529,15 @@
               "url": "/data/docs/technical_writing/tw_api_spec_languages.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "tw_basic_programming_concepts",
           "name": "Basic Programming Concepts (for reading code)",
           "tag": "essential",
-          "description": "Acquire fundamental programming concepts such as variables, data types, control flow, functions, and object-oriented principles, enabling the ability to read and understand code examples in documentation.",
+          "description": "Read and annotate code: Understanding variables, functions, control loops, error handling, and writing accurate multi-language code snippets (Python, JavaScript, cURL).",
           "resources": [
             {
               "title": "Python for Everybody (University of Michigan)",
@@ -537,15 +564,19 @@
               "url": "/data/docs/technical_writing/tw_basic_programming_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 20
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 14
     },
     {
       "id": "tw_documentation_types_frameworks",
       "name": "Documentation Types & Frameworks",
       "tag": "essential",
-      "description": "Master the creation of various documentation types, applying structured frameworks for effective content design and delivery that meets user needs.",
+      "description": "Master technical documentation types using the Diátaxis framework: Tutorials, How-to guides, Reference docs, and Explanations.",
       "resources": [
         {
           "title": "Diataxis Documentation Framework",
@@ -573,7 +604,7 @@
           "id": "tw_diataxis_framework",
           "name": "Applying the Diátaxis Framework",
           "tag": "essential",
-          "description": "Understand and apply the four modes of documentation: Tutorials, How-to guides, Explanations (Concepts), and Reference, to structure comprehensive and user-centric documentation sets.",
+          "description": "Apply the Diátaxis framework: Categorizing content across two axes (Learning-oriented vs Task-oriented, Practical vs Theoretical) to prevent content confusion.",
           "resources": [
             {
               "title": "The Grand Unified Theory of Documentation",
@@ -595,13 +626,15 @@
               "url": "/data/docs/technical_writing/tw_diataxis_framework.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "tw_tutorials_how_to",
           "name": "Tutorials & How-to Guides",
           "tag": "essential",
-          "description": "Design and write effective step-by-step tutorials and actionable how-to guides, including clear prerequisites, verification steps, and basic troubleshooting, focused on task completion.",
+          "description": "Author tutorials and how-to guides: Step-by-step learning-oriented tutorials for beginners, and task-oriented recipes solving real-world developer problems.",
           "resources": [
             {
               "title": "How-To Guides: The Complete Guide",
@@ -623,13 +656,15 @@
               "url": "/data/docs/technical_writing/tw_tutorials_how_to.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "tw_conceptual_docs",
           "name": "Conceptual & Explanatory Documentation",
           "tag": "essential",
-          "description": "Create clear and engaging conceptual articles that explain underlying principles, architectures, complex technologies, and reasons 'why' something works, providing foundational understanding.",
+          "description": "Write conceptual and explanatory documentation: System architecture overviews, design rationales, core conceptual models, and technical trade-off analyses.",
           "resources": [
             {
               "title": "The importance of conceptual documentation",
@@ -656,13 +691,15 @@
               "url": "/data/docs/technical_writing/tw_conceptual_docs.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "tw_api_reference_detailed",
           "name": "Detailed API Reference Documentation",
           "tag": "advanced",
-          "description": "Develop comprehensive API reference materials covering endpoints, request/response schemas, authentication, examples, error codes, and utilizing generated documentation tools (e.g., Swagger UI, Redoc).",
+          "description": "Document comprehensive API references: Parameter descriptions, request/response bodies, status code explanations, authentication requirements, and copy-pasteable cURL examples.",
           "resources": [
             {
               "title": "Stoplight: API Documentation Guide",
@@ -684,13 +721,15 @@
               "url": "/data/docs/technical_writing/tw_api_reference_detailed.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 48
         },
         {
           "id": "tw_release_notes_changelogs",
           "name": "Release Notes & Changelogs",
           "tag": "essential",
-          "description": "Write clear, concise, and user-facing release notes and technical changelogs for new features, bug fixes, and breaking changes, effectively communicating updates to users.",
+          "description": "Write customer-facing release notes: Keep a Changelog conventions, categorizing changes (Added, Changed, Deprecated, Removed, Fixed, Security), and migration guides.",
           "resources": [
             {
               "title": "How to Write Great Release Notes",
@@ -717,13 +756,15 @@
               "url": "/data/docs/technical_writing/tw_release_notes_changelogs.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "tw_troubleshooting_faqs",
           "name": "Troubleshooting Guides & FAQs",
           "tag": "essential",
-          "description": "Create effective troubleshooting documentation, including common issues, diagnostic steps, potential solutions, and frequently asked questions, to empower users and reduce support load.",
+          "description": "Author troubleshooting guides: Problem-Cause-Solution structures, error message glossaries, diagnostic step trees, and actionable FAQs.",
           "resources": [
             {
               "title": "Writing Effective Troubleshooting Guides",
@@ -745,13 +786,15 @@
               "url": "/data/docs/technical_writing/tw_troubleshooting_faqs.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "tw_ui_text_microcopy_onboarding",
           "name": "UI Text, Microcopy & Onboarding Documentation",
           "tag": "advanced",
-          "description": "Craft concise and helpful user interface text, microcopy, and onboarding sequences that guide users effectively within product interfaces, enhancing usability and reducing friction.",
+          "description": "Write product UI microcopy: In-app tooltips, onboarding walkthroughs, empty states, and user-friendly error dialogs.",
           "resources": [
             {
               "title": "Microcopy: The Complete Guide",
@@ -778,15 +821,19 @@
               "url": "/data/docs/technical_writing/tw_ui_text_microcopy_onboarding.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 18
     },
     {
       "id": "tw_docs_as_code_modern_tooling",
       "name": "Docs-as-Code & Modern Tooling",
       "tag": "advanced",
-      "description": "Implement modern documentation workflows using version control, static site generators, automation, and advanced tooling for efficient content creation, quality assurance, and delivery.",
+      "description": "Master the Docs-as-Code workflow: Markdown/AsciiDoc, Static Site Generators (SSGs), automated CI/CD linting, and documentation testing.",
       "resources": [
         {
           "title": "Docs as Code Overview",
@@ -814,7 +861,7 @@
           "id": "tw_markdown_asciidoc",
           "name": "Markdown & AsciiDoc for Technical Content",
           "tag": "essential",
-          "description": "Master advanced Markdown syntax (e.g., CommonMark, GitHub Flavored Markdown), explore AsciiDoc, and understand the role of reStructuredText for more complex structural requirements, especially in docs-as-code workflows.",
+          "description": "Author in lightweight markup languages: GitHub Flavored Markdown (GFM), AsciiDoc for complex modular manuals, and formatting tables/admonitions.",
           "resources": [
             {
               "title": "CommonMark Help",
@@ -846,13 +893,15 @@
               "url": "/data/docs/technical_writing/tw_markdown_asciidoc.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "tw_static_site_generators",
           "name": "Static Site Generators (SSG) for Docs",
           "tag": "advanced",
-          "description": "Learn to set up, configure, and publish documentation sites using popular SSGs like Docusaurus, MkDocs, or Hugo, covering navigation, search, versioning, and theme customization.",
+          "description": "Deploy documentation with modern SSGs: Docusaurus, MkDocs (Material for MkDocs), Nextra, Mintlify, Starlight, and Hugo.",
           "resources": [
             {
               "title": "Docusaurus Documentation",
@@ -879,13 +928,15 @@
               "url": "/data/docs/technical_writing/tw_static_site_generators.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         },
         {
           "id": "tw_content_reuse_single_sourcing",
           "name": "Content Reuse & Single Sourcing",
           "tag": "advanced",
-          "description": "Implement strategies for maximizing content reuse, managing variables, conditional content, and single-sourcing across different documentation outputs to maintain consistency and efficiency.",
+          "description": "Implement single-sourcing and content reuse: Reusable variables, conditional text rendering (`if/else` tags), and including shared snippet partials.",
           "resources": [
             {
               "title": "DITA and topic-based authoring",
@@ -907,13 +958,15 @@
               "url": "/data/docs/technical_writing/tw_content_reuse_single_sourcing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 24
         },
         {
           "id": "tw_diagramming_visuals",
           "name": "Diagramming & Visuals for Documentation",
           "tag": "essential",
-          "description": "Create clear and effective diagrams (flowcharts, architecture diagrams, sequence diagrams) using text-based tools like Mermaid, PlantUML, or dedicated diagramming software to enhance understanding.",
+          "description": "Create technical diagrams: Architecture flowcharts and sequence diagrams using Mermaid.js, PlantUML, and Draw.io; screenshot annotation best practices.",
           "resources": [
             {
               "title": "Mermaid Documentation",
@@ -940,13 +993,15 @@
               "url": "/data/docs/technical_writing/tw_diagramming_visuals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "tw_linting_automation_ci",
           "name": "Linting, Automation & CI/CD for Docs",
           "tag": "advanced",
-          "description": "Integrate linters (e.g., Vale, proselint), spell checkers, and automated build/deploy processes (CI/CD) to ensure documentation quality, consistency, and efficient publishing workflows.",
+          "description": "Automate documentation CI/CD: Automated prose linting with Vale (enforcing style guides), markdown link checking (`markdown-link-check`), and GitHub Actions deployment.",
           "resources": [
             {
               "title": "Vale Style Linter",
@@ -968,13 +1023,15 @@
               "url": "/data/docs/technical_writing/tw_linting_automation_ci.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         },
         {
           "id": "tw_docs_seo_analytics",
           "name": "Docs SEO & Analytics",
           "tag": "advanced",
-          "description": "Optimize documentation for search engines (SEO) and analyze user behavior using tools like Google Analytics/Search Console to identify popular content, search failures, and areas for improvement.",
+          "description": "Optimize documentation discoverability: Search engine optimization for developer docs, structured schema markup, and tracking doc feedback with analytics.",
           "resources": [
             {
               "title": "Google Search Console",
@@ -1001,15 +1058,19 @@
               "url": "/data/docs/technical_writing/tw_docs_seo_analytics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 32
     },
     {
       "id": "tw_professional_dev_portfolio",
       "name": "Professional Development & Portfolio",
       "tag": "advanced",
-      "description": "Build a strong portfolio, demonstrate advanced technical writing skills through practical projects, and understand career growth paths in technical communication.",
+      "description": "Build a competitive Technical Writing portfolio: Published documentation sites, API reference guides, and interview readiness.",
       "resources": [
         {
           "title": "Docs as Code: Write for Developers as a Developer (Wizeline Academy)",
@@ -1032,7 +1093,7 @@
           "id": "tw_portfolio_building",
           "name": "Building a Technical Writing Portfolio",
           "tag": "essential",
-          "description": "Curate and present a professional portfolio showcasing diverse technical documentation samples, including project work, open-source contributions, and personal documentation projects.",
+          "description": "Curate an elite technical writing portfolio: Showcasing an end-to-end documentation site, a complete OpenAPI reference, a conceptual architecture guide, and a tutorial.",
           "resources": [
             {
               "title": "How to Build a Technical Writing Portfolio",
@@ -1059,13 +1120,15 @@
               "url": "/data/docs/technical_writing/tw_portfolio_building.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "tw_stakeholder_collaboration",
           "name": "Stakeholder Management & Cross-functional Collaboration",
           "tag": "essential",
-          "description": "Develop effective communication, negotiation, and collaboration skills with engineers, product managers, quality assurance, and other stakeholders to gather information, facilitate reviews, manage feedback, and ensure documentation alignment with product goals.",
+          "description": "Collaborate across engineering and product: Reviewing PRDs, running doc review cycles, managing SME review bottlenecks, and advocating for clear documentation culture.",
           "resources": [
             {
               "title": "Collaborating with Developers (Write the Docs)",
@@ -1092,13 +1155,15 @@
               "url": "/data/docs/technical_writing/tw_stakeholder_collaboration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "tw_user_feedback_usability",
           "name": "User Feedback & Usability Testing for Documentation",
           "tag": "advanced",
-          "description": "Implement methods for collecting and analyzing user feedback, conduct basic usability testing for documentation, and iterate on content based on insights to continuously improve user experience.",
+          "description": "Test documentation usability: Tracking 'Was this page helpful?' ratings, analyzing search queries for unindexed terms, and conducting developer documentation testing sessions.",
           "resources": [
             {
               "title": "Usability Testing for Documentation",
@@ -1120,13 +1185,15 @@
               "url": "/data/docs/technical_writing/tw_user_feedback_usability.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         },
         {
           "id": "tw_capstone_project",
           "name": "Capstone Project: End-to-End Developer Docs",
           "tag": "advanced",
-          "description": "Apply all learned skills to build a complete documentation portal for a simulated or open-source product, including conceptual docs, how-to guides, API reference, diagrams, and a static site with CI/CD integration.",
+          "description": "Build an enterprise developer documentation capstone: Complete Docs-as-Code site built with Docusaurus/MkDocs, featuring Diátaxis structure, OpenAPI interactive playground, Mermaid diagrams, and automated Vale linting in CI.",
           "resources": [
             {
               "title": "Open Source Projects Suitable for Documentation Contributions",
@@ -1148,13 +1215,15 @@
               "url": "/data/docs/technical_writing/tw_capstone_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 100
         },
         {
           "id": "tw_career_paths_future_trends",
           "name": "Career Paths & Future Trends",
           "tag": "advanced",
-          "description": "Explore different career paths within technical communication, including UX writing, content strategy, and information architecture, and stay updated on industry trends and emerging tools.",
+          "description": "Advance as a Technical Writer: Lead Documentarian, Developer Relations (DevRel), Technical Content Strategist, and integrating AI documentation assistance tools responsibly.",
           "resources": [
             {
               "title": "Society for Technical Communication (STC)",
@@ -1181,9 +1250,14 @@
               "url": "/data/docs/technical_writing/tw_career_paths_future_trends.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 26
     }
-  ]
+  ],
+  "total_exp": 1000
 }

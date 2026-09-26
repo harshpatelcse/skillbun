@@ -48,25 +48,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Fast In-Memory Key-Value Cache Engine",
+        "title": "High-Throughput Multithreaded In-Memory Key-Value Store",
         "tech_stack": [
           "Rust",
           "Tokio",
+          "Crossbeam",
           "RESP Protocol",
-          "Criterion Benchmarking"
+          "Criterion"
         ],
-        "description": "Build a multithreaded Redis-compatible in-memory store supporting concurrent reads/writes with zero runtime data races."
+        "description": "Build a multithreaded Redis-compatible in-memory store supporting concurrent transactions, lock-free ring buffers, and microsecond latency validated with Criterion."
       },
       {
-        "title": "High-Throughput Asynchronous Reverse Proxy with Tokio",
+        "title": "Asynchronous HTTP/HTTPS Reverse Proxy with Zero-Copy Buffer Management",
         "tech_stack": [
           "Rust",
-          "Tokio",
           "Hyper",
+          "Tokio",
           "Rustls",
-          "Prometheus"
+          "epoll/kqueue"
         ],
-        "description": "Write an ultra-fast async HTTP/HTTPS reverse proxy with zero-copy buffer handling, automated TLS termination via Rustls, and health-check round-robin routing."
+        "description": "Write an ultra-fast async HTTP/HTTPS reverse proxy with zero-copy buffer pools, TLS termination via Rustls, dynamic route health-checking, and rate limiting."
       }
     ],
     "certifications": [
@@ -75,10 +76,11 @@
       "AWS Certified Developer - Associate"
     ],
     "interview_focus": [
-      "Borrow Checker Rules & Lifetime Annotations",
-      "Arc, Rc, RefCell & Mutex Internal Differences",
-      "Tokio Async Task Scheduling & Pinning",
-      "Memory Layout & Zero-Cost Traits"
+      "Rust Ownership, Borrow Checker, Lifetimes ('a, 'static) & Interior Mutability (RefCell, Mutex)",
+      "Concurrency Primitives (Send and Sync Traits, Arc, Mutex, RwLock, Channels vs Atomics)",
+      "Error Handling Idioms (Result, Option, Custom Error Types, thiserror, anyhow)",
+      "Asynchronous Rust & Tokio Runtime (Future Polling, Wakers, Pinning, Async Tasks vs OS Threads)",
+      "Unsafe Rust Invariants, Raw Pointers & Preventing Undefined Behavior"
     ]
   },
   "format": "tree",
@@ -87,7 +89,7 @@
       "id": "rust_core_fundamentals",
       "name": "Rust Core Fundamentals",
       "tag": "essential",
-      "description": "Establish a strong understanding of Rust's unique principles: ownership, borrowing, lifetimes, data types, control flow, functions, and the Cargo build system, enabling robust and memory-safe programming. This foundational knowledge is crucial for writing efficient and reliable Rust code.",
+      "description": "Establish an uncompromised Rust foundation: understand compile-time memory safety without a garbage collector, affine type system mechanics, lifetime variance, zero-cost abstractions, and fearless systems programming.",
       "resources": [
         {
           "title": "The Rust Programming Language Book",
@@ -115,7 +117,7 @@
           "id": "rust_syntax_modules_tooling",
           "name": "Rust Syntax, Modules, Crates & Tooling",
           "tag": "essential",
-          "description": "Understand fundamental Rust syntax, primitive data types, structs, enums, control flow, functions, methods, traits. Master organizing code with modules and crates, managing projects and dependencies with Cargo, and utilizing `rustc` and `rustfmt`.",
+          "description": "Master the Rust edition model and developer toolchain: Cargo workspace manifests, crate dependency graphs, module trees (`mod.rs` vs modern path files), `pub(crate)` encapsulation, formatting with `rustfmt`, and configuring strict lint enforcement via `clippy` (`-D warnings`, pedantic and nursery lint groups).",
           "resources": [
             {
               "title": "Rust Tutorial Full Course (Derek Banas)",
@@ -132,13 +134,15 @@
               "url": "/data/docs/rust_developer/rust_syntax_modules_tooling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 18
         },
         {
           "id": "rust_ownership_lifetimes_type_system",
           "name": "Ownership, Borrowing, Lifetimes & Type System Deep Dive",
           "tag": "essential",
-          "description": "Master Rust's core memory safety mechanisms: ownership rules, references, mutable references, and lifetimes, including lifetime elision and generic lifetimes. Explore Copy/Clone traits, `Drop` and `Deref` traits, and the Send/Sync markers for concurrency safety.",
+          "description": "Master the borrow checker and memory safety mechanics: move semantics, ownership transfer, copy vs clone, reborrowing, lifetime annotations (`'a`), lifetime elision rules, subtyping and variance (covariance over lifetime arguments, invariance over mutable references `&mut T`), anonymous lifetimes (`'_`), and higher-ranked trait bounds (`for<'a>`).",
           "resources": [
             {
               "title": "The Rustonomicon - Ownership and Lifetimes",
@@ -160,13 +164,15 @@
               "url": "/data/docs/rust_developer/rust_ownership_lifetimes_type_system.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "rust_std_collections_iterators",
           "name": "Standard Library Collections, Iterators & Data Structures",
           "tag": "essential",
-          "description": "Explore common data structures like `Vec`, `HashMap`, `String`, `Option`, `Result`, `VecDeque`, `LinkedList`, `BTreeMap`, `BTreeSet`, `HashSet`. Understand slices, arrays, tuples, and master the `Iterator` trait with its powerful adapter methods for efficient data processing.",
+          "description": "Master standard library collections and zero-cost iterators: contiguous heap allocation in `Vec<T>`, chunking, `HashMap<K, V>` SipHash DoS resistance vs ultra-fast non-cryptographic `ahash`/`fxhash`, ordered `BTreeMap<K, V>`, and iterator combinators (`map`, `filter_map`, `fold`, `collect`, `try_fold`) compiling down to vectorized assembly without boundary checks.",
           "resources": [
             {
               "title": "Rust Standard Library Documentation",
@@ -188,13 +194,15 @@
               "url": "/data/docs/rust_developer/rust_std_collections_iterators.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "rust_traits_generics_errors_patterns",
           "name": "Traits, Generics, Error Handling & Pattern Matching",
           "tag": "essential",
-          "description": "Understand traits for shared behavior (`impl Trait`, `dyn Trait`, associated types), implement generics for flexible code, and develop robust error handling strategies using `Result`, `Option`, custom error types (e.g., `thiserror`, `anyhow`), and the `?` operator. Master exhaustive pattern matching.",
+          "description": "Master polymorphism and error architecture: static dispatch (`impl Trait` monomorphization with inlining) vs dynamic dispatch (`dyn Trait` fat pointers with vtable pointer and data pointer), orphan rules and newtype pattern, associated types, idiomatic error handling with `Result<T, E>` and `Option<T>`, domain error definition with `thiserror`, and application context with `anyhow`.",
           "resources": [
             {
               "title": "Rust by Example",
@@ -221,13 +229,15 @@
               "url": "/data/docs/rust_developer/rust_traits_generics_errors_patterns.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "rust_advanced_memory_smart_pointers",
           "name": "Advanced Memory Management: Smart Pointers & Interior Mutability",
           "tag": "advanced",
-          "description": "Deep dive into smart pointers: `Box` for heap allocation, `Rc` and `Arc` for shared ownership, and `Cell`/`RefCell` for interior mutability. Understand their use cases, implications for memory management, and how they interact with Rust's ownership model.",
+          "description": "Master advanced pointer semantics and interior mutability: unique heap ownership with `Box<T>`, reference counting with `Rc<T>` and atomic `Arc<T>`, runtime borrow checking with `RefCell<T>` and detecting reentrancy panics, copy-on-write optimization with `Cow<'a, T>`, and `Pin<P>` mechanics guaranteeing immovable memory addresses essential for self-referential async futures.",
           "resources": [
             {
               "title": "The Rustonomicon - Smart Pointers",
@@ -249,13 +259,15 @@
               "url": "/data/docs/rust_developer/rust_advanced_memory_smart_pointers.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "rust_metaprogramming_macros",
           "name": "Metaprogramming with Macros",
           "tag": "advanced",
-          "description": "Explore the power of declarative macros (`macro_rules!`), understanding their syntax, patterns, and use cases for reducing boilerplate. Dive into procedural macros (derive, function-like, attribute-like), their implementation using `syn` and `quote`, and applications for code generation and DSLs.",
+          "description": "Master Rust metaprogramming: declarative pattern-matching macros (`macro_rules!`) and AST token-tree matching, and procedural macros (derive, attribute, function-like) utilizing `syn`, `quote`, and `proc-macro2` for compile-time code generation, custom serialization, and domain-specific languages (DSLs).",
           "resources": [
             {
               "title": "The Little Book of Rust Macros",
@@ -277,15 +289,19 @@
               "url": "/data/docs/rust_developer/rust_metaprogramming_macros.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 16
     },
     {
       "id": "rust_concurrency_async",
       "name": "Concurrency and Asynchronous Programming",
       "tag": "essential",
-      "description": "Learn to write efficient and safe concurrent and asynchronous code in Rust, a critical skill for high-performance applications and network services, leveraging Rust's unique safety guarantees.",
+      "description": "Master safe concurrency and asynchronous execution: multi-threading with fearless concurrency, thread synchronization, the Tokio async runtime, cooperative task scheduling, and backpressure management.",
       "resources": [
         {
           "title": "The Async Book",
@@ -313,7 +329,7 @@
           "id": "rust_os_threads_shared_state_messaging",
           "name": "OS Threads, Shared State & Message Passing",
           "tag": "essential",
-          "description": "Explore OS threads with `std::thread`, manage shared mutable state safely using `Mutex` and `RwLock`. Implement inter-thread communication via message passing with channels (`mpsc`). Understand `Send` and `Sync` traits and their role in concurrency safety. Introduce `crossbeam` for advanced concurrent data structures.",
+          "description": "Master OS thread concurrency and memory synchronization: spawning threads with `std::thread`, thread-safety marker traits (`Send` for transferring ownership across threads, `Sync` for sharing references across threads), synchronizing shared state with `Arc<Mutex<T>>` and `Arc<RwLock<T>>`, lock poisoning handling, atomic primitives (`AtomicBool`, `AtomicUsize`, `AtomicPtr`) with explicit `Ordering` (Relaxed, Acquire/Release, SeqCst), and lock-free channels with `crossbeam`.",
           "resources": [
             {
               "title": "Crossbeam Documentation",
@@ -335,13 +351,15 @@
               "url": "/data/docs/rust_developer/rust_os_threads_shared_state_messaging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         },
         {
           "id": "rust_async_futures_runtimes",
           "name": "Asynchronous Programming: Futures, async/await & Runtimes",
           "tag": "essential",
-          "description": "Grasp asynchronous programming concepts, the `Future` trait, `async/await` syntax for writing asynchronous code, and the role of async runtimes like Tokio or async-std for executing futures. Understand tasks, executors, and the polling model.",
+          "description": "Master asynchronous runtime mechanics: the `Future` trait polling contract (`poll(Pin<&mut Self>, &mut Context) -> Poll<T>`), Waker notifications and reactor event loops, the Tokio multi-threaded work-stealing executor, cooperative yielding, and avoiding blocking the async runtime by offloading CPU-intensive tasks using `tokio::task::spawn_blocking`.",
           "resources": [
             {
               "title": "Tokio Tutorial",
@@ -363,13 +381,15 @@
               "url": "/data/docs/rust_developer/rust_async_futures_runtimes.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 18
         },
         {
           "id": "rust_advanced_async_streams_primitives",
           "name": "Advanced Async Patterns, Streams & Concurrency Primitives",
           "tag": "advanced",
-          "description": "Work with the `Stream` trait, advanced asynchronous I/O operations, managing multiple futures concurrently (`tokio::join!`, `tokio::select!`). Build resilient async applications, understand backpressure strategies, and utilize async primitives like one-shot and broadcast channels, and semaphores.",
+          "description": "Implement resilient async communication patterns: handling cancellation safety inside `tokio::select!` (preventing data loss from dropped futures), asynchronous streaming with `futures::Stream`, bounded MPSC channels (`tokio::sync::mpsc`), broadcast channels for pub/sub, and controlling concurrency limits using `tokio::sync::Semaphore`.",
           "resources": [
             {
               "title": "Tokio Documentation - Advanced Topics",
@@ -391,15 +411,19 @@
               "url": "/data/docs/rust_developer/rust_advanced_async_streams_primitives.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 42
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 20
     },
     {
       "id": "rust_building_applications",
       "name": "Building Practical Applications (CLI & Web)",
       "tag": "essential",
-      "description": "Apply Rust fundamentals and concurrency skills to build robust command-line tools and scalable web services, leveraging popular crates and industry best practices.",
+      "description": "Engineer production-grade CLIs and web services: command-line tools with `clap`, asynchronous web services with Axum, compile-time SQL verification with `sqlx`, and gRPC APIs with Tonic.",
       "resources": [
         {
           "title": "Command Line Applications in Rust",
@@ -427,7 +451,7 @@
           "id": "rust_cli_development",
           "name": "Robust Command-Line Interface (CLI) Development",
           "tag": "essential",
-          "description": "Develop professional CLIs using `clap` for argument parsing, handle file I/O, environment variables, integrate logging (`env_logger`, `tracing`), and produce self-contained binaries. Explore input validation, user interaction (`dialoguer`), progress bars (`indicatif`), and proper exit codes.",
+          "description": "Build enterprise command-line utilities: structured argument parsing with `clap` derive mode, POSIX signal interception (`tokio::signal::ctrl_c`), terminal progress visualization with `indicatif`, color diagnostics with `color-eyre`, and packaging static, standalone binaries compiled against `x86_64-unknown-linux-musl`.",
           "resources": [
             {
               "title": "clap Documentation",
@@ -454,13 +478,15 @@
               "url": "/data/docs/rust_developer/rust_cli_development.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "rust_web_service_development",
           "name": "Web Service Development with Frameworks",
           "tag": "essential",
-          "description": "Build RESTful APIs and web applications using modern async web frameworks like Axum or Actix-web. Learn routing, middleware, state management, request/response handling, dependency injection, and advanced features for building scalable services. Briefly explore other frameworks like Warp or Rocket.",
+          "description": "Engineer high-performance web microservices using Axum: composing modular middleware with Tower (`Service`, `Layer`), type-safe request extractors (Path, Query, Json, State), shared state using `Arc<AppState>`, CORS, request timeout layers, and graceful shutdown coordination with OS process signals.",
           "resources": [
             {
               "title": "Axum Documentation",
@@ -487,13 +513,15 @@
               "url": "/data/docs/rust_developer/rust_web_service_development.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "rust_database_interaction_orms",
           "name": "Database Interaction and ORMs",
           "tag": "advanced",
-          "description": "Connect Rust applications to SQL (PostgreSQL, SQLite, MySQL) and NoSQL (MongoDB, Redis) databases. Explore async database drivers (`sqlx`, `tokio-postgres`, `mongodb`), connection pooling (`deadpool`, `r2d2`), migrations (`sqlx-cli`, `diesel_cli`), and transaction management. Understand ORM/query builder patterns (`diesel`).",
+          "description": "Master type-safe, compile-time verified database persistence: asynchronous PostgreSQL interaction with `sqlx`, utilizing compile-time query validation against live schemas (`query!`), connection pool configuration (`PgPoolOptions`), transactional integrity with automatic rollback on error, and automated database migrations.",
           "resources": [
             {
               "title": "SQLx User Guide",
@@ -520,13 +548,15 @@
               "url": "/data/docs/rust_developer/rust_database_interaction_orms.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "rust_api_design_auth_authz",
           "name": "API Design, Serialization, Authentication & Authorization",
           "tag": "advanced",
-          "description": "Design well-structured RESTful and gRPC APIs. Handle data serialization/deserialization with `serde` (JSON, YAML, Protobuf). Implement robust authentication (JWT, OAuth2) and authorization (RBAC) mechanisms. Cover API versioning, input validation, rate limiting, and OpenAPI/Swagger generation.",
+          "description": "Design production REST and gRPC services: ultra-fast binary serialization with `serde` and Protocol Buffers, building high-throughput gRPC services with Tonic, JWT authentication (Ed25519 / RS256 signature verification), role-based authorization middleware, and generating OpenAPI documentation with `utoipa`.",
           "resources": [
             {
               "title": "serde.rs Documentation",
@@ -553,13 +583,15 @@
               "url": "/data/docs/rust_developer/rust_api_design_auth_authz.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 52
         },
         {
           "id": "rust_data_processing_pipelines",
           "name": "Data Processing Pipelines & ETL",
           "tag": "advanced",
-          "description": "Develop applications for efficient batch and stream data processing. Learn to integrate with message queues (Kafka, RabbitMQ) using crates like `tokio-kafka` or `lapin`. Explore data transformation, aggregation, loading patterns, and strategies for handling large datasets with memory efficiency using crates like `csv`, `polars`.",
+          "description": "Engineer high-throughput data processing and ETL pipelines: columnar memory layout and SIMD processing with Apache Arrow / Polars, zero-copy memory-mapped file ingestion using `memmap2`, streaming Parquet/CSV parsing, and building robust Kafka / RabbitMQ consumer pipelines.",
           "resources": [
             {
               "title": "Tokio-kafka Crate",
@@ -586,13 +618,15 @@
               "url": "/data/docs/rust_developer/rust_data_processing_pipelines.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 55
         },
         {
           "id": "rust_project_data_processing_tool",
           "name": "Project: Data Processing CLI & Web API",
           "tag": "essential",
-          "description": "Build an application that processes data (e.g., CSV, JSON, Parquet), exposing both a CLI for file processing and a web API for real-time queries. Focus on robust error handling, comprehensive testing, performance optimization, and clean architecture.",
+          "description": "Project: Build a high-throughput streaming log parser and metrics aggregation service: command-line interface for local batch ingestion, Axum HTTP streaming API, regex/grok parsing compiled at startup, memory-efficient bounded channel processing, and Prometheus metric export.",
           "resources": [
             {
               "title": "Rust Tutorial Full Course (Derek Banas)",
@@ -609,15 +643,19 @@
               "url": "/data/docs/rust_developer/rust_project_data_processing_tool.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 53
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 19
     },
     {
       "id": "rust_systems_performance_interop",
       "name": "Systems Programming, Performance & Interop",
       "tag": "advanced",
-      "description": "Delve into low-level programming with Rust, focusing on performance optimization, advanced memory management, interaction with C/C++, and building high-efficiency components and system tools.",
+      "description": "Master systems-level engineering: unsafe Rust, Foreign Function Interface (FFI) bindings, hardware cache optimization, Linux system calls, and `#![no_std]` embedded development.",
       "resources": [
         {
           "title": "Rust Performance Book",
@@ -645,7 +683,7 @@
           "id": "rust_unsafe_ffi_low_level_primitives",
           "name": "Unsafe Rust, FFI & Low-Level Primitives",
           "tag": "advanced",
-          "description": "Understand the `unsafe` keyword, raw pointers, `static mut`, `extern ",
+          "description": "Master Unsafe Rust and C interoperability: raw pointers (`*const T`, `*mut T`), pointer arithmetic, dereferencing, avoiding undefined behavior (aliasing violations, unaligned reads), Foreign Function Interface (FFI) with C libraries using `bindgen` and `cbindgen`, and encapsulating unsafe invariants inside sound, ergonomic safe Rust abstractions.",
           "resources": [
             {
               "title": "The Rustonomicon",
@@ -667,13 +705,15 @@
               "url": "/data/docs/rust_developer/rust_unsafe_ffi_low_level_primitives.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "rust_advanced_memory_perf_profiling",
           "name": "Advanced Memory Layout, Performance & Profiling",
           "tag": "advanced",
-          "description": "Explore `no_std`, `alloc` crates, cache locality, SIMD intrinsics, vectorization, `const` generics, and compile-time optimizations. Use profiling tools (`perf`, `dhat-rs`, `cargo-callgrind`), benchmarking (`Criterion`), and flamegraphs to identify and resolve performance bottlenecks.",
+          "description": "Optimize memory layout and CPU throughput: struct field alignment and layout attributes (`#[repr(C)]`, `#[repr(align(64))]`), SIMD vectorization with portable SIMD (`std::simd`), identifying bottlenecks using `cargo-flamegraph` and Linux `perf`, and rigorous statistical benchmarking with `Criterion.rs`.",
           "resources": [
             {
               "title": "dhat-rs Crate",
@@ -700,13 +740,15 @@
               "url": "/data/docs/rust_developer/rust_advanced_memory_perf_profiling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 52
         },
         {
           "id": "rust_os_interaction_high_perf_io",
           "name": "Operating System Interactions & High-Performance I/O",
           "tag": "advanced",
-          "description": "Interact directly with the operating system using `libc` or `std::os` extensions for advanced file operations (`mmap`), efficient sockets, and inter-process communication (IPC). Understand event loops (`epoll`, `kqueue`) via crates like `mio` or `polling` to build high-performance network applications.",
+          "description": "Master low-level OS I/O in Rust: direct system calls using `nix` or `libc`, non-blocking event loops using `mio`, zero-copy network transfer using `splice` and `sendfile`, and asynchronous kernel ring buffer I/O with `tokio-uring`.",
           "resources": [
             {
               "title": "mio Crate Documentation",
@@ -728,13 +770,15 @@
               "url": "/data/docs/rust_developer/rust_os_interaction_high_perf_io.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 52
         },
         {
           "id": "rust_embedded_nostd_development",
           "name": "Embedded Rust & `no_std` Development",
           "tag": "advanced",
-          "description": "Explore the Rust ecosystem for embedded systems, cross-compilation, target support, `no_std` and `no_main` environments. Understand Hardware Abstraction Layers (HALs), device drivers, real-time operating systems (RTOS) in Rust, and communication protocols (I2C, SPI, UART).",
+          "description": "Explore bare-metal systems and `#![no_std]` programming: cross-compiling for embedded targets (ARM Cortex-M, RISC-V), Hardware Abstraction Layers (HALs), managing memory without a global allocator, volatile register reads/writes, and handling hardware interrupts safely.",
           "resources": [
             {
               "title": "The Embedded Rust Book",
@@ -756,15 +800,19 @@
               "url": "/data/docs/rust_developer/rust_embedded_nostd_development.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 25
     },
     {
       "id": "rust_quality_deployment",
       "name": "Testing, Quality Assurance & Deployment",
       "tag": "advanced",
-      "description": "Ensure the reliability, correctness, and maintainability of Rust applications through comprehensive testing, robust CI/CD pipelines, and best practices for deployment in production environments.",
+      "description": "Enforce enterprise reliability, correctness, and operational visibility: testing matrices, fuzzing, automated CI/CD release engineering, and distributed OpenTelemetry tracing.",
       "resources": [
         {
           "title": "Rust Testing Chapter (The Book)",
@@ -797,7 +845,7 @@
           "id": "rust_comprehensive_testing_strategies",
           "name": "Comprehensive Testing: Unit, Integration & E2E",
           "tag": "essential",
-          "description": "Write thorough unit tests (`#[test]`, `#[cfg(test)]`), integration tests (separate `tests` directory), and end-to-end tests. Learn to mock dependencies (`mockall`), explore property-based testing (`proptest`), and understand different test harnesses. Practice writing idiomatic and effective tests.",
+          "description": "Implement exhaustive automated testing in Rust: unit tests with `#[test]`, integration tests in `tests/`, property-based generative testing using `proptest`, interface mocking with `mockall`, and multi-container integration testing using Testcontainers-rs.",
           "resources": [
             {
               "title": "proptest Crate",
@@ -824,13 +872,15 @@
               "url": "/data/docs/rust_developer/rust_comprehensive_testing_strategies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "rust_benchmarking_fuzzing_coverage",
           "name": "Benchmarking, Fuzzing & Code Coverage",
           "tag": "advanced",
-          "description": "Use `criterion.rs` for performance benchmarks, interpret results, and apply fuzz testing (`cargo-fuzz`) to discover edge-case vulnerabilities and bugs. Integrate code coverage tools like `grcov` to analyze test thoroughness and identify untested code paths. Learn about profiling and flamegraphs for optimization.",
+          "description": "Run statistical benchmarks and coverage-guided fuzz testing: detecting performance regressions with `criterion`, fuzzing untrusted inputs for panics and memory violations using `cargo-fuzz` (libFuzzer), and tracking line/branch coverage with `cargo-llvm-cov`.",
           "resources": [
             {
               "title": "Criterion Benchmarking",
@@ -857,13 +907,15 @@
               "url": "/data/docs/rust_developer/rust_benchmarking_fuzzing_coverage.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "rust_ci_cd_release_automation",
           "name": "CI/CD, Release Management & Automation",
           "tag": "advanced",
-          "description": "Set up continuous integration and deployment pipelines using GitHub Actions, GitLab CI, or Jenkins. Automate builds, tests, linting (`clippy`), code formatting (`rustfmt`), security scanning (`cargo audit`), cross-compilation, and binary releases (Docker images, self-contained binaries, crates.io publishing).",
+          "description": "Build enterprise GitHub Actions pipelines for Rust: caching Cargo build artifacts with `swatinem/rust-cache`, enforcing Clippy and formatting checks, scanning crate dependencies for known CVEs using `cargo audit`, multi-architecture cross-compilation with `cross` / `cargo-zigbuild`, and creating ultra-minimal scratch Docker deployment images.",
           "resources": [
             {
               "title": "Rust GitHub Actions",
@@ -890,13 +942,15 @@
               "url": "/data/docs/rust_developer/rust_ci_cd_release_automation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 43
         },
         {
           "id": "rust_observability_logging_metrics_tracing",
           "name": "Observability: Logging, Metrics & Tracing",
           "tag": "advanced",
-          "description": "Integrate logging libraries (`tracing`, `log`), structured logging, and event-based systems. Implement metrics collection (Prometheus, OpenTelemetry) and distributed tracing for monitoring and debugging Rust applications effectively in production environments. Understand how to instrument code for better visibility.",
+          "description": "Implement production-grade observability: structured async instrumented tracing with `tracing` and `tracing-subscriber`, exporting spans to OpenTelemetry / Jaeger, collecting Prometheus metrics, and propagating trace context across distributed microservices.",
           "resources": [
             {
               "title": "tracing Crate Documentation",
@@ -923,13 +977,15 @@
               "url": "/data/docs/rust_developer/rust_observability_logging_metrics_tracing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 52
         },
         {
           "id": "rust_project_distributed_service",
           "name": "Capstone Project: High-Availability Distributed Service",
           "tag": "advanced",
-          "description": "Build a multi-component distributed service (e.g., a message queue, a real-time analytics backend, or a high-traffic microservice) applying all learned concepts: async, database interaction, extensive testing, performance optimization, CI/CD, and containerized deployment. Focus on resilience, scalability, and observability.",
+          "description": "Capstone Project: Architect and deploy a high-availability, distributed Raft consensus key-value cluster in Rust: Tokio async runtime, Tonic gRPC inter-node replication, log compaction, snapshotting, leader election, and sub-millisecond read/write latency with complete crash-recovery testing.",
           "resources": [
             {
               "title": "Rust Programming Full Course (freeCodeCamp)",
@@ -946,9 +1002,14 @@
               "url": "/data/docs/rust_developer/rust_project_distributed_service.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 73
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 31
     }
-  ]
+  ],
+  "total_exp": 1000
 }

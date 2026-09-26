@@ -47,26 +47,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Production Multi-Tenant Kubernetes Cluster with GitOps",
+        "title": "Production Multi-Tenant Kubernetes Platform with Cilium eBPF & GitOps",
         "tech_stack": [
-          "Kubernetes",
+          "Kubernetes 1.30",
           "Cilium CNI",
           "ArgoCD",
-          "Helm",
+          "OPA Gatekeeper",
           "Prometheus"
         ],
-        "description": "Deploy a production-ready Kubernetes cluster featuring Cilium network policies, mutual TLS via service mesh, and automated GitOps sync."
+        "description": "Architect an enterprise multi-tenant Kubernetes platform enforcing strict eBPF network policies, OPA admission control, and zero-trust mutual TLS service meshing."
       },
       {
-        "title": "Production Multi-Tenant Kubernetes Cluster with GitOps & Calico",
+        "title": "Custom Kubernetes Operator for Automated Database Lifecycle & Backups",
         "tech_stack": [
-          "Kubernetes",
-          "Kustomize",
-          "Calico CNI",
-          "Cert-Manager",
-          "Vault"
+          "Go",
+          "Kubebuilder",
+          "Controller Runtime",
+          "Custom Resource Definitions (CRDs)",
+          "Helm"
         ],
-        "description": "Provision an enterprise Kubernetes cluster enforcing strict NetworkPolicies, automated TLS certificate rotation with Let's Encrypt, and Vault secret injection."
+        "description": "Develop a production Go operator managing custom database cluster resources, automated point-in-time snapshotting, and health-check reconciliation loops."
       }
     ],
     "certifications": [
@@ -74,10 +74,11 @@
       "Certified Kubernetes Security Specialist (CKS)"
     ],
     "interview_focus": [
-      "Etcd Quorum, Raft Consensus & Backup Restoration",
-      "Kubernetes Service Types (ClusterIP vs NodePort vs LoadBalancer)",
-      "Pod Eviction, QoS Classes & OOMKiller Behavior",
-      "Debugging CrashLoopBackOff & Pending Pod States"
+      "Kubernetes Control Plane Architecture (API Server, etcd quorum, Kube-Scheduler, Kube-Controller-Manager)",
+      "Kubelet Pod Lifecycle, Container Runtime Interface (CRI) & OOMKiller Mechanics",
+      "Kubernetes Networking Model (CNI Plugins, ClusterIP, NodePort, Ingress Controllers, eBPF)",
+      "Admission Controllers (Mutating vs Validating Webhooks) & Policy Enforcement (OPA/Kyverno)",
+      "Custom Resource Definitions (CRDs) & Operator Reconcile Loop Idempotency"
     ]
   },
   "format": "tree",
@@ -86,7 +87,7 @@
       "id": "kubernetes_engineer_foundational_skills",
       "name": "Foundational Skills for Kubernetes Engineers",
       "tag": "essential",
-      "description": "Establish a strong baseline in Linux system administration, networking, containerization, and version control, crucial for understanding and operating Kubernetes environments effectively.",
+      "description": "Establish an unshakeable cloud-native systems foundation: master Linux kernel isolation primitives (cgroups v2, namespaces), container networking mechanics (veth pairs, iptables, IPVS), OCI runtimes, and Kubernetes control plane architecture.",
       "resources": [
         {
           "title": "Kubernetes Tutorial for Beginners FULL COURSE (TechWorld with Nana)",
@@ -109,7 +110,7 @@
           "id": "kubernetes_engineer_linux_system_scripting",
           "name": "Linux System Internals & Shell Scripting",
           "tag": "essential",
-          "description": "Master essential Linux commands, process management, file systems, permissions, `systemd` for service management, `cgroups` and `namespaces` for resource isolation, and shell scripting for automation.",
+          "description": "Master Linux kernel internals for containerization: cgroups v2 for CPU and memory resource constraints (CFS bandwidth control, OOM killer triggers), namespaces (PID, network, mount, IPC, UTS, user), systemd service management, bash automation scripts, and kernel networking tuning via `sysctl` (`net.ipv4.ip_forward`, `bridge-nf-call-iptables`, `net.core.somaxconn`).",
           "resources": [
             {
               "title": "Linux Tutorial for Beginners: Learn Linux in 5 Days",
@@ -141,13 +142,15 @@
               "url": "/data/docs/kubernetes_engineer/kubernetes_engineer_linux_system_scripting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 27
         },
         {
           "id": "kubernetes_engineer_networking_deep_dive",
           "name": "Networking Essentials Deep Dive",
           "tag": "essential",
-          "description": "Understand the OSI model, TCP/IP stack, DNS resolution, routing, subnetting, firewall concepts (`iptables`, `nftables`), and network troubleshooting tools (`netstat`, `ss`, `tcpdump`).",
+          "description": "Master container networking from first principles: virtual ethernet (veth) pairs, Linux network bridges (`cbr0`), packet routing with iptables (PREROUTING, POSTROUTING, NAT tables) vs high-performance IPVS, overlay networks (VXLAN encapsulation, Geneve), CIDR IP subnet planning for Pods and Services, and DNS resolution workflows via CoreDNS.",
           "resources": [
             {
               "title": "TCP/IP Fundamentals",
@@ -174,13 +177,15 @@
               "url": "/data/docs/kubernetes_engineer/kubernetes_engineer_networking_deep_dive.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "kubernetes_engineer_docker_oci",
           "name": "Containerization with Docker & OCI Standards",
           "tag": "essential",
-          "description": "Learn to build, run, and manage Docker containers, understand Dockerfiles, images, layers, registries, volumes, networking, multi-stage builds, and the Open Container Initiative (OCI) standards.",
+          "description": "Master Open Container Initiative (OCI) standards: Container Runtime Interface (CRI) implementations (containerd, CRI-O), low-level runtimes (`runc`, `crun`), authoring hardened multi-stage Dockerfiles, minimizing layer count and image attack surfaces, non-root user security enforcement, and signing container images with Cosign.",
           "resources": [
             {
               "title": "Docker Deep Dive Course",
@@ -212,13 +217,15 @@
               "url": "/data/docs/kubernetes_engineer/kubernetes_engineer_docker_oci.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 33
         },
         {
           "id": "kubernetes_engineer_git_version_control",
           "name": "Git and Version Control",
           "tag": "essential",
-          "description": "Master basic Git commands, branching strategies, merging, rebasing, and collaborative workflows using platforms like GitHub, GitLab, or Bitbucket.",
+          "description": "Apply disciplined Git workflows for infrastructure-as-code and GitOps: multi-environment repository structuring (base and overlays), commit signing with GPG, semantic versioning, and managing declarative manifest repositories with automated PR validation.",
           "resources": [
             {
               "title": "Getting Started with Git",
@@ -245,13 +252,15 @@
               "url": "/data/docs/kubernetes_engineer/kubernetes_engineer_git_version_control.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 20
         },
         {
           "id": "kubernetes_engineer_k8s_core_architecture",
           "name": "Kubernetes Core Concepts & Architecture",
           "tag": "essential",
-          "description": "Understand the Kubernetes control plane (API Server, etcd, Kube-scheduler, Kube-controller-manager) and worker nodes (Kubelet, Kube-proxy, Container Runtime), and the declarative nature of Kubernetes.",
+          "description": "Deep dive into Kubernetes control plane and node architecture: `kube-apiserver` (authentication, authorization, mutating/validating admission webhooks), `etcd` distributed key-value store (Raft consensus, quorum, snapshotting, compaction), `kube-scheduler` (filtering, scoring, node affinity, taints/tolerations), `kube-controller-manager` reconciliation loops, and worker node components (`kubelet` sync loop, `kube-proxy`, CRI runtime).",
           "resources": [
             {
               "title": "Kubernetes Documentation: Core Concepts",
@@ -278,13 +287,15 @@
               "url": "/data/docs/kubernetes_engineer/kubernetes_engineer_k8s_core_architecture.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         },
         {
           "id": "kubernetes_engineer_local_dev_kubectl",
           "name": "Local Kubernetes Development & kubectl Mastery",
           "tag": "essential",
-          "description": "Set up a local Kubernetes environment (Minikube, Kind, k3s) and master `kubectl` for interacting with clusters, including applying manifests, inspecting resources, and managing contexts.",
+          "description": "Master local cluster development and advanced `kubectl` operations: spinning up lightweight local multi-node clusters with KinD (Kubernetes in Docker) and k3d, `kubectl` output parsing (`-o jsonpath`, custom-columns), context management with `kubectx`/`kubens`, imperative debugging commands, and declarative dry-run diffing (`kubectl apply --dry-run=server --diff`).",
           "resources": [
             {
               "title": "kubectl Cheatsheet",
@@ -316,15 +327,19 @@
               "url": "/data/docs/kubernetes_engineer/kubernetes_engineer_local_dev_kubectl.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 23
     },
     {
       "id": "kubernetes_engineer_app_deployment",
       "name": "Kubernetes Application Deployment and Management",
       "tag": "essential",
-      "description": "Learn to define, deploy, and manage stateless and stateful applications using core Kubernetes objects, package managers, and advanced scaling techniques.",
+      "description": "Deploy and orchestrate enterprise workloads: manage stateful and stateless applications, service discovery, configuration decoupling, persistent storage, packaging with Helm, and autoscaling.",
       "resources": [
         {
           "title": "Kubernetes CKA Full Course (KodeKloud)",
@@ -347,7 +362,7 @@
           "id": "kubernetes_engineer_workload_management",
           "name": "Workload Management: Pods, Deployments, StatefulSets, DaemonSets, Jobs",
           "tag": "essential",
-          "description": "Deep dive into Pods (lifecycle, Init Containers, Ephemeral Containers), Deployments (ReplicaSets, rolling updates, rollbacks, deployment strategies), StatefulSets (stable identity, ordered operations, persistent storage), DaemonSets (node-specific agents), and Jobs/CronJobs for batch processing.",
+          "description": "Master workload primitives and lifecycle management: Pod lifecycle phases and conditions, pre-stop hooks and graceful shutdown (`terminationGracePeriodSeconds`), Deployments (rolling updates, rollback strategies, `maxSurge` / `maxUnavailable`), StatefulSets (stable network identities, headless Services, ordered deployment, `volumeClaimTemplates`), DaemonSets for node-level agents, and Jobs/CronJobs for batch processing.",
           "resources": [
             {
               "title": "Kubernetes Deployments",
@@ -379,13 +394,15 @@
               "url": "/data/docs/kubernetes_engineer/kubernetes_engineer_workload_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 20
         },
         {
           "id": "kubernetes_engineer_service_discovery",
           "name": "Service Discovery and Load Balancing",
           "tag": "essential",
-          "description": "Understand different Service types (ClusterIP, NodePort, LoadBalancer, ExternalName), how Ingress works with Ingress Controllers for external access, and CoreDNS for in-cluster service discovery.",
+          "description": "Master Kubernetes service networking and traffic routing: Service types (ClusterIP, NodePort, LoadBalancer, ExternalName), headless services for stateful peering, CoreDNS customization, Ingress Controllers (NGINX Ingress, Traefik), SSL/TLS termination with Cert-Manager, and next-generation Kubernetes Gateway API.",
           "resources": [
             {
               "title": "Kubernetes Services",
@@ -417,13 +434,15 @@
               "url": "/data/docs/kubernetes_engineer/kubernetes_engineer_service_discovery.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "kubernetes_engineer_config_secrets",
           "name": "Configuration, Secrets, and Resource Management",
           "tag": "essential",
-          "description": "Manage application configuration with ConfigMaps, handle sensitive data with Secrets (including best practices for security), and apply resource management with Resource Quotas and Limit Ranges.",
+          "description": "Manage application configuration and sensitive credentials: immutable ConfigMaps, Secret types (Opaque, TLS, dockerconfigjson), integrating external secret management systems (External Secrets Operator syncing from AWS Secrets Manager / HashiCorp Vault), and enforcing resource governance using ResourceQuotas and LimitRanges.",
           "resources": [
             {
               "title": "Managing Resources for Containers",
@@ -445,13 +464,15 @@
               "url": "/data/docs/kubernetes_engineer/kubernetes_engineer_config_secrets.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "kubernetes_engineer_persistent_storage",
           "name": "Persistent Storage in Kubernetes",
           "tag": "essential",
-          "description": "Learn to persist data using Persistent Volumes (PVs), Persistent Volume Claims (PVCs), and Storage Classes for dynamic provisioning. Understand different access modes, volume types, and CSI drivers.",
+          "description": "Orchestrate persistent state in Kubernetes: PersistentVolumes (PV), PersistentVolumeClaims (PVC), StorageClasses for dynamic volume provisioning, access modes (ReadWriteOnce, ReadWriteMany, ReadOnlyMany), volume reclaim policies (Retain, Delete), Container Storage Interface (CSI) drivers, and volume expansion and snapshotting.",
           "resources": [
             {
               "title": "Persistent Volumes in Kubernetes",
@@ -478,13 +499,15 @@
               "url": "/data/docs/kubernetes_engineer/kubernetes_engineer_persistent_storage.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "kubernetes_engineer_helm_packaging",
           "name": "Application Packaging with Helm",
           "tag": "essential",
-          "description": "Learn to use Helm for templating and managing Kubernetes applications, including creating custom charts, managing releases, and using public repositories. Understand chart structure, values, and dependencies.",
+          "description": "Master application packaging with Helm 3: authoring production Helm charts, Go template functions and control structures, validating values with JSON schema (`values.schema.json`), managing chart dependencies, implementing Helm lifecycle hooks (pre-install, post-upgrade), and publishing charts to OCI registries.",
           "resources": [
             {
               "title": "Helm Official Documentation",
@@ -506,13 +529,15 @@
               "url": "/data/docs/kubernetes_engineer/kubernetes_engineer_helm_packaging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "kubernetes_engineer_scaling_autoscaling",
           "name": "Scaling and Autoscaling Applications",
           "tag": "essential",
-          "description": "Explore manual scaling and automated scaling strategies using Horizontal Pod Autoscaler (HPA) based on resource metrics and custom metrics, Vertical Pod Autoscaler (VPA) for resource recommendations, and Pod Disruption Budgets (PDBs) for maintaining application availability.",
+          "description": "Implement multi-dimensional autoscaling: Horizontal Pod Autoscaler (HPA v2) scaling on CPU, memory, and custom Prometheus metrics via KEDA (Kubernetes Event-driven Autoscaling), Vertical Pod Autoscaler (VPA) in recommendation mode, Karpenter for high-speed just-in-time cloud node provisioning, and configuring Pod Disruption Budgets (PDB) to safeguard high availability during node drains.",
           "resources": [
             {
               "title": "Horizontal Pod Autoscaler",
@@ -544,13 +569,15 @@
               "url": "/data/docs/kubernetes_engineer/kubernetes_engineer_scaling_autoscaling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 27
         },
         {
           "id": "kubernetes_engineer_app_debugging",
           "name": "Debugging and Troubleshooting Applications",
           "tag": "essential",
-          "description": "Develop skills in identifying and resolving issues in Kubernetes applications using `kubectl` commands like `logs`, `describe`, `events`, and `exec`. Understand the importance of Liveness, Readiness, and Startup Probes for application health.",
+          "description": "Diagnose and resolve application failures systematically: analyzing Pod termination reasons (OOMKilled, CrashLoopBackOff, Error), inspecting logs (`kubectl logs -f --previous`), cluster event auditing, troubleshooting container crashes using ephemeral debug containers (`kubectl debug`), and configuring robust Liveness, Readiness, and Startup Probes to prevent traffic routing to unready pods.",
           "resources": [
             {
               "title": "Troubleshooting Applications",
@@ -577,15 +604,19 @@
               "url": "/data/docs/kubernetes_engineer/kubernetes_engineer_app_debugging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 21
     },
     {
       "id": "kubernetes_engineer_production_ops",
       "name": "Advanced Operations, Security, and Ecosystem",
       "tag": "advanced",
-      "description": "Learn best practices for running and securing Kubernetes clusters in production, focusing on advanced security, comprehensive observability, automation, maintenance, and extending Kubernetes capabilities.",
+      "description": "Operate enterprise Kubernetes clusters at scale: zero-trust cluster security, GitOps continuous delivery, eBPF networking, service meshes, custom controllers, disaster recovery, and chaos engineering.",
       "resources": [
         {
           "title": "Certified Kubernetes Administrator (CKA) Course",
@@ -618,7 +649,7 @@
           "id": "kubernetes_engineer_security_best_practices",
           "name": "Kubernetes Security Best Practices",
           "tag": "essential",
-          "description": "Implement robust security measures: Authentication (x509, Service Accounts, OIDC), Authorization (RBAC), Pod Security Standards (PSS), Network Policies, Admission Controllers, image security (scanning, trusted registries, supply chain security), and runtime security tools (Falco, AppArmor, Seccomp).",
+          "description": "Harden Kubernetes clusters against attacks: enforcing Pod Security Standards (Privileged, Baseline, Restricted) via Pod Security Admission, Role-Based Access Control (RBAC with least-privilege ServiceAccounts), NetworkPolicies (default-deny ingress and egress), image scanning with Trivy, runtime anomaly detection with Falco (eBPF syscall auditing), and declarative policy enforcement using Kyverno or OPA Gatekeeper.",
           "resources": [
             {
               "title": "Kubernetes RBAC Explained",
@@ -655,13 +686,15 @@
               "url": "/data/docs/kubernetes_engineer/kubernetes_engineer_security_best_practices.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "kubernetes_engineer_observability",
           "name": "Observability: Monitoring, Logging, Tracing",
           "tag": "essential",
-          "description": "Set up and manage comprehensive observability stacks. Implement monitoring with Prometheus and Grafana for metrics and alerting, centralized logging solutions (Fluentd/Fluent Bit, Loki, ELK Stack), and distributed tracing with OpenTelemetry, Jaeger, or Zipkin.",
+          "description": "Deploy and maintain enterprise observability: deploying Prometheus Operator (kube-prometheus-stack), configuring custom ServiceMonitors and PodMonitors, authoring PromQL alerting rules, visualizing cluster performance in Grafana, aggregating logs with Fluent Bit / Vector to Grafana Loki, and distributed tracing using OpenTelemetry and Tempo.",
           "resources": [
             {
               "title": "Centralized Logging with ELK Stack on Kubernetes",
@@ -688,13 +721,15 @@
               "url": "/data/docs/kubernetes_engineer/kubernetes_engineer_observability.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 33
         },
         {
           "id": "kubernetes_engineer_ci_cd_gitops",
           "name": "CI/CD & GitOps with Kubernetes",
           "tag": "advanced",
-          "description": "Integrate Kubernetes with modern CI/CD pipelines (e.g., GitHub Actions, GitLab CI, Jenkins, Tekton). Explore GitOps principles using tools like Argo CD or Flux CD for declarative cluster management and automated deployments (Canary, Blue/Green).",
+          "description": "Implement enterprise GitOps pipelines: automated declarative continuous delivery with Argo CD or Flux CD, managing multi-tenant repositories, automated drift detection and self-healing, and advanced progressive delivery using Argo Rollouts (Canary and Blue/Green deployments with automated metrics analysis).",
           "resources": [
             {
               "title": "Introduction to GitOps with Argo CD",
@@ -721,13 +756,15 @@
               "url": "/data/docs/kubernetes_engineer/kubernetes_engineer_ci_cd_gitops.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         },
         {
           "id": "kubernetes_engineer_advanced_networking_mesh",
           "name": "Kubernetes Networking Deep Dive & Service Mesh",
           "tag": "advanced",
-          "description": "Gain a deeper understanding of CNI plugins (Calico, Cilium, Flannel), advanced Ingress configurations with various Ingress Controllers and API Gateways, and the principles and implementation of Service Meshes (Istio, Linkerd) for traffic management, security (mTLS), and observability.",
+          "description": "Master advanced cloud-native networking: eBPF-powered CNI with Cilium (replacing kube-proxy with eBPF for high-throughput routing, XDP acceleration, and Layer 7 network security), and deploying Service Meshes (Istio or Linkerd) for transparent mutual TLS (mTLS), traffic splitting, and distributed fault injection.",
           "resources": [
             {
               "title": "Understanding Kubernetes Networking: Pods, Services, and CNI",
@@ -759,13 +796,15 @@
               "url": "/data/docs/kubernetes_engineer/kubernetes_engineer_advanced_networking_mesh.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 62
         },
         {
           "id": "kubernetes_engineer_cloud_k8s_services",
           "name": "Cloud Provider Kubernetes Services (EKS, AKS, GKE)",
           "tag": "advanced",
-          "description": "Explore the features, management, and cost implications of managed Kubernetes offerings like AWS EKS, Azure AKS, and Google GKE. Understand their integrations with cloud provider-specific services (IAM, Load Balancers, Storage) and strategies for hybrid/multi-cloud deployments.",
+          "description": "Architect and operate managed cloud Kubernetes: AWS EKS, Google Cloud GKE, and Azure AKS. Implementing cloud IAM identity federation (AWS IRSA / EKS Pod Identities, GCP Workload Identity), managed node group lifecycles, Spot instance cost optimization with graceful termination handling, and integrating cloud load balancer controllers (AWS Load Balancer Controller).",
           "resources": [
             {
               "title": "Amazon EKS Documentation",
@@ -797,13 +836,15 @@
               "url": "/data/docs/kubernetes_engineer/kubernetes_engineer_cloud_k8s_services.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         },
         {
           "id": "kubernetes_engineer_operators_crds",
           "name": "Kubernetes Operators & Custom Resource Definitions (CRDs)",
           "tag": "advanced",
-          "description": "Understand how to extend the Kubernetes API with Custom Resource Definitions (CRDs) and implement the Operator pattern to automate complex application lifecycle management, including using existing Operators and an introduction to tools like Operator SDK or Kubebuilder.",
+          "description": "Extend the Kubernetes API: authoring Custom Resource Definitions (CRDs) with OpenAPI v3 schema validation, writing custom Kubernetes Operators in Go using Kubebuilder and Operator SDK, implementing the controller reconciliation loop, watching resources with Informers and Caches, and managing stateful application lifecycles automatically.",
           "resources": [
             {
               "title": "Extend the Kubernetes API with CustomResources",
@@ -830,13 +871,15 @@
               "url": "/data/docs/kubernetes_engineer/kubernetes_engineer_operators_crds.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 47
         },
         {
           "id": "kubernetes_engineer_cluster_maint_dr",
           "name": "Cluster Management: Upgrades, Backup, & Disaster Recovery",
           "tag": "advanced",
-          "description": "Learn about the Kubernetes cluster lifecycle, upgrade strategies, patching, and maintenance. Implement robust backup and restore solutions (Velero, etcd backup), ensure high availability for control plane and worker nodes, and plan for disaster recovery, including multi-cluster management strategies.",
+          "description": "Manage cluster lifecycle and disaster recovery: zero-downtime cluster version upgrades (`kubeadm upgrade`, node cordoning and draining), performing `etcd` snapshot backups and disaster recovery restorations, node OS patching, and implementing whole-cluster multi-region backups with Velero.",
           "resources": [
             {
               "title": "Upgrading Kubernetes Clusters",
@@ -868,13 +911,15 @@
               "url": "/data/docs/kubernetes_engineer/kubernetes_engineer_cluster_maint_dr.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         },
         {
           "id": "kubernetes_engineer_performance_cost",
           "name": "Performance Tuning & Cost Optimization",
           "tag": "advanced",
-          "description": "Optimize Kubernetes cluster and application performance through careful tuning of resource requests and limits. Implement cost optimization strategies using Cluster Autoscaler, Karpenter (node auto-provisioning), VPA in recommendation mode, and apply FinOps principles to manage cloud spend.",
+          "description": "Optimize cluster performance and cloud infrastructure costs: tuning node kernel parameters, setting optimal resource requests to prevent CPU throttling and eliminate OOMKills, implementing right-sizing recommendations with Goldilocks, and monitoring cloud infrastructure spend with Kubecost.",
           "resources": [
             {
               "title": "Kubernetes Cost Optimization Best Practices",
@@ -906,13 +951,15 @@
               "url": "/data/docs/kubernetes_engineer/kubernetes_engineer_performance_cost.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         },
         {
           "id": "kubernetes_engineer_advanced_troubleshooting_chaos",
           "name": "Advanced Troubleshooting & Chaos Engineering",
           "tag": "advanced",
-          "description": "Develop advanced skills in diagnosing complex cluster and application issues, including network, control plane, and storage problems. Utilize tools like `strace` and `nsenter` for deep inspection. Understand and apply Chaos Engineering principles with tools like Litmus Chaos to build more resilient systems and conduct effective post-mortems.",
+          "description": "Troubleshoot complex cluster outages and inject chaos: debugging node `NotReady` conditions, CNI IP exhaustion, etcd split-brain quorum loss, inspecting network traffic inside pod namespaces with `nsenter` and `tcpdump`, and conducting proactive Chaos Engineering experiments with Chaos Mesh or LitmusChaos.",
           "resources": [
             {
               "title": "Incident Management Best Practices",
@@ -939,15 +986,19 @@
               "url": "/data/docs/kubernetes_engineer/kubernetes_engineer_advanced_troubleshooting_chaos.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 49
     },
     {
       "id": "kubernetes_engineer_portfolio_career",
       "name": "Portfolio and Career Readiness",
       "tag": "advanced",
-      "description": "Translate your Kubernetes Engineer expertise into tangible proof through projects, case studies, and interview preparation to secure a role.",
+      "description": "Demonstrate production Kubernetes engineering mastery: build an enterprise-grade platform capstone, author real-world post-mortems, and excel in CKA/CKS scenario-based technical interviews.",
       "resources": [
         {
           "title": "Crafting a Compelling Tech Portfolio",
@@ -980,7 +1031,7 @@
           "id": "kubernetes_engineer_case_study",
           "name": "Case Study Writing",
           "tag": "advanced",
-          "description": "Document successful Kubernetes projects by detailing the problem, solution, technologies used, challenges faced, and measurable outcomes.",
+          "description": "Author professional engineering case studies: documenting a zero-downtime multi-cluster migration, a 40% cloud cost reduction initiative using Karpenter and Spot instances, or a production incident post-mortem detailing detection, mitigation, root cause, and preventative action items.",
           "resources": [
             {
               "title": "How to Write a Technical Case Study",
@@ -1002,13 +1053,15 @@
               "url": "/data/docs/kubernetes_engineer/kubernetes_engineer_case_study.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         },
         {
           "id": "kubernetes_engineer_project_capstone",
           "name": "Project: Kubernetes Engineer Portfolio Capstone",
           "tag": "advanced",
-          "description": "Build a comprehensive, production-ready Kubernetes project from scratch, demonstrating deployment, scaling, monitoring, and security best practices. Include a detailed README, diagrams, and deployment notes.",
+          "description": "Capstone Project: Architect and deploy an enterprise multi-tenant Kubernetes platform: automated GitOps with Argo CD, Cilium eBPF CNI, Kyverno security policies, Cert-Manager with automated Let's Encrypt TLS, Prometheus/Grafana monitoring, Argo Rollouts canary progressive delivery, and Velero automated backup to cloud object storage.",
           "resources": [
             {
               "title": "Awesome Kubernetes Projects for Learning",
@@ -1035,13 +1088,15 @@
               "url": "/data/docs/kubernetes_engineer/kubernetes_engineer_project_capstone.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 83
         },
         {
           "id": "kubernetes_engineer_mock_interviews",
           "name": "Mock Interviews and Technical Assessments",
           "tag": "advanced",
-          "description": "Practice technical interviews, whiteboard sessions, and scenario-based questions common for Kubernetes Engineer roles.",
+          "description": "Excel in Kubernetes engineering interviews: scenario-based troubleshooting under pressure (recovering crashed control planes, debugging broken CNI routing), system design of large-scale multi-tenant Kubernetes clusters, deep explanations of Kubernetes internals (etcd, scheduler, kubelet), and CKA/CKS exam preparation.",
           "resources": [
             {
               "title": "Cracking the Kubernetes Interview",
@@ -1063,9 +1118,14 @@
               "url": "/data/docs/kubernetes_engineer/kubernetes_engineer_mock_interviews.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 30
     }
-  ]
+  ],
+  "total_exp": 1000
 }

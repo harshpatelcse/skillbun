@@ -47,25 +47,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Enterprise Digital Transformation BRD & Process Overhaul",
-        "tech_stack": [
-          "BPMN (Lucidchart)",
-          "Jira",
-          "SQL",
-          "Confluence"
-        ],
-        "description": "Draft a comprehensive Business Requirements Document (BRD) and to-be process diagrams for transforming an analog loan approval system."
-      },
-      {
-        "title": "Digital Transformation Feasibility & Process Mining Spec",
+        "title": "Enterprise Digital Transformation BRD & Business Process Model",
         "tech_stack": [
           "BPMN 2.0",
-          "SQL",
           "Jira",
           "Confluence",
-          "Tableau"
+          "Lucidchart",
+          "Gap Analysis"
         ],
-        "description": "Deliver an executive business requirements document (BRD), user story map, and process flow simulation for migrating legacy ERP workflows to modern cloud architecture."
+        "description": "Author an exhaustive Business Requirements Document (BRD) and As-Is / To-Be process maps for a corporate ERP migration with stakeholder RACI matrices."
+      },
+      {
+        "title": "Data-Driven Process Mining & Customer Journey Analytics Audit",
+        "tech_stack": [
+          "Celonis",
+          "SQL",
+          "Power BI",
+          "Python",
+          "Value Stream Mapping"
+        ],
+        "description": "Execute a process mining audit on corporate procurement logs, pinpointing bottleneck stages, throughput variances, and automation ROI projections."
       }
     ],
     "certifications": [
@@ -73,10 +74,11 @@
       "PMI-PBA (Professional in Business Analysis)"
     ],
     "interview_focus": [
-      "Managing Conflicting Stakeholder Priorities",
-      "Writing Unambiguous Functional vs Non-Functional Requirements",
-      "Conducting a Comprehensive Gap Analysis",
-      "Using SQL to Validate Feasibility of Requirements"
+      "Requirements Elicitation Techniques (Workshops, Shadowing, Contextual Inquiry)",
+      "Functional vs Non-Functional Requirements (Performance, Security, Compliance)",
+      "BPMN 2.0 Syntax (Gateways, Pools, Lanes, Boundary Events) & Value Stream Mapping",
+      "User Story Writing & Acceptance Criteria (Gherkin Given-When-Then Syntax)",
+      "Change Management Models (ADKAR, Kotter) & Executive Stakeholder Conflict Resolution"
     ]
   },
   "format": "tree",
@@ -85,7 +87,7 @@
       "id": "ba_foundations_core",
       "name": "Foundational Business Analysis",
       "tag": "essential",
-      "description": "Establish a strong understanding of the Business Analysis profession, its core principles, roles, responsibilities, and key competencies. This module covers the foundational knowledge required to effectively bridge business needs with technological solutions and understand the business context.",
+      "description": "Master Business Analysis foundations: BABOK Guide knowledge areas, business architecture, requirements engineering, and stakeholder value creation.",
       "resources": [
         {
           "title": "IIBA Business Analysis Body of Knowledge (BABOK® Guide)",
@@ -113,7 +115,7 @@
           "id": "ba_core_concepts",
           "name": "Business Analysis Fundamentals & Methodologies",
           "tag": "essential",
-          "description": "Gain a deep understanding of the Business Analysis profession, its value proposition, and the core competencies defined by industry standards (e.g., IIBA BABOK® Guide). Explore various BA roles, their responsibilities across different organizational structures, and the distinct phases of the business analysis planning and monitoring knowledge area. Delve into predictive (waterfall) vs. adaptive (agile) lifecycles and the importance of ethical conduct.",
+          "description": "Understand business analysis methodologies: Business Analysis Core Concept Model (BACCM - Change, Need, Solution, Stakeholder, Value, Context), and project lifecycles.",
           "resources": [
             {
               "title": "Introduction to the BABOK Guide (IIBA)",
@@ -135,13 +137,15 @@
               "url": "/data/docs/business_analyst/ba_core_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 28
         },
         {
           "id": "ba_strategic_analysis",
           "name": "Strategic Business Analysis & Problem Definition",
           "tag": "essential",
-          "description": "Learn to interpret organizational strategy, understand business objectives, and align initiatives with overarching goals. Master strategic analysis frameworks such as SWOT, PESTLE, Porter's Five Forces, and Business Model Canvas. Develop robust problem-solving skills, including root cause analysis (e.g., 5 Whys, Fishbone diagrams, Pareto Analysis) and techniques for clearly defining the core business problem and desired outcomes before solutioning.",
+          "description": "Perform strategic business analysis: SWOT, PESTLE, root cause analysis (Fishbone / 5 Whys), current vs future state gap analysis, and building business cases.",
           "resources": [
             {
               "title": "SWOT Analysis Guide",
@@ -168,13 +172,15 @@
               "url": "/data/docs/business_analyst/ba_strategic_analysis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 35
         },
         {
           "id": "ba_stakeholder_management",
           "name": "Stakeholder Engagement & Communication",
           "tag": "essential",
-          "description": "Identify all relevant stakeholders, analyze their influence, interest, and impact using matrices like Power/Interest Grid or Salience Model. Develop comprehensive communication plans tailored to different stakeholder groups, master techniques for facilitating meetings, workshops, and presentations. Learn effective negotiation, conflict resolution, and expectation management to build strong relationships and ensure alignment.",
+          "description": "Manage stakeholder relationships: Stakeholder identification, RACI matrices, communication planning, and managing divergent stakeholder expectations.",
           "resources": [
             {
               "title": "Stakeholder Analysis Guide",
@@ -196,13 +202,15 @@
               "url": "/data/docs/business_analyst/ba_stakeholder_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 33
         },
         {
           "id": "ba_requirements_elicitation",
           "name": "Requirements Elicitation & Collaboration",
           "tag": "essential",
-          "description": "Master a diverse set of requirements elicitation techniques, including interviews (structured, unstructured), facilitated workshops (JAD sessions), brainstorming, document analysis (system manuals, policies), observation, prototyping, surveys, focus groups, and interface analysis. Focus on active listening, probing questions, and effective facilitation to uncover both stated and unstated needs from diverse stakeholder groups. Understand the importance of collaborative approaches.",
+          "description": "Execute requirements elicitation: Structured interviews, focus groups, requirements workshops, observation/job shadowing, and document analysis.",
           "resources": [
             {
               "title": "Requirements Gathering",
@@ -224,13 +232,15 @@
               "url": "/data/docs/business_analyst/ba_requirements_elicitation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 32
         },
         {
           "id": "ba_req_analysis_doc",
           "name": "Requirements Analysis, Documentation & Validation",
           "tag": "essential",
-          "description": "Learn to categorize, prioritize, and analyze different types of requirements: business, stakeholder, functional, non-functional (performance, security, usability), and transition requirements. Master various documentation formats including Business Requirements Documents (BRD), Software Requirements Specifications (SRS), Use Cases (including UML Use Case Diagrams), User Stories, and Business Rules. Understand the principles of clear, concise, and unambiguous writing. Learn to define acceptance criteria, conduct requirements validation techniques, and manage requirement traceability matrices to ensure completeness and correctness.",
+          "description": "Analyze and document requirements: Functional vs non-functional requirements (NFRs), business rules, traceability matrices (RTM), and validation criteria.",
           "resources": [
             {
               "title": "Use Case Diagram Tutorial",
@@ -252,15 +262,19 @@
               "url": "/data/docs/business_analyst/ba_req_analysis_doc.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 34
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 28
     },
     {
       "id": "ba_process_data_analytics",
       "name": "Business Process & Data Analytics",
       "tag": "essential",
-      "description": "Develop advanced analytical skills in understanding, modeling, and optimizing business processes and data flows. Learn to identify inefficiencies, propose measurable improvements, leverage data insights for informed decision-making, and contribute to data governance initiatives.",
+      "description": "Master business process modeling, relational databases, SQL queries, and interactive data visualization.",
       "resources": [
         {
           "title": "BPMN Tutorial for Beginners (The Agile Business Analyst)",
@@ -283,7 +297,7 @@
           "id": "ba_process_modeling_opt",
           "name": "Business Process Modeling & Optimization",
           "tag": "essential",
-          "description": "Master a range of process mapping and modeling techniques including flowcharts, swimlanes, SIPOC (Suppliers, Inputs, Process, Outputs, Customers), Value Stream Mapping, and Decision Trees. Gain proficiency in BPMN 2.0 (Business Process Model and Notation) for creating standard, executable process diagrams. Conduct thorough current-state ('As-Is') vs. future-state ('To-Be') analysis, identify bottlenecks, perform gap analysis, and propose data-driven process improvements using Lean and Six Sigma principles.",
+          "description": "Model business processes with BPMN 2.0: Process flowcharts, swimlane diagrams, identifying operational bottlenecks, and As-Is vs To-Be process optimization.",
           "resources": [
             {
               "title": "Lucidchart Process Mapping",
@@ -315,13 +329,15 @@
               "url": "/data/docs/business_analyst/ba_process_modeling_opt.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 34
         },
         {
           "id": "ba_data_fundamentals_db",
           "name": "Data Fundamentals & Database Concepts",
           "tag": "essential",
-          "description": "Understand core data concepts: data types, data structures, data quality dimensions (accuracy, completeness, consistency, timeliness), and the data lifecycle. Learn about relational database management systems (RDBMS), keys (primary, foreign), normalization, and fundamental database architecture concepts. Explore different data storage approaches (data warehouses, data marts, data lakes) and basic data governance principles.",
+          "description": "Master enterprise data concepts: Relational data models, Entity-Relationship Diagrams (ERD), primary/foreign keys, and data normalization (3NF).",
           "resources": [
             {
               "title": "Database Management System (DBMS) Concepts",
@@ -343,13 +359,15 @@
               "url": "/data/docs/business_analyst/ba_data_fundamentals_db.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 24
         },
         {
           "id": "ba_sql_for_ba",
           "name": "SQL for Business Analysts",
           "tag": "essential",
-          "description": "Develop practical SQL skills essential for data extraction and analysis. Learn to write complex queries involving SELECT, FROM, WHERE, GROUP BY, ORDER BY, HAVING clauses, and various types of JOINs (INNER, LEFT, RIGHT, FULL OUTER). Understand subqueries, common table expressions (CTEs), and basic aggregate functions to retrieve and manipulate data effectively from relational databases.",
+          "description": "Query business data with SQL: Multi-table JOINs, GROUP BY aggregations, window functions, subqueries, and extracting business insights from databases.",
           "resources": [
             {
               "title": "Mode SQL Tutorial",
@@ -366,13 +384,15 @@
               "url": "/data/docs/business_analyst/ba_sql_for_ba.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 33
         },
         {
           "id": "ba_data_analysis_viz",
           "name": "Data Analysis & Visualization Tools",
           "tag": "essential",
-          "description": "Gain proficiency in using data analysis and visualization tools. Master advanced features in Microsoft Excel (VLOOKUP/XLOOKUP, INDEX/MATCH, Pivot Tables, Power Query). Get hands-on with leading Business Intelligence (BI) tools like Power BI or Tableau to connect to data sources, create interactive dashboards, and design compelling visual reports. Focus on data storytelling to communicate insights effectively to stakeholders.",
+          "description": "Build business dashboards: Visualizing KPI trends, operational metrics, and executive summaries in Power BI, Tableau, or Excel advanced pivots.",
           "resources": [
             {
               "title": "Power BI for Beginners (Microsoft)",
@@ -399,13 +419,15 @@
               "url": "/data/docs/business_analyst/ba_data_analysis_viz.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 32
         },
         {
           "id": "ba_api_integration",
           "name": "Introduction to API & Integration Concepts",
           "tag": "essential",
-          "description": "Understand the fundamental concepts of Application Programming Interfaces (APIs) and how systems communicate. Learn about different types of APIs (REST, SOAP), common data formats (JSON, XML), and the basics of system integration to better define requirements for connected systems and digital solutions.",
+          "description": "Understand software integrations: REST APIs, JSON payloads, request/response headers, webhooks, and documenting system integration specifications.",
           "resources": [
             {
               "title": "What is an API? (MuleSoft)",
@@ -432,13 +454,15 @@
               "url": "/data/docs/business_analyst/ba_api_integration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 40
         },
         {
           "id": "ba_practice_process_data_flow",
           "name": "Practice Lab: Process & Data Flow Analysis",
           "tag": "advanced",
-          "description": "Hands-on exercise to analyze an existing business workflow, document its current state 'As-Is' using BPMN, identify gaps and inefficiencies, design an optimized future-state 'To-Be' process, and define the resulting data and requirement changes. Includes a basic SQL task to extract relevant data for process metrics.",
+          "description": "Practice Lab: Process and data flow analysis: Documenting a complex procurement process using BPMN swimlane diagrams and defining Data Flow Diagrams (DFD).",
           "resources": [
             {
               "title": "BPMN Tutorial for Beginners",
@@ -455,15 +479,19 @@
               "url": "/data/docs/business_analyst/ba_practice_process_data_flow.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 48
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 26
     },
     {
       "id": "ba_agile_solution_delivery",
       "name": "Agile Solution Delivery & Design",
       "tag": "essential",
-      "description": "Master the principles of Agile methodologies and effectively translate business requirements into actionable backlog items and solutions, ensuring smooth collaboration with development teams and successful product delivery.",
+      "description": "Deliver solutions in Agile environments: User story authoring, backlog refinement, wireframing, and acceptance testing.",
       "resources": [
         {
           "title": "Scrum Guide",
@@ -481,7 +509,7 @@
           "id": "ba_agile_principles",
           "name": "Agile Principles & Methodologies",
           "tag": "essential",
-          "description": "Explore the Agile Manifesto and its 12 principles. Gain an in-depth understanding of the Scrum framework, including roles (Product Owner, Scrum Master, Development Team), ceremonies (Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective), and artifacts (Product Backlog, Sprint Backlog, Increment). Learn the core principles of Kanban, Lean methodologies, and their applicability in different project contexts. Understand how the BA role adapts within agile teams.",
+          "description": "Apply Agile business analysis: Scrum and Kanban methodologies, user story mapping, incremental value delivery, and supporting the Product Owner.",
           "resources": [
             {
               "title": "What is Kanban? (Atlassian)",
@@ -498,13 +526,15 @@
               "url": "/data/docs/business_analyst/ba_agile_principles.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 32
         },
         {
           "id": "ba_user_stories_ac_gherkin",
           "name": "User Stories, Acceptance Criteria & Gherkin",
           "tag": "essential",
-          "description": "Master the art of writing effective user stories following the INVEST criteria (Independent, Negotiable, Valuable, Estimable, Small, Testable). Learn techniques for breaking down epics and features into manageable user stories. Define clear business rules and create unambiguous, testable acceptance criteria using various formats, including Gherkin syntax (Given/When/Then), to ensure precise communication between business and development teams.",
+          "description": "Author user stories: INVEST criteria, detailed Acceptance Criteria, and Behavior-Driven Development (BDD) scenarios using Gherkin syntax.",
           "resources": [
             {
               "title": "Atlassian User Stories",
@@ -531,13 +561,15 @@
               "url": "/data/docs/business_analyst/ba_user_stories_ac_gherkin.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 23
         },
         {
           "id": "ba_backlog_management_prio",
           "name": "Backlog Management & Prioritization Techniques",
           "tag": "essential",
-          "description": "Understand the Product Backlog and Sprint Backlog in detail. Learn best practices for managing, refining (grooming), and maintaining a healthy backlog. Explore various prioritization techniques such as MoSCoW (Must-have, Should-have, Could-have, Won't-have), KANO Model, RICE (Reach, Impact, Confidence, Effort), Weighted Shortest Job First (WSJF), and Value vs. Effort matrices. Understand how to facilitate estimation sessions using techniques like Planning Poker and T-Shirt Sizing.",
+          "description": "Manage product backlogs: Backlog grooming, prioritization frameworks (MoSCoW, Value vs Effort matrix), and sprint scope negotiation.",
           "resources": [
             {
               "title": "Product Prioritization Techniques (ProductPlan)",
@@ -559,13 +591,15 @@
               "url": "/data/docs/business_analyst/ba_backlog_management_prio.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 30
         },
         {
           "id": "ba_solution_design_wireframe",
           "name": "Solution Design, Wireframing & Prototyping",
           "tag": "advanced",
-          "description": "Learn the fundamentals of solution design, including translating abstract requirements into tangible designs. Develop skills in creating wireframes (low-fidelity sketches) and mockups (mid-to-high fidelity visual designs) using tools like Balsamiq, Figma, or Adobe XD. Understand core UI/UX principles (usability, accessibility, consistency) and how to effectively collaborate with UX/UI designers and development teams to visualize and validate proposed solutions.",
+          "description": "Design low-fidelity solutions: UI wireframing in Figma/Balsamiq, interactive task flows, and validating concept feasibility with users.",
           "resources": [
             {
               "title": "Balsamiq Wireframing Academy",
@@ -597,13 +631,15 @@
               "url": "/data/docs/business_analyst/ba_solution_design_wireframe.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 42
         },
         {
           "id": "ba_project_agile_reqs",
           "name": "Project: Comprehensive Agile Requirements Package",
           "tag": "advanced",
-          "description": "Apply all learned skills to develop a complete set of agile requirements for a complex, real-world business scenario. This comprehensive project includes defining epics, features, user stories with detailed acceptance criteria (including Gherkin), business rules, managing the product backlog, and creating basic wireframes or user flow diagrams to illustrate the proposed solution. Focus on delivering a fully actionable requirements package.",
+          "description": "Project: Author an Agile Requirements Package: Complete business case, user story map, 10 detailed user stories with Gherkin acceptance criteria, and BPMN process flow.",
           "resources": [
             {
               "title": "User Stories & Acceptance Criteria Explained (Agile Requirements)",
@@ -620,15 +656,19 @@
               "url": "/data/docs/business_analyst/ba_project_agile_reqs.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 114
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 24
     },
     {
       "id": "ba_tools_evaluation_career",
       "name": "Solution Evaluation, Tools & Professional Development",
       "tag": "advanced",
-      "description": "Gain proficiency in essential business analysis tools, manage user acceptance testing effectively, and develop critical professional skills for continuous career growth and impact within an organization.",
+      "description": "Master requirements tools, User Acceptance Testing (UAT), change management, and career advancement.",
       "resources": [
         {
           "title": "Atlassian Jira Guide",
@@ -656,7 +696,7 @@
           "id": "ba_req_mgmt_tools",
           "name": "Requirements Management & Collaboration Tools",
           "tag": "advanced",
-          "description": "Deep dive into industry-standard tools for requirements management and team collaboration. Master Jira for issue tracking, sprint management, and backlog refinement. Gain proficiency in Confluence for documentation, knowledge management, and team collaboration spaces. Explore other common tools like Azure DevOps, Monday.com, or Asana. Understand how to establish and maintain end-to-end requirements traceability, reporting, and dashboard creation within these platforms.",
+          "description": "Utilize requirements management platforms: Jira, Confluence, Azure DevOps; configuring epics, requirements traceability, and documentation wikis.",
           "resources": [
             {
               "title": "Confluence Cloud Support",
@@ -683,13 +723,15 @@
               "url": "/data/docs/business_analyst/ba_req_mgmt_tools.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 45
         },
         {
           "id": "ba_change_version_impact",
           "name": "Change Management, Version Control & Impact Analysis",
           "tag": "advanced",
-          "description": "Learn structured approaches to managing changes to requirements throughout the project lifecycle. Develop skills in assessing the impact of proposed changes on scope, schedule, cost, and other requirements. Implement effective change control processes, including change request forms, approval workflows, and communication strategies. Understand the principles of versioning requirements and documentation in shared repositories and requirements management tools.",
+          "description": "Manage change requests: Change impact analysis, scope creep control, versioning requirements documents, and maintaining approval audit trails.",
           "resources": [
             {
               "title": "Introduction to Change Management (Prosci)",
@@ -711,13 +753,15 @@
               "url": "/data/docs/business_analyst/ba_change_version_impact.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         },
         {
           "id": "ba_uat_solution_validation",
           "name": "User Acceptance Testing (UAT) & Solution Validation",
           "tag": "advanced",
-          "description": "Master the planning, execution, and management of User Acceptance Testing (UAT). Learn to develop comprehensive UAT test plans, recruit and coordinate user testers, facilitate testing sessions, and effectively gather feedback. Track and triage defects, analyze test results, obtain formal stakeholder sign-offs, and support post-implementation activities such as training material updates, rollout, and benefit realization assessment. Understand different levels of testing (unit, integration, system, UAT).",
+          "description": "Coordinate User Acceptance Testing (UAT): Defining UAT test plans, test scenarios, guiding business users through testing, and defect triage.",
           "resources": [
             {
               "title": "User Acceptance Testing Guide",
@@ -744,13 +788,15 @@
               "url": "/data/docs/business_analyst/ba_uat_solution_validation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         },
         {
           "id": "ba_comm_present_negotiate",
           "name": "Professional Communication, Presentation & Negotiation",
           "tag": "advanced",
-          "description": "Refine advanced communication skills for diverse audiences, from technical teams to executive leadership. Learn to craft compelling presentations and reports, create concise executive summaries, and master the art of data storytelling to effectively convey complex insights, recommendations, and business cases. Develop strong negotiation and persuasion skills crucial for achieving consensus and managing conflicts with stakeholders.",
+          "description": "Master professional communication: Facilitating executive presentations, negotiating scope trade-offs, and active listening in conflict resolution.",
           "resources": [
             {
               "title": "Effective Negotiation Strategies",
@@ -772,13 +818,15 @@
               "url": "/data/docs/business_analyst/ba_comm_present_negotiate.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 45
         },
         {
           "id": "ba_ethics_data_privacy",
           "name": "Ethical Considerations & Data Privacy",
           "tag": "advanced",
-          "description": "Understand the ethical implications of business analysis, data collection, and solution implementation. Learn about key data privacy regulations (e.g., GDPR, CCPA), principles of responsible AI, and the importance of ethical decision-making in handling sensitive information and designing systems that are fair and unbiased. Address the moral and societal impact of technology solutions.",
+          "description": "Comply with ethical standards: Data privacy regulations (GDPR, CCPA), ethical data handling, intellectual property protection, and business confidentiality.",
           "resources": [
             {
               "title": "GDPR Explained: An Overview of the Regulations",
@@ -805,13 +853,15 @@
               "url": "/data/docs/business_analyst/ba_ethics_data_privacy.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 48
         },
         {
           "id": "ba_career_specializations_certs",
           "name": "Career Growth, Specializations & Certifications",
           "tag": "advanced",
-          "description": "Guidance on building a compelling resume, preparing for interviews (behavioral, technical, case studies), and identifying various BA career paths and specializations (e.g., Product Owner, Data Analyst, CRM BA, ERP BA, Agile BA). Explore professional certifications such as IIBA certifications (ECBA, CCBA, CBAP, CBDA) and PMI-PBA, and how to plan for continuous professional development and networking within the BA community.",
+          "description": "Advance in Business Analysis: Preparing for industry certifications (ECBA, CCBA, CBAP, PMI-PBA), and targeting Senior/Lead Business Analyst roles.",
           "resources": [
             {
               "title": "Business Analyst Interview Questions",
@@ -838,9 +888,14 @@
               "url": "/data/docs/business_analyst/ba_career_specializations_certs.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 45
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 37
     }
-  ]
+  ],
+  "total_exp": 1000
 }

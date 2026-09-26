@@ -47,26 +47,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Autonomous Multi-Agent Market Intelligence System",
+        "title": "Enterprise Multimodal Agentic Research Assistant with LangGraph",
         "tech_stack": [
           "Python",
           "LangGraph",
-          "Pinecone",
+          "Qdrant",
           "FastAPI",
-          "Next.js"
+          "Hybrid BM25/Vector Search"
         ],
-        "description": "Build a team of AI agents that research, summarize, critique, and synthesize corporate earnings reports into PDF briefs."
+        "description": "Construct a multi-agent autonomous research system featuring cyclical reflection, tool calling, hybrid semantic retrieval, and citation verification."
       },
       {
-        "title": "Autonomous Multi-Agent Research Assistant with LangGraph",
+        "title": "Autonomous Code Review & Security Remediation Agent",
         "tech_stack": [
-          "Python",
-          "LangGraph",
-          "OpenAI API",
-          "ChromaDB",
-          "FastAPI"
+          "TypeScript",
+          "LangChain",
+          "Claude API",
+          "AST Parsing",
+          "GitHub App Webhooks"
         ],
-        "description": "Build a multi-agent system where independent specialist agents search the web, critique findings, execute Python code in sandboxes, and synthesize verified reports."
+        "description": "Build a GitHub App agent analyzing PR diffs via abstract syntax tree parsing, detecting OWASP vulnerabilities, and generating verifiable unit-tested pull request fixes."
       }
     ],
     "certifications": [
@@ -74,10 +74,11 @@
       "AWS Certified AI Practitioner"
     ],
     "interview_focus": [
-      "RAG Hallucination Mitigation & Context Windows",
-      "Vector Similarity Metrics (Cosine, Dot Product, Euclidean)",
-      "Agent Tool Calling & Loop Termination Guarantees",
-      "Latency, Token Cost & Semantic Caching Strategies"
+      "Retrieval Augmented Generation (RAG) Architecture (Chunking Strategies, Hybrid Search, Reranking)",
+      "Agentic Workflows (ReAct Pattern, Plan-and-Solve, State Graphs with LangGraph)",
+      "Token Context Window Management, KV-Caching & Streaming SSE Implementation",
+      "Prompt Injection Defenses & Output Guardrails (NeMo Guardrails, JSON Schema Enforcement)",
+      "Evaluation Metrics for Generative AI (Faithfulness, Answer Relevance, Context Recall)"
     ]
   },
   "format": "tree",
@@ -86,7 +87,7 @@
       "id": "genai_foundations",
       "name": "Foundations of Generative AI & Application Development",
       "tag": "essential",
-      "description": "Establish a strong understanding of Generative AI principles, the landscape of Large Language Models (LLMs), core concepts like tokens, context windows, latency, and cost implications. This module also covers fundamental prompt design and an introduction to user experience considerations for AI-powered applications.",
+      "description": "Master foundational generative AI architecture: Autoregressive decoding, token limits, context management, API client lifecycle, and high-performance frontend streaming UX.",
       "resources": [
         {
           "title": "ChatGPT Prompt Engineering for Developers (DeepLearning.AI)",
@@ -119,7 +120,7 @@
           "id": "genai_api_basics",
           "name": "LLM API Integration and Management",
           "tag": "essential",
-          "description": "Master the integration of LLMs via APIs from various providers (e.g., OpenAI, Anthropic, Google Gemini). Learn to handle chat/completion requests, manage API keys securely, implement streaming for real-time responses, manage rate limits, handle errors with robust retry mechanisms, estimate token usage for cost control, and parse structured model outputs (JSON, YAML).",
+          "description": "Integrate enterprise LLM APIs: Managing authentication, rate limiting, exponential backoff with jitter, parallel requests, token consumption counting with tiktoken, and multi-provider fallbacks.",
           "resources": [
             {
               "title": "OpenAI Text Generation Guide",
@@ -151,13 +152,15 @@
               "url": "/data/docs/generative_ai_app_developer/genai_api_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 50
         },
         {
           "id": "prompt_engineering_basics",
           "name": "Core Prompt Engineering Techniques",
           "tag": "essential",
-          "description": "Develop proficiency in fundamental prompt engineering techniques including zero-shot, few-shot, and chain-of-thought prompting. Learn to craft effective system messages, use persona-based prompting, design prompts for specific output formats (JSON, Markdown), and iterate on prompts for improved model performance and reliability.",
+          "description": "Implement production prompt templates: Dynamic variable substitution, few-shot exemplars, delimiter formatting (XML/Markdown), and system instruction conditioning.",
           "resources": [
             {
               "title": "Prompt Engineering Guide",
@@ -184,13 +187,15 @@
               "url": "/data/docs/generative_ai_app_developer/prompt_engineering_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 34
         },
         {
           "id": "genai_frontend_ux",
           "name": "User Experience (UX) Design for AI Applications",
           "tag": "essential",
-          "description": "Design intuitive and effective user interfaces for AI applications. Focus on user feedback mechanisms, handling AI uncertainties (loading states, confidence scores), displaying citations, enabling human review workflows, prompt controls, edit/refinement flows, and graceful recovery from AI failures. Understand ethical considerations and user trust in AI design.",
+          "description": "Build responsive generative UI: Server-Sent Events (SSE) streaming with Vercel AI SDK, optimistic UI updates, Markdown rendering, copy-to-clipboard code blocks, and stop-generation controls.",
           "resources": [
             {
               "title": "People + AI Guidebook",
@@ -217,13 +222,15 @@
               "url": "/data/docs/generative_ai_app_developer/genai_frontend_ux.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 39
         },
         {
           "id": "llm_dev_frameworks_intro",
           "name": "LLM Application Development Frameworks",
           "tag": "essential",
-          "description": "Get started with popular LLM orchestration frameworks like LangChain and LlamaIndex. Understand their core components (chains, agents, tools, retrievers, parsers, memory), how they simplify complex LLM workflows, and set up your development environment. This module bridges foundational LLM interactions with advanced application patterns.",
+          "description": "Master orchestration ecosystems: Comparing LangChain, LlamaIndex, Instructor, and Haystack for constructing deterministic prompt pipelines and data extraction workflows.",
           "resources": [
             {
               "title": "LangChain Getting Started",
@@ -250,15 +257,19 @@
               "url": "/data/docs/generative_ai_app_developer/llm_dev_frameworks_intro.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 35
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 31
     },
     {
       "id": "genai_rag_tools",
       "name": "Advanced Interaction: RAG, Tooling, and Autonomous Agents",
       "tag": "essential",
-      "description": "Build sophisticated AI applications by enabling models to interact with external data and tools. This section covers Retrieval Augmented Generation (RAG) for grounding responses in private data, function/tool calling for external API interaction, and the development of intelligent, autonomous agents capable of multi-step reasoning.",
+      "description": "Architect advanced generative interactions: Dynamic retrieval-augmented generation, multi-step tool execution, and autonomous agent state machines.",
       "resources": [
         {
           "title": "LangChain Documentation",
@@ -291,7 +302,7 @@
           "id": "genai_rag",
           "name": "Retrieval Augmented Generation (RAG) Systems",
           "tag": "essential",
-          "description": "Implement robust RAG systems to connect LLMs to external knowledge sources. Learn document loading, various text chunking strategies (fixed size, recursive, semantic), different embedding models, vector database selection (e.g., Chroma, Pinecone, Weaviate), advanced retrieval techniques (hybrid search, semantic search), re-ranking algorithms, and integrating citations for source attribution. Focus on debugging retrieval quality and minimizing hallucinations.",
+          "description": "Build enterprise RAG pipelines: Document ingestion (PDF, DOCX, Markdown), semantic chunking, embedding generation (OpenAI, Voyage, Cohere), and vector search with Qdrant / Pinecone.",
           "resources": [
             {
               "title": "OpenAI Embeddings Guide",
@@ -313,13 +324,15 @@
               "url": "/data/docs/generative_ai_app_developer/genai_rag.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 38
         },
         {
           "id": "rag_advanced_techniques",
           "name": "Advanced RAG Optimizations and Architectures",
           "tag": "advanced",
-          "description": "Dive into sophisticated RAG techniques to enhance performance and accuracy. Cover topics like query rewriting, hypothetical document embedding (HyDE), context compression, self-correction mechanisms in RAG, multi-query approaches, RAG-Fusion, and exploring multi-modal RAG systems. Understand the tradeoffs and applications of different RAG architectures.",
+          "description": "Implement advanced RAG optimizations: Hybrid dense-sparse retrieval (BM25 + vector search), Cohere reranking, contextual compression, Parent Document Retrievers, and multi-query expansion.",
           "resources": [
             {
               "title": "Advanced RAG Techniques: A Deep Dive (Towards Data Science)",
@@ -346,13 +359,15 @@
               "url": "/data/docs/generative_ai_app_developer/rag_advanced_techniques.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 55
         },
         {
           "id": "genai_tool_calling",
           "name": "Function Calling, External Tools, and Agentic Workflows",
           "tag": "advanced",
-          "description": "Enable LLMs to perform actions by calling external APIs and tools. Learn to define tools, implement function calling with precise argument validation, manage multi-step tool use, handle state across interactions, recover gracefully from tool execution errors, and design workflows that keep humans in the loop for critical decisions. Explore the foundations of agentic behavior.",
+          "description": "Master LLM function calling: Defining strict JSON schemas for external APIs, extracting validated function arguments with Pydantic, executing tools, and passing outputs back into conversation state.",
           "resources": [
             {
               "title": "OpenAI Function Calling Guide",
@@ -374,13 +389,15 @@
               "url": "/data/docs/generative_ai_app_developer/genai_tool_calling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 58
         },
         {
           "id": "agent_frameworks",
           "name": "Building and Deploying Autonomous Agents",
           "tag": "advanced",
-          "description": "Explore advanced agent architectures and design patterns for building truly autonomous LLM applications. Learn about concepts like ReAct (Reasoning and Acting), planning, memory management, self-reflection, and implementing agents using frameworks like LangChain Agents or LlamaIndex Agents. Understand how to manage complex multi-agent systems and their application in real-world scenarios.",
+          "description": "Build stateful multi-step agents: Implementing LangGraph and CrewAI for cyclical planning, reflection loops, memory persistence (short-term & long-term), and autonomous task delegation.",
           "resources": [
             {
               "title": "LangChain Agents",
@@ -412,13 +429,15 @@
               "url": "/data/docs/generative_ai_app_developer/agent_frameworks.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         },
         {
           "id": "rag_retrieval_debug_practice",
           "name": "Practice Lab: RAG Retrieval and Grounding Debugging",
           "tag": "advanced",
-          "description": "Hands-on practice in debugging RAG systems. Test various chunking strategies, identify retrieval misses, analyze the impact of different embedding models, verify citation accuracy, and troubleshoot hallucinations. Implement techniques to improve answer grounding and overall RAG system reliability through iterative testing.",
+          "description": "Practice Lab: Debug RAG retrieval quality: Diagnose chunk boundary clipping, embedding semantic mismatch, context hallucination, and benchmark retrieval recall using golden test sets.",
           "resources": [
             {
               "title": "RAG System Architecture & Best Practices - Learn to Build a RAG from Scratch",
@@ -435,15 +454,19 @@
               "url": "/data/docs/generative_ai_app_developer/rag_retrieval_debug_practice.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 53
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 27
     },
     {
       "id": "genai_eval_safety",
       "name": "Robustness: Evaluation, Safety, Ethics, and Cost Optimization",
       "tag": "advanced",
-      "description": "Ensure the reliability, safety, ethical compliance, and cost-efficiency of Generative AI applications. This module covers systematic evaluation methodologies, implementing robust safety and privacy measures, understanding responsible AI principles, and optimizing deployment costs for sustainable operation.",
+      "description": "Harden generative applications: Automated quality evaluation, latency profiling, safety guardrail enforcement, and token cost governance.",
       "resources": [
         {
           "title": "Responsible AI Practices (Microsoft Azure)",
@@ -476,7 +499,7 @@
           "id": "genai_evals",
           "name": "Evaluation Metrics and Continuous Testing",
           "tag": "advanced",
-          "description": "Develop comprehensive evaluation strategies for LLM applications. Create golden datasets, design automated and human-in-the-loop evaluation pipelines, assess output quality using metrics like faithfulness, relevancy, answer correctness, fluency, and toxicity. Implement regression testing, track model changes, compare prompt versions, and integrate A/B testing for continuous improvement.",
+          "description": "Implement automated evaluation frameworks: Unit testing prompts with Promptfoo, synthetic test generation, LLM-as-a-judge scoring, and tracking Ragas metrics (Faithfulness, Answer Relevance).",
           "resources": [
             {
               "title": "Ragas Documentation: Evaluating RAG Pipelines",
@@ -508,13 +531,15 @@
               "url": "/data/docs/generative_ai_app_developer/genai_evals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 55
         },
         {
           "id": "monitoring_observability",
           "name": "AI Observability and Performance Monitoring",
           "tag": "advanced",
-          "description": "Implement robust logging, tracing, and monitoring for Generative AI applications in production. Track key metrics such as prompts, model outputs, token usage, latency, cost, tool errors, retrieval misses, hallucination rates, and user feedback. Establish alerts and dashboards to ensure continuous optimal performance, detect model drift, and identify safety incidents.",
+          "description": "Implement production AI observability: Instrumenting applications with Langfuse, Phoenix, or Helicone to trace execution trees, token usage, latency (TTFT), and user feedback scores.",
           "resources": [
             {
               "title": "LangSmith Observability",
@@ -546,13 +571,15 @@
               "url": "/data/docs/generative_ai_app_developer/monitoring_observability.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 53
         },
         {
           "id": "genai_safety_cost",
           "name": "Responsible AI: Safety, Ethics, and Cost Control",
           "tag": "advanced",
-          "description": "Address critical aspects of responsible AI development including safety, ethical considerations, and cost management. Learn to mitigate risks like prompt injection, adversarial attacks, PII leakage, model refusals, and abuse. Implement content moderation, output filtering, and strategies for managing token budgets, caching, rate limiting, and auditing logs for compliance and transparency.",
+          "description": "Enforce safety and cost policies: Implementing semantic caching with Redis to eliminate redundant queries, routing lightweight requests to smaller models, and enforcing budget caps.",
           "resources": [
             {
               "title": "OWASP LLM Top 10 Vulnerabilities",
@@ -584,13 +611,15 @@
               "url": "/data/docs/generative_ai_app_developer/genai_safety_cost.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 66
         },
         {
           "id": "data_privacy_security",
           "name": "Data Privacy and Security in LLM Applications",
           "tag": "advanced",
-          "description": "Implement best practices for securing data in LLM workflows. This includes data anonymization, encryption at rest and in transit, access control mechanisms, secure storage for sensitive data (e.g., vector databases), compliance with regulations (GDPR, HIPAA, CCPA), and strategies for handling proprietary or confidential information within RAG systems.",
+          "description": "Secure generative apps against vulnerabilities: Prompt injection sanitization, PII masking with Presidio before sending to LLM APIs, and preventing unauthorized tool execution.",
           "resources": [
             {
               "title": "Secure LLM Deployment Best Practices (Wallarm)",
@@ -617,15 +646,19 @@
               "url": "/data/docs/generative_ai_app_developer/data_privacy_security.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 51
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 35
     },
     {
       "id": "genai_deploy_project",
       "name": "Production Deployment and Scaling of AI Applications",
       "tag": "advanced",
-      "description": "Prepare Generative AI applications for production. This module covers deploying scalable infrastructure, implementing CI/CD pipelines, managing model versions, ensuring security for secrets, collecting user feedback, and documenting the entire application lifecycle for maintainability and collaboration.",
+      "description": "Deploy and scale generative AI products: Production containerization, serverless edge functions, asynchronous queueing, and scalable background workers.",
       "resources": [
         {
           "title": "FastAPI Tutorial: Deploying a Web Application",
@@ -653,7 +686,7 @@
           "id": "deployment_infrastructure",
           "name": "Cloud Deployment, Containerization, and MLOps",
           "tag": "advanced",
-          "description": "Master the deployment of GenAI applications to cloud environments (e.g., AWS, Azure, Google Cloud). Learn containerization with Docker, orchestration with Kubernetes, and serverless deployment options. Implement MLOps principles for automated build, test, and deployment pipelines, model versioning, artifact management, and infrastructure as code.",
+          "description": "Deploy generative backends to production: Docker containers on AWS ECS / GCP Cloud Run, Celery / BullMQ queues for long-running generation, and Redis for distributed session state.",
           "resources": [
             {
               "title": "Docker Get Started Guide",
@@ -685,13 +718,15 @@
               "url": "/data/docs/generative_ai_app_developer/deployment_infrastructure.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 65
         },
         {
           "id": "genai_project_knowledge_assistant",
           "name": "Capstone Project: Production-Ready Knowledge Assistant",
           "tag": "advanced",
-          "description": "Apply all learned concepts to build a comprehensive, production-grade RAG-based knowledge assistant. This project will involve document ingestion, advanced retrieval with citations, tool calling capabilities, an integrated evaluation dataset, robust safety checks, a user-facing dashboard for usage analytics and feedback, and detailed deployment notes for scaling and maintenance.",
+          "description": "Capstone Project: Build a production-ready enterprise knowledge assistant: Multi-tenant document indexing, hybrid search RAG, function-calling CRM tool, streaming Next.js interface, and Langfuse tracing.",
           "resources": [
             {
               "title": "Chroma Vector Database Documentation",
@@ -713,9 +748,14 @@
               "url": "/data/docs/generative_ai_app_developer/genai_project_knowledge_assistant.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 130
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 85
     }
-  ]
+  ],
+  "total_exp": 1000
 }

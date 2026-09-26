@@ -48,26 +48,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Fintech Payment Gateway & Transaction Ledger",
+        "title": "High-Concurrency Banking Transaction Engine with Spring Boot 3 & Virtual Threads",
         "tech_stack": [
           "Java 21",
           "Spring Boot 3",
+          "Project Loom Virtual Threads",
           "PostgreSQL",
-          "Kafka",
-          "Docker"
+          "Kafka"
         ],
-        "description": "Build an ACID-compliant double-entry ledger with distributed tracing, idempotency keys, and asynchronous transaction publishing."
+        "description": "Engineer an ACID-compliant double-entry ledger processing 15,000 transactions/sec utilizing Java 21 Virtual Threads, optimistic locking, and Kafka event streams."
       },
       {
-        "title": "High-Concurrency Banking Transaction Engine with Spring Boot 3",
+        "title": "Event-Driven Distributed Order Fulfillment System with Resilience4j",
         "tech_stack": [
-          "Java 21",
-          "Spring Boot 3",
-          "Kafka",
+          "Spring Cloud",
+          "Resilience4j",
           "PostgreSQL",
-          "Docker"
+          "Docker",
+          "Prometheus"
         ],
-        "description": "Architect an ACID-compliant double-entry ledger handling concurrent financial transfers using optimistic locking, Kafka event sourcing, and Redis idempotency keys."
+        "description": "Construct a distributed microservices platform implementing Saga orchestration, distributed tracing, circuit breakers, and transactional outbox patterns."
       }
     ],
     "certifications": [
@@ -75,10 +75,11 @@
       "Spring Certified Professional"
     ],
     "interview_focus": [
-      "JVM Memory Model, Garbage Collection & Virtual Threads",
-      "Spring Framework Lifecycle & AOP Proxies",
-      "Database Isolation Levels & Pessimistic/Optimistic Locking",
-      "Kafka Consumer Groups & Partitioning"
+      "Java Virtual Machine (JVM) Memory Model (Heap, Metaspace, GC Algorithms ZGC & G1)",
+      "Java 21 Features (Virtual Threads, Pattern Matching, Records, Sealed Classes)",
+      "Spring Bean Lifecycle, Dependency Injection & @Transactional Propagation Levels",
+      "Concurrency Primitives (synchronized, ReentrantLock, CompletableFuture, ConcurrentHashMap)",
+      "Distributed Transactions (Saga Pattern, Two-Phase Commit, Transactional Outbox Pattern)"
     ]
   },
   "format": "tree",
@@ -87,7 +88,7 @@
       "id": "java_core_foundations",
       "name": "Core Java Foundations",
       "tag": "essential",
-      "description": "Master the fundamental concepts of Java programming, including syntax, object-oriented principles, data structures, and advanced language features crucial for building robust applications.",
+      "description": "Establish an unshakeable modern Java foundation (Java 17 & Java 21 LTS): master the Java Virtual Machine (JVM) architecture, strongly-typed object modeling, memory layout, functional pipelines, and high-throughput virtual threads (Project Loom).",
       "resources": [
         {
           "title": "Dev.java Learn Java",
@@ -120,7 +121,7 @@
           "id": "java_syntax_oop",
           "name": "Java Syntax & OOP Principles",
           "tag": "essential",
-          "description": "Learn Java syntax, data types, control flow, and fundamental Object-Oriented Programming (OOP) concepts like classes, objects, inheritance, polymorphism, abstraction, and encapsulation. Understand interfaces, abstract classes, records, and enums. Master `equals()`, `hashCode()`, `toString()`, and principles of immutability.",
+          "description": "Master modern Java language features: records for immutable data carriers, sealed classes and interfaces for restricted hierarchies, pattern matching for `switch` and `instanceof`, text blocks, access modifiers, method overriding vs overloading, and object-oriented principles prioritizing composition over deep inheritance trees.",
           "resources": [
             {
               "title": "Object-Oriented Programming in Java",
@@ -142,13 +143,15 @@
               "url": "/data/docs/java_developer/java_syntax_oop.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 14
         },
         {
           "id": "java_collections_generics",
           "name": "Java Collections Framework & Generics",
           "tag": "essential",
-          "description": "Deep dive into the Java Collections Framework. Understand and utilize `List`, `Set`, `Map` interfaces, common implementations (ArrayList, HashMap, HashSet). Master `Iterators`, `Generics` for type safety, and how to use `Comparable` and `Comparator` for custom sorting.",
+          "description": "Master the Java Collections Framework and Generics internals: dynamic resizing in `ArrayList`, `HashMap` bucket hashing and red-black tree conversion (treeification threshold of 8), lock striping in `ConcurrentHashMap`, ordered traversal with `LinkedHashMap` and `TreeMap`, and Generics type erasure, wildcards (`? extends T` covariance, `? super T` contravariance - PECS rule), and bounded type parameters.",
           "resources": [
             {
               "title": "Java Collections Tutorial",
@@ -175,13 +178,15 @@
               "url": "/data/docs/java_developer/java_collections_generics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         },
         {
           "id": "java_exceptions_io",
           "name": "Exception Handling, File I/O & Networking",
           "tag": "essential",
-          "description": "Learn to manage errors effectively with Java's exception handling mechanism (checked vs unchecked, try-catch-finally, try-with-resources). Understand file operations using `java.io` (streams, readers, writers) and `java.nio` (Paths, Files, Channels). Get a basic understanding of network programming with Sockets.",
+          "description": "Master robust error handling and I/O architectures: checked vs unchecked runtime exceptions, try-with-resources with `AutoCloseable`, custom domain exception hierarchies, and Java NIO.2 non-blocking I/O (`Path`, `Files`, `ByteBuffer`, `FileChannel`, `AsynchronousSocketChannel`, and selector event demultiplexing).",
           "resources": [
             {
               "title": "Java Exception Handling",
@@ -208,13 +213,15 @@
               "url": "/data/docs/java_developer/java_exceptions_io.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         },
         {
           "id": "java_streams_lambdas",
           "name": "Advanced Java: Lambdas & Stream API",
           "tag": "essential",
-          "description": "Explore functional programming concepts in Java. Master lambda expressions, method references, and the Stream API for efficient data processing. Understand `Optional` for handling null values gracefully and the modern `java.time` API for date and time manipulations.",
+          "description": "Master functional programming in Java: lambda expressions, functional interfaces (`Function`, `Predicate`, `Supplier`, `Consumer`), Stream API mechanics (spliterators, lazy pipeline evaluation, terminal collectors with `Collectors.groupingBy` and `teeing`), avoiding parallel stream thread pool starvation, and idiomatic `Optional<T>` usage to eliminate `NullPointerException`.",
           "resources": [
             {
               "title": "Java 8 Streams Tutorial",
@@ -241,13 +248,15 @@
               "url": "/data/docs/java_developer/java_streams_lambdas.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 22
         },
         {
           "id": "java_concurrency_multithreading",
           "name": "Java Concurrency & Multithreading",
           "tag": "advanced",
-          "description": "Understand the fundamentals of concurrent programming in Java. Learn about `Threads`, `Runnables`, and `Thread` lifecycles. Master synchronization mechanisms like `synchronized` blocks/methods, `volatile` keyword, and `Lock` interface. Explore the `ExecutorService`, `Callable`, `Future`, and basic concurrent collections for building high-performance applications.",
+          "description": "Master modern Java concurrency and Project Loom: virtual threads (`Thread.ofVirtual().start()`) for millions of concurrent tasks, structured concurrency, platform thread pools with `ThreadPoolExecutor` (tuning core pool size, work queue capacity, and saturation rejection policies), asynchronous composition with `CompletableFuture`, synchronization primitives (`ReentrantLock`, `StampedLock`, `Semaphore`), and lock-free thread safety with `volatile` and `java.util.concurrent.atomic` primitives.",
           "resources": [
             {
               "title": "Java Concurrency Lesson",
@@ -274,13 +283,15 @@
               "url": "/data/docs/java_developer/java_concurrency_multithreading.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "java_jvm_memory",
           "name": "JVM Internals & Memory Management",
           "tag": "advanced",
-          "description": "Gain insight into the Java Virtual Machine (JVM) architecture, including classloaders and runtime data areas. Understand garbage collection mechanisms (generations, common algorithms like G1, Parallel, CMS basics) and how to identify and prevent common memory leaks. Learn basic Java profiling techniques.",
+          "description": "Deep dive into JVM internals and performance tuning: classloader hierarchy (Bootstrap, Platform, App), bytecode execution and JIT compilation (C1 client compiler, C2 optimizing compiler, tiered compilation, GraalVM AOT compilation), JVM memory areas (Young Generation Eden/Survivor, Tenured Old Gen, Metaspace, Thread Stacks), and Garbage Collection algorithms (G1GC tuning, low-latency Generational ZGC, and Shenandoah).",
           "resources": [
             {
               "title": "JVM Architecture Explained",
@@ -307,15 +318,19 @@
               "url": "/data/docs/java_developer/java_jvm_memory.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 16
     },
     {
       "id": "database_fundamentals_orm",
       "name": "Database Fundamentals & ORM",
       "tag": "essential",
-      "description": "Learn to interact with databases, from fundamental SQL concepts to advanced Object-Relational Mapping (ORM) using JPA and Hibernate, essential for persistent data storage in Java applications.",
+      "description": "Master relational data persistence and Object-Relational Mapping (ORM): ACID transaction isolation, connection pooling, and high-performance JPA/Hibernate integration.",
       "resources": [
         {
           "title": "JDBC Tutorial",
@@ -343,7 +358,7 @@
           "id": "db_relational_concepts",
           "name": "Relational Database Concepts & SQL",
           "tag": "essential",
-          "description": "Understand core relational database concepts, including tables, keys, relationships. Master SQL for data definition (DDL), data manipulation (DML), and data control (DCL). Learn about database normalization and work with popular databases like PostgreSQL or MySQL.",
+          "description": "Master relational database engineering: ACID properties, transaction isolation levels (Read Committed, Repeatable Read, Serializable), diagnosing dirty reads, non-repeatable reads, and phantom reads, indexing strategies (B-Tree indexes, composite indexes, index selectivity), and foreign key constraints.",
           "resources": [
             {
               "title": "PostgreSQL Tutorial",
@@ -370,13 +385,15 @@
               "url": "/data/docs/java_developer/db_relational_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "db_jdbc_data_access",
           "name": "JDBC & Basic Data Access",
           "tag": "essential",
-          "description": "Learn how Java applications connect to databases using JDBC. Understand how to execute queries, use Prepared Statements to prevent SQL injection, process Result Sets, and implement connection pooling with libraries like HikariCP for efficient database interactions.",
+          "description": "Master low-level database communication with JDBC: parameterized queries with `PreparedStatement` to eliminate SQL injection, batch operations for bulk inserts, transaction demarcation (`setAutoCommit(false)`, `commit()`, `rollback()`), and connection pool tuning with HikariCP (pool size sizing formula, connection timeout, leak detection threshold).",
           "resources": [
             {
               "title": "JDBC Basics",
@@ -403,13 +420,15 @@
               "url": "/data/docs/java_developer/db_jdbc_data_access.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 22
         },
         {
           "id": "db_jpa_hibernate",
           "name": "JPA & Hibernate ORM",
           "tag": "advanced",
-          "description": "Dive into Object-Relational Mapping (ORM) with the Java Persistence API (JPA) and its most popular implementation, Hibernate. Learn to define entities, map relationships (One-to-One, One-to-Many, Many-to-Many), write JPQL (Java Persistence Query Language) queries, and understand native SQL queries within JPA.",
+          "description": "Master Hibernate and Jakarta Persistence (JPA) internals: persistence context lifecycle, first-level cache vs second-level cache (Redis/Ehcache), dirty checking mechanism, entity states (Transient, Managed, Detached, Removed), diagnosing and resolving the N+1 query problem (`JOIN FETCH`, `@EntityGraph`), and optimistic locking (`@Version`) vs pessimistic locking (`PESSIMISTIC_WRITE`).",
           "resources": [
             {
               "title": "Hibernate User Guide",
@@ -436,15 +455,19 @@
               "url": "/data/docs/java_developer/db_jpa_hibernate.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 16
     },
     {
       "id": "spring_boot_core_web",
       "name": "Spring Boot Core & Web Development",
       "tag": "essential",
-      "description": "Master Spring Boot for building modern, production-ready backend applications and RESTful APIs with ease, focusing on core concepts, web development, and data persistence.",
+      "description": "Master modern Spring Boot 3 & Spring 6 web application engineering: IoC container, autoconfiguration, RESTful web services, validation, and declarative data access.",
       "resources": [
         {
           "title": "Spring Quickstart",
@@ -472,7 +495,7 @@
           "id": "spring_framework_basics",
           "name": "Spring Framework Core Concepts",
           "tag": "essential",
-          "description": "Understand the foundational concepts of the Spring Framework: Dependency Injection (DI), Inversion of Control (IoC) container, Spring Beans, and core annotations like `@Component`, `@Service`, `@Repository`, `@Autowired`, `@Qualifier`, and `@Value`. Learn about Spring Profiles and Configuration using `@Configuration` and `@PropertySource`.",
+          "description": "Master Spring Core fundamentals: Inversion of Control (IoC) and Dependency Injection (DI) prioritizing constructor injection, bean lifecycles (`@PostConstruct`, `@PreDestroy`, `BeanPostProcessor`), bean scopes (Singleton, Prototype, Request), and component scanning with `@Configuration`, `@Bean`, and `@Component`.",
           "resources": [
             {
               "title": "Spring Framework Documentation",
@@ -499,13 +522,15 @@
               "url": "/data/docs/java_developer/spring_framework_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 14
         },
         {
           "id": "spring_boot_intro",
           "name": "Introduction to Spring Boot",
           "tag": "essential",
-          "description": "Learn what Spring Boot is and how it simplifies Spring application development. Understand auto-configuration, `spring-boot-starter` dependencies, embedded servers (Tomcat, Jetty), and how to build executable JARs. Explore Command Line Runner for application startup logic.",
+          "description": "Understand Spring Boot 3 internals: condition-based autoconfiguration (`@ConditionalOnClass`, `@ConditionalOnMissingBean`), custom starters, configuration properties binding (`@ConfigurationProperties`), environment profiles (`application.yml`), and migrating to Spring Boot 3 / Java 17+ baseline.",
           "resources": [
             {
               "title": "Spring Boot Reference Documentation",
@@ -532,13 +557,15 @@
               "url": "/data/docs/java_developer/spring_boot_intro.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 13
         },
         {
           "id": "spring_restful_apis",
           "name": "Building RESTful APIs with Spring Boot",
           "tag": "essential",
-          "description": "Develop RESTful web services using Spring Boot. Master `@RestController` and `@RequestMapping`. Understand HTTP methods (GET, POST, PUT, DELETE, PATCH), request/response handling using `@RequestBody`, `@ResponseBody`, `ResponseEntity`, path variables, and request parameters. Learn to structure APIs with Data Transfer Objects (DTOs).",
+          "description": "Engineer production RESTful APIs with Spring Web: `@RestController`, request mapping, path variables, query parameters, request body deserialization, response headers, content negotiation, DTO transformation using MapStruct, and file upload streaming.",
           "resources": [
             {
               "title": "Spring REST Service Guide",
@@ -565,13 +592,15 @@
               "url": "/data/docs/java_developer/spring_restful_apis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 13
         },
         {
           "id": "spring_validation_exception_handling",
           "name": "Data Validation & Global Exception Handling",
           "tag": "essential",
-          "description": "Implement robust data validation using the Bean Validation API (`@Valid`, `@Validated`) and create custom validators. Learn to handle exceptions globally across your REST APIs using `@ControllerAdvice` and `@ExceptionHandler`, providing consistent and informative error responses.",
+          "description": "Implement robust input validation and centralized error handling: Jakarta Bean Validation (`@NotNull`, `@Size`, `@Pattern`, custom validators), nested object validation with `@Valid`, global exception handling using `@RestControllerAdvice` and `@ExceptionHandler`, and standardizing error responses using the RFC 7807 Problem Details specification.",
           "resources": [
             {
               "title": "Spring Boot Validation",
@@ -598,13 +627,15 @@
               "url": "/data/docs/java_developer/spring_validation_exception_handling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         },
         {
           "id": "spring_data_jpa_transactions",
           "name": "Spring Data JPA & Transactions",
           "tag": "essential",
-          "description": "Simplify data access with Spring Data JPA. Implement the Repository Pattern using `CrudRepository` and `JpaRepository`. Write custom queries with `@Query`, handle pagination and sorting, and ensure data integrity with declarative transaction management using `@Transactional`.",
+          "description": "Master declarative data access with Spring Data JPA: repository interfaces (`JpaRepository`), derived query methods, custom JPQL and native SQL queries (`@Query`), pagination and sorting (`Pageable`, `Slice`), dynamic queries with Specifications, and declarative transaction management (`@Transactional` propagation behaviors like `REQUIRED` and `REQUIRES_NEW`, rollback rules).",
           "resources": [
             {
               "title": "Spring Data JPA Reference Documentation",
@@ -631,15 +662,19 @@
               "url": "/data/docs/java_developer/spring_data_jpa_transactions.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 12
     },
     {
       "id": "enterprise_spring_dev",
       "name": "Enterprise-Grade Spring Development",
       "tag": "advanced",
-      "description": "Advance your Spring skills to build secure, scalable, and resilient enterprise applications by integrating security, messaging, caching, and exploring advanced Spring features.",
+      "description": "Engineer enterprise-grade Spring Boot microservices: stateless security, event-driven messaging, distributed caching, fault tolerance, and reactive programming.",
       "resources": [
         {
           "title": "Spring Security Docs",
@@ -672,7 +707,7 @@
           "id": "spring_security_authz",
           "name": "Spring Security & Authorization",
           "tag": "advanced",
-          "description": "Implement robust security in your Spring Boot applications. Differentiate between authentication and authorization. Learn to secure endpoints with Basic Auth, Form Login, JWT (JSON Web Tokens), and explore basics of OAuth2 (Resource Server, Client). Apply method-level security using `@PreAuthorize` and `@PostAuthorize`.",
+          "description": "Implement enterprise security with Spring Security 6: Security Filter Chain configuration, stateless JWT authentication (access and refresh tokens with RS256 signing), OAuth2 Resource Server integration, Method-level authorization (`@PreAuthorize`), password hashing with BCrypt / Argon2, and CORS and CSRF defense.",
           "resources": [
             {
               "title": "Spring Security with JWT Tutorial",
@@ -699,13 +734,15 @@
               "url": "/data/docs/java_developer/spring_security_authz.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "spring_messaging_event_driven",
           "name": "Messaging & Event-Driven Architectures",
           "tag": "advanced",
-          "description": "Integrate messaging queues into your Spring applications. Understand message queue concepts (Producer, Consumer). Implement Spring AMQP for RabbitMQ or Spring Kafka for high-throughput messaging. Explore the basics of Event-Driven Architecture, design for idempotency, and implement retry mechanisms for message processing.",
+          "description": "Build event-driven distributed systems: messaging with Spring for Apache Kafka and Spring AMQP (RabbitMQ), producer acknowledgments (`acks=all`), consumer group scaling, handling partition rebalances, implementing Dead Letter Queues (DLQ) with retry topics, and the Transactional Outbox Pattern to guarantee at-least-once message publishing.",
           "resources": [
             {
               "title": "Spring Kafka Tutorial",
@@ -732,13 +769,15 @@
               "url": "/data/docs/java_developer/spring_messaging_event_driven.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "spring_caching_strategies",
           "name": "Caching Strategies with Spring",
           "tag": "advanced",
-          "description": "Improve application performance using caching. Understand different caching strategies (in-memory, distributed). Utilize Spring's Cache Abstraction with annotations like `@Cacheable`, `@CachePut`, and `@CacheEvict`. Explore integration with caching providers like Ehcache or Redis.",
+          "description": "Implement enterprise caching architectures: Spring Cache Abstraction (`@Cacheable`, `@CachePut`, `@CacheEvict`), distributed Redis caching with `RedisTemplate`, mitigating cache stampede and thundering herd problems, configuring cache TTLs with jitter, and cache invalidation strategies.",
           "resources": [
             {
               "title": "Spring Caching Guide",
@@ -765,13 +804,15 @@
               "url": "/data/docs/java_developer/spring_caching_strategies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "spring_resilience_microservices",
           "name": "Resilience Patterns & Microservices Communication",
           "tag": "advanced",
-          "description": "Design resilient microservices using patterns like Circuit Breaker (e.g., Resilience4j), Bulkhead, and Retry. Explore inter-service communication mechanisms (REST, gRPC) and pattern implementations like API Gateways (e.g., Spring Cloud Gateway) for routing and cross-cutting concerns, and Service Discovery (e.g., Eureka, Consul) for dynamic service location.",
+          "description": "Build resilient microservices using Resilience4j: Circuit Breakers (failure rate thresholds, slow call rate thresholds), Rate Limiters, Bulkheads for thread isolation, Retry with exponential backoff, Spring Cloud Gateway for API edge routing, and declarative HTTP clients using Spring 6 `HttpInterfaces` or OpenFeign.",
           "resources": [
             {
               "title": "Resilience4j Official Documentation",
@@ -803,13 +844,15 @@
               "url": "/data/docs/java_developer/spring_resilience_microservices.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "spring_advanced_features",
           "name": "Advanced Spring Features",
           "tag": "advanced",
-          "description": "Explore specialized Spring modules. Understand Aspect-Oriented Programming (AOP) for cross-cutting concerns. Get an introduction to reactive programming with Spring WebFlux and Spring Reactor. Discover Spring Batch for building robust batch processing applications.",
+          "description": "Master advanced Spring capabilities: Aspect-Oriented Programming (AOP with `@Aspect`, `@Around` pointcuts) for cross-cutting telemetry and auditing, reactive asynchronous pipelines with Spring WebFlux and Project Reactor (`Mono`, `Flux`), and chunk-based large-scale batch processing with Spring Batch.",
           "resources": [
             {
               "title": "Spring AOP Tutorial",
@@ -836,15 +879,19 @@
               "url": "/data/docs/java_developer/spring_advanced_features.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 28
     },
     {
       "id": "testing_quality_assurance",
       "name": "Testing & Quality Assurance",
       "tag": "essential",
-      "description": "Develop high-quality, reliable Java applications by mastering various testing methodologies, build tools, and dependency management strategies.",
+      "description": "Enforce automated quality assurance and verification: unit testing pyramids, containerized integration tests, and build tool optimization.",
       "resources": [
         {
           "title": "JUnit 5 User Guide",
@@ -877,7 +924,7 @@
           "id": "testing_unit_testing",
           "name": "Unit Testing with JUnit & Mockito",
           "tag": "essential",
-          "description": "Write effective unit tests for your Java code using JUnit 5 (annotations, assertions). Learn to mock dependencies and verify interactions using Mockito. Understand the principles of Test-Driven Development (TDD) to design better code.",
+          "description": "Master unit testing with JUnit 5 and Mockito: parameterized tests (`@ValueSource`, `@CsvSource`), test lifecycle callbacks, mocking dependencies with `@Mock` and `@InjectMocks`, verifying invocations, argument captors (`ArgumentCaptor`), and writing readable, fluent assertions using AssertJ.",
           "resources": [
             {
               "title": "JUnit 5 Tutorial",
@@ -904,13 +951,15 @@
               "url": "/data/docs/java_developer/testing_unit_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         },
         {
           "id": "testing_integration_component",
           "name": "Integration & Component Testing",
           "tag": "essential",
-          "description": "Perform comprehensive testing using Spring Boot Test annotations like `@SpringBootTest`, `@WebMvcTest`, and `@DataJpaTest`. Leverage Testcontainers to spin up real databases and message brokers for reliable integration tests. Use REST Assured for testing RESTful APIs.",
+          "description": "Implement production-grade integration testing in Spring: `@SpringBootTest`, slice testing (`@WebMvcTest`, `@DataJpaTest`), and Testcontainers to spin up isolated, ephemeral PostgreSQL, Redis, and Kafka containers in Docker for 100% deterministic test execution.",
           "resources": [
             {
               "title": "Spring Boot Testing Documentation",
@@ -942,13 +991,15 @@
               "url": "/data/docs/java_developer/testing_integration_component.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "build_tools_dependency_mgmt",
           "name": "Build Tools & Dependency Management",
           "tag": "essential",
-          "description": "Master essential build automation tools. Learn Maven (POM, build lifecycle, plugins) and Gradle (Groovy/Kotlin DSL, tasks, plugins) for compiling, testing, and packaging your applications. Understand dependency management, including dependency scopes and transitive dependencies.",
+          "description": "Master enterprise build automation with Maven and Gradle: multi-module project architectures, managing dependency versions with BOMs, resolving transitive dependency version conflicts, build caching, and static code quality plugins (Spotless, JaCoCo coverage gates).",
           "resources": [
             {
               "title": "Maven in 5 Minutes",
@@ -975,15 +1026,19 @@
               "url": "/data/docs/java_developer/build_tools_dependency_mgmt.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 10
     },
     {
       "id": "deployment_operations",
       "name": "Deployment & Operations",
       "tag": "advanced",
-      "description": "Learn to deploy, monitor, and maintain Java applications in production environments, covering version control, containerization, cloud platforms, and observability practices.",
+      "description": "Deploy, monitor, and scale production Java applications: containerization, Kubernetes orchestration, distributed observability, and cloud native deployment.",
       "resources": [
         {
           "title": "Docker Java Guide",
@@ -1016,7 +1071,7 @@
           "id": "version_control_ci_cd",
           "name": "Version Control & CI/CD",
           "tag": "essential",
-          "description": "Master Git for version control, including branching, merging, and rebasing strategies. Understand the principles of Continuous Integration (CI) and Continuous Deployment (CD). Get familiar with basic configurations for CI/CD pipelines using tools like GitHub Actions, GitLab CI, or Jenkins.",
+          "description": "Implement trunk-based Git workflows and continuous delivery pipelines: GitHub Actions / GitLab CI for compiling, running multi-container tests, generating vulnerability reports with OWASP Dependency-Check / Snyk, and automated artifact publishing to container registries.",
           "resources": [
             {
               "title": "Git Handbook",
@@ -1043,13 +1098,15 @@
               "url": "/data/docs/java_developer/version_control_ci_cd.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         },
         {
           "id": "containerization_orchestration",
           "name": "Containerization & Orchestration",
           "tag": "advanced",
-          "description": "Learn to containerize Java applications using Docker. Master Dockerfile creation, image building, container management, volumes, and networks. Use Docker Compose for multi-container applications. Get an introduction to container orchestration with Kubernetes (Pods, Deployments, Services).",
+          "description": "Containerize and orchestrate Spring Boot applications: multi-stage Docker builds utilizing layered JARs (`layertools`) or Cloud Native Buildpacks (Paketo), optimizing image sizes with Distroless/Alpine base images, and authoring Kubernetes manifests (Deployments, Services, ConfigMaps, Secrets, PDBs, HPA).",
           "resources": [
             {
               "title": "Kubernetes Basics",
@@ -1071,13 +1128,15 @@
               "url": "/data/docs/java_developer/containerization_orchestration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         },
         {
           "id": "monitoring_logging_tracing",
           "name": "Monitoring, Logging & Tracing",
           "tag": "advanced",
-          "description": "Implement observability for production applications. Utilize Spring Boot Actuator for health checks and metrics. Implement structured logging with SLF4J and Logback/Log4j2. Explore centralized logging solutions (ELK Stack basics), metrics collection (Micrometer, Prometheus, Grafana), and distributed tracing (OpenTelemetry, Zipkin).",
+          "description": "Implement enterprise observability for Spring Boot: Spring Boot Actuator health endpoints (`/health/liveness`, `/health/readiness`), structured JSON logging with Logback/Logstash, application metrics collection with Micrometer and Prometheus, and distributed tracing with OpenTelemetry, Micrometer Tracing, and Jaeger/Tempo.",
           "resources": [
             {
               "title": "Spring Boot and Centralized Logging",
@@ -1104,13 +1163,15 @@
               "url": "/data/docs/java_developer/monitoring_logging_tracing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "cloud_deployment_basics",
           "name": "Cloud Deployment Basics",
           "tag": "advanced",
-          "description": "Get an introduction to deploying applications on major cloud providers (AWS, GCP, Azure). Learn to deploy Spring Boot applications to Platform as a Service (PaaS) offerings like Heroku or AWS Elastic Beanstalk, or container services. Understand Database as a Service (e.g., AWS RDS, GCP Cloud SQL).",
+          "description": "Deploy and operate Spring Boot on cloud platforms: AWS ECS/EKS or Google Cloud Run, configuring managed databases (AWS RDS PostgreSQL), IAM role-based identity delegation, and integrating cloud secrets managers.",
           "resources": [
             {
               "title": "Deploy Spring Boot to AWS EC2",
@@ -1137,15 +1198,19 @@
               "url": "/data/docs/java_developer/cloud_deployment_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 19
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 26
     },
     {
       "id": "software_design_best_practices",
       "name": "Software Design & Best Practices",
       "tag": "advanced",
-      "description": "Cultivate strong software engineering practices, focusing on robust design principles, clean code, effective refactoring, and professional API design.",
+      "description": "Architect clean, maintainable software systems: SOLID principles, design patterns, Domain-Driven Design, and API standards.",
       "resources": [
         {
           "title": "SOLID Principles in Java",
@@ -1178,7 +1243,7 @@
           "id": "oop_design_patterns",
           "name": "Object-Oriented Design & Patterns",
           "tag": "advanced",
-          "description": "Deepen your understanding of Object-Oriented Design (OOD) with SOLID Principles. Explore common Gang of Four Design Patterns (Creational, Structural, Behavioral) and understand their application in real-world scenarios. Get an introduction to Domain-Driven Design (DDD) concepts.",
+          "description": "Master software architectural patterns in Java: SOLID design principles, Gang of Four patterns (Factory, Builder, Strategy, Observer, Decorator), and Domain-Driven Design (DDD) tactical patterns (Entities, Value Objects, Aggregates, Repositories, Domain Events).",
           "resources": [
             {
               "title": "Design Patterns in Java",
@@ -1205,13 +1270,15 @@
               "url": "/data/docs/java_developer/oop_design_patterns.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         },
         {
           "id": "clean_code_refactoring",
           "name": "Clean Code & Refactoring",
           "tag": "advanced",
-          "description": "Learn to write maintainable, readable, and efficient code. Identify and eliminate code smells. Master refactoring techniques to improve existing codebases without changing external behavior. Understand the importance and process of effective code reviews.",
+          "description": "Write clean, maintainable enterprise Java: identifying and refactoring code smells, eliminating cognitive complexity, enforcing architectural boundaries with ArchUnit, and conducting high-signal peer code reviews.",
           "resources": [
             {
               "title": "Refactoring Guru",
@@ -1238,13 +1305,15 @@
               "url": "/data/docs/java_developer/clean_code_refactoring.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         },
         {
           "id": "api_design_principles",
           "name": "API Design Principles & Documentation",
           "tag": "advanced",
-          "description": "Design well-structured and user-friendly RESTful APIs. Understand best practices for API versioning strategies, error handling, and resource naming. Learn to document your APIs effectively using OpenAPI/Swagger for better collaboration and consumption.",
+          "description": "Design enterprise RESTful APIs: consistent resource URI conventions, HTTP status code semantics, pagination and filtering standards, backward-compatible API versioning, and auto-generating interactive OpenAPI 3.0 documentation using Springdoc-OpenAPI.",
           "resources": [
             {
               "title": "REST API Design Best Practices",
@@ -1271,15 +1340,19 @@
               "url": "/data/docs/java_developer/api_design_principles.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 18
     },
     {
       "id": "capstone_project",
       "name": "Capstone Project: Full-Stack Banking Application",
       "tag": "advanced",
-      "description": "Apply all learned skills to build a comprehensive, production-ready full-stack banking application, demonstrating proficiency in modern Java development practices.",
+      "description": "Capstone: Architect, implement, test, and deploy an enterprise-grade fintech banking core service in Java 21 and Spring Boot 3.",
       "resources": [
         {
           "title": "Spring Guides",
@@ -1307,7 +1380,7 @@
           "id": "project_planning_architecture",
           "name": "Project Planning & Architecture",
           "tag": "advanced",
-          "description": "Define the scope, gather requirements, and design the architecture for a banking application. This includes database schema design, API endpoint definitions, and technology stack selection.",
+          "description": "Project Architecture: Define system requirements and domain models for a multi-tenant core banking engine: double-entry bookkeeping ledger, ACID transactional guarantees, event-driven architecture, and zero-trust security specifications.",
           "resources": [
             {
               "title": "System Design Primer",
@@ -1329,13 +1402,15 @@
               "url": "/data/docs/java_developer/project_planning_architecture.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 55
         },
         {
           "id": "project_implementation_testing",
           "name": "Implementation & Testing",
           "tag": "advanced",
-          "description": "Develop core banking features such as user management, account creation, transaction processing (deposit, withdrawal, transfer). Integrate Spring Security for authentication and authorization (using JWT or OAuth2). Write comprehensive unit and integration tests, and manage database schema changes using Flyway or Liquibase.",
+          "description": "Project Implementation: Develop core banking capabilities in Java 21 & Spring Boot 3: double-entry ledger transactions with optimistic locking, Spring Security stateless JWT authentication, event streaming with Kafka, HikariCP connection pool tuning, and an automated integration test suite using Testcontainers with 85%+ code coverage.",
           "resources": [
             {
               "title": "Flyway Documentation",
@@ -1362,13 +1437,15 @@
               "url": "/data/docs/java_developer/project_implementation_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 55
         },
         {
           "id": "project_deployment_documentation",
           "name": "Deployment & Documentation",
           "tag": "advanced",
-          "description": "Containerize the application using Docker, then deploy it to a chosen cloud platform (e.g., AWS, GCP). Implement robust monitoring and logging solutions. Generate detailed OpenAPI documentation for the API, ensuring it's ready for future development and consumption.",
+          "description": "Project Deployment: Package into multi-stage container images, deploy with Docker Compose / Kubernetes, configure Prometheus and Grafana dashboards for Actuator metrics and latency percentiles, and publish interactive OpenAPI Swagger documentation.",
           "resources": [
             {
               "title": "SpringDoc OpenAPI UI",
@@ -1390,9 +1467,14 @@
               "url": "/data/docs/java_developer/project_deployment_documentation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 55
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 31
     }
-  ]
+  ],
+  "total_exp": 1000
 }

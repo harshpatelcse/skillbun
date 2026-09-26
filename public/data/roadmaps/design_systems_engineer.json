@@ -47,34 +47,34 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Enterprise Multi-Theme Accessible Component Library",
+        "title": "Enterprise Multi-Brand Headless Component Library",
         "tech_stack": [
           "React",
+          "Radix UI",
           "TypeScript",
-          "Storybook",
-          "Tailwind",
-          "Chromatic",
-          "NPM"
+          "Tailwind CSS",
+          "Storybook 8"
         ],
-        "description": "Publish a production-ready UI component library supporting dark/light tokens, keyboard navigation, and automated visual regression testing."
+        "description": "Build an enterprise headless design system with full WAI-ARIA compliance, composable primitives, automated accessibility audits, and multi-theme support."
       },
       {
-        "title": "Accessible Multi-Brand Headless Component Library",
+        "title": "Automated Cross-Platform Design Token Pipeline",
         "tech_stack": [
-          "React",
-          "TypeScript",
-          "Radix UI",
-          "Storybook",
-          "Tailwind"
+          "Style Dictionary",
+          "Figma REST API",
+          "GitHub Actions",
+          "CSS Variables",
+          "iOS/Android"
         ],
-        "description": "Architect a headless token-driven component library adhering to WCAG 2.2 AAA accessibility standards, featuring automated visual regression tests via Playwright."
+        "description": "Architect a zero-friction design token pipeline transforming Figma token variables into production CSS variables, iOS Swift structs, and Android Jetpack Compose tokens."
       }
     ],
     "interview_focus": [
-      "Design Tokens Architecture & Synchronization with Figma",
-      "Building Fully Accessible Modal and Dropdown Components",
-      "Component API Design: Flexibility vs Constraint",
-      "Handling Breaking Component Changes Across Multiple Products"
+      "Design Token Architecture (Global Primitives vs Semantic Aliases vs Component Tokens)",
+      "Compound Components Pattern, Prop Getters & Inversion of Control in React",
+      "Web Accessibility (WCAG 2.2 Level AA, Focus Trapping, ARIA Live Regions, Screen Readers)",
+      "Automated Visual Regression Testing (Chromatic, Playwright) & Breaking Change Detection",
+      "CSS Specificity, Cascade Layers (@layer) & Subgrid Design System Scalability"
     ],
     "certifications": [
       "W3C Web Accessibility Specialist",
@@ -87,7 +87,7 @@
       "id": "design_systems_engineer_foundations",
       "name": "Foundations and Role Context",
       "tag": "essential",
-      "description": "Understand the fundamental concepts of design systems, the pivotal role of a Design Systems Engineer, and the essential context needed before diving into practical implementation.",
+      "description": "Master Design Systems Engineering: Bridging design and frontend development, establishing multi-tier design token architectures, and building accessible UI component libraries.",
       "resources": [
         {
           "title": "What is a Design System? - Figma",
@@ -120,7 +120,7 @@
           "id": "ds_core_concepts",
           "name": "Design System Core Concepts & Principles",
           "tag": "essential",
-          "description": "Dive into the foundational principles (scalability, consistency, usability), core components, and vocabulary that define a robust design system, understanding its value proposition for organizations.",
+          "description": "Understand core design system principles: Atomic design methodology (atoms, molecules, organisms), single source of truth, component consistency, and cross-platform token scaling.",
           "resources": [
             {
               "title": "Design Systems Glossary",
@@ -142,13 +142,15 @@
               "url": "/data/docs/design_systems_engineer/ds_core_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 26
         },
         {
           "id": "ds_engineer_role_context",
           "name": "Design Systems Engineer Role, Impact, and Collaboration",
           "tag": "essential",
-          "description": "Understand the responsibilities, typical daily tasks, and how the Design Systems Engineer role interfaces with design, product, and other engineering teams to drive efficiency, consistency, and innovation across product development cycles.",
+          "description": "Define the Design Systems Engineer role: Managing design-developer collaboration, measuring system adoption metrics, maintaining component SLAs, and establishing governance.",
           "resources": [
             {
               "title": "A Day in the Life of a Design System Engineer",
@@ -170,13 +172,15 @@
               "url": "/data/docs/design_systems_engineer/ds_engineer_role_context.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 33
         },
         {
           "id": "ds_dev_environment_setup",
           "name": "Essential Development Environment & Tooling Setup",
           "tag": "essential",
-          "description": "Set up your local development environment, establish version control best practices, understand modern package managers (npm, yarn, pnpm), and explore monorepo structures crucial for managing a large-scale design system.",
+          "description": "Configure a modern monorepo development environment: Turborepo / pnpm workspaces, TypeScript, Vite, Changesets for semantic versioning, and Storybook 8.",
           "resources": [
             {
               "title": "Git Handbook",
@@ -208,15 +212,19 @@
               "url": "/data/docs/design_systems_engineer/ds_dev_environment_setup.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 22
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 30
     },
     {
       "id": "design_systems_engineer_core_skills",
       "name": "Core Skills: Design Tokens & Component Development",
       "tag": "essential",
-      "description": "Build the practical skill stack for a Design Systems Engineer through hands-on exercises, realistic constraints, and repeatable component development workflows, focusing on modern frontend techniques.",
+      "description": "Architect core design system components: Design tokens, component architecture, styling strategies, Storybook documentation, and accessibility.",
       "resources": [
         {
           "title": "React Official Documentation",
@@ -254,7 +262,7 @@
           "id": "ds_design_tokens_implementation",
           "name": "Design Tokens: Definition, Structure & Implementation",
           "tag": "essential",
-          "description": "Learn to define, manage, and implement design tokens as the single source of truth for styling. Understand token architecture, tooling (e.g., Style Dictionary), and generating platform-agnostic outputs for consistent styling across various environments.",
+          "description": "Master design token architecture: Three-tier token hierarchy (Global/Primitive, Semantic/Alias, Component-specific tokens), Style Dictionary transformation, and DTCG token specifications.",
           "resources": [
             {
               "title": "W3C Design Tokens Community Group Specification",
@@ -286,13 +294,15 @@
               "url": "/data/docs/design_systems_engineer/ds_design_tokens_implementation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 36
         },
         {
           "id": "ds_component_architecture_patterns",
           "name": "Building Reusable UI Components & Architectural Patterns",
           "tag": "essential",
-          "description": "Master the art of building robust, flexible, and accessible UI components. Explore component architecture patterns (composition, HOCs, render props), state management within components, and best practices for creating maintainable, scalable building blocks.",
+          "description": "Engineer headless and compound component patterns: Controlled vs uncontrolled components, slot composition, polymorphism (`asChild`), and React/Web Components primitives.",
           "resources": [
             {
               "title": "Building a Component Library: Best Practices",
@@ -324,13 +334,15 @@
               "url": "/data/docs/design_systems_engineer/ds_component_architecture_patterns.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 25
         },
         {
           "id": "ds_styling_solutions_and_frameworks",
           "name": "Styling Strategies & Frontend Framework Integration",
           "tag": "essential",
-          "description": "Deep dive into various styling solutions (CSS Modules, Styled Components, Emotion, TailwindCSS, SASS) and how to integrate them effectively within components across popular frontend frameworks like React, Vue, or Angular, considering theming and dark mode.",
+          "description": "Evaluate design system styling architectures: CSS Custom Properties, Tailwind CSS theme plugins, CSS Modules, Vanilla Extract zero-runtime CSS, and CSS-in-JS tradeoffs.",
           "resources": [
             {
               "title": "Modern CSS-in-JS Solutions",
@@ -357,13 +369,15 @@
               "url": "/data/docs/design_systems_engineer/ds_styling_solutions_and_frameworks.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 32
         },
         {
           "id": "ds_storybook_documentation",
           "name": "Interactive Component Documentation with Storybook",
           "tag": "essential",
-          "description": "Learn to set up and leverage Storybook for interactive component development and documentation. Write clear stories, utilize controls, actions, args, and integrate addons for enhanced development, testing, and demonstration.",
+          "description": "Author interactive Storybook documentation: Storybook 8 autodocs, controls, args, interaction testing with `@storybook/test`, and publishing to Chromatic.",
           "resources": [
             {
               "title": "Storybook Documentation",
@@ -395,13 +409,15 @@
               "url": "/data/docs/design_systems_engineer/ds_storybook_documentation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 30
         },
         {
           "id": "ds_a11y_in_components",
           "name": "Building Truly Accessible UI Components",
           "tag": "essential",
-          "description": "Integrate accessibility best practices from the start. Focus on semantic HTML, keyboard navigation, ARIA attributes, focus management, and contrast requirements to ensure components are usable by everyone, including those with disabilities, adhering to WCAG standards.",
+          "description": "Build accessible UI primitives: WAI-ARIA authoring practices, focus trap management, keyboard navigation, screen reader announcements, and Radix UI / Zag.js headless integration.",
           "resources": [
             {
               "title": "WAI-ARIA Authoring Practices Guide",
@@ -428,15 +444,19 @@
               "url": "/data/docs/design_systems_engineer/ds_a11y_in_components.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 26
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 24
     },
     {
       "id": "design_systems_engineer_quality_testing",
       "name": "Quality Assurance, Testing, and Code Standards",
       "tag": "essential",
-      "description": "Implement robust testing strategies, ensure high code quality, and establish review processes to maintain a reliable, consistent, and performant design system.",
+      "description": "Ensure UI component quality: Automated unit testing, visual regression testing, and automated accessibility auditing.",
       "resources": [
         {
           "title": "Testing JavaScript Applications",
@@ -474,7 +494,7 @@
           "id": "ds_unit_integration_testing",
           "name": "Unit & Integration Testing for UI Components",
           "tag": "essential",
-          "description": "Write effective unit and integration tests to ensure component logic, behavior, and interactions are correct. Master testing tools like Jest and React Testing Library for comprehensive coverage and robust component behavior.",
+          "description": "Unit test UI components: Vitest and React Testing Library; asserting component rendering, user event simulation, and ARIA state transitions.",
           "resources": [
             {
               "title": "Jest Documentation",
@@ -506,13 +526,15 @@
               "url": "/data/docs/design_systems_engineer/ds_unit_integration_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 34
         },
         {
           "id": "ds_visual_regression_testing",
           "name": "Visual Regression Testing & UI Stability",
           "tag": "advanced",
-          "description": "Automate the detection of UI changes and prevent unintended visual regressions. Implement tools like Chromatic, Storybook's built-in visual testing, or other dedicated solutions to ensure pixel-perfect consistency across component updates.",
+          "description": "Prevent visual regressions: Automated pixel-by-pixel regression testing using Playwright screenshot comparisons or Chromatic across viewports and dark/light themes.",
           "resources": [
             {
               "title": "Introduction to Visual Regression Testing",
@@ -539,13 +561,15 @@
               "url": "/data/docs/design_systems_engineer/ds_visual_regression_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         },
         {
           "id": "ds_code_quality_standards",
           "name": "Code Quality, Linting, Typing & Pre-commit Hooks",
           "tag": "essential",
-          "description": "Enforce consistent code style, catch errors early, and improve maintainability and developer experience. Configure ESLint, Prettier, and TypeScript, and integrate them with pre-commit hooks (e.g., Husky, lint-staged) and CI pipelines for automated quality checks.",
+          "description": "Enforce code quality standards: Strict TypeScript compiler flags, ESLint with `eslint-plugin-jsx-a11y`, Prettier formatting, and Lefthook / Husky pre-commit hooks.",
           "resources": [
             {
               "title": "ESLint Documentation",
@@ -577,13 +601,15 @@
               "url": "/data/docs/design_systems_engineer/ds_code_quality_standards.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         },
         {
           "id": "ds_a11y_testing_auditing",
           "name": "Comprehensive Accessibility Testing & Auditing",
           "tag": "essential",
-          "description": "Learn to use automated tools (e.g., Axe-core) and perform manual testing techniques (keyboard navigation, screen reader checks) to verify and ensure the accessibility of your design system components, leveraging browser developer tools and Lighthouse audits.",
+          "description": "Automate accessibility audits: axe-core integration in automated CI tests, manual VoiceOver / NVDA screen reader audits, and color contrast ratio verification.",
           "resources": [
             {
               "title": "Axe-core Accessibility Engine",
@@ -610,15 +636,19 @@
               "url": "/data/docs/design_systems_engineer/ds_a11y_testing_auditing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 23
     },
     {
       "id": "design_systems_engineer_production_collaboration",
       "name": "Production Readiness, Collaboration, and System Operations",
       "tag": "advanced",
-      "description": "Transition from isolated component development to managing a living design system in a production environment, fostering seamless collaboration with cross-functional teams, and ensuring its long-term health, evolution, and adoption.",
+      "description": "Operationalize design systems in production: Package publishing, CI/CD automation, cross-team governance, and performance.",
       "resources": [
         {
           "title": "Scaling Design Systems",
@@ -646,7 +676,7 @@
           "id": "ds_versioning_packaging",
           "name": "Versioning, Packaging, and Publishing Strategies",
           "tag": "advanced",
-          "description": "Implement semantic versioning for design system packages, understand module formats (ESM, CJS), and package components for efficient distribution. Master publishing to internal or public registries like npm, including changelog generation.",
+          "description": "Package and publish UI libraries: Multi-package monorepo publishing via Changesets, Rollup bundle optimization, tree-shaking verification (ESM/CJS exports), and npm/GitHub Packages.",
           "resources": [
             {
               "title": "Semantic Versioning Specification (SemVer)",
@@ -678,13 +708,15 @@
               "url": "/data/docs/design_systems_engineer/ds_versioning_packaging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 49
         },
         {
           "id": "ds_ci_cd_for_ds",
           "name": "Continuous Integration & Delivery for Design Systems",
           "tag": "advanced",
-          "description": "Automate testing, building, and deploying the design system using robust CI/CD pipelines (e.g., GitHub Actions, GitLab CI, Jenkins). Ensure rapid, reliable updates, version control, and consistent delivery to consuming applications.",
+          "description": "Automate design system CI/CD: GitHub Actions running automated type checking, linting, unit tests, Chromatic visual regression reviews, and automated release notes.",
           "resources": [
             {
               "title": "Introduction to CI/CD",
@@ -716,13 +748,15 @@
               "url": "/data/docs/design_systems_engineer/ds_ci_cd_for_ds.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         },
         {
           "id": "ds_design_dev_collaboration",
           "name": "Seamless Collaboration: Design, Development & Product",
           "tag": "advanced",
-          "description": "Establish effective communication channels and sophisticated workflows to ensure seamless collaboration. Focus on Figma-to-code integration, automated design handoff, continuous feedback loops, and aligning engineering efforts with design intent for consistent user experiences.",
+          "description": "Facilitate design-to-code workflows: Figma Tokens Studio integration, bidirectional token syncing via GitHub Actions, and Figma Dev Mode component mapping.",
           "resources": [
             {
               "title": "Figma API Documentation",
@@ -749,13 +783,15 @@
               "url": "/data/docs/design_systems_engineer/ds_design_dev_collaboration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 42
         },
         {
           "id": "ds_governance_adoption",
           "name": "Design System Governance, Evolution & Adoption Metrics",
           "tag": "advanced",
-          "description": "Define clear processes for contribution, evolution, and deprecation of design system assets. Understand different governance models (centralized, federated) and learn to measure the impact and adoption of the design system across the organization to drive success and maintain its long-term health.",
+          "description": "Drive design system governance: Contribution RFC processes, tracking adoption percentage across product repos with scanner scripts, and deprecation lifecycles.",
           "resources": [
             {
               "title": "Design System Governance Strategies",
@@ -787,13 +823,15 @@
               "url": "/data/docs/design_systems_engineer/ds_governance_adoption.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 43
         },
         {
           "id": "ds_performance_optimization",
           "name": "Performance Optimization for Design Systems",
           "tag": "advanced",
-          "description": "Optimize design system components for performance. Address bundle size, lazy loading, tree-shaking, runtime performance, and efficient rendering to ensure consuming applications remain fast and responsive, contributing to a superior user experience.",
+          "description": "Optimize library runtime performance: Zero-runtime CSS extraction, tree-shaking unused icons/components, bundle size monitoring with Size Limit, and minimizing DOM node counts.",
           "resources": [
             {
               "title": "Webpack Performance Guide",
@@ -825,13 +863,15 @@
               "url": "/data/docs/design_systems_engineer/ds_performance_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 47
         },
         {
           "id": "ds_internationalization_localization",
           "name": "Internationalization and Localization (i18n & l10n)",
           "tag": "advanced",
-          "description": "Implement internationalization and localization strategies within design system components. Ensure support for multiple languages, cultural nuances, date/time formats, and right-to-left (RTL) layouts, making the system globally ready and inclusive.",
+          "description": "Support RTL and internationalization: CSS logical properties (`margin-inline-start`), bidirectional text direction switching, and locale-aware number/date formatters.",
           "resources": [
             {
               "title": "i18n with React",
@@ -858,15 +898,19 @@
               "url": "/data/docs/design_systems_engineer/ds_internationalization_localization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 45
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 32
     },
     {
       "id": "design_systems_engineer_portfolio_career",
       "name": "Portfolio and Career Readiness",
       "tag": "advanced",
-      "description": "Transform your Design Systems Engineering knowledge and projects into a compelling portfolio, craft impactful case studies, and prepare for successful job interviews in this specialized field.",
+      "description": "Build a competitive Design Systems portfolio: Open-source component libraries, interactive documentation portals, and interview readiness.",
       "resources": [
         {
           "title": "Building a Strong Technical Portfolio",
@@ -894,7 +938,7 @@
           "id": "ds_case_study_writing",
           "name": "Crafting Impactful Design System Case Studies",
           "tag": "advanced",
-          "description": "Learn to structure and write compelling case studies that effectively highlight your problem-solving skills, significant design system contributions, and measurable impact on product development and team efficiency, showcasing your value as a DSE.",
+          "description": "Author design system case studies: Documenting how token architecture reduced UI bug tickets by 60%, accelerated sprint velocity, and unified multi-brand themes.",
           "resources": [
             {
               "title": "How to Write a Technical Case Study",
@@ -911,13 +955,15 @@
               "url": "/data/docs/design_systems_engineer/ds_case_study_writing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 43
         },
         {
           "id": "ds_capstone_project",
           "name": "Capstone Project: Building a Production-Ready Design System",
           "tag": "advanced",
-          "description": "Develop a comprehensive, portfolio-ready design system from scratch, demonstrating your mastery of design tokens, component development, comprehensive documentation, testing, CI/CD, and collaboration workflows, showcasing a holistic understanding of the role.",
+          "description": "Build an enterprise Design System capstone: Multi-package monorepo featuring Style Dictionary tokens, accessible React components (Radix primitives), Storybook documentation, Chromatic visual CI, and npm release.",
           "resources": [
             {
               "title": "Example Design Systems on GitHub",
@@ -939,13 +985,15 @@
               "url": "/data/docs/design_systems_engineer/ds_capstone_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 123
         },
         {
           "id": "ds_interview_preparation",
           "name": "Interviewing for Design Systems Engineer Roles",
           "tag": "advanced",
-          "description": "Prepare for technical, behavioral, and system design interviews specific to Design Systems Engineer positions, focusing on effective communication, problem-solving, and demonstrating deep domain knowledge in design systems principles and practices.",
+          "description": "Master Design Systems technical interviews: Whiteboard compound component APIs, derive design token inheritance models, explain WCAG 2.1 AA focus rings, and solve component architecture problems.",
           "resources": [
             {
               "title": "Common Frontend Interview Questions",
@@ -967,9 +1015,14 @@
               "url": "/data/docs/design_systems_engineer/ds_interview_preparation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 53
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 32
     }
-  ]
+  ],
+  "total_exp": 1000
 }

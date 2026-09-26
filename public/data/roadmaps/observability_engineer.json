@@ -47,32 +47,34 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Unified OpenTelemetry & Distributed Tracing Cluster",
+        "title": "Full-Stack Distributed Tracing & Telemetry Pipeline with OpenTelemetry",
         "tech_stack": [
-          "OpenTelemetry",
-          "Jaeger",
-          "Prometheus",
-          "Grafana Loki",
-          "Kubernetes"
-        ],
-        "description": "Instrument a multi-service microservice application with OpenTelemetry auto-instrumentation, correlating logs, metrics, and traces under a unified TraceID."
-      },
-      {
-        "title": "Full-Stack Distributed Tracing with OpenTelemetry & Grafana Tempo",
-        "tech_stack": [
-          "OpenTelemetry",
+          "OpenTelemetry Collector",
           "Grafana Tempo",
           "Prometheus",
-          "Loki"
+          "Grafana 11",
+          "Docker"
         ],
-        "description": "Instrument a polyglot microservice application with distributed trace propagation, correlation of logs and metrics, and actionable SLO burn-rate alerting."
+        "description": "Deploy an OpenTelemetry Collector gateway gathering traces, metrics, and logs across distributed microservices with automated tail-based sampling."
+      },
+      {
+        "title": "Centralized High-Throughput Log Aggregation & SLO Alerting Platform",
+        "tech_stack": [
+          "Fluent Bit",
+          "Vector",
+          "Grafana Loki",
+          "PromQL",
+          "PagerDuty API"
+        ],
+        "description": "Engineer a resilient log aggregation cluster parsing structured JSON logs, computing service level indicators (SLIs), and triggering predictive budget alerts."
       }
     ],
     "interview_focus": [
-      "The Three Pillars of Observability vs True Observability",
-      "PromQL Rate vs Irate Mechanics",
-      "Managing High-Cardinality Metrics without Exploding Storage",
-      "Trace Context Propagation over HTTP and Message Queues"
+      "The Three Pillars of Observability (Metrics, Logs, Traces) & OpenTelemetry Standard",
+      "Trace Context Propagation (W3C TraceContext headers, Span IDs, Parent-Child Relationships)",
+      "Sampling Strategies (Head-Based vs Tail-Based Sampling, Adaptive Sampling Budgets)",
+      "Prometheus Time-Series Data Model (Gauges, Counters, Histograms, Summaries & Rate Calculation)",
+      "SLI/SLO/SLA Calculations & Error Budget Depletion Rate Alerting (Google SRE Book Standards)"
     ],
     "certifications": [
       "Prometheus Certified Associate (PCA)",
@@ -85,7 +87,7 @@
       "id": "obs_engineer_foundations",
       "name": "Observability Foundations & Principles",
       "tag": "essential",
-      "description": "Establish a strong understanding of observability's 'why' and 'what', differentiating it from traditional monitoring, and exploring its fundamental pillars and architectural considerations.",
+      "description": "Master foundational observability concepts: Differentiating telemetry from debugging, control theory principles, and building feedback loops for complex distributed systems.",
       "resources": [
         {
           "title": "The Three Pillars of Observability",
@@ -118,7 +120,7 @@
           "id": "obs_engineer_domain_basics_intro",
           "name": "Introduction to Observability, SRE & Monitoring",
           "tag": "essential",
-          "description": "Define observability, its evolution, the core SRE principles it supports, and its business impact. Understand the common challenges it addresses and clearly differentiate it from traditional monitoring.",
+          "description": "Understand observability vs traditional monitoring: Black-box vs white-box monitoring, cardinality challenges, unknown-unknowns detection, and Site Reliability Engineering (SRE) synergy.",
           "resources": [
             {
               "title": "Observability vs. Monitoring: What's the Difference?",
@@ -140,13 +142,15 @@
               "url": "/data/docs/observability_engineer/obs_engineer_domain_basics_intro.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 16
         },
         {
           "id": "obs_engineer_telemetry_pillars",
           "name": "The Core Telemetry Pillars: Metrics, Logs, Traces",
           "tag": "essential",
-          "description": "Deep dive into each telemetry type: their characteristics, data models, common use cases, collection methods, and how they complement each other for a holistic system view.",
+          "description": "Master the three core telemetry pillars: Structured metrics, contextual distributed traces, and high-fidelity event logs. Correlating pillars using trace IDs and exemplar links.",
           "resources": [
             {
               "title": "Understanding Metrics, Logs, and Traces",
@@ -168,13 +172,15 @@
               "url": "/data/docs/observability_engineer/obs_engineer_telemetry_pillars.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 20
         },
         {
           "id": "obs_engineer_data_processing_storage",
           "name": "Telemetry Data Lifecycle: Ingestion, Processing & Storage",
           "tag": "essential",
-          "description": "Understand the full lifecycle of telemetry data, from efficient ingestion and real-time aggregation to robust storage strategies (Time-Series Databases, Log Stores, Trace Stores) and data retention policies.",
+          "description": "Architect the telemetry data lifecycle: High-throughput ingestion pipelines, sampling strategies (head-based vs tail-based), compression codecs, and tiered storage.",
           "resources": [
             {
               "title": "Observability Data Pipelines: A Comprehensive Guide",
@@ -201,13 +207,15 @@
               "url": "/data/docs/observability_engineer/obs_engineer_data_processing_storage.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "obs_engineer_telemetry_design",
           "name": "Designing Effective Telemetry & Instrumentation Strategies",
           "tag": "essential",
-          "description": "Learn how to design instrumentation for new and existing applications, focusing on high-cardinality data, appropriate granularity, and balancing verbosity with performance.",
+          "description": "Design enterprise instrumentation strategies: Standardizing semantic conventions, avoiding high-cardinality label explosions, and establishing logging schema standards.",
           "resources": [
             {
               "title": "Principles of Observability Data Design",
@@ -234,15 +242,19 @@
               "url": "/data/docs/observability_engineer/obs_engineer_telemetry_design.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 17
     },
     {
       "id": "obs_engineer_opentelemetry",
       "name": "OpenTelemetry: Universal Telemetry Standard",
       "tag": "essential",
-      "description": "Master OpenTelemetry as the vendor-neutral, universal standard for instrumenting applications, collecting, and exporting high-quality telemetry data across diverse services and programming languages.",
+      "description": "Master OpenTelemetry (OTel): Vendor-neutral telemetry standard, specification, data models, APIs, and Language SDKs.",
       "resources": [
         {
           "title": "OpenTelemetry Documentation",
@@ -270,7 +282,7 @@
           "id": "obs_engineer_opentelemetry_architecture",
           "name": "OpenTelemetry Architecture, APIs & SDKs",
           "tag": "essential",
-          "description": "Explore the OpenTelemetry specification, APIs, SDKs, and the role of the OTel Collector in standardizing telemetry data generation and export across various ecosystems.",
+          "description": "Deconstruct OpenTelemetry architecture: TracerProvider, MeterProvider, LoggerProvider, Context propagation mechanisms, and OTLP protocol over gRPC/HTTP.",
           "resources": [
             {
               "title": "OpenTelemetry Architecture Overview",
@@ -297,13 +309,15 @@
               "url": "/data/docs/observability_engineer/obs_engineer_opentelemetry_architecture.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 17
         },
         {
           "id": "obs_engineer_opentelemetry_instrumentation",
           "name": "Application Instrumentation with OpenTelemetry",
           "tag": "essential",
-          "description": "Learn manual and automatic instrumentation for generating metrics, logs, and traces across popular programming languages (e.g., Python, Go, Java, Node.js). Master context propagation, baggage, and attribute management.",
+          "description": "Instrument applications with OpenTelemetry: Auto-instrumentation agents vs manual instrumentation in Java, Go, Python, and Node.js; creating spans and recording custom metrics.",
           "resources": [
             {
               "title": "OpenTelemetry Instrumentation Guides",
@@ -325,13 +339,15 @@
               "url": "/data/docs/observability_engineer/obs_engineer_opentelemetry_instrumentation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 20
         },
         {
           "id": "obs_engineer_opentelemetry_collector",
           "name": "OpenTelemetry Collector Configuration & Deployment",
           "tag": "essential",
-          "description": "Configure the OTel Collector for robust data ingestion, advanced processing (batching, filtering, enriching, sampling, transformations), and exporting to various observability backends. Explore deployment patterns for different environments (sidecar, agent, gateway).",
+          "description": "Deploy OpenTelemetry Collectors: Configuring receivers, processors (batch, memory_limiter, attributes, tail_sampling), and exporters for routing telemetry to backends.",
           "resources": [
             {
               "title": "OpenTelemetry Collector Documentation",
@@ -358,15 +374,19 @@
               "url": "/data/docs/observability_engineer/obs_engineer_opentelemetry_collector.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 14
     },
     {
       "id": "obs_engineer_metrics_prometheus",
       "name": "Metrics & Monitoring with Prometheus Ecosystem",
       "tag": "essential",
-      "description": "Become proficient in using Prometheus for collecting, storing, and querying time-series metrics. Understand its data model, operational aspects, and integrate it within a broader monitoring ecosystem.",
+      "description": "Master metrics collection with the Prometheus ecosystem: Pull-based scraping model, multi-dimensional data model, and time-series database internals.",
       "resources": [
         {
           "title": "Prometheus Documentation",
@@ -394,7 +414,7 @@
           "id": "obs_engineer_prometheus_basics",
           "name": "Prometheus Fundamentals: Architecture & Data Model",
           "tag": "essential",
-          "description": "Understand Prometheus server, scrape targets, pushgateway, service discovery, and the powerful PromQL query language. Dive into the pull model and label-based data model.",
+          "description": "Master Prometheus fundamentals: Counter, Gauge, Histogram, and Summary metric types; TSDB chunk storage; and write-ahead logs (WAL).",
           "resources": [
             {
               "title": "Prometheus Data Model",
@@ -421,13 +441,15 @@
               "url": "/data/docs/observability_engineer/obs_engineer_prometheus_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 12
         },
         {
           "id": "obs_engineer_prometheus_exporters_sd",
           "name": "Prometheus Exporters & Service Discovery",
           "tag": "essential",
-          "description": "Implement and manage common exporters (Node Exporter, cAdvisor, custom application exporters) to expose metrics. Configure static and dynamic service discovery mechanisms (Kubernetes, Consul, EC2).",
+          "description": "Deploy Prometheus exporters and service discovery: Node Exporter, Blackbox Exporter, and dynamic service discovery via Kubernetes API, Consul, and AWS EC2 tags.",
           "resources": [
             {
               "title": "Prometheus Exporters",
@@ -454,13 +476,15 @@
               "url": "/data/docs/observability_engineer/obs_engineer_prometheus_exporters_sd.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         },
         {
           "id": "obs_engineer_promql_advanced",
           "name": "Advanced PromQL, Recording & Alerting Rules",
           "tag": "essential",
-          "description": "Master complex PromQL queries for aggregation, rate calculations, and advanced analysis. Create efficient recording rules for pre-aggregated metrics and define effective alerting rules.",
+          "description": "Master advanced PromQL queries: Vector matching (one-to-one, many-to-one), rate/irate calculations, subqueries, histogram quantiles (`histogram_quantile`), and recording rules.",
           "resources": [
             {
               "title": "PromQL documentation",
@@ -487,13 +511,15 @@
               "url": "/data/docs/observability_engineer/obs_engineer_promql_advanced.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 20
         },
         {
           "id": "obs_engineer_prometheus_federation_remote",
           "name": "Prometheus Federation, Remote Storage & HA",
           "tag": "advanced",
-          "description": "Implement Prometheus federation for hierarchical monitoring. Explore remote write and remote read for long-term storage solutions (e.g., Thanos, Mimir, VictoriaMetrics) and achieve high availability.",
+          "description": "Scale Prometheus horizontally: Hierarchical federation, remote write configurations, and deploying Thanos or VictoriaMetrics for global query deduplication and multi-year retention.",
           "resources": [
             {
               "title": "Prometheus Federation",
@@ -520,15 +546,19 @@
               "url": "/data/docs/observability_engineer/obs_engineer_prometheus_federation_remote.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 29
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 18
     },
     {
       "id": "obs_engineer_grafana",
       "name": "Visualization & Interactive Dashboards with Grafana",
       "tag": "essential",
-      "description": "Build powerful, informative, and interactive dashboards using Grafana for metrics, logs, and traces, enabling quick insights and efficient troubleshooting across various data sources.",
+      "description": "Design high-impact operational dashboards and alerts with Grafana across multi-source telemetry backends.",
       "resources": [
         {
           "title": "Grafana Documentation",
@@ -556,7 +586,7 @@
           "id": "obs_engineer_grafana_dashboards",
           "name": "Grafana Dashboard Design & Best Practices",
           "tag": "essential",
-          "description": "Create effective and user-friendly dashboards, utilizing different panel types, variables, templating, annotations, and row/panel organization for clear data representation and drill-down capabilities.",
+          "description": "Engineer production Grafana dashboards: Designing intuitive operational views, templating with dynamic dashboard variables, heatmap visualizations, and dashboard usability.",
           "resources": [
             {
               "title": "Designing effective Grafana dashboards",
@@ -583,13 +613,15 @@
               "url": "/data/docs/observability_engineer/obs_engineer_grafana_dashboards.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 15
         },
         {
           "id": "obs_engineer_grafana_data_sources",
           "name": "Connecting Data Sources & Advanced Panel Features",
           "tag": "essential",
-          "description": "Integrate various data sources like Prometheus, Loki, Tempo, CloudWatch, Elasticsearch, and more. Utilize advanced panel features like transformations, overrides, and linking between dashboards/explorers.",
+          "description": "Connect heterogeneous data sources in Grafana: Integrating Prometheus, Loki, Tempo, CloudWatch, and PostgreSQL; configuring panel expressions and transformations.",
           "resources": [
             {
               "title": "Grafana Data Sources",
@@ -616,13 +648,15 @@
               "url": "/data/docs/observability_engineer/obs_engineer_grafana_data_sources.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 19
         },
         {
           "id": "obs_engineer_grafana_alerting",
           "name": "Grafana Unified Alerting & Panel Expressions",
           "tag": "essential",
-          "description": "Configure and manage alerts directly within Grafana using unified alerting. Learn to create complex alert conditions using PromQL, LogQL, and other query languages, and integrate with notification channels.",
+          "description": "Implement Grafana Unified Alerting: Multi-dimensional alert rules, evaluation groups, notification policies, contact points (Slack, PagerDuty), and alert routing trees.",
           "resources": [
             {
               "title": "Grafana Alerting Guide",
@@ -649,15 +683,19 @@
               "url": "/data/docs/observability_engineer/obs_engineer_grafana_alerting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 14
     },
     {
       "id": "obs_engineer_logs_management",
       "name": "Logs Management & Advanced Analysis",
       "tag": "essential",
-      "description": "Implement robust log collection, aggregation, storage, and advanced analysis systems to derive actionable insights from application and infrastructure logs, crucial for debugging and security.",
+      "description": "Architect enterprise log management: Ingestion, parsing, structured JSON formatting, full-text indexing, and high-efficiency querying.",
       "resources": [
         {
           "title": "Introduction to Log Management",
@@ -685,7 +723,7 @@
           "id": "obs_engineer_log_collection",
           "name": "Log Collection & Forwarding (Fluentd/Fluent Bit, Vector)",
           "tag": "essential",
-          "description": "Deploy and configure high-performance log agents like Fluentd, Fluent Bit, or Vector for efficient, reliable log collection from diverse sources (files, Docker, Kubernetes, systemd journals).",
+          "description": "Deploy log shipping agents: Configuring Fluent Bit, Fluentd, and Vector for lightweight log collection, multiline parsing, filtering, and buffering.",
           "resources": [
             {
               "title": "Fluentd Documentation",
@@ -712,13 +750,15 @@
               "url": "/data/docs/observability_engineer/obs_engineer_log_collection.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 17
         },
         {
           "id": "obs_engineer_log_storage_query",
           "name": "Log Storage & Querying (Loki, Elasticsearch/OpenSearch)",
           "tag": "essential",
-          "description": "Set up and manage scalable log aggregation and storage solutions like Grafana Loki or Elasticsearch/OpenSearch (ELK/EFK stack). Master querying languages (LogQL, KQL) and full-text search.",
+          "description": "Deploy scalable log storage backends: Index-free log aggregation with Grafana Loki using LogQL, and full-text search clusters with Elasticsearch / OpenSearch.",
           "resources": [
             {
               "title": "Grafana Loki for Logs",
@@ -745,13 +785,15 @@
               "url": "/data/docs/observability_engineer/obs_engineer_log_storage_query.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         },
         {
           "id": "obs_engineer_structured_logging",
           "name": "Structured Logging, Contextualization & Parsing",
           "tag": "essential",
-          "description": "Understand the benefits of structured logging, implement it effectively in applications, and enrich logs with contextual information. Learn to parse and transform unstructured logs into structured data for better analysis.",
+          "description": "Standardize structured logging across microservices: Enforcing JSON schemas, contextual attributes (service name, environment, user ID), and embedding trace/span correlation IDs.",
           "resources": [
             {
               "title": "Structured Logging Best Practices",
@@ -778,13 +820,15 @@
               "url": "/data/docs/observability_engineer/obs_engineer_structured_logging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 20
         },
         {
           "id": "obs_engineer_log_anomaly_detection",
           "name": "Log Anomaly Detection & Pattern Recognition",
           "tag": "advanced",
-          "description": "Explore techniques and tools for automated anomaly detection in log streams to proactively identify issues. Understand how to use machine learning for log pattern recognition and clustering.",
+          "description": "Detect log anomalies and patterns: Automated log clustering, regex pattern extraction, error spike detection, and identifying silent failures in production.",
           "resources": [
             {
               "title": "Log Anomaly Detection with Machine Learning",
@@ -811,15 +855,19 @@
               "url": "/data/docs/observability_engineer/obs_engineer_log_anomaly_detection.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 14
     },
     {
       "id": "obs_engineer_distributed_tracing",
       "name": "Distributed Tracing & Performance Analysis",
       "tag": "essential",
-      "description": "Implement distributed tracing to visualize request flows across complex microservices architectures, identify latency bottlenecks, understand inter-service dependencies, and debug system behavior.",
+      "description": "Analyze distributed transactions across microservices: Tracing asynchronous requests, identifying latency bottlenecks, and mapping service dependency topologies.",
       "resources": [
         {
           "title": "What is Distributed Tracing?",
@@ -847,7 +895,7 @@
           "id": "obs_engineer_tracing_concepts",
           "name": "Tracing Concepts: Spans, Traces, Context Propagation",
           "tag": "essential",
-          "description": "Deepen understanding of the trace data model, how spans combine to form traces, and the critical role of context propagation (W3C Trace Context) in correlating operations across service boundaries.",
+          "description": "Master distributed tracing fundamentals: Spans, Traces, Span Context, Parent-Child relationships, W3C TraceContext headers, and baggage propagation across process boundaries.",
           "resources": [
             {
               "title": "OpenTelemetry Tracing Concepts",
@@ -874,13 +922,15 @@
               "url": "/data/docs/observability_engineer/obs_engineer_tracing_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 20
         },
         {
           "id": "obs_engineer_tracing_backends",
           "name": "Tracing Backends: Jaeger, Zipkin, Grafana Tempo",
           "tag": "essential",
-          "description": "Deploy, configure, and operate popular tracing backends like Jaeger, Zipkin, or Grafana Tempo for efficient storage, indexing, and visualization of trace data.",
+          "description": "Deploy distributed tracing backends: Jaeger, Grafana Tempo with object storage (S3/GCS), and Zipkin for high-throughput, cost-effective trace persistence.",
           "resources": [
             {
               "title": "Jaeger Documentation",
@@ -907,13 +957,15 @@
               "url": "/data/docs/observability_engineer/obs_engineer_tracing_backends.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 27
         },
         {
           "id": "obs_engineer_trace_analysis",
           "name": "Analyzing Traces for Performance & Root Cause Analysis",
           "tag": "essential",
-          "description": "Utilize tracing UIs to effectively pinpoint latency bottlenecks, identify service dependencies, detect errors, and understand distributed system behavior for faster root cause analysis. Explore service graphs and flame graphs.",
+          "description": "Analyze trace data for root-cause diagnosis: Identifying critical path latency bottlenecks, database slow queries, cascading network timeouts, and microservice deadlocks.",
           "resources": [
             {
               "title": "Troubleshooting with Distributed Tracing",
@@ -940,13 +992,15 @@
               "url": "/data/docs/observability_engineer/obs_engineer_trace_analysis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "obs_engineer_service_mesh_tracing",
           "name": "Service Mesh Observability with Tracing",
           "tag": "advanced",
-          "description": "Understand how service meshes (e.g., Istio, Linkerd) automatically generate tracing data without application changes. Learn to configure and leverage service mesh tracing for enhanced visibility in microservices.",
+          "description": "Trace across service meshes: Integrating Istio / Envoy with OpenTelemetry for automated East-West traffic tracing, header propagation, and mesh telemetry.",
           "resources": [
             {
               "title": "Istio Distributed Tracing",
@@ -973,15 +1027,19 @@
               "url": "/data/docs/observability_engineer/obs_engineer_service_mesh_tracing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 25
     },
     {
       "id": "obs_engineer_alerting_slos",
       "name": "Alerting, Incident Response & SLOs",
       "tag": "essential",
-      "description": "Design effective alerting strategies, integrate with incident management workflows, and define/track Service Level Objectives (SLOs) to ensure the reliability and performance of critical systems.",
+      "description": "Establish actionable alerting strategies, incident management pipelines, and Site Reliability Engineering SLOs.",
       "resources": [
         {
           "title": "Prometheus Alerting",
@@ -1014,7 +1072,7 @@
           "id": "obs_engineer_alert_manager",
           "name": "Prometheus Alertmanager & Notification Systems",
           "tag": "essential",
-          "description": "Configure Alertmanager for intelligent alert routing, grouping, silencing, and inhibition. Integrate with popular notification channels like PagerDuty, Slack, Opsgenie, and email.",
+          "description": "Configure Prometheus Alertmanager: Routing trees, alert grouping, inhibition rules to prevent alert storms, silencing windows, and high-availability clustering.",
           "resources": [
             {
               "title": "Alertmanager Documentation",
@@ -1036,13 +1094,15 @@
               "url": "/data/docs/observability_engineer/obs_engineer_alert_manager.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         },
         {
           "id": "obs_engineer_alerting_best_practices",
           "name": "Actionable Alerting Best Practices & Runbooks",
           "tag": "essential",
-          "description": "Learn to create actionable, signal-based alerts that minimize alert fatigue. Develop comprehensive and automated runbooks to guide incident response and resolution.",
+          "description": "Eliminate alert fatigue: Applying alerting best practices (alert on symptoms, not causes), symptom-based paging, linking alerts directly to runbooks, and tuning thresholds.",
           "resources": [
             {
               "title": "Best Practices for Alerting",
@@ -1069,13 +1129,15 @@
               "url": "/data/docs/observability_engineer/obs_engineer_alerting_best_practices.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 20
         },
         {
           "id": "obs_engineer_slos_sli_error_budgets",
           "name": "Service Level Objectives (SLOs), SLIs, & Error Budgets",
           "tag": "essential",
-          "description": "Define meaningful Service Level Indicators (SLIs), set realistic and impactful SLOs, and manage error budgets to balance system reliability with feature velocity and innovation. Learn the 'PULSE' and 'RED' methods.",
+          "description": "Implement SRE reliability frameworks: Defining Service Level Indicators (SLIs), negotiating Service Level Objectives (SLOs), tracking error budget burn rates, and multi-window burn rate alerts.",
           "resources": [
             {
               "title": "Implementing SLOs",
@@ -1097,13 +1159,15 @@
               "url": "/data/docs/observability_engineer/obs_engineer_slos_sli_error_budgets.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 22
         },
         {
           "id": "obs_engineer_incident_response_postmortem",
           "name": "Incident Response & Post-Mortem Practices",
           "tag": "essential",
-          "description": "Understand incident management workflows, roles, and communication strategies. Conduct effective blameless post-mortems (root cause analysis) to learn from failures and implement preventative measures.",
+          "description": "Drive incident management: Participating in on-call rotations, running blameless post-mortems, identifying telemetry blind spots, and implementing automated corrective actions.",
           "resources": [
             {
               "title": "Blameless Postmortems",
@@ -1130,15 +1194,19 @@
               "url": "/data/docs/observability_engineer/obs_engineer_incident_response_postmortem.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 20
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 14
     },
     {
       "id": "obs_engineer_advanced_cloud_native",
       "name": "Advanced Observability & Cloud-Native Practices",
       "tag": "advanced",
-      "description": "Explore cutting-edge and advanced topics in observability, including eBPF, AIOps, Observability-as-Code, and integrating sophisticated observability solutions into complex cloud-native ecosystems.",
+      "description": "Deploy frontier cloud-native observability technologies: eBPF-based kernel telemetry, Observability-as-Code, and chaos engineering.",
       "resources": [
         {
           "title": "The Rise of eBPF",
@@ -1171,7 +1239,7 @@
           "id": "obs_engineer_ebpf_kernel_observability",
           "name": "eBPF for Kernel & Application Observability",
           "tag": "advanced",
-          "description": "Understand how eBPF (extended Berkeley Packet Filter) provides unparalleled deep visibility into kernel-level performance, networking, and application behavior without code changes. Explore tools like Pixie, Falco, and Cilium.",
+          "description": "Implement eBPF observability: Leveraging Cilium, Pixie, or Coroot to capture zero-instrumentation kernel metrics, TCP socket latency, and HTTP request inspection without application changes.",
           "resources": [
             {
               "title": "eBPF Observability Tools",
@@ -1193,13 +1261,15 @@
               "url": "/data/docs/observability_engineer/obs_engineer_ebpf_kernel_observability.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 47
         },
         {
           "id": "obs_engineer_observability_as_code",
           "name": "Observability-as-Code (OaC) & GitOps",
           "tag": "advanced",
-          "description": "Manage dashboards, alerts, recording rules, and telemetry configurations using code, version control (Git), and CI/CD pipelines for consistency, reproducibility, and disaster recovery. Implement GitOps principles for observability resources.",
+          "description": "Manage observability declaratively: Terraform, Grafana Grizzly, and Prometheus Operator CRDs (ServiceMonitors, PrometheusRules) versioned in Git via GitOps.",
           "resources": [
             {
               "title": "Grafana Dashboards as Code",
@@ -1226,13 +1296,15 @@
               "url": "/data/docs/observability_engineer/obs_engineer_observability_as_code.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         },
         {
           "id": "obs_engineer_cloud_native_platforms",
           "name": "Observability in Kubernetes & Cloud Platforms",
           "tag": "advanced",
-          "description": "Implement comprehensive observability for containerized workloads in Kubernetes (DaemonSets, Sidecars, Operators). Integrate and leverage managed observability services from major cloud providers (AWS CloudWatch/Managed Prometheus/Grafana, Azure Monitor, GCP Operations Suite).",
+          "description": "Monitor cloud-native platforms: Kubernetes cluster components (kube-state-metrics, cAdvisor), cloud managed services (AWS CloudWatch, GCP Cloud Monitoring), and serverless functions.",
           "resources": [
             {
               "title": "Kubernetes Observability Best Practices",
@@ -1259,13 +1331,15 @@
               "url": "/data/docs/observability_engineer/obs_engineer_cloud_native_platforms.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 29
         },
         {
           "id": "obs_engineer_chaos_engineering",
           "name": "Integrating with Chaos Engineering & Resilience Testing",
           "tag": "advanced",
-          "description": "Use observability tools to validate hypotheses, measure the impact of controlled experiments (e.g., latency injection, resource exhaustion) on system resilience, and identify weak points before they become outages.",
+          "description": "Validate observability with Chaos Engineering: Running Chaos Mesh or Gremlin experiments to inject latency/pod kills and verifying alert triggering and dashboard accuracy.",
           "resources": [
             {
               "title": "Chaos Engineering and Observability",
@@ -1292,13 +1366,15 @@
               "url": "/data/docs/observability_engineer/obs_engineer_chaos_engineering.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 27
         },
         {
           "id": "obs_engineer_aiops_ml",
           "name": "AIOps and Machine Learning for Observability",
           "tag": "advanced",
-          "description": "Explore how Artificial Intelligence and Machine Learning are applied to observability data for automated anomaly detection, root cause analysis, predictive analytics, and reducing alert noise.",
+          "description": "Explore AIOps and automated remediation: Metric anomaly detection algorithms, automated baseline forecasting, correlation engines, and LLM-assisted incident triage.",
           "resources": [
             {
               "title": "Introduction to AIOps",
@@ -1325,13 +1401,15 @@
               "url": "/data/docs/observability_engineer/obs_engineer_aiops_ml.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         },
         {
           "id": "obs_engineer_frontend_rum_synthetics",
           "name": "Front-End Observability: RUM & Synthetic Monitoring",
           "tag": "advanced",
-          "description": "Implement Real User Monitoring (RUM) to understand actual user experience and synthetic monitoring to proactively test application availability and performance from various locations.",
+          "description": "Monitor user-facing performance: Real User Monitoring (RUM) tracking Core Web Vitals (LCP, FID, CLS) and automated synthetic probes using Playwright.",
           "resources": [
             {
               "title": "What is Real User Monitoring (RUM)?",
@@ -1358,15 +1436,19 @@
               "url": "/data/docs/observability_engineer/obs_engineer_frontend_rum_synthetics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 24
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 31
     },
     {
       "id": "obs_engineer_production_project",
       "name": "Production Readiness & Capstone Project",
       "tag": "advanced",
-      "description": "Apply all learned skills to design and build a comprehensive, production-grade observability solution. Focus on scalability, security, cost-efficiency, and maintainability for real-world distributed systems, culminating in a portfolio-ready project.",
+      "description": "Harden observability infrastructure for production: Scaling backends, multi-tenant isolation, data governance, and capstone deployment.",
       "resources": [
         {
           "title": "Designing Scalable Observability Systems",
@@ -1394,7 +1476,7 @@
           "id": "obs_engineer_scalability_ha",
           "name": "Scalability, High Availability & Security",
           "tag": "advanced",
-          "description": "Design highly available and scalable observability stacks capable of handling massive data volumes. Implement robust security best practices for telemetry data, access control (RBAC, API keys), and data in transit/at rest.",
+          "description": "Scale observability systems: Sharding Prometheus, deploying Thanos queriers, managing Grafana HA clusters, and securing telemetry pipelines with mTLS and RBAC.",
           "resources": [
             {
               "title": "Prometheus High Availability and Scalability",
@@ -1421,13 +1503,15 @@
               "url": "/data/docs/observability_engineer/obs_engineer_scalability_ha.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         },
         {
           "id": "obs_engineer_cost_optimization",
           "name": "Cost Optimization & Data Governance",
           "tag": "advanced",
-          "description": "Strategize on cost-effective data collection, storage, and retention policies. Implement data sampling, aggregation, and filtering techniques to manage costs without sacrificing critical insights. Understand data governance for compliance.",
+          "description": "Control telemetry costs: Implementing dynamic sampling, metric drop rules for unused counters, log retention tiering, and monitoring telemetry ingestion spend.",
           "resources": [
             {
               "title": "Optimizing Observability Costs",
@@ -1454,13 +1538,15 @@
               "url": "/data/docs/observability_engineer/obs_engineer_cost_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         },
         {
           "id": "obs_engineer_capstone_project",
           "name": "Capstone Project: End-to-End Observability System Implementation",
           "tag": "advanced",
-          "description": "Design, implement, and deploy a complete observability solution for a simulated or real-world distributed application. This project should demonstrate proficiency across all three pillars of observability, utilizing OpenTelemetry, Prometheus, Grafana, Loki/Tempo, alerting, and SLOs. Document your architecture, implementation choices, and lessons learned.",
+          "description": "Build an enterprise observability capstone: Deploy an end-to-end system featuring OpenTelemetry Collector, Prometheus/Thanos, Grafana Loki, Grafana Tempo, SLO burn-rate alerts, and eBPF.",
           "resources": [
             {
               "title": "Building a Robust Observability Stack (Project Guide)",
@@ -1487,9 +1573,14 @@
               "url": "/data/docs/observability_engineer/obs_engineer_capstone_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 65
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 42
     }
-  ]
+  ],
+  "total_exp": 1000
 }

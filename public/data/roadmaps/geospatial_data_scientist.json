@@ -47,26 +47,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Satellite-Based Urban Deforestation & Growth Detector",
+        "title": "Satellite-Based Urban Deforestation & Wildfire Risk Mapping Engine",
         "tech_stack": [
           "Python",
+          "Google Earth Engine",
+          "Sentinel-2",
           "Rasterio",
-          "GeoPandas",
-          "PyTorch",
-          "Sentinel-2 API"
+          "XGBoost"
         ],
-        "description": "Build an AI pipeline calculating NDVI indices and classifying urban sprawl patterns from multi-spectral satellite imagery."
+        "description": "Process multi-spectral Sentinel-2 imagery computing NDVI and thermal indices to predict wildfire risk corridors with sub-10m spatial resolution."
       },
       {
-        "title": "Satellite Imagery Land Cover Classification Model",
+        "title": "Urban Mobility & Transit Isochrone Optimization Network",
         "tech_stack": [
+          "OSMNx",
           "GeoPandas",
-          "Rasterio",
-          "PyTorch",
-          "Sentinel-2 API",
-          "QGIS"
+          "PostGIS",
+          "Kepler.gl",
+          "Uber H3 Spatial Index"
         ],
-        "description": "Process multi-spectral satellite imagery to detect urban expansion and deforestation using convolutional semantic segmentation models (U-Net)."
+        "description": "Engineer an urban transit accessibility model utilizing Uber H3 hexagonal spatial indexing, computing real-time travel-time isochrones across multimodal transit."
       }
     ],
     "certifications": [
@@ -74,10 +74,11 @@
       "Python Institute PCAP Certified Associate"
     ],
     "interview_focus": [
-      "Coordinate Reference Systems (CRS) & Projections (EPSG:4320 vs EPSG:3857)",
-      "Spatial Indexing Mechanics (R-Tree / GiST in PostGIS)",
-      "Raster vs Vector Processing Tradeoffs",
-      "Handling Cloud Occlusion in Satellite Imagery"
+      "Coordinate Reference Systems (CRS), Geographic vs Projected (EPSG:4326 vs EPSG:3857)",
+      "Vector vs Raster Data Operations (Zonal Statistics, Buffer, Intersect, Map Algebra)",
+      "Spatial Indexing Algorithms (R-Tree, QuadTree, Geohash, Uber H3 Hexagonal Grid)",
+      "PostGIS Spatial Queries (ST_Intersects, ST_DWithin, Spatial Joins & Index Tuning)",
+      "Handling Massive Remote Sensing Datasets with Cloud-Optimized GeoTIFFs (COG) & STAC API"
     ]
   },
   "format": "tree",
@@ -86,7 +87,7 @@
       "id": "geospatial_data_scientist_foundations",
       "name": "Foundations of Geospatial Data Science",
       "tag": "essential",
-      "description": "Establish a robust understanding of core GIS principles, geospatial data models, coordinate systems, and essential tools for setting up a modern geospatial development environment.",
+      "description": "Master foundational geospatial data science: Coordinate reference systems, map projections, vector/raster spatial data models, and GIS toolchains.",
       "resources": [
         {
           "title": "Introduction to Geospatial Data Science (Esri)",
@@ -119,7 +120,7 @@
           "id": "geospatial_domain_principles",
           "name": "Geospatial Domain Principles",
           "tag": "essential",
-          "description": "Grasp fundamental concepts like Coordinate Reference Systems (CRS), map projections, vector and raster data models, and the common workflows in geospatial analysis.",
+          "description": "Understand core GIS principles: Tobler's First Law of Geography, spatial autocorrelation, scale and resolution effects, and Modifiable Areal Unit Problem (MAUP).",
           "resources": [
             {
               "title": "Concepts in GIS (QGIS)",
@@ -141,13 +142,15 @@
               "url": "/data/docs/geospatial_data_scientist/geospatial_domain_principles.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 12
         },
         {
           "id": "crs_map_projections",
           "name": "Coordinate Reference Systems & Projections",
           "tag": "essential",
-          "description": "Understand different coordinate systems (geographic vs. projected), datum, and the impact of various map projections on spatial analysis.",
+          "description": "Master Coordinate Reference Systems (CRS): Geographic (WGS84 EPSG:4326) vs Projected (Web Mercator EPSG:3857, UTM zones), ellipsoids, datums, and on-the-fly reprojection with PROJ.",
           "resources": [
             {
               "title": "Understanding Coordinate Reference Systems in GIS",
@@ -169,13 +172,15 @@
               "url": "/data/docs/geospatial_data_scientist/crs_map_projections.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         },
         {
           "id": "vector_raster_data_models",
           "name": "Vector & Raster Data Models",
           "tag": "essential",
-          "description": "Learn the characteristics, uses, and differences between vector data (points, lines, polygons) and raster data (grids, imagery) and their respective file formats.",
+          "description": "Compare spatial data models: Vector geometries (Points, LineStrings, Polygons, MultiPolygons) vs continuous Raster grids (pixels, bands, spatial resolution, bit depth).",
           "resources": [
             {
               "title": "Vector and Raster Data Formats",
@@ -197,13 +202,15 @@
               "url": "/data/docs/geospatial_data_scientist/vector_raster_data_models.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 13
         },
         {
           "id": "spatial_data_acquisition_sources",
           "name": "Spatial Data Acquisition & Sources",
           "tag": "essential",
-          "description": "Explore methods of acquiring geospatial data, including open data portals, APIs, GPS, remote sensing, and understanding data quality.",
+          "description": "Acquire open geospatial data: OpenStreetMap (OSM via Overpass API), USGS EarthExplorer, Copernicus Open Access Hub (Sentinel-1/2), and Landsat catalogs.",
           "resources": [
             {
               "title": "Open Data Portals for Geospatial Data",
@@ -230,13 +237,15 @@
               "url": "/data/docs/geospatial_data_scientist/spatial_data_acquisition_sources.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 12
         },
         {
           "id": "geospatial_workbench_setup",
           "name": "Geospatial Workbench Setup",
           "tag": "essential",
-          "description": "Set up your development environment with Python, essential geospatial libraries, GIS software, and learn version control for collaborative projects, ensuring a robust foundation for all subsequent work.",
+          "description": "Set up a modern geospatial computing environment: Conda / Mamba environments, GDAL/GEOS C++ bindings, Jupyter Lab, and geospatial CLI utilities.",
           "resources": [
             {
               "title": "Setting up a Python GIS Environment",
@@ -258,13 +267,15 @@
               "url": "/data/docs/geospatial_data_scientist/geospatial_workbench_setup.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 8
         },
         {
           "id": "essential_python_geospatial_libraries",
           "name": "Essential Python Geospatial Libraries",
           "tag": "essential",
-          "description": "Configure Python environments and package managers (conda, pip). Introduce and set up core geospatial libraries such as Shapely, Fiona, PyProj, GeoPandas, and Rasterio, understanding their roles in spatial data handling.",
+          "description": "Master core Python geospatial packages: Shapely (computational geometry), PyProj (coordinate transformations), Fiona (vector file I/O), and GeoPandas.",
           "resources": [
             {
               "title": "Conda for Python Geospatial Packages",
@@ -306,13 +317,15 @@
               "url": "/data/docs/geospatial_data_scientist/essential_python_geospatial_libraries.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 11
         },
         {
           "id": "qgis_introduction_basics",
           "name": "QGIS: Introduction & Basic Operations",
           "tag": "essential",
-          "description": "Familiarize yourself with the QGIS interface, loading data, basic navigation, attribute tables, and simple geoprocessing tools.",
+          "description": "Utilize QGIS for spatial data exploration: Layer styling, spatial querying, geoprocessing tools, raster terrain analysis, and validating automated Python pipelines visually.",
           "resources": [
             {
               "title": "QGIS Training Manual",
@@ -339,13 +352,15 @@
               "url": "/data/docs/geospatial_data_scientist/qgis_introduction_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 10
         },
         {
           "id": "git_github_version_control",
           "name": "Git & GitHub for Version Control",
           "tag": "essential",
-          "description": "Master essential Git commands for version control, branching, merging, and collaborating on geospatial codebases using GitHub.",
+          "description": "Manage geospatial codebases: Version control for GIS workflows, `.gitignore` for large GeoTIFF / Shapefile datasets, and managing data via Git LFS.",
           "resources": [
             {
               "title": "Git Handbook (GitHub)",
@@ -367,13 +382,15 @@
               "url": "/data/docs/geospatial_data_scientist/git_github_version_control.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 11
         },
         {
           "id": "cli_basics_geospatial",
           "name": "Command Line Interface (CLI) & Scripting Basics",
           "tag": "essential",
-          "description": "Learn fundamental command-line operations, file system navigation, and basic scripting crucial for managing geospatial data and interacting with tools like GDAL/OGR.",
+          "description": "Master geospatial command line tools: `gdalinfo`, `gdal_translate`, `gdalwarp`, `ogrinfo`, `ogr2ogr` for fast format conversion and reprojection.",
           "resources": [
             {
               "title": "Linux Command Line for Data Science",
@@ -400,15 +417,19 @@
               "url": "/data/docs/geospatial_data_scientist/cli_basics_geospatial.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 8
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 10
     },
     {
       "id": "geospatial_data_scientist_core_skills",
       "name": "Core Geospatial Data Analysis & Implementation",
       "tag": "essential",
-      "description": "Build practical expertise in handling, processing, analyzing, and visualizing both vector and raster geospatial data using leading Python libraries and spatial databases.",
+      "description": "Execute core spatial data processing: Vector analytics with GeoPandas, raster manipulation with Rasterio/GDAL, and spatial SQL databases (PostGIS).",
       "resources": [
         {
           "title": "Geospatial Analysis with Python (Datacamp)",
@@ -441,7 +462,7 @@
           "id": "vector_data_processing_analysis",
           "name": "Vector Data Processing with GeoPandas",
           "tag": "essential",
-          "description": "Learn to work with vector geometries, perform spatial joins, overlay analysis, and advanced geoprocessing operations using GeoPandas.",
+          "description": "Process vector datasets: Reading/writing Shapefiles, GeoJSON, and GeoPackage formats; geometric calculations (area, length, centroid, convex hull).",
           "resources": [
             {
               "title": "GeoPandas Documentation",
@@ -463,13 +484,15 @@
               "url": "/data/docs/geospatial_data_scientist/vector_data_processing_analysis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 11
         },
         {
           "id": "geopandas_data_io_manipulation",
           "name": "GeoPandas: Data I/O & Manipulation",
           "tag": "essential",
-          "description": "Read, write, and manipulate various vector data formats (Shapefile, GeoJSON, KML) with GeoPandas DataFrames.",
+          "description": "Master GeoPandas DataFrames: GeoSeries geometry columns, filtering by spatial bounding box, CRS transformation, and integrating with standard Pandas methods.",
           "resources": [
             {
               "title": "Reading and Writing Files in GeoPandas",
@@ -491,13 +514,15 @@
               "url": "/data/docs/geospatial_data_scientist/geopandas_data_io_manipulation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 12
         },
         {
           "id": "spatial_joins_overlay_analysis",
           "name": "Spatial Joins & Overlay Analysis",
           "tag": "essential",
-          "description": "Execute spatial joins (e.g., within, intersects) and overlay operations (union, intersection, difference) to combine and analyze spatial datasets.",
+          "description": "Perform spatial joins and overlays: `sjoin` with spatial predicates (intersects, contains, within), spatial overlays (intersection, union, difference), and distance matrix calculations.",
           "resources": [
             {
               "title": "Performing Spatial Joins with GeoPandas",
@@ -524,13 +549,15 @@
               "url": "/data/docs/geospatial_data_scientist/spatial_joins_overlay_analysis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 14
         },
         {
           "id": "geoprocessing_operations_geopandas",
           "name": "Geoprocessing Operations & Geometry Transformations",
           "tag": "essential",
-          "description": "Apply common geoprocessing functions like buffer, dissolve, convex hull, and transform geometries between different CRSs.",
+          "description": "Execute advanced geoprocessing: Spatial buffering, polygon clipping, line simplification (Douglas-Peucker), and Voronoi diagram generation.",
           "resources": [
             {
               "title": "Reprojecting Geometries in GeoPandas",
@@ -552,13 +579,15 @@
               "url": "/data/docs/geospatial_data_scientist/geoprocessing_operations_geopandas.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 11
         },
         {
           "id": "raster_data_processing_analysis",
           "name": "Raster Data Processing with Rasterio & GDAL",
           "tag": "essential",
-          "description": "Master the techniques for reading, writing, manipulating, and analyzing raster datasets including satellite imagery and digital elevation models.",
+          "description": "Analyze multi-band raster data using Rasterio and GDAL: Affine georeferencing transforms, no-data masking, and multi-spectral band reading.",
           "resources": [
             {
               "title": "Rasterio Documentation",
@@ -585,13 +614,15 @@
               "url": "/data/docs/geospatial_data_scientist/raster_data_processing_analysis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 11
         },
         {
           "id": "rasterio_data_io_basics",
           "name": "Rasterio: Data I/O & Metadata",
           "tag": "essential",
-          "description": "Understand how to read and write raster data (GeoTIFF, NetCDF), access metadata, and handle multiple bands with Rasterio.",
+          "description": "Master Rasterio fundamentals: Reading GeoTIFF files, accessing metadata (CRS, bounds, transform), reading windowed subsets, and writing compressed Cloud Optimized GeoTIFFs (COGs).",
           "resources": [
             {
               "title": "Reading Raster Files with Rasterio",
@@ -613,13 +644,15 @@
               "url": "/data/docs/geospatial_data_scientist/rasterio_data_io_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 10
         },
         {
           "id": "raster_manipulation_reprojection",
           "name": "Raster Manipulation & Reprojection",
           "tag": "essential",
-          "description": "Perform operations such as clipping, mosaicking, resampling, and reprojection of raster datasets.",
+          "description": "Manipulate raster grids: Resampling techniques (Nearest Neighbor, Bilinear, Cubic), reprojecting rasters to target CRS, and clipping rasters to vector boundaries.",
           "resources": [
             {
               "title": "Clipping and Mosaicking Rasters with Python",
@@ -641,13 +674,15 @@
               "url": "/data/docs/geospatial_data_scientist/raster_manipulation_reprojection.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 27
         },
         {
           "id": "raster_analysis_map_algebra",
           "name": "Raster Analysis & Map Algebra",
           "tag": "essential",
-          "description": "Conduct zonal statistics, calculate vegetation indices (NDVI), perform terrain analysis, and apply map algebra operations.",
+          "description": "Perform map algebra calculations: Computing spectral indices (NDVI, NDWI, NBR), Digital Elevation Model (DEM) slope/aspect terrain analysis, and zonal statistics.",
           "resources": [
             {
               "title": "Zonal Statistics with Python and Rasterio",
@@ -674,13 +709,15 @@
               "url": "/data/docs/geospatial_data_scientist/raster_analysis_map_algebra.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 12
         },
         {
           "id": "spatial_databases_sql",
           "name": "Spatial Databases (PostGIS)",
           "tag": "essential",
-          "description": "Store, manage, and query geospatial data efficiently using spatial extensions in relational databases like PostGIS.",
+          "description": "Deploy enterprise spatial databases using PostgreSQL and PostGIS: Spatial indexing, topological operations, and high-concurrency spatial SQL queries.",
           "resources": [
             {
               "title": "PostGIS Documentation",
@@ -702,13 +739,15 @@
               "url": "/data/docs/geospatial_data_scientist/spatial_databases_sql.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 14
         },
         {
           "id": "postgis_spatial_sql",
           "name": "PostGIS: Spatial SQL Queries",
           "tag": "essential",
-          "description": "Write advanced SQL queries with spatial functions (ST_Contains, ST_Intersects, ST_Buffer) to analyze and manipulate geometries.",
+          "description": "Write complex PostGIS SQL queries: `ST_Intersects`, `ST_DWithin`, `ST_Buffer`, `ST_Union`, `ST_Centroid`, spatial aggregations, and CTEs for spatial analysis.",
           "resources": [
             {
               "title": "PostGIS Tutorial",
@@ -735,13 +774,15 @@
               "url": "/data/docs/geospatial_data_scientist/postgis_spatial_sql.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 12
         },
         {
           "id": "spatial_indexing_performance",
           "name": "Spatial Indexing & Performance Optimization",
           "tag": "advanced",
-          "description": "Learn about spatial indexes (GiST, R-Tree) and techniques to optimize query performance for large geospatial datasets in PostGIS.",
+          "description": "Optimize spatial database performance: R-tree spatial indexes (`GIST(geom)`), spatial clustering (`CLUSTER`), analyzing execution plans (`EXPLAIN ANALYZE`), and query tuning.",
           "resources": [
             {
               "title": "PostGIS Performance Tips",
@@ -763,13 +804,15 @@
               "url": "/data/docs/geospatial_data_scientist/spatial_indexing_performance.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 23
         },
         {
           "id": "geospatial_data_visualization",
           "name": "Geospatial Data Visualization & Cartography",
           "tag": "essential",
-          "description": "Create compelling static and interactive maps, applying cartographic principles for effective communication of spatial insights.",
+          "description": "Create publication-quality maps and interactive web dashboards using modern Python cartography libraries.",
           "resources": [
             {
               "title": "QGIS Tutorial for Beginners (Klas Karlsson)",
@@ -786,13 +829,15 @@
               "url": "/data/docs/geospatial_data_scientist/geospatial_data_visualization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 10
         },
         {
           "id": "static_mapping_matplotlib",
           "name": "Static Mapping with Matplotlib & Seaborn",
           "tag": "essential",
-          "description": "Generate high-quality static maps using Python's Matplotlib and Seaborn, integrating with GeoPandas for spatial layers.",
+          "description": "Design static cartographic layouts: Plotting GeoDataFrames with Matplotlib, choropleth map classification schemes (Quantiles, Natural Breaks/Jenks), legends, and scale bars.",
           "resources": [
             {
               "title": "Plotting with GeoPandas",
@@ -814,13 +859,15 @@
               "url": "/data/docs/geospatial_data_scientist/static_mapping_matplotlib.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 13
         },
         {
           "id": "interactive_mapping_folium_leaflet",
           "name": "Interactive Mapping with Folium & Leaflet",
           "tag": "essential",
-          "description": "Develop dynamic and interactive web maps using libraries like Folium and integrate with front-end mapping platforms (e.g., Leaflet.js).",
+          "description": "Build interactive web maps: Folium and Leaflet.js, embedding GeoJSON layers, custom marker clusters, choropleth overlays, and PyDeck / Kepler.gl 3D visualizations.",
           "resources": [
             {
               "title": "Folium Documentation",
@@ -847,13 +894,15 @@
               "url": "/data/docs/geospatial_data_scientist/interactive_mapping_folium_leaflet.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 12
         },
         {
           "id": "cartographic_principles_design",
           "name": "Cartographic Principles & Design",
           "tag": "essential",
-          "description": "Understand best practices for map symbology, labeling, legends, color theory, and map layout to create clear and informative visualizations.",
+          "description": "Apply cartographic design principles: Visual hierarchy, perceptually uniform color palettes (ColorBrewer), typography, projection selection, and minimizing spatial distortion.",
           "resources": [
             {
               "title": "Thematic Mapping for Data Scientists",
@@ -880,13 +929,15 @@
               "url": "/data/docs/geospatial_data_scientist/cartographic_principles_design.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 13
         },
         {
           "id": "advanced_geospatial_analytics_ml",
           "name": "Advanced Geospatial Analytics & Machine Learning",
           "tag": "advanced",
-          "description": "Delve into specialized areas like remote sensing, spatial statistics, and applying machine learning and deep learning techniques to spatial data problems.",
+          "description": "Apply remote sensing, spatial statistics, geostatistics, and deep learning computer vision to geospatial datasets.",
           "resources": [
             {
               "title": "Geospatial Machine Learning (Google Earth Engine)",
@@ -908,13 +959,15 @@
               "url": "/data/docs/geospatial_data_scientist/advanced_geospatial_analytics_ml.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 14
         },
         {
           "id": "remote_sensing_satellite_imagery",
           "name": "Remote Sensing & Satellite Imagery Analysis",
           "tag": "advanced",
-          "description": "Process and analyze satellite and aerial imagery for various applications, including land cover classification and change detection.",
+          "description": "Analyze satellite imagery: Optical vs Synthetic Aperture Radar (SAR), multi-spectral bands, spatial/temporal/spectral resolution, and atmospheric correction.",
           "resources": [
             {
               "title": "Introduction to Remote Sensing (Coursera)",
@@ -941,13 +994,15 @@
               "url": "/data/docs/geospatial_data_scientist/remote_sensing_satellite_imagery.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 17
         },
         {
           "id": "remote_sensing_preprocessing",
           "name": "Remote Sensing Preprocessing & Correction",
           "tag": "advanced",
-          "description": "Understand and apply techniques for radiometric, atmospheric, and geometric corrections to satellite and aerial imagery, preparing data for analysis.",
+          "description": "Preprocess satellite data: Cloud masking with Quality Assessment (QA) bands, radiometric calibration, pansharpening, and mosaic creation.",
           "resources": [
             {
               "title": "Atmospheric Correction for Remote Sensing",
@@ -974,13 +1029,15 @@
               "url": "/data/docs/geospatial_data_scientist/remote_sensing_preprocessing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 14
         },
         {
           "id": "spatial_statistics_modeling",
           "name": "Spatial Statistics & Predictive Modeling",
           "tag": "advanced",
-          "description": "Apply statistical methods to spatial data, including spatial autocorrelation, interpolation techniques, and geographically weighted regression.",
+          "description": "Measure spatial clustering and patterns: Moran's I for global spatial autocorrelation, Anselin Local Moran's I (LISA), and geographically weighted regression (GWR) using PySAL.",
           "resources": [
             {
               "title": "Spatial Statistics in Python (PySAL Documentation)",
@@ -1007,13 +1064,15 @@
               "url": "/data/docs/geospatial_data_scientist/spatial_statistics_modeling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 19
         },
         {
           "id": "geostatistics_interpolation",
           "name": "Geostatistics & Spatial Interpolation",
           "tag": "advanced",
-          "description": "Explore geostatistical methods like kriging, inverse distance weighting (IDW), and other interpolation techniques to estimate values at unmeasured locations and analyze spatial dependence.",
+          "description": "Perform spatial interpolation: Inverse Distance Weighting (IDW), Kriging (Ordinary, Universal), variogram modeling, and estimating unobserved continuous surfaces.",
           "resources": [
             {
               "title": "Geostatistics with PySAL",
@@ -1040,13 +1099,15 @@
               "url": "/data/docs/geospatial_data_scientist/geostatistics_interpolation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 17
         },
         {
           "id": "geospatial_machine_deep_learning",
           "name": "Geospatial Machine & Deep Learning",
           "tag": "advanced",
-          "description": "Develop and apply machine learning models (e.g., random forests, SVMs) and deep learning architectures (e.g., CNNs for image segmentation) to solve geospatial problems.",
+          "description": "Train spatial machine learning models: Scikit-learn random forests and XGBoost on spatial features, handling spatial cross-validation (spatial k-fold) to avoid data leakage.",
           "resources": [
             {
               "title": "Machine Learning for Geospatial Data (Packt)",
@@ -1073,13 +1134,15 @@
               "url": "/data/docs/geospatial_data_scientist/geospatial_machine_deep_learning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 18
         },
         {
           "id": "deep_learning_for_remote_sensing",
           "name": "Deep Learning for Remote Sensing Imagery",
           "tag": "advanced",
-          "description": "Apply advanced deep learning architectures (e.g., U-Net, Mask R-CNN) for tasks such as land cover classification, object detection, and change detection in high-resolution satellite imagery.",
+          "description": "Apply deep learning to overhead imagery: Convolutional Neural Networks and Vision Transformers for satellite land cover segmentation (U-Net) and building footprint extraction.",
           "resources": [
             {
               "title": "Deep Learning for Satellite Image Segmentation",
@@ -1106,13 +1169,15 @@
               "url": "/data/docs/geospatial_data_scientist/deep_learning_for_remote_sensing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 19
         },
         {
           "id": "geospatial_model_evaluation_metrics",
           "name": "Geospatial Model Evaluation & Metrics",
           "tag": "advanced",
-          "description": "Learn to evaluate the performance of geospatial models using appropriate metrics, considering spatial autocorrelation and edge effects.",
+          "description": "Evaluate spatial models: Spatial accuracy metrics, Intersection over Union (IoU), F1-score, Cohen's Kappa, and spatial error residual mapping.",
           "resources": [
             {
               "title": "Evaluating Classification Accuracy in Remote Sensing",
@@ -1139,15 +1204,19 @@
               "url": "/data/docs/geospatial_data_scientist/geospatial_model_evaluation_metrics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 15
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 10
     },
     {
       "id": "geospatial_data_scientist_production_collaboration",
       "name": "Production-Ready Geospatial Systems & MLOps",
       "tag": "advanced",
-      "description": "Transition from local development to building, deploying, and managing robust geospatial data pipelines, APIs, and machine learning models in production environments, emphasizing reliability and scalability.",
+      "description": "Engineer production geospatial data pipelines, cloud infrastructure, geospatial APIs, and MLOps workflows.",
       "resources": [
         {
           "title": "Building Production-Ready Geospatial Applications (AWS)",
@@ -1175,7 +1244,7 @@
           "id": "geospatial_data_engineering_pipelines",
           "name": "Geospatial Data Engineering & ETL Pipelines",
           "tag": "advanced",
-          "description": "Design and implement robust ETL processes for ingesting, transforming, and loading diverse geospatial datasets efficiently.",
+          "description": "Build scalable spatial ETL pipelines: Processing large vector/raster data with Apache Sedona / GeoSpark, Dask-GeoPandas, and Xarray for multidimensional cubes.",
           "resources": [
             {
               "title": "Designing Geospatial ETL Workflows",
@@ -1197,13 +1266,15 @@
               "url": "/data/docs/geospatial_data_scientist/geospatial_data_engineering_pipelines.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 17
         },
         {
           "id": "data_ingestion_transformation_tools",
           "name": "Data Ingestion & Transformation Tools",
           "tag": "advanced",
-          "description": "Utilize tools like OGR/GDAL, FME, and Python scripts for automated data extraction, cleaning, and format conversion.",
+          "description": "Ingest planetary-scale data: SpatioTemporal Asset Catalogs (STAC API) with pystac, querying Earth search endpoints, and streaming Cloud Optimized GeoTIFFs (COGs).",
           "resources": [
             {
               "title": "GDAL/OGR Cheatsheet",
@@ -1230,13 +1301,15 @@
               "url": "/data/docs/geospatial_data_scientist/data_ingestion_transformation_tools.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 17
         },
         {
           "id": "workflow_orchestration_airflow",
           "name": "Workflow Orchestration (Airflow, Prefect)",
           "tag": "advanced",
-          "description": "Implement and manage complex geospatial data pipelines using orchestration tools to automate tasks and ensure data freshness.",
+          "description": "Orchestrate spatial workflows: Building directed acyclic graphs in Apache Airflow or Prefect to automate daily satellite imagery downloads, preprocessing, and database updates.",
           "resources": [
             {
               "title": "Building Data Pipelines with Apache Airflow (Datacamp)",
@@ -1263,13 +1336,15 @@
               "url": "/data/docs/geospatial_data_scientist/workflow_orchestration_airflow.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 19
         },
         {
           "id": "cloud_geospatial_infrastructure",
           "name": "Cloud Geospatial Infrastructure & Platforms",
           "tag": "advanced",
-          "description": "Leverage cloud computing platforms and specialized geospatial services for scalable data storage, processing, and analytics.",
+          "description": "Deploy cloud GIS infrastructure: AWS, GCP, Azure; BigQuery GIS, Amazon RDS for PostgreSQL with PostGIS, and scalable object storage.",
           "resources": [
             {
               "title": "Cloud-Native Geospatial Foundation",
@@ -1291,13 +1366,15 @@
               "url": "/data/docs/geospatial_data_scientist/cloud_geospatial_infrastructure.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 14
         },
         {
           "id": "cloud_spatial_databases",
           "name": "Cloud Spatial Databases (BigQuery GIS, RDS PostGIS)",
           "tag": "advanced",
-          "description": "Work with managed spatial databases in the cloud for scalable and performant geospatial data storage and querying.",
+          "description": "Analyze big spatial data with BigQuery GIS and Snowflake: Geospatial SQL at petabyte scale, spatial partitioning, and serverless geospatial queries.",
           "resources": [
             {
               "title": "BigQuery GIS Tutorial (Google Cloud)",
@@ -1324,13 +1401,15 @@
               "url": "/data/docs/geospatial_data_scientist/cloud_spatial_databases.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 16
         },
         {
           "id": "google_earth_engine_cloud_analysis",
           "name": "Google Earth Engine & Cloud Analysis",
           "tag": "advanced",
-          "description": "Perform planetary-scale geospatial analysis using platforms like Google Earth Engine or similar cloud-based services.",
+          "description": "Leverage Google Earth Engine (GEE): Analyzing decades of planetary satellite imagery using Python GEE API (`geemap`), computing time-series NDVI, and forest loss tracking.",
           "resources": [
             {
               "title": "Google Earth Engine Developers Guide",
@@ -1357,13 +1436,15 @@
               "url": "/data/docs/geospatial_data_scientist/google_earth_engine_cloud_analysis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 18
         },
         {
           "id": "aws_azure_geospatial_services",
           "name": "AWS/Azure Geospatial Services (SageMaker Geo, Azure Maps)",
           "tag": "advanced",
-          "description": "Explore and utilize cloud-specific geospatial services for machine learning, mapping, and location intelligence.",
+          "description": "Utilize managed cloud geospatial services: AWS SageMaker Geospatial capabilities, AWS Earth data registry, and Azure Maps services.",
           "resources": [
             {
               "title": "Amazon SageMaker Geospatial Documentation",
@@ -1390,13 +1471,15 @@
               "url": "/data/docs/geospatial_data_scientist/aws_azure_geospatial_services.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 14
         },
         {
           "id": "serverless_geospatial_computing",
           "name": "Serverless Geospatial Computing",
           "tag": "advanced",
-          "description": "Utilize serverless functions (e.g., AWS Lambda, Azure Functions) to run on-demand geospatial processing tasks, scale automatically, and reduce operational overhead.",
+          "description": "Deploy serverless spatial computing: AWS Lambda / GCP Cloud Functions processing incoming drone orthomosaics and generating tile pyramids.",
           "resources": [
             {
               "title": "Running GDAL on AWS Lambda",
@@ -1423,13 +1506,15 @@
               "url": "/data/docs/geospatial_data_scientist/serverless_geospatial_computing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 15
         },
         {
           "id": "geospatial_security_access",
           "name": "Geospatial Security & Access Control",
           "tag": "advanced",
-          "description": "Implement best practices for securing geospatial data, APIs, and cloud infrastructure, including authentication, authorization, and data encryption.",
+          "description": "Secure spatial data: Managing access controls to sensitive GIS layers, differential privacy for location telemetry, and compliance with data sovereignty regulations.",
           "resources": [
             {
               "title": "Security Considerations for Geospatial Data",
@@ -1456,13 +1541,15 @@
               "url": "/data/docs/geospatial_data_scientist/geospatial_security_access.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 17
         },
         {
           "id": "geospatial_api_deployment",
           "name": "Geospatial API Development & Deployment",
           "tag": "advanced",
-          "description": "Build and deploy APIs to serve spatial data, geoprocessing functions, and geospatial model predictions.",
+          "description": "Develop high-performance geospatial APIs: Building RESTful and OGC-compliant spatial APIs using FastAPI, GeoJSON responses, and vector tile generation.",
           "resources": [
             {
               "title": "Building a Geospatial API with FastAPI",
@@ -1484,13 +1571,15 @@
               "url": "/data/docs/geospatial_data_scientist/geospatial_api_deployment.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 16
         },
         {
           "id": "flask_fastapi_geoservices",
           "name": "Flask/FastAPI for Geospatial Services",
           "tag": "advanced",
-          "description": "Develop RESTful APIs using Python frameworks to expose geospatial functionalities and data.",
+          "description": "Build spatial microservices: FastAPI with async endpoints, Pydantic spatial schemas, streaming GeoJSON features, and dynamic bounding box queries.",
           "resources": [
             {
               "title": "FastAPI Documentation",
@@ -1512,13 +1601,15 @@
               "url": "/data/docs/geospatial_data_scientist/flask_fastapi_geoservices.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 15
         },
         {
           "id": "ogc_standards_web_services",
           "name": "OGC Standards & Web Services (WFS, WMS)",
           "tag": "advanced",
-          "description": "Understand and implement Open Geospatial Consortium (OGC) standards for interoperable web mapping and feature services.",
+          "description": "Implement Open Geospatial Consortium (OGC) standards: Deploying GeoServer or pygeoapi for Web Feature Service (WFS), Web Map Service (WMS), and OGC API - Features.",
           "resources": [
             {
               "title": "OGC Standards Overview",
@@ -1545,13 +1636,15 @@
               "url": "/data/docs/geospatial_data_scientist/ogc_standards_web_services.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 17
         },
         {
           "id": "mlops_geospatial_considerations",
           "name": "MLOps & Operational Considerations for Geospatial",
           "tag": "advanced",
-          "description": "Apply MLOps principles to geospatial models, focusing on monitoring, data versioning, model retraining, and scalability specific to spatial data.",
+          "description": "Operationalize geospatial models: Model registries, tracking spatial drift over seasons, automated retraining pipelines, and serving inference over raster streams.",
           "resources": [
             {
               "title": "MLOps for Geospatial Applications",
@@ -1573,13 +1666,15 @@
               "url": "/data/docs/geospatial_data_scientist/mlops_geospatial_considerations.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 17
         },
         {
           "id": "containerization_docker_kubernetes",
           "name": "Containerization (Docker, Kubernetes)",
           "tag": "advanced",
-          "description": "Package and deploy geospatial applications and models using Docker containers and orchestrate with Kubernetes for scalable deployments.",
+          "description": "Containerize GIS services: Multi-stage Dockerfiles with optimized GDAL/PROJ builds, non-root users, and deploying spatial microservices on Kubernetes.",
           "resources": [
             {
               "title": "Docker for Data Scientists (Datacamp)",
@@ -1606,13 +1701,15 @@
               "url": "/data/docs/geospatial_data_scientist/containerization_docker_kubernetes.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 16
         },
         {
           "id": "monitoring_observability_geo",
           "name": "Monitoring & Observability for Geospatial Workloads",
           "tag": "advanced",
-          "description": "Implement logging, metrics, and alerting to monitor the performance, availability, and data quality of geospatial systems.",
+          "description": "Monitor spatial services: Tracking tile rendering latency, database spatial query response times, and logging memory utilization during heavy raster operations.",
           "resources": [
             {
               "title": "Monitoring Geospatial Applications in Production",
@@ -1634,13 +1731,15 @@
               "url": "/data/docs/geospatial_data_scientist/monitoring_observability_geo.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 22
         },
         {
           "id": "geospatial_data_versioning_lineage",
           "name": "Geospatial Data Versioning & Lineage",
           "tag": "advanced",
-          "description": "Understand strategies for versioning spatial datasets and tracking data lineage in production pipelines.",
+          "description": "Version spatial datasets: DVC (Data Version Control) for raster datasets, tracking pipeline lineage, and cataloging spatial metadata.",
           "resources": [
             {
               "title": "Data Version Control (DVC) for Geospatial Data",
@@ -1662,13 +1761,15 @@
               "url": "/data/docs/geospatial_data_scientist/geospatial_data_versioning_lineage.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 14
         },
         {
           "id": "geospatial_project_collaboration",
           "name": "Geospatial Project Collaboration & Best Practices",
           "tag": "advanced",
-          "description": "Adopt collaborative workflows, coding standards, and documentation practices for efficient team delivery of geospatial projects.",
+          "description": "Collaborate in geospatial teams: Following reproducible data science standards, documenting assumptions, and conducting GIS code reviews.",
           "resources": [
             {
               "title": "Best Practices for Geospatial Software Development",
@@ -1690,13 +1791,15 @@
               "url": "/data/docs/geospatial_data_scientist/geospatial_project_collaboration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         },
         {
           "id": "code_review_best_practices_geo",
           "name": "Code Review & Best Practices for Geospatial",
           "tag": "advanced",
-          "description": "Participate in effective code reviews, ensuring code quality, maintainability, and adherence to geospatial coding standards.",
+          "description": "Review geospatial code: Checking for CRS mismatch bugs, floating-point geometry precision issues, memory leakage in raster loops, and missing spatial indexes.",
           "resources": [
             {
               "title": "Python Code Review Guidelines",
@@ -1718,13 +1821,15 @@
               "url": "/data/docs/geospatial_data_scientist/code_review_best_practices_geo.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 13
         },
         {
           "id": "documentation_metadata_standards",
           "name": "Documentation & Metadata Standards",
           "tag": "advanced",
-          "description": "Create comprehensive project documentation and adhere to geospatial metadata standards (e.g., ISO 19115) for data discoverability.",
+          "description": "Document geospatial data: ISO 19115 / FGDC metadata standards, data dictionaries, CRS definitions, and methodological provenance.",
           "resources": [
             {
               "title": "ISO 19115 Geospatial Metadata Standard",
@@ -1751,15 +1856,19 @@
               "url": "/data/docs/geospatial_data_scientist/documentation_metadata_standards.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 14
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 27
     },
     {
       "id": "geospatial_data_scientist_portfolio_career",
       "name": "Portfolio Development & Career Advancement",
       "tag": "advanced",
-      "description": "Translate your acquired skills into a compelling portfolio, articulate your contributions through case studies, and strategically prepare for job interviews and career growth in Geospatial Data Science.",
+      "description": "Build an elite geospatial data science portfolio: End-to-end cloud projects, interactive cartography, and technical interview readiness.",
       "resources": [
         {
           "title": "Building a Strong Data Science Portfolio (Towards Data Science)",
@@ -1787,7 +1896,7 @@
           "id": "geospatial_capstone_project",
           "name": "End-to-End Geospatial Data Science Capstone Project",
           "tag": "advanced",
-          "description": "Design, implement, and document a comprehensive, real-world geospatial project demonstrating your full skill set from data acquisition to deployment and visualization.",
+          "description": "Build an end-to-end geospatial capstone: Automated pipeline downloading Sentinel-2 imagery via STAC, calculating multi-temporal vegetation indices, training a land cover segmentation model, and serving results via an interactive web dashboard.",
           "resources": [
             {
               "title": "Example Geospatial Capstone Projects",
@@ -1809,13 +1918,15 @@
               "url": "/data/docs/geospatial_data_scientist/geospatial_capstone_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 48
         },
         {
           "id": "project_scoping_design",
           "name": "Project Scoping & Design",
           "tag": "advanced",
-          "description": "Define a problem, identify data sources, outline methodology, and design the architecture for a significant geospatial project.",
+          "description": "Scope real-world GIS projects: Formulating problem statements (e.g. wildfire risk modeling, flood inundation mapping, urban heat island analysis), identifying data requirements, and defining metrics.",
           "resources": [
             {
               "title": "Geospatial Project Planning Guide",
@@ -1837,13 +1948,15 @@
               "url": "/data/docs/geospatial_data_scientist/project_scoping_design.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 46
         },
         {
           "id": "implementation_testing_validation",
           "name": "Implementation, Testing & Validation",
           "tag": "advanced",
-          "description": "Execute the project, write clean and tested code, and validate geospatial outputs using appropriate metrics and techniques.",
+          "description": "Implement and test spatial pipelines: Rigorous unit tests for geometry edge cases (self-intersecting polygons, invalid geometries with `ST_IsValid`), and cross-validation.",
           "resources": [
             {
               "title": "Testing Geospatial Applications in Python",
@@ -1865,13 +1978,15 @@
               "url": "/data/docs/geospatial_data_scientist/implementation_testing_validation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 18
         },
         {
           "id": "deployment_demonstration_showcase",
           "name": "Deployment, Demonstration & Showcase",
           "tag": "advanced",
-          "description": "Deploy your project (e.g., as an API, web app), create a compelling demo, and prepare materials for a portfolio presentation.",
+          "description": "Deploy interactive demos: Hosting interactive GIS dashboards on Streamlit Cloud, Hugging Face Spaces, or custom React/Leaflet frontends.",
           "resources": [
             {
               "title": "QGIS Tutorial for Beginners (Klas Karlsson)",
@@ -1888,13 +2003,15 @@
               "url": "/data/docs/geospatial_data_scientist/deployment_demonstration_showcase.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 14
         },
         {
           "id": "geospatial_case_study_writing",
           "name": "Geospatial Case Study Writing & Storytelling",
           "tag": "advanced",
-          "description": "Craft engaging case studies that highlight the problem, your approach, technical decisions, and the impact of your geospatial analysis, effectively communicating complex insights.",
+          "description": "Author geospatial case studies: Documenting data pipelines, spatial modeling choices, business/environmental impact, and lessons learned with publication-grade maps.",
           "resources": [
             {
               "title": "How to Write a Data Science Case Study",
@@ -1921,13 +2038,15 @@
               "url": "/data/docs/geospatial_data_scientist/geospatial_case_study_writing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 17
         },
         {
           "id": "career_interview_preparation_geo",
           "name": "Career & Interview Preparation",
           "tag": "advanced",
-          "description": "Prepare for interviews with typical technical and behavioral questions, focusing on showcasing your geospatial project experience and problem-solving skills.",
+          "description": "Master geospatial technical interviews: Whiteboard spatial joins, derive projection transformation equations, explain raster map algebra, and solve system design challenges for location-based services.",
           "resources": [
             {
               "title": "Geospatial Data Scientist Interview Questions",
@@ -1954,9 +2073,14 @@
               "url": "/data/docs/geospatial_data_scientist/career_interview_preparation_geo.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 21
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 13
     }
-  ]
+  ],
+  "total_exp": 1000
 }

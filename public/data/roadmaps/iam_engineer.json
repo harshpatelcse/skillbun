@@ -47,25 +47,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Enterprise SSO & Automated SCIM Provisioning Gateway",
+        "title": "Centralized OIDC/SAML2 Enterprise Single Sign-On & SCIM Gateway",
         "tech_stack": [
-          "Node.js/Python",
-          "OAuth 2.0",
-          "OIDC",
-          "Okta API",
-          "PostgreSQL"
+          "Keycloak",
+          "OAuth2.0 / OIDC",
+          "SAML 2.0",
+          "SCIM 2.0",
+          "FIDO2/WebAuthn"
         ],
-        "description": "Build an enterprise single sign-on bridge with Okta that supports multi-factor authentication and automated user provisioning via SCIM."
+        "description": "Deploy an enterprise identity provider supporting SAML 2.0 and OIDC federation, passwordless WebAuthn MFA, and automated user provisioning via SCIM 2.0."
       },
       {
-        "title": "Centralized SAML/OIDC SSO & Automated SCIM Lifecycle",
+        "title": "Automated Just-In-Time (JIT) Cloud Privileged Access Management Engine",
         "tech_stack": [
-          "Okta",
-          "OAuth 2.0 / OIDC",
-          "Node.js",
-          "SAML 2.0"
+          "Go",
+          "AWS STS AssumeRole",
+          "Slack API",
+          "DynamoDB",
+          "Terraform"
         ],
-        "description": "Implement an automated identity lifecycle provider integrating user provisioning (SCIM 2.0), adaptive multi-factor authentication (MFA), and conditional access policies."
+        "description": "Engineer a self-service JIT access workflow in Slack allowing developers to request temporary elevated cloud permissions with manager approvals and immutable audit trails."
       }
     ],
     "certifications": [
@@ -73,10 +74,11 @@
       "Microsoft Certified: Identity and Access Administrator Associate (SC-300)"
     ],
     "interview_focus": [
-      "OAuth 2.0 Authorization Code Flow with PKCE",
-      "SAML vs OpenID Connect Architecture Comparison",
-      "Implementing Attribute-Based Access Control (ABAC)",
-      "Mitigating Session Hijacking and Token Replay Attacks"
+      "OAuth2.0 vs OIDC vs SAML 2.0 Protocol Handshakes & Assertion Tokens",
+      "Role-Based Access Control (RBAC) vs Attribute-Based Access Control (ABAC)",
+      "Principle of Least Privilege & Cloud IAM Evaluation Logic (Explicit Deny, SCPs, Boundary Policies)",
+      "Multi-Factor Authentication (MFA) Protocols, FIDO2/WebAuthn & Phishing-Resistant Credentials",
+      "Automated User Lifecycle Management (SCIM Protocol, JIT Provisioning & Deprovisioning)"
     ]
   },
   "format": "tree",
@@ -85,7 +87,7 @@
       "id": "iam_fundamentals",
       "name": "01. IAM Fundamentals & Core Principles",
       "tag": "essential",
-      "description": "Establish a strong understanding of Identity and Access Management (IAM) concepts, its importance in cybersecurity, and the foundational components that underpin modern identity systems.",
+      "description": "Master Identity and Access Management (IAM) fundamentals: Zero Trust architecture, authentication vs authorization, least privilege principle, and identity lifecycles.",
       "resources": [
         {
           "title": "What is Identity and Access Management (IAM)? - IBM",
@@ -118,7 +120,7 @@
           "id": "iam_intro_what_why",
           "name": "Introduction to IAM: What, Why, and How",
           "tag": "essential",
-          "description": "Defining IAM, its role in security and compliance, common use cases, benefits, and the landscape of identity management.",
+          "description": "Define the IAM domain: Preventing unauthorized access, mitigating credential theft, ensuring regulatory compliance (SOX, GDPR, HIPAA), and enabling frictionless user access.",
           "resources": [
             {
               "title": "The Evolution of Identity and Access Management (ForgeRock)",
@@ -140,13 +142,15 @@
               "url": "/data/docs/iam_engineer/iam_intro_what_why.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 19
         },
         {
           "id": "iam_core_concepts",
           "name": "Core IAM Concepts & Terminology",
           "tag": "essential",
-          "description": "Understand key terms like Identity, Authentication, Authorization, Provisioning, Deprovisioning, Auditing, and the Principle of Least Privilege.",
+          "description": "Master core IAM primitives: Principals, identities, accounts, entitlements, credentials, security tokens, sessions, authentication, authorization, and accounting (AAA).",
           "resources": [
             {
               "title": "Authentication vs. Authorization (Okta)",
@@ -173,13 +177,15 @@
               "url": "/data/docs/iam_engineer/iam_core_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 31
         },
         {
           "id": "iam_standards_protocols",
           "name": "IAM Standards and Protocols",
           "tag": "essential",
-          "description": "Deep dive into critical protocols: LDAP, Kerberos, SAML, OAuth 2.0, OpenID Connect (OIDC), and SCIM for identity provisioning.",
+          "description": "Master modern identity protocols: SAML 2.0 XML assertions, OAuth 2.0 authorization framework, OpenID Connect (OIDC) identity layer, and SCIM 2.0 user provisioning.",
           "resources": [
             {
               "title": "LDAP Tutorial for Beginners (GeeksforGeeks)",
@@ -221,13 +227,15 @@
               "url": "/data/docs/iam_engineer/iam_standards_protocols.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "iam_directories_databases",
           "name": "Directory Services and Identity Stores",
           "tag": "essential",
-          "description": "Explore Active Directory, LDAP directories, cloud identity providers (Azure AD/Entra ID, AWS IAM), and other identity data stores.",
+          "description": "Administer identity stores: Lightweight Directory Access Protocol (LDAP), Microsoft Active Directory Domain Services (AD DS), Azure AD / Entra ID, and Kerberos ticket-granting architecture.",
           "resources": [
             {
               "title": "Active Directory Explained (SearchWindowsServer)",
@@ -259,15 +267,19 @@
               "url": "/data/docs/iam_engineer/iam_directories_databases.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 16
     },
     {
       "id": "iam_core_solution_areas",
       "name": "02. Core IAM Solution Areas",
       "tag": "essential",
-      "description": "Dive into the primary functional components of modern IAM systems, understanding their design, implementation, and operational considerations.",
+      "description": "Architect core enterprise IAM pillars: Single Sign-On, Multi-Factor Authentication, Access Control models, and Privileged Access Management.",
       "resources": [
         {
           "title": "Identity and Access Management (IAM) Best Practices (NIST)",
@@ -300,7 +312,7 @@
           "id": "iam_sso_federation",
           "name": "Single Sign-On (SSO) and Federation",
           "tag": "essential",
-          "description": "Understand Identity Providers (IdPs) and Service Providers (SPs), implement SSO using SAML and OIDC, and explore federation use cases for B2B and B2C scenarios.",
+          "description": "Implement enterprise Single Sign-On (SSO): Identity Provider (IdP) vs Service Provider (SP) roles, IdP-initiated vs SP-initiated SAML/OIDC flows, and cross-domain identity federation.",
           "resources": [
             {
               "title": "What is Single Sign-On (SSO)? (Okta)",
@@ -332,13 +344,15 @@
               "url": "/data/docs/iam_engineer/iam_sso_federation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "iam_mfa_adaptive_access",
           "name": "Multi-Factor Authentication (MFA) & Adaptive Access",
           "tag": "essential",
-          "description": "Learn about different MFA types (TOTP, FIDO2, Push, Biometrics), implement MFA policies, and configure risk-based adaptive authentication and conditional access, leveraging identity context and behavioral analytics.",
+          "description": "Deploy Multi-Factor Authentication (MFA): TOTP (Time-based One-Time Passwords), FIDO2 / WebAuthn hardware security keys, push notifications, and risk-based adaptive contextual access.",
           "resources": [
             {
               "title": "What is Multi-Factor Authentication (MFA)? (Cisco)",
@@ -370,13 +384,15 @@
               "url": "/data/docs/iam_engineer/iam_mfa_adaptive_access.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 34
         },
         {
           "id": "iam_advanced_auth_passwordless",
           "name": "Advanced Authentication Methods & Passwordless",
           "tag": "advanced",
-          "description": "Explore cutting-edge authentication mechanisms like FIDO2/WebAuthn, Magic Links, Certificate-Based Authentication, and Biometrics beyond basic MFA. Design and implement strategies for a truly passwordless enterprise experience.",
+          "description": "Implement passwordless authentication: Passkeys (FIDO Alliance), certificate-based authentication (Smart Cards / PIV), biometrics (Windows Hello, Touch ID), and eliminating shared secrets.",
           "resources": [
             {
               "title": "FIDO Alliance: What is FIDO?",
@@ -408,13 +424,15 @@
               "url": "/data/docs/iam_engineer/iam_advanced_auth_passwordless.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         },
         {
           "id": "iam_access_control_models",
           "name": "Access Control Models (RBAC, ABAC, DAC, MAC)",
           "tag": "essential",
-          "description": "Design and implement Role-Based Access Control (RBAC) and Attribute-Based Access Control (ABAC) systems, understanding their principles, advantages, policy enforcement, and comparison with Discretionary Access Control (DAC) and Mandatory Access Control (MAC). Explore policy engines and entitlement management concepts.",
+          "description": "Design granular access control models: Role-Based Access Control (RBAC), Attribute-Based Access Control (ABAC with XACML/ALFA), Discretionary (DAC), and Mandatory (MAC) access controls.",
           "resources": [
             {
               "title": "RBAC vs ABAC: Which Access Control Model Is Best? (Okta)",
@@ -451,13 +469,15 @@
               "url": "/data/docs/iam_engineer/iam_access_control_models.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "iam_privileged_access_mgmt",
           "name": "Privileged Access Management (PAM)",
           "tag": "essential",
-          "description": "Learn about the principles of PAM, implementing just-in-time (JIT) and just-enough access (JEA), secure session recording and monitoring, credential vaulting, secrets management solutions, and privileged identity governance.",
+          "description": "Implement Privileged Access Management (PAM): CyberArk, HashiCorp Vault; credential vaulting, automatic rotation of admin passwords, session recording, and Just-In-Time (JIT) access.",
           "resources": [
             {
               "title": "What is Privileged Access Management (PAM)? (CyberArk)",
@@ -489,13 +509,15 @@
               "url": "/data/docs/iam_engineer/iam_privileged_access_mgmt.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "iam_identity_lifecycle_mgmt",
           "name": "Identity Lifecycle Management (ILM)",
           "tag": "essential",
-          "description": "Master user provisioning and deprovisioning, implement joiner-mover-leaver (JML) processes, and automate identity workflows using SCIM and other integration methods. Focus on efficiency, security, and compliance throughout the identity lifecycle.",
+          "description": "Automate the Joiner-Mover-Leaver (JML) lifecycle: Automated user onboarding, role changes, immediate offboarding revocation, and orphan account detection.",
           "resources": [
             {
               "title": "Automated User Provisioning and Deprovisioning (Okta)",
@@ -527,15 +549,19 @@
               "url": "/data/docs/iam_engineer/iam_identity_lifecycle_mgmt.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 18
     },
     {
       "id": "iam_platforms_cloud_identity",
       "name": "03. IAM Platforms and Cloud Identity",
       "tag": "essential",
-      "description": "Gain practical experience with leading commercial and open-source IAM platforms, focusing on their architecture, configuration, and integration capabilities.",
+      "description": "Administer enterprise and cloud IAM platforms across AWS, Azure, Okta, and open-source identity providers.",
       "resources": [
         {
           "title": "Top Identity and Access Management (IAM) Tools (Gartner)",
@@ -568,7 +594,7 @@
           "id": "iam_cloud_aws",
           "name": "Cloud IAM: AWS Identity & Access Management",
           "tag": "essential",
-          "description": "Configure AWS IAM Users, Groups, Roles, Policies (managed vs. inline), understand Cross-Account Access, and utilize AWS Identity Center (SSO) and Organizations.",
+          "description": "Master AWS IAM: IAM policies (JSON permission syntax, evaluation logic, condition keys), roles, assume-role STS tokens, permission boundaries, and AWS IAM Identity Center (SSO).",
           "resources": [
             {
               "title": "AWS IAM User Guide (AWS Docs)",
@@ -595,13 +621,15 @@
               "url": "/data/docs/iam_engineer/iam_cloud_aws.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 19
         },
         {
           "id": "iam_cloud_azure_entra",
           "name": "Cloud IAM: Microsoft Entra ID (Azure AD)",
           "tag": "essential",
-          "description": "Manage Entra ID Tenants, Users, Groups, Enterprise Applications, configure Conditional Access, Privileged Identity Management (PIM), and B2B/B2C scenarios. Implement Azure AD Connect and understand Microsoft Graph API for identity.",
+          "description": "Master Microsoft Entra ID: App registrations, enterprise applications, Conditional Access policies, Privileged Identity Management (PIM), and Access Reviews.",
           "resources": [
             {
               "title": "Microsoft Entra Documentation (Microsoft Learn)",
@@ -633,13 +661,15 @@
               "url": "/data/docs/iam_engineer/iam_cloud_azure_entra.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "iam_vendor_solutions",
           "name": "Enterprise IAM Solutions (Okta, PingIdentity, ForgeRock)",
           "tag": "essential",
-          "description": "Understand the architecture, core features (SSO, MFA, Directory, Lifecycle Management), and integration patterns for leading enterprise IAM vendors. Focus on practical configuration, deployment, and best practices for large-scale environments.",
+          "description": "Deploy enterprise identity platforms: Okta Universal Directory, Okta Workflows, Ping Identity, ForgeRock, and managing multi-tenant enterprise federation.",
           "resources": [
             {
               "title": "Okta Developer Documentation",
@@ -671,13 +701,15 @@
               "url": "/data/docs/iam_engineer/iam_vendor_solutions.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "iam_open_source_solutions",
           "name": "Open Source & Developer-Focused IAM (Keycloak, Auth0)",
           "tag": "advanced",
-          "description": "Explore the benefits and challenges of open-source IAM. Deploy and configure Keycloak for identity management, authentication, and authorization. Understand Auth0's developer-friendly approach for embedding identity into applications, including their APIs and SDKs.",
+          "description": "Deploy developer IAM solutions: Keycloak identity broker, Ory Kratos / Hydra, Auth0, and embedding authentication into web and mobile applications.",
           "resources": [
             {
               "title": "Keycloak Documentation (Official)",
@@ -704,15 +736,19 @@
               "url": "/data/docs/iam_engineer/iam_open_source_solutions.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 17
     },
     {
       "id": "iam_advanced_ops",
       "name": "04. Advanced Topics & IAM Operations",
       "tag": "advanced",
-      "description": "Explore advanced IAM concepts, operational best practices, security hardening, and integration strategies required for large-scale, enterprise-grade identity systems.",
+      "description": "Operate enterprise IAM programs: Identity governance, automated orchestration, API security, Zero Trust, and identity auditing.",
       "resources": [
         {
           "title": "Advanced Identity Management: Course (Cybrary)",
@@ -745,7 +781,7 @@
           "id": "iam_identity_governance_admin",
           "name": "Identity Governance & Administration (IGA)",
           "tag": "advanced",
-          "description": "Deep dive into Identity Governance & Administration (IGA) including access certifications/reviews, segregation of duties (SoD) enforcement, role mining, entitlement management, policy definition, and compliance reporting against frameworks like NIST, ISO 27001, GDPR.",
+          "description": "Implement Identity Governance and Administration (IGA): SailPoint IdentityIQ, access certification campaigns, separation of duties (SoD) enforcement, and compliance reporting.",
           "resources": [
             {
               "title": "What is Identity Governance? (SailPoint)",
@@ -777,13 +813,15 @@
               "url": "/data/docs/iam_engineer/iam_identity_governance_admin.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         },
         {
           "id": "iam_automation_orchestration",
           "name": "IAM Automation and Orchestration",
           "tag": "advanced",
-          "description": "Develop scripting for identity management (PowerShell, Python), integrate with ITSM tools, and design automated identity workflows using API-driven approaches, orchestration engines, and Infrastructure as Code (IaC) principles.",
+          "description": "Automate IAM operations: SCIM automated provisioning pipelines, custom Python automation using MS Graph API / AWS Boto3, and webhook-driven account deprovisioning.",
           "resources": [
             {
               "title": "Automate IAM tasks using AWS Lambda and Python (AWS Security Blog)",
@@ -815,13 +853,15 @@
               "url": "/data/docs/iam_engineer/iam_automation_orchestration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "iam_api_security",
           "name": "API Security with IAM",
           "tag": "advanced",
-          "description": "Secure APIs using OAuth 2.0 and OIDC, understand client authentication, JWTs, scope management, and how to integrate identity with API Gateways for robust access control and threat protection.",
+          "description": "Secure APIs with IAM: Protecting microservices with OAuth 2.0 scopes, token introspection (RFC 7662), JWT validation, and mTLS client certificates.",
           "resources": [
             {
               "title": "API Security Best Practices (OWASP)",
@@ -853,13 +893,15 @@
               "url": "/data/docs/iam_engineer/iam_api_security.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "iam_zero_trust_principles",
           "name": "Zero Trust Architecture and IAM",
           "tag": "advanced",
-          "description": "Understand and implement Zero Trust principles, including continuous verification, micro-segmentation, device trust, workload identity, and data protection within an IAM framework. Design identity-centric Zero Trust strategies.",
+          "description": "Operationalize Zero Trust: Never trust, always verify; assume breach; verify explicitly using device health, user context, and continuous risk assessment.",
           "resources": [
             {
               "title": "Zero Trust Security Model (Palo Alto Networks)",
@@ -891,13 +933,15 @@
               "url": "/data/docs/iam_engineer/iam_zero_trust_principles.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         },
         {
           "id": "iam_monitoring_logging",
           "name": "IAM Monitoring, Logging, and Alerting",
           "tag": "advanced",
-          "description": "Establish centralized identity logging with SIEM/SOAR tools, implement advanced anomaly detection for identity-related events, investigate identity threats, and define robust incident response procedures for IAM security incidents (Identity Threat Detection and Response - ITDR).",
+          "description": "Monitor identity telemetry: Analyzing Okta system logs, AWS CloudTrail sign-in events, Entra ID risky sign-ins, detecting password spraying, and alert integration with SIEM.",
           "resources": [
             {
               "title": "Monitor and Log Security Events in AWS IAM (AWS Security Blog)",
@@ -929,15 +973,19 @@
               "url": "/data/docs/iam_engineer/iam_monitoring_logging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 30
     },
     {
       "id": "iam_portfolio_career_readiness",
       "name": "05. Real-World Projects & Career Readiness",
       "tag": "advanced",
-      "description": "Apply your IAM knowledge to practical, hands-on projects, develop a professional portfolio, and prepare for successful career opportunities in the IAM domain.",
+      "description": "Build a demonstrable IAM engineering portfolio: Hands-on implementation projects, architectural write-ups, and career interview preparation.",
       "resources": [
         {
           "title": "Building a Cybersecurity Portfolio (Cybrary)",
@@ -965,7 +1013,7 @@
           "id": "iam_project_sso_mfa",
           "name": "Project: Implementing SSO & MFA for a Web Application",
           "tag": "advanced",
-          "description": "Configure a sample web application to integrate with an Identity Provider (e.g., Okta, Azure AD, Keycloak) for SSO (SAML/OIDC) and enforce MFA policies for users. Document the architectural design and implementation steps.",
+          "description": "Project: Implement SSO & MFA: Configure Keycloak or Okta to authenticate a modern web application using OIDC, enforcing WebAuthn MFA and role claims.",
           "resources": [
             {
               "title": "Build a Simple Web App with Okta (Okta Developer)",
@@ -992,13 +1040,15 @@
               "url": "/data/docs/iam_engineer/iam_project_sso_mfa.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 67
         },
         {
           "id": "iam_project_rbac_abac",
           "name": "Project: Designing & Implementing Access Control Policies",
           "tag": "advanced",
-          "description": "Design and implement a detailed RBAC model for a simulated enterprise environment (departments, roles, permissions) or an ABAC system for granular resource access in a cloud platform (e.g., AWS S3, Azure Blob Storage). Include policy definition and enforcement mechanisms.",
+          "description": "Project: Design access control policies: Model complex organizational hierarchy using AWS IAM JSON policies and Open Policy Agent (OPA) Rego rules.",
           "resources": [
             {
               "title": "Designing a Robust RBAC System (Article)",
@@ -1025,13 +1075,15 @@
               "url": "/data/docs/iam_engineer/iam_project_rbac_abac.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 66
         },
         {
           "id": "iam_project_pam_secrets",
           "name": "Project: Setting up Basic Privileged Access & Secrets Management",
           "tag": "advanced",
-          "description": "Implement a basic PAM solution (e.g., using open-source tools or a cloud-native service) focusing on secure credential storage, just-in-time access for administrative tasks, or secrets rotation for applications. Document the security benefits and operational procedures.",
+          "description": "Project: Privileged access management: Deploy HashiCorp Vault with dynamic AWS/database credential generation, short-lived tokens, and automated lease revocation.",
           "resources": [
             {
               "title": "Implementing HashiCorp Vault (Course)",
@@ -1058,13 +1110,15 @@
               "url": "/data/docs/iam_engineer/iam_project_pam_secrets.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 73
         },
         {
           "id": "iam_project_ilm_automation",
           "name": "Project: Identity Lifecycle Automation Workflow",
           "tag": "advanced",
-          "description": "Develop and demonstrate an automated workflow for user onboarding, managing access changes (e.g., department transfer), and offboarding. Integrate with a simulated HR system or a directory service using scripting (Python/PowerShell) and APIs (e.g., SCIM, Microsoft Graph).",
+          "description": "Project: Identity lifecycle automation: Build an automated Joiner-Mover-Leaver workflow using SCIM 2.0 endpoints and Python to sync HR system data to cloud directories.",
           "resources": [
             {
               "title": "Automating Identity Management with PowerShell (Microsoft Learn)",
@@ -1086,13 +1140,15 @@
               "url": "/data/docs/iam_engineer/iam_project_ilm_automation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 76
         },
         {
           "id": "iam_career_prep",
           "name": "Career Preparation & Interview Skills",
           "tag": "advanced",
-          "description": "Craft an IAM-focused resume and LinkedIn profile, prepare for common technical and behavioral interview questions for IAM Engineer roles, and understand career progression paths and industry certifications.",
+          "description": "Master IAM technical interviews: Whiteboard OAuth 2.0 / SAML 2.0 federation flows, explain STS token assumption, design Zero Trust architectures, and target certifications (CISSP, AWS Security, SC-300).",
           "resources": [
             {
               "title": "Top Identity & Access Management (IAM) Technical Interview Guide",
@@ -1119,9 +1175,14 @@
               "url": "/data/docs/iam_engineer/iam_career_prep.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 52
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 25
     }
-  ]
+  ],
+  "total_exp": 1000
 }

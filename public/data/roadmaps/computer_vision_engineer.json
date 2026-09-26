@@ -87,7 +87,7 @@
       "id": "computer_vision_fundamentals",
       "name": "Foundational Concepts: Math, Python, and Traditional CV",
       "tag": "essential",
-      "description": "Master the mathematical underpinnings, core Python libraries, and traditional image processing techniques crucial for understanding modern computer vision. This module lays the groundwork for advanced deep learning applications.",
+      "description": "Master computer vision fundamentals: Linear algebra for image transformations, camera optics, image sensor physics, and traditional spatial/frequency domain filtering.",
       "resources": [
         {
           "title": "OpenCV Course - Full Tutorial with Python (freeCodeCamp)",
@@ -110,7 +110,7 @@
           "id": "python_scientific_stack",
           "name": "Python Scientific Stack: NumPy, Pandas, Matplotlib",
           "tag": "essential",
-          "description": "Learn to efficiently manipulate numerical data with NumPy, handle structured data with Pandas, and visualize results with Matplotlib, forming the backbone of data science and machine learning workflows in computer vision.",
+          "description": "Leverage NumPy, SciPy, and Pandas for image data manipulation: High-performance array broadcasting, multi-dimensional slicing, spatial convolution kernels, and histogram transformations.",
           "resources": [
             {
               "title": "NumPy Learn",
@@ -132,13 +132,15 @@
               "url": "/data/docs/computer_vision_engineer/python_scientific_stack.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "version_control_basics",
           "name": "Version Control with Git",
           "tag": "essential",
-          "description": "Learn the fundamental principles of Git for version control, including basic commands (commit, push, pull, branch, merge), repository management, and collaborative development workflows, essential for any software engineering or ML project.",
+          "description": "Utilize Git and Git LFS for computer vision projects: Managing code repositories, versioning heavy annotation datasets, model weights, and collaborating across engineering branches.",
           "resources": [
             {
               "title": "Pro Git Book",
@@ -155,13 +157,15 @@
               "url": "/data/docs/computer_vision_engineer/version_control_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "cv_math_basics",
           "name": "Mathematical Foundations for CV",
           "tag": "essential",
-          "description": "Review essential linear algebra (vector spaces, matrices, transformations), calculus (gradients, optimization), and probability & statistics (distributions, Bayes' theorem) concepts as they directly apply to image processing, computer vision algorithms, and neural networks.",
+          "description": "Master the mathematics of computer vision: Affine and projective transformations, 3x3 homography matrices, epipolar geometry, singular value decomposition, and gradient descent for visual optimization.",
           "resources": [
             {
               "title": "Mathematics for Machine Learning (Coursera)",
@@ -173,13 +177,15 @@
               "url": "/data/docs/computer_vision_engineer/cv_math_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "digital_image_processing_basics",
           "name": "Digital Image Fundamentals and Pre-processing",
           "tag": "essential",
-          "description": "Understand how digital images are represented (pixels, channels, color spaces like RGB, HSV, Grayscale), common image formats (JPEG, PNG), and fundamental pre-processing techniques such as resizing, cropping, rotation, histogram equalization, and basic noise reduction.",
+          "description": "Implement digital image preprocessing: Color space conversions (RGB, HSV, LAB), contrast limited adaptive histogram equalization (CLAHE), bilateral filtering, and edge detection (Sobel, Canny).",
           "resources": [
             {
               "title": "Image Basics in OpenCV",
@@ -191,13 +197,15 @@
               "url": "/data/docs/computer_vision_engineer/digital_image_processing_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 15
         },
         {
           "id": "traditional_image_analysis_opencv",
           "name": "Traditional Image Analysis with OpenCV",
           "tag": "essential",
-          "description": "Dive into classic computer vision algorithms including image filtering (convolution, blurring, sharpening), edge detection (Sobel, Canny, Laplacian), feature extraction (Harris, SIFT, SURF, ORB), morphological operations (erosion, dilation), segmentation (thresholding, connected components, watershed), and geometric transformations (translation, rotation, scaling, affine).",
+          "description": "Implement classical OpenCV algorithms: Scale-Invariant Feature Transform (SIFT), ORB keypoint detection, RANSAC feature matching, Hough transforms, and watershed image segmentation.",
           "resources": [
             {
               "title": "OpenCV Image Processing Tutorials",
@@ -214,13 +222,15 @@
               "url": "/data/docs/computer_vision_engineer/traditional_image_analysis_opencv.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "camera_geometry_calibration",
           "name": "Camera Models and Calibration",
           "tag": "advanced",
-          "description": "Understand the pinhole camera model, intrinsic (focal length, principal point) and extrinsic (rotation, translation) parameters, lens distortion models (radial, tangential), and techniques for camera calibration to remove distortions and estimate real-world coordinates from image points.",
+          "description": "Calibrate monocular and stereo cameras: Pinhole camera models, intrinsic/extrinsic parameter estimation using Zhang's checkerboard method, radial lens distortion correction, and stereo rectification.",
           "resources": [
             {
               "title": "Camera Calibration with OpenCV",
@@ -242,15 +252,19 @@
               "url": "/data/docs/computer_vision_engineer/camera_geometry_calibration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 12
     },
     {
       "id": "dl_core_concepts",
       "name": "Deep Learning Core Concepts and Frameworks",
       "tag": "essential",
-      "description": "Build a strong understanding of neural networks, convolutional architectures, and practical skills in major deep learning frameworks like PyTorch or TensorFlow, crucial for modern computer vision.",
+      "description": "Transition from hand-crafted features to deep visual representations: Receptive fields, spatial downsampling, backpropagation through convolutional layers, and GPU tensor computation.",
       "resources": [
         {
           "title": "Deep Learning Specialization (deeplearning.ai)",
@@ -273,7 +287,7 @@
           "id": "ml_dl_review",
           "name": "Machine Learning & Deep Learning Refresher",
           "tag": "essential",
-          "description": "Quick review of foundational machine learning concepts including supervised vs. unsupervised learning, regression, classification, clustering, model training, validation, testing, overfitting/underfitting, and a gentle introduction to artificial neural networks.",
+          "description": "Review core visual deep learning concepts: Cross-entropy loss, focal loss, gradient vanishing/exploding dynamics, and batch/layer normalization across visual feature maps.",
           "resources": [
             {
               "title": "Machine Learning Crash Course (Google Developers)",
@@ -290,13 +304,15 @@
               "url": "/data/docs/computer_vision_engineer/ml_dl_review.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "gpu_acceleration_cuda_basics",
           "name": "GPU Acceleration and CUDA Basics",
           "tag": "essential",
-          "description": "Understand the role of GPUs in accelerating deep learning training and inference. Learn about NVIDIA CUDA toolkit, cuDNN, and how to configure deep learning frameworks to effectively utilize GPU resources for high-performance computing.",
+          "description": "Accelerate visual inference with CUDA: Parallel GPU thread hierarchies, CUDA memory management, kernel launching, and utilizing TensorRT and cuDNN for real-time video stream throughput.",
           "resources": [
             {
               "title": "NVIDIA CUDA Documentation",
@@ -318,13 +334,15 @@
               "url": "/data/docs/computer_vision_engineer/gpu_acceleration_cuda_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 34
         },
         {
           "id": "neural_network_architectures",
           "name": "Neural Networks and CNN Architectures",
           "tag": "essential",
-          "description": "Explore the building blocks of neural networks: perceptrons, activation functions, loss functions, forward and backward propagation. Delve into key CNN architectures: LeNet, AlexNet, VGG, ResNet, Inception, understanding their unique contributions and how they learn hierarchical features.",
+          "description": "Architect modern visual backbones: ResNet residual connections, ConvNeXt modernized CNNs, Vision Transformers (ViT), Swin Transformer hierarchical attention, and MobileNet edge architectures.",
           "resources": [
             {
               "title": "CS231n: Convolutional Neural Networks for Visual Recognition",
@@ -346,13 +364,15 @@
               "url": "/data/docs/computer_vision_engineer/neural_network_architectures.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 22
         },
         {
           "id": "training_dl_models_optimization",
           "name": "Training Deep Learning Models: Optimization and Regularization",
           "tag": "essential",
-          "description": "Master the techniques for effectively training deep neural networks, including understanding various loss functions, optimizers (SGD, Adam, RMSprop), learning rate scheduling, regularization (dropout, batch normalization, L1/L2), and hyperparameter tuning strategies.",
+          "description": "Optimize visual training pipelines: Data augmentation (CutMix, MixUp, AutoAugment), cosine annealing schedules, label smoothing, stochastic depth, and mixed-precision (FP16/BF16) training.",
           "resources": [
             {
               "title": "An Overview of Gradient Descent Optimization Algorithms",
@@ -379,13 +399,15 @@
               "url": "/data/docs/computer_vision_engineer/training_dl_models_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "dl_frameworks_basics",
           "name": "Deep Learning Frameworks: PyTorch/TensorFlow",
           "tag": "essential",
-          "description": "Gain hands-on experience with either PyTorch or TensorFlow, covering data loading with custom datasets and dataloaders, model definition, building training loops, managing device allocation (CPU/GPU), and basic model saving/loading.",
+          "description": "Build end-to-end vision pipelines in PyTorch and Torchvision: Custom dataset classes, multi-GPU DistributedDataParallel (DDP), and compiling computation graphs with `torch.compile`.",
           "resources": [
             {
               "title": "PyTorch Official Tutorials",
@@ -412,15 +434,19 @@
               "url": "/data/docs/computer_vision_engineer/dl_frameworks_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 14
     },
     {
       "id": "dl_vision_tasks",
       "name": "Deep Learning for Core Computer Vision Tasks",
       "tag": "essential",
-      "description": "Learn to apply deep learning models to solve fundamental computer vision problems such as image classification, object detection, and semantic/instance segmentation, mastering the practical application of these techniques.",
+      "description": "Implement production pipelines for core visual tasks: Object detection, semantic and instance segmentation, keypoint estimation, and multi-object tracking.",
       "resources": [
         {
           "title": "TorchVision Documentation",
@@ -443,7 +469,7 @@
           "id": "data_annotation_management",
           "name": "Data Annotation and Dataset Management",
           "tag": "essential",
-          "description": "Master techniques for annotating images/videos for various vision tasks (bounding boxes, polygons, keypoints), managing dataset versions, ensuring data quality, handling class imbalances, and ethical considerations in data collection.",
+          "description": "Manage computer vision annotation workflows: CVAT, Label Studio, Roboflow; COCO, Pascal VOC, and YOLO annotation formats; active learning data selection; and inter-annotator agreement scoring.",
           "resources": [
             {
               "title": "Roboflow Docs",
@@ -470,13 +496,15 @@
               "url": "/data/docs/computer_vision_engineer/data_annotation_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 22
         },
         {
           "id": "data_quality_audit_project",
           "name": "Project: Data Quality Audit and Preprocessing",
           "tag": "essential",
-          "description": "Conduct a thorough inspection of a real-world dataset to identify label errors, inconsistencies, class imbalance, and apply appropriate preprocessing, augmentation (e.g., albumentations, imgaug), and data splitting strategies to prepare for model training.",
+          "description": "Project: Audit dataset quality: Detect label noise, analyze spatial bounding box aspect ratio distributions, identify visual occlusion biases, and clean automated dataset splits.",
           "resources": [
             {
               "title": "Albumentations Documentation",
@@ -498,13 +526,15 @@
               "url": "/data/docs/computer_vision_engineer/data_quality_audit_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         },
         {
           "id": "image_classification_techniques",
           "name": "Image Classification",
           "tag": "essential",
-          "description": "Implement and evaluate image classification models, covering advanced concepts like transfer learning, fine-tuning, knowledge distillation, data augmentation, and understanding performance metrics (accuracy, precision, recall, F1-score, confusion matrices, ROC curves).",
+          "description": "Train high-accuracy image classifiers: Transfer learning from ImageNet-22k checkpoints, fine-tuning ViT and EfficientNet models, and evaluating multi-label classification using PR curves.",
           "resources": [
             {
               "title": "PyTorch Transfer Learning Tutorial",
@@ -521,13 +551,15 @@
               "url": "/data/docs/computer_vision_engineer/image_classification_techniques.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "object_detection_models",
           "name": "Object Detection Models",
           "tag": "advanced",
-          "description": "Explore state-of-the-art object detection algorithms, including two-stage detectors (R-CNN family: Faster R-CNN, Mask R-CNN) and one-stage detectors (YOLO series: YOLOv3, YOLOv5, YOLOv8; SSD), along with their evaluation metrics (IoU, mAP, AP50, AP75).",
+          "description": "Deploy single-stage and two-stage object detectors: YOLOv8/v10/v11 real-time architectures, RT-DETR (Real-Time DEtection TRansformer), and Faster R-CNN with Feature Pyramid Networks (FPN).",
           "resources": [
             {
               "title": "YOLO (You Only Look Once) Official Website",
@@ -554,13 +586,15 @@
               "url": "/data/docs/computer_vision_engineer/object_detection_models.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         },
         {
           "id": "semantic_instance_segmentation",
           "name": "Semantic and Instance Segmentation",
           "tag": "advanced",
-          "description": "Learn about pixel-wise classification (semantic segmentation) using fully convolutional networks (FCNs), U-Net, DeepLab, and object-aware segmentation (instance segmentation) with models like Mask R-CNN and panoptic segmentation approaches. Understand common datasets like Cityscapes and COCO.",
+          "description": "Implement visual segmentation: Segment Anything Model (SAM / SAM-2) for zero-shot segmentation, Mask R-CNN for instance segmentation, and SegFormer / DeepLabV3+ for dense semantic maps.",
           "resources": [
             {
               "title": "Segmentation Models PyTorch",
@@ -582,13 +616,15 @@
               "url": "/data/docs/computer_vision_engineer/semantic_instance_segmentation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 29
         },
         {
           "id": "keypoint_detection_pose_estimation",
           "name": "Keypoint Detection and Pose Estimation",
           "tag": "advanced",
-          "description": "Explore techniques for detecting specific keypoints (e.g., facial landmarks, human body joints) in images and videos. Learn about popular models for 2D and 3D pose estimation, such as OpenPose, AlphaPose, and HRNet, and their applications in human-computer interaction, robotics, and sports analytics.",
+          "description": "Implement human pose estimation and spatial keypoints: Heatmap regression, direct coordinate prediction, YOLO-Pose, MediaPipe, and multi-person bottom-up tracking.",
           "resources": [
             {
               "title": "OpenPose GitHub",
@@ -615,13 +651,15 @@
               "url": "/data/docs/computer_vision_engineer/keypoint_detection_pose_estimation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         },
         {
           "id": "project_dl_vision_application",
           "name": "Project: End-to-End Object Detection/Segmentation Application",
           "tag": "essential",
-          "description": "Apply knowledge of object detection or segmentation to a real-world problem. This project involves dataset preparation, model selection/training (using pre-trained models and fine-tuning), evaluation, and basic deployment demonstration, consolidating practical skills.",
+          "description": "Project: Deploy an end-to-end real-time visual inspection application: Integrating YOLO/RT-DETR detection, tracking, visual quality alerting, and FastAPI web dashboard delivery.",
           "resources": [
             {
               "title": "Kaggle Datasets",
@@ -643,15 +681,19 @@
               "url": "/data/docs/computer_vision_engineer/project_dl_vision_application.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 15
     },
     {
       "id": "advanced_cv_techniques",
       "name": "Advanced Computer Vision Techniques",
       "tag": "advanced",
-      "description": "Delve into more specialized and cutting-edge computer vision topics, including video analysis, generative models, self-supervised learning, and 3D vision, pushing the boundaries of what CV can achieve.",
+      "description": "Engineer advanced computer vision capabilities: Video temporal modeling, generative visual synthesis, self-supervised pre-training, and 3D geometric scene reconstruction.",
       "resources": [
         {
           "title": "Advanced Computer Vision with Python (freeCodeCamp)",
@@ -674,7 +716,7 @@
           "id": "video_processing_object_tracking",
           "name": "Video Processing and Object Tracking",
           "tag": "advanced",
-          "description": "Understand how to process video streams efficiently, implement robust object tracking algorithms (e.g., SORT, DeepSORT, Kalman Filters, state-of-the-art multi-object tracking), analyze motion, estimate optical flow, and manage real-time performance considerations for video analytics.",
+          "description": "Track objects across multi-frame video: ByteTrack, DeepSORT, optical flow (Lucas-Kanade, RAFT), Kalman filter trajectory smoothing, and handling visual occlusions.",
           "resources": [
             {
               "title": "OpenCV Video Analysis and Object Tracking",
@@ -696,13 +738,15 @@
               "url": "/data/docs/computer_vision_engineer/video_processing_object_tracking.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         },
         {
           "id": "generative_models_cv",
           "name": "Generative Models for Vision (GANs, VAEs, Diffusion Models)",
           "tag": "advanced",
-          "description": "Explore Generative Adversarial Networks (GANs), Variational Autoencoders (VAEs), and Diffusion Models for tasks like realistic image generation, style transfer, super-resolution, data augmentation, and image-to-image translation. Understand their architectures and training challenges.",
+          "description": "Implement generative vision models: Variational Autoencoders (VAEs), Generative Adversarial Networks (StyleGAN3), and Latent Diffusion Models (Stable Diffusion, ControlNet) for conditioned image synthesis.",
           "resources": [
             {
               "title": "Generative Adversarial Networks (GANs) Specialization",
@@ -724,13 +768,15 @@
               "url": "/data/docs/computer_vision_engineer/generative_models_cv.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "self_supervised_vision_transformers",
           "name": "Self-Supervised Learning and Vision Transformers",
           "tag": "advanced",
-          "description": "Learn about methods for pre-training powerful models without explicit human labels (e.g., SimCLR, BYOL, MAE) and the rising importance of Transformer architectures in computer vision (Vision Transformers ViT, DETR, Swin Transformers), understanding their attention mechanisms and scalability.",
+          "description": "Leverage self-supervised visual representation learning: Masked Autoencoders (MAE), DINOv2 self-distillation features, and fine-tuning Vision Transformers for zero-shot downstream tasks.",
           "resources": [
             {
               "title": "Hugging Face Transformers: Vision",
@@ -752,13 +798,15 @@
               "url": "/data/docs/computer_vision_engineer/self_supervised_vision_transformers.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         },
         {
           "id": "3d_computer_vision_and_scene_understanding",
           "name": "3D Computer Vision and Scene Understanding",
           "tag": "advanced",
-          "description": "Explore techniques for perceiving and reconstructing 3D information from 2D images. Topics include stereo vision, structure-from-motion (SfM), Simultaneous Localization and Mapping (SLAM), point clouds, 3D object detection, and neural radiance fields (NeRFs) for novel view synthesis.",
+          "description": "Implement 3D visual reconstruction: Monocular depth estimation, point cloud processing with Open3D, Structure from Motion (SfM with COLMAP), and 3D Gaussian Splatting for novel view synthesis.",
           "resources": [
             {
               "title": "OpenCV 3D Reconstruction",
@@ -775,15 +823,19 @@
               "url": "/data/docs/computer_vision_engineer/3d_computer_vision_and_scene_understanding.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 23
     },
     {
       "id": "cv_mlops_production",
       "name": "MLOps, Deployment, and Production for CV Models",
       "tag": "advanced",
-      "description": "Understand the full lifecycle of computer vision models in production, from data and model versioning to scalable deployment, monitoring, and optimization for various real-world environments.",
+      "description": "Operationalize computer vision in production: Model serialization, hardware-accelerated compilation, cloud API serving, edge IoT deployment, and real-time visual drift monitoring.",
       "resources": [
         {
           "title": "MLOps Guide by Google Cloud",
@@ -806,7 +858,7 @@
           "id": "mlops_experiment_management",
           "name": "Experiment Tracking and Model Versioning",
           "tag": "advanced",
-          "description": "Implement tools and practices for tracking experiments (parameters, metrics, artifacts), managing dataset and model versions, ensuring reproducibility, and facilitating collaborative development in an MLOps environment using tools like MLflow, Weights & Biases, and DVC.",
+          "description": "Track visual model experiments: Logging bounding box predictions, confusion matrices, precision-recall curves, and checkpoint artifacts in Weights & Biases or MLflow.",
           "resources": [
             {
               "title": "MLflow Documentation",
@@ -833,13 +885,15 @@
               "url": "/data/docs/computer_vision_engineer/mlops_experiment_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         },
         {
           "id": "model_deployment_strategies",
           "name": "Model Deployment Strategies: Cloud, API, Streaming",
           "tag": "advanced",
-          "description": "Learn to deploy CV models as robust REST APIs using frameworks like Flask/FastAPI, containerize applications with Docker, orchestrate scalable deployments with Kubernetes, and leverage cloud platforms (AWS SageMaker, GCP Vertex AI, Azure ML) for managed and auto-scaling inference endpoints.",
+          "description": "Deploy high-throughput visual APIs: Triton Inference Server, ONNX Runtime, FastAPI with asynchronous batching, and low-latency RTSP video stream consumption with GStreamer.",
           "resources": [
             {
               "title": "Deploying Machine Learning Models (TensorFlow)",
@@ -866,13 +920,15 @@
               "url": "/data/docs/computer_vision_engineer/model_deployment_strategies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 27
         },
         {
           "id": "edge_device_optimization",
           "name": "Edge Device Optimization and Inference",
           "tag": "advanced",
-          "description": "Optimize CV models for constrained environments: techniques like quantization (post-training, quantization-aware), pruning, model distillation, and deployment on edge devices like NVIDIA Jetson, Google Coral, or mobile platforms using specialized tools like ONNX, TensorRT, and TensorFlow Lite.",
+          "description": "Optimize models for edge hardware: INT8/FP16 quantization with TensorRT on NVIDIA Jetson, OpenVINO on Intel CPUs, CoreML on Apple Silicon, and pruning redundant convolutional filters.",
           "resources": [
             {
               "title": "ONNX Runtime Documentation",
@@ -904,13 +960,15 @@
               "url": "/data/docs/computer_vision_engineer/edge_device_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 45
         },
         {
           "id": "model_monitoring_explainability",
           "name": "Model Monitoring, Drift, and Explainability",
           "tag": "advanced",
-          "description": "Set up comprehensive systems for monitoring model performance in production, detecting data drift and concept drift, and understanding model predictions through explainable AI (XAI) techniques like LIME, SHAP, Grad-CAM, and counterfactual explanations to build trust and debug issues.",
+          "description": "Monitor production vision systems: Detect visual distribution drift (lighting shifts, blur, camera degradation) using Evidently AI, and generate Grad-CAM / Eigen-CAM visual saliency heatmaps.",
           "resources": [
             {
               "title": "Evidently AI Documentation",
@@ -937,15 +995,19 @@
               "url": "/data/docs/computer_vision_engineer/model_monitoring_explainability.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 31
     },
     {
       "id": "responsible_ai_capstone",
       "name": "Responsible AI and Capstone Projects",
       "tag": "advanced",
-      "description": "Address critical ethical considerations in computer vision, understand and implement responsible AI practices, and apply all acquired knowledge to build comprehensive, real-world capstone projects that demonstrate industry readiness.",
+      "description": "Enforce ethical standards in computer vision: Mitigating demographic bias in facial analysis, protecting biometric privacy, adversarial robustness against physical patch attacks, and capstone delivery.",
       "resources": [
         {
           "title": "What is Responsible AI? | Google Cloud AI Ethics & Governance",
@@ -968,7 +1030,7 @@
           "id": "ethics_bias_privacy",
           "name": "Ethics, Bias, and Privacy in Computer Vision",
           "tag": "advanced",
-          "description": "Examine potential biases in CV models and datasets (e.g., gender, race), discuss fairness metrics, understand privacy concerns (e.g., facial recognition, data anonymization), and explore ethical guidelines and regulatory frameworks (e.g., GDPR, AI Act) for responsible AI development.",
+          "description": "Audit models for demographic parity: Anonymizing facial and license plate data, evaluating performance disparities across skin tones and lighting conditions, and ensuring GDPR compliance.",
           "resources": [
             {
               "title": "Google Responsible AI Practices",
@@ -995,13 +1057,15 @@
               "url": "/data/docs/computer_vision_engineer/ethics_bias_privacy.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         },
         {
           "id": "adversarial_attacks_robustness",
           "name": "Adversarial Attacks and Model Robustness",
           "tag": "advanced",
-          "description": "Investigate methods for adversarial attacks (e.g., FGSM, PGD) that can fool CV models and explore defense mechanisms to improve model robustness and security. Understand the implications for critical applications like autonomous driving and surveillance.",
+          "description": "Defend against visual adversarial attacks: Evaluating FGSM (Fast Gradient Sign Method), PGD (Projected Gradient Descent), adversarial patch defenses, and randomized input smoothing.",
           "resources": [
             {
               "title": "CleverHans Library for Adversarial Examples",
@@ -1028,13 +1092,15 @@
               "url": "/data/docs/computer_vision_engineer/adversarial_attacks_robustness.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 29
         },
         {
           "id": "industry_capstone_project",
           "name": "Industry-Standard Capstone Project",
           "tag": "advanced",
-          "description": "Execute an end-to-end computer vision project, from problem definition, literature review, and data collection to model development, MLOps integration, deployment as a user-friendly application (e.g., with Gradio/Streamlit), and thorough performance evaluation, culminating in a robust demo and detailed report.",
+          "description": "Execute an enterprise computer vision capstone: Build a real-world multi-camera perception system (e.g. autonomous retail checkout, autonomous drone landing, or medical pathology segmentation) with TensorRT deployment.",
           "resources": [
             {
               "title": "Gradio Quickstart",
@@ -1061,9 +1127,14 @@
               "url": "/data/docs/computer_vision_engineer/industry_capstone_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 73
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 61
     }
-  ]
+  ],
+  "total_exp": 1000
 }

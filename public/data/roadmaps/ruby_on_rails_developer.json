@@ -47,25 +47,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Real-Time Team Discussion & Issue Tracker",
+        "title": "Real-Time Collaborative Workspace with Rails 7, Hotwire & Turbo",
         "tech_stack": [
-          "Ruby 3",
-          "Rails 7",
-          "Hotwire Turbo",
+          "Ruby on Rails 7.2",
+          "Turbo Streams",
+          "Stimulus",
           "PostgreSQL",
-          "Redis"
+          "Tailwind CSS"
         ],
-        "description": "Build a modern linear-style issue tracker with instant live updates using Turbo Streams, keyboard shortcuts, and email notifications."
+        "description": "Build a linear-style task workspace featuring instant multi-user reactive updates via Turbo Streams, Stimulus controllers, and optimistic UI transitions without SPA bloat."
       },
       {
-        "title": "Real-Time Marketplace Platform with Rails 7 & Hotwire",
+        "title": "Multi-Tenant Marketplace Platform with Stripe Connect & Solid Queue",
         "tech_stack": [
-          "Ruby on Rails 7",
-          "Hotwire (Turbo/Stimulus)",
-          "PostgreSQL",
-          "Sidekiq"
+          "Rails 7",
+          "Solid Queue",
+          "Solid Cache",
+          "Stripe Connect",
+          "RSpec"
         ],
-        "description": "Develop a high-performance marketplace featuring real-time bidding updates via Turbo Streams, background payment settlement with Sidekiq, and Stripe billing."
+        "description": "Architect a multi-vendor marketplace platform featuring sub-account payment payouts, background job orchestration with Solid Queue, and comprehensive RSpec testing."
       }
     ],
     "certifications": [
@@ -73,10 +74,11 @@
       "Ruby Association Certified Programmer Gold"
     ],
     "interview_focus": [
-      "Active Record Query Optimization & Scopes",
-      "Hotwire vs Single Page Application (SPA) Paradigms",
-      "Ruby Blocks, Procs & Lambdas",
-      "Background Jobs & Race Condition Defenses"
+      "Ruby Object Model (Metaprogramming, Method Lookup Path, Singleton Classes, Blocks/Procs/Lambdas)",
+      "ActiveRecord Query Optimization (Includes vs Joins vs Preload, N+1 Query Resolution)",
+      "Hotwire Architecture (Turbo Drive, Turbo Frames, Turbo Streams, Stimulus Controller Lifecycle)",
+      "Rails Background Processing (Solid Queue, Sidekiq, Redis Idempotency, Retry Strategies)",
+      "Rails Security Defenses (Strong Parameters, CSRF Tokens, SQL Injection Prevention in Scopes)"
     ]
   },
   "format": "tree",
@@ -85,7 +87,7 @@
       "id": "ror_foundations",
       "name": "Foundations: Ruby & Web Basics",
       "tag": "essential",
-      "description": "Establish a strong understanding of the Ruby programming language, fundamental web concepts, and essential development tools before diving into Rails.",
+      "description": "Master Ruby language fundamentals: Object-oriented architecture, metaprogramming, blocks/procs/lambdas, and modern web application development.",
       "resources": [
         {
           "title": "Ruby Documentation",
@@ -118,7 +120,7 @@
           "id": "ror_ruby_language_fundamentals",
           "name": "Ruby Language Fundamentals",
           "tag": "essential",
-          "description": "Master Ruby's syntax, data types, control flow, object-oriented programming principles, metaprogramming basics, blocks, procs, lambdas, modules, and error handling, all crucial for effective Rails development.",
+          "description": "Master Ruby syntax: Dynamic typing, duck typing, mixins with modules, enumerable methods (`map`, `select`, `reduce`), exceptions, and gem package management with Bundler.",
           "resources": [
             {
               "title": "The Ruby Way: Solutions in Ruby from 2000s to Today",
@@ -150,13 +152,15 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_ruby_language_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 18
         },
         {
           "id": "ror_web_development_basics",
           "name": "Web Development Basics",
           "tag": "essential",
-          "description": "Understand core web technologies like HTTP/HTTPS protocols, browser-server interaction, HTML for structure, CSS for styling, fundamental JavaScript for interactivity, and relational databases for data persistence.",
+          "description": "Understand web architecture for Rails: HTTP protocol mechanics, RESTful conventions, Rack interface, and how Rails processes web requests.",
           "resources": [
             {
               "title": "HTTP: The Definitive Guide",
@@ -183,13 +187,15 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_web_development_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 15
         },
         {
           "id": "ror_development_environment",
           "name": "Development Environment & Workflow",
           "tag": "essential",
-          "description": "Set up a robust development environment, master version control with Git, navigate the command line, and explore containerization with Docker for consistent setups.",
+          "description": "Configure Ruby development environments: Version management with `rbenv`/`asdf`, Rails CLI commands (`rails new`, `generators`, `console`), and Bundler gemfile locking.",
           "resources": [
             {
               "title": "Rails Getting Started Guide",
@@ -221,15 +227,19 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_development_environment.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 18
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 13
     },
     {
       "id": "ror_core_rails_development",
       "name": "Core Rails Development",
       "tag": "essential",
-      "description": "Dive deep into the Ruby on Rails framework, mastering its core components like MVC, Active Record, routing, controllers, and views to build functional and data-driven web applications.",
+      "description": "Master the Rails Model-View-Controller (MVC) architecture, routing, controllers, and database interactions.",
       "resources": [
         {
           "title": "Ruby on Rails Guides",
@@ -262,7 +272,7 @@
           "id": "ror_rails_introduction",
           "name": "Rails Introduction & Setup",
           "tag": "essential",
-          "description": "Understand the Rails philosophy, project structure, generators, and perform initial setup for a new Rails application.",
+          "description": "Master Rails conventions: Convention over Configuration (CoC), Don't Repeat Yourself (DRY), directory structure, and the boot process of Rails applications.",
           "resources": [
             {
               "title": "Rails Getting Started Guide",
@@ -284,13 +294,15 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_rails_introduction.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 17
         },
         {
           "id": "ror_mvc_architecture",
           "name": "MVC Architecture in Rails",
           "tag": "essential",
-          "description": "Grasp the Model-View-Controller pattern as implemented in Rails, understanding how each component interacts to handle requests and render responses.",
+          "description": "Implement MVC separation of concerns: Thin controllers, fat models, and modular views ensuring maintainable and readable codebases.",
           "resources": [
             {
               "title": "Rails Architecture: MVC and Beyond",
@@ -312,13 +324,15 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_mvc_architecture.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 20
         },
         {
           "id": "ror_routing",
           "name": "Routing",
           "tag": "essential",
-          "description": "Define and manage application routes, understanding RESTful routes, custom routes, and URL helpers.",
+          "description": "Configure RESTful routing: Resourceful routing (`resources :articles`), nested resources, member/collection routes, namespaces, and route constraints.",
           "resources": [
             {
               "title": "Rails Routing from the Outside In",
@@ -340,13 +354,15 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_routing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 22
         },
         {
           "id": "ror_controllers_actions",
           "name": "Controllers & Actions",
           "tag": "essential",
-          "description": "Implement controller logic, handle requests, manage session state, and prepare data for views.",
+          "description": "Build controllers: Strong parameters, filters/callbacks (`before_action`), session management, cookie handling, and response rendering formats.",
           "resources": [
             {
               "title": "Action Controller Overview",
@@ -368,13 +384,15 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_controllers_actions.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "ror_views_forms",
           "name": "Views, ERB & Forms",
           "tag": "essential",
-          "description": "Render dynamic content using ERB templates, utilize helpers, build forms, and implement strong parameters for secure data handling.",
+          "description": "Render views: Action View helpers, ERB templating, partials, layouts, FormBuilder (`form_with`), and CSRF token protection.",
           "resources": [
             {
               "title": "Action View Overview",
@@ -401,13 +419,15 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_views_forms.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 20
         },
         {
           "id": "ror_active_record",
           "name": "Models & Active Record",
           "tag": "essential",
-          "description": "Master Active Record for object-relational mapping. This includes database migrations, defining model associations, implementing robust validations, using callbacks, and performing advanced data querying.",
+          "description": "Master Active Record: Migrations, associations (`belongs_to`, `has_many :through`), validations, callbacks, scopes, and avoiding N+1 queries with `includes`.",
           "resources": [
             {
               "title": "Active Record Basics",
@@ -439,15 +459,19 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_active_record.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 17
     },
     {
       "id": "ror_advanced_features",
       "name": "Advanced Rails Features & Patterns",
       "tag": "advanced",
-      "description": "Explore powerful Rails features and common architectural patterns for building complex, real-world applications, including user management, APIs, rich interactive experiences, and asynchronous processing.",
+      "description": "Architect advanced Rails systems: Authentication, API mode, background jobs, real-time websockets, and Hotwire interfaces.",
       "resources": [
         {
           "title": "Advanced Rails Recipes (The Pragmatic Programmers)",
@@ -480,7 +504,7 @@
           "id": "ror_authentication_authorization",
           "name": "Authentication & Authorization",
           "tag": "essential",
-          "description": "Implement secure user registration, login, password management with Devise, and role-based or attribute-based access control using authorization gems like Pundit or CanCanCan.",
+          "description": "Implement secure auth: User authentication from scratch with `has_secure_password` or Devise; role-based authorization with Pundit or CanCanCan.",
           "resources": [
             {
               "title": "Devise Gem GitHub Repo",
@@ -507,13 +531,15 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_authentication_authorization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "ror_restful_apis",
           "name": "Building RESTful APIs",
           "tag": "essential",
-          "description": "Develop robust JSON APIs with Rails. Understand API design principles, serialization (e.g., Jbuilder, Active Model Serializers), versioning strategies, and authentication methods for APIs (e.g., JWT, API Keys).",
+          "description": "Build Rails API-only applications: Serializing data with Jbuilder or Alba, JWT authentication, CORS configuration with `rack-cors`, and OpenAPI documentation.",
           "resources": [
             {
               "title": "Building a REST API with Rails",
@@ -540,13 +566,15 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_restful_apis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 30
         },
         {
           "id": "ror_background_jobs",
           "name": "Background Jobs & Asynchronous Processing",
           "tag": "advanced",
-          "description": "Implement Active Job with background processing libraries like Sidekiq, Resque, or Delayed Job for handling long-running, non-blocking tasks efficiently, such as email sending or data processing.",
+          "description": "Process asynchronous background tasks: Active Job abstraction, Sidekiq backed by Redis, concurrency tuning, retries, and job monitoring with Sidekiq Web UI.",
           "resources": [
             {
               "title": "Active Job Basics",
@@ -573,13 +601,15 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_background_jobs.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         },
         {
           "id": "ror_rich_features",
           "name": "Action Mailer, Active Storage & Action Text",
           "tag": "advanced",
-          "description": "Integrate rich functionalities like email delivery with Action Mailer, file uploads/attachments with Active Storage, and advanced text editing with Action Text directly within your Rails application.",
+          "description": "Manage rich assets: Action Mailer for transactional emails, Active Storage for cloud file uploads (S3), and Action Text for rich-text editing with Trix.",
           "resources": [
             {
               "title": "Action Mailer Basics",
@@ -611,13 +641,15 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_rich_features.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "ror_realtime_action_cable",
           "name": "Real-time Features with Action Cable",
           "tag": "advanced",
-          "description": "Add WebSocket-based real-time functionality to your Rails applications using Action Cable for features like live updates and chat.",
+          "description": "Implement real-time WebSockets: Action Cable channels, broadcasting events from background jobs, and handling client subscriptions.",
           "resources": [
             {
               "title": "Action Cable Overview",
@@ -639,13 +671,15 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_realtime_action_cable.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 27
         },
         {
           "id": "ror_modern_frontend_integration",
           "name": "Modern Frontend Integration (Hotwire/JavaScript)",
           "tag": "advanced",
-          "description": "Integrate modern frontend techniques with Rails. Master Hotwire (Turbo, Stimulus) for rich, interactive experiences with minimal JavaScript, or understand how to effectively integrate traditional JavaScript frameworks if required.",
+          "description": "Build reactive frontends with Hotwire: Turbo Drive, Turbo Frames, Turbo Streams, and Stimulus JavaScript controllers for SPA-like experiences without complex frontend builds.",
           "resources": [
             {
               "title": "Hotwire.dev",
@@ -677,13 +711,15 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_modern_frontend_integration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         },
         {
           "id": "ror_design_patterns_services",
           "name": "Design Patterns & Service Objects",
           "tag": "advanced",
-          "description": "Explore advanced architectural patterns and organize complex business logic using Service Objects, Form Objects, Decorators/Presenters, and other Ruby design patterns to keep your codebase clean and maintainable.",
+          "description": "Refactor complex business logic: Service Objects, Form Objects, Query Objects, Decorators (Draper), and Policy Objects to prevent model bloat.",
           "resources": [
             {
               "title": "Practical Object-Oriented Design in Ruby (POODR)",
@@ -710,15 +746,19 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_design_patterns_services.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 29
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 31
     },
     {
       "id": "ror_quality_testing",
       "name": "Quality, Testing & Refinement",
       "tag": "essential",
-      "description": "Develop a robust testing mindset and apply various testing methodologies to ensure the reliability, maintainability, and correctness of your Rails applications through unit, integration, and end-to-end tests.",
+      "description": "Master automated testing in Rails: Test-Driven Development (TDD), RSpec, factory generation, and continuous integration.",
       "resources": [
         {
           "title": "A Guide to Testing Rails Applications",
@@ -751,7 +791,7 @@
           "id": "ror_testing_fundamentals",
           "name": "Testing Fundamentals & Frameworks",
           "tag": "essential",
-          "description": "Understand the importance of testing, different test types (unit, integration, system/feature), and popular testing frameworks like RSpec or Minitest. Embrace Test-Driven Development (TDD) or Behavior-Driven Development (BDD) principles.",
+          "description": "Master testing principles: Writing readable, maintainable tests with RSpec, understanding test pyramids, and configuring test databases.",
           "resources": [
             {
               "title": "RSpec Documentation",
@@ -778,13 +818,15 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_testing_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 15
         },
         {
           "id": "ror_model_controller_testing",
           "name": "Model & Controller Testing",
           "tag": "essential",
-          "description": "Write effective unit tests for your models and integration tests for your controllers to verify business logic and request handling.",
+          "description": "Test models and controllers: Testing Active Record validations, associations, scopes, and controller request specs with RSpec.",
           "resources": [
             {
               "title": "Testing Models in Rails",
@@ -806,13 +848,15 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_model_controller_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "ror_feature_system_testing",
           "name": "Feature & System Testing",
           "tag": "advanced",
-          "description": "Conduct end-to-end testing of user flows with tools like Capybara to simulate user interactions and ensure application behavior meets requirements.",
+          "description": "Execute system and integration tests: Capybara with headless Chrome for full-stack browser simulation, user journey testing, and interaction verification.",
           "resources": [
             {
               "title": "System Testing",
@@ -839,13 +883,15 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_feature_system_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "ror_api_testing",
           "name": "API Testing",
           "tag": "advanced",
-          "description": "Write tests specifically for your Rails API endpoints to ensure correct responses, status codes, and data formats.",
+          "description": "Test JSON APIs: Request specs verifying HTTP status codes, JSON response schemas, authentication headers, and edge-case errors.",
           "resources": [
             {
               "title": "Testing APIs in Rails with RSpec",
@@ -867,13 +913,15 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_api_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         },
         {
           "id": "ror_factories_fixtures",
           "name": "Test Data Management (Factories & Fixtures)",
           "tag": "advanced",
-          "description": "Learn to effectively manage test data using FactoryBot or fixtures to create predictable and consistent test environments.",
+          "description": "Manage test data: FactoryBot for flexible test data generation, traits, sequences, and Faker for realistic mock data generation.",
           "resources": [
             {
               "title": "FactoryBot Getting Started",
@@ -900,13 +948,15 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_factories_fixtures.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 27
         },
         {
           "id": "ror_advanced_testing_topics",
           "name": "Advanced Testing Topics",
           "tag": "advanced",
-          "description": "Delve into more specialized testing scenarios for different Rails components and strategies for test suite optimization.",
+          "description": "Advanced testing techniques: Shared examples, custom RSpec matchers, mocking external HTTP requests with VCR and WebMock, and measuring test coverage with SimpleCov.",
           "resources": [
             {
               "title": "How to Test Ruby on Rails Mailers",
@@ -928,15 +978,19 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_advanced_testing_topics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 17
     },
     {
       "id": "ror_deployment_operations",
       "name": "Deployment, Operations & Performance",
       "tag": "advanced",
-      "description": "Prepare, deploy, and operate your Rails applications in production environments. Implement robust monitoring, optimize performance, and ensure application security and scalability.",
+      "description": "Deploy and scale Rails in production: Containerization, Kamal deployments, performance tuning, and security.",
       "resources": [
         {
           "title": "Deployment Options for Rails Applications",
@@ -969,7 +1023,7 @@
           "id": "ror_environment_configuration",
           "name": "Environment Configuration",
           "tag": "essential",
-          "description": "Understand how to configure Rails for different environments (development, test, production) using environment variables and configuration files.",
+          "description": "Configure environments: Managing multi-environment credentials (`credentials.yml.enc`), Puma web server thread/worker configuration, and database connection pooling.",
           "resources": [
             {
               "title": "Configuring Rails Applications",
@@ -991,13 +1045,15 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_environment_configuration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 18
         },
         {
           "id": "ror_deployment_strategies",
           "name": "Deployment Strategies & Tools",
           "tag": "essential",
-          "description": "Learn to deploy Rails applications to various platforms including PaaS (Heroku, Render), IaaS (AWS EC2, DigitalOcean) using tools like Capistrano, or container-based deployments with Docker and Kubernetes.",
+          "description": "Deploy Rails applications: Modern zero-downtime container deployments using Kamal (Docker-based), Heroku, or AWS ECS/Render.",
           "resources": [
             {
               "title": "Deploying Rails to Heroku",
@@ -1024,13 +1080,15 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_deployment_strategies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "ror_cicd",
           "name": "Continuous Integration/Deployment (CI/CD)",
           "tag": "advanced",
-          "description": "Set up CI/CD pipelines using tools like GitHub Actions, GitLab CI, or CircleCI to automate testing and deployment workflows.",
+          "description": "Automate CI/CD pipelines: GitHub Actions running RuboCop style linting, Brakeman security scanning, and RSpec test suites on every pull request.",
           "resources": [
             {
               "title": "Continuous Integration for Ruby on Rails",
@@ -1052,13 +1110,15 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_cicd.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         },
         {
           "id": "ror_monitoring_logging",
           "name": "Monitoring & Logging",
           "tag": "advanced",
-          "description": "Implement comprehensive application monitoring (e.g., New Relic, Datadog), error tracking (e.g., Sentry, Honeybadger), and centralized logging solutions (e.g., Papertrail, ELK Stack) to ensure production health.",
+          "description": "Monitor production Rails: Semantic logging with Lograge, error tracking with Sentry/Honeybadger, and application performance monitoring (APM) with Scout / Skylight.",
           "resources": [
             {
               "title": "Rails Logging",
@@ -1085,13 +1145,15 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_monitoring_logging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "ror_performance_optimization",
           "name": "Performance Optimization",
           "tag": "advanced",
-          "description": "Identify and resolve performance bottlenecks. Master database indexing, query optimization, various caching strategies (page, fragment, object, low-level), and profiling tools to improve application responsiveness and scalability.",
+          "description": "Optimize Rails performance: Page and Russian Doll fragment caching, database index optimization, bullet gem for N+1 detection, and database query caching.",
           "resources": [
             {
               "title": "Rails Performance Guide",
@@ -1118,13 +1180,15 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_performance_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         },
         {
           "id": "ror_security_best_practices",
           "name": "Security Best Practices",
           "tag": "essential",
-          "description": "Learn common web vulnerabilities and implement Rails' built-in security features and best practices to protect your application from attacks like CSRF, XSS, and SQL injection.",
+          "description": "Harden Rails security: Automated security auditing with Brakeman, mitigating SQL injection, secure headers, rate limiting with Rack::Attack, and dependency audits with Bundler Audit.",
           "resources": [
             {
               "title": "Securing Rails Applications",
@@ -1151,15 +1215,19 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_security_best_practices.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 33
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 24
     },
     {
       "id": "ror_portfolio_career",
       "name": "Portfolio & Career Readiness",
       "tag": "advanced",
-      "description": "Transition from learning to career readiness by building a compelling portfolio, preparing for interviews, and positioning yourself as a competent Ruby on Rails Developer.",
+      "description": "Build a demonstrable Rails portfolio: Production capstone application, open-source gem contributions, and technical interview readiness.",
       "resources": [
         {
           "title": "How to Build a Portfolio Website for Developers (freeCodeCamp)",
@@ -1192,7 +1260,7 @@
           "id": "ror_project_capstone",
           "name": "Project: Full-Stack Rails Application",
           "tag": "advanced",
-          "description": "Develop one or more comprehensive, full-stack Ruby on Rails applications from scratch. Incorporate essential and advanced features learned throughout the roadmap, creating a strong, portfolio-quality project.",
+          "description": "Build a production Rails capstone: Multi-tenant SaaS platform featuring Hotwire UI, Devise auth, Stripe billing with webhooks, Sidekiq background processing, and Kamal deployment.",
           "resources": [
             {
               "title": "Build a SaaS App with Ruby on Rails 7 & Hotwire",
@@ -1214,13 +1282,15 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_project_capstone.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 79
         },
         {
           "id": "ror_code_quality_refactoring",
           "name": "Code Quality, Refactoring & Best Practices",
           "tag": "advanced",
-          "description": "Focus on writing clean, maintainable, and idiomatic Ruby and Rails code. Understand refactoring techniques, apply design principles like SOLID, and utilize static analysis tools like RuboCop for code consistency.",
+          "description": "Maintain high code quality: Enforcing standard Ruby style with RuboCop, continuous refactoring of code smells, and optimizing test execution speed.",
           "resources": [
             {
               "title": "Practical Object-Oriented Design in Ruby (POODR)",
@@ -1247,13 +1317,15 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_code_quality_refactoring.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         },
         {
           "id": "ror_interview_preparation",
           "name": "Interview Preparation & Job Search",
           "tag": "advanced",
-          "description": "Prepare for technical interviews, practice common Ruby/Rails questions, understand resume building for development roles, and strategies for job searching.",
+          "description": "Prepare for Ruby on Rails interviews: Metaprogramming concepts, Active Record query execution lifecycle, Hotwire vs React tradeoffs, and architectural design.",
           "resources": [
             {
               "title": "Awesome Ruby Interview Questions",
@@ -1280,9 +1352,14 @@
               "url": "/data/docs/ruby_on_rails_developer/ror_interview_preparation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 24
     }
-  ]
+  ],
+  "total_exp": 1000
 }

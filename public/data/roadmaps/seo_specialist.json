@@ -47,31 +47,34 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Full Technical SEO Audit & Schema Markup Package",
+        "title": "Full Technical SEO Audit, Core Web Vitals & Schema Markup Package",
         "tech_stack": [
           "Screaming Frog",
           "Google Search Console",
-          "Schema.org",
-          "Ahrefs/Semrush"
+          "JSON-LD Schema",
+          "Lighthouse",
+          "SQL"
         ],
-        "description": "Perform an exhaustive technical audit of a high-traffic web application, resolve crawl budget issues, and deploy rich schema markup."
+        "description": "Perform an exhaustive technical SEO audit of a high-traffic web application, debugging crawl budgets, canonicalization chains, and implementing rich snippet Schema.org."
       },
       {
-        "title": "Technical SEO Migration & Automated Core Web Vitals Audit",
+        "title": "Zero-Traffic-Loss Site Migration Strategy & International SEO Architecture",
         "tech_stack": [
+          "Redirect Mapping (301)",
+          "hreflang Architecture",
           "Google Search Console",
-          "Screaming Frog",
-          "Python",
-          "Schema.org"
+          "Ahrefs",
+          "Python"
         ],
-        "description": "Plan a zero-traffic-loss site migration redirect mapping strategy, audit technical crawl budget, and implement structured JSON-LD schema across 10,000+ pages."
+        "description": "Plan and execute a domain migration redirect mapping strategy, auditing international hreflang tags, preventing indexation loss, and monitoring organic visibility."
       }
     ],
     "interview_focus": [
-      "Troubleshooting Sudden Organic Traffic Drops in Google Search Console",
-      "Client-Side Rendering (CSR) vs Server-Side Rendering (SSR) SEO Impact",
-      "Canonicalization vs 301 Redirects vs Noindex Tags",
-      "Optimizing for Core Web Vitals (LCP, INP, CLS)"
+      "Search Engine Crawling, Rendering & Indexing (Client-Side Rendering vs SSR vs Prerendering)",
+      "Core Web Vitals Impact on Search Rankings (Interaction to Next Paint / INP, LCP, CLS)",
+      "Canonicalization, Faceted Navigation & Crawl Budget Optimization for Enterprise Sites",
+      "International SEO Implementation (hreflang Tags, Country-Specific Domains vs Subdirectories)",
+      "Algorithm Updates, Recovery Strategies & High-Quality Content Guidelines (Google E-E-A-T)"
     ],
     "certifications": [
       "Google Search Central SEO Expert",
@@ -84,7 +87,7 @@
       "id": "seo_foundations",
       "name": "Search Engine and SEO Foundations",
       "tag": "essential",
-      "description": "Develop a deep understanding of how search engines operate, from crawling and indexing to ranking algorithms, and grasp the core principles that underpin all SEO strategies.",
+      "description": "Master Search Engine Optimization fundamentals: Search engine architecture, Google rendering pipelines, ranking algorithms, and search user journeys.",
       "resources": [
         {
           "title": "Google SEO Starter Guide",
@@ -117,7 +120,7 @@
           "id": "seo_search_engine_mechanics_rendering",
           "name": "Search Engine Mechanics: Crawling, Rendering & Indexing",
           "tag": "essential",
-          "description": "Learn the intricacies of how search engines discover content (crawling), process and render it (rendering), and store it (indexing). Understand the role of sitemaps, robots.txt, and canonicalization in guiding search engine bots.",
+          "description": "Understand search engine mechanics: Web crawling (Googlebot user-agents), rendering (two-wave indexing with Chromium headless), indexing, and query serving.",
           "resources": [
             {
               "title": "Google Search Essentials",
@@ -149,13 +152,15 @@
               "url": "/data/docs/seo_specialist/seo_search_engine_mechanics_rendering.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "seo_ranking_factors_algorithms_eeat",
           "name": "Core Ranking Factors, Algorithms & E-E-A-T",
           "tag": "essential",
-          "description": "Explore the fundamental signals Google and other search engines use to rank content, including relevance, authority, quality, and user experience. Understand the impact of major algorithm updates and the critical importance of Experience, Expertise, Authoritativeness, and Trustworthiness (E-E-A-T).",
+          "description": "Master core ranking factors: Google's Helpful Content System, PageRank, topical authority, E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness), and Quality Rater Guidelines.",
           "resources": [
             {
               "title": "Google's Core Updates Explained",
@@ -182,13 +187,15 @@
               "url": "/data/docs/seo_specialist/seo_ranking_factors_algorithms_eeat.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 30
         },
         {
           "id": "seo_keyword_research_intent_analysis",
           "name": "Advanced Keyword Research, Intent & Competitor Analysis",
           "tag": "essential",
-          "description": "Master the art of comprehensive keyword research, mapping various user intents (informational, navigational, transactional, commercial investigation), identifying topic clusters, assessing keyword difficulty, and uncovering competitor keyword gaps for strategic content and SEO planning.",
+          "description": "Execute advanced keyword research: Search intent classification (Informational, Navigational, Commercial, Transactional), keyword clustering with Python/SEMrush, and competitor keyword gaps.",
           "resources": [
             {
               "title": "Ahrefs Keyword Research Guide",
@@ -220,13 +227,15 @@
               "url": "/data/docs/seo_specialist/seo_keyword_research_intent_analysis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         },
         {
           "id": "seo_serp_features_user_journey",
           "name": "Understanding SERP Features & User Journey",
           "tag": "essential",
-          "description": "Explore various Search Engine Results Page (SERP) features such as Rich Snippets, Featured Snippets, Local Packs, Knowledge Panels, and People Also Ask boxes. Understand how these features impact click-through rates and the overall user search journey, from initial query to conversion.",
+          "description": "Optimize for modern SERP features: Featured snippets, People Also Ask (PAA), knowledge panels, video packs, local map packs, and mapping user search journeys.",
           "resources": [
             {
               "title": "Google Search Gallery",
@@ -253,15 +262,19 @@
               "url": "/data/docs/seo_specialist/seo_serp_features_user_journey.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 15
     },
     {
       "id": "seo_content_onpage",
       "name": "Content and On-page SEO",
       "tag": "essential",
-      "description": "Learn to create, optimize, and structure high-quality content that meets user intent and search engine guidelines for maximum visibility, engagement, and conversion.",
+      "description": "Master on-page SEO: Semantic HTML, helpful content creation, Schema markup, and strategic internal linking.",
       "resources": [
         {
           "title": "Google Helpful Content Guidance",
@@ -294,7 +307,7 @@
           "id": "seo_onpage_elements_optimization",
           "name": "On-Page Elements Optimization",
           "tag": "essential",
-          "description": "Optimize critical on-page elements including title tags, meta descriptions, headings (H1-H6), URL structures, content hierarchy, image alt text, and internal links to enhance relevance, readability, and click-through rates (CTR).",
+          "description": "Optimize on-page HTML elements: Title tags, meta descriptions, semantic header hierarchy (H1-H6), image alt attributes, canonical tags (`rel=\"canonical\"`), and Open Graph tags.",
           "resources": [
             {
               "title": "Google Title Links",
@@ -321,13 +334,15 @@
               "url": "/data/docs/seo_specialist/seo_onpage_elements_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         },
         {
           "id": "seo_helpful_content_strategy_creation",
           "name": "Helpful Content Strategy and Creation",
           "tag": "essential",
-          "description": "Develop comprehensive content briefs aligned with user intent. Create engaging, authoritative, and truly helpful content that deeply addresses user needs. Implement and uphold E-E-A-T principles and strategize effective content refresh cycles for stale or underperforming pages.",
+          "description": "Execute topical authority content strategies: Topic clusters, hub-and-spoke content architecture, comprehensive content briefs, and demonstrating primary original research.",
           "resources": [
             {
               "title": "Creating Helpful, Reliable, People-First Content (Google)",
@@ -354,13 +369,15 @@
               "url": "/data/docs/seo_specialist/seo_helpful_content_strategy_creation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "seo_structured_data_schema_markup",
           "name": "Structured Data and Schema Markup",
           "tag": "advanced",
-          "description": "Implement various schema types (e.g., Article, Product, FAQ, Local Business, Review, HowTo, VideoObject) to provide search engines with explicit context, enhance SERP visibility, and enable rich results. Validate schema implementation using tools.",
+          "description": "Implement Schema.org structured data: JSON-LD implementation (Article, FAQ, Product, Organization, BreadcrumbList), and validating with Google Rich Results Test.",
           "resources": [
             {
               "title": "Google Structured Data",
@@ -387,13 +404,15 @@
               "url": "/data/docs/seo_specialist/seo_structured_data_schema_markup.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         },
         {
           "id": "seo_advanced_internal_linking_strategy",
           "name": "Advanced Internal Linking Strategy",
           "tag": "advanced",
-          "description": "Design robust internal linking architectures, leverage contextual links, implement hub-and-spoke models and silos, and optimize anchor text for improved crawlability, strategic distribution of page authority, and enhanced user navigation.",
+          "description": "Design internal linking architecture: PageRank flow distribution, contextual in-body anchor text, silo structures, eliminating orphan pages, and automated internal link auditing.",
           "resources": [
             {
               "title": "Ahrefs Internal Link Building Guide",
@@ -420,13 +439,15 @@
               "url": "/data/docs/seo_specialist/seo_advanced_internal_linking_strategy.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         },
         {
           "id": "seo_content_audits_gap_analysis",
           "name": "Content Audits, Gap Analysis & Repurposing",
           "tag": "advanced",
-          "description": "Conduct comprehensive content audits to identify underperforming, duplicate, or thin content. Perform thorough content gap analysis against competitors. Learn advanced strategies for content repurposing, refreshing, and consolidating content for sustained relevance and improved performance.",
+          "description": "Audit content portfolios: Content decay analysis, identifying keyword cannibalization, pruning thin/underperforming content, and 301 consolidation strategies.",
           "resources": [
             {
               "title": "How to do a Content Audit (Moz)",
@@ -453,15 +474,19 @@
               "url": "/data/docs/seo_specialist/seo_content_audits_gap_analysis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 19
     },
     {
       "id": "seo_offpage_link_building",
       "name": "Off-page SEO and Link Building",
       "tag": "essential",
-      "description": "Master the art of acquiring high-quality backlinks, managing off-site signals, and building online authority to improve domain ranking, trust, and organic visibility.",
+      "description": "Execute off-page SEO and link acquisition: High-authority link acquisition, digital PR, and backlink audit defense.",
       "resources": [
         {
           "title": "Ahrefs Link Building Guide",
@@ -494,7 +519,7 @@
           "id": "seo_link_acquisition_strategies_digital_pr",
           "name": "Link Acquisition Strategies & Digital PR",
           "tag": "essential",
-          "description": "Learn various white-hat link building techniques including broken link building, resource page outreach, guest blogging, content promotion, unlinked mentions, and advanced digital PR strategies (e.g., HARO, expert contributions, press releases) to earn valuable backlinks.",
+          "description": "Earn high-authority backlinks: Digital PR data studies, original survey distribution, HARO / Connectively journalist pitching, guest editorial thought leadership, and broken link building.",
           "resources": [
             {
               "title": "Broken Link Building Guide (Moz)",
@@ -521,13 +546,15 @@
               "url": "/data/docs/seo_specialist/seo_link_acquisition_strategies_digital_pr.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "seo_backlink_profile_analysis_audits_disavow",
           "name": "Backlink Profile Analysis, Audits & Disavow",
           "tag": "advanced",
-          "description": "Conduct comprehensive backlink audits, identify toxic links, understand link metrics (e.g., Domain Rating, Trust Flow, Citation Flow), perform competitor backlink analysis, and effectively use Google's Disavow Tool to protect against negative SEO attacks or problematic links.",
+          "description": "Audit backlink profiles: Analyzing referring domain authority (Ahrefs DR / Moz DA), identifying toxic link spam networks, link velocity, and managing Google Disavow files.",
           "resources": [
             {
               "title": "Google Disavow Tool Guide",
@@ -554,13 +581,15 @@
               "url": "/data/docs/seo_specialist/seo_backlink_profile_analysis_audits_disavow.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         },
         {
           "id": "seo_local_seo_gbp_citation",
           "name": "Local SEO, Google Business Profile & Citation Management",
           "tag": "advanced",
-          "description": "Optimize Google Business Profile listings, manage local citations (NAP consistency), garner and respond to reviews, implement local schema, and leverage localized content to dominate local search results and drive foot traffic to physical locations.",
+          "description": "Master Local SEO: Google Business Profile (GBP) optimization, local citation consistency (NAP - Name, Address, Phone), local schema, and review acquisition strategies.",
           "resources": [
             {
               "title": "Google Business Profile Help",
@@ -587,13 +616,15 @@
               "url": "/data/docs/seo_specialist/seo_local_seo_gbp_citation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         },
         {
           "id": "seo_competitor_link_gap_automation",
           "name": "Competitor Link Gap Analysis & Outreach Automation",
           "tag": "advanced",
-          "description": "Identify strategic link building opportunities by analyzing competitor backlink profiles and identifying their link gaps. Explore advanced tools and techniques for scaling outreach campaigns, managing relationships, and automating aspects of the link acquisition process efficiently.",
+          "description": "Automate link prospecting: Scraping competitor backlink gaps with Ahrefs API / Python, prioritizing high-value domains, and automating email outreach pipelines with Pitchbox.",
           "resources": [
             {
               "title": "Link Gap Analysis (Ahrefs)",
@@ -620,15 +651,19 @@
               "url": "/data/docs/seo_specialist/seo_competitor_link_gap_automation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 18
     },
     {
       "id": "seo_technical_audits_performance",
       "name": "Technical SEO and Performance Optimization",
       "tag": "essential",
-      "description": "Conduct in-depth technical audits, optimize site speed, ensure mobile-friendliness, and manage site architecture for optimal search engine crawlability, indexability, and user experience.",
+      "description": "Master technical SEO: Core Web Vitals, site crawlability, log file analysis, and JavaScript rendering optimization.",
       "resources": [
         {
           "title": "Technical SEO Audit Checklist (SEMrush)",
@@ -656,7 +691,7 @@
           "id": "seo_core_web_vitals_page_speed",
           "name": "Core Web Vitals, Page Speed & Mobile-First Indexing",
           "tag": "essential",
-          "description": "Understand and optimize for Core Web Vitals (Largest Contentful Paint, Interaction to Next Paint, Cumulative Layout Shift) and other page experience signals. Implement page speed best practices, understand mobile-first indexing considerations, and apply responsive design principles to enhance user experience across all devices.",
+          "description": "Optimize Core Web Vitals: Largest Contentful Paint (LCP < 2.5s), Interaction to Next Paint (INP < 200ms), and Cumulative Layout Shift (CLS < 0.1); mobile-first indexing audits.",
           "resources": [
             {
               "title": "Web Vitals Documentation",
@@ -688,13 +723,15 @@
               "url": "/data/docs/seo_specialist/seo_core_web_vitals_page_speed.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         },
         {
           "id": "seo_site_architecture_info_arch_intl",
           "name": "Site Architecture, Information Architecture & International SEO",
           "tag": "advanced",
-          "description": "Design and optimize logical site structures (e.g., flat vs. deep), intuitive navigation, and effective information architecture for user experience and crawl efficiency. Manage pagination, faceted navigation, implement Hreflang for international targeting, and resolve duplicate content issues efficiently.",
+          "description": "Architect international and technical website structures: Flat URL hierarchies, XML sitemaps, robots.txt directives, and international SEO with hreflang tags.",
           "resources": [
             {
               "title": "Google Hreflang Tags",
@@ -721,13 +758,15 @@
               "url": "/data/docs/seo_specialist/seo_site_architecture_info_arch_intl.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         },
         {
           "id": "seo_advanced_crawl_budget_log_analysis",
           "name": "Advanced Crawl Budget Optimization & Log Analysis",
           "tag": "advanced",
-          "description": "Deep dive into server log analysis to understand crawler behavior, identify crawl budget inefficiencies, broken links, redirect chains, and server errors that impact SEO performance and indexation, especially for large-scale websites.",
+          "description": "Optimize crawl budget: Web server access log analysis (ELK/Screaming Frog Log Analyzer), identifying crawl waste, faceted navigation parameter control, and noindex directives.",
           "resources": [
             {
               "title": "Server Log File Analysis for SEO (OnCrawl)",
@@ -754,13 +793,15 @@
               "url": "/data/docs/seo_specialist/seo_advanced_crawl_budget_log_analysis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         },
         {
           "id": "seo_javascript_rendering_seo",
           "name": "JavaScript SEO & Dynamic Rendering",
           "tag": "advanced",
-          "description": "Understand the unique challenges of SEO for JavaScript-heavy websites. Learn about dynamic rendering, server-side rendering (SSR), client-side rendering (CSR), hydration, and pre-rendering techniques to ensure discoverability, crawlability, and indexation of content by search engines.",
+          "description": "Solve JavaScript SEO challenges: Client-Side Rendering (CSR) vs Server-Side Rendering (SSR) vs Dynamic Rendering; diagnosing hydration mismatches and DOM content visibility.",
           "resources": [
             {
               "title": "JavaScript SEO Basics (Google)",
@@ -787,15 +828,19 @@
               "url": "/data/docs/seo_specialist/seo_javascript_rendering_seo.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 18
     },
     {
       "id": "seo_analytics_reporting",
       "name": "SEO Analytics and Reporting",
       "tag": "essential",
-      "description": "Utilize various analytics platforms to monitor SEO performance, track organic traffic, user behavior, conversions, and create actionable reports to demonstrate ROI.",
+      "description": "Measure SEO impact: Google Search Console, GA4 organic performance, and automated reporting dashboards.",
       "resources": [
         {
           "title": "Google Analytics 4 Documentation",
@@ -828,7 +873,7 @@
           "id": "seo_gsc_deep_dive_problem_solving",
           "name": "Google Search Console Deep Dive & Problem Solving",
           "tag": "essential",
-          "description": "Deep dive into all Google Search Console reports (Performance, Index Coverage, Sitemaps, Core Web Vitals, Removals, Manual Actions) to diagnose technical issues, identify growth opportunities, monitor site health, and troubleshoot indexation problems.",
+          "description": "Master Google Search Console: Index Coverage troubleshooting, Core Web Vitals reports, URL Inspection API, canonical selection overrides, and manual action resolution.",
           "resources": [
             {
               "title": "Mastering Google Search Console (SEMrush)",
@@ -850,13 +895,15 @@
               "url": "/data/docs/seo_specialist/seo_gsc_deep_dive_problem_solving.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "seo_ga4_organic_performance",
           "name": "Google Analytics 4 (GA4) for Organic Performance",
           "tag": "essential",
-          "description": "Configure and leverage GA4 to accurately track organic traffic acquisition, user engagement, conversions, and revenue. Master advanced segmentation, build custom reports, and integrate GSC data for a holistic view of organic search performance.",
+          "description": "Analyze organic search traffic in GA4: Organic acquisition channels, landing page engagement, conversion attribution, and BigQuery organic event exports.",
           "resources": [
             {
               "title": "GA4 for SEO: A Complete Guide (Search Engine Journal)",
@@ -883,13 +930,15 @@
               "url": "/data/docs/seo_specialist/seo_ga4_organic_performance.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "seo_advanced_reporting_dashboards_forecasting",
           "name": "Advanced SEO Reporting, Dashboards & Forecasting",
           "tag": "advanced",
-          "description": "Design and build automated, impactful SEO dashboards using tools like Looker Studio (formerly Google Data Studio), Google Sheets, or other BI tools. Learn to interpret complex data sets, forecast organic growth, and effectively communicate SEO insights, progress, and ROI to stakeholders.",
+          "description": "Build executive SEO dashboards: Automated reporting in Looker Studio, tracking organic revenue lift, keyword ranking distribution, and organic traffic forecasting.",
           "resources": [
             {
               "title": "Looker Studio Documentation",
@@ -916,13 +965,15 @@
               "url": "/data/docs/seo_specialist/seo_advanced_reporting_dashboards_forecasting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         },
         {
           "id": "seo_competitor_monitoring_market_share",
           "name": "Competitor Monitoring & Market Share Analysis",
           "tag": "advanced",
-          "description": "Utilize advanced SEO tools to continuously monitor competitor organic performance, identify their strategic moves, uncover new keyword opportunities, track shifts in market share, and benchmark your strategy against industry leaders to maintain a competitive edge.",
+          "description": "Track organic market share: Share of Voice (SoV) monitoring, tracking competitor SERP volatility, algorithm update impact tracking, and SERP feature win/loss analysis.",
           "resources": [
             {
               "title": "Competitor Analysis for SEO (Moz)",
@@ -949,15 +1000,19 @@
               "url": "/data/docs/seo_specialist/seo_competitor_monitoring_market_share.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 18
     },
     {
       "id": "seo_growth_experiments_portfolio",
       "name": "Growth Experiments and Portfolio",
       "tag": "advanced",
-      "description": "Design and execute SEO experiments, measure their impact scientifically, and build a compelling portfolio of successful SEO projects to showcase practical skills and measurable results.",
+      "description": "Drive growth through SEO experimentation, AI search adaptation, and portfolio development.",
       "resources": [
         {
           "title": "SEO A/B Testing Guide (Optimizely)",
@@ -985,7 +1040,7 @@
           "id": "seo_experimentation_ab_testing_causal",
           "name": "SEO Experimentation, A/B Testing & Causal Inference",
           "tag": "advanced",
-          "description": "Master methodologies for designing and executing controlled SEO A/B tests (e.g., title tags, meta descriptions, content variations). Learn to measure statistical significance, interpret results accurately, and establish causal relationships for scalable and impactful optimization strategies.",
+          "description": "Run scientific SEO experiments: SEO A/B testing (SplitSignal, SearchPilot) comparing control vs variant URL groups, and measuring causal traffic impact using CausalImpact in R/Python.",
           "resources": [
             {
               "title": "How to Run SEO A/B Tests (Ahrefs)",
@@ -1007,13 +1062,15 @@
               "url": "/data/docs/seo_specialist/seo_experimentation_ab_testing_causal.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         },
         {
           "id": "seo_portfolio_development_case_studies",
           "name": "Building an Impactful SEO Portfolio & Case Studies",
           "tag": "advanced",
-          "description": "Develop a compelling portfolio showcasing your practical SEO expertise through detailed case studies of successful projects. Quantify measurable results in organic traffic, rankings, conversions, and revenue to effectively demonstrate your value and skills to potential employers.",
+          "description": "Curate an elite SEO portfolio: Documenting technical audit findings, migration case studies, algorithm recovery strategies, and measurable organic revenue growth.",
           "resources": [
             {
               "title": "How to Build an SEO Portfolio (Ahrefs)",
@@ -1040,13 +1097,15 @@
               "url": "/data/docs/seo_specialist/seo_portfolio_development_case_studies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         },
         {
           "id": "seo_capstone_project_implementation",
           "name": "Capstone Project: End-to-End SEO Strategy & Implementation",
           "tag": "advanced",
-          "description": "Apply all acquired knowledge and skills to a real-world or simulated website. Conduct a full SEO audit, develop a comprehensive strategy, implement on-page, off-page, and technical optimizations, and report on the performance outcomes, showcasing a holistic and practical approach to SEO.",
+          "description": "Build an enterprise SEO capstone: Comprehensive technical audit of a 50,000+ page e-commerce or SaaS website with Screaming Frog, Core Web Vitals remediation plan, schema markup, and GTM strategy.",
           "resources": [
             {
               "title": "SEO Strategy Template (SEMrush)",
@@ -1078,13 +1137,15 @@
               "url": "/data/docs/seo_specialist/seo_capstone_project_implementation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 94
         },
         {
           "id": "seo_trends_ai_future",
           "name": "Staying Current: Industry Trends, AI & Future of SEO",
           "tag": "advanced",
-          "description": "Explore emerging SEO trends, the profound impact of Artificial Intelligence and Large Language Models on search, anticipate future algorithm developments, and cultivate strategies for continuous learning to remain at the forefront of the ever-evolving SEO landscape.",
+          "description": "Navigate the future of search: AI Overviews (SGE), Search Generative Experience optimization, conversational search engines (Perplexity, ChatGPT Search), and generative AI content policies.",
           "resources": [
             {
               "title": "Google's Perspective on AI and Search (Google)",
@@ -1111,9 +1172,14 @@
               "url": "/data/docs/seo_specialist/seo_trends_ai_future.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 26
     }
-  ]
+  ],
+  "total_exp": 1000
 }

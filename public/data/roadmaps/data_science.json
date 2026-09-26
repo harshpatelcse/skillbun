@@ -103,7 +103,9 @@
               "url": "/data/docs/data_science/ds_python_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 30
         },
         {
           "id": "ds_pandas_numpy",
@@ -131,7 +133,9 @@
               "url": "/data/docs/data_science/ds_pandas_numpy.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 44
         },
         {
           "id": "ds_sql_database_fundamentals",
@@ -154,7 +158,9 @@
               "url": "/data/docs/data_science/ds_sql_database_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 54
         },
         {
           "id": "ds_statistics_probability_core",
@@ -177,7 +183,9 @@
               "url": "/data/docs/data_science/ds_statistics_probability_core.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 44
         },
         {
           "id": "ds_eda_visualization",
@@ -205,14 +213,19 @@
               "url": "/data/docs/data_science/ds_eda_visualization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 44
         }
       ],
       "project": {
         "title": "UCI Machine Learning Repository Data Story",
         "description": "Analyze a public dataset, clean it, perform thorough EDA, visualize key patterns, and publish a short notebook with insightful business recommendations.",
-        "url": "https://archive.ics.uci.edu/"
-      }
+        "url": "https://archive.ics.uci.edu/",
+        "difficulty": "advanced",
+        "exp": 50
+      },
+      "description": "Establish an unshakeable foundation in Python for scientific computing, vectorized numerical manipulation (NumPy/Pandas/Polars), and data cleaning pipelines."
     },
     {
       "step": 2,
@@ -244,7 +257,9 @@
               "url": "/data/docs/data_science/ds_data_preprocessing_feature_engineering_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 44
         },
         {
           "id": "ds_supervised_learning_models",
@@ -267,7 +282,9 @@
               "url": "/data/docs/data_science/ds_supervised_learning_models.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 44
         },
         {
           "id": "ds_model_evaluation_tuning",
@@ -295,7 +312,9 @@
               "url": "/data/docs/data_science/ds_model_evaluation_tuning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 44
         },
         {
           "id": "ds_unsupervised_learning_dr",
@@ -318,14 +337,19 @@
               "url": "/data/docs/data_science/ds_unsupervised_learning_dr.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 61
         }
       ],
       "project": {
         "title": "Advanced Prediction Model Notebook",
         "description": "Build and compare multiple models (baseline and advanced), document preprocessing steps, evaluate models fairly using appropriate metrics and cross-validation, and write detailed recommendations based on model performance and insights.",
-        "url": "https://scikit-learn.org/stable/auto_examples/index.html"
-      }
+        "url": "https://scikit-learn.org/stable/auto_examples/index.html",
+        "difficulty": "advanced",
+        "exp": 50
+      },
+      "description": "Master rigorous mathematical statistics, probability distributions, hypothesis testing methodologies, and A/B test experimental design."
     },
     {
       "step": 3,
@@ -352,7 +376,9 @@
               "url": "/data/docs/data_science/ds_advanced_feature_engineering.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         },
         {
           "id": "ds_deep_learning_fundamentals_pytorch_tf",
@@ -375,7 +401,9 @@
               "url": "/data/docs/data_science/ds_deep_learning_fundamentals_pytorch_tf.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 46
         },
         {
           "id": "ds_natural_language_processing_intro",
@@ -403,7 +431,9 @@
               "url": "/data/docs/data_science/ds_natural_language_processing_intro.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 46
         },
         {
           "id": "ds_computer_vision_intro",
@@ -431,7 +461,9 @@
               "url": "/data/docs/data_science/ds_computer_vision_intro.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 46
         },
         {
           "id": "ds_responsible_ai_ethics_explainability",
@@ -459,14 +491,19 @@
               "url": "/data/docs/data_science/ds_responsible_ai_ethics_explainability.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 61
         }
       ],
       "project": {
         "title": "Explainable and Fair ML Report",
         "description": "Train a model, explain top drivers using XAI tools, test subgroup performance for fairness, and write a non-technical model risk summary for stakeholders.",
-        "url": "https://christophm.github.io/interpretable-ml-book/"
-      }
+        "url": "https://christophm.github.io/interpretable-ml-book/",
+        "difficulty": "advanced",
+        "exp": 50
+      },
+      "description": "Design, train, and validate supervised and unsupervised machine learning models, gradient boosted trees, and ensemble architectures."
     },
     {
       "step": 4,
@@ -493,7 +530,9 @@
               "url": "/data/docs/data_science/ds_mlops_deployment_monitoring_orchestration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 79
         },
         {
           "id": "ds_data_storytelling_business_communication",
@@ -521,7 +560,9 @@
               "url": "/data/docs/data_science/ds_data_storytelling_business_communication.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 44
         },
         {
           "id": "ds_capstone_mlops_project",
@@ -549,14 +590,532 @@
               "url": "/data/docs/data_science/ds_capstone_mlops_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 135
         }
       ],
       "project": {
         "title": "Deployed ML Demo with MLOps Practices",
         "description": "Create a simple model API or Streamlit app, deploy it, integrate with tracked experiments (e.g., MLflow), write a clean README, and provide a short project write-up detailing the end-to-end process and MLOps considerations.",
-        "url": "https://streamlit.io/"
-      }
+        "url": "https://streamlit.io/",
+        "difficulty": "advanced",
+        "exp": 50
+      },
+      "description": "Deploy predictive models into production via containerized REST microservices with automated model performance drift monitoring."
     }
-  ]
+  ],
+  "format": "tree",
+  "tree": [
+    {
+      "id": "data_science_stage_1",
+      "name": "Python, Math, and Data Analysis Fundamentals",
+      "tag": "essential",
+      "description": "Establish an unshakeable mathematical and analytical foundation: vectorized computing in Python, tabular data manipulation with Pandas and Polars, analytical SQL, probability distributions, and rigorous EDA.",
+      "resources": [],
+      "children": [
+        {
+          "id": "ds_python_fundamentals",
+          "name": "Python Programming Fundamentals for Data Science",
+          "tag": "essential",
+          "description": "Master vectorized Python for scientific data analysis: NumPy multidimensional array manipulation, memory layouts (strides, views vs copies), broadcasting rules, and writing memory-efficient vectorized computations.",
+          "resources": [
+            {
+              "title": "Learn Python - Full Course for Beginners [Tutorial]",
+              "url": "https://www.youtube.com/watch?v=rfscVS0vtbw",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/data_science/ds_python_fundamentals.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "beginner",
+          "exp": 30
+        },
+        {
+          "id": "ds_pandas_numpy",
+          "name": "Data Manipulation with Pandas & NumPy",
+          "tag": "essential",
+          "description": "Master tabular data manipulation: Pandas 2.0 with PyArrow backends, and Polars for lightning-fast multi-threaded SIMD lazy execution. Clean messy real-world datasets, engineer time-series features, and aggregate multi-gigabyte files.",
+          "resources": [
+            {
+              "title": "Pandas User Guide",
+              "url": "https://pandas.pydata.org/docs/user_guide/index.html",
+              "type": "article"
+            },
+            {
+              "title": "Python for Data Science - Course for Beginners (Learn Python, Pandas, NumPy, Matplotlib) (freeCodeCamp.org)",
+              "url": "https://www.youtube.com/watch?v=LHBE6Q9XlzI",
+              "type": "video"
+            },
+            {
+              "title": "Data Analysis with Python - Full Course for Beginners (Numpy, Pandas, Matplotlib, Seaborn) (freeCodeCamp.org)",
+              "url": "https://www.youtube.com/watch?v=r-uOLxNrNk8",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/data_science/ds_pandas_numpy.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 44
+        },
+        {
+          "id": "ds_sql_database_fundamentals",
+          "name": "SQL and Database Fundamentals",
+          "tag": "essential",
+          "description": "Master analytical SQL for data science: window functions (ROW_NUMBER(), RANK(), DENSE_RANK(), LEAD(), LAG()), Common Table Expressions (CTEs), cohort retention modeling, and optimizing complex analytical queries in modern data warehouses.",
+          "resources": [
+            {
+              "title": "SQL Tutorial (W3Schools)",
+              "url": "https://www.w3schools.com/sql/",
+              "type": "article"
+            },
+            {
+              "title": "SQL Tutorial - Full Database Course for Beginners (freeCodeCamp.org)",
+              "url": "https://www.youtube.com/watch?v=HXV3zeQKqGY",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/data_science/ds_sql_database_fundamentals.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "beginner",
+          "exp": 54
+        },
+        {
+          "id": "ds_statistics_probability_core",
+          "name": "Core Statistics and Probability for Data Science",
+          "tag": "essential",
+          "description": "Master statistical inference and experimentation: probability distributions (Normal, Poisson, Binomial), hypothesis testing (t-test, ANOVA, Chi-Square), p-value interpretation, Central Limit Theorem, and A/B test experimental design (power analysis, sample size sizing).",
+          "resources": [
+            {
+              "title": "Complete Statistics for Data Science (Krish Naik)",
+              "url": "https://www.youtube.com/watch?v=LZzq1zSL1bs",
+              "type": "video"
+            },
+            {
+              "title": "Statistics for Data Science | Probability and Statistics | Statistics Tutorial | Ph.D. (Stanford) (Great Learning)",
+              "url": "https://www.youtube.com/watch?v=Vfo5le26IhY",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/data_science/ds_statistics_probability_core.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 44
+        },
+        {
+          "id": "ds_eda_visualization",
+          "name": "Exploratory Data Analysis and Visualization",
+          "tag": "essential",
+          "description": "Execute rigorous Exploratory Data Analysis (EDA): detect and treat outliers (IQR, Isolation Forests), analyze correlation matrices, evaluate multicollinearity with Variance Inflation Factor (VIF), and create publication-ready statistical visualizations with Seaborn and Plotly.",
+          "resources": [
+            {
+              "title": "Seaborn Tutorial",
+              "url": "https://seaborn.pydata.org/tutorial.html",
+              "type": "course"
+            },
+            {
+              "title": "Exploratory Data Analysis in Pandas | Python Pandas Tutorials (Alex The Analyst)",
+              "url": "https://www.youtube.com/watch?v=Liv6eeb1VfE",
+              "type": "video"
+            },
+            {
+              "title": "Data Analysis with Python - Full Course for Beginners (Numpy, Pandas, Matplotlib, Seaborn) (freeCodeCamp.org)",
+              "url": "https://www.youtube.com/watch?v=r-uOLxNrNk8",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/data_science/ds_eda_visualization.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 44
+        }
+      ],
+      "difficulty": "beginner",
+      "exp": 25
+    },
+    {
+      "id": "data_science_stage_2",
+      "name": "Machine Learning Core Concepts and Applications",
+      "tag": "essential",
+      "description": "Master classical machine learning algorithms, leak-free preprocessing pipelines, cross-validation, hyperparameter optimization, and unsupervised dimensionality reduction.",
+      "resources": [],
+      "children": [
+        {
+          "id": "ds_data_preprocessing_feature_engineering_basics",
+          "name": "Data Preprocessing and Foundational Feature Engineering",
+          "tag": "essential",
+          "description": "Preprocess data without data leakage: handle missing data through iterative imputer strategies, robust scaling (RobustScaler, QuantileTransformer), categorical encoding (One-Hot, Target Encoding with out-of-fold validation), and build Scikit-Learn Pipelines.",
+          "resources": [
+            {
+              "title": "Feature Scaling for Machine Learning",
+              "url": "https://www.geeksforgeeks.org/feature-scaling-in-machine-learning/",
+              "type": "article"
+            },
+            {
+              "title": "Data Cleaning in Pandas | Python Pandas Tutorials (Alex The Analyst)",
+              "url": "https://www.youtube.com/watch?v=bDhvCp3_lYw",
+              "type": "video"
+            },
+            {
+              "title": "Feature Engineering for AI: Transforming Raw Data into Predictions (IBM Technology)",
+              "url": "https://www.youtube.com/watch?v=Bg3CjiJ67Cc",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/data_science/ds_data_preprocessing_feature_engineering_basics.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 44
+        },
+        {
+          "id": "ds_supervised_learning_models",
+          "name": "Supervised Learning: Regression and Classification Models",
+          "tag": "essential",
+          "description": "Master supervised learning models: Linear and Logistic Regression with L1/L2 regularization, Support Vector Machines, and gradient-boosted decision trees (XGBoost, LightGBM, CatBoost) with custom loss functions and early stopping.",
+          "resources": [
+            {
+              "title": "Scikit-learn Getting Started",
+              "url": "https://scikit-learn.org/stable/getting_started.html",
+              "type": "article"
+            },
+            {
+              "title": "Machine Learning for Everybody – Full Course (freeCodeCamp.org)",
+              "url": "https://www.youtube.com/watch?v=i_LwzRVP7bg",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/data_science/ds_supervised_learning_models.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 44
+        },
+        {
+          "id": "ds_model_evaluation_tuning",
+          "name": "Model Evaluation, Validation, and Hyperparameter Tuning",
+          "tag": "essential",
+          "description": "Implement leak-free model evaluation: Stratified K-Fold and TimeSeriesSplit cross-validation, evaluate models under severe class imbalance (PR-AUC vs ROC-AUC, F-beta score), and tune hyperparameters efficiently using Optuna (Bayesian optimization with TPE sampler).",
+          "resources": [
+            {
+              "title": "Scikit-Learn Model Evaluation",
+              "url": "https://scikit-learn.org/stable/modules/model_evaluation.html",
+              "type": "article"
+            },
+            {
+              "title": "How to evaluate ML models | Evaluation metrics for machine learning (AssemblyAI)",
+              "url": "https://www.youtube.com/watch?v=LbX4X71-TFI",
+              "type": "video"
+            },
+            {
+              "title": "Machine Learning Tutorial Python - 16: Hyper parameter Tuning (GridSearchCV) (codebasics)",
+              "url": "https://www.youtube.com/watch?v=HdlDYng8g9s",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/data_science/ds_model_evaluation_tuning.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 44
+        },
+        {
+          "id": "ds_unsupervised_learning_dr",
+          "name": "Unsupervised Learning and Dimensionality Reduction",
+          "tag": "advanced",
+          "description": "Master unsupervised learning and dimensionality reduction: clustering algorithms (K-Means, DBSCAN, Gaussian Mixture Models), and projection techniques (PCA for multicollinearity reduction, t-SNE and UMAP for high-dimensional latent space exploration).",
+          "resources": [
+            {
+              "title": "Google Machine Learning Crash Course",
+              "url": "https://developers.google.com/machine-learning/crash-course",
+              "type": "course"
+            },
+            {
+              "title": "Machine Learning Tutorial Python - 13: K Means Clustering Algorithm (codebasics)",
+              "url": "https://www.youtube.com/watch?v=EItlUEPCIzM",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/data_science/ds_unsupervised_learning_dr.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "advanced",
+          "exp": 61
+        }
+      ],
+      "difficulty": "beginner",
+      "exp": 20
+    },
+    {
+      "id": "data_science_stage_3",
+      "name": "Feature Engineering, Deep Learning, and Specialized AI",
+      "tag": "essential",
+      "description": "Master advanced feature engineering, deep neural network architectures in PyTorch, Natural Language Processing, Computer Vision, and Explainable AI (XAI).",
+      "resources": [],
+      "children": [
+        {
+          "id": "ds_advanced_feature_engineering",
+          "name": "Advanced Feature Engineering and Selection",
+          "tag": "essential",
+          "description": "Engineer high-impact features: domain-specific interaction ratios, cyclical temporal encoding (sine/cosine transforms), dense text embeddings via Sentence-Transformers, and automated feature selection using Recursive Feature Elimination and SHAP importance.",
+          "resources": [
+            {
+              "title": "Feature Engineering Playlist (Krish Naik)",
+              "url": "https://www.youtube.com/watch?v=6WDFfaYtN6s&list=PLZoTAELRMXVPwYGE2PXD3x0bfKnR0cJjN",
+              "type": "video"
+            },
+            {
+              "title": "Feature Selection Techniques Easily Explained | Machine Learning (Krish Naik)",
+              "url": "https://www.youtube.com/watch?v=EqLBAmtKMnQ",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/data_science/ds_advanced_feature_engineering.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "advanced",
+          "exp": 44
+        },
+        {
+          "id": "ds_deep_learning_fundamentals_pytorch_tf",
+          "name": "Deep Learning Fundamentals with TensorFlow/PyTorch",
+          "tag": "advanced",
+          "description": "Master deep learning fundamentals in PyTorch: Multi-Layer Perceptrons, autograd computational graphs, activation functions (GELU, ReLU, Swish), training with AdamW, learning rate schedulers, and preventing overfitting with Dropout and Weight Decay.",
+          "resources": [
+            {
+              "title": "PyTorch Tutorials",
+              "url": "https://pytorch.org/tutorials/",
+              "type": "course"
+            },
+            {
+              "title": "PyTorch for Deep Learning & Machine Learning – Full Course (freeCodeCamp.org)",
+              "url": "https://www.youtube.com/watch?v=V_xro1bcAuA",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/data_science/ds_deep_learning_fundamentals_pytorch_tf.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "advanced",
+          "exp": 46
+        },
+        {
+          "id": "ds_natural_language_processing_intro",
+          "name": "Introduction to Natural Language Processing (NLP)",
+          "tag": "advanced",
+          "description": "Master practical NLP for data science: tokenization (BPE, WordPiece), text classification and sentiment analysis using HuggingFace Transformers, and semantic vector embeddings for customer feedback clustering.",
+          "resources": [
+            {
+              "title": "NLTK Book",
+              "url": "https://www.nltk.org/book/",
+              "type": "course"
+            },
+            {
+              "title": "What is NLP (Natural Language Processing)? (IBM Technology)",
+              "url": "https://www.youtube.com/watch?v=fLvJ8VdHLA0",
+              "type": "video"
+            },
+            {
+              "title": "Natural Language Processing with spaCy & Python - Course for Beginners (freeCodeCamp.org)",
+              "url": "https://www.youtube.com/watch?v=dIUTsFT2MeQ",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/data_science/ds_natural_language_processing_intro.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "advanced",
+          "exp": 46
+        },
+        {
+          "id": "ds_computer_vision_intro",
+          "name": "Introduction to Computer Vision (CV)",
+          "tag": "advanced",
+          "description": "Master computer vision fundamentals: image preprocessing and data augmentation pipelines with Albumentations, and transfer learning using pre-trained convolutional backbones (ResNet, ConvNeXt) in PyTorch for image classification.",
+          "resources": [
+            {
+              "title": "OpenCV-Python Tutorials",
+              "url": "https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_gui/py_image_display/py_image_display.html",
+              "type": "article"
+            },
+            {
+              "title": "Deep Learning for Computer Vision with Python and TensorFlow – Complete Course (freeCodeCamp.org)",
+              "url": "https://www.youtube.com/watch?v=IA3WxTTPXqQ",
+              "type": "video"
+            },
+            {
+              "title": "What is Computer Vision? | Introduction (First Principles of Computer Vision)",
+              "url": "https://www.youtube.com/watch?v=wVE8SFMSBJ0",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/data_science/ds_computer_vision_intro.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "advanced",
+          "exp": 46
+        },
+        {
+          "id": "ds_responsible_ai_ethics_explainability",
+          "name": "Responsible AI, Ethics, and Explainability (XAI)",
+          "tag": "advanced",
+          "description": "Implement Explainable AI (XAI) and algorithmic fairness: interpret predictions with SHAP (SHapley Additive exPlanations) and TreeSHAP, compute global and local feature attributions, and audit models for demographic parity and disparate impact.",
+          "resources": [
+            {
+              "title": "Google Responsible AI Practices",
+              "url": "https://ai.google/responsibility/responsible-ai-practices/",
+              "type": "article"
+            },
+            {
+              "title": "Introduction to Responsible AI (Google Cloud)",
+              "url": "https://www.youtube.com/watch?v=w_3L1Bf2P_g",
+              "type": "video"
+            },
+            {
+              "title": "What is Explainable AI? (IBM Technology)",
+              "url": "https://www.youtube.com/watch?v=jFHPEQi55Ko",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/data_science/ds_responsible_ai_ethics_explainability.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "advanced",
+          "exp": 61
+        }
+      ],
+      "difficulty": "beginner",
+      "exp": 24
+    },
+    {
+      "id": "data_science_stage_4",
+      "name": "MLOps, Data Storytelling, and Capstone Project",
+      "tag": "essential",
+      "description": "Deploy models into production, build interactive executive dashboards, monitor data drift, and deliver high-impact business value.",
+      "resources": [],
+      "children": [
+        {
+          "id": "ds_mlops_deployment_monitoring_orchestration",
+          "name": "MLOps: Deployment, Monitoring, and Orchestration",
+          "tag": "advanced",
+          "description": "Deploy and monitor data science models in production: build prediction REST APIs with FastAPI, containerize with Docker, track experiments with MLflow, and detect data drift and concept drift in production using Evidently AI.",
+          "resources": [
+            {
+              "title": "MLflow Tracking Quickstart",
+              "url": "https://mlflow.org/docs/latest/ml/getting-started/quickstart/",
+              "type": "article"
+            },
+            {
+              "title": "MLOps Course – Build Machine Learning Production Grade Projects (freeCodeCamp.org)",
+              "url": "https://www.youtube.com/watch?v=-dJPoLm_gtE",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/data_science/ds_mlops_deployment_monitoring_orchestration.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "advanced",
+          "exp": 79
+        },
+        {
+          "id": "ds_data_storytelling_business_communication",
+          "name": "Data Storytelling, Business Communication, and Visualization Design",
+          "tag": "essential",
+          "description": "Translate technical data science findings into executive business strategy: calculate ROI and payback period from model predictions, communicate technical uncertainties effectively, and build interactive stakeholder decision dashboards using Streamlit.",
+          "resources": [
+            {
+              "title": "Data Visualization Catalogue",
+              "url": "https://datavizcatalogue.com/",
+              "type": "article"
+            },
+            {
+              "title": "Data Storytelling Basics (in 3 Steps): How to Communicate Data and Numbers (Word Cortex with Anita)",
+              "url": "https://www.youtube.com/watch?v=zklM_KnNloI",
+              "type": "video"
+            },
+            {
+              "title": "12 Dashboard design tips for better data visualization (Geckoboard)",
+              "url": "https://www.youtube.com/watch?v=t3cAUt7sOQg",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/data_science/ds_data_storytelling_business_communication.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "intermediate",
+          "exp": 44
+        },
+        {
+          "id": "ds_capstone_mlops_project",
+          "name": "Capstone Project: End-to-End MLOps Application",
+          "tag": "advanced",
+          "description": "Capstone Project: Architect and deploy an end-to-end customer lifetime value forecasting and churn prediction system, featuring leak-free Scikit-Learn pipelines, Optuna Bayesian hyperparameter optimization, SHAP explanations, FastAPI serving, and real-time drift monitoring.",
+          "resources": [
+            {
+              "title": "Made With ML",
+              "url": "https://madewithml.com/",
+              "type": "course"
+            },
+            {
+              "title": "Deploy ML models with FastAPI, Docker, and Heroku | Tutorial (AssemblyAI)",
+              "url": "https://www.youtube.com/watch?v=h5wLuVDr0oc",
+              "type": "video"
+            },
+            {
+              "title": "MLOps Course – Build Machine Learning Production Grade Projects (freeCodeCamp.org)",
+              "url": "https://www.youtube.com/watch?v=-dJPoLm_gtE",
+              "type": "video"
+            },
+            {
+              "title": "Study Guide & Notes",
+              "url": "/data/docs/data_science/ds_capstone_mlops_project.md",
+              "type": "doc"
+            }
+          ],
+          "difficulty": "advanced",
+          "exp": 135
+        }
+      ],
+      "difficulty": "beginner",
+      "exp": 21
+    }
+  ],
+  "total_exp": 1000
 }

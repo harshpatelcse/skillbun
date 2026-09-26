@@ -48,26 +48,28 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Asynchronous Content Ingestion & Summarization API",
+        "title": "High-Concurrency Asynchronous Web Scraping & Ingestion Engine",
         "tech_stack": [
           "Python 3.12",
-          "FastAPI",
-          "Celery",
+          "Asyncio",
+          "Playwright",
           "Redis",
-          "PostgreSQL"
+          "PostgreSQL",
+          "Docker"
         ],
-        "description": "Build a high-performance background web scraper and document processing pipeline with webhook notifications."
+        "description": "Engineer an asynchronous scraping engine capable of harvesting and parsing 5,000 dynamic web pages per minute with distributed rate limiting and proxies."
       },
       {
-        "title": "High-Concurrency Asynchronous Web Scraper & Data Pipeline",
+        "title": "Production REST API Microservice with FastAPI & Event-Driven Celery",
         "tech_stack": [
-          "Python",
-          "Asyncio",
-          "Aiohttp",
-          "BeautifulSoup",
-          "PostgreSQL"
+          "FastAPI",
+          "Pydantic v2",
+          "Celery",
+          "SQLAlchemy 2.0",
+          "Redis",
+          "Pytest"
         ],
-        "description": "Construct a resilient crawler handling thousands of concurrent requests, automated proxy rotation, exponential backoff retries, and relational data normalization."
+        "description": "Construct an asynchronous enterprise API backend featuring clean architecture, background Celery task queues, Redis caching, and full integration test coverage."
       }
     ],
     "certifications": [
@@ -75,10 +77,11 @@
       "AWS Certified Developer - Associate"
     ],
     "interview_focus": [
-      "Python GIL (Global Interpreter Lock) & Concurrency Models",
-      "Generators, Context Managers & Decorator Internals",
-      "Pydantic Data Validation & Asyncio Event Loops",
-      "Database Connection Pooling & Query Profiling"
+      "Python Memory Management, Reference Counting & Generational Garbage Collection",
+      "The Global Interpreter Lock (GIL), Free-Threading (PEP 703) & Multiprocessing vs Asyncio",
+      "Decorators, Context Managers (__enter__ / __exit__) & Metaclasses in Python",
+      "Advanced Asyncio (Event Loop Mechanics, Tasks, Futures, Gathering vs As Completed)",
+      "Python Performance Profiling (cProfile, memory_profiler, Cython & Vectorization with NumPy)"
     ]
   },
   "format": "tree",
@@ -87,7 +90,7 @@
       "id": "py_fundamentals_env",
       "name": "Python Fundamentals & Development Environment",
       "tag": "essential",
-      "description": "Master the core Python language, foundational programming concepts, and establish a professional development environment with essential tools and best practices.",
+      "description": "Establish an uncompromising modern Python foundation (Python 3.12+): master CPython runtime internals, memory allocation and garbage collection, the Global Interpreter Lock (GIL), asynchronous event loops, and modern package management.",
       "resources": [
         {
           "title": "Python Tutorial",
@@ -125,7 +128,7 @@
           "id": "py_core_lang",
           "name": "Python Core Language & Paradigms",
           "tag": "essential",
-          "description": "Deep dive into Python's syntax, data types, control flow, functions, modules, classes, error handling, file I/O, and advanced language features like iterators, generators, decorators, context managers, type hinting, and asynchronous programming.",
+          "description": "Deep dive into CPython runtime internals and advanced language mechanics: object model and memory overhead (everything is a PyObject), reference counting and cyclic garbage collection generations, bytecode inspection with the `dis` module, iterators and generators (`yield from`), context managers (`__enter__`, `__exit__`), decorators with `functools.wraps`, descriptor protocol (`__get__`, `__set__`), metaclasses, modern static typing (TypeVar, ParamSpec, Protocol for structural subtyping), and `asyncio` event loop task scheduling.",
           "resources": [
             {
               "title": "Python Standard Library",
@@ -162,13 +165,15 @@
               "url": "/data/docs/python_developer/py_core_lang.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 38
         },
         {
           "id": "dev_env_tooling",
           "name": "Development Environment & Tooling",
           "tag": "essential",
-          "description": "Set up a robust development workflow using virtual environments (venv, conda), package managers (pip, Poetry/pip-tools), code formatters (Black), linters (Flake8), static type checkers (Mypy), and version control systems (Git & GitHub/GitLab). Understand project structuring, dependency management, and build tools.",
+          "description": "Master the high-performance modern Python tooling ecosystem: lightning-fast package resolution and virtual environment management with `uv` and `Poetry`, unified configuration in `pyproject.toml`, linting and formatting with `Ruff` (replacing Black, Flake8, and isort), strict static type analysis with `Mypy` (`--strict` mode), and pre-commit hooks enforcing repository standards.",
           "resources": [
             {
               "title": "Python Packaging User Guide",
@@ -210,13 +215,15 @@
               "url": "/data/docs/python_developer/dev_env_tooling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 29
         },
         {
           "id": "data_structures_algo",
           "name": "Data Structures & Algorithms (Basics)",
           "tag": "essential",
-          "description": "Understand fundamental data structures like lists, dictionaries, sets, tuples, and basic algorithms for sorting and searching, including common usage patterns. Grasp the concept of time and space complexity (Big O notation).",
+          "description": "Master Python algorithmic efficiency: Big-O analysis of built-in types (lists dynamic array amortized resizing, dictionaries and sets compact hash table implementation with open addressing), double-ended queues (`collections.deque` O(1) append/pop), priority heaps with `heapq`, binary search optimization with `bisect`, and implementing custom graph, tree, and dynamic programming algorithms.",
           "resources": [
             {
               "title": "Python Data Structures and Algorithms",
@@ -243,15 +250,19 @@
               "url": "/data/docs/python_developer/data_structures_algo.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 29
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 33
     },
     {
       "id": "backend_web_dev",
       "name": "Backend Web Development with Python",
       "tag": "essential",
-      "description": "Develop robust backend services and APIs using Python web frameworks, interact with various databases, and implement essential security practices for web applications.",
+      "description": "Engineer production-grade asynchronous web services and APIs: high-performance ASGI frameworks, relational database persistence, eager loading, and defense-in-depth API security.",
       "resources": [
         {
           "title": "RESTful API Design Best Practices",
@@ -284,7 +295,7 @@
           "id": "web_frameworks_py",
           "name": "Web Frameworks & API Design (FastAPI / Django)",
           "tag": "essential",
-          "description": "Learn to build high-performance APIs and web applications. Master routing, request/response validation, middleware, request lifecycle, ORM integration, authentication, authorization, background tasks, serialization/deserialization, and API documentation using a framework like FastAPI (for async performance) or Django (for full-stack capabilities).",
+          "description": "Build enterprise web APIs using FastAPI and modern Django: FastAPI with Pydantic v2 (Rust-backed data validation and serialization), ASGI servers (Uvicorn running on `uvloop`), asynchronous dependency injection (`Depends`), request lifecycle middleware, background tasks, and Django 5 with async views, signals, and production ORM optimization.",
           "resources": [
             {
               "title": "FastAPI Tutorial",
@@ -321,13 +332,15 @@
               "url": "/data/docs/python_developer/web_frameworks_py.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 51
         },
         {
           "id": "database_mgmt",
           "name": "Database Management & ORMs",
           "tag": "essential",
-          "description": "Gain proficiency in relational databases like PostgreSQL, SQL fundamentals, database design (normalization), and Object-Relational Mappers (ORMs) such as SQLAlchemy and Django ORM. Explore database migrations, indexing, transactions, connection pooling, query optimization, and an overview of NoSQL databases and caching strategies.",
+          "description": "Master enterprise database engineering with SQLAlchemy 2.0: async engine configuration (`create_async_engine`), declarative mapped models, tuning connection pools (`QueuePool` sizing and recycling), diagnosing and eliminating the N+1 query problem using explicit loading strategies (`selectinload` for one-to-many, `joinedload` for many-to-one), ACID transaction management with savepoints, database migrations with Alembic, and distributed caching with Redis.",
           "resources": [
             {
               "title": "SQLAlchemy Tutorial",
@@ -359,13 +372,15 @@
               "url": "/data/docs/python_developer/database_mgmt.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 51
         },
         {
           "id": "api_security_best_practices",
           "name": "API Security & Best Practices",
           "tag": "advanced",
-          "description": "Implement crucial security measures for web APIs, including authentication (JWT, OAuth), authorization (RBAC), input validation, rate limiting, Cross-Origin Resource Sharing (CORS), secure coding practices (e.g., preventing SQL injection, XSS), secret management, and HTTPS/SSL best practices.",
+          "description": "Implement robust backend API security: OAuth2 with Password, Authorization Code, and Client Credentials flows, JWT token issuance and validation (access and refresh tokens with RS256 cryptography), Argon2id password hashing, distributed rate limiting with Redis token buckets, strict CORS and CSRF defense, SQL injection elimination via parameterized ORM queries, and secret management using environment variables.",
           "resources": [
             {
               "title": "JWT Handbook",
@@ -397,15 +412,19 @@
               "url": "/data/docs/python_developer/api_security_best_practices.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 83
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 37
     },
     {
       "id": "automation_testing_devops",
       "name": "Automation, Testing & DevOps Fundamentals",
       "tag": "advanced",
-      "description": "Build high-quality, reliable Python applications through comprehensive testing, automation of development workflows, and foundational DevOps practices including CI/CD and observability.",
+      "description": "Enforce automated quality assurance and distributed background job processing: test pyramids, asynchronous test suites, message queues, and full-stack observability.",
       "resources": [
         {
           "title": "The Phoenix Project (Book)",
@@ -433,7 +452,7 @@
           "id": "automated_testing_quality",
           "name": "Automated Testing & Quality Assurance",
           "tag": "advanced",
-          "description": "Implement robust testing strategies including unit, integration, end-to-end, and regression tests using frameworks like pytest. Learn about fixtures, mocking, test coverage analysis, and the principles of Test-Driven Development (TDD).",
+          "description": "Implement rigorous testing with `pytest`: fixture scope hierarchies (session, module, function) and dependency injection, parameterized test matrices (`@pytest.mark.parametrize`), testing async coroutines with `pytest-asyncio`, mocking external services with `unittest.mock` (enforcing `autospec=True` to prevent mock drift), measuring code coverage with `pytest-cov`, and spinning up real PostgreSQL and Redis containers with `testcontainers-python`.",
           "resources": [
             {
               "title": "pytest Documentation",
@@ -465,13 +484,15 @@
               "url": "/data/docs/python_developer/automated_testing_quality.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 69
         },
         {
           "id": "ci_cd_pipelines",
           "name": "Continuous Integration & Deployment (CI/CD)",
           "tag": "advanced",
-          "description": "Understand the principles of Continuous Integration and Continuous Deployment. Set up automated build, test, and deployment pipelines using tools like GitHub Actions, GitLab CI, or Jenkins. Learn about artefact management, release management basics, and rollback strategies.",
+          "description": "Build automated CI/CD pipelines with GitHub Actions: running Ruff formatting and lint checks, executing Mypy type verification, running parallel pytest matrices across Python versions, security vulnerability scanning with Bandit and Safety, and automated container image builds.",
           "resources": [
             {
               "title": "Introduction to CI/CD",
@@ -498,13 +519,15 @@
               "url": "/data/docs/python_developer/ci_cd_pipelines.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 67
         },
         {
           "id": "task_mgmt_automation",
           "name": "Scripting, Task Management & Automation",
           "tag": "advanced",
-          "description": "Develop powerful command-line interface (CLI) tools, automate routine tasks, perform system automation (e.g., file operations, process management), data extraction (APIs, web scraping, parsing), and manage background jobs using message queues (e.g., Celery, Redis Queue) and schedulers. Understand data serialization formats like JSON, YAML, and CSV.",
+          "description": "Master distributed background processing and task automation: Celery with Redis or RabbitMQ as the message broker, designing idempotent tasks, handling task retries with exponential backoff and jitter, orchestrating complex task graphs with Celery Canvas (signatures, groups, chains, chords), scheduled cron jobs with Celery Beat, and building ergonomic command-line tools using `Click` or `Typer`.",
           "resources": [
             {
               "title": "Typer Documentation",
@@ -541,13 +564,15 @@
               "url": "/data/docs/python_developer/task_mgmt_automation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 53
         },
         {
           "id": "observability_py",
           "name": "Observability: Logging, Monitoring & Tracing",
           "tag": "advanced",
-          "description": "Implement robust logging strategies including structured logging, monitor application performance with metrics and dashboards, and understand distributed tracing to diagnose issues in complex systems. Learn to use tools like Prometheus, Grafana, OpenTelemetry, and establish effective alerting systems for proactive issue detection and root cause analysis.",
+          "description": "Implement production-grade observability: structured JSON logging with `structlog`, gathering Prometheus metrics (`prometheus_client`) for request throughput, latency histograms, and error rates, distributed tracing with OpenTelemetry (OTel) auto-instrumentation and custom spans, and real-time error tracking with Sentry.",
           "resources": [
             {
               "title": "Python Logging Tutorial",
@@ -579,15 +604,19 @@
               "url": "/data/docs/python_developer/observability_py.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 67
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 37
     },
     {
       "id": "deployment_cloud_advanced",
       "name": "Deployment, Cloud & Advanced Project",
       "tag": "advanced",
-      "description": "Prepare Python applications for production environments by containerizing, deploying to cloud platforms, and understanding advanced system design principles. Conclude with a comprehensive, industry-standard project.",
+      "description": "Deploy, scale, and operate production Python systems: container optimization, cloud infrastructure, high-availability system architecture, and capstone engineering.",
       "resources": [
         {
           "title": "The Twelve-Factor App",
@@ -615,7 +644,7 @@
           "id": "containerization_docker",
           "name": "Containerization with Docker",
           "tag": "advanced",
-          "description": "Master Docker fundamentals: writing efficient Dockerfiles (including multi-stage builds), building images, running containers, managing networks and volumes. Understand container best practices, security considerations, and use Docker Compose for orchestrating multi-service local development environments and deploying to image registries like Docker Hub.",
+          "description": "Master Docker containerization for Python: writing optimized multi-stage Dockerfiles, leveraging layer caching, running as an unprivileged non-root user, tuning production WSGI/ASGI worker counts (`(2 * CPU cores) + 1`), configuring health checks, and orchestrating multi-container development environments with Docker Compose.",
           "resources": [
             {
               "title": "Docker Python Guide",
@@ -642,13 +671,15 @@
               "url": "/data/docs/python_developer/containerization_docker.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 67
         },
         {
           "id": "cloud_deployment",
           "name": "Cloud Deployment & Infrastructure",
           "tag": "advanced",
-          "description": "Understand basic cloud computing concepts (IaaS, PaaS, SaaS) and deploy Python applications to public cloud providers (e.g., AWS EC2/Lambda/S3/RDS, Heroku, Render). Explore serverless functions, managed databases, cloud storage, basic networking (VPCs, Security Groups), and an introduction to Infrastructure as Code (Terraform/CloudFormation).",
+          "description": "Deploy and scale Python applications on cloud platforms: AWS ECS Fargate or Google Cloud Run, configuring managed databases (RDS PostgreSQL) with VPC private subnets, managing secrets via AWS Secrets Manager / GCP Secret Manager, and provisioning cloud resources declaratively using Terraform.",
           "resources": [
             {
               "title": "AWS Free Tier",
@@ -680,13 +711,15 @@
               "url": "/data/docs/python_developer/cloud_deployment.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 53
         },
         {
           "id": "system_design_scalability",
           "name": "System Design & Scalability Basics",
           "tag": "advanced",
-          "description": "Learn fundamental system design concepts for building scalable, resilient, and highly available applications. Cover topics like load balancing, API gateways, microservices vs. monoliths, message brokers (Kafka/RabbitMQ basics), event-driven architectures, caching strategies (CDN, in-memory, distributed), data consistency models, fault tolerance, and disaster recovery basics.",
+          "description": "Architect resilient, scalable distributed systems: load balancing with NGINX, reverse proxies and API gateways, horizontal scaling stateless services, message queues for asynchronous decoupling, Redis cache-aside caching to prevent database overload, database read replicas with connection routing, and disaster recovery strategies.",
           "resources": [
             {
               "title": "Grokking System Design Interview (Course)",
@@ -713,13 +746,15 @@
               "url": "/data/docs/python_developer/system_design_scalability.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 83
         },
         {
           "id": "final_project_production",
           "name": "Final Project: Production-Ready Backend Service",
           "tag": "advanced",
-          "description": "Apply all learned skills by building a complete production-ready FastAPI or Django service. This project should include robust API design, database integration, comprehensive authentication and authorization, background tasks, extensive automated testing with CI/CD, Dockerization, monitoring and logging, deployment to a cloud environment, and clear API documentation (e.g., Swagger/OpenAPI) with a focus on performance tuning.",
+          "description": "Capstone: Architect, build, and deploy an enterprise-grade, asynchronous real-time e-commerce order processing and analytics platform in Python 3.12: FastAPI async backend, PostgreSQL database with SQLAlchemy 2.0 and Alembic migrations, Redis caching and distributed locks, Celery worker cluster for order fulfillment and PDF invoice generation, full test suite with Pytest and Testcontainers, structured logging with Structlog, and containerized Kubernetes deployment manifests.",
           "resources": [
             {
               "title": "OpenAPI Specification",
@@ -746,9 +781,14 @@
               "url": "/data/docs/python_developer/final_project_production.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 117
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 36
     }
-  ]
+  ],
+  "total_exp": 1000
 }

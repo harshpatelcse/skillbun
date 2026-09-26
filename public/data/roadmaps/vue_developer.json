@@ -47,26 +47,27 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Modern E-Commerce Storefront with Nuxt 3",
+        "title": "Modern High-Traffic E-Commerce Storefront with Nuxt 3 & SSR",
         "tech_stack": [
           "Vue 3",
           "Nuxt 3",
           "Pinia",
-          "Tailwind",
-          "Stripe"
+          "Tailwind CSS",
+          "Stripe",
+          "Nitro Engine"
         ],
-        "description": "Develop an e-commerce catalog featuring server-side rendering, faceted search filters, and persistent cart checkout."
+        "description": "Develop a server-side rendered e-commerce catalog featuring faceted filtering, optimistic cart management via Pinia, SEO metadata optimization, and Stripe checkout."
       },
       {
-        "title": "Enterprise Project Management Board with Nuxt 3 & Pinia",
+        "title": "Enterprise Real-Time Project Management Board with Pinia & WebSockets",
         "tech_stack": [
           "Vue 3",
-          "Nuxt 3",
-          "Pinia",
-          "TypeScript",
-          "Tailwind"
+          "Composition API",
+          "HTML5 Drag-and-Drop",
+          "WebSockets",
+          "Vitest"
         ],
-        "description": "Build an ultra-responsive kanban workspace featuring optimistic drag-and-drop task reordering, server-side rendered routes, role permissions, and full test coverage."
+        "description": "Build a responsive kanban workspace featuring optimistic drag-and-drop card reordering, live multi-user cursor tracking, and comprehensive Vitest component coverage."
       }
     ],
     "certifications": [
@@ -74,10 +75,11 @@
       "Meta Front-End Developer Professional Certificate"
     ],
     "interview_focus": [
-      "Vue 3 Reactivity Proxy Mechanics vs Vue 2 Object.defineProperty",
-      "Composition API vs Options API",
-      "Pinia vs Vuex Differences",
-      "Nuxt Universal Rendering Hydration"
+      "Vue 3 Reactivity System Internals (Proxy vs Object.defineProperty, ref vs reactive, shallowRef)",
+      "Composition API vs Options API & Custom Composables Architecture",
+      "Nuxt 3 Architecture (Nitro Server Engine, Auto-Imports, useAsyncData vs useFetch, Hydration)",
+      "State Management with Pinia (Stores, Getters, Actions, SSR Hydration & Plugins)",
+      "Performance Optimization in Vue 3 (v-once, v-memo, Virtual Scrolling, Component Lazy Loading)"
     ]
   },
   "format": "tree",
@@ -86,7 +88,7 @@
       "id": "vue_developer_foundations",
       "name": "Foundations of Web & Vue",
       "tag": "essential",
-      "description": "Master the fundamental concepts of web development and grasp the core principles that underpin modern Vue.js applications, setting a strong base for advanced topics.",
+      "description": "Establish an unshakeable modern Vue 3 foundation: master the Composition API, Proxy-based reactivity engine, Vite build toolchain, and modern TypeScript architecture.",
       "resources": [
         {
           "title": "Introduction to Web Development (MDN)",
@@ -114,7 +116,7 @@
           "id": "vue_developer_web_fundamentals",
           "name": "Web Development Fundamentals",
           "tag": "essential",
-          "description": "Solidify your understanding of HTML for structuring content, CSS for styling, and JavaScript (ES6+) for dynamic interactivity on the web.",
+          "description": "Master web platform fundamentals for Vue: ES2024 JavaScript semantics (destructuring, async/await, modules), CSS Grid and modern CSS nesting, browser DOM event lifecycles, and network request pipelines.",
           "resources": [
             {
               "title": "JavaScript Course for Beginners – Your First Step to Web Development (Programming with Mosh)",
@@ -136,13 +138,15 @@
               "url": "/data/docs/vue_developer/vue_developer_web_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 16
         },
         {
           "id": "vue_developer_intro_vue",
           "name": "Introduction to Vue.js",
           "tag": "essential",
-          "description": "Learn what Vue.js is, its key features, why it's a popular choice for building user interfaces, and explore its vibrant ecosystem.",
+          "description": "Understand the Vue 3 architecture: declarative template rendering, the virtual DOM with compiler optimizations (hoisted static vnodes, patch flags for dynamic text/attributes), and comparing Vue's reactivity with React and Angular.",
           "resources": [
             {
               "title": "Vue Guide: Introduction",
@@ -164,13 +168,15 @@
               "url": "/data/docs/vue_developer/vue_developer_intro_vue.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 22
         },
         {
           "id": "vue_developer_env_setup",
           "name": "Setting Up Your Vue Development Environment",
           "tag": "essential",
-          "description": "Configure your local machine with essential tools like Node.js, npm/yarn, Vite, and Visual Studio Code, along with version control using Git.",
+          "description": "Configure an enterprise Vue development workspace: Vite with `@vitejs/plugin-vue`, Volar language server in VS Code, ESLint with `plugin:vue/vue3-recommended`, Prettier, and TypeScript configuration.",
           "resources": [
             {
               "title": "Installing Node.js and npm (Official Docs)",
@@ -197,15 +203,19 @@
               "url": "/data/docs/vue_developer/vue_developer_env_setup.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 16
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 15
     },
     {
       "id": "vue_developer_core_skills",
       "name": "Core Vue.js Development",
       "tag": "essential",
-      "description": "Dive deep into the fundamental building blocks of Vue.js, mastering components, reactivity, data flow, and essential architectural patterns.",
+      "description": "Master core Vue 3 application development: template directives, reactive state primitives, `<script setup>` syntax, Pinia state stores, and Vue Router navigation.",
       "resources": [
         {
           "title": "Vue.js Official Tutorial",
@@ -233,7 +243,7 @@
           "id": "vue_developer_directives_events",
           "name": "Basic Directives & Event Handling",
           "tag": "essential",
-          "description": "Learn fundamental Vue directives like v-if, v-for, v-show, v-bind, and v-on to conditionally render elements, loop through data, bind attributes, and handle user events.",
+          "description": "Master template directives and event handling: conditional rendering (`v-if` vs `v-show` layout costs), list rendering (`v-for` with mandatory unique keys), two-way data binding with `v-model` and component arguments (`v-model:title`), and event modifiers (`.prevent`, `.stop`, `.passive`, `.once`).",
           "resources": [
             {
               "title": "Template Syntax (Vue Guide)",
@@ -265,13 +275,15 @@
               "url": "/data/docs/vue_developer/vue_developer_directives_events.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 17
         },
         {
           "id": "vue_developer_computed_watchers",
           "name": "Computed Properties & Watchers",
           "tag": "essential",
-          "description": "Master computed properties for deriving values from reactive state, and watchers for performing side effects in response to data changes, crucial for efficient data management.",
+          "description": "Master reactive derivations and side-effects: cached `computed` properties (getter/setter syntax), `watch` (watching specific sources, deep observation, immediate execution), `watchEffect` for automatic dependency tracking, and flush timing (`flush: 'post'` for DOM updates).",
           "resources": [
             {
               "title": "Computed Properties (Vue Guide)",
@@ -298,13 +310,15 @@
               "url": "/data/docs/vue_developer/vue_developer_computed_watchers.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 17
         },
         {
           "id": "vue_developer_components_reactivity",
           "name": "Components & Reactivity Fundamentals",
           "tag": "essential",
-          "description": "Understand Vue components, their structure, props for input, emits for output, and the core reactivity system that makes Vue dynamic.",
+          "description": "Deep dive into the Vue 3 Reactivity Engine: Proxy-based state tracking (`reactive` for objects vs `ref` for primitives), retaining reactivity with `toRefs` / `toRef`, avoiding reactivity loss during destructuring, and optimizing large data structures with `shallowRef`.",
           "resources": [
             {
               "title": "Components Basics (Vue Guide)",
@@ -331,13 +345,15 @@
               "url": "/data/docs/vue_developer/vue_developer_components_reactivity.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 17
         },
         {
           "id": "vue_developer_devtools_debugging",
           "name": "Vue Devtools & Debugging",
           "tag": "essential",
-          "description": "Effectively debug your Vue applications using the official Vue Devtools browser extension to inspect component hierarchies, reactive data, events, and performance.",
+          "description": "Debug Vue applications with Vue DevTools: inspecting reactive component trees, tracking Pinia store state mutations with time-travel debugging, recording performance events, and routing timeline diagnostics.",
           "resources": [
             {
               "title": "Vue Devtools Documentation",
@@ -364,13 +380,15 @@
               "url": "/data/docs/vue_developer/vue_developer_devtools_debugging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 22
         },
         {
           "id": "vue_developer_composition_options_api",
           "name": "Composition API vs. Options API",
           "tag": "essential",
-          "description": "Learn both Vue's Composition API for flexible, organized logic and the Options API for simpler components, understanding when and why to use each.",
+          "description": "Master modern `<script setup>` and Composition API: compiler macros (`defineProps`, `defineEmits`, `defineModel` for seamless two-way binding, `defineExpose`), component lifecycle hooks (`onMounted`, `onUpdated`, `onUnmounted`, `onActivated`), and migrating legacy Options API codebases.",
           "resources": [
             {
               "title": "Comparison with Options API (Vue Guide)",
@@ -397,13 +415,15 @@
               "url": "/data/docs/vue_developer/vue_developer_composition_options_api.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 22
         },
         {
           "id": "vue_developer_routing_vue_router",
           "name": "Routing with Vue Router",
           "tag": "essential",
-          "description": "Implement client-side routing in your Vue applications using Vue Router, covering basic routes, dynamic matching, nested routes, and navigation guards.",
+          "description": "Master client-side routing with Vue Router 4: dynamic route parameters, nested routes, programmatic navigation, global and per-route navigation guards (`beforeEach`, `beforeEnter` for auth redirects), scroll behavior customization, and route meta fields.",
           "resources": [
             {
               "title": "Getting Started (Vue Router Docs)",
@@ -425,13 +445,15 @@
               "url": "/data/docs/vue_developer/vue_developer_routing_vue_router.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 22
         },
         {
           "id": "vue_developer_state_management_pinia",
           "name": "State Management with Pinia",
           "tag": "essential",
-          "description": "Manage global application state efficiently using Pinia, Vue's official state management library. Learn about stores, state, getters, and actions.",
+          "description": "Master centralized state management with Pinia: defining modular stores using Setup Store syntax (`defineStore` with refs and functions), computed getters, asynchronous actions, store subscriptions (`$subscribe`, `$onAction`), and plugin architecture for state persistence.",
           "resources": [
             {
               "title": "Pinia Documentation",
@@ -453,13 +475,15 @@
               "url": "/data/docs/vue_developer/vue_developer_state_management_pinia.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 17
         },
         {
           "id": "vue_developer_forms_input",
           "name": "Forms and User Input Handling",
           "tag": "essential",
-          "description": "Develop interactive forms in Vue, handle user input with v-model, and implement robust validation strategies for a great user experience.",
+          "description": "Engineer robust form management: complex multi-step forms, schema validation with VeeValidate and Zod, managing input states (dirty, touched, valid), and building custom accessible form control components.",
           "resources": [
             {
               "title": "Form Input Bindings (Vue Guide)",
@@ -486,13 +510,15 @@
               "url": "/data/docs/vue_developer/vue_developer_forms_input.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 22
         },
         {
           "id": "vue_developer_api_integration",
           "name": "Working with APIs (HTTP Requests)",
           "tag": "essential",
-          "description": "Integrate external APIs into your Vue applications, performing asynchronous HTTP requests using Fetch API or Axios, and handling responses and errors.",
+          "description": "Master asynchronous data communication: building resilient API layers with Fetch and Axios interceptors (automatic token attachment, error handling, cancellation tokens with `AbortController`), and managing asynchronous loading and error UI states.",
           "resources": [
             {
               "title": "Fetch API Handbook (freeCodeCamp.org)",
@@ -514,13 +540,15 @@
               "url": "/data/docs/vue_developer/vue_developer_api_integration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 22
         },
         {
           "id": "vue_developer_styling_css",
           "name": "Styling Vue Applications",
           "tag": "essential",
-          "description": "Explore various methods for styling Vue components, including scoped CSS, CSS Modules, utility-first frameworks like Tailwind CSS, and CSS preprocessors.",
+          "description": "Master component styling: scoped CSS (`<style scoped>`), deep selectors (`:deep()`), slotted selectors (`:slotted()`), CSS Modules, dynamic CSS variables via `v-bind()` in styles, and modern utility-first styling with Tailwind CSS.",
           "resources": [
             {
               "title": "Component Style (Vue Guide)",
@@ -547,13 +575,15 @@
               "url": "/data/docs/vue_developer/vue_developer_styling_css.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 16
         },
         {
           "id": "vue_developer_advanced_component_arch",
           "name": "Advanced Component Architecture & Features",
           "tag": "advanced",
-          "description": "Explore advanced patterns for building robust and reusable Vue components, including lifecycle hooks, content distribution with slots and teleport, and advanced rendering techniques like Suspense.",
+          "description": "Master advanced component patterns: custom Composables, dependency injection, type-safe generic components, and micro-animations.",
           "resources": [
             {
               "title": "Lifecycle Hooks (Vue Guide)",
@@ -590,13 +620,15 @@
               "url": "/data/docs/vue_developer/vue_developer_advanced_component_arch.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 20
         },
         {
           "id": "vue_developer_custom_directives_plugins",
           "name": "Custom Directives & Plugins",
           "tag": "advanced",
-          "description": "Extend Vue's functionality by creating your own custom directives for DOM manipulation and developing plugins to add global features or integrate third-party libraries.",
+          "description": "Extend Vue core capabilities: authoring custom directives (`mounted`, `updated` hooks for click-outside detection and tooltip positioning), and creating modular Vue Plugins providing global properties, components, or injection keys.",
           "resources": [
             {
               "title": "Custom Directives (Vue Guide)",
@@ -623,13 +655,15 @@
               "url": "/data/docs/vue_developer/vue_developer_custom_directives_plugins.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "vue_developer_provide_inject",
           "name": "Provide/Inject & Application Context",
           "tag": "advanced",
-          "description": "Learn to use the provide/inject pattern for passing data deeply down the component tree without prop drilling, ideal for managing application-wide configurations or services.",
+          "description": "Master dependency injection across deep component hierarchies: `provide` and `inject` with TypeScript `InjectionKey<T>` symbols for strict compile-time type safety, providing read-only reactive states, and isolating component contexts.",
           "resources": [
             {
               "title": "Provide / Inject (Vue Guide)",
@@ -651,13 +685,15 @@
               "url": "/data/docs/vue_developer/vue_developer_provide_inject.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "vue_developer_vue_typescript",
           "name": "TypeScript with Vue.js",
           "tag": "advanced",
-          "description": "Integrate TypeScript into your Vue projects for enhanced type safety, better code maintainability, and improved developer experience, especially in larger applications.",
+          "description": "Master TypeScript integration in Vue 3: typing props and emits with pure type syntax (`defineProps<{ id: string }>()`), generic components with `<script setup generic='T'>`, typing template refs, and strict type verification with `vue-tsc`.",
           "resources": [
             {
               "title": "TypeScript Support (Vue Guide)",
@@ -684,13 +720,15 @@
               "url": "/data/docs/vue_developer/vue_developer_vue_typescript.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 23
         },
         {
           "id": "vue_developer_composables",
           "name": "Custom Composables for Reusability",
           "tag": "advanced",
-          "description": "Leverage the power of Vue's Composition API by creating custom composables to encapsulate and reuse stateful logic across multiple components, improving code organization and maintainability.",
+          "description": "Architect clean, reusable logic with Composables: adhering to convention (`use*` naming), returning reactive objects with `ref`/`computed`, managing lifecycle subscriptions automatically, handling reactive parameters with `toValue()`, and authoring utility collections.",
           "resources": [
             {
               "title": "Composables (Vue Guide)",
@@ -717,13 +755,15 @@
               "url": "/data/docs/vue_developer/vue_developer_composables.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "vue_developer_animations_transitions",
           "name": "Animations & Transitions",
           "tag": "advanced",
-          "description": "Add dynamic and engaging user experiences to your Vue applications using Vue's built-in transition components for entering/leaving elements, and explore advanced animation libraries.",
+          "description": "Build fluid micro-interactions and page transitions: `<Transition>` and `<TransitionGroup>` with CSS transition classes, JavaScript animation hooks with GSAP, interactive FLIP animations for reordered lists, and reduced-motion compliance.",
           "resources": [
             {
               "title": "Transitions (Vue Guide)",
@@ -755,13 +795,15 @@
               "url": "/data/docs/vue_developer/vue_developer_animations_transitions.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "vue_developer_component_libraries",
           "name": "UI Component Libraries & Design Systems",
           "tag": "advanced",
-          "description": "Integrate and customize popular UI component libraries like Vuetify, PrimeVue, or Quasar to accelerate development and ensure consistent design across your applications, or understand how to build your own simple design system.",
+          "description": "Integrate and customize enterprise UI component libraries: PrimeVue, Vuetify 3, or headless component primitives with Radix Vue, customizing design tokens and maintaining accessibility compliance.",
           "resources": [
             {
               "title": "Vuetify Documentation",
@@ -793,15 +835,19 @@
               "url": "/data/docs/vue_developer/vue_developer_component_libraries.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 22
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 11
     },
     {
       "id": "vue_developer_quality_testing",
       "name": "Quality Assurance & Testing",
       "tag": "advanced",
-      "description": "Implement robust testing strategies for your Vue applications, ensuring code quality, functionality, and maintainability through various testing methodologies.",
+      "description": "Implement enterprise testing and accessibility: unit testing, component harness tests, end-to-end automation, and WCAG compliance.",
       "resources": [
         {
           "title": "Testing Vue Components (Vue Guide)",
@@ -829,7 +875,7 @@
           "id": "vue_developer_unit_testing",
           "name": "Unit Testing with Vitest & Vue Test Utils",
           "tag": "advanced",
-          "description": "Write effective unit tests for your Vue components and Pinia stores using Vitest and Vue Test Utils, covering component mounting, events, and state.",
+          "description": "Master unit testing with Vitest and `@vue/test-utils`: mounting components (`mount`, `shallowMount`), triggering DOM events, asserting emitted events, mocking external composables and Pinia stores, and testing reactive business logic in isolation.",
           "resources": [
             {
               "title": "Vitest Documentation",
@@ -861,13 +907,15 @@
               "url": "/data/docs/vue_developer/vue_developer_unit_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "vue_developer_integration_testing",
           "name": "Integration Testing",
           "tag": "advanced",
-          "description": "Develop integration tests to verify the interaction between multiple Vue components or between components and external services, ensuring modules work correctly when combined.",
+          "description": "Perform integration testing across component workflows: simulating real user input sequences, testing routing transitions, and mocking HTTP network calls with Mock Service Worker (MSW).",
           "resources": [
             {
               "title": "Integration Testing for Vue.js (Vue Test Utils)",
@@ -894,13 +942,15 @@
               "url": "/data/docs/vue_developer/vue_developer_integration_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 27
         },
         {
           "id": "vue_developer_e2e_testing",
           "name": "End-to-End (E2E) Testing",
           "tag": "advanced",
-          "description": "Explore end-to-end testing frameworks like Cypress or Playwright to simulate user interactions and ensure your entire application flow works as expected, from the UI to the backend.",
+          "description": "Automate end-to-end user journeys with Playwright: cross-browser test automation, visual regression testing, testing authentication flows, and integrating E2E runs into CI pipelines.",
           "resources": [
             {
               "title": "Cypress.io Official Documentation",
@@ -927,13 +977,15 @@
               "url": "/data/docs/vue_developer/vue_developer_e2e_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         },
         {
           "id": "vue_developer_code_quality",
           "name": "Code Quality, Linting & Formatting",
           "tag": "essential",
-          "description": "Maintain high code quality through linting (ESLint) and consistent formatting (Prettier), adhering to best practices and team style guides.",
+          "description": "Enforce automated repository standards: ESLint flat configurations, Prettier formatting, Git pre-commit hooks with Husky, and automated dependency vulnerability scans.",
           "resources": [
             {
               "title": "ESLint User Guide",
@@ -960,13 +1012,15 @@
               "url": "/data/docs/vue_developer/vue_developer_code_quality.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         },
         {
           "id": "vue_developer_accessibility",
           "name": "Accessibility (A11y) in Vue",
           "tag": "advanced",
-          "description": "Build inclusive Vue applications by understanding and applying web accessibility standards (ARIA attributes, semantic HTML, keyboard navigation).",
+          "description": "Ensure web accessibility (a11y): semantic HTML structure, ARIA roles and live regions, full keyboard navigation, managing focus trapped modals with `<Teleport>`, and running automated axe-core audits.",
           "resources": [
             {
               "title": "Accessibility (Vue Guide)",
@@ -993,15 +1047,19 @@
               "url": "/data/docs/vue_developer/vue_developer_accessibility.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 18
     },
     {
       "id": "vue_developer_production_ops",
       "name": "Production Readiness & Operations",
       "tag": "advanced",
-      "description": "Prepare your Vue applications for deployment, optimize performance, ensure security, and understand the lifecycle of a production-grade application.",
+      "description": "Deploy, optimize, and scale production Vue and Nuxt 3 applications: build optimization, SSR, error telemetry, and CI/CD.",
       "resources": [
         {
           "title": "Deploying a Vue Application (Vue Mastery)",
@@ -1029,7 +1087,7 @@
           "id": "vue_developer_build_deploy",
           "name": "Building and Deployment Strategies",
           "tag": "advanced",
-          "description": "Learn to build your Vue application for production using Vite, and deploy it to various hosting platforms like Netlify, Vercel, or through basic Dockerization.",
+          "description": "Optimize production bundles with Vite: dynamic code splitting, manual chunk splitting (`rollupOptions`), tree-shaking, asset compression (Gzip/Brotli), and deploying static builds to CDN edges.",
           "resources": [
             {
               "title": "Vite Production Build Guide",
@@ -1056,13 +1114,15 @@
               "url": "/data/docs/vue_developer/vue_developer_build_deploy.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 29
         },
         {
           "id": "vue_developer_performance_optimization",
           "name": "Performance Optimization",
           "tag": "advanced",
-          "description": "Identify and resolve performance bottlenecks in Vue applications through techniques like lazy loading, code splitting, memoization, and efficient asset management.",
+          "description": "Eliminate web performance bottlenecks: virtualized lists for large datasets, caching component trees with `<KeepAlive>`, moving heavy DOM elements with `<Teleport>`, asynchronous components with `defineAsyncComponent`, and Core Web Vitals optimization.",
           "resources": [
             {
               "title": "Performance Optimization (Vue Guide)",
@@ -1089,13 +1149,15 @@
               "url": "/data/docs/vue_developer/vue_developer_performance_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "vue_developer_security_best_practices",
           "name": "Security Best Practices for SPAs",
           "tag": "advanced",
-          "description": "Understand common security vulnerabilities in client-side applications (XSS, CSRF) and implement best practices for data protection and secure API communication.",
+          "description": "Harden frontend security: preventing XSS attacks by sanitizing untrusted HTML with DOMPurify, mitigating CSRF, configuring Content Security Policy (CSP) headers, and avoiding unsafe template expressions.",
           "resources": [
             {
               "title": "OWASP Top 10 Web Application Security Risks",
@@ -1122,13 +1184,15 @@
               "url": "/data/docs/vue_developer/vue_developer_security_best_practices.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         },
         {
           "id": "vue_developer_monitoring_error_handling",
           "name": "Monitoring and Error Handling",
           "tag": "advanced",
-          "description": "Implement robust error handling mechanisms and integrate monitoring tools to track application performance, errors, and user behavior in production.",
+          "description": "Implement production monitoring: centralized error capturing with `app.config.errorHandler`, integrating Sentry for real-time error tracking and source-map symbolication, and capturing user session replays.",
           "resources": [
             {
               "title": "Error Handling (Vue Guide)",
@@ -1155,13 +1219,15 @@
               "url": "/data/docs/vue_developer/vue_developer_monitoring_error_handling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "vue_developer_ci_cd",
           "name": "Continuous Integration/Continuous Deployment (CI/CD)",
           "tag": "advanced",
-          "description": "Automate your build, test, and deployment processes using CI/CD pipelines to ensure faster, more reliable releases for your Vue applications.",
+          "description": "Build enterprise CI/CD pipelines with GitHub Actions: automated linting, running Vitest and Playwright test suites, building multi-stage Docker containers with NGINX, and automated preview deployments.",
           "resources": [
             {
               "title": "Continuous Integration & Deployment for Front-End (LogRocket)",
@@ -1183,13 +1249,15 @@
               "url": "/data/docs/vue_developer/vue_developer_ci_cd.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         },
         {
           "id": "vue_developer_ssr_ssg_nuxt",
           "name": "Server-Side Rendering (SSR) & Static Site Generation (SSG) with Nuxt",
           "tag": "advanced",
-          "description": "Understand and implement advanced rendering strategies like SSR and SSG using the Nuxt.js framework to improve SEO, initial load times, and developer experience for complex Vue applications.",
+          "description": "Master Server-Side Rendering and Full-Stack apps with Nuxt 3: Nitro server engine, server routes and API middleware (`/server/api`), auto-imports, asynchronous data fetching with `useAsyncData` and `useFetch`, SEO meta management with `useSeoMeta`, and hybrid rendering.",
           "resources": [
             {
               "title": "Nuxt.js Documentation (Getting Started)",
@@ -1216,15 +1284,19 @@
               "url": "/data/docs/vue_developer/vue_developer_ssr_ssg_nuxt.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 18
     },
     {
       "id": "vue_developer_portfolio_career",
       "name": "Portfolio & Career Advancement",
       "tag": "advanced",
-      "description": "Showcase your expertise and prepare for career opportunities by building a strong portfolio, mastering interview techniques, and engaging with the Vue community.",
+      "description": "Demonstrate Vue 3 engineering mastery: build full-stack portfolio applications, author technical blog posts, and excel in senior Vue/Nuxt technical interviews.",
       "resources": [
         {
           "title": "Building a Tech Portfolio (freeCodeCamp.org)",
@@ -1252,7 +1324,7 @@
           "id": "vue_developer_portfolio_building",
           "name": "Building a Strong Vue Portfolio",
           "tag": "advanced",
-          "description": "Learn to effectively present your Vue projects, write compelling READMEs, and create live demos to impress potential employers.",
+          "description": "Curate a compelling engineering portfolio: documenting real-world applications with detailed architecture explanations, providing live demo links, and demonstrating modular Composable architecture.",
           "resources": [
             {
               "title": "How to Create a Portfolio that Gets You Hired (Vue Mastery)",
@@ -1279,13 +1351,15 @@
               "url": "/data/docs/vue_developer/vue_developer_portfolio_building.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 29
         },
         {
           "id": "vue_developer_interview_prep",
           "name": "Interview Preparation for Vue Developers",
           "tag": "advanced",
-          "description": "Prepare for technical interviews by reviewing common Vue-specific questions, data structures, algorithms, and behavioral aspects.",
+          "description": "Excel in technical frontend interviews: deep explanations of Vue 3 Proxy reactivity vs Vue 2 Object.defineProperty, live coding accessible UI components with `<script setup>`, and whiteboarding Nuxt 3 full-stack architectures.",
           "resources": [
             {
               "title": "Vue.js Interview Questions (GitHub)",
@@ -1312,13 +1386,15 @@
               "url": "/data/docs/vue_developer/vue_developer_interview_prep.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 23
         },
         {
           "id": "vue_developer_networking",
           "name": "Networking & Community Engagement",
           "tag": "advanced",
-          "description": "Connect with other developers, participate in the Vue community, attend meetups and conferences, and contribute to open source projects.",
+          "description": "Engage with the global Vue ecosystem: contributing to open-source Vue libraries, participating in Vue community discussions, and attending developer conferences.",
           "resources": [
             {
               "title": "Vue.js Community Guide",
@@ -1345,13 +1421,15 @@
               "url": "/data/docs/vue_developer/vue_developer_networking.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 24
         },
         {
           "id": "vue_developer_capstone_project",
           "name": "Project: Advanced Vue Application Capstone",
           "tag": "advanced",
-          "description": "Build a comprehensive, production-ready Vue application incorporating advanced features, testing, deployment, and documentation as your final portfolio piece.",
+          "description": "Capstone Project: Architect and Deploy a Production-Grade Full-Stack SaaS Application in Nuxt 3 & Vue 3: Nitro backend API routes, Pinia state stores with persistence, Composition API with custom composables, Tailwind CSS styling, authentication with HTTP-only cookies, full Vitest & Playwright test coverage, and containerized Docker deployment.",
           "resources": [
             {
               "title": "Ideas for Vue.js Projects (Medium)",
@@ -1378,9 +1456,14 @@
               "url": "/data/docs/vue_developer/vue_developer_capstone_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 68
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 20
     }
-  ]
+  ],
+  "total_exp": 1000
 }

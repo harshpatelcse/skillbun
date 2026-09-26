@@ -48,26 +48,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "High-Availability PostgreSQL Cluster with Automated Failover",
+        "title": "Zero-Data-Loss PostgreSQL High Availability Cluster with Patroni & etcd",
         "tech_stack": [
-          "PostgreSQL",
-          "Patroni",
-          "Etcd",
-          "PgBouncer",
-          "HAProxy"
-        ],
-        "description": "Deploy an enterprise HA PostgreSQL cluster with synchronous replication, automated raft-based failover via Patroni, and connection pooling."
-      },
-      {
-        "title": "High-Availability PostgreSQL Cluster with Failover Automation",
-        "tech_stack": [
-          "PostgreSQL",
+          "PostgreSQL 16",
           "Patroni",
           "etcd",
-          "HAProxy",
-          "PgBouncer"
+          "pgBouncer",
+          "HAProxy"
         ],
-        "description": "Deploy a resilient 3-node PostgreSQL cluster orchestrating automated zero-downtime failover with Patroni, connection pooling with PgBouncer, and WAL-G backup archiving."
+        "description": "Deploy a resilient multi-node PostgreSQL HA cluster featuring DCS-backed automated failover via Patroni, connection pooling with pgBouncer, and split-brain defenses."
+      },
+      {
+        "title": "Zero-Downtime Database Migration & Change Data Capture Pipeline",
+        "tech_stack": [
+          "Debezium",
+          "Apache Kafka",
+          "PostgreSQL",
+          "ClickHouse",
+          "Flyway"
+        ],
+        "description": "Execute a zero-downtime database sharding and migration pipeline streaming WAL changes via Debezium CDC into an analytical data store with schema validation."
       }
     ],
     "certifications": [
@@ -75,10 +75,11 @@
       "Oracle Certified Professional: Database Administrator"
     ],
     "interview_focus": [
-      "PostgreSQL VACUUM Mechanics & Transaction ID Wraparound",
-      "B-Tree Index Internals vs Hash vs GIN/GiST",
-      "Write-Ahead Logging (WAL) & Crash Recovery",
-      "Handling Long-Running Queries and Deadlocks in Production"
+      "ACID Properties & Transaction Isolation Levels (Read Committed to Serializable Anomalies)",
+      "PostgreSQL MVCC, VACUUM Mechanics, Table Bloat & Write Amplification",
+      "B-Tree vs Hash vs GIN vs GiST Indexing Strategies & EXPLAIN ANALYZE Execution Plans",
+      "Point-in-Time Recovery (PITR), WAL Archiving & Backup Verification Automation",
+      "Distributed Consensus (etcd / Raft) in Database Failover & Quorum Management"
     ]
   },
   "format": "tree",
@@ -87,7 +88,7 @@
       "id": "it_foundations",
       "name": "Essential IT Foundations for DBAs",
       "tag": "essential",
-      "description": "Build a strong understanding of underlying IT infrastructure crucial for database administration, including operating systems, networking, storage, and virtualization.",
+      "description": "Establish an unshakeable systems administration foundation for database operations: master Linux kernel I/O scheduling, storage block devices, networking, and virtualization.",
       "resources": [
         {
           "title": "Storage Basics: HDD vs SSD vs NVMe",
@@ -115,7 +116,7 @@
           "id": "linux_os_administration",
           "name": "Linux OS Administration for Databases",
           "tag": "essential",
-          "description": "Master Linux command line, file systems, user/group management (sudoers), process management (systemd), package management (apt/yum), logging (journalctl), and essential system utilities for database server administration.",
+          "description": "Master enterprise Linux administration for database hosts: file systems (XFS, ext4 mount options `noatime`), process scheduling, memory management, user access control (`sudo`, PAM), and systemd service unit management.",
           "resources": [
             {
               "title": "Linux Commands Handbook",
@@ -137,13 +138,15 @@
               "url": "/data/docs/database_admin/linux_os_administration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "linux_system_scripting",
           "name": "Linux System Utilities & Scripting",
           "tag": "essential",
-          "description": "Utilize disk and memory management tools (df, du, free), CPU monitoring (top, htop), I/O monitoring (iostat, vmstat), and develop basic Bash scripts for automation and task scheduling (cron).",
+          "description": "Automate administrative DBA workflows with Bash and Python: writing automated backup scripts, log rotation, health check probes, and parsing system diagnostic commands.",
           "resources": [
             {
               "title": "Linux Performance Monitoring Tools",
@@ -170,13 +173,15 @@
               "url": "/data/docs/database_admin/linux_system_scripting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 17
         },
         {
           "id": "network_fundamentals_security",
           "name": "Networking Fundamentals & Security",
           "tag": "essential",
-          "description": "Understand TCP/IP, DNS, ports, firewalls (iptables/firewalld), routing, VPNs, basic load balancing concepts, and network troubleshooting tools (ping, traceroute, netstat, ss) relevant to database connectivity and security.",
+          "description": "Master database networking and perimeter security: TCP/IP socket tuning (`net.core.somaxconn`), firewall configuration (`iptables`/`firewalld`), SSH bastion tunneling, and configuring TLS/SSL encryption for client-server database connections.",
           "resources": [
             {
               "title": "iptables Essentials",
@@ -198,13 +203,15 @@
               "url": "/data/docs/database_admin/network_fundamentals_security.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 26
         },
         {
           "id": "server_hardware_storage_virtualization",
           "name": "Server Hardware, Storage & Virtualization",
           "tag": "essential",
-          "description": "Learn about CPU architectures, RAM, different storage technologies (HDD, SSD, NVMe, SAN, NAS), RAID levels, filesystems (ext4, XFS, ZFS), and their impact on database performance and reliability.",
+          "description": "Understand storage hardware performance: NVMe SSDs, RAID levels (RAID 10 for database write throughput vs RAID 5 write penalties), I/O schedulers (`none`/`mq-deadline`), and storage area networks (SAN/NAS).",
           "resources": [
             {
               "title": "Understanding RAID Levels",
@@ -226,13 +233,15 @@
               "url": "/data/docs/database_admin/server_hardware_storage_virtualization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 20
         },
         {
           "id": "virtualization_containerization_basics",
           "name": "Virtualization & Containerization Basics",
           "tag": "essential",
-          "description": "Introduction to virtualization concepts (VMware, KVM, Hyper-V) and containerization technologies (Docker, Kubernetes basics), understanding their role in deploying and managing databases.",
+          "description": "Operate containerized and virtualized databases: VMware ESXi, KVM, Docker volumes for persistent storage, and evaluating database performance penalties in containerized environments.",
           "resources": [
             {
               "title": "Virtualization Explained",
@@ -254,15 +263,19 @@
               "url": "/data/docs/database_admin/virtualization_containerization_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 22
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 15
     },
     {
       "id": "relational_db_fundamentals",
       "name": "Relational Database Fundamentals",
       "tag": "essential",
-      "description": "Deep dive into the core concepts of relational databases, including their architecture, transaction management, schema design, and essential SQL knowledge, with a focus on practical application in PostgreSQL.",
+      "description": "Master relational database internals: storage engine mechanics, transaction logging, concurrency control, and advanced SQL query execution.",
       "resources": [
         {
           "title": "PostgreSQL Tutorial",
@@ -290,7 +303,7 @@
           "id": "db_architecture_internals",
           "name": "Database Architecture & Internals",
           "tag": "essential",
-          "description": "Understand storage engines, memory structures (buffers, caches, shared memory), process models, Write-Ahead Logging (WAL), transaction logs, data files, and physical file management. Focus on how these components interact in a relational database.",
+          "description": "Deep dive into RDBMS engine architecture: client connection processes, memory architecture (shared memory buffer pool, process private memory), background writer processes, checkpointer, and Write-Ahead Logging (WAL) mechanics.",
           "resources": [
             {
               "title": "PostgreSQL Architecture Overview",
@@ -317,13 +330,15 @@
               "url": "/data/docs/database_admin/db_architecture_internals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         },
         {
           "id": "acid_transactions_concurrency",
           "name": "ACID, Transactions & Concurrency Control",
           "tag": "essential",
-          "description": "Learn about Atomicity, Consistency, Isolation, Durability (ACID) properties, various transaction isolation levels (Read Committed, Repeatable Read, Serializable), locking mechanisms (row-level, table-level), and strategies for concurrency control including MVCC (Multi-Version Concurrency Control).",
+          "description": "Master transaction isolation and concurrency control: ACID properties, ANSI SQL isolation levels (Read Committed, Repeatable Read, Serializable), anomalies (dirty reads, non-repeatable reads, phantom reads, write skew), and table/row-level lock contention and deadlock detection.",
           "resources": [
             {
               "title": "ACID Properties in DBMS",
@@ -345,13 +360,15 @@
               "url": "/data/docs/database_admin/acid_transactions_concurrency.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "sql_mastery_postgresql",
           "name": "SQL Mastery & Advanced Querying (PostgreSQL)",
           "tag": "essential",
-          "description": "Master DDL, DML, DCL, advanced joins, Common Table Expressions (CTEs), window functions, stored procedures, user-defined functions, triggers, and views. Understand query execution flow, basic optimization, and PostgreSQL-specific SQL extensions.",
+          "description": "Master PostgreSQL SQL dialactics: CTEs, window functions, JSONB operations (`->`, `->>`, `@>`), arrays, generating test data with `generate_series()`, and procedural programming with PL/pgSQL.",
           "resources": [
             {
               "title": "SQLBolt: Learn SQL Interactive",
@@ -378,13 +395,15 @@
               "url": "/data/docs/database_admin/sql_mastery_postgresql.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 19
         },
         {
           "id": "schema_data_modeling",
           "name": "Schema Design, Data Modeling & Constraints",
           "tag": "essential",
-          "description": "Design efficient database schemas, apply normalization forms (1NF-3NF, BCNF), understand entity-relationship diagrams, choosing appropriate data types, defining constraints (PRIMARY KEY, FOREIGN KEY, UNIQUE, CHECK), and planning schema migrations (e.g., using Flyway or Liquibase).",
+          "description": "Design production relational schemas: normalization (1NF through 3NF/BCNF), surrogate vs natural primary keys, foreign key constraints, check constraints, table partitioning (declarative range, list, and hash partitioning), and data type selection.",
           "resources": [
             {
               "title": "PostgreSQL Data Definition",
@@ -416,13 +435,15 @@
               "url": "/data/docs/database_admin/schema_data_modeling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "indexing_strategies",
           "name": "Indexing Strategies & Maintenance",
           "tag": "essential",
-          "description": "Learn about different index types (B-tree, Hash, GIN, GiST), when and how to use them, multi-column indexes, partial indexes, expression indexes, index-only scans, and their impact on query performance and storage. Understand index maintenance techniques like `REINDEX` and `VACUUM`.",
+          "description": "Master database indexing mechanics: B-Tree internal node and leaf page structure, GIN (Generalized Inverted Index) for JSONB and full-text search, GiST for geometric data, BRIN (Block Range Index) for massive timeseries tables saving 99% disk space, partial indexes, and covering indexes with `INCLUDE`.",
           "resources": [
             {
               "title": "PostgreSQL Indexes",
@@ -449,13 +470,15 @@
               "url": "/data/docs/database_admin/indexing_strategies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "postgresql_deep_dive",
           "name": "PostgreSQL Configuration & Management",
           "tag": "essential",
-          "description": "Understand PostgreSQL server configuration (`postgresql.conf`), client authentication (`pg_hba.conf`), user and role management, database creation, object privileges, and essential command-line tools like `psql`, `pg_dump`, `pg_restore`.",
+          "description": "Master PostgreSQL internals: Multi-Version Concurrency Control (MVCC), heap tuple visibility, transaction ID (XID) wraparound risks, and tuning the Autovacuum daemon (`autovacuum_vacuum_scale_factor`, `autovacuum_vacuum_cost_limit`, `vacuum_freeze_min_age`).",
           "resources": [
             {
               "title": "PostgreSQL Server Configuration",
@@ -482,15 +505,19 @@
               "url": "/data/docs/database_admin/postgresql_deep_dive.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 16
     },
     {
       "id": "db_operations_reliability",
       "name": "Database Operations & Reliability Engineering",
       "tag": "essential",
-      "description": "Ensure continuous availability, data integrity, and operational efficiency through robust practices in backup, recovery, replication, monitoring, maintenance, automation, and capacity planning.",
+      "description": "Ensure enterprise database high availability, zero data loss, disaster recovery, and automated maintenance.",
       "resources": [
         {
           "title": "Site Reliability Engineering (SRE) Book - Data Intensive Applications",
@@ -518,7 +545,7 @@
           "id": "backup_recovery_dr",
           "name": "Backup, Recovery & Disaster Recovery Strategies",
           "tag": "essential",
-          "description": "Implement comprehensive backup policies (logical via pg_dump, physical via pg_basebackup/pgBackRest), perform various restore types (full, point-in-time recovery), define Recovery Point Objective (RPO) and Recovery Time Objective (RTO) objectives, and develop robust disaster recovery plans, including continuous archiving (WAL shipping).",
+          "description": "Master enterprise backup and Disaster Recovery: physical backups with pgBackRest or WAL-G (full, differential, and incremental backups), WAL archiving, Point-In-Time Recovery (PITR) to exact transaction timestamps, and automating logical backups with `pg_dump`.",
           "resources": [
             {
               "title": "PostgreSQL Backup and Restore",
@@ -550,13 +577,15 @@
               "url": "/data/docs/database_admin/backup_recovery_dr.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "replication_high_availability",
           "name": "Replication, High Availability (HA) & Load Balancing",
           "tag": "essential",
-          "description": "Configure and manage various replication methods (streaming physical replication, logical replication), understand master-replica topologies, implement automatic failover with quorum-based solutions, and ensure high availability with tools like Patroni, Pgpool-II, or repmgr. Explore load balancing and connection pooling for distributed environments.",
+          "description": "Architect High Availability (HA) clusters: PostgreSQL physical streaming replication (synchronous vs asynchronous, replication slots), logical replication, automatic failover orchestration with Patroni and etcd/Consul, and connection pooling with PgBouncer.",
           "resources": [
             {
               "title": "PostgreSQL High Availability, Load Balancing, and Replication",
@@ -588,13 +617,15 @@
               "url": "/data/docs/database_admin/replication_high_availability.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         },
         {
           "id": "monitoring_alerting",
           "name": "Database Monitoring, Logging & Alerting",
           "tag": "essential",
-          "description": "Set up robust monitoring for key database metrics (CPU, RAM, I/O, connections, query performance, replication lag, table/index bloat), configure intelligent alerts, and build insightful dashboards using tools like Prometheus, Grafana, Datadog, or Pgbadger. Understand database log analysis for troubleshooting.",
+          "description": "Implement comprehensive database observability: tracking cache hit ratios, transaction throughput, replication lag in bytes/seconds, connection saturation, and deadlocks using `pg_stat_statements`, Prometheus `postgres_exporter`, and Grafana dashboards.",
           "resources": [
             {
               "title": "PostgreSQL Monitoring Tools & Best Practices",
@@ -621,13 +652,15 @@
               "url": "/data/docs/database_admin/monitoring_alerting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "patching_upgrades",
           "name": "Database Patching & Version Upgrades",
           "tag": "essential",
-          "description": "Plan and execute database patching, minor/major version upgrades (e.g., using pg_upgrade). Understand impact analysis, develop comprehensive test procedures, and create rollback strategies to minimize downtime and risk. Familiarity with database vendor release cycles.",
+          "description": "Execute zero-downtime database upgrades: minor version in-place binary upgrades, major version upgrades with `pg_upgrade --link` (hard links), and zero-downtime major version migrations using logical replication.",
           "resources": [
             {
               "title": "PostgreSQL Major Version Upgrades",
@@ -644,13 +677,15 @@
               "url": "/data/docs/database_admin/patching_upgrades.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "dba_automation_iac",
           "name": "Automation for DBAs & Infrastructure as Code",
           "tag": "advanced",
-          "description": "Automate routine DBA tasks using scripting (Bash, Python), cron jobs, and configuration management tools (e.g., Ansible, Chef, Puppet). Embrace Infrastructure as Code (IaC) principles with tools like Terraform to manage database infrastructure provision, deployment, and configuration, improving efficiency, consistency, and reducing human error.",
+          "description": "Automate database infrastructure: provisioning database instances using Terraform and configuring database clusters idempotently with Ansible playbooks.",
           "resources": [
             {
               "title": "Automating PostgreSQL with Ansible",
@@ -682,13 +717,15 @@
               "url": "/data/docs/database_admin/dba_automation_iac.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 21
         },
         {
           "id": "capacity_planning_scaling",
           "name": "Capacity Planning, Scaling & Partitioning",
           "tag": "advanced",
-          "description": "Forecast database growth, plan for resource allocation (storage, CPU, memory, network), and understand horizontal (sharding) and vertical scaling strategies to meet future demands. Implement table partitioning for performance and manageability of large datasets.",
+          "description": "Plan capacity and scale database workloads: forecasting disk growth, connection pooling sizing formulas, vertical scaling thresholds, and horizontal read scaling with read replicas.",
           "resources": [
             {
               "title": "Database Capacity Planning Best Practices",
@@ -715,13 +752,15 @@
               "url": "/data/docs/database_admin/capacity_planning_scaling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         },
         {
           "id": "dba_operational_lab",
           "name": "Practice Lab: Operational Drill",
           "tag": "advanced",
-          "description": "Perform a full backup and point-in-time restore, simulate a failover to a replica, identify and resolve a replication lag issue, perform a minor version upgrade on a test cluster, and document the steps and lessons learned in a runbook format.",
+          "description": "Hands-on DBA Lab: build a multi-node PostgreSQL replication cluster, simulate primary node crash, execute automated Patroni failover, and perform point-in-time disaster recovery.",
           "resources": [
             {
               "title": "PostgreSQL Sample Databases",
@@ -743,15 +782,19 @@
               "url": "/data/docs/database_admin/dba_operational_lab.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 12
     },
     {
       "id": "db_performance_security",
       "name": "Database Performance & Security Optimization",
       "tag": "advanced",
-      "description": "Optimize database performance at all levels (query, server, OS) and implement robust security measures to protect sensitive data, ensure compliance with industry standards, and maintain a strong security posture.",
+      "description": "Optimize query execution, tune operating system parameters, enforce role-based security, and ensure regulatory compliance.",
       "resources": [
         {
           "title": "PostgreSQL Performance Tips",
@@ -784,7 +827,7 @@
           "id": "query_performance_tuning",
           "name": "Query Performance Tuning & Optimization",
           "tag": "advanced",
-          "description": "Utilize `EXPLAIN`/`EXPLAIN ANALYZE` deeply to interpret query plans, identify bottlenecks, optimize complex SQL queries, manage database statistics (ANALYZE/VACUUM ANALYZE), tune optimizer parameters, and understand workload-aware tuning and profiling tools.",
+          "description": "Tune slow queries systematically: analyzing `EXPLAIN (ANALYZE, BUFFERS, VERBOSE)` query plans, identifying sequential scans on large tables, eliminating expensive nested loops, resolving Cartesian products, and utilizing `pg_stat_statements` to target top query resource consumers.",
           "resources": [
             {
               "title": "PostgreSQL EXPLAIN Explained",
@@ -811,13 +854,15 @@
               "url": "/data/docs/database_admin/query_performance_tuning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 22
         },
         {
           "id": "db_server_os_tuning",
           "name": "Database Server & OS-Level Tuning",
           "tag": "advanced",
-          "description": "Configure database server parameters (e.g., `shared_buffers`, `work_mem`, `effective_cache_size`, `checkpoint` settings, `maintenance_work_mem`) and OS-level settings (kernel parameters like `shmmax`, `shmall`, `vm.swappiness`, I/O schedulers, NUMA awareness) for maximum performance and resource utilization.",
+          "description": "Tune operating system and database server parameters: calculating optimal PostgreSQL memory settings (`shared_buffers`, `work_mem`, `maintenance_work_mem`, `effective_cache_size`), tuning Linux kernel virtual memory (`vm.swappiness=1`, `vm.overcommit_memory=2`), and enabling Transparent HugePages.",
           "resources": [
             {
               "title": "Tuning Your PostgreSQL Server",
@@ -844,13 +889,15 @@
               "url": "/data/docs/database_admin/db_server_os_tuning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 29
         },
         {
           "id": "security_access_control",
           "name": "Database Security, Access Control & Authentication",
           "tag": "advanced",
-          "description": "Implement robust user/role management, grant/revoke permissions with the principle of least privilege, manage secrets effectively (e.g., using HashiCorp Vault), and configure secure client authentication methods (e.g., SSL certificates, Kerberos, LDAP, MFA). Explore Row-Level Security (RLS).",
+          "description": "Implement enterprise database security: role-based access control (RBAC), least-privilege role hierarchies, `pg_hba.conf` client authentication configuration (SCRAM-SHA-256, certificate authentication), and Row-Level Security (RLS) policies.",
           "resources": [
             {
               "title": "PostgreSQL Client Authentication",
@@ -882,13 +929,15 @@
               "url": "/data/docs/database_admin/security_access_control.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         },
         {
           "id": "data_encryption_compliance",
           "name": "Data Encryption, Masking & Compliance",
           "tag": "advanced",
-          "description": "Understand data encryption at rest (filesystem or TDE) and in transit (SSL/TLS), manage certificates, implement data masking/redaction and tokenization for sensitive information, and navigate complex compliance requirements such as GDPR, HIPAA, PCI DSS, and SOC 2.",
+          "description": "Implement complete data encryption: encryption in transit (enforcing TLS 1.3), encryption at rest (Linux LUKS or transparent database encryption), column-level cryptographic hashing with `pgcrypto`, and complying with PCI-DSS / HIPAA standards.",
           "resources": [
             {
               "title": "PostgreSQL SSL Support",
@@ -910,13 +959,15 @@
               "url": "/data/docs/database_admin/data_encryption_compliance.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         },
         {
           "id": "auditing_vulnerability_management",
           "name": "Auditing, Vulnerability Management & Security Patching",
           "tag": "advanced",
-          "description": "Configure detailed database auditing (e.g., with pgaudit), review audit logs for anomalies and suspicious activities, conduct regular vulnerability assessments and penetration testing, and establish a rigorous security patching cycle to mitigate known risks effectively. Understand common database attack vectors (e.g., SQL Injection, privilege escalation).",
+          "description": "Audit database operations: deploying `pgaudit` for detailed session and DDL/DML audit logging, database vulnerability scanning, and monitoring failed connection attempts.",
           "resources": [
             {
               "title": "PostgreSQL Audit Logging with pgaudit",
@@ -938,15 +989,19 @@
               "url": "/data/docs/database_admin/auditing_vulnerability_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 20
     },
     {
       "id": "cloud_db_incident_response",
       "name": "Cloud Databases & Advanced Incident Management",
       "tag": "advanced",
-      "description": "Specialize in managing databases in various cloud environments, leveraging cloud-native features, and developing robust incident response capabilities for complex production scenarios.",
+      "description": "Manage cloud databases, execute cross-region migrations, and lead incident postmortems.",
       "resources": [
         {
           "title": "Amazon RDS Documentation",
@@ -964,7 +1019,7 @@
           "id": "managed_db_services_deep_dive",
           "name": "Managed Database Services Deep Dive",
           "tag": "advanced",
-          "description": "Explore and compare major cloud-managed relational database services (AWS RDS/Aurora, Google Cloud SQL, Azure Database for PostgreSQL). Understand their features, architecture (multi-AZ/regional deployments), serverless options, automated backups, parameter groups, maintenance windows, and shared responsibilities model.",
+          "description": "Master cloud managed database offerings: AWS RDS PostgreSQL, AWS Aurora PostgreSQL, Azure Database for PostgreSQL Flexible Server, and Google Cloud SQL; understanding shared responsibility limits and parameter group management.",
           "resources": [
             {
               "title": "Cloud SQL Documentation",
@@ -986,13 +1041,15 @@
               "url": "/data/docs/database_admin/managed_db_services_deep_dive.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         },
         {
           "id": "cloud_db_operations_cost_iac",
           "name": "Cloud Database Operations, Cost Optimization & IaC",
           "tag": "advanced",
-          "description": "Learn cloud-specific monitoring strategies and tools (CloudWatch, Stackdriver, Azure Monitor), scaling patterns (read replicas, auto-scaling, serverless options), high availability patterns in the cloud, and advanced cost management/optimization for managed database services. Implement Infrastructure as Code (IaC) for cloud database provisioning (e.g., with Terraform or CloudFormation).",
+          "description": "Optimize cloud database spend: rightsizing compute instances, evaluating Provisioned IOPS (io2) vs baseline storage, and automated snapshot lifecycle management.",
           "resources": [
             {
               "title": "AWS RDS Pricing Overview",
@@ -1009,13 +1066,15 @@
               "url": "/data/docs/database_admin/cloud_db_operations_cost_iac.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 22
         },
         {
           "id": "db_migration_strategies_cloud",
           "name": "Database Migration Strategies to/from Cloud",
           "tag": "advanced",
-          "description": "Understand various strategies and tools for migrating databases to the cloud (e.g., AWS DMS, Azure Migrate, Google Cloud Database Migration Service) or between different cloud providers/on-premise. Cover online/offline migrations, zero-downtime migration patterns, data integrity checks, and planning for hybrid cloud database environments.",
+          "description": "Execute database cloud migrations: homogenous and heterogeneous database migrations with minimal downtime using AWS DMS, Azure DMS, or native logical replication pipelines.",
           "resources": [
             {
               "title": "AWS Database Migration Service (DMS)",
@@ -1032,13 +1091,15 @@
               "url": "/data/docs/database_admin/db_migration_strategies_cloud.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 24
         },
         {
           "id": "incident_management_postmortems",
           "name": "Incident Management, Runbooks & Post-Mortems",
           "tag": "advanced",
-          "description": "Develop and utilize detailed incident runbooks for common and complex database issues (slow queries, replication lag, storage exhaustion, failed backups, performance degradation). Practice structured incident response, conduct thorough root cause analysis, and lead effective post-mortems to learn from failures and implement preventative measures.",
+          "description": "Lead database incident response: resolving database replication lag spikes, mitigating connection pool exhaustion, recovering from disk full emergency states, and authoring blameless post-incident reviews.",
           "resources": [
             {
               "title": "Google SRE: Managing Incidents",
@@ -1060,13 +1121,15 @@
               "url": "/data/docs/database_admin/incident_management_postmortems.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         },
         {
           "id": "advanced_db_ops_project_lab",
           "name": "Project: Advanced Cloud Database Operations Lab",
           "tag": "advanced",
-          "description": "Provision a highly available and scalable database cluster in a chosen cloud environment (e.g., AWS RDS/Aurora) using Infrastructure as Code. Implement comprehensive backup/restore with PITR, configure advanced monitoring and alerting, simulate and resolve a complex database incident, and document an operational runbook and post-mortem report.",
+          "description": "Hands-on Cloud Lab: deploy a multi-region PostgreSQL cluster on cloud infrastructure with automated cross-region backup replication and benchmark failover times.",
           "resources": [
             {
               "title": "AWS CloudFormation User Guide",
@@ -1078,15 +1141,19 @@
               "url": "/data/docs/database_admin/advanced_db_ops_project_lab.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 45
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 15
     },
     {
       "id": "dba_specialized_topics",
       "name": "Specialized & Emerging Database Technologies",
       "tag": "advanced",
-      "description": "Explore specialized areas and emerging trends in the database landscape, broadening your expertise beyond traditional relational systems to address diverse data management needs and modern architectures.",
+      "description": "Master NoSQL systems, distributed SQL architectures, timeseries databases, and polyglot persistence strategies.",
       "resources": [
         {
           "title": "Study Guide & Notes",
@@ -1099,7 +1166,7 @@
           "id": "nosql_databases_deep_dive",
           "name": "NoSQL Databases Deep Dive",
           "tag": "advanced",
-          "description": "Understand different NoSQL types (document, key-value, columnar, graph), their use cases, and when to choose them over relational databases. Deep dive into operational aspects of popular NoSQL systems like MongoDB (document), Cassandra (columnar), and Redis (key-value/in-memory data structure store).",
+          "description": "Operate NoSQL database clusters: MongoDB (sharding, replica sets, wiredTiger cache), Apache Cassandra (wide-column partition keys, compaction strategies, read/write consistency levels), and Redis cluster operations.",
           "resources": [
             {
               "title": "NoSQL Explained (AWS)",
@@ -1126,13 +1193,15 @@
               "url": "/data/docs/database_admin/nosql_databases_deep_dive.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         },
         {
           "id": "data_warehousing_etl_elt",
           "name": "Data Warehousing, Data Lakes & ETL/ELT",
           "tag": "advanced",
-          "description": "Introduction to data warehousing concepts, OLAP vs. OLTP, star/snowflake schemas, and the Extract, Transform, Load (ETL) and Extract, Load, Transform (ELT) processes for analytical workloads. Understand the role of data lakes and modern data stack components.",
+          "description": "Manage analytical data warehouses: columnar architectures, ETL/ELT batch load tuning, and maintaining warehouse storage efficiency.",
           "resources": [
             {
               "title": "Data Warehousing Concepts",
@@ -1149,13 +1218,15 @@
               "url": "/data/docs/database_admin/data_warehousing_etl_elt.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 19
         },
         {
           "id": "search_graph_time_series_dbs",
           "name": "Search, Graph & Time-Series Databases",
           "tag": "advanced",
-          "description": "Explore specialized database types: Search databases (e.g., Elasticsearch, OpenSearch) for full-text search and analytics, Graph databases (e.g., Neo4j, Amazon Neptune) for relational data, and Time-Series databases (e.g., InfluxDB, TimescaleDB) for monitoring and IoT data.",
+          "description": "Operate specialized database engines: TimescaleDB / InfluxDB for high-throughput timeseries telemetry, Elasticsearch / OpenSearch for full-text search clusters, and Neo4j for connected graph relationships.",
           "resources": [
             {
               "title": "Elasticsearch Guide",
@@ -1177,13 +1248,15 @@
               "url": "/data/docs/database_admin/search_graph_time_series_dbs.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 28
         },
         {
           "id": "distributed_sql_databases",
           "name": "Distributed SQL Databases",
           "tag": "advanced",
-          "description": "Understand the architecture and benefits of Distributed SQL databases (e.g., CockroachDB, YugabyteDB, Vitess), which combine relational database features with horizontal scalability and global distribution.",
+          "description": "Master NewSQL and Distributed SQL engines: CockroachDB, YugabyteDB, and Google Cloud Spanner; understanding distributed transactions, Raft consensus per range/tablet, and multi-region data placement.",
           "resources": [
             {
               "title": "CockroachDB Fundamentals",
@@ -1200,13 +1273,15 @@
               "url": "/data/docs/database_admin/distributed_sql_databases.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 45
         },
         {
           "id": "polyglot_persistence_data_strategy",
           "name": "Polyglot Persistence & Data Strategy",
           "tag": "advanced",
-          "description": "Understand the concept of using multiple data storage technologies within a single application or system, each best suited for a particular data workload or domain. Learn to define a comprehensive data strategy for complex microservices architectures.",
+          "description": "Formulate enterprise polyglot persistence strategies: matching distinct application workload requirements to appropriate database paradigms (relational, document, key-value, graph, search, distributed SQL) while minimizing operational complexity.",
           "resources": [
             {
               "title": "What is Polyglot Persistence?",
@@ -1218,9 +1293,14 @@
               "url": "/data/docs/database_admin/polyglot_persistence_data_strategy.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 19
     }
-  ]
+  ],
+  "total_exp": 1000
 }

@@ -47,25 +47,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Enterprise Playwright Automated E2E Test Suite",
-        "tech_stack": [
-          "TypeScript",
-          "Playwright",
-          "GitHub Actions",
-          "Allure Reports",
-          "Docker"
-        ],
-        "description": "Build a production-grade automated testing suite testing user signup, cart checkout, and payments with parallel execution and trace recording."
-      },
-      {
-        "title": "Cross-Browser End-to-End Testing Suite with Playwright",
+        "title": "Enterprise Cross-Browser End-to-End Test Automation Suite",
         "tech_stack": [
           "Playwright",
           "TypeScript",
+          "Page Object Model",
           "GitHub Actions",
           "Allure Reports"
         ],
-        "description": "Develop a robust Page Object Model (POM) automation framework running parallel cross-browser regression suites with automatic trace recordings and CI/CD triggers."
+        "description": "Architect a scalable E2E automation framework utilizing Playwright, parallel worker execution, API mocking, and automated Slack test failure reports in CI."
+      },
+      {
+        "title": "High-Load Performance & API Contract Testing Harness",
+        "tech_stack": [
+          "K6",
+          "TypeScript",
+          "Pact",
+          "Docker",
+          "Grafana / InfluxDB"
+        ],
+        "description": "Construct a comprehensive performance and API contract testing suite simulating 10,000 concurrent virtual users, verifying p95 latency SLOs and contract schemas."
       }
     ],
     "certifications": [
@@ -73,10 +74,11 @@
       "ISTQB Certified Test Automation Engineer (CTAL-TAE)"
     ],
     "interview_focus": [
-      "Page Object Model Architecture and Maintainability",
-      "Handling Asynchronous Flakiness and Dynamic DOM Elements",
-      "Unit vs Integration vs End-to-End Testing (The Testing Pyramid)",
-      "Load Testing: Measuring Throughput vs Latency vs Error Rate"
+      "Test Automation Framework Architecture (Page Object Model, Screenplay Pattern, Fixtures)",
+      "API Testing & Consumer-Driven Contract Testing (Pact Framework, Schema Validation)",
+      "Performance Testing Metrics (Throughput, Latency Percentiles p50/p95/p99, Error Rate)",
+      "Handling Flaky Tests (Auto-Wait, Dynamic Selectors, Retry Mechanics, Root Cause Analysis)",
+      "CI/CD Integration (Parallel Test Sharding, Headless Browsers, Artifacts & Test Reporting)"
     ]
   },
   "format": "tree",
@@ -85,7 +87,7 @@
       "id": "qa_foundations",
       "name": "Testing Foundations & Principles",
       "tag": "essential",
-      "description": "Master core software testing principles, methodologies, and the crucial role of quality assurance in the Software Development Life Cycle (SDLC) and Software Testing Life Cycle (STLC), including Agile and DevOps contexts.",
+      "description": "Master quality engineering foundations: Testing methodologies, test pyramid, defect lifecycles, and embedding QA across Agile/DevOps workflows.",
       "resources": [
         {
           "title": "ISTQB Foundation Syllabus",
@@ -113,7 +115,7 @@
           "id": "qa_sdlc_stlc_agile",
           "name": "SDLC, STLC & Agile Methodologies",
           "tag": "essential",
-          "description": "Understand the Software Development Life Cycle (SDLC) and Software Testing Life Cycle (STLC). Explore popular methodologies like Waterfall, V-model, and Agile (Scrum, Kanban), focusing on the QA role and testing activities in each, especially in modern CI/CD environments.",
+          "description": "Master SDLC and STLC: Software Testing Life Cycle phases, Scrum/Kanban sprint rituals, Shift-Left testing principles, and Definition of Done (DoD).",
           "resources": [
             {
               "title": "Agile Testing: A Practical Guide for Testers and Agile Teams (Book)",
@@ -140,13 +142,15 @@
               "url": "/data/docs/qa_automation/qa_sdlc_stlc_agile.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "qa_test_design_reporting",
           "name": "Test Design & Defect Reporting",
           "tag": "essential",
-          "description": "Learn to create effective test cases using techniques like equivalence partitioning, boundary value analysis, and decision tables. Understand different testing types (functional, non-functional, smoke, sanity, regression), and report defects with clarity and actionable detail, including severity, priority, and steps to reproduce.",
+          "description": "Design exhaustive test cases: Boundary Value Analysis (BVA), Equivalence Partitioning (EP), Decision Tables, State Transition testing, and bug reporting in Jira.",
           "resources": [
             {
               "title": "Atlassian Testing Guide: Test Case Management",
@@ -173,13 +177,15 @@
               "url": "/data/docs/qa_automation/qa_test_design_reporting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "qa_test_planning_strategy",
           "name": "Test Planning & Strategy",
           "tag": "essential",
-          "description": "Develop skills in crafting comprehensive test plans, performing risk assessments, implementing traceability matrices, and defining robust testing strategies for diverse projects.",
+          "description": "Author enterprise test strategies: Risk-based testing matrices, test environment requirements, entry/exit criteria, and automation feasibility analysis.",
           "resources": [
             {
               "title": "Test Planning Best Practices",
@@ -206,13 +212,15 @@
               "url": "/data/docs/qa_automation/qa_test_planning_strategy.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 21
         },
         {
           "id": "qa_essential_programming",
           "name": "Essential Programming for Automation",
           "tag": "essential",
-          "description": "Acquire fundamental programming concepts including variables, data types, control flow (loops, conditionals), functions, basic object-oriented principles, and error handling using a relevant language like JavaScript or Python.",
+          "description": "Master programming for automation: Writing clean, maintainable automation code in TypeScript / Python / Java; OOP principles, and handling asynchronous execution.",
           "resources": [
             {
               "title": "JavaScript Guide - MDN Web Docs",
@@ -234,13 +242,15 @@
               "url": "/data/docs/qa_automation/qa_essential_programming.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "qa_version_control_git",
           "name": "Version Control with Git",
           "tag": "essential",
-          "description": "Learn to manage code changes, collaborate effectively with teams, and utilize Git commands for efficient branching, merging, and overall software development and test automation workflows.",
+          "description": "Manage automation codebases: Git workflows, pull request reviews, versioning test suites alongside application code, and maintaining branch health.",
           "resources": [
             {
               "title": "Git Handbook - GitHub Guides",
@@ -267,15 +277,19 @@
               "url": "/data/docs/qa_automation/qa_version_control_git.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 23
     },
     {
       "id": "qa_api_automation",
       "name": "API Automation Testing",
       "tag": "essential",
-      "description": "Validate backend services and APIs directly, ensuring data integrity, security, and performance using robust automation frameworks and tools, focusing on RESTful and potentially GraphQL APIs.",
+      "description": "Automate backend API testing: HTTP assertions, schema validation, authentication flows, and contract testing.",
       "resources": [
         {
           "title": "Postman Learning Center",
@@ -303,7 +317,7 @@
           "id": "qa_http_rest_principles",
           "name": "HTTP & RESTful Principles",
           "tag": "essential",
-          "description": "Deep dive into HTTP methods (GET, POST, PUT, DELETE), status codes, headers, cookies, sessions, JSON structures, idempotency, and REST architectural constraints for effective API interaction.",
+          "description": "Master HTTP for test automation: Verbs, status codes, headers, cookies, payload serializations, and inspecting network traffic.",
           "resources": [
             {
               "title": "MDN HTTP Overview",
@@ -330,13 +344,15 @@
               "url": "/data/docs/qa_automation/qa_http_rest_principles.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "qa_api_tools_frameworks",
           "name": "API Automation Tools & Frameworks",
           "tag": "essential",
-          "description": "Implement automated API tests using popular tools and frameworks (e.g., Postman, RestAssured for Java, Supertest/Playwright for JavaScript/TypeScript, requests for Python), covering request creation, parameterization, assertions, data-driven testing, and environment management.",
+          "description": "Automate API tests with modern frameworks: Writing automated tests using Playwright APIRequestContext, Supertest, RestAssured, or Newman collections.",
           "resources": [
             {
               "title": "RestAssured Getting Started",
@@ -363,13 +379,15 @@
               "url": "/data/docs/qa_automation/qa_api_tools_frameworks.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "qa_advanced_api_concepts",
           "name": "Advanced API Concepts & Security",
           "tag": "advanced",
-          "description": "Explore complex authentication mechanisms (e.g., OAuth, JWT), rate limiting, robust error handling strategies, and fundamental API security testing practices.",
+          "description": "Test complex API architectures: GraphQL query assertions, WebSocket real-time event testing, and simulating third-party webhooks.",
           "resources": [
             {
               "title": "OAuth 2.0 Simplified",
@@ -396,13 +414,15 @@
               "url": "/data/docs/qa_automation/qa_advanced_api_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 45
         },
         {
           "id": "qa_contract_schema_testing",
           "name": "API Contract & Schema Testing",
           "tag": "advanced",
-          "description": "Utilize schema validation (e.g., JSON Schema) and contract testing frameworks (e.g., Pact, OpenAPI tools) to ensure consistency and prevent silent drift between API providers and consumers.",
+          "description": "Enforce API contracts: JSON Schema assertions, and consumer-driven contract testing with Pact to catch breaking backend changes before deployment.",
           "resources": [
             {
               "title": "OpenAPI Specification",
@@ -429,15 +449,19 @@
               "url": "/data/docs/qa_automation/qa_contract_schema_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 48
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 29
     },
     {
       "id": "qa_ui_automation_testing",
       "name": "UI Automation Testing & Advanced Concepts",
       "tag": "essential",
-      "description": "Build robust, maintainable, and scalable UI test suites for web applications, focusing on modern frameworks, design patterns, cross-browser compatibility, and advanced testing types like visual and accessibility testing.",
+      "description": "Engineer robust browser UI automation: Locators, page object patterns, synchronization strategies, and visual regression.",
       "resources": [
         {
           "title": "Playwright Writing Tests",
@@ -470,7 +494,7 @@
           "id": "qa_ui_frameworks_playwright",
           "name": "UI Automation with Playwright",
           "tag": "essential",
-          "description": "Master Playwright for end-to-end web testing, including its powerful locators, fixtures, assertions, test projects, tracing, and parallel test execution capabilities.",
+          "description": "Master Playwright test automation: Browser fixtures, multi-browser execution (Chromium, Firefox, WebKit), auto-waiting mechanics, and tracing.",
           "resources": [
             {
               "title": "Playwright Running Tests",
@@ -497,13 +521,15 @@
               "url": "/data/docs/qa_automation/qa_ui_frameworks_playwright.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "qa_locators_waits_interactions",
           "name": "Locators, Wait Strategies & Interactions",
           "tag": "essential",
-          "description": "Learn effective element identification using various locator strategies, handling asynchronous operations with implicit and explicit waits, and simulating complex user interactions for reliable and resilient tests.",
+          "description": "Implement resilient selectors: User-facing locators (`getByRole`, `getByText`, `getByLabel`), eliminating flaky hardcoded sleeps, and managing dynamic DOM rendering.",
           "resources": [
             {
               "title": "Playwright Auto-Waiting",
@@ -530,13 +556,15 @@
               "url": "/data/docs/qa_automation/qa_locators_waits_interactions.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 30
         },
         {
           "id": "qa_pom_test_data",
           "name": "Page Object Model & Test Data Management",
           "tag": "essential",
-          "description": "Apply design patterns like the Page Object Model (POM) and Screenplay pattern for creating maintainable, readable, and reusable test code. Implement effective strategies for generating, managing, and provisioning diverse test data, including faker libraries and database integration.",
+          "description": "Architect scalable test frameworks: Page Object Model (POM), Component Object models, and test data management (factories, API pre-seeding, database seeding).",
           "resources": [
             {
               "title": "Page Object Model Explained",
@@ -568,13 +596,15 @@
               "url": "/data/docs/qa_automation/qa_pom_test_data.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 36
         },
         {
           "id": "qa_accessibility_testing",
           "name": "Automated Accessibility Testing",
           "tag": "advanced",
-          "description": "Integrate automated accessibility checks into UI test suites using tools like Axe-core to identify common WCAG violations while understanding the critical aspects that still require manual review for inclusive user experiences.",
+          "description": "Automate accessibility (a11y) audits: Integrating axe-core with Playwright to verify WCAG 2.1 AA compliance, color contrast, and keyboard navigation.",
           "resources": [
             {
               "title": "Playwright Accessibility Testing",
@@ -601,13 +631,15 @@
               "url": "/data/docs/qa_automation/qa_accessibility_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         },
         {
           "id": "qa_cross_browser_mobile_ui",
           "name": "Cross-Browser & Responsive UI Testing",
           "tag": "advanced",
-          "description": "Configure and execute tests across different browsers and operating systems, addressing compatibility issues and validating responsive design across various viewports and device emulations.",
+          "description": "Test across form factors: Emulating mobile viewports, touch gestures, and cross-browser testing on cloud device grids (BrowserStack / SauceLabs).",
           "resources": [
             {
               "title": "Playwright Cross-Browser Testing",
@@ -634,13 +666,15 @@
               "url": "/data/docs/qa_automation/qa_cross_browser_mobile_ui.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         },
         {
           "id": "qa_visual_regression_testing",
           "name": "Visual Regression Testing",
           "tag": "advanced",
-          "description": "Implement visual regression testing to detect unintended UI changes using tools like Applitools Eyes, Percy, or Playwright's built-in screenshot capabilities. Understand pixel-by-pixel comparisons, baseline management, and threshold configurations.",
+          "description": "Implement pixel and DOM visual testing: Visual regression testing using Playwright screenshot comparisons, Percy, or Applitools to detect unintended CSS/layout drift.",
           "resources": [
             {
               "title": "Playwright Visual Comparison",
@@ -667,13 +701,15 @@
               "url": "/data/docs/qa_automation/qa_visual_regression_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 42
         },
         {
           "id": "qa_bdd_gherkin",
           "name": "BDD & Gherkin for UI Automation",
           "tag": "advanced",
-          "description": "Learn Behavior-Driven Development (BDD) principles and how to write executable specifications using Gherkin syntax (Given/When/Then). Integrate BDD frameworks like Cucumber or Playwright-bdd into UI automation projects for better collaboration and readability.",
+          "description": "Implement Behavior-Driven Development (BDD): Writing human-readable Gherkin feature files (`Given-When-Then`), step definitions in Cucumber, and living documentation.",
           "resources": [
             {
               "title": "Cucumber Gherkin Reference",
@@ -700,15 +736,19 @@
               "url": "/data/docs/qa_automation/qa_bdd_gherkin.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 42
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 27
     },
     {
       "id": "qa_ci_cd_advanced_eng",
       "name": "CI/CD, Performance & Advanced Automation Engineering",
       "tag": "advanced",
-      "description": "Integrate automation into CI/CD pipelines, implement containerization for consistent test execution, conduct comprehensive performance and reliability testing, and establish robust monitoring and reporting for continuous quality assurance.",
+      "description": "Scale automation in CI/CD: Containerized test runners, performance testing, and test observability.",
       "resources": [
         {
           "title": "k6 Documentation",
@@ -741,7 +781,7 @@
           "id": "qa_ci_cd_integration",
           "name": "CI/CD Integration for Test Automation",
           "tag": "essential",
-          "description": "Automate test execution within Continuous Integration/Continuous Delivery (CI/CD) pipelines using tools like GitHub Actions, Jenkins, or GitLab CI, focusing on trigger events, parallelization, and comprehensive reporting.",
+          "description": "Run tests in CI/CD pipelines: GitHub Actions / GitLab CI workflows, sharding tests across parallel runners, and generating rich HTML test artifact reports.",
           "resources": [
             {
               "title": "Jenkins Pipelines Tutorial",
@@ -768,13 +808,15 @@
               "url": "/data/docs/qa_automation/qa_ci_cd_integration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         },
         {
           "id": "qa_containerization_tests",
           "name": "Containerization for Test Environments (Docker)",
           "tag": "essential",
-          "description": "Understand the benefits of containerization for creating isolated and consistent test environments. Learn to use Docker to package test suites, application dependencies, and browsers, ensuring reliable and reproducible test execution across different machines and CI/CD pipelines.",
+          "description": "Containerize test execution with Docker: Building standardized Docker test images, docker-compose multi-service test harnesses, and running headless browser clusters.",
           "resources": [
             {
               "title": "Docker for Beginners",
@@ -801,13 +843,15 @@
               "url": "/data/docs/qa_automation/qa_containerization_tests.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 30
         },
         {
           "id": "qa_performance_load_testing",
           "name": "Performance & Load Testing Engineering",
           "tag": "advanced",
-          "description": "Design and execute various types of performance tests, including load, stress, and scalability tests, to identify bottlenecks and ensure system resilience under realistic user traffic and varying loads.",
+          "description": "Engineer load and performance tests: Defining performance metrics (throughput, response time percentiles p95/p99, error rate), stress testing, and soak testing.",
           "resources": [
             {
               "title": "k6 Get Started",
@@ -834,13 +878,15 @@
               "url": "/data/docs/qa_automation/qa_performance_load_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "qa_performance_tools_analysis",
           "name": "Performance Testing Tools & Analysis",
           "tag": "advanced",
-          "description": "Utilize specialized tools like k6, JMeter, or LoadRunner to simulate user loads, collect performance metrics, analyze results, and generate actionable insights for system optimization.",
+          "description": "Execute performance testing with k6 or JMeter: Writing JavaScript load test scenarios, analyzing server bottleneck metrics, and setting performance thresholds in CI.",
           "resources": [
             {
               "title": "Analyzing k6 Test Results",
@@ -867,13 +913,15 @@
               "url": "/data/docs/qa_automation/qa_performance_tools_analysis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 42
         },
         {
           "id": "qa_flaky_test_management",
           "name": "Flaky Test Management & Reporting",
           "tag": "advanced",
-          "description": "Understand the causes of flaky tests, implement strategies to debug and resolve them, improve test stability through better selectors and isolated data, and track reliability metrics for continuous improvement.",
+          "description": "Eliminate test flakiness: Root-cause analysis of timing issues, automated quarantine of flaky tests, retry strategies, and tracking pass-rate stability.",
           "resources": [
             {
               "title": "Playwright Test Retries",
@@ -900,13 +948,15 @@
               "url": "/data/docs/qa_automation/qa_flaky_test_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         },
         {
           "id": "qa_test_reporting_metrics",
           "name": "Test Reporting, Metrics & Dashboards",
           "tag": "essential",
-          "description": "Implement comprehensive test reporting mechanisms (e.g., Allure, ExtentReports) to visualize test results, track key metrics like pass/fail rates, test execution time, and flakiness. Create dashboards to provide clear insights into product quality and automation health.",
+          "description": "Generate actionable quality metrics: Test execution dashboards with Allure Report / ReportPortal, tracking automated test pass rates, and defect escape rates.",
           "resources": [
             {
               "title": "Allure Framework Documentation",
@@ -933,13 +983,15 @@
               "url": "/data/docs/qa_automation/qa_test_reporting_metrics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "qa_test_observability_monitoring",
           "name": "Test Observability & Monitoring",
           "tag": "advanced",
-          "description": "Explore strategies for monitoring test environments and execution in real-time. Integrate logging, tracing, and metrics collection to quickly diagnose issues, analyze test performance, and improve the efficiency and reliability of the automation pipeline.",
+          "description": "Monitor production quality: Synthetic monitoring with Playwright probes running continuously in production, and correlating test failures with Datadog/Sentry logs.",
           "resources": [
             {
               "title": "OpenTelemetry for Beginners",
@@ -966,13 +1018,15 @@
               "url": "/data/docs/qa_automation/qa_test_observability_monitoring.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "qa_comprehensive_automation_project",
           "name": "Capstone Project: Comprehensive Automation Suite",
           "tag": "advanced",
-          "description": "Apply all learned skills to build a complete end-to-end automation solution for a web application, integrating API, UI, accessibility, performance, and visual tests. Implement the solution within a CI/CD pipeline, generating detailed reports and dashboards for continuous monitoring and improvement.",
+          "description": "Build an enterprise QA automation capstone: End-to-end framework integrating Playwright UI & API tests, axe-core a11y, k6 load scripts, Docker execution, and GitHub Actions parallel CI.",
           "resources": [
             {
               "title": "Playwright Test Reporters",
@@ -999,9 +1053,14 @@
               "url": "/data/docs/qa_automation/qa_comprehensive_automation_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 104
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 38
     }
-  ]
+  ],
+  "total_exp": 1000
 }

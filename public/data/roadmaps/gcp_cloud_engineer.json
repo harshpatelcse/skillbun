@@ -86,7 +86,7 @@
       "id": "gcp_cloud_engineer_foundations",
       "name": "Foundations and Cloud Fundamentals",
       "tag": "essential",
-      "description": "Understand core cloud computing concepts, Google Cloud's global infrastructure, and foundational services essential for any cloud engineer.",
+      "description": "Establish an unshakeable Google Cloud Platform foundation: resource hierarchy architecture, global infrastructure backbone, and administrative automation via the `gcloud` CLI and Google Cloud SDK.",
       "resources": [
         {
           "title": "Google Cloud Documentation",
@@ -109,7 +109,7 @@
           "id": "gcp_cloud_engineer_cloud_computing_essentials",
           "name": "Cloud Computing Essentials",
           "tag": "essential",
-          "description": "Learn fundamental cloud concepts including IaaS, PaaS, SaaS, serverless, virtualization, containerization, benefits of cloud adoption, CAPEX vs. OPEX, and the shared responsibility model.",
+          "description": "Master cloud architectural fundamentals from a Google Cloud perspective: comparing IaaS, PaaS, and serverless runtimes; evaluating Capex vs Opex financial modeling; understanding Google's private software-defined global fiber network (Jupiter, Andromeda); and designing for high availability and low latency.",
           "resources": [
             {
               "title": "What is Cloud Computing?",
@@ -141,13 +141,15 @@
               "url": "/data/docs/gcp_cloud_engineer/gcp_cloud_engineer_cloud_computing_essentials.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 25
         },
         {
           "id": "gcp_cloud_engineer_gcp_fundamentals_organization",
           "name": "GCP Global Infrastructure and Resource Hierarchy",
           "tag": "essential",
-          "description": "Explore Google Cloud's global infrastructure (regions, zones, edge networks), understand the resource hierarchy (organization, folders, projects, billing accounts), and manage quotas and service limits.",
+          "description": "Master Google Cloud resource hierarchy and governance: Organization node, Folders (departmental/environment segmentation), Projects (resource boundaries, billing attachment, API enablement), Organization Policy Service (enforcing domain-restricted sharing, disabling external IP allocation, disabling service account key creation), and Cloud Billing Accounts.",
           "resources": [
             {
               "title": "Google Cloud Resource Hierarchy",
@@ -179,13 +181,15 @@
               "url": "/data/docs/gcp_cloud_engineer/gcp_cloud_engineer_gcp_fundamentals_organization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 25
         },
         {
           "id": "gcp_cloud_engineer_developer_tools_cli",
           "name": "Developer Tools: Cloud Console, gcloud CLI, and Cloud Shell",
           "tag": "essential",
-          "description": "Master the essential graphical interface (Cloud Console), command-line tools (gcloud CLI), and browser-based environment (Cloud Shell) for interacting with GCP services. Learn basic Git for version control.",
+          "description": "Master Google Cloud developer tooling and automation: configuring `gcloud` CLI configurations and components, parsing output using formatting filters (`--filter`, `--format='json'`), managing credentials, and developing automation scripts using Google Cloud Client Libraries in Python and Go.",
           "resources": [
             {
               "title": "Installing the gcloud CLI",
@@ -212,15 +216,19 @@
               "url": "/data/docs/gcp_cloud_engineer/gcp_cloud_engineer_developer_tools_cli.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 34
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 21
     },
     {
       "id": "gcp_cloud_engineer_core_gcp_services",
       "name": "Core GCP Services: Compute, Networking, Storage, and Identity",
       "tag": "essential",
-      "description": "Build practical skills by learning and implementing key Google Cloud services across compute, networking, storage, and identity management for robust cloud solutions.",
+      "description": "Master core Google Cloud infrastructure: identity and access management, global VPC networking, Compute Engine, Cloud Run serverless containers, Google Kubernetes Engine (GKE), and scalable cloud storage.",
       "resources": [
         {
           "title": "Google Cloud Architecture Center",
@@ -243,7 +251,7 @@
           "id": "gcp_cloud_engineer_identity_access_management",
           "name": "Identity and Access Management (IAM)",
           "tag": "essential",
-          "description": "Implement fine-grained access control using IAM roles (primitive, predefined, custom), policies, service accounts, and understanding best practices for security including IAM Conditions and Audit Logs.",
+          "description": "Master Cloud IAM (Identity and Access Management): principle of least privilege, Member types (users, Google Groups, Service Accounts), predefined vs custom roles, IAM Conditions (`request.time`, `resource.name`), Workload Identity Federation (authenticating AWS/GitHub Actions without long-lived service account keys), and Service Account impersonation.",
           "resources": [
             {
               "title": "Understanding IAM",
@@ -270,13 +278,15 @@
               "url": "/data/docs/gcp_cloud_engineer/gcp_cloud_engineer_identity_access_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 34
         },
         {
           "id": "gcp_cloud_engineer_vpc_networking",
           "name": "Virtual Private Cloud (VPC) Networking Fundamentals",
           "tag": "essential",
-          "description": "Configure and manage VPC networks, subnets, custom modes, firewall rules, routing tables, and connect resources securely within GCP.",
+          "description": "Architect global Virtual Private Clouds (VPCs): global VPC networks, regional subnets, firewall rules (ingress/egress priority, target tags, service account filtering), Cloud NAT for private instance outbound internet, and Cloud DNS for internal and public resolution.",
           "resources": [
             {
               "title": "VPC network overview",
@@ -298,13 +308,15 @@
               "url": "/data/docs/gcp_cloud_engineer/gcp_cloud_engineer_vpc_networking.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 25
         },
         {
           "id": "gcp_cloud_engineer_advanced_network_services",
           "name": "Advanced Network Services and Connectivity",
           "tag": "essential",
-          "description": "Utilize Cloud DNS, Cloud Load Balancing (global, regional, internal), Cloud CDN, Cloud NAT, Private Google Access, and understand Hybrid Connectivity options like Cloud VPN and Cloud Interconnect.",
+          "description": "Master enterprise network architectures: Shared VPC (host project sharing subnets with service projects), VPC Network Peering, Cloud Router with BGP routing, Cloud Interconnect / Partner Interconnect, and Private Service Connect (PSC) for accessing Google and third-party services securely.",
           "resources": [
             {
               "title": "Cloud Load Balancing overview",
@@ -336,13 +348,15 @@
               "url": "/data/docs/gcp_cloud_engineer/gcp_cloud_engineer_advanced_network_services.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         },
         {
           "id": "gcp_cloud_engineer_compute_engine",
           "name": "Compute Engine: Virtual Machines and Instance Groups",
           "tag": "essential",
-          "description": "Provision, configure, and manage virtual machines (VMs) on Compute Engine, including instances, custom images, persistent disks, snapshots, and Managed Instance Groups (MIGs) with auto-scaling.",
+          "description": "Master Compute Engine infrastructure: machine families (General-purpose E2/N2, Compute-optimized C2, Memory-optimized M2), live migration capabilities, preemptible and Spot VMs for 60-91% cost savings, Managed Instance Groups (MIGs) with stateful configurations and autoscaling policies, and Shielded VMs.",
           "resources": [
             {
               "title": "Compute Engine documentation",
@@ -369,13 +383,15 @@
               "url": "/data/docs/gcp_cloud_engineer/gcp_cloud_engineer_compute_engine.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 34
         },
         {
           "id": "gcp_cloud_engineer_serverless_platforms",
           "name": "Serverless Platforms (Cloud Run, Functions, App Engine)",
           "tag": "essential",
-          "description": "Deploy and manage event-driven serverless functions with Cloud Functions, containerized applications with Cloud Run, and scalable web applications with App Engine (Standard & Flexible Environment).",
+          "description": "Deploy scalable serverless applications: Cloud Run (container-to-production in seconds, concurrency tuning per container instance, min/max instances, serverless VPC access connectors, and traffic splitting for canary deployments), and event-driven Cloud Functions (2nd gen on Cloud Run).",
           "resources": [
             {
               "title": "Cloud Run overview",
@@ -407,13 +423,15 @@
               "url": "/data/docs/gcp_cloud_engineer/gcp_cloud_engineer_serverless_platforms.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 53
         },
         {
           "id": "gcp_cloud_engineer_google_kubernetes_engine",
           "name": "Google Kubernetes Engine (GKE)",
           "tag": "essential",
-          "description": "Understand container orchestration with Kubernetes and deploy, manage, and scale containerized applications using GKE. Learn about clusters, nodes, pods, deployments, services, and GKE modes (Standard, Autopilot).",
+          "description": "Master Google Kubernetes Engine (GKE): GKE Autopilot (fully managed control plane and node infrastructure) vs GKE Standard, VPC-native clusters with alias IP routing, GKE Workload Identity, cluster autoscaler, node auto-provisioning, and Binary Authorization for supply-chain security.",
           "resources": [
             {
               "title": "GKE overview",
@@ -440,13 +458,15 @@
               "url": "/data/docs/gcp_cloud_engineer/gcp_cloud_engineer_google_kubernetes_engine.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 34
         },
         {
           "id": "gcp_cloud_engineer_storage_solutions",
           "name": "Storage Solutions: Object, Block, and File",
           "tag": "essential",
-          "description": "Choose and implement appropriate storage services: Cloud Storage for object storage (buckets, object lifecycle), Persistent Disks for block storage, and Filestore for managed network file storage (NFS).",
+          "description": "Engineer object and file storage: Cloud Storage (Standard, Nearline, Coldline, Archive tiers), Object Lifecycle Management rules, Uniform bucket-level access, Object Versioning, Customer-Managed Encryption Keys (CMEK), signed URLs, and Filestore for NFS shared file storage.",
           "resources": [
             {
               "title": "Cloud Storage documentation",
@@ -478,13 +498,15 @@
               "url": "/data/docs/gcp_cloud_engineer/gcp_cloud_engineer_storage_solutions.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 34
         },
         {
           "id": "gcp_cloud_engineer_database_services",
           "name": "Database Services: Relational and NoSQL",
           "tag": "essential",
-          "description": "Select and manage various database services including Cloud SQL (managed MySQL, PostgreSQL, SQL Server), Cloud Spanner (horizontally scalable relational), Firestore (NoSQL document database), and Bigtable (NoSQL wide-column database).",
+          "description": "Deploy resilient Google Cloud databases: Cloud SQL (PostgreSQL, MySQL with automated failover and read replicas), Cloud Spanner (globally distributed relational database with external consistency and the TrueTime API), and Cloud Bigtable for ultra-low latency NoSQL workloads.",
           "resources": [
             {
               "title": "Cloud SQL documentation",
@@ -516,13 +538,15 @@
               "url": "/data/docs/gcp_cloud_engineer/gcp_cloud_engineer_database_services.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 46
         },
         {
           "id": "gcp_cloud_engineer_infrastructure_as_code",
           "name": "Infrastructure as Code (IaC) with Terraform and Deployment Manager",
           "tag": "essential",
-          "description": "Automate infrastructure provisioning and management using declarative tools like Terraform and Google Cloud Deployment Manager for consistent, repeatable, and version-controlled deployments.",
+          "description": "Automate cloud deployments with HashiCorp Terraform: Google provider (`google` / `google-beta`), remote state backend in Cloud Storage with object versioning, writing modular Terraform configurations, and validating policies with Google Cloud Asset Inventory.",
           "resources": [
             {
               "title": "Manage your infrastructure as code on Google Cloud (Google Cloud Blog)",
@@ -544,13 +568,15 @@
               "url": "/data/docs/gcp_cloud_engineer/gcp_cloud_engineer_infrastructure_as_code.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 34
         },
         {
           "id": "gcp_cloud_engineer_ci_cd_pipelines",
           "name": "CI/CD Pipelines with Cloud Build and Artifact Registry",
           "tag": "advanced",
-          "description": "Build and automate continuous integration and continuous delivery (CI/CD) pipelines using Cloud Build for automated builds and tests, Cloud Source Repositories for version control, and Artifact Registry for managing artifacts and container images.",
+          "description": "Build enterprise CI/CD pipelines: Cloud Build for container image compilation, Artifact Registry for Docker/OCI artifacts, and Google Cloud Deploy for declarative continuous delivery to GKE and Cloud Run with automated promotion and rollback.",
           "resources": [
             {
               "title": "Cloud Build overview",
@@ -582,15 +608,19 @@
               "url": "/data/docs/gcp_cloud_engineer/gcp_cloud_engineer_ci_cd_pipelines.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 59
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 29
     },
     {
       "id": "gcp_cloud_engineer_operations_security_cost",
       "name": "Operations, Security, Compliance, and Cost Management",
       "tag": "essential",
-      "description": "Implement robust operational practices, monitor system health, manage logs, ensure security and compliance, and optimize costs for production-ready GCP environments.",
+      "description": "Ensure enterprise operational excellence: full-stack Google Cloud Operations suite, zero-trust security perimeter, and FinOps cost governance.",
       "resources": [
         {
           "title": "Google Cloud Skills Boost",
@@ -618,7 +648,7 @@
           "id": "gcp_cloud_engineer_observability_monitoring_logging",
           "name": "Cloud Operations Suite (Monitoring, Logging, Alerting)",
           "tag": "essential",
-          "description": "Configure and utilize Cloud Monitoring for collecting metrics, creating dashboards, and setting up alerting policies. Use Cloud Logging for centralized log management, log analytics, and exporting logs. Explore Cloud Trace and Error Reporting for application insights.",
+          "description": "Master observability with Google Cloud Operations Suite: Cloud Monitoring (dashboards, alert policies, MQL and PromQL querying, uptime checks), Cloud Logging (Log Router sinks to BigQuery/Storage, log-based metrics, exclusion filters), and distributed tracing with Cloud Trace.",
           "resources": [
             {
               "title": "Cloud Monitoring documentation",
@@ -645,13 +675,15 @@
               "url": "/data/docs/gcp_cloud_engineer/gcp_cloud_engineer_observability_monitoring_logging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 42
         },
         {
           "id": "gcp_cloud_engineer_troubleshooting_incident_response",
           "name": "Troubleshooting, Debugging, and Incident Response",
           "tag": "advanced",
-          "description": "Develop skills in diagnosing issues across GCP services, utilizing logging and monitoring tools for root cause analysis, implementing debugging strategies, and following incident response procedures based on SRE principles.",
+          "description": "Troubleshoot complex cloud incidents: analyzing VPC Flow Logs in BigQuery, debugging serial console outputs, Network Intelligence Center Connectivity Tests for firewall and routing verification, and conducting incident root cause analysis.",
           "resources": [
             {
               "title": "Troubleshooting Google Cloud operations",
@@ -683,13 +715,15 @@
               "url": "/data/docs/gcp_cloud_engineer/gcp_cloud_engineer_troubleshooting_incident_response.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 48
         },
         {
           "id": "gcp_cloud_engineer_security_compliance_data_protection",
           "name": "Advanced Security, Compliance, and Data Protection",
           "tag": "advanced",
-          "description": "Implement security best practices, utilize services like Security Command Center for threat detection, Cloud KMS for key management, Secret Manager for sensitive data, and understand compliance requirements. Explore VPC Service Controls and Data Loss Prevention (DLP).",
+          "description": "Implement enterprise cloud security: Cloud Key Management Service (Cloud KMS with CMEK and Cloud HSM), Secret Manager for sensitive configuration, Cloud Armor for DDoS and WAF protection, VPC Service Controls to prevent data exfiltration, and Security Command Center (SCC) for posture management.",
           "resources": [
             {
               "title": "Google Cloud security",
@@ -721,13 +755,15 @@
               "url": "/data/docs/gcp_cloud_engineer/gcp_cloud_engineer_security_compliance_data_protection.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 48
         },
         {
           "id": "gcp_cloud_engineer_cost_management_optimization",
           "name": "Cost Management and Optimization Strategies",
           "tag": "essential",
-          "description": "Manage billing accounts, set up budgets and alerts, analyze cost reports with Billing Export, implement strategies for optimizing GCP resource utilization (rightsizing, auto-scaling), and leverage committed use discounts (CUDs) and sustained use discounts (SUDs).",
+          "description": "Master FinOps cost optimization: Cloud Billing reports, export billing data to BigQuery for SQL analysis, creating budget threshold alerts with Pub/Sub, Recommender API recommendations for rightsizing VMs, and Committed Use Discounts (CUDs).",
           "resources": [
             {
               "title": "Google Cloud pricing",
@@ -754,13 +790,15 @@
               "url": "/data/docs/gcp_cloud_engineer/gcp_cloud_engineer_cost_management_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 42
         },
         {
           "id": "gcp_cloud_engineer_automation_devops_practices",
           "name": "Automation and DevOps Practices on GCP",
           "tag": "advanced",
-          "description": "Implement automation for operational tasks using Cloud Scheduler, Cloud Workflows, and Cloud Tasks. Integrate these tools into DevOps practices for automated deployments, scaling, and maintenance. Understand infrastructure orchestration patterns.",
+          "description": "Automate operational workflows: event-driven automation with Eventarc and Cloud Pub/Sub, Cloud Scheduler for cron jobs, and continuous compliance monitoring with Cloud Asset Inventory.",
           "resources": [
             {
               "title": "Cloud Workflows overview",
@@ -792,15 +830,19 @@
               "url": "/data/docs/gcp_cloud_engineer/gcp_cloud_engineer_automation_devops_practices.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 42
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 20
     },
     {
       "id": "gcp_cloud_engineer_portfolio_career",
       "name": "Portfolio and Career Readiness",
       "tag": "advanced",
-      "description": "Showcase your GCP Cloud Engineer expertise through practical projects, case studies, and prepare for interviews to successfully land a role.",
+      "description": "Build production-grade Google Cloud projects, prepare for Google Cloud Associate Cloud Engineer and Professional Cloud Architect certifications, and excel in cloud systems design interviews.",
       "resources": [
         {
           "title": "Google Cloud Documentation",
@@ -833,7 +875,7 @@
           "id": "gcp_cloud_engineer_case_study_writing",
           "name": "Case Study Writing and Documentation",
           "tag": "advanced",
-          "description": "Learn to articulate technical projects into compelling case studies, detailing problem, solution, implementation, impact, and architectural decisions. Master creating clear and concise technical documentation.",
+          "description": "Author a Cloud Architecture Case Study: document a large-scale enterprise migration to GKE and Cloud Run, detailing cost reduction, disaster recovery architecture, Shared VPC security posture, and business outcomes.",
           "resources": [
             {
               "title": "How to Write a Technical Case Study",
@@ -860,13 +902,15 @@
               "url": "/data/docs/gcp_cloud_engineer/gcp_cloud_engineer_case_study_writing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 48
         },
         {
           "id": "gcp_cloud_engineer_portfolio_capstone_project",
           "name": "GCP Cloud Engineer Portfolio Capstone Project",
           "tag": "advanced",
-          "description": "Design, implement, and document a comprehensive, end-to-end GCP project that demonstrates a wide range of skills acquired throughout the roadmap, creating a strong professional portfolio centerpiece.",
+          "description": "Capstone Project: Architect and deploy an Enterprise Multi-Tier Platform on Google Cloud: Shared VPC network across regions, GKE Autopilot cluster with Workload Identity, Cloud SQL PostgreSQL with Private Service Connect, Global External HTTPS Load Balancer with Cloud Armor, and full Terraform IaC automation.",
           "resources": [
             {
               "title": "Google Cloud Skills Boost - Advanced GCP Projects",
@@ -888,13 +932,15 @@
               "url": "/data/docs/gcp_cloud_engineer/gcp_cloud_engineer_portfolio_capstone_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 104
         },
         {
           "id": "gcp_cloud_engineer_interview_prep",
           "name": "Interview Preparation and Professional Networking",
           "tag": "advanced",
-          "description": "Prepare for technical and behavioral interviews, practice scenario-based problem-solving, develop resume and LinkedIn presence, and actively engage in professional networking within the cloud community.",
+          "description": "Excel in Google Cloud technical interviews: whiteboard cloud architecture (scalability, security, resilience, cost), scenario-based troubleshooting of broken cloud deployments, and articulating trade-offs between Cloud Run, GKE, and Compute Engine.",
           "resources": [
             {
               "title": "Preparing for your Google Cloud Certification (Google Cloud Blog)",
@@ -916,9 +962,14 @@
               "url": "/data/docs/gcp_cloud_engineer/gcp_cloud_engineer_interview_prep.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 47
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 38
     }
-  ]
+  ],
+  "total_exp": 1000
 }

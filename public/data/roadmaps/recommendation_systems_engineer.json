@@ -47,33 +47,34 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Real-Time E-Commerce Recommendation & Personalization Engine",
-        "tech_stack": [
-          "Python",
-          "Two-Tower Model",
-          "FAISS",
-          "Redis",
-          "Kafka"
-        ],
-        "description": "Build a personalized feed service generating candidate products using deep neural embeddings and ranking by predicted CTR."
-      },
-      {
         "title": "Two-Stage Real-Time E-Commerce Recommendation Engine",
         "tech_stack": [
           "PyTorch",
-          "Two-Tower Models",
-          "Faiss",
-          "FastAPI",
-          "Redis"
+          "Two-Tower DNN",
+          "ScaNN / Milvus",
+          "Redis",
+          "Triton Server"
         ],
-        "description": "Implement candidate generation via vector similarity search using Faiss, followed by a gradient boosted tree ranking stage with real-time negative feedback filtering."
+        "description": "Architect a candidate generation and deep ranking pipeline using two-tower vector embeddings and approximate nearest neighbors (ANN) for sub-30ms serving."
+      },
+      {
+        "title": "Contextual Multi-Armed Bandit & Collaborative Filtering Pipeline",
+        "tech_stack": [
+          "Implicit",
+          "LightFM",
+          "Polars",
+          "FastAPI",
+          "Docker"
+        ],
+        "description": "Build an exploration-exploitation recommendation service using Upper Confidence Bound (UCB) bandits and matrix factorization to overcome cold-start dilemmas."
       }
     ],
     "interview_focus": [
-      "Two-Tower Model Training & In-Batch Negatives",
-      "Approximate Nearest Neighbor Algorithms (HNSW vs IVF)",
-      "Multi-Objective Ranking Tradeoffs (Clicks vs Revenue)",
-      "Cold-Start Problem Solutions for New Users and Items"
+      "Two-Stage Recommender Architecture (Candidate Retrieval vs Heavy Ranking vs Re-Ranking)",
+      "Approximate Nearest Neighbor (ANN) Algorithms (HNSW, IVF-PQ, ScaNN Indexing)",
+      "Cold Start Problem Strategies (Bandits, Hybrid Filtering, Metadata Enrichments)",
+      "Loss Functions in Recommendation (BPR Loss, Triplet Loss, Cross-Entropy with Negative Sampling)",
+      "Offline vs Online Evaluation (NDCG, MAP@K, Hit Rate vs Click-Through Rate, A/B Testing)"
     ],
     "certifications": [
       "TensorFlow Developer Certificate",
@@ -86,7 +87,7 @@
       "id": "rec_sys_fundamentals",
       "name": "Fundamentals of Recommendation Systems",
       "tag": "essential",
-      "description": "Establish a strong understanding of what recommendation systems are, their business value, common types, and how to evaluate their performance both offline and online. This section lays the groundwork for all subsequent advanced topics.",
+      "description": "Master recommendation system architecture: Candidate retrieval, ranking, re-ranking, offline metrics vs online business metrics, and feedback loops.",
       "resources": [
         {
           "title": "Recommender Systems: The Textbook (Aggarwal)",
@@ -119,7 +120,7 @@
           "id": "rec_sys_intro_concepts",
           "name": "Introduction and Core Concepts",
           "tag": "essential",
-          "description": "Learn the definition, diverse types (e.g., collaborative filtering, content-based, hybrid, knowledge-based), business drivers (engagement, conversion), and ethical considerations (e.g., filter bubbles, fairness, privacy) of recommendation systems. Understand the basic components: users, items, and interactions.",
+          "description": "Understand core recommender paradigms: Explicit vs implicit feedback, click-through rate (CTR), conversion rate (CVR), watch time optimization, and feedback loop polarization.",
           "resources": [
             {
               "title": "What are Recommender Systems?",
@@ -146,13 +147,15 @@
               "url": "/data/docs/recommendation_systems_engineer/rec_sys_intro_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 18
         },
         {
           "id": "rec_sys_data_engineering_basics",
           "name": "Data for Recommendation Systems",
           "tag": "essential",
-          "description": "Understand the lifecycle and characteristics of user, item, and interaction data. Learn about explicit vs. implicit feedback, the importance of feature engineering for users, items, and context, and fundamental data preprocessing steps including cleaning, normalization, and handling missing values.",
+          "description": "Engineer data pipelines for recommendations: User interaction logs, item catalogs, user demographic attributes, context features (timestamp, device), and handling extreme data sparsity.",
           "resources": [
             {
               "title": "RecBole Documentation: Data Preparation",
@@ -179,13 +182,15 @@
               "url": "/data/docs/recommendation_systems_engineer/rec_sys_data_engineering_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "rec_sys_evaluation_metrics",
           "name": "Evaluation Metrics and A/B Testing Basics",
           "tag": "essential",
-          "description": "Explore a comprehensive set of offline evaluation metrics such as Precision, Recall, F1-score, NDCG (Normalized Discounted Cumulative Gain), MRR (Mean Reciprocal Rank) for ranking, and RMSE, MAE for rating prediction. Understand the fundamental principles of online A/B testing, including hypothesis formulation, statistical significance, and common pitfalls in an online experimentation setting.",
+          "description": "Evaluate recommender systems offline and online: Precision@K, Recall@K, Mean Average Precision (MAP@K), Normalized Discounted Cumulative Gain (NDCG@K), Hit Rate, and A/B test statistical significance.",
           "resources": [
             {
               "title": "Recommender System Evaluation - Towards Data Science",
@@ -212,15 +217,19 @@
               "url": "/data/docs/recommendation_systems_engineer/rec_sys_evaluation_metrics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 20
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 13
     },
     {
       "id": "rec_sys_traditional_algorithms",
       "name": "Traditional Recommendation Algorithms",
       "tag": "essential",
-      "description": "Dive into foundational recommendation algorithms, understanding their mechanics, strengths, and weaknesses. These methods serve as crucial baselines and often form components of more complex hybrid systems, providing a robust understanding of core recommendation principles.",
+      "description": "Implement classical baseline algorithms: Heuristics, collaborative filtering, matrix factorization, and content-based feature filtering.",
       "resources": [
         {
           "title": "Microsoft Recommenders: Overview of algorithms",
@@ -253,7 +262,7 @@
           "id": "rec_sys_non_personalized_baselines",
           "name": "Non-Personalized & Heuristic Baselines",
           "tag": "essential",
-          "description": "Understand fundamental non-personalized recommendation strategies like popularity-based (e.g., most viewed, best-selling), trending items, and simple rule-based systems. Learn their practical use as robust baselines, for tackling the cold-start problem, and for exploring item discovery.",
+          "description": "Build non-personalized baselines: Popularity-based ranking, recency-weighted trending items, association rule mining (Apriori), and co-occurrence frequency matrices.",
           "resources": [
             {
               "title": "Building a Basic Recommender System (Popularity-Based)",
@@ -275,13 +284,15 @@
               "url": "/data/docs/recommendation_systems_engineer/rec_sys_non_personalized_baselines.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 22
         },
         {
           "id": "rec_sys_collaborative_filtering",
           "name": "Collaborative Filtering (CF)",
           "tag": "essential",
-          "description": "Learn about User-Based Collaborative Filtering (User-User CF) and Item-Based Collaborative Filtering (Item-Item CF). Differentiate between memory-based (neighborhood-based) and model-based approaches. Understand their mechanisms, limitations related to sparsity and scalability, and techniques for similarity calculation (e.g., Cosine, Pearson correlation).",
+          "description": "Implement memory-based collaborative filtering: User-based and item-based collaborative filtering, cosine similarity, Pearson correlation, and k-nearest neighbors (KNN) on sparse interaction matrices.",
           "resources": [
             {
               "title": "Collaborative Filtering Explained",
@@ -303,13 +314,15 @@
               "url": "/data/docs/recommendation_systems_engineer/rec_sys_collaborative_filtering.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "rec_sys_matrix_factorization",
           "name": "Matrix Factorization Techniques",
           "tag": "essential",
-          "description": "Understand the principles of matrix factorization (MF) to discover latent factors for users and items, addressing sparsity and scalability issues of basic CF. Explore techniques like Singular Value Decomposition (SVD), Alternating Least Squares (ALS) for large-scale datasets, and FunkSVD. Learn how MF handles both explicit and implicit feedback scenarios and its relation to latent factor models.",
+          "description": "Factorize large interaction matrices: Singular Value Decomposition (SVD), Alternating Least Squares (ALS) with implicit feedback, Probabilistic Matrix Factorization (PMF), and Bayesian Personalized Ranking (BPR).",
           "resources": [
             {
               "title": "Matrix Factorization for Recommender Systems - Medium",
@@ -336,13 +349,15 @@
               "url": "/data/docs/recommendation_systems_engineer/rec_sys_matrix_factorization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         },
         {
           "id": "rec_sys_content_based",
           "name": "Content-Based Recommendation",
           "tag": "essential",
-          "description": "Explore how to recommend items based on item attributes and user profiles. Learn techniques for creating item feature vectors (e.g., TF-IDF, word embeddings), user profiling (e.g., averaged item features, explicit preferences), and using similarity measures (e.g., cosine similarity) to match users to items they might like based on their past interactions.",
+          "description": "Build content-based recommendation engines: TF-IDF item representations, metadata feature matching, BERT/text embedding similarity, and constructing user preference profiles.",
           "resources": [
             {
               "title": "Content-Based Recommender Systems - Towards Data Science",
@@ -364,13 +379,15 @@
               "url": "/data/docs/recommendation_systems_engineer/rec_sys_content_based.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "rec_sys_hybrid_approaches",
           "name": "Hybrid Recommender Systems",
           "tag": "advanced",
-          "description": "Learn to combine the strengths of collaborative filtering, content-based methods, and other techniques to build more robust, accurate, and diverse recommendation models. Explore common hybridization strategies such as weighted, switching, mixed, cascaded, and feature-combination approaches.",
+          "description": "Design hybrid recommender systems: Combining collaborative filtering predictions with content-based features using weighted ensembles, cascading filters, or feature stacking.",
           "resources": [
             {
               "title": "Hybrid Recommender Systems: A Survey - ResearchGate",
@@ -392,15 +409,19 @@
               "url": "/data/docs/recommendation_systems_engineer/rec_sys_hybrid_approaches.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 16
     },
     {
       "id": "rec_sys_deep_learning_algorithms",
       "name": "Deep Learning for Recommendation Systems",
       "tag": "essential",
-      "description": "Master modern deep learning techniques to build highly sophisticated, scalable, and personalized recommendation engines. This section covers embedding generation, advanced ranking models, and sequential recommendation architectures.",
+      "description": "Architect modern deep learning recommendation models: Two-tower retrieval, feature interaction networks, and sequential session modeling.",
       "resources": [
         {
           "title": "TensorFlow Recommenders",
@@ -433,7 +454,7 @@
           "id": "rec_sys_embeddings_techniques",
           "name": "Embeddings for RecSys",
           "tag": "essential",
-          "description": "Learn to generate dense vector representations (embeddings) for users, items, and interactions. Explore techniques like Word2Vec and Item2Vec for learning item representations from sequences, and Graph Embeddings (e.g., Node2Vec, DeepWalk) for leveraging relational data. Understand how these embeddings capture latent features and enable similarity computations.",
+          "description": "Generate high-capacity entity embeddings: Word2Vec-style Item2Vec on user session trajectories, Graph Convolutional Networks (PinSage, LightGCN), and multimodal item embeddings.",
           "resources": [
             {
               "title": "Graph Embeddings for Recommender Systems",
@@ -455,13 +476,15 @@
               "url": "/data/docs/recommendation_systems_engineer/rec_sys_embeddings_techniques.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "rec_sys_feature_interaction_dl",
           "name": "Feature Interaction Models & Factorization Machines",
           "tag": "advanced",
-          "description": "Explore advanced models designed to capture complex feature interactions, moving beyond linear models. Understand Factorization Machines (FMs) and Field-aware Factorization Machines (FFMs) as effective methods for modeling second-order interactions. Dive into DeepFM and xDeepFM which combine FMs with deep neural networks for higher-order interactions, bridging traditional and deep learning approaches for enriched feature representations.",
+          "description": "Model high-order feature interactions: Factorization Machines (FM), Wide & Deep architectures, DeepFM, and DLRM (Deep Learning Recommendation Model) for sparse categorical embeddings.",
           "resources": [
             {
               "title": "Factorization Machines Explained",
@@ -488,13 +511,15 @@
               "url": "/data/docs/recommendation_systems_engineer/rec_sys_feature_interaction_dl.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         },
         {
           "id": "rec_sys_dnn_ranking",
           "name": "Deep Neural Networks for Ranking",
           "tag": "essential",
-          "description": "Implement and understand various deep neural network architectures specifically designed for personalized ranking. This includes models like YouTube DNN for robust user-item matching, Deep Learning Recommendation Model (DLRM) for combining categorical and numerical features efficiently, and Neural Collaborative Filtering (NCF) for capturing non-linear user-item interactions. Focus on architectural choices, feature input layers, and loss functions (e.g., pointwise, pairwise, listwise).",
+          "description": "Implement multi-task deep ranking models: Multi-gate Mixture-of-Experts (MMoE) and Progressive Layered Extraction (PLE) to predict simultaneous objectives (CTR, CVR, dwell time).",
           "resources": [
             {
               "title": "Deep Neural Networks for YouTube Recommendations - Research Paper",
@@ -521,13 +546,15 @@
               "url": "/data/docs/recommendation_systems_engineer/rec_sys_dnn_ranking.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "rec_sys_two_tower_models",
           "name": "Two-Tower Models and Efficient Retrieval",
           "tag": "essential",
-          "description": "Design and implement two-tower (dual-encoder) models for efficient candidate generation and retrieval from large item corpora. Understand the architecture where user and item representations are learned independently and then matched. Focus on training strategies (e.g., contrastive learning, sampled softmax), efficient retrieval techniques (e.g., Approximate Nearest Neighbors - ANN), and their role in a multi-stage recommendation pipeline.",
+          "description": "Deploy dual-encoder Two-Tower networks: Independent User and Item representation towers, in-batch negative sampling, and low-latency approximate nearest neighbor (ANN) search.",
           "resources": [
             {
               "title": "Two-tower models for search and recommendations - Google AI Blog",
@@ -554,13 +581,15 @@
               "url": "/data/docs/recommendation_systems_engineer/rec_sys_two_tower_models.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "rec_sys_sequential_recs",
           "name": "Sequential and Session-Based Recommenders",
           "tag": "advanced",
-          "description": "Build recommendation systems that capture dynamic and sequential user behavior, crucial for e-commerce and media platforms. Explore models based on Recurrent Neural Networks (RNNs), Gated Recurrent Units (GRUs), Long Short-Term Memory (LSTMs), and advanced Transformer-based architectures (e.g., SASRec, BERT4Rec) to model item sequences and predict next interactions.",
+          "description": "Model sequential user intent: Recurrent Neural Networks (GRU4Rec), Transformer-based session recommenders (SASRec, BERT4Rec) to capture dynamic real-time user journey transitions.",
           "resources": [
             {
               "title": "Session-based recommendation with recurrent neural networks - Research Paper",
@@ -587,15 +616,19 @@
               "url": "/data/docs/recommendation_systems_engineer/rec_sys_sequential_recs.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 16
     },
     {
       "id": "rec_sys_system_design_mlops",
       "name": "System Design and MLOps for Recommenders",
       "tag": "essential",
-      "description": "Learn to design, deploy, and maintain robust, scalable, and performant recommendation systems in real-world production environments. This section covers critical MLOps principles, architectural patterns, and infrastructure considerations for end-to-end RecSys lifecycle management.",
+      "description": "Design industrial-scale recommendation architectures: Multi-stage funnels (Retrieval -> Filtering -> Scoring/Ranking -> Re-ranking/Diversity -> Business Rules).",
       "resources": [
         {
           "title": "MLOps for Recommender Systems - Towards Data Science",
@@ -628,7 +661,7 @@
           "id": "rec_sys_data_pipelines",
           "name": "Data Pipelines for RecSys (Batch & Streaming)",
           "tag": "essential",
-          "description": "Design and implement robust data pipelines for collecting, transforming, and storing user, item, and interaction data. Cover batch processing frameworks (e.g., Apache Spark, Flink) for historical data and real-time streaming technologies (e.g., Apache Kafka, Pulsar) for fresh feature generation, event processing, and model retraining triggers. Understand data governance and schema management.",
+          "description": "Build high-throughput ingestion pipelines: Real-time event streaming with Apache Kafka / Flink, Parquet lakehouse storage with Apache Iceberg, and feature extraction.",
           "resources": [
             {
               "title": "Building a Real-time Data Pipeline for Machine Learning",
@@ -655,13 +688,15 @@
               "url": "/data/docs/recommendation_systems_engineer/rec_sys_data_pipelines.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         },
         {
           "id": "rec_sys_candidate_generation",
           "name": "Candidate Generation and Retrieval Systems",
           "tag": "essential",
-          "description": "Understand strategies for efficient candidate retrieval from vast item corpora, a critical first stage in multi-stage recommender architectures. Explore techniques including inverted indexes, hashing methods, and state-of-the-art Approximate Nearest Neighbor (ANN) libraries like Faiss, Annoy, ScaNN, and Hnswlib. Learn to design multi-stage retrieval pipelines for improved relevance and recall.",
+          "description": "Scale candidate retrieval across millions of items: Vector indexing with ScaNN, Faiss, and HNSW graphs; graph-based candidate expansion; and multi-retrieval source blending.",
           "resources": [
             {
               "title": "Candidate Generation for Recommender Systems - Google ML",
@@ -688,13 +723,15 @@
               "url": "/data/docs/recommendation_systems_engineer/rec_sys_candidate_generation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "rec_sys_ranking_systems",
           "name": "Ranking Systems and Real-time Feature Stores",
           "tag": "essential",
-          "description": "Design and implement advanced ranking models that take candidates from the retrieval stage and re-rank them for optimal personalization. Explore Learning to Rank (LTR) algorithms (pointwise, pairwise, listwise) and the integration of complex deep learning models for fine-grained scoring. Understand the crucial role of real-time feature stores (e.g., Feast, Tecton) for managing and serving features consistently during training and inference.",
+          "description": "Deploy real-time ranking systems: Low-latency feature stores (Feast, Hopsworks, Redis) serving user/item features to Triton Inference Server within 20ms SLA limits.",
           "resources": [
             {
               "title": "Learning to Rank for Information Retrieval - Wikipedia",
@@ -721,13 +758,15 @@
               "url": "/data/docs/recommendation_systems_engineer/rec_sys_ranking_systems.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 22
         },
         {
           "id": "rec_sys_realtime_serving",
           "name": "Real-time Serving and Inference",
           "tag": "essential",
-          "description": "Address the challenges of low-latency serving and high-throughput inference for recommendation models in production. Learn about model deployment frameworks (e.g., TensorFlow Serving, TorchServe, BentoML), various caching strategies (e.g., CDN, distributed caches like Redis), API design principles (REST, gRPC) for recommender services, and microservices architecture patterns.",
+          "description": "Architect high-concurrency inference endpoints: Parallel candidate retrieval, async scoring, batching requests, caching top candidates, and failover fallbacks.",
           "resources": [
             {
               "title": "TensorFlow Serving Documentation",
@@ -749,13 +788,15 @@
               "url": "/data/docs/recommendation_systems_engineer/rec_sys_realtime_serving.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "rec_sys_experimentation_ab_testing",
           "name": "Experimentation and A/B Testing Frameworks",
           "tag": "essential",
-          "description": "Set up and manage robust A/B testing frameworks for rigorous online evaluation of recommendation algorithms. Understand advanced statistical concepts like statistical significance, power analysis, novelty effects, and common pitfalls in experiment design. Explore dynamic experimentation strategies such as multi-armed bandits (MAB) for faster model iteration and optimization.",
+          "description": "Design rigorous online A/B testing infrastructure: User bucketing, variance reduction techniques (CUPED), interleaving experiments, and monitoring cannibalization vs incremental lift.",
           "resources": [
             {
               "title": "A/B Testing in Recommender Systems - Medium",
@@ -782,13 +823,15 @@
               "url": "/data/docs/recommendation_systems_engineer/rec_sys_experimentation_ab_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         },
         {
           "id": "rec_sys_monitoring_mlops",
           "name": "Monitoring, Logging, and MLOps Pipelines",
           "tag": "advanced",
-          "description": "Implement comprehensive monitoring solutions for model performance (e.g., CTR, latency, error rates), data quality (e.g., data drift, feature skew), and system health. Learn about logging best practices, alerting systems, and building automated CI/CD pipelines for ML models. Understand model versioning, retraining strategies, and incident response in a production recommender system environment.",
+          "description": "Monitor recommender systems in production: Tracking data distribution drift, feature staleness, candidate pool coverage, model performance decay, and automated pipeline retraining.",
           "resources": [
             {
               "title": "MLOps Best Practices for Recommender Systems - Databricks",
@@ -815,15 +858,19 @@
               "url": "/data/docs/recommendation_systems_engineer/rec_sys_monitoring_mlops.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 19
     },
     {
       "id": "rec_sys_advanced_challenges",
       "name": "Advanced Topics & Production Challenges",
       "tag": "advanced",
-      "description": "Explore complex, real-world issues in recommendation systems, including handling new data, ensuring fairness, optimizing for multiple objectives, and leveraging cutting-edge techniques like Reinforcement Learning and Large Language Models.",
+      "description": "Solve frontier recommender challenges: Position bias, popularity bias, filter bubbles, cold-start bottlenecks, and multi-stakeholder optimization.",
       "resources": [
         {
           "title": "RecBole Documentation: Advanced Topics",
@@ -856,7 +903,7 @@
           "id": "rec_sys_cold_start",
           "name": "Addressing Cold Start and Sparsity",
           "tag": "advanced",
-          "description": "Learn advanced strategies to provide effective recommendations for new users and items, or in domains with scarce interaction data. This includes leveraging auxiliary information (e.g., metadata, demographics), content-based methods, transfer learning, meta-learning, and active learning strategies for cold-start scenarios.",
+          "description": "Solve user and item cold-start problems: Multi-armed bandits (LinUCB, Thompson Sampling) for active exploration, zero-shot item representation via foundation models, and onboarding surveys.",
           "resources": [
             {
               "title": "Cold-Start Problem in Recommender Systems - ResearchGate",
@@ -878,13 +925,15 @@
               "url": "/data/docs/recommendation_systems_engineer/rec_sys_cold_start.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         },
         {
           "id": "rec_sys_bias_fairness_explainability",
           "name": "Bias, Fairness, and Explainability",
           "tag": "advanced",
-          "description": "Understand different types of bias prevalent in recommendation systems (e.g., popularity bias, selection bias, position bias), methods for measuring and mitigating bias (e.g., re-ranking, adversarial training), and techniques for generating explainable recommendations (XAI) to increase user trust and transparency (e.g., LIME, SHAP, attention mechanisms, rule extraction).",
+          "description": "Mitigate algorithmic bias: Inverse propensity scoring (IPS) to correct selection bias, demographic parity checks, and generating user-facing recommendation explanations.",
           "resources": [
             {
               "title": "Fairness in Recommender Systems - ACM RecSys",
@@ -911,13 +960,15 @@
               "url": "/data/docs/recommendation_systems_engineer/rec_sys_bias_fairness_explainability.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         },
         {
           "id": "rec_sys_multi_objective_optimization",
           "name": "Multi-Objective Optimization & Diversity",
           "tag": "advanced",
-          "description": "Address the critical challenge of optimizing for multiple, often conflicting, objectives beyond mere relevance (e.g., diversity, novelty, serendipity, long-term engagement, business goals). Explore techniques like multi-task learning, Pareto optimization, re-ranking algorithms for diversity, and incorporating explicit diversity metrics into model training and evaluation.",
+          "description": "Optimize competing objectives: Balancing relevance, diversity (Maximal Marginal Relevance - MMR), novelty, serendipity, and business revenue constraints.",
           "resources": [
             {
               "title": "Diversity and Recommender Systems: A Survey",
@@ -944,13 +995,15 @@
               "url": "/data/docs/recommendation_systems_engineer/rec_sys_multi_objective_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 29
         },
         {
           "id": "rec_sys_causal_inference",
           "name": "Causal Inference in Recommenders",
           "tag": "advanced",
-          "description": "Understand the application of causal inference techniques to estimate the true, unbiased impact of recommendations on user behavior and business metrics. Learn about methods like inverse propensity weighting, instrumental variables, and matching to mitigate confounding biases present in observational data and design more effective intervention strategies in recommender systems.",
+          "description": "Apply causal inference to recommendations: Estimating treatment effects, distinguishing organic behavior from recommendation-driven actions, and avoiding confounder bias.",
           "resources": [
             {
               "title": "Causal Inference in Recommender Systems",
@@ -972,13 +1025,15 @@
               "url": "/data/docs/recommendation_systems_engineer/rec_sys_causal_inference.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         },
         {
           "id": "rec_sys_rl_recs",
           "name": "Reinforcement Learning for Recommenders",
           "tag": "advanced",
-          "description": "Explore the application of Reinforcement Learning (RL) techniques for dynamic and long-term optimized recommendation policies. Understand how RL agents interact with users to learn optimal sequences of recommendations, balancing exploration vs. exploitation. Cover foundational RL algorithms (e.g., Q-learning, Policy Gradients, Actor-Critic methods) and their adaptation to the sequential decision-making context of recommender systems.",
+          "description": "Formulate recommendations as Markov Decision Processes: Reinforcement learning agents (Q-learning, Actor-Critic) optimizing long-term cumulative user lifetime value (LTV).",
           "resources": [
             {
               "title": "Deep Reinforcement Learning for Recommender Systems: A Survey",
@@ -1000,13 +1055,15 @@
               "url": "/data/docs/recommendation_systems_engineer/rec_sys_rl_recs.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         },
         {
           "id": "rec_sys_llm_recs",
           "name": "Large Language Models (LLMs) for Recommenders",
           "tag": "advanced",
-          "description": "Understand how Large Language Models are revolutionizing recommendation systems. Explore their integration for richer content understanding, sophisticated user intent modeling, generating explanations, and even synthesizing novel recommendations. Cover techniques like prompt engineering, fine-tuning LLMs for specific recommendation tasks, and leveraging LLMs as powerful feature extractors or re-rankers.",
+          "description": "Incorporate LLMs into recommendations: LLMs as zero-shot rankers, generative item descriptions, conversational recommendation agents, and semantic feature extractors.",
           "resources": [
             {
               "title": "A Survey on Large Language Models for Recommendation",
@@ -1028,15 +1085,19 @@
               "url": "/data/docs/recommendation_systems_engineer/rec_sys_llm_recs.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 24
     },
     {
       "id": "rec_sys_project_career",
       "name": "End-to-End Project and Career Readiness",
       "tag": "advanced",
-      "description": "Consolidate your knowledge by building a comprehensive recommendation system project that reflects industry standards. This section also prepares you for career opportunities by focusing on performance optimization, interview skills, and showcasing your expertise.",
+      "description": "Build an industry-grade recommendation portfolio: End-to-end open-source system design, benchmark evaluations, and technical interview preparation.",
       "resources": [
         {
           "title": "TensorFlow Recommenders: End-to-end tutorial",
@@ -1069,7 +1130,7 @@
           "id": "rec_sys_capstone_project",
           "name": "Capstone Project: Production-Ready Recommender",
           "tag": "advanced",
-          "description": "Apply all learned concepts to build a portfolio-quality, end-to-end recommendation system. This project should span the entire MLOps lifecycle: from data ingestion and feature engineering, model training and evaluation, to deployment, real-time serving, monitoring, and A/B testing integration. Demonstrate your ability to build, deploy, and operate a robust recommender.",
+          "description": "Build an enterprise recommender capstone: Multi-stage pipeline featuring two-tower retrieval with Faiss, DeepFM ranking, Redis feature store, FastAPI serving, and real-time Kafka event streaming.",
           "resources": [
             {
               "title": "Microsoft Recommenders: Sample Notebooks and Examples",
@@ -1091,13 +1152,15 @@
               "url": "/data/docs/recommendation_systems_engineer/rec_sys_capstone_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 81
         },
         {
           "id": "rec_sys_performance_tuning",
           "name": "Performance Optimization and Tuning",
           "tag": "advanced",
-          "description": "Learn practical techniques for optimizing model inference speed, memory usage, and overall system efficiency for large-scale recommendation systems. This includes model quantization, batching inference requests, distributed training paradigms (e.g., horovod, distributed TensorFlow/PyTorch), and leveraging hardware accelerators like GPUs and TPUs for both training and serving.",
+          "description": "Profile and tune recommendation systems: Reducing P99 inference latency, optimizing sparse embedding table memory, and maximizing GPU/CPU hardware utilization.",
           "resources": [
             {
               "title": "Optimizing Recommender Systems Performance - Nvidia Blog",
@@ -1124,13 +1187,15 @@
               "url": "/data/docs/recommendation_systems_engineer/rec_sys_performance_tuning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         },
         {
           "id": "rec_sys_career_prep",
           "name": "Career Development and Interview Prep",
           "tag": "advanced",
-          "description": "Prepare comprehensively for interviews for Recommendation Systems Engineer, Machine Learning Engineer, or Research Scientist roles. Understand common technical and system design questions related to recommenders, articulate your project experience effectively, and position yourself as a highly capable professional in the field. Includes resume building, portfolio showcase, and mock interview practice.",
+          "description": "Master recommendation system design interviews: Whiteboard large-scale feeds (Netflix, Spotify, TikTok), explain offline-online metric gaps, and solve algorithm optimization problems.",
           "resources": [
             {
               "title": "Machine Learning System Design Interview Guide",
@@ -1152,9 +1217,14 @@
               "url": "/data/docs/recommendation_systems_engineer/rec_sys_career_prep.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 53
     }
-  ]
+  ],
+  "total_exp": 1000
 }

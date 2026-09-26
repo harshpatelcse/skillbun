@@ -47,26 +47,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Automated Hardened Linux Server Deployment Suite",
+        "title": "Automated Hardened Server Fleet Provisioning with Ansible & OpenSCAP",
         "tech_stack": [
-          "Bash",
-          "Systemd",
-          "SELinux",
           "Ansible",
-          "RHEL/Ubuntu"
+          "CIS Benchmark Level 2",
+          "OpenSCAP",
+          "auditd",
+          "Centralized Rsyslog/Loki"
         ],
-        "description": "Create an automated provisioning script applying CIS Benchmark security hardening, auditd logging, and custom systemd watchdogs."
+        "description": "Construct an automated infrastructure provisioning pipeline applying CIS Level 2 hardening benchmarks, auditd kernel logging, and automated compliance reporting."
       },
       {
-        "title": "Automated Hardened Linux Server Fleet with Ansible",
+        "title": "High-Availability Load Balancing & Failover Cluster with Keepalived & HAProxy",
         "tech_stack": [
-          "Ansible",
-          "Bash",
-          "systemd",
-          "UFW/iptables",
-          "SELinux"
+          "HAProxy",
+          "Keepalived VRRP",
+          "BIND DNS",
+          "SSL Termination",
+          "Bash"
         ],
-        "description": "Write modular Ansible playbooks automating CIS benchmark OS hardening, automated security patch management, SSH key rotation, and centralized rsyslog forwarding."
+        "description": "Deploy a redundant dual-node load balancer cluster utilizing VRRP virtual IP failover, active health checking, zero-downtime reconfiguration, and SSL offloading."
       }
     ],
     "certifications": [
@@ -75,10 +75,11 @@
       "Linux Foundation Certified System Administrator (LFCS)"
     ],
     "interview_focus": [
-      "Systemd Unit Files & Dependency Ordering",
-      "Troubleshooting Linux High Load Average (CPU vs I/O Wait)",
-      "LVM Volume Resizing without Downtime",
-      "SELinux Contexts & Permissive vs Enforcing Modes"
+      "Linux Boot Process (BIOS/UEFI -> GRUB -> Kernel -> Init / Systemd Targets)",
+      "Process Management & Signals (fork, exec, signals SIGTERM vs SIGKILL, Zombie vs Orphan Processes)",
+      "File System Architecture (Inodes, Superblocks, Hard Links vs Soft Links, VFS Layer)",
+      "Troubleshooting Server Performance (top, vmstat, iostat, sar, strace, lsof, netstat/ss)",
+      "Linux Networking Stack (iptables / nftables, routing tables, TCP socket states & tuning)"
     ]
   },
   "format": "tree",
@@ -87,7 +88,7 @@
       "id": "linux_fundamentals",
       "name": "Linux Fundamentals",
       "tag": "essential",
-      "description": "Master the foundational concepts of Linux, including the command-line interface, file system, user management, process control, and software package management, crucial for any system administrator.",
+      "description": "Master Linux operating system fundamentals: Kernel architecture, shell environments, file system hierarchies, user privileges, and package managers.",
       "resources": [
         {
           "title": "Linux Journey",
@@ -115,7 +116,7 @@
           "id": "linux_cli_essentials",
           "name": "Command Line Interface Essentials",
           "tag": "essential",
-          "description": "Navigate the shell effectively, execute basic and advanced commands, understand input/output redirection, pipes, aliases, environment variables, and basic shell customization.",
+          "description": "Master Bash command line essentials: Navigation, pipes, standard streams (stdin, stdout, stderr), redirection, text processing with grep, awk, sed, cut, and sort.",
           "resources": [
             {
               "title": "The Linux Command Line",
@@ -142,13 +143,15 @@
               "url": "/data/docs/linux_system_admin/linux_cli_essentials.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 15
         },
         {
           "id": "linux_filesystem_hierarchy",
           "name": "Filesystem Hierarchy, Permissions & Attributes",
           "tag": "essential",
-          "description": "Understand the Linux Filesystem Hierarchy Standard (FHS), manage file and directory permissions (chmod, chown, sticky bit, SGID, SUID), work with hard/soft links, and grasp basic Access Control Lists (ACLs).",
+          "description": "Navigate the Linux Filesystem Hierarchy Standard (FHS): Dissecting `/etc`, `/var`, `/usr`, `/proc`, `/sys`; managing POSIX permissions (`chmod`, `chown`), umask, and SUID/SGID/Sticky bits.",
           "resources": [
             {
               "title": "Filesystem Hierarchy Standard",
@@ -170,13 +173,15 @@
               "url": "/data/docs/linux_system_admin/linux_filesystem_hierarchy.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 17
         },
         {
           "id": "linux_users_groups_sudo",
           "name": "User, Group, and Sudo Management",
           "tag": "essential",
-          "description": "Create, modify, and delete user accounts and groups. Understand UID/GID, password policies, shadow files, and configure sudo privileges with a focus on security best practices.",
+          "description": "Administer users and groups: Managing `/etc/passwd`, `/etc/shadow`, `/etc/group`; configuring fine-grained sudoer privileges via `/etc/sudoers` with `visudo`.",
           "resources": [
             {
               "title": "Ubuntu Server Documentation - User Management",
@@ -198,13 +203,15 @@
               "url": "/data/docs/linux_system_admin/linux_users_groups_sudo.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 15
         },
         {
           "id": "linux_package_management",
           "name": "Software Package Management",
           "tag": "essential",
-          "description": "Utilize diverse package managers (apt, yum, dnf, pacman) to install, update, remove, and query software packages. Understand repositories, managing external sources (PPAs, EPEL), and resolving dependencies.",
+          "description": "Manage software packages across distributions: Debian/Ubuntu (APT, dpkg), RHEL/CentOS/Rocky (DNF, RPM), repository configuration, package pinning, and verifying GPG signatures.",
           "resources": [
             {
               "title": "Debian Administrator's Handbook - Package Management",
@@ -226,13 +233,15 @@
               "url": "/data/docs/linux_system_admin/linux_package_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 16
         },
         {
           "id": "linux_process_job_control",
           "name": "Process Management and Job Control",
           "tag": "essential",
-          "description": "Monitor and manage processes (ps, top, htop, kill, nice, renice), understand background/foreground jobs, use `nohup`, `screen`, `tmux`, and analyze process states for troubleshooting.",
+          "description": "Manage system processes: Process lifecycles, PID namespaces, signals (SIGTERM, SIGKILL, SIGHUP), process monitoring with `ps`, `top`, `htop`, background jobs (`&`, `bg`, `fg`), and `nice`/`renice`.",
           "resources": [
             {
               "title": "Linux Process Management Tutorial",
@@ -254,13 +263,15 @@
               "url": "/data/docs/linux_system_admin/linux_process_job_control.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         },
         {
           "id": "linux_boot_init",
           "name": "Boot Process and System Initialization",
           "tag": "essential",
-          "description": "Understand the Linux boot sequence (BIOS/UEFI, GRUB, Kernel, initramfs), runlevels/targets, and system initialization with systemd. Diagnose boot failures and perform recovery.",
+          "description": "Master Linux boot sequence: BIOS/UEFI firmware, GRUB2 bootloader, initramfs/initrd, kernel initialization, systemd targets, and analyzing boot times with `systemd-analyze`.",
           "resources": [
             {
               "title": "The Linux Boot Process Explained",
@@ -282,15 +293,19 @@
               "url": "/data/docs/linux_system_admin/linux_boot_init.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 16
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 12
     },
     {
       "id": "linux_core_services_network",
       "name": "Core System Services and Networking",
       "tag": "essential",
-      "description": "Manage essential Linux services, configure network interfaces, secure remote access, and understand fundamental networking concepts vital for server operation.",
+      "description": "Configure essential Linux network services, remote SSH access, host-level firewalls, and scheduled cron automations.",
       "resources": [
         {
           "title": "Red Hat Enterprise Linux Documentation - Networking Guide",
@@ -318,7 +333,7 @@
           "id": "linux_systemd_service_mgmt",
           "name": "Systemd Service Management",
           "tag": "essential",
-          "description": "Master service management with systemctl (start, stop, enable, disable, mask, status). Understand service units, targets, dependencies, and create custom systemd unit files.",
+          "description": "Master systemd service administration: Writing custom `.service`, `.socket`, and `.timer` unit files; managing service states with `systemctl`; and configuring auto-restart policies.",
           "resources": [
             {
               "title": "systemd Guide - Arch Wiki",
@@ -340,13 +355,15 @@
               "url": "/data/docs/linux_system_admin/linux_systemd_service_mgmt.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 17
         },
         {
           "id": "linux_logging_journaling",
           "name": "System Logging and Journalctl",
           "tag": "essential",
-          "description": "Understand syslog/rsyslog, logrotate configuration for log management, and master system logs using journalctl for effective troubleshooting, including persistent logging.",
+          "description": "Inspect and manage system logs: Querying binary logs with `journalctl`, configuring rsyslog, log rotation policies via `/etc/logrotate.conf`, and centralizing log forwarding.",
           "resources": [
             {
               "title": "Understanding and Using Systemd Journalctl",
@@ -368,13 +385,15 @@
               "url": "/data/docs/linux_system_admin/linux_logging_journaling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 16
         },
         {
           "id": "linux_network_configuration",
           "name": "Network Configuration and Troubleshooting",
           "tag": "essential",
-          "description": "Configure network interfaces (IP addresses, netmasks, gateways, DNS) using modern tools (ip, nmcli). Understand basic network utilities (ping, traceroute, netstat, ss, dig, host), diagnose connectivity issues, and grasp basic IPv6 concepts.",
+          "description": "Configure network interfaces: `iproute2` suite (`ip addr`, `ip route`, `ip link`), NetworkManager (`nmcli`), bonding/bridging, testing connectivity with `ping`, `traceroute`, `curl`, and `ss`.",
           "resources": [
             {
               "title": "Network Configuration in Linux - Guide",
@@ -396,13 +415,15 @@
               "url": "/data/docs/linux_system_admin/linux_network_configuration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         },
         {
           "id": "linux_ssh_secure_access",
           "name": "SSH and Secure Remote Access",
           "tag": "essential",
-          "description": "Configure SSH for secure remote access, generate and manage SSH keys, understand SSH agents, `authorized_keys`, and implement basic SSH hardening techniques (e.g., disabling password auth).",
+          "description": "Harden SSH access: Ed25519 key-pair authentication, `/etc/ssh/sshd_config` hardening (disabling root login, changing ports), SSH certificates, SSH agent forwarding, and bastion jump hosts.",
           "resources": [
             {
               "title": "SSH/OpenSSH - Arch Wiki",
@@ -424,13 +445,15 @@
               "url": "/data/docs/linux_system_admin/linux_ssh_secure_access.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 17
         },
         {
           "id": "linux_firewall_mgmt",
           "name": "Firewall Management and Network Filtering",
           "tag": "essential",
-          "description": "Configure and manage Linux firewalls (iptables, nftables, firewalld, ufw) to control inbound and outbound network traffic, define zones, and understand packet filtering concepts.",
+          "description": "Manage host firewalls: Configuring `iptables`, `nftables`, `ufw`, and `firewalld`; defining packet filtering rules, NAT port forwarding, and connection state inspection.",
           "resources": [
             {
               "title": "How To Configure a Firewall with UFW on Ubuntu 20.04",
@@ -452,13 +475,15 @@
               "url": "/data/docs/linux_system_admin/linux_firewall_mgmt.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 16
         },
         {
           "id": "linux_cron_scheduling",
           "name": "Scheduled Tasks and Job Automation",
           "tag": "essential",
-          "description": "Automate recurring tasks efficiently using cron jobs, anacron for systems that are not always on, and systemd timers for more flexible and robust scheduling.",
+          "description": "Automate scheduled jobs: User and system crontabs (`crontab -e`), `/etc/cron.*` directories, syntax conventions, and modern systemd timers for calendar-based tasks.",
           "resources": [
             {
               "title": "How to Schedule Tasks on Linux Using Cron",
@@ -480,13 +505,15 @@
               "url": "/data/docs/linux_system_admin/linux_cron_scheduling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 11
         },
         {
           "id": "linux_dns_dhcp_basics",
           "name": "DNS and DHCP Fundamentals",
           "tag": "essential",
-          "description": "Understand the basics of DNS resolution, common record types (A, CNAME, MX), and how to configure client-side DNS. Grasp DHCP principles and client configuration.",
+          "description": "Configure local name resolution and dynamic addressing: `/etc/resolv.conf`, `/etc/hosts`, systemd-resolved, querying DNS records with `dig`/`nslookup`, and DHCP client operations.",
           "resources": [
             {
               "title": "DNS Explained Simply",
@@ -508,15 +535,19 @@
               "url": "/data/docs/linux_system_admin/linux_dns_dhcp_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 12
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 11
     },
     {
       "id": "linux_storage_disk_mgmt",
       "name": "Storage and Disk Management",
       "tag": "advanced",
-      "description": "Gain expertise in disk partitioning, filesystem management, Logical Volume Management (LVM), and setting up various storage solutions and robust backup strategies for production.",
+      "description": "Manage physical and logical storage: Partitioning, file systems, LVM volume expansion, RAID arrays, and disaster recovery backups.",
       "resources": [
         {
           "title": "Arch Wiki - File Systems",
@@ -544,7 +575,7 @@
           "id": "linux_disk_partitioning",
           "name": "Disk Partitioning and Filesystems",
           "tag": "advanced",
-          "description": "Manage disk partitions (fdisk, parted, gdisk), create and manage filesystems (ext4, XFS, Btrfs, ZFS), understand mounting/unmounting, and configure persistent mounting with `/etc/fstab` using UUIDs and labels.",
+          "description": "Partition and format block devices: MBR vs GPT partitioning with `fdisk`, `gdisk`, and `parted`; creating filesystems (ext4, XFS, Btrfs) with `mkfs`; and persistent `/etc/fstab` mounting.",
           "resources": [
             {
               "title": "Understanding fstab and Mount Points",
@@ -566,13 +597,15 @@
               "url": "/data/docs/linux_system_admin/linux_disk_partitioning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 24
         },
         {
           "id": "linux_lvm",
           "name": "Logical Volume Management (LVM)",
           "tag": "advanced",
-          "description": "Implement LVM for flexible disk management, including creating physical volumes, volume groups, logical volumes, and extending/shrinking filesystems with online operations.",
+          "description": "Master Logical Volume Management (LVM): Physical Volumes (PV), Volume Groups (VG), Logical Volumes (LV); online volume resizing, thin provisioning, and LVM snapshots.",
           "resources": [
             {
               "title": "Getting Started with LVM",
@@ -594,13 +627,15 @@
               "url": "/data/docs/linux_system_admin/linux_lvm.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 21
         },
         {
           "id": "linux_advanced_storage_options",
           "name": "Advanced Storage Solutions and Concepts",
           "tag": "advanced",
-          "description": "Configure network file systems (NFS, Samba/CIFS), understand RAID concepts (hardware vs. software, levels), explore iSCSI for block storage, and grasp distributed file systems like GlusterFS or Ceph fundamentals.",
+          "description": "Configure enterprise storage: Software RAID with `mdadm`, Network File System (NFS) exports, iSCSI initiator/target configurations, and exploring ZFS storage pools.",
           "resources": [
             {
               "title": "Understanding and Using NFS in Linux",
@@ -622,13 +657,15 @@
               "url": "/data/docs/linux_system_admin/linux_advanced_storage_options.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 21
         },
         {
           "id": "linux_backup_recovery",
           "name": "Backup, Restore and Disaster Recovery Strategies",
           "tag": "advanced",
-          "description": "Develop robust backup strategies using tools like rsync, tar, dd, `restic`, `borgbackup`. Implement disaster recovery procedures, including bare-metal recovery, snapshots, and regular restore tests.",
+          "description": "Implement backup and recovery strategies: Snapshot-based backups, incremental rsync over SSH, archiving with tar/gzip, and disk cloning with `dd`.",
           "resources": [
             {
               "title": "Linux Backup and Recovery Essentials",
@@ -650,15 +687,19 @@
               "url": "/data/docs/linux_system_admin/linux_backup_recovery.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 19
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 15
     },
     {
       "id": "linux_security_hardening",
       "name": "Linux System Security and Hardening",
       "tag": "advanced",
-      "description": "Apply security best practices, harden Linux systems against various threats, manage complex access controls, understand encryption, and implement auditing for compliance in production environments.",
+      "description": "Harden enterprise Linux servers: Mandatory Access Control (SELinux/AppArmor), system auditing, kernel parameter tuning, and CVE vulnerability patching.",
       "resources": [
         {
           "title": "CIS Benchmarks for Linux",
@@ -686,7 +727,7 @@
           "id": "linux_system_hardening_practices",
           "name": "OS Hardening Best Practices",
           "tag": "advanced",
-          "description": "Implement security configurations for services, restrict unnecessary daemons, secure boot processes, apply kernel tuning (sysctl hardening), and manage system time with NTP/Chrony.",
+          "description": "Implement CIS Benchmark hardening: Disabling unused kernel modules, securing shared memory (`/dev/shm`), setting login banners, and configuring PAM modules (`/etc/pam.d/`).",
           "resources": [
             {
               "title": "Linux Server Hardening Guide",
@@ -708,13 +749,15 @@
               "url": "/data/docs/linux_system_admin/linux_system_hardening_practices.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 22
         },
         {
           "id": "linux_access_control_auth",
           "name": "Advanced Access Control and Authentication",
           "tag": "advanced",
-          "description": "Understand Pluggable Authentication Modules (PAM) configuration, integrate with centralized authentication systems (LDAP/AD via SSSD), and master Mandatory Access Control (SELinux/AppArmor) policies and troubleshooting.",
+          "description": "Master Mandatory Access Control (MAC): SELinux contexts, types, booleans, audit logs (`audit2allow`), and AppArmor profile configuration and enforcement.",
           "resources": [
             {
               "title": "SELinux documentation",
@@ -736,13 +779,15 @@
               "url": "/data/docs/linux_system_admin/linux_access_control_auth.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 20
         },
         {
           "id": "linux_encryption_secrets",
           "name": "Encryption and Secrets Management",
           "tag": "advanced",
-          "description": "Implement disk encryption (LUKS), understand file-level encryption, manage SSL/TLS certificates for services, and learn best practices for handling sensitive data and secrets.",
+          "description": "Encrypt storage and manage credentials: Full disk encryption with LUKS (`cryptsetup`), file-level encryption, GPG keyrings, and secure credentials management.",
           "resources": [
             {
               "title": "LUKS Disk Encryption Guide",
@@ -764,13 +809,15 @@
               "url": "/data/docs/linux_system_admin/linux_encryption_secrets.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 20
         },
         {
           "id": "linux_auditing_compliance",
           "name": "System Auditing and Compliance",
           "tag": "advanced",
-          "description": "Configure and analyze system audit logs (auditd), understand file integrity monitoring (AIDE, Tripwire), and implement basic compliance frameworks (e.g., CIS Benchmarks, NIST).",
+          "description": "Audit system security: Linux Audit Framework (`auditd`), writing `audit.rules` to monitor file integrity and privileged command execution, and OpenSCAP compliance scanning.",
           "resources": [
             {
               "title": "Linux Auditd Tutorial",
@@ -792,13 +839,15 @@
               "url": "/data/docs/linux_system_admin/linux_auditing_compliance.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 22
         },
         {
           "id": "linux_vulnerability_patching",
           "name": "Vulnerability Management and Patching",
           "tag": "advanced",
-          "description": "Implement systematic patching strategies, identify common vulnerabilities and exposures (CVEs), use vulnerability scanners, and secure against known exploits and zero-day threats.",
+          "description": "Manage CVE patching: Automated security updates with `unattended-upgrades` (Debian) or `dnf-automatic` (RHEL), kernel live patching, and vulnerability auditing.",
           "resources": [
             {
               "title": "Common Vulnerabilities and Exposures (CVE)",
@@ -820,15 +869,19 @@
               "url": "/data/docs/linux_system_admin/linux_vulnerability_patching.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 21
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 17
     },
     {
       "id": "linux_automation_config_mgmt",
       "name": "Automation and Configuration Management",
       "tag": "advanced",
-      "description": "Automate administrative tasks, manage server configurations idempotently, and deploy applications using advanced scripting and industry-standard configuration management tools.",
+      "description": "Automate system administration: Writing production Bash scripts, Python automation tools, and orchestrating server fleets with Ansible.",
       "resources": [
         {
           "title": "Ansible Documentation",
@@ -856,7 +909,7 @@
           "id": "linux_bash_scripting",
           "name": "Advanced Bash Scripting",
           "tag": "advanced",
-          "description": "Write robust shell scripts with functions, error handling, input validation, loops, conditionals, arrays, and advanced text processing tools (sed, awk, grep, regex).",
+          "description": "Write advanced Bash scripts: Error handling (`set -euo pipefail`), command-line argument parsing with `getopts`, functions, trap signal handling, and regex pattern matching.",
           "resources": [
             {
               "title": "Bash Guide for Beginners",
@@ -878,13 +931,15 @@
               "url": "/data/docs/linux_system_admin/linux_bash_scripting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 22
         },
         {
           "id": "linux_python_for_automation",
           "name": "Python Scripting for System Administration",
           "tag": "advanced",
-          "description": "Utilize Python for more complex automation tasks, interact with REST APIs, parse data (JSON/YAML), and develop custom tools using libraries like `subprocess`, `paramiko`, `requests`, `os`, `sys`.",
+          "description": "Automate administration with Python: Interacting with system calls via `subprocess` and `os`, parsing JSON/YAML configs, and using Paramiko for automated SSH tasks.",
           "resources": [
             {
               "title": "Automate the Boring Stuff with Python",
@@ -906,13 +961,15 @@
               "url": "/data/docs/linux_system_admin/linux_python_for_automation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 21
         },
         {
           "id": "linux_ansible_fundamentals",
           "name": "Ansible Fundamentals",
           "tag": "advanced",
-          "description": "Learn Ansible architecture, write declarative playbooks, manage inventory, use modules, variables, handlers, and conditionals for efficient server automation and orchestration.",
+          "description": "Manage configuration with Ansible: Writing declarative YAML playbooks, inventory management, core modules (`apt`, `yum`, `service`, `copy`, `template`), and idempotency.",
           "resources": [
             {
               "title": "Ansible - An Introduction (DigitalOcean)",
@@ -934,13 +991,15 @@
               "url": "/data/docs/linux_system_admin/linux_ansible_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 16
         },
         {
           "id": "linux_ansible_advanced",
           "name": "Advanced Ansible: Roles, Vault, Galaxy, & Tower",
           "tag": "advanced",
-          "description": "Organize playbooks using roles, manage sensitive data with Ansible Vault, leverage Ansible Galaxy for content, understand dynamic inventory, and get an overview of Ansible Tower/AWX.",
+          "description": "Scale Ansible deployments: Authoring reusable Ansible Roles, encrypting secrets with Ansible Vault, Ansible Galaxy community collections, and AWX / Ansible Automation Platform.",
           "resources": [
             {
               "title": "Ansible Best Practices - Roles",
@@ -962,15 +1021,19 @@
               "url": "/data/docs/linux_system_admin/linux_ansible_advanced.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 23
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 15
     },
     {
       "id": "linux_monitoring_troubleshooting",
       "name": "Monitoring and Troubleshooting",
       "tag": "advanced",
-      "description": "Implement comprehensive system monitoring, analyze performance metrics, and apply systematic methodologies to diagnose and resolve complex system issues in production.",
+      "description": "Monitor system health and diagnose production outages: CPU, memory, disk I/O, network bottlenecks, and performance profiling.",
       "resources": [
         {
           "title": "Prometheus Overview",
@@ -998,7 +1061,7 @@
           "id": "linux_performance_monitoring",
           "name": "System Performance Monitoring",
           "tag": "advanced",
-          "description": "Monitor CPU, memory, disk I/O, and network usage using command-line tools (top, htop, sar, iostat, vmstat, dstat) and analyze output for performance bottlenecks.",
+          "description": "Profile Linux performance: The USE method (Utilization, Saturation, Errors), analyzing metrics with `vmstat`, `iostat`, `mpstat`, `sar` (sysstat), and `dstat`.",
           "resources": [
             {
               "title": "Linux Performance Monitoring Tools",
@@ -1020,13 +1083,15 @@
               "url": "/data/docs/linux_system_admin/linux_performance_monitoring.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 20
         },
         {
           "id": "linux_advanced_debugging_tools",
           "name": "Advanced System Debugging Tools",
           "tag": "advanced",
-          "description": "Utilize powerful debugging tools like `strace` for tracing system calls, `lsof` for open files/sockets, and `tcpdump` for network packet analysis to pinpoint complex issues.",
+          "description": "Trace system execution: Tracing system calls with `strace`, library calls with `ltrace`, inspecting file locks with `lsof`, and analyzing kernel events with `perf` and eBPF.",
           "resources": [
             {
               "title": "Using Strace to Troubleshoot Linux Problems",
@@ -1048,13 +1113,15 @@
               "url": "/data/docs/linux_system_admin/linux_advanced_debugging_tools.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         },
         {
           "id": "linux_log_analysis",
           "name": "Advanced Log Analysis and Centralized Logging",
           "tag": "advanced",
-          "description": "Perform advanced log file analysis, identify patterns, correlate events across systems, and understand concepts of centralized logging solutions (e.g., ELK Stack, Grafana Loki, Splunk).",
+          "description": "Perform high-efficiency log analysis: Centralized log aggregation with Vector / Fluent Bit, querying logs in real time, and parsing log formats with custom regex.",
           "resources": [
             {
               "title": "Centralized Logging with ELK Stack",
@@ -1076,13 +1143,15 @@
               "url": "/data/docs/linux_system_admin/linux_log_analysis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 21
         },
         {
           "id": "linux_metrics_alerting_visualization",
           "name": "Metrics Collection, Alerting, and Visualization",
           "tag": "advanced",
-          "description": "Set up robust metrics collection with Prometheus, configure sophisticated alerts using Alertmanager, and create interactive dashboards using Grafana for comprehensive system health visualization.",
+          "description": "Deploy monitoring stacks on Linux: Prometheus Node Exporter, Telegraf agents, and visualizing system health in Grafana dashboards.",
           "resources": [
             {
               "title": "Grafana Documentation",
@@ -1104,13 +1173,15 @@
               "url": "/data/docs/linux_system_admin/linux_metrics_alerting_visualization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 17
         },
         {
           "id": "linux_troubleshooting_methodologies",
           "name": "Advanced Troubleshooting Methodologies",
           "tag": "advanced",
-          "description": "Apply structured troubleshooting approaches (e.g., OSI model, runbook-driven, divide and conquer, 5 Whys) to diagnose and resolve complex system and network problems efficiently.",
+          "description": "Master systematic troubleshooting: Isolating hardware vs kernel vs application layer faults, analyzing kernel panics in `/var/crash`, and resolving hung processes.",
           "resources": [
             {
               "title": "Troubleshooting methodology",
@@ -1132,15 +1203,19 @@
               "url": "/data/docs/linux_system_admin/linux_troubleshooting_methodologies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 21
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 15
     },
     {
       "id": "linux_incident_ops",
       "name": "Incident Response and Operations",
       "tag": "advanced",
-      "description": "Develop skills to effectively respond to system incidents, conduct root cause analysis, and create repeatable operational runbooks for efficient production environment management.",
+      "description": "Operate production environments: Incident response runbooks, root cause analysis, business continuity, and post-incident documentation.",
       "resources": [
         {
           "title": "Google SRE Incident Response",
@@ -1168,7 +1243,7 @@
           "id": "linux_incident_response_process",
           "name": "Incident Response Process and Communication",
           "tag": "advanced",
-          "description": "Understand the phases of incident response (preparation, identification, containment, eradication, recovery, post-mortem), define roles, and master effective communication strategies during incidents.",
+          "description": "Coordinate Linux incident response: Establishing triage communication, preserving volatile evidence, containing compromised hosts, and restoring clean states.",
           "resources": [
             {
               "title": "NIST Computer Security Incident Handling Guide",
@@ -1190,13 +1265,15 @@
               "url": "/data/docs/linux_system_admin/linux_incident_response_process.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 20
         },
         {
           "id": "linux_runbook_development",
           "name": "Runbook and Playbook Development",
           "tag": "advanced",
-          "description": "Create detailed, actionable runbooks and playbooks for common operational procedures and incident resolutions, ensuring consistency, efficiency, and knowledge transfer.",
+          "description": "Author operational runbooks: Clear step-by-step incident playbooks for disk full recovery, OOM killer investigation, service crash loops, and certificate renewal.",
           "resources": [
             {
               "title": "What is a Runbook?",
@@ -1218,13 +1295,15 @@
               "url": "/data/docs/linux_system_admin/linux_runbook_development.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 16
         },
         {
           "id": "linux_root_cause_analysis",
           "name": "Root Cause Analysis (RCA) Techniques",
           "tag": "advanced",
-          "description": "Learn techniques for performing effective Root Cause Analysis (e.g., 5 Whys, Fishbone Diagram) to identify underlying issues, prevent recurrence of incidents, and improve system reliability.",
+          "description": "Conduct Root Cause Analysis (RCA): Five Whys methodology, fishbone diagrams, timeline reconstruction, and documenting blameless post-mortem reports.",
           "resources": [
             {
               "title": "Root Cause Analysis Explained",
@@ -1246,13 +1325,15 @@
               "url": "/data/docs/linux_system_admin/linux_root_cause_analysis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 19
         },
         {
           "id": "linux_disaster_recovery",
           "name": "Disaster Recovery Planning and Business Continuity",
           "tag": "advanced",
-          "description": "Develop comprehensive strategies and plans for disaster recovery, ensuring business continuity, minimal downtime (RTO/RPO), and resilience in critical situations.",
+          "description": "Plan disaster recovery: Recovery Time Objective (RTO) and Recovery Point Objective (RPO) planning, off-site backup validation, and bare-metal restore drills.",
           "resources": [
             {
               "title": "Disaster Recovery Planning Guide",
@@ -1274,15 +1355,19 @@
               "url": "/data/docs/linux_system_admin/linux_disaster_recovery.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 20
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 15
     },
     {
       "id": "linux_cloud_virtualization",
       "name": "Linux in Virtualized and Cloud Environments",
       "tag": "advanced",
-      "description": "Explore the role of Linux in virtualization platforms and cloud computing, including fundamental containerization concepts and managing Linux instances in modern infrastructure.",
+      "description": "Operate Linux in cloud and virtualized environments: Hypervisors, public cloud virtual machines, and Docker containerization.",
       "resources": [
         {
           "title": "How to Use the ip Command in Linux: A Beginner’s Guide (Learn Linux TV)",
@@ -1305,7 +1390,7 @@
           "id": "linux_virtualization_basics",
           "name": "Virtualization Concepts and Hypervisors",
           "tag": "advanced",
-          "description": "Understand hypervisors (Type 1 and Type 2), virtual machines, and basic operation of virtualization technologies like KVM, libvirt, VirtualBox, or VMware, including virtual networking and storage.",
+          "description": "Manage Linux virtualization: KVM (Kernel-based Virtual Machine), QEMU, libvirt CLI (`virsh`), and understanding paravirtualization vs full hardware virtualization.",
           "resources": [
             {
               "title": "Introduction to Virtualization",
@@ -1327,13 +1412,15 @@
               "url": "/data/docs/linux_system_admin/linux_virtualization_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 21
         },
         {
           "id": "linux_cloud_instances",
           "name": "Linux in Public Cloud Environments",
           "tag": "advanced",
-          "description": "Manage Linux instances on major cloud platforms (AWS EC2, Azure VMs, Google Compute Engine), focusing on deployment, scaling, cloud-specific networking, instance metadata, and security groups.",
+          "description": "Administer Linux in AWS/GCP/Azure: Cloud-init automated instance bootstrapping, attached block storage (EBS/Persistent Disk), and instance metadata service (IMDSv2).",
           "resources": [
             {
               "title": "AWS EC2 Documentation",
@@ -1355,13 +1442,15 @@
               "url": "/data/docs/linux_system_admin/linux_cloud_instances.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 21
         },
         {
           "id": "linux_container_fundamentals",
           "name": "Containerization Fundamentals with Docker",
           "tag": "advanced",
-          "description": "Introduce Docker basics: container images, running containers, Dockerfiles for image creation, container networking, volumes, and managing containers with the Docker CLI.",
+          "description": "Master Linux container foundations: Linux kernel namespaces (PID, NET, MNT, IPC, UTS), cgroups (control groups v1/v2), overlay filesystems, and Docker container lifecycles.",
           "resources": [
             {
               "title": "Docker Documentation - Getting Started",
@@ -1383,13 +1472,15 @@
               "url": "/data/docs/linux_system_admin/linux_container_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 22
         },
         {
           "id": "linux_docker_compose_orchestration",
           "name": "Docker Compose and Basic Orchestration",
           "tag": "advanced",
-          "description": "Learn to define and run multi-container Docker applications using Docker Compose. Understand concepts of container orchestration and get an overview of Kubernetes (k8s) as the industry standard.",
+          "description": "Orchestrate multi-container services: Writing `docker-compose.yml` declarations, configuring bridge networks, volume mounts, and service dependency health checks.",
           "resources": [
             {
               "title": "Docker Compose Overview",
@@ -1411,15 +1502,19 @@
               "url": "/data/docs/linux_system_admin/linux_docker_compose_orchestration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 21
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 15
     },
     {
       "id": "linux_capstone_project",
       "name": "Capstone Project: Production Server Build & Operations",
       "tag": "advanced",
-      "description": "Apply all learned skills to provision, secure, automate, monitor, and troubleshoot a production-ready Linux server environment with comprehensive documentation, simulating real-world scenarios.",
+      "description": "Build an enterprise Linux production server capstone: Hardened Linux deployment, automated Ansible provisioning, LVM storage, Nginx reverse proxy, and monitoring.",
       "resources": [
         {
           "title": "Linux Security Hardening (HackerSploit)",
@@ -1442,7 +1537,7 @@
           "id": "linux_prod_server_deployment",
           "name": "Production-Ready Web Server Deployment",
           "tag": "advanced",
-          "description": "Deploy a secure web server (e.g., Nginx/Apache) with TLS, implement SSH hardening, configure firewalls, set up robust logging, automated backups, comprehensive monitoring (Prometheus/Grafana), and create a detailed operational runbook.",
+          "description": "Deploy a production-hardened web stack: Nginx web server with TLS/SSL encryption, PHP-FPM / Python backend, automated log rotation, and UFW/firewalld filtering.",
           "resources": [
             {
               "title": "Deploying Nginx with TLS",
@@ -1464,13 +1559,15 @@
               "url": "/data/docs/linux_system_admin/linux_prod_server_deployment.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 45
         },
         {
           "id": "linux_broken_server_recovery_lab",
           "name": "Practice Lab: Broken Server Recovery & Incident Simulation",
           "tag": "advanced",
-          "description": "Diagnose and recover a Linux service from various simulated failures (disk, permission, network, configuration, process, security misconfiguration) and document the resolution process as part of an incident report.",
+          "description": "Practice Lab: Broken server recovery: Booting into single-user / rescue target, repairing corrupted filesystem with `fsck`, fixing broken `/etc/fstab`, and recovering root passwords.",
           "resources": [
             {
               "title": "Linux System Administration (Edureka)",
@@ -1487,13 +1584,15 @@
               "url": "/data/docs/linux_system_admin/linux_broken_server_recovery_lab.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 23
         },
         {
           "id": "linux_ci_cd_basics",
           "name": "Introduction to CI/CD for Infrastructure",
           "tag": "advanced",
-          "description": "Understand the basics of Continuous Integration/Continuous Deployment (CI/CD) pipelines, how they apply to infrastructure-as-code (IaC), and tools like Jenkins or GitLab CI for automated deployments.",
+          "description": "Integrate Linux infrastructure with CI/CD: Automated linting of shell scripts (ShellCheck), automated testing of Ansible playbooks with Molecule, and GitOps deployments.",
           "resources": [
             {
               "title": "What is CI/CD?",
@@ -1515,9 +1614,14 @@
               "url": "/data/docs/linux_system_admin/linux_ci_cd_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 27
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 40
     }
-  ]
+  ],
+  "total_exp": 1000
 }

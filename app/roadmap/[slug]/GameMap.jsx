@@ -38,6 +38,8 @@ function normalizeTopicNode(topic) {
   return {
     ...topic,
     tag: topic.tag || 'essential',
+    difficulty: topic.difficulty || (topic.tag === 'advanced' ? 'advanced' : 'beginner'),
+    exp: typeof topic.exp === 'number' ? topic.exp : (topic.tag === 'advanced' ? 300 : 100),
     resources: Array.isArray(topic.resources) ? topic.resources : [],
     children: Array.isArray(topic.children) ? topic.children.map(normalizeTopicNode) : [],
   };
@@ -51,6 +53,8 @@ function normalizeProjectNode(project, roadmapId, stage, index) {
     name: `Project: ${project.title}`,
     icon: '🏆',
     tag: 'advanced',
+    difficulty: project.difficulty || 'advanced',
+    exp: typeof project.exp === 'number' ? project.exp : 400,
     description: project.description || 'Build a portfolio-ready project for this stage.',
     resources: project.url ? [{ title: project.title, url: project.url, type: 'article' }] : [],
     children: [],
@@ -214,6 +218,14 @@ export default function GameMap({ roadmap, slug, initialTab }) {
   const total = allNodes.length;
   const doneCount = allNodes.filter(n => progress.includes(n.id)).length;
   const pct = total === 0 ? 0 : Math.round((doneCount / total) * 100);
+  const totalXp = useMemo(() => {
+    return typeof roadmap?.total_exp === 'number'
+      ? roadmap.total_exp
+      : allNodes.reduce((sum, n) => sum + (n.exp || 100), 0);
+  }, [roadmap?.total_exp, allNodes]);
+  const earnedXp = useMemo(() => {
+    return allNodes.filter(n => progress.includes(n.id)).reduce((sum, n) => sum + (n.exp || 100), 0);
+  }, [allNodes, progress]);
 
   const toggle = async (id) => {
     if (authLoading) {
@@ -370,6 +382,7 @@ export default function GameMap({ roadmap, slug, initialTab }) {
                   </h3>
                   {node.tag === 'advanced' && <span className="sk-pill adv">⚡ ADV</span>}
                   {node.tag === 'essential' && <span className="sk-pill ess">CORE</span>}
+                  <span className="sk-pill exp">+{node.exp || 100} XP</span>
                 </div>
                 <p>{node.description}</p>
               </div>
@@ -398,7 +411,7 @@ export default function GameMap({ roadmap, slug, initialTab }) {
                   disabled={!isUnlocked || authLoading}
                   onClick={(e) => { e.stopPropagation(); if (isUnlocked) toggle(node.id); }}
                 >
-                  {isUnlocked ? (isDone ? '✅ Completed — Undo?' : '🎯 Mark Complete (+100 XP)') : 'Complete prerequisite first'}
+                  {isUnlocked ? (isDone ? '✅ Completed — Undo?' : `🎯 Mark Complete (+${node.exp || 100} XP)`) : 'Complete prerequisite first'}
                 </button>
                 {node.resources?.filter(r => isSafeUrl(r.url)).length > 0 && (
                   <div className="sk-res-section">
@@ -424,7 +437,9 @@ export default function GameMap({ roadmap, slug, initialTab }) {
                               resources: node.resources,
                               isUnlocked: isUnlocked,
                               isDone: isDone,
-                              nodeId: node.id
+                              nodeId: node.id,
+                              exp: node.exp || 100,
+                              difficulty: node.difficulty || 'intermediate',
                             });
                           }
                         }}
@@ -518,7 +533,7 @@ export default function GameMap({ roadmap, slug, initialTab }) {
               <div className="sk-sep"></div>
               <div className="sk-stat"><span className="sk-stat-v">{doneCount}</span><span className="sk-stat-l">Done</span></div>
               <div className="sk-sep"></div>
-              <div className="sk-stat"><span className="sk-stat-v sk-green">{doneCount * 100}</span><span className="sk-stat-l">XP</span></div>
+              <div className="sk-stat"><span className="sk-stat-v sk-green">{earnedXp}</span><span className="sk-stat-l">/ {totalXp} XP</span></div>
             </div>
             {progressNotice && <p className="sk-sync-note">{progressNotice}</p>}
             <div className="sk-cert-btn-container">
@@ -1047,7 +1062,7 @@ function StudyGuideDrawer({ node, user, onClose, onToggleComplete, authLoading, 
           <div className="sk-reader-status" role="status"><ReaderIcon name={node.isDone ? 'check' : !node.isUnlocked ? 'lock' : 'book'} size={18} /><span>{progressNotice || (node.isDone ? 'Topic completed' : !node.isUnlocked ? 'Complete the prerequisite to unlock progress' : status === 'ready' ? `About ${guide.minutes} min read` : 'Learn at your own pace')}</span></div>
           <div className="sk-reader-footer-buttons">
             <Link href={askBunBot(node.topicName, node.roadmapTitle)} className="sk-btn-ai"><ReaderIcon name="chat" size={18} /> Ask BunBot</Link>
-            <button type="button" className={`sk-btn-mark ${node.isDone ? 'done' : ''}`} disabled={!node.isUnlocked || authLoading || saving} onClick={async () => { setSaving(true); try { await onToggleComplete(); } finally { setSaving(false); } }}><ReaderIcon name={node.isDone ? 'refresh' : 'check'} size={18} />{saving ? 'Saving...' : node.isDone ? 'Undo completion' : !user ? 'Log in to save progress' : 'Mark complete'}</button>
+            <button type="button" className={`sk-btn-mark ${node.isDone ? 'done' : ''}`} disabled={!node.isUnlocked || authLoading || saving} onClick={async () => { setSaving(true); try { await onToggleComplete(); } finally { setSaving(false); } }}><ReaderIcon name={node.isDone ? 'refresh' : 'check'} size={18} />{saving ? 'Saving...' : node.isDone ? 'Undo completion' : !user ? 'Log in to save progress' : node.exp ? `Mark complete (+${node.exp} XP)` : 'Mark complete'}</button>
           </div>
         </footer>
       </div>

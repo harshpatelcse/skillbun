@@ -47,32 +47,34 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Automated Progressive Delivery & Rollback Controller",
+        "title": "Automated Multi-Environment Progressive Delivery Controller with Argo Rollouts",
         "tech_stack": [
-          "GitHub Actions",
-          "Flagger",
           "Kubernetes",
+          "Argo Rollouts",
           "Prometheus",
-          "Slack Webhooks"
+          "Helm",
+          "GitHub Actions"
         ],
-        "description": "Build an automated release train that releases versions to 5% of users, monitors error rates, and automatically rolls back if errors increase."
+        "description": "Architect an enterprise progressive delivery pipeline executing automated canary releases, verifying latency/error metrics, and triggering automatic rollbacks on anomalies."
       },
       {
-        "title": "Automated Multi-Environment Release Pipeline with Semantic Versioning",
+        "title": "Hermetic Monorepo Build & Dependency Caching Engine with Bazel",
         "tech_stack": [
+          "Bazel",
+          "Docker",
+          "Remote Build Execution (RBE)",
           "GitHub Actions",
-          "Docker Buildx",
-          "Cosign",
           "Semantic Release"
         ],
-        "description": "Construct an end-to-end release automation pipeline that generates changelogs, signs container images with Cosign, and publishes release manifests."
+        "description": "Design a hermetic, reproducible build system for a multi-language polyglot monorepo, achieving 90% build cache hit rates and automated semantic versioning."
       }
     ],
     "interview_focus": [
-      "Canary vs Blue-Green vs Dark Launching",
-      "Semantic Versioning in Microservices vs Monoliths",
-      "SLSA Framework for Software Supply Chain Integrity",
-      "Mitigating Database Migration Rollback Complications"
+      "Hermetic & Reproducible Builds (Bazel/Buck concepts, Content-Addressable Storage)",
+      "Branching Strategies (Trunk-Based Development vs GitFlow) & Release Branch Management",
+      "Semantic Versioning (SemVer 2.0.0) & Automated Changelog / Release Generation",
+      "Progressive Delivery Patterns (Canary Deployments, Blue/Green, Feature Flags)",
+      "Binary Artifact Management (OCI Registries, Maven, NPM, CycloneDX SBOM Generation)"
     ],
     "certifications": [
       "Linux Foundation Certified DevOps Engineer",
@@ -85,7 +87,7 @@
       "id": "release_engineer_foundations",
       "name": "Foundations of Release Engineering & SDLC",
       "tag": "essential",
-      "description": "Establish a robust understanding of the Release Engineer role, its critical place within the Software Development Life Cycle, and fundamental concepts that govern reliable software delivery.",
+      "description": "Master foundational release engineering principles: Software delivery lifecycles, artifact immutability, hermetic builds, and zero-downtime release automation.",
       "resources": [
         {
           "title": "Introduction to Release Engineering",
@@ -113,7 +115,7 @@
           "id": "release_engineer_role_context",
           "name": "Role & Responsibilities of a Release Engineer",
           "tag": "essential",
-          "description": "Explore the core functions, key stakeholders, and strategic importance of a Release Engineer. Understand responsibilities like pipeline ownership, environment management, release coordination, and toolchain selection.",
+          "description": "Define the Release Engineer role: Driving predictable release velocity, maintaining production auditability, reducing deployment failure rates, and bridging Dev and Ops.",
           "resources": [
             {
               "title": "The Release Engineer Role Explained",
@@ -135,13 +137,15 @@
               "url": "/data/docs/release_engineer/release_engineer_role_context.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "release_engineer_sdlc_intro",
           "name": "Software Development Life Cycle & Release Process",
           "tag": "essential",
-          "description": "Understand the various phases of the SDLC (planning, analysis, design, implementation, testing, deployment, maintenance) and how release engineering practices integrate and optimize each stage, particularly within Agile and DevOps models.",
+          "description": "Navigate the software release lifecycle: Code freeze policies, release branches, release candidate (RC) validation, sign-off gates, and post-release verification.",
           "resources": [
             {
               "title": "Understanding the SDLC: A Complete Guide",
@@ -163,13 +167,15 @@
               "url": "/data/docs/release_engineer/release_engineer_sdlc_intro.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         },
         {
           "id": "release_engineer_version_control",
           "name": "Version Control Systems & Branching Strategies",
           "tag": "essential",
-          "description": "Master modern VCS like Git, including advanced branching models such as GitFlow, GitHub Flow, and Trunk-Based Development. Understand pull requests, code review, tagging, and release branching strategies.",
+          "description": "Master enterprise version control workflows: Trunk-based development, GitHub Flow, Git branching strategies, release tagging, and merge queue automation.",
           "resources": [
             {
               "title": "Official Git Documentation",
@@ -201,13 +207,15 @@
               "url": "/data/docs/release_engineer/release_engineer_version_control.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "release_engineer_ci_cd_intro",
           "name": "Introduction to Continuous Integration & Delivery",
           "tag": "essential",
-          "description": "Grasp the core principles, benefits (faster feedback, higher quality), and components of CI (automated build, test, integration) and CD (automated deployment, delivery). Understand its role as the backbone of modern release engineering.",
+          "description": "Establish CI/CD delivery pipelines: Automated build triggers, pipeline orchestration, artifact promotion stages, and continuous feedback loops.",
           "resources": [
             {
               "title": "What is CI/CD?",
@@ -229,13 +237,15 @@
               "url": "/data/docs/release_engineer/release_engineer_ci_cd_intro.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 31
         },
         {
           "id": "release_engineer_semver_immutability",
           "name": "Semantic Versioning, Immutability, & Idempotency",
           "tag": "essential",
-          "description": "Deep dive into essential release principles: Semantic Versioning (SemVer) for consistent versioning, immutability for reliable artifacts (e.g., container images, build binaries), and idempotency for repeatable and safe operations.",
+          "description": "Enforce Semantic Versioning (SemVer 2.0.0): Major, minor, and patch increment rules; enforcing build artifact immutability; and deterministic build reproducibility.",
           "resources": [
             {
               "title": "Semantic Versioning",
@@ -262,15 +272,19 @@
               "url": "/data/docs/release_engineer/release_engineer_semver_immutability.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 24
     },
     {
       "id": "release_engineer_core_implementation",
       "name": "Core Skills: Build, Artifacts & CI/CD Pipelines",
       "tag": "essential",
-      "description": "Develop the practical skills needed to design, implement, and manage automated build processes, robust artifact handling, and reliable CI/CD pipelines.",
+      "description": "Master build systems, artifact storage, container management, and continuous delivery pipeline engineering.",
       "resources": [
         {
           "title": "The Ultimate Guide to CI/CD",
@@ -298,7 +312,7 @@
           "id": "release_engineer_build_systems",
           "name": "Build System Fundamentals & Dependency Management",
           "tag": "essential",
-          "description": "Learn to configure and optimize common build tools (e.g., Maven, Gradle, npm, Bazel, Make, CMake) for different language ecosystems. Master dependency resolution, caching, and build performance optimization.",
+          "description": "Master modern build systems: Bazel, Maven, Gradle, Make, and npm/pnpm; managing dependency resolution, parallel compilation, and remote build caching.",
           "resources": [
             {
               "title": "Apache Maven Official Documentation",
@@ -325,13 +339,15 @@
               "url": "/data/docs/release_engineer/release_engineer_build_systems.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 19
         },
         {
           "id": "release_engineer_artifact_management",
           "name": "Artifact Repositories & Binary Management",
           "tag": "essential",
-          "description": "Master the use of artifact management systems (e.g., JFrog Artifactory, Sonatype Nexus, GitHub Packages) for storing, promoting, versioning, and securing release binaries, packages, and dependencies across various stages.",
+          "description": "Manage enterprise binary artifact repositories: JFrog Artifactory, Sonatype Nexus, AWS CodeArtifact; package versioning, immutability, and retention policies.",
           "resources": [
             {
               "title": "JFrog Artifactory Documentation",
@@ -358,13 +374,15 @@
               "url": "/data/docs/release_engineer/release_engineer_artifact_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "release_engineer_containerization",
           "name": "Containerization & Image Management",
           "tag": "essential",
-          "description": "Understand Docker for containerizing applications. Learn Dockerfile best practices, image layers, multi-stage builds, container registries (Docker Hub, AWS ECR, GCR, Azure Container Registry), and image security scanning.",
+          "description": "Standardize container release management: Multi-stage Docker builds, image tagging conventions (commit SHA + semver), digest pinning, and container registry replication.",
           "resources": [
             {
               "title": "Docker Documentation",
@@ -391,13 +409,15 @@
               "url": "/data/docs/release_engineer/release_engineer_containerization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "release_engineer_pipeline_design",
           "name": "CI/CD Pipeline Design & Scripting",
           "tag": "essential",
-          "description": "Learn to design and script automated CI/CD pipelines using various platforms (Jenkins, GitLab CI, GitHub Actions, Azure DevOps, CircleCI) with Pipeline-as-Code principles (YAML/Groovy). Focus on stages, parallelization, conditional steps, and integrations.",
+          "description": "Design enterprise CI/CD pipelines in GitHub Actions, GitLab CI, and Jenkins: Declarative syntax, matrix builds, reusable workflow templates, and pipeline caching.",
           "resources": [
             {
               "title": "GitHub Actions Documentation",
@@ -429,13 +449,15 @@
               "url": "/data/docs/release_engineer/release_engineer_pipeline_design.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 36
         },
         {
           "id": "release_engineer_testing_quality",
           "name": "Automated Testing & Quality Gates",
           "tag": "essential",
-          "description": "Integrate automated unit, integration, end-to-end, performance, and security tests into CI/CD pipelines. Establish robust quality gates, code coverage thresholds, and reporting mechanisms to ensure release readiness.",
+          "description": "Integrate automated quality gates: Unit, integration, smoke, performance, and regression testing suites blocking promotion on failure.",
           "resources": [
             {
               "title": "Google SRE Release Engineering",
@@ -462,13 +484,15 @@
               "url": "/data/docs/release_engineer/release_engineer_testing_quality.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "release_engineer_secrets_management",
           "name": "Secrets Management in CI/CD",
           "tag": "essential",
-          "description": "Implement secure practices for handling credentials, API keys, certificates, and other sensitive information within automated pipelines. Utilize tools like HashiCorp Vault, cloud secret managers (AWS Secrets Manager, Azure Key Vault), and Kubernetes Secrets.",
+          "description": "Secure secrets in release pipelines: Integrating HashiCorp Vault, AWS Secrets Manager, GitHub encrypted secrets, and dynamic short-lived credentials.",
           "resources": [
             {
               "title": "HashiCorp Vault Documentation",
@@ -500,15 +524,19 @@
               "url": "/data/docs/release_engineer/release_engineer_secrets_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 26
     },
     {
       "id": "release_engineer_advanced_deployment_ops",
       "name": "Advanced Deployment, Release Management & Operations",
       "tag": "advanced",
-      "description": "Acquire expertise in advanced deployment strategies, comprehensive release management, operational best practices, and post-release incident handling for robust production environments.",
+      "description": "Execute advanced progressive delivery strategies: Canary deployments, automated rollbacks, release trains, and disaster recovery.",
       "resources": [
         {
           "title": "The Phoenix Project: A Novel About IT, DevOps, and Helping Your Business Win",
@@ -536,7 +564,7 @@
           "id": "release_engineer_deployment_strategies",
           "name": "Deployment Strategies: Blue/Green, Canary, Rolling",
           "tag": "advanced",
-          "description": "Implement and manage advanced deployment patterns like Blue/Green deployments, Canary releases, and Rolling updates to minimize downtime, reduce risk, enable controlled rollouts, and facilitate rapid rollback.",
+          "description": "Execute progressive deployment patterns: Blue/Green environments, Canary rollouts with automated traffic shifting (Argo Rollouts/Flagger), and rolling updates.",
           "resources": [
             {
               "title": "Blue/Green Deployment Explained",
@@ -568,13 +596,15 @@
               "url": "/data/docs/release_engineer/release_engineer_deployment_strategies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         },
         {
           "id": "release_engineer_feature_flags",
           "name": "Feature Flags & Progressive Delivery",
           "tag": "advanced",
-          "description": "Utilize feature flags (feature toggles) for decoupling deployment from release. Enable A/B testing, gradual rollouts, dark launches, and kill-switches. Understand flag management platforms and best practices.",
+          "description": "Decouple deployment from release: Feature flag management with LaunchDarkly or Unleash; targeted user rollouts, percentage rollouts, and instant kill switches.",
           "resources": [
             {
               "title": "Feature Toggles (aka Feature Flags)",
@@ -596,13 +626,15 @@
               "url": "/data/docs/release_engineer/release_engineer_feature_flags.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         },
         {
           "id": "release_engineer_release_planning",
           "name": "Release Planning, Cadence & Change Management",
           "tag": "advanced",
-          "description": "Develop robust release plans, define release cadences, manage approval workflows, stakeholder communication, and implement effective change management processes (ITIL, DevOps principles). Master release readiness checklists and cut-off dates.",
+          "description": "Coordinate release planning and change management: Release calendars, Change Advisory Board (CAB) reviews, release notes generation, and compliance audit trails.",
           "resources": [
             {
               "title": "ITIL Change Management Process Explained",
@@ -629,13 +661,15 @@
               "url": "/data/docs/release_engineer/release_engineer_release_planning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         },
         {
           "id": "release_engineer_rollback_dr",
           "name": "Rollback Procedures & Disaster Recovery",
           "tag": "advanced",
-          "description": "Design and implement rapid, automated rollback mechanisms for failed releases, including application, database, and infrastructure state. Develop comprehensive disaster recovery (DR) plans to mitigate the impact of catastrophic failures.",
+          "description": "Automate instant rollback procedures: Health check thresholds, automated canary rollbacks, database migration rollbacks, and disaster recovery playbooks.",
           "resources": [
             {
               "title": "Google SRE Release Engineering",
@@ -662,13 +696,15 @@
               "url": "/data/docs/release_engineer/release_engineer_rollback_dr.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         },
         {
           "id": "release_engineer_observability",
           "name": "Monitoring, Logging & Release Health",
           "tag": "advanced",
-          "description": "Set up comprehensive monitoring (Prometheus, Grafana, Datadog), structured logging (ELK stack, Splunk), and distributed tracing (Jaeger, OpenTelemetry). Establish alerts and dashboards to observe release health, identify issues, and gather performance metrics.",
+          "description": "Monitor release health in real time: Tracking deployment frequency, change failure rate, p99 latency regressions, and error rate spikes in Datadog/Prometheus.",
           "resources": [
             {
               "title": "The Three Pillars of Observability",
@@ -695,13 +731,15 @@
               "url": "/data/docs/release_engineer/release_engineer_observability.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 48
         },
         {
           "id": "release_engineer_incident_response",
           "name": "Incident Management & Post-Mortems for Releases",
           "tag": "advanced",
-          "description": "Learn to effectively respond to release-related incidents, develop detailed incident runbooks, conduct thorough root cause analysis (RCA), and implement blameless post-mortem processes for continuous learning and preventive measures.",
+          "description": "Drive release incident response: Managing deployment-related outages, blameless post-mortems, identifying pipeline gaps, and implementing preventative guardrails.",
           "resources": [
             {
               "title": "Site Reliability Engineering (SRE) Incident Management",
@@ -728,13 +766,15 @@
               "url": "/data/docs/release_engineer/release_engineer_incident_response.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         },
         {
           "id": "release_engineer_security_compliance",
           "name": "Security & Compliance in Release Pipelines",
           "tag": "advanced",
-          "description": "Integrate DevSecOps practices: Static Application Security Testing (SAST), Dynamic Application Security Testing (DAST), Software Bill of Materials (SBOM) generation, dependency scanning, secret scanning, and ensuring compliance (e.g., SOC2, GDPR, HIPAA) within the entire release process.",
+          "description": "Enforce supply chain security: Software Bill of Materials (SBOM) generation (SPDX/CycloneDX), image vulnerability scanning (Trivy), and cryptographic signing with Sigstore/Cosign.",
           "resources": [
             {
               "title": "Introduction to DevSecOps",
@@ -761,15 +801,19 @@
               "url": "/data/docs/release_engineer/release_engineer_security_compliance.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 43
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 29
     },
     {
       "id": "release_engineer_enterprise_career",
       "name": "Enterprise Practices & Career Advancement",
       "tag": "advanced",
-      "description": "Master enterprise-scale release strategies, lead initiatives, and build a compelling portfolio to advance your career as a Release Engineer, focusing on broader impact and leadership.",
+      "description": "Scale enterprise release practices: Multi-team release trains, infrastructure as code, stakeholder communication, and career development.",
       "resources": [
         {
           "title": "Accelerate: The Science of Lean Software and DevOps",
@@ -797,7 +841,7 @@
           "id": "release_engineer_iac_orchestration",
           "name": "Infrastructure as Code (IaC) & Orchestration",
           "tag": "advanced",
-          "description": "Leverage Infrastructure as Code (IaC) tools like Terraform (cloud provisioning), Ansible/Chef/Puppet (configuration management) for environment provisioning and orchestrators like Kubernetes (container orchestration) with Helm charts for managing complex deployments.",
+          "description": "Provision deployment environments via IaC: Terraform, Helm charts, and Kubernetes manifests for ephemeral on-demand preview environments.",
           "resources": [
             {
               "title": "Terraform Getting Started Guide",
@@ -829,13 +873,15 @@
               "url": "/data/docs/release_engineer/release_engineer_iac_orchestration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "release_engineer_release_trains",
           "name": "Release Trains & Multi-Team Coordination",
           "tag": "advanced",
-          "description": "Coordinate large-scale releases across multiple teams and services, implementing strategies like release trains, synchronized releases, and managing dependencies in complex monorepo or polyrepo environments.",
+          "description": "Orchestrate multi-team release trains: Fixed-cadence scheduled releases across dozens of microservices, managing inter-service dependency locks and train conductors.",
           "resources": [
             {
               "title": "Scaled Agile Framework (SAFe) - Release Train",
@@ -862,13 +908,15 @@
               "url": "/data/docs/release_engineer/release_engineer_release_trains.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         },
         {
           "id": "release_engineer_stakeholder_comm",
           "name": "Stakeholder Communication & Collaboration",
           "tag": "advanced",
-          "description": "Develop strong communication and negotiation skills to align with product, development, QA, and operations teams. Master managing expectations, resolving conflicts, and fostering a collaborative culture around release processes.",
+          "description": "Facilitate cross-functional communication: Automated release notifications in Slack/Teams, publishing user-facing changelogs, and aligning product managers and engineers.",
           "resources": [
             {
               "title": "Effective Communication for Technical Leaders",
@@ -895,13 +943,15 @@
               "url": "/data/docs/release_engineer/release_engineer_stakeholder_comm.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "release_engineer_career_positioning",
           "name": "Career Positioning & Interview Preparation",
           "tag": "advanced",
-          "description": "Understand how to articulate your skills, prepare for technical (system design, troubleshooting) and behavioral interviews, build a compelling resume, and position yourself for growth and leadership roles in the Release Engineering domain.",
+          "description": "Advance as a Release Engineer: Preparing for senior infrastructure roles, mastering DORA metric tracking, and targeting certifications (CWA, CKA).",
           "resources": [
             {
               "title": "Guide to Release Engineer Interviews",
@@ -923,13 +973,15 @@
               "url": "/data/docs/release_engineer/release_engineer_career_positioning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         },
         {
           "id": "release_engineer_portfolio_capstone",
           "name": "Capstone Project: End-to-End Release Pipeline",
           "tag": "advanced",
-          "description": "Design and implement a full-fledged, production-ready release pipeline for a complex, multi-service application. Demonstrate mastery of CI/CD, advanced deployment strategies, monitoring, security, and infrastructure as code, culminating in a robust portfolio piece.",
+          "description": "Build an enterprise release pipeline capstone: Multi-stage pipeline featuring Bazel build caching, Artifactory promotion, Argo Rollouts canary deployment, Cosign signing, and automated rollback.",
           "resources": [
             {
               "title": "Google SRE Release Engineering",
@@ -956,13 +1008,15 @@
               "url": "/data/docs/release_engineer/release_engineer_portfolio_capstone.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 103
         },
         {
           "id": "release_engineer_case_study_writing",
           "name": "Case Study & Documentation",
           "tag": "advanced",
-          "description": "Learn to document release processes comprehensively, write clear, concise, and actionable release notes for various audiences, and create compelling case studies of your projects and improvements for your professional portfolio.",
+          "description": "Author release engineering case studies: Documenting how build time was reduced by 70%, how change failure rate dropped below 1%, and zero-downtime database migration patterns.",
           "resources": [
             {
               "title": "GitHub Actions Documentation",
@@ -994,9 +1048,14 @@
               "url": "/data/docs/release_engineer/release_engineer_case_study_writing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 53
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 29
     }
-  ]
+  ],
+  "total_exp": 1000
 }

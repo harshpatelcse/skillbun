@@ -48,26 +48,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Zero-Downtime GitOps Deployment Pipeline",
-        "tech_stack": [
-          "Kubernetes",
-          "ArgoCD",
-          "GitHub Actions",
-          "Terraform",
-          "Prometheus"
-        ],
-        "description": "Build an automated GitOps release pipeline deploying staging and production clusters with blue-green traffic switching."
-      },
-      {
-        "title": "Production GitOps Platform with ArgoCD & Kubernetes",
+        "title": "Production Multi-Tenant GitOps Platform with ArgoCD & Kubernetes",
         "tech_stack": [
           "Kubernetes",
           "ArgoCD",
           "Helm",
-          "Prometheus",
-          "Grafana"
+          "Argo Rollouts",
+          "Prometheus"
         ],
-        "description": "Construct a self-healing GitOps deployment engine deploying multi-environment microservices with canary rollouts via Argo Rollouts and automated metric validation."
+        "description": "Construct a self-healing GitOps deployment engine deploying multi-environment microservices with automated canary rollouts via Argo Rollouts and Prometheus metrics."
+      },
+      {
+        "title": "Multi-Region Infrastructure as Code & Disaster Recovery Pipeline",
+        "tech_stack": [
+          "Terraform",
+          "AWS VPC/EKS",
+          "HashiCorp Vault",
+          "Terratest",
+          "GitHub Actions"
+        ],
+        "description": "Architect a modular multi-region AWS cloud infrastructure with automated secret injection, infrastructure unit testing via Terratest, and automated RTO/RPO failover."
       }
     ],
     "certifications": [
@@ -76,10 +76,11 @@
       "HashiCorp Certified: Terraform Associate"
     ],
     "interview_focus": [
-      "Docker Layer Caching & Image Size Minimization",
-      "Kubernetes Pod Scheduling, Probes & Eviction Lifecycle",
-      "Zero-Downtime Deployment Strategies (Canary vs Blue-Green)",
-      "Secret Management in CI/CD Pipelines"
+      "Docker Layer Caching, Multi-Stage Builds & Distroless Container Security",
+      "Kubernetes Pod Scheduling, Probes, Resource Requests/Limits & Eviction Lifecycle",
+      "Zero-Downtime Deployment Strategies (Canary vs Blue-Green vs Rolling Updates)",
+      "Terraform State Management, Locking with DynamoDB, Remote Backends & Drift Detection",
+      "Secret Management in CI/CD (OIDC Federated Auth, Vault Dynamic Secrets, KMS)"
     ]
   },
   "format": "tree",
@@ -88,7 +89,7 @@
       "id": "fundamentals_linux_git_networking",
       "name": "Foundational Skills: Linux, Git, and Networking",
       "tag": "essential",
-      "description": "Establish a strong base in operating systems, essential command-line tools, version control, and fundamental networking concepts crucial for any DevOps role.",
+      "description": "Master the foundational pillars of cloud and platform infrastructure: Linux operating system internals, advanced shell scripting, enterprise Git workflows, and computer networking protocols.",
       "resources": [
         {
           "title": "The Linux Command Line: A Complete Introduction",
@@ -121,7 +122,7 @@
           "id": "linux_system_administration",
           "name": "Linux System Administration",
           "tag": "essential",
-          "description": "Deep dive into Linux file systems, permissions, process management, user and group management, package management (apt/yum/dnf), and system monitoring utilities (top, df, du, journalctl).",
+          "description": "Master Linux kernel and systems engineering: understand cgroups v2 and namespaces (the bedrock of containers), systemd unit service management, process scheduling and signals (SIGTERM vs SIGKILL), file system permissions, memory allocation/swapping, and troubleshooting system load with top, vmstat, iostat, and strace.",
           "resources": [
             {
               "title": "Linux Journey",
@@ -148,13 +149,15 @@
               "url": "/data/docs/devops_cloud/linux_system_administration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "advanced_shell_scripting",
           "name": "Advanced Shell Scripting (Bash/Zsh)",
           "tag": "essential",
-          "description": "Automate complex tasks with robust shell scripts, covering conditional logic, loops, functions, error handling, environment variables, and powerful text processing tools (sed, awk, grep, jq).",
+          "description": "Author production-grade shell automation scripts using Bash. Enforce strict error handling (set -euo pipefail), handle exit signals with trap for clean resource cleanup, implement idempotent execution patterns, parse JSON with jq, and validate scripts with ShellCheck in CI.",
           "resources": [
             {
               "title": "Bash Guide for Beginners",
@@ -181,13 +184,15 @@
               "url": "/data/docs/devops_cloud/advanced_shell_scripting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         },
         {
           "id": "git_version_control_mastery",
           "name": "Git Version Control Mastery",
           "tag": "essential",
-          "description": "Master advanced Git concepts including branching strategies (Gitflow, Trunk-Based Development), rebasing, cherry-picking, interactive rebase, Git hooks, and resolving complex merge conflicts.",
+          "description": "Master enterprise Git version control. Implement trunk-based development, semantic commits, interactive rebasing (git rebase -i), resolving complex merge conflicts, managing submodules, signing commits cryptographically with SSH/GPG keys, and configuring branch protection rules.",
           "resources": [
             {
               "title": "Pro Git Book",
@@ -214,13 +219,15 @@
               "url": "/data/docs/devops_cloud/git_version_control_mastery.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "network_security_essentials",
           "name": "Network & Security Essentials",
           "tag": "essential",
-          "description": "Understand core networking protocols (TCP/IP, HTTP/S, DNS, DHCP), common utilities (ping, traceroute, netstat, ss, curl, telnet), firewall concepts (iptables/nftables, firewalld), VPN basics, and TLS/SSL.",
+          "description": "Master core networking for cloud engineers. Deep dive into TCP 3-way handshakes, window scaling, DNS record types (A, CNAME, ALIAS, TXT) and resolution paths, TLS 1.3 handshake encryption, mutual TLS (mTLS), subnetting, CIDR calculations, and packet inspection with Wireshark and tcpdump.",
           "resources": [
             {
               "title": "CompTIA Network+ N10-008 Full Course (Professor Messer)",
@@ -242,15 +249,19 @@
               "url": "/data/docs/devops_cloud/network_security_essentials.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 21
     },
     {
       "id": "ci_cd_release_engineering",
       "name": "CI/CD and Release Engineering",
       "tag": "essential",
-      "description": "Design, implement, and manage robust Continuous Integration and Continuous Delivery pipelines for automated testing, artifact management, and reliable application deployments.",
+      "description": "Design, build, and maintain automated delivery pipelines, security compliance gates, progressive deployment strategies, and declarative GitOps synchronization.",
       "resources": [
         {
           "title": "The CI/CD Pipeline - A Complete Guide",
@@ -278,7 +289,7 @@
           "id": "pipeline_fundamentals_tooling",
           "name": "CI/CD Pipeline Fundamentals & Tooling",
           "tag": "essential",
-          "description": "Understand core CI/CD principles, common pipeline stages (build, test, deploy), triggers, variables, and explore popular tools like GitHub Actions, GitLab CI, Jenkins, Azure DevOps, and CircleCI.",
+          "description": "Design scalable CI/CD pipelines with GitHub Actions or GitLab CI. Configure runner topologies (self-hosted vs cloud runners), matrix builds, build cache optimization (Docker buildx layer caching), and parallelizing test stages to minimize pipeline execution times.",
           "resources": [
             {
               "title": "GitHub Actions Documentation",
@@ -300,13 +311,15 @@
               "url": "/data/docs/devops_cloud/pipeline_fundamentals_tooling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 35
         },
         {
           "id": "automated_testing_security_gates",
           "name": "Automated Testing & Security Gates",
           "tag": "essential",
-          "description": "Integrate various automated tests (unit, integration, E2E, linting, performance) and security scans (SAST, DAST, SCA, secret scanning, supply chain security) into CI pipelines.",
+          "description": "Shift security and quality left in delivery pipelines: integrate Static Application Security Testing (SAST via Semgrep), Software Bill of Materials (SBOM generation via Syft/CycloneDX), container vulnerability scanning (Trivy), and automated unit/integration test gates.",
           "resources": [
             {
               "title": "OWASP Top 10 Web Application Security Risks",
@@ -333,13 +346,15 @@
               "url": "/data/docs/devops_cloud/automated_testing_security_gates.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 34
         },
         {
           "id": "artifact_environment_secrets_management",
           "name": "Artifact, Environment & Secrets Management",
           "tag": "essential",
-          "description": "Manage build artifacts with versioning, utilize artifact repositories (Nexus, Artifactory), configure environment-specific variables, and securely handle secrets (Vault, Kubernetes Secrets, cloud KMS).",
+          "description": "Eliminate long-lived credentials in CI/CD pipelines: configure OIDC federated authentication between GitHub Actions and cloud providers (AWS STS / GCP Workload Identity), integrate dynamic secrets via HashiCorp Vault, and publish signed immutable container images to OCI registries.",
           "resources": [
             {
               "title": "The Twelve-Factor App: Configuration",
@@ -366,13 +381,15 @@
               "url": "/data/docs/devops_cloud/artifact_environment_secrets_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 33
         },
         {
           "id": "advanced_deployment_strategies_rollback",
           "name": "Advanced Deployment Strategies & Rollback",
           "tag": "advanced",
-          "description": "Implement sophisticated deployment patterns like Blue/Green, Canary releases, rolling updates, A/B testing, and dark launches. Design robust rollback plans and automated recovery mechanisms.",
+          "description": "Implement progressive delivery patterns: Blue-Green environments, Canary rollouts with automated metric analysis (error rate threshold < 0.1%, p99 latency verification), feature flagging, and automated zero-downtime rollback triggers via Argo Rollouts.",
           "resources": [
             {
               "title": "Deployment Strategies for Kubernetes",
@@ -399,13 +416,15 @@
               "url": "/data/docs/devops_cloud/advanced_deployment_strategies_rollback.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         },
         {
           "id": "cicd_pipeline_troubleshooting_resilience",
           "name": "Practice: CI/CD Troubleshooting & Resilience",
           "tag": "advanced",
-          "description": "Hands-on exercises to diagnose, debug, and fix common CI/CD pipeline failures related to build, testing, deployment, environment configuration, and network issues. Implement pipeline resilience and fault tolerance.",
+          "description": "Practice Drill: Troubleshoot and repair broken production CI/CD pipelines. Resolve Docker daemon socket permission errors, reconcile flaky test race conditions, debug out-of-disk runner failures, and implement exponential backoff on external API dependencies.",
           "resources": [
             {
               "title": "Debugging GitHub Actions Workflows",
@@ -427,13 +446,15 @@
               "url": "/data/docs/devops_cloud/cicd_pipeline_troubleshooting_resilience.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 47
         },
         {
           "id": "gitops_declarative_deployments",
           "name": "GitOps and Declarative Deployments",
           "tag": "advanced",
-          "description": "Understand GitOps principles for managing infrastructure and application configurations. Implement declarative deployments using tools like Argo CD or Flux for Kubernetes.",
+          "description": "Master the GitOps operating model: store declarative Kubernetes manifests in Git, configure automated drift detection and self-healing with ArgoCD or Flux, implement the App-of-Apps architectural pattern, and manage multi-cluster synchronization.",
           "resources": [
             {
               "title": "What is GitOps?",
@@ -460,15 +481,19 @@
               "url": "/data/docs/devops_cloud/gitops_declarative_deployments.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 22
     },
     {
       "id": "containerization_orchestration",
       "name": "Containerization and Orchestration",
       "tag": "essential",
-      "description": "Master container technologies with Docker, learn to manage multi-service applications, and operate highly available, scalable workloads using Kubernetes.",
+      "description": "Master container technology and production Kubernetes orchestration: Dockerfile hardening, multi-container networking, workload lifecycle management, ingress controllers, Helm packaging, and custom operators.",
       "resources": [
         {
           "title": "Kubernetes Basics",
@@ -496,7 +521,7 @@
           "id": "docker_fundamentals_best_practices",
           "name": "Docker Fundamentals & Best Practices",
           "tag": "essential",
-          "description": "Learn Docker basics: images, containers, volumes, networks. Create efficient and secure Dockerfiles, understand multi-stage builds, and optimize image sizes for production.",
+          "description": "Engineer secure, high-performance container images. Author multi-stage Dockerfiles to minimize image attack surfaces, enforce non-root user execution, optimize build cache layers, configure proper signal handling (SIGTERM graceful shutdown with tini/dumb-init), and write strict .dockerignore files.",
           "resources": [
             {
               "title": "Docker Get Started",
@@ -523,13 +548,15 @@
               "url": "/data/docs/devops_cloud/docker_fundamentals_best_practices.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 20
         },
         {
           "id": "docker_compose_advanced_local_orchestration",
           "name": "Docker Compose for Local Orchestration",
           "tag": "essential",
-          "description": "Orchestrate multi-container applications locally using Docker Compose, including advanced features like custom networks, volume management, health checks, environment configurations, and extension fields.",
+          "description": "Orchestrate complex multi-service local environments with Docker Compose. Define service dependencies with condition-based health checks (depends_on: condition: service_healthy), configure custom bridge networks, manage persistent data volumes, and emulate production topologies locally.",
           "resources": [
             {
               "title": "Compose file version 3 reference",
@@ -551,13 +578,15 @@
               "url": "/data/docs/devops_cloud/docker_compose_advanced_local_orchestration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "container_registries_security_scanning",
           "name": "Container Registries & Security Scanning",
           "tag": "essential",
-          "description": "Understand public and private container registries (Docker Hub, ECR, GCR, ACR), image tagging, versioning, and integrating container image vulnerability scanning (e.g., Trivy, Clair) into CI/CD workflows.",
+          "description": "Manage enterprise container image registries (AWS ECR, Google Artifact Registry, Harbor). Enforce image tag immutability, automated CVE scanning on push with Trivy, cryptographic container signing with Sigstore Cosign, and automated image lifecycle retention policies.",
           "resources": [
             {
               "title": "Introduction to Container Registries",
@@ -584,13 +613,15 @@
               "url": "/data/docs/devops_cloud/container_registries_security_scanning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "kubernetes_architecture_core_components",
           "name": "Kubernetes Architecture & Core Components",
           "tag": "essential",
-          "description": "Explore Kubernetes architecture: master and worker nodes, control plane components (API Server, etcd, Scheduler, Controller Manager, Cloud Controller Manager), and kubelet/kube-proxy. Understand how these components interact.",
+          "description": "Deep dive into the Kubernetes control plane architecture: API Server request flow, etcd distributed consensus and quorum requirements, Kube-Scheduler scheduling algorithms, Kube-Controller-Manager reconciliation loops, and Kubelet / CRI container runtime interactions.",
           "resources": [
             {
               "title": "Kubernetes Components",
@@ -617,13 +648,15 @@
               "url": "/data/docs/devops_cloud/kubernetes_architecture_core_components.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "kubernetes_core_workloads",
           "name": "Kubernetes Core Workloads",
           "tag": "essential",
-          "description": "Deploy, manage, and scale applications using core Kubernetes workload objects: Pods, Deployments, ReplicaSets, DaemonSets, StatefulSets, Jobs, and CronJobs. Understand resource requests and limits.",
+          "description": "Manage production Kubernetes workloads: Deployments (rolling updates, maxSurge/maxUnavailable), StatefulSets (stable network identities and persistent volume claims), DaemonSets for node-level agents, Jobs, and CronJobs.",
           "resources": [
             {
               "title": "Kubernetes Documentation: Workloads",
@@ -650,13 +683,15 @@
               "url": "/data/docs/devops_cloud/kubernetes_core_workloads.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "kubernetes_services_ingress_networking",
           "name": "Kubernetes Services, Ingress & Networking",
           "tag": "advanced",
-          "description": "Expose and connect applications within and outside the cluster using Kubernetes Services (ClusterIP, NodePort, LoadBalancer, ExternalName), Ingress controllers, and understand fundamental CNI concepts and Network Policies.",
+          "description": "Master Kubernetes networking: compare CNI plugins (Cilium with eBPF vs Calico), understand Service types (ClusterIP, NodePort, LoadBalancer), configure Ingress Controllers (NGINX, Traefik) with automated TLS cert-manager certificates, and manage internal CoreDNS service discovery.",
           "resources": [
             {
               "title": "Kubernetes Services, Load Balancing, and Networking",
@@ -683,13 +718,15 @@
               "url": "/data/docs/devops_cloud/kubernetes_services_ingress_networking.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         },
         {
           "id": "kubernetes_storage_config_security",
           "name": "Kubernetes Storage, Configuration & Security",
           "tag": "advanced",
-          "description": "Dive into Kubernetes storage solutions (Volumes, Persistent Volumes, Persistent Volume Claims, StorageClasses). Manage application configuration with ConfigMaps and Secrets. Implement basic cluster security with RBAC and Service Accounts.",
+          "description": "Manage storage, state, and security in Kubernetes: PersistentVolumes (PV), PersistentVolumeClaims (PVC), dynamic StorageClasses, ConfigMaps, Secrets, RBAC Role and RoleBinding authorization, and enforcing Pod Security Standards (Restricted profile).",
           "resources": [
             {
               "title": "Kubernetes Storage Concepts",
@@ -716,13 +753,15 @@
               "url": "/data/docs/devops_cloud/kubernetes_storage_config_security.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         },
         {
           "id": "helm_package_management_kubernetes",
           "name": "Helm for Kubernetes Package Management",
           "tag": "advanced",
-          "description": "Use Helm to define, install, and upgrade complex Kubernetes applications using Charts. Learn to create custom charts, manage releases, and leverage public/private Helm repositories.",
+          "description": "Package and deploy applications using Helm 3. Structure modular Helm charts, define values.yaml hierarchies, author chart templates with flow control and helper functions, manage release revisions and rollbacks, and distribute charts via OCI registries.",
           "resources": [
             {
               "title": "Helm Documentation",
@@ -744,13 +783,15 @@
               "url": "/data/docs/devops_cloud/helm_package_management_kubernetes.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         },
         {
           "id": "advanced_kubernetes_patterns_operators",
           "name": "Advanced Kubernetes Patterns & Operators",
           "tag": "advanced",
-          "description": "Explore advanced Kubernetes concepts such as Custom Resource Definitions (CRDs), Operators, Admission Controllers, and Service Mesh (Istio/Linkerd) for enhanced traffic management and security.",
+          "description": "Extend Kubernetes with custom functionality: author Custom Resource Definitions (CRDs), build automated operators in Go using Kubebuilder, implement dynamic admission control with OPA Gatekeeper or Kyverno, and deploy service meshes (Istio/Linkerd) for zero-trust mutual TLS.",
           "resources": [
             {
               "title": "Kubernetes Custom Resources",
@@ -777,15 +818,19 @@
               "url": "/data/docs/devops_cloud/advanced_kubernetes_patterns_operators.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 23
     },
     {
       "id": "cloud_iac_sre_operations",
       "name": "Cloud, IaC & SRE Operations",
       "tag": "advanced",
-      "description": "Provision and manage cloud infrastructure using IaC, implement robust observability, master incident response, and apply Site Reliability Engineering principles for highly available and resilient systems.",
+      "description": "Operate enterprise cloud platforms: Infrastructure as Code with Terraform, configuration management with Ansible, full-stack observability, SRE incident response, and cloud FinOps cost optimization.",
       "resources": [
         {
           "title": "Terraform Tutorials",
@@ -818,7 +863,7 @@
           "id": "cloud_provider_fundamentals",
           "name": "Cloud Provider Fundamentals (AWS/Azure/GCP)",
           "tag": "essential",
-          "description": "Introduction to core cloud computing concepts, service models (IaaS, PaaS, SaaS, FaaS), and foundational services of a major cloud provider (e.g., EC2, S3, VPC, IAM, RDS on AWS, or equivalent on Azure/GCP).",
+          "description": "Architect enterprise cloud infrastructure across AWS, GCP, or Azure. Master core cloud primitives: Virtual Private Clouds (VPCs, public/private subnets, NAT gateways, VPC peering), IAM least-privilege policies, managed Kubernetes (EKS, GKE, AKS), and S3/GCS object storage security.",
           "resources": [
             {
               "title": "AWS Cloud Practitioner Essentials (AWS Skill Builder)",
@@ -840,13 +885,15 @@
               "url": "/data/docs/devops_cloud/cloud_provider_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 20
         },
         {
           "id": "iac_terraform_cloud_provisioning",
           "name": "Infrastructure as Code: Terraform",
           "tag": "advanced",
-          "description": "Master Infrastructure as Code (IaC) principles. Use Terraform to declaratively define, provision, and manage cloud resources across various providers with state management, modules, and workspaces. Explore Terragrunt for advanced use cases.",
+          "description": "Master Infrastructure as Code using Terraform. Write modular, reusable HCL modules, configure remote backends with S3 and DynamoDB state locking, manage state migrations and imports (terraform import), detect and remediate infrastructure drift, and test modules with Terratest.",
           "resources": [
             {
               "title": "Terraform Registry (Modules)",
@@ -868,13 +915,15 @@
               "url": "/data/docs/devops_cloud/iac_terraform_cloud_provisioning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         },
         {
           "id": "configuration_management_ansible",
           "name": "Configuration Management (Ansible)",
           "tag": "advanced",
-          "description": "Automate server configuration, application deployment, and orchestration using Ansible. Learn playbooks, roles, inventory management, dynamic inventories, and securing credentials with Ansible Vault.",
+          "description": "Automate server fleet configuration with Ansible. Write idempotent playbooks, manage dynamic cloud inventories, author reusable roles, leverage Jinja2 templates, and automate OS patching and CIS hardening benchmarks across Linux server fleets.",
           "resources": [
             {
               "title": "Ansible Documentation",
@@ -891,13 +940,15 @@
               "url": "/data/docs/devops_cloud/configuration_management_ansible.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         },
         {
           "id": "observability_monitoring_logging_tracing",
           "name": "Observability: Monitoring, Logging & Tracing",
           "tag": "advanced",
-          "description": "Implement comprehensive observability solutions: metrics collection and visualization (Prometheus, Grafana, cloud monitoring services), centralized logging (ELK stack, Loki, Splunk, cloud logging), and distributed tracing (Jaeger, OpenTelemetry).",
+          "description": "Build an enterprise observability stack: collect time-series metrics with Prometheus following the RED and USE methods, build real-time dashboards in Grafana, aggregate structured JSON logs with Fluent Bit and Loki, and trace requests with OpenTelemetry.",
           "resources": [
             {
               "title": "Prometheus Documentation",
@@ -924,13 +975,15 @@
               "url": "/data/docs/devops_cloud/observability_monitoring_logging_tracing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 45
         },
         {
           "id": "sre_incident_response_postmortems",
           "name": "SRE: Incident Response & Postmortems",
           "tag": "advanced",
-          "description": "Learn Site Reliability Engineering (SRE) principles including SLAs, SLOs, SLIs, error budgets. Implement robust incident response methodologies, create effective runbooks, and conduct blameless post-mortems for continuous improvement and learning.",
+          "description": "Implement Site Reliability Engineering practices: define Service Level Objectives (SLOs) and Service Level Indicators (SLIs), manage Error Budgets with multi-window burn-rate alerts, orchestrate incident management (Incident Commander), and conduct blameless postmortems with Root Cause Analysis.",
           "resources": [
             {
               "title": "Google SRE Book: Managing Incidents",
@@ -952,13 +1005,15 @@
               "url": "/data/docs/devops_cloud/sre_incident_response_postmortems.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         },
         {
           "id": "cloud_security_cost_optimization",
           "name": "Cloud Security & Cost Optimization",
           "tag": "advanced",
-          "description": "Understand and implement cloud security best practices: Identity and Access Management (IAM), network security (VPC, Security Groups, WAF, Private Endpoints), encryption, compliance. Strategies for monitoring and optimizing cloud costs (FinOps), and governance.",
+          "description": "Implement cloud security governance and FinOps: audit IAM permissions, enforce encryption at rest and in transit, deploy automated idle resource reapers, rightsize compute clusters using Spot instances and Autoscaling, and integrate Infracost into pull request workflows.",
           "resources": [
             {
               "title": "AWS Security Best Practices",
@@ -985,13 +1040,15 @@
               "url": "/data/docs/devops_cloud/cloud_security_cost_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 45
         },
         {
           "id": "capstone_production_devops_project",
           "name": "Capstone Project: Production DevOps Deployment",
           "tag": "advanced",
-          "description": "Apply all learned concepts to design, build, deploy, monitor, and maintain a real-world, highly available, scalable, and secure application on a chosen cloud provider using CI/CD, containers, Kubernetes, IaC, and SRE practices.",
+          "description": "Production Capstone: Architect and deploy a complete multi-tier GitOps platform on Kubernetes using Terraform, ArgoCD, Prometheus/Grafana monitoring, and automated canary deployments with zero downtime.",
           "resources": [
             {
               "title": "Awesome DevOps Projects",
@@ -1008,9 +1065,14 @@
               "url": "/data/docs/devops_cloud/capstone_production_devops_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 78
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 30
     }
-  ]
+  ],
+  "total_exp": 1000
 }

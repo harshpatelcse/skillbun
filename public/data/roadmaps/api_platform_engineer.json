@@ -47,26 +47,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Enterprise API Gateway & Developer Developer Hub",
-        "tech_stack": [
-          "Envoy/Kong",
-          "Docker",
-          "OpenAPI",
-          "Redis",
-          "Go"
-        ],
-        "description": "Deploy an API gateway featuring automated JWT validation, distributed rate limiting, and dynamic OpenAPI mock servers."
-      },
-      {
-        "title": "High-Throughput Distributed API Gateway with Rate Limiting",
+        "title": "High-Throughput Distributed API Gateway with Envoy & Redis",
         "tech_stack": [
           "Go",
-          "Envoy",
+          "Envoy Proxy",
           "Redis",
-          "gRPC",
-          "Prometheus"
+          "OpenTelemetry",
+          "Docker"
         ],
-        "description": "Design and deploy a distributed API gateway supporting dynamic routing, distributed token bucket rate limiting, JWT validation filters, and OpenTelemetry instrumentation."
+        "description": "Build an ultra-low-latency API gateway proxy featuring distributed sliding-window rate limiting, JWT validation, and automated circuit breaking with Envoy."
+      },
+      {
+        "title": "Enterprise Developer Portal & Automated OpenAPI Contract Testing Suite",
+        "tech_stack": [
+          "Docusaurus",
+          "Spectral",
+          "Schemathesis",
+          "GitHub Actions",
+          "TypeScript"
+        ],
+        "description": "Construct an automated API governance hub with live OpenAPI/Swagger documentation, Spectral linting rules, and fuzz-based contract validation in CI."
       }
     ],
     "certifications": [
@@ -75,10 +75,11 @@
       "AWS Certified Developer - Associate"
     ],
     "interview_focus": [
-      "Gateway vs Service Mesh Responsibilities",
-      "Rate Limiting Algorithms (Sliding Window vs Leaky Bucket)",
-      "Zero Trust mTLS Enforcement",
-      "API Versioning & Breaking Change Management"
+      "API Rate Limiting Algorithms (Leaky Bucket, Token Bucket, Sliding Window Counter)",
+      "API Versioning Strategies (URI vs Header vs Query Param) & Deprecation Lifecycles",
+      "HTTP/2 vs HTTP/3 Multiplexing, gRPC Protobufs & REST Tradeoffs",
+      "Idempotency Keys & Distributed Lock Implementation in Payment APIs",
+      "Distributed Tracing (W3C Trace Context, OpenTelemetry Spans & Sampling Rates)"
     ]
   },
   "format": "tree",
@@ -87,7 +88,7 @@
       "id": "api_platform_engineer_foundations",
       "name": "API Platform Engineering Fundamentals",
       "tag": "essential",
-      "description": "Gain a comprehensive understanding of the API landscape, the unique value and responsibilities of an API Platform Engineer, and foundational architectural principles.",
+      "description": "Master API platform engineering foundations: Establishing API-first design principles, standardized protocols, developer ergonomics, and governance across distributed microservices.",
       "resources": [
         {
           "title": "What is an API Platform Engineer? (Red Hat)",
@@ -120,7 +121,7 @@
           "id": "api_platform_engineer_role_value",
           "name": "The API Platform Engineer Role and Value",
           "tag": "essential",
-          "description": "Define the scope, core responsibilities, and strategic importance of an API Platform Engineer, bridging the gap between API producers and consumers and driving API adoption.",
+          "description": "Define the platform engineer's value proposition: Driving developer velocity, reducing integration friction, enforcing security baselines, and treating internal APIs as enterprise products.",
           "resources": [
             {
               "title": "The API Platform Engineer: A New Role for the API Economy (Nordic APIs)",
@@ -142,13 +143,15 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_role_value.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         },
         {
           "id": "api_platform_engineer_http_basics",
           "name": "HTTP/HTTPS Fundamentals for APIs",
           "tag": "essential",
-          "description": "Deep dive into HTTP methods, status codes, headers, statelessness, connection management, caching mechanisms, and the critical role of HTTPS for secure API communication.",
+          "description": "Master HTTP/HTTPS protocol mechanics: HTTP/1.1 pipelining, HTTP/2 multiplexing, HTTP/3 QUIC, status codes, standard request/response headers, content negotiation, and TLS handshakes.",
           "resources": [
             {
               "title": "HTTP: The Definitive Guide (O'Reilly)",
@@ -175,13 +178,15 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_http_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 18
         },
         {
           "id": "api_platform_engineer_rest_api_design",
           "name": "RESTful API Design Principles & Best Practices",
           "tag": "essential",
-          "description": "Master resource-oriented design, idempotency, HATEOAS, proper use of HTTP methods, media types, and practical guidelines for building robust, intuitive, and scalable REST APIs, focusing on the platform perspective of consistency and reusability.",
+          "description": "Design RESTful APIs following Richardson Maturity Model: Resource naming conventions, idempotent HTTP verbs (GET, PUT, DELETE), PATCH semantics, pagination, and HATEOAS.",
           "resources": [
             {
               "title": "RESTful API Design Guidelines (Microsoft Azure)",
@@ -208,13 +213,15 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_rest_api_design.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 22
         },
         {
           "id": "api_platform_engineer_api_description_specifications",
           "name": "API Description & Specification (OpenAPI/Swagger)",
           "tag": "essential",
-          "description": "Learn to define, document, and generate code for APIs using OpenAPI Specification (OAS), understanding its role in API-first design, tooling integration, code generation, and enhancing developer experience across the platform.",
+          "description": "Author standardized OpenAPI 3.1 and JSON Schema specifications: Defining reusable components, request/response bodies, authentication schemes, and automated documentation generation.",
           "resources": [
             {
               "title": "OpenAPI Specification",
@@ -231,13 +238,15 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_api_description_specifications.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         },
         {
           "id": "api_platform_engineer_other_api_architectures",
           "name": "Exploring Alternative API Architectures (GraphQL, gRPC, AsyncAPI)",
           "tag": "advanced",
-          "description": "Gain a foundational understanding of alternative API styles: GraphQL for flexible data fetching, gRPC for high-performance microservices communication, and AsyncAPI for event-driven architectures, and their implications for API platform design.",
+          "description": "Evaluate alternative API paradigms: Comparing REST, GraphQL federated graphs, gRPC high-throughput binary RPCs with Protocol Buffers, and event-driven AsyncAPI webhooks.",
           "resources": [
             {
               "title": "Introduction to GraphQL (Official Documentation)",
@@ -269,15 +278,19 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_other_api_architectures.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 53
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 32
     },
     {
       "id": "api_platform_engineer_development_workflow_tooling",
       "name": "API Development Workflow & Tooling",
       "tag": "essential",
-      "description": "Master the essential tools and workflows for designing, developing, testing, securing, and documenting APIs, emphasizing an API-first approach and efficient collaboration across the API platform lifecycle.",
+      "description": "Establish automated API development toolchains: Linters (Spectral), contract testing frameworks (Pact), mocking engines, and CI/CD validation gates.",
       "resources": [
         {
           "title": "The API-First Approach (Postman)",
@@ -305,7 +318,7 @@
           "id": "api_platform_engineer_api_dev_clients",
           "name": "API Development Clients & Testing Tools",
           "tag": "essential",
-          "description": "Become proficient with industry-standard GUI and command-line tools like Postman, Insomnia, and cURL for making requests, inspecting responses, testing APIs, and scripting workflows for API consumption and validation.",
+          "description": "Utilize advanced API testing clients: Postman, Bruno, Insomnia, and cURL for testing complex authentication flows, parameter assertions, and multi-step integration collections.",
           "resources": [
             {
               "title": "Postman Getting Started Guide",
@@ -337,13 +350,15 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_api_dev_clients.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 30
         },
         {
           "id": "api_platform_engineer_api_design_spec_tools",
           "name": "API Design & Specification Tools",
           "tag": "essential",
-          "description": "Explore and utilize specialized tools for visual API design, OpenAPI specification creation, validation, linting, and maintaining a consistent API catalog. Examples include Stoplight Studio, SwaggerHub, or Postman's design capabilities.",
+          "description": "Standardize API design tooling: Stoplight, SwaggerHub, and Redocly for collaborative API linting, versioned contract reviews, and automated developer portal publication.",
           "resources": [
             {
               "title": "Introduction to Stoplight Studio",
@@ -365,13 +380,15 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_api_design_spec_tools.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 22
         },
         {
           "id": "api_platform_engineer_version_control",
           "name": "Version Control Systems (Git & CI/CD Basics)",
           "tag": "essential",
-          "description": "Master Git for collaborative development, managing API specifications, code, and configurations, and understanding its integration with CI/CD pipelines for automated testing, building, and deployment of APIs and the platform itself.",
+          "description": "Manage API definitions as code: Git monorepo vs multirepo strategies for OpenAPI specs, automated changelog generation, and semantic release tagging.",
           "resources": [
             {
               "title": "Git Handbook (GitHub)",
@@ -398,13 +415,15 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_version_control.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 24
         },
         {
           "id": "api_platform_engineer_api_testing",
           "name": "API Testing Strategies & Frameworks",
           "tag": "essential",
-          "description": "Learn various API testing methodologies (unit, integration, contract, end-to-end, performance, security) and explore popular tools and frameworks like Postman (Newman), SoapUI, Jest, or Cypress. Emphasize contract testing for platform reliability.",
+          "description": "Implement multi-layered API testing: Automated unit tests, integration test suites, schema validation testing, mutation testing, and consumer-driven contract testing with Pact.",
           "resources": [
             {
               "title": "The Ultimate Guide to API Testing (SmartBear)",
@@ -436,13 +455,15 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_api_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         },
         {
           "id": "api_platform_engineer_api_automation_cicd",
           "name": "API Automation & CI/CD for Platform",
           "tag": "essential",
-          "description": "Deep dive into automating API deployment, testing, documentation generation, and governance checks within continuous integration and continuous delivery (CI/CD) pipelines, crucial for maintaining a robust API platform.",
+          "description": "Automate API verification in CI/CD: Automated Spectral linting against company style guides, backward-compatibility breaking change detection with oasdiff, and automated test runners.",
           "resources": [
             {
               "title": "Automating API lifecycle with CI/CD (IBM)",
@@ -469,13 +490,15 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_api_automation_cicd.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 30
         },
         {
           "id": "api_platform_engineer_api_mocking_sandbox",
           "name": "API Mocking & Sandbox Environments",
           "tag": "advanced",
-          "description": "Understand how to create mock APIs and sandbox environments to enable parallel development, frontend integration, robust testing, and faster iteration without dependencies on a fully implemented backend, improving developer agility.",
+          "description": "Provide developer sandboxes and mock servers: Deploying Prism, WireMock, and Mockoon to simulate backend services and unblock frontend development before implementation completes.",
           "resources": [
             {
               "title": "Mocking APIs for Faster Development and Testing (Postman)",
@@ -497,15 +520,19 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_api_mocking_sandbox.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 22
     },
     {
       "id": "api_platform_engineer_security_lifecycle",
       "name": "API Security, Authentication & Lifecycle Management",
       "tag": "essential",
-      "description": "Deep dive into securing APIs against common threats, implementing robust authentication and authorization schemes, and managing the API lifecycle from creation to deprecation effectively, ensuring a secure and stable API ecosystem.",
+      "description": "Implement zero-trust API security: Managing tokens, enforcing OWASP API Security Top 10 defenses, rate limiting, and automated lifecycle deprecation.",
       "resources": [
         {
           "title": "API Security: A Comprehensive Guide (Okta)",
@@ -533,7 +560,7 @@
           "id": "api_platform_engineer_auth_authz",
           "name": "Authentication & Authorization Mechanisms",
           "tag": "essential",
-          "description": "Explore API Key management, OAuth 2.0 (Authorization Flows), OpenID Connect (OIDC), JWTs (JSON Web Tokens), and best practices for secure access control in API platforms, including token validation and refresh strategies.",
+          "description": "Architect authentication and authorization: OAuth 2.0 grant types (Authorization Code + PKCE, Client Credentials), OIDC identity tokens, signed JWT validation, and mTLS mutual authentication.",
           "resources": [
             {
               "title": "An Ultimate Guide to API Authentication and Authorization (Auth0)",
@@ -560,13 +587,15 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_auth_authz.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 33
         },
         {
           "id": "api_platform_engineer_api_security_best_practices",
           "name": "API Security Best Practices (OWASP API Top 10)",
           "tag": "essential",
-          "description": "Understand the most critical API security risks identified by OWASP (e.g., Broken Authentication, Excessive Data Exposure, Security Misconfiguration, SSRF) and effective mitigation strategies and security controls for the API platform.",
+          "description": "Defend against OWASP API Top 10 vulnerabilities: Mitigating Broken Object Level Authorization (BOLA/IDOR), Broken Function Level Authorization (BFLA), mass assignment, and SSRF.",
           "resources": [
             {
               "title": "OWASP API Security Top 10 (2023)",
@@ -588,13 +617,15 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_api_security_best_practices.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "api_platform_engineer_data_security_compliance",
           "name": "API Data Security & Compliance",
           "tag": "advanced",
-          "description": "Implement robust measures for data security in APIs, including encryption at rest and in transit, protection of Personally Identifiable Information (PII), and ensuring compliance with regulations like GDPR, CCPA, and HIPAA.",
+          "description": "Enforce data privacy and compliance: Field-level encryption, PII masking in API responses, automated DLP inspection, and compliance with GDPR, HIPAA, and PCI-DSS standards.",
           "resources": [
             {
               "title": "API Security and Data Privacy (Auth0)",
@@ -621,13 +652,15 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_data_security_compliance.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         },
         {
           "id": "api_platform_engineer_api_versioning",
           "name": "API Versioning Strategies",
           "tag": "essential",
-          "description": "Learn and evaluate different approaches to versioning APIs (e.g., URI, Header, Query Parameter, Content Negotiation) and their implications for compatibility, evolution, consumer experience, and platform management.",
+          "description": "Implement API versioning strategies: URI path versioning (`/v1/`), custom header versioning, query parameters, content negotiation (Accept headers), and non-breaking schema expansion.",
           "resources": [
             {
               "title": "Versioning REST APIs (Microsoft Azure)",
@@ -649,13 +682,15 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_api_versioning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 30
         },
         {
           "id": "api_platform_engineer_api_deprecation",
           "name": "API Deprecation & Sunsetting",
           "tag": "advanced",
-          "description": "Develop and implement strategies for gracefully deprecating old API versions, communicating changes to consumers, and managing the entire API sunsetting process to minimize disruption and maintain consumer trust.",
+          "description": "Execute graceful API deprecations: Communicating sunset timelines via RFC 8594 Sunset and Deprecation headers, developer portal notifications, and tracking legacy client migration.",
           "resources": [
             {
               "title": "How to Deprecate an API (Nordic APIs)",
@@ -677,15 +712,19 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_api_deprecation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 22
     },
     {
       "id": "api_platform_engineer_gateway_observability",
       "name": "API Gateways, Observability & Reliability",
       "tag": "essential",
-      "description": "Focus on the operational aspects of API platforms, including the critical role of API gateways, ensuring high availability, optimal performance, and comprehensive monitoring, logging, and reliability engineering.",
+      "description": "Deploy resilient API gateway infrastructure: Traffic management, dynamic routing, distributed rate limiting, and end-to-end distributed tracing.",
       "resources": [
         {
           "title": "What is an API Gateway? (NGINX)",
@@ -713,7 +752,7 @@
           "id": "api_platform_engineer_api_gateway_architecture",
           "name": "API Gateway Architecture & Implementation",
           "tag": "essential",
-          "description": "Understand the core functions of API gateways (routing, load balancing, policy enforcement, security, request/response transformation, caching) and explore popular platforms like Kong, Apigee, AWS API Gateway, and Azure API Management.",
+          "description": "Architect enterprise API gateways: Evaluating Kong Gateway, Envoy Proxy, Apigee, and Traefik for TLS termination, plugin architectures, and high-concurrency request routing.",
           "resources": [
             {
               "title": "API Gateway vs. API Management: What's the Difference? (Kong)",
@@ -740,13 +779,15 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_api_gateway_architecture.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 23
         },
         {
           "id": "api_platform_engineer_api_traffic_management",
           "name": "API Traffic Management & Policy Enforcement",
           "tag": "essential",
-          "description": "Implement and manage advanced traffic management techniques via the API gateway, including intelligent routing, load balancing algorithms, circuit breaking, caching policies, and enforcing security and business rules.",
+          "description": "Manage live API traffic: Path-based routing, header manipulation, request rewriting, weighted canary releases, and geographical DNS routing.",
           "resources": [
             {
               "title": "API Management Traffic Control (Red Hat)",
@@ -773,13 +814,15 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_api_traffic_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         },
         {
           "id": "api_platform_engineer_rate_limiting",
           "name": "Rate Limiting & Throttling",
           "tag": "essential",
-          "description": "Implement strategies to control API consumption, protect against abuse, denial-of-service attacks, and ensure fair usage for all consumers while maintaining service stability and adherence to quotas.",
+          "description": "Enforce distributed rate limiting and throttling: Token bucket, leaky bucket, and fixed/sliding window algorithms backed by Redis clusters to prevent denial of service.",
           "resources": [
             {
               "title": "Rate Limiting: How to protect your APIs (Akamai)",
@@ -801,13 +844,15 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_rate_limiting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 22
         },
         {
           "id": "api_platform_engineer_infra_as_code_api_platform",
           "name": "Infrastructure as Code for API Platform",
           "tag": "essential",
-          "description": "Learn to manage and automate the provisioning and configuration of API gateway infrastructure, associated services, and deployment pipelines using Infrastructure as Code (IaC) tools like Terraform, CloudFormation, or Pulumi.",
+          "description": "Provision gateway infrastructure as code: Terraform, Helm charts, and Kubernetes Gateway API CRDs to declare routes, plugins, and policies declaratively.",
           "resources": [
             {
               "title": "Terraform AWS API Gateway Module",
@@ -829,13 +874,15 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_infra_as_code_api_platform.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 20
         },
         {
           "id": "api_platform_engineer_monitoring_logging",
           "name": "API Monitoring, Logging & Tracing",
           "tag": "essential",
-          "description": "Set up comprehensive observability for APIs and the platform itself using key metrics (RED, USE), structured logging, distributed tracing (e.g., OpenTelemetry), and alerting to ensure health, performance, and rapid error detection and root cause analysis.",
+          "description": "Implement comprehensive API observability: OpenTelemetry distributed tracing across services, W3C Trace Context propagation, RED metrics (Rate, Errors, Duration), and Grafana dashboards.",
           "resources": [
             {
               "title": "The Pillars of Observability (Datadog)",
@@ -857,13 +904,15 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_monitoring_logging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 32
         },
         {
           "id": "api_platform_engineer_resilience_scalability",
           "name": "API Resilience & Scalability Patterns",
           "tag": "advanced",
-          "description": "Explore and implement patterns like circuit breakers, retries with exponential backoff, bulkheads, and caching strategies to build highly available, fault-tolerant, and scalable API platforms capable of handling fluctuating loads.",
+          "description": "Harden API resilience: Circuit breakers (Envoy/Hystrix), automated retries with exponential backoff and jitter, bulkhead isolation, and fallback responses.",
           "resources": [
             {
               "title": "Resilience Patterns for APIs (AWS)",
@@ -885,13 +934,15 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_resilience_scalability.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         },
         {
           "id": "api_platform_engineer_service_mesh_integration",
           "name": "Service Mesh Integration for Internal APIs",
           "tag": "advanced",
-          "description": "Understand the role of service meshes (e.g., Istio, Linkerd) in managing and securing internal APIs within a microservices architecture, and how API Gateways interact with service meshes for boundary control.",
+          "description": "Integrate with service mesh topologies: Istio and Linkerd for internal East-West mTLS encryption, fine-grained access control policies, and mesh traffic mirroring.",
           "resources": [
             {
               "title": "What is a Service Mesh? (Red Hat)",
@@ -918,13 +969,15 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_service_mesh_integration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         },
         {
           "id": "api_platform_engineer_performance_optimization",
           "name": "API Performance Optimization",
           "tag": "advanced",
-          "description": "Master techniques for optimizing API response times, including advanced caching strategies (CDN, client-side, server-side), efficient data serialization, payload compression, database query optimization, and load testing.",
+          "description": "Optimize API latency and throughput: Response caching with Redis/Varnish, HTTP conditional requests (ETags), gzip/Brotli compression, and connection pooling.",
           "resources": [
             {
               "title": "How to Optimize Your API Performance (Appwrite)",
@@ -951,15 +1004,19 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_performance_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 16
     },
     {
       "id": "api_platform_engineer_ecosystem_governance",
       "name": "API Ecosystem, Governance & Strategy",
       "tag": "essential",
-      "description": "Understand the broader impact of APIs, how to foster a thriving developer ecosystem, enforce robust governance, and contribute strategically to the overall API product and business strategy for long-term success.",
+      "description": "Establish API governance and product management: Building self-service internal developer portals (Backstage), API registries, and tracking adoption KPIs.",
       "resources": [
         {
           "title": "API Strategy & Governance (Apigee)",
@@ -982,7 +1039,7 @@
           "id": "api_platform_engineer_api_product_management",
           "name": "API Product Management Principles",
           "tag": "essential",
-          "description": "Learn to treat APIs as products, understanding consumer needs, defining API roadmaps, managing feature lifecycles, and aligning API development with business goals and market demands.",
+          "description": "Treat APIs as products: Defining Developer Experience (DX) metrics, Time to First Hello World (TTFHW), API SLAs, and tracking user journey telemetry.",
           "resources": [
             {
               "title": "API Product Management - Building an API (APIMatic)",
@@ -1009,13 +1066,15 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_api_product_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 20
         },
         {
           "id": "api_platform_engineer_developer_experience_portals",
           "name": "API Developer Experience (DX) & Portals",
           "tag": "essential",
-          "description": "Learn to build and manage effective developer portals, providing comprehensive interactive documentation, SDKs, code samples, quickstarts, and support to enhance overall developer experience (DX) and drive adoption.",
+          "description": "Deploy developer portals with Backstage, Redocly, or ReadMe: Interactive API documentation, dynamic code snippet generation, API key self-service issuance, and changelogs.",
           "resources": [
             {
               "title": "What Makes a Good Developer Portal? (APIs.json)",
@@ -1042,13 +1101,15 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_developer_experience_portals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 22
         },
         {
           "id": "api_platform_engineer_api_governance_strategy",
           "name": "API Governance & Strategic Planning",
           "tag": "essential",
-          "description": "Establish organizational standards, design guidelines, best practices, and a clear strategic roadmap for API consistency, quality, security, and long-term evolution across the enterprise, including policy definition and enforcement.",
+          "description": "Drive centralized API governance: Establishing cross-team API review councils, automated linting rule enforcement, and enterprise-wide API taxonomies.",
           "resources": [
             {
               "title": "API Governance for Dummies (Red Hat)",
@@ -1075,13 +1136,15 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_api_governance_strategy.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 20
         },
         {
           "id": "api_platform_engineer_cross_functional_collaboration",
           "name": "Cross-functional Collaboration & Communication",
           "tag": "essential",
-          "description": "Develop skills in collaborating with diverse stakeholders (product managers, developers, operations, security, legal) to ensure API platform initiatives meet business goals, technical requirements, and organizational standards.",
+          "description": "Foster cross-functional collaboration: Partnering with frontend, mobile, backend, and security teams to align API roadmaps and minimize breaking changes.",
           "resources": [
             {
               "title": "Effective Collaboration for API Teams (Postman)",
@@ -1108,13 +1171,15 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_cross_functional_collaboration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "api_platform_engineer_community_engagement_feedback",
           "name": "API Community Engagement & Feedback Loops",
           "tag": "advanced",
-          "description": "Establish channels for gathering feedback from API consumers, foster an active developer community, and implement continuous improvement processes based on user insights and support interactions.",
+          "description": "Gather developer feedback: Hosting developer office hours, monitoring SDK issue trackers, conducting developer surveys, and analyzing API error logs.",
           "resources": [
             {
               "title": "Building a Thriving API Developer Community (Nordic APIs)",
@@ -1141,13 +1206,15 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_community_engagement_feedback.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         },
         {
           "id": "api_platform_engineer_api_analytics",
           "name": "API Analytics & Insights",
           "tag": "advanced",
-          "description": "Utilize API usage data, performance metrics, and analytics tools to gain critical insights into API adoption, consumer behavior, performance trends, identify areas for improvement, new features, and inform strategic decisions.",
+          "description": "Analyze API platform metrics: Ingesting access logs into ClickHouse or BigQuery to analyze active API consumers, endpoint usage trends, latency heatmaps, and error spikes.",
           "resources": [
             {
               "title": "The Value of API Analytics (Nordic APIs)",
@@ -1164,13 +1231,15 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_api_analytics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "api_platform_engineer_api_monetization",
           "name": "API Monetization & Business Models",
           "tag": "advanced",
-          "description": "Explore different business models for APIs, including freemium, tiered pricing, pay-per-use, and subscription models, and understand how to enable and manage these on the API platform to generate revenue and strategic value.",
+          "description": "Implement API monetization and billing: Tiered subscription quotas, usage-based metering with Stripe or Lago, developer billing portals, and partner enterprise licensing.",
           "resources": [
             {
               "title": "API Monetization: Top Strategies & Best Practices (Moesif)",
@@ -1192,9 +1261,14 @@
               "url": "/data/docs/api_platform_engineer/api_platform_engineer_api_monetization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 18
     }
-  ]
+  ],
+  "total_exp": 1000
 }

@@ -47,25 +47,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Real-Time Markdown Collaboration Tool",
+        "title": "Real-Time Collaborative Workspace with SvelteKit & Runes",
         "tech_stack": [
           "Svelte 5",
           "SvelteKit",
-          "TypeScript",
-          "WebSockets"
+          "Runes Reactive State",
+          "WebSockets",
+          "Tailwind CSS"
         ],
-        "description": "Build an ultra-lightweight collaborative note editor with live sync, compile-time speed, and instant offline PWA support."
+        "description": "Build an ultra-lightweight project collaboration board using Svelte 5 universal reactivity runes ($state, $derived, $effect), optimistic mutations, and WebSocket sync."
       },
       {
-        "title": "Interactive Data Workspace with SvelteKit & WebSockets",
+        "title": "High-Performance Data Visualization Studio with Svelte & LayerCake",
         "tech_stack": [
           "Svelte 5",
-          "SvelteKit",
-          "TypeScript",
-          "Tailwind CSS",
-          "WebSockets"
+          "D3.js",
+          "LayerCake",
+          "HTML5 Canvas",
+          "IndexedDB"
         ],
-        "description": "Build a reactive productivity board with live collaborative cursor syncing, optimistic UI state updates, server-side data loaders, and zero bundle bloat."
+        "description": "Construct an interactive financial charting studio plotting 100,000 live price ticks with canvas rendering, virtualized data tables, and client-side IndexedDB caching."
       }
     ],
     "certifications": [
@@ -73,10 +74,11 @@
       "OpenJS Node.js Application Developer (JSNAD)"
     ],
     "interview_focus": [
-      "Compile-Time vs Virtual DOM Paradigms",
-      "Svelte 5 Runes Reactivity Engine",
-      "SvelteKit Form Actions & Progressive Enhancement",
-      "Bundle Size & Performance Profile"
+      "Svelte 5 Runes Reactivity Model ($state, $derived, $effect, $props) vs Svelte 4 Store Semantics",
+      "SvelteKit Architecture (Routing, +page.server.js Load Functions, Form Actions, Hooks)",
+      "Compile-Time vs Runtime Frameworks (Why Svelte Generates Imperative DOM Updates Without Virtual DOM)",
+      "Server-Side Rendering (SSR), Client Hydration & Prerendering in SvelteKit",
+      "State Management Options in Large-Scale Svelte Applications (Context API vs Runes Modules)"
     ]
   },
   "format": "tree",
@@ -85,7 +87,7 @@
       "id": "svelte_core_foundations",
       "name": "Svelte & SvelteKit Fundamentals",
       "tag": "essential",
-      "description": "Master the core concepts of Svelte, understand its unique reactivity model, and set up your development environment for modern SvelteKit projects.",
+      "description": "Master Svelte and SvelteKit fundamentals: Compiler-based reactivity, zero-virtual-DOM architecture, component lifecycles, and modern frontend development.",
       "resources": [
         {
           "title": "Svelte Documentation",
@@ -118,7 +120,7 @@
           "id": "svelte_developer_environment_setup",
           "name": "Development Environment & Tooling",
           "tag": "essential",
-          "description": "Set up your development environment, including Node.js, npm/pnpm/yarn, SvelteKit project creation with Vite, and essential VS Code extensions for an optimized workflow.",
+          "description": "Set up modern Svelte tooling: Vite build tool, Svelte for VS Code, TypeScript configuration, and ESLint / Prettier formatting with prettier-plugin-svelte.",
           "resources": [
             {
               "title": "SvelteKit Documentation: Getting Started",
@@ -150,13 +152,15 @@
               "url": "/data/docs/svelte_developer/svelte_developer_environment_setup.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 21
         },
         {
           "id": "svelte_developer_svelte_basics",
           "name": "Svelte Core Concepts & Reactivity",
           "tag": "essential",
-          "description": "Learn Svelte's reactivity system, components (props, events, slots), two-way data binding, component lifecycle functions (`onMount`, `onDestroy`), and template syntax including reactive declarations (`$:`).",
+          "description": "Master Svelte reactivity: Reactive declarations (`$:` / runes `$state`), event directives (`on:click` / `onclick`), props, component bindings (`bind:value`), and slots / snippets.",
           "resources": [
             {
               "title": "Svelte Tutorial: Reactivity",
@@ -193,13 +197,15 @@
               "url": "/data/docs/svelte_developer/svelte_developer_svelte_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 24
         },
         {
           "id": "svelte_developer_stores_context",
           "name": "Advanced State Management: Stores & Context",
           "tag": "essential",
-          "description": "Understand Svelte's built-in store types (writable, readable, derived), create custom stores for complex state, and utilize the Context API for efficient state management across deeply nested component trees.",
+          "description": "Manage application state: Writable, readable, and derived stores; custom store contracts; context API (`setContext`, `getContext`) for component subtrees; and modern runes `$state` / `$derived`.",
           "resources": [
             {
               "title": "Svelte Tutorial: Writable Stores",
@@ -231,13 +237,15 @@
               "url": "/data/docs/svelte_developer/svelte_developer_stores_context.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 43
         },
         {
           "id": "svelte_developer_sveltekit_routing",
           "name": "SvelteKit Routing, Layouts & Navigation",
           "tag": "essential",
-          "description": "Explore SvelteKit's file-system-based routing, creating pages, nested layouts, handling dynamic route parameters, route groups, and advanced navigation (`goto`, `invalidate`, `replaceState`).",
+          "description": "Master SvelteKit file-based routing: `+page.svelte`, `+layout.svelte`, route parameters (`[id]`), optional parameters, rest parameters, and client-side navigation (`goto`).",
           "resources": [
             {
               "title": "SvelteKit Docs: Routing",
@@ -269,13 +277,15 @@
               "url": "/data/docs/svelte_developer/svelte_developer_sveltekit_routing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         },
         {
           "id": "svelte_developer_animations_transitions",
           "name": "Animations & Transitions",
           "tag": "essential",
-          "description": "Master Svelte's powerful built-in animations and transitions for creating smooth, performant, and engaging user interfaces. Learn about custom transitions and motion utilities for dynamic UI elements.",
+          "description": "Create fluid UI animations: Built-in transitions (`fade`, `fly`, `slide`), spring/tweened motion stores, crossfade for shared element transitions, and reduced-motion accessibility.",
           "resources": [
             {
               "title": "Svelte Tutorial: Transitions",
@@ -307,15 +317,19 @@
               "url": "/data/docs/svelte_developer/svelte_developer_animations_transitions.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 32
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 24
     },
     {
       "id": "sveltekit_deep_dive",
       "name": "Deep Dive into SvelteKit Features",
       "tag": "essential",
-      "description": "Dive deeper into SvelteKit's advanced features, including efficient data loading, robust form handling, server-side rendering strategies, API endpoints, and powerful server hooks.",
+      "description": "Master advanced SvelteKit features: Data loading, form actions, server endpoints, rendering adapters, and middleware hooks.",
       "resources": [
         {
           "title": "SvelteKit Docs: Core Concepts",
@@ -343,7 +357,7 @@
           "id": "svelte_developer_data_loading",
           "name": "Efficient Data Loading with `load` Functions",
           "tag": "essential",
-          "description": "Learn to fetch data effectively using `+page.js`, `+layout.js`, and `+server.js` load functions. Understand their client-side/server-side execution, data dependencies (`depends`), and streaming responses for optimized performance.",
+          "description": "Load data efficiently: Universal `load` functions in `+page.js` vs server-only `load` in `+page.server.js`, parent data inheritance, and cache invalidation with `invalidate`.",
           "resources": [
             {
               "title": "SvelteKit Docs: Load functions",
@@ -375,13 +389,15 @@
               "url": "/data/docs/svelte_developer/svelte_developer_data_loading.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         },
         {
           "id": "svelte_developer_form_actions",
           "name": "Robust Form Handling with Form Actions",
           "tag": "essential",
-          "description": "Implement robust form submissions using SvelteKit's form actions. Handle data validation (client and server-side with libraries like Superforms), manage success/error states, and ensure progressive enhancement for accessibility.",
+          "description": "Handle forms progressively: Default and named form actions in `+page.server.js`, progressive enhancement with `use:enhance`, and client-side validation state.",
           "resources": [
             {
               "title": "SvelteKit Docs: Form Actions",
@@ -408,13 +424,15 @@
               "url": "/data/docs/svelte_developer/svelte_developer_form_actions.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         },
         {
           "id": "svelte_developer_ssr_ssg_spa",
           "name": "Rendering Modes: SSR, SSG, SPA & Adapters",
           "tag": "essential",
-          "description": "Understand different rendering modes (Server-Side Rendering, Static Site Generation, Single Page Application), their trade-offs, and how to use SvelteKit adapters (e.g., `adapter-auto`, `adapter-static`, `adapter-node`) for various deployment targets.",
+          "description": "Configure rendering modes: Server-Side Rendering (SSR), Static Site Generation (SSG with `@sveltejs/adapter-static`), Single Page Apps (SPA), and edge deployments (`@sveltejs/adapter-cloudflare` / `@sveltejs/adapter-vercel`).",
           "resources": [
             {
               "title": "SvelteKit Docs: Adapters",
@@ -446,13 +464,15 @@
               "url": "/data/docs/svelte_developer/svelte_developer_ssr_ssg_spa.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 37
         },
         {
           "id": "svelte_developer_advanced_endpoints",
           "name": "Server Endpoints & API Routes",
           "tag": "essential",
-          "description": "Create RESTful API endpoints using `+server.js` files, handle different HTTP methods, manage request/response headers and cookies, and integrate with external services or databases directly from the server.",
+          "description": "Build server endpoints: Handling raw HTTP methods (`GET`, `POST`, `PUT`, `DELETE`) in `+server.js`, streaming responses, and building internal RESTful APIs.",
           "resources": [
             {
               "title": "SvelteKit Docs: Server",
@@ -479,13 +499,15 @@
               "url": "/data/docs/svelte_developer/svelte_developer_advanced_endpoints.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         },
         {
           "id": "svelte_developer_server_hooks",
           "name": "Server Hooks (`handle`, `handleFetch`)",
           "tag": "advanced",
-          "description": "Utilize SvelteKit's powerful server hooks (`handle`, `handleFetch`) to customize request and response processing, manage sessions, modify outgoing `fetch` requests, and implement global server-side logic (e.g., logging, authentication checks).",
+          "description": "Implement server middleware: Intercepting requests with `handle` hook in `hooks.server.js`, session injection, error handling with `handleError`, and `handleFetch` proxying.",
           "resources": [
             {
               "title": "SvelteKit Docs: Hooks",
@@ -512,15 +534,19 @@
               "url": "/data/docs/svelte_developer/svelte_developer_server_hooks.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 43
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 21
     },
     {
       "id": "svelte_robust_apps",
       "name": "Building Robust & Scalable Applications",
       "tag": "essential",
-      "description": "Learn to style SvelteKit applications effectively, integrate UI libraries, implement secure authentication, and handle errors gracefully to build production-ready and maintainable apps.",
+      "description": "Build scalable Svelte applications: Design systems, state architecture, authentication, and comprehensive error handling.",
       "resources": [
         {
           "title": "Svelte Tutorial for Beginners (The Net Ninja)",
@@ -543,7 +569,7 @@
           "id": "svelte_developer_styling_components",
           "name": "Advanced Styling & CSS Architecture",
           "tag": "essential",
-          "description": "Apply CSS scoping, global styles, integrate popular CSS frameworks like Tailwind CSS, understand CSS preprocessors (Sass, Less, PostCSS), and manage static assets within SvelteKit projects.",
+          "description": "Style Svelte components: Component-scoped CSS, CSS custom properties, global styles (`:global()`), and integrating Tailwind CSS / PostCSS.",
           "resources": [
             {
               "title": "Svelte Tutorial: Styling",
@@ -575,13 +601,15 @@
               "url": "/data/docs/svelte_developer/svelte_developer_styling_components.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         },
         {
           "id": "svelte_developer_ui_libraries",
           "name": "Integrating & Building UI Component Libraries",
           "tag": "advanced",
-          "description": "Learn to integrate and customize existing UI component libraries (e.g., DaisyUI, Svelte Material UI, Flowbite Svelte) or build your own design system and headless UI components (e.g., Melt UI) to accelerate development and maintain design consistency.",
+          "description": "Build and integrate UI components: Headless UI libraries (Melt UI, Bits UI), component libraries (shadcn-svelte, Skeleton), and accessible iconography.",
           "resources": [
             {
               "title": "DaisyUI Documentation",
@@ -613,13 +641,15 @@
               "url": "/data/docs/svelte_developer/svelte_developer_ui_libraries.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         },
         {
           "id": "svelte_developer_authentication",
           "name": "Authentication & Authorization Strategies",
           "tag": "advanced",
-          "description": "Implement secure authentication flows (login, logout, registration) using SvelteKit's server capabilities, integrating with solutions like Auth.js, Lucia, or custom JWT/session-based strategies. Learn about protecting routes and managing user roles/permissions.",
+          "description": "Implement secure authentication: Cookie-based session authentication in SvelteKit hooks, protected route redirects, and integrating OAuth (Auth.js / Lucia Auth).",
           "resources": [
             {
               "title": "Auth.js for SvelteKit",
@@ -646,13 +676,15 @@
               "url": "/data/docs/svelte_developer/svelte_developer_authentication.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 50
         },
         {
           "id": "svelte_developer_error_handling",
           "name": "Comprehensive Error Handling & Boundaries",
           "tag": "essential",
-          "description": "Implement robust error handling strategies in Svelte and SvelteKit, including custom error pages (`+error.svelte`), using the `handleError` hook, `try-catch` blocks, and graceful degradation for a better user experience and robust application stability.",
+          "description": "Handle application errors: Expected errors with `error()` helper, unexpected crash boundaries with `+error.svelte`, and logging server exceptions.",
           "resources": [
             {
               "title": "SvelteKit Docs: Error Handling",
@@ -679,15 +711,19 @@
               "url": "/data/docs/svelte_developer/svelte_developer_error_handling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 21
     },
     {
       "id": "svelte_testing_deployment",
       "name": "Testing, Deployment & Performance Optimization",
       "tag": "essential",
-      "description": "Learn to write effective tests for your SvelteKit applications, deploy them to production environments, and optimize for peak performance and user experience.",
+      "description": "Test, optimize, and deploy SvelteKit applications with production-grade reliability.",
       "resources": [
         {
           "title": "SvelteKit Docs: Deployment",
@@ -715,7 +751,7 @@
           "id": "svelte_developer_unit_integration_testing",
           "name": "Unit & Integration Testing",
           "tag": "essential",
-          "description": "Write comprehensive unit tests for Svelte components and functions using Vitest and the Svelte Testing Library. Learn about effective mocking strategies and snapshot testing to ensure individual parts work correctly.",
+          "description": "Unit test Svelte components: Testing component rendering and user events using Vitest and `@testing-library/svelte`.",
           "resources": [
             {
               "title": "Svelte Testing Library",
@@ -747,13 +783,15 @@
               "url": "/data/docs/svelte_developer/svelte_developer_unit_integration_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         },
         {
           "id": "svelte_developer_e2e_testing",
           "name": "End-to-End Testing (E2E)",
           "tag": "advanced",
-          "description": "Perform end-to-end testing using tools like Playwright or Cypress to simulate real user interactions and verify the entire application flow, ensuring critical paths function as expected. Integrate E2E tests into CI/CD pipelines for automated quality assurance.",
+          "description": "Perform end-to-end testing: Writing comprehensive E2E tests using Playwright for SvelteKit page flows, form submissions, and authentication states.",
           "resources": [
             {
               "title": "Playwright Documentation",
@@ -780,13 +818,15 @@
               "url": "/data/docs/svelte_developer/svelte_developer_e2e_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 46
         },
         {
           "id": "svelte_developer_deployment_strategies",
           "name": "Deployment & CI/CD Pipelines",
           "tag": "essential",
-          "description": "Deploy SvelteKit applications to various platforms like Vercel, Netlify, Cloudflare Pages, or self-hosted Node.js environments. Understand Continuous Integration/Continuous Deployment (CI/CD) workflows using GitHub Actions or similar tools for automated builds and releases.",
+          "description": "Deploy SvelteKit to production: Node.js server deployments (`@sveltejs/adapter-node`), Docker containerization, edge network hosting, and CI/CD pipelines.",
           "resources": [
             {
               "title": "Deploying SvelteKit to Vercel",
@@ -818,13 +858,15 @@
               "url": "/data/docs/svelte_developer/svelte_developer_deployment_strategies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 35
         },
         {
           "id": "svelte_developer_performance_optimization",
           "name": "Advanced Performance Optimization",
           "tag": "advanced",
-          "description": "Optimize SvelteKit application performance through code splitting, asset optimization (images, fonts), lazy loading, preloading strategies (`preloadCode`, `preloadData`), and understanding bundle analysis. Focus on Core Web Vitals and user experience metrics.",
+          "description": "Optimize SvelteKit performance: Code splitting, asset preloading, image optimization with `@sveltejs/enhanced-img`, and measuring Core Web Vitals.",
           "resources": [
             {
               "title": "Svelte Performance Guide",
@@ -856,15 +898,19 @@
               "url": "/data/docs/svelte_developer/svelte_developer_performance_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 21
     },
     {
       "id": "svelte_advanced_pro",
       "name": "Advanced Concepts & Professional Practice",
       "tag": "advanced",
-      "description": "Explore advanced SvelteKit patterns, implement crucial security and accessibility best practices, integrate modern developer tools, and develop the professional skills required for a Svelte Developer role.",
+      "description": "Explore advanced Svelte engineering: Runes architecture, accessibility, monorepos, and Web Components.",
       "resources": [
         {
           "title": "Svelte.js Advanced Concepts",
@@ -892,7 +938,7 @@
           "id": "svelte_developer_accessibility_security",
           "name": "Accessibility (A11y) & Security Best Practices",
           "tag": "advanced",
-          "description": "Build accessible Svelte applications following WCAG guidelines and WAI-ARIA practices. Implement robust security measures against common web vulnerabilities (XSS, CSRF, insecure direct object references, input sanitization) in SvelteKit.",
+          "description": "Enforce accessibility and security: Compiler-enforced a11y warnings, keyboard navigation, ARIA attributes, and sanitizing inputs to prevent XSS.",
           "resources": [
             {
               "title": "Svelte A11y Guide",
@@ -924,13 +970,15 @@
               "url": "/data/docs/svelte_developer/svelte_developer_accessibility_security.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         },
         {
           "id": "svelte_developer_monorepos_modules",
           "name": "Large-Scale Architectures & Monorepos",
           "tag": "advanced",
-          "description": "Understand how to structure larger SvelteKit projects, manage shared components and utility modules, and explore monorepo setups with tools like Nx or Turborepo for efficient code sharing, build management, and a unified development experience.",
+          "description": "Manage large-scale Svelte monorepos: Turborepo / pnpm workspaces, packaging reusable Svelte component libraries with `@sveltejs/package`, and sharing design tokens.",
           "resources": [
             {
               "title": "Monorepos with SvelteKit and Nx",
@@ -962,13 +1010,15 @@
               "url": "/data/docs/svelte_developer/svelte_developer_monorepos_modules.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "svelte_developer_ecosystem_tools",
           "name": "Developer Workflow, Ecosystem Tools & TypeScript",
           "tag": "essential",
-          "description": "Integrate essential development tools like ESLint and Prettier for code quality, Storybook for isolated component development, and leverage TypeScript for type-safe and robust SvelteKit applications, enhancing developer experience and maintainability.",
+          "description": "Leverage Svelte ecosystem: Full-stack TypeScript integration, Svelte Inspector for DOM debugging, and community extensions.",
           "resources": [
             {
               "title": "Svelte with ESLint and Prettier",
@@ -1000,13 +1050,15 @@
               "url": "/data/docs/svelte_developer/svelte_developer_ecosystem_tools.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "svelte_developer_web_components_interop",
           "name": "Web Components & Interoperability",
           "tag": "advanced",
-          "description": "Learn how Svelte components can be compiled into Web Components and understand strategies for interoperability between Svelte and other frameworks or vanilla JavaScript, fostering flexible and future-proof architectures.",
+          "description": "Compile to custom Web Components: Setting `<svelte:options customElement=\"my-element\" />` to distribute framework-agnostic UI widgets across any web project.",
           "resources": [
             {
               "title": "Svelte Docs: Custom Elements",
@@ -1033,13 +1085,15 @@
               "url": "/data/docs/svelte_developer/svelte_developer_web_components_interop.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         },
         {
           "id": "svelte_developer_career_portfolio",
           "name": "Career Readiness & Portfolio Building",
           "tag": "advanced",
-          "description": "Compile your Svelte projects into a professional portfolio, learn to articulate your skills in interviews, understand common Svelte developer interview questions, and position yourself effectively for Svelte Developer roles.",
+          "description": "Build a competitive Svelte portfolio: Highlighting performant full-stack web applications, open-source packages, and technical interview readiness.",
           "resources": [
             {
               "title": "How to Build a Powerful Tech Portfolio",
@@ -1066,13 +1120,15 @@
               "url": "/data/docs/svelte_developer/svelte_developer_career_portfolio.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         },
         {
           "id": "svelte_developer_capstone_project",
           "name": "Capstone Project: Full-Stack SvelteKit Application",
           "tag": "advanced",
-          "description": "Build a comprehensive, production-grade SvelteKit application from scratch, incorporating multiple features, authentication, database integration (e.g., Prisma, Supabase), API endpoints, and a robust deployment strategy. This project consolidates all learned skills.",
+          "description": "Build an enterprise SvelteKit capstone: Full-stack SaaS application featuring Svelte 5 Runes, Lucia auth, PostgreSQL database with Drizzle ORM, Stripe payments, and Playwright tests.",
           "resources": [
             {
               "title": "Example SvelteKit Fullstack App (GitHub)",
@@ -1099,9 +1155,14 @@
               "url": "/data/docs/svelte_developer/svelte_developer_capstone_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 100
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 30
     }
-  ]
+  ],
+  "total_exp": 1000
 }

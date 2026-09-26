@@ -47,25 +47,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Multilingual Contract Entity & Clause Extraction Engine",
+        "title": "Multilingual Legal Contract Extraction & Clause Classification Engine",
         "tech_stack": [
-          "Python",
-          "HuggingFace Transformers",
           "PyTorch",
-          "FastAPI"
+          "HuggingFace Transformers",
+          "RoBERTa",
+          "FastAPI",
+          "Docker"
         ],
-        "description": "Fine-tune a RoBERTa model to automatically identify legal obligations, liabilities, and entities in enterprise legal contracts."
+        "description": "Train and deploy a domain-adapted transformer extracting named entities, indemnification clauses, and payment liabilities from legal PDFs with 95%+ precision."
       },
       {
-        "title": "Domain-Specific LLM Fine-Tuning with LoRA & PEFT",
+        "title": "Domain-Adapted Instruction Fine-Tuning with LoRA & QLoRA",
         "tech_stack": [
-          "PyTorch",
-          "Hugging Face Transformers",
+          "LLaMA 3",
           "PEFT",
-          "BitsAndBytes",
-          "TRL"
+          "Unsloth",
+          "DeepSpeed",
+          "HuggingFace TGI"
         ],
-        "description": "Fine-tune an open-source 8B parameter language model on domain-specific medical/legal text using QLoRA, evaluating perplexity and hallucination rates."
+        "description": "Perform parameter-efficient fine-tuning (QLoRA) on an open-weight LLM for enterprise support ticket triage, evaluating performance with synthetic test sets."
       }
     ],
     "certifications": [
@@ -73,10 +74,11 @@
       "AWS Certified Machine Learning - Specialty"
     ],
     "interview_focus": [
-      "Subword Tokenization Algorithms & Out-of-Vocabulary Handling",
-      "BERT (Encoder) vs GPT (Decoder) vs T5 (Seq2Seq)",
-      "Cross-Entropy Loss in Language Modeling",
-      "Handling Imbalanced Text Classification Datasets"
+      "Transformer Architecture (Multi-Head Self-Attention, Positional Embeddings, LayerNorm)",
+      "Tokenization Algorithms (Byte-Pair Encoding / BPE, WordPiece, SentencePiece)",
+      "Parameter-Efficient Fine-Tuning (LoRA, QLoRA, Prefix Tuning, Adapters)",
+      "Semantic Search & Dense Retrieval (Sentence Transformers, Bi-Encoders vs Cross-Encoders)",
+      "Evaluation Metrics in NLP (BLEU, ROUGE, Exact Match / F1, Perplexity, Embedding Cosine Similarity)"
     ]
   },
   "format": "tree",
@@ -85,7 +87,7 @@
       "id": "nlp_engineer_fundamentals",
       "name": "Foundational Skills & NLP Basics",
       "tag": "essential",
-      "description": "Establish a strong foundation in programming, mathematics for ML, and core Natural Language Processing concepts and traditional techniques.",
+      "description": "Master natural language processing fundamentals: Computational linguistics, text processing pipelines, vector representations, and deep neural architectures.",
       "resources": [
         {
           "title": "Python for Data Science and Machine Learning Bootcamp (Udemy)",
@@ -118,7 +120,7 @@
           "id": "nlp_engineer_python_essentials",
           "name": "Python & Data Science Toolkit",
           "tag": "essential",
-          "description": "Master Python programming, data structures, algorithms, and key libraries like NumPy, Pandas, Scikit-learn, and Matplotlib for efficient data manipulation, analysis, and visualization. Understand virtual environments (venv, conda) for project management.",
+          "description": "Master Python libraries for NLP: High-performance text manipulation with regex, spaCy, NLTK, Hugging Face Datasets, and Polars/Pandas for large-scale corpus processing.",
           "resources": [
             {
               "title": "NumPy Documentation",
@@ -150,13 +152,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_python_essentials.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         },
         {
           "id": "nlp_engineer_ml_math",
           "name": "Mathematics for Machine Learning",
           "tag": "essential",
-          "description": "Understand the essential mathematical concepts including linear algebra (vectors, matrices, eigenvalues), calculus (gradients, optimization), probability (Bayes' theorem, distributions), and statistics (hypothesis testing, regression) that underpin machine learning and NLP algorithms.",
+          "description": "Master mathematical foundations of NLP: Probability theory, Markov chains, cross-entropy loss, softmax distributions, matrix factorization, and vector space geometry.",
           "resources": [
             {
               "title": "Linear Algebra for Machine Learning (Machine Learning Mastery)",
@@ -183,13 +187,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_ml_math.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         },
         {
           "id": "nlp_engineer_intro_nlp",
           "name": "Introduction to NLP & Core Linguistics",
           "tag": "essential",
-          "description": "Learn the history and evolution of NLP, fundamental linguistic concepts (morphology, syntax, semantics, pragmatics), and the common problems NLP aims to solve (e.g., text understanding, generation, translation, summarization).",
+          "description": "Understand core linguistic concepts: Morphology, syntax, semantics, pragmatics, dependency parsing, constituency trees, and lexical databases such as WordNet.",
           "resources": [
             {
               "title": "Speech and Language Processing (3rd ed. draft) by Jurafsky and Martin",
@@ -211,13 +217,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_intro_nlp.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 13
         },
         {
           "id": "nlp_engineer_traditional_nlp",
           "name": "Traditional & Statistical NLP Techniques",
           "tag": "essential",
-          "description": "Explore rule-based systems, statistical NLP methods, and classic machine learning algorithms (e.g., Naive Bayes, SVMs, Logistic Regression, Hidden Markov Models, CRFs) for basic NLP tasks like text classification, part-of-speech tagging, and named entity recognition. Understand feature engineering for these models.",
+          "description": "Implement classical statistical NLP: N-gram language models, smoothing algorithms (Kneser-Ney), Hidden Markov Models (HMMs), and Maximum Entropy classifiers.",
           "resources": [
             {
               "title": "Text Classification with Naive Bayes (Analytics Vidhya)",
@@ -244,15 +252,19 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_traditional_nlp.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 17
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 11
     },
     {
       "id": "nlp_engineer_text_representation",
       "name": "Text Preprocessing & Advanced Representation Learning",
       "tag": "essential",
-      "description": "Master techniques for cleaning, preparing, and transforming raw text into numerical representations suitable for machine learning and deep learning models, moving from statistical to distributed embeddings.",
+      "description": "Transform raw text into numerical feature spaces: One-hot encoding, bag-of-words (BoW), TF-IDF weighting, BM25 ranking, and cosine similarity matching.",
       "resources": [
         {
           "title": "Text Preprocessing for NLP (Towards Data Science)",
@@ -280,7 +292,7 @@
           "id": "nlp_engineer_preprocessing",
           "name": "Text Cleaning & Normalization",
           "tag": "essential",
-          "description": "Implement essential preprocessing steps: tokenization, stemming, lemmatization, stop-word removal, handling special characters, punctuation, numerical data, case folding, and noise reduction using libraries like NLTK, spaCy, and RegEx.",
+          "description": "Build robust text normalization pipelines: Unicode normalization (NFKC), casing strategies, stopword filtering, lemmatization with spaCy, stemming, and handling emojis/URLs.",
           "resources": [
             {
               "title": "spaCy Documentation: Tokenization",
@@ -307,13 +319,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_preprocessing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "nlp_engineer_feature_engineering",
           "name": "Statistical Feature Engineering for Text",
           "tag": "essential",
-          "description": "Learn to extract meaningful features from text using count-based methods like Bag-of-Words (BoW), Term Frequency-Inverse Document Frequency (TF-IDF), N-grams, and one-hot encoding. Understand their strengths and limitations.",
+          "description": "Engineer linguistic features: Part-of-speech tag distributions, readability scores (Flesch-Kincaid), named entity density, sentiment lexicons (VADER), and syntactic features.",
           "resources": [
             {
               "title": "Understanding TF-IDF (MonkeyLearn)",
@@ -340,13 +354,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_feature_engineering.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "nlp_engineer_word_embeddings",
           "name": "Static Word Embeddings",
           "tag": "essential",
-          "description": "Understand distributed representations of words, including how they are learned (e.g., Skip-gram, CBOW), and implement pre-trained models like Word2Vec, GloVe, and FastText. Grasp their ability to capture semantic and syntactic relationships.",
+          "description": "Implement dense distributed representations: Word2Vec (Skip-gram, CBOW with negative sampling), GloVe co-occurrence matrix factorization, and FastText subword embeddings.",
           "resources": [
             {
               "title": "GloVe: Global Vectors for Word Representation (Paper)",
@@ -368,13 +384,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_word_embeddings.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         },
         {
           "id": "nlp_engineer_subword_tokenization",
           "name": "Subword & Character-level Tokenization",
           "tag": "advanced",
-          "description": "Explore advanced tokenization techniques like Byte Pair Encoding (BPE), WordPiece, and SentencePiece, which are crucial for handling out-of-vocabulary words and are fundamental to modern large language models. Also, understand character-level embeddings for robustness.",
+          "description": "Master modern tokenization algorithms: Byte-Pair Encoding (BPE), WordPiece, SentencePiece, Unigram tokenizers, and managing vocabulary truncation and special tokens.",
           "resources": [
             {
               "title": "Subword Tokenization (Hugging Face Blog)",
@@ -401,15 +419,19 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_subword_tokenization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 14
     },
     {
       "id": "nlp_engineer_deep_learning_nlp",
       "name": "Deep Learning Architectures for NLP",
       "tag": "essential",
-      "description": "Dive into neural network architectures specifically designed for sequential data, understanding their evolution from basic networks to sophisticated attention-based models, and their application to various NLP tasks.",
+      "description": "Transition to deep neural sequence modeling: Autoregressive sequence modeling, gradient backpropagation through time (BPTT), and embedding layer architectures.",
       "resources": [
         {
           "title": "Deep Learning Specialization (Coursera by Andrew Ng)",
@@ -437,7 +459,7 @@
           "id": "nlp_engineer_neural_networks_basics",
           "name": "Neural Networks Fundamentals",
           "tag": "essential",
-          "description": "Learn about the building blocks of neural networks: perceptrons, multi-layer perceptrons (MLPs), feedforward networks, backpropagation algorithm, various activation functions (ReLU, Sigmoid, Tanh, GELU), loss functions, and optimization algorithms (SGD, Adam, RMSprop).",
+          "description": "Train foundational deep neural networks in PyTorch: Multilayer perceptrons for text classification, embedding lookups, dropout regularization, and cross-entropy loss.",
           "resources": [
             {
               "title": "Neural Networks and Deep Learning Book",
@@ -464,13 +486,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_neural_networks_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 13
         },
         {
           "id": "nlp_engineer_rnns_lstms",
           "name": "Recurrent Neural Networks (RNNs), LSTMs & GRUs",
           "tag": "essential",
-          "description": "Understand the architecture of Recurrent Neural Networks (RNNs), their ability to process sequential data, and their limitations (vanishing/exploding gradients). Learn how Long Short-Term Memory (LSTM) networks and Gated Recurrent Units (GRUs) address these issues, enabling longer-term dependencies.",
+          "description": "Model sequential dependencies: Vanilla RNN vanishing/exploding gradients, Long Short-Term Memory (LSTM) gating mechanisms, Gated Recurrent Units (GRUs), and bidirectional LSTMs.",
           "resources": [
             {
               "title": "Understanding LSTMs (Colah's Blog)",
@@ -497,13 +521,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_rnns_lstms.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "nlp_engineer_cnns_nlp",
           "name": "Convolutional Neural Networks (CNNs) for NLP",
           "tag": "advanced",
-          "description": "Explore how CNNs, traditionally used for image processing, can be adapted and applied to text data for tasks like text classification, sentiment analysis, and extracting local features through various kernel sizes and pooling layers.",
+          "description": "Apply convolutional architectures to text: Kim's TextCNN, multi-scale 1D convolutions for n-gram feature extraction, max-over-time pooling, and character-level CNNs.",
           "resources": [
             {
               "title": "A Comprehensive Guide to Convolutional Neural Networks for NLP (Analytics Vidhya)",
@@ -530,13 +556,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_cnns_nlp.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         },
         {
           "id": "nlp_engineer_attention",
           "name": "Attention Mechanisms & Encoder-Decoder Architectures",
           "tag": "essential",
-          "description": "Grasp the fundamental concept of attention and its role in allowing neural network models (especially sequence-to-sequence encoder-decoder models) to dynamically focus on relevant parts of the input sequence, leading to significant improvements in tasks like machine translation.",
+          "description": "Implement sequence-to-sequence attention: Bahdanau additive attention, Luong multiplicative attention, encoder-decoder architectures for machine translation, and teacher forcing.",
           "resources": [
             {
               "title": "Attention and Augmented Recurrent Neural Networks (Distill.pub)",
@@ -563,15 +591,19 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_attention.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 15
     },
     {
       "id": "nlp_engineer_transformers",
       "name": "Transformers & Large Language Models (LLMs)",
       "tag": "essential",
-      "description": "Master the revolutionary Transformer architecture, its numerous variants, and how to effectively work with powerful pre-trained Large Language Models, which form the backbone of modern NLP.",
+      "description": "Master the Transformer architecture: Scaled dot-product attention, multi-head self-attention, cross-attention, causal masking, and feed-forward position-wise layers.",
       "resources": [
         {
           "title": "The Illustrated Transformer (Jay Alammar)",
@@ -604,7 +636,7 @@
           "id": "nlp_engineer_transformer_architecture",
           "name": "Transformer Architecture Explained",
           "tag": "essential",
-          "description": "Deep dive into the core components of the Transformer: self-attention, multi-head attention, positional encoding, the encoder-decoder structure, feed-forward layers, residual connections, and layer normalization. Understand why attention is 'all you need'.",
+          "description": "Dissect Transformer mechanics: Positional encodings (sinusoidal, learned, RoPE, ALiBi), Pre-LN vs Post-LN stability, residual connections, and layer normalization vs RMSNorm.",
           "resources": [
             {
               "title": "Attention Is All You Need (Paper)",
@@ -631,13 +663,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_transformer_architecture.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 19
         },
         {
           "id": "nlp_engineer_pretrained_models",
           "name": "Pre-trained Transformer Models (BERT, GPT, T5)",
           "tag": "essential",
-          "description": "Learn about the architecture, training objectives, and applications of prominent pre-trained models. Differentiate between encoder-only (BERT, RoBERTa), decoder-only (GPT, Llama), and encoder-decoder (T5, BART) models. Explore their capabilities and limitations.",
+          "description": "Leverage pre-trained model paradigms: Masked language modeling (BERT, RoBERTa), causal autoregressive modeling (GPT-2/3/4, LLaMA), and encoder-decoder modeling (T5, BART).",
           "resources": [
             {
               "title": "Hugging Face Transformers Documentation",
@@ -664,13 +698,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_pretrained_models.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         },
         {
           "id": "nlp_engineer_fine_tuning",
           "name": "Fine-tuning Transformers for Downstream Tasks",
           "tag": "essential",
-          "description": "Apply transfer learning by fine-tuning pre-trained models on specific downstream NLP tasks (e.g., classification, NER, QA) using frameworks like Hugging Face Transformers with PyTorch or TensorFlow. Understand hyperparameter tuning and best practices for domain adaptation.",
+          "description": "Fine-tune foundation models using Hugging Face Transformers: Custom Trainer classes, learning rate warmup schedules, gradient accumulation, and evaluation metrics.",
           "resources": [
             {
               "title": "Fine-tuning a pre-trained model (Hugging Face Transformers)",
@@ -697,13 +733,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_fine_tuning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         },
         {
           "id": "nlp_engineer_prompt_engineering",
           "name": "Prompt Engineering & In-Context Learning",
           "tag": "advanced",
-          "description": "Develop strategies for crafting effective prompts to guide LLMs for various tasks. Understand concepts like few-shot learning, zero-shot learning, chain-of-thought prompting, and self-consistency to maximize model performance without explicit fine-tuning.",
+          "description": "Engineer effective prompts: Zero-shot and few-shot in-context learning, Chain-of-Thought (CoT), ReAct prompting, and structured output extraction with Pydantic/Instructor.",
           "resources": [
             {
               "title": "Prompt Engineering Guide",
@@ -730,13 +768,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_prompt_engineering.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         },
         {
           "id": "nlp_engineer_peft_methods",
           "name": "Parameter-Efficient Fine-Tuning (PEFT)",
           "tag": "advanced",
-          "description": "Explore advanced techniques like LoRA (Low-Rank Adaptation), Adapters, Prefix Tuning, and Prompt Tuning to efficiently fine-tune large language models with significantly reduced computational resources and storage requirements.",
+          "description": "Implement Parameter-Efficient Fine-Tuning (PEFT): Low-Rank Adaptation (LoRA), QLoRA 4-bit quantization with bitsandbytes, prefix tuning, and prompt tuning.",
           "resources": [
             {
               "title": "PEFT Library Documentation (Hugging Face)",
@@ -763,13 +803,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_peft_methods.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 23
         },
         {
           "id": "nlp_engineer_alignment_instruction_tuning",
           "name": "Alignment & Instruction Tuning",
           "tag": "advanced",
-          "description": "Understand the process of aligning LLMs to human preferences and instructions. Learn about techniques like Instruction Tuning, Reinforcement Learning from Human Feedback (RLHF), and Constitutional AI to make models more helpful, harmless, and honest.",
+          "description": "Align language models to human intent: Supervised Fine-Tuning (SFT), Reinforcement Learning from Human Feedback (RLHF) with PPO, Direct Preference Optimization (DPO), and ORPO.",
           "resources": [
             {
               "title": "Aligning Language Models to Follow Instructions (Stanford)",
@@ -796,15 +838,19 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_alignment_instruction_tuning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 27
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 15
     },
     {
       "id": "nlp_engineer_advanced_applications",
       "name": "Advanced NLP Applications & Projects",
       "tag": "essential",
-      "description": "Apply modern and cutting-edge NLP techniques, especially leveraging Transformers and LLMs, to solve complex real-world problems across various domains, and build innovative language systems.",
+      "description": "Build end-to-end production NLP systems across high-value business domains: Semantic search, conversational assistants, extraction pipelines, and agentic workflows.",
       "resources": [
         {
           "title": "Practical Natural Language Processing: A Guide to the State of the Art",
@@ -832,7 +878,7 @@
           "id": "nlp_engineer_text_classification",
           "name": "Text Classification & Sentiment Analysis",
           "tag": "essential",
-          "description": "Build robust models for categorizing text into predefined classes (e.g., spam detection, topic classification), detecting emotions, and analyzing sentiment at document, sentence, or aspect level using deep learning and transformer-based approaches.",
+          "description": "Deploy robust text classifiers: Multi-class and multi-label intent detection, toxic comment classification, aspect-based sentiment analysis (ABSA), and zero-shot classification.",
           "resources": [
             {
               "title": "Sentiment Analysis with Transformers (Hugging Face Blog)",
@@ -859,13 +905,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_text_classification.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "nlp_engineer_ner_pos",
           "name": "Named Entity Recognition (NER) & Part-of-Speech Tagging",
           "tag": "essential",
-          "description": "Develop advanced systems to identify and classify named entities (persons, organizations, locations, dates, products) and part-of-speech tags in text using conditional random fields (CRFs) and transformer-based sequence tagging models (e.g., spaCy, Hugging Face).",
+          "description": "Extract structured entities: Named Entity Recognition (NER) with RoBERTa-CRF, biomedical entity extraction, Part-of-Speech tagging, and relation extraction.",
           "resources": [
             {
               "title": "Named Entity Recognition (NER) with spaCy",
@@ -892,13 +940,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_ner_pos.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 17
         },
         {
           "id": "nlp_engineer_qa_summarization",
           "name": "Question Answering & Text Summarization",
           "tag": "advanced",
-          "description": "Implement models for both extractive (identifying key sentences) and abstractive (generating new text) summarization. Build systems that can answer questions based on given text, knowledge bases, or real-time information, including open-domain QA.",
+          "description": "Implement extractive and abstractive text generation: Reading comprehension with Question Answering models, document summarization with T5/BART, and evaluating ROUGE and BLEU scores.",
           "resources": [
             {
               "title": "Question Answering with a fine-tuned BERT (Hugging Face)",
@@ -925,13 +975,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_qa_summarization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 27
         },
         {
           "id": "nlp_engineer_machine_translation",
           "name": "Machine Translation",
           "tag": "advanced",
-          "description": "Understand the principles of Neural Machine Translation (NMT) and work with encoder-decoder architectures, especially Transformer-based models, for accurate and fluent language translation. Explore multilingual models and low-resource translation challenges.",
+          "description": "Build translation pipelines: Sequence-to-sequence models with MarianMT and NLLB, beam search decoding, length penalties, and quality evaluation with COMET and BLEU.",
           "resources": [
             {
               "title": "Neural Machine Translation with Attention (TensorFlow)",
@@ -958,13 +1010,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_machine_translation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         },
         {
           "id": "nlp_engineer_text_generation_conversational_ai",
           "name": "Text Generation & Conversational AI",
           "tag": "advanced",
-          "description": "Explore sophisticated text generation techniques using decoder-only LLMs for creative writing, content creation, and dialogue systems. Develop chatbots and virtual assistants, focusing on dialogue state tracking, intent recognition, and response generation.",
+          "description": "Develop conversational systems: Multi-turn dialogue management, context window pruning, sampling hyperparameters (temperature, top-p, top-k, repetition penalty), and streaming responses.",
           "resources": [
             {
               "title": "Building a Chatbot with OpenAI GPT-3 (Weights & Biases)",
@@ -991,13 +1045,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_text_generation_conversational_ai.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 28
         },
         {
           "id": "nlp_engineer_information_retrieval",
           "name": "Information Retrieval & Semantic Search",
           "tag": "advanced",
-          "description": "Implement techniques for retrieving relevant documents or passages from large corpora. Focus on dense retrieval (e.g., using Sentence-BERT for semantic similarity) and Retrieval Augmented Generation (RAG) for combining retrieval with generative models to reduce hallucinations.",
+          "description": "Implement semantic search and RAG: Dense passage retrieval with bi-encoders, cross-encoder re-ranking (BGE-Reranker), hybrid BM25 + dense search, and vector databases (Qdrant, Pinecone).",
           "resources": [
             {
               "title": "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks (Paper)",
@@ -1024,13 +1080,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_information_retrieval.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 28
         },
         {
           "id": "nlp_engineer_llm_agents_tool_use",
           "name": "LLM Agents & Tool Use",
           "tag": "advanced",
-          "description": "Understand the architecture and principles of building LLM-powered autonomous agents capable of performing complex multi-step tasks. Explore concepts like planning, memory, reflection, and using external tools (e.g., search engines, APIs, code interpreters) to augment LLM capabilities.",
+          "description": "Architect autonomous LLM agents: Function calling, ReAct agent loops, LangChain / LangGraph stateful graph execution, and external tool integration (search APIs, SQL query generators).",
           "resources": [
             {
               "title": "OpenAI Function Calling Guide",
@@ -1052,13 +1110,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_llm_agents_tool_use.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 21
         },
         {
           "id": "nlp_engineer_topic_modeling_clustering",
           "name": "Topic Modeling & Clustering",
           "tag": "advanced",
-          "description": "Apply unsupervised learning techniques to discover abstract 'topics' in collections of documents. Explore traditional methods like Latent Dirichlet Allocation (LDA) and Non-negative Matrix Factorization (NMF), and modern approaches using embeddings and clustering algorithms.",
+          "description": "Discover latent semantic structures: BERTopic with sentence-transformers and UMAP/HDBSCAN clustering, Latent Dirichlet Allocation (LDA), and dynamic topic evolution tracking.",
           "resources": [
             {
               "title": "Topic Modeling with LDA using Gensim (Kaggle)",
@@ -1085,15 +1145,19 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_topic_modeling_clustering.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 15
     },
     {
       "id": "nlp_engineer_evaluation_mlops",
       "name": "Model Evaluation, MLOps & Deployment",
       "tag": "essential",
-      "description": "Learn to robustly evaluate NLP models, manage their entire lifecycle from experimentation to production, and deploy them effectively into real-world environments with scalability and reliability.",
+      "description": "Evaluate, deploy, and monitor production NLP systems: Latency profiling, inference optimization, CI/CD automation, and drift detection.",
       "resources": [
         {
           "title": "Machine Learning Engineering for Production (MLOps) Specialization (Coursera)",
@@ -1121,7 +1185,7 @@
           "id": "nlp_engineer_model_evaluation",
           "name": "NLP Model Evaluation & Metrics",
           "tag": "essential",
-          "description": "Understand and apply appropriate quantitative and qualitative evaluation metrics for various NLP tasks (e.g., Accuracy, Precision, Recall, F1, BLEU, ROUGE, METEOR, Perplexity). Perform thorough error analysis, human evaluation, and robustness testing (e.g., adversarial attacks).",
+          "description": "Evaluate language systems with rigor: Perplexity, BLEU, ROUGE, METEOR, BERTScore, and LLM-as-a-judge frameworks with G-Eval and Ragas for RAG pipelines.",
           "resources": [
             {
               "title": "Metrics for NLP Models (Hugging Face Documentation)",
@@ -1148,13 +1212,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_model_evaluation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 16
         },
         {
           "id": "nlp_engineer_model_interpretability",
           "name": "Model Interpretability & Explainability (XAI)",
           "tag": "advanced",
-          "description": "Explore techniques to understand why an NLP model makes certain predictions, crucial for trust and debugging. Implement methods like LIME, SHAP, attention visualizations, saliency maps, and probing tasks to gain insights into model behavior.",
+          "description": "Explain model predictions: Feature attribution with Integrated Gradients, SHAP, LIME, attention heatmap visualizations with BertViz, and probing internal representations.",
           "resources": [
             {
               "title": "Explainable AI for NLP (Weights & Biases)",
@@ -1181,13 +1247,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_model_interpretability.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         },
         {
           "id": "nlp_engineer_mlops_principles",
           "name": "MLOps Principles & Workflow",
           "tag": "essential",
-          "description": "Grasp the core concepts of MLOps, including data versioning (DVC), model versioning (MLflow), continuous integration/delivery/training (CI/CD/CT) for ML, experiment tracking, and orchestration. Understand the transition from research to production.",
+          "description": "Apply MLOps to language models: Versioning datasets and tokenizers with DVC, tracking training runs in Weights & Biases, and managing model registries in Hugging Face Hub or MLflow.",
           "resources": [
             {
               "title": "MLflow Documentation",
@@ -1214,13 +1282,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_mlops_principles.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "nlp_engineer_api_development",
           "name": "API Development & Containerization",
           "tag": "essential",
-          "description": "Build efficient and scalable RESTful APIs for NLP models using modern Python frameworks like FastAPI or Flask. Containerize applications with Docker to ensure consistent deployment across different environments, managing dependencies effectively.",
+          "description": "Build low-latency NLP APIs: FastAPI with asynchronous request handling, SSE streaming response endpoints, input sanitization, and Pydantic validation.",
           "resources": [
             {
               "title": "FastAPI Tutorial",
@@ -1247,13 +1317,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_api_development.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 16
         },
         {
           "id": "nlp_engineer_deployment_orchestration",
           "name": "Model Deployment & Orchestration",
           "tag": "advanced",
-          "description": "Deploy NLP models to various cloud platforms (AWS Sagemaker, GCP Vertex AI, Azure Machine Learning), understand serverless functions (Lambda, Cloud Functions), and master basic concepts of container orchestration with Kubernetes for scaling, load balancing, and managing microservices.",
+          "description": "Deploy NLP systems at scale: High-throughput LLM serving engines (vLLM, TGI, TensorRT-LLM) on Kubernetes with continuous batching and PagedAttention.",
           "resources": [
             {
               "title": "Deploying Machine Learning Models to Production (Google Cloud)",
@@ -1280,13 +1352,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_deployment_orchestration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         },
         {
           "id": "nlp_engineer_monitoring_logging",
           "name": "Monitoring, Logging & Alerting",
           "tag": "advanced",
-          "description": "Set up comprehensive monitoring for model performance (data drift, concept drift, bias drift, latency, throughput) and system health. Implement effective logging strategies, define alerts, and use dashboards (e.g., Grafana, Prometheus) to maintain model integrity and reliability in production.",
+          "description": "Monitor production NLP applications: Tracking token throughput (tokens/sec), time-to-first-token (TTFT), semantic drift, hallucination frequency, and logging user query traces with Langfuse.",
           "resources": [
             {
               "title": "ML Model Monitoring in Production (Databricks)",
@@ -1313,15 +1387,19 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_monitoring_logging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 13
     },
     {
       "id": "nlp_engineer_responsible_ai",
       "name": "Responsible AI & Ethical NLP",
       "tag": "essential",
-      "description": "Understand and actively mitigate ethical concerns, biases, fairness, privacy issues, and potential harms inherent in NLP systems to build trustworthy and human-centric AI.",
+      "description": "Enforce Responsible AI standards: Mitigating stereotyping, toxicity filtering, PII redaction, and adhering to international AI compliance frameworks.",
       "resources": [
         {
           "title": "Responsible AI Practices (Microsoft)",
@@ -1349,7 +1427,7 @@
           "id": "nlp_engineer_bias_fairness",
           "name": "Bias Detection & Mitigation in NLP",
           "tag": "essential",
-          "description": "Identify and address various types of biases (e.g., gender, racial, cultural, historical) in training data, word embeddings, and NLP model outputs. Explore techniques like bias measurement, debiasing algorithms, and fair evaluation metrics to ensure equitable outcomes.",
+          "description": "Detect and mitigate linguistic bias: Measuring representation parity across demographic groups, counterfactual data augmentation, and de-biasing word embeddings.",
           "resources": [
             {
               "title": "Fairness in AI (Google AI)",
@@ -1376,13 +1454,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_bias_fairness.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 17
         },
         {
           "id": "nlp_engineer_privacy_security",
           "name": "Privacy, Data Security & Confidentiality",
           "tag": "essential",
-          "description": "Learn about techniques for data anonymization, pseudonymization, differential privacy, federated learning, and secure multi-party computation to protect sensitive text data and user information in NLP applications. Understand data governance and compliance (e.g., GDPR, HIPAA).",
+          "description": "Secure NLP systems against attacks: Prompt injection defenses, data extraction guardrails (NeMo Guardrails), and differential privacy in language model training.",
           "resources": [
             {
               "title": "Differential Privacy (Google AI)",
@@ -1409,13 +1489,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_privacy_security.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 17
         },
         {
           "id": "nlp_engineer_ethical_considerations",
           "name": "Ethical NLP & Societal Impact",
           "tag": "essential",
-          "description": "Discuss the broader societal implications of NLP technologies, including potential for misuse (e.g., deepfakes, propaganda), misinformation, toxicity, and accountability. Develop frameworks for ethical decision-making and responsible deployment of AI systems.",
+          "description": "Navigate ethical challenges in NLP: Copyright and intellectual property in training datasets, environmental footprint of large model training, and societal impact of synthetic text.",
           "resources": [
             {
               "title": "Ethics in NLP (ACL Workshop)",
@@ -1442,15 +1524,19 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_ethical_considerations.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 14
     },
     {
       "id": "nlp_engineer_portfolio_career",
       "name": "Portfolio Development & Career Readiness",
       "tag": "advanced",
-      "description": "Translate your extensive NLP knowledge into a compelling portfolio, prepare rigorously for technical and behavioral interviews, and strategically position yourself for a successful NLP Engineer role in the industry.",
+      "description": "Build a demonstrable NLP portfolio: Publishing open-source Hugging Face models, creating interactive demos on Spaces, and writing technical deep dives.",
       "resources": [
         {
           "title": "How to Build an NLP Portfolio (Towards Data Science)",
@@ -1478,7 +1564,7 @@
           "id": "nlp_engineer_project_capstone",
           "name": "Capstone Project: End-to-End Production-Ready NLP System",
           "tag": "advanced",
-          "description": "Design and implement a complete, production-grade NLP project from problem definition and data acquisition to model development, evaluation, deployment, and monitoring. This project should showcase advanced skills and problem-solving abilities across multiple roadmap areas.",
+          "description": "Build a production-grade NLP capstone: End-to-end multi-document research assistant featuring hybrid search, re-ranking, source citation, and a vLLM-served local LLM.",
           "resources": [
             {
               "title": "Kaggle: Real-world NLP Competitions",
@@ -1500,13 +1586,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_project_capstone.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 55
         },
         {
           "id": "nlp_engineer_portfolio_showcase",
           "name": "Building a Strong Portfolio & Case Studies",
           "tag": "advanced",
-          "description": "Curate and present your NLP projects effectively on platforms like GitHub, personal websites, or LinkedIn. Write detailed case studies explaining the problem, your approach, technical details, results, and lessons learned. Focus on quantifiable impact and clear communication.",
+          "description": "Curate your NLP engineering portfolio: Showcase GitHub repositories with clean documentation, Dockerfiles, test suites, and interactive live Gradio/Streamlit demos.",
           "resources": [
             {
               "title": "Structuring a Data Science Portfolio Project (freeCodeCamp)",
@@ -1533,13 +1621,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_portfolio_showcase.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         },
         {
           "id": "nlp_engineer_interview_prep",
           "name": "Interview Preparation & System Design",
           "tag": "advanced",
-          "description": "Prepare for common technical questions (coding, algorithms, data structures, ML fundamentals), behavioral interviews, and NLP-specific system design challenges (e.g., designing a recommendation engine, chatbot, or search system). Practice communicating technical solutions clearly.",
+          "description": "Ace NLP technical interviews: Solve coding challenges on string algorithms and PyTorch tensor operations, whiteboard Transformer attention mechanisms, and design large-scale RAG systems.",
           "resources": [
             {
               "title": "Machine Learning Interview Prep (AlgoExpert)",
@@ -1566,13 +1656,15 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_interview_prep.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 28
         },
         {
           "id": "nlp_engineer_staying_updated",
           "name": "Staying Updated in the Rapidly Evolving NLP Field",
           "tag": "advanced",
-          "description": "Develop habits for continuous learning and professional growth: regularly reading cutting-edge research papers (arXiv, ACL, EMNLP), following key conferences, engaging with the NLP community, and experimenting with new tools and models.",
+          "description": "Maintain bleeding-edge NLP expertise: Track Hugging Face Daily Papers, follow top NLP conferences (ACL, EMNLP, NAACL), and experiment with frontier open-weights models.",
           "resources": [
             {
               "title": "ACL Anthology",
@@ -1599,9 +1691,14 @@
               "url": "/data/docs/nlp_engineer/nlp_engineer_staying_updated.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 20
     }
-  ]
+  ],
+  "total_exp": 1000
 }

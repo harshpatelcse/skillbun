@@ -47,25 +47,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Enterprise Active Directory Attack & Detection Lab",
+        "title": "Enterprise Active Directory Compromise & Lateral Movement Simulation",
         "tech_stack": [
-          "Windows Server",
-          "Active Directory",
-          "BloodHound",
           "Sliver C2",
-          "Sysmon"
+          "Cobalt Strike",
+          "BloodHound",
+          "Impacket",
+          "Kerberoasting"
         ],
-        "description": "Set up an enterprise domain lab, simulate credential harvesting, perform BloodHound analysis, and author detection rules."
+        "description": "Execute a full attack adversary simulation in an enterprise AD lab, exploiting misconfigured certificate services (AD CS), bypassing AMSI, and pivoting."
       },
       {
-        "title": "Active Directory Domain Compromise Simulation & Persistence Lab",
+        "title": "Custom C2 Beacon & Process Injection Dropper in C++/Rust",
         "tech_stack": [
-          "Cobalt Strike / Sliver",
-          "PowerView",
-          "Mimikatz",
-          "Kerberos"
+          "Rust",
+          "C++",
+          "Indirect Syscalls",
+          "API Hashing",
+          "Process Hollowing"
         ],
-        "description": "Execute adversary emulation tactics including Kerberoasting, AS-REP roasting, DCSync domain replication, and token impersonation in a proctored lab."
+        "description": "Author an evasive command-and-control implant utilizing indirect system calls, unhooking ntdll.dll, custom sleep obfuscation, and encrypted HTTPS beacons."
       }
     ],
     "certifications": [
@@ -73,10 +74,11 @@
       "Certified Red Team Professional (CRTP)"
     ],
     "interview_focus": [
-      "Explaining Kerberoasting & AS-REP Roasting Mechanics",
-      "Active Directory Delegation (Constrained vs Unconstrained)",
-      "Bypassing AMSI (Antimalware Scan Interface)",
-      "Coordinating Purple Team Exercises with Blue Teams"
+      "EDR Evasion Techniques (Direct/Indirect Syscalls, API Unhooking, Sleep Obfuscation)",
+      "Process Injection Primitives (Process Hollowing, Early Bird APC, Thread Pool Injection)",
+      "Active Directory Attack Vectors (AD CS ESC1-ESC8, Constrained/Unconstrained Delegation)",
+      "Command and Control (C2) Architecture (Malleable C2 Profiles, Domain Fronting, Egress Filtering)",
+      "Living-off-the-Land Binaries (LOLBins) & Defensive Evasion during Execution"
     ]
   },
   "format": "tree",
@@ -85,7 +87,7 @@
       "id": "red_team_operator_fundamentals",
       "name": "Foundational Knowledge & Environment Setup",
       "tag": "essential",
-      "description": "Establish a strong baseline with essential technical skills, cybersecurity principles, and the setup of a dedicated Red Team lab environment for practical learning.",
+      "description": "Establish an elite Red Team operations foundation: master adversary emulation methodologies, operational security (OPSEC), stealth tradecraft, and isolated threat emulation infrastructure.",
       "resources": [
         {
           "title": "Introduction to Cybersecurity Fundamentals",
@@ -113,7 +115,7 @@
           "id": "rt_intro_concepts",
           "name": "Introduction to Red Teaming & Core Concepts",
           "tag": "essential",
-          "description": "Understand the Red Team operator role, its objectives, legal and ethical considerations, and the adversary emulation lifecycle. Differentiate between Red Team, Pen Testing, and Bug Bounty, and get introduced to the MITRE ATT&CK Framework.",
+          "description": "Understand Red Teaming vs Penetration Testing: threat-informed defense, simulating real-world Advanced Persistent Threats (APTs), assumed-breach scenarios, and the MITRE ATT&CK enterprise matrix.",
           "resources": [
             {
               "title": "Red Team vs. Penetration Test: What's the Difference?",
@@ -140,13 +142,15 @@
               "url": "/data/docs/red_team_operator/rt_intro_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 27
         },
         {
           "id": "rt_technical_basics",
           "name": "Essential Technical Fundamentals (OS, Networking, Scripting)",
           "tag": "essential",
-          "description": "Gain proficiency in operating systems (Linux, Windows, Windows Server), networking protocols (TCP/IP stack, common services), and scripting for automation using Python, Bash, and PowerShell. Understand command-line interfaces and fundamental data structures.",
+          "description": "Master underlying operating systems and systems programming for evasion: Windows API internals, native system calls (NTDLL), Portable Executable (PE) binary format, and process memory injection mechanics.",
           "resources": [
             {
               "title": "Python for Everybody Specialization",
@@ -173,13 +177,15 @@
               "url": "/data/docs/red_team_operator/rt_technical_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 28
         },
         {
           "id": "rt_security_principles",
           "name": "Core Security Principles & Threat Intelligence",
           "tag": "essential",
-          "description": "Understand common attack vectors, vulnerabilities (OWASP Top 10), and various defensive mechanisms (AV, EDR, SIEM, Firewalls). Learn threat modeling methodologies and how to integrate threat intelligence into Red Team planning.",
+          "description": "Master defensive countermeasures from an operator perspective: how Endpoint Detection and Response (EDR) engines hook APIs, Antimalware Scan Interface (AMSI), Event Tracing for Windows (ETW), and heuristic behavior detection.",
           "resources": [
             {
               "title": "OWASP Top 10",
@@ -206,13 +212,15 @@
               "url": "/data/docs/red_team_operator/rt_security_principles.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 39
         },
         {
           "id": "rt_lab_setup_tooling",
           "name": "Red Team Lab Setup & Essential Tooling",
           "tag": "essential",
-          "description": "Set up a virtualized lab environment (e.g., VMWare, VirtualBox, Proxmox) with diverse target machines (Windows 10/11, Windows Server, various Linux distributions) and attacker machines (Kali Linux, Parrot OS). Build a small Active Directory environment for practice and gain proficiency with foundational Red Team tools and version control (Git).",
+          "description": "Build a multi-forest enterprise Red Team laboratory: multi-domain Active Directory forests, deploying commercial and open-source EDR agents, and configuring modern C2 frameworks (Sliver, Mythic, Havoc).",
           "resources": [
             {
               "title": "Metasploit Documentation",
@@ -244,15 +252,19 @@
               "url": "/data/docs/red_team_operator/rt_lab_setup_tooling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 28
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 23
     },
     {
       "id": "red_team_engagement_lifecycle",
       "name": "Red Team Engagement Lifecycle",
       "tag": "essential",
-      "description": "Master the complete phases of a Red Team operation, from meticulous planning and reconnaissance to achieving initial access, execution, sophisticated post-exploitation, and objective completion.",
+      "description": "Execute the end-to-end Red Team engagement lifecycle: covert reconnaissance, initial access weaponization, Command and Control (C2) operations, and simulated data exfiltration.",
       "resources": [
         {
           "title": "Atomic Red Team",
@@ -280,7 +292,7 @@
           "id": "rt_engagement_planning",
           "name": "Engagement Planning & Rules of Engagement",
           "tag": "essential",
-          "description": "Learn to define clear engagement objectives, scope, and rules of engagement (RoE). Understand legal and ethical boundaries, client communication, and expectation management for successful adversary simulations.",
+          "description": "Structure enterprise adversary emulation engagements: establishing Rules of Engagement (RoE), defining high-value organizational crown jewels, threat actor profiling, and establishing emergency deconfliction protocols.",
           "resources": [
             {
               "title": "Creating Effective Rules of Engagement for Security Testing",
@@ -302,13 +314,15 @@
               "url": "/data/docs/red_team_operator/rt_engagement_planning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 38
         },
         {
           "id": "rt_advanced_recon_osint",
           "name": "Advanced Reconnaissance & OSINT",
           "tag": "essential",
-          "description": "Master open-source intelligence (OSINT) techniques for passive reconnaissance and conduct targeted active reconnaissance using tools like Nmap, Shodan, Censys, and DNS/Subdomain enumeration for effective target profiling and vulnerability identification.",
+          "description": "Execute advanced Open Source Intelligence (OSINT): passive external attack surface mapping, credential breach analysis, employee profiling for targeted access, and analyzing cloud tenant infrastructure.",
           "resources": [
             {
               "title": "Nmap: The Network Mapper",
@@ -340,13 +354,15 @@
               "url": "/data/docs/red_team_operator/rt_advanced_recon_osint.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         },
         {
           "id": "rt_initial_access",
           "name": "Initial Access Vectors & Exploitation",
           "tag": "essential",
-          "description": "Develop skills in gaining the initial foothold into a target environment. Explore various attack vectors including sophisticated social engineering (phishing, vishing), client-side exploits, public-facing application exploitation (web apps, APIs), and understanding basic vulnerability research concepts.",
+          "description": "Engineer initial access payloads: custom shellcode runners, bypassing AMSI via in-memory patching, patching ETW to blind security telemetry, and weaponized documents or ISO/LNK containers.",
           "resources": [
             {
               "title": "Web Application Penetration Testing Course",
@@ -373,13 +389,15 @@
               "url": "/data/docs/red_team_operator/rt_initial_access.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 35
         },
         {
           "id": "rt_execution_c2",
           "name": "Execution & Command and Control (C2) Operations",
           "tag": "essential",
-          "description": "Learn to establish and maintain resilient command and control channels. Understand various C2 frameworks (e.g., Cobalt Strike, Metasploit, Covenant), their operational security, custom payload development, and techniques for C2 evasion over diverse protocols (HTTP, DNS, SMB, ICMP).",
+          "description": "Operate resilient Command and Control (C2) infrastructure: tiered redirector networks (cloud CDN domain fronting, reverse proxies), malleable C2 communication profiles mimicking legitimate HTTPS traffic, asynchronous beacons, and DNS tunneling.",
           "resources": [
             {
               "title": "Cobalt Strike Documentation",
@@ -411,13 +429,15 @@
               "url": "/data/docs/red_team_operator/rt_execution_c2.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 38
         },
         {
           "id": "rt_post_exploitation",
           "name": "Post-Exploitation & Internal Operations",
           "tag": "essential",
-          "description": "Execute comprehensive post-exploitation actions: credential dumping (Mimikatz, LSASS), establishing persistence mechanisms (scheduled tasks, WMI, run keys), privilege escalation (kernel exploits, misconfigurations), lateral movement (PsExec, WMI, RDP, Pass-the-Hash), and advanced defense evasion tactics.",
+          "description": "Execute covert post-exploitation: unhooking EDR user-mode hooks, utilizing indirect syscalls (SysWhispers3) to evade API monitoring, process hollowing, early bird APC injection, and credential dumping from LSASS memory using stealthy techniques.",
           "resources": [
             {
               "title": "Windows Privilege Escalation Guide",
@@ -454,13 +474,15 @@
               "url": "/data/docs/red_team_operator/rt_post_exploitation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 48
         },
         {
           "id": "rt_data_exfil_impact",
           "name": "Data Exfiltration & Objective Completion",
           "tag": "essential",
-          "description": "Focus on techniques for sensitive data exfiltration, achieving specific objectives (e.g., domain administrator, critical system access, intellectual property theft), and understanding the overall impact of the simulated breach from a business perspective.",
+          "description": "Simulate mission objectives and data exfiltration: staging encrypted target data, exfiltrating data over covert channels (HTTPS, DNS tunneling, cloud storage APIs), and documenting simulated business impact.",
           "resources": [
             {
               "title": "Data Exfiltration Techniques Explained",
@@ -487,15 +509,19 @@
               "url": "/data/docs/red_team_operator/rt_data_exfil_impact.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 38
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 28
     },
     {
       "id": "red_team_advanced_topics_collaboration",
       "name": "Advanced Topics, Reporting & Collaboration",
       "tag": "advanced",
-      "description": "Dive into specialized Red Team operations, master effective reporting, and learn to collaborate with blue teams for enhanced security posture through Purple Teaming.",
+      "description": "Master advanced tradecraft: Active Directory Certificate Services (AD CS) exploitation, cloud persistence, strict OPSEC hygiene, and Purple Teaming.",
       "resources": [
         {
           "title": "Red Team Operations: A Practical Guide (Book)",
@@ -528,7 +554,7 @@
           "id": "rt_active_directory_exploitation",
           "name": "Active Directory & Enterprise Environment Exploitation",
           "tag": "advanced",
-          "description": "Deep dive into Active Directory concepts, enumeration, common vulnerabilities, and advanced attack techniques like Kerberoasting, AS-REP Roasting, Golden Ticket, Silver Ticket, DCsync, DCshadow, and BloodHound analysis for complex enterprise environments.",
+          "description": "Master advanced Active Directory attacks: abusing misconfigured Active Directory Certificate Services (AD CS ESC1 through ESC8) for domain-wide privilege escalation, Resource-Based Constrained Delegation (RBCD), and Golden/Diamond Ticket persistence.",
           "resources": [
             {
               "title": "Attack and Defend Active Directory",
@@ -555,13 +581,15 @@
               "url": "/data/docs/red_team_operator/rt_active_directory_exploitation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         },
         {
           "id": "rt_cloud_red_teaming",
           "name": "Cloud Security Red Teaming",
           "tag": "advanced",
-          "description": "Explore Red Team operations in various cloud environments (AWS, Azure, GCP). Understand common cloud misconfigurations, cloud-specific IAM attacks, serverless function exploitation, container escapes, and abusing cloud service misconfigurations and native tools for persistence and privilege escalation.",
+          "description": "Execute cloud adversary operations: pivoting from compromised on-prem workstations to Azure Entra ID via PRT token extraction, abusing AWS IAM instance roles, and moving laterally across hybrid cloud infrastructure.",
           "resources": [
             {
               "title": "AWS Cloud Pentesting Course",
@@ -588,13 +616,15 @@
               "url": "/data/docs/red_team_operator/rt_cloud_red_teaming.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 54
         },
         {
           "id": "rt_opsec_tradecraft",
           "name": "Operational Security (OpSec) & Advanced Tradecraft",
           "tag": "advanced",
-          "description": "Learn to manage and protect your Red Team infrastructure (C2 infrastructure design, redirectors, domain fronting), maintain stealth, and implement sophisticated evasion techniques to avoid detection by advanced defensive mechanisms (EDR, SIEM). Focus on custom payload development, anti-virus/EDR evasion, anti-forensics, and intelligence-driven emulation.",
+          "description": "Enforce strict Operational Security (OPSEC): avoiding default C2 configurations, cleaning up artifacts, minimizing disk footprints by executing entirely in memory, and maintaining operator attribution anonymity.",
           "resources": [
             {
               "title": "Red Team Infrastructure: Essential OpSec Considerations",
@@ -621,13 +651,15 @@
               "url": "/data/docs/red_team_operator/rt_opsec_tradecraft.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 54
         },
         {
           "id": "rt_reporting_debriefing",
           "name": "Red Team Reporting & Debriefing",
           "tag": "advanced",
-          "description": "Develop skills in writing clear, concise, and impactful Red Team reports. Learn to effectively communicate findings, risk assessments, actionable recommendations, and executive summaries to various stakeholders during debriefings, demonstrating strong presentation skills.",
+          "description": "Deliver executive and technical debriefings: creating comprehensive attack path timelines, detailing detection gap analysis, and presenting actionable remediation engineering strategies to C-level executives.",
           "resources": [
             {
               "title": "Effective Red Team Report Writing",
@@ -654,13 +686,15 @@
               "url": "/data/docs/red_team_operator/rt_reporting_debriefing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 54
         },
         {
           "id": "rt_purple_teaming",
           "name": "Purple Teaming & Remediation Strategies",
           "tag": "advanced",
-          "description": "Understand the principles of purple teaming, how to effectively collaborate with blue teams to improve detection and response capabilities, and assist in developing effective, prioritized remediation strategies based on identified TTPs and attack paths. Integrate threat hunting and TTP emulation.",
+          "description": "Lead collaborative Purple Team exercises: sitting alongside SOC and Detection Engineering teams, executing specific adversary TTPs, validating SIEM correlation rules, and iteratively hardening defensive detection capabilities.",
           "resources": [
             {
               "title": "The Ultimate Guide to Purple Teaming",
@@ -687,15 +721,19 @@
               "url": "/data/docs/red_team_operator/rt_purple_teaming.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 54
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 33
     },
     {
       "id": "red_team_career_capstone",
       "name": "Capstone Project & Professional Development",
       "tag": "advanced",
-      "description": "Apply all learned skills in a comprehensive capstone project, build a strong professional portfolio, and prepare for career advancement as a Red Team Operator, fostering continuous learning.",
+      "description": "Demonstrate operational mastery: complete an end-to-end adversary simulation, build an offensive tool portfolio, and excel in Red Team technical evaluations.",
       "resources": [
         {
           "title": "Active Directory Hacking Lab Setup (John Hammond)",
@@ -718,7 +756,7 @@
           "id": "rt_capstone_project",
           "name": "Full-Scope Red Team Engagement Capstone",
           "tag": "advanced",
-          "description": "Plan and execute a simulated end-to-end Red Team engagement, emulating real-world threat actors and their TTPs, from initial reconnaissance to objective completion and reporting, on a realistic target environment. Document the entire process, including TTPs, lessons learned, and defensive counteractions.",
+          "description": "Capstone Project: Execute a Full-Scope Enterprise Adversary Simulation: deploy covert multi-tier C2 infrastructure with CDN redirectors, weaponize an initial access loader with indirect syscalls bypassing EDR, compromise an Active Directory forest via AD CS ESC1, simulate crown jewel exfiltration, and lead a comprehensive Purple Team debrief.",
           "resources": [
             {
               "title": "Red Team Exercise Playbook Example",
@@ -745,13 +783,15 @@
               "url": "/data/docs/red_team_operator/rt_capstone_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 118
         },
         {
           "id": "rt_portfolio_showcase",
           "name": "Portfolio Development & Case Study Writing",
           "tag": "advanced",
-          "description": "Curate a professional portfolio showcasing your Red Team skills through documented projects, detailed case studies (including TTPs and impact), CTF write-ups, blog posts, and contributions to the security community. Learn to articulate your experience effectively for interviews.",
+          "description": "Curate a professional Red Team portfolio: developing and open-sourcing novel offensive security tools (custom loaders, evasion scripts), authoring technical tradecraft research papers, and documenting lab adversary simulations.",
           "resources": [
             {
               "title": "How to Build a Cybersecurity Portfolio",
@@ -778,13 +818,15 @@
               "url": "/data/docs/red_team_operator/rt_portfolio_showcase.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 54
         },
         {
           "id": "rt_career_advancement",
           "name": "Career Paths, Certifications & Interview Prep",
           "tag": "advanced",
-          "description": "Explore different career trajectories within Red Teaming and offensive security. Understand industry-recognized certifications (e.g., OSCP, OSWE, OSEP, CRTP, CRT) and prepare for technical interviews. Focus on continuous learning and staying current with emerging threats and technologies.",
+          "description": "Prepare for senior offensive security roles: Certified Red Team Operator (CRTO), Certified Red Team Lead (CRTL), or Offensive Security Experienced Penetration Tester (OSEP); and master Red Team operational interviews.",
           "resources": [
             {
               "title": "OSCP - Offensive Security Certified Professional",
@@ -816,9 +858,14 @@
               "url": "/data/docs/red_team_operator/rt_career_advancement.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 54
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 78
     }
-  ]
+  ],
+  "total_exp": 1000
 }

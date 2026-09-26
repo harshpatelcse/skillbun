@@ -47,26 +47,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Automated Chaos Testing & SLO Dashboard Suite",
+        "title": "Automated Chaos Engineering & SLO Error Budget Suite",
         "tech_stack": [
-          "Prometheus",
-          "Grafana",
           "Chaos Mesh",
           "Kubernetes",
-          "Go"
+          "Prometheus",
+          "Grafana",
+          "Sloth SLO Generator"
         ],
-        "description": "Build an automated chaos testing pipeline that injects network latency and pod crashes to validate multi-region failover and error budget tracking."
+        "description": "Construct an automated chaos testing framework injecting network partitions and container restarts to validate SLO error budgets and self-healing cluster policies."
       },
       {
-        "title": "Chaos Engineering & Automated Disaster Recovery Automation",
+        "title": "High-Availability Multi-Region Disaster Recovery Automation",
         "tech_stack": [
-          "Chaos Mesh",
-          "Kubernetes",
-          "Prometheus",
-          "Grafana",
-          "Python"
+          "Terraform",
+          "AWS Route 53 DNS Failover",
+          "PostgreSQL Replication",
+          "Terratest",
+          "Bash"
         ],
-        "description": "Inject controlled network latency, pod failures, and disk stress into production clusters to validate SLO alerting and automated failover resiliency."
+        "description": "Architect an automated multi-region disaster recovery engine executing health-check routed traffic failover and database replica promotion with verified RTO/RPO limits."
       }
     ],
     "certifications": [
@@ -74,10 +74,11 @@
       "AWS Certified DevOps Engineer - Professional"
     ],
     "interview_focus": [
-      "How to Calculate Multi-Window Multi-Burn-Rate Alerts",
-      "Defining Actionable SLIs for Microservices",
-      "Automating Toil: Python vs Bash vs Custom Operator",
-      "Conducting a Real-World Blameless Post-Mortem"
+      "SLI, SLO and SLA Definitions, Error Budget Policies & Burn-Rate Alerting Algorithms",
+      "Incident Management Lifecycle (Incident Commander, Postmortem Blameless Culture, Root Cause Analysis)",
+      "Site Reliability Engineering Principles (Eliminating Toil, Capacity Planning, Chaos Engineering)",
+      "Distributed Systems Resilience Patterns (Circuit Breakers, Bulkheads, Backpressure, Jitter/Backoff)",
+      "Observability for High-Scale SRE (Golden Signals: Latency, Traffic, Errors, Saturation)"
     ]
   },
   "format": "tree",
@@ -86,7 +87,7 @@
       "id": "sre_foundations_systems_programming",
       "name": "SRE Foundations: Systems, Programming & Principles",
       "tag": "essential",
-      "description": "Build a rock-solid understanding of operating systems, networking, a core programming language, database internals, and fundamental SRE principles to establish a robust operational mindset.",
+      "description": "Establish an uncompromising systems engineering foundation: master Linux kernel execution, network socket behavior, systems programming in Go/Python, distributed systems consensus protocols, and database reliability patterns.",
       "resources": [
         {
           "title": "Google SRE Book",
@@ -114,7 +115,7 @@
           "id": "sre_os_networking_deep_dive",
           "name": "Operating Systems & Networking Deep Dive",
           "tag": "essential",
-          "description": "Master Linux/Unix operating systems including kernel concepts, process management, filesystems, and I/O. Gain expertise in advanced shell scripting and core networking concepts like the TCP/IP stack, DNS, HTTP/S, load balancing, firewalls (iptables/nftables), and network troubleshooting tools (tcpdump, netstat).",
+          "description": "Master Linux kernel internals and network diagnostics: virtual memory management, page cache writeback, swapping behavior, file descriptor limits (`ulimit`, `epoll`), process scheduling (CFS scheduler, CPU pinning), TCP/IP stack tuning (`tcp_tw_reuse`, SYN cookies, TCP window scaling), packet drop analysis, and low-level diagnostic tools (`ss`, `strace`, `lsof`, `tcpdump`, `perf`).",
           "resources": [
             {
               "title": "Linux Journey",
@@ -141,13 +142,15 @@
               "url": "/data/docs/site_reliability_engineer/sre_os_networking_deep_dive.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 55
         },
         {
           "id": "sre_programming_scripting_proficiency",
           "name": "Programming & Scripting Proficiency",
           "tag": "essential",
-          "description": "Gain proficiency in at least one general-purpose programming language (Python, Go, or Rust) for automation, tool development, and API interaction. Understand fundamental data structures, algorithms, and best practices for writing reliable, maintainable code.",
+          "description": "Master systems automation and tooling development in Go and Python: authoring robust CLI utilities, interacting with cloud provider SDKs and REST/gRPC APIs, implementing parallel execution and retries with exponential backoff and jitter, parsing structured log streams, and writing automated health-check probes.",
           "resources": [
             {
               "title": "Learn Python The Hard Way",
@@ -174,13 +177,15 @@
               "url": "/data/docs/site_reliability_engineer/sre_programming_scripting_proficiency.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 36
         },
         {
           "id": "sre_distributed_systems_advanced_concepts",
           "name": "Distributed Systems Advanced Concepts",
           "tag": "essential",
-          "description": "Deepen understanding of the CAP theorem, various consistency models (strong, eventual), consensus algorithms (Raft, Paxos), and inter-service communication patterns (RPC, REST, gRPC). Explore message queues (Kafka, RabbitMQ), distributed databases, service discovery, and robust failure detection mechanisms.",
+          "description": "Master distributed systems theory and failure modes: CAP and PACELC theorems, consistency models (strict serializability, linearizability, eventual consistency), consensus algorithms (Raft quorum, leader election, log replication, Paxos), split-brain scenarios, byzantine vs crash-recovery faults, and vector clocks.",
           "resources": [
             {
               "title": "Designing Data-Intensive Applications",
@@ -207,13 +212,15 @@
               "url": "/data/docs/site_reliability_engineer/sre_distributed_systems_advanced_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 64
         },
         {
           "id": "sre_database_fundamentals",
           "name": "Database Fundamentals for SRE",
           "tag": "essential",
-          "description": "Understand operational aspects of relational databases (SQL, indexing, transactions, replication, backup/restore, connection pooling) and NoSQL databases (key-value, document, column-family, graph). Learn about common database reliability patterns, performance tuning, and monitoring strategies.",
+          "description": "Engineer database reliability and high availability: write-ahead logging (WAL) mechanics, diagnosing and mitigating replication lag in PostgreSQL and MySQL, connection pooling with PgBouncer / HikariCP, automated failover management (Patroni, Orchestrator), and validating Recovery Time Objective (RTO) and Recovery Point Objective (RPO) through automated backup restoration tests.",
           "resources": [
             {
               "title": "PostgreSQL Documentation",
@@ -240,15 +247,19 @@
               "url": "/data/docs/site_reliability_engineer/sre_database_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 44
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 51
     },
     {
       "id": "sre_cloud_native_infra_automation",
       "name": "Cloud Native & Infrastructure Automation",
       "tag": "essential",
-      "description": "Master cloud platforms, containerization, orchestration, and automate infrastructure provisioning and configuration management for scalability, consistency, and reliability across environments.",
+      "description": "Automate resilient cloud infrastructure: multi-region architecture, Kubernetes workload resilience, declarative Terraform infrastructure-as-code, and automated configuration management.",
       "resources": [
         {
           "title": "Kubernetes Tutorial for Beginners (TechWorld with Nana)",
@@ -271,7 +282,7 @@
           "id": "sre_cloud_platforms_serverless",
           "name": "Cloud Platforms & Serverless Architectures",
           "tag": "essential",
-          "description": "Deep dive into major cloud providers (AWS, GCP, Azure), understanding IaaS, PaaS, and FaaS models. Explore virtual machines, cloud networking (VPCs, subnets), security groups, IAM, managed services, and cost management. Understand serverless architectures and their operational considerations.",
+          "description": "Architect enterprise cloud infrastructure: multi-region active-active and active-passive designs across AWS, GCP, or Azure, VPC routing and Transit Gateways, IAM least-privilege role delegation, cloud egress cost optimization, and operational constraints of serverless runtimes (cold starts, execution timeouts, connection pool exhaustion).",
           "resources": [
             {
               "title": "AWS Cloud Practitioner Essentials",
@@ -298,13 +309,15 @@
               "url": "/data/docs/site_reliability_engineer/sre_cloud_platforms_serverless.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 35
         },
         {
           "id": "sre_containerization_orchestration",
           "name": "Containerization & Orchestration",
           "tag": "essential",
-          "description": "Gain a comprehensive understanding of Docker for containerization, including image building, registries, and container networking. Master Kubernetes for container orchestration, covering pods, deployments, services, ingress, persistent storage, security contexts, and Helm charts for package management.",
+          "description": "Master high-availability Kubernetes operations: setting precise resource requests and limits to eliminate CPU throttling and OOMKills, configuring Pod Anti-Affinity across availability zones, Pod Disruption Budgets (PDB) to safeguard uptime, node taints/tolerations, and multi-tier autoscaling with HPA and Karpenter.",
           "resources": [
             {
               "title": "Docker Official Documentation",
@@ -336,13 +349,15 @@
               "url": "/data/docs/site_reliability_engineer/sre_containerization_orchestration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 35
         },
         {
           "id": "sre_infrastructure_as_code",
           "name": "Infrastructure as Code (IaC)",
           "tag": "essential",
-          "description": "Learn to define and manage infrastructure declaratively using Infrastructure as Code (IaC) tools like Terraform or Pulumi. Understand state management, modularization, secrets integration, and applying IaC within CI/CD pipelines for reproducible and scalable infrastructure.",
+          "description": "Implement declarative infrastructure with Terraform / OpenTofu: modular architectures, remote state storage with DynamoDB state locking, drift detection in continuous integration, automated plan testing with Checkov/TFLint, and safe zero-downtime infrastructure rolling updates.",
           "resources": [
             {
               "title": "Terraform Documentation",
@@ -369,13 +384,15 @@
               "url": "/data/docs/site_reliability_engineer/sre_infrastructure_as_code.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 35
         },
         {
           "id": "sre_configuration_management",
           "name": "Configuration Management",
           "tag": "essential",
-          "description": "Automate server and application configuration using tools like Ansible. Understand idempotency, playbooks, roles, inventory management, and vaulting for secure secrets management. Integrate configuration management into infrastructure provisioning workflows.",
+          "description": "Automate fleet configuration with Ansible: writing idempotent playbooks and reusable roles, dynamic cloud inventory integration, managing secrets securely with Ansible Vault, and executing zero-downtime rolling OS kernel patches and security updates.",
           "resources": [
             {
               "title": "Ansible Documentation",
@@ -397,15 +414,19 @@
               "url": "/data/docs/site_reliability_engineer/sre_configuration_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 35
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 28
     },
     {
       "id": "sre_observability_proactive_reliability",
       "name": "Observability & Proactive Reliability",
       "tag": "essential",
-      "description": "Implement comprehensive observability, define robust Service Level Objectives (SLOs), and build effective alerting strategies to proactively manage system health, performance, and user experience.",
+      "description": "Implement enterprise observability and user-centric reliability: metrics, structured logs, distributed traces, SLOs, error budgets, and actionable low-noise alerting.",
       "resources": [
         {
           "title": "Terraform Full Course (freeCodeCamp)",
@@ -428,7 +449,7 @@
           "id": "sre_metrics_logs_traces_tools",
           "name": "Metrics, Logs, and Traces with Tools",
           "tag": "essential",
-          "description": "Deep dive into the three pillars of observability: metrics (Prometheus, Grafana), structured logging (ELK stack, Loki, Vector, Splunk), and distributed tracing (OpenTelemetry, Jaeger, Zipkin). Learn application and infrastructure instrumentation techniques, data aggregation, and correlation.",
+          "description": "Master the three pillars of observability: Prometheus metric collection (Counters, Gauges, Histograms), authoring advanced PromQL queries (rate, histogram_quantile for p95/p99/p99.9 latency percentiles), structured JSON log shipping with Vector to Grafana Loki, and distributed end-to-end request tracing with OpenTelemetry and Tempo.",
           "resources": [
             {
               "title": "OpenTelemetry Documentation",
@@ -460,13 +481,15 @@
               "url": "/data/docs/site_reliability_engineer/sre_metrics_logs_traces_tools.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 35
         },
         {
           "id": "sre_slos_error_budgets_implementation",
           "name": "Service Level Objectives (SLOs) & Error Budgets Implementation",
           "tag": "essential",
-          "description": "Define meaningful Service Level Indicators (SLIs) and Service Level Objectives (SLOs) that truly reflect user experience. Learn to implement, track, and report on error budgets, connecting reliability metrics directly to business goals and guiding product development priorities.",
+          "description": "Implement Service Level Objectives (SLOs) and Error Budgets (Google SRE framework): defining user-centric Service Level Indicators (SLIs), setting mathematical SLO targets, calculating error budget burn rates, implementing Multi-Window Multi-Burn-Rate alerting to detect both fast and slow budget exhaustion, and enforcing deployment freeze policies when error budgets are breached.",
           "resources": [
             {
               "title": "SRE Workbook - SLOs",
@@ -493,13 +516,15 @@
               "url": "/data/docs/site_reliability_engineer/sre_slos_error_budgets_implementation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 35
         },
         {
           "id": "sre_alerting_paging_runbooks",
           "name": "Alerting Strategies, Paging & Runbooks",
           "tag": "essential",
-          "description": "Design effective, actionable, and low-noise alerting strategies. Configure and manage paging systems (PagerDuty, Opsgenie), develop comprehensive runbooks for common incidents, and implement on-call best practices, including rotation, escalation policies, and fatigue management.",
+          "description": "Design high-signal alerting and on-call operations: eliminating alert fatigue through symptom-based alerting (alerting on user impact, not raw CPU spikes), configuring PagerDuty/Opsgenie escalation policies and rotation schedules, authoring clear and executable runbooks with diagnostic commands, and tracking on-call health and sleep interruptions.",
           "resources": [
             {
               "title": "Alerting on SLIs (Prometheus)",
@@ -526,15 +551,19 @@
               "url": "/data/docs/site_reliability_engineer/sre_alerting_paging_runbooks.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 35
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 25
     },
     {
       "id": "sre_incident_management_operational_excellence",
       "name": "Incident Management & Operational Excellence",
       "tag": "essential",
-      "description": "Master the incident response lifecycle, lead effective postmortems, and drive continuous improvement through strategic toil reduction and robust release engineering practices.",
+      "description": "Master incident response and operational discipline: incident command systems, blameless postmortems, toil elimination, and progressive release engineering.",
       "resources": [
         {
           "title": "Terraform Full Course (freeCodeCamp)",
@@ -557,7 +586,7 @@
           "id": "sre_incident_response_postmortems",
           "name": "Incident Response & Blameless Postmortems",
           "tag": "essential",
-          "description": "Master the incident response lifecycle: detection, declaration, communication (internal/external stakeholders), mitigation, and resolution. Understand and practice blameless postmortems, common incident roles (Incident Commander, Comms Lead, Scribe), and root cause analysis techniques (e.g., 5 Whys, Fishbone Diagram) to foster a culture of learning.",
+          "description": "Lead incident response and blameless retrospectives: incident command structure (Incident Commander, Operations Lead, Communications Lead), managing incident war rooms and status pages, conducting blameless postmortems focusing on systemic failure modes, 5-Whys root cause analysis, and tracking preventative engineering action items to completion.",
           "resources": [
             {
               "title": "Google SRE Incident Response",
@@ -584,13 +613,15 @@
               "url": "/data/docs/site_reliability_engineer/sre_incident_response_postmortems.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 35
         },
         {
           "id": "sre_toil_reduction_automation_dev",
           "name": "Toil Reduction & Automation Engineering",
           "tag": "essential",
-          "description": "Identify, measure, and systematically eliminate toil through automation. Develop scripts, integrate APIs, build self-service tools, and embed automation into operational workflows. Promote a culture where repetitive manual tasks are continuously engineered away.",
+          "description": "Identify, measure, and systematically eliminate operational toil: tracking toil percentage to keep it below 50% of SRE workload, automating recurring operational tasks (TLS certificate rotation, disk space remediation, database failover rehearsals), and building self-service developer tooling to eliminate manual tickets.",
           "resources": [
             {
               "title": "Google SRE Book - Eliminating Toil",
@@ -612,13 +643,15 @@
               "url": "/data/docs/site_reliability_engineer/sre_toil_reduction_automation_dev.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 35
         },
         {
           "id": "sre_release_engineering_cicd",
           "name": "Release Engineering & CI/CD for SRE",
           "tag": "essential",
-          "description": "Understand SRE's critical role in the CI/CD pipeline. Implement reliable release strategies such as continuous delivery, progressive rollouts (canary deployments, blue/green deployments), and effective use of feature flags. Focus on automated testing, minimizing deployment risk, and ensuring fast, reliable rollbacks.",
+          "description": "Engineer safe, zero-downtime software releases: progressive delivery pipelines using Argo Rollouts or Flagger (Canary deployments with automated Prometheus metric analysis and instant rollbacks on error spike), feature flagging architectures, and hermetic build verification.",
           "resources": [
             {
               "title": "Google SRE Book - Release Engineering",
@@ -645,15 +678,19 @@
               "url": "/data/docs/site_reliability_engineer/sre_release_engineering_cicd.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 35
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 23
     },
     {
       "id": "sre_resilience_security_advanced_practices",
       "name": "Resilience, Security & Advanced SRE Practices",
       "tag": "advanced",
-      "description": "Design and build highly resilient and secure systems, optimize for peak performance, plan for future growth, and drive a culture of continuous operational improvement through advanced SRE techniques.",
+      "description": "Build resilient, attack-hardened platforms: capacity engineering, chaos engineering experiments, disaster recovery game days, and security governance.",
       "resources": [
         {
           "title": "Terraform Full Course (freeCodeCamp)",
@@ -676,7 +713,7 @@
           "id": "sre_capacity_scalability_performance",
           "name": "Capacity Planning, Scalability & Performance Engineering",
           "tag": "essential",
-          "description": "Forecast system resource needs, conduct load modeling, stress testing (k6, Locust, JMeter), and performance profiling. Optimize application and infrastructure performance to meet SLOs under expected and peak loads. Understand auto-scaling, elasticity patterns, and cost-efficiency.",
+          "description": "Master capacity planning and performance engineering: distributed load testing with k6 and Locust, stress testing to identify saturation breaking points, identifying CPU and memory bottlenecks, modeling traffic growth, and validating autoscaling policies under sudden load spikes.",
           "resources": [
             {
               "title": "k6 Documentation",
@@ -703,13 +740,15 @@
               "url": "/data/docs/site_reliability_engineer/sre_capacity_scalability_performance.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 35
         },
         {
           "id": "sre_chaos_engineering_disaster_recovery_bcp",
           "name": "Chaos Engineering, Disaster Recovery & BCP",
           "tag": "advanced",
-          "description": "Proactively identify weaknesses by systematically injecting failures into systems using Chaos Engineering tools (e.g., LitmusChaos, Gremlin, Chaos Mesh). Develop, test, and validate robust Disaster Recovery (DR) and Business Continuity Plans (BCP), including comprehensive backup strategies, data restoration, and failover/failback procedures.",
+          "description": "Execute proactive Chaos Engineering and Disaster Recovery: designing failure injection experiments using Chaos Mesh or LitmusChaos (network latency, packet loss, pod eviction, DNS failure, disk fill), conducting regular Disaster Recovery game days, and measuring and proving Recovery Time Objective (RTO) and Recovery Point Objective (RPO).",
           "resources": [
             {
               "title": "LitmusChaos Documentation",
@@ -736,13 +775,15 @@
               "url": "/data/docs/site_reliability_engineer/sre_chaos_engineering_disaster_recovery_bcp.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 50
         },
         {
           "id": "sre_security_fundamentals_for_sre",
           "name": "Security Fundamentals for SRE",
           "tag": "advanced",
-          "description": "Understand common security vulnerabilities (OWASP Top 10), secure configuration practices, secrets management (Vault, AWS Secrets Manager), identity and access management (IAM) best practices, network security, and compliance basics. Advocate for integrating security into every stage of the software lifecycle.",
+          "description": "Implement enterprise platform security: managing secrets with HashiCorp Vault (dynamic database credentials, short-lived tokens), enforcing zero-trust Kubernetes NetworkPolicies, automating TLS certificate renewal with Cert-Manager, vulnerability scanning, and audit logging.",
           "resources": [
             {
               "title": "OWASP Top 10",
@@ -769,13 +810,15 @@
               "url": "/data/docs/site_reliability_engineer/sre_security_fundamentals_for_sre.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 64
         },
         {
           "id": "sre_operational_readiness_knowledge_management",
           "name": "Operational Readiness & Knowledge Management",
           "tag": "essential",
-          "description": "Establish and implement processes for comprehensive operational readiness reviews before launching or significantly updating services. Create and maintain living documentation, including architectural diagrams, runbooks, troubleshooting guides, service catalogs, and post-incident reports. Foster a culture of knowledge sharing and continuous improvement.",
+          "description": "Conduct Operational Readiness Reviews (ORR): rigorous production launch checklists (monitoring coverage, verified alerts, tested runbooks, capacity headroom, rollback procedures), maintaining living service catalogs, and fostering continuous operational learning.",
           "resources": [
             {
               "title": "Google SRE Workbook - Effective Documentation",
@@ -802,13 +845,15 @@
               "url": "/data/docs/site_reliability_engineer/sre_operational_readiness_knowledge_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 35
         },
         {
           "id": "sre_capstone_project_production_sre",
           "name": "Capstone Project: Building a Production-Grade Resilient Service",
           "tag": "advanced",
-          "description": "Apply all learned SRE principles by designing, deploying, and operating a highly observable, resilient, and secure service in a simulated production environment. Implement SLOs, comprehensive dashboards, effective alerts, automated deployments, robust capacity planning, and practice incident response and post-mortems for continuous improvement.",
+          "description": "Capstone Project: Architect, deploy, and operate a multi-region production platform with a 99.99% availability target: multi-burn-rate Prometheus alerting, automated canary rollouts with Argo Rollouts, automated chaos testing pipeline, and comprehensive disaster recovery runbooks.",
           "resources": [
             {
               "title": "SRE Classroom: Mini-Project",
@@ -830,9 +875,14 @@
               "url": "/data/docs/site_reliability_engineer/sre_capstone_project_production_sre.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 109
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 31
     }
-  ]
+  ],
+  "total_exp": 1000
 }

@@ -47,23 +47,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Enterprise SOC 2 Type II Readiness & Risk Register Package",
+        "title": "Enterprise SOC 2 Type II & ISO 27001 Readiness Control Package",
         "tech_stack": [
-          "Excel/Notion",
-          "Risk Assessment Matrix",
-          "Security Policy Templates"
+          "SOC 2 Trust Services Criteria",
+          "ISO 27001:2022",
+          "Risk Register",
+          "Jira",
+          "Vanta/Drata"
         ],
-        "description": "Construct a complete audit-ready SOC 2 compliance package including Information Security Policy, Vendor Risk Assessment, and Risk Register."
+        "description": "Develop an exhaustive compliance control matrix, operational policies, and audit evidence collection repository for SOC 2 Type II and ISO 27001 certification."
       },
       {
-        "title": "SOC 2 Type II & ISO 27001 Readiness Control Matrix",
+        "title": "Third-Party Vendor Risk Management (TPRM) & Security Assessment Portal",
         "tech_stack": [
-          "NIST CSF",
-          "ISO 27001",
-          "Markdown",
-          "Risk Assessment Matrix"
+          "Python",
+          "NIST SP 800-53",
+          "SIG Core Questionnaire",
+          "Streamlit",
+          "Risk Scoring"
         ],
-        "description": "Author a comprehensive organizational security risk assessment, Third-Party Vendor Risk Management (TPRM) policy, and audit-ready SOC 2 compliance playbook."
+        "description": "Build a programmatic vendor risk intake and assessment workflow evaluating vendor security posture, calculating residual risk scores, and generating board reports."
       }
     ],
     "certifications": [
@@ -71,10 +74,11 @@
       "CRISC (Certified in Risk and Information Systems Control)"
     ],
     "interview_focus": [
-      "SOC 2 Type I vs Type II Key Differences",
-      "Qualitative vs Quantitative Risk Assessment Methods",
-      "Handling Non-Compliant Business Stakeholders",
-      "NIST CSF Core Functions (Identify, Protect, Detect, Respond, Recover)"
+      "Compliance Framework Mapping (SOC 2 vs ISO 27001 vs NIST CSF vs GDPR/HIPAA)",
+      "Risk Assessment Methodologies (Inherent vs Residual Risk, Qualitative vs Quantitative FAIR)",
+      "Audit Evidence Collection, Control Testing & Deficiency Remediation Workflows",
+      "Third-Party Risk Management (TPRM) Lifecycle & Vendor Due Diligence",
+      "Incident Notification Regulations & Data Subject Access Request (DSAR) Requirements"
     ]
   },
   "format": "tree",
@@ -83,7 +87,7 @@
       "id": "grc_analyst_foundations",
       "name": "Foundations and Role Context",
       "tag": "essential",
-      "description": "Understand what GRC Analyst work looks like, which problems it solves, and the baseline concepts needed before building.",
+      "description": "Master Governance, Risk, and Compliance (GRC) foundations: Security control frameworks, regulatory landscape, risk management, and compliance auditing.",
       "resources": [
         {
           "title": "Overview - NIST Cybersecurity Framework 2.0 (Optic Cyber)",
@@ -106,7 +110,7 @@
           "id": "grc_analyst_core_cyber_grc",
           "name": "Core Cybersecurity Concepts for GRC",
           "tag": "essential",
-          "description": "Define GRC, its three pillars (Governance, Risk Management, Compliance), and its crucial role within the broader cybersecurity landscape. Understand fundamental cybersecurity concepts like the CIA Triad, common threats, vulnerabilities, and basic security controls.",
+          "description": "Master core cybersecurity concepts for GRC: Confidentiality, Integrity, Availability (CIA triad), defense-in-depth, identity security, network security, and cryptography.",
           "resources": [
             {
               "title": "The GRC Explained: What it is and Why it Matters",
@@ -133,13 +137,15 @@
               "url": "/data/docs/grc_analyst/grc_analyst_core_cyber_grc.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "grc_analyst_frameworks_regs_deep_dive",
           "name": "Deep Dive into GRC Frameworks & Regulatory Landscape",
           "tag": "essential",
-          "description": "Explore industry-standard GRC frameworks (e.g., NIST CSF, ISO 27001, COBIT, CIS Controls) and understand the impact of major regulatory requirements (e.g., GDPR, HIPAA, SOX, PCI DSS, CCPA, SOC 2) on organizations. Learn how to interpret and apply these standards.",
+          "description": "Master major GRC frameworks: NIST Cybersecurity Framework (CSF 2.0), ISO/IEC 27001:2022, SOC 2 Type II Trust Services Criteria, PCI-DSS 4.0, HIPAA Security Rule, and GDPR.",
           "resources": [
             {
               "title": "NIST Cybersecurity Framework",
@@ -176,13 +182,15 @@
               "url": "/data/docs/grc_analyst/grc_analyst_frameworks_regs_deep_dive.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "grc_analyst_roles_methodologies_tools",
           "name": "GRC Ecosystem: Roles, Methodologies, and Foundational Tools",
           "tag": "essential",
-          "description": "Identify typical responsibilities of a GRC Analyst, differentiate between various GRC roles, understand common GRC methodologies (e.g., ITIL, COBIT, FAIR), and become familiar with GRC platform categories (IRM, GRC, audit management) and common tools (e.g., Archer, ServiceNow GRC, LogicManager, spreadsheets for small scale).",
+          "description": "Navigate the GRC ecosystem: Role of GRC analyst vs internal auditor vs security engineer; GRC tools (OneTrust, Drata, Vanta, ServiceNow GRC), and compliance lifecycles.",
           "resources": [
             {
               "title": "What does a GRC Analyst do?",
@@ -214,15 +222,19 @@
               "url": "/data/docs/grc_analyst/grc_analyst_roles_methodologies_tools.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 20
     },
     {
       "id": "grc_analyst_governance_policy",
       "name": "Governance & Policy Management",
       "tag": "essential",
-      "description": "Develop a strong understanding of how to establish, implement, and maintain effective governance structures and security policies within an organization.",
+      "description": "Establish enterprise governance and policies: Security policies, standards, procedures, guidelines, and control mapping.",
       "resources": [
         {
           "title": "The Role of Governance in GRC",
@@ -250,7 +262,7 @@
           "id": "grc_analyst_governance_structures",
           "name": "Establishing Governance Structures",
           "tag": "essential",
-          "description": "Learn to define and document organizational policies, standards, and procedures. Understand the importance of clear roles, responsibilities, and accountability for GRC across the enterprise, including committee structures and reporting lines.",
+          "description": "Design governance structures: Information security steering committees, reporting lines to CISO and Board of Directors, and defining organizational security mandates.",
           "resources": [
             {
               "title": "Developing an Information Security Governance Program",
@@ -272,13 +284,15 @@
               "url": "/data/docs/grc_analyst/grc_analyst_governance_structures.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "grc_analyst_policy_dev_comm",
           "name": "Policy Development and Communication",
           "tag": "essential",
-          "description": "Master the art of drafting clear, concise, and enforceable security policies, standards, and guidelines. Learn about policy lifecycle management, version control, approval processes, and strategies for effective communication and awareness.",
+          "description": "Author security policies: Writing Acceptable Use, Access Control, Data Classification, Incident Response, and Password policies with clear employee guidelines.",
           "resources": [
             {
               "title": "How to Write a Good Security Policy",
@@ -305,13 +319,15 @@
               "url": "/data/docs/grc_analyst/grc_analyst_policy_dev_comm.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "grc_analyst_control_design_mapping",
           "name": "Control Design, Identification, and Cross-Framework Mapping",
           "tag": "essential",
-          "description": "Identify relevant security controls from established frameworks (e.g., NIST 800-53, ISO 27002, CIS Controls). Learn to design appropriate controls, categorize them (preventative, detective, corrective), and effectively map them to organizational policies, technical implementations, and multiple regulatory requirements.",
+          "description": "Design and map security controls: Mapping NIST 800-53 controls to ISO 27001 Annex A and SOC 2 criteria to eliminate redundant compliance overhead.",
           "resources": [
             {
               "title": "NIST Special Publication 800-53",
@@ -343,13 +359,15 @@
               "url": "/data/docs/grc_analyst/grc_analyst_control_design_mapping.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 22
         },
         {
           "id": "grc_analyst_control_implementation_testing",
           "name": "Control Implementation and Effectiveness Testing",
           "tag": "essential",
-          "description": "Understand the practical aspects of implementing controls within an organization's systems and processes. Learn methods for assessing and documenting control effectiveness, including control self-assessments (CSAs), walkthroughs, and evidence review.",
+          "description": "Test control effectiveness: Design of controls vs operational effectiveness, sampling techniques, testing procedures, and documenting control deficiencies.",
           "resources": [
             {
               "title": "Control Self-Assessment (CSA) Overview",
@@ -376,15 +394,19 @@
               "url": "/data/docs/grc_analyst/grc_analyst_control_implementation_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 18
     },
     {
       "id": "grc_analyst_risk_management",
       "name": "Risk Management & Assessment",
       "tag": "essential",
-      "description": "Acquire the skills to identify, analyze, evaluate, and treat risks effectively, maintaining a comprehensive risk posture for the organization.",
+      "description": "Master enterprise risk management: Risk identification, qualitative vs quantitative risk analysis, risk treatment, and risk registers.",
       "resources": [
         {
           "title": "Introduction to Risk Management",
@@ -412,7 +434,7 @@
           "id": "grc_analyst_risk_id_categorization",
           "name": "Risk Identification and Categorization",
           "tag": "essential",
-          "description": "Learn various methodologies for identifying potential risks (e.g., brainstorming, checklists, interviews, incident reviews), classifying them by type (e.g., technical, operational, legal, financial, strategic), and understanding their potential impact on business objectives.",
+          "description": "Identify and categorize risks: Asset valuation, threat modeling, identifying vulnerabilities, and categorizing risks into operational, compliance, financial, and reputational buckets.",
           "resources": [
             {
               "title": "Risk Identification: The First Step in Risk Management",
@@ -434,13 +456,15 @@
               "url": "/data/docs/grc_analyst/grc_analyst_risk_id_categorization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         },
         {
           "id": "grc_analyst_risk_analysis_eval",
           "name": "Risk Analysis and Evaluation",
           "tag": "essential",
-          "description": "Perform qualitative and quantitative risk analysis. Understand risk matrices, likelihood and impact assessment techniques, scenario analysis, and how to prioritize risks based on organizational risk appetite and tolerance levels.",
+          "description": "Analyze risk: Qualitative risk matrices (Likelihood x Impact), quantitative risk analysis using FAIR (Factor Analysis of Information Risk), and calculating Annualized Loss Expectancy (ALE).",
           "resources": [
             {
               "title": "Qualitative vs. Quantitative Risk Analysis",
@@ -467,13 +491,15 @@
               "url": "/data/docs/grc_analyst/grc_analyst_risk_analysis_eval.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "grc_analyst_risk_mitigation",
           "name": "Risk Mitigation and Treatment Strategies",
           "tag": "essential",
-          "description": "Develop and recommend effective strategies for treating identified risks (e.g., avoid, transfer, mitigate, accept). Learn to implement and monitor appropriate controls to reduce risk exposure to an acceptable level, including residual risk management.",
+          "description": "Formulate risk treatment strategies: Risk Acceptance, Avoidance, Mitigation (implementing controls), and Transfer (cyber insurance); defining remediation roadmaps.",
           "resources": [
             {
               "title": "Risk Mitigation Strategies in Cybersecurity",
@@ -495,13 +521,15 @@
               "url": "/data/docs/grc_analyst/grc_analyst_risk_mitigation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "grc_analyst_risk_register",
           "name": "Maintaining a Risk Register",
           "tag": "essential",
-          "description": "Understand the purpose, structure, and importance of a risk register. Learn to populate, update, and manage risks throughout their lifecycle, including tracking ownership, status, mitigation actions, and residual risk.",
+          "description": "Maintain enterprise Risk Registers: Documenting risk descriptions, inherent risk scores, control implementations, residual risk scores, risk owners, and remediation deadlines.",
           "resources": [
             {
               "title": "How to Build a Risk Register",
@@ -523,13 +551,15 @@
               "url": "/data/docs/grc_analyst/grc_analyst_risk_register.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "grc_analyst_threat_intel_risk",
           "name": "Threat Intelligence Integration in Risk Management",
           "tag": "advanced",
-          "description": "Understand how to leverage threat intelligence feeds, reports, and platforms to inform risk assessments, identify emerging threats, understand attacker tactics, techniques, and procedures (TTPs), and refine risk mitigation strategies proactively.",
+          "description": "Incorporate threat intelligence into risk models: Utilizing CISA alerts, CVE vulnerability feeds, and MITRE ATT&CK adversary profiles to prioritize emerging risks.",
           "resources": [
             {
               "title": "Integrating Threat Intelligence with Risk Management",
@@ -556,15 +586,19 @@
               "url": "/data/docs/grc_analyst/grc_analyst_threat_intel_risk.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 18
     },
     {
       "id": "grc_analyst_compliance_audit",
       "name": "Compliance & Audit Management",
       "tag": "essential",
-      "description": "Master the processes of monitoring compliance, conducting internal and external audits, and managing findings to ensure continuous adherence to standards and regulations.",
+      "description": "Manage compliance audits: Audit readiness, evidence collection, liaison with external auditors, and corrective action plans.",
       "resources": [
         {
           "title": "Understanding IT Compliance Audits",
@@ -592,7 +626,7 @@
           "id": "grc_analyst_compliance_monitoring",
           "name": "Compliance Monitoring & Reporting",
           "tag": "essential",
-          "description": "Implement processes for continuous monitoring of compliance with policies, standards, and regulatory obligations. Learn to establish compliance dashboards, identify deviations, and generate clear and actionable compliance reports for various stakeholders.",
+          "description": "Monitor continuous compliance: Tracking control operational status, compliance dashboards, key risk indicators (KRIs), and key performance indicators (KPIs).",
           "resources": [
             {
               "title": "Continuous Compliance Monitoring: Best Practices",
@@ -614,13 +648,15 @@
               "url": "/data/docs/grc_analyst/grc_analyst_compliance_monitoring.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "grc_analyst_audit_planning",
           "name": "Audit Planning and Execution",
           "tag": "essential",
-          "description": "Understand the full audit lifecycle, from planning and scoping an audit (internal vs. external) to conducting fieldwork, including interviews, walkthroughs, and technical control testing. Learn how to prepare for and support external audit engagements.",
+          "description": "Plan compliance audits: Defining audit scope, audit calendars, notification schedules, and preparing auditee teams for external examinations.",
           "resources": [
             {
               "title": "Audit Planning: Key Steps for a Successful Audit",
@@ -647,13 +683,15 @@
               "url": "/data/docs/grc_analyst/grc_analyst_audit_planning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "grc_analyst_evidence_collection",
           "name": "Evidence Collection & Documentation",
           "tag": "essential",
-          "description": "Develop expertise in collecting, organizing, and documenting comprehensive audit evidence (e.g., system configurations, logs, screenshots, interview notes, policy documents, vendor assessments). Ensure the integrity, relevance, and sufficiency of collected data.",
+          "description": "Collect defensible audit evidence: Gathering screenshots, system configuration exports, access review logs, policy sign-off attestations, and maintaining evidence integrity.",
           "resources": [
             {
               "title": "Collecting Audit Evidence: Types and Techniques",
@@ -680,13 +718,15 @@
               "url": "/data/docs/grc_analyst/grc_analyst_evidence_collection.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "grc_analyst_audit_reporting",
           "name": "Audit Reporting & Remediation Tracking",
           "tag": "essential",
-          "description": "Draft clear, concise, and actionable audit reports, including findings, recommendations, root cause analysis, and risk ratings. Learn to track remediation efforts, manage corrective action plans (CAPs), and perform follow-up verification to close out findings effectively.",
+          "description": "Author audit reports: Documenting findings, root causes, severity rankings, management responses, and Corrective Action Plans (CAPs).",
           "resources": [
             {
               "title": "How to Write an Effective Audit Report",
@@ -708,13 +748,15 @@
               "url": "/data/docs/grc_analyst/grc_analyst_audit_reporting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "grc_analyst_continuous_auditing",
           "name": "Continuous Auditing and Monitoring Technologies",
           "tag": "advanced",
-          "description": "Explore how technology enables real-time or near real-time monitoring of controls and compliance. Understand the principles and implementation of continuous auditing, leveraging data analytics, automation, and AI to enhance audit efficiency and effectiveness.",
+          "description": "Leverage continuous compliance automation: Deploying automated compliance platforms (Vanta, Drata, Secureframe) to automatically monitor AWS/GCP controls and GitHub configurations.",
           "resources": [
             {
               "title": "Continuous Auditing: Benefits and Implementation",
@@ -741,15 +783,19 @@
               "url": "/data/docs/grc_analyst/grc_analyst_continuous_auditing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 18
     },
     {
       "id": "grc_analyst_operational_advanced",
       "name": "Operational GRC & Advanced Topics",
       "tag": "advanced",
-      "description": "Explore practical applications of GRC in daily operations and delve into advanced topics like third-party risk management, business continuity, cloud GRC, and the integration of GRC with broader enterprise functions.",
+      "description": "Operate advanced GRC domains: Third-Party Risk Management (TPRM), Business Continuity, cloud compliance, and privacy.",
       "resources": [
         {
           "title": "Operational GRC: Integrating into Daily Business",
@@ -777,7 +823,7 @@
           "id": "grc_analyst_tpr_management",
           "name": "Third-Party Risk Management (TPRM)",
           "tag": "advanced",
-          "description": "Understand the end-to-end process of assessing, managing, and monitoring risks associated with third-party vendors, suppliers, and business partners throughout their lifecycle, including due diligence, contract review, and ongoing oversight.",
+          "description": "Manage third-party vendor risk: Vendor security assessments using SIG (Standardized Information Gathering) questionnaires, SOC 2 report reviews, and vendor tiering.",
           "resources": [
             {
               "title": "Introduction to Vendor Risk Management",
@@ -804,13 +850,15 @@
               "url": "/data/docs/grc_analyst/grc_analyst_tpr_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         },
         {
           "id": "grc_analyst_bcdr",
           "name": "Business Continuity & Disaster Recovery (BCDR)",
           "tag": "advanced",
-          "description": "Understand the GRC analyst's role in developing, testing, and ensuring compliance with Business Continuity (BCP) and Disaster Recovery (DRP) plans to minimize disruption, maintain resilience, and ensure operational continuity in the face of adverse events.",
+          "description": "Oversee Business Continuity and Disaster Recovery: Business Impact Analysis (BIA), disaster recovery plan reviews, tabletop testing exercises, and RTO/RPO validation.",
           "resources": [
             {
               "title": "The GRC Role in Business Continuity Planning",
@@ -837,13 +885,15 @@
               "url": "/data/docs/grc_analyst/grc_analyst_bcdr.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         },
         {
           "id": "grc_analyst_security_awareness",
           "name": "Security Awareness & Training",
           "tag": "advanced",
-          "description": "Learn to develop, implement, and manage effective security awareness and training programs to educate employees, foster a culture of compliance, and mitigate human-related security risks, including phishing simulations and policy acknowledgments.",
+          "description": "Manage security awareness programs: Developing employee phishing simulations, annual security training compliance tracking, and security culture measurement.",
           "resources": [
             {
               "title": "Designing an Effective Security Awareness Program",
@@ -865,13 +915,15 @@
               "url": "/data/docs/grc_analyst/grc_analyst_security_awareness.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "grc_analyst_grc_automation_irm",
           "name": "GRC Automation and Integrated Platforms (IRM)",
           "tag": "advanced",
-          "description": "Explore how GRC tools and Integrated Risk Management (IRM) platforms automate different GRC components to streamline processes, automate control monitoring, centralize data, and improve reporting efficiency and decision-making.",
+          "description": "Implement Integrated Risk Management (IRM): Deploying ServiceNow GRC / Archer platforms, workflow automation, and centralized risk telemetry.",
           "resources": [
             {
               "title": "Benefits of Integrated GRC",
@@ -898,13 +950,15 @@
               "url": "/data/docs/grc_analyst/grc_analyst_grc_automation_irm.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         },
         {
           "id": "grc_analyst_cloud_grc",
           "name": "Cloud GRC and Emerging Technology Risks",
           "tag": "advanced",
-          "description": "Address the specific governance, risk, and compliance challenges and frameworks associated with cloud environments (e.g., AWS, Azure, GCP), hybrid cloud strategies, serverless computing, and the GRC implications of emerging technologies like IoT, AI/ML, and blockchain.",
+          "description": "Govern cloud environments: Cloud Security Posture Management (CSPM), AWS Well-Architected Framework security pillar, and Shared Responsibility models.",
           "resources": [
             {
               "title": "Cloud GRC: Governance, Risk, and Compliance in the Cloud",
@@ -931,13 +985,15 @@
               "url": "/data/docs/grc_analyst/grc_analyst_cloud_grc.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         },
         {
           "id": "grc_analyst_data_privacy_grc",
           "name": "Data Privacy and Protection GRC",
           "tag": "advanced",
-          "description": "Deep dive into global privacy regulations (e.g., GDPR, CCPA, LGPD, PIPL) and how GRC principles apply to managing personal data, consent management, data retention, privacy impact assessments (PIAs), and embedding privacy by design (PbD) principles.",
+          "description": "Enforce data privacy governance: Data Protection Impact Assessments (DPIA), Record of Processing Activities (ROPA), cross-border data transfer safeguards, and GDPR/CCPA alignment.",
           "resources": [
             {
               "title": "GDPR Compliance Checklist",
@@ -964,15 +1020,19 @@
               "url": "/data/docs/grc_analyst/grc_analyst_data_privacy_grc.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 25
     },
     {
       "id": "grc_analyst_portfolio_career",
       "name": "Portfolio and Career Readiness",
       "tag": "advanced",
-      "description": "Translate GRC knowledge into demonstrable skills, creating a strong portfolio and preparing for interviews to successfully launch or advance your GRC analyst career.",
+      "description": "Build a competitive GRC portfolio: Risk assessment reports, policy documentation packages, audit simulation case studies, and career advancement.",
       "resources": [
         {
           "title": "Building a Cybersecurity Portfolio",
@@ -1000,7 +1060,7 @@
           "id": "grc_analyst_project_planning",
           "name": "GRC Project Planning & Execution",
           "tag": "advanced",
-          "description": "Apply GRC principles to plan and execute a realistic project, such as developing a compliance program for a specific regulation, conducting a mock risk assessment, or designing a policy framework. Focus on project scope, timelines, stakeholder management, and documentation.",
+          "description": "Plan GRC implementations: Scoping ISO 27001 readiness roadmaps, SOC 2 Type II audit preparations, and tracking timeline milestones.",
           "resources": [
             {
               "title": "Project Management Basics for GRC Professionals",
@@ -1022,13 +1082,15 @@
               "url": "/data/docs/grc_analyst/grc_analyst_project_planning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 63
         },
         {
           "id": "grc_analyst_capstone_simulation",
           "name": "Capstone Project: End-to-End GRC Simulation",
           "tag": "advanced",
-          "description": "Undertake a comprehensive GRC capstone project for a simulated organization, encompassing policy development, risk assessment, control mapping, mock audit preparation, evidence collection, and reporting. Integrate learnings from all previous modules into a cohesive deliverable.",
+          "description": "Build an enterprise GRC capstone: Conduct end-to-end SOC 2 Type II audit simulation for a cloud SaaS company: draft Information Security Policy, complete risk assessment with risk register, collect audit evidence, and author corrective action plan.",
           "resources": [
             {
               "title": "GRC Case Study Examples",
@@ -1050,13 +1112,15 @@
               "url": "/data/docs/grc_analyst/grc_analyst_capstone_simulation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 97
         },
         {
           "id": "grc_analyst_interview_prep",
           "name": "Interview Preparation & Role Positioning",
           "tag": "advanced",
-          "description": "Prepare for GRC analyst interviews by practicing common behavioral and technical questions, articulating your experience, demonstrating problem-solving skills, and effectively positioning yourself for relevant roles in various industry sectors.",
+          "description": "Master GRC technical interviews: Explaining differences between SOC 1 vs SOC 2 vs ISO 27001, walking through third-party risk evaluations, and defending risk treatment decisions.",
           "resources": [
             {
               "title": "Common GRC Analyst Interview Questions",
@@ -1078,13 +1142,15 @@
               "url": "/data/docs/grc_analyst/grc_analyst_interview_prep.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         },
         {
           "id": "grc_analyst_grc_certifications",
           "name": "GRC Certifications and Continuous Learning",
           "tag": "advanced",
-          "description": "Explore relevant industry certifications (e.g., CISA, CRISC, CISM, GRCP, CCSP, CIPP) that can enhance your GRC career. Understand the value of continuous professional development, networking, and staying current with evolving threats and regulations.",
+          "description": "Target industry credentials: CRISC, CISA, CISM, CompTIA Security+, ISO 27001 Lead Auditor, and continuing professional education.",
           "resources": [
             {
               "title": "Top GRC Certifications for Your Career",
@@ -1111,9 +1177,14 @@
               "url": "/data/docs/grc_analyst/grc_analyst_grc_certifications.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 29
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 27
     }
-  ]
+  ],
+  "total_exp": 1000
 }

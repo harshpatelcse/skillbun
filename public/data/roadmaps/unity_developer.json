@@ -47,25 +47,27 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "3D Action Platformer with Fluid Character Controller",
-        "tech_stack": [
-          "Unity",
-          "C#",
-          "Cinemachine",
-          "Shader Graph",
-          "Universal Render Pipeline"
-        ],
-        "description": "Develop a 3D platformer featuring responsive wall-jumping physics, dynamic camera tracking, particle systems, and particle effects."
-      },
-      {
-        "title": "Procedural Dungeon Crawler with Custom Shaders",
+        "title": "3D Isometric Action Roguelike with Procedural Dungeon Generation",
         "tech_stack": [
           "Unity 6",
           "C#",
+          "NavMesh",
           "Shader Graph",
-          "Universal Render Pipeline (URP)"
+          "Cinemachine",
+          "Object Pooling"
         ],
-        "description": "Build a 3D isometric dungeon crawler featuring procedurally generated room layouts (BSP algorithm), dynamic lighting shaders, and an event-driven game architecture."
+        "description": "Develop a 3D isometric action game featuring procedurally generated dungeon layouts, AI pathfinding via NavMesh, dynamic camera tracking, and custom visual shaders."
+      },
+      {
+        "title": "Networked Multiplayer Physics Game with Netcode for GameObjects",
+        "tech_stack": [
+          "Unity 6",
+          "Netcode for GameObjects",
+          "Client-Side Prediction",
+          "Relay Service",
+          "Lobby"
+        ],
+        "description": "Build a real-time multiplayer arena game implementing client-side prediction, server reconciliation, lag compensation, and matchmaking via Unity Gaming Services."
       }
     ],
     "certifications": [
@@ -73,10 +75,11 @@
       "Unity Certified Expert Gameplay Programmer"
     ],
     "interview_focus": [
-      "MonoBehaviour Lifecycle (Awake vs Start vs Update vs FixedUpdate)",
-      "ScriptableObjects for Data-Driven Architecture",
-      "Optimizing Draw Calls (Static/Dynamic Batching, GPU Instancing)",
-      "Garbage Collection Spikes Mitigation in Unity"
+      "Unity Execution Order & Lifecycle Methods (Awake, OnEnable, Start, FixedUpdate, Update, LateUpdate)",
+      "Memory Management in Unity (Garbage Collection, Structs vs Classes, Object Pooling Patterns)",
+      "Physics Simulation (Rigidbodies, Colliders, Physics Raycasting, FixedUpdate Invariants)",
+      "Optimization Techniques (Draw Call Batching, GPU Instancing, Occlusion Culling, LOD Groups)",
+      "ScriptableObjects Architecture for Decoupled Game Systems and Modular Data"
     ]
   },
   "format": "tree",
@@ -85,7 +88,7 @@
       "id": "unity_fundamentals",
       "name": "Unity & C# Fundamentals",
       "tag": "essential",
-      "description": "Master the foundational C# programming concepts and Unity Editor workflow essential for game development, laying the groundwork for creating interactive experiences.",
+      "description": "Master Unity engine architecture: GameObject-Component model, MonoBehaviour lifecycle, scene hierarchies, and C# scripting fundamentals.",
       "resources": [
         {
           "title": "Unity Learn: Get Started with Unity",
@@ -113,7 +116,7 @@
           "id": "csharp_programming_essentials",
           "name": "C# Programming Essentials for Unity",
           "tag": "essential",
-          "description": "Learn core C# syntax including data types, variables, operators, control flow, functions, basic data structures (arrays, lists, dictionaries), delegates, and events, as directly applied in Unity scripting.",
+          "description": "Master C# for Unity: Data types, control flow, methods, arrays, collections, and asynchronous execution with Coroutines and async/await.",
           "resources": [
             {
               "title": "C# Programming Basics - Unity Learn",
@@ -145,13 +148,15 @@
               "url": "/data/docs/unity_developer/csharp_programming_essentials.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 14
         },
         {
           "id": "csharp_oop_principles",
           "name": "Object-Oriented Programming (OOP) in C#",
           "tag": "essential",
-          "description": "Understand core OOP concepts: classes, objects, inheritance, polymorphism, encapsulation, abstraction, interfaces, and abstract classes, and effectively apply them in Unity game architecture and component design.",
+          "description": "Apply OOP in Unity: Classes, inheritance, polymorphism, interfaces, and decoupling systems using C# delegates and events.",
           "resources": [
             {
               "title": "Object-Oriented Programming (OOP) - Unity Learn",
@@ -173,13 +178,15 @@
               "url": "/data/docs/unity_developer/csharp_oop_principles.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "unity_editor_interface",
           "name": "Unity Editor Interface & Workflow",
           "tag": "essential",
-          "description": "Navigate the Unity Editor, understand its key windows (Scene, Game, Inspector, Project, Hierarchy), manage project settings, asset import pipelines, and establish an efficient scene setup workflow.",
+          "description": "Navigate the Unity Editor: Scene and Game views, Inspector, Project hierarchy, Console, layout customization, and Play Mode debugging.",
           "resources": [
             {
               "title": "Unity Editor Interface Overview - Unity Manual",
@@ -201,13 +208,15 @@
               "url": "/data/docs/unity_developer/unity_editor_interface.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "unity_gameobjects_components",
           "name": "GameObjects, Components & Prefabs",
           "tag": "essential",
-          "description": "Understand the GameObject-Component architecture, how to add/remove components, and create reusable Prefabs for efficient scene management, modularity, and rapid prototyping.",
+          "description": "Master GameObjects and Components: Adding and caching component references (`GetComponent`), Prefab workflows, Prefab Variants, and nested prefabs.",
           "resources": [
             {
               "title": "GameObjects & Components - Unity Manual",
@@ -234,13 +243,15 @@
               "url": "/data/docs/unity_developer/unity_gameobjects_components.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "unity_transforms_coordinates",
           "name": "Transforms & Coordinate Systems",
           "tag": "essential",
-          "description": "Master position, rotation, and scale of GameObjects. Understand local versus world space, pivot points, and the role of parent-child hierarchies in spatial relationships.",
+          "description": "Master spatial coordinates: Local vs World space, vectors (`Vector3`), quaternions (`Quaternion.Euler`, `Quaternion.LookRotation`), and parent-child matrix hierarchies.",
           "resources": [
             {
               "title": "Transforms - Unity Manual",
@@ -262,13 +273,15 @@
               "url": "/data/docs/unity_developer/unity_transforms_coordinates.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "unity_scripting_essentials",
           "name": "Scripting Essentials & MonoBehaviour Lifecycle",
           "tag": "essential",
-          "description": "Write basic Unity scripts, understand the MonoBehaviour lifecycle (Awake, Start, Update, FixedUpdate, LateUpdate, OnEnable, OnDisable), and handle events and interactions.",
+          "description": "Master MonoBehaviour execution lifecycle: `Awake`, `OnEnable`, `Start`, `FixedUpdate` (physics), `Update` (input/gameplay), `LateUpdate` (camera), and `OnDisable`.",
           "resources": [
             {
               "title": "Introduction to Scripting - Unity Learn",
@@ -295,13 +308,15 @@
               "url": "/data/docs/unity_developer/unity_scripting_essentials.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "unity_version_control",
           "name": "Version Control for Game Development",
           "tag": "essential",
-          "description": "Set up Git for Unity projects, understand `.gitignore` for Unity, use Git LFS for large binary assets, and apply basic branching and merging strategies for collaborative development.",
+          "description": "Manage Unity projects in Git: `.gitignore` for Library and Temp directories, Git LFS for textures and 3D models, and Unity YAML Merge tool for scene conflicts.",
           "resources": [
             {
               "title": "Version control with Git and Unity - Unity Manual",
@@ -328,15 +343,19 @@
               "url": "/data/docs/unity_developer/unity_version_control.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 13
     },
     {
       "id": "unity_core_game_systems",
       "name": "Core Game Systems Development",
       "tag": "essential",
-      "description": "Develop fundamental game mechanics using Unity's built-in systems for input, physics, UI, animation, audio, cameras, and basic rendering, forming the core of any interactive experience.",
+      "description": "Develop core gameplay systems: Physics, collision detection, UI Canvas, animations, and audio.",
       "resources": [
         {
           "title": "Unity User Manual",
@@ -364,7 +383,7 @@
           "id": "unity_input_management",
           "name": "Input Management",
           "tag": "essential",
-          "description": "Implement player input using both the Legacy Input Manager and the modern Input System package for various devices (keyboard, mouse, gamepad, touch) and robust action maps.",
+          "description": "Implement the new Unity Input System: Input Actions asset, action maps, player input components, handling multi-touch, gamepads, and remapping keys.",
           "resources": [
             {
               "title": "Input Manager - Unity Manual",
@@ -386,13 +405,15 @@
               "url": "/data/docs/unity_developer/unity_input_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "unity_physics_collisions",
           "name": "Physics & Collisions",
           "tag": "essential",
-          "description": "Work with Rigidbodies, Colliders (2D & 3D), Physics Materials, Joints, Raycasting, and understand collision detection and triggers for realistic and engaging interactions.",
+          "description": "Simulate 2D and 3D physics: Rigidbody/Rigidbody2D, Box/Sphere/Capsule colliders, Mesh colliders, Physic Materials, collision matrix layers, and raycasting.",
           "resources": [
             {
               "title": "Physics overview - Unity Docs",
@@ -414,13 +435,15 @@
               "url": "/data/docs/unity_developer/unity_physics_collisions.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 22
         },
         {
           "id": "unity_ui_ux_development",
           "name": "UI/UX Development with Canvas",
           "tag": "essential",
-          "description": "Design and implement user interfaces using Unity's UI Canvas system, rect transforms, fundamental UI elements (buttons, sliders, text, images), and responsive layouts for various screen sizes.",
+          "description": "Build user interfaces with Unity UI (uGUI) and UI Toolkit: Canvas render modes (Screen Space Overlay/Camera, World Space), anchors, layout groups, and responsive scaling.",
           "resources": [
             {
               "title": "Unity UI - Unity Learn",
@@ -447,13 +470,15 @@
               "url": "/data/docs/unity_developer/unity_ui_ux_development.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "unity_canvas_events_event_system",
           "name": "UI Event System & Interactions",
           "tag": "essential",
-          "description": "Understand how the Event System works, handle UI events (clicks, drags, hovers, selections), implement custom UI components, and effectively integrate UI with underlying game logic.",
+          "description": "Handle UI events: EventSystem, Raycaster components, button clicks, input fields, scroll views, and custom interface implementations (`IPointerEnterHandler`).",
           "resources": [
             {
               "title": "Unity UI Event System - Unity Manual",
@@ -475,13 +500,15 @@
               "url": "/data/docs/unity_developer/unity_canvas_events_event_system.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 22
         },
         {
           "id": "unity_animation_vfx",
           "name": "Animation & Visual Effects",
           "tag": "essential",
-          "description": "Create character animations with the Animator and Mecanim (states, transitions, blend trees), implement keyframe animations, and use Particle Systems for dynamic visual effects.",
+          "description": "Animate characters and objects: Animator component, Animator Controllers, State Machines, blend trees, transition conditions, and Animation Events.",
           "resources": [
             {
               "title": "Animation in Unity - Unity Manual",
@@ -503,13 +530,15 @@
               "url": "/data/docs/unity_developer/unity_animation_vfx.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "unity_timeline_cinematics",
           "name": "Unity Timeline & Cinematics",
           "tag": "essential",
-          "description": "Orchestrate sequences, cutscenes, and complex animations using Unity Timeline for dynamic storytelling, event sequencing, and non-linear animation control.",
+          "description": "Author cutscenes with Unity Timeline: Sequencing character animations, virtual camera switching with Cinemachine, audio tracks, and activation tracks.",
           "resources": [
             {
               "title": "Timeline - Unity Docs",
@@ -531,13 +560,15 @@
               "url": "/data/docs/unity_developer/unity_timeline_cinematics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "unity_audio_integration",
           "name": "Audio Integration",
           "tag": "essential",
-          "description": "Integrate sound effects and background music using Audio Sources, Audio Listeners, Audio Mixers, and understand spatial audio for immersive and dynamic soundscapes.",
+          "description": "Engineer game audio: AudioSource, AudioClip, AudioListener, AudioMixer snapshots, spatial 3D audio rolloff curves, and sound effect prioritization.",
           "resources": [
             {
               "title": "Audio - Unity Manual",
@@ -559,13 +590,15 @@
               "url": "/data/docs/unity_developer/unity_audio_integration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "unity_cameras_projections",
           "name": "Cameras & Projections",
           "tag": "essential",
-          "description": "Master different camera types, culling masks, viewports, orthographic vs. perspective projections, and camera effects for defining the player's perspective and rendering views.",
+          "description": "Master camera controls: Perspective vs Orthographic cameras, field of view, clipping planes, and dynamic camera framing with Cinemachine virtual cameras.",
           "resources": [
             {
               "title": "Cameras - Unity Manual",
@@ -587,13 +620,15 @@
               "url": "/data/docs/unity_developer/unity_cameras_projections.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 48
         },
         {
           "id": "unity_lighting_rendering_basics",
           "name": "Lighting & Basic Rendering",
           "tag": "essential",
-          "description": "Understand basic lighting concepts (directional, point, spot lights), light modes (realtime, baked, mixed), shadows, materials, textures, and essential rendering settings to create visually appealing scenes.",
+          "description": "Configure lighting and shadows: Directional, point, and spot lights; baked vs realtime global illumination, lightmaps, light probes, and reflection probes.",
           "resources": [
             {
               "title": "Lighting in Unity - Unity Manual",
@@ -620,13 +655,15 @@
               "url": "/data/docs/unity_developer/unity_lighting_rendering_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 16
         },
         {
           "id": "unity_scriptable_objects_data_management",
           "name": "Scriptable Objects for Data Management",
           "tag": "essential",
-          "description": "Utilize Scriptable Objects to store and manage game data, configurations, and settings independently of scenes and GameObjects, promoting modularity, reusability, and easier iteration.",
+          "description": "Architect data with ScriptableObjects: Decoupled modular game architectures, item/weapon database definitions, game events, and shared runtime sets.",
           "resources": [
             {
               "title": "Scriptable Objects - Unity Manual",
@@ -648,13 +685,15 @@
               "url": "/data/docs/unity_developer/unity_scriptable_objects_data_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "unity_scene_persistence",
           "name": "Scene Management & Data Persistence",
           "tag": "essential",
-          "description": "Manage multiple scenes, load/unload scenes additively, and implement saving/loading game data using various persistence strategies (PlayerPrefs, JSON, Binary, custom solutions) for continuous gameplay.",
+          "description": "Manage scenes: Asynchronous scene loading (`SceneManager.LoadSceneAsync`), additive scenes, preserving state with `DontDestroyOnLoad`, and save-game serialization.",
           "resources": [
             {
               "title": "Scene Management - Unity Manual",
@@ -676,13 +715,15 @@
               "url": "/data/docs/unity_developer/unity_scene_persistence.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "unity_asset_management",
           "name": "Asset Management & Organization",
           "tag": "essential",
-          "description": "Import and manage various asset types (models, textures, audio, animations), optimize asset settings, and understand asset bundles and the Addressables system for efficient content delivery.",
+          "description": "Optimize asset usage: Addressable Asset System, asynchronous asset loading/unloading, Asset Bundles, and memory optimization.",
           "resources": [
             {
               "title": "Asset management - Unity Manual",
@@ -709,15 +750,19 @@
               "url": "/data/docs/unity_developer/unity_asset_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 17
     },
     {
       "id": "unity_advanced_game_dev_production",
       "name": "Advanced Game Development & Production",
       "tag": "advanced",
-      "description": "Dive into performance optimization, advanced scripting architectures, AI, editor tooling, multiplayer networking, advanced rendering, robust testing, and preparing Unity projects for industry-standard deployment and live operations.",
+      "description": "Master advanced Unity production: Performance profiling, design patterns, AI navigation, custom tools, and shaders.",
       "resources": [
         {
           "title": "Unity Best Practices Guide",
@@ -745,7 +790,7 @@
           "id": "unity_performance_optimization_profiling",
           "name": "Performance Optimization & Profiling",
           "tag": "advanced",
-          "description": "Identify and resolve performance bottlenecks using the Unity Profiler, Frame Debugger, and deep optimization techniques for scripts, graphics (batching, culling, GPU instancing), memory management (object pooling), and physics settings.",
+          "description": "Profile Unity applications: Unity Profiler (CPU, GPU, Memory allocations), Memory Profiler, Frame Debugger for draw call inspection, and reducing GC allocations.",
           "resources": [
             {
               "title": "Optimizing performance - Unity Manual",
@@ -772,13 +817,15 @@
               "url": "/data/docs/unity_developer/unity_performance_optimization_profiling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         },
         {
           "id": "unity_advanced_scripting_design_patterns",
           "name": "Advanced Scripting & Design Patterns",
           "tag": "advanced",
-          "description": "Implement common game design patterns (e.g., Singleton, Observer, State Machine, Command, Service Locator, Factory) to create robust, maintainable, and scalable game architectures, promoting code reusability and flexibility.",
+          "description": "Apply architectural patterns in Unity: State machines, Command pattern, Object Pooling to eliminate instantiation hitches, and Model-View-Presenter (MVP).",
           "resources": [
             {
               "title": "Game Programming Patterns",
@@ -800,13 +847,15 @@
               "url": "/data/docs/unity_developer/unity_advanced_scripting_design_patterns.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "unity_advanced_csharp_features",
           "name": "Advanced C# Features",
           "tag": "advanced",
-          "description": "Leverage advanced C# features such as LINQ, generics, extension methods, asynchronous programming (async/await), and custom attributes for more expressive, efficient, and modern C# code in Unity.",
+          "description": "Leverage advanced C# in Unity: Generics, extension methods, LINQ avoidance in Update loops, lambda expressions, and memory-safe structs.",
           "resources": [
             {
               "title": "Asynchronous programming with async and await - Microsoft Docs",
@@ -833,13 +882,15 @@
               "url": "/data/docs/unity_developer/unity_advanced_csharp_features.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 20
         },
         {
           "id": "unity_ai_pathfinding",
           "name": "AI & Pathfinding",
           "tag": "advanced",
-          "description": "Implement AI behaviors using finite state machines (FSMs), behavior trees, navigation meshes (NavMesh), obstacle avoidance, and basic AI agents for believable non-player characters and game challenges.",
+          "description": "Implement AI with Unity NavMesh: NavMesh baking, NavMeshAgent movement, obstacle avoidance (NavMeshObstacle), off-mesh links, and patrol state machines.",
           "resources": [
             {
               "title": "AI Navigation (NavMesh) - Unity Manual",
@@ -866,13 +917,15 @@
               "url": "/data/docs/unity_developer/unity_ai_pathfinding.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         },
         {
           "id": "unity_editor_tool_development",
           "name": "Editor Scripting & Tool Development",
           "tag": "advanced",
-          "description": "Extend Unity Editor functionality with custom inspectors, editor windows, property drawers, and other tools to streamline workflows, automate tasks, and improve productivity for game development.",
+          "description": "Build custom editor tools: Custom Inspectors (`CustomEditor`), Property Drawers, Editor Windows (`EditorWindow`), and Gizmo visualizations for level design.",
           "resources": [
             {
               "title": "Extending the Editor - Unity Manual",
@@ -899,13 +952,15 @@
               "url": "/data/docs/unity_developer/unity_editor_tool_development.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "unity_multiplayer_networking",
           "name": "Multiplayer & Networking (Optional)",
           "tag": "advanced",
-          "description": "Explore concepts of client-server architecture, authoritative servers, state synchronization, and use Unity's Netcode for GameObjects or third-party solutions (PUN, Mirror) for robust multiplayer functionality.",
+          "description": "Implement multiplayer networking: Netcode for GameObjects (NGO), client-server architecture, NetworkVariables, Server RPCs / Client RPCs, and Unity Transport.",
           "resources": [
             {
               "title": "Netcode for GameObjects - Unity Docs",
@@ -932,13 +987,15 @@
               "url": "/data/docs/unity_developer/unity_multiplayer_networking.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "unity_rendering_pipelines_shaders",
           "name": "Rendering Pipelines & Shader Programming (Optional)",
           "tag": "advanced",
-          "description": "Understand the High Definition Render Pipeline (HDRP) and Universal Render Pipeline (URP), Physically Based Rendering (PBR) workflows, and learn basic shader programming with Shader Graph or HLSL for custom visual effects.",
+          "description": "Author custom visual styles: Universal Render Pipeline (URP), Shader Graph visual shader creation, custom lighting models, and full-screen post-processing effects.",
           "resources": [
             {
               "title": "Universal Render Pipeline (URP) - Unity Docs",
@@ -970,13 +1027,15 @@
               "url": "/data/docs/unity_developer/unity_rendering_pipelines_shaders.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         },
         {
           "id": "unity_testing_debugging",
           "name": "Testing & Debugging",
           "tag": "advanced",
-          "description": "Implement Unit Tests, Play Mode Tests, and Integration Tests to ensure code quality and game logic correctness, and master advanced debugging techniques in Unity and Visual Studio.",
+          "description": "Test Unity codebases: Unity Test Framework (UTF), writing EditMode and PlayMode unit tests, mocking components, and conditional compilation (`#if UNITY_EDITOR`).",
           "resources": [
             {
               "title": "Testing in Unity - Unity Manual",
@@ -1003,13 +1062,15 @@
               "url": "/data/docs/unity_developer/unity_testing_debugging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         },
         {
           "id": "unity_build_deployment_distribution",
           "name": "Build, Deployment & Distribution",
           "tag": "advanced",
-          "description": "Configure build settings for various platforms (PC, mobile, console, WebGL), optimize build size, implement CI/CD for automated builds, and understand distribution platforms (Steam, App Stores).",
+          "description": "Build and deploy games: Build settings, player settings, target platform configurations (Windows, Android, iOS, WebGL), IL2CPP compilation, and optimization.",
           "resources": [
             {
               "title": "Building a player - Unity Manual",
@@ -1036,13 +1097,15 @@
               "url": "/data/docs/unity_developer/unity_build_deployment_distribution.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "unity_liveops_analytics_monetization",
           "name": "Live Operations, Analytics & Monetization",
           "tag": "advanced",
-          "description": "Integrate Unity Analytics to gather player data, implement Remote Config for dynamic game content, A/B testing, and understand strategies for post-launch updates, monetization (in-app purchases, ads), and community management.",
+          "description": "Integrate monetization and telemetry: Unity Analytics, remote configuration, Unity In-App Purchasing (IAP), and ad mediation.",
           "resources": [
             {
               "title": "Unity Analytics - Unity Docs",
@@ -1074,15 +1137,19 @@
               "url": "/data/docs/unity_developer/unity_liveops_analytics_monetization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 27
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 23
     },
     {
       "id": "unity_portfolio_career",
       "name": "Portfolio & Career Readiness",
       "tag": "advanced",
-      "description": "Translate your Unity development skills into a strong portfolio, create compelling case studies, and prepare for interviews to land a Unity Developer role.",
+      "description": "Build a professional Unity portfolio: Game documentation, production-ready gameplay mechanics, and technical interview readiness.",
       "resources": [
         {
           "title": "Unity Learn: Prepare for a Career in Games",
@@ -1115,7 +1182,7 @@
           "id": "unity_project_planning_docs",
           "name": "Project Planning & Documentation",
           "tag": "advanced",
-          "description": "Learn to create Game Design Documents (GDDs), technical design specifications, production roadmaps, and project management plans essential for organized game development.",
+          "description": "Plan game development: Game Design Documents (GDD), technical design documents (TDD), production sprint milestones, and risk assessment.",
           "resources": [
             {
               "title": "Writing a Game Design Document - Gamasutra",
@@ -1142,13 +1209,15 @@
               "url": "/data/docs/unity_developer/unity_project_planning_docs.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 59
         },
         {
           "id": "unity_portfolio_project_development",
           "name": "Portfolio Project Development",
           "tag": "advanced",
-          "description": "Conceptualize, plan, and execute polished Unity projects that specifically showcase your core skills and specific interests (e.g., a mini-game, an interactive experience, a tool, a tech demo).",
+          "description": "Develop a commercial-ready game: Polished gameplay loop, game feel, sound effects, particle feedback, menus, and high-performance execution.",
           "resources": [
             {
               "title": "Build Your First Game - Unity Learn",
@@ -1175,13 +1244,15 @@
               "url": "/data/docs/unity_developer/unity_portfolio_project_development.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 61
         },
         {
           "id": "unity_collaboration_teamwork",
           "name": "Collaboration & Teamwork in Game Dev",
           "tag": "advanced",
-          "description": "Understand collaborative development workflows using Git, Unity Teams/Cloud, Agile methodologies (Scrum/Kanban), and effective communication strategies within a game development team.",
+          "description": "Collaborate in Unity teams: Asset workflow handoffs, code reviews, and maintaining consistent naming conventions across projects.",
           "resources": [
             {
               "title": "Unity Teams Advanced - Unity Docs",
@@ -1208,13 +1279,15 @@
               "url": "/data/docs/unity_developer/unity_collaboration_teamwork.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 27
         },
         {
           "id": "unity_case_study_demo_reel",
           "name": "Case Study & Demo Reel Creation",
           "tag": "advanced",
-          "description": "Develop concise case studies for your projects, highlighting problem, solution, technologies used, challenges, and outcomes. Create a compelling demo reel to visually showcase your best work to potential employers.",
+          "description": "Create a developer demo reel: Recording 60fps gameplay clips, editing technical showcase breakdowns, and highlighting custom editor tools.",
           "resources": [
             {
               "title": "How to make a great portfolio for game development",
@@ -1236,13 +1309,15 @@
               "url": "/data/docs/unity_developer/unity_case_study_demo_reel.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 27
         },
         {
           "id": "unity_interview_job_search_prep",
           "name": "Interview Preparation & Job Search",
           "tag": "advanced",
-          "description": "Prepare for technical interviews, coding challenges, and behavioral questions specific to Unity Developer roles. Understand the game industry job market, networking strategies, and resume/CV optimization.",
+          "description": "Master Unity technical interviews: Explain garbage collection in Unity, MonoBehaviour lifecycle differences, physics timesteps, and whiteboard game mechanics.",
           "resources": [
             {
               "title": "Game Development Interview Questions - Unity Forum",
@@ -1269,9 +1344,14 @@
               "url": "/data/docs/unity_developer/unity_interview_job_search_prep.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 23
     }
-  ]
+  ],
+  "total_exp": 1000
 }

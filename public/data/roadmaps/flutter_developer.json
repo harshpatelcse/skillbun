@@ -86,7 +86,7 @@
       "id": "flutter_foundations_pro",
       "name": "Dart Language & Flutter Fundamentals",
       "tag": "essential",
-      "description": "Master the Dart language syntax, set up your development environment, understand Flutter's core principles, widget tree, element tree, render tree, layout system, and debugging tools.",
+      "description": "Establish an unshakeable cross-platform foundation: master modern Dart 3 features, Flutter rendering pipeline internals, the three trees (Widget, Element, RenderObject), and declarative layout principles.",
       "resources": [
         {
           "title": "Flutter Get Started: Install",
@@ -114,7 +114,7 @@
           "id": "flutter_env_setup",
           "name": "Environment Setup & Tooling",
           "tag": "essential",
-          "description": "Install Flutter SDK, Android Studio/VS Code, Xcode, set up emulators/simulators, and understand Flutter DevTools for debugging and profiling.",
+          "description": "Master the Flutter development toolchain: configuring the Flutter SDK, managing Android Studio and Xcode build tools, managing device emulators, configuring VS Code extensions, and utilizing Flutter DevTools for CPU and memory profiling.",
           "resources": [
             {
               "title": "Flutter DevTools",
@@ -141,13 +141,15 @@
               "url": "/data/docs/flutter_developer/flutter_env_setup.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 24
         },
         {
           "id": "dart_core_language_features",
           "name": "Dart Core Language Features",
           "tag": "essential",
-          "description": "Understand Dart's type system, null safety, object-oriented programming (OOP) concepts, functional programming aspects, package management, and essential collection types.",
+          "description": "Master modern Dart 3 core language features: 100% sound null safety, pattern matching and destructuring (`switch` expressions), records for returning multiple typed values, sealed class hierarchies for exhaustive state modeling, extension types, and Object-Oriented design patterns.",
           "resources": [
             {
               "title": "Effective Dart: Style Guide",
@@ -174,13 +176,15 @@
               "url": "/data/docs/flutter_developer/dart_core_language_features.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "dart_async_programming_streams",
           "name": "Dart Asynchronous Programming & Streams",
           "tag": "essential",
-          "description": "Learn about Futures, async/await, Streams, and Isolates for concurrent, non-blocking operations, and effective event handling.",
+          "description": "Master Dart concurrency and asynchronous execution: Futures and `async/await`, asynchronous streams (`Stream`, `StreamController`, `async*`), single-subscription vs broadcast streams, stream transformers, and running CPU-bound computations in background threads using Dart Isolates (`Isolate.run`).",
           "resources": [
             {
               "title": "Asynchronous programming: futures, async, await",
@@ -207,13 +211,15 @@
               "url": "/data/docs/flutter_developer/dart_async_programming_streams.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "flutter_widgets_intro_lifecycle",
           "name": "Flutter Widgets & Lifecycle",
           "tag": "essential",
-          "description": "Build user interfaces using Stateless and Stateful Widgets, understand the Widget tree, Element tree, Render tree, and the widget lifecycle.",
+          "description": "Understand Flutter rendering mechanics: Stateless vs Stateful widgets, widget lifecycle (`initState`, `didUpdateWidget`, `dispose`), the three trees (Widget configuration, Element lifecycle management, RenderObject painting and hit-testing), and `BuildContext` lookup mechanics.",
           "resources": [
             {
               "title": "Introduction to widgets",
@@ -235,13 +241,15 @@
               "url": "/data/docs/flutter_developer/flutter_widgets_intro_lifecycle.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "flutter_layout_basics_material",
           "name": "Flutter Layout Basics & Material Design",
           "tag": "essential",
-          "description": "Construct basic layouts using Rows, Columns, Stacks, Containers. Implement Material Design principles and use common Material widgets (AppBar, Scaffold, Button, TextField, etc.).",
+          "description": "Master Flutter's layout constraint system: 'Constraints go down, Sizes go up, Parent sets position'; mastering Flex layouts (Row, Column, Flex, Flexible, Expanded), Stack and Positioned, CustomScrollView with Slivers, and building responsive Material 3 and Cupertino interfaces.",
           "resources": [
             {
               "title": "Layout and widgets",
@@ -268,13 +276,15 @@
               "url": "/data/docs/flutter_developer/flutter_layout_basics_material.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 18
         },
         {
           "id": "flutter_navigation_gestures",
           "name": "Navigation & User Interaction",
           "tag": "essential",
-          "description": "Manage screen flow with Navigator 1.0, handle basic user interactions with GestureDetector, and understand form handling.",
+          "description": "Master user interaction and navigation: gesture recognition (GestureDetector, InkWell, RawGestureDetector), pointer events, hit-test behavior, and transitioning between screens with custom hero animations.",
           "resources": [
             {
               "title": "Navigation and routing",
@@ -301,15 +311,19 @@
               "url": "/data/docs/flutter_developer/flutter_navigation_gestures.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 15
     },
     {
       "id": "flutter_architecture_data_advanced",
       "name": "App Architecture & Data Management",
       "tag": "essential",
-      "description": "Design scalable Flutter applications by understanding architectural patterns, implementing robust state management, integrating with APIs, handling local data persistence, and ensuring smooth navigation.",
+      "description": "Engineer scalable, production-grade Flutter architectures: enterprise state management, resilient API integration, offline-first local persistence, and clean dependency injection.",
       "resources": [
         {
           "title": "Flutter State Management Approaches",
@@ -337,7 +351,7 @@
           "id": "flutter_state_mgmt_provider_bloc",
           "name": "State Management (Provider, Riverpod, BLoC)",
           "tag": "essential",
-          "description": "Explore and implement popular state management solutions like Provider, Riverpod, and BLoC/Cubit, understanding their principles, advantages, and use cases for different application complexities.",
+          "description": "Master enterprise Flutter state management: BLoC / Cubit (`flutter_bloc` event-to-state stream mapping, `BlocBuilder`, `BlocConsumer`, `BlocObserver` for telemetry), and Riverpod 2.x (compile-time safety, code generation with `riverpod_generator`, auto-dispose, family providers).",
           "resources": [
             {
               "title": "Provider Package Documentation",
@@ -364,13 +378,15 @@
               "url": "/data/docs/flutter_developer/flutter_state_mgmt_provider_bloc.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "flutter_api_integration_secure_comm",
           "name": "API Integration & Secure Communication",
           "tag": "essential",
-          "description": "Perform HTTP requests using `http` package or Dio, handle JSON serialization/deserialization, manage authentication tokens (JWT, OAuth), implement secure API communication, and handle common API error scenarios.",
+          "description": "Build resilient HTTP client networking: configuring Dio with custom interceptors (request logging, automated token refresh with lock/unlock, exponential retry), SSL/TLS certificate pinning with `SecurityContext`, and JSON serialization with `freezed` and `json_serializable`.",
           "resources": [
             {
               "title": "Flutter Networking Cookbook",
@@ -397,13 +413,15 @@
               "url": "/data/docs/flutter_developer/flutter_api_integration_secure_comm.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 30
         },
         {
           "id": "flutter_local_data_persistence_offline",
           "name": "Local Data Persistence & Offline Support",
           "tag": "essential",
-          "description": "Persist data locally using SharedPreferences, explore relational databases with SQLite/drift, and utilize NoSQL solutions like Hive or Isar for offline capabilities and caching strategies.",
+          "description": "Engineer offline-first mobile applications: relational database persistence with Drift (type-safe SQLite with migrations and reactive queries), high-speed key-value caching with Hive or Isar, and hardware-backed secure credential storage with `flutter_secure_storage` (Android Keystore, iOS Keychain).",
           "resources": [
             {
               "title": "Persist data with SQLite",
@@ -430,13 +448,15 @@
               "url": "/data/docs/flutter_developer/flutter_local_data_persistence_offline.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 30
         },
         {
           "id": "flutter_dependency_injection_getit",
           "name": "Dependency Injection & Service Location",
           "tag": "essential",
-          "description": "Understand the principles of Dependency Injection (DI) and Service Location to create maintainable and testable codebases using packages like GetIt, and their role in clean architecture.",
+          "description": "Implement clean architecture dependency injection: service locator pattern using `get_it`, constructor injection, factory vs singleton registrations, and managing dependency lifecycles across feature modules.",
           "resources": [
             {
               "title": "GetIt: Simple DI for Flutter",
@@ -463,13 +483,15 @@
               "url": "/data/docs/flutter_developer/flutter_dependency_injection_getit.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "flutter_app_routing_advanced_nav",
           "name": "Advanced App Routing & Deep Linking",
           "tag": "essential",
-          "description": "Implement advanced navigation with Navigator 2.0 (Router API), named routes, nested navigation, and handle deep linking for seamless user experience.",
+          "description": "Master declarative routing with `go_router`: URI-based deep linking, nested navigation with `ShellRoute` / `StatefulShellRoute` (preserving bottom tab state), route redirect guards for authentication state, and path parameter extraction.",
           "resources": [
             {
               "title": "Declarative navigation in Flutter",
@@ -496,13 +518,15 @@
               "url": "/data/docs/flutter_developer/flutter_app_routing_advanced_nav.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 24
         },
         {
           "id": "flutter_error_handling_logging",
           "name": "Robust Error Handling & Logging",
           "tag": "essential",
-          "description": "Implement effective error handling strategies across different layers of the application, utilize logging frameworks (e.g., Logger, Sentry) for debugging and monitoring.",
+          "description": "Implement centralized error handling: catching unhandled framework exceptions with `FlutterError.onError`, catching asynchronous isolate errors with `PlatformDispatcher.instance.onError`, structured logging with Talker, and real-time crash reporting integration with Firebase Crashlytics.",
           "resources": [
             {
               "title": "Error handling in Dart",
@@ -529,13 +553,15 @@
               "url": "/data/docs/flutter_developer/flutter_error_handling_logging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "flutter_architectural_patterns_intro",
           "name": "Introduction to Architectural Patterns",
           "tag": "essential",
-          "description": "Understand common architectural patterns like MVC, MVVM, MVI, and a gentle introduction to Clean Architecture principles to structure your Flutter projects for scalability and maintainability.",
+          "description": "Apply Clean Architecture principles in Flutter: separating Domain layer (Entities, Use Cases, Repository Interfaces), Data layer (Models, Data Sources, Repository Implementations), and Presentation layer (BLoC/Cubit, UI Views, Widgets).",
           "resources": [
             {
               "title": "Flutter Architecture Samples",
@@ -557,13 +583,15 @@
               "url": "/data/docs/flutter_developer/flutter_architectural_patterns_intro.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 18
         },
         {
           "id": "flutter_project_recipe_app",
           "name": "Project: Recipe App with Auth & API",
           "tag": "essential",
-          "description": "Build a multi-screen recipe application incorporating user authentication, an advanced state management solution, local data persistence for favorites, and robust API integration for fetching recipe data.",
+          "description": "Build an Advanced Recipe & Nutrition Application: clean architecture, Riverpod/BLoC state management, REST API integration with caching, offline bookmarking with Drift, and interactive smooth animations.",
           "resources": [
             {
               "title": "Flutter Recipe App UI (Example)",
@@ -585,15 +613,19 @@
               "url": "/data/docs/flutter_developer/flutter_project_recipe_app.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 51
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 22
     },
     {
       "id": "flutter_advanced_dev_qa",
       "name": "Advanced Development, Quality & Performance",
       "tag": "advanced",
-      "description": "Integrate native device features, implement comprehensive testing strategies (unit, widget, integration), optimize application performance, and ensure accessibility for a superior user experience.",
+      "description": "Master advanced mobile capabilities: native platform channels, comprehensive testing pyramids, performance profiling, and custom GPU rendering.",
       "resources": [
         {
           "title": "Flutter Testing Documentation",
@@ -626,7 +658,7 @@
           "id": "flutter_native_features_platform_channels",
           "name": "Native Features & Platform Channels",
           "tag": "advanced",
-          "description": "Interact with native platform APIs using Platform Channels (Method, Event), FFI, integrate device hardware like camera, location, sensors, and understand background processing and notifications.",
+          "description": "Master native platform interop: type-safe bidirectional communication with Pigeon, MethodChannel for invoking native Kotlin/Swift APIs, EventChannel for streaming native sensor data (accelerometer, GPS), and direct native C/C++ library invocation via `dart:ffi`.",
           "resources": [
             {
               "title": "Platform channels in Flutter",
@@ -648,13 +680,15 @@
               "url": "/data/docs/flutter_developer/flutter_native_features_platform_channels.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         },
         {
           "id": "flutter_firebase_baas_integration",
           "name": "Firebase & BaaS Integration",
           "tag": "advanced",
-          "description": "Integrate Firebase services like Authentication, Firestore, Realtime Database, Cloud Functions, Storage, and Crashlytics for robust backend and analytics solutions.",
+          "description": "Integrate full-stack mobile backend services: Firebase Authentication, Cloud Firestore real-time queries, Firebase Cloud Messaging (FCM) for push notifications with background message handlers, and Firebase Remote Config feature flags.",
           "resources": [
             {
               "title": "Firebase for Flutter",
@@ -681,13 +715,15 @@
               "url": "/data/docs/flutter_developer/flutter_firebase_baas_integration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "flutter_comprehensive_testing_tdd",
           "name": "Comprehensive Testing & TDD",
           "tag": "advanced",
-          "description": "Write effective Unit Tests for business logic, Widget Tests for UI components, and Integration Tests for end-to-end flows. Learn about mocking, faking, and Test-Driven Development (TDD) practices.",
+          "description": "Implement rigorous automated testing: unit tests with `test` and `mocktail`, widget tests with `WidgetTester` (simulating user gestures, `pumpAndSettle`), golden UI snapshot tests for pixel-perfect regression prevention, and integration testing on real devices using `integration_test`.",
           "resources": [
             {
               "title": "Unit test a Flutter app",
@@ -719,13 +755,15 @@
               "url": "/data/docs/flutter_developer/flutter_comprehensive_testing_tdd.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "flutter_performance_optimization_profiling",
           "name": "Performance Optimization & Profiling",
           "tag": "advanced",
-          "description": "Use Flutter DevTools to profile UI rendering, CPU usage, and memory. Optimize app startup, reduce jank, manage assets efficiently, optimize image loading, and debug complex issues.",
+          "description": "Eliminate UI jank and achieve locked 60/120 FPS: diagnosing frame render times in Flutter DevTools, understanding the Impeller rendering engine (eliminating shader compilation stutter), isolating repaints with `RepaintBoundary`, optimizing list rendering with `ListView.builder`, and eliminating memory leaks.",
           "resources": [
             {
               "title": "Debug a Flutter app",
@@ -752,13 +790,15 @@
               "url": "/data/docs/flutter_developer/flutter_performance_optimization_profiling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "flutter_animations_custom_painters",
           "name": "Advanced Animations & Custom Painters",
           "tag": "advanced",
-          "description": "Implement explicit and implicit animations, hero animations, custom transitions, and create unique UI elements using CustomPainter and CustomClipper.",
+          "description": "Build custom graphics and fluid animations: explicit animations (`AnimationController`, `CurvedAnimation`, `AnimatedBuilder`), implicit animations, physics-based springs, and low-level canvas rendering using `CustomPainter` with optimized `shouldRepaint` triggers.",
           "resources": [
             {
               "title": "Animations in Flutter",
@@ -785,13 +825,15 @@
               "url": "/data/docs/flutter_developer/flutter_animations_custom_painters.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "flutter_internationalization_localization",
           "name": "Internationalization & Localization (i18n & l10n)",
           "tag": "advanced",
-          "description": "Make your app accessible to a global audience by implementing internationalization (i18n) and localization (l10n) for multiple languages and regions.",
+          "description": "Implement enterprise multi-language support: configuring `flutter_localizations` and ARB files (`intl`), handling pluralization and gender, dynamic locale switching, and supporting Right-to-Left (RTL) Arabic/Hebrew layouts.",
           "resources": [
             {
               "title": "Internationalizing Flutter apps",
@@ -813,13 +855,15 @@
               "url": "/data/docs/flutter_developer/flutter_internationalization_localization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "flutter_theming_dynamic_themes",
           "name": "Theming & Dynamic Themes",
           "tag": "advanced",
-          "description": "Implement consistent theming across your application, including light/dark modes and custom dynamic themes, leveraging Flutter's theming capabilities.",
+          "description": "Design scalable Material 3 theme systems: custom `ColorScheme` generation, custom `ThemeExtension` for enterprise brand tokens, and seamless dynamic light/dark mode switching.",
           "resources": [
             {
               "title": "Using themes to share colors and font styles",
@@ -841,13 +885,15 @@
               "url": "/data/docs/flutter_developer/flutter_theming_dynamic_themes.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 28
         },
         {
           "id": "flutter_security_best_practices",
           "name": "Security Best Practices in Flutter",
           "tag": "advanced",
-          "description": "Understand and apply security best practices for Flutter applications, including secure coding, data protection, API key management, and preventing common vulnerabilities.",
+          "description": "Harden mobile application security: code obfuscation (`--obfuscate --split-debug-info`), root and jailbreak detection, screenshot prevention on sensitive screens, secure biometric authentication with `local_auth`, and network security configs.",
           "resources": [
             {
               "title": "Security tips for Flutter apps (article)",
@@ -869,15 +915,19 @@
               "url": "/data/docs/flutter_developer/flutter_security_best_practices.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 42
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 20
     },
     {
       "id": "flutter_deployment_cicd_production",
       "name": "Deployment, CI/CD & Production Readiness",
       "tag": "advanced",
-      "description": "Prepare your Flutter applications for production release on app stores, implement Continuous Integration/Continuous Deployment (CI/CD) pipelines, and explore advanced development practices for large-scale applications.",
+      "description": "Deploy and automate mobile releases: automated app store publishing, multi-platform targets, continuous delivery pipelines, and live crash observability.",
       "resources": [
         {
           "title": "Flutter Deployment Guide",
@@ -910,7 +960,7 @@
           "id": "flutter_app_deployment_store_release",
           "name": "Mobile App Deployment & Store Release",
           "tag": "advanced",
-          "description": "Configure app signing for Android (Play Store) and iOS (App Store), generate app bundles/archives, manage app store listings (metadata, screenshots), conduct beta testing, and understand release cycles.",
+          "description": "Master mobile app store submission: generating signing keys (Android Keystore, iOS Provisioning Profiles and Certificates), building optimized Android App Bundles (AAB) and iOS IPAs, and managing Google Play Console and Apple App Store Connect releases.",
           "resources": [
             {
               "title": "Build and release an Android app",
@@ -937,13 +987,15 @@
               "url": "/data/docs/flutter_developer/flutter_app_deployment_store_release.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "flutter_web_desktop_deployment",
           "name": "Web & Desktop Deployment",
           "tag": "advanced",
-          "description": "Understand the specifics of deploying Flutter applications to web and desktop platforms, including configuration, platform-specific considerations, and optimization.",
+          "description": "Deploy Flutter across multi-platform targets: optimizing Flutter Web for search engines (Wasm compiler, CanvasKit vs HTML renderer), and packaging native desktop binaries for Windows, macOS, and Linux.",
           "resources": [
             {
               "title": "Build and release a web app",
@@ -970,13 +1022,15 @@
               "url": "/data/docs/flutter_developer/flutter_web_desktop_deployment.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         },
         {
           "id": "flutter_ci_cd_pipelines",
           "name": "Continuous Integration & Deployment (CI/CD)",
           "tag": "advanced",
-          "description": "Set up automated testing, build, and deployment pipelines using CI/CD tools like GitHub Actions, GitLab CI, Codemagic, or Bitrise to streamline your development workflow and ensure consistent releases.",
+          "description": "Automate mobile CI/CD pipelines: configuring Fastlane for automated code signing, building, and beta deployment (TestFlight, Firebase App Distribution), orchestrated through GitHub Actions or Codemagic.",
           "resources": [
             {
               "title": "Codemagic for Flutter CI/CD",
@@ -998,13 +1052,15 @@
               "url": "/data/docs/flutter_developer/flutter_ci_cd_pipelines.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "flutter_analytics_crash_reporting",
           "name": "Analytics, Crash Reporting & Monitoring",
           "tag": "advanced",
-          "description": "Integrate analytics tools (e.g., Firebase Analytics, Amplitude) to track user behavior, and crash reporting services (e.g., Firebase Crashlytics, Sentry) for monitoring app stability in production.",
+          "description": "Implement production telemetry: tracking user engagement with Firebase Analytics, capturing symbolicated crash stack traces in Crashlytics, and tracking network performance with Sentry/Datadog.",
           "resources": [
             {
               "title": "Firebase Analytics for Flutter",
@@ -1031,13 +1087,15 @@
               "url": "/data/docs/flutter_developer/flutter_analytics_crash_reporting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "flutter_scalable_architecture_implementation",
           "name": "Scalable Architecture Implementation",
           "tag": "advanced",
-          "description": "Deep dive into implementing Clean Architecture, Domain-Driven Design (DDD), and other patterns for building highly scalable, maintainable, and testable large-scale Flutter applications.",
+          "description": "Master enterprise multi-package monorepos, engine architecture, and complete production capstone engineering.",
           "resources": [
             {
               "title": "Clean Architecture in Flutter (Article Series)",
@@ -1059,13 +1117,15 @@
               "url": "/data/docs/flutter_developer/flutter_scalable_architecture_implementation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 22
         },
         {
           "id": "flutter_modularization_multi_package",
           "name": "Modularization & Multi-package Projects",
           "tag": "advanced",
-          "description": "Learn to structure large projects using modularization, monorepos, and multi-package setups to manage feature isolation, code reuse, and team collaboration effectively.",
+          "description": "Architect enterprise monorepo modularization: dividing large apps into independent Melos packages (core, design_system, feature_auth, feature_checkout), managing dependency boundaries, and speeding up CI build times.",
           "resources": [
             {
               "title": "Flutter Modularization Guide",
@@ -1087,13 +1147,15 @@
               "url": "/data/docs/flutter_developer/flutter_modularization_multi_package.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "flutter_internals_engine_deep_dive",
           "name": "Flutter Internals & Engine Deep Dive",
           "tag": "advanced",
-          "description": "Gain a deep understanding of Flutter's rendering pipeline, engine architecture, Skia graphics, Dart VM, and how Flutter communicates with native platforms at a low level.",
+          "description": "Understand Flutter engine internals: Skia and Impeller GPU backends, platform embedding layer, thread architecture (Platform, UI, GPU/Raster, and IO threads), and how frame scheduling works with VSync.",
           "resources": [
             {
               "title": "Flutter Architecture Explained",
@@ -1120,13 +1182,15 @@
               "url": "/data/docs/flutter_developer/flutter_internals_engine_deep_dive.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         },
         {
           "id": "flutter_capstone_marketplace_app_fullstack",
           "name": "Capstone Project: Full-stack E-commerce App",
           "tag": "advanced",
-          "description": "Develop a complete e-commerce marketplace app with user authentication, product listings, search, shopping cart, order management, secure API interactions, local caching, push notifications, comprehensive testing, and prepare it for store release.",
+          "description": "Capstone Project: Architect and Deploy a Production Multi-Platform Marketplace App in Flutter & Dart: clean architecture monorepo, BLoC/Riverpod state management, offline-first data sync with Drift, Stripe payment integration, Push Notifications, Impeller 120 FPS performance, and Fastlane CI/CD automation.",
           "resources": [
             {
               "title": "Flutter E-commerce UI Kit (Example)",
@@ -1143,9 +1207,14 @@
               "url": "/data/docs/flutter_developer/flutter_capstone_marketplace_app_fullstack.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 74
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 21
     }
-  ]
+  ],
+  "total_exp": 1000
 }

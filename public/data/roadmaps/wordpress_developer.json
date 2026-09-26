@@ -47,32 +47,34 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Custom Headless Real Estate Listing Portal",
+        "title": "Enterprise Decoupled Headless WordPress CMS with Next.js & WPGraphQL",
         "tech_stack": [
-          "Next.js",
           "WordPress",
           "WPGraphQL",
-          "Tailwind CSS"
+          "Next.js 15",
+          "Incremental Static Regeneration",
+          "Docker"
         ],
-        "description": "Build a headless real estate portal leveraging WordPress as a headless CMS and Next.js for instant static page generation."
+        "description": "Architect a headless enterprise publishing system utilizing WPGraphQL, automated webhook cache revalidation in Next.js, and sub-100ms global page delivery."
       },
       {
-        "title": "Enterprise Headless WordPress CMS with Next.js & GraphQL",
+        "title": "Custom High-Performance Gutenberg Block Plugin Suite & WooCommerce Engine",
         "tech_stack": [
-          "WordPress",
-          "WPGraphQL",
-          "Next.js",
-          "Tailwind",
-          "PHP"
+          "PHP 8.3",
+          "React",
+          "WordPress Block API",
+          "WooCommerce REST API",
+          "Redis Object Cache"
         ],
-        "description": "Architect a decoupled WordPress implementation leveraging WPGraphQL, custom post types, webhook-triggered on-demand ISR, and ACF Pro structured data."
+        "description": "Develop a bespoke suite of custom Gutenberg blocks using modern React and the WordPress Block Editor, integrated with WooCommerce and persistent Redis caching."
       }
     ],
     "interview_focus": [
-      "WordPress Action vs Filter Hooks",
-      "Gutenberg Block Attributes & Deprecation Handlers",
-      "Security Sanitization (wp_kses, sanitize_text_field)",
-      "Database Optimization for High-Traffic WP Sites"
+      "WordPress Hook System (Actions vs Filters, Hook Priority, Custom Action Implementation)",
+      "Database Schema & Optimization (wp_posts, wp_postmeta, Custom Post Types, Transients API)",
+      "Modern Gutenberg Block Development (Block Registration, attributes, edit vs save, React JSX)",
+      "Headless WordPress Architecture (WPGraphQL vs REST API, Authentication, Webhook Invalidation)",
+      "WordPress Security Hardening (Nonces, Data Sanitization/Validation/Escaping, Capabilities)"
     ],
     "certifications": [
       "WordPress Core Contributor Credential",
@@ -85,7 +87,7 @@
       "id": "wp_core_web_foundations",
       "name": "Web & WordPress Core Foundations",
       "tag": "essential",
-      "description": "Establish a strong understanding of fundamental web technologies and the core principles of WordPress, from basic server setup and installation to fundamental content management.",
+      "description": "Master WordPress engineering fundamentals: Core architecture, database schemas, modern PHP 8.x, local development environments, and the WordPress template hierarchy.",
       "resources": [
         {
           "title": "WordPress Learn",
@@ -118,7 +120,7 @@
           "id": "wp_web_tech_basics",
           "name": "Web Technology Fundamentals",
           "tag": "essential",
-          "description": "Learn the basics of how the web works: HTTP/HTTPS, DNS, client-server model, web servers (Apache/Nginx), and databases (MySQL/MariaDB). Understand HTML for structure, CSS for styling, and JavaScript for client-side interactivity, including DOM manipulation and event handling.",
+          "description": "Master web technologies for WordPress: Semantic HTML5, CSS3, JavaScript ES6+, and client-server HTTP lifecycles.",
           "resources": [
             {
               "title": "How the Internet Works (MDN)",
@@ -155,13 +157,15 @@
               "url": "/data/docs/wordpress_developer/wp_web_tech_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 10
         },
         {
           "id": "wp_php_fundamentals",
           "name": "PHP Fundamentals for WordPress",
           "tag": "essential",
-          "description": "Grasp core PHP concepts: variables, data types, operators, conditional statements, loops, functions, arrays, and basic object-oriented programming (OOP) principles. Focus on how these apply to WordPress development, including understanding PHP versions and environment requirements.",
+          "description": "Master PHP for WordPress: Variables, arrays, control structures, functions, object-oriented programming (OOP), namespaces, and PHP error handling.",
           "resources": [
             {
               "title": "PHP Manual (Official Documentation)",
@@ -183,13 +187,15 @@
               "url": "/data/docs/wordpress_developer/wp_php_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 11
         },
         {
           "id": "wp_local_dev_environments",
           "name": "Local Development Environments",
           "tag": "essential",
-          "description": "Set up and manage various local development environments crucial for WordPress development. Explore options like Local by Flywheel, Docker, Valet (Mac), Laragon (Windows), or MAMP/XAMPP, understanding their pros and cons.",
+          "description": "Configure local development tools: LocalWP, DDEV, Docker-based WordPress environments, WP-CLI command-line management, and Xdebug.",
           "resources": [
             {
               "title": "Local by Flywheel (Official Site)",
@@ -216,13 +222,15 @@
               "url": "/data/docs/wordpress_developer/wp_local_dev_environments.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 14
         },
         {
           "id": "wp_installation_setup",
           "name": "WordPress Installation & Initial Configuration",
           "tag": "essential",
-          "description": "Understand different WordPress installation methods (manual, one-click installer, local setup). Learn to configure basic settings, permalinks, connect to a database, and explore different hosting environments (shared, VPS, managed WordPress hosting).",
+          "description": "Install and configure WordPress: Database creation, `wp-config.php` configuration (salts, debugging flags), file permissions, and directory structures (`wp-content`).",
           "resources": [
             {
               "title": "Installing WordPress (WordPress.org)",
@@ -249,13 +257,15 @@
               "url": "/data/docs/wordpress_developer/wp_installation_setup.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 13
         },
         {
           "id": "wp_admin_content_mgmt",
           "name": "WordPress Admin & Content Management",
           "tag": "essential",
-          "description": "Master the WordPress dashboard. Learn to create and manage Posts, Pages, Categories, Tags, Media Library, Menus, and Widgets. Understand user roles and capabilities, basic content workflows, and how to manage comments and user profiles.",
+          "description": "Master the WordPress dashboard: Posts, Pages, Media Library, Categories, Tags, user roles and capabilities (`current_user_can`), and site settings.",
           "resources": [
             {
               "title": "WordPress Support Docs (Getting Started)",
@@ -282,15 +292,19 @@
               "url": "/data/docs/wordpress_developer/wp_admin_content_mgmt.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 15
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 11
     },
     {
       "id": "wp_site_building_structured",
       "name": "Mastering Site Building with Gutenberg & Structured Content",
       "tag": "essential",
-      "description": "Dive deep into modern WordPress site building using the Gutenberg editor, leveraging custom content types, and structuring information effectively for dynamic display.",
+      "description": "Build structured sites with Gutenberg and custom data models: Block patterns, custom post types, and custom taxonomies.",
       "resources": [
         {
           "title": "Gutenberg Handbook (WordPress Developer Docs)",
@@ -323,7 +337,7 @@
           "id": "wp_gutenberg_editor",
           "name": "Gutenberg Editor & Core Blocks",
           "tag": "essential",
-          "description": "Understand the block editor interface, mastery of common core blocks, block patterns, and reusable blocks. Learn to effectively compose layouts and manage content using a block-first approach.",
+          "description": "Master the Block Editor (Gutenberg): Core blocks, block transformations, reusable synced patterns, template parts, and block layout settings.",
           "resources": [
             {
               "title": "Using the Block Editor (WordPress.org)",
@@ -350,13 +364,15 @@
               "url": "/data/docs/wordpress_developer/wp_gutenberg_editor.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 14
         },
         {
           "id": "wp_cpt_tax_acf",
           "name": "Custom Post Types, Taxonomies & Custom Fields",
           "tag": "essential",
-          "description": "Learn to extend WordPress content capabilities by registering custom post types and taxonomies for organizing diverse content. Master custom fields using plugins like Advanced Custom Fields (ACF) or native meta boxes to store and retrieve structured data efficiently.",
+          "description": "Model custom post types and fields: `register_post_type`, `register_taxonomy`, Advanced Custom Fields (ACF Pro) / Meta Box, and relationship fields.",
           "resources": [
             {
               "title": "Register Post Type (WordPress Developer Docs)",
@@ -388,13 +404,15 @@
               "url": "/data/docs/wordpress_developer/wp_cpt_tax_acf.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 15
         },
         {
           "id": "wp_query_loops_patterns",
           "name": "Dynamic Content with Query Loops & Block Patterns",
           "tag": "essential",
-          "description": "Understand how to dynamically display content using the Query Loop block in Gutenberg. Learn to create and utilize custom block patterns to streamline site building and integrate custom post types and fields into block-based layouts.",
+          "description": "Display dynamic content: Query Loop block, template query parameters, custom block patterns, and displaying structured custom field data.",
           "resources": [
             {
               "title": "Query Loop Block (WordPress.org)",
@@ -421,13 +439,15 @@
               "url": "/data/docs/wordpress_developer/wp_query_loops_patterns.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 10
         },
         {
           "id": "wp_site_global_styles",
           "name": "Site Global Styles & Customization",
           "tag": "essential",
-          "description": "Configure site identity, global styles, and theme settings using the Customizer (for classic themes) and the Site Editor with `theme.json` (for block themes/FSE). Manage colors, typography, layout, and other global design aspects.",
+          "description": "Manage Global Styles: `theme.json` configuration (color palettes, typographic scales, layout spacing), and Full Site Editing (FSE) visual site customization.",
           "resources": [
             {
               "title": "Global Styles (WordPress Developer Docs)",
@@ -454,13 +474,15 @@
               "url": "/data/docs/wordpress_developer/wp_site_global_styles.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 16
         },
         {
           "id": "wp_basic_seo_content",
           "name": "Basic SEO for Content & Structure",
           "tag": "essential",
-          "description": "Implement fundamental SEO practices: optimizing titles, meta descriptions, image alt text, clean URL structures, internal linking, and using popular SEO plugins like Yoast SEO or Rank Math for on-page optimization.",
+          "description": "Implement on-page SEO for WordPress: Semantic heading hierarchy, XML sitemaps, Open Graph metadata, permalink optimization, and canonical URLs.",
           "resources": [
             {
               "title": "WordPress SEO: The Ultimate Guide (Yoast SEO)",
@@ -487,15 +509,19 @@
               "url": "/data/docs/wordpress_developer/wp_basic_seo_content.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 11
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 12
     },
     {
       "id": "wp_theme_development",
       "name": "WordPress Theme Development",
       "tag": "essential",
-      "description": "Learn to build and customize WordPress themes, from understanding the classic template hierarchy to developing modern block themes (Full Site Editing), ensuring robust and maintainable front-end experiences.",
+      "description": "Develop custom classic and block themes: Template hierarchy, hooks, functions, and Full Site Editing.",
       "resources": [
         {
           "title": "Theme Developer Handbook",
@@ -523,7 +549,7 @@
           "id": "wp_classic_theme_basics",
           "name": "Classic Theme Fundamentals",
           "tag": "essential",
-          "description": "Understand the WordPress template hierarchy, common theme files (index.php, header.php, footer.php, sidebar.php, single.php, page.php, archive.php), and how to create and customize child themes for safe modifications and updates.",
+          "description": "Master classic theme architecture: Template files (`index.php`, `header.php`, `footer.php`, `single.php`, `page.php`), and template hierarchy resolution.",
           "resources": [
             {
               "title": "Template Hierarchy (WordPress Developer Docs)",
@@ -550,13 +576,15 @@
               "url": "/data/docs/wordpress_developer/wp_classic_theme_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 12
         },
         {
           "id": "wp_theme_wp_query",
           "name": "Dynamic Content with WP_Query",
           "tag": "essential",
-          "description": "Master the `WP_Query` class to retrieve and display posts, pages, and custom post types in themes. Learn to build custom loops, implement pagination, and filter content effectively based on various criteria.",
+          "description": "Master dynamic database queries: `WP_Query`, the standard WordPress Loop, custom query parameters, pagination, and preventing query performance bottlenecks.",
           "resources": [
             {
               "title": "WP_Query (WordPress Developer Docs)",
@@ -583,13 +611,15 @@
               "url": "/data/docs/wordpress_developer/wp_theme_wp_query.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 16
         },
         {
           "id": "wp_theme_functions_hooks",
           "name": "Theme Functions, Actions & Filters",
           "tag": "essential",
-          "description": "Utilize `functions.php` to register theme features, enqueue scripts/styles correctly, define custom image sizes, and leverage WordPress action and filter hooks for extending or modifying functionality within themes safely and efficiently.",
+          "description": "Master theme extensibility: `functions.php`, enqueueing scripts and styles (`wp_enqueue_script`), Action hooks, Filter hooks, and custom theme supports.",
           "resources": [
             {
               "title": "Theme Functions (WordPress Developer Docs)",
@@ -616,13 +646,15 @@
               "url": "/data/docs/wordpress_developer/wp_theme_functions_hooks.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 15
         },
         {
           "id": "wp_theme_design_principles",
           "name": "Responsive Design & Accessibility",
           "tag": "essential",
-          "description": "Implement responsive web design principles using modern CSS techniques (flexbox, grid, media queries) and fluid layouts. Ensure themes meet Web Content Accessibility Guidelines (WCAG) to provide an inclusive experience for all users.",
+          "description": "Design accessible, responsive themes: Mobile-first responsive styling, CSS variables, fluid typography, and WCAG 2.1 AA accessibility compliance.",
           "resources": [
             {
               "title": "Responsive Web Design (MDN)",
@@ -649,13 +681,15 @@
               "url": "/data/docs/wordpress_developer/wp_theme_design_principles.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 11
         },
         {
           "id": "wp_theme_i18n_l10n",
           "name": "Internationalization (i18n) & Localization (l10n)",
           "tag": "essential",
-          "description": "Learn to prepare themes for translation using WordPress internationalization functions (`__()`, `_e()`) and create language files (PO/MO). Understand how to localize a theme for different languages and regions.",
+          "description": "Internationalize themes: Text domains, localization functions (`__()`, `_e()`, `_n()`), translation template files (`.pot`), and multi-language compatibility (WPML, Polylang).",
           "resources": [
             {
               "title": "Internationalization (WordPress Developer Docs)",
@@ -682,13 +716,15 @@
               "url": "/data/docs/wordpress_developer/wp_theme_i18n_l10n.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         },
         {
           "id": "wp_block_theme_fse",
           "name": "Block Theme Development & Full Site Editing (FSE)",
           "tag": "advanced",
-          "description": "Explore the modern era of WordPress themes. Learn about `theme.json` for global styles, block templates, template parts, and how to build themes entirely with blocks using Full Site Editing, moving beyond the classic template hierarchy.",
+          "description": "Develop modern Block Themes (FSE): Creating block themes from scratch, `theme.json` schema v3, HTML block templates (`templates/index.html`), and template parts.",
           "resources": [
             {
               "title": "Block Theme Handbook (WordPress Developer Docs)",
@@ -720,13 +756,15 @@
               "url": "/data/docs/wordpress_developer/wp_block_theme_fse.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 23
         },
         {
           "id": "wp_theme_frontend_tools",
           "name": "Front-End Build Tools & Workflows",
           "tag": "advanced",
-          "description": "Incorporate modern front-end development practices into theme building. Learn to use CSS preprocessors (Sass/Less), JavaScript bundlers (Webpack), task runners (Gulp), and npm/Yarn for dependency management and efficient asset compilation.",
+          "description": "Set up frontend build tools: Node.js, Vite / Webpack, PostCSS, Tailwind CSS integration, and asset minification workflows.",
           "resources": [
             {
               "title": "Sass Basics (Official Docs)",
@@ -748,15 +786,19 @@
               "url": "/data/docs/wordpress_developer/wp_theme_frontend_tools.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 19
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 12
     },
     {
       "id": "wp_plugin_development",
       "name": "WordPress Plugin Development",
       "tag": "advanced",
-      "description": "Master the art of creating robust custom plugins to extend WordPress functionality, integrate with external services, and build powerful custom features that are maintainable and secure.",
+      "description": "Develop custom WordPress plugins: Plugin lifecycles, hooks, custom settings, database manipulation, and REST API endpoints.",
       "resources": [
         {
           "title": "Plugin Developer Handbook",
@@ -789,7 +831,7 @@
           "id": "wp_plugin_basics",
           "name": "Plugin Structure & Lifecycle",
           "tag": "essential",
-          "description": "Understand the basic file structure of a plugin, required plugin header comments, and the plugin activation/deactivation/uninstall hooks. Learn best practices for organizing plugin code and including external libraries.",
+          "description": "Master plugin architecture: Plugin header comments, activation and deactivation hooks, uninstall hooks (`uninstall.php`), and directory structures.",
           "resources": [
             {
               "title": "Plugin Basics (WordPress Developer Docs)",
@@ -811,13 +853,15 @@
               "url": "/data/docs/wordpress_developer/wp_plugin_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 15
         },
         {
           "id": "wp_plugin_advanced_hooks",
           "name": "Advanced Hooks: Actions & Filters",
           "tag": "advanced",
-          "description": "Deep dive into WordPress action and filter hooks to modify core WordPress behavior, extend themes, and interact with other plugins. Learn about hook priority, parameters, and best practices for creating and using custom hooks.",
+          "description": "Master the Hook system: Priority arguments, parameter passing, custom action execution (`do_action`), and modifying data with filters (`apply_filters`).",
           "resources": [
             {
               "title": "Actions Reference (WordPress Developer Docs)",
@@ -844,13 +888,15 @@
               "url": "/data/docs/wordpress_developer/wp_plugin_advanced_hooks.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 22
         },
         {
           "id": "wp_plugin_custom_admin",
           "name": "Custom Admin Pages & Settings API",
           "tag": "advanced",
-          "description": "Create custom administration pages and sub-menus for plugin settings. Utilize the Settings API for registering and managing plugin options, ensuring proper data sanitization, validation, and user interface design.",
+          "description": "Build custom admin interfaces: `add_menu_page`, Settings API (`register_setting`, `add_settings_section`), Options API, and building admin forms.",
           "resources": [
             {
               "title": "Settings API (WordPress Developer Docs)",
@@ -877,13 +923,15 @@
               "url": "/data/docs/wordpress_developer/wp_plugin_custom_admin.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 21
         },
         {
           "id": "wp_plugin_db_interaction",
           "name": "Database Interaction (WPDB & Custom Tables)",
           "tag": "advanced",
-          "description": "Learn to interact with the WordPress database using the `wpdb` class for custom queries and data manipulation. Understand when and how to create, manage, and upgrade custom database tables for complex plugin data, adhering to WordPress database best practices.",
+          "description": "Interact with the database: The `$wpdb` global class, prepared SQL statements (`$wpdb->prepare`), creating custom database tables (`dbDelta`), and indexing.",
           "resources": [
             {
               "title": "WPDB Class (WordPress Developer Docs)",
@@ -910,13 +958,15 @@
               "url": "/data/docs/wordpress_developer/wp_plugin_db_interaction.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 29
         },
         {
           "id": "wp_plugin_rest_api",
           "name": "WordPress REST API & Custom Endpoints",
           "tag": "advanced",
-          "description": "Work with the WordPress REST API to fetch and manage data programmatically. Learn to register custom REST API routes and endpoints, manage authentication, and integrate with headless WordPress setups or external applications.",
+          "description": "Extend the WordPress REST API: `register_rest_route`, handling HTTP methods, request validation, sanitization callbacks, and permission callbacks.",
           "resources": [
             {
               "title": "REST API Handbook (WordPress Developer Docs)",
@@ -943,13 +993,15 @@
               "url": "/data/docs/wordpress_developer/wp_plugin_rest_api.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         },
         {
           "id": "wp_plugin_i18n_l10n",
           "name": "Internationalization (i18n) & Localization (l10n) for Plugins",
           "tag": "essential",
-          "description": "Ensure plugins are ready for global audiences by implementing internationalization best practices. Learn to use text domains, translation functions, and how to make strings translatable within your plugin code.",
+          "description": "Internationalize plugins: Loading plugin text domains (`load_plugin_textdomain`), string translation, and preparing plugins for the official WordPress repository.",
           "resources": [
             {
               "title": "Internationalization for WordPress Developers (WordPress Developer Docs)",
@@ -971,13 +1023,15 @@
               "url": "/data/docs/wordpress_developer/wp_plugin_i18n_l10n.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 16
         },
         {
           "id": "wp_plugin_custom_blocks",
           "name": "Custom Gutenberg Block Development",
           "tag": "advanced",
-          "description": "Learn to build custom Gutenberg blocks from scratch using modern JavaScript, React, and `@wordpress/scripts`. Understand block structure, controls, attributes, and how to create dynamic blocks for highly customizable content.",
+          "description": "Build custom Gutenberg blocks: `@wordpress/scripts`, `block.json` metadata, React `Edit` and `Save` components, block attributes, and InspectorControls.",
           "resources": [
             {
               "title": "Block Editor Handbook - Building Blocks (WordPress Developer Docs)",
@@ -1004,13 +1058,15 @@
               "url": "/data/docs/wordpress_developer/wp_plugin_custom_blocks.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 22
         },
         {
           "id": "wp_plugin_modern_js",
           "name": "Modern JavaScript & React/Vue in Plugins",
           "tag": "advanced",
-          "description": "Integrate modern JavaScript frameworks like React or Vue.js into WordPress plugins, particularly for complex admin interfaces or interactive front-end components. Learn how to enqueue scripts, localize data, and leverage build tools like Webpack for development.",
+          "description": "Incorporate modern JavaScript in plugins: React, `@wordpress/components` UI library, state management with `@wordpress/data` (Redux-like store), and API fetch.",
           "resources": [
             {
               "title": "Using React in WordPress Plugins (Learn WordPress)",
@@ -1037,13 +1093,15 @@
               "url": "/data/docs/wordpress_developer/wp_plugin_modern_js.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 28
         },
         {
           "id": "wp_plugin_security_dev",
           "name": "Plugin Security & Best Practices",
           "tag": "advanced",
-          "description": "Implement robust security measures: using nonces for verification, sanitizing and validating all user input, escaping output data, and understanding common vulnerabilities like XSS, CSRF, and SQL injection to build secure plugins.",
+          "description": "Harden plugin security: Nonce verification (`wp_verify_nonce`), capability checks, data sanitization (`sanitize_text_field`), and data escaping (`esc_html`, `esc_attr`, `esc_url`).",
           "resources": [
             {
               "title": "WordPress Security Best Practices for Developers",
@@ -1070,15 +1128,19 @@
               "url": "/data/docs/wordpress_developer/wp_plugin_security_dev.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 22
     },
     {
       "id": "wp_performance_security_devops",
       "name": "Performance, Security & DevOps for WordPress",
       "tag": "advanced",
-      "description": "Optimize WordPress sites for maximum speed, secure them against emerging threats, and implement efficient development, deployment, and maintenance workflows for long-term project success.",
+      "description": "Optimize WordPress performance, enforce security hardening, and automate DevOps pipelines.",
       "resources": [
         {
           "title": "WordPress Security Hardening",
@@ -1111,7 +1173,7 @@
           "id": "wp_performance_opt",
           "name": "Front-End Performance Optimization",
           "tag": "advanced",
-          "description": "Implement front-end caching strategies (page, browser), optimize images for web (compression, lazy loading, responsive images, WebP), minify CSS/JS, and leverage Content Delivery Networks (CDNs). Analyze Core Web Vitals (LCP, FID, CLS) using tools like PageSpeed Insights.",
+          "description": "Optimize frontend performance: Asset minification, disabling unused scripts, critical CSS generation, caching plugins (WP Rocket / Redis Object Cache), and Core Web Vitals.",
           "resources": [
             {
               "title": "PageSpeed Insights (Google Developers)",
@@ -1138,13 +1200,15 @@
               "url": "/data/docs/wordpress_developer/wp_performance_opt.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "wp_db_media_optimization",
           "name": "Database & Media Library Optimization",
           "tag": "advanced",
-          "description": "Learn to optimize the WordPress database through regular cleanup, removing transients, post revisions, and optimizing tables. Efficiently manage and optimize the media library for performance, including offloading to cloud storage and serving media responsively.",
+          "description": "Optimize database and media: Database transient cleanup, indexing slow queries, WebP image conversion, lazy loading, and CDN offloading to S3/Cloudflare.",
           "resources": [
             {
               "title": "Optimizing WordPress Database (WPBeginner)",
@@ -1171,13 +1235,15 @@
               "url": "/data/docs/wordpress_developer/wp_db_media_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 27
         },
         {
           "id": "wp_security_hardening",
           "name": "Security Hardening & Maintenance",
           "tag": "advanced",
-          "description": "Secure WordPress installations by enforcing strong passwords, implementing Two-Factor Authentication (2FA), configuring Web Application Firewalls (WAFs), performing regular updates, setting up robust backup solutions, and malware scanning. Understand common attack vectors and prevention techniques.",
+          "description": "Harden production WordPress: Disabling file editing in admin, changing default database prefix, configuring Web Application Firewalls (Cloudflare/Wordfence), and 2FA.",
           "resources": [
             {
               "title": "WordPress Security Best Practices (Sucuri)",
@@ -1204,13 +1270,15 @@
               "url": "/data/docs/wordpress_developer/wp_security_hardening.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         },
         {
           "id": "wp_dev_workflow_git",
           "name": "Development Workflow & Version Control (Git)",
           "tag": "advanced",
-          "description": "Set up efficient local development environments and integrate Git for version control, collaborative development, and managing codebases. Understand branching strategies (Git Flow, GitHub Flow) and managing database synchronization between environments.",
+          "description": "Manage WordPress with Git: Versioning custom themes and plugins while excluding WordPress core, using Composer for plugin dependency management (Bedrock/Roots stack).",
           "resources": [
             {
               "title": "Git Handbook (GitHub)",
@@ -1237,13 +1305,15 @@
               "url": "/data/docs/wordpress_developer/wp_dev_workflow_git.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 24
         },
         {
           "id": "wp_deployment_migration",
           "name": "Deployment & Migration Strategies",
           "tag": "advanced",
-          "description": "Learn reliable methods for deploying WordPress sites from development to live, including using tools for migration (e.g., Duplicator, All-in-One WP Migration), SSH/WP-CLI for command-line management, and understanding environment-specific configurations.",
+          "description": "Deploy and migrate WordPress sites: Database search-and-replace using WP-CLI (`wp search-replace`), managing staging vs production environments, and zero-downtime deployments.",
           "resources": [
             {
               "title": "WP-CLI Handbook (WordPress Developer Docs)",
@@ -1270,13 +1340,15 @@
               "url": "/data/docs/wordpress_developer/wp_deployment_migration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         },
         {
           "id": "wp_devops_cicd",
           "name": "Continuous Integration/Deployment (CI/CD)",
           "tag": "advanced",
-          "description": "Explore advanced DevOps practices for WordPress. Implement CI/CD pipelines using tools like GitHub Actions, GitLab CI/CD, or Jenkins to automate testing, building, and deployment processes for themes and plugins, ensuring consistent and rapid releases.",
+          "description": "Automate WordPress CI/CD: GitHub Actions pipelines running PHPCS (WordPress Coding Standards), automated unit testing with PHPUnit, and deploying via rsync/SSH.",
           "resources": [
             {
               "title": "CI/CD for WordPress with GitHub Actions (Delicious Brains)",
@@ -1303,15 +1375,19 @@
               "url": "/data/docs/wordpress_developer/wp_devops_cicd.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 29
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 17
     },
     {
       "id": "wp_ecommerce_woocommerce",
       "name": "E-commerce with WooCommerce",
       "tag": "advanced",
-      "description": "Become proficient in setting up, configuring, and customizing e-commerce solutions using WooCommerce, the leading e-commerce plugin for WordPress, covering everything from product management to advanced integrations.",
+      "description": "Build e-commerce solutions with WooCommerce: Setup, product types, custom hooks, payment gateways, and performance optimization.",
       "resources": [
         {
           "title": "WooCommerce Developer Docs",
@@ -1344,7 +1420,7 @@
           "id": "wp_wc_setup_config",
           "name": "WooCommerce Store Setup & Configuration",
           "tag": "advanced",
-          "description": "Install and configure WooCommerce. Set up store details, currency, shipping zones and methods, tax rates, various payment gateways (Stripe, PayPal, etc.), and customize email notifications.",
+          "description": "Configure WooCommerce: Store setup wizard, tax rules, shipping zones, email notifications, and configuring standard shop pages.",
           "resources": [
             {
               "title": "WooCommerce Setup Wizard Guide",
@@ -1371,13 +1447,15 @@
               "url": "/data/docs/wordpress_developer/wp_wc_setup_config.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 14
         },
         {
           "id": "wp_wc_products_mgmt",
           "name": "Product & Inventory Management",
           "tag": "advanced",
-          "description": "Learn to create and manage various product types (simple, variable, grouped, external/affiliate, virtual/downloadable). Understand product attributes, categories, tags, and advanced inventory control for effective stock management.",
+          "description": "Manage product catalogs: Simple, variable, grouped, and affiliate products; stock inventory management, and bulk product imports/exports.",
           "resources": [
             {
               "title": "Adding and Managing Products (WooCommerce Docs)",
@@ -1404,13 +1482,15 @@
               "url": "/data/docs/wordpress_developer/wp_wc_products_mgmt.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 20
         },
         {
           "id": "wp_wc_customization_dev",
           "name": "WooCommerce Customization & Development",
           "tag": "advanced",
-          "description": "Customize WooCommerce templates using action/filter hooks and template overrides for tailored design and functionality. Integrate with other plugins, and implement custom features like product bundles, advanced shipping logic, or custom checkout fields.",
+          "description": "Customize WooCommerce: Template overriding in themes, action and filter hooks for checkout and single-product pages, and customizing cart workflows.",
           "resources": [
             {
               "title": "WooCommerce Hooks Reference",
@@ -1437,13 +1517,15 @@
               "url": "/data/docs/wordpress_developer/wp_wc_customization_dev.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 21
         },
         {
           "id": "wp_wc_payments_gateways",
           "name": "Payment Gateways & Subscriptions",
           "tag": "advanced",
-          "description": "Understand how to integrate and configure various payment gateways. Explore WooCommerce Subscriptions and Memberships for implementing recurring revenue models, subscription products, and restricted content access.",
+          "description": "Integrate payments and subscriptions: Stripe, PayPal, custom payment gateway development, and managing recurring subscriptions with WooCommerce Subscriptions.",
           "resources": [
             {
               "title": "WooCommerce Payments (Official)",
@@ -1470,13 +1552,15 @@
               "url": "/data/docs/wordpress_developer/wp_wc_payments_gateways.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 23
         },
         {
           "id": "wp_wc_rest_api",
           "name": "WooCommerce REST API & Headless Commerce",
           "tag": "advanced",
-          "description": "Utilize the WooCommerce REST API to integrate with external systems, mobile apps, or build headless e-commerce solutions. Learn to authenticate API requests, retrieve product data, manage orders, and create custom endpoints.",
+          "description": "Master WooCommerce REST API: API keys, consuming store endpoints, webhooks for order creation, and building headless commerce storefronts.",
           "resources": [
             {
               "title": "WooCommerce REST API Documentation",
@@ -1503,13 +1587,15 @@
               "url": "/data/docs/wordpress_developer/wp_wc_rest_api.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         },
         {
           "id": "wp_wc_performance_scale",
           "name": "Optimizing WooCommerce Performance & Scalability",
           "tag": "advanced",
-          "description": "Implement performance best practices specific to WooCommerce stores. Learn about optimizing product queries, caching strategies, database optimization, and server configurations to ensure fast load times and scalability for high-traffic e-commerce sites.",
+          "description": "Scale high-volume WooCommerce: High-Performance Order Storage (HPOS), object caching with Redis, isolating checkout databases, and scaling for flash sales.",
           "resources": [
             {
               "title": "Speed Up WooCommerce (Kinsta)",
@@ -1536,15 +1622,19 @@
               "url": "/data/docs/wordpress_developer/wp_wc_performance_scale.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 28
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 13
     },
     {
       "id": "wp_client_project_delivery",
       "name": "Client Project Delivery & Professional Practices",
       "tag": "advanced",
-      "description": "Develop the essential skills to manage client projects, deliver high-quality, maintainable WordPress solutions, and establish a professional and successful development career.",
+      "description": "Manage agency client deliverables: Project scoping, testing, client handoff, and legal compliance.",
       "resources": [
         {
           "title": "WordPress Coding Standards",
@@ -1577,7 +1667,7 @@
           "id": "wp_project_management",
           "name": "Project Scoping & Client Communication",
           "tag": "advanced",
-          "description": "Learn to effectively gather requirements, define clear project scopes, create compelling proposals, set realistic timelines and budgets, and maintain transparent communication with clients throughout the entire development lifecycle.",
+          "description": "Scope WordPress projects: Estimating project hours, defining functional specifications, managing scope creep, and setting milestone deliverables.",
           "resources": [
             {
               "title": "How to Write a Web Design Proposal (HubSpot)",
@@ -1604,13 +1694,15 @@
               "url": "/data/docs/wordpress_developer/wp_project_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 46
         },
         {
           "id": "wp_quality_assurance",
           "name": "Testing & Quality Assurance",
           "tag": "advanced",
-          "description": "Implement thorough testing procedures: conducting cross-browser and device compatibility testing, responsiveness checks, performance testing, security audits, and user acceptance testing (UAT). Learn about unit testing and integration testing for custom code.",
+          "description": "Perform quality assurance: Cross-browser testing, mobile responsiveness audits, broken link checking, and verifying form submission workflows.",
           "resources": [
             {
               "title": "Cross Browser Testing Guide",
@@ -1637,13 +1729,15 @@
               "url": "/data/docs/wordpress_developer/wp_quality_assurance.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 20
         },
         {
           "id": "wp_client_handoff_support",
           "name": "Client Handoff & Ongoing Support",
           "tag": "advanced",
-          "description": "Prepare comprehensive documentation (user manuals, technical docs), conduct effective client training sessions, and establish clear support and maintenance plans for post-launch updates, troubleshooting, and ongoing site health.",
+          "description": "Deliver client handoffs: Authoring custom admin walkthrough guides, recording Loom video tutorials, and structuring ongoing maintenance contracts.",
           "resources": [
             {
               "title": "Creating Client Handoff Documentation",
@@ -1670,13 +1764,15 @@
               "url": "/data/docs/wordpress_developer/wp_client_handoff_support.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 21
         },
         {
           "id": "wp_legal_compliance",
           "name": "Legal & Compliance (GDPR, CCPA, Accessibility Audits)",
           "tag": "advanced",
-          "description": "Understand key legal and compliance requirements for websites, including GDPR, CCPA, and other privacy regulations. Learn to conduct basic accessibility audits and implement features to meet legal standards, such as cookie consents and privacy policies.",
+          "description": "Ensure legal compliance: Cookie consent banners (Complianz), Privacy Policy page generation, GDPR/CCPA data export/erasure compliance, and accessibility audits.",
           "resources": [
             {
               "title": "GDPR Compliance for WordPress (WPBeginner)",
@@ -1703,13 +1799,15 @@
               "url": "/data/docs/wordpress_developer/wp_legal_compliance.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 23
         },
         {
           "id": "wp_portfolio_business",
           "name": "Building a Portfolio & Business Acumen",
           "tag": "advanced",
-          "description": "Showcase your best projects effectively to attract clients. Understand pricing models, marketing yourself as a developer, managing contracts, invoicing, and the overall business aspects of a WordPress development career (freelancing or agency).",
+          "description": "Build a competitive WordPress business portfolio: Demonstrating custom themes, published plugins, case studies, and freelance/agency positioning.",
           "resources": [
             {
               "title": "How to Create an Impressive Freelance Portfolio",
@@ -1736,9 +1834,14 @@
               "url": "/data/docs/wordpress_developer/wp_portfolio_business.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 21
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 37
     }
-  ]
+  ],
+  "total_exp": 1000
 }

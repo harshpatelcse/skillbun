@@ -47,24 +47,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "End-to-End Ransomware Breach Investigation Case Study",
+        "title": "Enterprise Ransomware Breach Investigation & Timeline Reconstruction",
         "tech_stack": [
+          "Plaso / log2timeline",
           "Volatility 3",
-          "Autopsy",
+          "Eric Zimmerman Tools",
           "Timesketch",
-          "YARA"
+          "Wireshark"
         ],
-        "description": "Analyze a memory dump and disk image of an infected machine, reconstruct the adversary timeline, identify the entry point, and write a forensic report."
+        "description": "Perform an end-to-end memory and disk forensic investigation of a simulated enterprise ransomware intrusion, reconstructing adversary lateral movement."
       },
       {
-        "title": "Ransomware Attack Forensic Investigation & Timeline Reconstruction",
+        "title": "Automated Endpoint Forensic Triage & YARA Threat Hunting Harness",
         "tech_stack": [
           "Velociraptor",
-          "Autopsy",
-          "Volatility 3",
-          "Plaso"
+          "Python",
+          "YARA",
+          "Sigma Rules",
+          "Timesketch"
         ],
-        "description": "Perform memory and disk forensics on a simulated compromised Windows workstation, isolating malware persistence mechanisms, extracting C2 IP addresses, and assembling an evidentiary timeline."
+        "description": "Deploy an automated live-response artifact triage system using Velociraptor VQL queries and custom YARA memory scanners across 100+ simulated endpoints."
       }
     ],
     "certifications": [
@@ -72,10 +74,11 @@
       "GIAC Certified Forensic Analyst (GCFA)"
     ],
     "interview_focus": [
-      "Investigating Process Injection using Volatility (malfind)",
-      "Prefetch Files vs Shimcache Evidence Value",
-      "Preserving Volatile RAM without Contaminating Evidence",
-      "Order of Volatility in Digital Forensics"
+      "Windows Forensic Artifacts ($MFT, USN Journal, Shimcache, Amcache, Prefetch, Shellbags)",
+      "Memory Forensics (VAD Tree Analysis, Code Injection, Process Hollow Detection)",
+      "Order of Volatility & Forensic Evidence Handling (Chain of Custody, Hash Verification)",
+      "Event Log Analysis (Sysmon Events 1, 3, 7, 8, 10, Security Events 4624, 4672, 4720)",
+      "Reconstructing Adversary Lateral Movement (Pass-the-Ticket, WMI, PsExec, RDP Tunnels)"
     ]
   },
   "format": "tree",
@@ -84,7 +87,7 @@
       "id": "dfir_analyst_foundations",
       "name": "DFIR Fundamentals & Incident Response Lifecycle",
       "tag": "essential",
-      "description": "Establish a strong understanding of what DFIR work entails, its ethical and legal boundaries, and the structured approach to handling security incidents.",
+      "description": "Master Digital Forensics and Incident Response (DFIR) principles, the NIST SP 800-61 / ISO 27035 incident lifecycles, chain of custody verification, and forensic lab engineering.",
       "resources": [
         {
           "title": "NIST Incident Handling Guide SP 800-61 Rev. 2",
@@ -117,7 +120,7 @@
           "id": "dfir_analyst_ir_lifecycle",
           "name": "Incident Response Life Cycle & Frameworks",
           "tag": "essential",
-          "description": "Deep dive into the stages of incident response (preparation, identification, containment, eradication, recovery, post-incident activity) as per NIST, SANS, and other industry frameworks. Understand playbooks and runbooks for structured incident management.",
+          "description": "Execute every phase of the Incident Response lifecycle: Preparation, Detection & Analysis, Containment, Eradication, Recovery, and Post-Incident Activity. Establish enterprise containment and communication playbooks.",
           "resources": [
             {
               "title": "Understanding the NIST Incident Response Life Cycle",
@@ -139,13 +142,15 @@
               "url": "/data/docs/dfir_analyst/dfir_analyst_ir_lifecycle.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 32
         },
         {
           "id": "dfir_analyst_forensics_principles",
           "name": "Digital Forensics Principles & Evidence Handling",
           "tag": "essential",
-          "description": "Understand the fundamental principles of digital forensics, the importance of chain of custody, proper evidence preservation techniques, legal and ethical considerations, and standardized reporting.",
+          "description": "Enforce strict forensic standards: Adhere to RFC 3227 order of volatility, maintain verifiable cryptographic chain of custody (MD5/SHA256), avoid live evidence contamination, and manage legally defensible exhibits.",
           "resources": [
             {
               "title": "ACPO Good Practice Guide for Digital Evidence",
@@ -172,13 +177,15 @@
               "url": "/data/docs/dfir_analyst/dfir_analyst_forensics_principles.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 32
         },
         {
           "id": "dfir_analyst_tooling_lab_setup",
           "name": "DFIR Lab Setup & Essential Tooling",
           "tag": "essential",
-          "description": "Setting up a secure and effective DFIR lab environment (virtual machines, forensic workstations). Introduction to essential tools for triage, forensic imaging (DD, E01), hashing for integrity verification, and write-blocking (hardware/software). Practical use of tools like FTK Imager, Autopsy, and KAPE.",
+          "description": "Build an isolated DFIR lab environment: Deploy SIFT Workstation, REMnux, forensic hardware write-blockers, virtualized analysis networks, and evidence repository servers.",
           "resources": [
             {
               "title": "Building a DFIR Lab",
@@ -215,13 +222,15 @@
               "url": "/data/docs/dfir_analyst/dfir_analyst_tooling_lab_setup.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 20
         },
         {
           "id": "dfir_analyst_os_fundamentals_for_dfir",
           "name": "Operating System Fundamentals for Forensics",
           "tag": "essential",
-          "description": "Understand core operating system components critical for forensic analysis: processes, services, user accounts, file permissions, kernel modules, boot processes, and system architecture across Windows, Linux, and macOS environments.",
+          "description": "Master operating system internals for forensics: Windows kernel architecture, NTFS/FAT/ReFS file systems, Linux ext4/XFS metadata, processes, memory management, and system call execution flows.",
           "resources": [
             {
               "title": "Windows Internals, Part 1 (7th Edition)",
@@ -243,15 +252,19 @@
               "url": "/data/docs/dfir_analyst/dfir_analyst_os_fundamentals_for_dfir.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 46
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 37
     },
     {
       "id": "dfir_analyst_core_skills_implementation",
       "name": "Core Technical Skills & Implementation",
       "tag": "essential",
-      "description": "Develop hands-on expertise in various forensic disciplines to collect, analyze, and interpret digital evidence from diverse sources effectively.",
+      "description": "Execute live incident response, host forensic artifact extraction, volatile memory forensics, and deep network packet analysis across Windows, Linux, and macOS platforms.",
       "resources": [
         {
           "title": "Digital Forensics Course - Learn the Basics of Computer Forensics",
@@ -269,7 +282,7 @@
           "id": "dfir_analyst_live_response_triage",
           "name": "Live Response & Endpoint Triage",
           "tag": "essential",
-          "description": "Learn techniques for collecting volatile data from active systems without disturbing ongoing operations. This includes capturing memory dumps, running processes, network connections, command history, and utilizing live response scripting and Endpoint Detection and Response (EDR) tools for immediate incident investigation and containment.",
+          "description": "Perform rapid live host triage: Collect volatile endpoint data using KAPE, CyLR, and Velociraptor; capture running processes, network sockets, loaded modules, logged-on users, and scheduled tasks without altering state.",
           "resources": [
             {
               "title": "Sysinternals Suite Documentation",
@@ -296,13 +309,15 @@
               "url": "/data/docs/dfir_analyst/dfir_analyst_live_response_triage.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 32
         },
         {
           "id": "dfir_analyst_windows_host_forensics",
           "name": "Windows Host Forensics",
           "tag": "essential",
-          "description": "Master forensic analysis of Windows systems, including detailed examination of file systems (NTFS, FAT), registry hive analysis, event logs, prefetch files, JumpLists, ShellBags, LNK files, ShimCache, Amcache, and MFT analysis. Understand common Windows artifacts related to user activity, execution, and persistence.",
+          "description": "Analyze critical Windows forensic artifacts using Eric Zimmerman tools: Master File Table ($MFT, $LogFile), Registry hives (SYSTEM, SOFTWARE, NTUSER.dat), Shimcache, Amcache, Prefetch, SRUM, and Event Logs (EVTX).",
           "resources": [
             {
               "title": "Windows Forensic Analysis Toolkit - SANS",
@@ -329,13 +344,15 @@
               "url": "/data/docs/dfir_analyst/dfir_analyst_windows_host_forensics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 32
         },
         {
           "id": "dfir_analyst_linux_macos_host_forensics",
           "name": "Linux & macOS Host Forensics",
           "tag": "essential",
-          "description": "Perform forensic investigations on Linux systems (Ext4, system logs, Bash history, process accounting, cron jobs, network configurations) and macOS (APFS, Unified Log, Plists, Time Machine backups, TCC database, browser artifacts, Spotlight metadata).",
+          "description": "Investigate Linux and macOS endpoints: Analyze `/var/log` artifacts, systemd journals, cron jobs, bash history, auditd logs, Unified Logs (OSLog), LaunchDaemons, LaunchAgents, and extended file attributes.",
           "resources": [
             {
               "title": "Linux Forensics Quick Reference",
@@ -357,13 +374,15 @@
               "url": "/data/docs/dfir_analyst/dfir_analyst_linux_macos_host_forensics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 32
         },
         {
           "id": "dfir_analyst_file_system_forensics_deep_dive",
           "name": "File System Forensics Deep Dive",
           "tag": "essential",
-          "description": "A dedicated exploration of common file systems (NTFS, Ext4, APFS, HFS+), their structures, metadata, journaling mechanisms, and advanced artifact analysis like Master File Table (MFT) records, USN Journal, Volume Shadow Copies, and APFS snapshots. Understand deleted file recovery techniques.",
+          "description": "Dissect file systems at the byte and cluster level: Analyze NTFS attributes ($STANDARD_INFORMATION, $FILE_NAME), timestamp resolution, timestomping detection, alternate data streams (ADS), and unallocated space carvers.",
           "resources": [
             {
               "title": "File System Forensic Analysis (Brian Carrier)",
@@ -390,13 +409,15 @@
               "url": "/data/docs/dfir_analyst/dfir_analyst_file_system_forensics_deep_dive.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 32
         },
         {
           "id": "dfir_analyst_memory_forensics",
           "name": "Memory Forensics",
           "tag": "essential",
-          "description": "Learn to acquire and analyze memory dumps using tools like Volatility and Rekall. Focus on extracting running processes, network connections, loaded DLLs, injected code, command history, user activity, and detecting rootkits or hidden processes.",
+          "description": "Perform advanced volatile memory analysis with Volatility 3 and Rekall: Acquire RAM dumps via LiME/WinPmem, identify injected DLLs, unhooked code, hidden processes (DKOM), extract network sockets, and dump process memory.",
           "resources": [
             {
               "title": "Volatility3 Documentation",
@@ -423,13 +444,15 @@
               "url": "/data/docs/dfir_analyst/dfir_analyst_memory_forensics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 32
         },
         {
           "id": "dfir_analyst_network_forensics_pcap",
           "name": "Network Forensics & Packet Analysis",
           "tag": "essential",
-          "description": "Analyze network traffic for indicators of compromise (IOCs). Understand common network protocols (TCP/IP, DNS, HTTP, SMB), use packet capture tools like Wireshark and TShark, interpret network flow data (NetFlow, IPFIX), and detect anomalies or malicious communication patterns.",
+          "description": "Investigate network evidence: Deep packet inspection (PCAP) with Wireshark and Zeek (Bro); reconstruct TCP streams, extract transmitted files, identify C2 beaconing patterns, and analyze NetFlow/IPFIX telemetry.",
           "resources": [
             {
               "title": "Wireshark User's Guide",
@@ -451,13 +474,15 @@
               "url": "/data/docs/dfir_analyst/dfir_analyst_network_forensics_pcap.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 32
         },
         {
           "id": "dfir_analyst_log_analysis_siem",
           "name": "Log Analysis & SIEM Fundamentals",
           "tag": "essential",
-          "description": "Develop skills in parsing, filtering, and analyzing various log types (system, application, firewall, web server, cloud logs). Understand SIEM concepts, data ingestion, normalization, correlation rules, alert generation, and integration with threat intelligence. Gain practical experience with platforms like Splunk, ELK Stack, and Microsoft Sentinel, including query languages like KQL or SPL.",
+          "description": "Correlate multi-source enterprise logs in SIEM (Splunk, Elastic, Sentinel): Query Windows security events (4624, 4688, 4720), Sysmon events (1, 3, 7, 8, 10), firewall logs, and reverse proxy access records.",
           "resources": [
             {
               "title": "Getting Started with Splunk",
@@ -489,15 +514,19 @@
               "url": "/data/docs/dfir_analyst/dfir_analyst_log_analysis_siem.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 24
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 32
     },
     {
       "id": "dfir_analyst_advanced_practices",
       "name": "Advanced DFIR & Operational Excellence",
       "tag": "advanced",
-      "description": "Transition from foundational skills to advanced enterprise-level incident response practices, proactive threat hunting, and specialized forensic areas like cloud, malware analysis, and automation.",
+      "description": "Architect enterprise incident orchestration, proactive threat hunting, cloud and container forensics, malware triage, and automated DFIR scripting.",
       "resources": [
         {
           "title": "Digital Forensics & Incident Response (DFIR) Master Class (Prabh Nair)",
@@ -515,7 +544,7 @@
           "id": "dfir_analyst_enterprise_ir_orchestration",
           "name": "Enterprise IR & SOAR Automation",
           "tag": "advanced",
-          "description": "Learn to manage and scale incident response within large organizations. Explore Security Orchestration, Automation, and Response (SOAR) platforms, develop playbooks for automated responses, and integrate with security tools via APIs to streamline operations.",
+          "description": "Design enterprise-wide Incident Response orchestration: Integrate SOAR platforms (Cortex XSOAR, Splunk SOAR), automate host quarantine, revoke session tokens, and coordinate cross-functional crisis management.",
           "resources": [
             {
               "title": "What is SOAR (Security Orchestration, Automation, and Response)?",
@@ -532,13 +561,15 @@
               "url": "/data/docs/dfir_analyst/dfir_analyst_enterprise_ir_orchestration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 70
         },
         {
           "id": "dfir_analyst_threat_hunting_mitre",
           "name": "Threat Hunting & MITRE ATT&CK",
           "tag": "advanced",
-          "description": "Develop proactive threat hunting methodologies. Utilize threat intelligence and frameworks like MITRE ATT&CK to identify adversary tactics, techniques, and procedures (TTPs) that bypass traditional security controls, and build robust detection rules.",
+          "description": "Execute proactive hypothesis-driven threat hunting: Map enterprise telemetry gaps against MITRE ATT&CK, author custom Sigma and YARA-L rules, and sweep endpoints for elusive adversary persistence.",
           "resources": [
             {
               "title": "MITRE ATT&CK Framework Official Site",
@@ -565,13 +596,15 @@
               "url": "/data/docs/dfir_analyst/dfir_analyst_threat_hunting_mitre.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 42
         },
         {
           "id": "dfir_analyst_cloud_container_forensics",
           "name": "Cloud & Container Forensics",
           "tag": "advanced",
-          "description": "Understand the unique challenges and techniques for performing forensics in cloud environments (AWS, Azure, GCP) including logging, snapshotting, API analysis, and cloud-native security tools. Explore incident response and forensics within containerized environments (Docker, Kubernetes).",
+          "description": "Forensicate cloud and container environments: Collect and analyze AWS CloudTrail, VPC Flow Logs, GuardDuty findings, Azure Activity/Sign-in logs, GCP Audit logs, and inspect ephemeral Kubernetes pod snapshots.",
           "resources": [
             {
               "title": "AWS Cloud Forensics Guide",
@@ -588,13 +621,15 @@
               "url": "/data/docs/dfir_analyst/dfir_analyst_cloud_container_forensics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 45
         },
         {
           "id": "dfir_analyst_malware_triage_basic_analysis",
           "name": "Malware Triage & Basic Analysis",
           "tag": "advanced",
-          "description": "Perform basic static analysis (file signatures, strings, packers, PE header analysis) and dynamic analysis (sandboxing, process monitoring, network traffic analysis) of suspicious executables, scripts, and documents to understand their behavior, extract indicators of compromise (IOCs), and write basic YARA rules for detection.",
+          "description": "Perform rapid malware triage on collected artifacts: Extract strings, calculate fuzzy hashes (SSDEEP), inspect imported API symbols, unpack compressed payloads, and execute safe dynamic detonation in Cuckoo Sandbox.",
           "resources": [
             {
               "title": "Practical Malware Analysis Book",
@@ -626,13 +661,15 @@
               "url": "/data/docs/dfir_analyst/dfir_analyst_malware_triage_basic_analysis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 45
         },
         {
           "id": "dfir_analyst_scripting_for_dfir",
           "name": "Scripting for DFIR Automation",
           "tag": "advanced",
-          "description": "Develop essential scripting skills (Python, PowerShell, Bash) for automating repetitive DFIR tasks such as data parsing, log analysis, evidence collection, tool integration, and report generation. Focus on practical scripts for efficiency and scalability.",
+          "description": "Automate forensic processing using Python and PowerShell: Develop automated scripts to parse EVTX logs, query MFT databases, extract timeline artifacts with Plaso/log2timeline, and automate IOC hashing.",
           "resources": [
             {
               "title": "Automate the Boring Stuff with Python",
@@ -659,13 +696,15 @@
               "url": "/data/docs/dfir_analyst/dfir_analyst_scripting_for_dfir.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 43
         },
         {
           "id": "dfir_analyst_email_forensics",
           "name": "Email Forensics",
           "tag": "advanced",
-          "description": "Master techniques for analyzing email headers, body content, attachments, and links to investigate phishing attempts, Business Email Compromise (BEC), malware delivery vectors, and insider threats. Understand email protocols (SMTP, POP3, IMAP) and anti-spam technologies.",
+          "description": "Investigate business email compromise (BEC) and phishing: Analyze raw RFC 5322 email headers, SPF/DKIM/DMARC authentication verdicts, tracing originating IP hops, and extract weaponized macro attachments.",
           "resources": [
             {
               "title": "Email Header Analyzer Tool",
@@ -692,13 +731,15 @@
               "url": "/data/docs/dfir_analyst/dfir_analyst_email_forensics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         },
         {
           "id": "dfir_analyst_advanced_threat_detection_response",
           "name": "Advanced Threat Detection & Response",
           "tag": "advanced",
-          "description": "Explore advanced threat detection techniques, understanding sophisticated adversary tactics like Advanced Persistent Threats (APTs), supply chain attacks, and leveraging frameworks beyond MITRE ATT&CK for deeper incident analysis and response strategies. Focus on proactive hunting and innovative defense mechanisms.",
+          "description": "Detect and remediate advanced in-memory threats: Recognize Process Hollowing, Process Doppelgänging, AtomBombing, reflective DLL injection, and credential dumping (LSASS, DPAPI, NTDS.dit).",
           "resources": [
             {
               "title": "Advanced Persistent Threats: A Practical Guide",
@@ -725,15 +766,19 @@
               "url": "/data/docs/dfir_analyst/dfir_analyst_advanced_threat_detection_response.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 41
     },
     {
       "id": "dfir_analyst_portfolio_career_readiness",
       "name": "Portfolio & Career Readiness",
       "tag": "advanced",
-      "description": "Transform theoretical knowledge and practical skills into demonstrable proof for career advancement. Focus on effective communication, professional development, and showcasing expertise.",
+      "description": "Build a demonstrable DFIR portfolio: Document incident response simulation write-ups, contribute to open-source DFIR tools/parsers, and earn recognized certifications (GCFA, GCFE, GCIH).",
       "resources": [
         {
           "title": "Creating a Cybersecurity Portfolio",
@@ -761,7 +806,7 @@
           "id": "dfir_analyst_incident_reporting_communication",
           "name": "Incident Reporting & Stakeholder Communication",
           "tag": "advanced",
-          "description": "Master the art of crafting clear, concise, and actionable incident reports. Learn to effectively communicate findings and recommendations to technical teams, management, legal counsel, and other stakeholders.",
+          "description": "Author comprehensive forensic incident reports: Craft executive breach summaries, detailed technical timelines, root-cause analyses, chain-of-custody documentation, and regulatory remediation roadmaps.",
           "resources": [
             {
               "title": "Writing Effective Incident Reports",
@@ -783,13 +828,15 @@
               "url": "/data/docs/dfir_analyst/dfir_analyst_incident_reporting_communication.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 43
         },
         {
           "id": "dfir_analyst_capstone_project",
           "name": "DFIR Capstone Project: End-to-End Incident Simulation",
           "tag": "advanced",
-          "description": "Apply all learned skills in a comprehensive, simulated incident response scenario. This project should cover the entire IR lifecycle, from initial detection, evidence collection, analysis, containment, eradication, recovery, to final reporting, suitable for a professional portfolio.",
+          "description": "Execute an enterprise DFIR capstone: Investigate a multi-stage simulated enterprise ransomware intrusion from initial phishing access through lateral movement and exfiltration, producing full timeline and eradication proof.",
           "resources": [
             {
               "title": "Blue Team Labs Online (BTLO) Challenges",
@@ -816,13 +863,15 @@
               "url": "/data/docs/dfir_analyst/dfir_analyst_capstone_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 98
         },
         {
           "id": "dfir_analyst_career_development",
           "name": "Career Development & Certifications",
           "tag": "advanced",
-          "description": "Explore common DFIR career paths, prepare for interviews, and understand relevant industry certifications (e.g., GCIH, GCFA, CySA+, eCIR, CREST). Develop strategies for continuous learning, professional networking, and personal branding.",
+          "description": "Navigate professional DFIR growth: Master legal expert witness testimony principles, stay current with DFIR research (SANS DFIR Summit, Black Hat), and pursue advanced credentials.",
           "resources": [
             {
               "title": "Top DFIR Certifications for Your Career",
@@ -849,9 +898,14 @@
               "url": "/data/docs/dfir_analyst/dfir_analyst_career_development.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 35
     }
-  ]
+  ],
+  "total_exp": 1000
 }

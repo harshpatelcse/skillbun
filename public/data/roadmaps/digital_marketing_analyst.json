@@ -47,24 +47,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "E-Commerce Marketing Attribution & Funnel Optimization Audit",
+        "title": "Multi-Touch Algorithmic Attribution Model & ROAS Forecaster",
         "tech_stack": [
-          "Google Analytics 4",
-          "GTM",
-          "Looker Studio",
-          "SQL"
+          "Python",
+          "Markov Chains",
+          "Shapley Values",
+          "BigQuery",
+          "Looker Studio"
         ],
-        "description": "Build an end-to-end attribution dashboard tracking paid traffic campaigns, checkout drop-offs, and calculating true ROAS."
+        "description": "Build a probabilistic multi-touch attribution pipeline comparing first-touch, last-touch, and data-driven Markov chain credit allocation across paid channels."
       },
       {
-        "title": "Multi-Touch Marketing Attribution & Budget Optimizer",
+        "title": "Automated Conversion Rate Optimization (CRO) & User Funnel Audit",
         "tech_stack": [
           "Google Analytics 4",
           "BigQuery",
           "SQL",
-          "Looker Studio"
+          "Hotjar",
+          "Optimizely"
         ],
-        "description": "Extract raw attribution telemetry into BigQuery, build Markov chain and Shapley value attribution models, and formulate optimal quarterly ad-spend allocations."
+        "description": "Design and execute an end-to-end user funnel drop-off analysis using raw GA4 BigQuery event exports, generating actionable A/B test hypotheses with power calculations."
       }
     ],
     "certifications": [
@@ -72,10 +74,11 @@
       "Meta Certified Digital Marketing Associate"
     ],
     "interview_focus": [
-      "Explaining the Differences Between First-Touch and Data-Driven Attribution",
-      "Setting Up Cross-Domain Tracking in GA4 with GTM",
-      "Calculating Customer Acquisition Cost (CAC) and Lifetime Value (LTV)",
-      "Designing a Statistically Rigorous Landing Page A/B Test"
+      "Attribution Modeling Tradeoffs (First-Click, Last-Click, Linear, Time-Decay vs Markov Chains)",
+      "Google Analytics 4 Event-Driven Data Model & BigQuery Raw Export Schema",
+      "A/B Testing Statistical Rigor (Sample Size Calculations, Minimum Detectable Effect, p-Values)",
+      "Customer Acquisition Cost (CAC), Lifetime Value (LTV) Ratios & Payback Period Modeling",
+      "Server-Side Tagging & Privacy Compliance (Cookieless Tracking, Consent Mode v2, GDPR)"
     ]
   },
   "format": "tree",
@@ -84,7 +87,7 @@
       "id": "dma_foundations",
       "name": "Digital Marketing Fundamentals & Strategic Frameworks",
       "tag": "essential",
-      "description": "Establish a strong understanding of core digital marketing concepts, strategic planning, channel landscape, customer journey mapping, and the analytical mind-set required for data-driven decisions.",
+      "description": "Master digital marketing analytics: Channel attribution, conversion funnels, customer acquisition economics, and measurement strategy across paid and organic ecosystems.",
       "resources": [
         {
           "title": "Google Digital Garage",
@@ -112,7 +115,7 @@
           "id": "dma_marketing_strategy_principles",
           "name": "Marketing Strategy & Business Objectives",
           "tag": "essential",
-          "description": "Grasp fundamental marketing principles including target audience definition (personas), market positioning, competitive analysis, and goal setting (SMART objectives, OKRs) from an analytical perspective.",
+          "description": "Align marketing with business objectives: Customer Acquisition Cost (CAC), Return on Ad Spend (ROAS), Customer Lifetime Value (LTV), payback period, and revenue attribution.",
           "resources": [
             {
               "title": "What is a Marketing Strategy?",
@@ -139,13 +142,15 @@
               "url": "/data/docs/digital_marketing_analyst/dma_marketing_strategy_principles.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "dma_digital_channels_overview",
           "name": "Digital Marketing Channels & Ecosystem",
           "tag": "essential",
-          "description": "Explore key digital channels (SEO, SEM, Social Media, Email, Content, Display, Affiliate) their unique value propositions, typical use cases, and how they integrate into a cohesive strategy, with an initial focus on their measurable aspects.",
+          "description": "Analyze multi-channel ecosystems: Paid search (Google Ads), paid social (Meta, LinkedIn, TikTok), programmatic display, email marketing, and organic search (SEO).",
           "resources": [
             {
               "title": "HubSpot Digital Marketing Guide",
@@ -162,13 +167,15 @@
               "url": "/data/docs/digital_marketing_analyst/dma_digital_channels_overview.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "dma_customer_journey_analytics",
           "name": "Customer Journey & Lifecycle Analytics",
           "tag": "essential",
-          "description": "Map customer touchpoints across the funnel (Awareness, Consideration, Conversion, Retention, Advocacy) and understand how to engage users at each stage, focusing on identifiable metrics and opportunities for measurement.",
+          "description": "Map multi-touch customer journeys: Tracking touchpoints across Awareness, Consideration, Conversion, and Retention phases, and identifying drop-off friction points.",
           "resources": [
             {
               "title": "What is Customer Journey Mapping?",
@@ -190,13 +197,15 @@
               "url": "/data/docs/digital_marketing_analyst/dma_customer_journey_analytics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "dma_core_kpis_metrics",
           "name": "Core Marketing KPIs & Performance Metrics",
           "tag": "essential",
-          "description": "Learn to identify, define, and measure essential marketing metrics across the funnel, including impressions, clicks, CTR, CPC, leads, conversion rates, CPA, ROAS, LTV, churn rate, and their business implications.",
+          "description": "Master digital marketing KPIs: Click-Through Rate (CTR), Cost Per Click (CPC), Cost Per Acquisition (CPA), Conversion Rate (CVR), bounce rate, and engagement depth.",
           "resources": [
             {
               "title": "Google Ads Skillshop: Measurement",
@@ -223,13 +232,15 @@
               "url": "/data/docs/digital_marketing_analyst/dma_core_kpis_metrics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "dma_marketing_tech_stack_overview",
           "name": "Marketing Technology (MarTech) Stack Overview",
           "tag": "essential",
-          "description": "Understand the different types of tools and platforms (CRMs, CDPs, DMPs, ESPs, Ad Platforms) that comprise a modern marketing technology stack and their role in data collection and activation.",
+          "description": "Navigate the MarTech ecosystem: Customer Data Platforms (Segment, RudderStack), Tag Management Systems, CRMs (HubSpot, Salesforce), and marketing automation tools.",
           "resources": [
             {
               "title": "What is MarTech?",
@@ -246,13 +257,15 @@
               "url": "/data/docs/digital_marketing_analyst/dma_marketing_tech_stack_overview.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 18
         },
         {
           "id": "dma_data_privacy_compliance",
           "name": "Marketing Data Privacy & Compliance",
           "tag": "essential",
-          "description": "Understand crucial data privacy regulations (GDPR, CCPA, ePrivacy Directive, LGPD), ethical data collection practices, user consent management, and the implications for tracking, analytics, and cookieless future.",
+          "description": "Navigate data privacy changes: Third-party cookie deprecation, iOS App Tracking Transparency (ATT), GDPR/CCPA consent modes, and server-side tracking.",
           "resources": [
             {
               "title": "GDPR Compliance Guide",
@@ -279,15 +292,19 @@
               "url": "/data/docs/digital_marketing_analyst/dma_data_privacy_compliance.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 17
     },
     {
       "id": "dma_tracking_measurement_systems",
       "name": "Data Collection & Measurement Systems",
       "tag": "essential",
-      "description": "Master the tools and techniques for accurate and robust digital marketing data collection, including tag management, web analytics platforms, and sound data governance principles.",
+      "description": "Deploy tracking and measurement: Google Tag Manager, GA4 event tracking schemas, UTM parameter conventions, and server-side API integrations.",
       "resources": [
         {
           "title": "Google Analytics Academy",
@@ -315,7 +332,7 @@
           "id": "dma_measurement_plan_strategy",
           "name": "Measurement Planning & Strategy",
           "tag": "essential",
-          "description": "Develop comprehensive measurement plans, define key performance indicators (KPIs), identify data sources, and establish tracking requirements aligned with overarching business objectives.",
+          "description": "Design enterprise measurement plans: Defining business objectives, key performance indicators, custom event hierarchies, and parameter mapping documents.",
           "resources": [
             {
               "title": "Google Analytics Academy: Measurement Planning",
@@ -337,13 +354,15 @@
               "url": "/data/docs/digital_marketing_analyst/dma_measurement_plan_strategy.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "dma_ga4_implementation_config",
           "name": "GA4 Implementation & Core Configuration",
           "tag": "essential",
-          "description": "Set up and configure Google Analytics 4 (GA4) properties, including data streams, event tracking (auto, recommended, custom), conversion setup, audiences, and linking with other platforms like Google Ads and BigQuery.",
+          "description": "Configure Google Analytics 4 (GA4): Enhanced measurement events, custom dimensions/metrics, User-ID tracking, data streams, and BigQuery raw event export.",
           "resources": [
             {
               "title": "Google Analytics 4 Documentation",
@@ -365,13 +384,15 @@
               "url": "/data/docs/digital_marketing_analyst/dma_ga4_implementation_config.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "dma_gtm_mastery",
           "name": "Google Tag Manager (GTM) for Data Collection",
           "tag": "essential",
-          "description": "Implement and manage marketing tags using GTM, including variables, triggers, tags, data layers, custom dimensions/metrics, server-side tagging introduction, consent management, and advanced debugging techniques.",
+          "description": "Master Google Tag Manager (GTM): Data Layer architecture, custom triggers, JavaScript variables, tag sequencing, and server-side GTM deployment via Cloud Run.",
           "resources": [
             {
               "title": "Google Tag Manager Developer Guide",
@@ -388,13 +409,15 @@
               "url": "/data/docs/digital_marketing_analyst/dma_gtm_mastery.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 18
         },
         {
           "id": "dma_campaign_taxonomy_tracking",
           "name": "UTM & Advanced Campaign Tracking",
           "tag": "essential",
-          "description": "Implement consistent and systematic UTM parameter tagging across all campaigns to accurately track source, medium, campaign, content, and term. Understand best practices for structuring campaign IDs and tracking across different platforms.",
+          "description": "Standardize campaign tracking: Bulletproof UTM taxonomy (utm_source, utm_medium, utm_campaign, utm_term, utm_content), automated UTM builders, and URL shorteners.",
           "resources": [
             {
               "title": "Google Analytics Campaign URL Builder",
@@ -421,13 +444,15 @@
               "url": "/data/docs/digital_marketing_analyst/dma_campaign_taxonomy_tracking.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 24
         },
         {
           "id": "dma_data_sources_integration",
           "name": "Integrating Marketing Data Sources",
           "tag": "essential",
-          "description": "Understand how to integrate data from various marketing platforms (e.g., Google Ads, Meta Ads, CRM, Email Platforms) with analytics platforms using direct integrations, APIs, and data connectors.",
+          "description": "Ingest marketing data: Connecting ad platform APIs (Google Ads, Meta Graph API) into cloud data warehouses via Fivetran, Stitch, or custom Python scripts.",
           "resources": [
             {
               "title": "Connect Google Ads to GA4",
@@ -454,13 +479,15 @@
               "url": "/data/docs/digital_marketing_analyst/dma_data_sources_integration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "dma_data_quality_governance",
           "name": "Data Quality Assurance & Governance",
           "tag": "essential",
-          "description": "Implement processes for data validation, identify and resolve tracking discrepancies, ensure data accuracy, consistency, and completeness. Establish a robust data governance framework to maintain data integrity.",
+          "description": "Audit marketing tracking hygiene: Identifying unmapped events, missing UTM tags, duplicate conversions, and verifying tag firing with Chrome DevTools and Tag Assistant.",
           "resources": [
             {
               "title": "Data Governance Framework",
@@ -487,15 +514,19 @@
               "url": "/data/docs/digital_marketing_analyst/dma_data_quality_governance.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 19
     },
     {
       "id": "dma_data_analysis_reporting",
       "name": "Data Analysis & Visualization",
       "tag": "essential",
-      "description": "Learn to extract, transform, and analyze marketing data, build insightful dashboards, and communicate performance effectively using common analytical tools and fundamental statistical concepts.",
+      "description": "Analyze marketing performance: SQL queries, spreadsheet modeling, statistical testing, and executive dashboard visualization.",
       "resources": [
         {
           "title": "SQL Tutorial - Full Database Course for Beginners",
@@ -518,7 +549,7 @@
           "id": "dma_spreadsheet_skills_advanced",
           "name": "Advanced Spreadsheet Skills for Analysis",
           "tag": "essential",
-          "description": "Utilize advanced Excel/Google Sheets functions (VLOOKUP, INDEX/MATCH, QUERY, ARRAYFORMULA), pivot tables, conditional formatting, and data validation for robust data manipulation, cleaning, and preliminary analysis.",
+          "description": "Master advanced spreadsheet modeling: Pivot tables, `XLOOKUP`, dynamic array formulas, trend forecasting, and cohort retention modeling in Google Sheets / Excel.",
           "resources": [
             {
               "title": "Google Sheets Query Function",
@@ -540,13 +571,15 @@
               "url": "/data/docs/digital_marketing_analyst/dma_spreadsheet_skills_advanced.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 24
         },
         {
           "id": "dma_sql_for_marketing_data",
           "name": "SQL for Marketing Data Extraction",
           "tag": "essential",
-          "description": "Learn basic to intermediate SQL queries (SELECT, FROM, WHERE, GROUP BY, JOIN, filtering, aggregation) to extract and combine data from marketing databases or data warehouses (e.g., BigQuery, Snowflake) for deeper analysis.",
+          "description": "Query marketing data with SQL: Writing queries on raw GA4 BigQuery export tables (unnesting event parameters), joining CRM revenue data, and calculating blended ROAS.",
           "resources": [
             {
               "title": "SQL Tutorial for Beginners",
@@ -568,13 +601,15 @@
               "url": "/data/docs/digital_marketing_analyst/dma_sql_for_marketing_data.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "dma_statistical_foundations_marketing",
           "name": "Statistical Foundations for Marketing Analysis",
           "tag": "essential",
-          "description": "Understand basic statistical concepts including descriptive statistics (mean, median, mode, variance, standard deviation), probability, sampling, confidence intervals, and an introduction to hypothesis testing relevant to marketing data.",
+          "description": "Apply marketing statistics: Descriptive statistics, hypothesis testing (t-tests, z-tests), sample size determination, confidence intervals, and correlation vs causation.",
           "resources": [
             {
               "title": "Introduction to Statistics for Marketing",
@@ -601,13 +636,15 @@
               "url": "/data/docs/digital_marketing_analyst/dma_statistical_foundations_marketing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "dma_dashboard_development_visualization",
           "name": "Dashboard Development & Data Visualization",
           "tag": "essential",
-          "description": "Design and build interactive marketing dashboards using tools like Looker Studio, Power BI, or Tableau. Focus on choosing appropriate chart types, visual hierarchy, user-centric design principles, and dashboard performance optimization.",
+          "description": "Build automated marketing dashboards: Connecting Looker Studio, Tableau, or Power BI to cloud data warehouses for real-time ROAS and conversion monitoring.",
           "resources": [
             {
               "title": "Looker Studio Documentation",
@@ -634,13 +671,15 @@
               "url": "/data/docs/digital_marketing_analyst/dma_dashboard_development_visualization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "dma_ga4_reporting_exploration",
           "name": "GA4 Reporting & Exploration Interface",
           "tag": "essential",
-          "description": "Deep dive into GA4's native reporting interface, including standard reports, Explorations (Free-form, Funnel, Path, Segment Overlap), custom reports, and audience building for in-depth analysis.",
+          "description": "Master GA4 Exploration reports: Freeform tables, funnel exploration, path exploration, segment overlap, and cohort exploration for deep user journey analysis.",
           "resources": [
             {
               "title": "Explore your data in GA4",
@@ -657,13 +696,15 @@
               "url": "/data/docs/digital_marketing_analyst/dma_ga4_reporting_exploration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "dma_performance_reporting_insights",
           "name": "Performance Reporting & Actionable Insight Generation",
           "tag": "essential",
-          "description": "Structure comprehensive performance reports, identify key trends, variances, and anomalies. Translate raw data into actionable insights, articulate 'so what' and 'now what' for diverse stakeholders.",
+          "description": "Generate actionable business insights: Differentiating performance descriptions from root-cause diagnostics, and framing strategic budget reallocation recommendations.",
           "resources": [
             {
               "title": "Storytelling with Data Blog",
@@ -685,13 +726,15 @@
               "url": "/data/docs/digital_marketing_analyst/dma_performance_reporting_insights.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "dma_practice_campaign_readout",
           "name": "Practice: Campaign Performance Readout & Recommendations",
           "tag": "essential",
-          "description": "Conduct a thorough analysis of a marketing campaign, identifying key successes and failures, quantifying ROI, and formulating data-backed recommendations for optimization in a memo or presentation format.",
+          "description": "Practice Lab: Author a quarterly campaign performance readout: Synthesize multi-channel data into an executive deck, calculate blended CAC/ROAS, and recommend budget shifts.",
           "resources": [
             {
               "title": "How to Write a Marketing Report",
@@ -713,15 +756,19 @@
               "url": "/data/docs/digital_marketing_analyst/dma_practice_campaign_readout.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 22
     },
     {
       "id": "dma_advanced_analytics_optimization",
       "name": "Advanced Analytics & Optimization Techniques",
       "tag": "advanced",
-      "description": "Delve into sophisticated analytical techniques, experimentation design, and modeling to drive continuous marketing performance improvement, uncover deeper insights, and predict future trends.",
+      "description": "Optimize marketing channels: Conversion rate optimization (CRO), A/B testing, cohort LTV analysis, and multi-touch attribution.",
       "resources": [
         {
           "title": "What is Predictive Analytics? | IBM Technology",
@@ -744,7 +791,7 @@
           "id": "dma_paid_media_optimization_analytics",
           "name": "Paid Media Analytics & Optimization",
           "tag": "advanced",
-          "description": "Conduct in-depth analysis of Google Ads, Meta Ads, and other paid platforms (e.g., LinkedIn, TikTok). Optimize targeting strategies, ad creatives, keywords, bidding models, budget allocation, and landing page performance based on data.",
+          "description": "Optimize paid advertising: Quality score analysis, bid strategy optimization (Target CPA, Target ROAS), search query mining, and ad creative fatigue analysis.",
           "resources": [
             {
               "title": "Google Ads Skillshop",
@@ -771,13 +818,15 @@
               "url": "/data/docs/digital_marketing_analyst/dma_paid_media_optimization_analytics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "dma_seo_content_performance_analysis",
           "name": "SEO & Content Performance Analysis",
           "tag": "advanced",
-          "description": "Analyze organic search performance using Google Search Console, SEMrush, Ahrefs, and other SEO tools. Evaluate content effectiveness, identify ranking opportunities, monitor keyword performance, analyze competitor strategies, and measure content ROI.",
+          "description": "Analyze organic search impact: Google Search Console query performance, organic landing page conversion efficiency, and content ROI modeling.",
           "resources": [
             {
               "title": "Google Search Console Help",
@@ -799,13 +848,15 @@
               "url": "/data/docs/digital_marketing_analyst/dma_seo_content_performance_analysis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         },
         {
           "id": "dma_web_app_behavioral_analytics",
           "name": "Web & App Behavioral Analytics",
           "tag": "advanced",
-          "description": "Go beyond standard web analytics by utilizing tools for heatmaps, session recordings, user flow analysis, form analytics, and qualitative feedback (surveys) to understand user behavior and identify friction points.",
+          "description": "Analyze on-site behavior: Funnel drop-off analysis, heatmap analysis with Hotjar/Clarity, session replay analysis, and micro-conversion optimization.",
           "resources": [
             {
               "title": "Introduction to Hotjar",
@@ -832,13 +883,15 @@
               "url": "/data/docs/digital_marketing_analyst/dma_web_app_behavioral_analytics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         },
         {
           "id": "dma_experimentation_design_analysis",
           "name": "A/B Testing & Experimentation Design",
           "tag": "advanced",
-          "description": "Design robust A/B tests and multivariate experiments. Understand statistical significance, sample size calculation, power analysis, confidence intervals, and interpret results to make data-driven optimization decisions, avoiding common pitfalls.",
+          "description": "Design conversion rate experiments: Formulating A/B test hypotheses, pre-test power calculations, running tests with VWO / Optimizely, and analyzing statistical significance.",
           "resources": [
             {
               "title": "Optimizely Experimentation Guide",
@@ -865,13 +918,15 @@
               "url": "/data/docs/digital_marketing_analyst/dma_experimentation_design_analysis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         },
         {
           "id": "dma_customer_segmentation_analysis",
           "name": "Customer Segmentation & LTV Analysis",
           "tag": "advanced",
-          "description": "Develop and apply various customer segmentation strategies (demographic, behavioral, psychographic) using analytics data. Calculate and analyze Customer Lifetime Value (CLTV) to inform acquisition and retention strategies.",
+          "description": "Segment customers for retention: RFM (Recency, Frequency, Monetary) segmentation, behavioral clustering with k-means, and predictive LTV modeling.",
           "resources": [
             {
               "title": "What is Customer Segmentation?",
@@ -898,13 +953,15 @@
               "url": "/data/docs/digital_marketing_analyst/dma_customer_segmentation_analysis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "dma_attribution_modeling_advanced",
           "name": "Advanced Attribution Modeling & Media Mix",
           "tag": "advanced",
-          "description": "Explore various attribution models (first-touch, last-touch, linear, time decay, position-based, data-driven) and understand their strengths, weaknesses, and implications for budget allocation and channel effectiveness measurement. Introduction to data-driven attribution (DDA).",
+          "description": "Evaluate attribution models: Comparing First-Click, Last-Click, Linear, Time-Decay, Data-Driven Attribution (DDA), and identifying channel cannibalization.",
           "resources": [
             {
               "title": "Google Analytics Attribution Models Guide",
@@ -931,13 +988,15 @@
               "url": "/data/docs/digital_marketing_analyst/dma_attribution_modeling_advanced.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "dma_marketing_mix_modeling_intro",
           "name": "Introduction to Marketing Mix Modeling (MMM)",
           "tag": "advanced",
-          "description": "Understand the fundamentals of MMM for quantifying the aggregated impact of different marketing channels (both online and offline) on sales or conversions, especially in privacy-centric environments, and how it differs from attribution.",
+          "description": "Understand Marketing Mix Modeling (MMM): Econometric regression modeling (Meta Robyn, Google LightweightMMM) to measure incrementality and macro spend elasticity.",
           "resources": [
             {
               "title": "What is Marketing Mix Modeling?",
@@ -964,13 +1023,15 @@
               "url": "/data/docs/digital_marketing_analyst/dma_marketing_mix_modeling_intro.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         },
         {
           "id": "dma_predictive_analytics_foundations",
           "name": "Foundations of Predictive Analytics for Marketing",
           "tag": "advanced",
-          "description": "Explore basic concepts of predictive analytics such as lead scoring, churn prediction, customer segmentation, and forecasting using historical marketing data and simple statistical or machine learning methods (e.g., regression, classification intro).",
+          "description": "Apply predictive marketing models: Churn prediction, lead scoring models, and predictive lifetime value forecasting.",
           "resources": [
             {
               "title": "Predictive Analytics in Marketing",
@@ -992,15 +1053,19 @@
               "url": "/data/docs/digital_marketing_analyst/dma_predictive_analytics_foundations.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 29
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 25
     },
     {
       "id": "dma_business_impact_communication",
       "name": "Business Impact & Strategic Communication",
       "tag": "advanced",
-      "description": "Develop the skills to translate complex analytical findings into clear, compelling narratives and strategic recommendations that drive tangible business growth and influence decision-making across the organization.",
+      "description": "Deliver executive marketing presentations: Storytelling with data, presenting recommendations to CMOs, and cross-functional collaboration.",
       "resources": [
         {
           "title": "Data Storytelling: How to tell a story with data",
@@ -1023,7 +1088,7 @@
           "id": "dma_data_storytelling_viz",
           "name": "Data Storytelling & Advanced Visual Communication",
           "tag": "advanced",
-          "description": "Master the art of crafting compelling narratives from data, using effective and ethical visualizations, structured communication techniques, and empathy to engage and persuade non-technical stakeholders and drive action.",
+          "description": "Master data storytelling: Crafting persuasive visual narratives, highlighting business context, and presenting data clearly without clutter.",
           "resources": [
             {
               "title": "Storytelling with Data Blog",
@@ -1045,13 +1110,15 @@
               "url": "/data/docs/digital_marketing_analyst/dma_data_storytelling_viz.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         },
         {
           "id": "dma_actionable_insight_strategy",
           "name": "Actionable Insight Generation & Strategic Recommendations",
           "tag": "advanced",
-          "description": "Refine the ability to move beyond observations to identify root causes, quantify business impact, anticipate future trends, and formulate clear, concise, and actionable recommendations with associated risks and opportunities for strategic growth.",
+          "description": "Translate data into growth strategy: Identifying underperforming segments, recommending high-ROI channel investments, and forecasting revenue impact.",
           "resources": [
             {
               "title": "Google Data Analytics Certificate: Analyze Data to Answer Questions",
@@ -1068,13 +1135,15 @@
               "url": "/data/docs/digital_marketing_analyst/dma_actionable_insight_strategy.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "dma_stakeholder_engagement_presentation",
           "name": "Stakeholder Engagement & Executive Presentation Skills",
           "tag": "advanced",
-          "description": "Effectively present complex analytical findings to diverse audiences (marketing managers, executives, product teams), handle challenging questions, manage expectations, build credibility, and drive consensus for data-driven decisions.",
+          "description": "Present to executive leadership: Fielding skeptical stakeholder questions, defending analytical assumptions, and aligning marketing metrics with P&L goals.",
           "resources": [
             {
               "title": "The Art of Presentation",
@@ -1101,13 +1170,15 @@
               "url": "/data/docs/digital_marketing_analyst/dma_stakeholder_engagement_presentation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "dma_capstone_project_fullstack",
           "name": "Capstone Project: End-to-End Campaign Analytics & Strategy",
           "tag": "advanced",
-          "description": "Apply all learned skills to a comprehensive project: from defining objectives and tracking requirements to data extraction, cleaning, analysis, dashboard creation, advanced modeling (e.g., attribution), and presenting actionable insights and strategic recommendations for a real or simulated marketing campaign.",
+          "description": "Build an enterprise marketing analytics capstone: End-to-end multi-channel campaign audit: GTM server-side tracking setup, BigQuery SQL attribution modeling, Looker Studio dashboard, and executive strategy deck.",
           "resources": [
             {
               "title": "Google Analytics Developers Blog: Case Studies",
@@ -1129,9 +1200,14 @@
               "url": "/data/docs/digital_marketing_analyst/dma_capstone_project_fullstack.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 97
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 25
     }
-  ]
+  ],
+  "total_exp": 1000
 }

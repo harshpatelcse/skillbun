@@ -47,32 +47,33 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Autonomous Navigation Agent in Simulated Physics Environment",
+        "title": "Autonomous Robotics Navigation Agent with Proximal Policy Optimization (PPO)",
         "tech_stack": [
-          "Python",
           "Gymnasium",
-          "MuJoCo",
-          "PPO",
-          "PyTorch"
+          "Stable-Baselines3",
+          "PyTorch",
+          "PyBullet",
+          "TensorBoard"
         ],
-        "description": "Train a continuous-control robotic agent to navigate complex obstacle courses using deep actor-critic reinforcement learning."
+        "description": "Train a continuous control robotic agent navigating dynamic obstacle courses using Proximal Policy Optimization (PPO) and vectorized simulation environments."
       },
       {
-        "title": "Deep Q-Network (DQN) & PPO Autonomous Driving Agent",
+        "title": "Deep Q-Network (DQN) High-Frequency Algorithmic Trading Agent",
         "tech_stack": [
           "PyTorch",
-          "Stable-Baselines3",
-          "Gymnasium",
-          "CARLA Simulator"
+          "Custom Financial Gym",
+          "Prioritized Experience Replay",
+          "Dueling DQN"
         ],
-        "description": "Train a reinforcement learning agent to navigate simulated track environments with obstacle avoidance using Proximal Policy Optimization (PPO)."
+        "description": "Engineer a reinforcement learning agent for order book execution, utilizing dueling deep Q-networks, prioritized replay buffers, and risk-adjusted reward functions."
       }
     ],
     "interview_focus": [
-      "Bellman Equation Derivation & Value Iteration",
-      "On-Policy (PPO) vs Off-Policy (SAC/DQN) Tradeoffs",
-      "Reward Hacking & Exploration-Exploitation Dilemma",
-      "RLHF vs Direct Preference Optimization (DPO) Mechanics"
+      "Markov Decision Processes (MDP), Bellman Equations & Value vs Policy Iteration",
+      "Policy Gradient Methods (REINFORCE, Actor-Critic, PPO Clipping Objective, TRPO)",
+      "Q-Learning & Deep Q-Networks (DQN, Double DQN, Dueling DQN, Experience Replay Buffers)",
+      "Exploration vs Exploitation Strategies (Epsilon-Greedy, Entropy Regularization, Curiosity-Driven)",
+      "Reward Shaping Challenges (Sparse Rewards, Reward Hacking, Credit Assignment Problem)"
     ],
     "certifications": [
       "DeepLearning.AI Reinforcement Learning Specialization",
@@ -85,7 +86,7 @@
       "id": "rl_foundations_prerequisites",
       "name": "Foundational Prerequisites & Math for RL",
       "tag": "essential",
-      "description": "Build a strong mathematical and computational foundation essential for understanding and implementing Reinforcement Learning algorithms, covering key concepts in linear algebra, probability, calculus, programming, and ML/DL basics.",
+      "description": "Master mathematical foundations of reinforcement learning: Measure-theoretic probability, dynamic programming, Markov processes, and optimization theory.",
       "resources": [
         {
           "title": "OpenAI Spinning Up",
@@ -113,7 +114,7 @@
           "id": "rl_math_essentials",
           "name": "Mathematics Essentials for RL",
           "tag": "essential",
-          "description": "Solidify understanding of linear algebra, probability theory, calculus, and optimization techniques necessary for comprehending and implementing RL theory.",
+          "description": "Master core RL mathematics: Vector calculus, expectation values, Markov chains, contraction mapping theorem, fixed-point theory, and stochastic approximation.",
           "resources": [
             {
               "title": "OpenAI Spinning Up",
@@ -135,13 +136,15 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_math_essentials.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         },
         {
           "id": "rl_programming_fundamentals",
           "name": "Python Programming & ML/DL Basics",
           "tag": "essential",
-          "description": "Master Python with advanced data structures, object-oriented programming, numerical computing with NumPy, and an overview of Machine Learning and Deep Learning fundamentals relevant to RL.",
+          "description": "Program high-performance RL algorithms: Vectorized environments, NumPy operations, PyTorch tensor manipulation, and GPU-accelerated simulation frameworks.",
           "resources": [
             {
               "title": "OpenAI Gym Tutorial (Nicholas Renotte)",
@@ -158,13 +161,15 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_programming_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 14
         },
         {
           "id": "rl_tooling_environment",
           "name": "RL Tooling & Development Environment Setup",
           "tag": "essential",
-          "description": "Set up a robust development environment, master Git for version control, understand Python package management, and get introduced to core RL libraries like Gymnasium and Stable-Baselines3, including basic containerization.",
+          "description": "Configure RL development environments: Gymnasium (formerly OpenAI Gym), PettingZoo for multi-agent systems, Stable-Baselines3, Ray RLlib, and Weights & Biases.",
           "resources": [
             {
               "title": "Gymnasium Documentation",
@@ -191,15 +196,19 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_tooling_environment.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 14
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 16
     },
     {
       "id": "rl_core_concepts",
       "name": "Core Reinforcement Learning Concepts",
       "tag": "essential",
-      "description": "Dive into the fundamental theoretical concepts of Reinforcement Learning, understanding how agents learn to make decisions in dynamic environments through interactions and rewards.",
+      "description": "Master foundational reinforcement learning concepts: Agents, environments, states, actions, rewards, discount factor (gamma), returns, and policies.",
       "resources": [
         {
           "title": "OpenAI Spinning Up",
@@ -227,7 +236,7 @@
           "id": "rl_mdp_bellman",
           "name": "Markov Decision Processes & Bellman Equations",
           "tag": "essential",
-          "description": "Understand the formal framework of RL, including states, actions, rewards, transitions, discounted returns, optimal policies, value functions (V-value, Q-value), and the fundamental Bellman optimality equations.",
+          "description": "Formulate Markov Decision Processes (MDPs): Partially Observable MDPs (POMDPs), state transition dynamics, Bellman Expectation Equations, and Bellman Optimality Equations.",
           "resources": [
             {
               "title": "OpenAI Spinning Up",
@@ -249,13 +258,15 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_mdp_bellman.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 20
         },
         {
           "id": "rl_dynamic_programming",
           "name": "Dynamic Programming in RL",
           "tag": "essential",
-          "description": "Learn model-based RL methods like Policy Evaluation, Policy Improvement, Policy Iteration, and Value Iteration for solving MDPs with known dynamics, understanding their computational trade-offs.",
+          "description": "Solve known MDPs with Dynamic Programming: Policy Evaluation, Policy Iteration, Value Iteration, and proof of convergence using Banach fixed-point theorem.",
           "resources": [
             {
               "title": "Reinforcement Learning Full Course (freeCodeCamp)",
@@ -272,13 +283,15 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_dynamic_programming.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         },
         {
           "id": "rl_monte_carlo_td",
           "name": "Monte Carlo & Temporal Difference Learning",
           "tag": "essential",
-          "description": "Explore model-free prediction and control methods including Monte Carlo estimation (first-visit, every-visit), Temporal Difference (TD) learning (SARSA, Q-learning), and Expected SARSA, highlighting the bias-variance trade-off.",
+          "description": "Implement model-free RL algorithms: First-visit and every-visit Monte Carlo methods, Temporal Difference TD(0), SARSA (on-policy), Q-Learning (off-policy), and TD(lambda) with eligibility traces.",
           "resources": [
             {
               "title": "OpenAI Spinning Up",
@@ -300,13 +313,15 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_monte_carlo_td.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "rl_exploration_exploitation",
           "name": "Exploration-Exploitation Dilemma",
           "tag": "essential",
-          "description": "Understand the fundamental trade-off between exploring new actions and exploiting known good actions, covering strategies like epsilon-greedy, Upper Confidence Bound (UCB), and Thompson Sampling.",
+          "description": "Master exploration-exploitation tradeoffs: Epsilon-greedy schedules, Upper Confidence Bound (UCB1), Boltzmann exploration, Thompson Sampling, and intrinsic curiosity rewards.",
           "resources": [
             {
               "title": "OpenAI Gym Tutorial (Nicholas Renotte)",
@@ -323,15 +338,19 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_exploration_exploitation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 20
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 15
     },
     {
       "id": "rl_deep_reinforcement_learning",
       "name": "Deep Reinforcement Learning Algorithms",
       "tag": "essential",
-      "description": "Explore and implement state-of-the-art Deep Reinforcement Learning algorithms, combining neural networks with classic RL techniques to handle complex, high-dimensional state and action spaces.",
+      "description": "Bridge reinforcement learning with deep neural networks: Handling non-stationary target distributions, correlated data streams, and training instabilities.",
       "resources": [
         {
           "title": "OpenAI Spinning Up",
@@ -364,7 +383,7 @@
           "id": "rl_value_based_drl",
           "name": "Value-Based Deep RL: DQN and Variants",
           "tag": "essential",
-          "description": "Implement and understand Deep Q-Networks (DQN), including key improvements like Experience Replay, Target Networks, Double DQN, Dueling DQN, and Prioritized Experience Replay for stable learning.",
+          "description": "Master Deep Q-Networks (DQN) and enhancements: Experience replay buffers, target networks, Double DQN (DDQN), Dueling DQN architectures, and Prioritized Experience Replay (PER).",
           "resources": [
             {
               "title": "OpenAI Spinning Up",
@@ -391,13 +410,15 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_value_based_drl.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "rl_policy_gradient_methods",
           "name": "Policy Gradient Methods",
           "tag": "essential",
-          "description": "Learn about the Policy Gradient Theorem and implement algorithms like REINFORCE, understanding the concept of variance reduction with baselines, and the challenges of pure policy gradients.",
+          "description": "Derive and implement Policy Gradient algorithms: The Policy Gradient Theorem, REINFORCE with baseline, likelihood ratio trick, and variance reduction techniques.",
           "resources": [
             {
               "title": "OpenAI Spinning Up",
@@ -424,13 +445,15 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_policy_gradient_methods.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "rl_actor_critic_algorithms",
           "name": "Actor-Critic Algorithms",
           "tag": "essential",
-          "description": "Dive into Actor-Critic architectures such as A2C, A3C, DDPG, TD3, and SAC, understanding how they combine value and policy estimation for more stable and efficient learning in continuous and discrete action spaces.",
+          "description": "Implement Actor-Critic architectures: Advantage Actor-Critic (A2C), Asynchronous Advantage Actor-Critic (A3C), Deep Deterministic Policy Gradient (DDPG), and Twin Delayed DDPG (TD3).",
           "resources": [
             {
               "title": "OpenAI Spinning Up",
@@ -457,13 +480,15 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_actor_critic_algorithms.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "rl_ppo_trpo",
           "name": "PPO and Trust Region Methods",
           "tag": "essential",
-          "description": "Understand Proximal Policy Optimization (PPO) and Trust Region Policy Optimization (TRPO), and their role in stable and efficient policy learning by constraining policy updates.",
+          "description": "Master trust-region optimization: Trust Region Policy Optimization (TRPO), Proximal Policy Optimization (PPO) with clipped surrogate objective, and Generalized Advantage Estimation (GAE).",
           "resources": [
             {
               "title": "OpenAI Spinning Up",
@@ -490,15 +515,19 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_ppo_trpo.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 22
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 16
     },
     {
       "id": "rl_engineering_practice",
       "name": "RL System Design & Engineering Practice",
       "tag": "essential",
-      "description": "Develop practical engineering skills for building, evaluating, and iterating on Reinforcement Learning systems, covering simulation, testing, hyperparameter tuning, and efficient implementation.",
+      "description": "Engineer production-grade RL systems: Custom environment design, distributed simulation scaling, hyperparameter tuning, and reward engineering.",
       "resources": [
         {
           "title": "Gymnasium Documentation",
@@ -531,7 +560,7 @@
           "id": "rl_environment_design_simulation",
           "name": "RL Environment Design & Simulation",
           "tag": "essential",
-          "description": "Learn to use and design custom simulation environments using Gymnasium, including reward shaping, observation space, action space definition, environment registration, and simulating real-world scenarios.",
+          "description": "Design custom simulation environments: Gymnasium API compliance, continuous and discrete action spaces, observation normalization, physics simulation in MuJoCo / Isaac Gym.",
           "resources": [
             {
               "title": "Gymnasium Documentation",
@@ -553,13 +582,15 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_environment_design_simulation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 15
         },
         {
           "id": "rl_frameworks_apis",
           "name": "RL Frameworks and APIs",
           "tag": "essential",
-          "description": "Deep dive into the APIs and best practices of popular RL frameworks such as Stable-Baselines3, Ray RLlib, and Acme for efficient algorithm implementation, custom agent creation, and parallelization.",
+          "description": "Leverage enterprise RL frameworks: Ray RLlib for distributed cluster training, CleanRL for transparent single-file implementations, and Tianshou for modular PyTorch RL.",
           "resources": [
             {
               "title": "Stable-Baselines3 Documentation",
@@ -586,13 +617,15 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_frameworks_apis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 20
         },
         {
           "id": "rl_evaluation_metrics",
           "name": "RL Model Evaluation & Benchmarking",
           "tag": "essential",
-          "description": "Master techniques for evaluating RL agents, including performance metrics (episode rewards, returns, win rates), sample efficiency analysis, convergence criteria, and benchmarking different algorithms against baselines.",
+          "description": "Evaluate RL agents: Episode returns, sample efficiency curves, asymptotic performance, stability across multiple random seeds, and out-of-distribution generalization.",
           "resources": [
             {
               "title": "OpenAI Spinning Up",
@@ -614,13 +647,15 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_evaluation_metrics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "rl_hyperparameter_tuning",
           "name": "Hyperparameter Tuning & Experimentation",
           "tag": "advanced",
-          "description": "Learn systematic approaches for hyperparameter optimization in RL, including grid search, random search, Bayesian optimization (e.g., Optuna), and population-based training, ensuring reproducibility and efficient resource utilization.",
+          "description": "Tune RL hyperparameters systematically: Learning rates for actor/critic, discount factor, PPO clipping epsilon, entropy regularization coefficients, and GAE lambda parameters.",
           "resources": [
             {
               "title": "Reinforcement Learning Full Course (freeCodeCamp)",
@@ -637,13 +672,15 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_hyperparameter_tuning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 29
         },
         {
           "id": "rl_testing_debugging",
           "name": "Testing and Debugging RL Systems",
           "tag": "advanced",
-          "description": "Develop strategies for unit testing RL environments and agents, integration testing, debugging common RL issues (e.g., reward sparsity, unstable training), visualizing agent behavior, and analyzing performance for insights.",
+          "description": "Debug and test RL systems: Unit testing reward functions, verifying environment reset states, checking gradient norms, and sanity-checking policies on toy environments.",
           "resources": [
             {
               "title": "Gymnasium Documentation",
@@ -665,15 +702,19 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_testing_debugging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 21
         }
-      ]
+      ],
+      "difficulty": "intermediate",
+      "exp": 23
     },
     {
       "id": "rl_advanced_topics_applications",
       "name": "Advanced RL Topics & Applications",
       "tag": "advanced",
-      "description": "Explore specialized and advanced topics in Reinforcement Learning, understanding cutting-edge techniques and their real-world application domains across various industries.",
+      "description": "Explore frontier RL domains: Multi-agent systems, imitation learning, safe RL, hierarchical RL, offline RL, and RLHF for language models.",
       "resources": [
         {
           "title": "OpenAI Spinning Up",
@@ -701,7 +742,7 @@
           "id": "rl_multi_agent",
           "name": "Multi-Agent Reinforcement Learning",
           "tag": "advanced",
-          "description": "Study cooperative, competitive, and mixed-sum games, foundational game theory concepts, and algorithms like Independent Q-Learning, Multi-Agent DDPG (MADDPG), and QMIX for solving complex multi-agent interactions.",
+          "description": "Implement Multi-Agent RL (MARL): Cooperative vs competitive environments, Centralized Training with Decentralized Execution (CTDE), QMIX, and Multi-Agent PPO (MAPPO).",
           "resources": [
             {
               "title": "OpenAI Spinning Up",
@@ -723,13 +764,15 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_multi_agent.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 27
         },
         {
           "id": "rl_imitation_inverse",
           "name": "Imitation Learning & Inverse RL",
           "tag": "advanced",
-          "description": "Understand how to learn from expert demonstrations through Imitation Learning (Behavioral Cloning, DAGGER) and Inverse Reinforcement Learning (IRL), including Maximum Entropy IRL and Generative Adversarial Imitation Learning (GAIL).",
+          "description": "Implement Imitation Learning: Behavioral Cloning (BC), DAgger (Dataset Aggregation), and Inverse Reinforcement Learning (IRL) to infer reward functions from expert demonstrations.",
           "resources": [
             {
               "title": "Q-Learning Explained (Sentdex)",
@@ -746,13 +789,15 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_imitation_inverse.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 29
         },
         {
           "id": "rl_safe_rl",
           "name": "Safe Reinforcement Learning",
           "tag": "advanced",
-          "description": "Explore methods for ensuring safety in RL agents, including constraint-aware RL, reward penalization, safe policy search, safety layer implementations, and formal verification techniques to avoid undesirable behaviors.",
+          "description": "Ensure safe policy learning: Constrained MDPs (CMDPs), Lagrangian relaxation, safety critics, action masking, and formal verification of policy bounds.",
           "resources": [
             {
               "title": "OpenAI Gym Tutorial (Nicholas Renotte)",
@@ -769,13 +814,15 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_safe_rl.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         },
         {
           "id": "rl_hierarchical_rl",
           "name": "Hierarchical Reinforcement Learning",
           "tag": "advanced",
-          "description": "Investigate techniques for learning abstract policies and sub-goals, such as the Options framework, feudal RL, and goal-conditioned RL, to tackle complex, long-horizon tasks efficiently.",
+          "description": "Deconstruct complex long-horizon tasks: Hierarchical Reinforcement Learning (HRL), options framework, sub-goal generation, and meta-controller / low-level controller separation.",
           "resources": [
             {
               "title": "OpenAI Spinning Up",
@@ -797,13 +844,15 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_hierarchical_rl.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 29
         },
         {
           "id": "rl_rlhf",
           "name": "Reinforcement Learning from Human Feedback (RLHF)",
           "tag": "advanced",
-          "description": "Understand the process of incorporating human preferences into RL training to align agent behavior with human values, a key technique in large language models and other complex AI systems.",
+          "description": "Master Reinforcement Learning from Human Feedback (RLHF): Reward model training on pairwise comparisons, Bradley-Terry preference modeling, PPO alignment for LLMs, and Direct Preference Optimization (DPO).",
           "resources": [
             {
               "title": "Q-Learning Explained (Sentdex)",
@@ -820,13 +869,15 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_rlhf.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         },
         {
           "id": "rl_offline_rl",
           "name": "Offline Reinforcement Learning",
           "tag": "advanced",
-          "description": "Learn about methods to train RL agents entirely from pre-collected static datasets without further interaction with the environment, crucial for real-world applications where online interaction is costly or risky.",
+          "description": "Learn from fixed demonstration datasets: Distributional shift challenges, out-of-distribution action penalties, Conservative Q-Learning (CQL), and Implicit Q-Learning (IQL).",
           "resources": [
             {
               "title": "DeepMind Blog: Offline Reinforcement Learning",
@@ -848,13 +899,15 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_offline_rl.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 28
         },
         {
           "id": "rl_model_based_rl",
           "name": "Model-Based Reinforcement Learning",
           "tag": "advanced",
-          "description": "Explore techniques that learn or are given a model of the environment's dynamics, allowing for planning and sample-efficient learning, including algorithms like Dyna, Model-Predictive Control (MPC), and AlphaZero-style approaches.",
+          "description": "Learn world models for planning: Dyna-Q architectures, MuZero / AlphaZero Monte Carlo Tree Search (MCTS), World Models, and DreamerV3 latent space imagination.",
           "resources": [
             {
               "title": "OpenAI Spinning Up",
@@ -876,15 +929,19 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_model_based_rl.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 20
     },
     {
       "id": "rl_production_mlops",
       "name": "Production, MLOps & Operationalizing RL",
       "tag": "advanced",
-      "description": "Understand the challenges and best practices for deploying, monitoring, maintaining, and scaling Reinforcement Learning systems in real-world production environments, integrating MLOps principles.",
+      "description": "Operationalize RL in production: Model deployment, real-time inference latency limits, safety fallbacks, and continuous observability.",
       "resources": [
         {
           "title": "Stable-Baselines3 Documentation",
@@ -917,7 +974,7 @@
           "id": "rl_deployment_strategies",
           "name": "RL Deployment Strategies",
           "tag": "advanced",
-          "description": "Learn about deploying RL agents in various settings (online, offline, partial rollout, shadow mode), A/B testing policies, designing scalable model serving infrastructure, and API design for real-time RL systems.",
+          "description": "Deploy trained RL policies: Exporting policies to ONNX / TensorRT, low-latency C++ inference wrappers, edge deployment in robotics, and fallback rule-based controllers.",
           "resources": [
             {
               "title": "Stable-Baselines3 Documentation",
@@ -939,13 +996,15 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_deployment_strategies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 28
         },
         {
           "id": "rl_monitoring_observability",
           "name": "Monitoring & Observability for RL",
           "tag": "advanced",
-          "description": "Implement robust monitoring for RL systems, tracking key metrics like reward curves, episode lengths, exploration rates, policy shift, data drift, and detecting policy degradation and environment changes using specialized tools.",
+          "description": "Monitor live RL agents: Tracking policy divergence, action distribution entropy, unexpected state frequency, and automated fallback triggers.",
           "resources": [
             {
               "title": "Reinforcement Learning Full Course (freeCodeCamp)",
@@ -962,13 +1021,15 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_monitoring_observability.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 23
         },
         {
           "id": "rl_scalability_resource",
           "name": "Scalability & Resource Management",
           "tag": "advanced",
-          "description": "Understand how to scale RL training and inference, utilizing distributed RL frameworks (e.g., Ray RLlib, Acme), cloud computing resources (GPUs, TPUs), and efficient data pipelining for large-scale experiments.",
+          "description": "Scale distributed RL training: High-throughput experience collection with Ray, GPU-accelerated parallel environments (Isaac Gym), and managing cluster compute costs.",
           "resources": [
             {
               "title": "OpenAI Spinning Up",
@@ -990,13 +1051,15 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_scalability_resource.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 42
         },
         {
           "id": "rl_safety_ethics_explainability",
           "name": "Safety, Ethics & Explainability in RL",
           "tag": "advanced",
-          "description": "Address critical considerations for trustworthy RL, including identifying and mitigating biases, ensuring robust and safe behavior, interpreting agent decisions (XAI for RL), and incorporating human-in-the-loop approaches for continuous improvement and oversight.",
+          "description": "Ensure ethical deployment: Avoiding reward hacking / specification gaming, verifying policy predictability, and generating interpretable policy explanations.",
           "resources": [
             {
               "title": "OpenAI Gym Tutorial (Nicholas Renotte)",
@@ -1013,13 +1076,15 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_safety_ethics_explainability.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         },
         {
           "id": "rl_experiment_tracking_logging",
           "name": "Experiment Tracking & Reproducibility",
           "tag": "advanced",
-          "description": "Utilize tools like Weights & Biases (W&B), MLflow, or TensorBoard for logging metrics, visualizing training progress, managing hyperparameter sweeps, and ensuring the reproducibility of RL experiments.",
+          "description": "Track RL experiments: Logging episode lengths, reward distributions, loss components (policy loss, value loss, entropy), and rendering rollout videos in Weights & Biases.",
           "resources": [
             {
               "title": "Weights & Biases Documentation",
@@ -1046,13 +1111,15 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_experiment_tracking_logging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 28
         },
         {
           "id": "rl_data_management_pipelines",
           "name": "Data Management & Pipelines for RL",
           "tag": "advanced",
-          "description": "Design efficient data pipelines for experience collection, storage, and replay, including handling large datasets, feature engineering for states, and managing transitions for offline and online RL.",
+          "description": "Manage replay buffer datasets: High-throughput in-memory sharding, disk-backed replay storage for offline RL, and dataset versioning with DVC.",
           "resources": [
             {
               "title": "Ray RLlib Documentation: Dataflow",
@@ -1074,15 +1141,19 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_data_management_pipelines.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 36
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 19
     },
     {
       "id": "rl_portfolio_career_development",
       "name": "Portfolio & Career Readiness",
       "tag": "advanced",
-      "description": "Showcase your expertise through impactful projects and prepare comprehensively for a successful career as a Reinforcement Learning Engineer, mastering technical and communication skills.",
+      "description": "Build an RL engineering portfolio: Documenting custom environment designs, benchmark victories on Gym / MuJoCo, and authoring technical post-mortems.",
       "resources": [
         {
           "title": "OpenAI Spinning Up",
@@ -1115,7 +1186,7 @@
           "id": "rl_project_design_execution",
           "name": "RL Project Design & Execution",
           "tag": "advanced",
-          "description": "Learn to scope and plan end-to-end RL projects, defining clear objectives, selecting appropriate algorithms and environments, structuring development workflows, and managing project milestones.",
+          "description": "Design and execute an end-to-end RL project: Formulate real-world problem as an MDP, engineer shaped rewards, benchmark candidate algorithms, and optimize inference.",
           "resources": [
             {
               "title": "OpenAI Spinning Up",
@@ -1137,13 +1208,15 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_project_design_execution.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 60
         },
         {
           "id": "rl_portfolio_showcase",
           "name": "Building an RL Portfolio & Case Studies",
           "tag": "advanced",
-          "description": "Create compelling GitHub repositories with well-documented code, write detailed project reports and READMEs, craft impactful case studies demonstrating problem-solving, and effectively present your RL projects.",
+          "description": "Curate an RL portfolio: Publish clean GitHub repositories with benchmark reproducibility scripts, simulation videos, and interactive web demos.",
           "resources": [
             {
               "title": "Stable-Baselines3 Documentation",
@@ -1165,13 +1238,15 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_portfolio_showcase.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 23
         },
         {
           "id": "rl_career_interview_prep",
           "name": "RL Career & Interview Preparation",
           "tag": "advanced",
-          "description": "Prepare for technical interviews with coding challenges, deep dives into RL concepts and system design questions, behavioral questions, and refine your resume and LinkedIn profile for RL engineer roles.",
+          "description": "Master RL technical interviews: Derive Bellman equations and Policy Gradient theorems on a whiteboard, explain algorithm tradeoffs (DQN vs PPO), and solve system design problems.",
           "resources": [
             {
               "title": "OpenAI Gym Tutorial (Nicholas Renotte)",
@@ -1188,13 +1263,15 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_career_interview_prep.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 29
         },
         {
           "id": "rl_capstone_project",
           "name": "Capstone Project: End-to-End RL System",
           "tag": "advanced",
-          "description": "Apply all learned skills to build a production-ready, portfolio-grade Reinforcement Learning project, from complex environment design and algorithm selection to deployment considerations, robust evaluation, and MLOps integration.",
+          "description": "Build an end-to-end RL capstone project: Train a robotic manipulation policy in Isaac Gym or an autonomous trading agent with PPO, deploying the optimized policy with safety verification.",
           "resources": [
             {
               "title": "Gymnasium Documentation",
@@ -1216,9 +1293,14 @@
               "url": "/data/docs/reinforcement_learning_engineer/rl_capstone_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 68
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 16
     }
-  ]
+  ],
+  "total_exp": 1000
 }

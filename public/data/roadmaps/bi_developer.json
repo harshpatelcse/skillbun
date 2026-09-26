@@ -84,7 +84,7 @@
       "id": "bi_foundations",
       "name": "Foundations of Business Intelligence & Role Context",
       "tag": "essential",
-      "description": "Understand the core concepts of Business Intelligence, the strategic role of a BI Developer in an organization, and the foundational knowledge required before diving into specific tools and advanced techniques.",
+      "description": "Establish an unshakeable Business Intelligence foundation: master the enterprise BI lifecycle, modern cloud data architectures, and data governance frameworks.",
       "resources": [
         {
           "title": "What is Business Intelligence? A complete guide",
@@ -107,7 +107,7 @@
           "id": "bi_what_is_bi_deep_dive",
           "name": "What is Business Intelligence? Definition & Strategic Value",
           "tag": "essential",
-          "description": "Learn the precise definition, fundamental purpose, and strategic value of Business Intelligence in modern organizations. Understand its historical evolution, key benefits, and how it clearly differentiates from data analytics and data science.",
+          "description": "Understand the end-to-end Business Intelligence discipline: converting raw multi-source data into actionable business intelligence, descriptive vs diagnostic vs predictive analytics, and executive KPI reporting.",
           "resources": [
             {
               "title": "Business Intelligence Full Course in 10 Hours | Power BI Training | Tableau Training | Edureka (edureka!)",
@@ -119,13 +119,15 @@
               "url": "/data/docs/bi_developer/bi_what_is_bi_deep_dive.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 10
         },
         {
           "id": "bi_role_responsibilities",
           "name": "Role and Responsibilities of a BI Developer",
           "tag": "essential",
-          "description": "Explore the typical day-to-day tasks, critical technical and soft skills, common career paths, and how BI Developers effectively interact with diverse stakeholders across various business units throughout the entire BI project lifecycle.",
+          "description": "Analyze the BI Developer role: collaborating with Data Engineers, business analysts, and executive leadership; architecting semantic models; and driving company-wide data literacy.",
           "resources": [
             {
               "title": "BI Developer Job Description & Skills",
@@ -137,13 +139,15 @@
               "url": "/data/docs/bi_developer/bi_role_responsibilities.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 12
         },
         {
           "id": "bi_business_domain_understanding",
           "name": "Business Domain Understanding & Requirements Gathering",
           "tag": "essential",
-          "description": "Develop the crucial ability to understand specific business domains, translate vague business questions into precise, actionable BI requirements, and align analytical solutions directly with organizational goals and strategic objectives.",
+          "description": "Develop deep domain literacy: understanding key business operations and metrics across SaaS (MRR, ARR, Churn, LTV, CAC), E-Commerce (Conversion Rate, AOV, Cart Abandonment), and Supply Chain (Inventory Turnover, Fill Rate).",
           "resources": [
             {
               "title": "Translating Business Needs into BI Requirements",
@@ -165,13 +169,15 @@
               "url": "/data/docs/bi_developer/bi_business_domain_understanding.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 15
         },
         {
           "id": "bi_core_bi_concepts_methodologies",
           "name": "Core BI Concepts, Metrics & Methodologies",
           "tag": "essential",
-          "description": "Familiarize yourself with essential BI terminology such as key business metrics, Key Performance Indicators (KPIs), dashboards, reports, and understand the basic principles behind data-driven decision-making and business value generation. Includes an introduction to data culture.",
+          "description": "Master foundational BI methodologies: Corporate Information Factory (Inmon) vs Dimensional Modeling (Kimball), agile BI delivery, and centralized vs decentralized reporting models.",
           "resources": [
             {
               "title": "Power BI Learning Path: Get started with Power BI",
@@ -183,13 +189,15 @@
               "url": "/data/docs/bi_developer/bi_core_bi_concepts_methodologies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 12
         },
         {
           "id": "bi_bi_architecture_overview",
           "name": "Traditional & Modern BI Architecture Overview",
           "tag": "essential",
-          "description": "Get an introductory understanding of common BI architectures, including various data sources, ETL/ELT layers, data warehouses, data marts, data lakes, and the interconnected components involved in building a comprehensive end-to-end BI solution. Includes an overview of modern concepts like data mesh or data fabric.",
+          "description": "Understand enterprise BI architecture tiers: data source layer, ingestion and storage layer, enterprise semantic layer, and presentation visualization layer.",
           "resources": [
             {
               "title": "Understanding Data Warehousing Architectures",
@@ -201,13 +209,15 @@
               "url": "/data/docs/bi_developer/bi_bi_architecture_overview.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 8
         },
         {
           "id": "bi_modern_cloud_bi_stack_overview",
           "name": "Modern Cloud BI Stack: Data Platforms & Services",
           "tag": "essential",
-          "description": "Explore the components of modern cloud-native BI architectures. Understand services like cloud data warehouses (e.g., Snowflake, Google BigQuery, Azure Synapse Analytics, AWS Redshift), cloud ETL/ELT tools, and their role in scalable BI solutions.",
+          "description": "Navigate the Modern Cloud BI stack: cloud warehouses (Snowflake, BigQuery), semantic data models (Power BI Semantic Models, Looker LookML, Cube), and enterprise visualization platforms.",
           "resources": [
             {
               "title": "What is Cloud Data Warehousing?",
@@ -224,13 +234,15 @@
               "url": "/data/docs/bi_developer/bi_modern_cloud_bi_stack_overview.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 13
         },
         {
           "id": "bi_data_governance_basics",
           "name": "Introduction to Data Governance and Ethics",
           "tag": "essential",
-          "description": "Understand the foundational concepts of data governance, data quality management, data security protocols, privacy regulations (e.g., GDPR, HIPAA), and ethical considerations when handling sensitive business data.",
+          "description": "Understand foundational data governance: data quality standards, stewardship, compliance regulations (GDPR, CCPA), and metadata management.",
           "resources": [
             {
               "title": "What is Data Governance? (IBM)",
@@ -242,15 +254,19 @@
               "url": "/data/docs/bi_developer/bi_data_governance_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 7
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 10
     },
     {
       "id": "bi_data_fundamentals",
       "name": "Data Fundamentals & Modeling",
       "tag": "essential",
-      "description": "Master SQL for efficient data extraction and manipulation, and thoroughly understand the foundational principles of data modeling and data warehousing crucial for building robust and performant BI solutions.",
+      "description": "Master enterprise data modeling, SQL data preparation, database performance, and analytical storage engines.",
       "resources": [
         {
           "title": "SQL Tutorial for Beginners - Full Course (Programming with Mosh)",
@@ -273,7 +289,7 @@
           "id": "bi_sql_essentials",
           "name": "SQL Essentials for Data Extraction",
           "tag": "essential",
-          "description": "Learn to write efficient SQL queries using fundamental clauses such as SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY, and various JOIN types for retrieving, filtering, and aggregating data from relational databases.",
+          "description": "Master core SQL for reporting: complex multi-table joins (INNER, LEFT, RIGHT, FULL OUTER), grouping with `GROUP BY` and `HAVING`, aggregate functions, and subqueries.",
           "resources": [
             {
               "title": "W3Schools SQL Tutorial",
@@ -285,13 +301,15 @@
               "url": "/data/docs/bi_developer/bi_sql_essentials.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 11
         },
         {
           "id": "bi_advanced_sql_data_prep",
           "name": "Advanced SQL for Data Preparation & Transformation",
           "tag": "essential",
-          "description": "Dive into advanced SQL features such as Window Functions (ROW_NUMBER, RANK, LAG, LEAD), Common Table Expressions (CTEs), subqueries, views, stored procedures, and complex data type handling for intricate data manipulation and preparation tasks.",
+          "description": "Master advanced SQL data preparation: window functions (`ROW_NUMBER`, `RANK`, `DENSE_RANK`, `LEAD`, `LAG`), cumulative running totals, Common Table Expressions (CTEs), and pivoting rows into columns.",
           "resources": [
             {
               "title": "Advanced SQL: Window Functions (Mode Analytics)",
@@ -303,13 +321,15 @@
               "url": "/data/docs/bi_developer/bi_advanced_sql_data_prep.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 13
         },
         {
           "id": "bi_sql_performance_indexing",
           "name": "SQL Performance Tuning and Indexing",
           "tag": "essential",
-          "description": "Optimize SQL query performance through understanding execution plans, implementing appropriate indexing strategies (clustered, non-clustered), writing efficient subqueries, and utilizing query hints to improve data retrieval speeds for BI workloads.",
+          "description": "Optimize reporting query execution: analyzing query execution plans, understanding B-Tree and clustered indexes, index fragmentation, and avoiding non-sargable query predicates.",
           "resources": [
             {
               "title": "SQL Performance Tuning Tutorial",
@@ -326,13 +346,15 @@
               "url": "/data/docs/bi_developer/bi_sql_performance_indexing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 16
         },
         {
           "id": "bi_data_profiling_analysis",
           "name": "Data Profiling and Quality Analysis",
           "tag": "essential",
-          "description": "Master techniques for profiling raw data to understand its structure, content, and quality. Identify anomalies, inconsistencies, missing values, and potential errors at the source, which is crucial before any transformation or modeling begins.",
+          "description": "Perform statistical data profiling: analyzing column distributions, cardinality, null percentages, identifying data anomalies, and validating referential integrity.",
           "resources": [
             {
               "title": "What is Data Profiling? (IBM)",
@@ -354,13 +376,15 @@
               "url": "/data/docs/bi_developer/bi_data_profiling_analysis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 11
         },
         {
           "id": "bi_relational_analytical_db_design",
           "name": "Relational & Analytical Database Design Principles (OLTP vs OLAP)",
           "tag": "essential",
-          "description": "Understand the core concepts of relational database design, including normalization (1NF, 2NF, 3NF, BCNF) and deliberate denormalization strategies. Learn the key differences between OLTP (Online Transaction Processing) and OLAP (Online Analytical Processing) systems and their architectural implications for BI solutions.",
+          "description": "Design analytical databases: OLTP (normalized 3NF) vs OLAP (denormalized analytical schemas), and understanding columnar storage mechanics.",
           "resources": [
             {
               "title": "Database Normalization Explained (Tutorials Point)",
@@ -372,13 +396,15 @@
               "url": "/data/docs/bi_developer/bi_relational_analytical_db_design.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 9
         },
         {
           "id": "bi_data_warehousing_concepts",
           "name": "Data Warehousing Concepts",
           "tag": "essential",
-          "description": "Grasp the fundamentals of data warehousing, including its purpose, common components (staging area, data store, ODS), different design approaches (Inmon vs. Kimball), and the pivotal role of the data warehouse in a modern BI ecosystem.",
+          "description": "Master enterprise data warehousing architecture: staging layers, operational data stores (ODS), enterprise data warehouses (EDW), and business unit data marts.",
           "resources": [
             {
               "title": "Introduction to Data Warehousing (Guru99)",
@@ -390,13 +416,15 @@
               "url": "/data/docs/bi_developer/bi_data_warehousing_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 10
         },
         {
           "id": "bi_dimensional_modeling_schemas",
           "name": "Dimensional Modeling & Schemas (Star, Snowflake)",
           "tag": "essential",
-          "description": "Learn the core concepts of dimensional modeling, including facts, dimensions, attributes, hierarchies, and the critical differences between Star and Snowflake schemas. Understand how to design models that are specifically optimized for analytical queries and reporting.",
+          "description": "Master Ralph Kimball dimensional modeling: Star schemas, Snowflake schemas, Fact tables (additive, semi-additive, non-additive facts), and Conformed Dimensions across enterprise data marts.",
           "resources": [
             {
               "title": "The Kimball Group: Dimensional Modeling Techniques",
@@ -408,13 +436,15 @@
               "url": "/data/docs/bi_developer/bi_dimensional_modeling_schemas.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 12
         },
         {
           "id": "bi_slowly_changing_dimensions",
           "name": "Slowly Changing Dimensions (SCD) Implementation",
           "tag": "advanced",
-          "description": "Explore strategies and practical implementations for handling dimension attributes that change over time, specifically mastering Type 1 (overwrite), Type 2 (new row for each change), Type 3 (new attribute), and various Hybrid SCD approaches.",
+          "description": "Implement Slowly Changing Dimensions (SCD): SCD Type 1 (overwrite values), SCD Type 2 (maintain full history with surrogate keys and active date ranges), and SCD Type 3 (previous vs current column tracking).",
           "resources": [
             {
               "title": "Slowly Changing Dimensions in a Data Warehouse (GeeksforGeeks)",
@@ -426,13 +456,15 @@
               "url": "/data/docs/bi_developer/bi_slowly_changing_dimensions.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 19
         },
         {
           "id": "bi_data_lakes_lakehouses_intro",
           "name": "Introduction to Data Lakes & Lakehouses",
           "tag": "advanced",
-          "description": "Understand the concepts of Data Lakes and the emerging Lakehouse architecture, their purpose, components, and how they complement or extend traditional data warehouses in modern analytical ecosystems, including considerations for semi-structured and unstructured data.",
+          "description": "Understand Data Lakes and Lakehouses: querying structured, semi-structured, and unstructured data on cloud object storage using open table formats.",
           "resources": [
             {
               "title": "What is a Data Lakehouse? (Databricks)",
@@ -444,13 +476,15 @@
               "url": "/data/docs/bi_developer/bi_data_lakes_lakehouses_intro.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 10
         },
         {
           "id": "bi_data_storage_formats",
           "name": "Data Storage Formats & Serialization",
           "tag": "advanced",
-          "description": "Explore various file formats (e.g., CSV, JSON, Parquet, ORC) commonly used in data lakes and data warehouses. Understand their characteristics, advantages (compression, columnar storage), and impact on query performance for BI workloads.",
+          "description": "Analyze big data storage formats: row-oriented storage (CSV, Avro) vs columnar formats (Apache Parquet, ORC) optimized for analytical aggregation queries.",
           "resources": [
             {
               "title": "Understanding Data Storage Formats: Parquet, ORC, Avro, and CSV",
@@ -472,13 +506,15 @@
               "url": "/data/docs/bi_developer/bi_data_storage_formats.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 15
         },
         {
           "id": "bi_nosql_data_sources_intro",
           "name": "Introduction to NoSQL for BI Data Sources",
           "tag": "advanced",
-          "description": "Gain an introductory understanding of NoSQL databases (e.g., MongoDB, Cassandra, DynamoDB) and their use cases as data sources for BI. Learn when and how to integrate non-relational data into a BI ecosystem, and understand the challenges and benefits.",
+          "description": "Connect to NoSQL and document data sources: parsing nested JSON documents from MongoDB and REST APIs into tabular reporting schemas.",
           "resources": [
             {
               "title": "NoSQL Databases Explained (MongoDB)",
@@ -505,13 +541,15 @@
               "url": "/data/docs/bi_developer/bi_nosql_data_sources_intro.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 17
         },
         {
           "id": "bi_data_cataloging_metadata",
           "name": "Data Cataloging & Metadata Management",
           "tag": "advanced",
-          "description": "Learn about the importance of data catalogs and metadata management for discoverability, governance, and understanding data assets within an organization. Explore tools and practices for documenting data sources, transformations, and BI reports.",
+          "description": "Manage enterprise metadata: building data dictionaries, cataloging enterprise datasets, and tracking end-to-end data lineage.",
           "resources": [
             {
               "title": "What is a Data Catalog? (IBM)",
@@ -528,15 +566,19 @@
               "url": "/data/docs/bi_developer/bi_data_cataloging_metadata.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 13
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 10
     },
     {
       "id": "bi_data_integration_etl",
       "name": "Data Integration & Transformation (ETL/ELT)",
       "tag": "essential",
-      "description": "Learn how to efficiently extract, transform, and load data from various source systems into a structured and clean format suitable for reporting and analysis, covering data pipeline concepts and practical tool usage.",
+      "description": "Master data extraction, transformation, quality validation, and pipeline scheduling for Business Intelligence.",
       "resources": [
         {
           "title": "ETL vs ELT: What's the Difference?",
@@ -559,7 +601,7 @@
           "id": "bi_etl_elt_concepts_data_pipelines",
           "name": "ETL/ELT Concepts and Data Pipeline Workflows",
           "tag": "essential",
-          "description": "Understand the complete workflow of modern data pipelines, including various data ingestion methods, staging areas, intricate data transformation stages (cleansing, aggregation, enrichment), and efficient loading strategies into a data warehouse or data mart.",
+          "description": "Understand data movement pipelines: comparing traditional ETL with cloud-native ELT, batch synchronization, and change capture mechanisms.",
           "resources": [
             {
               "title": "What is ETL? (AWS)",
@@ -571,13 +613,15 @@
               "url": "/data/docs/bi_developer/bi_etl_elt_concepts_data_pipelines.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 9
         },
         {
           "id": "bi_data_quality_cleansing_techniques",
           "name": "Data Quality and Cleansing Techniques",
           "tag": "essential",
-          "description": "Implement systematic techniques to ensure data accuracy, consistency, validity, and completeness. This includes identifying and handling missing values, resolving duplicates, standardizing data formats, and performing precise data type conversions.",
+          "description": "Implement automated data cleansing: handling missing values, standardizing date and currency formats, deduplication, and schema validation.",
           "resources": [
             {
               "title": "Data Cleansing: The Ultimate Guide",
@@ -589,13 +633,15 @@
               "url": "/data/docs/bi_developer/bi_data_quality_cleansing_techniques.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 9
         },
         {
           "id": "bi_practical_data_transformation_tools",
           "name": "Practical Data Transformation with BI Tools (Power Query, Tableau Prep)",
           "tag": "essential",
-          "description": "Gain hands-on experience with the embedded ETL/ELT capabilities of leading BI tools. Master Power Query (including M Language basics) for Power BI and Tableau Prep for Tableau, to perform robust data shaping, merging, and cleaning operations directly within the BI ecosystem.",
+          "description": "Master data transformation tools: Power Query (M language) in Power BI/Excel, Alteryx, dbt, and Python data wrangling libraries.",
           "resources": [
             {
               "title": "Getting Started with Power Query (Microsoft Learn)",
@@ -612,13 +658,15 @@
               "url": "/data/docs/bi_developer/bi_practical_data_transformation_tools.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 10
         },
         {
           "id": "bi_data_loading_strategies_optimization",
           "name": "Data Loading Strategies & Optimization",
           "tag": "advanced",
-          "description": "Explore different advanced approaches for loading data into analytical systems, such as full loads, incremental loads, Change Data Capture (CDC), and micro-batching. Understand the performance trade-offs and how to optimize for refresh times, resource usage, and data freshness.",
+          "description": "Optimize data loading: full refreshes vs high-speed incremental loads, partition switching, and bulk loading mechanisms.",
           "resources": [
             {
               "title": "Incremental vs. Full Refresh (Power BI)",
@@ -630,13 +678,15 @@
               "url": "/data/docs/bi_developer/bi_data_loading_strategies_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 12
         },
         {
           "id": "bi_basic_refresh_scheduling",
           "name": "Basic Data Refresh Scheduling",
           "tag": "essential",
-          "description": "Learn the fundamentals of automating data refresh processes within BI tools and data sources. Understand how to set up scheduled refreshes for datasets, configure gateway connections, and ensure data freshness for reports and dashboards.",
+          "description": "Configure automated dataset refresh schedules: setting up on-premises data gateways, cloud-to-cloud connections, and refresh frequency policies.",
           "resources": [
             {
               "title": "Scheduled data refresh in Power BI",
@@ -663,13 +713,15 @@
               "url": "/data/docs/bi_developer/bi_basic_refresh_scheduling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 8
         },
         {
           "id": "bi_advanced_pipeline_orchestration",
           "name": "Advanced Data Pipeline Orchestration (e.g., Airflow)",
           "tag": "advanced",
-          "description": "Dive into dedicated data orchestration tools like Apache Airflow, Azure Data Factory, or AWS Glue Workflows. Learn to build, schedule, and monitor complex, interdependent data pipelines, managing dependencies, retries, and failure handling for robust ETL/ELT operations.",
+          "description": "Orchestrate complex BI dependencies: triggering dataset refreshes via REST APIs after upstream dbt or Airflow data warehouse pipeline completion.",
           "resources": [
             {
               "title": "Building your first pipeline in Azure Data Factory",
@@ -686,13 +738,15 @@
               "url": "/data/docs/bi_developer/bi_advanced_pipeline_orchestration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 18
         },
         {
           "id": "bi_etl_elt_error_handling_logging",
           "name": "ETL/ELT Error Handling & Logging",
           "tag": "advanced",
-          "description": "Implement robust error handling mechanisms within ETL/ELT processes to gracefully manage data loading failures, transformation errors, and connectivity issues. Learn to set up effective logging and alerting for troubleshooting and maintaining data pipeline reliability.",
+          "description": "Implement robust pipeline error handling: capturing failed load rows, dead-letter tables, alerting on refresh failures, and retry logic.",
           "resources": [
             {
               "title": "ETL Error Handling Best Practices",
@@ -714,13 +768,15 @@
               "url": "/data/docs/bi_developer/bi_etl_elt_error_handling_logging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 17
         },
         {
           "id": "bi_data_governance_in_pipelines",
           "name": "Data Governance in Pipelines: Auditing & Lineage Enforcement",
           "tag": "advanced",
-          "description": "Focus on implementing data governance principles directly within ETL/ELT pipelines. This includes enforcing data quality rules, managing metadata, ensuring data lineage traceability, and establishing auditing mechanisms to track data transformations and access for compliance.",
+          "description": "Enforce compliance in pipelines: ensuring GDPR right-to-be-forgotten compliance, PII data masking, and audit logging.",
           "resources": [
             {
               "title": "Data Lineage and Governance in Modern Data Platforms",
@@ -747,13 +803,15 @@
               "url": "/data/docs/bi_developer/bi_data_governance_in_pipelines.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 13
         },
         {
           "id": "bi_cloud_etl_elt_platforms",
           "name": "Introduction to Cloud ETL/ELT Platforms (e.g., ADF, SSIS, Glue)",
           "tag": "advanced",
-          "description": "Explore popular cloud-based ETL/ELT services such as Azure Data Factory, AWS Glue, Google Cloud Dataflow, or traditional tools like SQL Server Integration Services (SSIS). Understand their core functionalities for building scalable and robust data pipelines in cloud environments.",
+          "description": "Utilize cloud ETL services: Azure Data Factory, AWS Glue, Google Cloud Dataflow, and automated data integration tools (Fivetran, Airbyte).",
           "resources": [
             {
               "title": "Getting Started with AWS Glue",
@@ -775,13 +833,15 @@
               "url": "/data/docs/bi_developer/bi_cloud_etl_elt_platforms.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 10
         },
         {
           "id": "bi_realtime_data_streaming_basics",
           "name": "Real-time Data Processing & Streaming Basics",
           "tag": "advanced",
-          "description": "Understand the fundamentals of real-time data ingestion and processing. Explore concepts like stream processing, event-driven architectures, and tools (e.g., Kafka, Azure Stream Analytics, Kinesis) for near real-time BI use cases.",
+          "description": "Build real-time BI streaming dashboards: pushing live telemetry into Power BI streaming datasets or Tableau from Kafka / Event Hubs.",
           "resources": [
             {
               "title": "Introduction to Stream Processing (Confluent)",
@@ -803,13 +863,15 @@
               "url": "/data/docs/bi_developer/bi_realtime_data_streaming_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 13
         },
         {
           "id": "bi_data_security_anonymization_pipelines",
           "name": "Data Security & Anonymization in Pipelines",
           "tag": "advanced",
-          "description": "Implement techniques for securing sensitive data during ETL/ELT processes. This includes data masking, encryption at rest and in transit, tokenization, and ensuring compliance with data privacy regulations like GDPR and CCPA within data pipelines.",
+          "description": "Anonymize sensitive business data: hashing identifiers, pseudonomization, differential privacy concepts, and tokenization in transit.",
           "resources": [
             {
               "title": "Data Masking Techniques for Privacy",
@@ -831,15 +893,19 @@
               "url": "/data/docs/bi_developer/bi_data_security_anonymization_pipelines.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 13
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 8
     },
     {
       "id": "bi_tool_mastery",
       "name": "BI Tool Mastery (Power BI / Tableau)",
       "tag": "essential",
-      "description": "Develop expert-level skills in leading BI tools like Power BI or Tableau, covering comprehensive data connection, robust semantic modeling, advanced DAX/LOD, and impactful visualization design and implementation.",
+      "description": "Master industry-standard BI platforms (Power BI & Tableau): semantic modeling, advanced DAX, LOD expressions, and VertiPaq engine tuning.",
       "resources": [
         {
           "title": "Power BI Learning (Microsoft)",
@@ -862,7 +928,7 @@
           "id": "bi_tool_data_connection_shaping",
           "name": "Data Connection & Initial Shaping in BI Tools",
           "tag": "essential",
-          "description": "Learn to connect to a wide array of data sources (e.g., databases, files, web services, cloud sources) directly within your chosen BI tool. Perform initial data shaping, cleaning, and preliminary transformations before building the semantic model, utilizing features like Power Query Editor.",
+          "description": "Master data ingestion and shaping: Import mode vs DirectQuery vs Live Connection trade-offs, and Power Query M language data shaping.",
           "resources": [
             {
               "title": "Connect to Data Sources in Power BI Desktop",
@@ -874,13 +940,15 @@
               "url": "/data/docs/bi_developer/bi_tool_data_connection_shaping.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 9
         },
         {
           "id": "bi_semantic_model_development",
           "name": "Semantic Model Development",
           "tag": "essential",
-          "description": "Master building robust and performant data models within BI tools. This includes defining table relationships (one-to-many, many-to-many, disconnected tables), establishing correct cardinality, and managing cross-filter direction for accurate and efficient analytical queries.",
+          "description": "Architect enterprise semantic models: star schema relationships (one-to-many, active vs inactive relationships), avoiding bidirectional cross-filtering pitfalls, and defining standardized business measures.",
           "resources": [
             {
               "title": "Introduction to Data Modeling in Power BI",
@@ -897,13 +965,15 @@
               "url": "/data/docs/bi_developer/bi_semantic_model_development.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 14
         },
         {
           "id": "bi_dax_fundamentals",
           "name": "DAX Fundamentals (Power BI)",
           "tag": "essential",
-          "description": "Understand the basics of Data Analysis Expressions (DAX) for creating powerful calculations, measures, and calculated columns in Power BI. Learn about crucial concepts like evaluation contexts (row context, filter context, query context) and fundamental DAX functions.",
+          "description": "Master DAX (Data Analysis Expressions) fundamentals: calculated columns vs measures, evaluation contexts (Row Context vs Filter Context), and mastering the `CALCULATE` function and Context Transition.",
           "resources": [
             {
               "title": "Mastering DAX in Power BI (SQLBI)",
@@ -925,13 +995,15 @@
               "url": "/data/docs/bi_developer/bi_dax_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 11
         },
         {
           "id": "bi_dax_advanced_lod_expressions",
           "name": "Advanced DAX / LOD Expressions (Power BI/Tableau)",
           "tag": "advanced",
-          "description": "Dive into complex DAX concepts like context transition (CALCULATE function), advanced time intelligence functions, complex table functions, and optimization techniques for Power BI. For Tableau, master Level of Detail (LOD) expressions (FIXED, INCLUDE, EXCLUDE) for intricate, granular calculations.",
+          "description": "Master advanced DAX and Tableau Level of Detail (LOD) calculations: DAX time intelligence functions (`TOTALYTD`, `SAMEPERIODLASTYEAR`), iterators (`SUMX`, `AVERAGEX`), `ALL`, `ALLEXCEPT`, `REMOVEFILTERS`, and Tableau `FIXED`, `INCLUDE`, `EXCLUDE` expressions.",
           "resources": [
             {
               "title": "DAX Guide (SQLBI)",
@@ -958,13 +1030,15 @@
               "url": "/data/docs/bi_developer/bi_dax_advanced_lod_expressions.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 20
         },
         {
           "id": "bi_data_model_performance_optimization",
           "name": "Data Model Performance Optimization (Tool Specific)",
           "tag": "advanced",
-          "description": "Learn advanced techniques to optimize your data models for speed, efficiency, and scalability, specific to your chosen BI tool. Topics include cardinality management, effective column removal, data type optimization, strategic storage mode selection (Import, DirectQuery, Composite for Power BI) and understanding the VertiPaq engine concepts or Tableau Data Engine optimizations.",
+          "description": "Tune in-memory VertiPaq database performance: reducing column cardinality, splitting datetime into separate date and time columns, disabling Auto Date/Time hierarchies, and optimizing memory footprints with DAX Studio and Tabular Editor.",
           "resources": [
             {
               "title": "Optimizing Power BI Data Models (Guy in a Cube)",
@@ -981,13 +1055,15 @@
               "url": "/data/docs/bi_developer/bi_data_model_performance_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 20
         },
         {
           "id": "bi_report_dashboard_design",
           "name": "Report & Dashboard Design Principles",
           "tag": "essential",
-          "description": "Create intuitive and impactful reports and dashboards by applying fundamental data visualization best practices, robust user experience (UX) principles, and incorporating interactive features to effectively drive business insights.",
+          "description": "Master dashboard UX and visual communication: chart selection, visual hierarchy, interactivity, and executive storytelling.",
           "resources": [
             {
               "title": "Data Visualization Best Practices (Microsoft)",
@@ -1009,13 +1085,15 @@
               "url": "/data/docs/bi_developer/bi_report_dashboard_design.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 10
         },
         {
           "id": "bi_visualization_best_practices_charts",
           "name": "Data Visualization Best Practices & Chart Selection",
           "tag": "essential",
-          "description": "Understand core principles of effective data visualization, including chart junk reduction, appropriate and accessible use of color, and strategically choosing the right chart type (bar, line, pie, scatter, treemap, custom visuals) for different data types and insights.",
+          "description": "Select optimal chart types: matching business metrics to appropriate encodings (bar charts for comparisons, line charts for trends, scatter plots for correlation, and waterfall charts for variance analysis; avoiding misleading pie charts).",
           "resources": [
             {
               "title": "Storytelling with Data: A Data Visualization Guide for Business Professionals (Book)",
@@ -1037,13 +1115,15 @@
               "url": "/data/docs/bi_developer/bi_visualization_best_practices_charts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 15
         },
         {
           "id": "bi_dashboard_ux_principles",
           "name": "Dashboard User Experience (UX) Design",
           "tag": "essential",
-          "description": "Design dashboards with a rigorous user-centric approach, focusing on intuitive layout, clear and consistent navigation, effective information hierarchy, and responsive design to ensure optimal user engagement and accessibility across devices.",
+          "description": "Apply dashboard UX design principles: progressive disclosure, the 5-second rule, grid alignment, intentional white space, and establishing cohesive color palettes.",
           "resources": [
             {
               "title": "Dashboard Design Best Practices (Dresner Advisory Services)",
@@ -1060,13 +1140,15 @@
               "url": "/data/docs/bi_developer/bi_dashboard_ux_principles.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 11
         },
         {
           "id": "bi_interactivity_advanced_visuals",
           "name": "Interactivity & Advanced Visuals",
           "tag": "essential",
-          "description": "Implement essential interactive elements like slicers, filters, drill-throughs, bookmarks, buttons, tooltips, and dynamic actions to empower users to explore data dynamically. Explore and utilize advanced or custom visuals for specific analytical needs and enhanced insights.",
+          "description": "Build interactive dashboards: drill-through pages, cross-filtering, report page tooltips, bookmarks, and dynamic parameter switching.",
           "resources": [
             {
               "title": "Power BI Interactive Reports Features",
@@ -1088,13 +1170,15 @@
               "url": "/data/docs/bi_developer/bi_interactivity_advanced_visuals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 10
         },
         {
           "id": "bi_storytelling_with_data_insights",
           "name": "Storytelling with Data & Presenting Insights",
           "tag": "essential",
-          "description": "Develop the crucial ability to craft compelling narratives from data. Learn proven techniques to present complex insights clearly, concisely, and persuasively to diverse audiences, guiding them to understand findings and make well-informed business decisions.",
+          "description": "Craft persuasive data stories: structuring analytical presentations, highlighting key business anomalies, and framing data insights with actionable recommendations.",
           "resources": [
             {
               "title": "Data Storytelling: The essential data science skill everyone needs",
@@ -1116,13 +1200,15 @@
               "url": "/data/docs/bi_developer/bi_storytelling_with_data_insights.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 11
         },
         {
           "id": "bi_self_service_bi_enablement",
           "name": "Self-Service BI & User Enablement",
           "tag": "essential",
-          "description": "Understand the principles of self-service BI and how to design solutions that empower business users to explore data independently. Learn to create user-friendly interfaces, provide training, and establish guidelines for effective self-service adoption.",
+          "description": "Enable self-service analytics: creating certified shared semantic models, perspective views, and empowering business analysts to build custom reports.",
           "resources": [
             {
               "title": "What is Self-Service BI?",
@@ -1149,13 +1235,15 @@
               "url": "/data/docs/bi_developer/bi_self_service_bi_enablement.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 11
         },
         {
           "id": "bi_report_performance_optimization",
           "name": "Report & Dashboard Performance Optimization",
           "tag": "advanced",
-          "description": "Identify and systematically resolve performance bottlenecks specifically within reports and dashboards. Optimize visual load times, reduce query execution time, and significantly improve overall user experience through efficient report design and tuning.",
+          "description": "Optimize visual rendering performance: analyzing visual render times with Performance Analyzer, limiting visual count per page, and reducing heavy visual query payloads.",
           "resources": [
             {
               "title": "Optimize a report for performance in Power BI",
@@ -1177,13 +1265,15 @@
               "url": "/data/docs/bi_developer/bi_report_performance_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 17
         },
         {
           "id": "bi_tool_advanced_features_integration",
           "name": "Advanced BI Tool Features & Integration",
           "tag": "advanced",
-          "description": "Explore specialized features like parameters, What-If analysis, custom visuals, AI visuals, and integrating with external tools or languages (e.g., Python/R for advanced analytics or scripting) to extend and enhance core BI capabilities.",
+          "description": "Integrate advanced analytics: embedding Python/R visualizations, AI visual insights (Key Influencers, Decomposition Tree), and natural language Q&A.",
           "resources": [
             {
               "title": "Using What-If parameters to visualize variables in Power BI Desktop",
@@ -1205,13 +1295,15 @@
               "url": "/data/docs/bi_developer/bi_tool_advanced_features_integration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 15
         },
         {
           "id": "bi_advanced_semantic_modeling",
           "name": "Advanced Semantic Model Techniques (e.g., Calculation Groups, Composite Models)",
           "tag": "advanced",
-          "description": "Master sophisticated semantic modeling techniques beyond basic relationships. For Power BI, delve into Calculation Groups, Composite Models, and Query Reduction. For Tableau, explore advanced data blending and optimization for complex scenarios.",
+          "description": "Implement advanced tabular modeling: calculation groups for dynamic measure formatting, user hierarchies, and composite models combining Import and DirectQuery.",
           "resources": [
             {
               "title": "Power BI Composite Models: A Comprehensive Guide",
@@ -1233,13 +1325,15 @@
               "url": "/data/docs/bi_developer/bi_advanced_semantic_modeling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 16
         },
         {
           "id": "bi_object_level_security_sensitivity",
           "name": "Object-Level Security & Data Sensitivity Labels",
           "tag": "advanced",
-          "description": "Implement granular security within BI tools, including object-level security (OLS) to restrict access to tables or columns, and apply data sensitivity labels to classify and protect sensitive information, ensuring compliance and data privacy at the semantic model level.",
+          "description": "Implement enterprise data privacy: Row-Level Security (RLS) with dynamic `USERPRINCIPALNAME()`, Object-Level Security (OLS) hiding sensitive salary/financial tables, and Microsoft Purview sensitivity labels.",
           "resources": [
             {
               "title": "Object-level security in Power BI (Microsoft Learn)",
@@ -1266,13 +1360,15 @@
               "url": "/data/docs/bi_developer/bi_object_level_security_sensitivity.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 20
         },
         {
           "id": "bi_mobile_dashboard_design",
           "name": "Mobile BI Dashboard Design & Optimization",
           "tag": "advanced",
-          "description": "Design and optimize BI dashboards specifically for mobile devices. Focus on responsive layouts, touch-friendly interactions, performance considerations, and ensuring critical insights are accessible and clear on smaller screens.",
+          "description": "Design mobile-optimized dashboard layouts: responsive phone views, touch-friendly navigation, and mobile push alert triggers.",
           "resources": [
             {
               "title": "Designing Mobile Dashboards in Power BI",
@@ -1294,15 +1390,19 @@
               "url": "/data/docs/bi_developer/bi_mobile_dashboard_design.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 13
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 8
     },
     {
       "id": "bi_production_operations",
       "name": "Production, Deployment & Operations",
       "tag": "advanced",
-      "description": "Learn to robustly deploy, manage, and maintain BI solutions in production environments, ensuring data freshness, security, governance, and optimal performance through continuous monitoring and administration.",
+      "description": "Operate enterprise BI platforms: workspace governance, version control with Git, deployment pipelines, and cost optimization.",
       "resources": [
         {
           "title": "Power BI Service (Microsoft Learn)",
@@ -1335,7 +1435,7 @@
           "id": "bi_scheduled_refresh_management",
           "name": "Scheduled Data Refresh Management & Gateways",
           "tag": "essential",
-          "description": "Configure data gateways for secure on-premises data sources, schedule automatic data refreshes, and monitor the health, performance, and reliability of your end-to-end data refresh pipelines within the BI service/server environment.",
+          "description": "Manage enterprise data refreshes: incremental refresh policies, XMLA endpoint automation, and managing gateway clustering.",
           "resources": [
             {
               "title": "On-premises data gateway (Power BI)",
@@ -1357,13 +1457,15 @@
               "url": "/data/docs/bi_developer/bi_scheduled_refresh_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 10
         },
         {
           "id": "bi_workspace_deployment_management",
           "name": "Workspace/Site Management & Deployment Pipelines",
           "tag": "advanced",
-          "description": "Efficiently organize and manage BI content within workspaces/sites. Understand and implement deployment pipelines (e.g., Development, Test, Production environments) for continuous integration and delivery of BI assets, ensuring controlled and reliable releases.",
+          "description": "Implement enterprise deployment pipelines: Development, Test, and Production workspace stages, parameterizing connections, and automated deployment.",
           "resources": [
             {
               "title": "Deployment pipelines in Power BI",
@@ -1385,13 +1487,15 @@
               "url": "/data/docs/bi_developer/bi_workspace_deployment_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 15
         },
         {
           "id": "bi_user_access_permissions",
           "name": "User Access & Permissions Management (RLS/CLS)",
           "tag": "advanced",
-          "description": "Define and manage roles, security groups, row-level security (RLS), and column-level security (CLS) to precisely control who can view, edit, or administer BI content and underlying data, thereby ensuring data privacy, compliance, and controlled access.",
+          "description": "Manage enterprise access governance: workspace roles (Admin, Member, Contributor, Viewer), app packaging, and sharing reports securely.",
           "resources": [
             {
               "title": "Manage workspace access (Power BI)",
@@ -1418,13 +1522,15 @@
               "url": "/data/docs/bi_developer/bi_user_access_permissions.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 13
         },
         {
           "id": "bi_governance_admin_best_practices",
           "name": "BI Governance & Administration Best Practices",
           "tag": "advanced",
-          "description": "Implement comprehensive best practices for managing tenant settings, monitoring usage metrics, certifying datasets and reports, and establishing clear organizational guidelines for BI development, deployment, and consumption to ensure consistency and quality.",
+          "description": "Enforce tenant-level administrative policies: managing tenant settings in Power BI Admin Portal, monitoring capacity utilization, and dataset certification.",
           "resources": [
             {
               "title": "Power BI Governance and Deployment (Enterprise DNA)",
@@ -1441,13 +1547,15 @@
               "url": "/data/docs/bi_developer/bi_governance_admin_best_practices.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 15
         },
         {
           "id": "bi_version_control_bi_assets",
           "name": "Version Control for BI Assets (Git Integration)",
           "tag": "advanced",
-          "description": "Integrate modern version control systems like Git to manage changes to BI reports, datasets, semantic models, underlying SQL scripts, and ETL code. This enables collaborative development, detailed change tracking, robust rollback capabilities, and streamlines team workflows significantly.",
+          "description": "Implement version control for BI: Power BI Developer Mode (PBIP format with TMDL and JSON metadata), integration with Azure DevOps and GitHub, and tracking semantic model diffs.",
           "resources": [
             {
               "title": "Using Git with Power BI Project (Preview)",
@@ -1464,13 +1572,15 @@
               "url": "/data/docs/bi_developer/bi_version_control_bi_assets.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 17
         },
         {
           "id": "bi_performance_tuning_monitoring",
           "name": "Performance Tuning & Monitoring in Production",
           "tag": "advanced",
-          "description": "Systematically identify and resolve performance bottlenecks in SQL queries, complex data models, slow-loading reports, and refresh pipelines within the production environment. Utilize monitoring tools and logs to proactively address issues and ensure fast, responsive BI solutions for end-users.",
+          "description": "Monitor capacity performance: tracking Power BI Premium / Fabric capacity metrics, diagnosing overloaded compute, and optimizing dataset memory limits.",
           "resources": [
             {
               "title": "Optimizing Power BI Performance (Guy in a Cube)",
@@ -1487,13 +1597,15 @@
               "url": "/data/docs/bi_developer/bi_performance_tuning_monitoring.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 15
         },
         {
           "id": "bi_monitoring_alerting",
           "name": "Monitoring and Alerting for BI Systems",
           "tag": "advanced",
-          "description": "Set up robust monitoring for data refresh schedules, report performance metrics, and data gateway status. Implement sophisticated alerting mechanisms to proactively notify administrators of failures, delays, or performance degradation in real-time, enabling swift issue resolution.",
+          "description": "Configure automated metric alerts: data-driven alerts notifying stakeholders via email or Teams when KPIs breach critical business thresholds.",
           "resources": [
             {
               "title": "Power BI Monitoring Guide",
@@ -1515,13 +1627,15 @@
               "url": "/data/docs/bi_developer/bi_monitoring_alerting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 14
         },
         {
           "id": "bi_data_lineage_impact_analysis",
           "name": "Data Lineage and Impact Analysis",
           "tag": "advanced",
-          "description": "Understand how to trace the complete flow of data from its source to the final report, including all intermediate transformations and semantic models. Learn to perform thorough impact analysis to assess the consequences of changes to data sources or models on dependent reports and dashboards.",
+          "description": "Conduct impact and lineage analysis: tracing data lineage from data lakehouse sources through semantic models to downstream dashboards.",
           "resources": [
             {
               "title": "Data lineage in Power BI",
@@ -1538,13 +1652,15 @@
               "url": "/data/docs/bi_developer/bi_data_lineage_impact_analysis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 13
         },
         {
           "id": "bi_auditing_compliance_reporting",
           "name": "Auditing and Compliance Reporting for BI Systems",
           "tag": "advanced",
-          "description": "Implement robust auditing mechanisms for BI usage, data access, and report consumption. Generate compliance reports to ensure adherence to internal policies and external regulations (e.g., GDPR, HIPAA), demonstrating accountability and data security.",
+          "description": "Audit BI tenant usage: querying Activity Logs and Unified Audit Logs to analyze report views, export activities, and user adoption metrics.",
           "resources": [
             {
               "title": "Power BI Audit Log (Microsoft Learn)",
@@ -1571,13 +1687,15 @@
               "url": "/data/docs/bi_developer/bi_auditing_compliance_reporting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 14
         },
         {
           "id": "bi_cloud_bi_service_management",
           "name": "Cloud BI Service Administration & Scaling (e.g., Power BI Premium, Tableau Cloud)",
           "tag": "advanced",
-          "description": "Learn to administer and optimize cloud-based BI services like Power BI Premium capacities, Power BI Embedded, or Tableau Cloud. This includes managing resources, optimizing gateway performance, configuring scaling options, and ensuring high availability for enterprise-level BI solutions.",
+          "description": "Manage cloud BI capacities: provisioning dedicated capacities (Power BI Premium, Fabric F-SKUs, Tableau Server on cloud), and configuring auto-scaling.",
           "resources": [
             {
               "title": "Power BI Premium Overview (Microsoft Learn)",
@@ -1604,13 +1722,15 @@
               "url": "/data/docs/bi_developer/bi_cloud_bi_service_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 15
         },
         {
           "id": "bi_cost_management_optimization",
           "name": "Cost Management & Optimization for Cloud BI",
           "tag": "advanced",
-          "description": "Understand the cost implications of various cloud BI services and learn strategies for optimizing expenditures without compromising performance or reliability. This includes efficient resource provisioning, monitoring usage patterns, and implementing cost-saving best practices.",
+          "description": "Optimize BI licensing and infrastructure costs: analyzing Pro vs Premium vs Fabric capacity licensing, and deprecating unused datasets.",
           "resources": [
             {
               "title": "Optimizing Costs in Power BI Premium",
@@ -1627,13 +1747,15 @@
               "url": "/data/docs/bi_developer/bi_cost_management_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 13
         },
         {
           "id": "bi_embedded_analytics_api",
           "name": "Embedded Analytics & API Integration",
           "tag": "advanced",
-          "description": "Explore how to embed BI reports and dashboards into custom applications or web portals. Learn about BI tool APIs (e.g., Power BI REST APIs, Tableau JavaScript API) for programmatic access, automation, and deeper integration.",
+          "description": "Implement embedded analytics: Power BI Embedded API / Tableau Embedding API, generating secure embed tokens, and integrating reports into custom web applications.",
           "resources": [
             {
               "title": "Power BI Embedded Analytics Playground",
@@ -1660,13 +1782,15 @@
               "url": "/data/docs/bi_developer/bi_embedded_analytics_api.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 16
         },
         {
           "id": "bi_backup_disaster_recovery",
           "name": "Backup and Disaster Recovery for BI Assets",
           "tag": "advanced",
-          "description": "Develop strategies for backing up critical BI assets (reports, datasets, semantic models) and planning for disaster recovery. Understand how to restore services and data efficiently in case of system failures or data loss.",
+          "description": "Establish disaster recovery for BI: automated backup of tabular models via XMLA endpoints, version history preservation, and cross-region workspace replication.",
           "resources": [
             {
               "title": "Power BI Disaster Recovery Best Practices",
@@ -1688,15 +1812,19 @@
               "url": "/data/docs/bi_developer/bi_backup_disaster_recovery.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 16
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 12
     },
     {
       "id": "bi_collaboration_quality",
       "name": "Collaboration, Quality Assurance & Best Practices",
       "tag": "advanced",
-      "description": "Develop essential skills for effective teamwork, ensuring the highest quality and reliability of BI solutions, and communicating effectively with stakeholders throughout the entire project lifecycle.",
+      "description": "Enforce enterprise quality standards: User Acceptance Testing (UAT), documentation, and agile delivery frameworks.",
       "resources": [
         {
           "title": "Data Quality Best Practices",
@@ -1729,7 +1857,7 @@
           "id": "bi_documentation_standards_governance",
           "name": "Documentation & Standardization",
           "tag": "essential",
-          "description": "Create clear, comprehensive, and up-to-date documentation for BI reports, data models, DAX measures, data sources, and ETL logic. Establish and rigorously adhere to consistent naming conventions and style guides for enhanced maintainability and seamless collaboration.",
+          "description": "Author standardized BI documentation: business metric definitions, technical data dictionaries, and user operating manuals.",
           "resources": [
             {
               "title": "Why is Documentation Important for BI Projects?",
@@ -1751,13 +1879,15 @@
               "url": "/data/docs/bi_developer/bi_documentation_standards_governance.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 10
         },
         {
           "id": "bi_testing_validation_uat",
           "name": "Testing and Validation for BI Solutions",
           "tag": "advanced",
-          "description": "Implement robust strategies for data quality checks, data reconciliation, thorough report accuracy validation, and rigorous user acceptance testing (UAT). Ensure the reliability, correctness, and precise business alignment of BI deliverables before their deployment to production.",
+          "description": "Validate report data accuracy: cross-checking BI measure outputs against source ERP/warehouse SQL queries, conducting UAT with business users, and signing off on release candidates.",
           "resources": [
             {
               "title": "Do those numbers look right? How to ensure quality, and avoid inaccuracies in your data insights. (SQLBits)",
@@ -1769,13 +1899,15 @@
               "url": "/data/docs/bi_developer/bi_testing_validation_uat.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 20
         },
         {
           "id": "bi_stakeholder_engagement_communication",
           "name": "Stakeholder Engagement & Effective Communication",
           "tag": "essential",
-          "description": "Learn to gather and precisely refine business requirements, proactively manage stakeholder expectations, present complex insights clearly and concisely, and facilitate continuous feedback loops with business stakeholders to ensure BI solutions consistently meet their evolving needs.",
+          "description": "Manage stakeholder communication: leading dashboard design workshops, managing feature backlogs, and demonstrating delivered business ROI.",
           "resources": [
             {
               "title": "Stakeholder Management for Data Projects",
@@ -1797,13 +1929,15 @@
               "url": "/data/docs/bi_developer/bi_stakeholder_engagement_communication.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 10
         },
         {
           "id": "bi_agile_bi_development",
           "name": "Agile Methodologies in BI Development",
           "tag": "advanced",
-          "description": "Introduce agile principles and practices (e.g., Scrum, Kanban) to BI project delivery. Learn how to manage sprints, define user stories, prioritize backlogs, and implement iterative development to respond to changing business requirements efficiently and deliver incremental value.",
+          "description": "Execute Agile BI workflows: two-week sprint cycles, user story mapping for analytical questions, and continuous stakeholder feedback loops.",
           "resources": [
             {
               "title": "Agile BI Development Best Practices",
@@ -1825,13 +1959,15 @@
               "url": "/data/docs/bi_developer/bi_agile_bi_development.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 10
         },
         {
           "id": "bi_change_management_adoption",
           "name": "Change Management & BI Adoption Strategies",
           "tag": "advanced",
-          "description": "Learn to drive user adoption of BI solutions by understanding change management principles. This includes user training, communication strategies, fostering a data-driven culture, and measuring the impact of BI initiatives within an organization.",
+          "description": "Drive corporate data adoption: training non-technical business users, conducting lunch-and-learns, and monitoring report engagement metrics.",
           "resources": [
             {
               "title": "Driving User Adoption for Business Intelligence",
@@ -1853,15 +1989,19 @@
               "url": "/data/docs/bi_developer/bi_change_management_adoption.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 14
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 12
     },
     {
       "id": "bi_portfolio_career_readiness",
       "name": "Portfolio & Career Readiness",
       "tag": "advanced",
-      "description": "Translate your BI development skills into tangible proof through a strong portfolio, preparing you for successful interviews, continuous learning, and long-term career advancement in the dynamic field of Business Intelligence.",
+      "description": "Curate a professional BI portfolio, prepare for Microsoft PL-300 / Tableau Certified Data Analyst certifications, and excel in BI interviews.",
       "resources": [
         {
           "title": "Building a Data Analyst Portfolio (Alex The Analyst)",
@@ -1879,7 +2019,7 @@
           "id": "bi_building_professional_bi_portfolio",
           "name": "Building a Professional BI Portfolio",
           "tag": "advanced",
-          "description": "Identify compelling, real-world project ideas. Execute them using industry best practices across the entire BI lifecycle (from data ingestion and modeling to interactive dashboard design), and showcase your work effectively on platforms like GitHub or personal websites.",
+          "description": "Build a compelling BI portfolio: showcasing interactive public reports (NovyPro, Tableau Public), detailing business problem contexts, and explaining data modeling decisions.",
           "resources": [
             {
               "title": "How to Build a Portfolio for Data Analytics (Coursera)",
@@ -1901,13 +2041,15 @@
               "url": "/data/docs/bi_developer/bi_building_professional_bi_portfolio.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 17
         },
         {
           "id": "bi_interview_preparation_strategies",
           "name": "Interview Preparation Strategies",
           "tag": "advanced",
-          "description": "Prepare comprehensively for technical questions covering SQL, DAX/LOD, data modeling concepts, and BI tool specifics. Practice behavioral questions, mock presentations of your portfolio projects, and effectively articulate your problem-solving skills and BI experience.",
+          "description": "Excel in BI technical interviews: live SQL data transformation problems, complex DAX / LOD formula derivations, and defending dashboard UX design choices.",
           "resources": [
             {
               "title": "BI Developer Interview Questions (InterviewBit)",
@@ -1929,13 +2071,15 @@
               "url": "/data/docs/bi_developer/bi_interview_preparation_strategies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 15
         },
         {
           "id": "bi_capstone_project_end_to_end",
           "name": "Capstone Project: End-to-End BI Solution",
           "tag": "advanced",
-          "description": "Undertake a comprehensive, portfolio-grade BI project. This involves selecting a real-world dataset, performing end-to-end data integration, building a robust semantic model, designing interactive dashboards, deploying, and thoroughly documenting the entire solution with a focus on delivering measurable business impact.",
+          "description": "Capstone Project: Architect and Deploy an Enterprise Executive Analytics Platform: multi-source data ingestion, clean Kimball star schema, complex DAX time-intelligence measures, VertiPaq performance optimization with DAX Studio, Dynamic RLS security, and deployment pipeline automation.",
           "resources": [
             {
               "title": "Sample Power BI End-to-End Project (Data Camp)",
@@ -1952,13 +2096,15 @@
               "url": "/data/docs/bi_developer/bi_capstone_project_end_to_end.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 45
         },
         {
           "id": "bi_continuous_learning_industry_trends",
           "name": "Continuous Learning & Industry Trends",
           "tag": "advanced",
-          "description": "Cultivate a mindset of continuous learning. Stay updated with emerging BI tools, cutting-edge techniques, advancements in cloud analytics platforms, evolving data governance trends, and advanced analytical concepts to remain highly relevant and competitive in the rapidly evolving BI landscape.",
+          "description": "Stay ahead of industry developments: Microsoft Fabric unified analytics, AI copilot integration in BI tools, and modern semantic layer standards.",
           "resources": [
             {
               "title": "Top Business Intelligence Trends",
@@ -1980,9 +2126,14 @@
               "url": "/data/docs/bi_developer/bi_continuous_learning_industry_trends.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 14
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 11
     }
-  ]
+  ],
+  "total_exp": 1000
 }

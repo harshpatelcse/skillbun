@@ -48,24 +48,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Comprehensive PRD & Go-to-Market Strategy for an AI Feature",
+        "title": "End-to-End AI Copilot Feature PRD, Business Case & User Journeys",
         "tech_stack": [
-          "Product Strategy",
-          "Figma Wireframes",
-          "Analytics Spec",
-          "PRD Document"
+          "PRD",
+          "User Story Mapping",
+          "North Star Metric",
+          "RICE Prioritization",
+          "Wireframing"
         ],
-        "description": "Author a complete, engineering-ready Product Requirements Document (PRD) specifying metrics, user stories, edge cases, and rollout strategy."
+        "description": "Author an exhaustive Product Requirements Document (PRD) for an enterprise AI copilot, incorporating user flows, technical edge cases, and launch criteria."
       },
       {
-        "title": "Comprehensive Product Strategy, PRD & Go-to-Market Spec",
+        "title": "Comprehensive B2B SaaS Product Strategy & Go-To-Market Spec",
         "tech_stack": [
-          "Product Strategy Frameworks",
-          "PRD",
-          "Mixpanel",
-          "Jira"
+          "TAM/SAM/SOM",
+          "Competitive Matrix",
+          "Unit Economics",
+          "GTM Playbook",
+          "A/B Testing"
         ],
-        "description": "Author a complete Product Requirement Document (PRD), business case model, competitive moat analysis, feature prioritization matrix (RICE), and rollout roadmap."
+        "description": "Develop a multi-year product roadmap, competitive differentiation matrix, pricing model, and Go-To-Market strategy for a developer tooling platform."
       }
     ],
     "certifications": [
@@ -73,10 +75,11 @@
       "Scrum Alliance Certified Scrum Product Owner (CSPO)"
     ],
     "interview_focus": [
-      "Product Design Questions (\"How would you design an elevator for children?\")",
-      "Prioritizing Competing Engineering Features using RICE",
-      "Diagnosing Sudden Metrics Drops (e.g. \"Checkout conversion dropped 15% overnight\")",
-      "Root Cause Analysis and Execution Tradeoffs"
+      "Product Sense & Discovery (Problem Definition, User Personas, Jobs-To-Be-Done / JTBD)",
+      "Feature Prioritization Frameworks (RICE, Kano Model, MoSCoW, Value vs Effort Matrix)",
+      "Defining Product Metrics (North Star Metric, Input vs Output Metrics, Guardrail Metrics)",
+      "A/B Testing & Experimentation Strategy (Hypothesis Formulation, MDE, Guardrail Indicators)",
+      "Product Execution & Tradeoff Scenarios (Scope Creep, Engineering Delays, Technical Debt)"
     ]
   },
   "format": "tree",
@@ -85,7 +88,7 @@
       "id": "product_strategy_discovery",
       "name": "Product Strategy & Discovery",
       "tag": "essential",
-      "description": "Mastering the art of identifying user problems, understanding market dynamics, defining compelling product visions, and laying the strategic groundwork for successful products.",
+      "description": "Master product strategy and discovery: Formulating compelling product visions, customer problem discovery, competitive positioning, and business model design.",
       "resources": [
         {
           "title": "Product Management 101: Everything You Need to Know (Full Course) (Explained Hub)",
@@ -108,7 +111,7 @@
           "id": "product_thinking_principles",
           "name": "Product Thinking Principles",
           "tag": "essential",
-          "description": "Understand the core mindset of a Product Manager, differentiating product from project management, focusing on outcomes over outputs, and the decision-making framework.",
+          "description": "Apply product thinking: First-principles reasoning, focusing on outcomes over outputs, identifying high-impact customer problems, and navigating product trade-offs.",
           "resources": [
             {
               "title": "Product Management Guide",
@@ -130,13 +133,15 @@
               "url": "/data/docs/product_manager/product_thinking_principles.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 30
         },
         {
           "id": "user_research_problem_framing",
           "name": "User Research & Problem Framing",
           "tag": "essential",
-          "description": "Delve into qualitative (interviews, usability tests, ethnography, focus groups) and quantitative (surveys, analytics basics, A/B test analysis) research methods. Learn to uncover latent user needs, validate assumptions, define problem statements using Jobs-to-be-Done (JTBD) and persona development, and frame problems effectively.",
+          "description": "Frame customer problems: Continuous user interviews, jobs-to-be-done (JTBD) framework, customer journey mapping, and drafting crisp problem statements.",
           "resources": [
             {
               "title": "NN/g User Interviews",
@@ -163,13 +168,15 @@
               "url": "/data/docs/product_manager/user_research_problem_framing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         },
         {
           "id": "market_competitor_analysis",
           "name": "Market & Competitor Analysis",
           "tag": "essential",
-          "description": "Analyze market trends, identify target segments, perform comprehensive competitive analysis using frameworks like SWOT, Porter's Five Forces, PESTEL, and understand market positioning, differentiation, and defensibility.",
+          "description": "Analyze markets and competitors: Total Addressable Market (TAM/SAM/SOM) sizing, Porter's Five Forces, competitive differentiation, and tracking market trends.",
           "resources": [
             {
               "title": "Lean Canvas",
@@ -196,13 +203,15 @@
               "url": "/data/docs/product_manager/market_competitor_analysis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "business_models_product_economics",
           "name": "Business Models & Product Economics",
           "tag": "essential",
-          "description": "Explore various revenue models (Subscription, Freemium, Transactional, Ad-based), pricing strategies, cost structures, unit economics, LTV/CAC calculations, and understand how product decisions impact overall business profitability and sustainability.",
+          "description": "Master product economics: Unit economics, Customer Lifetime Value (LTV), Customer Acquisition Cost (CAC), payback periods, pricing strategies, and gross margins.",
           "resources": [
             {
               "title": "Understanding Product Unit Economics",
@@ -224,13 +233,15 @@
               "url": "/data/docs/product_manager/business_models_product_economics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 30
         },
         {
           "id": "product_vision_strategy",
           "name": "Product Vision & Strategic Planning",
           "tag": "essential",
-          "description": "Define and articulate a compelling product vision, mission, and strategic pillars. Learn to set Objectives and Key Results (OKRs) and Key Performance Indicators (KPIs) that align with company goals, and establish a North Star Metric for long-term guidance.",
+          "description": "Define strategic product roadmaps: Translating executive company vision into multi-year product strategy, strategic pillars, and measurable OKRs.",
           "resources": [
             {
               "title": "Measure What Matters (OKRs)",
@@ -257,13 +268,15 @@
               "url": "/data/docs/product_manager/product_vision_strategy.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "ideation_solution_design",
           "name": "Ideation & Solution Design",
           "tag": "essential",
-          "description": "Apply Design Thinking principles to generate innovative solutions. Techniques include structured brainstorming, concept validation, user story mapping, developing user flows, creating wireframes, and rapid, low-fidelity prototyping.",
+          "description": "Lead solution ideation: Opportunity Solution Trees, running design discovery workshops, customer co-design, and rapid hypothesis validation.",
           "resources": [
             {
               "title": "Introduction to Design Thinking",
@@ -290,15 +303,19 @@
               "url": "/data/docs/product_manager/ideation_solution_design.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 25
     },
     {
       "id": "product_development_execution",
       "name": "Product Development & Execution",
       "tag": "essential",
-      "description": "Translate strategic vision into shippable product increments through effective roadmapping, agile development practices, detailed requirements, and successful launch strategies.",
+      "description": "Drive product execution: Roadmapping, backlog grooming, feature prioritization frameworks, and agile sprint delivery.",
       "resources": [
         {
           "title": "A/B Testing Explained (CXL)",
@@ -321,7 +338,7 @@
           "id": "product_roadmapping",
           "name": "Product Roadmapping",
           "tag": "essential",
-          "description": "Learn to create, communicate, and manage different types of product roadmaps (e.g., Now/Next/Later, Theme-based, Outcome-driven). Master techniques for aligning stakeholders, managing expectations, and adapting roadmaps to evolving strategies.",
+          "description": "Build outcome-based roadmaps: Now-Next-Later roadmap formats, thematic roadmaps, managing dependency risks, and transparent stakeholder communication.",
           "resources": [
             {
               "title": "Product Roadmapping Guide",
@@ -343,13 +360,15 @@
               "url": "/data/docs/product_manager/product_roadmapping.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         },
         {
           "id": "prioritization_frameworks",
           "name": "Prioritization Frameworks",
           "tag": "essential",
-          "description": "Master various prioritization techniques such as RICE, MoSCoW, KANO model, Weighted Shortest Job First (WSJF), and impact-effort matrices for making informed tradeoff decisions.",
+          "description": "Prioritize ruthlessly: RICE (Reach, Impact, Confidence, Effort), MoSCoW, Kano model, cost of delay, and balancing technical debt with new feature development.",
           "resources": [
             {
               "title": "RICE Prioritization",
@@ -371,13 +390,15 @@
               "url": "/data/docs/product_manager/prioritization_frameworks.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "requirements_documentation",
           "name": "Requirements & Documentation",
           "tag": "essential",
-          "description": "Write clear, concise, and actionable user stories, epics, and themes with detailed acceptance criteria. Develop comprehensive Product Requirements Documents (PRDs) or their agile equivalents, and effectively collaborate on technical specifications with engineering.",
+          "description": "Author clear Product Requirement Documents (PRDs): User stories, acceptance criteria, edge cases, data requirements, success metrics, and non-functional requirements.",
           "resources": [
             {
               "title": "User Stories with Examples",
@@ -404,13 +425,15 @@
               "url": "/data/docs/product_manager/requirements_documentation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         },
         {
           "id": "agile_development_practices",
           "name": "Agile Development Practices",
           "tag": "essential",
-          "description": "Understand and apply Agile methodologies like Scrum and Kanban. Participate in sprint planning, stand-ups, reviews, and retrospectives, fostering effective collaboration with engineering and design teams.",
+          "description": "Partner with engineering in Agile: Scrum/Kanban ceremonies, backlog refinement, sprint planning, estimating effort, and unblocking development bottlenecks.",
           "resources": [
             {
               "title": "Scrum Guide",
@@ -437,13 +460,15 @@
               "url": "/data/docs/product_manager/agile_development_practices.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "go_to_market_launch",
           "name": "Go-to-Market & Launch Strategies",
           "tag": "essential",
-          "description": "Plan and execute successful product launches, including soft launches, beta programs, and phased rollouts. Coordinate effectively with marketing, sales, customer support, and PR teams, and establish post-launch monitoring and feedback loops.",
+          "description": "Execute Go-To-Market (GTM) launches: Partnering with Product Marketing, sales enablement, customer support training, release notes, and phased beta rollouts.",
           "resources": [
             {
               "title": "Go-to-Market Strategy Guide",
@@ -465,13 +490,15 @@
               "url": "/data/docs/product_manager/go_to_market_launch.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "practice_feature_prioritization",
           "name": "Practice: Feature Prioritization Memo",
           "tag": "advanced",
-          "description": "Apply learned prioritization frameworks to compare feature ideas using user evidence, effort, risks, success metrics, and recommend an optimized roadmap order.",
+          "description": "Practice Lab: Author a feature prioritization memo: Evaluate 5 competing feature requests using RICE scoring, defend resource allocation tradeoffs, and define KPIs.",
           "resources": [
             {
               "title": "Product Management Full Course 2026 | Product Management Tutorial For Beginners | Simplilearn (Simplilearn)",
@@ -488,15 +515,19 @@
               "url": "/data/docs/product_manager/practice_feature_prioritization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 43
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 22
     },
     {
       "id": "product_growth_optimization",
       "name": "Product Growth & Optimization",
       "tag": "advanced",
-      "description": "Master the art of measuring product performance, running effective experiments, and iterating for continuous improvement to drive sustained product growth.",
+      "description": "Drive product growth: Retention analysis, A/B testing experimentation, viral loops, funnel optimization, and telemetry analysis.",
       "resources": [
         {
           "title": "User Story Mapping Tutorial (ProductPlan)",
@@ -519,7 +550,7 @@
           "id": "product_analytics_fundamentals",
           "name": "Product Analytics Fundamentals",
           "tag": "advanced",
-          "description": "Define key product metrics (AARRR/Pirate metrics, North Star Metric, engagement, retention), create effective dashboards, understand data visualization best practices, and gain proficiency in basic SQL for data querying, along with common analytics tools (e.g., Google Analytics, Amplitude, Mixpanel).",
+          "description": "Master product analytics: Setting up event tracking taxonomies in Amplitude / Mixpanel; analyzing conversion funnels, retention cohorts, and feature adoption.",
           "resources": [
             {
               "title": "Product Metrics Guide",
@@ -551,13 +582,15 @@
               "url": "/data/docs/product_manager/product_analytics_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "experimentation_ab_testing",
           "name": "Experimentation & A/B Testing",
           "tag": "advanced",
-          "description": "Design, implement, and analyze A/B tests and multivariate experiments. Formulate strong, testable hypotheses, understand statistical significance, sample size calculation, and interpret results accurately to inform product decisions and drive iterative improvement.",
+          "description": "Run rigorous A/B experiments: Formulating hypotheses, sample size calculations, statistical significance, minimum detectable effect (MDE), and interpreting experiment results.",
           "resources": [
             {
               "title": "A/B Testing Guide",
@@ -579,13 +612,15 @@
               "url": "/data/docs/product_manager/experimentation_ab_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 45
         },
         {
           "id": "feedback_loops_continuous_improvement",
           "name": "Feedback Loops & Continuous Improvement",
           "tag": "advanced",
-          "description": "Establish robust channels for collecting user feedback (surveys, NPS, support tickets, app store reviews, user forums). Synthesize insights from qualitative and quantitative data, and implement processes for continuous product iteration and improvement, including Voice of Customer (VoC) programs.",
+          "description": "Close customer feedback loops: NPS surveys, customer advisory boards, churn interviews, and funneling feedback into product backlog iterations.",
           "resources": [
             {
               "title": "Net Promoter Score (NPS) Explained",
@@ -607,13 +642,15 @@
               "url": "/data/docs/product_manager/feedback_loops_continuous_improvement.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 28
         },
         {
           "id": "product_lifecycle_management",
           "name": "Product Lifecycle Management",
           "tag": "advanced",
-          "description": "Manage products through their entire lifecycle: introduction, growth, maturity, and decline. Understand strategies for feature deprecation, maintenance, and end-of-life planning.",
+          "description": "Manage full product lifecycles: Introduction, growth, maturity, decline, managing feature sunsetting, and coordinating data migrations.",
           "resources": [
             {
               "title": "Product Lifecycle Management for PMs",
@@ -635,13 +672,15 @@
               "url": "/data/docs/product_manager/product_lifecycle_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 27
         },
         {
           "id": "project_product_case_study",
           "name": "Project: Product Case Study",
           "tag": "advanced",
-          "description": "Develop a comprehensive product teardown or improvement proposal, integrating research, prioritization, roadmap planning, key metrics, and a detailed launch strategy.",
+          "description": "Project: Author an end-to-end Product Case Study: Define market opportunity, analyze user feedback, author detailed PRD, build financial model, and design GTM plan.",
           "resources": [
             {
               "title": "Atlassian Product Management Guide",
@@ -663,15 +702,19 @@
               "url": "/data/docs/product_manager/project_product_case_study.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 94
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 23
     },
     {
       "id": "stakeholder_management_leadership",
       "name": "Stakeholder Management & Leadership",
       "tag": "essential",
-      "description": "Develop crucial communication, negotiation, and leadership skills to effectively align cross-functional teams, influence without authority, and manage diverse stakeholder expectations.",
+      "description": "Lead cross-functional teams: Influencing without authority, executive stakeholder communication, negotiation, and building consensus.",
       "resources": [
         {
           "title": "Product Management 101: Everything You Need to Know (Full Course) (Explained Hub)",
@@ -694,7 +737,7 @@
           "id": "effective_communication_storytelling",
           "name": "Effective Communication & Storytelling",
           "tag": "essential",
-          "description": "Master techniques for communicating product strategy, decisions, and progress to various audiences (executives, engineering, marketing). Learn to tell compelling product stories that resonate and drive alignment.",
+          "description": "Master executive communication: Crafting narrative decks, structuring updates using the Pyramid Principle (Minto Pyramid), and presenting data-driven business cases.",
           "resources": [
             {
               "title": "Storytelling for Product Managers",
@@ -716,13 +759,15 @@
               "url": "/data/docs/product_manager/effective_communication_storytelling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         },
         {
           "id": "influencing_negotiation_skills",
           "name": "Influencing & Negotiation Skills",
           "tag": "essential",
-          "description": "Learn to influence cross-functional teams and stakeholders without direct authority. Develop effective negotiation tactics for resolving conflicts, prioritizing resources, managing dependencies, and achieving consensus across diverse groups.",
+          "description": "Influence without authority: Aligning cross-functional priorities between engineering, design, marketing, legal, and sales leadership.",
           "resources": [
             {
               "title": "Influence Without Authority for PMs",
@@ -744,13 +789,15 @@
               "url": "/data/docs/product_manager/influencing_negotiation_skills.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "cross_functional_collaboration",
           "name": "Cross-functional Collaboration",
           "tag": "essential",
-          "description": "Build strong working relationships with engineering, design, marketing, sales, and customer support. Foster a collaborative environment to deliver integrated product solutions and drive shared goals.",
+          "description": "Foster squad collaboration: Building healthy team culture, psychological safety, celebrating wins, and conducting blameless retrospectives.",
           "resources": [
             {
               "title": "Building Strong Relationships with Engineering",
@@ -772,13 +819,15 @@
               "url": "/data/docs/product_manager/cross_functional_collaboration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "executive_communication_reporting",
           "name": "Executive Communication & Reporting",
           "tag": "essential",
-          "description": "Master the art of communicating complex product strategies, updates, and performance to executive leadership. Learn to create concise, impactful presentations and reports that focus on key insights, decisions, and outcomes.",
+          "description": "Deliver executive updates: Writing concise 1-page monthly memos, QBR presentations, and communicating project risks and mitigations transparently.",
           "resources": [
             {
               "title": "Communicating with Executives",
@@ -800,13 +849,15 @@
               "url": "/data/docs/product_manager/executive_communication_reporting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "conflict_resolution_consensus_building",
           "name": "Conflict Resolution & Consensus Building",
           "tag": "essential",
-          "description": "Develop strategies for identifying and resolving conflicts within product teams and with stakeholders. Learn techniques for active listening, empathy, and facilitating discussions to build consensus and drive forward progress.",
+          "description": "Resolve organizational conflicts: Navigating competing resource demands, managing difficult stakeholders, and building team consensus around data.",
           "resources": [
             {
               "title": "Conflict Resolution Skills for PMs",
@@ -828,15 +879,19 @@
               "url": "/data/docs/product_manager/conflict_resolution_consensus_building.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 22
     },
     {
       "id": "pm_career_path_interview_prep",
       "name": "PM Career Path & Interview Prep",
       "tag": "advanced",
-      "description": "Transform your product skills into job-ready evidence, excel in interviews, and strategically plan for long-term career growth in product management.",
+      "description": "Advance in Product Management: Product sense interviews, analytical problem solving, behavioral leadership, and executive presence.",
       "resources": [
         {
           "title": "Product Manager Interview Guide",
@@ -864,7 +919,7 @@
           "id": "product_case_interviews",
           "name": "Product Case Interviews",
           "tag": "advanced",
-          "description": "Practice structured approaches to product sense, estimation, metrics, prioritization, tradeoff, and launch questions commonly encountered in PM interviews.",
+          "description": "Master product design cases: CIRCLES method, diagnosing metrics drops, defining product metrics for novel products, and improving existing apps.",
           "resources": [
             {
               "title": "Product Management Interview Guide",
@@ -886,13 +941,15 @@
               "url": "/data/docs/product_manager/product_case_interviews.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         },
         {
           "id": "portfolio_resume_building",
           "name": "Portfolio & Resume Building",
           "tag": "advanced",
-          "description": "Curate a strong product portfolio showcasing product teardowns, PRDs/User Stories, roadmap samples, metrics dashboards, and a summary of impactful projects. Learn to craft a compelling resume and utilize the STAR method for interview storytelling.",
+          "description": "Curate an elite PM resume: Quantifying business impact (revenue generated, retention increased, churn reduced), and showcasing strategic leadership.",
           "resources": [
             {
               "title": "STAR Interview Method",
@@ -919,13 +976,15 @@
               "url": "/data/docs/product_manager/portfolio_resume_building.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         },
         {
           "id": "networking_personal_branding",
           "name": "Networking & Personal Branding",
           "tag": "advanced",
-          "description": "Strategically build a professional network, establish an online presence, and cultivate thought leadership to enhance career opportunities and impact within the product community.",
+          "description": "Build personal brand: Sharing product teardowns on LinkedIn/Substack, participating in PM communities (Lenny's Newsletter, Mind the Product), and mentoring.",
           "resources": [
             {
               "title": "Networking for Product Managers",
@@ -947,13 +1006,15 @@
               "url": "/data/docs/product_manager/networking_personal_branding.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "behavioral_system_design_interviews",
           "name": "Behavioral & System Design Interviews",
           "tag": "advanced",
-          "description": "Prepare for behavioral interview questions by articulating experiences using frameworks like STAR. Understand fundamental system design concepts and common architectural patterns relevant to product managers to answer basic system design questions.",
+          "description": "Master behavioral and technical interviews: STAR method leadership stories, explaining technical architecture tradeoffs to engineers, and executive interviews.",
           "resources": [
             {
               "title": "System Design Interview Prep for PMs",
@@ -980,9 +1041,14 @@
               "url": "/data/docs/product_manager/behavioral_system_design_interviews.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 31
     }
-  ]
+  ],
+  "total_exp": 1000
 }

@@ -47,32 +47,34 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Live Multiplayer Whiteboard & Chat Engine",
+        "title": "High-Concurrency Real-Time Collaboration Canvas with Phoenix LiveView",
         "tech_stack": [
           "Elixir",
           "Phoenix LiveView",
-          "PubSub",
-          "PostgreSQL"
+          "OTP GenStage",
+          "Phoenix PubSub",
+          "Tailwind CSS"
         ],
-        "description": "Build a zero-JavaScript real-time collaborative workspace supporting thousands of concurrent users per node."
+        "description": "Build a reactive multi-user whiteboard canvas featuring sub-10ms cursor synchronization, presence tracking via Phoenix Presence, and operational transform state."
       },
       {
-        "title": "Real-Time Collaborative Canvas with Phoenix LiveView",
+        "title": "Distributed IoT Telemetry Ingestion Engine with BEAM OTP Supervision",
         "tech_stack": [
           "Elixir",
-          "Phoenix LiveView",
-          "BEAM/OTP",
-          "PostgreSQL",
-          "Tailwind"
+          "Broadway",
+          "TimescaleDB",
+          "Cowboy",
+          "Docker"
         ],
-        "description": "Build a zero-JavaScript collaborative digital canvas supporting thousands of concurrent users utilizing OTP GenServers, PubSub distribution, and distributed Presence."
+        "description": "Architect a fault-tolerant streaming ingestion pipeline processing 20,000 sensor telemetry messages per second with OTP backpressure and supervision trees."
       }
     ],
     "interview_focus": [
-      "BEAM Process Isolation & \"Let it Crash\" Philosophy",
-      "GenServer State Loop & Message Mailbox",
-      "Phoenix LiveView WebSockets vs REST",
-      "Ecto Changeset Validations"
+      "BEAM Virtual Machine Internals (Actor Model, Process Mailboxes, Preemptive Scheduling)",
+      "OTP Architecture (GenServer, Supervisor One-for-One vs Rest-for-One, Application Trees)",
+      "Phoenix LiveView Lifecycle (Mount, Handle Params, Handle Event, Live Navigation)",
+      "Concurrency Primitives (Task, Agent, Registry, ETS Tables for In-Memory Caching)",
+      "Metaprogramming in Elixir (Macros, Quote/Unquote, Compile-Time Code Generation)"
     ],
     "certifications": [
       "AWS Certified Solutions Architect - Associate",
@@ -86,7 +88,7 @@
       "id": "elixir_fundamentals",
       "name": "Elixir Language Fundamentals",
       "tag": "essential",
-      "description": "Master the core syntax, functional programming paradigms, and foundational concepts of the Elixir language to build robust and maintainable applications.",
+      "description": "Master Elixir language foundations: Erlang BEAM virtual machine architecture, immutable data structures, pattern matching, and functional paradigms.",
       "resources": [
         {
           "title": "Elixir Getting Started",
@@ -119,7 +121,7 @@
           "id": "elixir_syntax_data_types",
           "name": "Syntax, Data Types & Pattern Matching",
           "tag": "essential",
-          "description": "Understand basic syntax, core data types (atoms, lists, maps, tuples), and the power of pattern matching in Elixir.",
+          "description": "Master Elixir data primitives: Atoms, tuples, lists, maps, keyword lists, binaries/bitstrings, and pattern matching with the pin operator (`^`).",
           "resources": [
             {
               "title": "Elixir School: Basic Types",
@@ -146,13 +148,15 @@
               "url": "/data/docs/elixir_phoenix_developer/elixir_syntax_data_types.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 9
         },
         {
           "id": "elixir_functional_concepts",
           "name": "Functional Programming Concepts",
           "tag": "essential",
-          "description": "Grasp immutability, pure functions, recursion, higher-order functions, and pipe operator for clean and declarative code.",
+          "description": "Master functional programming in Elixir: Pure functions, immutability, first-class functions, pipeline operator (`|>`), and recursion over mutable loops.",
           "resources": [
             {
               "title": "Elixir School: The Pipe Operator",
@@ -174,13 +178,15 @@
               "url": "/data/docs/elixir_phoenix_developer/elixir_functional_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 10
         },
         {
           "id": "elixir_modules_functions",
           "name": "Modules, Functions & Organizers",
           "tag": "essential",
-          "description": "Learn to define modules, functions, use `defp` for private functions, and organize code with `import`, `alias`, `require`.",
+          "description": "Organize code with modules: Public/private functions (`def`/`defp`), module attributes, default arguments, guard clauses, and struct definitions (`defstruct`).",
           "resources": [
             {
               "title": "Elixir School: Modules",
@@ -207,13 +213,15 @@
               "url": "/data/docs/elixir_phoenix_developer/elixir_modules_functions.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 14
         },
         {
           "id": "elixir_enums_comprehensions",
           "name": "Enum Module & Comprehensions",
           "tag": "essential",
-          "description": "Effectively work with collections using the powerful `Enum` module and leverage list/map comprehensions for concise data transformations.",
+          "description": "Process collections: Eager enumeration with `Enum`, lazy evaluation with `Stream`, list comprehensions (`for`), and reduce pipelines.",
           "resources": [
             {
               "title": "Elixir School: Enum",
@@ -240,13 +248,15 @@
               "url": "/data/docs/elixir_phoenix_developer/elixir_enums_comprehensions.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 12
         },
         {
           "id": "elixir_error_handling",
           "name": "Error Handling & Control Flow",
           "tag": "essential",
-          "description": "Implement robust error handling strategies using `case`, `with`, `try/catch`, `raise`, `exit`, and understand different types of errors.",
+          "description": "Handle errors idiomatically: The 'let it crash' philosophy, `with` statements for chaining operations that return `{:ok, val}` or `{:error, reason}`, and exception handling.",
           "resources": [
             {
               "title": "Elixir School: Error Handling",
@@ -268,13 +278,15 @@
               "url": "/data/docs/elixir_phoenix_developer/elixir_error_handling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 11
         },
         {
           "id": "elixir_mix_escript",
           "name": "Mix Build Tool & Escript",
           "tag": "essential",
-          "description": "Understand Mix for project management, dependencies, tasks, and building executable Escripts.",
+          "description": "Master build tooling: Mix build tool, managing dependencies with Hex, running tasks, compiling executables with Escript, and environment configuration.",
           "resources": [
             {
               "title": "Elixir School: Mix",
@@ -296,15 +308,19 @@
               "url": "/data/docs/elixir_phoenix_developer/elixir_mix_escript.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 10
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 8
     },
     {
       "id": "elixir_otp_concurrency",
       "name": "OTP and Concurrency Model",
       "tag": "essential",
-      "description": "Dive deep into Elixir's concurrency model based on the Erlang Virtual Machine (BEAM) and the Open Telecom Platform (OTP) for building fault-tolerant and distributed systems.",
+      "description": "Master the Open Telecom Platform (OTP) concurrency model: Lightweight actor processes, message passing, and fault-tolerant supervision trees.",
       "resources": [
         {
           "title": "Elixir School: Concurrency",
@@ -342,7 +358,7 @@
           "id": "elixir_processes_messaging",
           "name": "Elixir Processes & Message Passing",
           "tag": "essential",
-          "description": "Learn about lightweight processes, message passing, `spawn`, `send`, `receive` for concurrent execution.",
+          "description": "Spawn and manage BEAM processes: Process mailboxes, asynchronous message passing (`send`/`receive`), process links (`spawn_link`), and process monitors (`spawn_monitor`).",
           "resources": [
             {
               "title": "Elixir School: Processes",
@@ -364,13 +380,15 @@
               "url": "/data/docs/elixir_phoenix_developer/elixir_processes_messaging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 15
         },
         {
           "id": "elixir_gen_server",
           "name": "GenServer Behavior",
           "tag": "essential",
-          "description": "Master `GenServer` for building robust server-client applications, managing state, and handling asynchronous requests.",
+          "description": "Master GenServer: Client-server callbacks (`init`, `handle_call`, `handle_cast`, `handle_info`), managing state, synchronous vs asynchronous calls, and timeouts.",
           "resources": [
             {
               "title": "Elixir School: GenServer",
@@ -397,13 +415,15 @@
               "url": "/data/docs/elixir_phoenix_developer/elixir_gen_server.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 14
         },
         {
           "id": "elixir_agent_task",
           "name": "Agent & Task Behaviors",
           "tag": "essential",
-          "description": "Utilize `Agent` for simple state management and `Task` for running one-off, asynchronous computations.",
+          "description": "Utilize OTP abstractions: `Agent` for simplified shared state encapsulation, and `Task` / `Task.Supervisor` for concurrent asynchronous background execution.",
           "resources": [
             {
               "title": "Elixir School: Agent",
@@ -430,13 +450,15 @@
               "url": "/data/docs/elixir_phoenix_developer/elixir_agent_task.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 14
         },
         {
           "id": "elixir_supervisors",
           "name": "Supervisors & Supervision Trees",
           "tag": "essential",
-          "description": "Implement fault-tolerant systems using `Supervisor` to manage process lifecycles and recovery strategies.",
+          "description": "Design resilient supervision trees: Restart strategies (`:one_for_one`, `:one_for_all`, `:rest_for_one`), supervisor hierarchies, and dynamic child processes with `DynamicSupervisor`.",
           "resources": [
             {
               "title": "Elixir School: Supervisors",
@@ -458,13 +480,15 @@
               "url": "/data/docs/elixir_phoenix_developer/elixir_supervisors.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 16
         },
         {
           "id": "elixir_applications_releases",
           "name": "OTP Applications & Releases",
           "tag": "essential",
-          "description": "Structure your projects as OTP applications and learn to build standalone releases for deployment with `Mix Release`.",
+          "description": "Package OTP applications: Application callbacks, environment configurations, and generating self-contained production releases using `mix release`.",
           "resources": [
             {
               "title": "Elixir School: Applications",
@@ -491,15 +515,19 @@
               "url": "/data/docs/elixir_phoenix_developer/elixir_applications_releases.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 10
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 11
     },
     {
       "id": "phoenix_framework_core",
       "name": "Phoenix Framework Essentials",
       "tag": "essential",
-      "description": "Get started with the Phoenix web framework, understanding its structure, MVC pattern, routing, and basic request/response cycle for building powerful web applications.",
+      "description": "Architect web applications with Phoenix: Functional MVC design, endpoint pipelines, router plugs, and context boundaries.",
       "resources": [
         {
           "title": "Phoenix Framework Guides",
@@ -527,7 +555,7 @@
           "id": "phoenix_project_setup",
           "name": "Phoenix Project Setup",
           "tag": "essential",
-          "description": "Set up a new Phoenix project, understand its directory structure, and basic configuration.",
+          "description": "Initialize Phoenix applications: Project structure, directory layout, configuring database adapters, and running local development servers.",
           "resources": [
             {
               "title": "Phoenix Installation Guide",
@@ -554,13 +582,15 @@
               "url": "/data/docs/elixir_phoenix_developer/phoenix_project_setup.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 27
         },
         {
           "id": "phoenix_routing_controllers",
           "name": "Routing & Controllers",
           "tag": "essential",
-          "description": "Define routes, create controllers, handle HTTP requests, and manage request parameters.",
+          "description": "Implement routing and controllers: Scopes, pipelines (`:browser`, `:api`), resource routing, controller actions, and rendering JSON/HTML responses.",
           "resources": [
             {
               "title": "Phoenix.Router Guide",
@@ -587,13 +617,15 @@
               "url": "/data/docs/elixir_phoenix_developer/phoenix_routing_controllers.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 13
         },
         {
           "id": "phoenix_plugs_middleware",
           "name": "Plugs & Middleware",
           "tag": "essential",
-          "description": "Understand and utilize Plugs for building modular and composable web request pipelines, including custom plugs and the Plug specification.",
+          "description": "Master the Plug specification: Module plugs and function plugs, connection transformation (`Plug.Conn`), authentication plugs, and pipeline sequencing.",
           "resources": [
             {
               "title": "Plug Introduction",
@@ -620,13 +652,15 @@
               "url": "/data/docs/elixir_phoenix_developer/phoenix_plugs_middleware.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 17
         },
         {
           "id": "phoenix_views_templates",
           "name": "Views & EEx Templates",
           "tag": "essential",
-          "description": "Work with Phoenix views, EEx templates, layouts, and helpers for rendering dynamic HTML.",
+          "description": "Render dynamic views: Phoenix.Component, HEEx (HTML + Embedded Elixir) templating engine, component slots, layouts, and compile-time HTML validation.",
           "resources": [
             {
               "title": "Phoenix.View Guide",
@@ -653,13 +687,15 @@
               "url": "/data/docs/elixir_phoenix_developer/phoenix_views_templates.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 13
         },
         {
           "id": "phoenix_contexts_app_structure",
           "name": "Contexts & Application Structure",
           "tag": "essential",
-          "description": "Organize business logic using Phoenix Contexts for a clear, maintainable, and domain-driven application architecture.",
+          "description": "Enforce Domain-Driven Design with Contexts: Decoupling business logic from the web interface using dedicated Elixir context modules.",
           "resources": [
             {
               "title": "Phoenix Contexts (Official Blog Post)",
@@ -686,13 +722,15 @@
               "url": "/data/docs/elixir_phoenix_developer/phoenix_contexts_app_structure.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 12
         },
         {
           "id": "phoenix_static_assets",
           "name": "Static Assets & Asset Pipeline",
           "tag": "essential",
-          "description": "Manage static files, integrate with asset bundlers like esbuild, and understand the asset pipeline for efficient front-end delivery.",
+          "description": "Manage static assets: Tailwind CSS integration, Esbuild bundling, asset digests with `mix phx.digest`, and cache headers.",
           "resources": [
             {
               "title": "Phoenix Static Files (Official Docs)",
@@ -714,13 +752,15 @@
               "url": "/data/docs/elixir_phoenix_developer/phoenix_static_assets.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 12
         },
         {
           "id": "phoenix_channels_intro",
           "name": "Introduction to Phoenix Channels",
           "tag": "essential",
-          "description": "Understand the basics of Phoenix Channels for real-time communication, including topics and pub/sub patterns.",
+          "description": "Implement real-time bidirectional communication: Phoenix Channels, WebSockets protocol, topic multiplexing, socket authentication, and broadcasting.",
           "resources": [
             {
               "title": "Phoenix Channels Guide",
@@ -737,15 +777,19 @@
               "url": "/data/docs/elixir_phoenix_developer/phoenix_channels_intro.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 10
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 10
     },
     {
       "id": "ecto_data_persistence",
       "name": "Data Persistence with Ecto",
       "tag": "essential",
-      "description": "Learn how to interact with databases using Ecto, Elixir's powerful data mapping and query tool, enabling robust data management in your applications.",
+      "description": "Master data persistence with Ecto: Schemas, migrations, changesets, repositories, and complex SQL queries.",
       "resources": [
         {
           "title": "Ecto Documentation",
@@ -778,7 +822,7 @@
           "id": "ecto_schemas_migrations",
           "name": "Ecto Schemas & Migrations",
           "tag": "essential",
-          "description": "Define data structures with Ecto schemas and manage database changes using migrations.",
+          "description": "Define database schemas and migrations: Table mapping, field types, database constraints, reversible migrations, and indexes.",
           "resources": [
             {
               "title": "Ecto.Schema Guide",
@@ -805,13 +849,15 @@
               "url": "/data/docs/elixir_phoenix_developer/ecto_schemas_migrations.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 12
         },
         {
           "id": "ecto_changesets",
           "name": "Ecto Changesets",
           "tag": "essential",
-          "description": "Master `Changesets` for data validation, casting, and manipulation before persisting to the database.",
+          "description": "Validate and cast data with Changesets: Data casting (`cast`), validations (`validate_required`, `validate_format`), custom validation functions, and error handling.",
           "resources": [
             {
               "title": "Ecto.Changeset Guide",
@@ -833,13 +879,15 @@
               "url": "/data/docs/elixir_phoenix_developer/ecto_changesets.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 14
         },
         {
           "id": "ecto_queries_repos",
           "name": "Ecto Queries & Repositories",
           "tag": "essential",
-          "description": "Build powerful queries using Ecto.Query and interact with your database via Ecto.Repo.",
+          "description": "Query databases with Ecto: Compositional query syntax (`Ecto.Query`), dynamic queries, join operations, preloading associations, and `Repo` operations.",
           "resources": [
             {
               "title": "Ecto.Query Guide",
@@ -866,13 +914,15 @@
               "url": "/data/docs/elixir_phoenix_developer/ecto_queries_repos.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 10
         },
         {
           "id": "ecto_associations",
           "name": "Ecto Associations",
           "tag": "essential",
-          "description": "Handle relationships between schemas (has_many, belongs_to, has_one, many_to_many) for complex data models.",
+          "description": "Model relationships: `has_many`, `belongs_to`, `many_to_many`, dependent delete callbacks, and managing nested associations with `cast_assoc`.",
           "resources": [
             {
               "title": "Ecto: Associations and Preloading",
@@ -889,13 +939,15 @@
               "url": "/data/docs/elixir_phoenix_developer/ecto_associations.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 12
         },
         {
           "id": "ecto_transactions_multi",
           "name": "Transactions & Ecto.Multi",
           "tag": "essential",
-          "description": "Ensure data consistency with database transactions and compose multiple Ecto operations atomically using `Ecto.Multi`.",
+          "description": "Execute atomic database operations: Database transactions, and orchestrating complex multi-step database workflows using `Ecto.Multi`.",
           "resources": [
             {
               "title": "Ecto.Repo.transaction (Hexdocs)",
@@ -922,13 +974,15 @@
               "url": "/data/docs/elixir_phoenix_developer/ecto_transactions_multi.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 12
         },
         {
           "id": "ecto_embedded_custom_types",
           "name": "Embedded Schemas & Custom Types",
           "tag": "advanced",
-          "description": "Work with embedded schemas for complex data structures within a single record and define custom Ecto types for specific data representations.",
+          "description": "Implement advanced types: Embedded schemas (`embeds_one`, `embeds_many`) for document-style fields, and custom types implementing the `Ecto.Type` behavior.",
           "resources": [
             {
               "title": "Ecto.Schema: Embedded Schemas",
@@ -955,15 +1009,19 @@
               "url": "/data/docs/elixir_phoenix_developer/ecto_embedded_custom_types.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 19
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 10
     },
     {
       "id": "phoenix_liveview",
       "name": "Real-time UIs with Phoenix LiveView",
       "tag": "essential",
-      "description": "Master Phoenix LiveView to build rich, interactive user interfaces with server-rendered HTML and minimal JavaScript, creating highly responsive web applications.",
+      "description": "Build interactive, real-time web applications without JavaScript using Phoenix LiveView and server-side state machines.",
       "resources": [
         {
           "title": "Phoenix LiveView Guides",
@@ -991,7 +1049,7 @@
           "id": "liveview_basics",
           "name": "LiveView Lifecycle & Interactions",
           "tag": "essential",
-          "description": "Understand the LiveView lifecycle (`mount`, `handle_event`, `render`), state management, and basic user interactions.",
+          "description": "Master LiveView lifecycle: Mount phase, render phase, event handling (`phx-click`, `phx-submit`), and diff tracking over WebSockets.",
           "resources": [
             {
               "title": "LiveView Lifecycle (Official Docs)",
@@ -1018,13 +1076,15 @@
               "url": "/data/docs/elixir_phoenix_developer/liveview_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 12
         },
         {
           "id": "liveview_components",
           "name": "LiveComponents & Layouts",
           "tag": "essential",
-          "description": "Create reusable LiveComponents, manage contexts, and utilize layouts for consistent UI.",
+          "description": "Build modular LiveView UIs: Stateless functional components, stateful `LiveComponent` modules with isolated state, and slot composition.",
           "resources": [
             {
               "title": "LiveComponents (Official Docs)",
@@ -1051,13 +1111,15 @@
               "url": "/data/docs/elixir_phoenix_developer/liveview_components.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 12
         },
         {
           "id": "liveview_forms_validation",
           "name": "Forms & Validation in LiveView",
           "tag": "essential",
-          "description": "Handle forms, implement real-time client-side and server-side validation using Ecto Changesets in LiveView.",
+          "description": "Handle real-time form validation: Inline error feedback with `phx-change`, debounce/throttle controls, and form submission with Changesets.",
           "resources": [
             {
               "title": "Form Bindings and Inputs (Official Docs)",
@@ -1079,13 +1141,15 @@
               "url": "/data/docs/elixir_phoenix_developer/liveview_forms_validation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 12
         },
         {
           "id": "liveview_uploads_streaming",
           "name": "File Uploads & Streaming",
           "tag": "advanced",
-          "description": "Implement direct-to-S3 or server-backed file uploads and leverage LiveView's streaming capabilities for efficient data display.",
+          "description": "Manage uploads and streaming: Reactive direct-to-cloud file uploads (S3), drag-and-drop file inputs, progress tracking, and LiveView streams for infinite scroll.",
           "resources": [
             {
               "title": "File Uploads (Official LiveView Docs)",
@@ -1112,13 +1176,15 @@
               "url": "/data/docs/elixir_phoenix_developer/liveview_uploads_streaming.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 20
         },
         {
           "id": "liveview_authentication_authorization",
           "name": "Authentication & Authorization with LiveView",
           "tag": "essential",
-          "description": "Implement user authentication and authorization logic within LiveView applications, including session management and access control.",
+          "description": "Secure LiveView applications: Session-based authentication via `phx.gen.auth`, live session hooks (`on_mount`), and securing websocket connections.",
           "resources": [
             {
               "title": "Phoenix.Auth (Hexdocs, common patterns)",
@@ -1135,13 +1201,15 @@
               "url": "/data/docs/elixir_phoenix_developer/liveview_authentication_authorization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 13
         },
         {
           "id": "liveview_js_interop",
           "name": "JavaScript Interoperability",
           "tag": "advanced",
-          "description": "Integrate custom JavaScript using `phx-hook`, `JS.exec`, and manage client-side features that LiveView doesn't cover.",
+          "description": "Interoperate with client JavaScript: Client hooks (`phx-hook`), push events from server to client (`push_event`), and handling DOM events (`handleEvent`).",
           "resources": [
             {
               "title": "JavaScript Interoperability (Official Docs)",
@@ -1163,15 +1231,19 @@
               "url": "/data/docs/elixir_phoenix_developer/liveview_js_interop.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 19
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 10
     },
     {
       "id": "testing_qa",
       "name": "Testing, Debugging & Quality Assurance",
       "tag": "essential",
-      "description": "Implement robust testing strategies, effective debugging techniques, and best practices for code quality in Elixir and Phoenix applications to ensure reliability.",
+      "description": "Ensure application quality: Automated testing with ExUnit, property testing, database sandboxes, and static analysis.",
       "resources": [
         {
           "title": "Elixir School: Testing",
@@ -1204,7 +1276,7 @@
           "id": "exunit_unit_integration",
           "name": "ExUnit: Unit & Integration Testing",
           "tag": "essential",
-          "description": "Write comprehensive unit tests for Elixir modules and integration tests for application logic using ExUnit.",
+          "description": "Test with ExUnit: Writing unit tests, assertions (`assert`, `refute`), test setup blocks, doctests, and parallel test execution.",
           "resources": [
             {
               "title": "Writing Tests (Elixir Lang Docs)",
@@ -1226,13 +1298,15 @@
               "url": "/data/docs/elixir_phoenix_developer/exunit_unit_integration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 9
         },
         {
           "id": "elixir_mocking_stubbing",
           "name": "Mocking & Stubbing in Tests",
           "tag": "advanced",
-          "description": "Learn techniques for isolating units of code during testing using mocking, stubbing, and dependency injection patterns in Elixir.",
+          "description": "Mock external dependencies: Mox library, defining behaviors (`@callback`), and verifying mock expectations without altering global state.",
           "resources": [
             {
               "title": "Testing Elixir with Mocks and Stubs",
@@ -1259,13 +1333,15 @@
               "url": "/data/docs/elixir_phoenix_developer/elixir_mocking_stubbing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 17
         },
         {
           "id": "phoenix_liveview_testing",
           "name": "Testing Phoenix & LiveView",
           "tag": "essential",
-          "description": "Learn to test Phoenix controllers, views, channels, and specifically LiveView components and interactions.",
+          "description": "Test Phoenix and LiveView: `Phoenix.LiveViewTest` helpers (`live`, `render_click`, `render_submit`), asserting DOM updates, and controller integration tests.",
           "resources": [
             {
               "title": "Phoenix.ConnTest Guide",
@@ -1292,13 +1368,15 @@
               "url": "/data/docs/elixir_phoenix_developer/phoenix_liveview_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 14
         },
         {
           "id": "ecto_testing_strategies",
           "name": "Ecto Database Testing",
           "tag": "essential",
-          "description": "Implement database testing strategies, including transactional tests and seeding data for tests.",
+          "description": "Test database logic: Ecto SQL Sandbox (`Ecto.Adapters.SQL.Sandbox`) for isolated, concurrent, and rolled-back database tests.",
           "resources": [
             {
               "title": "Testing Ecto (Ecto Docs)",
@@ -1320,13 +1398,15 @@
               "url": "/data/docs/elixir_phoenix_developer/ecto_testing_strategies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 15
         },
         {
           "id": "elixir_code_quality_tools",
           "name": "Code Quality & Static Analysis",
           "tag": "essential",
-          "description": "Utilize tools like `mix format` for consistent code styling and `Credo` for static analysis to enforce coding standards and identify potential issues.",
+          "description": "Enforce code quality: Static analysis with Dialyzer and Dialyxir, code formatting with `mix format`, and linting with Credo.",
           "resources": [
             {
               "title": "Mix Format (Official Elixir Docs)",
@@ -1353,13 +1433,15 @@
               "url": "/data/docs/elixir_phoenix_developer/elixir_code_quality_tools.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 12
         },
         {
           "id": "debugging_tools",
           "name": "Debugging & Observability Tools",
           "tag": "essential",
-          "description": "Utilize `IEx`, `IO.inspect`, `Logger`, and the Erlang `Observer` for effective debugging and runtime inspection.",
+          "description": "Debug running BEAM systems: Erlang Observer GUI, `IEx.pry`, logging with Logger, and inspecting process message queues.",
           "resources": [
             {
               "title": "Elixir School: Logging",
@@ -1386,15 +1468,19 @@
               "url": "/data/docs/elixir_phoenix_developer/debugging_tools.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 12
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 13
     },
     {
       "id": "deployment_observability",
       "name": "Deployment, Operations & Observability",
       "tag": "advanced",
-      "description": "Learn to deploy, monitor, and maintain Elixir/Phoenix applications in production environments, focusing on reliability, security, and performance at scale.",
+      "description": "Deploy and monitor production Elixir/Phoenix systems: Docker packaging, clustering, telemetry, and zero-downtime releases.",
       "resources": [
         {
           "title": "Building and Deploying Elixir Applications (DockYard)",
@@ -1422,7 +1508,7 @@
           "id": "elixir_deployment_strategies",
           "name": "Elixir Deployment Strategies",
           "tag": "advanced",
-          "description": "Explore various deployment methods like releases, Docker, cloud platforms (Gigalixir, Fly.io, Kubernetes) and understand their trade-offs.",
+          "description": "Deploy Phoenix to production: Fly.io, Gigalixir, AWS ECS, or Kubernetes; containerizing releases with multi-stage Alpine Dockerfiles.",
           "resources": [
             {
               "title": "Deploying Elixir to Fly.io",
@@ -1449,13 +1535,15 @@
               "url": "/data/docs/elixir_phoenix_developer/elixir_deployment_strategies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 17
         },
         {
           "id": "elixir_env_config_secrets",
           "name": "Environment Configuration & Secrets Management",
           "tag": "advanced",
-          "description": "Effectively manage environment-specific configurations and securely handle sensitive data and secrets in Elixir applications.",
+          "description": "Manage configuration: Runtime configuration with `config/runtime.exs`, environment variables, and secure credential management.",
           "resources": [
             {
               "title": "Managing Configuration (Elixir School)",
@@ -1482,13 +1570,15 @@
               "url": "/data/docs/elixir_phoenix_developer/elixir_env_config_secrets.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 12
         },
         {
           "id": "elixir_ci_cd_pipelines",
           "name": "CI/CD Pipelines for Elixir/Phoenix",
           "tag": "advanced",
-          "description": "Set up continuous integration and continuous deployment pipelines using tools like GitHub Actions or GitLab CI for automated testing and deployment.",
+          "description": "Automate CI/CD: GitHub Actions pipelines running compilation checks, Credo linting, Dialyzer type-checks, and ExUnit test suites.",
           "resources": [
             {
               "title": "CI/CD for Elixir and Phoenix with GitHub Actions",
@@ -1515,13 +1605,15 @@
               "url": "/data/docs/elixir_phoenix_developer/elixir_ci_cd_pipelines.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 16
         },
         {
           "id": "monitoring_logging_metrics",
           "name": "Monitoring, Logging & Metrics",
           "tag": "advanced",
-          "description": "Implement structured logging with `Logger`, capture application metrics with `Telemetry`, and integrate with monitoring tools (e.g., Prometheus, Grafana).",
+          "description": "Implement observability: Telemetry library (`:telemetry`), Phoenix LiveDashboard for real-time BEAM metrics, and PromEx for Prometheus scraping.",
           "resources": [
             {
               "title": "Telemetry: Metrics for Elixir Applications",
@@ -1548,13 +1640,15 @@
               "url": "/data/docs/elixir_phoenix_developer/monitoring_logging_metrics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 22
         },
         {
           "id": "performance_optimization",
           "name": "Performance Optimization",
           "tag": "advanced",
-          "description": "Identify bottlenecks, optimize Elixir code, database queries, and manage concurrency for high-performance applications.",
+          "description": "Optimize BEAM performance: Profiling with `:fprof`, memory management, ETS (Erlang Term Storage) in-memory caching, and optimizing LiveView diffs.",
           "resources": [
             {
               "title": "Optimizing Elixir applications (AppSignal)",
@@ -1581,13 +1675,15 @@
               "url": "/data/docs/elixir_phoenix_developer/performance_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 18
         },
         {
           "id": "security_best_practices",
           "name": "Security Best Practices",
           "tag": "advanced",
-          "description": "Understand common web vulnerabilities, implement secure coding practices, and secure Phoenix applications (e.g., Cross-Site Request Forgery, SQL Injection, authentication).",
+          "description": "Harden Phoenix security: Content Security Policy (CSP), parameterized SQL queries, secure session cookies, rate limiting with Hammer, and CSRF protection.",
           "resources": [
             {
               "title": "Phoenix Security Guide",
@@ -1614,15 +1710,19 @@
               "url": "/data/docs/elixir_phoenix_developer/security_best_practices.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 23
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 14
     },
     {
       "id": "advanced_elixir_phoenix",
       "name": "Advanced Topics & Ecosystem",
       "tag": "advanced",
-      "description": "Explore deeper into the Elixir and Phoenix ecosystem, covering advanced features, distributed systems, and powerful libraries to extend application capabilities.",
+      "description": "Explore advanced BEAM paradigms: Distributed nodes, metaprogramming macros, and machine learning with Nx.",
       "resources": [
         {
           "title": "Elixir School: Advanced Topics",
@@ -1655,7 +1755,7 @@
           "id": "distributed_elixir_systems",
           "name": "Distributed Elixir Systems",
           "tag": "advanced",
-          "description": "Understand how to build and manage distributed Elixir applications, including clustering, distributed processes, and RPC.",
+          "description": "Build distributed clusters: Connecting Erlang nodes (`Node.connect`), libcluster for automated cluster discovery, and distributed pub/sub with Phoenix PubSub.",
           "resources": [
             {
               "title": "Elixir School: Distributed Elixir",
@@ -1682,13 +1782,15 @@
               "url": "/data/docs/elixir_phoenix_developer/distributed_elixir_systems.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 19
         },
         {
           "id": "advanced_otp_behaviors",
           "name": "Advanced OTP Behaviors (GenStage, GenRegistry)",
           "tag": "advanced",
-          "description": "Explore more advanced OTP behaviors like `GenStage` for building data processing pipelines and `GenRegistry` for distributed named processes.",
+          "description": "Implement high-throughput data processing: GenStage for producer-consumer pipelines, Flow for parallel computing, and Broadway for event stream ingestion (SQS, Kafka).",
           "resources": [
             {
               "title": "Hexdocs: GenStage",
@@ -1715,13 +1817,15 @@
               "url": "/data/docs/elixir_phoenix_developer/advanced_otp_behaviors.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         },
         {
           "id": "meta_programming_macros",
           "name": "Metaprogramming & Macros",
           "tag": "advanced",
-          "description": "Delve into Elixir's metaprogramming capabilities, including understanding and writing macros for code generation and DSLs.",
+          "description": "Master Elixir metaprogramming: Quoting expressions (`quote`), unquoting (`unquote`), AST inspection, writing domain-specific languages (DSLs), and hygiene.",
           "resources": [
             {
               "title": "Elixir School: Metaprogramming",
@@ -1748,13 +1852,15 @@
               "url": "/data/docs/elixir_phoenix_developer/meta_programming_macros.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 19
         },
         {
           "id": "elixir_data_science_ml",
           "name": "Elixir for Data Science & Machine Learning",
           "tag": "advanced",
-          "description": "Explore the growing ecosystem around numerical Elixir, including `Nx` for numerical computing, `Explorer`, and basic machine learning concepts.",
+          "description": "Leverage Elixir for machine learning: Numerical computing with Nx (Numerical Elixir), Axon for neural networks, and Livebook for interactive data science notebooks.",
           "resources": [
             {
               "title": "Nx: Numerical Elixir",
@@ -1771,13 +1877,15 @@
               "url": "/data/docs/elixir_phoenix_developer/elixir_data_science_ml.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 20
         },
         {
           "id": "elixir_ecosystem_libraries",
           "name": "Key Ecosystem Libraries",
           "tag": "advanced",
-          "description": "Explore essential Elixir libraries for common tasks: background jobs (Oban), GraphQL (Absinthe), API clients, and more.",
+          "description": "Utilize key ecosystem tools: Oban for persistent PostgreSQL-backed background jobs, Absinthe for GraphQL APIs, and Finche for HTTP client pooling.",
           "resources": [
             {
               "title": "Oban: Reliable Background Jobs in Elixir",
@@ -1809,15 +1917,19 @@
               "url": "/data/docs/elixir_phoenix_developer/elixir_ecosystem_libraries.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 18
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 14
     },
     {
       "id": "project_portfolio_readiness",
       "name": "Project-Based Learning & Portfolio",
       "tag": "advanced",
-      "description": "Apply your learned skills to build real-world projects, refine problem-solving abilities, and prepare a strong portfolio for career advancement as an Elixir/Phoenix Developer.",
+      "description": "Build a demonstrable Elixir/Phoenix portfolio: End-to-end real-time applications, open-source package publication, and career readiness.",
       "resources": [
         {
           "title": "The Pragmatic Programmer (Book, project-based thinking)",
@@ -1845,7 +1957,7 @@
           "id": "mini_projects_skill_drills",
           "name": "Mini-Projects & Skill Drills",
           "tag": "essential",
-          "description": "Undertake small, focused projects (e.g., chat app, CRUD API, real-time dashboard) to solidify specific Elixir/Phoenix concepts and patterns.",
+          "description": "Execute targeted skill drills: Building a distributed key-value store, a real-time collaborative chat room, and a rate-limiting plug.",
           "resources": [
             {
               "title": "Phoenix TodoMVC Example",
@@ -1867,13 +1979,15 @@
               "url": "/data/docs/elixir_phoenix_developer/mini_projects_skill_drills.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         },
         {
           "id": "capstone_portfolio_project",
           "name": "Capstone Portfolio Project",
           "tag": "advanced",
-          "description": "Design and build a comprehensive, full-stack Elixir/Phoenix application from scratch, showcasing a wide range of skills (e.g., e-commerce platform, project management tool, social media clone).",
+          "description": "Build an enterprise Phoenix LiveView capstone: Real-time collaborative dashboard featuring distributed LiveView components, Oban background processing, Ecto multi-tenant persistence, and Fly.io multi-region clustering.",
           "resources": [
             {
               "title": "Project ideas for your portfolio",
@@ -1900,13 +2014,15 @@
               "url": "/data/docs/elixir_phoenix_developer/capstone_portfolio_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 56
         },
         {
           "id": "elixir_code_review_collaboration",
           "name": "Code Review & Collaborative Development",
           "tag": "advanced",
-          "description": "Participate in code reviews, understand best practices for submitting and evaluating pull requests, and learn effective pair programming techniques.",
+          "description": "Collaborate in Elixir codebases: Idiomatic pattern reviews, following Community Style Guides, and reviewing PRs for process leakage and concurrency safety.",
           "resources": [
             {
               "title": "How to do a code review (Google Engineering Practices)",
@@ -1933,13 +2049,15 @@
               "url": "/data/docs/elixir_phoenix_developer/elixir_code_review_collaboration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 19
         },
         {
           "id": "project_documentation_presentation",
           "name": "Project Documentation & Presentation",
           "tag": "advanced",
-          "description": "Learn to write clear READMEs, create architectural diagrams, document design choices, and effectively present your project's features and technical details.",
+          "description": "Document Elixir projects: Generating HTML documentation with ExDoc, creating interactive Livebook demos, and writing clear architectural guides.",
           "resources": [
             {
               "title": "How to write a great README",
@@ -1961,13 +2079,15 @@
               "url": "/data/docs/elixir_phoenix_developer/project_documentation_presentation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         },
         {
           "id": "elixir_open_source_contributions",
           "name": "Open Source Contributions",
           "tag": "advanced",
-          "description": "Discover how to contribute to existing Elixir/Phoenix open-source projects, a valuable way to learn from experienced developers and build a public portfolio.",
+          "description": "Contribute to the Hex ecosystem: Submitting PRs to community packages, publishing libraries on Hex.pm, and adhering to semantic versioning.",
           "resources": [
             {
               "title": "How to Contribute to Open Source",
@@ -1994,13 +2114,15 @@
               "url": "/data/docs/elixir_phoenix_developer/elixir_open_source_contributions.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 17
         },
         {
           "id": "interview_career_prep",
           "name": "Interview & Career Preparation",
           "tag": "advanced",
-          "description": "Prepare for technical interviews, discuss project experiences, articulate your problem-solving process, and position yourself effectively for Elixir/Phoenix roles.",
+          "description": "Master Elixir technical interviews: Explain the actor model, supervise tree failure recovery, GenServer concurrency semantics, and design scalable real-time systems.",
           "resources": [
             {
               "title": "Elixir Interview Questions",
@@ -2027,9 +2149,14 @@
               "url": "/data/docs/elixir_phoenix_developer/interview_career_prep.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 20
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 32
     }
-  ]
+  ],
+  "total_exp": 1000
 }

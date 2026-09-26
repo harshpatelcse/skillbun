@@ -72,6 +72,65 @@ test('SkillBun 100 Roadmaps Global Standard Suite', async (t) => {
     }
   });
 
+  await t.test('All roadmap nodes have difficulty rating and calibrated EXP points', () => {
+    const validDifficulties = new Set(['beginner', 'intermediate', 'advanced']);
+    let totalNodesChecked = 0;
+
+    function checkNode(node, file) {
+      if (Array.isArray(node)) {
+        for (const item of node) checkNode(item, file);
+        return;
+      }
+      if (!node || typeof node !== 'object') return;
+      totalNodesChecked++;
+
+      assert.ok(node.id, `${file} node must have an id`);
+      assert.ok(node.difficulty, `${file} node ${node.id} must define difficulty`);
+      assert.ok(validDifficulties.has(node.difficulty), `${file} node ${node.id} has invalid difficulty: ${node.difficulty}`);
+      assert.ok(typeof node.exp === 'number' && node.exp > 0, `${file} node ${node.id} must define numeric exp > 0`);
+
+      if (Array.isArray(node.children)) {
+        for (const child of node.children) checkNode(child, file);
+      }
+    }
+
+    for (const file of files) {
+      const raw = fs.readFileSync(path.join(ROADMAPS_DIR, file), 'utf8');
+      const data = JSON.parse(raw);
+      if (data.tree) {
+        checkNode(data.tree, file);
+      }
+    }
+
+    assert.ok(totalNodesChecked >= 3000, `Expected at least 3000 nodes checked, found ${totalNodesChecked}`);
+  });
+
+  await t.test('Every roadmap has an equal 1,000 EXP pool divided across its nodes', () => {
+    for (const file of files) {
+      const raw = fs.readFileSync(path.join(ROADMAPS_DIR, file), 'utf8');
+      const data = JSON.parse(raw);
+      assert.equal(data.total_exp, 1000, `${file} must define total_exp of 1000`);
+
+      let roadmapExpSum = 0;
+      function sumExp(node) {
+        if (Array.isArray(node)) {
+          for (const item of node) sumExp(item);
+          return;
+        }
+        if (!node || typeof node !== 'object') return;
+        roadmapExpSum += node.exp;
+        if (Array.isArray(node.children)) {
+          for (const child of node.children) sumExp(child);
+        }
+      }
+
+      if (data.tree) {
+        sumExp(data.tree);
+      }
+      assert.equal(roadmapExpSum, 1000, `${file} nodes must sum to exactly 1000 EXP (got ${roadmapExpSum})`);
+    }
+  });
+
   await t.test('All roadmap video resources comply with the SkillBun Official Video Standard', () => {
     const verifiedVideosRaw = fs.readFileSync(path.join(process.cwd(), 'public', 'data', 'verified_videos.json'), 'utf8');
     const verifiedVideosSet = new Set(JSON.parse(verifiedVideosRaw));

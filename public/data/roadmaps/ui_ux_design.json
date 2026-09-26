@@ -47,24 +47,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Accessible Fintech Banking Web & Mobile App Redesign",
+        "title": "Comprehensive Multi-Platform Design System & Token Architecture",
         "tech_stack": [
-          "Figma",
-          "Prototyping",
-          "Accessibility Audit (Stark)",
-          "Usability Testing"
+          "Figma Variables",
+          "Token Studio",
+          "Auto Layout 5",
+          "WCAG 2.2 AA",
+          "Storybook"
         ],
-        "description": "Conduct usability tests on a traditional banking portal, design a high-contrast accessible interface, and prototype interactive checkout flows."
+        "description": "Construct an enterprise-scale design system with multi-theme color tokens, accessible typography scales, modular components, and comprehensive design documentation."
       },
       {
-        "title": "Complete Multi-Platform Design System & Interactive Prototype",
+        "title": "Accessible Complex B2B SaaS Workflow Redesign & Usability Case Study",
         "tech_stack": [
+          "User Journey Mapping",
+          "Interactive Prototyping",
+          "Usability Testing",
           "Figma",
-          "Tokens Studio",
-          "UsabilityHub",
-          "FigJam"
+          "Miro"
         ],
-        "description": "Create an extensive, production-ready design system with comprehensive component variants, accessibility contrast compliance, auto-layout tokens, and user test reports."
+        "description": "Lead an end-to-end redesign of an enterprise analytics workflow, documenting user research, wireframing iterations, usability test benchmarks, and measurable task improvements."
       }
     ],
     "certifications": [
@@ -72,10 +74,11 @@
       "Nielsen Norman Group (NN/g) UX Certification"
     ],
     "interview_focus": [
-      "Explaining Rationale Behind Layout and Hierarchy Choices",
-      "Conducting Usability Testing on Low-Fidelity Wireframes",
-      "Designing Accessible Color Contrast and Focus States",
-      "Handoff and Collaboration Workflows with Frontend Engineers"
+      "UX Research Methodologies (Generative vs Evaluative, Quantitative vs Qualitative)",
+      "Design System Scalability (Variables, Modes, Component Variants, Slot Patterns in Figma)",
+      "Information Architecture & User Mental Models in Complex Digital Products",
+      "Accessibility Guidelines (WCAG 2.2 Level AA/AAA, Focus States, Color Contrast, Screen Readers)",
+      "Articulating Design Rationale & Measuring Product Design Impact on Business Metrics"
     ]
   },
   "format": "tree",
@@ -84,7 +87,7 @@
       "id": "ux_foundations_research",
       "name": "UX Fundamentals & User Research",
       "tag": "essential",
-      "description": "Establish a strong understanding of Human-Centered Design, design thinking, and essential user research methodologies to uncover user needs, problems, and behaviors, forming the bedrock of effective design solutions.",
+      "description": "Master user experience fundamentals: Human-Centered Design (HCD), Design Thinking phases (Empathize, Define, Ideate, Prototype, Test), and cognitive psychology principles.",
       "resources": [
         {
           "title": "Nielsen Norman Group Articles",
@@ -117,7 +120,7 @@
           "id": "intro_hcd",
           "name": "Introduction to Human-Centered Design & Design Thinking",
           "tag": "essential",
-          "description": "Understand the core philosophy of Human-Centered Design (HCD) and the iterative Design Thinking process (Empathize, Define, Ideate, Prototype, Test). Learn the value proposition of UX in business and its impact.",
+          "description": "Master Human-Centered Design: User empathy, participatory design workshops, iterative problem-solving cycles, and balancing business viability with user desirability.",
           "resources": [
             {
               "title": "What is Human-Centered Design?",
@@ -144,13 +147,15 @@
               "url": "/data/docs/ui_ux_design/intro_hcd.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 13
         },
         {
           "id": "ux_principles_ethics",
           "name": "Core UX Principles & Design Ethics",
           "tag": "essential",
-          "description": "Explore fundamental UX principles like usability, usefulness, desirability, and accessibility. Discuss ethical considerations in design, data privacy, persuasive design, and identifying dark patterns.",
+          "description": "Apply core UX laws and ethical design: Hick's Law, Fitts's Law, Miller's Law, Jakob's Law, Gestalt principles, and eliminating deceptive dark patterns.",
           "resources": [
             {
               "title": "Laws of UX",
@@ -177,13 +182,15 @@
               "url": "/data/docs/ui_ux_design/ux_principles_ethics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 16
         },
         {
           "id": "user_research_planning",
           "name": "User Research Planning & Methodologies",
           "tag": "essential",
-          "description": "Learn to define clear research goals, formulate hypotheses, select appropriate qualitative and quantitative methods, create detailed research plans, and understand sampling strategies.",
+          "description": "Plan strategic user research: Defining research objectives, crafting research briefs, selecting qualitative/quantitative methodologies, and participant recruitment screening.",
           "resources": [
             {
               "title": "NN/g User Research Methods: When to Use Which",
@@ -210,13 +217,15 @@
               "url": "/data/docs/ui_ux_design/user_research_planning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "qual_research_methods",
           "name": "Qualitative Research: Interviews, Surveys, Contextual Inquiry",
           "tag": "essential",
-          "description": "Practice conducting effective user interviews, writing unbiased survey questions, facilitating focus groups, and performing contextual inquiries to gather rich, deep descriptive data about user behaviors and motivations.",
+          "description": "Conduct qualitative discovery: Semi-structured user interviews, contextual inquiry, observation sessions, ethnographic field research, and diary studies.",
           "resources": [
             {
               "title": "User Interviews: How to Conduct Them",
@@ -243,13 +252,15 @@
               "url": "/data/docs/ui_ux_design/qual_research_methods.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 16
         },
         {
           "id": "quant_research_methods",
           "name": "Quantitative Research: Analytics, A/B Testing, Benchmarking",
           "tag": "advanced",
-          "description": "Understand the basics of quantitative data, how to set up and interpret website/app analytics, principles of A/B testing for validating hypotheses, and UX benchmarking to measure performance over time.",
+          "description": "Gather quantitative product signals: Analyzing Google Analytics / Mixpanel funnels, cohort retention heatmaps, user surveys (Likert scales), and benchmark surveys.",
           "resources": [
             {
               "title": "Introduction to Google Analytics for UX",
@@ -276,13 +287,15 @@
               "url": "/data/docs/ui_ux_design/quant_research_methods.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         },
         {
           "id": "user_analysis_artifacts",
           "name": "User Analysis: Personas, Empathy Maps, Journey Maps",
           "tag": "essential",
-          "description": "Create actionable user artifacts like detailed personas, empathy maps, and user journey maps to synthesize research findings, build shared understanding of users and their experiences, and identify pain points and opportunities.",
+          "description": "Synthesize user research models: Developing evidence-based user personas, empathy maps, customer journey maps, and service experience touchpoint matrices.",
           "resources": [
             {
               "title": "Personas: The Foundation of a Great UX Strategy",
@@ -309,13 +322,15 @@
               "url": "/data/docs/ui_ux_design/user_analysis_artifacts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 17
         },
         {
           "id": "comp_analysis",
           "name": "Competitive Analysis & Market Research",
           "tag": "essential",
-          "description": "Analyze direct and indirect competitors to identify industry best practices, market gaps, strengths, weaknesses, and opportunities for differentiation. Learn to conduct a thorough competitive audit and SWOT analysis.",
+          "description": "Execute competitive benchmarking: Direct and indirect competitor heuristic audits, feature matrix comparisons, market gap identification, and SWOT analysis.",
           "resources": [
             {
               "title": "How to Conduct a UX Competitive Analysis",
@@ -337,13 +352,15 @@
               "url": "/data/docs/ui_ux_design/comp_analysis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 17
         },
         {
           "id": "stakeholder_interviews_mapping",
           "name": "Stakeholder Interviews & Mapping",
           "tag": "essential",
-          "description": "Learn to conduct effective interviews with project stakeholders to gather business requirements, understand organizational goals, and map stakeholder relationships and influence.",
+          "description": "Align with enterprise stakeholders: Conducting executive stakeholder interviews, power-interest matrix mapping, and aligning design outcomes with business OKRs.",
           "resources": [
             {
               "title": "How to Interview Stakeholders",
@@ -370,13 +387,15 @@
               "url": "/data/docs/ui_ux_design/stakeholder_interviews_mapping.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 17
         },
         {
           "id": "synthesis_insights",
           "name": "Synthesizing Research & Uncovering Actionable Insights",
           "tag": "essential",
-          "description": "Master methods like affinity mapping, thematic analysis, and prioritization matrices to group research data, identify patterns, and translate raw observations into actionable design insights and well-defined problem statements.",
+          "description": "Synthesize research into product opportunities: Affinity mapping, thematic clustering, identifying latent pain points, and formulating actionable 'How Might We' (HMW) statements.",
           "resources": [
             {
               "title": "Affinity Diagram: A Visual Tool for Organizing Ideas",
@@ -398,15 +417,19 @@
               "url": "/data/docs/ui_ux_design/synthesis_insights.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 12
     },
     {
       "id": "ia_ixd_design",
       "name": "Information Architecture & Interaction Design",
       "tag": "essential",
-      "description": "Learn to structure digital products logically, design intuitive navigation, and create engaging, usable interactions that guide users effectively through a seamless experience.",
+      "description": "Architect information structures and intuitive interaction flows for complex digital applications.",
       "resources": [
         {
           "title": "Usability.gov Information Architecture",
@@ -439,7 +462,7 @@
           "id": "information_architecture",
           "name": "Information Architecture Principles & Methods",
           "tag": "essential",
-          "description": "Understand how to organize, structure, and label content effectively. Explore methods like card sorting, tree testing, sitemaps, and content inventories to create clear navigation systems and mental models.",
+          "description": "Design information architecture: Content hierarchies, top-level navigation taxonomies, metadata schemas, open/closed card sorting, and tree testing.",
           "resources": [
             {
               "title": "Card Sorting: What It Is & How to Do It",
@@ -466,13 +489,15 @@
               "url": "/data/docs/ui_ux_design/information_architecture.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 16
         },
         {
           "id": "content_strategy_ux",
           "name": "Content Strategy for UX & UX Writing",
           "tag": "essential",
-          "description": "Develop strategies for planning, creating, and governing content. Learn principles of UX writing for clarity, conciseness, tone of voice, and microcopy to enhance the user experience and guide users.",
+          "description": "Integrate content design into UX: Writing concise microcopy, establishing brand voice and tone guidelines, error message design, and content readability.",
           "resources": [
             {
               "title": "UX Writing: How to Do It Like a Pro",
@@ -499,13 +524,15 @@
               "url": "/data/docs/ui_ux_design/content_strategy_ux.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 16
         },
         {
           "id": "interaction_design_principles",
           "name": "Interaction Design Principles: Laws of UX, Heuristics",
           "tag": "essential",
-          "description": "Dive into core interaction design principles, including Jakob Nielsen's 10 Usability Heuristics, Hick's Law, Fitt's Law, Miller's Law, and Gestalt principles to create intuitive, efficient, and delightful interactions.",
+          "description": "Master interaction design heuristics: Nielsen Norman Group 10 usability heuristics, feedback loops, conceptual mental models, and progressive disclosure.",
           "resources": [
             {
               "title": "Jakob Nielsen's 10 Usability Heuristics",
@@ -532,13 +559,15 @@
               "url": "/data/docs/ui_ux_design/interaction_design_principles.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 12
         },
         {
           "id": "design_patterns_states",
           "name": "Common UI Patterns & Component States",
           "tag": "essential",
-          "description": "Identify and apply common UI design patterns (e.g., navigation, forms, search, data display) and understand different component states (hover, active, disabled, error, success) to build predictable and robust interfaces.",
+          "description": "Design comprehensive UI component states: Empty states, loading/skeleton states, error validation states, active/hover/focus states, and edge-case layouts.",
           "resources": [
             {
               "title": "UI Patterns",
@@ -565,13 +594,15 @@
               "url": "/data/docs/ui_ux_design/design_patterns_states.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 17
         },
         {
           "id": "user_flows_task_analysis",
           "name": "User Flows, Task Analysis & Wireframing",
           "tag": "essential",
-          "description": "Map out user flows to visualize task completion steps and conduct task analysis to simplify complex processes. Translate research and conceptual designs into basic wireframes to establish layout and functionality.",
+          "description": "Map user journeys: Hierarchical task analysis (HTA), user flow diagrams, low-fidelity paper wireframes, and rapid divergent ideation sketches.",
           "resources": [
             {
               "title": "User Flow vs. Journey Map vs. Sitemap",
@@ -598,13 +629,15 @@
               "url": "/data/docs/ui_ux_design/user_flows_task_analysis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 15
         },
         {
           "id": "lo_fi_prototyping",
           "name": "Low-Fidelity Prototyping & Ideation",
           "tag": "essential",
-          "description": "Learn to quickly translate ideas into tangible low-fidelity prototypes using sketching or basic digital tools. Explore ideation techniques like brainstorming, crazy eights, and concept mapping to generate diverse solutions.",
+          "description": "Build low-fidelity wireframes: Low-fidelity digital wireframes in Figma, click-through wireframe prototypes, and validating core navigational paths early.",
           "resources": [
             {
               "title": "Low-Fidelity Prototyping: The What, Why, and How",
@@ -631,13 +664,15 @@
               "url": "/data/docs/ui_ux_design/lo_fi_prototyping.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 17
         },
         {
           "id": "form_design_best_practices",
           "name": "Form Design Best Practices",
           "tag": "essential",
-          "description": "Master the principles of designing usable and efficient forms, including input types, validation, error handling, layout, and progressive disclosure to minimize user effort and errors.",
+          "description": "Design high-converting accessible forms: Single-column layouts, inline validation, clear field labels, intelligent input masking, and reducing cognitive friction.",
           "resources": [
             {
               "title": "Form Design: From Foundations to Advanced",
@@ -664,13 +699,15 @@
               "url": "/data/docs/ui_ux_design/form_design_best_practices.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 17
         },
         {
           "id": "microinteractions_animation",
           "name": "Microinteractions & UI Animation",
           "tag": "advanced",
-          "description": "Explore the power of microinteractions to enhance usability, provide feedback, and delight users. Learn principles of UI animation for transitions, states, and conveying hierarchy and flow.",
+          "description": "Design purposeful UI motion: Easing curves (cubic-bezier), micro-interaction feedback (button toggles, pull-to-refresh), and ensuring WCAG reduced-motion compliance.",
           "resources": [
             {
               "title": "Microinteractions: Designing with Details by Dan Saffer",
@@ -697,13 +734,15 @@
               "url": "/data/docs/ui_ux_design/microinteractions_animation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         },
         {
           "id": "high_fidelity_prototyping",
           "name": "High-Fidelity Prototyping",
           "tag": "essential",
-          "description": "Develop advanced, interactive prototypes that closely resemble the final product's look and feel, enabling realistic testing and clear communication of the user experience to stakeholders.",
+          "description": "Build interactive high-fidelity prototypes: Figma smart animate, interactive component variants, nested component state flows, and realistic user testing prototypes.",
           "resources": [
             {
               "title": "High-Fidelity Prototyping: Best Practices",
@@ -730,15 +769,19 @@
               "url": "/data/docs/ui_ux_design/high_fidelity_prototyping.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 13
     },
     {
       "id": "ui_visual_design",
       "name": "UI & Visual Design Excellence",
       "tag": "essential",
-      "description": "Master the aesthetics of user interfaces, including layout, typography, color, and responsive design, ensuring visual appeal, intuitive understanding, and brand consistency across all platforms.",
+      "description": "Master visual hierarchy, layout grids, typography systems, and modern aesthetic standards.",
       "resources": [
         {
           "title": "Material Design",
@@ -771,7 +814,7 @@
           "id": "visual_design_fundamentals",
           "name": "Visual Design Fundamentals: Layout, Grids, Space",
           "tag": "essential",
-          "description": "Understand the core principles of visual design, including effective use of white space, grid systems (8pt grid, columns), alignment, proximity, and visual hierarchy to create clean, organized, and balanced interfaces.",
+          "description": "Master layout and composition: 8pt spatial grid systems, visual hierarchy, focal points, white space utilization, and balanced asymmetrical layouts.",
           "resources": [
             {
               "title": "The 8-Point Grid System in UI Design",
@@ -798,13 +841,15 @@
               "url": "/data/docs/ui_ux_design/visual_design_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 12
         },
         {
           "id": "typography_readability",
           "name": "Typography & Readability",
           "tag": "essential",
-          "description": "Learn to select appropriate typefaces, establish a readable and accessible type scale, manage line height, letter spacing, font weights, and paragraph styles to optimize text readability and visual appeal for diverse contexts.",
+          "description": "Master typographic scales: Font pairing, modular type scales, line heights (`line-height: 1.5`), letter spacing, and optical hierarchy for legibility across devices.",
           "resources": [
             {
               "title": "Material Design Typography",
@@ -831,13 +876,15 @@
               "url": "/data/docs/ui_ux_design/typography_readability.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         },
         {
           "id": "color_theory_application",
           "name": "Color Theory & Application in UI",
           "tag": "essential",
-          "description": "Explore color theory, color psychology, and best practices for creating harmonious, accessible, and brand-aligned color palettes for user interfaces. Understand primary, secondary, accent, and semantic colors.",
+          "description": "Apply color theory in UI: 60-30-10 color balance rule, semantic status palettes (success, warning, error, info), dark mode contrast ratios, and HSL color modeling.",
           "resources": [
             {
               "title": "Color in UI Design: A Practical Guide",
@@ -864,13 +911,15 @@
               "url": "/data/docs/ui_ux_design/color_theory_application.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 17
         },
         {
           "id": "iconography_imagery",
           "name": "Iconography, Imagery & Branding",
           "tag": "essential",
-          "description": "Design and select effective, consistent icons. Utilize photography, illustrations, and other imagery to enhance user experience. Understand how to integrate brand identity and visual language consistently across a product.",
+          "description": "Curate visual assets: Consistent icon stroke weights, SVG vector optimization, authentic contextual photography, and cohesive illustration styles.",
           "resources": [
             {
               "title": "The Noun Project",
@@ -897,13 +946,15 @@
               "url": "/data/docs/ui_ux_design/iconography_imagery.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 16
         },
         {
           "id": "responsive_design_principles",
           "name": "Responsive & Adaptive Design",
           "tag": "essential",
-          "description": "Design interfaces that adapt seamlessly to various screen sizes, orientations, and devices (mobile, tablet, desktop, wearables). Understand breakpoints, flexible layouts, content prioritization, and mobile-first approach.",
+          "description": "Design responsive multi-device layouts: Mobile-first breakpoints (360px, 768px, 1024px, 1440px), fluid grids, adaptive touch targets (minimum 44x44px), and desktop dashboards.",
           "resources": [
             {
               "title": "Responsive Design: What It Is and How to Use It",
@@ -930,13 +981,15 @@
               "url": "/data/docs/ui_ux_design/responsive_design_principles.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "design_for_platforms",
           "name": "Designing for Specific Platforms (iOS, Android, Web)",
           "tag": "essential",
-          "description": "Learn to design native applications adhering to platform-specific guidelines like Apple's Human Interface Guidelines (HIG) and Google's Material Design, as well as best practices for web applications.",
+          "description": "Design for platform conventions: Apple Human Interface Guidelines (HIG) for iOS/macOS vs Google Material Design 3 for Android/Web.",
           "resources": [
             {
               "title": "Apple Human Interface Guidelines",
@@ -963,13 +1016,15 @@
               "url": "/data/docs/ui_ux_design/design_for_platforms.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 15
         },
         {
           "id": "design_systems_application",
           "name": "Applying & Contributing to Design Systems",
           "tag": "advanced",
-          "description": "Understand how to effectively use an existing design system to maintain consistency and efficiency in your UI work. Learn about contributing new patterns and components, adhering to documentation and governance.",
+          "description": "Utilize enterprise design systems: Consuming design tokens, contributing new variants, and maintaining UI consistency across cross-functional product squads.",
           "resources": [
             {
               "title": "Using a Design System: A Guide for Designers",
@@ -996,13 +1051,15 @@
               "url": "/data/docs/ui_ux_design/design_systems_application.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 24
         },
         {
           "id": "design_critique_feedback",
           "name": "Design Critique & Feedback Processes",
           "tag": "essential",
-          "description": "Learn to give and receive constructive design feedback effectively. Participate in design critiques to refine solutions, articulate design decisions with rationale, and collaborate effectively with peers and stakeholders.",
+          "description": "Facilitate design critique sessions: Giving and receiving constructive feedback, presenting rationale grounded in user research, and synthesizing feedback into iterations.",
           "resources": [
             {
               "title": "How to Give a Design Critique",
@@ -1029,15 +1086,19 @@
               "url": "/data/docs/ui_ux_design/design_critique_feedback.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 13
     },
     {
       "id": "figma_design_systems",
       "name": "Figma Mastery & Design Systems",
       "tag": "essential",
-      "description": "Become proficient in Figma for collaborative design, building efficient component libraries, and establishing scalable design systems to maintain consistency and accelerate development.",
+      "description": "Master Figma as an enterprise design tool: Auto Layout, component variants, variable tokens, and library management.",
       "resources": [
         {
           "title": "Figma Help Center",
@@ -1065,7 +1126,7 @@
           "id": "figma_essentials",
           "name": "Figma Essentials: Tools, Frames, Text, Images",
           "tag": "essential",
-          "description": "Master the fundamental tools and features of Figma, including frames, shapes, vectors, text, images, and basic layer management to efficiently create static designs and layouts.",
+          "description": "Master core Figma workflows: Frames vs groups, vector networks, typography styles, color styles, and keyboard shortcut mastery for maximum speed.",
           "resources": [
             {
               "title": "Color Theory for Designers (DesignCourse)",
@@ -1082,13 +1143,15 @@
               "url": "/data/docs/ui_ux_design/figma_essentials.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 16
         },
         {
           "id": "auto_layout_constraints",
           "name": "Auto Layout & Constraints in Figma",
           "tag": "essential",
-          "description": "Learn to use Auto Layout for creating responsive and flexible components and designs that adapt to content changes and screen sizes. Understand constraints for adapting elements within frames.",
+          "description": "Master Figma Auto Layout: Vertical/horizontal stacking, gap distribution, padding, min/max dimensions, absolute positioning within auto layout, and responsive constraints.",
           "resources": [
             {
               "title": "Mastering Auto Layout in Figma",
@@ -1110,13 +1173,15 @@
               "url": "/data/docs/ui_ux_design/auto_layout_constraints.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         },
         {
           "id": "components_variants_properties",
           "name": "Components, Variants & Component Properties",
           "tag": "essential",
-          "description": "Create reusable UI components, manage their states, types, and interactions with Variants, and leverage Component Properties for greater flexibility, scalability, and maintainability in your designs.",
+          "description": "Build advanced Figma components: Component sets, variant properties, boolean visibility toggles, text replacement props, and nested instance swapping.",
           "resources": [
             {
               "title": "Figma Components Guide",
@@ -1143,13 +1208,15 @@
               "url": "/data/docs/ui_ux_design/components_variants_properties.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 16
         },
         {
           "id": "advanced_prototyping_animation",
           "name": "Advanced Prototyping & Animation in Figma",
           "tag": "essential",
-          "description": "Build interactive prototypes with complex flows, dynamic overlays, smart animate transitions, and interactive components. Simulate realistic user experiences for effective testing and presentation.",
+          "description": "Master advanced Figma prototyping: Variables, expressions, conditional logic (`if/else`), scrolling containers, and realistic interactive prototypes.",
           "resources": [
             {
               "title": "Figma Prototyping Guide",
@@ -1171,13 +1238,15 @@
               "url": "/data/docs/ui_ux_design/advanced_prototyping_animation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 12
         },
         {
           "id": "figma_plugins_shortcuts",
           "name": "Figma Plugins, Shortcuts & Workflow Optimization",
           "tag": "advanced",
-          "description": "Enhance your Figma workflow with powerful plugins for various tasks (e.g., content generation, accessibility checks) and master keyboard shortcuts to maximize efficiency and speed up your design process.",
+          "description": "Optimize Figma efficiency: Curating essential plugins (Stark, Autoflow, Content Reel, Unsplash), and establishing keyboard shortcut muscle memory.",
           "resources": [
             {
               "title": "Best Figma Plugins for UI/UX Designers",
@@ -1204,13 +1273,15 @@
               "url": "/data/docs/ui_ux_design/figma_plugins_shortcuts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 22
         },
         {
           "id": "collaborative_workflows_versioning",
           "name": "Collaborative Workflows & Version Control in Figma",
           "tag": "essential",
-          "description": "Learn to collaborate effectively with teams in Figma, manage file versions and history, utilize comments, and establish a clear file organization structure for shared projects.",
+          "description": "Manage collaborative design files: Figma branching, merging design changes, version history checkpoints, and multi-designer file organization.",
           "resources": [
             {
               "title": "Collaboration in Figma: Best Practices",
@@ -1237,13 +1308,15 @@
               "url": "/data/docs/ui_ux_design/collaborative_workflows_versioning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 15
         },
         {
           "id": "design_systems_intro",
           "name": "Introduction to Design Systems & Tokens",
           "tag": "essential",
-          "description": "Understand the purpose, benefits, and core components of design systems. Learn about design tokens as the atomic elements that define visual and interactive properties across a product suite.",
+          "description": "Structure design system libraries: Defining color, typography, spacing, and elevation tokens; and publishing component libraries across organization workspaces.",
           "resources": [
             {
               "title": "Figma Introduction to Design Systems",
@@ -1270,13 +1343,15 @@
               "url": "/data/docs/ui_ux_design/design_systems_intro.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 13
         },
         {
           "id": "building_design_library",
           "name": "Building & Maintaining a Design System Library",
           "tag": "advanced",
-          "description": "Learn to create and manage a scalable design system library in Figma, including component architecture, documentation best practices, versioning strategies, and governance for collaborative teams.",
+          "description": "Maintain component libraries: Component documentation frames, usage guidelines, dos and don'ts, and maintaining changelog release notes.",
           "resources": [
             {
               "title": "Design Systems Handbook by InVision",
@@ -1298,15 +1373,19 @@
               "url": "/data/docs/ui_ux_design/building_design_library.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 20
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 13
     },
     {
       "id": "accessibility_testing_handoff",
       "name": "Accessibility, Testing & Handoff",
       "tag": "essential",
-      "description": "Design for inclusivity, validate designs through rigorous usability testing, and ensure smooth collaboration and efficient handoff processes with development teams for successful implementation.",
+      "description": "Enforce accessibility standards, conduct usability testing, and execute seamless developer handoffs.",
       "resources": [
         {
           "title": "NN/g Usability Testing 101",
@@ -1339,7 +1418,7 @@
           "id": "accessibility_guidelines",
           "name": "Web Content Accessibility Guidelines (WCAG)",
           "tag": "essential",
-          "description": "Deep dive into WCAG principles (Perceivable, Operable, Understandable, Robust) and success criteria (A, AA, AAA) to ensure your designs meet international accessibility standards for diverse users.",
+          "description": "Master WCAG 2.1 AA & AAA standards: Contrast ratios (4.5:1 text, 3:1 UI elements), keyboard focus indicators, non-color visual cues, and accessible text alternatives.",
           "resources": [
             {
               "title": "Web Content Accessibility Guidelines (WCAG) 2.1 Overview",
@@ -1366,13 +1445,15 @@
               "url": "/data/docs/ui_ux_design/accessibility_guidelines.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         },
         {
           "id": "inclusive_design_practices",
           "name": "Inclusive Design Practices & Assistive Technologies",
           "tag": "essential",
-          "description": "Adopt inclusive design mindsets and understand how people with diverse abilities (cognitive, motor, visual, auditory) interact with digital products. Learn about common assistive technologies (screen readers, voice control, switch control).",
+          "description": "Design inclusive interfaces: Catering to situational, temporary, and permanent impairments; screen reader accessibility (ARIA semantics), and cognitive accessibility.",
           "resources": [
             {
               "title": "Microsoft Inclusive Design Toolkit",
@@ -1399,13 +1480,15 @@
               "url": "/data/docs/ui_ux_design/inclusive_design_practices.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         },
         {
           "id": "accessibility_testing_tools",
           "name": "Accessibility Testing & Auditing Tools",
           "tag": "essential",
-          "description": "Learn to use various tools for accessibility testing, including contrast checkers, keyboard navigation checks, screen reader emulators, and automated accessibility auditing tools (e.g., Axe, Lighthouse).",
+          "description": "Audit accessibility: Automated testing with Stark Figma plugin, axe DevTools, contrast analyzers, and simulating color blindness deficiencies.",
           "resources": [
             {
               "title": "Web Accessibility Evaluation Tools List",
@@ -1432,13 +1515,15 @@
               "url": "/data/docs/ui_ux_design/accessibility_testing_tools.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 15
         },
         {
           "id": "usability_testing_methods",
           "name": "Usability Testing Methods & Planning",
           "tag": "essential",
-          "description": "Learn to plan and conduct various usability tests (moderated, unmoderated, remote, in-person, guerrilla testing). Define clear objectives, recruit representative participants, create realistic tasks, and facilitate sessions effectively.",
+          "description": "Plan and moderate usability testing: Moderated think-aloud testing, unmoderated remote testing (UserTesting, Maze), task completion metrics, and System Usability Scale (SUS).",
           "resources": [
             {
               "title": "Usability.gov Testing Basics",
@@ -1465,13 +1550,15 @@
               "url": "/data/docs/ui_ux_design/usability_testing_methods.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "test_analysis_reporting",
           "name": "Analyzing Test Results & Reporting Findings",
           "tag": "essential",
-          "description": "Synthesize qualitative and quantitative data from usability tests. Identify patterns, prioritize usability problems by severity, and present actionable recommendations to stakeholders for design improvements and iterations.",
+          "description": "Analyze usability findings: Calculating Single Ease Question (SEQ) scores, severity rating usability issues, and sharing highlight reels with cross-functional teams.",
           "resources": [
             {
               "title": "How to Analyze and Present Usability Test Results",
@@ -1498,13 +1585,15 @@
               "url": "/data/docs/ui_ux_design/test_analysis_reporting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         },
         {
           "id": "design_handoff_devmode",
           "name": "Design Handoff & Developer Collaboration (Figma Dev Mode)",
           "tag": "essential",
-          "description": "Prepare designs for seamless developer handoff. Learn to use Figma's Dev Mode effectively, create clear specifications, annotate designs, and provide assets for efficient, accurate implementation.",
+          "description": "Execute seamless developer handoffs: Figma Dev Mode, inspecting CSS/tokens, providing redline measurements, exporting optimized SVG/PNG assets, and writing implementation notes.",
           "resources": [
             {
               "title": "Figma Dev Mode",
@@ -1531,13 +1620,15 @@
               "url": "/data/docs/ui_ux_design/design_handoff_devmode.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "cross_functional_communication",
           "name": "Cross-functional Communication & Stakeholder Management",
           "tag": "essential",
-          "description": "Develop strong communication, presentation, and negotiation skills. Learn to collaborate effectively with product managers, engineers, marketing, and other stakeholders, advocating for user needs and design decisions.",
+          "description": "Collaborate with engineers and product managers: Negotiating scope, sprint grooming participation, design QA audits in staging, and resolving technical feasibility tradeoffs.",
           "resources": [
             {
               "title": "Communicating UX: Speak User Experience",
@@ -1564,13 +1655,15 @@
               "url": "/data/docs/ui_ux_design/cross_functional_communication.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "post_launch_monitoring_iteration",
           "name": "Post-Launch Monitoring & Design Iteration",
           "tag": "advanced",
-          "description": "Understand the importance of post-launch monitoring using analytics and feedback loops. Learn to identify areas for improvement and engage in continuous design iteration and optimization based on real-world data.",
+          "description": "Monitor post-launch design metrics: Tracking user telemetry, feature adoption rates, heatmaps with Hotjar, customer satisfaction (CSAT), and continuous iteration.",
           "resources": [
             {
               "title": "The Continuous Design Cycle",
@@ -1597,15 +1690,19 @@
               "url": "/data/docs/ui_ux_design/post_launch_monitoring_iteration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 24
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 13
     },
     {
       "id": "portfolio_career_dev",
       "name": "Portfolio & Career Development",
       "tag": "advanced",
-      "description": "Craft compelling case studies, strategically build your personal brand, and prepare rigorously for interviews to effectively launch and advance your UI/UX design career in the industry.",
+      "description": "Build a world-class UI/UX design portfolio: Case studies, whiteboard challenges, and positioning for senior product design roles.",
       "resources": [
         {
           "title": "Google UX Design Professional Certificate",
@@ -1638,7 +1735,7 @@
           "id": "case_study_crafting",
           "name": "Crafting UX Case Studies: Problem, Process, Solution, Impact",
           "tag": "advanced",
-          "description": "Learn the art of storytelling in UX. Structure your case studies with clear problem statements, detailed process, design solutions, trade-offs, and measurable impact using STAR method principles.",
+          "description": "Author compelling UX case studies: Structuring narrative (Problem Statement, Business Context, Research Discovery, Iterative Exploration, Final Solution, Measurable Impact).",
           "resources": [
             {
               "title": "How to Write a Great UX Case Study",
@@ -1660,13 +1757,15 @@
               "url": "/data/docs/ui_ux_design/case_study_crafting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         },
         {
           "id": "portfolio_website_best_practices",
           "name": "Building Your Portfolio Website: Best Practices",
           "tag": "advanced",
-          "description": "Design and build a professional online portfolio that showcases your best work. Focus on clear navigation, visual appeal, concise project summaries, and articulating your unique design voice and process.",
+          "description": "Build an online design portfolio: Curating 3-4 deep-dive case studies, responsive personal website design, clear storytelling, and accessible typography.",
           "resources": [
             {
               "title": "10 Best UX Portfolio Examples",
@@ -1693,13 +1792,15 @@
               "url": "/data/docs/ui_ux_design/portfolio_website_best_practices.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 23
         },
         {
           "id": "resume_linkedin_optimization",
           "name": "Resume & LinkedIn Optimization",
           "tag": "advanced",
-          "description": "Tailor your resume and LinkedIn profile to stand out to recruiters in the UI/UX field. Highlight relevant skills, experience, and accomplishments using industry-specific keywords and a strong personal brand narrative.",
+          "description": "Optimize design resumes: Highlighting quantifiable product outcomes (e.g. 'reduced checkout drop-off by 24%'), design leadership skills, and ATS keyword alignment.",
           "resources": [
             {
               "title": "Crafting a UX Designer Resume",
@@ -1726,13 +1827,15 @@
               "url": "/data/docs/ui_ux_design/resume_linkedin_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         },
         {
           "id": "interview_preparation",
           "name": "Interview Preparation: Portfolio Reviews, Whiteboard Challenges",
           "tag": "advanced",
-          "description": "Prepare for common UX interview formats, including in-depth portfolio walkthroughs, live design/whiteboarding challenges, technical questions, and behavioral questions. Practice articulating your design process and rationale under pressure.",
+          "description": "Master UX design interviews: Presenting portfolio case studies, solving live 45-minute whiteboard design challenges, and answering app critique questions.",
           "resources": [
             {
               "title": "UX Interview Questions: The Ultimate Guide",
@@ -1759,13 +1862,15 @@
               "url": "/data/docs/ui_ux_design/interview_preparation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 23
         },
         {
           "id": "networking_mentorship",
           "name": "Networking & Mentorship",
           "tag": "advanced",
-          "description": "Learn the importance of networking in the design community, how to effectively connect with peers and industry leaders, and seek out mentorship opportunities for career growth and guidance.",
+          "description": "Engage with the design community: Participating in design meetups, seeking mentorship on ADPList, and contributing to open design discussions.",
           "resources": [
             {
               "title": "Networking for UX Designers: A Practical Guide",
@@ -1792,13 +1897,15 @@
               "url": "/data/docs/ui_ux_design/networking_mentorship.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 21
         },
         {
           "id": "personal_branding_online_presence",
           "name": "Personal Branding & Online Presence",
           "tag": "advanced",
-          "description": "Develop a unique personal brand that reflects your design philosophy and skills. Learn to leverage platforms like Medium, Dribbble, Behance, and Twitter to build a professional online presence and thought leadership.",
+          "description": "Build a design brand: Sharing design insights on LinkedIn/X, publishing Figma Community templates, and writing UX case studies on Medium/Substack.",
           "resources": [
             {
               "title": "Building Your Personal Brand as a Designer",
@@ -1825,13 +1932,15 @@
               "url": "/data/docs/ui_ux_design/personal_branding_online_presence.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 22
         },
         {
           "id": "freelance_vs_inhouse",
           "name": "Career Paths: Freelance, Agency, In-House",
           "tag": "advanced",
-          "description": "Explore different career avenues for UI/UX designers, understanding the pros and cons, required skill sets, and typical work environments of freelancing, working at agencies, or joining in-house product teams.",
+          "description": "Evaluate design career paths: Comparing agency client delivery, startup generalist breadth, enterprise specialized design systems, and freelance consulting.",
           "resources": [
             {
               "title": "Agency vs. In-House UX Design: Which is Right For You?",
@@ -1858,13 +1967,15 @@
               "url": "/data/docs/ui_ux_design/freelance_vs_inhouse.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 23
         },
         {
           "id": "cont_learning_trends",
           "name": "Continuous Learning & Industry Trends",
           "tag": "advanced",
-          "description": "Stay updated with the latest trends and innovations in UI/UX design, emerging technologies (e.g., AI in UX, VR/AR, voice UI), and cultivate a mindset of continuous learning and skill development to remain competitive.",
+          "description": "Stay ahead of industry shifts: Spatial computing UI (visionOS), generative AI design patterns, voice user interfaces (VUI), and conversational UX.",
           "resources": [
             {
               "title": "Top UX Design Trends to Watch",
@@ -1891,9 +2002,14 @@
               "url": "/data/docs/ui_ux_design/cont_learning_trends.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 22
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 18
     }
-  ]
+  ],
+  "total_exp": 1000
 }

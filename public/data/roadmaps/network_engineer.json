@@ -47,26 +47,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Simulated Enterprise Multi-Site WAN Topology",
-        "tech_stack": [
-          "GNS3/Cisco Packet Tracer",
-          "BGP",
-          "OSPF",
-          "IPsec VPN",
-          "Wireshark"
-        ],
-        "description": "Design an enterprise campus and branch network featuring redundant BGP uplinks, OSPF area segregation, and encrypted IPsec site-to-site tunnels."
-      },
-      {
-        "title": "Software-Defined Network (SD-WAN) Automation with Netmiko & PyEZ",
+        "title": "Software-Defined Network Automation Engine with Netmiko & Nornir",
         "tech_stack": [
           "Python",
+          "Nornir",
           "Netmiko",
-          "NAPALM",
-          "GNS3/EVE-NG",
-          "BGP"
+          "Jinja2",
+          "Git / GitHub Actions"
         ],
-        "description": "Automate configuration templating, ACL deployments, and automated route health verification across multi-vendor network topologies using Python."
+        "description": "Build an automated network configuration engine generating vendor-agnostic router configurations from Jinja2 templates and validating routes with pyATS."
+      },
+      {
+        "title": "Multi-Site Enterprise BGP/EVPN VXLAN Data Center Fabric",
+        "tech_stack": [
+          "GNS3 / EVE-NG",
+          "Arista cEOS",
+          "BGP EVPN",
+          "VXLAN",
+          "Wireshark"
+        ],
+        "description": "Design and emulate a Spine-and-Leaf data center network utilizing an OSPF underlay, BGP EVPN control plane, and VXLAN overlay with asymmetric routing."
       }
     ],
     "certifications": [
@@ -74,10 +74,11 @@
       "CompTIA Network+"
     ],
     "interview_focus": [
-      "TCP 3-Way Handshake & 4-Way Termination Details",
-      "Subnetting Calculation Questions (CIDR /26, /27, /28)",
-      "BGP Path Selection Attributes",
-      "Spanning Tree Protocol (STP) Root Bridge Election"
+      "TCP/IP Stack Deep Dive (TCP 3-Way Handshake, Window Scaling, Congestion Control, FIN/RST)",
+      "BGP Routing Protocol (Path Attributes, Route Reflectors, AS-Path Prepending, MED vs Local Pref)",
+      "VLANs, 802.1Q Trunking, Spanning Tree Protocols (STP / RSTP / MSTP) & Loop Prevention",
+      "IP Subnetting, VLSM, Supernetting & CIDR Address Calculations",
+      "Network Troubleshooting Methodology (ping, traceroute, mtr, Wireshark packet analysis)"
     ]
   },
   "format": "tree",
@@ -86,7 +87,7 @@
       "id": "net_fundamentals",
       "name": "Networking Fundamentals",
       "tag": "essential",
-      "description": "Establish a strong understanding of how computer networks function, from physical connections to application-level communication, including core protocols and addressing schemes.",
+      "description": "Master computer networking fundamentals: Layered communication models, Ethernet frames, IP addressing, ARP, ICMP, and essential transport protocols (TCP/UDP).",
       "resources": [
         {
           "title": "CompTIA Network+ N10-008 Course (Professor Messer)",
@@ -119,7 +120,7 @@
           "id": "net_osi_tcp_ip_models",
           "name": "OSI and TCP/IP Models",
           "tag": "essential",
-          "description": "Understand the historical context, distinct layers, functions, and interrelationships of the OSI and TCP/IP models, including the process of data encapsulation and de-encapsulation across layers and their practical relevance in troubleshooting.",
+          "description": "Compare OSI 7-layer vs TCP/IP 4-layer architectures: Encapsulation/decapsulation lifecycles, protocol data units (PDUs), headers, and layer-by-layer troubleshooting.",
           "resources": [
             {
               "title": "OSI Model Explained (GeeksforGeeks)",
@@ -141,13 +142,15 @@
               "url": "/data/docs/network_engineer/net_osi_tcp_ip_models.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         },
         {
           "id": "net_ethernet_lan_basics",
           "name": "Ethernet and LAN Basics",
           "tag": "essential",
-          "description": "Gain a foundational understanding of Layer 2 Ethernet technologies, including MAC addresses, ARP protocol, half-duplex vs. full-duplex operation, collision and broadcast domains, and common LAN topologies. Explore Ethernet frame formats and basic switching principles.",
+          "description": "Master Ethernet and Layer 2 concepts: MAC addressing, frame formats, collision domains vs broadcast domains, CSMA/CD, duplex modes, and physical cabling standards.",
           "resources": [
             {
               "title": "Ethernet Tutorial (Cisco)",
@@ -169,13 +172,15 @@
               "url": "/data/docs/network_engineer/net_ethernet_lan_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 23
         },
         {
           "id": "net_ip_addressing_subnetting",
           "name": "IP Addressing & Subnetting (IPv4 & IPv6)",
           "tag": "essential",
-          "description": "Master IPv4 addressing schemes, variable-length subnet masking (VLSM), Classless Inter-Domain Routing (CIDR), private IP address ranges, and the fundamental concepts of Network Address Translation (NAT). Comprehend IPv6 addressing formats, address types (Global Unicast, Link-Local, Unique Local), and stateless/stateful auto-configuration mechanisms.",
+          "description": "Master IPv4 and IPv6 addressing: Classless Inter-Domain Routing (CIDR), Variable Length Subnet Masking (VLSM), binary subnet calculation, IPv6 address types, and SLAAC.",
           "resources": [
             {
               "title": "Practical Networking - Subnetting Mastery",
@@ -197,13 +202,15 @@
               "url": "/data/docs/network_engineer/net_ip_addressing_subnetting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         },
         {
           "id": "net_dns_dhcp_fundamentals",
           "name": "DNS and DHCP Fundamentals",
           "tag": "essential",
-          "description": "Explore the critical roles of DNS and DHCP. For DNS, learn about name resolution, recursive/iterative queries, DNS hierarchy, and record types (A, AAAA, MX, CNAME, SRV). For DHCP, understand dynamic IP address assignment, leases, scope management, and basic troubleshooting.",
+          "description": "Understand core IP services: Dynamic Host Configuration Protocol (DHCP DORA process, relay agents), and Domain Name System (DNS resolution hierarchy, resource records A, AAAA, CNAME, MX).",
           "resources": [
             {
               "title": "How DNS Works (Cloudflare)",
@@ -230,13 +237,15 @@
               "url": "/data/docs/network_engineer/net_dns_dhcp_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 26
         },
         {
           "id": "net_troubleshooting_tools",
           "name": "Basic Network Troubleshooting Tools",
           "tag": "essential",
-          "description": "Develop proficiency in using essential command-line and graphical tools for basic network diagnostics and troubleshooting, including ping, traceroute/tracert, nslookup, dig, netstat, ipconfig/ifconfig, and packet capture analysis with tcpdump or Wireshark.",
+          "description": "Utilize network diagnostic utilities: Packet capture with Wireshark/tshark, connectivity testing with ping, traceroute (ICMP/UDP), pathping, netstat/ss, and nmap port scanning.",
           "resources": [
             {
               "title": "Wireshark User Guide",
@@ -263,15 +272,19 @@
               "url": "/data/docs/network_engineer/net_troubleshooting_tools.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 24
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 19
     },
     {
       "id": "net_core_routing_switching",
       "name": "Core Routing & Switching",
       "tag": "essential",
-      "description": "Dive deep into the mechanics of switches and routers, configuring VLANs, implementing robust routing protocols, and ensuring high availability in campus and WAN environments.",
+      "description": "Configure enterprise switching and routing: VLAN segmentation, Spanning Tree Protocol, dynamic routing protocols, and redundancy.",
       "resources": [
         {
           "title": "Cisco Networking Basics",
@@ -299,7 +312,7 @@
           "id": "net_lan_switching_vlans",
           "name": "Advanced LAN Switching & VLANs",
           "tag": "essential",
-          "description": "Configure and manage advanced Layer 2 switching features including switchport modes (access, trunk), VLAN creation and tagging (802.1Q), inter-VLAN routing, and understanding the Spanning Tree Protocol (STP, RSTP, MSTP) for loop prevention. Implement EtherChannel/LACP for link aggregation and bandwidth scalability.",
+          "description": "Master Layer 2 switching: 802.1Q VLAN trunking, Spanning Tree Protocol (STP, RSTP, MSTP), link aggregation (LACP/EtherChannel), and switch port security.",
           "resources": [
             {
               "title": "Cisco VLAN Configuration Guide",
@@ -326,13 +339,15 @@
               "url": "/data/docs/network_engineer/net_lan_switching_vlans.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 28
         },
         {
           "id": "net_ip_routing_protocols",
           "name": "IP Routing Protocols (Static, OSPF, EIGRP, BGP)",
           "tag": "essential",
-          "description": "Implement and troubleshoot static routing, and dynamic Interior Gateway Protocols (IGPs) such as OSPF (single-area, multi-area, LSA types) and EIGRP (DUAL algorithm, metrics). Grasp the fundamental concepts, attributes, path selection, and peering configurations of Border Gateway Protocol (BGP) for inter-domain routing and internet connectivity.",
+          "description": "Configure dynamic IP routing protocols: Interior Gateway Protocols (OSPFv2/OSPFv3 multi-area, EIGRP metrics), and Exterior Gateway Protocols (BGP peering, path attributes AS-PATH, MED, Local Pref).",
           "resources": [
             {
               "title": "OSPF Explained in Detail (NetworkLessons.com)",
@@ -359,13 +374,15 @@
               "url": "/data/docs/network_engineer/net_ip_routing_protocols.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 37
         },
         {
           "id": "net_network_high_availability",
           "name": "Network High Availability & Redundancy",
           "tag": "advanced",
-          "description": "Design and implement highly available network infrastructures using first-hop redundancy protocols (HSRP, VRRP, GLBP), redundant physical and logical links, and advanced link aggregation techniques to ensure business continuity and minimize downtime.",
+          "description": "Implement First Hop Redundancy Protocols (FHRP): Virtual Router Redundancy Protocol (VRRP), Hot Standby Router Protocol (HSRP), and gateway load balancing.",
           "resources": [
             {
               "title": "First Hop Redundancy Protocols (Cisco)",
@@ -387,13 +404,15 @@
               "url": "/data/docs/network_engineer/net_network_high_availability.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         },
         {
           "id": "net_acl_nat_concepts",
           "name": "Access Control Lists (ACLs) & Network Address Translation (NAT)",
           "tag": "essential",
-          "description": "Configure and apply various types of Access Control Lists (ACLs) including standard, extended, and named ACLs for granular traffic filtering and security enforcement. Implement different Network Address Translation (NAT) types: static, dynamic, and Port Address Translation (PAT) for IP address conservation and network segmentation.",
+          "description": "Configure traffic filtering and translation: Standard and extended Access Control Lists (ACLs), Network Address Translation (Static NAT, Dynamic NAT, PAT / NAT Overload).",
           "resources": [
             {
               "title": "Understanding ACLs (Cisco)",
@@ -420,13 +439,15 @@
               "url": "/data/docs/network_engineer/net_acl_nat_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         },
         {
           "id": "net_practice_routing_switching_labs",
           "name": "Practice: Routing & Switching Labs",
           "tag": "essential",
-          "description": "Gain practical, hands-on experience through extensive lab exercises. Configure and troubleshoot complex scenarios involving VLANs, inter-VLAN routing, OSPF, EIGRP, BGP peerings, HSRP/VRRP, and ACLs using network simulators/emulators like Cisco Packet Tracer, GNS3, or EVE-NG. Focus on scenario-based problem-solving.",
+          "description": "Practice Lab: Build enterprise network topologies in Cisco Packet Tracer, GNS3, or EVE-NG: Configure multi-VLAN trunking, OSPF routing, NAT overload, and verify failover.",
           "resources": [
             {
               "title": "Cisco Packet Tracer",
@@ -453,15 +474,19 @@
               "url": "/data/docs/network_engineer/net_practice_routing_switching_labs.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 22
     },
     {
       "id": "net_security_essentials",
       "name": "Network Security Essentials",
       "tag": "advanced",
-      "description": "Learn to secure network infrastructure by implementing firewalls, VPNs, intrusion detection/prevention systems, and managing network access control, ensuring data integrity and confidentiality.",
+      "description": "Secure enterprise networks: Perimeter firewalls, IPSec VPN tunnels, intrusion prevention systems, and 802.1X network access control.",
       "resources": [
         {
           "title": "Introduction to Network Security (Cybrary)",
@@ -494,7 +519,7 @@
           "id": "net_firewall_vpn_concepts",
           "name": "Firewall & VPN Concepts",
           "tag": "essential",
-          "description": "Understand the operational principles and deployment of various firewall types (stateless, stateful, application-aware, next-generation, zone-based). Configure firewall rules, security policies, and implement secure site-to-site and remote-access Virtual Private Networks (VPNs) using IPsec and SSL/TLS protocols.",
+          "description": "Deploy stateful firewalls and VPNs: Next-Generation Firewalls (NGFW), deep packet inspection, site-to-site IPsec VPN tunnels (IKEv1/IKEv2 phases), and remote access SSL/TLS VPNs.",
           "resources": [
             {
               "title": "What is a Firewall? (Cloudflare)",
@@ -521,13 +546,15 @@
               "url": "/data/docs/network_engineer/net_firewall_vpn_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 33
         },
         {
           "id": "net_ids_ips_dlp",
           "name": "IDS/IPS & DLP Basics",
           "tag": "advanced",
-          "description": "Differentiate between Intrusion Detection Systems (IDS) and Intrusion Prevention Systems (IPS), exploring their deployment models, signature-based vs. anomaly-based detection methods, and common use cases. Understand the fundamentals of Data Loss Prevention (DLP) strategies and tools.",
+          "description": "Configure intrusion detection and prevention: Snort/Suricata signature detection, anomaly-based inspection, and Data Loss Prevention (DLP) egress filters.",
           "resources": [
             {
               "title": "IDS vs IPS (Fortinet)",
@@ -549,13 +576,15 @@
               "url": "/data/docs/network_engineer/net_ids_ips_dlp.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         },
         {
           "id": "net_network_access_control",
           "name": "Network Access Control (NAC)",
           "tag": "advanced",
-          "description": "Implement robust Network Access Control (NAC) solutions using 802.1X authentication. Explore Authentication, Authorization, and Accounting (AAA) concepts and services utilizing RADIUS and TACACS+ protocols for centralized user and device management, along with guest access and profiling solutions.",
+          "description": "Enforce Network Access Control (NAC): IEEE 802.1X port authentication, RADIUS/TACACS+ protocols, dynamic VLAN assignment, and posture assessment.",
           "resources": [
             {
               "title": "802.1X Explained (Cisco)",
@@ -577,13 +606,15 @@
               "url": "/data/docs/network_engineer/net_network_access_control.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         },
         {
           "id": "net_monitoring_logging",
           "name": "Network Monitoring & Logging",
           "tag": "essential",
-          "description": "Establish comprehensive network visibility through effective monitoring and logging. Utilize protocols like SNMP for device status, NetFlow/IPFIX for traffic analysis, and Syslog for event collection. Learn log aggregation and analysis for security incident detection, performance troubleshooting, and introduce Security Information and Event Management (SIEM) concepts.",
+          "description": "Monitor network telemetry: SNMP (Simple Network Management Protocol v2c/v3), NetFlow / sFlow / IPFIX flow analysis, and centralized syslog forwarding.",
           "resources": [
             {
               "title": "Introduction to Network Monitoring (Paessler)",
@@ -605,13 +636,15 @@
               "url": "/data/docs/network_engineer/net_monitoring_logging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 35
         },
         {
           "id": "net_security_best_practices",
           "name": "Network Security Best Practices",
           "tag": "advanced",
-          "description": "Identify and mitigate common network security vulnerabilities. Implement industry best practices for device hardening, secure configuration management, patch management, and vulnerability assessment. Understand basic incident response procedures and frameworks (e.g., NIST CSF, ISO 27001) for handling network breaches.",
+          "description": "Implement defense-in-depth network hardening: Disabling Telnet/HTTP, securing management planes with SSH/HTTPS, control plane policing (CoPP), and protecting against ARP spoofing with Dynamic ARP Inspection (DAI).",
           "resources": [
             {
               "title": "NIST Cybersecurity Framework",
@@ -633,15 +666,19 @@
               "url": "/data/docs/network_engineer/net_security_best_practices.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 54
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 31
     },
     {
       "id": "net_cloud_advanced",
       "name": "Cloud & Advanced Networking",
       "tag": "advanced",
-      "description": "Master networking in public cloud environments, explore Software-Defined Networking (SDN) principles, and understand advanced network architectures and emerging technologies.",
+      "description": "Architect modern cloud, hybrid, and software-defined networks across enterprise and multi-cloud environments.",
       "resources": [
         {
           "title": "Microsoft Azure Networking Fundamentals",
@@ -669,7 +706,7 @@
           "id": "net_cloud_fundamentals",
           "name": "Cloud Networking Fundamentals (AWS, Azure, GCP)",
           "tag": "essential",
-          "description": "Master foundational networking concepts across major public cloud providers (AWS, Azure, GCP). Learn to provision and manage Virtual Private Clouds (VPCs) / Virtual Networks (VNets), subnets, routing tables, security groups, Network Access Control Lists (NACLs), and various connectivity options including VPN gateways and peering.",
+          "description": "Design public cloud networking: AWS VPC, Azure VNet, GCP VPC; subnets, route tables, internet gateways, NAT gateways, and VPC peering.",
           "resources": [
             {
               "title": "AWS VPC Documentation",
@@ -696,13 +733,15 @@
               "url": "/data/docs/network_engineer/net_cloud_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 19
         },
         {
           "id": "net_cloud_network_services",
           "name": "Cloud Network Services",
           "tag": "advanced",
-          "description": "Explore and implement advanced cloud-native networking services. This includes various types of load balancers (Application Load Balancer, Network Load Balancer), Content Delivery Networks (CDNs) for performance optimization, cloud DNS services (e.g., AWS Route 53, Azure DNS), API gateways, and dedicated direct connectivity solutions (e.g., AWS Direct Connect, Azure ExpressRoute, Google Cloud Interconnect).",
+          "description": "Configure advanced cloud interconnects: AWS Direct Connect, Azure ExpressRoute, GCP Cloud Interconnect, Transit Gateways, and Cloud Load Balancers.",
           "resources": [
             {
               "title": "AWS Elastic Load Balancing",
@@ -729,13 +768,15 @@
               "url": "/data/docs/network_engineer/net_cloud_network_services.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         },
         {
           "id": "net_sdn_nfv_concepts",
           "name": "Software-Defined Networking (SDN) & NFV",
           "tag": "advanced",
-          "description": "Understand the architectural principles of Software-Defined Networking (SDN), including the separation of the control plane and data plane, and its benefits for network agility and programmability. Explore Network Function Virtualization (NFV) and its role in deploying virtualized network services, particularly in the context of modern data centers and Software-Defined Wide Area Networks (SD-WAN).",
+          "description": "Understand Software-Defined Networking (SDN): Decoupling control plane from data plane, OpenFlow, Cisco ACI, SD-WAN topologies, and Network Functions Virtualization (NFV).",
           "resources": [
             {
               "title": "What is SDN? (Cisco)",
@@ -762,13 +803,15 @@
               "url": "/data/docs/network_engineer/net_sdn_nfv_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         },
         {
           "id": "net_container_networking",
           "name": "Container Networking Basics",
           "tag": "advanced",
-          "description": "Gain an introduction to networking within containerized environments. Understand Docker networking concepts (bridge, host, overlay networks, network drivers) and delve into the intricacies of Kubernetes networking, including the Container Network Interface (CNI) model, Pod-to-Pod communication, Service networking, and Ingress.",
+          "description": "Master container and Kubernetes networking: Docker bridge networks, Kubernetes CNI plugins (Calico, Cilium), overlay networks (VXLAN), and Ingress routing.",
           "resources": [
             {
               "title": "Docker Networking Deep Dive",
@@ -795,13 +838,15 @@
               "url": "/data/docs/network_engineer/net_container_networking.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         },
         {
           "id": "net_network_architecture_design",
           "name": "Network Architecture & Design Principles",
           "tag": "advanced",
-          "description": "Learn fundamental network architecture and design principles. Study various network design models (e.g., traditional three-tier, modern spine-leaf architectures), hierarchical design, segmentation strategies, and key considerations for building scalable, reliable, secure, and performant enterprise and data center networks. Focus on high-level planning and documentation.",
+          "description": "Design resilient enterprise architectures: Three-tier hierarchical network design (Core, Distribution, Access), spine-leaf data center topologies, and disaster recovery redundancy.",
           "resources": [
             {
               "title": "Cisco Enterprise Network Design Guide",
@@ -823,15 +868,19 @@
               "url": "/data/docs/network_engineer/net_network_architecture_design.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 47
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 31
     },
     {
       "id": "net_automation_devops",
       "name": "Network Automation & DevOps",
       "tag": "advanced",
-      "description": "Develop skills in automating network tasks, programmatic configuration management, and integrating network operations into a DevOps workflow using scripting, APIs, and Infrastructure as Code (IaC) principles.",
+      "description": "Automate network infrastructure using modern DevOps paradigms: Python scripting, configuration management, and Infrastructure as Code.",
       "resources": [
         {
           "title": "Cisco DevNet Learning Labs",
@@ -864,7 +913,7 @@
           "id": "net_python_network_automation",
           "name": "Python for Network Automation",
           "tag": "essential",
-          "description": "Develop essential Python scripting skills for network automation. Learn fundamental programming concepts, data structures, and utilize popular libraries such as Netmiko for SSH/Telnet device interaction, Paramiko for SSH, and Nornir for advanced configuration management and orchestration across multiple devices.",
+          "description": "Program network automation scripts in Python: Connecting to switches and routers via Netmiko, Scrapli, and NAPALM for automated configuration changes and validation.",
           "resources": [
             {
               "title": "Netmiko Documentation",
@@ -886,13 +935,15 @@
               "url": "/data/docs/network_engineer/net_python_network_automation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         },
         {
           "id": "net_config_management_tools",
           "name": "Network Configuration Management Tools",
           "tag": "advanced",
-          "description": "Implement network configuration management using powerful tools like Ansible. Learn to write Ansible playbooks and roles for declarative configuration, leverage Jinja2 templating for dynamic configurations, and integrate Git for robust version control of network configurations, scripts, and automation workflows.",
+          "description": "Manage network configurations with Ansible: Writing declarative network playbooks, maintaining Git-backed network inventories, and enforcing configuration compliance.",
           "resources": [
             {
               "title": "Ansible Network Automation Documentation",
@@ -919,13 +970,15 @@
               "url": "/data/docs/network_engineer/net_config_management_tools.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 43
         },
         {
           "id": "net_rest_apis_netconf_yang",
           "name": "REST APIs, NETCONF, & YANG",
           "tag": "advanced",
-          "description": "Interact with modern network devices programmatically using industry-standard interfaces. Understand and utilize RESTful APIs for querying and configuring devices. Delve into the NETCONF protocol for robust, transactional configuration management, and learn to model network data and operations using the YANG data modeling language for standardized automation.",
+          "description": "Master modern programmatic network management: YANG data modeling, NETCONF (RFC 6241) XML RPCs, RESTCONF JSON APIs, and Cisco DNA Center / Meraki APIs.",
           "resources": [
             {
               "title": "NETCONF and YANG Basics (Juniper)",
@@ -947,13 +1000,15 @@
               "url": "/data/docs/network_engineer/net_rest_apis_netconf_yang.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         },
         {
           "id": "net_infrastructure_as_code",
           "name": "Infrastructure as Code (IaC) for Networking",
           "tag": "advanced",
-          "description": "Apply Infrastructure as Code (IaC) principles to networking. Learn to define, provision, and manage network infrastructure (particularly in public cloud environments) in a declarative and reproducible manner using tools like Terraform. Understand IaC's benefits for consistency, versioning, and accelerated deployments.",
+          "description": "Provision cloud networks with Terraform: Declaring VPC topologies, subnets, routing rules, and security groups in version-controlled declarative code.",
           "resources": [
             {
               "title": "Terraform Networking Tutorials (HashiCorp)",
@@ -975,13 +1030,15 @@
               "url": "/data/docs/network_engineer/net_infrastructure_as_code.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         },
         {
           "id": "net_cert_preparation_labs",
           "name": "Certification Preparation & Advanced Labs",
           "tag": "advanced",
-          "description": "Prepare rigorously for industry-recognized certifications (e.g., CCNA, CCNP Enterprise, JNCIA, AWS Networking Specialty). Build and troubleshoot extensive lab portfolios covering complex, real-world scenarios in routing, switching, network security, cloud networking, and automation. Emphasize hands-on troubleshooting, design, and optimization skills.",
+          "description": "Prepare for network engineering credentials: Hands-on labs simulating CCNA, CCNP Enterprise, AWS Advanced Networking Specialty, and technical whiteboard interview design.",
           "resources": [
             {
               "title": "Cisco Certification Roadmaps",
@@ -1008,9 +1065,14 @@
               "url": "/data/docs/network_engineer/net_cert_preparation_labs.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 31
     }
-  ]
+  ],
+  "total_exp": 1000
 }

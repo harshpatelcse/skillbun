@@ -88,7 +88,7 @@
       "id": "de_foundations",
       "name": "Foundational Skills for Data Engineers",
       "tag": "essential",
-      "description": "Establish a robust base in programming, databases, version control, operating systems, and core data concepts essential for any data engineer.",
+      "description": "Establish an unshakeable data engineering foundation: master Python data pipelines, relational query optimization, Linux systems administration, and version-controlled data repository workflows.",
       "resources": [
         {
           "title": "The Data Engineering Lifecycle (Databricks)",
@@ -116,7 +116,7 @@
           "id": "de_python_essentials",
           "name": "Python Programming Essentials",
           "tag": "essential",
-          "description": "Master Python fundamentals, including data structures, algorithms, functional programming, OOP basics, error handling, and writing clean, modular code. Introduce relevant libraries like Pandas, NumPy, and requests for data manipulation and API interaction.",
+          "description": "Master production Python for data engineering: memory-efficient generators (`yield`), object-oriented pipeline design, vectorized numerical processing with NumPy, high-speed tabular manipulation with Polars and Pandas 2.0 (PyArrow backend), and type hinting with Pydantic for schema validation.",
           "resources": [
             {
               "title": "Python for Everybody Specialization",
@@ -143,13 +143,15 @@
               "url": "/data/docs/data_engineering/de_python_essentials.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "de_advanced_sql_rdbms",
           "name": "Advanced SQL & Relational Databases",
           "tag": "essential",
-          "description": "Deepen SQL proficiency with complex queries, window functions, CTEs, performance optimization (indexing, query plans), transactions, and understand RDBMS concepts (ACID, normalization, denormalization). Work with popular RDBMS like PostgreSQL or MySQL.",
+          "description": "Master advanced SQL and relational database internals: window functions (`ROW_NUMBER`, `RANK`, `DENSE_RANK`, `LEAD`, `LAG`), recursive Common Table Expressions (CTEs), ACID transaction isolation levels, query execution plan analysis (`EXPLAIN ANALYZE`), and indexing strategies (B-Tree, GIN, BRIN for timeseries).",
           "resources": [
             {
               "title": "Mode SQL Tutorial",
@@ -181,13 +183,15 @@
               "url": "/data/docs/data_engineering/de_advanced_sql_rdbms.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         },
         {
           "id": "de_git_version_control",
           "name": "Version Control with Git",
           "tag": "essential",
-          "description": "Learn Git for collaborative development, including branching strategies (GitFlow, GitHub Flow), merging, rebasing, pull requests, resolving conflicts, and managing code repositories.",
+          "description": "Implement disciplined Git workflows for data platforms: managing dbt and Spark repositories, branch protection, CI/CD automated test gates, and managing semantic versioning across data transformation artifacts.",
           "resources": [
             {
               "title": "Git - The Simple Guide",
@@ -219,13 +223,15 @@
               "url": "/data/docs/data_engineering/de_git_version_control.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "de_linux_shell_basics",
           "name": "Linux & Shell Scripting Basics",
           "tag": "essential",
-          "description": "Familiarize with Linux command line for navigating file systems, managing permissions, common utilities (grep, sed, awk), process management, and writing basic shell scripts for automating data-related tasks.",
+          "description": "Master Linux data manipulation and scripting: text stream processing with `awk`, `sed`, `grep`, `jq` for JSON wrangling, process monitoring (`htop`, `iostat`), crontab scheduling, and shell automation scripts.",
           "resources": [
             {
               "title": "Linux Command Line Basics (Ubuntu Community)",
@@ -257,13 +263,15 @@
               "url": "/data/docs/data_engineering/de_linux_shell_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 17
         },
         {
           "id": "de_networking_os_fundamentals",
           "name": "Networking & OS Fundamentals",
           "tag": "essential",
-          "description": "Understand fundamental networking concepts (TCP/IP, HTTP/HTTPS, DNS, Load Balancing) and operating system principles (processes, threads, memory management, file systems, I/O) crucial for distributed systems, cloud computing, and troubleshooting data infrastructure.",
+          "description": "Understand operating systems and network protocols for distributed data: socket communication, TCP/IP tuning for high-throughput bulk transfers, file descriptors, Linux page cache writeback behavior, and cloud VPC peering.",
           "resources": [
             {
               "title": "Computer Networking: A Top-Down Approach (Book)",
@@ -290,15 +298,19 @@
               "url": "/data/docs/data_engineering/de_networking_os_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 36
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 19
     },
     {
       "id": "de_data_modeling_warehousing",
       "name": "Data Modeling & Warehousing",
       "tag": "essential",
-      "description": "Learn to design efficient and robust data models for analytical workloads and understand the architecture of modern data warehouses, data lakes, and lakehouses.",
+      "description": "Architect enterprise data models and storage layers: dimensional modeling, Lakehouse table formats, and cloud data warehouse architectures.",
       "resources": [
         {
           "title": "The Data Warehouse Toolkit (Kimball Group)",
@@ -331,7 +343,7 @@
           "id": "de_dimensional_schema",
           "name": "Dimensional Modeling & Schema Design",
           "tag": "essential",
-          "description": "Master dimensional modeling concepts: facts, dimensions, slowly changing dimensions (SCDs Type 1-3), star/snowflake schemas, and data vault modeling for creating analytics-friendly and scalable data warehouses. Understand surrogate keys and grain.",
+          "description": "Master Ralph Kimball dimensional modeling: Star vs Snowflake schemas, Fact tables (transaction, periodic snapshot, accumulating snapshot), Dimension tables, Slowly Changing Dimensions (SCD Type 1 overwrite, SCD Type 2 historical row versioning with valid dates, SCD Type 3), and surrogate keys vs natural keys.",
           "resources": [
             {
               "title": "dbt Analytics Engineering Guide",
@@ -363,13 +375,15 @@
               "url": "/data/docs/data_engineering/de_dimensional_schema.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "de_data_lakehouse",
           "name": "Data Lake & Data Lakehouse Architectures",
           "tag": "essential",
-          "description": "Understand the concepts and evolution of data lakes, optimal storage strategies (e.g., separating raw, processed, curated zones), and the emerging data lakehouse paradigm with platforms and open formats like Delta Lake, Apache Hudi, or Apache Iceberg.",
+          "description": "Architect modern open Data Lakehouses: ACID transactions on cloud object storage using Apache Iceberg, Delta Lake, or Apache Hudi; metadata catalogs (AWS Glue, Project Nessie, Unity Catalog); hidden partitioning; schema evolution; and time travel queries.",
           "resources": [
             {
               "title": "What is a Data Lakehouse? (Databricks)",
@@ -401,13 +415,15 @@
               "url": "/data/docs/data_engineering/de_data_lakehouse.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "de_cloud_data_warehouses_deep_dive",
           "name": "Cloud Data Warehouses Deep Dive",
           "tag": "essential",
-          "description": "Dive deeper into leading cloud data warehouse solutions (e.g., Snowflake, Google BigQuery, AWS Redshift, Azure Synapse Analytics), exploring their architecture, columnar storage, query optimization, cost management, and security features.",
+          "description": "Master modern cloud analytical warehouses: Snowflake (multi-cluster virtual warehouses, zero-copy cloning, micro-partitioning, Snowpipe streaming), Google BigQuery (serverless slot allocation, partitioned and clustered tables, BI Engine), and Amazon Redshift (RA3 nodes, distribution keys, sort keys).",
           "resources": [
             {
               "title": "Snowflake Data Cloud Overview",
@@ -439,13 +455,15 @@
               "url": "/data/docs/data_engineering/de_cloud_data_warehouses_deep_dive.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "de_nosql_databases_concepts",
           "name": "NoSQL Databases Concepts",
           "tag": "essential",
-          "description": "Explore various NoSQL database types (Key-Value, Document, Column-Family, Graph) and their use cases in data engineering, understanding their strengths and weaknesses compared to RDBMS (e.g., MongoDB, Cassandra, Redis, DynamoDB).",
+          "description": "Select and integrate NoSQL data stores: wide-column stores (Apache Cassandra / ScyllaDB for high-velocity writes and partition key design), document stores (MongoDB), key-value caches (Redis for fast lookup), and graph databases (Neo4j).",
           "resources": [
             {
               "title": "NoSQL Databases Explained (IBM)",
@@ -472,13 +490,15 @@
               "url": "/data/docs/data_engineering/de_nosql_databases_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "de_data_marts_data_virtualization",
           "name": "Data Marts & Data Virtualization",
           "tag": "advanced",
-          "description": "Understand the role and design of data marts for focused analytical needs. Explore data virtualization techniques and tools for creating integrated, logical views over disparate data sources without physical consolidation, improving agility and data access.",
+          "description": "Design focused analytical data marts and query virtualization: Trino / Presto distributed query engines for federated querying across heterogeneous sources without moving data, and semantic layer integration.",
           "resources": [
             {
               "title": "What are Data Marts?",
@@ -505,15 +525,19 @@
               "url": "/data/docs/data_engineering/de_data_marts_data_virtualization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 14
     },
     {
       "id": "de_batch_processing",
       "name": "Batch Data Pipelines",
       "tag": "essential",
-      "description": "Develop skills to build, optimize, and manage batch ETL/ELT pipelines for large-scale data ingestion and transformation, ensuring data quality and efficiency.",
+      "description": "Engineer resilient, high-volume batch processing pipelines: Apache Spark distributed computing, dbt SQL transformations, and columnar storage formats.",
       "resources": [
         {
           "title": "Designing Data-Intensive Applications",
@@ -541,7 +565,7 @@
           "id": "de_etl_elt_ingestion",
           "name": "ETL/ELT Concepts & Data Ingestion",
           "tag": "essential",
-          "description": "Understand the fundamental differences and trade-offs between ETL and ELT. Learn various methods for ingesting data (e.g., file-based, API integration, database replication, Change Data Capture (CDC), web scraping) and best practices for robust data loading.",
+          "description": "Design robust ingestion architectures: evaluating ETL (Extract-Transform-Load) vs modern ELT (Extract-Load-Transform), batch data replication tools (Airbyte, Fivetran), CDC (Change Data Capture with Debezium), and idempotency guarantees.",
           "resources": [
             {
               "title": "ETL vs ELT - What's the Difference?",
@@ -573,13 +597,15 @@
               "url": "/data/docs/data_engineering/de_etl_elt_ingestion.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "de_spark_distributed",
           "name": "Distributed Processing with Apache Spark",
           "tag": "essential",
-          "description": "Master Spark architecture, RDDs, DataFrames, Spark SQL, and Structured Streaming. Learn about partitioning, caching, cluster modes, fault tolerance, and performance tuning techniques for large-scale batch and near real-time processing using PySpark.",
+          "description": "Master distributed data processing with Apache Spark & PySpark: DataFrame and Dataset APIs, the Catalyst query optimizer and Tungsten execution engine, managing partitions (`repartition` vs `coalesce`), broadcast hash joins vs shuffle hash joins, mitigating data skew with salting, and tuning Spark executor memory (`spark.executor.memory`, `spark.sql.shuffle.partitions`).",
           "resources": [
             {
               "title": "PySpark Getting Started",
@@ -606,13 +632,15 @@
               "url": "/data/docs/data_engineering/de_spark_distributed.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "de_dbt_transformations",
           "name": "Data Transformation with dbt",
           "tag": "essential",
-          "description": "Utilize dbt (data build tool) for building modular, tested, and documented SQL models. Learn about managing data sources, defining tests, creating repeatable data transformations, and deploying them in a modern data stack with best practices.",
+          "description": "Master modern analytics engineering with dbt (data build tool): organizing multi-layer data transformations (Staging, Intermediate, Marts), materialization strategies (table, view, incremental with merge/delete+insert strategies), authoring reusable Jinja macros, and dbt packages.",
           "resources": [
             {
               "title": "dbt Guides",
@@ -639,13 +667,15 @@
               "url": "/data/docs/data_engineering/de_dbt_transformations.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "de_data_formats_compression",
           "name": "Data Formats & Compression",
           "tag": "essential",
-          "description": "Learn about various data formats (CSV, JSON, XML for raw data; Parquet, ORC, Avro for columnar and row-based storage) and compression techniques (Gzip, Snappy, Zstd) for efficient storage, fast querying, and reduced costs of large datasets in data lakes and warehouses.",
+          "description": "Optimize file storage and I/O efficiency: columnar binary formats (Apache Parquet, Apache ORC) with dictionary encoding and run-length encoding, row-oriented serialization with Apache Avro, and evaluating compression codecs (Snappy for fast decompression vs ZSTD for high compression ratio).",
           "resources": [
             {
               "title": "Apache Parquet: A Primer",
@@ -677,13 +707,15 @@
               "url": "/data/docs/data_engineering/de_data_formats_compression.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "de_data_cleansing_lab",
           "name": "Practice Lab: Data Cleansing & Transformation",
           "tag": "essential",
-          "description": "Apply learned skills to clean messy real-world datasets, identify and handle missing values, outliers, and inconsistencies. Document assumptions, implement data quality checks, and publish trusted transformed tables ready for analysis or further processing.",
+          "description": "Build automated data cleaning and deduplication pipelines: handling nulls, type coercion, fuzzy matching, outlier detection, and writing deterministic transformation rules in PySpark and SQL.",
           "resources": [
             {
               "title": "Kaggle Datasets",
@@ -715,15 +747,19 @@
               "url": "/data/docs/data_engineering/de_data_cleansing_lab.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 15
     },
     {
       "id": "de_streaming_pipelines",
       "name": "Streaming Data Pipelines",
       "tag": "advanced",
-      "description": "Build and manage real-time and near-real-time data pipelines using event streaming platforms and stream processing frameworks, handling high throughput and low-latency requirements.",
+      "description": "Engineer real-time streaming architectures: event streaming with Apache Kafka, stream processing engines, and event-driven patterns.",
       "resources": [
         {
           "title": "Designing Data-Intensive Applications",
@@ -756,7 +792,7 @@
           "id": "de_kafka_event_streaming",
           "name": "Event Streaming with Apache Kafka",
           "tag": "advanced",
-          "description": "Deep dive into Kafka concepts: topics, partitions, producers, consumers, consumer groups, offsets, message delivery semantics (at-least-once, exactly-once), schema registries (Avro, Protobuf), Kafka Connect for integration, and Kafka Streams for lightweight processing.",
+          "description": "Master Apache Kafka event streaming: broker clusters, topic partitioning and consumer group rebalances, producer acknowledgment settings (`acks=all`), consumer commit strategies, Schema Registry (Avro/Protobuf schema evolution rules), and Kafka Connect for source/sink streaming.",
           "resources": [
             {
               "title": "Apache Kafka Quickstart",
@@ -783,13 +819,15 @@
               "url": "/data/docs/data_engineering/de_kafka_event_streaming.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         },
         {
           "id": "de_stream_processing",
           "name": "Stream Processing Frameworks",
           "tag": "advanced",
-          "description": "Explore and implement stream processing with frameworks like Apache Flink or Spark Structured Streaming. Learn about windowing operations (tumbling, sliding, session), stateful stream processing, event time vs. processing time, and fault tolerance for real-time transformations and aggregations.",
+          "description": "Master stateful stream processing: Apache Flink and Spark Structured Streaming, processing event-time vs processing-time, watermarking to handle late-arriving data, windowing functions (tumbling, sliding, session), checkpointing, and exactly-once processing guarantees.",
           "resources": [
             {
               "title": "Apache Flink Documentation",
@@ -821,13 +859,15 @@
               "url": "/data/docs/data_engineering/de_stream_processing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         },
         {
           "id": "de_realtime_ingestion",
           "name": "Real-time Data Ingestion & APIs",
           "tag": "advanced",
-          "description": "Understand how to ingest data from various real-time sources, including webhooks, message queues (e.g., AWS SQS/Kinesis, RabbitMQ, Google Pub/Sub), real-time APIs, and integrating with IoT devices for continuous data flows.",
+          "description": "Implement ultra-low latency real-time ingestion: streaming events directly into cloud lakehouses and analytical stores using Kafka Connect, Snowpipe Streaming, or BigQuery Storage Write API.",
           "resources": [
             {
               "title": "AWS Kinesis Data Streams Developer Guide",
@@ -854,13 +894,15 @@
               "url": "/data/docs/data_engineering/de_realtime_ingestion.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         },
         {
           "id": "de_event_driven_architecture_patterns",
           "name": "Event-Driven Architecture Patterns",
           "tag": "advanced",
-          "description": "Deepen understanding of event-driven architectures. Explore patterns such as event sourcing, Command Query Responsibility Segregation (CQRS), saga patterns, and the distinctions between publish-subscribe messaging and message queues in complex distributed systems.",
+          "description": "Apply distributed event architectural patterns: Event Sourcing, CQRS, Change Data Capture (CDC) via database transaction logs, and the Transactional Outbox Pattern to guarantee reliable event dispatch.",
           "resources": [
             {
               "title": "Event-Driven Architecture (AWS)",
@@ -887,15 +929,19 @@
               "url": "/data/docs/data_engineering/de_event_driven_architecture_patterns.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 54
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 29
     },
     {
       "id": "de_orchestration_monitoring",
       "name": "Workflow Orchestration & Monitoring",
       "tag": "essential",
-      "description": "Learn to schedule, manage, and monitor complex data workflows, ensuring reliability, data quality, and operational efficiency across diverse environments.",
+      "description": "Orchestrate and monitor enterprise data workflows: Apache Airflow, containerization, data quality assertions, and continuous integration.",
       "resources": [
         {
           "title": "Data Orchestration for Dummies (O'Reilly)",
@@ -923,7 +969,7 @@
           "id": "de_airflow_orchestration",
           "name": "Workflow Orchestration with Apache Airflow",
           "tag": "essential",
-          "description": "Design and implement DAGs (Directed Acyclic Graphs), manage dependencies, schedule tasks, handle retries, parameterize workflows, and monitor job failures in Airflow. Explore different executors, sensors, and operators for complex pipeline management.",
+          "description": "Master workflow orchestration with Apache Airflow 2.x: authoring DAGs using the TaskFlow API (`@task`, `@dag`), configuring execution backends (CeleryExecutor, KubernetesExecutor), custom operators, sensors, XCom data passing limits, dynamic DAG generation, and handling task retries with exponential backoff.",
           "resources": [
             {
               "title": "Apache Airflow Tutorials",
@@ -950,13 +996,15 @@
               "url": "/data/docs/data_engineering/de_airflow_orchestration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "de_docker_containerization",
           "name": "Containerization with Docker",
           "tag": "essential",
-          "description": "Understand Docker concepts for packaging applications and dependencies into isolated containers. Learn to build Docker images, manage containers, use Docker Compose for multi-container applications, facilitating consistent environments for development and deployment of data pipelines.",
+          "description": "Containerize data workloads with Docker: multi-stage Dockerfiles for Spark drivers and Airflow workers, managing dependencies, and running local multi-service data stacks using Docker Compose.",
           "resources": [
             {
               "title": "Docker Get Started Guide",
@@ -988,13 +1036,15 @@
               "url": "/data/docs/data_engineering/de_docker_containerization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "de_cicd_for_data_pipelines",
           "name": "CI/CD for Data Pipelines",
           "tag": "essential",
-          "description": "Implement Continuous Integration and Continuous Delivery (CI/CD) practices for data pipelines. Learn about automated testing (unit, integration, data quality tests), code reviews, versioning data assets, and automated deployments for ensuring reliability, maintainability, and faster iteration cycles.",
+          "description": "Build enterprise CI/CD pipelines for data: automated linting with SQLFluff and Ruff, running automated dbt tests in CI against ephemeral staging schemas, and automated pipeline deployment with GitHub Actions.",
           "resources": [
             {
               "title": "CI/CD Pipeline for Data Engineering (Medium)",
@@ -1026,13 +1076,15 @@
               "url": "/data/docs/data_engineering/de_cicd_for_data_pipelines.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "de_monitoring_logging_alerting",
           "name": "Monitoring, Logging & Alerting",
           "tag": "essential",
-          "description": "Implement robust monitoring for data pipelines and infrastructure, set up proactive alerting for anomalies, performance bottlenecks, and failures (e.g., Prometheus, Grafana, Datadog). Establish comprehensive logging practices (e.g., ELK stack, cloud logging services) for debugging, auditing, and operational insights.",
+          "description": "Implement data pipeline observability: capturing execution logs, monitoring DAG run durations, emitting Prometheus metrics, and configuring PagerDuty / Slack alerts for failed pipeline tasks.",
           "resources": [
             {
               "title": "Prometheus Monitoring System",
@@ -1064,15 +1116,19 @@
               "url": "/data/docs/data_engineering/de_monitoring_logging_alerting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 13
     },
     {
       "id": "de_cloud_mlops_governance",
       "name": "Cloud Data Platforms, MLOps & Governance",
       "tag": "advanced",
-      "description": "Master cloud-native data services, ensure data quality and governance, and understand the data engineer's role in supporting machine learning operations and maintaining production-grade data ecosystems.",
+      "description": "Govern and operationalize data: cloud ecosystems, data contracts, quality frameworks, and feature stores.",
       "resources": [
         {
           "title": "AWS Data Engineering",
@@ -1110,7 +1166,7 @@
           "id": "de_cloud_ecosystems",
           "name": "Cloud Data Platform Ecosystems (AWS/GCP/Azure)",
           "tag": "advanced",
-          "description": "Explore and compare key data services across major cloud providers (e.g., AWS S3, Glue, Kinesis, Redshift, Athena, EMR; GCP Cloud Storage, Dataflow, BigQuery, Pub/Sub, Dataproc; Azure Data Lake, Data Factory, Synapse, Event Hubs, Databricks on Azure). Focus on service selection, integration patterns, and cost optimization for specific data workloads.",
+          "description": "Architect end-to-end data stacks on major cloud providers: AWS (S3, EMR, Glue, Athena, Redshift), GCP (GCS, Dataproc, BigQuery, Dataflow), or Azure (ADLS Gen2, Synapse, Databricks, Fabric).",
           "resources": [
             {
               "title": "AWS Glue Documentation",
@@ -1137,13 +1193,15 @@
               "url": "/data/docs/data_engineering/de_cloud_ecosystems.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         },
         {
           "id": "de_iac",
           "name": "Infrastructure as Code (IaC)",
           "tag": "advanced",
-          "description": "Learn to provision and manage cloud infrastructure using declarative tools like Terraform or AWS CloudFormation (or Azure ARM templates, GCP Deployment Manager). Focus on creating reproducible, version-controlled, and automated deployments of data infrastructure.",
+          "description": "Provision cloud data infrastructure declaratively: writing Terraform modules to deploy S3 buckets, Snowflake databases/warehouses, IAM service roles, and Airflow clusters.",
           "resources": [
             {
               "title": "Terraform Documentation",
@@ -1170,13 +1228,15 @@
               "url": "/data/docs/data_engineering/de_iac.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 27
         },
         {
           "id": "de_data_quality_observability",
           "name": "Data Quality, Observability & Lineage",
           "tag": "advanced",
-          "description": "Implement data quality frameworks (e.g., Great Expectations, Soda Core, dbt-expectations) to define and enforce data quality rules. Build data observability practices to monitor data health, detect anomalies, and establish data lineage to track data's journey and ensure trust and reliability in data assets.",
+          "description": "Enforce automated data quality and observability: declarative data testing with Great Expectations or Soda Core, tracking data lineage with OpenLineage, and monitoring schema drift and data freshness with Monte Carlo.",
           "resources": [
             {
               "title": "Great Expectations Documentation",
@@ -1208,13 +1268,15 @@
               "url": "/data/docs/data_engineering/de_data_quality_observability.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 42
         },
         {
           "id": "de_data_governance_security",
           "name": "Data Governance, Security & Privacy",
           "tag": "advanced",
-          "description": "Understand data governance policies, implement robust security best practices (IAM, encryption, network security, access control), manage Personally Identifiable Information (PII), ensure compliance with regulations (GDPR, CCPA, HIPAA), and implement strategies for cloud cost optimization.",
+          "description": "Implement enterprise data governance: data cataloging with Apache Atlas or DataHub, role-based access control (RBAC), column-level encryption, dynamic data masking, and complying with GDPR / HIPAA regulations.",
           "resources": [
             {
               "title": "BigQuery Best Practices for Cost Optimization",
@@ -1246,13 +1308,15 @@
               "url": "/data/docs/data_engineering/de_data_governance_security.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         },
         {
           "id": "de_mlops_intro",
           "name": "Introduction to MLOps for Data Engineers",
           "tag": "advanced",
-          "description": "Understand the data engineer's crucial role in MLOps, including preparing and curating data for model training, building robust feature engineering pipelines, managing feature stores, and deploying/monitoring data components for machine learning systems in production.",
+          "description": "Bridge data engineering and machine learning: building scalable Feature Stores with Feast, managing training dataset versioning with DVC, and serving low-latency features for ML inference.",
           "resources": [
             {
               "title": "MLOps Community Guide",
@@ -1279,13 +1343,15 @@
               "url": "/data/docs/data_engineering/de_mlops_intro.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 22
         },
         {
           "id": "de_data_api_design_serving",
           "name": "Data API Design & Serving",
           "tag": "advanced",
-          "description": "Learn to design and implement robust data APIs (RESTful, GraphQL, gRPC) for serving transformed datasets to analytics tools, applications, or machine learning models. Focus on creating clear data contracts, ensuring efficient access, scalability, and security for data consumers.",
+          "description": "Build high-performance data serving APIs: developing asynchronous REST and GraphQL data access APIs with FastAPI, integrating Redis caching layers, and implementing token-bucket rate limiting.",
           "resources": [
             {
               "title": "API Design Best Practices",
@@ -1317,13 +1383,15 @@
               "url": "/data/docs/data_engineering/de_data_api_design_serving.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         },
         {
           "id": "de_capstone_project",
           "name": "Capstone Project: End-to-End Data Platform",
           "tag": "advanced",
-          "description": "Design, build, and deploy a complete data pipeline solution, encompassing data ingestion (batch/streaming), transformation, warehousing (data lakehouse), quality checks, workflow orchestration, and a serving layer (APIs or dashboards) for analytics or ML applications using cloud services. Focus on best practices, scalability, and reliability.",
+          "description": "Capstone Project: Architect, Build, and Deploy an Enterprise Real-Time Lakehouse Platform: Change Data Capture from PostgreSQL using Debezium into Apache Kafka, stateful streaming with Spark Structured Streaming into an Apache Iceberg lakehouse, dbt transformations for dimensional analytics, Airflow DAG orchestration, Great Expectations data validation, and complete Terraform IaC provisioning.",
           "resources": [
             {
               "title": "Awesome Data Engineering Projects",
@@ -1350,9 +1418,14 @@
               "url": "/data/docs/data_engineering/de_capstone_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 71
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 19
     }
-  ]
+  ],
+  "total_exp": 1000
 }

@@ -47,25 +47,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Federated Supergraph for Multi-Brand Retail",
+        "title": "Enterprise Federated GraphQL Supergraph with Apollo Federation v2",
         "tech_stack": [
           "Apollo Router",
-          "Node.js/TypeScript",
-          "GraphQL",
-          "Redis",
-          "Docker"
+          "Rust",
+          "TypeScript",
+          "Apollo Federation v2",
+          "Rover CLI"
         ],
-        "description": "Build a federated supergraph unifying product, inventory, and review microservices into a single cohesive API endpoint."
+        "description": "Architect a distributed GraphQL supergraph uniting inventory, user, and billing subgraphs with entity interfaces, subgraph composition checks, and schema contracts."
       },
       {
-        "title": "Federated Supergraph Architecture with Apollo Federation",
+        "title": "Real-Time Collaborative GraphQL API with Subscriptions & DataLoader",
         "tech_stack": [
           "Node.js",
-          "Apollo Router",
-          "GraphQL Federation v2",
-          "TypeScript"
+          "GraphQL Yoga",
+          "Redis PubSub",
+          "DataLoader",
+          "Prisma"
         ],
-        "description": "Design and compose an enterprise federated supergraph uniting independent subgraphs (Products, Accounts, Reviews) with entity resolution and dataloader batching."
+        "description": "Build a high-performance GraphQL API featuring real-time WebSocket subscriptions, query complexity analysis, and strict DataLoader batching to eliminate N+1 queries."
       }
     ],
     "certifications": [
@@ -73,10 +74,11 @@
       "Apollo Certified Professional Graph Developer"
     ],
     "interview_focus": [
-      "N+1 Problem & DataLoader Batching Internals",
-      "Federation @key, @extends, and Entity Resolvers",
-      "Query Depth Limiting & Complexity Defense",
-      "GraphQL Caching Strategies"
+      "GraphQL N+1 Query Problem & DataLoader Batching/Caching Mechanics",
+      "Apollo Federation Architecture (Entities, Keys, External Fields, Query Plan Generation)",
+      "Schema Design Best Practices (Relay Connection Specification, Input Object Unions)",
+      "Security & DoS Protection (Query Depth Limiting, Complexity Cost Analysis, Introspection Control)",
+      "GraphQL Over HTTP vs WebSockets vs Server-Sent Events (SSE) for Subscriptions"
     ]
   },
   "format": "tree",
@@ -85,7 +87,7 @@
       "id": "graphql_fundamentals_ecosystem",
       "name": "GraphQL Fundamentals & Ecosystem",
       "tag": "essential",
-      "description": "Establish a strong foundation by understanding the core principles, benefits, and components of GraphQL, contrasting it with traditional APIs and setting up the development environment.",
+      "description": "Master GraphQL fundamentals: Schema-driven architecture, precise client data fetching, eliminating over/under-fetching, and understanding the GraphQL specification.",
       "resources": [
         {
           "title": "GraphQL Learn Official Guide",
@@ -118,7 +120,7 @@
           "id": "graphql_core_concepts",
           "name": "Core Concepts: Queries, Mutations, Subscriptions",
           "tag": "essential",
-          "description": "Understand the fundamental operations in GraphQL: fetching data with queries, modifying data with mutations, and real-time updates with subscriptions.",
+          "description": "Master core GraphQL operations: Read queries, write mutations, real-time reactive subscriptions, field arguments, aliases, and reusable fragments.",
           "resources": [
             {
               "title": "Queries and Mutations (GraphQL Docs)",
@@ -150,13 +152,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_core_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 15
         },
         {
           "id": "graphql_schema_design_basics",
           "name": "Schema Definition Language (SDL) & Core Type System",
           "tag": "essential",
-          "description": "Learn to define GraphQL schemas using SDL, understanding fundamental building blocks like object types, scalar types, enums, interfaces, unions, and input types, which form the contract of your API.",
+          "description": "Design schemas with Schema Definition Language (SDL): Scalar types (String, Int, Float, Boolean, ID, custom scalars), Object types, Enums, Interfaces, Unions, and Input types.",
           "resources": [
             {
               "title": "Schema and Types (GraphQL Docs)",
@@ -188,13 +192,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_schema_design_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "graphql_directives",
           "name": "GraphQL Directives",
           "tag": "essential",
-          "description": "Master the use of GraphQL directives for schema modification, execution logic, and advanced features like schema stitching or federation.",
+          "description": "Leverage built-in and custom schema directives: `@include`, `@skip`, `@deprecated`, and authoring custom schema transformation directives (e.g. `@auth`, `@cacheControl`).",
           "resources": [
             {
               "title": "Directives (GraphQL Docs)",
@@ -226,13 +232,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_directives.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         },
         {
           "id": "graphql_vs_rest",
           "name": "GraphQL vs. REST: Understanding the Trade-offs",
           "tag": "essential",
-          "description": "Compare and contrast GraphQL with traditional REST APIs, identifying the advantages and disadvantages of each, and understanding when to choose GraphQL.",
+          "description": "Evaluate architectural tradeoffs: GraphQL vs REST vs gRPC regarding network roundtrips, schema contracts, caching simplicity, CDN edge caching, and attack surfaces.",
           "resources": [
             {
               "title": "GraphQL vs REST (LogRocket)",
@@ -259,13 +267,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_vs_rest.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 27
         },
         {
           "id": "graphql_tooling_env",
           "name": "GraphQL Tooling & Environment Setup",
           "tag": "essential",
-          "description": "Set up a local development environment, learn to use essential GraphQL tools like GraphiQL, Apollo Studio, and Postman for schema introspection and query testing.",
+          "description": "Set up modern GraphQL development environments: Apollo Sandbox, GraphiQL IDE, GraphQL Playground, ESLint GraphQL plugins, and Prettier schema formatting.",
           "resources": [
             {
               "title": "Getting Started with Apollo Server",
@@ -297,15 +307,19 @@
               "url": "/data/docs/graphql_api_developer/graphql_tooling_env.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 16
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 15
     },
     {
       "id": "graphql_server_implementation",
       "name": "GraphQL Server Implementation",
       "tag": "essential",
-      "description": "Dive into building a functional GraphQL server, including choosing a framework, implementing resolvers, connecting to various data sources, and handling common operational patterns.",
+      "description": "Implement robust GraphQL servers: Request execution lifecycles, AST query parsing, validation against schema, resolver execution phases, and response serialization.",
       "resources": [
         {
           "title": "Build a GraphQL Server (Howtographql.com)",
@@ -343,7 +357,7 @@
           "id": "graphql_server_frameworks",
           "name": "Choosing & Setting Up a GraphQL Server Framework",
           "tag": "essential",
-          "description": "Evaluate and set up popular GraphQL server frameworks like Apollo Server (Node.js), Graphene (Python), GraphQL-Ruby, or GraphQL-Java for your backend.",
+          "description": "Deploy modern GraphQL server frameworks: Apollo Server, Yoga (Envelop), Mercurius for Fastify, NestJS GraphQL module, and Express GraphQL.",
           "resources": [
             {
               "title": "Get Started with Apollo Server in Node.js",
@@ -375,13 +389,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_server_frameworks.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 15
         },
         {
           "id": "graphql_schema_first_code_first",
           "name": "Schema-First vs. Code-First Development",
           "tag": "essential",
-          "description": "Understand the two primary approaches to GraphQL server development: defining your schema first with SDL and then implementing resolvers, or generating schema from code.",
+          "description": "Evaluate schema design methodologies: Schema-first development (SDL-driven with codegen) vs Code-first / Type-first development with TypeGraphQL, Pothos, or Nexus.",
           "resources": [
             {
               "title": "GraphQL Code-First with Nexus (The Guild)",
@@ -408,13 +424,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_schema_first_code_first.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 17
         },
         {
           "id": "graphql_resolvers_data_fetching",
           "name": "Resolvers: Data Fetching & Transformation",
           "tag": "essential",
-          "description": "Learn to write resolvers that connect GraphQL schema fields to actual data sources, understanding how to fetch, transform, and return data effectively.",
+          "description": "Implement resolver functions: Resolving parent arguments, field parameters, contextual request state, and abstract AST info objects.",
           "resources": [
             {
               "title": "Resolvers (GraphQL Docs)",
@@ -446,13 +464,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_resolvers_data_fetching.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 14
         },
         {
           "id": "graphql_server_context_middleware",
           "name": "Context, Middleware & Plugins",
           "tag": "essential",
-          "description": "Implement server context to pass information (like user authentication or data loaders) through the resolver chain and leverage middleware/plugins for cross-cutting concerns like logging or error handling.",
+          "description": "Inject request-scoped context: User authentication tokens, database connection pools, DataLoader instances, and middleware pipelines using GraphQL Envelop.",
           "resources": [
             {
               "title": "Context (Apollo Server)",
@@ -484,13 +504,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_server_context_middleware.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "graphql_connecting_data_sources",
           "name": "Connecting to Various Data Sources (DBs, REST, Microservices)",
           "tag": "essential",
-          "description": "Integrate your GraphQL server with different backend services, including SQL/NoSQL databases, existing REST APIs, and other microservices, using appropriate strategies.",
+          "description": "Connect heterogeneous data sources: Relational databases via Prisma/Drizzle ORM, NoSQL stores, internal microservices via REST connectors, and third-party APIs.",
           "resources": [
             {
               "title": "Building a GraphQL API on Top of REST APIs (Apollo Blog)",
@@ -522,13 +544,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_connecting_data_sources.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 22
         },
         {
           "id": "graphql_input_validation",
           "name": "Input Validation & Sanitization",
           "tag": "essential",
-          "description": "Implement robust server-side input validation and sanitization for GraphQL arguments and mutation inputs to ensure data integrity and prevent security vulnerabilities.",
+          "description": "Enforce strict input validation: Validating mutation input types with Zod, Joi, or custom scalar constraints, sanitizing strings against XSS, and handling invalid arguments.",
           "resources": [
             {
               "title": "GraphQL Input Validation with Joi (The Guild)",
@@ -560,13 +584,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_input_validation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 18
         },
         {
           "id": "graphql_error_handling",
           "name": "Error Handling & Custom Errors",
           "tag": "essential",
-          "description": "Implement robust error handling mechanisms in your GraphQL API, including standard error formats and custom error types for better client communication.",
+          "description": "Standardize GraphQL error formatting: RFC-compliant errors array, custom extension codes (`UNAUTHENTICATED`, `FORBIDDEN`, `BAD_USER_INPUT`), and masking internal server errors in production.",
           "resources": [
             {
               "title": "Error Handling (Apollo Server)",
@@ -598,13 +624,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_error_handling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 20
         },
         {
           "id": "graphql_subscriptions_realtime",
           "name": "Subscriptions for Real-time Data",
           "tag": "advanced",
-          "description": "Implement GraphQL Subscriptions to provide real-time updates to clients, covering WebSockets, PubSub engines, and managing state for live data.",
+          "description": "Implement real-time GraphQL subscriptions: WebSockets protocol (`graphql-ws`), Server-Sent Events (SSE), Redis Pub/Sub backends for horizontal cluster scaling.",
           "resources": [
             {
               "title": "GraphQL Subscriptions Tutorial (Howtographql.com)",
@@ -631,15 +659,19 @@
               "url": "/data/docs/graphql_api_developer/graphql_subscriptions_realtime.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 24
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 15
     },
     {
       "id": "graphql_api_enhancements",
       "name": "Enhancing GraphQL APIs",
       "tag": "essential",
-      "description": "Optimize your GraphQL API for performance, security, and developer experience by implementing advanced features like authentication, authorization, caching, and efficient data loading.",
+      "description": "Harden and optimize GraphQL APIs: Solving the N+1 query problem, client-side/server-side caching, and query performance tuning.",
       "resources": [
         {
           "title": "GraphQL Security Best Practices (Apollo Blog)",
@@ -677,7 +709,7 @@
           "id": "graphql_auth_authz",
           "name": "Authentication & Authorization in GraphQL",
           "tag": "essential",
-          "description": "Secure your GraphQL API by implementing authentication mechanisms (JWT, OAuth) and authorization strategies (role-based, attribute-based access control).",
+          "description": "Implement granular authentication and authorization: Role-based access control (RBAC), attribute-based access control (ABAC) at schema, field, and object resolver levels.",
           "resources": [
             {
               "title": "Authentication & Authorization (Apollo Server)",
@@ -709,13 +741,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_auth_authz.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "graphql_caching_strategies",
           "name": "Caching Strategies (Client, Server, CDN)",
           "tag": "essential",
-          "description": "Implement effective caching at various levels—client-side, server-side (resolver caching), and CDN/edge caching—to improve API performance and reduce backend load.",
+          "description": "Implement multi-tier caching: Full-query HTTP caching with GET requests, `@cacheControl` directives, Apollo Server response caching, and CDN edge caching.",
           "resources": [
             {
               "title": "Caching (Apollo Server)",
@@ -747,13 +781,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_caching_strategies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 16
         },
         {
           "id": "graphql_nplus1_dataloader",
           "name": "Solving the N+1 Problem with DataLoader",
           "tag": "essential",
-          "description": "Address the N+1 query problem by implementing efficient data fetching patterns using DataLoader or similar batching and caching mechanisms to optimize database interactions.",
+          "description": "Eliminate the N+1 problem using DataLoader: Batching database queries across concurrent resolver executions, request-scoped memoization caching, and prime keys.",
           "resources": [
             {
               "title": "Solving N+1 with DataLoader (GraphQL Docs)",
@@ -785,13 +821,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_nplus1_dataloader.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         },
         {
           "id": "graphql_persisted_queries_batching",
           "name": "Persisted Queries & Query Batching",
           "tag": "advanced",
-          "description": "Enhance performance and security by using persisted queries to pre-register and execute queries by ID, and implement client-side query batching to reduce network requests.",
+          "description": "Implement Automatic Persisted Queries (APQ): Sending SHA256 query hashes instead of verbose query strings, reducing request payload size and enabling CDN caching.",
           "resources": [
             {
               "title": "Persisted Queries (Apollo Docs)",
@@ -823,13 +861,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_persisted_queries_batching.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 24
         },
         {
           "id": "graphql_pagination_filtering",
           "name": "Pagination, Filtering, and Sorting",
           "tag": "essential",
-          "description": "Design effective strategies for handling large datasets by implementing various pagination techniques (cursor-based, offset-based), filtering, and sorting capabilities.",
+          "description": "Implement standardized pagination: Relay Connection specification (Cursor-based pagination with `edges`, `node`, `pageInfo`, `hasNextPage`), sorting, and multi-criteria filtering.",
           "resources": [
             {
               "title": "Pagination (GraphQL Docs)",
@@ -861,13 +901,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_pagination_filtering.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "graphql_file_uploads",
           "name": "Handling File Uploads",
           "tag": "advanced",
-          "description": "Implement robust solutions for handling file uploads (single and multiple) via GraphQL mutations, ensuring proper parsing, storage, and retrieval of binary data.",
+          "description": "Handle file uploads in GraphQL: Multipart request specification (`graphql-multipart-request-spec`), Apollo Upload Server, or pre-signed S3 upload URL patterns.",
           "resources": [
             {
               "title": "GraphQL Multipart Request Specification",
@@ -899,15 +941,19 @@
               "url": "/data/docs/graphql_api_developer/graphql_file_uploads.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 24
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 13
     },
     {
       "id": "graphql_advanced_architectures",
       "name": "Advanced GraphQL Architectures",
       "tag": "advanced",
-      "description": "Explore complex architectural patterns for GraphQL, including building distributed graphs with federation or schema stitching, and deploying GraphQL in serverless environments.",
+      "description": "Architect enterprise GraphQL topologies: Federated microservice graphs, distributed schema stitching, and serverless edge deployments.",
       "resources": [
         {
           "title": "Apollo Federation Official Guide",
@@ -945,7 +991,7 @@
           "id": "graphql_federation_stitching",
           "name": "GraphQL Federation & Schema Stitching",
           "tag": "advanced",
-          "description": "Learn to combine multiple GraphQL services into a single unified graph using advanced techniques like Apollo Federation or Schema Stitching, managing a distributed API landscape.",
+          "description": "Build enterprise federated graphs using Apollo Federation 2: Composing subgraphs into a unified supergraph with `@key`, `@shareable`, `@external`, and Apollo Router.",
           "resources": [
             {
               "title": "Apollo Federation: The Complete Guide",
@@ -977,13 +1023,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_federation_stitching.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         },
         {
           "id": "graphql_serverless",
           "name": "Serverless GraphQL",
           "tag": "advanced",
-          "description": "Understand how to deploy and manage GraphQL APIs using serverless functions (AWS Lambda, Google Cloud Functions, Azure Functions) for scalability and cost efficiency.",
+          "description": "Deploy serverless GraphQL: Hosting Apollo Server / Yoga on AWS Lambda, Cloudflare Workers, or Vercel Edge with connection-pooled databases (Prisma Accelerate / Neon).",
           "resources": [
             {
               "title": "Serverless GraphQL with Apollo Server Lambda (Apollo Blog)",
@@ -1015,13 +1063,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_serverless.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         },
         {
           "id": "graphql_api_gateways",
           "name": "GraphQL API Gateways & Proxies",
           "tag": "advanced",
-          "description": "Learn to use GraphQL API gateways and proxies to manage multiple backend services, provide a unified API entry point, and implement cross-cutting concerns.",
+          "description": "Deploy high-performance GraphQL gateways: Apollo Router (written in Rust), GraphQL Hive gateway, and Envoy GraphQL filters for low-latency query planning and execution.",
           "resources": [
             {
               "title": "Building a GraphQL Gateway (Apollo Docs)",
@@ -1053,15 +1103,19 @@
               "url": "/data/docs/graphql_api_developer/graphql_api_gateways.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 27
     },
     {
       "id": "graphql_ops",
       "name": "Operationalizing GraphQL APIs",
       "tag": "advanced",
-      "description": "Master the skills required to deploy, monitor, test, and maintain GraphQL APIs in production environments, ensuring reliability, security, and schema evolution.",
+      "description": "Operationalize GraphQL in production: Automated testing, monitoring, security controls, and continuous integration.",
       "resources": [
         {
           "title": "Apollo Observability Guide",
@@ -1099,7 +1153,7 @@
           "id": "graphql_testing",
           "name": "Testing GraphQL APIs",
           "tag": "essential",
-          "description": "Develop comprehensive testing strategies for GraphQL APIs, including unit tests for resolvers, integration tests for data sources, and end-to-end testing of queries and mutations.",
+          "description": "Test GraphQL APIs systematically: Unit testing resolver functions, integration testing operations with Apollo Server test harnesses, and end-to-end Supertest assertion suites.",
           "resources": [
             {
               "title": "Testing Apollo Server",
@@ -1131,13 +1185,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         },
         {
           "id": "graphql_monitoring_logging",
           "name": "Monitoring, Logging & Tracing",
           "tag": "advanced",
-          "description": "Implement robust monitoring, logging, and tracing solutions (e.g., Apollo Studio, Prometheus, Grafana, OpenTelemetry) to gain visibility into API performance and troubleshoot issues.",
+          "description": "Monitor GraphQL performance: Distributed tracing with OpenTelemetry, field-level execution latency metrics with Apollo Studio or GraphQL Hive, and logging slow queries.",
           "resources": [
             {
               "title": "Monitoring (Apollo Server)",
@@ -1169,13 +1225,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_monitoring_logging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         },
         {
           "id": "graphql_security_depth_cost",
           "name": "Advanced Security: Rate Limiting, Depth Limiting, Query Cost Analysis",
           "tag": "advanced",
-          "description": "Protect your API from malicious queries and denial-of-service attacks by implementing advanced security measures such as rate limiting, query depth limiting, and query cost analysis.",
+          "description": "Protect GraphQL against DoS: Enforcing maximum query depth limits (`graphql-depth-limit`), query complexity/cost analysis, and distributed IP/user rate limiting.",
           "resources": [
             {
               "title": "GraphQL Security: Preventing DOS Attacks (Apollo Blog)",
@@ -1207,13 +1265,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_security_depth_cost.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         },
         {
           "id": "graphql_deployment_cicd",
           "name": "Deployment & CI/CD for GraphQL",
           "tag": "advanced",
-          "description": "Learn to deploy GraphQL APIs using Docker, Kubernetes, or serverless platforms, and integrate them into continuous integration and continuous delivery (CI/CD) pipelines.",
+          "description": "Automate GraphQL deployment: Continuous integration checking schema changes, validating supergraph composition, and zero-downtime rolling gateway deployments.",
           "resources": [
             {
               "title": "Deploying a GraphQL API to AWS with Serverless Framework (Serverless.com)",
@@ -1245,13 +1305,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_deployment_cicd.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 29
         },
         {
           "id": "graphql_schema_evolution",
           "name": "Schema Evolution & Versioning",
           "tag": "advanced",
-          "description": "Manage changes to your GraphQL schema over time using best practices for non-breaking changes, deprecation, and schema versioning to maintain backward compatibility.",
+          "description": "Evolve GraphQL schemas without breaking changes: Deprecating fields gracefully with `@deprecated(reason: \"...\")`, adding nullable fields, and avoiding enum value removals.",
           "resources": [
             {
               "title": "Schema Versioning (Apollo Docs)",
@@ -1283,13 +1345,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_schema_evolution.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 25
         },
         {
           "id": "graphql_schema_registry_linting",
           "name": "Schema Registry & Automated Schema Checks",
           "tag": "advanced",
-          "description": "Implement a GraphQL schema registry to track and manage schema changes, and integrate automated schema checks/linting into CI/CD pipelines to prevent breaking changes and ensure consistency.",
+          "description": "Implement schema registries: Using Apollo Studio or GraphQL Hive to enforce schema checks, detect breaking changes on PRs, and track client operation adoption.",
           "resources": [
             {
               "title": "Apollo GraphOS (Schema Registry)",
@@ -1321,15 +1385,19 @@
               "url": "/data/docs/graphql_api_developer/graphql_schema_registry_linting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 24
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 23
     },
     {
       "id": "graphql_client_integration",
       "name": "GraphQL Client Integration",
       "tag": "essential",
-      "description": "Understand how client applications interact with GraphQL APIs, including selecting a client library, consuming data, managing client-side state, and utilizing code generation.",
+      "description": "Integrate modern GraphQL clients: Caching normalized data, optimistic UI mutations, and end-to-end type safety.",
       "resources": [
         {
           "title": "Apollo Client Documentation",
@@ -1367,7 +1435,7 @@
           "id": "graphql_client_selection",
           "name": "Choosing a GraphQL Client (Apollo Client, Relay, Urql)",
           "tag": "essential",
-          "description": "Evaluate and choose the appropriate client library for consuming GraphQL APIs based on project requirements, framework preferences, and feature sets.",
+          "description": "Select the right frontend client: Comparing Apollo Client, Relay for performance-critical Facebook-scale apps, and Urql for lightweight modular flexibility.",
           "resources": [
             {
               "title": "Apollo Client vs. Relay (Apollo Blog)",
@@ -1399,13 +1467,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_client_selection.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 17
         },
         {
           "id": "graphql_consuming_apis",
           "name": "Consuming GraphQL APIs (Queries, Mutations, Subscriptions)",
           "tag": "essential",
-          "description": "Learn to integrate GraphQL queries, mutations, and subscriptions into client-side applications using chosen client libraries, managing data flow and UI updates.",
+          "description": "Execute client operations: Utilizing `useQuery`, `useMutation`, and `useSubscription` React hooks with loading, error, and data state handling.",
           "resources": [
             {
               "title": "Queries, Mutations, and Subscriptions (Apollo Client Docs)",
@@ -1437,13 +1507,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_consuming_apis.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 15
         },
         {
           "id": "graphql_client_caching_state",
           "name": "Client-side Caching & State Management",
           "tag": "essential",
-          "description": "Understand how GraphQL client libraries manage client-side cache, handle local state, and integrate with global state management solutions for complex applications.",
+          "description": "Master normalized client caching: InMemoryCache configuration, custom `TypePolicies`, field key arguments, merge functions, and local state management.",
           "resources": [
             {
               "title": "Apollo Client Cache (Apollo Client Docs)",
@@ -1475,13 +1547,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_client_caching_state.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 20
         },
         {
           "id": "graphql_client_optimistic_ui",
           "name": "Optimistic UI Updates",
           "tag": "advanced",
-          "description": "Implement optimistic UI updates in client applications to provide instant feedback to users for mutations, improving perceived performance and user experience.",
+          "description": "Implement optimistic UI updates: Specifying `optimisticResponse` in mutations to update client cache instantly before server confirmation, with automated rollback on error.",
           "resources": [
             {
               "title": "Optimistic UI (Apollo Client Docs)",
@@ -1513,13 +1587,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_client_optimistic_ui.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         },
         {
           "id": "graphql_client_error_handling_ui",
           "name": "Client-side Error Handling & UI Feedback",
           "tag": "essential",
-          "description": "Learn to effectively handle GraphQL errors on the client, display meaningful error messages to users, and implement strategies for error recovery and retry mechanisms.",
+          "description": "Handle client errors gracefully: Differentiating network errors from GraphQL execution errors, toast notification triggers, and token refresh retry links.",
           "resources": [
             {
               "title": "Error Handling (Apollo Client Docs)",
@@ -1551,13 +1627,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_client_error_handling_ui.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 16
         },
         {
           "id": "graphql_client_file_uploads",
           "name": "Client-side File Uploads",
           "tag": "advanced",
-          "description": "Understand how to implement file upload functionality from client applications to a GraphQL API, often using `graphql-upload` compatible clients.",
+          "description": "Implement client file uploads: Using `apollo-upload-client` to stream files via GraphQL multipart requests or coordinating S3 presigned URL uploads.",
           "resources": [
             {
               "title": "Apollo Client File Uploads (Apollo Docs)",
@@ -1589,13 +1667,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_client_file_uploads.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 22
         },
         {
           "id": "graphql_client_codegen",
           "name": "Code Generation from Schema (GraphQL Code Generator)",
           "tag": "advanced",
-          "description": "Automate the creation of types, hooks, and boilerplate code for client-side applications directly from your GraphQL schema, enhancing type safety and developer productivity.",
+          "description": "Generate type-safe frontend code using GraphQL Code Generator: Compiling schema and `.graphql` documents into fully typed React hooks, TypeScript types, and SDKs.",
           "resources": [
             {
               "title": "GraphQL Code Generator Official Website",
@@ -1627,15 +1707,19 @@
               "url": "/data/docs/graphql_api_developer/graphql_client_codegen.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 24
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 13
     },
     {
       "id": "graphql_project_career",
       "name": "Project & Career Readiness",
       "tag": "advanced",
-      "description": "Consolidate your GraphQL API development skills by building a portfolio-worthy project, preparing for technical interviews, and showcasing your expertise to potential employers.",
+      "description": "Build a demonstrable GraphQL portfolio: Architecting end-to-end full-stack applications, documenting schema designs, and preparing for GraphQL technical interviews.",
       "resources": [
         {
           "title": "How to Build a Portfolio Website (freeCodeCamp.org)",
@@ -1668,7 +1752,7 @@
           "id": "graphql_capstone_project",
           "name": "Building a Production-Ready GraphQL API Project",
           "tag": "advanced",
-          "description": "Develop a full-stack, production-ready GraphQL API with a client application, incorporating best practices learned throughout the roadmap. Document your work extensively.",
+          "description": "Build an enterprise GraphQL capstone: Federated supergraph with Apollo Router, PostgreSQL backend with DataLoader, Apollo Client frontend with codegen, and CI breaking change checks.",
           "resources": [
             {
               "title": "Fullstack GraphQL Tutorial (Howtographql.com)",
@@ -1695,13 +1779,15 @@
               "url": "/data/docs/graphql_api_developer/graphql_capstone_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 59
         },
         {
           "id": "graphql_portfolio_interview",
           "name": "Portfolio Development & Interview Preparation",
           "tag": "advanced",
-          "description": "Curate a strong portfolio showcasing your GraphQL projects, write compelling case studies, and prepare for common GraphQL-specific technical interview questions and system design challenges.",
+          "description": "Master GraphQL technical interviews: Explain query execution lifecycle, derive DataLoader batching mechanics, design federated enterprise schemas, and solve query cost defense problems.",
           "resources": [
             {
               "title": "How to Create an Awesome Portfolio (freeCodeCamp.org)",
@@ -1728,9 +1814,14 @@
               "url": "/data/docs/graphql_api_developer/graphql_portfolio_interview.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 27
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 47
     }
-  ]
+  ],
+  "total_exp": 1000
 }

@@ -84,7 +84,7 @@
       "id": "data_visualization_specialist_intro_principles",
       "name": "Introduction to Data Visualization & Core Principles",
       "tag": "essential",
-      "description": "Establish a strong foundation by understanding the purpose, history, and fundamental principles of effective data visualization, the evolving role of a specialist, and key terminology.",
+      "description": "Establish an unshakeable data visualization foundation: master visual perception theory, visual encoding channels, color science, and the grammar of graphics.",
       "resources": [
         {
           "title": "What is Data Visualization? The Ultimate Guide",
@@ -117,7 +117,7 @@
           "id": "data_visualization_specialist_data_basics",
           "name": "Understanding Data, Data Types & Sources",
           "tag": "essential",
-          "description": "Learn about different data types (quantitative, qualitative, categorical, ordinal), data structures (tabular, hierarchical, network, geospatial), common data sources (databases, APIs, files), and fundamental concepts of data granularity and cardinality relevant for visualization.",
+          "description": "Understand data taxonomy for visualization: continuous vs discrete scales, categorical, ordinal, interval, and ratio data; and structuring hierarchical, network, and geospatial datasets.",
           "resources": [
             {
               "title": "Data Types and Categories for Statistical Analysis",
@@ -144,13 +144,15 @@
               "url": "/data/docs/data_visualization_specialist/data_visualization_specialist_data_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 32
         },
         {
           "id": "data_visualization_specialist_viz_principles",
           "name": "Foundational Principles of Effective Visualization",
           "tag": "essential",
-          "description": "Explore foundational theories by pioneers like Edward Tufte (data-ink ratio, graphical integrity, chart junk) and Stephen Few (perceptual processing, visual analytics). Understand cognitive load, Gestalt principles of perception, and choosing appropriate visual encodings for clarity and impact.",
+          "description": "Master foundational information design principles: Edward Tufte's data-ink ratio and lie factor, Jacques Bertin's visual variables, and Gestalt principles of visual grouping (proximity, similarity, continuity, enclosure).",
           "resources": [
             {
               "title": "Data Visualization Best Practices: 5 Principles for Effective Dashboards",
@@ -182,13 +184,15 @@
               "url": "/data/docs/data_visualization_specialist/data_visualization_specialist_viz_principles.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 27
         },
         {
           "id": "data_visualization_specialist_visual_encoding",
           "name": "Visual Encoding, Chart Typology & Selection",
           "tag": "essential",
-          "description": "Master how different visual variables (position, color, size, shape, orientation, texture) encode data effectively. Learn to identify and select the most appropriate chart types (e.g., bar, line, scatter, treemap, heatmap, geospatial) for various data relationships and analytical goals, moving beyond default chart suggestions.",
+          "description": "Master visual encoding hierarchies: ranking encodings by perceptual accuracy (position along common scale, length, angle, area, color saturation, color hue), and perceptually uniform color palettes (Viridis, ColorBrewer) ensuring accessibility for color vision deficiencies.",
           "resources": [
             {
               "title": "A Complete Guide to The 12 Types of Charts",
@@ -220,13 +224,15 @@
               "url": "/data/docs/data_visualization_specialist/data_visualization_specialist_visual_encoding.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 35
         },
         {
           "id": "data_visualization_specialist_tools_overview",
           "name": "Data Visualization Ecosystem: Tools Overview & Setup",
           "tag": "essential",
-          "description": "Get acquainted with the broad ecosystem of data visualization tools. This includes commercial BI platforms (Tableau, Power BI, Looker), open-source programming libraries (Python with Matplotlib, Seaborn, Plotly; R with ggplot2), and web-based frameworks (D3.js, Vega-Lite). Set up initial development environments for selected tools.",
+          "description": "Survey the visualization ecosystem: declarative grammars (Vega-Lite), programmatic web libraries (D3.js, Observable Plot), GPU-accelerated libraries (deck.gl, Three.js), and enterprise BI suites.",
           "resources": [
             {
               "title": "Top 10 Data Visualization Tools",
@@ -248,15 +254,19 @@
               "url": "/data/docs/data_visualization_specialist/data_visualization_specialist_tools_overview.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 25
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 18
     },
     {
       "id": "data_visualization_specialist_techniques_tools",
       "name": "Advanced Data Visualization Techniques & Tools",
       "tag": "essential",
-      "description": "Develop hands-on proficiency in creating sophisticated visualizations, designing impactful dashboards, and using industry-standard tools and programming languages to solve real-world analytical challenges.",
+      "description": "Master data preparation, chart architecture, dashboard UX design, and narrative storytelling.",
       "resources": [
         {
           "title": "Mastering Power BI",
@@ -284,7 +294,7 @@
           "id": "data_visualization_specialist_eda_viz",
           "name": "Exploratory Data Analysis (EDA) & Visual Discovery",
           "tag": "essential",
-          "description": "Learn to use visualization as a primary tool for initial data exploration, identifying patterns, outliers, anomalies, and relationships. Understand how EDA informs subsequent data cleaning, feature engineering, and visualization design choices. Master techniques for univariate, bivariate, and multivariate visual analysis.",
+          "description": "Conduct visual exploratory data analysis: detecting outliers, skewness, multimodal distributions, and correlation clusters using Seaborn, Plotly, and Altair.",
           "resources": [
             {
               "title": "Exploratory Data Analysis with Python and Pandas",
@@ -306,13 +316,15 @@
               "url": "/data/docs/data_visualization_specialist/data_visualization_specialist_eda_viz.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "data_visualization_specialist_data_prep",
           "name": "Data Preparation & Transformation for Visualization",
           "tag": "essential",
-          "description": "Master techniques for cleaning, structuring, and transforming raw data into a suitable 'tidy' format for optimal visualization. Cover concepts like data shaping (pivoting/unpivoting), aggregation, joining/blending data from multiple sources, handling missing values, and creating calculated fields using various tools (e.g., Power Query, Tableau Prep) and languages (SQL, Python Pandas).",
+          "description": "Wrangle and shape data for visual rendering: wide-to-long unpivoting, hierarchical nesting, computing aggregations, and utilizing DuckDB-Wasm for high-speed client-side SQL transformations.",
           "resources": [
             {
               "title": "Data Wrangling with Python",
@@ -344,13 +356,15 @@
               "url": "/data/docs/data_visualization_specialist/data_visualization_specialist_data_prep.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 32
         },
         {
           "id": "data_visualization_specialist_chart_design",
           "name": "Advanced Chart Design & Customization",
           "tag": "essential",
-          "description": "Dive deeper into choosing the right chart for complex data and specific messages. Master advanced design elements: effective color theory (sequential, diverging, categorical palettes), typography for readability, use of negative space, visual hierarchy, and annotations to enhance clarity and impact. Learn to avoid common pitfalls in chart design.",
+          "description": "Design specialized and advanced chart types: Sankey diagrams, chord diagrams, treemaps, Voronoi tessellations, waterfall charts, and Ridgeline density plots.",
           "resources": [
             {
               "title": "Effective Use of Color in Data Visualization",
@@ -377,13 +391,15 @@
               "url": "/data/docs/data_visualization_specialist/data_visualization_specialist_chart_design.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 27
         },
         {
           "id": "data_visualization_specialist_dashboard_ux",
           "name": "Dashboard Design, Layout & User Experience (UX)",
           "tag": "essential",
-          "description": "Learn principles of effective dashboard design, including layout strategies (e.g., F-pattern, Z-pattern), grid systems, responsive design for different devices, interactivity elements (filters, parameters, actions), guided analytics, and considerations for user experience (UX) to create intuitive and actionable dashboards that support decision-making.",
+          "description": "Apply interaction design to analytical dashboards: progressive disclosure, coordinated multiple views (brushing and linking), consistent visual affordances, and cognitive load minimization.",
           "resources": [
             {
               "title": "Dashboard Design Best Practices",
@@ -415,13 +431,15 @@
               "url": "/data/docs/data_visualization_specialist/data_visualization_specialist_dashboard_ux.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 32
         },
         {
           "id": "data_visualization_specialist_storytelling",
           "name": "Data Storytelling & Presentation Skills",
           "tag": "essential",
-          "description": "Develop the ability to craft compelling narratives with data. Learn to structure a story, identify key insights, create a clear message, and present visualizations effectively to various audiences (technical vs. non-technical, executives), driving informed decisions and actionable outcomes. Focus on audience analysis and call to action.",
+          "description": "Master data storytelling and scrollytelling: structuring visual narrative arcs, step-by-step explanatory annotations, and scroll-driven animations with Scrollama.js.",
           "resources": [
             {
               "title": "Storytelling with Data: A Data Visualization Guide for Business Professionals",
@@ -453,13 +471,15 @@
               "url": "/data/docs/data_visualization_specialist/data_visualization_specialist_storytelling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         },
         {
           "id": "data_visualization_specialist_accessibility_usability",
           "name": "Accessibility & Inclusive Design in Data Visualization",
           "tag": "essential",
-          "description": "Understand the critical importance of making visualizations accessible to all users, including those with cognitive, visual, or motor disabilities. Learn techniques for WCAG compliance, optimal color contrast, use of alternative text, keyboard navigation, data tables for screen readers, and thoughtful design choices to ensure inclusivity.",
+          "description": "Ensure full accessibility (a11y) in visual graphics: WCAG 2.1 contrast compliance, ARIA attributes on SVG marks, keyboard navigation across data points, and screen-reader accessible tabular fallbacks.",
           "resources": [
             {
               "title": "A Guide to Data Visualization Accessibility",
@@ -486,13 +506,15 @@
               "url": "/data/docs/data_visualization_specialist/data_visualization_specialist_accessibility_usability.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 34
         },
         {
           "id": "data_visualization_specialist_bi_tools",
           "name": "BI Tools Deep Dive: Tableau & Power BI",
           "tag": "essential",
-          "description": "Gain hands-on expertise with industry-leading Business Intelligence tools. Master data connection, advanced data transformation, creating various standard and custom charts, building interactive dashboards, implementing drill-throughs and actions, and publishing reports. Focus on best practices for performance and user experience within these platforms.",
+          "description": "Master enterprise BI platforms (Power BI / Tableau): parameter-driven visual switching, advanced calculations, custom tooltips, and dashboard performance optimization.",
           "resources": [
             {
               "title": "Tableau Desktop Specialist Certification Prep",
@@ -519,13 +541,15 @@
               "url": "/data/docs/data_visualization_specialist/data_visualization_specialist_bi_tools.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         },
         {
           "id": "data_visualization_specialist_prog_viz",
           "name": "Programming for Visualization: Python & R Libraries",
           "tag": "advanced",
-          "description": "Utilize programming languages (Python with Matplotlib, Seaborn, Plotly, Bokeh; R with ggplot2) for advanced, custom, or programmatic visualizations. This includes creating complex statistical graphics, automating report generation, and building interactive web-based dashboards when BI tools fall short.",
+          "description": "Master programmatic web visualization: D3.js v7, WebGL GPU acceleration, and interactive client-side rendering.",
           "resources": [
             {
               "title": "Data Visualization with Python: Matplotlib, Seaborn, and Plotly",
@@ -552,13 +576,15 @@
               "url": "/data/docs/data_visualization_specialist/data_visualization_specialist_prog_viz.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         },
         {
           "id": "data_visualization_specialist_d3_fundamentals",
           "name": "Web-based Visualization: D3.js & Frontend Integration",
           "tag": "advanced",
-          "description": "Learn the fundamentals of D3.js (Data-Driven Documents) for creating dynamic, interactive, and highly custom web-based data visualizations using SVG, HTML, and CSS. Understand data binding, selections, transitions, and integrating D3 visualizations into modern web applications (e.g., React, Vue).",
+          "description": "Master D3.js v7 core architecture: DOM selections, the data join lifecycle (`enter`, `update`, `exit`), quantitative/time/ordinal scales, SVG shape generators (`d3.line`, `d3.area`, `d3.arc`), axis rendering, and smooth data transitions.",
           "resources": [
             {
               "title": "D3.js Official Documentation",
@@ -580,13 +606,15 @@
               "url": "/data/docs/data_visualization_specialist/data_visualization_specialist_d3_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 49
         },
         {
           "id": "data_visualization_specialist_advanced_interactivity",
           "name": "Advanced Interactivity & Custom Visuals Development",
           "tag": "advanced",
-          "description": "Explore techniques for creating highly interactive visualizations, including complex drill-downs, dynamic filtering with calculated measures, conditional formatting, custom tooltips, parameter actions, and developing bespoke visual components not available in standard libraries using extensions or custom code (e.g., custom visuals in Power BI, extensions in Tableau, D3.js).",
+          "description": "Build complex interactive graphics: D3 force-directed network graph simulations, geospatial projections (GeoJSON, TopoJSON), canvas/WebGL rendering for 100,000+ points at 60 FPS with deck.gl and Pixi.js, and interactive zooming and panning.",
           "resources": [
             {
               "title": "Build Dynamic Dashboards in Power BI with Bookmarks & Buttons",
@@ -618,13 +646,15 @@
               "url": "/data/docs/data_visualization_specialist/data_visualization_specialist_advanced_interactivity.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 49
         },
         {
           "id": "data_visualization_specialist_validation_testing",
           "name": "Validation, Testing & Quality Assurance for Visualizations",
           "tag": "advanced",
-          "description": "Implement robust strategies for validating data accuracy, visual integrity, and functionality of dashboards and charts. Learn to create comprehensive test cases, perform user acceptance testing (UAT), conduct A/B testing for design choices, and ensure consistent behavior across different environments and data updates. Understand data quality checks post-transformation.",
+          "description": "Validate visualization correctness: pixel-level visual regression testing with Playwright, verifying numerical accuracy against source data, and auditing cross-browser responsive SVG viewBox scaling.",
           "resources": [
             {
               "title": "How to Test Your Data Visualizations for Clarity and Accuracy",
@@ -656,15 +686,19 @@
               "url": "/data/docs/data_visualization_specialist/data_visualization_specialist_validation_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 47
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 20
     },
     {
       "id": "data_visualization_specialist_deployment_ops",
       "name": "Deployment, Performance & Project Management",
       "tag": "advanced",
-      "description": "Learn to manage the full lifecycle of data visualization projects, ensuring robust deployment, optimal performance, effective collaboration, and adherence to data governance and ethical standards in a professional setting.",
+      "description": "Deploy, optimize, and govern production data visualization systems: performance engineering and enterprise governance.",
       "resources": [
         {
           "title": "Best Practices for Publishing Data Sources and Workbooks",
@@ -697,7 +731,7 @@
           "id": "data_visualization_specialist_data_governance",
           "name": "Data Governance, Ethics & Security in Visualization",
           "tag": "advanced",
-          "description": "Understand principles of data governance, data privacy regulations (GDPR, CCPA, HIPAA), ethical considerations in data visualization (avoiding bias, misrepresentation, privacy concerns), and securing sensitive data within dashboards, reports, and underlying data sources through row-level security and access controls.",
+          "description": "Enforce enterprise data governance in visual tools: handling confidential metrics, ensuring PII redaction, and maintaining documented metric calculation definitions.",
           "resources": [
             {
               "title": "Data Governance in the Age of Self-Service BI",
@@ -724,13 +758,15 @@
               "url": "/data/docs/data_visualization_specialist/data_visualization_specialist_data_governance.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         },
         {
           "id": "data_visualization_specialist_performance_optim",
           "name": "Performance Optimization & Scalability for Dashboards",
           "tag": "advanced",
-          "description": "Implement advanced techniques to improve the loading speed, responsiveness, and scalability of dashboards and reports. This includes optimizing data extracts and live connections, writing efficient queries, managing filters and parameters effectively, optimizing calculated fields, and understanding rendering best practices for large datasets.",
+          "description": "Optimize web rendering performance: debouncing user interaction events, canvas off-screen buffering, web worker data aggregation, and minimizing browser reflows and repaints.",
           "resources": [
             {
               "title": "Tableau Performance Best Practices",
@@ -762,13 +798,15 @@
               "url": "/data/docs/data_visualization_specialist/data_visualization_specialist_performance_optim.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "data_visualization_specialist_deployment_strategies",
           "name": "Deployment Strategies, Automation & Monitoring",
           "tag": "advanced",
-          "description": "Learn how to deploy and manage visualizations and dashboards on platforms like Tableau Server/Cloud, Power BI Service, or integrate D3.js visualizations into web applications. Explore automation of report generation, scheduling data refreshes, and distribution. Understand monitoring tools and strategies for deployed assets to ensure uptime and data freshness.",
+          "description": "Deploy visual applications: embedding responsive interactive charts into React and Vue applications, building micro-frontends, and static asset CDN delivery.",
           "resources": [
             {
               "title": "Power BI Deployment Pipeline",
@@ -795,13 +833,15 @@
               "url": "/data/docs/data_visualization_specialist/data_visualization_specialist_deployment_strategies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         },
         {
           "id": "data_visualization_specialist_collaboration_versioning",
           "name": "Collaboration, Version Control & Documentation Standards",
           "tag": "advanced",
-          "description": "Work effectively in teams using version control systems (e.g., Git for code, specific features for BI tools) for data visualization projects. Master documentation standards for dashboards, underlying data sources, design choices, business logic, and maintenance procedures to ensure maintainability and team collaboration.",
+          "description": "Collaborate in engineering teams: version-controlling D3 codebases, managing design tokens with Figma tokens, and standardizing enterprise component chart libraries.",
           "resources": [
             {
               "title": "Using Git with Data Visualization Projects",
@@ -828,13 +868,15 @@
               "url": "/data/docs/data_visualization_specialist/data_visualization_specialist_collaboration_versioning.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         },
         {
           "id": "data_visualization_specialist_stakeholder_mgmt",
           "name": "Stakeholder Management & Feedback Integration",
           "tag": "advanced",
-          "description": "Develop advanced skills in communicating with diverse stakeholders, gathering precise business requirements, managing expectations, presenting interim results, and effectively incorporating feedback throughout the visualization development lifecycle. Learn negotiation skills and how to translate business needs into technical visualization solutions.",
+          "description": "Lead design reviews with executive stakeholders: gathering visual requirements, iterative wireframing, and demonstrating decision-making impact through visual clarity.",
           "resources": [
             {
               "title": "Communicating Data Insights Effectively",
@@ -866,15 +908,19 @@
               "url": "/data/docs/data_visualization_specialist/data_visualization_specialist_stakeholder_mgmt.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 28
     },
     {
       "id": "data_visualization_specialist_portfolio_career",
       "name": "Portfolio and Career Readiness",
       "tag": "advanced",
-      "description": "Translate your Data Visualization Specialist skills into a compelling portfolio, showcase your expertise, and prepare for career advancement and job interviews in the competitive data visualization market.",
+      "description": "Build an elite public visualization portfolio, author case studies, and excel in technical data visualization interviews.",
       "resources": [
         {
           "title": "Building a Killer Data Visualization Portfolio",
@@ -907,7 +953,7 @@
           "id": "data_visualization_specialist_portfolio_building",
           "name": "Building a Professional Data Visualization Portfolio",
           "tag": "essential",
-          "description": "Learn best practices for curating and presenting your data visualization projects. Focus on showcasing your end-to-end problem-solving process, design choices, technical skills, and the measurable impact of your visualizations. Include a variety of project types (BI dashboards, interactive web vizzes, static reports).",
+          "description": "Curate a distinctive visualization portfolio: publishing interactive web graphics on GitHub/Observable, writing detailed explanatory case studies, and demonstrating bespoke D3.js craftsmanship.",
           "resources": [
             {
               "title": "How to create an awesome data viz portfolio",
@@ -929,13 +975,15 @@
               "url": "/data/docs/data_visualization_specialist/data_visualization_specialist_portfolio_building.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 33
         },
         {
           "id": "data_visualization_specialist_case_study_writing",
           "name": "Crafting Impactful Data Visualization Case Studies",
           "tag": "advanced",
-          "description": "Master the art of writing concise and impactful case studies for your portfolio. Detail the problem statement, data sources used, design process, technical tools and challenges faced, solutions implemented, and quantifiable outcomes or insights derived from your projects. Focus on storytelling your process and impact.",
+          "description": "Author a Technical Visualization Case Study: document the redesign of a congested, unreadable enterprise dashboard into a high-impact, accessible visual tool, detailing cognitive load reduction, stakeholder feedback, and adoption metrics.",
           "resources": [
             {
               "title": "How to Write a Data Science Case Study",
@@ -957,13 +1005,15 @@
               "url": "/data/docs/data_visualization_specialist/data_visualization_specialist_case_study_writing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 49
         },
         {
           "id": "data_visualization_specialist_capstone_project",
           "name": "Capstone Project: End-to-End Data Visualization Solution",
           "tag": "essential",
-          "description": "Undertake a comprehensive, end-to-end data visualization project from real-world data acquisition, cleaning, and transformation, through design, development of interactive dashboards or web visualizations, to deployment. Document your work thoroughly, including a README, technical documentation, screenshots/diagrams, and a reflective summary of challenges and lessons learned.",
+          "description": "Capstone Project: Architect and Deploy a Production-Grade Interactive Geospatial & Financial Scrollytelling Platform: bespoke D3.js custom SVG visual components, deck.gl WebGL rendering of 500,000 geographic data points, DuckDB-Wasm client-side query engine, responsive animations with Scrollama, and WCAG AA accessibility compliance.",
           "resources": [
             {
               "title": "Example Data Visualization Portfolios on GitHub",
@@ -985,13 +1035,15 @@
               "url": "/data/docs/data_visualization_specialist/data_visualization_specialist_capstone_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 78
         },
         {
           "id": "data_visualization_specialist_interview_trends",
           "name": "Interview Preparation, Job Search & Industry Trends",
           "tag": "advanced",
-          "description": "Prepare for technical, design-focused, and behavioral interviews specific to data visualization roles. Learn common interview questions, whiteboarding challenges, and portfolio presentation strategies. Stay updated on emerging tools, techniques, best practices, and the evolving landscape of data visualization and business intelligence roles.",
+          "description": "Excel in Data Visualization technical interviews: live coding bespoke D3.js data joins, defending design and visual encoding choices, and critiquing and improving broken charts under pressure.",
           "resources": [
             {
               "title": "Data Visualization Interview Questions",
@@ -1023,9 +1075,14 @@
               "url": "/data/docs/data_visualization_specialist/data_visualization_specialist_interview_trends.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 46
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 28
     }
-  ]
+  ],
+  "total_exp": 1000
 }

@@ -84,7 +84,7 @@
       "id": "gdev_programming_foundations",
       "name": "Programming & Game Math Fundamentals",
       "tag": "essential",
-      "description": "Establish a robust foundation in programming and mathematics, indispensable for understanding and implementing game logic, physics, and complex systems.",
+      "description": "Master game programming foundations: Game loops, linear algebra (vectors, matrices, quaternions), coordinate spaces, and frame-rate independent physics updates.",
       "resources": [
         {
           "title": "CS50 Introduction to Game Development",
@@ -112,7 +112,7 @@
           "id": "gdev_prog_core",
           "name": "Core Programming Concepts (C#/GDScript)",
           "tag": "essential",
-          "description": "Master variables, data types, control flow, functions, classes, events, collections, debugging, error handling, and basic command-line usage. Focus on practical application in a game development context.",
+          "description": "Master programming for games in C# and GDScript: Static vs dynamic typing, memory management, garbage collection impact on frame times, and object lifecycles.",
           "resources": [
             {
               "title": "Microsoft C# Documentation",
@@ -139,13 +139,15 @@
               "url": "/data/docs/game_development/gdev_prog_core.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         },
         {
           "id": "gdev_data_structures_algorithms",
           "name": "Data Structures & Algorithms for Games",
           "tag": "essential",
-          "description": "Understand and apply fundamental data structures (arrays, lists, dictionaries, stacks, queues) and basic algorithms (searching, sorting) to efficiently manage game data and logic. Explore their practical use in game scenarios.",
+          "description": "Implement game algorithms: Spatial partitioning (quadtrees, octrees, spatial hashing), A* pathfinding on grids and navmeshes, and object pooling patterns.",
           "resources": [
             {
               "title": "C# for Game Dev (Brackeys)",
@@ -162,13 +164,15 @@
               "url": "/data/docs/game_development/gdev_data_structures_algorithms.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "gdev_applied_game_math",
           "name": "Applied Game Math & Physics Basics",
           "tag": "essential",
-          "description": "Learn coordinate systems, vector math (addition, subtraction, dot/cross products, normalization, magnitude), basic matrix transformations, quaternions for rotation, linear interpolation (Lerp), trigonometry (sine, cosine), delta time, collision detection (AABB, sphere, raycasting), and fundamental kinematics for game physics.",
+          "description": "Apply mathematical mechanics: 2D/3D vector mathematics (dot product, cross product, projection), trigonometric trajectory modeling, raycasting, and ray-plane intersections.",
           "resources": [
             {
               "title": "Godot Vector Math",
@@ -195,13 +199,15 @@
               "url": "/data/docs/game_development/gdev_applied_game_math.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 23
         },
         {
           "id": "gdev_oop_design_patterns",
           "name": "Object-Oriented Principles & Game Patterns",
           "tag": "essential",
-          "description": "Dive into OOP concepts like encapsulation, inheritance, polymorphism, and interfaces. Explore common game programming patterns such as Component, State, Command, Observer, Singleton, and Object Pool patterns for cleaner, more maintainable code.",
+          "description": "Master game programming patterns: Component pattern, State pattern for character FSMs, Observer/Event bus pattern, Command pattern for input buffering, and Singleton managers.",
           "resources": [
             {
               "title": "Game Programming Patterns",
@@ -228,15 +234,19 @@
               "url": "/data/docs/game_development/gdev_oop_design_patterns.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 19
     },
     {
       "id": "gdev_engine_fundamentals",
       "name": "Game Engine Fundamentals",
       "tag": "essential",
-      "description": "Gain proficiency with a leading game engine, understanding its core architecture, editor workflow, and integrated systems for crafting interactive experiences.",
+      "description": "Master game engine architecture: Scene graphs, component composition, asset pipelines, input handling, and graphics rendering lifecycles.",
       "resources": [
         {
           "title": "Unity Learn",
@@ -264,7 +274,7 @@
           "id": "gdev_engine_selection_setup",
           "name": "Engine Selection, Installation & Project Setup",
           "tag": "essential",
-          "description": "Evaluate and choose an appropriate game engine. Learn to install the engine, set up new projects, configure editor settings, manage project settings (build targets, quality), and organize project files effectively, including basic package/plugin management.",
+          "description": "Evaluate game engines: Unity (C# / mobile/PC cross-platform), Unreal Engine (C++/Blueprints high-fidelity 3D), and Godot 4 (lightweight open-source 2D/3D).",
           "resources": [
             {
               "title": "Getting Started with Godot",
@@ -291,13 +301,15 @@
               "url": "/data/docs/game_development/gdev_engine_selection_setup.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 21
         },
         {
           "id": "gdev_engine_core_concepts",
           "name": "Engine Core Concepts (Scenes, Objects, Components)",
           "tag": "essential",
-          "description": "Understand fundamental engine concepts: Scenes/Levels, GameObjects/Nodes, Components/Scripts, Prefabs/Instancing, and the Scene Hierarchy. Learn how these elements combine to build game worlds and manage complexity.",
+          "description": "Understand engine abstractions: Entity-Component systems, node trees in Godot, GameObject hierarchy in Unity, transformation hierarchies, and prefab systems.",
           "resources": [
             {
               "title": "Godot Nodes and Scenes Tutorial",
@@ -324,13 +336,15 @@
               "url": "/data/docs/game_development/gdev_engine_core_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 21
         },
         {
           "id": "gdev_asset_pipeline_basics",
           "name": "Basic Asset Pipeline & Management",
           "tag": "essential",
-          "description": "Learn to import various asset types (3D models, textures, sprites, audio), set up materials (PBR workflow basics), configure import settings, utilize sprite atlases, and manage assets within the engine for efficient development.",
+          "description": "Manage game assets: 3D model formats (FBX, glTF/GLB), texture atlases, sprite sheets, compression formats (BC7, ASTC), and audio asset import settings.",
           "resources": [
             {
               "title": "Godot Asset Library",
@@ -357,13 +371,15 @@
               "url": "/data/docs/game_development/gdev_asset_pipeline_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 20
         },
         {
           "id": "gdev_input_systems",
           "name": "Input Management & Controls",
           "tag": "essential",
-          "description": "Implement responsive player input for keyboard, mouse, and gamepads. Understand input mapping, action systems, event-driven input handling, input remapping, and basic mobile touch input.",
+          "description": "Implement modern input handling: Input mapping layers, dead zones, gamepads, touch gestures, mouse look smoothing, and context action rebinding.",
           "resources": [
             {
               "title": "Godot Input Management",
@@ -390,13 +406,15 @@
               "url": "/data/docs/game_development/gdev_input_systems.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "gdev_ui_development",
           "name": "User Interface (UI) Development",
           "tag": "essential",
-          "description": "Design and implement in-game menus, HUDs, pause screens, and other interactive UI elements using the engine's dedicated UI system. Understand layout groups, responsive UI design, and basic localization considerations.",
+          "description": "Build game user interfaces: HUD layout anchors, resolution independence, health bars, inventory grids, modal dialogue boxes, and navigation sound triggers.",
           "resources": [
             {
               "title": "Godot UI Development",
@@ -423,13 +441,15 @@
               "url": "/data/docs/game_development/gdev_ui_development.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         },
         {
           "id": "gdev_physics_collision_systems",
           "name": "Physics & Collision Systems",
           "tag": "essential",
-          "description": "Work with rigidbodies, colliders (various shapes like box, sphere, capsule, mesh), triggers, and physics layers/tags to create realistic interactions, detect collisions, apply forces, create joints, and manage physical simulations within the game world.",
+          "description": "Implement physics simulation: Rigidbodies, kinematic bodies, collision layers/masks, trigger volumes, physics materials (friction, bounciness), and continuous collision detection (CCD).",
           "resources": [
             {
               "title": "Godot Physics Introduction",
@@ -456,13 +476,15 @@
               "url": "/data/docs/game_development/gdev_physics_collision_systems.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 33
         },
         {
           "id": "gdev_animation_systems",
           "name": "Animation Systems (Characters, Objects)",
           "tag": "essential",
-          "description": "Implement character animation using state machines, blend trees, and keyframe animation. Learn to animate objects, UI elements, understand root motion, basic inverse kinematics (IK), and integrate animation events into gameplay logic.",
+          "description": "Animate game entities: Sprite animation state machines, skeletal 2D animation with Spine/DragonBones, 3D blend trees, and animation event triggers.",
           "resources": [
             {
               "title": "Godot Animation Documentation",
@@ -489,13 +511,15 @@
               "url": "/data/docs/game_development/gdev_animation_systems.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         },
         {
           "id": "gdev_unity_essentials",
           "name": "Unity Engine Essentials",
           "tag": "essential",
-          "description": "Specific deep dive into Unity's architecture: MonoBehaviours, ScriptableObjects, Prefab workflow, Editor Scripting basics, understanding the Game/Editor lifecycle (Update, FixedUpdate, LateUpdate), Coroutines, Scene Management, and an introduction to rendering pipelines (URP/HDRP).",
+          "description": "Master Unity engine essentials: MonoBehaviours, Prefabs, ScriptableObjects for data-driven design, and the Universal Render Pipeline (URP).",
           "resources": [
             {
               "title": "Unity Manual",
@@ -522,13 +546,15 @@
               "url": "/data/docs/game_development/gdev_unity_essentials.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "gdev_godot_essentials",
           "name": "Godot Engine Essentials",
           "tag": "essential",
-          "description": "Specific deep dive into Godot's node-based architecture: SceneTree, Signals and slots, Resources, AutoLoad (Singletons), custom editor tools, understanding the process callback (delta), and 2D/3D rendering specifics with GDScript and C#.",
+          "description": "Master Godot 4 essentials: Node hierarchy, Scene instancing, signals for decoupled communication, and GDScript 2.0 static typing.",
           "resources": [
             {
               "title": "Godot Step by Step",
@@ -555,15 +581,19 @@
               "url": "/data/docs/game_development/gdev_godot_essentials.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 16
     },
     {
       "id": "gdev_gameplay_systems",
       "name": "Core Gameplay Systems Development",
       "tag": "advanced",
-      "description": "Develop robust and engaging gameplay systems, including character behaviors, AI, core game mechanics, and dynamic level interactions.",
+      "description": "Develop core gameplay systems: Character movement controllers, combat mechanics, inventory management, dialogue trees, and save/load state.",
       "resources": [
         {
           "title": "Game Physics Explained (Sebastian Lague)",
@@ -586,7 +616,7 @@
           "id": "gdev_character_controllers",
           "name": "Character Controllers & Player Movement",
           "tag": "advanced",
-          "description": "Build responsive player and character controllers for various genres (e.g., first-person, third-person, 2D platformer, top-down). Implement advanced movement mechanics like jumping, dashing, climbing, ground detection, slope handling, step-up mechanics, and intuitive camera controls.",
+          "description": "Engineer character controllers: 2D platformer jump curves, variable height jumps, coyote time, jump buffering, and 3D third-person character movement controllers.",
           "resources": [
             {
               "title": "Godot Character Body 2D/3D",
@@ -608,13 +638,15 @@
               "url": "/data/docs/game_development/gdev_character_controllers.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         },
         {
           "id": "gdev_game_mechanics_impl",
           "name": "Core Game Mechanics Implementation",
           "tag": "advanced",
-          "description": "Implement essential game mechanics such as health and damage systems, stat systems, status effects, inventory management, item usage, basic crafting, progression systems (XP, leveling), resource management, and robust save/load functionality with data persistence.",
+          "description": "Implement core game loops: Weapon hitscan and projectile ballistics, damage mitigation formulas, stamina systems, and interactive puzzle elements.",
           "resources": [
             {
               "title": "Unity Game Dev - Inventory System",
@@ -636,13 +668,15 @@
               "url": "/data/docs/game_development/gdev_game_mechanics_impl.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 27
         },
         {
           "id": "gdev_game_ai_basics",
           "name": "Basic Game AI (State Machines, Pathfinding)",
           "tag": "advanced",
-          "description": "Create intelligent enemy behaviors using finite state machines and an introduction to behavior trees. Implement basic pathfinding algorithms like A* and utilize navigation meshes for intelligent NPC movement, including sensing (line of sight, hearing) and basic decision-making.",
+          "description": "Program game artificial intelligence: Finite State Machines (FSM), NavMesh pathfinding, sensory perception (sight cones, hearing radii), and steering behaviors.",
           "resources": [
             {
               "title": "Godot Navigation",
@@ -669,13 +703,15 @@
               "url": "/data/docs/game_development/gdev_game_ai_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         },
         {
           "id": "gdev_level_design_tools",
           "name": "Level Design & Environmental Interaction",
           "tag": "advanced",
-          "description": "Learn principles of level design, including whiteboxing, prototyping, pacing, difficulty curves, environmental storytelling, and modular level design. Implement interactive elements, environmental puzzles, and event triggers within levels.",
+          "description": "Design game levels: Tilemaps for 2D worlds, greyboxing 3D geometry with ProBuilder, lighting placement, trigger zones, and pacing player progression.",
           "resources": [
             {
               "title": "Game Physics Explained (Sebastian Lague)",
@@ -692,13 +728,15 @@
               "url": "/data/docs/game_development/gdev_level_design_tools.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         },
         {
           "id": "gdev_game_state_management",
           "name": "Game State, Event & Scene Management",
           "tag": "advanced",
-          "description": "Implement robust systems for managing game states (e.g., main menu, gameplay, pause, game over), handling game-wide events (event bus), and efficiently transitioning between scenes/levels. Understand game flow and data management across different states.",
+          "description": "Manage global game state: Scene loading/unloading (additive loading), persistent manager objects, audio managers, and serialization to JSON/binary save files.",
           "resources": [
             {
               "title": "Game Architecture - State Machines",
@@ -720,15 +758,19 @@
               "url": "/data/docs/game_development/gdev_game_state_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 30
     },
     {
       "id": "gdev_production_polish",
       "name": "Production, Polish & Game Design",
       "tag": "advanced",
-      "description": "Integrate art and audio, optimize game performance, apply advanced game design principles, and manage collaborative workflows to elevate the quality of your game.",
+      "description": "Polish game experiences: Visual effects, screen shake, audio balance, particle systems, game feel (juice), and performance profiling.",
       "resources": [
         {
           "title": "Game Feel: A Game Designer's Guide to Virtual Sensation",
@@ -756,7 +798,7 @@
           "id": "gdev_art_audio_integration",
           "name": "Art & Audio Asset Integration",
           "tag": "advanced",
-          "description": "Learn advanced techniques for integrating 2D and 3D art assets (spritesheets, tilemaps, models, textures, animations, UV mapping basics, LOD groups). Implement sound effects, background music, audio mixing, soundbanks, and spatial audio for immersive experiences.",
+          "description": "Integrate audio and art: Dynamic audio mixing, positional 3D sound attenuation, interactive music layers, and ambient audio soundscapes.",
           "resources": [
             {
               "title": "Godot Audio Bus Layout",
@@ -783,13 +825,15 @@
               "url": "/data/docs/game_development/gdev_art_audio_integration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         },
         {
           "id": "gdev_vfx_shaders_intro",
           "name": "Visual Effects & Shader Introduction",
           "tag": "advanced",
-          "description": "Create compelling visual effects using particle systems, post-processing effects (color grading, bloom, ambient occlusion), and learn the basics of shader programming (vertex/fragment shaders, PBR materials, shader graphs/visual editors) for custom visual styles and effects like decals.",
+          "description": "Create visual effects and shaders: Particle systems (sparks, smoke, magic), screen shake, camera feedback, and custom vertex/fragment shaders.",
           "resources": [
             {
               "title": "Godot Particle Systems",
@@ -816,13 +860,15 @@
               "url": "/data/docs/game_development/gdev_vfx_shaders_intro.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 27
         },
         {
           "id": "gdev_game_design_principles",
           "name": "Game Design Principles & Player Experience",
           "tag": "advanced",
-          "description": "Deepen your understanding of core game design principles, including player psychology, feedback loops, core loops, balancing, emergent gameplay, creating a positive user experience (UX), and the importance of 'game feel'.",
+          "description": "Apply game design theory: MDA framework (Mechanics, Dynamics, Aesthetics), player agency, difficulty curves, tutorial pacing, and positive/negative feedback loops.",
           "resources": [
             {
               "title": "The Art of Game Design: A Book of Lenses",
@@ -844,13 +890,15 @@
               "url": "/data/docs/game_development/gdev_game_design_principles.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         },
         {
           "id": "gdev_performance_optimization",
           "name": "Performance Optimization & Profiling",
           "tag": "advanced",
-          "description": "Identify and resolve performance bottlenecks using profiling tools (CPU, GPU). Implement strategies for draw call reduction, batching, occlusion culling, LODs, asset compression, memory management, and understanding common causes of memory leaks for smooth gameplay.",
+          "description": "Optimize game performance: Draw call batching, texture compression, occluding geometry, memory leak detection, and maintaining consistent 60fps/120fps.",
           "resources": [
             {
               "title": "Unity Profiler",
@@ -877,13 +925,15 @@
               "url": "/data/docs/game_development/gdev_performance_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         },
         {
           "id": "gdev_version_control_collaboration",
           "name": "Version Control & Collaborative Workflows",
           "tag": "advanced",
-          "description": "Master Git for version control, including branching strategies (e.g., GitFlow, Feature Branching), merging, pull requests, and resolving conflicts. Learn best practices for collaborative game development using Git LFS (Large File Storage) for assets and implementing code reviews.",
+          "description": "Collaborate in game teams: Git with Git LFS for binary assets, branching strategies, and handling project setting conflicts.",
           "resources": [
             {
               "title": "Git Handbook",
@@ -910,15 +960,19 @@
               "url": "/data/docs/game_development/gdev_version_control_collaboration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 30
     },
     {
       "id": "gdev_testing_publishing",
       "name": "Testing, Deployment & Portfolio",
       "tag": "advanced",
-      "description": "Navigate the final stages of game development, from rigorous testing and optimization to successful deployment, marketing, and creating a strong professional portfolio.",
+      "description": "Test, build, and publish games across platforms: Steam, itch.io, mobile app stores, and console platforms.",
       "resources": [
         {
           "title": "Game Physics Explained (Sebastian Lague)",
@@ -941,7 +995,7 @@
           "id": "gdev_qa_playtesting_feedback",
           "name": "Quality Assurance & Playtesting Feedback",
           "tag": "advanced",
-          "description": "Develop strategies for internal and external playtesting. Learn to collect, analyze, and act on player feedback. Implement basic unit and integration testing for game logic, utilize bug tracking systems, and conduct user experience (UX) testing to ensure a high level of game quality and polish.",
+          "description": "Conduct playtesting: Designing playtest questionnaires, observing player confusion, telemetry logging, and iterative mechanic refinement.",
           "resources": [
             {
               "title": "The Importance of Playtesting",
@@ -963,13 +1017,15 @@
               "url": "/data/docs/game_development/gdev_qa_playtesting_feedback.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         },
         {
           "id": "gdev_build_deployment",
           "name": "Building & Cross-Platform Deployment",
           "tag": "advanced",
-          "description": "Understand the process of building your game for various platforms (PC, WebGL, Mobile). Configure build settings, optimize for different target environments, manage asset packaging, create debugging builds, and package your game for release. Introduction to basic CI/CD pipelines.",
+          "description": "Build cross-platform game executables: Windows EXE, macOS App, WebGL builds, mobile APK/IPA, and code signing.",
           "resources": [
             {
               "title": "Godot Exporting Projects",
@@ -996,13 +1052,15 @@
               "url": "/data/docs/game_development/gdev_build_deployment.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 34
         },
         {
           "id": "gdev_marketing_community",
           "name": "Game Marketing & Community Engagement",
           "tag": "advanced",
-          "description": "Learn to create compelling store pages (itch.io, Steam, app stores), develop engaging trailers and screenshots, craft professional press kits, engage with communities via devlogs and social media, manage post-launch feedback, and understand basic monetization strategies (F2P, premium).",
+          "description": "Market indie games: Creating compelling gameplay trailers, Steam page optimization, crafting press kits, and running beta Discord communities.",
           "resources": [
             {
               "title": "itch.io Creator Guide",
@@ -1029,13 +1087,15 @@
               "url": "/data/docs/game_development/gdev_marketing_community.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         },
         {
           "id": "gdev_capstone_project",
           "name": "Capstone Project: Develop & Publish Your Game",
           "tag": "advanced",
-          "description": "Apply all acquired knowledge and skills to design, develop, polish, and successfully publish a complete, small-scale game. This project serves as a cornerstone for your professional portfolio, showcasing your ability to deliver a full game experience.",
+          "description": "Build and publish a commercial-ready game capstone: Complete playable 2D/3D game featuring polished mechanics, sound design, particle effects, UI menus, and published on Steam or itch.io.",
           "resources": [
             {
               "title": "Game Physics Explained (Sebastian Lague)",
@@ -1052,9 +1112,14 @@
               "url": "/data/docs/game_development/gdev_capstone_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 103
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 30
     }
-  ]
+  ],
+  "total_exp": 1000
 }

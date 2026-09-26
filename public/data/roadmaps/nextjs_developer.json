@@ -48,25 +48,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "High-Traffic Content Publishing Platform",
+        "title": "High-Traffic Multi-Tenant Editorial Platform with Next.js App Router & ISR",
         "tech_stack": [
-          "Next.js App Router",
+          "Next.js 15",
           "TypeScript",
-          "Tailwind",
-          "PostgreSQL"
+          "Tailwind CSS",
+          "PostgreSQL",
+          "Incremental Static Regeneration"
         ],
-        "description": "Develop an editorial platform with dynamic ISR, on-demand cache revalidation, MDX rendering, and sub-second page loads."
+        "description": "Architect a multi-tenant publishing platform supporting sub-domain routing, on-demand ISR revalidation, Server Components, and Edge Middleware auth."
       },
       {
-        "title": "High-Traffic Editorial Platform with Next.js ISR & Edge Middleware",
+        "title": "Edge-Rendered SaaS Analytics Workspace with Server Actions & Streaming",
         "tech_stack": [
           "Next.js 15",
           "React Server Components",
-          "Tailwind",
-          "Redis",
-          "Vercel Edge"
+          "Supabase",
+          "Drizzle ORM",
+          "Stripe"
         ],
-        "description": "Build an ultra-fast publishing portal utilizing Incremental Static Regeneration (ISR), geo-distributed edge authentication, streaming UI skeletons, and sub-1s Core Web Vitals."
+        "description": "Build an ultra-responsive SaaS product featuring optimistic Server Actions, React 19 Suspense streaming, role-based auth, and automated Stripe billing."
       }
     ],
     "certifications": [
@@ -74,10 +75,11 @@
       "OpenJS Node.js Application Developer (JSNAD)"
     ],
     "interview_focus": [
-      "Next.js Caching Tiers (Request Memoization, Data Cache, Full Route Cache)",
-      "Server vs Client Component Boundaries",
-      "Edge Functions vs Node.js Serverless Execution",
-      "Core Web Vitals Optimization"
+      "Next.js App Router Architecture: Server Components vs Client Components Tree Serialization",
+      "Rendering Strategies: SSR vs SSG vs ISR (Time-Based vs On-Demand) vs PPR (Partial Prerendering)",
+      "Server Actions Security (CSRF Protection, Action Idempotency, Input Validation with Zod)",
+      "Next.js Caching Layers (Request Memoization, Data Cache, Full Route Cache, Router Cache)",
+      "Core Web Vitals Optimization in Next.js (next/image, next/font, Script priority, INP tuning)"
     ]
   },
   "format": "tree",
@@ -86,7 +88,7 @@
       "id": "nextjs_dev_foundations_web_react",
       "name": "Foundational Web & React Ecosystem",
       "tag": "essential",
-      "description": "Establish a strong understanding of modern web development principles and core React.js concepts before diving into Next.js specifics.",
+      "description": "Establish an uncompromised React 19 and Next.js 15 foundation: master React Server Components (RSC), streaming server-side rendering, hydration boundaries, and modern TypeScript development environments.",
       "resources": [
         {
           "title": "Next.js Documentation",
@@ -119,7 +121,7 @@
           "id": "nextjs_dev_web_react_fundamentals",
           "name": "Modern Web & React Fundamentals",
           "tag": "essential",
-          "description": "Grasp the underlying technologies of the web (HTML, CSS, JavaScript ES6+) and master React's core principles, including JSX, component composition, state management (local & global context), props, hooks (useState, useEffect, useContext, useReducer, useRef), and common styling approaches (CSS Modules, Tailwind CSS, Styled Components).",
+          "description": "Master React 19 core architecture: React Server Components (RSC) vs Client Components (`'use client'`), the reconciliation fiber tree, Suspense boundaries for asynchronous streaming, concurrent transitions (`useTransition`), optimistic UI updates (`useOptimistic`), and form actions with `useActionState`.",
           "resources": [
             {
               "title": "JavaScript.info: The Modern JavaScript Tutorial",
@@ -156,13 +158,15 @@
               "url": "/data/docs/nextjs_developer/nextjs_dev_web_react_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 26
         },
         {
           "id": "nextjs_dev_env_tooling",
           "name": "Development Environment & Tooling",
           "tag": "essential",
-          "description": "Set up your development environment with VS Code, understand Node.js and npm/yarn/pnpm, master Git for version control, and configure essential developer tools like ESLint and Prettier for code quality and consistency.",
+          "description": "Master the Next.js developer toolchain: project initialization with TypeScript, configuring `next.config.mjs`, ESLint flat config with Next.js core web vitals plugin, Prettier formatting automation, and Turbopack fast compilation.",
           "resources": [
             {
               "title": "Getting Started with Next.js",
@@ -204,15 +208,19 @@
               "url": "/data/docs/nextjs_developer/nextjs_dev_env_tooling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 26
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 29
     },
     {
       "id": "nextjs_dev_core_app_router",
       "name": "Next.js Core Concepts: App Router & Server Components",
       "tag": "essential",
-      "description": "Deep dive into the latest Next.js features, focusing on the App Router, server components, data fetching strategies, and fundamental rendering mechanisms.",
+      "description": "Master the Next.js 15 App Router: file-system routing conventions, Server Actions, declarative form handling, enterprise authentication, and testing strategies.",
       "resources": [
         {
           "title": "Next.js Learn",
@@ -240,7 +248,7 @@
           "id": "nextjs_dev_app_router_deep_dive",
           "name": "App Router Deep Dive: Routing, Layouts & Data Fetching",
           "tag": "essential",
-          "description": "Master file-system based routing, route groups, parallel routes, dynamic routes, and catch-all routes. Understand nested layouts, templates, and integrate metadata. Deep dive into Server Components vs. Client Components, streaming with Suspense, Loading UIs, and Error Boundaries. Explore various data fetching patterns like `fetch` with `async/await` in Server Components, caching, and revalidation.",
+          "description": "Master advanced App Router patterns: nested layouts, templates, route groups `(group)` for layout isolation, parallel routes (`@slot`) for multi-view dashboards, intercepting routes `(..)photo` for contextual modal overlays, declarative error handling (`error.tsx`, `global-error.tsx`), `loading.tsx` streaming skeletons, and async request APIs (`await params`, `await searchParams`).",
           "resources": [
             {
               "title": "Next.js App Router Documentation",
@@ -282,13 +290,15 @@
               "url": "/data/docs/nextjs_developer/nextjs_dev_app_router_deep_dive.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 43
         },
         {
           "id": "nextjs_dev_forms_api_server_actions",
           "name": "Forms, Server Actions & API Routes",
           "tag": "essential",
-          "description": "Learn to build and handle forms effectively. Implement robust data mutations with Server Actions, including validation (e.g., Zod) and error handling. Develop RESTful API endpoints using Route Handlers (API Routes) for server-side logic and integrate third-party services.",
+          "description": "Engineer mutation lifecycles with Server Actions (`'use server'`): validating payloads with Zod schemas, handling mutations with `useActionState`, instant UI feedback with `useOptimistic`, granular cache invalidation (`revalidatePath`, `revalidateTag`), and securing Server Actions against CSRF.",
           "resources": [
             {
               "title": "API Routes in Next.js",
@@ -320,13 +330,15 @@
               "url": "/data/docs/nextjs_developer/nextjs_dev_forms_api_server_actions.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 35
         },
         {
           "id": "nextjs_dev_auth_authorization",
           "name": "Authentication & Authorization",
           "tag": "essential",
-          "description": "Secure your Next.js applications by implementing user authentication (e.g., NextAuth.js, Clerk) and authorization strategies. Understand session management, JWTs, and secure API access.",
+          "description": "Implement production authentication in Next.js: Auth.js / NextAuth v5, stateless JWT session tokens with rotating refresh tokens, OAuth2 social logins, role-based access control (RBAC), and route protection via Edge Middleware (`matcher` patterns, redirects).",
           "resources": [
             {
               "title": "NextAuth.js Documentation",
@@ -358,13 +370,15 @@
               "url": "/data/docs/nextjs_developer/nextjs_dev_auth_authorization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 47
         },
         {
           "id": "nextjs_dev_styling_perf_best_practices",
           "name": "Next.js Styling, Optimizations & Best Practices",
           "tag": "essential",
-          "description": "Explore various styling solutions (Tailwind CSS, CSS-in-JS, modules). Implement image and font optimization, understand bundle analysis, and leverage features like `next/script` and `next/link`. Learn general Next.js best practices for maintainable and performant applications.",
+          "description": "Optimize web performance and styling: Tailwind CSS v4, zero-layout-shift font loading with `next/font`, responsive image optimization with `next/image` (WebP/AVIF modern formats, `sizes` attribute calculation), dynamic code splitting with `next/dynamic`, and bundle analysis.",
           "resources": [
             {
               "title": "Optimizing Performance in Next.js",
@@ -401,13 +415,15 @@
               "url": "/data/docs/nextjs_developer/nextjs_dev_styling_perf_best_practices.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 35
         },
         {
           "id": "nextjs_dev_testing_strategies",
           "name": "Testing Next.js Applications",
           "tag": "advanced",
-          "description": "Implement robust testing strategies for your Next.js applications. Learn unit testing with Jest/React Testing Library, integration testing, and end-to-end (E2E) testing with Playwright or Cypress. Understand mocking and testing server components and actions.",
+          "description": "Implement comprehensive testing for Next.js applications: unit and component testing with Vitest and React Testing Library (mocking server actions and headers), and end-to-end (E2E) testing with Playwright (testing full authentication flows, parallel routes, and visual regressions).",
           "resources": [
             {
               "title": "Testing Next.js Applications",
@@ -439,13 +455,15 @@
               "url": "/data/docs/nextjs_developer/nextjs_dev_testing_strategies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 61
         },
         {
           "id": "nextjs_dev_project_core_app",
           "name": "Project: Build a Full-Stack Modern Web Application",
           "tag": "essential",
-          "description": "Apply all core Next.js skills by building a complete application, integrating App Router, Server Components, API routes/Server Actions, data fetching, and a responsive UI. Connect to a database (e.g., PostgreSQL with Prisma) and implement basic authentication.",
+          "description": "Build a Core App Router Application: develop a full-featured content publishing platform with Server Components, markdown/MDX rendering, Server Actions for commenting and bookmarks, and responsive Tailwind CSS styling.",
           "resources": [
             {
               "title": "Next.js Learn - Building a Dashboard (Example Project)",
@@ -472,15 +490,19 @@
               "url": "/data/docs/nextjs_developer/nextjs_dev_project_core_app.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 76
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 29
     },
     {
       "id": "nextjs_dev_deployment_scalability",
       "name": "Deployment, Scalability & Advanced Practices",
       "tag": "advanced",
-      "description": "Learn to deploy Next.js applications to production, implement monitoring, ensure security, and explore advanced features for building robust and scalable solutions.",
+      "description": "Deploy, monitor, and scale production Next.js applications: containerization, edge runtime caching, internationalization, and observability.",
       "resources": [
         {
           "title": "Vercel Documentation",
@@ -513,7 +535,7 @@
           "id": "nextjs_dev_prod_deployment_cicd",
           "name": "Production Deployment & CI/CD",
           "tag": "advanced",
-          "description": "Master deploying Next.js applications to platforms like Vercel and AWS Amplify. Set up robust Continuous Integration/Continuous Deployment (CI/CD) pipelines using GitHub Actions to automate builds, tests, and deployments. Understand environment variables for production.",
+          "description": "Master production deployment workflows: Docker multi-stage builds using `output: 'standalone'` (reducing container size to under 150MB), deploying to Kubernetes, AWS ECS, or Vercel, and building continuous delivery pipelines with GitHub Actions.",
           "resources": [
             {
               "title": "Deploying Next.js with Vercel",
@@ -545,13 +567,15 @@
               "url": "/data/docs/nextjs_developer/nextjs_dev_prod_deployment_cicd.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 60
         },
         {
           "id": "nextjs_dev_monitoring_logging",
           "name": "Monitoring, Logging & Error Handling",
           "tag": "advanced",
-          "description": "Integrate monitoring tools (e.g., Sentry, Datadog, Vercel Analytics) to track application performance, errors, and user behavior in production. Implement comprehensive logging strategies and graceful error handling for both server and client components.",
+          "description": "Implement production observability: capturing Core Web Vitals (LCP, INP, CLS) using `useReportWebVitals`, structured logging with Pino, distributed tracing with OpenTelemetry (`@vercel/otel`), and real-time error tracking with Sentry.",
           "resources": [
             {
               "title": "Sentry for Error Monitoring",
@@ -583,13 +607,15 @@
               "url": "/data/docs/nextjs_developer/nextjs_dev_monitoring_logging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 60
         },
         {
           "id": "nextjs_dev_caching_edge",
           "name": "Caching Strategies & Edge Runtime",
           "tag": "advanced",
-          "description": "Implement advanced caching strategies using Next.js's built-in caching, HTTP caching headers, and CDN integration to optimize performance and reduce server load. Leverage the Edge Runtime and Edge Functions for low-latency responses and global distribution.",
+          "description": "Master the Next.js 15 caching architecture: Request Memoization, Data Cache (`fetch` with explicit `cache` tags), Full Route Cache (static vs dynamic rendering), Router Cache, Partial Prerendering (PPR), and deploying compute to Edge Middleware.",
           "resources": [
             {
               "title": "Next.js Caching",
@@ -621,13 +647,15 @@
               "url": "/data/docs/nextjs_developer/nextjs_dev_caching_edge.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 60
         },
         {
           "id": "nextjs_dev_i18n_webhooks",
           "name": "Internationalization (i18n) & Webhooks",
           "tag": "advanced",
-          "description": "Implement multi-language support and internationalization (i18n) in your Next.js applications for a global audience. Learn to integrate and handle webhooks for real-time updates and integrations with external services.",
+          "description": "Build global enterprise applications: sub-path and domain-based internationalization routing with `next-intl`, secure incoming webhook handlers with cryptographic signature verification (Stripe, GitHub), and asynchronous background job triggers.",
           "resources": [
             {
               "title": "Internationalization in Next.js",
@@ -654,15 +682,19 @@
               "url": "/data/docs/nextjs_developer/nextjs_dev_i18n_webhooks.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 48
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 28
     },
     {
       "id": "nextjs_dev_pro_dev_projects",
       "name": "Professional Development & Advanced Projects",
       "tag": "advanced",
-      "description": "Refine your skills with complex project architectures, prepare for technical interviews, and build a compelling portfolio to showcase your expertise as a Next.js Developer.",
+      "description": "Engineer production-grade portfolio applications: master advanced server state architectures, complex micro-frontend patterns, and technical frontend interviews.",
       "resources": [
         {
           "title": "Next.js Documentation",
@@ -695,7 +727,7 @@
           "id": "nextjs_dev_advanced_state_data",
           "name": "Advanced State Management & Data Layer",
           "tag": "advanced",
-          "description": "Explore advanced global state management solutions beyond React Context (e.g., Zustand, Jotai, Redux Toolkit). Integrate complex data layers with GraphQL (Apollo Client, Relay) or TRPC for type-safe full-stack communication. Understand database integration patterns (ORMs like Prisma, DrizzleORM) and serverless database access.",
+          "description": "Architect scalable client and server data synchronization: combining React Server Components for initial payload streaming with TanStack Query / SWR for client-side optimistic polling, and Zustand for lightweight global client state.",
           "resources": [
             {
               "title": "State Management in React (Zustand, Jotai, Redux Toolkit)",
@@ -732,13 +764,15 @@
               "url": "/data/docs/nextjs_developer/nextjs_dev_advanced_state_data.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 48
         },
         {
           "id": "nextjs_dev_complex_arch_patterns",
           "name": "Complex Project Architecture & Design Patterns",
           "tag": "advanced",
-          "description": "Learn to design and architect large-scale Next.js applications. Explore design patterns (e.g., HOCs, Render Props, Compound Components), monorepo setups (Turborepo, Nx), and module federation for micro-frontends. Understand how to structure code for scalability and maintainability in enterprise environments.",
+          "description": "Design complex enterprise Next.js architectures: multi-tenant subdomains using Edge Middleware rewrites, micro-frontends with Module Federation, and Content Security Policy (CSP) nonces to mitigate XSS in Server Components.",
           "resources": [
             {
               "title": "Building a Scalable Next.js App - Vercel Blog",
@@ -770,13 +804,15 @@
               "url": "/data/docs/nextjs_developer/nextjs_dev_complex_arch_patterns.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 63
         },
         {
           "id": "nextjs_dev_capstone_project",
           "name": "Capstone Project: Full-Stack SaaS / Enterprise Application",
           "tag": "advanced",
-          "description": "Build a comprehensive, production-grade Next.js SaaS or enterprise-level application. This project should integrate advanced features, demonstrate robust testing, CI/CD, and impeccable documentation. Focus on real-world challenges like multi-tenancy, complex workflows, and third-party integrations.",
+          "description": "Capstone Project: Architect and Deploy a Production-Grade B2B SaaS Platform in Next.js 15: multi-tenant team management, Stripe billing and webhooks, PostgreSQL database with Drizzle/Prisma ORM, Server Actions with Zod validation, optimistic UI updates, full Playwright test suite, and standalone Docker deployment.",
           "resources": [
             {
               "title": "ShipFast - Boilerplate for SaaS with Next.js",
@@ -803,13 +839,15 @@
               "url": "/data/docs/nextjs_developer/nextjs_dev_capstone_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 106
         },
         {
           "id": "nextjs_dev_interview_portfolio_networking",
           "name": "Career Readiness: Interviews, Portfolio & Networking",
           "tag": "advanced",
-          "description": "Prepare for technical interviews with common Next.js, React, and general web development questions and coding challenges. Optimize your resume and LinkedIn profile, build a strong online portfolio showcasing your best work, and learn effective networking strategies to land your dream job.",
+          "description": "Excel in senior frontend and full-stack engineering interviews: live coding React 19 Server Components under pressure, deep explanations of the Next.js caching lifecycle, diagnosing Core Web Vitals bottlenecks, and showcasing benchmarked GitHub repositories.",
           "resources": [
             {
               "title": "Cracking the Coding Interview (Book)",
@@ -836,9 +874,14 @@
               "url": "/data/docs/nextjs_developer/nextjs_dev_interview_portfolio_networking.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 48
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 72
     }
-  ]
+  ],
+  "total_exp": 1000
 }

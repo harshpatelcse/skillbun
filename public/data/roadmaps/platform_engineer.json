@@ -47,32 +47,34 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Self-Service Developer Portal with Spotify Backstage",
+        "title": "Internal Developer Platform (IDP) with Spotify Backstage & Crossplane",
         "tech_stack": [
           "Backstage",
-          "Kubernetes",
           "Crossplane",
+          "Kubernetes",
           "GitHub Actions",
-          "PostgreSQL"
+          "ArgoCD"
         ],
-        "description": "Build an internal developer portal where engineers can scaffold a new microservice with automated CI/CD, database, and DNS in 2 minutes."
+        "description": "Construct a self-service developer portal allowing engineering teams to spin up standardized microservices and cloud databases with automated Golden Paths."
       },
       {
-        "title": "Internal Developer Platform (IDP) with Backstage & Crossplane",
+        "title": "Self-Service Cloud Infrastructure Catalog with Terraform & Ephemeral Envs",
         "tech_stack": [
-          "Backstage",
-          "Crossplane",
-          "Kubernetes",
-          "GitHub Actions"
+          "Terraform Cloud",
+          "AWS EKS",
+          "vcluster",
+          "GitHub App Webhooks",
+          "Docker"
         ],
-        "description": "Deliver a unified developer portal enabling self-service provisioning of databases, cloud storage buckets, and microservice boilerplate with policy guardrails."
+        "description": "Build an automated ephemeral preview environment generator deploying lightweight virtual Kubernetes clusters (vcluster) for every open pull request."
       }
     ],
     "interview_focus": [
-      "Platform as a Product Philosophy",
-      "Crossplane vs Traditional Terraform Tradeoffs",
-      "Defining and Measuring DevEx (Developer Friction)",
-      "Designing Self-Service Golden Paths without Shadow IT"
+      "Internal Developer Platform (IDP) Core Objectives & Golden Path Design Principles",
+      "Control Planes & Infrastructure Composition (Crossplane vs Terraform Operator)",
+      "Multi-Tenancy in Kubernetes (Namespace Isolation, ResourceQuotas, NetworkPolicies, vcluster)",
+      "Developer Experience (DevEx) Metrics (DORA Metrics, Time to First Commit, Deployment Frequency)",
+      "GitOps at Scale (App-of-Apps Pattern, Helm OCI Registries, Automated Policy Checks)"
     ],
     "certifications": [
       "Certified Kubernetes Administrator (CKA)",
@@ -85,7 +87,7 @@
       "id": "pe_foundations",
       "name": "Foundations: Role, Principles & Essential Tools",
       "tag": "essential",
-      "description": "Establish a strong understanding of the Platform Engineer role, its core principles, and the foundational technical skills required to build and operate internal developer platforms.",
+      "description": "Master foundational platform engineering concepts: Treating the platform as an internal product, establishing Golden Paths, and empowering self-service developer velocity.",
       "resources": [
         {
           "title": "What is Platform Engineering? Principles and Practices",
@@ -118,7 +120,7 @@
           "id": "pe_foundations_role_principles",
           "name": "Understanding the Role & Principles",
           "tag": "essential",
-          "description": "Explore the definition, benefits, and core philosophies of Platform Engineering, differentiating it from DevOps and SRE, and understanding its impact on developer experience.",
+          "description": "Understand the platform engineer role: Differentiating Platform Engineering from traditional DevOps and SysAdmin, reducing developer cognitive load, and defining internal SLOs.",
           "resources": [
             {
               "title": "Team Topologies - Platform Teams",
@@ -145,13 +147,15 @@
               "url": "/data/docs/platform_engineer/pe_foundations_role_principles.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "pe_os_shell_networking",
           "name": "Operating Systems, Shell Scripting & Networking Fundamentals",
           "tag": "essential",
-          "description": "Master Linux/Unix operating system concepts, essential shell scripting (Bash, Zsh) for automation, command-line tools, and fundamental networking principles (TCP/IP, DNS, HTTP) critical for platform interaction and troubleshooting.",
+          "description": "Master operating systems and networking: Linux kernel subsystems, systemd service management, advanced Bash scripting, POSIX tools, DNS resolution, and TCP/IP routing.",
           "resources": [
             {
               "title": "Linux Command Line Basics",
@@ -178,13 +182,15 @@
               "url": "/data/docs/platform_engineer/pe_os_shell_networking.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 23
         },
         {
           "id": "pe_cloud_fundamentals",
           "name": "Cloud Computing Fundamentals",
           "tag": "essential",
-          "description": "Understand core cloud computing concepts (elasticity, scalability, high availability), service models (IaaS, PaaS, SaaS), deployment models, and the basic architecture of major cloud providers (AWS, Azure, GCP), including common services like Compute, Storage, Networking, and IAM.",
+          "description": "Architect multi-cloud infrastructures: IAM hierarchy, VPC topologies, NAT gateways, security groups, and multi-region availability across AWS, GCP, and Azure.",
           "resources": [
             {
               "title": "Cloud Computing Basics - AWS",
@@ -211,13 +217,15 @@
               "url": "/data/docs/platform_engineer/pe_cloud_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 16
         },
         {
           "id": "pe_version_control_git",
           "name": "Version Control with Git & Collaboration",
           "tag": "essential",
-          "description": "Master Git for version control, including branching strategies, merging, rebasing, and collaborating effectively using platforms like GitHub, GitLab, or Bitbucket.",
+          "description": "Manage infrastructure repositories: Trunk-based development, semantic release automation, monorepo tooling, and branch protection policies with Git.",
           "resources": [
             {
               "title": "Pro Git Book",
@@ -239,15 +247,19 @@
               "url": "/data/docs/platform_engineer/pe_version_control_git.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 20
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 20
     },
     {
       "id": "pe_infra_automation",
       "name": "Infrastructure as Code & Containerization",
       "tag": "essential",
-      "description": "Master the art of declarative infrastructure management and containerization, forming the bedrock for building scalable, reproducible, and immutable platforms.",
+      "description": "Standardize infrastructure provisioning: Declarative Infrastructure as Code (IaC), containerization standards, and immutable infrastructure patterns.",
       "resources": [
         {
           "title": "Infrastructure as Code: From Fundamentals to Practices",
@@ -280,7 +292,7 @@
           "id": "pe_iac_terraform",
           "name": "Infrastructure as Code (IaC) with Terraform",
           "tag": "essential",
-          "description": "Learn to provision and manage cloud infrastructure using Terraform, including HCL syntax, state management, modules, providers, remote backends, and advanced patterns for managing complex environments.",
+          "description": "Master Terraform and OpenTofu: Modular architecture, remote state locking with DynamoDB/S3, workspaces, terragrunt orchestration, and policy-as-code with Sentinel / OPA.",
           "resources": [
             {
               "title": "Terraform Documentation",
@@ -307,13 +319,15 @@
               "url": "/data/docs/platform_engineer/pe_iac_terraform.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "pe_docker_mastery",
           "name": "Containerization with Docker",
           "tag": "essential",
-          "description": "Deep dive into Docker concepts such as images, containers, registries, Dockerfiles, multi-stage builds, container networking, volumes, and basic container orchestration with Docker Compose.",
+          "description": "Standardize container builds: Multi-stage Dockerfiles, distroless minimal base images, non-root security contexts, buildx cross-compilation, and image vulnerability scanning with Trivy.",
           "resources": [
             {
               "title": "Docker Documentation",
@@ -340,13 +354,15 @@
               "url": "/data/docs/platform_engineer/pe_docker_mastery.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         },
         {
           "id": "pe_config_management_basics",
           "name": "Configuration Management & Immutable Infrastructure",
           "tag": "essential",
-          "description": "Understand how to automate software provisioning and configuration management using tools like Ansible, focusing on idempotency, playbooks, and roles. Explore the benefits of immutable infrastructure and tools like Packer for building golden images.",
+          "description": "Implement configuration management: Automated VM templating with HashiCorp Packer, cloud-init provisioning, and immutable image pipelines.",
           "resources": [
             {
               "title": "Ansible Documentation",
@@ -373,15 +389,19 @@
               "url": "/data/docs/platform_engineer/pe_config_management_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 19
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 18
     },
     {
       "id": "pe_kubernetes_mastery",
       "name": "Kubernetes Ecosystem Mastery",
       "tag": "essential",
-      "description": "Gain in-depth expertise in Kubernetes, from core concepts and operational management to advanced patterns and security, which is critical for modern cloud-native platforms.",
+      "description": "Master the Kubernetes container platform: Control plane architecture, distributed etcd, declarative workload controllers, and production cluster operations.",
       "resources": [
         {
           "title": "Kubernetes Documentation",
@@ -414,7 +434,7 @@
           "id": "pe_kubernetes_core_concepts",
           "name": "Kubernetes Core Concepts & Architecture",
           "tag": "essential",
-          "description": "Learn the fundamental architecture of Kubernetes, including control plane components (API Server, etcd, Scheduler, Controller Manager), worker nodes, and key resources like Pods, Deployments, Services, StatefulSets, and Namespaces.",
+          "description": "Understand Kubernetes primitives: Pods, Deployments, ReplicaSets, StatefulSets, DaemonSets, Services, Namespaces, and ConfigMaps/Secrets.",
           "resources": [
             {
               "title": "Kubernetes Architecture Overview",
@@ -441,13 +461,15 @@
               "url": "/data/docs/platform_engineer/pe_kubernetes_core_concepts.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 14
         },
         {
           "id": "pe_kubernetes_operations",
           "name": "Kubernetes Operations & Management",
           "tag": "essential",
-          "description": "Master `kubectl` for interacting with clusters, manage application deployments with Helm, and understand how to manage configuration (ConfigMaps, Secrets) and storage (PVs, PVCs, StorageClasses) in Kubernetes. Learn about rolling updates and rollbacks.",
+          "description": "Operate production Kubernetes clusters: Cluster upgrades, node drain/cordon procedures, etcd backup/restore, Horizontal Pod Autoscaler (HPA), and Cluster Autoscaler / Karpenter.",
           "resources": [
             {
               "title": "kubectl Cheatsheet",
@@ -474,13 +496,15 @@
               "url": "/data/docs/platform_engineer/pe_kubernetes_operations.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "pe_kubernetes_networking_storage",
           "name": "Kubernetes Networking & Storage Deep Dive",
           "tag": "essential",
-          "description": "Deep dive into Kubernetes networking models (CNI, Service discovery, Ingress, Egress), understand Load Balancers, and explore various storage options, including persistent volumes, storage classes, volume provisioners, and CSI drivers.",
+          "description": "Master Kubernetes networking and storage: CNI plugins (Cilium, Calico), Ingress Controllers, Gateway API, Persistent Volumes, and CSI storage drivers.",
           "resources": [
             {
               "title": "Kubernetes Networking Model",
@@ -507,13 +531,15 @@
               "url": "/data/docs/platform_engineer/pe_kubernetes_networking_storage.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 20
         },
         {
           "id": "pe_kubernetes_security_iam",
           "name": "Kubernetes Security & Access Management",
           "tag": "advanced",
-          "description": "Implement robust security practices within Kubernetes, including Role-Based Access Control (RBAC), Pod Security Standards/Admission Controllers, Network Policies, secrets management strategies, and image security best practices for cluster hardening.",
+          "description": "Harden Kubernetes security: Role-Based Access Control (RBAC), Service Accounts, Pod Security Standards (PSS), NetworkPolicies, and secret encryption at rest.",
           "resources": [
             {
               "title": "Kubernetes RBAC Documentation",
@@ -540,13 +566,15 @@
               "url": "/data/docs/platform_engineer/pe_kubernetes_security_iam.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         },
         {
           "id": "pe_kubernetes_advanced_patterns",
           "name": "Advanced Kubernetes Patterns & Extensibility",
           "tag": "advanced",
-          "description": "Explore advanced Kubernetes features like Custom Resource Definitions (CRDs), Operators, Admission Controllers, and gain an introduction to Service Meshes (e.g., Istio, Linkerd) for traffic management, policy enforcement, and observability.",
+          "description": "Extend Kubernetes: Custom Resource Definitions (CRDs), writing Kubernetes Operators using Kubebuilder / Operator SDK, and mutating/validating admission webhooks.",
           "resources": [
             {
               "title": "Kubernetes CRD Documentation",
@@ -573,13 +601,15 @@
               "url": "/data/docs/platform_engineer/pe_kubernetes_advanced_patterns.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         },
         {
           "id": "pe_kubernetes_package_management_templating",
           "name": "Advanced Kubernetes Deployment & Configuration",
           "tag": "advanced",
-          "description": "Deepen skills in managing complex Kubernetes deployments using advanced templating and packaging tools like Kustomize for overlays and `ytt` or `jsonnet` for programmable configuration. Explore best practices for application packaging and environment separation.",
+          "description": "Standardize application packaging: Helm chart authoring, dependency management, Kustomize overlays for multi-environment deployments, and Helmfile orchestration.",
           "resources": [
             {
               "title": "Kustomize Documentation",
@@ -606,15 +636,19 @@
               "url": "/data/docs/platform_engineer/pe_kubernetes_package_management_templating.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 18
     },
     {
       "id": "pe_cicd_gitops_automation",
       "name": "CI/CD, GitOps & Automation",
       "tag": "essential",
-      "description": "Build robust, automated CI/CD pipelines and implement GitOps principles to manage deployments and infrastructure declaratively, ensuring consistent, secure, and reliable delivery.",
+      "description": "Implement GitOps-driven deployment pipelines: Automated continuous integration, declarative GitOps reconciliation, and automated rollouts.",
       "resources": [
         {
           "title": "CI/CD Best Practices for Cloud-Native Applications",
@@ -647,7 +681,7 @@
           "id": "pe_cicd_pipeline_design",
           "name": "CI/CD Pipeline Design & Implementation",
           "tag": "essential",
-          "description": "Design and implement continuous integration and continuous deployment pipelines using popular tools like GitHub Actions, GitLab CI, Jenkins, or Tekton, focusing on Pipeline as Code, automated testing, and release strategies.",
+          "description": "Design enterprise CI/CD pipelines: GitHub Actions / GitLab CI workflows, parallel testing matrices, artifact caching, container registry publishing, and automated security scans.",
           "resources": [
             {
               "title": "GitHub Actions Documentation",
@@ -674,13 +708,15 @@
               "url": "/data/docs/platform_engineer/pe_cicd_pipeline_design.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 34
         },
         {
           "id": "pe_gitops_principles_tools",
           "name": "GitOps Principles & Tools (ArgoCD/Flux)",
           "tag": "essential",
-          "description": "Understand GitOps philosophy, declarative infrastructure, and implement GitOps workflows for Kubernetes using tools like ArgoCD or Flux CD for automated, auditable, and traceable deployments.",
+          "description": "Master GitOps with ArgoCD and Flux: Declarative cluster synchronization, automated drift detection, ApplicationSets for multi-cluster rollout, and rollback mechanics.",
           "resources": [
             {
               "title": "Argo CD Documentation",
@@ -707,13 +743,15 @@
               "url": "/data/docs/platform_engineer/pe_gitops_principles_tools.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "pe_scripting_automation",
           "name": "Scripting & Automation for Platform Engineers",
           "tag": "essential",
-          "description": "Develop proficiency in scripting languages like Python or Go for automating operational tasks, developing custom tools, interacting with APIs, and building command-line utilities for platform management and developer workflows.",
+          "description": "Automate platform tasks: Building CLI tools and Kubernetes plugins using Python and Go, interacting with cloud SDKs and the Kubernetes API client.",
           "resources": [
             {
               "title": "Python for DevOps (Book/Course)",
@@ -735,15 +773,19 @@
               "url": "/data/docs/platform_engineer/pe_scripting_automation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 20
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 16
     },
     {
       "id": "pe_observability_monitoring",
       "name": "Observability & Monitoring Strategy",
       "tag": "essential",
-      "description": "Implement comprehensive observability solutions to gain deep insights into platform and application health, performance, and behavior, using metrics, logs, and traces. Focus on proactive identification and resolution of issues.",
+      "description": "Establish unified platform observability: Metrics collection, distributed tracing, centralized logging, and Site Reliability Engineering (SRE) alerting.",
       "resources": [
         {
           "title": "Observability vs. Monitoring: What's the Difference?",
@@ -776,7 +818,7 @@
           "id": "pe_observability_pillars",
           "name": "Fundamentals of Observability & SRE Metrics",
           "tag": "essential",
-          "description": "Understand the core concepts of metrics, logs, and traces, and how they contribute to a holistic view of system health and performance. Learn about Site Reliability Engineering (SRE) principles like SLOs (Service Level Objectives), SLIs (Service Level Indicators), and Error Budgets.",
+          "description": "Define platform telemetry standards: Golden Signals (Latency, Traffic, Errors, Saturation), RED and USE methods, and designing actionable alerts.",
           "resources": [
             {
               "title": "Site Reliability Engineering (SRE) - Measuring Reliability",
@@ -803,13 +845,15 @@
               "url": "/data/docs/platform_engineer/pe_observability_pillars.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 15
         },
         {
           "id": "pe_metrics_alerting",
           "name": "Metrics & Alerting with Prometheus & Grafana",
           "tag": "essential",
-          "description": "Implement metric collection using Prometheus, configure Alertmanager for intelligent and actionable notifications, and create insightful dashboards with Grafana for visualization, trend analysis, and real-time monitoring of platform components.",
+          "description": "Deploy Prometheus and Grafana at scale: ServiceMonitors, Prometheus Operator, VictoriaMetrics / Thanos for long-term storage, PromQL alerting rules, and Grafana dashboards.",
           "resources": [
             {
               "title": "Prometheus Getting Started",
@@ -836,13 +880,15 @@
               "url": "/data/docs/platform_engineer/pe_metrics_alerting.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 23
         },
         {
           "id": "pe_logs_tracing",
           "name": "Centralized Logging & Distributed Tracing",
           "tag": "essential",
-          "description": "Set up centralized logging solutions (e.g., Loki, Fluentd/Fluent Bit, ELK Stack/OpenSearch, Splunk) for efficient log aggregation and analysis. Implement distributed tracing (e.g., Jaeger, Zipkin, OpenTelemetry) to diagnose issues across complex microservices architectures.",
+          "description": "Centralize logs and traces: Fluent Bit / Vector log shipping, Grafana Loki / OpenSearch log aggregation, and OpenTelemetry distributed tracing with Jaeger.",
           "resources": [
             {
               "title": "Loki: Logs for Prometheans",
@@ -869,15 +915,19 @@
               "url": "/data/docs/platform_engineer/pe_logs_tracing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 21
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 22
     },
     {
       "id": "pe_idp_design_build",
       "name": "Internal Developer Platform (IDP) Design & Build",
       "tag": "advanced",
-      "description": "Learn to design, build, and evolve Internal Developer Platforms (IDPs) that provide golden paths, self-service capabilities, and significantly enhance developer experience, driving efficiency and innovation.",
+      "description": "Design and build Internal Developer Platforms (IDPs): Self-service developer portals, automated environment provisioning, and developer experience metrics.",
       "resources": [
         {
           "title": "Backstage: The Open Platform for Frontend Infrastructure",
@@ -910,7 +960,7 @@
           "id": "pe_idp_concepts_devex",
           "name": "IDP Concepts & Developer Experience",
           "tag": "advanced",
-          "description": "Understand the principles of Golden Paths, self-service portals, and how to measure and improve developer experience (DevEx) through platform design. Explore concepts like cognitive load and inner-sourcing.",
+          "description": "Optimize Developer Experience (DevEx): Measuring DORA metrics (Deployment Frequency, Lead Time for Changes, Change Failure Rate, Time to Restore Service) and reducing onboarding time.",
           "resources": [
             {
               "title": "Golden Path to Greatness - Charity Majors",
@@ -937,13 +987,15 @@
               "url": "/data/docs/platform_engineer/pe_idp_concepts_devex.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         },
         {
           "id": "pe_backstage_crossplane",
           "name": "Building with Backstage & Crossplane",
           "tag": "advanced",
-          "description": "Implement IDPs using Backstage for service catalog, software templates, and documentation portals. Extend Kubernetes with Crossplane to manage and provision external cloud resources from a unified control plane.",
+          "description": "Build IDPs with Backstage and Crossplane: Customizing Spotify Backstage software catalogs, scaffolding software templates, and composable cloud infrastructure with Crossplane.",
           "resources": [
             {
               "title": "Backstage Software Templates Guide",
@@ -970,13 +1022,15 @@
               "url": "/data/docs/platform_engineer/pe_backstage_crossplane.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "pe_platform_api_gateway",
           "name": "Platform APIs & Gateway Management",
           "tag": "advanced",
-          "description": "Design and implement internal platform APIs for programmatic self-service capabilities, enabling automation and integration. Manage external and internal traffic with API Gateways (e.g., NGINX Ingress, Kong, Istio Gateway) for routing, security, and rate limiting.",
+          "description": "Manage internal platform APIs: Exposing platform services via Kong / Envoy API gateways, mutual TLS, and centralized service discovery.",
           "resources": [
             {
               "title": "API Gateway Patterns",
@@ -1003,13 +1057,15 @@
               "url": "/data/docs/platform_engineer/pe_platform_api_gateway.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 26
         },
         {
           "id": "pe_platform_product_lifecycle",
           "name": "Platform as a Product Lifecycle & Feedback",
           "tag": "advanced",
-          "description": "Apply product management principles to the IDP, focusing on user research, defining platform roadmap, gathering feedback from developers, and iterating on platform services to drive adoption and satisfaction. Understand key platform metrics like DORA metrics and developer satisfaction.",
+          "description": "Manage platform as a product: Gathering developer user research, prioritizing developer platform roadmaps, defining deprecation cycles, and tracking internal NPS.",
           "resources": [
             {
               "title": "The Product-Led Platform Team",
@@ -1036,15 +1092,19 @@
               "url": "/data/docs/platform_engineer/pe_platform_product_lifecycle.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 31
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 19
     },
     {
       "id": "pe_security_reliability",
       "name": "Platform Security & Reliability Engineering",
       "tag": "advanced",
-      "description": "Focus on hardening platform security, implementing governance, and applying Site Reliability Engineering (SRE) principles to ensure high availability, resilience, operational excellence, and a secure software supply chain.",
+      "description": "Enforce platform security and resilience: Software supply chain security, chaos engineering, and automated incident management.",
       "resources": [
         {
           "title": "Cloud Native Security Whitepaper - CNCF",
@@ -1077,7 +1137,7 @@
           "id": "pe_platform_security_governance",
           "name": "Platform Security, Governance & Supply Chain",
           "tag": "advanced",
-          "description": "Implement security best practices for platform components, manage secrets securely (Vault), enforce policies with Policy-as-Code (OPA Gatekeeper), and secure the software supply chain through image scanning, signature verification, and compliance automation.",
+          "description": "Secure the software supply chain: SLSA framework compliance, container signing with Sigstore / Cosign, SBOM generation (Syft), and admission verification with Kyverno.",
           "resources": [
             {
               "title": "HashiCorp Vault Documentation",
@@ -1109,13 +1169,15 @@
               "url": "/data/docs/platform_engineer/pe_platform_security_governance.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 50
         },
         {
           "id": "pe_sre_practices_principles",
           "name": "SRE Practices & Platform Reliability",
           "tag": "advanced",
-          "description": "Apply SRE principles like error budgets, blameless post-mortems, and toil reduction. Design for resilience with patterns like circuit breakers, retries, and rate limiting. Develop strategies for disaster recovery, backups, and high availability.",
+          "description": "Operationalize SRE practices: Defining Service Level Indicators (SLIs), Service Level Objectives (SLOs), and managing error budgets to balance velocity and stability.",
           "resources": [
             {
               "title": "Chaos Engineering Principles - Gremlin",
@@ -1137,13 +1199,15 @@
               "url": "/data/docs/platform_engineer/pe_sre_practices_principles.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 32
         },
         {
           "id": "pe_incident_management_resiliency",
           "name": "Incident Management & Resiliency Engineering",
           "tag": "advanced",
-          "description": "Develop effective incident response strategies, create comprehensive runbooks, perform post-incident reviews, and practice chaos engineering to proactively identify and mitigate system weaknesses and improve operational robustness.",
+          "description": "Engineer resilient platform infrastructure: Automated failovers, multi-zone redundancy, disaster recovery runbooks, and blameless post-mortem culture.",
           "resources": [
             {
               "title": "Incident Management Best Practices - PagerDuty",
@@ -1170,15 +1234,19 @@
               "url": "/data/docs/platform_engineer/pe_incident_management_resiliency.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 29
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 22
     },
     {
       "id": "pe_capstone_career",
       "name": "Capstone Project & Career Readiness",
       "tag": "advanced",
-      "description": "Consolidate all learned skills into a comprehensive capstone project that showcases your ability to design, build, and operate a full-featured internal developer platform, and prepare for career advancement.",
+      "description": "Build a demonstrable Platform Engineering capstone: Golden Path developer platform, enterprise documentation, and technical career positioning.",
       "resources": [
         {
           "title": "Building a Robust Portfolio for Platform Engineers",
@@ -1211,7 +1279,7 @@
           "id": "pe_capstone_project_implementation",
           "name": "Capstone Project: Build a Golden Path IDP",
           "tag": "advanced",
-          "description": "Design and implement a complete Internal Developer Platform, including IaC for infrastructure, a Backstage instance with custom templates, CI/CD pipelines, integrated observability, and secure deployments. Document architecture and operational procedures.",
+          "description": "Build an enterprise IDP capstone: End-to-end self-service portal using Backstage, Crossplane cloud provisioning, ArgoCD GitOps deployment, and Prometheus monitoring.",
           "resources": [
             {
               "title": "Example: Building an IDP with Backstage, Kubernetes, and Terraform",
@@ -1238,13 +1306,15 @@
               "url": "/data/docs/platform_engineer/pe_capstone_project_implementation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 69
         },
         {
           "id": "pe_documentation_communication",
           "name": "Technical Documentation & Communication",
           "tag": "advanced",
-          "description": "Develop strong technical writing skills for documentation, runbooks, architecture diagrams (e.g., C4 Model), and incident reports. Practice presenting complex technical concepts clearly to both technical and non-technical audiences.",
+          "description": "Author world-class developer documentation: Clear Golden Path guides, interactive API references, architectural decision records (ADRs), and runbooks.",
           "resources": [
             {
               "title": "The Art of Documentation - A Developer's Guide",
@@ -1271,13 +1341,15 @@
               "url": "/data/docs/platform_engineer/pe_documentation_communication.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 29
         },
         {
           "id": "pe_career_readiness_interview_prep",
           "name": "Career Readiness & Interview Preparation",
           "tag": "advanced",
-          "description": "Refine your resume, create impactful case studies from your projects, prepare for technical interviews (system design, troubleshooting, coding challenges), behavioral questions, and effectively network within the platform engineering community.",
+          "description": "Master platform engineering interviews: Whiteboard large-scale Kubernetes platform architectures, explain GitOps drift reconciliation, and articulate DevEx ROI.",
           "resources": [
             {
               "title": "Platform Engineer Interview Questions (Example Set)",
@@ -1299,9 +1371,14 @@
               "url": "/data/docs/platform_engineer/pe_career_readiness_interview_prep.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 30
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 52
     }
-  ]
+  ],
+  "total_exp": 1000
 }

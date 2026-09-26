@@ -86,7 +86,7 @@
       "id": "angular_foundational_concepts",
       "name": "Foundational Web & Angular Concepts",
       "tag": "essential",
-      "description": "Grasp the essential web development prerequisites and the core introductory concepts of the Angular framework, TypeScript, and setting up your development environment for modern web development.",
+      "description": "Establish an uncompromised modern Angular foundation (v18/v19): master standalone component architecture, strict TypeScript generics, modern built-in control flow, and Angular CLI build optimizations.",
       "resources": [
         {
           "title": "Angular Official Documentation - Get Started",
@@ -119,7 +119,7 @@
           "id": "angular_web_prerequisites",
           "name": "Web Development Prerequisites (HTML5, CSS3, Modern JavaScript ES6+)",
           "tag": "essential",
-          "description": "Reinforce fundamental knowledge of HTML5 for structuring semantic web content, CSS3 for advanced styling and responsive design, and modern JavaScript (ES6+) for programming logic, asynchronous operations, and modularity, which are essential for any frontend development.",
+          "description": "Solidify enterprise web fundamentals: modern ES2024 JavaScript semantics (modules, destructuring, promises), CSS Grid and Flexbox responsive layouts, CSS Custom Properties, and browser rendering lifecycle events.",
           "resources": [
             {
               "title": "Mozilla HTML Introduction",
@@ -151,13 +151,15 @@
               "url": "/data/docs/angular_developer/angular_web_prerequisites.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 22
         },
         {
           "id": "angular_typescript_fundamentals",
           "name": "TypeScript Fundamentals",
           "tag": "essential",
-          "description": "Learn TypeScript, the strongly-typed superset of JavaScript that powers Angular. Understand types, interfaces, classes, enums, generics, modules, decorators, and advanced type utilities to write robust and maintainable code.",
+          "description": "Master strict TypeScript for enterprise Angular: strict null checks, utility types (Partial, Required, Readonly, Pick), discriminated unions, generics with extends constraints, and decorator metadata reflection.",
           "resources": [
             {
               "title": "TypeScript for JavaScript Programmers (Official)",
@@ -174,13 +176,15 @@
               "url": "/data/docs/angular_developer/angular_typescript_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 22
         },
         {
           "id": "angular_introduction_cli",
           "name": "Introduction to Angular & CLI",
           "tag": "essential",
-          "description": "Understand what Angular is, its core architectural concepts (components, modules, services, dependency injection, change detection), and how to efficiently use the Angular CLI for project generation, scaffolding, building, serving applications, and managing configurations.",
+          "description": "Master the Angular CLI and build system: project generation with Standalone Components by default (`--standalone`), configuring `angular.json` build targets, leveraging the high-speed Vite/esbuild development server, and environment profiles.",
           "resources": [
             {
               "title": "Angular Documentation - What is Angular?",
@@ -207,13 +211,15 @@
               "url": "/data/docs/angular_developer/angular_introduction_cli.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 22
         },
         {
           "id": "angular_environment_setup",
           "name": "Environment Setup & Tooling",
           "tag": "essential",
-          "description": "Set up your local development environment with essential tools: Node.js (runtime), npm/yarn (package managers), Visual Studio Code (with recommended Angular extensions), Git for version control, and browser developer tools for inspecting and debugging web applications.",
+          "description": "Configure an enterprise Angular workspace: ESLint with `@angular-eslint` rules, Prettier formatting automation, editor tooling with Angular Language Service, and git commit hooks.",
           "resources": [
             {
               "title": "Node.js Installation Guide",
@@ -245,15 +251,19 @@
               "url": "/data/docs/angular_developer/angular_environment_setup.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 19
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 18
     },
     {
       "id": "angular_core_development",
       "name": "Building Blocks: Angular Core",
       "tag": "essential",
-      "description": "Master the fundamental building blocks of Angular applications, including components, data binding, services, modules, routing, forms, and reactive programming with RxJS for asynchronous operations and state management.",
+      "description": "Master core Angular application engineering: Signals reactivity, built-in control flow, functional dependency injection, type-safe reactive forms, and RxJS HTTP streaming.",
       "resources": [
         {
           "title": "Angular Documentation - Fundamentals",
@@ -286,7 +296,7 @@
           "id": "angular_components_templates",
           "name": "Components, Templates & Data Binding",
           "tag": "essential",
-          "description": "Understand Angular components, their lifecycle hooks, templates (HTML), component-specific styles (CSS), template syntax, interpolation, property binding, event binding, two-way data binding, and component interaction using @Input() and @Output().",
+          "description": "Master modern Angular 18+ component architecture: Standalone components, modern built-in control flow (`@if`, `@for` with mandatory `track` expression, `@switch`), Deferrable Views (`@defer` with triggers like `on viewport`, `on idle`, and placeholder skeletons), input and output signals (`input()`, `output()`), and signal queries (`viewChild()`).",
           "resources": [
             {
               "title": "Angular Docs - Components Overview",
@@ -313,13 +323,15 @@
               "url": "/data/docs/angular_developer/angular_components_templates.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 22
         },
         {
           "id": "angular_directives_pipes",
           "name": "Directives & Pipes",
           "tag": "essential",
-          "description": "Explore Angular's built-in structural directives (*ngIf, *ngFor, *ngSwitch), attribute directives ([ngClass], [ngStyle]), and built-in pipes (DatePipe, CurrencyPipe, AsyncPipe) for transforming and formatting data. Learn to create custom structural and attribute directives and custom pipes for reusable UI logic.",
+          "description": "Build reusable template extensions: custom attribute directives modifying DOM behavior, host directives for directive composition, pure and impure custom Pipes, and built-in pipes (`AsyncPipe`, `CurrencyPipe`, `DatePipe`).",
           "resources": [
             {
               "title": "Angular Docs - Built-in Directives",
@@ -346,13 +358,15 @@
               "url": "/data/docs/angular_developer/angular_directives_pipes.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "angular_services_di",
           "name": "Services & Dependency Injection",
           "tag": "essential",
-          "description": "Learn to create and use injectable services for encapsulating reusable business logic, data access, and sharing state across components. Master Angular's powerful dependency injection (DI) system for managing and providing dependencies, understanding providers, and hierarchical injectors.",
+          "description": "Master enterprise Dependency Injection (DI): functional dependency injection with the `inject()` function, hierarchical injectors (EnvironmentInjector vs ElementInjector), `providedIn: 'root'`, custom `InjectionToken` definitions, and provider factory functions.",
           "resources": [
             {
               "title": "Angular Docs - Services and Dependency Injection",
@@ -374,13 +388,15 @@
               "url": "/data/docs/angular_developer/angular_services_di.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "angular_routing_navigation",
           "name": "Routing & Navigation",
           "tag": "essential",
-          "description": "Implement client-side routing using Angular's RouterModule. Define routes, navigate programmatically, pass route parameters, use route guards (CanActivate, CanDeactivate, Resolve) for authorization and data pre-fetching, and implement lazy loading for performance optimization of feature modules.",
+          "description": "Master enterprise Angular Routing: lazy loading standalone components (`loadComponent`), functional route guards (`CanActivateFn`, `CanMatchFn`), resolvers, typed route parameters, child routes, and title strategy.",
           "resources": [
             {
               "title": "Angular Docs - Routing & Navigation Overview",
@@ -412,13 +428,15 @@
               "url": "/data/docs/angular_developer/angular_routing_navigation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "angular_forms_handling",
           "name": "Forms & User Input",
           "tag": "essential",
-          "description": "Handle user input effectively with Angular forms. Learn about template-driven forms (FormsModule) and reactive forms (ReactiveFormsModule), including FormControls, FormGroups, and FormArrays. Implement robust validation techniques, including built-in validators, custom validators, and asynchronous validators.",
+          "description": "Engineer complex data entry with Reactive Forms: strictly-typed `FormGroup` and `FormControl`, dynamic `FormArray` inputs, custom synchronous and asynchronous validators, and observing input streams with `valueChanges`.",
           "resources": [
             {
               "title": "Angular Docs - Forms Overview",
@@ -450,13 +468,15 @@
               "url": "/data/docs/angular_developer/angular_forms_handling.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "angular_rxjs_httpclient",
           "name": "Reactive Programming with RxJS & HTTPClient",
           "tag": "essential",
-          "description": "Understand reactive programming principles with RxJS. Work with Observables, Observers, Subscriptions, and key Operators (map, filter, switchMap, mergeMap, debounceTime, catchError, retry). Integrate with backend APIs using Angular's HttpClient module for making HTTP requests, error handling, and implementing HTTP interceptors.",
+          "description": "Master reactive HTTP communication: configuring `provideHttpClient()`, authoring functional HTTP interceptors (`HttpInterceptorFn` for bearer token injection, automated retry, and logging), and mastering RxJS operators (`switchMap`, `concatMap`, `exhaustMap`, `catchError`).",
           "resources": [
             {
               "title": "RxJS Official Guide",
@@ -483,15 +503,19 @@
               "url": "/data/docs/angular_developer/angular_rxjs_httpclient.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 15
     },
     {
       "id": "angular_advanced_enterprise",
       "name": "Advanced Concepts & Enterprise Development",
       "tag": "advanced",
-      "description": "Dive into advanced Angular features, state management, complex architectural patterns, performance optimization, robust testing strategies, and preparing applications for production environments and large-scale enterprise use.",
+      "description": "Architect enterprise-grade Angular platforms: Signals-based state management, zoneless change detection, Server-Side Rendering (SSR), and micro-frontend monorepos.",
       "resources": [
         {
           "title": "Angular Docs - Advanced Topics",
@@ -524,7 +548,7 @@
           "id": "angular_state_management",
           "name": "State Management Patterns",
           "tag": "advanced",
-          "description": "Learn various strategies for managing application state in large-scale Angular applications. Explore simple service-based patterns with RxJS, Flux/Redux patterns using NgRx (Store, Effects, Reducers, Selectors), and other solutions like NgXs or Akita for efficient and predictable state handling.",
+          "description": "Master scalable state management: modern NgRx SignalStore (`@ngrx/signals` providing signal-based state, computed properties, and methods), and enterprise NgRx Store (Actions, Reducers, Effects, Selectors, and component store isolation).",
           "resources": [
             {
               "title": "NgRx Official Documentation",
@@ -551,13 +575,15 @@
               "url": "/data/docs/angular_developer/angular_state_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 51
         },
         {
           "id": "angular_performance_optimization",
           "name": "Performance, Optimization & Change Detection",
           "tag": "advanced",
-          "description": "Optimize Angular application performance through techniques like change detection strategies (OnPush), lazy loading of modules and routes, Ahead-of-Time (AOT) compilation, tree shaking for bundle size reduction, differential loading, Web Workers, and comprehensive performance profiling with browser dev tools and Angular DevTools.",
+          "description": "Eliminate frontend performance bottlenecks: enforcing `ChangeDetectionStrategy.OnPush`, exploring experimental Zoneless Angular (running without `zone.js` via signal change notifications), optimizing image loading with `NgOptimizedImage`, and virtual scrolling with CDK.",
           "resources": [
             {
               "title": "Angular Docs - Change Detection",
@@ -589,13 +615,15 @@
               "url": "/data/docs/angular_developer/angular_performance_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "angular_pwa_development",
           "name": "Progressive Web Apps (PWA) & Offline Capabilities",
           "tag": "advanced",
-          "description": "Build robust web experiences by transforming Angular applications into Progressive Web Apps. Implement service workers for offline caching and network resilience, create a Web App Manifest for installability, and explore strategies for background sync and push notifications.",
+          "description": "Transform applications into Progressive Web Apps (PWA): `@angular/pwa`, Service Worker caching strategies (performance vs freshness), offline shell caching, web app manifests, and push notification handling.",
           "resources": [
             {
               "title": "Angular Docs - Progressive Web Apps",
@@ -617,13 +645,15 @@
               "url": "/data/docs/angular_developer/angular_pwa_development.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         },
         {
           "id": "angular_ssr_seo",
           "name": "Server-Side Rendering (SSR) & SEO with Angular Universal",
           "tag": "advanced",
-          "description": "Implement Server-Side Rendering (SSR) with Angular Universal to improve initial page load performance, enhance SEO, and provide a better user experience on slower networks. Understand state transfer and hydration for seamless client-side interactivity.",
+          "description": "Implement modern Server-Side Rendering (SSR): Angular SSR with Node.js engine, non-destructive hydration (eliminating DOM flickering on load), dynamic meta tags with `Meta` and `Title` services, and caching API responses with TransferState.",
           "resources": [
             {
               "title": "Angular Docs - Server-Side Rendering with Universal",
@@ -645,13 +675,15 @@
               "url": "/data/docs/angular_developer/angular_ssr_seo.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 51
         },
         {
           "id": "angular_internationalization_localization",
           "name": "Internationalization (i18n) & Localization",
           "tag": "advanced",
-          "description": "Add multi-language support (i18n) to Angular applications for a global audience. Learn about Angular's built-in i18n tooling for translating text, handling pluralization, date, currency, and number formatting, and adapting to right-to-left (RTL) layouts.",
+          "description": "Deploy global localized applications: Angular's built-in `$localize` extraction toolchain, managing XLIFF translation files, handling pluralization and gender formatting, and runtime locale switching.",
           "resources": [
             {
               "title": "Angular Docs - Internationalization",
@@ -673,13 +705,15 @@
               "url": "/data/docs/angular_developer/angular_internationalization_localization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         },
         {
           "id": "angular_testing_debugging",
           "name": "Testing & Debugging Angular Applications",
           "tag": "essential",
-          "description": "Master comprehensive testing strategies including unit testing with Karma/Jasmine for services and components, integration testing, and end-to-end (E2E) testing with modern tools like Cypress or Playwright. Learn effective debugging techniques using browser developer tools, VS Code's debugger, and Angular DevTools.",
+          "description": "Implement comprehensive automated testing: component testing using `TestBed` and Component Harnesses, migrating to high-speed Vitest / Jest, mocking services with Spies, and end-to-end testing with Playwright.",
           "resources": [
             {
               "title": "Angular Docs - Testing",
@@ -711,13 +745,15 @@
               "url": "/data/docs/angular_developer/angular_testing_debugging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "angular_security_best_practices",
           "name": "Security Best Practices",
           "tag": "advanced",
-          "description": "Understand common web vulnerabilities like Cross-Site Scripting (XSS), Cross-Site Request Forgery (CSRF), clickjacking, and insecure direct object references. Implement Angular's built-in security features and follow best practices for secure coding, input sanitization, and protecting against common attacks.",
+          "description": "Harden Angular application security: understanding Angular's built-in XSS sanitization (DomSanitizer, SecurityContext), preventing cross-site request forgery (CSRF/XSRF tokens), Content Security Policy (CSP) compliance, and avoiding unsafe innerHTML bindings.",
           "resources": [
             {
               "title": "Angular Docs - Security",
@@ -744,13 +780,15 @@
               "url": "/data/docs/angular_developer/angular_security_best_practices.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "angular_authentication_authorization",
           "name": "Authentication & Authorization Strategies",
           "tag": "advanced",
-          "description": "Deep dive into implementing secure authentication and authorization in Angular applications. Explore common patterns like JWT (JSON Web Tokens), OAuth2, OpenID Connect. Learn to integrate with identity providers, manage tokens, implement route guards, and utilize HTTP interceptors for secure API communication.",
+          "description": "Implement enterprise auth flows: OAuth2 / OpenID Connect (OIDC) integration using `angular-oauth2-oidc`, silent refresh token rotation, and protecting routes and UI actions using role-based permission directives.",
           "resources": [
             {
               "title": "Angular Docs - Authentication Example",
@@ -782,13 +820,15 @@
               "url": "/data/docs/angular_developer/angular_authentication_authorization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "angular_monorepo_microfrontends",
           "name": "Monorepos, Micro Frontends & Web Components",
           "tag": "advanced",
-          "description": "Explore strategies for scaling large enterprise applications. Learn about monorepos with tools like Nx Workspace for managing multiple Angular applications and libraries. Understand micro frontend architectures for independent deployments and team scaling, and leverage Web Components for framework-agnostic UI elements.",
+          "description": "Architect large-scale monorepos and micro-frontends: Nx workspace architecture (sharing feature, data-access, ui, and util libraries), enforcing architectural module boundaries, and Micro-Frontends with Module Federation.",
           "resources": [
             {
               "title": "Nx Workspace Official Documentation",
@@ -820,13 +860,15 @@
               "url": "/data/docs/angular_developer/angular_monorepo_microfrontends.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "angular_deployment_cicd",
           "name": "Deployment & CI/CD",
           "tag": "advanced",
-          "description": "Learn to build and deploy Angular applications to various hosting platforms (e.g., Netlify, Vercel, Firebase Hosting, AWS S3/CloudFront, Azure Static Web Apps). Set up Continuous Integration and Continuous Deployment (CI/CD) pipelines with tools like GitHub Actions, GitLab CI/CD, or Jenkins for automated testing and deployment.",
+          "description": "Automate production delivery: multi-stage Docker build containers with NGINX reverse proxies, automated GitHub Actions CI/CD pipelines, and deploying to AWS S3/CloudFront, Azure Static Web Apps, or Firebase Hosting.",
           "resources": [
             {
               "title": "Angular Docs - Deployment",
@@ -853,15 +895,19 @@
               "url": "/data/docs/angular_developer/angular_deployment_cicd.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 51
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 28
     },
     {
       "id": "angular_project_career_growth",
       "name": "Project & Career Advancement",
       "tag": "advanced",
-      "description": "Apply all learned concepts to build a comprehensive portfolio project, solidify best practices, and prepare for career opportunities as a professional Angular Developer in the industry.",
+      "description": "Demonstrate enterprise Angular engineering mastery: build production-grade applications, author technical design documents, and excel in senior Angular technical interviews.",
       "resources": [
         {
           "title": "Angular Documentation",
@@ -894,7 +940,7 @@
           "id": "angular_capstone_project",
           "name": "Capstone Project: Enterprise Web Application",
           "tag": "advanced",
-          "description": "Build a substantial, full-stack Angular application from scratch that demonstrates mastery of core and advanced concepts. Focus on a clear problem statement, robust architecture, comprehensive testing, secure implementation, and documented deployment, mimicking a real-world enterprise project.",
+          "description": "Capstone Project: Architect and Deploy an Enterprise Multi-Tenant Administration & Analytics Platform in Angular 18/19: 100% Standalone components, Signals-based reactivity, NgRx SignalStore state management, `@defer` streaming views, SSR with non-destructive hydration, and full Playwright E2E test coverage.",
           "resources": [
             {
               "title": "Angular Tour of Heroes Tutorial (Official, project-based)",
@@ -916,13 +962,15 @@
               "url": "/data/docs/angular_developer/angular_capstone_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 89
         },
         {
           "id": "angular_architecture_quality_patterns",
           "name": "Angular Architecture, Code Quality & Best Practices",
           "tag": "advanced",
-          "description": "Adopt industry best practices for code quality: linting (ESLint), formatting (Prettier), effective project structuring (e.g., feature modules, core/shared modules, standalone components), architectural patterns (smart/dumb components, container/presenter), and design principles (SOLID, DRY, KISS) for scalable and maintainable Angular applications.",
+          "description": "Enforce clean architectural patterns: Smart (Container) vs Dumb (Presentational) components, clean unidirectional data flow, facade patterns for isolating domain logic, and automated static code quality analysis.",
           "resources": [
             {
               "title": "Angular Style Guide (Official)",
@@ -954,13 +1002,15 @@
               "url": "/data/docs/angular_developer/angular_architecture_quality_patterns.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         },
         {
           "id": "angular_soft_skills_collaboration",
           "name": "Soft Skills & Team Collaboration",
           "tag": "essential",
-          "description": "Develop essential soft skills crucial for team environments, including effective communication, constructive conflict resolution, active participation in code reviews, mastering advanced Git collaboration workflows (branching strategies, pull requests, rebase), and understanding Agile methodologies (Scrum/Kanban) for project management.",
+          "description": "Excel in enterprise engineering teams: conducting rigorous pull request code reviews, authoring Architecture Decision Records (ADRs), and coordinating cross-functional frontend and backend API contracts.",
           "resources": [
             {
               "title": "Git Branching Workflow Guide (Atlassian)",
@@ -987,13 +1037,15 @@
               "url": "/data/docs/angular_developer/angular_soft_skills_collaboration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 28
         },
         {
           "id": "angular_career_prep",
           "name": "Portfolio, Interview Prep & Continuous Learning",
           "tag": "advanced",
-          "description": "Craft a compelling developer portfolio showcasing your Angular projects and skills. Prepare for technical interviews (covering data structures, algorithms, system design, and Angular-specific questions). Cultivate a mindset of continuous learning to stay current with the evolving web landscape, new Angular features, and ecosystem trends.",
+          "description": "Excel in enterprise Angular interviews: deep explanations of Angular change detection mechanics and Signals internals, whiteboarding complex reactive data pipelines with RxJS, and live coding accessible UI components.",
           "resources": [
             {
               "title": "Frontend Interview Handbook (Angular Questions)",
@@ -1025,9 +1077,14 @@
               "url": "/data/docs/angular_developer/angular_career_prep.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 65
     }
-  ]
+  ],
+  "total_exp": 1000
 }

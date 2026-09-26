@@ -47,25 +47,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Serverless Video Transcoding & Notification Pipeline",
+        "title": "Event-Driven Serverless E-Commerce Processing Engine with AWS CDK",
         "tech_stack": [
+          "AWS CDK",
+          "TypeScript",
           "AWS Lambda",
-          "EventBridge",
-          "Step Functions",
-          "DynamoDB",
-          "S3"
+          "DynamoDB Single-Table Design",
+          "EventBridge"
         ],
-        "description": "Build an event-driven media processing workflow that ingests video uploads, runs Step Functions state machines, and notifies users via WebSockets."
+        "description": "Architect an event-driven serverless checkout platform orchestrating asynchronous payments with EventBridge, DynamoDB single-table design, and automated CDK deployment."
       },
       {
-        "title": "Event-Driven Serverless E-Commerce Backend with AWS CDK",
+        "title": "Serverless Video Transcoding & Real-Time Notification Workflow with Step Functions",
         "tech_stack": [
+          "AWS Step Functions",
           "AWS Lambda",
-          "Amazon EventBridge",
-          "DynamoDB",
-          "AWS CDK (TypeScript)"
+          "S3",
+          "AWS Elemental MediaConvert",
+          "API Gateway WebSockets"
         ],
-        "description": "Architect a serverless checkout flow orchestrating asynchronous payment and order events via EventBridge, single-table DynamoDB design, and automated CDK deploys."
+        "description": "Construct an automated serverless video ingestion pipeline coordinating distributed media encoding tasks, thumbnail generation, and real-time WebSocket client alerts."
       }
     ],
     "certifications": [
@@ -73,10 +74,11 @@
       "AWS Certified Solutions Architect - Associate"
     ],
     "interview_focus": [
-      "Lambda Cold Start Mitigation Techniques",
-      "DynamoDB Single-Table Design (Partition & Sort Keys)",
-      "Step Functions vs EventBridge Choreography",
-      "Handling Database Connection Pools in Serverless Functions"
+      "Serverless Cold Starts & Optimization Techniques (Provisioned Concurrency, Bundle Minimization)",
+      "DynamoDB Single-Table Design (Partition Keys, Sort Keys, Global Secondary Indexes / GSIs)",
+      "Asynchronous Event Orchestration (EventBridge vs SQS vs SNS vs Step Functions)",
+      "API Gateway Types (HTTP APIs vs REST APIs vs WebSocket APIs) & Authorization Strategies",
+      "Serverless Observability, Distributed Tracing (AWS X-Ray) & Cost Governance"
     ]
   },
   "format": "tree",
@@ -85,7 +87,7 @@
       "id": "serverless_developer_foundations",
       "name": "Foundations and Role Context",
       "tag": "essential",
-      "description": "Understand what Serverless Developer work looks like, which problems it solves, and the baseline concepts needed before building. This section establishes the fundamental understanding and initial tooling setup.",
+      "description": "Master foundational serverless concepts: Event-driven execution models, ephemeral stateless computing, pay-per-use economics, and auto-scaling to zero.",
       "resources": [
         {
           "title": "AWS Lambda Developer Guide",
@@ -113,7 +115,7 @@
           "id": "serverless_developer_introduction",
           "name": "Introduction to Serverless Computing",
           "tag": "essential",
-          "description": "Explore the fundamental concepts, benefits, use cases, and common misconceptions of serverless architecture. Understand the paradigm shift from traditional server management, focusing on Function-as-a-Service (FaaS) and Backend-as-a-Service (BaaS).",
+          "description": "Understand serverless compute: Function-as-a-Service (FaaS) lifecycles, cold starts vs warm starts, concurrency limits, execution timeouts, and managed backend services.",
           "resources": [
             {
               "title": "What is Serverless? (AWS)",
@@ -140,13 +142,15 @@
               "url": "/data/docs/serverless_developer/serverless_developer_introduction.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 30
         },
         {
           "id": "serverless_developer_event_driven_basics",
           "name": "Event-Driven Architecture Fundamentals",
           "tag": "essential",
-          "description": "Learn the core principles of event-driven architectures, including events, producers, consumers, event sources, and common patterns like choreography and orchestration. Understand how events drive serverless applications.",
+          "description": "Master event-driven architecture (EDA): Event producers, event routers (Amazon EventBridge), event consumers, asynchronous messaging patterns, and eventual consistency.",
           "resources": [
             {
               "title": "An introduction to event-driven architectures",
@@ -168,13 +172,15 @@
               "url": "/data/docs/serverless_developer/serverless_developer_event_driven_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 29
         },
         {
           "id": "serverless_developer_cloud_provider_aws_basics",
           "name": "Cloud Provider Fundamentals (AWS Focus)",
           "tag": "essential",
-          "description": "Gain foundational knowledge of essential AWS services that underpin serverless development. This includes AWS account structure, IAM for permissions management, basic networking concepts with VPC, S3 for object storage, and core compute concepts like EC2 to contrast with FaaS.",
+          "description": "Master cloud provider serverless fundamentals on AWS: Account boundaries, IAM policies, AWS Organizations, Service Quotas, and region-level high availability.",
           "resources": [
             {
               "title": "AWS Serverless Getting Started",
@@ -201,13 +207,15 @@
               "url": "/data/docs/serverless_developer/serverless_developer_cloud_provider_aws_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 21
         },
         {
           "id": "serverless_developer_tooling_and_workflow",
           "name": "Development Environment & Core Tooling",
           "tag": "essential",
-          "description": "Set up your local development environment for serverless. Understand essential command-line tools (AWS CLI), version control with Git and GitHub/GitLab, and an introduction to Infrastructure as Code (IaC) concepts relevant to serverless deployments.",
+          "description": "Configure developer tooling: AWS CLI v2, AWS Toolkit for VS Code, Node.js / Python version managers, and local terminal workflows for rapid cloud feedback loops.",
           "resources": [
             {
               "title": "AWS CLI User Guide",
@@ -234,13 +242,15 @@
               "url": "/data/docs/serverless_developer/serverless_developer_tooling_and_workflow.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 21
         },
         {
           "id": "serverless_developer_programming_basics",
           "name": "Serverless Programming Language Basics",
           "tag": "essential",
-          "description": "Understand the basics of common programming languages used in serverless, such as Node.js or Python, including asynchronous programming, dependency management, and local testing setup.",
+          "description": "Develop serverless functions in Node.js, Python, or Go: Handler function signatures, context objects, event payloads, and managing memory/timeout settings.",
           "resources": [
             {
               "title": "Asynchronous JavaScript: From Callbacks to Async/Await",
@@ -267,15 +277,19 @@
               "url": "/data/docs/serverless_developer/serverless_developer_programming_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 20
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 23
     },
     {
       "id": "serverless_developer_core_skills",
       "name": "Core Serverless Services & Implementation",
       "tag": "essential",
-      "description": "Build practical skills by implementing serverless solutions using key AWS services. Focus on serverless compute, API interfaces, event handling, and common data stores, laying the groundwork for complex architectures.",
+      "description": "Master core cloud serverless services: Function execution, API routing, serverless databases, message queues, and infrastructure as code.",
       "resources": [
         {
           "title": "AWS Serverless Getting Started",
@@ -303,7 +317,7 @@
           "id": "serverless_developer_lambda_deep_dive",
           "name": "AWS Lambda Deep Dive",
           "tag": "essential",
-          "description": "Master AWS Lambda functions: understanding runtimes, triggers, invocation types (synchronous/asynchronous), concurrency controls, cold starts, versions, aliases, environment variables, and best practices for function design and optimization.",
+          "description": "Master AWS Lambda internals: Execution environment lifecycle, microVM virtualization with Firecracker, provisioned concurrency, Lambda layers, and ephemeral storage (/tmp).",
           "resources": [
             {
               "title": "AWS Lambda Developer Guide",
@@ -330,13 +344,15 @@
               "url": "/data/docs/serverless_developer/serverless_developer_lambda_deep_dive.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 30
         },
         {
           "id": "serverless_developer_api_gateway",
           "name": "API Gateway for Serverless APIs",
           "tag": "essential",
-          "description": "Learn to build robust serverless APIs using Amazon API Gateway. Cover REST APIs, HTTP APIs, WebSockets, proxy integrations, custom domains, caching, and request/response mapping.",
+          "description": "Configure HTTP and REST API Gateways: Amazon API Gateway / HTTP APIs, request validation, CORS configuration, payload transformations with VTL, and custom authorizers.",
           "resources": [
             {
               "title": "Building an API Gateway REST API with Lambda Proxy Integration",
@@ -363,13 +379,15 @@
               "url": "/data/docs/serverless_developer/serverless_developer_api_gateway.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 37
         },
         {
           "id": "serverless_developer_authentication_authorization",
           "name": "Authentication and Authorization for APIs",
           "tag": "essential",
-          "description": "Implement secure access for serverless APIs. Learn about API Gateway authorizers (IAM, Lambda Custom Authorizers, Cognito User Pools), token-based authentication (JWT, OAuth), and basic identity management with Amazon Cognito.",
+          "description": "Secure serverless endpoints: Cognito User Pools, JWT verification via Lambda Authorizers, IAM role policies, and resource-based policies.",
           "resources": [
             {
               "title": "Control access to a REST API using IAM permissions",
@@ -396,13 +414,15 @@
               "url": "/data/docs/serverless_developer/serverless_developer_authentication_authorization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 30
         },
         {
           "id": "serverless_developer_data_persistence",
           "name": "Serverless Data Persistence & Caching",
           "tag": "essential",
-          "description": "Implement data persistence using serverless-friendly databases and caching mechanisms. Focus on Amazon DynamoDB (data modeling, access patterns, transactions, global tables), S3 for object storage, static content hosting, and event sources. Introduction to Aurora Serverless and caching strategies.",
+          "description": "Store data in serverless databases: Amazon DynamoDB (single-table design, partition/sort keys, Global Secondary Indexes), DynamoDB Streams, and Redis caching with Upstash.",
           "resources": [
             {
               "title": "Amazon DynamoDB Developer Guide",
@@ -434,13 +454,15 @@
               "url": "/data/docs/serverless_developer/serverless_developer_data_persistence.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 37
         },
         {
           "id": "serverless_developer_messaging_queuing",
           "name": "Event Messaging and Queuing Services",
           "tag": "essential",
-          "description": "Integrate asynchronous processing and communication using serverless messaging services. Cover Amazon SQS for message queues (standard/FIFO, dead-letter queues), SNS for publish/subscribe patterns, and EventBridge for intelligent event routing and event bus integration.",
+          "description": "Decouple services with messaging: Amazon SQS for point-to-point queuing, Amazon SNS for pub/sub fan-out, and dead-letter queues (DLQs) for failed message handling.",
           "resources": [
             {
               "title": "Building event-driven architectures with Amazon EventBridge",
@@ -467,13 +489,15 @@
               "url": "/data/docs/serverless_developer/serverless_developer_messaging_queuing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "serverless_developer_iac_deployment",
           "name": "Infrastructure as Code (IaC) & Deployment",
           "tag": "essential",
-          "description": "Learn to define, deploy, and manage serverless applications using Infrastructure as Code. Focus on tools like AWS SAM, Serverless Framework, or AWS CDK for robust, repeatable deployments and understanding underlying CloudFormation principles.",
+          "description": "Declare serverless infrastructure as code: AWS Serverless Application Model (SAM), Serverless Framework (v3/v4), AWS CDK (Cloud Development Kit), and SST (Serverless Stack).",
           "resources": [
             {
               "title": "AWS Serverless Application Model (SAM) Developer Guide",
@@ -505,13 +529,15 @@
               "url": "/data/docs/serverless_developer/serverless_developer_iac_deployment.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 30
         },
         {
           "id": "serverless_developer_local_dev_testing",
           "name": "Local Development and Testing Serverless Applications",
           "tag": "essential",
-          "description": "Implement effective testing strategies for serverless applications, including unit tests, integration tests, end-to-end testing, and local simulation techniques with tools like SAM CLI local. Understand mocking, dependency injection, and test environments.",
+          "description": "Test serverless applications locally: LocalStack for AWS emulation, SAM CLI local invocation, unit testing handler functions, and integration testing against cloud staging environments.",
           "resources": [
             {
               "title": "Testing Serverless Applications (Serverless Land)",
@@ -538,15 +564,19 @@
               "url": "/data/docs/serverless_developer/serverless_developer_local_dev_testing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 32
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 21
     },
     {
       "id": "serverless_developer_production_readiness",
       "name": "Production Readiness and Advanced Patterns",
       "tag": "advanced",
-      "description": "Prepare serverless applications for production with best practices in observability, security, cost management, and advanced architectural patterns. Move beyond basic implementations to build resilient, scalable, and maintainable systems.",
+      "description": "Harden serverless systems for enterprise scale: Distributed tracing, security scanning, cost optimization, and complex workflow orchestration.",
       "resources": [
         {
           "title": "AWS Serverless Land",
@@ -574,7 +604,7 @@
           "id": "serverless_developer_observability",
           "name": "Observability and Monitoring",
           "tag": "advanced",
-          "description": "Implement comprehensive monitoring, logging, and tracing for serverless applications using CloudWatch Logs (structured logging, log groups), CloudWatch Metrics (custom metrics, alarms, anomaly detection), and AWS X-Ray for distributed tracing across services. Learn to set up custom dashboards and real-time operational insights.",
+          "description": "Implement full serverless observability: Distributed tracing with AWS X-Ray and OpenTelemetry, structured JSON logging with CloudWatch Embedded Metric Format (EMF), and Lumigo/Datadog.",
           "resources": [
             {
               "title": "Monitoring and Troubleshooting Serverless Applications",
@@ -601,13 +631,15 @@
               "url": "/data/docs/serverless_developer/serverless_developer_observability.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 56
         },
         {
           "id": "serverless_developer_security_hardening",
           "name": "Serverless Security Best Practices",
           "tag": "advanced",
-          "description": "Deepen your understanding of security for serverless workloads: managing IAM roles and policies with least privilege, securing API endpoints with WAF, data encryption at rest and in transit (KMS), input validation, secret management with AWS Secrets Manager and Parameter Store, and adherence to the AWS Well-Architected Framework Security Pillar.",
+          "description": "Harden serverless security posture: Least-privilege IAM roles per function, Secrets Manager / SSM Parameter Store integration, and dependency vulnerability scanning.",
           "resources": [
             {
               "title": "Serverless Security Best Practices (AWS)",
@@ -634,13 +666,15 @@
               "url": "/data/docs/serverless_developer/serverless_developer_security_hardening.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "serverless_developer_cost_optimization",
           "name": "Cost Optimization for Serverless",
           "tag": "advanced",
-          "description": "Learn strategies for minimizing costs in serverless architectures. Understand detailed billing models for Lambda, API Gateway, DynamoDB, and other services. Implement right-sizing, provisioned concurrency, S3 lifecycle policies, and continuous monitoring for cost control using AWS Cost Explorer and Budgets.",
+          "description": "Optimize serverless expenditure: Tuning Lambda memory with AWS Lambda Power Tuning, optimizing DynamoDB on-demand vs provisioned capacity, and lifecycle archival.",
           "resources": [
             {
               "title": "Cost Optimization for Serverless (Serverless Land)",
@@ -667,13 +701,15 @@
               "url": "/data/docs/serverless_developer/serverless_developer_cost_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         },
         {
           "id": "serverless_developer_advanced_patterns",
           "name": "Advanced Serverless Architecture Patterns",
           "tag": "advanced",
-          "description": "Explore complex serverless patterns to build robust and scalable systems. Includes state machines with AWS Step Functions, event stream processing with Kinesis, serverless containers with AWS Fargate and Lambda container images, and patterns for idempotency and error handling.",
+          "description": "Orchestrate complex workflows: AWS Step Functions state machines for distributed transactions (Saga pattern), human approvals, error retries, and parallel execution.",
           "resources": [
             {
               "title": "AWS Step Functions Developer Guide",
@@ -700,13 +736,15 @@
               "url": "/data/docs/serverless_developer/serverless_developer_advanced_patterns.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "serverless_developer_stream_processing",
           "name": "Real-time Stream Processing with Serverless",
           "tag": "advanced",
-          "description": "Learn to build real-time data processing pipelines using serverless services. Focus on Amazon Kinesis Data Streams and Kinesis Firehose for ingestion and processing, integrated with AWS Lambda for transformation and analysis.",
+          "description": "Process real-time streaming data: Ingesting high-throughput data streams with Amazon Kinesis Data Streams and DynamoDB Streams with batch window tuning.",
           "resources": [
             {
               "title": "Processing streaming data with AWS Lambda",
@@ -733,13 +771,15 @@
               "url": "/data/docs/serverless_developer/serverless_developer_stream_processing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         },
         {
           "id": "serverless_developer_container_integration",
           "name": "Serverless Containers (Lambda Container Images & Fargate)",
           "tag": "advanced",
-          "description": "Understand how to leverage containerization within a serverless paradigm. Explore AWS Lambda container images for larger dependencies or custom runtimes and AWS Fargate for running containers without managing servers for long-running or batch workloads.",
+          "description": "Deploy serverless containers: Package Lambda functions as OCI container images (up to 10GB) and orchestrate serverless containers with AWS Fargate on ECS.",
           "resources": [
             {
               "title": "Lambda Container Image Support",
@@ -766,13 +806,15 @@
               "url": "/data/docs/serverless_developer/serverless_developer_container_integration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 38
         },
         {
           "id": "serverless_developer_ci_cd",
           "name": "CI/CD for Serverless Applications",
           "tag": "advanced",
-          "description": "Set up automated continuous integration and continuous deployment pipelines for serverless projects using services like AWS CodePipeline, GitHub Actions, or GitLab CI, integrated with SAM or Serverless Framework for automated testing and deployment strategies (e.g., canary deployments, blue/green).",
+          "description": "Automate serverless CI/CD: Automated deployment pipelines with GitHub Actions, ephemeral preview environments per PR, and automated canary deployments with AWS CodeDeploy.",
           "resources": [
             {
               "title": "Building a CI/CD pipeline for serverless applications using AWS SAM and AWS CodePipeline",
@@ -799,13 +841,15 @@
               "url": "/data/docs/serverless_developer/serverless_developer_ci_cd.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 42
         },
         {
           "id": "serverless_developer_frontend_integration",
           "name": "Full-Stack Serverless & Frontend Integration",
           "tag": "advanced",
-          "description": "Learn to integrate serverless backends with modern frontend applications. Cover static site hosting with S3/CloudFront, API consumption patterns, integrating with AWS Amplify for simplified frontend development, and using Lambda@Edge for content delivery at the edge.",
+          "description": "Build full-stack serverless applications: Connecting Next.js / React frontends via Amplify, CloudFront CDN edge caching, and serverless GraphQL / REST APIs.",
           "resources": [
             {
               "title": "Build a Serverless Web Application (AWS)",
@@ -837,15 +881,19 @@
               "url": "/data/docs/serverless_developer/serverless_developer_frontend_integration.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 48
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 47
     },
     {
       "id": "serverless_developer_portfolio_career",
       "name": "Portfolio and Career Readiness",
       "tag": "advanced",
-      "description": "Turn your Serverless Developer learning into proof: case studies, GitHub artifacts, demos, interview stories, and clear role positioning. This section focuses on showcasing your skills and preparing for a career.",
+      "description": "Build a competitive serverless portfolio: Documenting production architectures, optimizing cost and latency benchmarks, and preparing for cloud developer certifications.",
       "resources": [
         {
           "title": "AWS Lambda Developer Guide",
@@ -883,7 +931,7 @@
           "id": "serverless_developer_case_study_writing",
           "name": "Case Study & Project Documentation",
           "tag": "advanced",
-          "description": "Learn to articulate your serverless projects effectively through detailed case studies. Document problem statements, architectural decisions, implementation details, challenges overcome, and achieved outcomes, ready for review by potential employers or collaborators.",
+          "description": "Draft architectural case studies: Documenting event-driven migration from monoliths, cold start mitigation strategies, and cost savings calculations.",
           "resources": [
             {
               "title": "Writing Effective Documentation for Your Projects",
@@ -905,13 +953,15 @@
               "url": "/data/docs/serverless_developer/serverless_developer_case_study_writing.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 37
         },
         {
           "id": "serverless_developer_capstone_project",
           "name": "Capstone Project: End-to-End Serverless Application",
           "tag": "advanced",
-          "description": "Build a comprehensive, portfolio-grade serverless application. Incorporate multiple services (Lambda, API Gateway, DynamoDB, SQS/SNS, EventBridge, Step Functions, S3/CloudFront), CI/CD, observability, and security best practices. Focus on a real-world use case to demonstrate full-stack serverless capabilities and problem-solving skills.",
+          "description": "Build an enterprise serverless capstone: Event-driven e-commerce order processing engine using AWS Lambda, EventBridge, Step Functions Saga, DynamoDB single-table design, and SAM/CDK.",
           "resources": [
             {
               "title": "Serverless E-commerce Application Reference Architecture",
@@ -938,13 +988,15 @@
               "url": "/data/docs/serverless_developer/serverless_developer_capstone_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 99
         },
         {
           "id": "serverless_developer_interview_prep",
           "name": "Interview Preparation & Serverless Concepts",
           "tag": "advanced",
-          "description": "Prepare for technical interviews by reviewing common serverless questions, architectural design challenges, and practical problem-solving scenarios. Focus on explaining key concepts, trade-offs, and best practices in serverless development.",
+          "description": "Master serverless technical interviews: Single-table DynamoDB data modeling, cold start mitigation techniques, designing idempotent event processors, and solving distributed transaction questions.",
           "resources": [
             {
               "title": "AWS Lambda Interview Questions and Answers",
@@ -971,9 +1023,14 @@
               "url": "/data/docs/serverless_developer/serverless_developer_interview_prep.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 48
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 36
     }
-  ]
+  ],
+  "total_exp": 1000
 }

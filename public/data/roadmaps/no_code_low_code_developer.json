@@ -47,31 +47,34 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Complete Marketplace Application on Bubble with Stripe",
+        "title": "Full-Featured Enterprise Two-Sided Marketplace on Bubble",
         "tech_stack": [
           "Bubble.io",
           "Stripe Connect",
           "SendGrid",
-          "API Connector"
+          "Custom JavaScript Plugins",
+          "PostgreSQL"
         ],
-        "description": "Build a two-sided freelance services marketplace with seller profiles, booking calendar workflows, and automated payout splits via Stripe."
+        "description": "Construct an end-to-end service marketplace with dual user onboarding, Stripe Connect escrow payments, calendar booking, and responsive mobile layouts."
       },
       {
-        "title": "Automated Operations Hub with Make & Airtable API",
+        "title": "Automated Cross-Platform Operations Hub with Make, Airtable & Webhooks",
         "tech_stack": [
-          "Make (Integromat)",
-          "Airtable",
-          "Stripe API",
-          "Webhooks"
+          "Make.com",
+          "Airtable Scripting",
+          "REST Webhooks",
+          "Slack API",
+          "Google Workspace"
         ],
-        "description": "Construct a zero-code operations engine connecting webhooks, automated customer invoicing, CRM pipeline synchronization, and multi-step notification alerts."
+        "description": "Build an enterprise automation workflow orchestrating customer lead scoring, dynamic contract generation, Slack notifications, and error recovery routing."
       }
     ],
     "interview_focus": [
-      "Relational Data Modeling in No-Code Platforms",
-      "Optimizing Database Queries and Privacy Rules in Bubble",
-      "Integrating External REST APIs and Webhook Payloads",
-      "When to Choose No-Code vs Custom Software Engineering"
+      "Relational Data Modeling in No-Code Platforms (1:1, 1:N, N:M Relationships & Privacy Rules)",
+      "API Integrations (REST Endpoints, JSON Payloads, Webhook Verification, OAuth2 Tokens)",
+      "Performance Optimization in Bubble (Workload Units / WU Consumption, Search Constraints, Lazy Loading)",
+      "Error Handling & Failure Recovery in Workflow Automations (Make/Zapier)",
+      "No-Code Security & Compliance (Data Privacy Rules, Role-Based Access Control, API Key Protection)"
     ],
     "certifications": [
       "Bubble Developer Certification",
@@ -84,7 +87,7 @@
       "id": "nc_foundations_design",
       "name": "Foundational Concepts & Design",
       "tag": "essential",
-      "description": "Establish a strong understanding of product thinking, requirements gathering, process mapping, UI/UX principles, and robust data modeling crucial for any successful application build.",
+      "description": "Master No-Code/Low-Code product engineering: Visual development paradigms, relational data modeling, UI/UX accessibility, and business process automation.",
       "resources": [
         {
           "title": "The Complete Bubble.io Crash Course For Beginners (FREE COURSE) (Building With Bubble)",
@@ -107,7 +110,7 @@
           "id": "nc_user_research_personas",
           "name": "User Research & Persona Development",
           "tag": "essential",
-          "description": "Learn techniques to identify target users, understand their needs, pain points, and define user personas to guide design and feature development.",
+          "description": "Conduct user research for no-code apps: User interviews, defining user personas, identifying workflow friction, and mapping user journeys.",
           "resources": [
             {
               "title": "How to use Microsoft Power Apps - Beginner Tutorial (Kevin Stratvert)",
@@ -124,13 +127,15 @@
               "url": "/data/docs/no_code_low_code_developer/nc_user_research_personas.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "nc_requirements_gathering_mapping",
           "name": "Requirements Gathering & Process Mapping",
           "tag": "essential",
-          "description": "Master techniques for gathering business and user requirements, defining project scope, and mapping complex business processes into clear, actionable workflows.",
+          "description": "Gather and map functional requirements: Process flowcharts, user stories, scoping Minimum Viable Products (MVPs), and defining business rules.",
           "resources": [
             {
               "title": "Diagrams.net",
@@ -152,13 +157,15 @@
               "url": "/data/docs/no_code_low_code_developer/nc_requirements_gathering_mapping.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 25
         },
         {
           "id": "nc_data_modeling_design",
           "name": "Data Modeling & Database Design",
           "tag": "essential",
-          "description": "Design efficient and scalable database structures, manage relationships, ensure data integrity, and understand various data storage types (e.g., relational, document, spreadsheet-like databases used in no-code). Learn about normalization and data types.",
+          "description": "Design relational database schemas: Tables, field types, primary/foreign keys, one-to-one, one-to-many, and many-to-many relationships in Airtable / Supabase / Bubble.",
           "resources": [
             {
               "title": "Airtable Guides",
@@ -185,13 +192,15 @@
               "url": "/data/docs/no_code_low_code_developer/nc_data_modeling_design.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 29
         },
         {
           "id": "nc_ui_ux_basics",
           "name": "Core UI/UX Principles & Accessibility",
           "tag": "essential",
-          "description": "Understand fundamental concepts of user interface design, user experience, visual hierarchy, consistency, and accessibility standards for optimal usability.",
+          "description": "Apply UI/UX design in no-code: Responsive layouts, visual hierarchy, mobile-first design, 8pt spacing grids, and accessible color contrast.",
           "resources": [
             {
               "title": "The Complete Bubble.io Crash Course For Beginners (FREE COURSE) (Building With Bubble)",
@@ -208,13 +217,15 @@
               "url": "/data/docs/no_code_low_code_developer/nc_ui_ux_basics.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "nc_wireframing_prototyping",
           "name": "Wireframing & Prototyping",
           "tag": "essential",
-          "description": "Develop skills in creating low-fidelity wireframes and interactive prototypes to visualize user flows, test ideas, and gather early feedback before building.",
+          "description": "Prototype no-code applications: Low-fidelity wireframing in Figma / Whimsical, click-through prototypes, and validating user workflows before building.",
           "resources": [
             {
               "title": "How to use Microsoft Power Apps - Beginner Tutorial (Kevin Stratvert)",
@@ -231,15 +242,19 @@
               "url": "/data/docs/no_code_low_code_developer/nc_wireframing_prototyping.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 26
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 23
     },
     {
       "id": "nc_platform_mastery",
       "name": "No-code/Low-code Platform Mastery",
       "tag": "essential",
-      "description": "Gain hands-on experience with leading no-code/low-code platforms to build diverse applications, from marketing sites to complex internal tools, focusing on UI, logic, and component reusability.",
+      "description": "Master leading no-code platforms: Web development, internal tools, mobile apps, and database configuration.",
       "resources": [
         {
           "title": "How to use Microsoft Power Apps - Beginner Tutorial (Kevin Stratvert)",
@@ -262,7 +277,7 @@
           "id": "nc_nocode_ecosystem",
           "name": "Introduction to No-code & Low-code Ecosystem",
           "tag": "essential",
-          "description": "Overview of various no-code and low-code platforms, their strengths, weaknesses, ideal use cases (e.g., web apps, internal tools, websites, mobile apps), and key differences.",
+          "description": "Evaluate the no-code ecosystem: Web applications (Bubble, Webflow), mobile apps (FlutterFlow, Adalo), and internal tools (Retool, Appsmith).",
           "resources": [
             {
               "title": "What is Low-Code Development?",
@@ -284,13 +299,15 @@
               "url": "/data/docs/no_code_low_code_developer/nc_nocode_ecosystem.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 18
         },
         {
           "id": "nc_ui_development",
           "name": "UI Development & Responsive Design",
           "tag": "essential",
-          "description": "Build engaging user interfaces using platform-specific components, ensure responsive design across various devices, and manage reusable UI elements for consistency and efficiency.",
+          "description": "Build responsive visual interfaces: Bubble responsive engine, Webflow CSS grid and flexbox styling, FlutterFlow widget trees, and responsive breakpoints.",
           "resources": [
             {
               "title": "Webflow University",
@@ -317,13 +334,15 @@
               "url": "/data/docs/no_code_low_code_developer/nc_ui_development.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 27
         },
         {
           "id": "nc_app_logic_workflows",
           "name": "Application Logic & Workflows",
           "tag": "essential",
-          "description": "Implement dynamic application behavior using conditional logic, event triggers, data operations (CRUD), and advanced workflow sequences within the chosen platform.",
+          "description": "Implement application logic: Visual workflow builders, conditional logic (`only when`), looping, custom events, and database mutations.",
           "resources": [
             {
               "title": "Bubble Academy",
@@ -355,13 +374,15 @@
               "url": "/data/docs/no_code_low_code_developer/nc_app_logic_workflows.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 24
         },
         {
           "id": "nc_user_authentication_authorization",
           "name": "User Authentication & Authorization",
           "tag": "essential",
-          "description": "Implement secure user registration, login, password management, and role-based access control (RBAC) to manage different levels of user permissions and data access.",
+          "description": "Secure user access: User sign-up/login flows, session management, social logins (OAuth), and role-based data privacy rules in Bubble / Supabase.",
           "resources": [
             {
               "title": "User Authentication in Bubble",
@@ -383,15 +404,19 @@
               "url": "/data/docs/no_code_low_code_developer/nc_user_authentication_authorization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 31
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 21
     },
     {
       "id": "nc_advanced_integrations",
       "name": "Advanced Integrations & Automation",
       "tag": "advanced",
-      "description": "Connect applications seamlessly, automate complex multi-step processes, and extend no-code platforms with low-code capabilities for enhanced functionality.",
+      "description": "Connect systems: REST APIs, webhooks, automation platforms, and low-code JavaScript extensions.",
       "resources": [
         {
           "title": "Zapier AI Tutorial for Beginners: Automation Made Simple (Kevin Stratvert)",
@@ -414,7 +439,7 @@
           "id": "nc_api_webhook_mastery",
           "name": "API & Webhook Mastery",
           "tag": "advanced",
-          "description": "Deep dive into consuming external APIs (REST, GraphQL), understanding data formats like JSON, managing secure authentication (API Keys, OAuth 2.0), and designing/implementing webhooks for real-time communication.",
+          "description": "Integrate external APIs: Configuring API Connector plugins, making authenticated HTTP requests (GET, POST, PATCH), handling JSON responses, and webhook endpoints.",
           "resources": [
             {
               "title": "Postman Learning Center",
@@ -441,13 +466,15 @@
               "url": "/data/docs/no_code_low_code_developer/nc_api_webhook_mastery.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 39
         },
         {
           "id": "nc_workflow_automation_platforms",
           "name": "Cross-Platform Workflow Automation",
           "tag": "advanced",
-          "description": "Build sophisticated multi-application workflows using leading automation tools (e.g., Zapier, Make, Microsoft Power Automate), incorporating conditional logic, error handling, retry mechanisms, and scheduling for complex business processes.",
+          "description": "Automate cross-platform workflows: Make.com (Integromat) and Zapier; multi-step scenarios, routers, error handlers, and scheduling.",
           "resources": [
             {
               "title": "Zapier Learn",
@@ -479,13 +506,15 @@
               "url": "/data/docs/no_code_low_code_developer/nc_workflow_automation_platforms.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "nc_low_code_extensions",
           "name": "Low-code Extensions & Customizations",
           "tag": "advanced",
-          "description": "Bridge the gap between no-code and traditional development by integrating custom code snippets (e.g., JavaScript, SQL), creating custom components, leveraging platform APIs for advanced integrations, and connecting to external databases not natively supported.",
+          "description": "Extend platforms with custom code: Writing custom JavaScript in Bubble plugins, custom CSS in Webflow, and custom Dart functions in FlutterFlow.",
           "resources": [
             {
               "title": "Retool Custom Components",
@@ -512,15 +541,19 @@
               "url": "/data/docs/no_code_low_code_developer/nc_low_code_extensions.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 29
     },
     {
       "id": "nc_deployment_governance_lifecycle",
       "name": "Deployment, Governance & Project Lifecycle",
       "tag": "advanced",
-      "description": "Master the essential aspects of delivering professional no-code/low-code solutions, including testing, security, compliance, platform governance, project management, and client handoff.",
+      "description": "Operate and scale no-code applications: Testing, security compliance, deployment environments, and ongoing maintenance.",
       "resources": [
         {
           "title": "Zapier AI Tutorial for Beginners: Automation Made Simple (Kevin Stratvert)",
@@ -543,7 +576,7 @@
           "id": "nc_testing_qa",
           "name": "Testing & Quality Assurance",
           "tag": "advanced",
-          "description": "Implement comprehensive testing strategies including functional testing, UI testing, integration testing, performance testing, and User Acceptance Testing (UAT) to ensure the functionality, performance, and reliability of no-code applications before deployment.",
+          "description": "Test no-code applications: Manual functional testing, cross-browser testing, edge-case validation, performance testing, and bug tracking.",
           "resources": [
             {
               "title": "The Complete Bubble.io Crash Course For Beginners (FREE COURSE) (Building With Bubble)",
@@ -560,13 +593,15 @@
               "url": "/data/docs/no_code_low_code_developer/nc_testing_qa.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 33
         },
         {
           "id": "nc_security_compliance_governance",
           "name": "Security, Compliance & Platform Governance",
           "tag": "advanced",
-          "description": "Implement robust security measures, manage data privacy regulations (e.g., GDPR, CCPA), establish granular access controls, and define governance frameworks for managing no-code solutions at scale within an organization.",
+          "description": "Harden no-code security: Privacy rules, protecting API keys, preventing data leaks in client-side searches, and SOC 2 / GDPR compliance.",
           "resources": [
             {
               "title": "Power Platform Adoption Guidance - Governance",
@@ -593,13 +628,15 @@
               "url": "/data/docs/no_code_low_code_developer/nc_security_compliance_governance.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 41
         },
         {
           "id": "nc_project_management_handoff",
           "name": "Project Management, Documentation & Handoff",
           "tag": "advanced",
-          "description": "Manage the full lifecycle of no-code projects, from initial scoping and development to deployment, version control (if available), comprehensive documentation, post-launch support, and effective client handoff strategies.",
+          "description": "Manage project lifecycles: Agile delivery, sprint milestones, client handoff documentation, and user training guides.",
           "resources": [
             {
               "title": "Agile Project Management for No-Code",
@@ -621,13 +658,15 @@
               "url": "/data/docs/no_code_low_code_developer/nc_project_management_handoff.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 73
         },
         {
           "id": "nc_deployment_maintenance",
           "name": "Deployment & Ongoing Maintenance",
           "tag": "advanced",
-          "description": "Understand deployment strategies (e.g., staging vs. production environments), monitoring application performance, managing updates, and implementing maintenance routines for long-term application health.",
+          "description": "Deploy and maintain no-code products: Custom domains, SSL certificates, version backups, staging vs live environments, and database migrations.",
           "resources": [
             {
               "title": "Zapier AI Tutorial for Beginners: Automation Made Simple (Kevin Stratvert)",
@@ -644,15 +683,19 @@
               "url": "/data/docs/no_code_low_code_developer/nc_deployment_maintenance.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 36
     },
     {
       "id": "nc_capstone_projects",
       "name": "Capstone Projects & Portfolio Development",
       "tag": "advanced",
-      "description": "Apply learned skills to build real-world, comprehensive no-code/low-code applications, integrating various functionalities and best practices, and developing a strong professional portfolio.",
+      "description": "Build commercial-grade no-code capstones: Marketplaces, SaaS portals, and internal tools.",
       "resources": [
         {
           "title": "The Complete Bubble.io Crash Course For Beginners (FREE COURSE) (Building With Bubble)",
@@ -675,7 +718,7 @@
           "id": "nc_project_internal_portal",
           "name": "Project: Internal Operations Portal",
           "tag": "advanced",
-          "description": "Build a multi-functional internal tool featuring user roles, custom forms, database management, approval workflows, dynamic dashboards, and automated notifications using a platform like Retool, Appsmith, or Bubble.",
+          "description": "Project: Build an internal operations portal in Retool / Appsmith: Admin dashboard connecting PostgreSQL, user approval workflows, and CSV export.",
           "resources": [
             {
               "title": "Retool Documentation",
@@ -697,13 +740,15 @@
               "url": "/data/docs/no_code_low_code_developer/nc_project_internal_portal.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 78
         },
         {
           "id": "nc_project_customer_portal",
           "name": "Project: Customer Self-Service Portal",
           "tag": "advanced",
-          "description": "Develop an external-facing portal where customers can manage their profiles, view order history, submit support tickets, interact with dynamic content, and integrate with external APIs for data retrieval and submission.",
+          "description": "Project: Build a customer self-service portal in Bubble: Authentication, profile management, Stripe subscription billing, and ticket support.",
           "resources": [
             {
               "title": "How to use Microsoft Power Apps - Beginner Tutorial (Kevin Stratvert)",
@@ -720,13 +765,15 @@
               "url": "/data/docs/no_code_low_code_developer/nc_project_customer_portal.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 75
         },
         {
           "id": "nc_project_marketplace_mvp",
           "name": "Project: Marketplace Minimum Viable Product (MVP)",
           "tag": "advanced",
-          "description": "Create an MVP for a marketplace application, including user/vendor registration, listing management, advanced search and filtering, basic booking/ordering functionalities, and secure payment gateway integration.",
+          "description": "Project: Build a two-sided marketplace MVP in Bubble / Webflow: Buyer/seller accounts, listing creation, search filters, and Stripe Connect payments.",
           "resources": [
             {
               "title": "Zapier AI Tutorial for Beginners: Automation Made Simple (Kevin Stratvert)",
@@ -743,13 +790,15 @@
               "url": "/data/docs/no_code_low_code_developer/nc_project_marketplace_mvp.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 80
         },
         {
           "id": "nc_project_mobile_app_mvp",
           "name": "Project: Mobile Application MVP",
           "tag": "advanced",
-          "description": "Design and build a functional mobile application MVP with core features, user authentication, data display, and interactive elements suitable for a specific use case using platforms like Adalo or Glide.",
+          "description": "Project: Build a mobile app MVP in FlutterFlow: Cross-platform iOS/Android app, push notifications, local caching, and camera upload integration.",
           "resources": [
             {
               "title": "The Complete Bubble.io Crash Course For Beginners (FREE COURSE) (Building With Bubble)",
@@ -766,9 +815,14 @@
               "url": "/data/docs/no_code_low_code_developer/nc_project_mobile_app_mvp.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 78
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 63
     }
-  ]
+  ],
+  "total_exp": 1000
 }

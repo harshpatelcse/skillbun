@@ -48,32 +48,34 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Automated Prompt Evaluation & Red-Teaming Suite",
+        "title": "Automated Prompt Optimization & Programmatic Evaluation Engine with DSPy",
         "tech_stack": [
           "Python",
           "DSPy",
-          "DeepEval",
-          "OpenAI/Gemini API"
+          "OpenAI API",
+          "Anthropic Claude API",
+          "MLflow"
         ],
-        "description": "Build an automated regression test bench for LLM applications that evaluates accuracy, hallucination rates, and security vulnerability."
+        "description": "Engineer a self-optimizing prompt compilation pipeline using DSPy teleprompters to maximize accuracy and minimize token overhead for complex reasoning."
       },
       {
-        "title": "Reliable Structured Output Extraction Pipeline with DSPy",
+        "title": "Production Multi-Model Red-Teaming & Jailbreak Defense Benchmark",
         "tech_stack": [
-          "DSPy",
+          "Promptfoo",
           "Python",
-          "Instructor",
-          "Pydantic",
-          "OpenAI"
+          "Llama Guard",
+          "Garak",
+          "Automated Security Reports"
         ],
-        "description": "Build an automated prompt optimization pipeline that transforms unstructured contracts into validated Pydantic models using few-shot bootstrapping and assertion checks."
+        "description": "Construct an automated CI/CD red-teaming harness assessing LLM endpoints against adversarial jailbreak attempts, indirect prompt injections, and data extraction."
       }
     ],
     "interview_focus": [
-      "Prompt Injection Attack Vectors (Direct vs Indirect)",
-      "Techniques for Enforcing Strict Deterministic JSON Output",
-      "DSPy Teleprompter Optimization Mechanics",
-      "Context Window Compression & Information Loss"
+      "Prompt Engineering Frameworks (Chain-of-Thought / CoT, Few-Shot In-Context Learning, ReAct)",
+      "Structured Output Generation (JSON Schema Constraints, Pydantic, Guidance, Outlines)",
+      "Systematic Prompt Evaluation Methodologies (Ground Truth Benchmarks, LLM-as-a-Judge)",
+      "Vulnerability Mitigation (Indirect Prompt Injections, Jailbreaking, System Prompt Extraction)",
+      "Programmatic Prompt Optimization (DSPy Compilation, Bootstrapped Few-Shot, MIPRO)"
     ],
     "certifications": [
       "DeepLearning.AI Prompt Engineering for Developers",
@@ -86,7 +88,7 @@
       "id": "llm_prompt_foundations",
       "name": "Foundational Concepts & Principles of Prompt Engineering",
       "tag": "essential",
-      "description": "Master the core mechanisms of Large Language Models, understand how they process information, and apply fundamental principles for designing effective prompts that elicit desired responses.",
+      "description": "Master foundational prompt engineering: Architecture of instruction-tuned models, tokenization mechanics, attention context windows, and deterministic vs non-deterministic sampling parameters.",
       "resources": [
         {
           "title": "Prompt Engineering Guide",
@@ -114,7 +116,7 @@
           "id": "core_llm_concepts_arch",
           "name": "Core LLM Concepts & Architectures",
           "tag": "essential",
-          "description": "Gain a foundational understanding of LLM architecture (e.g., Transformer, Decoder-only), tokenization, the attention mechanism, embedding spaces, and the difference between pre-training, fine-tuning, and in-context learning to grasp model capabilities and limitations.",
+          "description": "Understand model mechanics for prompting: Transformer decoder mechanics, token probabilities, temperature, top-k, top-p (nucleus sampling), frequency/presence penalties, and stop sequences.",
           "resources": [
             {
               "title": "The Illustrated Transformer",
@@ -141,13 +143,15 @@
               "url": "/data/docs/prompt_engineer/core_llm_concepts_arch.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 44
         },
         {
           "id": "prompt_structure_elements",
           "name": "Prompt Structure and Key Elements",
           "tag": "essential",
-          "description": "Learn to construct effective prompts using clear instructions, providing relevant context, defining roles/personas, using few-shot examples effectively, and employing delimiters for clarity and structured input. Understand the impact of prompt length and order.",
+          "description": "Deconstruct prompt anatomy: Roles (System, User, Assistant), task directives, contextual grounding, format constraints, few-shot demonstration exemplars, and delimiter tags (XML, Markdown).",
           "resources": [
             {
               "title": "OpenAI Prompt Engineering Guide",
@@ -174,13 +178,15 @@
               "url": "/data/docs/prompt_engineer/prompt_structure_elements.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 44
         },
         {
           "id": "principles_effective_prompt_design",
           "name": "Principles of Effective Prompt Design",
           "tag": "essential",
-          "description": "Understand best practices for writing clear, concise, specific, and unambiguous prompts. Learn iterative refinement techniques to optimize prompt performance, reliability, and cost-efficiency, focusing on aligning model output with user intent and business objectives.",
+          "description": "Master core design principles: Clarity, specificity, positive directives vs negative constraints, avoiding ambiguity, and structuring complex tasks into sequential micro-steps.",
           "resources": [
             {
               "title": "Best practices for prompt engineering with OpenAI API",
@@ -207,13 +213,15 @@
               "url": "/data/docs/prompt_engineer/principles_effective_prompt_design.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 41
         },
         {
           "id": "llm_limitations_failure_modes",
           "name": "LLM Limitations & Common Failure Modes",
           "tag": "essential",
-          "description": "Identify common challenges such as hallucinations, stale knowledge, prompt injection vulnerabilities, context window limitations, inherent biases, and overconfident responses. Learn strategies to anticipate, detect, and mitigate these issues effectively through prompt design.",
+          "description": "Diagnose and prevent model failure modes: Hallucinations, sycophancy, recency/primacy bias in long contexts, instruction drift, and reasoning shortcuts.",
           "resources": [
             {
               "title": "OWASP Top 10 for LLM Apps",
@@ -245,15 +253,19 @@
               "url": "/data/docs/prompt_engineer/llm_limitations_failure_modes.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 35
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 39
     },
     {
       "id": "advanced_prompt_patterns",
       "name": "Advanced Prompt Design Patterns & Structured Outputs",
       "tag": "essential",
-      "description": "Explore advanced prompting strategies and design patterns for complex tasks, generating highly structured data, enhancing LLM reasoning capabilities, and integrating external knowledge for robust application development.",
+      "description": "Master advanced prompting patterns: Persona adoption, flipped interaction, perspective taking, template modularity, and structured output schema enforcement.",
       "resources": [
         {
           "title": "Anthropic Prompt Engineering",
@@ -286,7 +298,7 @@
           "id": "reasoning_techniques",
           "name": "Advanced Reasoning Techniques (CoT, ToT, Self-Consistency)",
           "tag": "essential",
-          "description": "Master advanced reasoning techniques like Chain-of-Thought (CoT), Tree-of-Thought (ToT), Self-consistency, and Generated Knowledge Prompting. Learn to guide LLMs through complex multi-step reasoning tasks, enabling self-correction, planning, and improved logical coherence.",
+          "description": "Implement advanced reasoning elicitation: Zero-Shot CoT ('Think step by step'), Few-Shot Chain-of-Thought, Tree of Thoughts (ToT) exploration, and Self-Consistency majority voting.",
           "resources": [
             {
               "title": "Chain-of-Thought Prompting",
@@ -318,13 +330,15 @@
               "url": "/data/docs/prompt_engineer/reasoning_techniques.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 42
         },
         {
           "id": "generating_structured_outputs",
           "name": "Generating Structured Outputs (JSON, XML, Pydantic)",
           "tag": "essential",
-          "description": "Learn to precisely control LLM output formats, including JSON, XML, Markdown, and custom schemas. Implement schema enforcement, leverage Pydantic models for robust validation, and develop strategies for handling uncertain or missing information while ensuring valid, parseable, and usable structured data.",
+          "description": "Enforce strict structured outputs: Constraining completions to RFC 8259 JSON, Pydantic schemas, YAML, or XML using grammar-constrained decoding (Outlines, Instructor) and system prompts.",
           "resources": [
             {
               "title": "OpenAI Structured Outputs",
@@ -356,13 +370,15 @@
               "url": "/data/docs/prompt_engineer/generating_structured_outputs.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 43
         },
         {
           "id": "tool_use_function_calling_agents",
           "name": "Tool Use, Function Calling, and Agents",
           "tag": "advanced",
-          "description": "Integrate LLMs with external tools and APIs through function calling. Understand agentic workflows, multi-step planning, memory, and frameworks like ReAct, LangChain, or LlamaIndex to enable LLMs to interact with the real world, retrieve information, and perform complex actions autonomously.",
+          "description": "Design prompts for tool use: Crafting clear OpenAPI tool descriptions, handling multi-turn tool calling schemas, error correction prompts, and ReAct (Reason + Act) loop orchestration.",
           "resources": [
             {
               "title": "OpenAI Function Calling",
@@ -394,13 +410,15 @@
               "url": "/data/docs/prompt_engineer/tool_use_function_calling_agents.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 60
         },
         {
           "id": "retrieval_augmented_generation",
           "name": "Retrieval Augmented Generation (RAG)",
           "tag": "advanced",
-          "description": "Understand the RAG paradigm for grounding LLMs in up-to-date and specific knowledge. Learn about advanced chunking strategies, embedding models, vector databases, and effectively integrating retrieved context into prompts to reduce hallucinations and improve factual accuracy and relevance. Explore re-ranking and query transformation.",
+          "description": "Engineer prompts for RAG: Formatting retrieved document passages, source attribution directives, citation syntax enforcement, and instructions for handling out-of-context queries.",
           "resources": [
             {
               "title": "Retrieval Augmented Generation (RAG) Explained",
@@ -432,15 +450,19 @@
               "url": "/data/docs/prompt_engineer/retrieval_augmented_generation.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 40
     },
     {
       "id": "robustness_eval_testing_safety",
       "name": "Robustness: Evaluation, Testing & LLM Safety",
       "tag": "advanced",
-      "description": "Develop robust methodologies for systematically evaluating prompt performance, ensuring reliability, detecting biases, and implementing comprehensive safety and guardrail mechanisms for LLM applications in production.",
+      "description": "Evaluate prompt robustness: Quantitative benchmarking, automated test suite generation, adversarial red-teaming, and defensive guardrail engineering.",
       "resources": [
         {
           "title": "OpenAI Evals",
@@ -473,7 +495,7 @@
           "id": "prompt_eval_methodologies",
           "name": "Prompt Evaluation Methodologies & Metrics",
           "tag": "advanced",
-          "description": "Explore different evaluation approaches, including human-in-the-loop, LLM-assisted evaluation, and programmatic checks. Define and measure quantitative metrics (e.g., accuracy, relevance, completeness, conciseness) and qualitative rubrics for assessing prompt output quality and identifying areas for improvement using tools like LangSmith or DeepEval.",
+          "description": "Establish quantitative evaluation methodologies: Exact match, regex assertion testing, semantic similarity scoring, and LLM-as-a-judge grading with Rubric-based scoring.",
           "resources": [
             {
               "title": "LangSmith Evaluation Concepts",
@@ -505,13 +527,15 @@
               "url": "/data/docs/prompt_engineer/prompt_eval_methodologies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 55
         },
         {
           "id": "test_set_benchmarking",
           "name": "Developing Comprehensive Test Sets & Benchmarking",
           "tag": "advanced",
-          "description": "Learn to create diverse and comprehensive test sets, including 'golden' examples, edge cases, and adversarial prompts to test robustness. Establish baselines and perform systematic benchmarking to compare prompt versions, model variations, or different LLMs against predefined performance criteria.",
+          "description": "Curate production test datasets: Building diverse golden datasets in Promptfoo or DeepEval covering edge cases, multilingual variations, long-tail queries, and adversarial inputs.",
           "resources": [
             {
               "title": "Best Practices for Building LLM Benchmarks",
@@ -538,13 +562,15 @@
               "url": "/data/docs/prompt_engineer/test_set_benchmarking.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 58
         },
         {
           "id": "llm_safety_bias_guardrails",
           "name": "LLM Safety, Bias Mitigation & Guardrails",
           "tag": "advanced",
-          "description": "Implement robust safety measures to prevent prompt injection, data leakage, adversarial attacks, and content generation of harmful outputs. Understand strategies for detecting and mitigating biases, implementing content moderation, and utilizing guardrail frameworks like Guardrails AI or NeMo Guardrails for responsible AI development and deployment.",
+          "description": "Implement safety guardrails: Defending against direct/indirect prompt injection, jailbreaks, system prompt extraction, PII leaks, and toxic content generation using NeMo Guardrails.",
           "resources": [
             {
               "title": "NIST AI Risk Management Framework",
@@ -576,13 +602,15 @@
               "url": "/data/docs/prompt_engineer/llm_safety_bias_guardrails.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 59
         },
         {
           "id": "practice_iterative_refinement",
           "name": "Practice: Iterative Prompt Refinement & A/B Testing",
           "tag": "advanced",
-          "description": "Gain hands-on experience in iteratively refining prompts based on evaluation feedback and real-world performance data. Learn to set up, execute, and analyze A/B tests for different prompt versions or strategies to identify optimal performance, user engagement, and achieve desired outcomes in production environments.",
+          "description": "Practice Lab: Iterative prompt optimization: A/B testing prompt variations, measuring win-rate matrices, tracking token latency improvements, and eliminating edge-case hallucinations.",
           "resources": [
             {
               "title": "A/B Testing with LLMs",
@@ -609,15 +637,19 @@
               "url": "/data/docs/prompt_engineer/practice_iterative_refinement.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 60
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 42
     },
     {
       "id": "promptops_deployment_management",
       "name": "PromptOps: Deployment, Monitoring & Management",
       "tag": "advanced",
-      "description": "Master the operational aspects of prompt engineering, including version control, deployment strategies, continuous monitoring, and effective project management for LLM applications in production environments.",
+      "description": "Establish enterprise PromptOps: Versioning prompts as code, CI/CD integration, observability, and cost-performance trade-off management.",
       "resources": [
         {
           "title": "Humanloop Prompt Management Guide",
@@ -650,7 +682,7 @@
           "id": "prompt_versioning_registries",
           "name": "Prompt Versioning, Management, and Registries",
           "tag": "advanced",
-          "description": "Learn best practices for version controlling prompts, managing prompt libraries, and utilizing prompt registries or hubs. Understand prompt templating engines, configuration management, and environment-specific prompt variations for dynamic, scalable, and maintainable prompt generation and deployment.",
+          "description": "Manage prompts in registries: Using Git, Langfuse, or Arize Phoenix to track prompt diffs, parameter configurations, and maintain semantic versioning (v1.2.0) tied to application releases.",
           "resources": [
             {
               "title": "PromptLayer Docs",
@@ -682,13 +714,15 @@
               "url": "/data/docs/prompt_engineer/prompt_versioning_registries.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 61
         },
         {
           "id": "llm_monitoring_observability",
           "name": "LLM Application Monitoring & Observability",
           "tag": "advanced",
-          "description": "Implement robust monitoring for LLM applications, tracking key metrics like latency, cost, token usage, error rates, user satisfaction, and output quality. Establish feedback loops, implement data/concept drift detection, and set up alerting for continuous model and prompt improvement in production using platforms like LangSmith or Weights & Biases.",
+          "description": "Monitor production prompt performance: Tracking user thumbs up/down feedback, response latency, token consumption trends, and detecting semantic drift over time.",
           "resources": [
             {
               "title": "LangChain LangSmith",
@@ -720,13 +754,15 @@
               "url": "/data/docs/prompt_engineer/llm_monitoring_observability.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 52
         },
         {
           "id": "ci_cd_llm_apps",
           "name": "CI/CD for LLM Applications",
           "tag": "advanced",
-          "description": "Integrate prompt and LLM application testing into Continuous Integration/Continuous Deployment (CI/CD) pipelines. Automate deployment, testing, performance validation, and rollback strategies to ensure reliable and efficient updates for LLM-powered systems, treating prompts as code.",
+          "description": "Integrate prompt testing into CI/CD: Automated GitHub Actions running Promptfoo test suites on pull requests, blocking deployments if accuracy or safety thresholds regress.",
           "resources": [
             {
               "title": "MLOps for LLMs",
@@ -753,13 +789,15 @@
               "url": "/data/docs/prompt_engineer/ci_cd_llm_apps.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 70
         },
         {
           "id": "building_portfolio_case_studies",
           "name": "Building a Prompt Engineering Portfolio & Case Studies",
           "tag": "advanced",
-          "description": "Document and showcase prompt engineering projects, demonstrating measurable improvements in performance, safety, efficiency, and user experience. Develop compelling case studies that highlight problem-solving skills, technical choices, and the tangible business impact of prompt engineering solutions, suitable for a professional portfolio.",
+          "description": "Build a professional prompt engineering portfolio: Documenting systematic prompt optimization case studies with before/after accuracy gains, cost reductions, and reproducible benchmark suites.",
           "resources": [
             {
               "title": "How to Build an AI/ML Portfolio",
@@ -786,9 +824,14 @@
               "url": "/data/docs/prompt_engineer/building_portfolio_case_studies.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 63
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 48
     }
-  ]
+  ],
+  "total_exp": 1000
 }

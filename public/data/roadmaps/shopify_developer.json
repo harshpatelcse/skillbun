@@ -47,24 +47,26 @@
   "boost": {
     "capstone_projects": [
       {
-        "title": "Bespoke Custom Apparel Storefront with 3D Preview",
+        "title": "Custom High-Performance Shopify 2.0 Theme with Liquid & Web Components",
         "tech_stack": [
-          "Shopify Liquid",
-          "JavaScript",
-          "Tailwind",
-          "Storefront API"
+          "Shopify 2.0",
+          "Liquid",
+          "Theme App Extensions",
+          "JavaScript Web Components",
+          "Tailwind CSS"
         ],
-        "description": "Develop a high-conversion Shopify 2.0 theme featuring dynamic bundle builders, slide-out cart, and sub-second load times."
+        "description": "Develop a bespoke Shopify 2.0 theme featuring dynamic bundle builders, native cart drawer mutations via Section Rendering API, and a 95+ Lighthouse mobile score."
       },
       {
-        "title": "Custom Headless Shopify Storefront with Hydrogen & Liquid",
+        "title": "Headless Shopify Storefront with Hydrogen, Remix & Storefront API",
         "tech_stack": [
-          "Shopify Liquid",
-          "Storefront API",
-          "Remix/Hydrogen",
-          "Tailwind"
+          "Shopify Hydrogen",
+          "Remix",
+          "GraphQL Storefront API",
+          "Tailwind CSS",
+          "Oxygen Hosting"
         ],
-        "description": "Build a lightning-fast custom Shopify theme and headless storefront with optimized collection filtering, predictive cart upsells, and custom checkout extensions."
+        "description": "Architect a lightning-fast headless e-commerce store with server-side rendering, sub-second route transitions, optimistic cart management, and Oxygen edge deployment."
       }
     ],
     "certifications": [
@@ -72,10 +74,11 @@
       "Shopify App Development Specialist"
     ],
     "interview_focus": [
-      "Liquid Render Lifecycle & Performance Limits",
-      "Headless Shopify Architecture with Hydrogen",
-      "Shopify Functions vs Legacy Scripts",
-      "Cart Mutation Performance & Optimistic UI"
+      "Shopify 2.0 Architecture (JSON Templates, App Blocks, Theme App Extensions, Liquid Drops)",
+      "Shopify Storefront API vs Admin API (Rate Limits, GraphQL Schema, Customer Access Tokens)",
+      "Section Rendering API for Dynamic Ajax Cart Updates Without Full Page Reloads",
+      "Headless Shopify Considerations (Hydrogen, Remix, Webhook Syncing, Checkout Redirections)",
+      "Theme Performance Optimization (Liquid Render Profiling, Image srcset, Lazy Loading)"
     ]
   },
   "format": "tree",
@@ -84,7 +87,7 @@
       "id": "shopify_ecosystem_fundamentals",
       "name": "Shopify Ecosystem & Web Foundations",
       "tag": "essential",
-      "description": "A comprehensive introduction to the Shopify platform, its core functionalities, the administrative interface, and the essential web development principles required for building on Shopify.",
+      "description": "Master Shopify ecosystem fundamentals: Multi-tenant SaaS architecture, Shopify Partners, store setup, Liquid templating, and local development environments.",
       "resources": [
         {
           "title": "Shopify Developer Docs",
@@ -117,7 +120,7 @@
           "id": "shopify_admin_store_management",
           "name": "Shopify Admin & Store Management",
           "tag": "essential",
-          "description": "Learn to navigate the Shopify admin, configure store settings, manage products (variants, inventory, advanced product data modeling, merchandising), organize collections, set up navigation, markets, shipping, taxes, payments, and understand basic order fulfillment. Includes product data management and customization options for checkout.",
+          "description": "Master the Shopify Admin: Catalog organization (collections, products, variants), inventory tracking, shipping profiles, tax settings, payment gateways, and order fulfillment lifecycles.",
           "resources": [
             {
               "title": "Shopify Admin Guide",
@@ -144,13 +147,15 @@
               "url": "/data/docs/shopify_developer/shopify_admin_store_management.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 40
         },
         {
           "id": "web_foundations_for_shopify",
           "name": "Web Development Fundamentals for Shopify",
           "tag": "essential",
-          "description": "Reinforce essential HTML5 structure, semantic CSS3 (including modern CSS layouts like Flexbox and Grid, responsive design principles, preprocessors like SASS/SCSS, and CSS Custom Properties), and modern JavaScript (ES6+ for DOM manipulation, event handling, asynchronous operations, and performance considerations like debouncing/throttling). Focus on applying these within a Shopify context.",
+          "description": "Master web foundations for e-commerce: Semantic HTML5, modern CSS (Flexbox/Grid), responsive design, JavaScript DOM manipulation, and asynchronous cart APIs.",
           "resources": [
             {
               "title": "MDN Web Docs (HTML, CSS, JS)",
@@ -177,13 +182,15 @@
               "url": "/data/docs/shopify_developer/web_foundations_for_shopify.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 26
         },
         {
           "id": "liquid_templating_essentials",
           "name": "Liquid Templating Language Essentials",
           "tag": "essential",
-          "description": "A deep dive into Shopify's templating language: Liquid syntax, objects (shop, customer, cart, product), filters, tags, control flow, loops, theme structure, utilizing sections, snippets, and schema for dynamic content and localization. Understand the differences between `render` and `include` directives.",
+          "description": "Master Shopify Liquid: Objects, tags, filters, control flow (`if`/`case`), iterative loops (`for`), variable assignments, and template rendering.",
           "resources": [
             {
               "title": "Liquid Reference",
@@ -210,13 +217,15 @@
               "url": "/data/docs/shopify_developer/liquid_templating_essentials.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 24
         },
         {
           "id": "shopify_cli_development_environment",
           "name": "Shopify CLI & Local Development Environment",
           "tag": "essential",
-          "description": "Master local development with Shopify CLI (versions 2 & 3), including theme development workflows, `theme serve` for live preview, `theme pull` to fetch remote themes, `theme push` to upload changes, `theme deploy` for production, and `theme check` for static analysis. Utilize Git for version control, including branching, merging, and pull requests for collaborative coding.",
+          "description": "Configure Shopify CLI: Local theme development (`shopify theme dev`), live preview servers, Dawn reference theme customization, and pushing to stores.",
           "resources": [
             {
               "title": "Shopify CLI Documentation",
@@ -243,15 +252,19 @@
               "url": "/data/docs/shopify_developer/shopify_cli_development_environment.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 24
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 22
     },
     {
       "id": "shopify_theme_development_mastery",
       "name": "Shopify Theme Development Mastery",
       "tag": "essential",
-      "description": "Advanced techniques for custom Shopify theme development, focusing on modularity, dynamic content, performance, accessibility, and modern frontend practices.",
+      "description": "Master modern Shopify Theme Architecture (Online Store 2.0): JSON templates, modular sections, blocks, and custom schema configurations.",
       "resources": [
         {
           "title": "Shopify Themes Documentation",
@@ -284,7 +297,7 @@
           "id": "modular_theme_architecture",
           "name": "Modular Theme Architecture: Sections, Blocks & Templates",
           "tag": "essential",
-          "description": "Design and implement advanced reusable theme sections and blocks, understanding `preset` and `default` values in schemas. Create custom JSON templates for products, collections, pages, and blogs, enabling flexible and configurable storefronts and specialized page layouts.",
+          "description": "Build modular theme sections: Section rendering API, customizable block types, dynamic presets, app blocks, and writing JSON schema configurations.",
           "resources": [
             {
               "title": "Theme Sections",
@@ -311,13 +324,15 @@
               "url": "/data/docs/shopify_developer/modular_theme_architecture.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 40
         },
         {
           "id": "dynamic_content_metafields_metaobjects",
           "name": "Dynamic Content with Metafields & Metaobjects",
           "tag": "essential",
-          "description": "Leverage metafields and metaobjects for custom data storage, dynamic content rendering, creating custom badges, size guides, FAQs, and structured product attributes within themes. Learn strategies for efficient data retrieval and best practices for organizing custom data.",
+          "description": "Model custom e-commerce data: Defining Metafields (JSON, files, references), Metaobjects for relational entities, and rendering dynamic content in Liquid.",
           "resources": [
             {
               "title": "Metafields Documentation",
@@ -344,13 +359,15 @@
               "url": "/data/docs/shopify_developer/dynamic_content_metafields_metaobjects.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 33
         },
         {
           "id": "advanced_javascript_for_themes",
           "name": "Advanced JavaScript for Shopify Themes",
           "tag": "essential",
-          "description": "Develop interactive theme features using advanced JavaScript concepts, including modular architecture (ES Modules) and state management for complex UI components. Integrate with the Shopify AJAX API for dynamic cart manipulations and the Shopify Storefront API for advanced product/collection data fetching. Utilize modern frontend tooling and build processes (as integrated with Shopify CLI).",
+          "description": "Write performant theme JavaScript: Asynchronous Ajax Cart API, section rendering on drawer open, custom web components, and minimizing third-party script bloat.",
           "resources": [
             {
               "title": "Shopify Storefront API Overview",
@@ -377,13 +394,15 @@
               "url": "/data/docs/shopify_developer/advanced_javascript_for_themes.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 35
         },
         {
           "id": "theme_performance_accessibility_seo",
           "name": "Theme Performance, Accessibility (A11y) & SEO",
           "tag": "essential",
-          "description": "Optimize theme speed (Core Web Vitals, image optimization including lazy loading and responsive images with `srcset`, critical CSS, asset deferring), interpret Google Lighthouse audit reports. Implement accessible design (ARIA, keyboard navigation, semantic HTML for screen readers), and ensure SEO best practices (semantic HTML, structured data/Schema.org, mobile responsiveness).",
+          "description": "Optimize storefront performance: Core Web Vitals for e-commerce (LCP < 2.5s), lazy loading, responsive srcset images, WCAG 2.1 AA keyboard a11y, and structured schema markup.",
           "resources": [
             {
               "title": "Shopify Theme Performance",
@@ -415,13 +434,15 @@
               "url": "/data/docs/shopify_developer/theme_performance_accessibility_seo.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 38
         },
         {
           "id": "project_custom_theme_feature_dev",
           "name": "Project: Custom Theme Feature Development",
           "tag": "essential",
-          "description": "Apply learned skills to design and implement a complex, production-ready custom feature for a Shopify theme (e.g., dynamic product configurator, advanced filtering system, custom subscription management UI). Focus on modularity, performance, maintainability, code quality, testing, and deployment readiness, documenting the feature comprehensively.",
+          "description": "Project: Build a high-converting custom theme feature: Multi-tier sliding cart drawer with free shipping progress bar, product upsells, and discount validation via Ajax API.",
           "resources": [
             {
               "title": "Shopify Developer Blog - Case Studies",
@@ -443,15 +464,19 @@
               "url": "/data/docs/shopify_developer/project_custom_theme_feature_dev.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 83
         }
-      ]
+      ],
+      "difficulty": "beginner",
+      "exp": 26
     },
     {
       "id": "shopify_app_api_integrations",
       "name": "Shopify App & API Integrations",
       "tag": "advanced",
-      "description": "Explore the Shopify API ecosystem, develop custom app extensions, integrate with third-party services, and implement advanced conversion optimization strategies.",
+      "description": "Develop custom Shopify apps and integrations: Admin API, Storefront API, webhooks, and App Bridge.",
       "resources": [
         {
           "title": "Shopify App Development",
@@ -479,7 +504,7 @@
           "id": "shopify_api_fundamentals",
           "name": "Shopify API Fundamentals (Admin & Storefront)",
           "tag": "essential",
-          "description": "Understand the core Shopify APIs: Admin API (REST & GraphQL) for backend operations, Storefront API (REST & GraphQL) for frontend data. Master webhooks for event-driven automation, and authentication concepts including OAuth flows for public and custom app development. Learn about rate limiting and error handling strategies.",
+          "description": "Master Shopify APIs: Admin GraphQL API, Storefront API for custom frontends, OAuth 2.0 app authentication, rate limits (GraphQL cost calculations), and Webhooks.",
           "resources": [
             {
               "title": "Shopify GraphQL Admin API",
@@ -511,13 +536,15 @@
               "url": "/data/docs/shopify_developer/shopify_api_fundamentals.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "beginner",
+          "exp": 46
         },
         {
           "id": "shopify_app_extension_development",
           "name": "Shopify App Extension Development",
           "tag": "advanced",
-          "description": "Learn to build and deploy various Shopify App Extensions, including UI Extensions (e.g., Admin UI, Checkout UI, Product UI), Function Extensions (for discounts, shipping, payment customizations), and Web Pixel Extensions for client-side event tracking. Emphasize the importance of Checkout UI Extensions for advanced checkout customizations, replacing `checkout.liquid`.",
+          "description": "Build Shopify App Extensions: Theme App Extensions (app blocks/embeds), Checkout UI Extensions using Shopify Functions, and Admin action extensions.",
           "resources": [
             {
               "title": "Shopify UI Extensions",
@@ -544,13 +571,15 @@
               "url": "/data/docs/shopify_developer/shopify_app_extension_development.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 45
         },
         {
           "id": "third_party_service_integrations",
           "name": "Third-Party Service Integrations",
           "tag": "advanced",
-          "description": "Integrate external services such as PIM (Product Information Management), ERP (Enterprise Resource Planning), CRM systems, marketing automation tools (e.g., Klaviyo, Mailchimp), loyalty programs, and various payment gateways. Focus on data synchronization, secure credential management, and leveraging Shopify APIs and partner apps for robust integrations.",
+          "description": "Integrate third-party services: Connecting Enterprise Resource Planning (ERP), Customer Relationship Management (Klaviyo), review systems, and 3PL fulfillment APIs.",
           "resources": [
             {
               "title": "Building Custom Integrations with the Admin API",
@@ -577,13 +606,15 @@
               "url": "/data/docs/shopify_developer/third_party_service_integrations.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 50
         },
         {
           "id": "conversion_rate_optimization",
           "name": "Conversion Rate Optimization (CRO) for Shopify",
           "tag": "advanced",
-          "description": "Implement CRO best practices: A/B testing (using native Shopify tools or third-party alternatives), user behavior analysis (e.g., heatmaps, session recordings), optimizing product pages (social proof, clear CTAs), cart abandonment recovery strategies, and checkout flow optimizations for speed and trust. Understand how to track and analyze conversion events and leverage Shopify Analytics to identify bottlenecks and opportunities.",
+          "description": "Optimize e-commerce conversions (CRO): Cart abandonment reduction, dynamic checkout buttons, mobile checkout ergonomics, and A/B testing with Google Optimize / Intelligems.",
           "resources": [
             {
               "title": "Shopify Analytics Overview",
@@ -610,15 +641,19 @@
               "url": "/data/docs/shopify_developer/conversion_rate_optimization.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 52
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 36
     },
     {
       "id": "professional_shopify_deployment_ops",
       "name": "Professional Deployment & Operations",
       "tag": "advanced",
-      "description": "Master the professional aspects of Shopify development, including advanced deployment strategies, testing, headless commerce concepts, and effective client project delivery.",
+      "description": "Operate professional Shopify delivery: Git workflows, automated CI/CD theme deploys, headless commerce, and client handover.",
       "resources": [
         {
           "title": "Shopify CLI for Theme Development",
@@ -646,7 +681,7 @@
           "id": "git_version_control_ci_cd",
           "name": "Git Version Control & CI/CD for Shopify",
           "tag": "essential",
-          "description": "Implement robust Git workflows for theme and app development (e.g., Gitflow or Trunk-based development), including branching strategies, pull requests, and code reviews. Set up continuous integration and continuous deployment (CI/CD) pipelines using tools like GitHub Actions for automated testing (linting, unit tests, Theme Check) and releases across development, staging, and production environments.",
+          "description": "Manage Shopify themes in Git: GitHub integration for automated theme synchronization, branching strategies, and CI/CD pipelines deploying to staging/live environments.",
           "resources": [
             {
               "title": "Git Branching Workflow",
@@ -673,13 +708,15 @@
               "url": "/data/docs/shopify_developer/git_version_control_ci_cd.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 36
         },
         {
           "id": "theme_app_qa_debugging",
           "name": "Theme & App QA, Testing & Debugging",
           "tag": "essential",
-          "description": "Conduct thorough QA testing for responsiveness, cross-browser compatibility, app conflicts, performance (using Lighthouse/PageSpeed Insights), accessibility, and critical e-commerce flows (payment, shipping, checkout). Master debugging tools and techniques for Shopify themes and apps using browser developer tools, Shopify's Theme Check, and Shopify's built-in developer console.",
+          "description": "Test and debug Shopify storefronts: Theme Inspector for Chrome (Liquid profile analysis), cross-browser testing, testing checkout flows, and bug tracking.",
           "resources": [
             {
               "title": "Shopify Theme Check",
@@ -706,13 +743,15 @@
               "url": "/data/docs/shopify_developer/theme_app_qa_debugging.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "intermediate",
+          "exp": 33
         },
         {
           "id": "headless_shopify_architecture",
           "name": "Headless Shopify & Custom Storefronts",
           "tag": "advanced",
-          "description": "Explore headless commerce architectures using Shopify's Storefront API. Understand the benefits (custom UX, performance, multi-channel capabilities) and drawbacks (increased complexity, hosting, maintenance). Deep dive into frameworks like Hydrogen and Remix for building custom, React-based storefronts, including components, hooks, caching strategies, and understanding the role of Oxygen hosting. Compare and contrast with traditional monolithic theme development.",
+          "description": "Architect headless e-commerce: Shopify Hydrogen (Remix framework) and Oxygen hosting, Storefront GraphQL queries, and headless checkout routing.",
           "resources": [
             {
               "title": "Shopify Hydrogen Documentation",
@@ -739,13 +778,15 @@
               "url": "/data/docs/shopify_developer/headless_shopify_architecture.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 44
         },
         {
           "id": "client_project_management_handoff",
           "name": "Client Project Management & Handoff",
           "tag": "advanced",
-          "description": "Best practices for client communication, project scoping, requirement gathering, and agile methodologies adapted for e-commerce projects. Deliver comprehensive documentation, provide client training (including video tutorials and guides), and establish post-launch support and maintenance plans with defined SLAs for successful project delivery and ongoing client relationships.",
+          "description": "Manage client projects: Scoping e-commerce requirements, client onboarding, admin training documentation, and setting up post-launch maintenance retainers.",
           "resources": [
             {
               "title": "Shopify Partner Academy",
@@ -772,13 +813,15 @@
               "url": "/data/docs/shopify_developer/client_project_management_handoff.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 104
         },
         {
           "id": "capstone_shopify_ecommerce_project",
           "name": "Capstone Project: End-to-End Shopify Store or App",
           "tag": "advanced",
-          "description": "Design, develop, and deploy a full-scale, production-quality Shopify store from scratch or a complex, public/private Shopify App. This project should integrate custom theme elements, dynamic content with metafields/metaobjects, external API integrations, adhere to performance and accessibility best practices, implement a CI/CD pipeline, and include comprehensive documentation and a deployment report. Aim for a solution that solves a real-world e-commerce problem or offers a unique value proposition, demonstrating mastery across all roadmap topics.",
+          "description": "Build an enterprise Shopify capstone: High-performance Online Store 2.0 theme featuring custom Metaobject product builder, dynamic cart drawer, Theme App Extension, and 95+ PageSpeed score.",
           "resources": [
             {
               "title": "Shopify Developer Challenges",
@@ -800,9 +843,14 @@
               "url": "/data/docs/shopify_developer/capstone_shopify_ecommerce_project.md",
               "type": "doc"
             }
-          ]
+          ],
+          "difficulty": "advanced",
+          "exp": 127
         }
-      ]
+      ],
+      "difficulty": "advanced",
+      "exp": 36
     }
-  ]
+  ],
+  "total_exp": 1000
 }
