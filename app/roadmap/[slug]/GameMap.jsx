@@ -11,6 +11,7 @@ import { marked } from 'marked';
 import DOMPurify from 'dompurify';
 import connections from '../../../public/data/roadmap_connections.json';
 import './roadmap.css';
+import CodePlayground from '../../components/CodePlayground';
 
 function isSafeUrl(url) {
   if (typeof url !== 'string' || !url.trim()) return false;
@@ -872,6 +873,7 @@ function ReaderIcon({ name, size = 20 }) {
   const paths = {
     book: 'M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20',
     play: 'm9 5 11 7-11 7V5Z',
+    code: 'm16 18 6-6-6-6M8 6l-6 6 6 6',
     close: 'm6 6 12 12M6 18 18 6',
     check: 'm5 12 4 4L19 6',
     external: 'M15 3h6v6m0-6L10 14M9 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4',
@@ -889,6 +891,7 @@ function StudyGuideDrawer({ node, user, onClose, onToggleComplete, authLoading, 
   const tabRefs = useRef([]);
   const [activePanel, setActivePanel] = useState('guide');
   const [selectedVideoKey, setSelectedVideoKey] = useState(null);
+  const [sandboxData, setSandboxData] = useState({ code: '', language: 'javascript' });
   const [retry, setRetry] = useState(0);
   const [saving, setSaving] = useState(false);
   const [guide, setGuide] = useState({ status: 'loading', html: '', outline: [], owner: null });
@@ -955,6 +958,69 @@ function StudyGuideDrawer({ node, user, onClose, onToggleComplete, authLoading, 
     return () => { active = false; controller.abort(); };
   }, [node.docUrl, user, authLoading, retry]);
 
+  const handleOpenInSandbox = (code, language) => {
+    setSandboxData({ code, language: language || 'javascript' });
+    setActivePanel('code');
+    if (bodyRef.current) bodyRef.current.scrollTop = 0;
+  };
+
+  useEffect(() => {
+    if (guide.status !== 'ready' || !articleRef.current) return;
+    const preElements = articleRef.current.querySelectorAll('pre');
+    preElements.forEach((pre) => {
+      if (pre.dataset.enhanced) return;
+      pre.dataset.enhanced = 'true';
+
+      const codeEl = pre.querySelector('code');
+      if (!codeEl) return;
+      const rawCode = codeEl.textContent || '';
+      const classList = Array.from(codeEl.classList);
+      const langClass = classList.find(c => c.startsWith('language-'));
+      const detectedLang = langClass ? langClass.replace('language-', '') : '';
+
+      const bar = document.createElement('div');
+      bar.className = 'sk-code-block-header';
+
+      const langLabel = document.createElement('span');
+      langLabel.className = 'sk-code-lang-tag';
+      langLabel.textContent = (detectedLang || 'code').toUpperCase();
+
+      const actions = document.createElement('div');
+      actions.className = 'sk-code-header-actions';
+
+      const copyBtn = document.createElement('button');
+      copyBtn.type = 'button';
+      copyBtn.className = 'sk-code-action-btn';
+      copyBtn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg> <span>Copy</span>';
+      copyBtn.onclick = async () => {
+        try {
+          await navigator.clipboard.writeText(rawCode);
+          copyBtn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg> <span>Copied!</span>';
+          setTimeout(() => {
+            copyBtn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg> <span>Copy</span>';
+          }, 2000);
+        } catch {
+          // ignore
+        }
+      };
+
+      const runBtn = document.createElement('button');
+      runBtn.type = 'button';
+      runBtn.className = 'sk-code-action-btn sk-code-run-action';
+      runBtn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg> <span>Run in Playground →</span>';
+      runBtn.onclick = () => {
+        handleOpenInSandbox(rawCode, detectedLang);
+      };
+
+      actions.appendChild(copyBtn);
+      actions.appendChild(runBtn);
+      bar.appendChild(langLabel);
+      bar.appendChild(actions);
+
+      pre.parentNode.insertBefore(bar, pre);
+    });
+  }, [guide.status, guide.html]);
+
   const changePanel = panel => {
     setActivePanel(panel);
     if (bodyRef.current) bodyRef.current.scrollTop = 0;
@@ -1003,12 +1069,19 @@ function StudyGuideDrawer({ node, user, onClose, onToggleComplete, authLoading, 
         <div className="sk-reader-tabs" role="tablist" aria-label="Study materials" onKeyDown={event => {
           if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
           event.preventDefault();
-          const nextIndex = event.key === 'Home' ? 0 : event.key === 'End' ? 1 : activePanel === 'guide' ? 1 : 0;
-          changePanel(nextIndex === 0 ? 'guide' : 'resources');
+          const panels = ['guide', 'resources', 'code'];
+          const curIndex = panels.indexOf(activePanel);
+          let nextIndex = 0;
+          if (event.key === 'Home') nextIndex = 0;
+          else if (event.key === 'End') nextIndex = panels.length - 1;
+          else if (event.key === 'ArrowRight') nextIndex = (curIndex + 1) % panels.length;
+          else if (event.key === 'ArrowLeft') nextIndex = (curIndex - 1 + panels.length) % panels.length;
+          changePanel(panels[nextIndex]);
           tabRefs.current[nextIndex]?.focus();
         }}>
           <button ref={element => { tabRefs.current[0] = element; }} type="button" role="tab" id="sk-reader-guide-tab" aria-selected={activePanel === 'guide'} aria-controls="sk-reader-guide-panel" tabIndex={activePanel === 'guide' ? 0 : -1} onClick={() => changePanel('guide')}><ReaderIcon name="book" /> Study guide</button>
           <button ref={element => { tabRefs.current[1] = element; }} type="button" role="tab" id="sk-reader-resources-tab" aria-selected={activePanel === 'resources'} aria-controls="sk-reader-resources-panel" tabIndex={activePanel === 'resources' ? 0 : -1} onClick={() => changePanel('resources')}><ReaderIcon name="play" /> Videos & resources <span>{videos.length + links.length}</span></button>
+          <button ref={element => { tabRefs.current[2] = element; }} type="button" role="tab" id="sk-reader-code-tab" aria-selected={activePanel === 'code'} aria-controls="sk-reader-code-panel" tabIndex={activePanel === 'code' ? 0 : -1} onClick={() => changePanel('code')}><ReaderIcon name="code" /> Playground <span>JS/PY/Web</span></button>
         </div>
 
         <div className="sk-drawer-body" ref={bodyRef}>
@@ -1055,6 +1128,17 @@ function StudyGuideDrawer({ node, user, onClose, onToggleComplete, authLoading, 
               {links.length > 0 && <div className="sk-reader-link-section"><h3 className="sk-reader-section-title">Read & explore <span>{links.length} {links.length === 1 ? 'resource' : 'resources'}</span></h3><div className="sk-reader-links">{links.map(resource => <a className="sk-reader-resource-link" href={resource.url} key={resource.key} target="_blank" rel="noopener noreferrer"><ReaderIcon name="book" /><span><strong>{resource.title}</strong><small>{resource.host}</small></span><ReaderIcon name="external" size={18} /></a>)}</div></div>}
               {!videos.length && !links.length && <div className="sk-reader-state"><div className="sk-reader-state-icon"><ReaderIcon name="book" size={32} /></div><h3>Keep learning with the guide</h3><p>There are no additional links for this topic yet. BunBot can help explain a concept or work through an example.</p></div>}
             </div>}
+          </div>
+
+          <div className="sk-reader-panel" role="tabpanel" id="sk-reader-code-panel" aria-labelledby="sk-reader-code-tab" hidden={activePanel !== 'code'} tabIndex={0}>
+            {activePanel === 'code' && (
+              <CodePlayground
+                initialCode={sandboxData.code}
+                initialLanguage={sandboxData.language}
+                topicName={node.topicName}
+                roadmapTitle={node.roadmapTitle}
+              />
+            )}
           </div>
         </div>
 
