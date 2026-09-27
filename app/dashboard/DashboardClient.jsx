@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useAuth } from '../components/AuthProvider';
 import WorkspaceSidebar from '../components/WorkspaceSidebar';
 import { readAllStoredRoadmapProgress } from '@/utils/shared/progressStore';
+import { subscribeDataSync } from '@/utils/client/dataSyncManager';
 import styles from './dashboard.module.css';
 
 function safeGet(obj, key) {
@@ -167,14 +168,24 @@ function Icon({ name }) {
 
 export default function DashboardClient({ roadmapsInfo }) {
   const { profile, authLoading, progressVersion } = useAuth();
-  const [localProgress, setLocalProgress] = useState([]);
+  const [localProgress, setLocalProgress] = useState(() => (typeof window !== 'undefined' ? readAllStoredRoadmapProgress() : []));
 
-  // Read progress dynamically on progress version changes or component mount
+  // Read progress dynamically on progress version changes, mount, or cross-tab sync
   useEffect(() => {
-    const progress = readAllStoredRoadmapProgress();
-    setTimeout(() => {
-      setLocalProgress(progress);
+    const timer = setTimeout(() => {
+      setLocalProgress(readAllStoredRoadmapProgress());
     }, 0);
+
+    const unsubscribe = subscribeDataSync((tag) => {
+      if (tag === 'user:progress' || tag === 'user:profile') {
+        setLocalProgress(readAllStoredRoadmapProgress());
+      }
+    });
+
+    return () => {
+      clearTimeout(timer);
+      unsubscribe();
+    };
   }, [progressVersion]);
 
   // Determine active project progress list

@@ -9,6 +9,7 @@ import { useAdminAccess } from '@/utils/client/adminAuth'
 import { getFirebaseServices } from '@/utils/client/firebaseClient'
 import { collection, getDocs } from 'firebase/firestore'
 import { downloadBase64Pdf as downloadUnifiedBase64Pdf } from '@/utils/client/printAndDownload'
+import { subscribeDataSync, notifyDataMutated } from '@/utils/client/dataSyncManager'
 import styles from './workforce.module.css'
 
 const STATUS_TABS = [
@@ -443,6 +444,14 @@ export default function WorkforcePage() {
       throw new Error('Admin access is required.')
     }
     if (!response.ok) throw new Error(data?.error?.message || 'The workforce request could not be completed.')
+
+    if (options.method && options.method.toUpperCase() !== 'GET') {
+      notifyDataMutated('admin:workforce')
+      if (typeof url === 'string' && url.includes('/certify/mint')) {
+        notifyDataMutated('admin:certs')
+      }
+    }
+
     return data
   }
 
@@ -484,7 +493,17 @@ export default function WorkforcePage() {
     const loadTimer = window.setTimeout(() => {
       if (isAdmin) loadEmployees()
     }, 0)
-    return () => window.clearTimeout(loadTimer)
+
+    const unsubscribe = subscribeDataSync((tag) => {
+      if (tag === 'admin:workforce' || tag === 'admin:crm') {
+        loadEmployees()
+      }
+    })
+
+    return () => {
+      window.clearTimeout(loadTimer)
+      unsubscribe()
+    }
     // Authentication state determines when the first protected request may run.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [authLoading, user, isAdmin])

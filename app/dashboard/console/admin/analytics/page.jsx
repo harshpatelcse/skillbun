@@ -10,6 +10,7 @@ import { recommendEmail as getRecommendedTemplate, emailCategory } from '@/utils
 import BulkRetentionCampaign from './BulkRetentionCampaign';
 import EmailDraftLibrary from '../emails/EmailDraftLibrary';
 import { RETENTION_TEMPLATES } from '@/utils/server/retentionEmails';
+import { subscribeDataSync, notifyDataMutated } from '@/utils/client/dataSyncManager';
 
 function formatDateTime(isoString) {
   if (!isoString) return 'N/A';
@@ -380,8 +381,15 @@ export default function AnalyticsDashboardPage() {
 
     fetchAnalyticsData();
 
+    const unsubscribeSync = subscribeDataSync((evt) => {
+      if (active && (evt.tag === 'admin:analytics' || evt.tag === 'admin:certs' || evt.type === 'DATA_MUTATED')) {
+        fetchAnalyticsData();
+      }
+    });
+
     return () => {
       active = false;
+      unsubscribeSync();
     };
   }, [user, isAdmin, authLoading, checking]);
 
@@ -485,6 +493,7 @@ export default function AnalyticsDashboardPage() {
         type: 'success',
         text: `Student account "${targetUser.name}" (${targetUser.email}) successfully deleted! Email is now freed up for new registration.`,
       });
+      notifyDataMutated('admin:analytics', { deletedUid: targetUser.uid });
     } catch (err) {
       console.error('User deletion error:', err);
       setStatusMessage({ type: 'error', text: `Failed to delete user: ${err.message}` });
@@ -535,6 +544,7 @@ export default function AnalyticsDashboardPage() {
         type: 'success',
         text: resData.message || 'Sent email counters successfully reset to 0 for all students!',
       });
+      notifyDataMutated('admin:analytics', { action: 'RESET_COUNTERS' });
     } catch (err) {
       console.error('Reset all sent email counters error:', err);
       setStatusMessage({

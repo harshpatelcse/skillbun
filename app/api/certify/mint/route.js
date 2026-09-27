@@ -98,6 +98,15 @@ export async function POST(request) {
 
       const { attemptId, roadmapSlug } = schemaCheck.value;
       const result = await mintExamCertificate(db, { uid, email, attemptId, roadmapSlug, certId: generateCertificateId() });
+
+      try {
+        const { invalidateCacheTag } = await import('@/utils/server/redisCache');
+        await Promise.all([
+          invalidateCacheTag('admin:certs'),
+          invalidateCacheTag('admin:analytics'),
+        ]);
+      } catch {}
+
       return NextResponse.json(result, { headers: { 'Cache-Control': 'private, no-store' } });
     }
 
@@ -186,6 +195,14 @@ export async function POST(request) {
       };
 
       await certRef.set(certData);
+
+      try {
+        const { invalidateCacheTag } = await import('@/utils/server/redisCache');
+        await Promise.all([
+          invalidateCacheTag('admin:certs'),
+          invalidateCacheTag('admin:analytics'),
+        ]);
+      } catch {}
 
       return NextResponse.json({
         success: true,

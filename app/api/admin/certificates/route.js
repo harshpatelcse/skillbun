@@ -5,6 +5,7 @@ import { generateCertificateId, generateWorkforceId, formatWorkforceDisplayId, W
 import { getActiveTemplateVersion } from '@/utils/common/docTemplateRegistry';
 import { checkServerRateLimit } from '@/utils/server/rateLimitStore';
 import { getClientAddress } from '@/utils/server/requestUtils';
+import { getOrSetCache, invalidateCacheTag, createCachedJsonResponse } from '@/utils/server/redisCache';
 
 export const runtime = 'nodejs';
 
@@ -65,44 +66,52 @@ export async function GET(request) {
       return NextResponse.json({ error: 'Database connection unavailable.' }, { status: 500 });
     }
 
-    const certsSnap = await db.collection('certificates').orderBy('createdAt', 'desc').get();
-    
-    let certificates = certsSnap.docs.map((doc) => {
-      const data = doc.data();
-      const toIso = (val) => {
-        if (!val) return null;
-        if (val.toDate && typeof val.toDate === 'function') return val.toDate().toISOString();
-        if (val instanceof Date) return val.toISOString();
-        if (typeof val === 'string') return val;
-        return null;
-      };
+    const allRawCerts = await getOrSetCache(
+      'admin:certs:all_raw',
+      60,
+      async () => {
+        const certsSnap = await db.collection('certificates').orderBy('createdAt', 'desc').get();
+        return certsSnap.docs.map((doc) => {
+          const data = doc.data();
+          const toIso = (val) => {
+            if (!val) return null;
+            if (val.toDate && typeof val.toDate === 'function') return val.toDate().toISOString();
+            if (val instanceof Date) return val.toISOString();
+            if (typeof val === 'string') return val;
+            return null;
+          };
 
-      const cType = (data.cert_type || 'ROADMAP').toUpperCase();
+          const cType = (data.cert_type || 'ROADMAP').toUpperCase();
 
-      return {
-        id: doc.id,
-        display_id: data.display_id || (doc.id.startsWith('SKB-') && doc.id.includes('-HR-') ? doc.id.replace(/-/g, '/') : doc.id),
-        cert_type: cType,
-        uid: data.uid || '',
-        employee_id: data.employee_id || '',
-        name: data.name || data.studentName || data.userName || 'Student',
-        email: (data.email || data.userEmail || '').toLowerCase(),
-        roadmapTitle: data.roadmapTitle || data.stream_or_track || 'Roadmap Track',
-        roadmapSlug: data.roadmapSlug || '',
-        department: data.department || '',
-        designation: data.designation || '',
-        stream_or_track: data.stream_or_track || data.roadmapTitle || '',
-        score: typeof data.score === 'number' ? data.score : 100,
-        start_date: data.start_date || null,
-        end_date: data.end_date || null,
-        recommendation_text: data.recommendation_text || '',
-        issued_by: data.issued_by || 'SkillBun Academic Verification Authority',
-        is_revoked: Boolean(data.is_revoked),
-        revoked_at: toIso(data.revoked_at),
-        revoked_by: data.revoked_by || null,
-        createdAt: toIso(data.createdAt) || new Date().toISOString(),
-      };
-    });
+          return {
+            id: doc.id,
+            display_id: data.display_id || (doc.id.startsWith('SKB-') && doc.id.includes('-HR-') ? doc.id.replace(/-/g, '/') : doc.id),
+            cert_type: cType,
+            uid: data.uid || '',
+            employee_id: data.employee_id || '',
+            name: data.name || data.studentName || data.userName || 'Student',
+            email: (data.email || data.userEmail || '').toLowerCase(),
+            roadmapTitle: data.roadmapTitle || data.stream_or_track || 'Roadmap Track',
+            roadmapSlug: data.roadmapSlug || '',
+            department: data.department || '',
+            designation: data.designation || '',
+            stream_or_track: data.stream_or_track || data.roadmapTitle || '',
+            score: typeof data.score === 'number' ? data.score : 100,
+            start_date: data.start_date || null,
+            end_date: data.end_date || null,
+            recommendation_text: data.recommendation_text || '',
+            issued_by: data.issued_by || 'SkillBun Academic Verification Authority',
+            is_revoked: Boolean(data.is_revoked),
+            revoked_at: toIso(data.revoked_at),
+            revoked_by: data.revoked_by || null,
+            createdAt: toIso(data.createdAt) || new Date().toISOString(),
+          };
+        });
+      },
+      { tags: ['admin:certs'], swr: true }
+    );
+
+    let certificates = [...allRawCerts];
 
     // Compute metrics
     const totalCount = certificates.length;
@@ -142,7 +151,7 @@ export async function GET(request) {
       });
     }
 
-    return NextResponse.json({
+    return createCachedJsonResponse(request, {
       success: true,
       certificates,
       count: certificates.length,
@@ -257,6 +266,14 @@ export async function POST(request) {
     };
 
     await db.collection('certificates').doc(certId).set(newCert);
+
+    // Invalidate cached certificate records and analytics
+    try {
+      await Promise.all([
+        invalidateCacheTag('admin:certs'),
+        invalidateCacheTag('admin:analytics'),
+      ]);
+    } catch {}
 
     return NextResponse.json({
       success: true,

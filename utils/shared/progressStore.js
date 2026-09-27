@@ -3,9 +3,16 @@
 const PROGRESS_PREFIX = 'skillbun_progress_';
 const PROGRESS_CHANGE_EVENT = 'sb_progress_change';
 
-export function notifyProgressChanged() {
+export function notifyProgressChanged(slug) {
   if (typeof window !== 'undefined') {
     window.dispatchEvent(new Event(PROGRESS_CHANGE_EVENT));
+    try {
+      if (typeof BroadcastChannel !== 'undefined') {
+        const channel = new BroadcastChannel('skillbun_data_sync_channel');
+        channel.postMessage({ type: 'PROGRESS_UPDATED', tag: 'user:progress', slug, timestamp: Date.now() });
+        channel.close();
+      }
+    } catch {}
   }
 }
 

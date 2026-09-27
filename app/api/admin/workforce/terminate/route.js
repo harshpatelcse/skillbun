@@ -10,6 +10,7 @@ import { generateWorkforceId, formatWorkforceDisplayId, WORKFORCE_PREFIXES } fro
 import { sendMailWithAttachment } from '@/utils/server/zohoMailer';
 import { buildTerminationDispatchEmail } from '@/utils/server/workforceEmailTemplates';
 import { getActiveTemplateVersion, DOCUMENT_CATEGORIES } from '@/utils/common/docTemplateRegistry';
+import { invalidateCacheTag } from '@/utils/server/redisCache';
 
 export const runtime = 'nodejs';
 
@@ -245,6 +246,13 @@ export async function POST(request) {
         emailError = smtpErr?.message || 'SMTP Dispatch failed';
       }
     }
+
+    await Promise.all([
+      invalidateCacheTag('admin:workforce'),
+      invalidateCacheTag('admin:workforce_docs'),
+      invalidateCacheTag('admin:certs'),
+      invalidateCacheTag('admin:analytics'),
+    ]);
 
     return NextResponse.json({
       success: true,

@@ -222,7 +222,7 @@ export default function GameMap({ roadmap, slug, initialTab }) {
     return typeof roadmap?.total_exp === 'number'
       ? roadmap.total_exp
       : allNodes.reduce((sum, n) => sum + (n.exp || 100), 0);
-  }, [roadmap?.total_exp, allNodes]);
+  }, [roadmap, allNodes]);
   const earnedXp = useMemo(() => {
     return allNodes.filter(n => progress.includes(n.id)).reduce((sum, n) => sum + (n.exp || 100), 0);
   }, [allNodes, progress]);

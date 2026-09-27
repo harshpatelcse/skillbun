@@ -17,6 +17,7 @@ import { generateOfferLetterPdf } from '@/utils/server/pdf/offerLetterGenerator'
 import { buildOfferDispatchEmail } from '@/utils/server/workforceEmailTemplates'
 import { sendMailWithAttachment } from '@/utils/server/zohoMailer'
 import { getActiveTemplateVersion, DOCUMENT_CATEGORIES } from '@/utils/common/docTemplateRegistry'
+import { getOrSetCache, createCachedJsonResponse, invalidateCacheTag } from '@/utils/server/redisCache'
 
 export const runtime = 'nodejs'
 
@@ -56,31 +57,44 @@ export async function GET(request) {
     }
 
     const db = getFirebaseAdminFirestore()
-    const employees = db.collection('employees')
-    let query = employees
-    if (status) query = query.where('status', '==', status)
-    if (department) query = query.where('department', '==', department.trim())
-    query = query.orderBy(FieldPath.documentId())
+    const cacheKey = `admin:workforce:employees:${status || 'ALL'}:${department || 'ALL'}:${pageToken || 'FIRST'}:${pageSize.value}`
 
-    if (pageToken) {
-      const cursor = await employees.doc(pageToken).get()
-      if (!cursor.exists) return apiError('pageToken does not reference an employee.', 400, 'VALIDATION_ERROR')
-      query = query.startAfter(cursor)
-    }
+    const result = await getOrSetCache(
+      cacheKey,
+      60,
+      async () => {
+        const employees = db.collection('employees')
+        let query = employees
+        if (status) query = query.where('status', '==', status)
+        if (department) query = query.where('department', '==', department.trim())
+        query = query.orderBy(FieldPath.documentId())
 
-    const snapshot = await query.limit(pageSize.value + 1).get()
-    const hasMore = snapshot.docs.length > pageSize.value
-    const visibleDocs = hasMore ? snapshot.docs.slice(0, pageSize.value) : snapshot.docs
+        if (pageToken) {
+          const cursor = await employees.doc(pageToken).get()
+          if (!cursor.exists) return null
+          query = query.startAfter(cursor)
+        }
 
-    return NextResponse.json({
-      success: true,
-      employees: visibleDocs.map((doc) => serializeEmployee(doc.id, doc.data())),
-      pagination: {
-        limit: pageSize.value,
-        has_more: hasMore,
-        next_page_token: hasMore ? visibleDocs.at(-1).id : null,
+        const snapshot = await query.limit(pageSize.value + 1).get()
+        const hasMore = snapshot.docs.length > pageSize.value
+        const visibleDocs = hasMore ? snapshot.docs.slice(0, pageSize.value) : snapshot.docs
+
+        return {
+          success: true,
+          employees: visibleDocs.map((doc) => serializeEmployee(doc.id, doc.data())),
+          pagination: {
+            limit: pageSize.value,
+            has_more: hasMore,
+            next_page_token: hasMore ? visibleDocs.at(-1).id : null,
+          },
+        }
       },
-    })
+      { tags: ['admin:workforce'], swr: true }
+    )
+
+    if (!result) return apiError('pageToken does not reference an employee.', 400, 'VALIDATION_ERROR')
+
+    return createCachedJsonResponse(request, result)
   } catch (error) {
     console.error('[Workforce Employees GET]', error)
     return apiError('Unable to load employee records.', 500, 'INTERNAL_ERROR')
@@ -135,6 +149,14 @@ export async function POST(request) {
         updated_at: now,
       })
     })
+
+    try {
+      const { invalidateCacheTag } = await import('@/utils/server/redisCache')
+      await Promise.all([
+        invalidateCacheTag('admin:workforce'),
+        invalidateCacheTag('admin:workforce_docs'),
+      ])
+    } catch {}
 
     // If existing employee checkbox was marked, skip PDF creation & email dispatch
     if (isExistingEmployee) {

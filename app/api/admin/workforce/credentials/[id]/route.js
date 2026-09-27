@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import { apiError, requireWorkforceAdmin } from '@/utils/server/workforceEmployees';
+import { invalidateCacheTag } from '@/utils/server/redisCache';
 
 export const runtime = 'nodejs';
 
@@ -39,6 +40,12 @@ export async function PATCH(request, { params }) {
       revoked_by: body.is_revoked ? adminCheck.email : null,
       updatedAt: new Date(),
     });
+
+    await Promise.all([
+      invalidateCacheTag('admin:workforce:credentials'),
+      invalidateCacheTag('admin:certs'),
+      invalidateCacheTag('admin:analytics'),
+    ]);
 
     return NextResponse.json({
       success: true,

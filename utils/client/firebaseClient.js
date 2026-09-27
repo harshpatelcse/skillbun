@@ -2,7 +2,13 @@
 
 import { getApp, getApps, initializeApp } from 'firebase/app';
 import { getAuth, GoogleAuthProvider } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
+import {
+  getFirestore,
+  initializeFirestore,
+  persistentLocalCache,
+  persistentMultipleTabManager,
+  memoryLocalCache,
+} from 'firebase/firestore';
 
 function readFirebaseConfig() {
   return {
@@ -14,6 +20,38 @@ function readFirebaseConfig() {
     storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET || '',
     measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID || '',
   };
+}
+
+let cachedDb = null;
+
+function getOrInitFirestore(app) {
+  if (cachedDb) return cachedDb;
+  if (typeof window === 'undefined') {
+    return getFirestore(app);
+  }
+
+  try {
+    // Attempt persistent multi-tab IndexedDB cache for instant reads & offline sync
+    cachedDb = initializeFirestore(app, {
+      localCache: persistentLocalCache({
+        tabManager: persistentMultipleTabManager(),
+      }),
+    });
+  } catch {
+    try {
+      cachedDb = getFirestore(app);
+    } catch {
+      try {
+        cachedDb = initializeFirestore(app, {
+          localCache: memoryLocalCache(),
+        });
+      } catch {
+        cachedDb = getFirestore(app);
+      }
+    }
+  }
+
+  return cachedDb;
 }
 
 export function isFirebaseConfigured() {
@@ -40,7 +78,7 @@ export function getFirebaseServices() {
     configured: true,
     app,
     auth: getAuth(app),
-    db: getFirestore(app),
+    db: getOrInitFirestore(app),
     googleProvider,
   };
 }

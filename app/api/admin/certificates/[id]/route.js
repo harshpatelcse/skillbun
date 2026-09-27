@@ -117,6 +117,14 @@ export async function PATCH(request, { params }) {
 
     await certRef.update(updates);
 
+    try {
+      const { invalidateCacheTag } = await import('@/utils/server/redisCache');
+      await Promise.all([
+        invalidateCacheTag('admin:certs'),
+        invalidateCacheTag('admin:analytics'),
+      ]);
+    } catch {}
+
     return NextResponse.json({
       success: true,
       id,
@@ -154,6 +162,14 @@ export async function DELETE(request, { params }) {
     }
 
     await certRef.delete();
+
+    try {
+      const { invalidateCacheTag } = await import('@/utils/server/redisCache');
+      await Promise.all([
+        invalidateCacheTag('admin:certs'),
+        invalidateCacheTag('admin:analytics'),
+      ]);
+    } catch {}
 
     return NextResponse.json({
       success: true,

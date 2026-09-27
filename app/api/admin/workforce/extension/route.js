@@ -11,6 +11,7 @@ import { generateWorkforceId, WORKFORCE_PREFIXES } from '@/utils/server/workforc
 import { sendMailWithAttachment } from '@/utils/server/zohoMailer';
 import { buildExtensionDispatchEmail } from '@/utils/server/workforceEmailTemplates';
 import { getActiveTemplateVersion, DOCUMENT_CATEGORIES } from '@/utils/common/docTemplateRegistry';
+import { invalidateCacheTag } from '@/utils/server/redisCache';
 
 export const runtime = 'nodejs';
 
@@ -143,6 +144,11 @@ export async function POST(request) {
       });
 
       await batch.commit();
+
+      await Promise.all([
+        invalidateCacheTag('admin:workforce'),
+        invalidateCacheTag('admin:workforce_docs'),
+      ]);
 
       return NextResponse.json({
         success: true,

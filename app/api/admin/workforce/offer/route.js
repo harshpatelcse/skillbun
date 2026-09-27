@@ -12,6 +12,7 @@ import { sendMailWithAttachment } from '@/utils/server/zohoMailer';
 import { buildOfferDispatchEmail } from '@/utils/server/workforceEmailTemplates';
 import { decryptCredentials, encryptCredentials } from '@/utils/server/workforceCrypto';
 import { getActiveTemplateVersion, DOCUMENT_CATEGORIES } from '@/utils/common/docTemplateRegistry';
+import { invalidateCacheTag } from '@/utils/server/redisCache';
 
 export const runtime = 'nodejs';
 
@@ -151,6 +152,11 @@ export async function POST(request) {
       });
 
       await batch.commit();
+
+      await Promise.all([
+        invalidateCacheTag('admin:workforce'),
+        invalidateCacheTag('admin:workforce_docs'),
+      ]);
 
       return NextResponse.json({
         success: true,

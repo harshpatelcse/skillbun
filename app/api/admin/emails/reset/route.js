@@ -120,6 +120,11 @@ export async function POST(request) {
       await batch.commit();
     }
 
+    try {
+      const { invalidateCacheTag } = await import('@/utils/server/redisCache');
+      await invalidateCacheTag('admin:analytics');
+    } catch {}
+
     return NextResponse.json({
       success: true,
       message: `Sent email counters successfully reset to 0 for all ${totalUpdated} students.`,

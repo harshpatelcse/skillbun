@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import { apiError, requireWorkforceAdmin } from '@/utils/server/workforceEmployees';
 import { formatWorkforceDisplayId } from '@/utils/server/workforceId';
+import { getOrSetCache, createCachedJsonResponse, invalidateCacheTag } from '@/utils/server/redisCache';
 
 export const runtime = 'nodejs';
 
@@ -46,27 +47,33 @@ export async function GET(request) {
     }
 
     const db = getFirebaseAdminFirestore();
-    let query = db.collection('workforce_docs').orderBy('issued_at', 'desc');
+    const cacheKey = `admin:workforce_docs:${docType || 'ALL'}:${pageToken || 'FIRST'}:${limit}`;
 
-    // Apply doc_type filter
-    if (docType) {
-      query = query.where('doc_type', '==', docType);
-    }
+    const result = await getOrSetCache(
+      cacheKey,
+      60,
+      async () => {
+        let query = db.collection('workforce_docs').orderBy('issued_at', 'desc');
 
-    // Apply cursor-based pagination
-    if (pageToken) {
-      try {
-        const cursorDate = new Date(pageToken);
-        if (!Number.isNaN(cursorDate.getTime())) {
-          query = query.startAfter(cursorDate);
+        // Apply doc_type filter
+        if (docType) {
+          query = query.where('doc_type', '==', docType);
         }
-      } catch {
-        // Ignore invalid pageToken, start from beginning
-      }
-    }
 
-    // Fetch limit + 1 to determine if there are more results
-    const snapshot = await query.limit(limit + 1).get();
+        // Apply cursor-based pagination
+        if (pageToken) {
+          try {
+            const cursorDate = new Date(pageToken);
+            if (!Number.isNaN(cursorDate.getTime())) {
+              query = query.startAfter(cursorDate);
+            }
+          } catch {
+            // Ignore invalid pageToken, start from beginning
+          }
+        }
+
+        // Fetch limit + 1 to determine if there are more results
+        const snapshot = await query.limit(limit + 1).get();
 
     const documents = [];
     const docs = snapshot.docs.slice(0, limit);
@@ -106,18 +113,23 @@ export async function GET(request) {
       });
     }
 
-    const hasMore = snapshot.docs.length > limit;
-    const nextPageToken = hasMore && documents.length > 0
-      ? documents[documents.length - 1].issued_at
-      : null;
+        const hasMore = snapshot.docs.length > limit;
+        const nextPageToken = hasMore && documents.length > 0
+          ? documents[documents.length - 1].issued_at
+          : null;
 
-    return NextResponse.json({
-      success: true,
-      documents,
-      count: documents.length,
-      nextPageToken,
-      has_more: hasMore,
-    });
+        return {
+          success: true,
+          documents,
+          count: documents.length,
+          nextPageToken,
+          has_more: hasMore,
+        };
+      },
+      { tags: ['admin:workforce_docs'], swr: true }
+    );
+
+    return createCachedJsonResponse(request, result);
   } catch (error) {
     console.error('[Workforce Documents GET Error]', error);
     return apiError(error?.message || 'Unable to retrieve workforce documents.', 500, 'INTERNAL_ERROR');
@@ -162,6 +174,11 @@ export async function PATCH(request) {
       revoked_at: is_revoked ? new Date() : null,
       revoked_by: is_revoked ? (admin.email || admin.uid) : null,
     });
+
+    try {
+      const { invalidateCacheTag } = await import('@/utils/server/redisCache');
+      await invalidateCacheTag('admin:workforce_docs');
+    } catch {}
 
     return NextResponse.json({
       success: true,

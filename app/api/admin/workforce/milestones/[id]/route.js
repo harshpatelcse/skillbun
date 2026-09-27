@@ -10,6 +10,7 @@ import {
   validateMilestoneId,
   validateMilestonePayload,
 } from '@/utils/server/workforceMilestones';
+import { invalidateCacheTag } from '@/utils/server/redisCache';
 
 export const runtime = 'nodejs';
 
@@ -71,6 +72,10 @@ export async function PATCH(request, { params }) {
     }
 
     await milestoneRef.update(updateData);
+    await Promise.all([
+      invalidateCacheTag('admin:workforce:milestones'),
+      invalidateCacheTag('admin:workforce'),
+    ]);
 
     const merged = { ...currentData, ...updateData };
     return NextResponse.json({
@@ -109,6 +114,10 @@ export async function DELETE(request, { params }) {
     }
 
     await milestoneRef.delete();
+    await Promise.all([
+      invalidateCacheTag('admin:workforce:milestones'),
+      invalidateCacheTag('admin:workforce'),
+    ]);
 
     return NextResponse.json({
       success: true,

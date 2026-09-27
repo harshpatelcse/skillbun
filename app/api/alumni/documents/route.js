@@ -4,6 +4,7 @@ import { isUserAuthorizedAdmin } from '@/utils/server/workforceEmployees';
 import { formatWorkforceDisplayId, isValidCertificateId } from '@/utils/server/workforceId';
 import { checkServerRateLimit } from '@/utils/server/rateLimitStore';
 import { getClientAddress } from '@/utils/server/requestUtils';
+import { getOrSetCache, createCachedJsonResponse } from '@/utils/server/redisCache';
 
 export const runtime = 'nodejs';
 
@@ -87,6 +88,93 @@ export async function GET(request) {
     const isEmail = searchQuery.includes('@');
     const normalizedRef = /^(SKB|SB)/i.test(searchQuery) ? searchQuery.toUpperCase().replace(/\//g, '-') : searchQuery;
 
+    if (isRefCode) {
+      const cacheKey = `alumni:ref:${normalizedRef}:${isAdmin ? 'admin' : 'public'}`;
+      const cachedResult = await getOrSetCache(
+        cacheKey,
+        60,
+        async () => {
+          const results = [];
+          try {
+            let docSnap = await db.collection('certificates').doc(normalizedRef).get();
+            if (!docSnap.exists && normalizedRef !== searchQuery.toUpperCase()) {
+              try {
+                docSnap = await db.collection('certificates').doc(searchQuery.toUpperCase()).get();
+              } catch {}
+            }
+            if (docSnap && docSnap.exists) {
+              const data = docSnap.data();
+              const certEmail = (data.email || '').toLowerCase();
+              const isOwnerOrAdmin = isAdmin || (userEmail && userEmail === certEmail);
+              results.push({
+                id: docSnap.id,
+                display_id: data.display_id || (data.cert_type === 'ROADMAP' ? docSnap.id : formatWorkforceDisplayId(docSnap.id)),
+                category: 'CERTIFICATE',
+                type: data.cert_type || 'ROADMAP',
+                title: data.stream_or_track || data.roadmapTitle || 'Internship Certificate of Completion',
+                recipient_name: data.name || '',
+                recipient_email: isOwnerOrAdmin ? (data.email || '') : maskEmail(data.email || ''),
+                department: data.department || '',
+                designation: data.designation || '',
+                start_date: data.start_date || '',
+                end_date: data.end_date || '',
+                issued_at: data.createdAt?.toDate ? data.createdAt.toDate().toISOString() : data.createdAt || '',
+                is_revoked: Boolean(data.is_revoked),
+                verification_url: `/certificate/${docSnap.id}`,
+              });
+            }
+          } catch (certErr) {
+            console.warn('[Alumni Cert Query Warning]:', certErr);
+          }
+
+          try {
+            let docSnap = await db.collection('workforce_docs').doc(normalizedRef).get();
+            if (!docSnap.exists && normalizedRef !== searchQuery.toUpperCase()) {
+              try {
+                docSnap = await db.collection('workforce_docs').doc(searchQuery.toUpperCase()).get();
+              } catch {}
+            }
+            if (docSnap && docSnap.exists) {
+              const data = docSnap.data();
+              const meta = data.metadata_snapshot || {};
+              const docRecipientEmail = (data.dispatched_to || meta.personal_email || '').toLowerCase();
+              const isOwnerOrAdmin = isAdmin || (userEmail && userEmail === docRecipientEmail);
+              results.push({
+                id: docSnap.id,
+                display_id: data.display_id || formatWorkforceDisplayId(docSnap.id),
+                category: 'WORKFORCE_DOCUMENT',
+                type: data.doc_type || 'OFFER_LETTER',
+                title: data.title || 'Workforce Document',
+                recipient_name: meta.full_name || '',
+                recipient_email: isOwnerOrAdmin ? (data.dispatched_to || meta.personal_email || '') : maskEmail(data.dispatched_to || meta.personal_email || ''),
+                department: meta.department || '',
+                designation: meta.designation || '',
+                start_date: meta.joining_date || '',
+                end_date: meta.extended_contract_end_date || meta.contract_end_date || '',
+                issued_at: data.issued_at?.toDate ? data.issued_at.toDate().toISOString() : data.issued_at || '',
+                is_revoked: Boolean(data.is_revoked),
+                verification_url: null,
+                pdf_base64: isOwnerOrAdmin ? (data.pdf_base64 || null) : null,
+              });
+            }
+          } catch (docsErr) {
+            console.warn('[Alumni Docs Query Warning]:', docsErr);
+          }
+
+          results.sort((a, b) => (b.issued_at || '').localeCompare(a.issued_at || ''));
+          return {
+            success: true,
+            query: searchQuery,
+            count: results.length,
+            documents: results,
+          };
+        },
+        { tags: ['admin:certs', 'admin:workforce_docs'], swr: true }
+      );
+
+      return createCachedJsonResponse(request, cachedResult);
+    }
+
     const results = [];
 
     // 1. Query certificates collection
@@ -94,14 +182,6 @@ export async function GET(request) {
       let certSnap;
       if (isEmail) {
         certSnap = await db.collection('certificates').where('email', '==', searchQuery).get();
-      } else if (isRefCode) {
-        let docSnap = await db.collection('certificates').doc(normalizedRef).get();
-        if (!docSnap.exists && normalizedRef !== searchQuery.toUpperCase()) {
-          try {
-            docSnap = await db.collection('certificates').doc(searchQuery.toUpperCase()).get();
-          } catch {}
-        }
-        certSnap = { docs: docSnap && docSnap.exists ? [docSnap] : [] };
       } else if (isAdmin) {
         certSnap = await db.collection('certificates').where('employee_id', '==', searchQuery).get();
       }
@@ -137,14 +217,6 @@ export async function GET(request) {
       let docsSnap;
       if (isEmail) {
         docsSnap = await db.collection('workforce_docs').where('dispatched_to', '==', searchQuery).get();
-      } else if (isRefCode) {
-        let docSnap = await db.collection('workforce_docs').doc(normalizedRef).get();
-        if (!docSnap.exists && normalizedRef !== searchQuery.toUpperCase()) {
-          try {
-            docSnap = await db.collection('workforce_docs').doc(searchQuery.toUpperCase()).get();
-          } catch {}
-        }
-        docsSnap = { docs: docSnap && docSnap.exists ? [docSnap] : [] };
       } else if (isAdmin) {
         docsSnap = await db.collection('workforce_docs').where('employee_id', '==', searchQuery).get();
       }

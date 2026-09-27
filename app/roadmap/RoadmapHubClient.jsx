@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState } from 'react';
 import WorkspaceSidebar from '../components/WorkspaceSidebar';
 import { useAuth } from '../components/AuthProvider';
 import { readAllStoredRoadmapProgress } from '@/utils/shared/progressStore';
+import { subscribeDataSync } from '@/utils/client/dataSyncManager';
 import styles from './roadmap-hub.module.css';
 
 function categoryLabel(categories, categoryId) {
@@ -127,7 +128,7 @@ function SavedEmptyState({ onExplore }) {
 
 export default function RoadmapHubClient({ categories, roadmaps }) {
   const { progressVersion } = useAuth();
-  const [progressRows, setProgressRows] = useState([]);
+  const [progressRows, setProgressRows] = useState(() => (typeof window !== 'undefined' ? readAllStoredRoadmapProgress() : []));
   const [activeView, setActiveView] = useState('saved');
   const [query, setQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState('web_app');
@@ -160,9 +161,16 @@ export default function RoadmapHubClient({ categories, roadmaps }) {
     window.addEventListener('storage', syncProgress);
     window.addEventListener('sb_progress_change', syncProgress);
 
+    const unsubscribe = subscribeDataSync((tag) => {
+      if (tag === 'user:progress' || tag === 'user:profile') {
+        syncProgress();
+      }
+    });
+
     return () => {
       window.removeEventListener('storage', syncProgress);
       window.removeEventListener('sb_progress_change', syncProgress);
+      unsubscribe();
     };
   }, [progressVersion]);
 

@@ -134,6 +134,17 @@ export async function DELETE(request, { params }) {
       console.warn('[Admin Delete Auth Account Error]:', authDeleteErr.message);
     }
 
+    // Invalidate cached analytics and certificates
+    try {
+      const { invalidateCacheTag } = await import('@/utils/server/redisCache');
+      await Promise.all([
+        invalidateCacheTag('admin:analytics'),
+        invalidateCacheTag('admin:certs'),
+      ]);
+    } catch (cacheErr) {
+      console.warn('[Admin Delete Cache Invalidation Warning]:', cacheErr.message);
+    }
+
     return NextResponse.json({
       success: true,
       message: `Student account (${uid}) and associated certificates permanently deleted. Email address freed up.`,

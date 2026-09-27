@@ -12,6 +12,7 @@ import { collection, getDocs } from 'firebase/firestore';
 import { triggerDocumentPrint } from '@/utils/client/printAndDownload';
 import certStyles from '@/app/certificate/[id]/certificate.module.css';
 import styles from './certificates.module.css';
+import { subscribeDataSync, notifyDataMutated } from '@/utils/client/dataSyncManager';
 
 
 function OrnateCorner({ position = 'TL' }) {
@@ -426,31 +427,41 @@ export default function AdminCertificatesPage() {
     }
   }, [user, isAdmin, typeFilter, statusFilter, searchTerm]);
 
-  // Initial load
+  // Initial load & real-time sync
   useEffect(() => {
     let isMounted = true;
-    if (user && isAdmin) {
-      const initLoad = async () => {
-        try {
-          const token = await user.getIdToken();
-          const res = await fetch('/api/admin/certificates', {
-            headers: { Authorization: `Bearer ${token}` },
-          });
-          const data = await res.json();
-          if (isMounted && data.success) {
-            setCerts(data.certificates || []);
-            if (data.metrics) setMetrics(data.metrics);
-          }
-        } catch (e) {
-          console.error(e);
-        } finally {
-          if (isMounted) setLoadingCerts(false);
+    const initLoad = async () => {
+      if (!user || !isAdmin) return;
+      try {
+        const token = await user.getIdToken();
+        const res = await fetch('/api/admin/certificates', {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        const data = await res.json();
+        if (isMounted && data.success) {
+          setCerts(data.certificates || []);
+          if (data.metrics) setMetrics(data.metrics);
         }
-      };
+      } catch (e) {
+        console.error(e);
+      } finally {
+        if (isMounted) setLoadingCerts(false);
+      }
+    };
+
+    if (user && isAdmin) {
       initLoad();
     }
+
+    const unsubscribeSync = subscribeDataSync((evt) => {
+      if (isMounted && (evt.tag === 'admin:certs' || evt.type === 'DATA_MUTATED')) {
+        initLoad();
+      }
+    });
+
     return () => {
       isMounted = false;
+      unsubscribeSync();
     };
   }, [user, isAdmin]);
 
@@ -491,6 +502,7 @@ export default function AdminCertificatesPage() {
           prev.map((c) => (c.id === cert.id ? { ...c, is_revoked: nextState } : c))
         );
         fetchCertificates();
+        notifyDataMutated('admin:certs');
       } else {
         alert(data.error || 'Failed to update certificate status.');
       }
@@ -521,6 +533,7 @@ export default function AdminCertificatesPage() {
       if (data.success) {
         setCerts((prev) => prev.filter((c) => c.id !== cert.id));
         fetchCertificates();
+        notifyDataMutated('admin:certs');
       } else {
         alert(data.error || 'Failed to delete certificate.');
       }
@@ -574,6 +587,7 @@ export default function AdminCertificatesPage() {
         setMintName('');
         setMintEmail('');
         fetchCertificates();
+        notifyDataMutated('admin:certs');
       } else {
         setFeedback({ type: 'error', text: data.error || 'Minting failed.' });
       }

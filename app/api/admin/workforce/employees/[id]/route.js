@@ -10,6 +10,7 @@ import {
   validateEmployeeId,
   validateEmployeePayload,
 } from '@/utils/server/workforceEmployees'
+import { invalidateCacheTag } from '@/utils/server/redisCache'
 
 export const runtime = 'nodejs'
 
@@ -90,6 +91,11 @@ export async function PATCH(request, { params }) {
       transaction.update(employeeRef, { ...prepared.value, updated_at: now })
     })
 
+    await Promise.all([
+      invalidateCacheTag('admin:workforce'),
+      invalidateCacheTag('admin:analytics'),
+    ])
+
     return NextResponse.json({ success: true, id: employeeRef.id })
   } catch (error) {
     if (error?.code === 'NOT_FOUND') return apiError('Employee record not found.', 404, 'NOT_FOUND')
@@ -167,6 +173,14 @@ export async function DELETE(request, { params }) {
     batch.delete(employeeRef)
 
     await batch.commit()
+
+    await Promise.all([
+      invalidateCacheTag('admin:workforce'),
+      invalidateCacheTag('admin:certs'),
+      invalidateCacheTag('admin:workforce_docs'),
+      invalidateCacheTag('admin:workforce:milestones'),
+      invalidateCacheTag('admin:analytics'),
+    ])
 
     return NextResponse.json({
       success: true,

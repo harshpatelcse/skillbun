@@ -9,6 +9,7 @@ import {
 import { sendMailWithAttachment } from '@/utils/server/zohoMailer';
 import { buildActivationWelcomeEmail } from '@/utils/server/workforceEmailTemplates';
 import { decryptCredentials, encryptCredentials } from '@/utils/server/workforceCrypto';
+import { invalidateCacheTag } from '@/utils/server/redisCache';
 
 export const runtime = 'nodejs';
 
@@ -132,6 +133,11 @@ export async function POST(request) {
       activated_at: now,
       updated_at: now,
     });
+
+    await Promise.all([
+      invalidateCacheTag('admin:workforce'),
+      invalidateCacheTag('admin:workforce_docs'),
+    ]);
 
     return NextResponse.json({
       success: true,

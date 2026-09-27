@@ -10,6 +10,11 @@ import {
   serializeMilestone,
   validateMilestonePayload,
 } from '@/utils/server/workforceMilestones';
+import {
+  getOrSetCache,
+  invalidateCacheTag,
+  createCachedJsonResponse,
+} from '@/utils/server/redisCache';
 
 export const runtime = 'nodejs';
 
@@ -21,40 +26,54 @@ export async function GET(request) {
     const url = new URL(request.url);
     const employeeId = url.searchParams.get('employeeId');
 
-    const db = getFirebaseAdminFirestore();
-    const milestones = db.collection('milestones');
-    let query = milestones;
-
-    if (caller.isAdmin) {
-      if (employeeId) {
-        const idCheck = validateEmployeeId(employeeId);
-        if (!idCheck.isValid) return apiError(idCheck.error, 400, 'VALIDATION_ERROR');
-        query = query.where('employee_id', '==', employeeId);
-      }
-    } else if (caller.isIntern) {
-      // Interns are scoped strictly to their own personal email
-      query = query.where('employee_email', '==', caller.email);
-    } else {
-      return apiError('Access forbidden.', 403, 'FORBIDDEN');
+    if (caller.isAdmin && employeeId) {
+      const idCheck = validateEmployeeId(employeeId);
+      if (!idCheck.isValid) return apiError(idCheck.error, 400, 'VALIDATION_ERROR');
     }
 
-    const snapshot = await query.get();
-    const list = snapshot.docs.map((doc) => serializeMilestone(doc.id, doc.data()));
+    const cacheScope = caller.isAdmin ? (employeeId || 'all') : caller.email;
+    const cacheKey = `admin:milestones:${cacheScope}`;
 
-    // Sort in-memory by due_date ascending, then created_at descending
-    list.sort((a, b) => {
-      if (a.due_date && b.due_date) {
-        const cmp = a.due_date.localeCompare(b.due_date);
-        if (cmp !== 0) return cmp;
-      }
-      return (b.created_at || '').localeCompare(a.created_at || '');
-    });
+    const data = await getOrSetCache(
+      cacheKey,
+      60,
+      async () => {
+        const db = getFirebaseAdminFirestore();
+        const milestones = db.collection('milestones');
+        let query = milestones;
 
-    return NextResponse.json({
-      success: true,
-      milestones: list,
-      count: list.length,
-    });
+        if (caller.isAdmin) {
+          if (employeeId) {
+            query = query.where('employee_id', '==', employeeId);
+          }
+        } else if (caller.isIntern) {
+          query = query.where('employee_email', '==', caller.email);
+        } else {
+          return null;
+        }
+
+        const snapshot = await query.get();
+        const list = snapshot.docs.map((doc) => serializeMilestone(doc.id, doc.data()));
+
+        list.sort((a, b) => {
+          if (a.due_date && b.due_date) {
+            const cmp = a.due_date.localeCompare(b.due_date);
+            if (cmp !== 0) return cmp;
+          }
+          return (b.created_at || '').localeCompare(a.created_at || '');
+        });
+
+        return {
+          success: true,
+          milestones: list,
+          count: list.length,
+        };
+      },
+      { tags: ['admin:workforce:milestones', 'admin:workforce'], swr: true }
+    );
+
+    if (!data) return apiError('Access forbidden.', 403, 'FORBIDDEN');
+    return createCachedJsonResponse(request, data);
   } catch (error) {
     console.error('[Milestones GET]', error);
     return apiError('Unable to fetch milestone records.', 500, 'INTERNAL_ERROR');
@@ -105,6 +124,10 @@ export async function POST(request) {
     };
 
     await milestoneRef.set(milestoneData);
+    await Promise.all([
+      invalidateCacheTag('admin:workforce:milestones'),
+      invalidateCacheTag('admin:workforce'),
+    ]);
 
     return NextResponse.json(
       {

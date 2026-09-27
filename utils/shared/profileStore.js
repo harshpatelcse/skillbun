@@ -17,6 +17,13 @@ let lastSnapshot = DEFAULT_PROFILE;
 export function notifyProfileChanged() {
   if (typeof window !== 'undefined') {
     window.dispatchEvent(new Event(PROFILE_CHANGE_EVENT));
+    try {
+      if (typeof BroadcastChannel !== 'undefined') {
+        const channel = new BroadcastChannel('skillbun_data_sync_channel');
+        channel.postMessage({ type: 'PROFILE_UPDATED', tag: 'user:profile', timestamp: Date.now() });
+        channel.close();
+      }
+    } catch {}
   }
 }
 
