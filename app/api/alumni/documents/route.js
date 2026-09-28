@@ -89,7 +89,11 @@ export async function GET(request) {
     const normalizedRef = /^(SKB|SB)/i.test(searchQuery) ? searchQuery.toUpperCase().replace(/\//g, '-') : searchQuery;
 
     if (isRefCode) {
-      const cacheKey = `alumni:ref:${normalizedRef}:${isAdmin ? 'admin' : 'public'}`;
+      // Viewer-independent cache key: the cached value is the public projection only
+      // (masked recipient email, no PDF bytes). Owner/admin-private fields are merged
+      // AFTER the cache read so an authorization-dependent payload is never shared
+      // between viewers (prevents cross-user disclosure via a poisoned cache entry).
+      const cacheKey = `alumni:ref:${normalizedRef}:anon`;
       const cachedResult = await getOrSetCache(
         cacheKey,
         60,
@@ -104,8 +108,6 @@ export async function GET(request) {
             }
             if (docSnap && docSnap.exists) {
               const data = docSnap.data();
-              const certEmail = (data.email || '').toLowerCase();
-              const isOwnerOrAdmin = isAdmin || (userEmail && userEmail === certEmail);
               results.push({
                 id: docSnap.id,
                 display_id: data.display_id || (data.cert_type === 'ROADMAP' ? docSnap.id : formatWorkforceDisplayId(docSnap.id)),
@@ -113,7 +115,7 @@ export async function GET(request) {
                 type: data.cert_type || 'ROADMAP',
                 title: data.stream_or_track || data.roadmapTitle || 'Internship Certificate of Completion',
                 recipient_name: data.name || '',
-                recipient_email: isOwnerOrAdmin ? (data.email || '') : maskEmail(data.email || ''),
+                recipient_email: maskEmail(data.email || ''),
                 department: data.department || '',
                 designation: data.designation || '',
                 start_date: data.start_date || '',
@@ -137,8 +139,6 @@ export async function GET(request) {
             if (docSnap && docSnap.exists) {
               const data = docSnap.data();
               const meta = data.metadata_snapshot || {};
-              const docRecipientEmail = (data.dispatched_to || meta.personal_email || '').toLowerCase();
-              const isOwnerOrAdmin = isAdmin || (userEmail && userEmail === docRecipientEmail);
               results.push({
                 id: docSnap.id,
                 display_id: data.display_id || formatWorkforceDisplayId(docSnap.id),
@@ -146,7 +146,7 @@ export async function GET(request) {
                 type: data.doc_type || 'OFFER_LETTER',
                 title: data.title || 'Workforce Document',
                 recipient_name: meta.full_name || '',
-                recipient_email: isOwnerOrAdmin ? (data.dispatched_to || meta.personal_email || '') : maskEmail(data.dispatched_to || meta.personal_email || ''),
+                recipient_email: maskEmail(data.dispatched_to || meta.personal_email || ''),
                 department: meta.department || '',
                 designation: meta.designation || '',
                 start_date: meta.joining_date || '',
@@ -154,7 +154,6 @@ export async function GET(request) {
                 issued_at: data.issued_at?.toDate ? data.issued_at.toDate().toISOString() : data.issued_at || '',
                 is_revoked: Boolean(data.is_revoked),
                 verification_url: null,
-                pdf_base64: isOwnerOrAdmin ? (data.pdf_base64 || null) : null,
               });
             }
           } catch (docsErr) {
@@ -172,7 +171,39 @@ export async function GET(request) {
         { tags: ['admin:certs', 'admin:workforce_docs'], swr: true }
       );
 
-      return createCachedJsonResponse(request, cachedResult);
+      // Merge owner/admin-private fields AFTER the cache read so they are never cached.
+      let responseResult = cachedResult;
+      if (Array.isArray(cachedResult?.documents) && cachedResult.documents.length > 0) {
+        const documents = await Promise.all(cachedResult.documents.map(async (doc) => {
+          // Clone before mutating: getOrSetCache may return a shared L1 reference.
+          const isWorkforce = doc.category === 'WORKFORCE_DOCUMENT';
+          const enriched = isWorkforce ? { ...doc, pdf_base64: null } : { ...doc };
+          if (!token) return enriched;
+          try {
+            const collection = isWorkforce ? 'workforce_docs' : 'certificates';
+            const fresh = await db.collection(collection).doc(doc.id).get();
+            if (!fresh.exists) return enriched;
+            const data = fresh.data();
+            const meta = data.metadata_snapshot || {};
+            const ownerEmail = isWorkforce
+              ? (data.dispatched_to || meta.personal_email || '').toLowerCase()
+              : (data.email || '').toLowerCase();
+            const isOwnerOrAdmin = isAdmin || (userEmail && userEmail === ownerEmail);
+            if (!isOwnerOrAdmin) return enriched;
+            enriched.recipient_email = isWorkforce
+              ? (data.dispatched_to || meta.personal_email || '')
+              : (data.email || '');
+            if (isWorkforce) enriched.pdf_base64 = data.pdf_base64 || null;
+            return enriched;
+          } catch (enrichErr) {
+            console.warn('[Alumni Enrich Warning]:', enrichErr);
+            return enriched;
+          }
+        }));
+        responseResult = { ...cachedResult, documents };
+      }
+
+      return createCachedJsonResponse(request, responseResult);
     }
 
     const results = [];

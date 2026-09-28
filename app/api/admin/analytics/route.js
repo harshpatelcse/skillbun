@@ -60,6 +60,7 @@ async function computeAdminAnalytics() {
 
   let usersList = [];
   let certsList = [];
+  let orphanedCertificatesCount = 0;
   let authUsersMap = {};
   let unsubscribedEmailsMap = {};
 
@@ -237,31 +238,20 @@ async function computeAdminAnalytics() {
         }
       });
 
-      // Clean up Orphaned Certificates (Certificates belonging to deleted users that no longer exist in usersList)
-      const orphanedCertRefs = [];
+      // Exclude Orphaned Certificates from the dashboard (certificates belonging to deleted users
+      // that no longer exist in usersList). This is a read path and must never mutate data, so
+      // orphaned records are reported as a diagnostic count instead of being purged here.
       certsList = rawCerts.filter((c) => {
         const isValidUserCert =
           (c.uid && activeUserUids.has(c.uid)) ||
           (c.email && activeUserEmails.has(c.email));
 
         if (!isValidUserCert) {
-          if (c.ref) orphanedCertRefs.push(c.ref);
+          orphanedCertificatesCount += 1;
           return false;
         }
         return true;
       });
-
-      // Automatically purge orphaned certificate records from Firestore
-      if (orphanedCertRefs.length > 0) {
-        try {
-          const purgeBatch = db.batch();
-          orphanedCertRefs.forEach((ref) => purgeBatch.delete(ref));
-          await purgeBatch.commit();
-          console.warn(`[Admin Analytics]: Automatically wiped ${orphanedCertRefs.length} orphaned certificates belonging to deleted accounts.`);
-        } catch (purgeErr) {
-          console.warn('[Admin Analytics Purge Warning]:', purgeErr.message);
-        }
-      }
 
       // Recommendation evidence excludes question banks and submitted answers.
       let examOutcomes = [];
@@ -293,6 +283,7 @@ async function computeAdminAnalytics() {
     stats: {
       totalStudents: usersList.length,
       totalCertificates: certsList.length,
+      orphanedCertificates: orphanedCertificatesCount,
       totalRoadmaps: roadmapsCount,
       quizQuestionBank: totalQuestionsCount,
       quizCategoriesCount: quizFilesCount,
