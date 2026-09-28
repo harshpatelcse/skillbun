@@ -9,7 +9,7 @@ import {
   getGeminiTimeoutMs,
 } from '@/utils/server/env'
 import { getFirebaseAdminAuth } from '@/utils/server/firebaseAdmin'
-import { verifyHumanProofToken } from '@/utils/server/humanProof'
+import { verifyHumanProofToken, isHumanProofBoundTo } from '@/utils/server/humanProof'
 import { checkServerRateLimit } from '@/utils/server/rateLimitStore'
 import { getClientAddress } from '@/utils/server/requestUtils'
 import { fetchTokenRouterCompletion } from '@/utils/server/tokenRouter'
@@ -210,7 +210,7 @@ export async function POST(request) {
     const token = request.headers.get('x-skillbun-human') || ''
     const verification = verifyHumanProofToken(token)
 
-    if (!verification.valid) {
+    if (!isHumanProofBoundTo(verification, authResult.user.uid)) {
       return NextResponse.json({ error: 'Human verification required.' }, { status: 403 })
     }
 

@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { getFirebaseAdminAuth } from '@/utils/server/firebaseAdmin'
-import { verifyHumanProofToken } from '@/utils/server/humanProof'
+import { verifyHumanProofToken, isHumanProofBoundTo } from '@/utils/server/humanProof'
 import { readFileSync, existsSync } from 'fs'
 import { join } from 'path'
 import { createDecipheriv, createHmac, createHash } from 'crypto'
@@ -76,8 +76,10 @@ export async function GET(request) {
     )
   }
 
+  let quizUid = ''
   try {
-    await getFirebaseAdminAuth().verifyIdToken(idToken)
+    const decodedQuizToken = await getFirebaseAdminAuth().verifyIdToken(idToken)
+    quizUid = typeof decodedQuizToken?.uid === 'string' ? decodedQuizToken.uid : ''
   } catch {
     return NextResponse.json(
       { error: 'Invalid or expired authentication token. Please log in again.' },
@@ -87,7 +89,7 @@ export async function GET(request) {
 
   const token = request.headers.get('x-skillbun-human') || ''
   const verification = verifyHumanProofToken(token)
-  if (!verification.valid) {
+  if (!isHumanProofBoundTo(verification, quizUid)) {
     return NextResponse.json({ error: 'Human verification required.' }, { status: 403 })
   }
 

@@ -54,6 +54,17 @@ export function issueHumanProofToken(claims = {}) {
   }
 }
 
+export function isHumanProofBoundTo(verification, uid) {
+  if (!verification?.valid) return false
+
+  const boundUid = typeof verification.payload?.uid === 'string' ? verification.payload.uid : ''
+
+  // Tokens minted before uid binding (legacy, or the pre-auth signup OTP flow) carry no
+  // uid. They stay valid so no existing flow breaks; a token bound to a different
+  // student is always rejected.
+  return boundUid === '' || boundUid === uid
+}
+
 export function verifyHumanProofToken(token) {
   if (typeof token !== 'string' || !token.trim()) {
     return { valid: false, reason: 'missing' }

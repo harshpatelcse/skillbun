@@ -11,6 +11,9 @@ export const runtime = 'nodejs'
 const DOCS_RATE_LIMITS = [
   { name: 'userMinute', windowMs: 60 * 1000, maxRequests: 30, getSubject: ({ uid }) => `user:${uid}` },
   { name: 'userHour', windowMs: 60 * 60 * 1000, maxRequests: 300, getSubject: ({ uid }) => `user:${uid}` },
+  // The corpus is ~3,100 guides. Without a daily ceiling a single account can walk the
+  // whole catalog in hours; this bounds harvesting to roughly a fifth of it per day.
+  { name: 'userDay', windowMs: 24 * 60 * 60 * 1000, maxRequests: 600, getSubject: ({ uid }) => `user:${uid}` },
   { name: 'ipMinute', windowMs: 60 * 1000, maxRequests: 60, getSubject: ({ address }) => `ip:${address}` },
 ]
 

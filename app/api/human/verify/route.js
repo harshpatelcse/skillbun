@@ -1,10 +1,30 @@
 import { NextResponse } from 'next/server'
 
 import { getTurnstileSecretKey, isCaptchaEnabled } from '@/utils/server/env'
-import { issueHumanProofToken, verifyHumanProofToken } from '@/utils/server/humanProof'
+import { getFirebaseAdminAuth } from '@/utils/server/firebaseAdmin'
+import { issueHumanProofToken, verifyHumanProofToken, isHumanProofBoundTo } from '@/utils/server/humanProof'
 import { validateSchema } from '@/utils/server/inputValidator'
 import { checkServerRateLimit } from '@/utils/server/rateLimitStore'
 import { getClientAddress } from '@/utils/server/requestUtils'
+
+/**
+ * Resolves the authenticated caller's uid for token binding. Returns '' when no valid
+ * session is presented, which keeps the pre-auth signup OTP flow (no Authorization
+ * header) working while binding every signed-in caller to their own account.
+ */
+async function resolveBoundUid(request) {
+  const authHeader = request.headers.get('authorization') || ''
+  const match = authHeader.match(/^Bearer\s+(.+)$/i)
+  if (!match || !match[1]) return ''
+  try {
+    const adminAuth = getFirebaseAdminAuth()
+    if (!adminAuth) return ''
+    const decoded = await adminAuth.verifyIdToken(match[1])
+    return typeof decoded?.uid === 'string' ? decoded.uid : ''
+  } catch {
+    return ''
+  }
+}
 
 export async function POST(request) {
   const limit = await checkServerRateLimit({ namespace: 'humanVerify', subject: getClientAddress(request),
@@ -12,11 +32,14 @@ export async function POST(request) {
   if (!limit.allowed) return NextResponse.json({ error: 'Too many verification requests.' }, {
     status: 429, headers: { 'Retry-After': String(Math.max(1, Math.ceil(limit.retryAfterMs / 1000))) },
   })
+  const boundUid = await resolveBoundUid(request)
   const captchaEnabled = isCaptchaEnabled()
   const existingToken = request.headers.get('x-skillbun-human') || ''
   const existingVerification = verifyHumanProofToken(existingToken)
 
-  if (existingVerification.valid) {
+  // Only re-use the presented token when it belongs to the caller; never echo a token
+  // bound to another student back into this session.
+  if (existingVerification.valid && isHumanProofBoundTo(existingVerification, boundUid)) {
     return NextResponse.json({
       captchaEnabled: captchaEnabled,
       humanToken: existingToken,
@@ -25,7 +48,7 @@ export async function POST(request) {
   }
 
   if (!captchaEnabled) {
-    const issued = issueHumanProofToken({ v: 1 })
+    const issued = issueHumanProofToken({ v: 1, uid: boundUid })
 
     if (!issued) {
       return NextResponse.json({ error: 'Human verification is not configured.' }, { status: 500 })
@@ -71,7 +94,7 @@ export async function POST(request) {
     const isBypassed = (token === 'bypass-captcha-dev') || (bypassHeader === 'bypass-captcha-dev');
 
     if (isBypassed && isLocal) {
-      const issued = issueHumanProofToken({ v: 1 });
+      const issued = issueHumanProofToken({ v: 1, uid: boundUid });
 
       if (!issued) {
         return NextResponse.json({ error: 'Human verification is not configured.' }, { status: 500 });
@@ -104,7 +127,7 @@ export async function POST(request) {
 
     const data = await response.json()
     if (data.success) {
-      const issued = issueHumanProofToken({ v: 1 })
+      const issued = issueHumanProofToken({ v: 1, uid: boundUid })
 
       if (!issued) {
         return NextResponse.json({ error: 'Human verification is not configured.' }, { status: 500 })
