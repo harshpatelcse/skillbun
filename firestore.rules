@@ -68,16 +68,6 @@ service cloud.firestore {
         optionalTimestamp('updatedAt');
     }
 
-
-    function validQuizAttempt(slug) {
-      return slug.matches('^[a-z0-9_]{1,80}$') &&
-        request.resource.data.keys().hasOnly(['slug', 'attempts', 'lastAttemptAt', 'updatedAt']) &&
-        request.resource.data.slug == slug &&
-        request.resource.data.attempts is list &&
-        (!( 'lastAttemptAt' in request.resource.data ) || request.resource.data.lastAttemptAt is int) &&
-        optionalTimestamp('updatedAt');
-    }
-
     function signedIn() {
       return request.auth != null && request.auth.token.get('email_verified', false) == true;
     }
