@@ -744,7 +744,7 @@ section {
 }
 
 .sb-moments-shell::before {
-  content: '<clarity />  const path = student.context + quiz.signal';
+  content: 'skillbun.guide(student.context, quiz.signal)';
   position: absolute;
   right: 2rem;
   bottom: 1rem;
@@ -4390,6 +4390,32 @@ footer {
 
 .quiz-captcha-status.error {
   color: var(--danger);
+}
+
+/* Quiz load failure card */
+.quiz-load-error {
+  margin: 1rem auto 0;
+  max-width: 420px;
+  padding: 1rem 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--danger) 40%, transparent);
+  background: var(--danger-soft);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.quiz-load-error-message {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--danger);
+  text-align: center;
+}
+
+.quiz-load-error .quiz-retry-btn {
+  min-width: 140px;
 }
 
 /* Progress */

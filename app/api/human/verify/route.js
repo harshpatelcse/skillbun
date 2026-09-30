@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { isIP } from 'node:net'
 
 import { getTurnstileSecretKey, isCaptchaEnabled } from '@/utils/server/env'
 import { getFirebaseAdminAuth } from '@/utils/server/firebaseAdmin'
@@ -8,31 +9,65 @@ import { checkServerRateLimit } from '@/utils/server/rateLimitStore'
 import { getClientAddress } from '@/utils/server/requestUtils'
 
 /**
- * Resolves the authenticated caller's uid for token binding. Returns '' when no valid
- * session is presented, which keeps the pre-auth signup OTP flow (no Authorization
- * header) working while binding every signed-in caller to their own account.
+ * Anonymous signup may request an unbound proof, but an invalid supplied session
+ * must never silently downgrade a signed-in caller to anonymous verification.
  */
 async function resolveBoundUid(request) {
   const authHeader = request.headers.get('authorization') || ''
+  if (!authHeader) return ''
   const match = authHeader.match(/^Bearer\s+(.+)$/i)
-  if (!match || !match[1]) return ''
+  if (!match || !match[1]) throw Object.assign(new Error('Invalid session.'), { status: 401 })
+  let adminAuth
   try {
-    const adminAuth = getFirebaseAdminAuth()
-    if (!adminAuth) return ''
-    const decoded = await adminAuth.verifyIdToken(match[1])
-    return typeof decoded?.uid === 'string' ? decoded.uid : ''
+    adminAuth = getFirebaseAdminAuth()
   } catch {
-    return ''
+    throw Object.assign(new Error('Authentication is unavailable.'), { status: 503 })
+  }
+  if (!adminAuth) throw Object.assign(new Error('Authentication is unavailable.'), { status: 503 })
+  try {
+    const decoded = await adminAuth.verifyIdToken(match[1])
+    if (typeof decoded?.uid !== 'string' || !decoded.uid) throw new Error('Missing user identity.')
+    return decoded.uid
+  } catch {
+    throw Object.assign(new Error('Invalid session.'), { status: 401 })
   }
 }
 
+function jsonResponse(body, options = {}) {
+  return NextResponse.json(body, {
+    ...options,
+    headers: { ...options.headers, 'Cache-Control': 'no-store' },
+  })
+}
+
 export async function POST(request) {
-  const limit = await checkServerRateLimit({ namespace: 'humanVerify', subject: getClientAddress(request),
+  const clientAddress = getClientAddress(request)
+  const limit = await checkServerRateLimit({ namespace: 'humanVerify', subject: clientAddress,
     limits: [{ name: 'minute', windowMs: 60000, maxRequests: 30 }], increment: true })
-  if (!limit.allowed) return NextResponse.json({ error: 'Too many verification requests.' }, {
+  if (!limit.allowed) return jsonResponse({ error: 'Too many verification requests.' }, {
     status: 429, headers: { 'Retry-After': String(Math.max(1, Math.ceil(limit.retryAfterMs / 1000))) },
   })
-  const boundUid = await resolveBoundUid(request)
+  const bypassHeader = request.headers.get('x-skillbun-bypass') || ''
+  const isLocal = process.env.NODE_ENV === 'development'
+  let body = {}
+  try {
+    if (request.body !== null) body = await request.json()
+  } catch {
+    return jsonResponse({ error: 'Payload must be valid JSON.' }, { status: 400 })
+  }
+  const isBypassed = body?.token === 'bypass-captcha-dev' || bypassHeader === 'bypass-captcha-dev'
+  // Reject legacy bypass attempts before cached-proof and disabled-CAPTCHA paths.
+  if (isBypassed && !isLocal) {
+    console.warn('[human-verify] rejected legacy dev bypass attempt')
+    return jsonResponse({ error: 'Captcha verification failed.' }, { status: 403 })
+  }
+
+  let boundUid
+  try {
+    boundUid = await resolveBoundUid(request)
+  } catch (error) {
+    return jsonResponse({ error: error.message }, { status: error.status || 401 })
+  }
   const captchaEnabled = isCaptchaEnabled()
   const existingToken = request.headers.get('x-skillbun-human') || ''
   const existingVerification = verifyHumanProofToken(existingToken)
@@ -40,7 +75,7 @@ export async function POST(request) {
   // Only re-use the presented token when it belongs to the caller; never echo a token
   // bound to another student back into this session.
   if (existingVerification.valid && isHumanProofBoundTo(existingVerification, boundUid)) {
-    return NextResponse.json({
+    return jsonResponse({
       captchaEnabled: captchaEnabled,
       humanToken: existingToken,
       expiresAt: existingVerification.expiresAt,
@@ -51,10 +86,10 @@ export async function POST(request) {
     const issued = issueHumanProofToken({ v: 1, uid: boundUid })
 
     if (!issued) {
-      return NextResponse.json({ error: 'Human verification is not configured.' }, { status: 500 })
+      return jsonResponse({ error: 'Human verification is not configured.' }, { status: 500 })
     }
 
-    return NextResponse.json({
+    return jsonResponse({
       captchaEnabled: false,
       humanToken: issued.token,
       expiresAt: issued.expiresAt,
@@ -62,13 +97,6 @@ export async function POST(request) {
   }
 
   try {
-    let body;
-    try {
-      body = await request.json();
-    } catch {
-      return NextResponse.json({ error: 'Payload must be valid JSON.' }, { status: 400 });
-    }
-
     const schemaCheck = validateSchema(body, {
       token: {
         type: 'string',
@@ -84,23 +112,19 @@ export async function POST(request) {
     });
 
     if (!schemaCheck.isValid) {
-      return NextResponse.json({ error: schemaCheck.error }, { status: 400 });
+      return jsonResponse({ error: schemaCheck.error }, { status: 400 });
     }
 
     const token = schemaCheck.value.token;
-
-    const bypassHeader = request.headers.get('x-skillbun-bypass') || '';
-    const isLocal = process.env.NODE_ENV === 'development';
-    const isBypassed = (token === 'bypass-captcha-dev') || (bypassHeader === 'bypass-captcha-dev');
 
     if (isBypassed && isLocal) {
       const issued = issueHumanProofToken({ v: 1, uid: boundUid });
 
       if (!issued) {
-        return NextResponse.json({ error: 'Human verification is not configured.' }, { status: 500 });
+        return jsonResponse({ error: 'Human verification is not configured.' }, { status: 500 });
       }
 
-      return NextResponse.json({
+      return jsonResponse({
         captchaEnabled: true,
         humanToken: issued.token,
         expiresAt: issued.expiresAt,
@@ -112,10 +136,10 @@ export async function POST(request) {
       response: token
     })
 
-    const forwardedFor = request.headers.get('x-forwarded-for') || ''
-    const remoteIp = forwardedFor.split(',')[0]?.trim()
-    if (remoteIp) {
-      formBody.set('remoteip', remoteIp)
+    // The shared limiter returns a trusted IPv4 address or a grouped IPv6 bucket.
+    // Cloudflare's optional remoteip field accepts addresses, not bucket labels.
+    if (isIP(clientAddress)) {
+      formBody.set('remoteip', clientAddress)
     }
 
     const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
@@ -130,18 +154,18 @@ export async function POST(request) {
       const issued = issueHumanProofToken({ v: 1, uid: boundUid })
 
       if (!issued) {
-        return NextResponse.json({ error: 'Human verification is not configured.' }, { status: 500 })
+        return jsonResponse({ error: 'Human verification is not configured.' }, { status: 500 })
       }
 
-      return NextResponse.json({
+      return jsonResponse({
         captchaEnabled: true,
         humanToken: issued.token,
         expiresAt: issued.expiresAt
       })
     }
 
-    return NextResponse.json({ error: 'Captcha verification failed.' }, { status: 403 })
+    return jsonResponse({ error: 'Captcha verification failed.' }, { status: 403 })
   } catch {
-    return NextResponse.json({ error: 'Captcha error.' }, { status: 500 })
+    return jsonResponse({ error: 'Captcha error.' }, { status: 500 })
   }
 }

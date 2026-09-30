@@ -4,7 +4,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs/promises';
 
 // These tests pin the Tier 2 rule: a human-proof token minted for one student must not be
-// usable by another, while legacy/unbound tokens (the pre-auth signup OTP flow) stay valid.
+// usable by another. Unbound tokens remain valid only for the pre-auth signup flow.
 //
 // utils/server/humanProof.js imports the '@/' Next alias, which bare node --test cannot
 // resolve, so the module is loaded the same way tests/fixtures/aiRouteHarness.mjs loads
@@ -40,7 +40,15 @@ test('an unbound token stays valid for the pre-auth signup OTP flow', () => {
   const verification = verifyHumanProofToken(issued.token);
   assert.equal(verification.valid, true);
   assert.equal(isHumanProofBoundTo(verification, ''), true, 'no account yet — still valid');
-  assert.equal(isHumanProofBoundTo(verification, 'student-a'), true, 'unbound tokens carry no binding to enforce');
+  assert.equal(isHumanProofBoundTo(verification, 'student-a'), false, 'a pre-auth proof cannot unlock an authenticated route');
+  assert.equal(isHumanProofBoundTo(verifyHumanProofToken(issueHumanProofToken({ v: 1 }).token), 'student-a'), false, 'legacy proofs also require a new account-bound verification');
+});
+
+test('a bound proof cannot be reused anonymously and malformed bindings are rejected', () => {
+  const verification = verifyHumanProofToken(issueHumanProofToken({ v: 1, uid: 'student-a' }).token);
+  assert.equal(isHumanProofBoundTo(verification, ''), false);
+  assert.equal(isHumanProofBoundTo(verification, undefined), false);
+  assert.equal(isHumanProofBoundTo(verifyHumanProofToken(issueHumanProofToken({ v: 1, uid: 7 }).token), ''), false);
 });
 
 test('an invalid or expired verification never passes the binding check', () => {

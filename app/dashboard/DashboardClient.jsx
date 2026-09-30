@@ -6,6 +6,7 @@ import { useAuth } from '../components/AuthProvider';
 import WorkspaceSidebar from '../components/WorkspaceSidebar';
 import { readAllStoredRoadmapProgress } from '@/utils/shared/progressStore';
 import { subscribeDataSync } from '@/utils/client/dataSyncManager';
+import { buildDashboardProjects } from '@/utils/client/dashboardProgress';
 import styles from './dashboard.module.css';
 
 function safeGet(obj, key) {
@@ -16,40 +17,11 @@ function safeGet(obj, key) {
   return undefined;
 }
 
-const DEFAULT_FEATURED_SLUGS = ['soc_analyst', 'frontend', 'flutter_developer', 'game_development'];
-
 const roadmapHrefByProject = {
   'soc_analyst': '/roadmap/soc_analyst',
   'frontend': '/roadmap/frontend',
   'flutter_developer': '/roadmap/flutter_developer',
   'game_development': '/roadmap/game_development',
-};
-
-const interestIntelMap = {
-  'Cybersecurity': [
-    { icon: 'chart', text: 'Security lab tasks are queued for the SOC Analyst path.' },
-    { icon: 'cloud', text: 'Cloud notes are pinned for the next salary research pass.' },
-    { icon: 'file', text: 'Threat Intelligence watchlist needs source review.' },
-    { icon: 'folder', text: 'Portfolio sprint: publish the Blue Team lab writeup.' },
-  ],
-  'Web Development': [
-    { icon: 'chart', text: 'Performance audit tasks are queued for the Frontend Developer path.' },
-    { icon: 'cloud', text: 'Next.js rendering notes are pinned for the next pass.' },
-    { icon: 'file', text: 'Component library watchlist needs API review.' },
-    { icon: 'folder', text: 'Portfolio sprint: publish the React portfolio project.' },
-  ],
-  'AI / Machine Learning': [
-    { icon: 'chart', text: 'Model evaluation tasks are queued for the AI/ML path.' },
-    { icon: 'cloud', text: 'GPU instance quotas are pinned for the next training pass.' },
-    { icon: 'file', text: 'AI/ML watchlist needs source review before saving.' },
-    { icon: 'folder', text: 'Portfolio sprint: publish the LLM fine-tuning notes.' },
-  ],
-  'default': [
-    { icon: 'chart', text: 'Security lab tasks are queued for the SOC Analyst path.' },
-    { icon: 'cloud', text: 'Cloud notes are pinned for the next salary research pass.' },
-    { icon: 'file', text: 'AI/ML watchlist needs source review before saving.' },
-    { icon: 'folder', text: 'Portfolio sprint: publish the DSA project notes.' },
-  ]
 };
 
 function Icon({ name }) {
@@ -167,7 +139,7 @@ function Icon({ name }) {
 }
 
 export default function DashboardClient({ roadmapsInfo }) {
-  const { profile, authLoading, progressVersion } = useAuth();
+  const { authLoading, progressVersion } = useAuth();
   const [localProgress, setLocalProgress] = useState(() => (typeof window !== 'undefined' ? readAllStoredRoadmapProgress() : []));
 
   // Read progress dynamically on progress version changes, mount, or cross-tab sync
@@ -176,7 +148,7 @@ export default function DashboardClient({ roadmapsInfo }) {
       setLocalProgress(readAllStoredRoadmapProgress());
     }, 0);
 
-    const unsubscribe = subscribeDataSync((tag) => {
+    const unsubscribe = subscribeDataSync(({ tag }) => {
       if (tag === 'user:progress' || tag === 'user:profile') {
         setLocalProgress(readAllStoredRoadmapProgress());
       }
@@ -189,86 +161,66 @@ export default function DashboardClient({ roadmapsInfo }) {
   }, [progressVersion]);
 
   // Determine active project progress list
-  const activeProjects = useMemo(() => {
-    const list = [];
-    const processedSlugs = new Set();
-
-    // 1. Gather all paths that have some progress in localStorage
-    localProgress.forEach(({ slug, completedNodeIds }) => {
-      if (!slug || completedNodeIds.length === 0) return;
-      const info = safeGet(roadmapsInfo, slug);
-      if (!info) return;
-
-      processedSlugs.add(slug);
-      list.push({
-        slug,
-        label: info.title,
-        done: completedNodeIds.length,
-        total: info.totalNodes || 13,
-      });
-    });
-
-    // 2. Fill with default featured paths if active paths are less than 4
-    DEFAULT_FEATURED_SLUGS.forEach(slug => {
-      if (processedSlugs.size >= 4 || processedSlugs.has(slug)) return;
-      const info = safeGet(roadmapsInfo, slug) || { title: slug.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' '), totalNodes: 13 };
-
-      processedSlugs.add(slug);
-      list.push({
-        slug,
-        label: info.title,
-        done: 0,
-        total: info.totalNodes,
-      });
-    });
-
-    return list;
-  }, [localProgress, roadmapsInfo]);
+  const activeProjects = useMemo(() => buildDashboardProjects(localProgress, roadmapsInfo), [localProgress, roadmapsInfo]);
 
   // Calculate overall progress across listed projects
-  const { doneCount, totalCount, overallProgress, remainingCount } = useMemo(() => {
+  const { doneCount, earnedXp, overallProgress, remainingCount } = useMemo(() => {
     let done = 0;
     let total = 0;
+    let xp = 0;
 
     activeProjects.forEach(p => {
       done += p.done;
       total += p.total;
+      xp += p.earnedXp;
     });
 
     const overall = total === 0 ? 0 : Math.round((done / total) * 100);
     const remaining = total - done;
 
-    return { doneCount: done, totalCount: total, overallProgress: overall, remainingCount: remaining };
+    return { doneCount: done, earnedXp: xp, overallProgress: overall, remainingCount: remaining };
   }, [activeProjects]);
+
+  const hasActivity = doneCount > 0;
+
+  // Focus Queue: real next actions derived from the student's state
+  const focusQueueTags = useMemo(() => {
+    if (!hasActivity) {
+      return ['Take the career quiz', 'Explore career roadmaps', 'Ask Bun-Bot for guidance'];
+    }
+    const next = activeProjects.find(p => p.done > 0 && p.done < p.total);
+    const tags = [];
+    tags.push(next ? 'Continue ' + next.label + ' (next node)' : 'Explore your next career roadmap');
+    tags.push(activeProjects.some(p => p.done / p.total >= 0.6)
+      ? 'Review your roadmap certifications'
+      : 'Reach 60% on a path to unlock its certification');
+    tags.push('Ask Bun-Bot about blockers');
+    return tags.slice(0, 3);
+  }, [hasActivity, activeProjects]);
 
   // Determine dynamic stats cards values
   const statsMetrics = useMemo(() => {
     return [
-      { label: 'Total XP', value: String(doneCount * 100), note: 'Validated growth', icon: 'bolt', tone: 'gold' },
-      { label: 'Active Paths', value: String(localProgress.filter(p => p.completedNodeIds.length > 0).length), note: 'Based on your activity', icon: 'up', tone: 'mint' },
+      { label: 'Total XP', value: String(earnedXp), note: 'Validated growth', icon: 'bolt', tone: 'gold' },
+      { label: 'Active Paths', value: String(activeProjects.length), note: 'Based on your activity', icon: 'up', tone: 'mint' },
       { label: 'Skills Mastered', value: String(doneCount), note: 'Validated nodes', icon: 'check', tone: 'green' },
       { label: 'Remaining', value: String(remainingCount), note: 'Open skill nodes', icon: 'flame', tone: 'warm' },
     ];
-  }, [doneCount, localProgress, remainingCount]);
+  }, [doneCount, earnedXp, activeProjects.length, remainingCount]);
 
   // Dynamic standing bars value
   const standingBars = useMemo(() => {
-    const calculatedStanding = totalCount === 0 ? 0 : Math.min(98, Math.max(10, Math.round((doneCount / totalCount) * 100)));
-    return [
-      { label: 'Avg User', value: 53, tone: 'muted' },
-      { label: 'You', value: calculatedStanding || 15, tone: 'active' },
-      { label: 'Top 1%', value: 99, tone: 'top' },
-    ];
-  }, [doneCount, totalCount]);
+    return activeProjects.slice(0, 4).map(project => ({
+      label: project.label,
+      value: Math.round((project.done / project.total) * 100),
+      tone: 'active',
+    }));
+  }, [activeProjects]);
 
   // Dynamic standing kicker copy
   const standingKicker = useMemo(() => {
-    const myStanding = standingBars.find(b => b.label === 'You')?.value || 15;
-    if (myStanding >= 90) return 'Top 1% of learners';
-    if (myStanding >= 70) return 'Top 10% of learners';
-    if (myStanding >= 50) return 'Top 25% of learners';
-    return 'SkillBun active explorer';
-  }, [standingBars]);
+    return hasActivity ? `${doneCount} roadmap nodes completed` : 'SkillBun active explorer';
+  }, [hasActivity, doneCount]);
 
   // Determine dynamic reminders card
   const reminderInfo = useMemo(() => {
@@ -292,11 +244,13 @@ export default function DashboardClient({ roadmapsInfo }) {
     };
   }, [activeProjects]);
 
-  // Industry Intel specific to interest
+  // Show recorded progress rather than illustrative tasks as completed activity.
   const intelList = useMemo(() => {
-    const interest = profile?.interest || 'default';
-    return safeGet(interestIntelMap, interest) || interestIntelMap['default'];
-  }, [profile?.interest]);
+    return activeProjects.slice(0, 4).map(project => ({
+      icon: 'chart',
+      text: `${project.label}: ${project.done} of ${project.total} nodes completed.`,
+    }));
+  }, [activeProjects]);
 
   return (
     <main className={styles.page}>
@@ -305,7 +259,7 @@ export default function DashboardClient({ roadmapsInfo }) {
         {'<Progress />'}
       </div>
       <div className={`${styles.floater} ${styles.floatTwo}`} aria-hidden="true">
-        {`{ xp: ${doneCount * 100} }`}
+        {`{ xp: ${earnedXp} }`}
       </div>
 
       <div className={styles.container}>
@@ -340,20 +294,24 @@ export default function DashboardClient({ roadmapsInfo }) {
               </div>
 
               <div className={styles.chartBlock}>
-                <h3>Estimated Global Standing</h3>
-                <div className={styles.standingBars}>
-                  {standingBars.map((bar) => (
-                    <div key={bar.label} className={styles.standingRow}>
-                      <span>{bar.label} ({bar.value}%)</span>
-                      <div className={styles.track}>
-                        <span
-                          className={`${styles.fill} ${safeGet(styles, bar.tone) || ''}`}
-                          style={{ '--bar-width': `${bar.value}%` }}
-                        />
+                <h3>Your Standing</h3>
+                {standingBars.length === 0 ? (
+                  <p className={styles.emptyNote}>No progress recorded yet. Complete your first roadmap node and your standing will appear here.</p>
+                ) : (
+                  <div className={styles.standingBars}>
+                    {standingBars.map((bar) => (
+                      <div key={bar.label} className={styles.standingRow}>
+                        <span>{bar.label} ({bar.value}%)</span>
+                        <div className={styles.track}>
+                          <span
+                            className={`${styles.fill} ${safeGet(styles, bar.tone) || ''}`}
+                            style={{ '--bar-width': `${bar.value}%` }}
+                          />
+                        </div>
                       </div>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
+                )}
               </div>
 
               <div className={styles.chartBlock}>
@@ -371,17 +329,21 @@ export default function DashboardClient({ roadmapsInfo }) {
             {/* Bottom Grid: Intel + Project Donut */}
             <div className={styles.bottomGrid}>
               <article className={`${styles.panel} ${styles.intelPanel} ${styles.glassPanel}`}>
-                <h2>Industry Intel</h2>
-                <ul className={styles.intelList}>
-                  {intelList.map((item) => (
-                    <li key={item.text}>
-                      <span className={styles.intelIcon}>
-                        <Icon name={item.icon} />
-                      </span>
-                      <span>{item.text}</span>
-                    </li>
-                  ))}
-                </ul>
+                <h2>Your Progress Intel</h2>
+                {intelList.length === 0 ? (
+                  <p className={styles.emptyNote}>Nothing here yet - start a roadmap (or take the quiz to pick one) and your progress updates will appear in this panel.</p>
+                ) : (
+                  <ul className={styles.intelList}>
+                    {intelList.map((item) => (
+                      <li key={item.text}>
+                        <span className={styles.intelIcon}>
+                          <Icon name={item.icon} />
+                        </span>
+                        <span>{item.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </article>
 
               <article className={`${styles.panel} ${styles.donutPanel} ${styles.glassPanel}`}>
@@ -418,27 +380,31 @@ export default function DashboardClient({ roadmapsInfo }) {
             {/* Projects List with Real Progress */}
             <article className={`${styles.panel} ${styles.projectsPanel} ${styles.glassPanel}`}>
               <h2>Projects</h2>
-              <div className={styles.projectList}>
-                {activeProjects.map((project) => {
-                  const percent = Math.round((project.done / project.total) * 100);
-                  const pathHref = safeGet(roadmapHrefByProject, project.slug) || `/roadmap/${project.slug}`;
-                  return (
-                    <Link
-                      key={project.label}
-                      href={pathHref}
-                      className={styles.projectItem}
-                    >
-                      <div className={styles.projectTopline}>
-                        <span>{project.label}</span>
-                        <span>{project.done}/{project.total} done, {percent}%</span>
-                      </div>
-                      <div className={styles.miniTrack}>
-                        <span style={{ '--bar-width': `${percent}%` }} />
-                      </div>
-                    </Link>
-                  );
-                })}
-              </div>
+              {hasActivity ? (
+                <div className={styles.projectList}>
+                  {activeProjects.map((project) => {
+                    const percent = Math.round((project.done / project.total) * 100);
+                    const pathHref = safeGet(roadmapHrefByProject, project.slug) || `/roadmap/${project.slug}`;
+                    return (
+                      <Link
+                        key={project.label}
+                        href={pathHref}
+                        className={styles.projectItem}
+                      >
+                        <div className={styles.projectTopline}>
+                          <span>{project.label}</span>
+                          <span>{project.done}/{project.total} done, {percent}%</span>
+                        </div>
+                        <div className={styles.miniTrack}>
+                          <span style={{ '--bar-width': `${percent}%` }} />
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+              ) : (
+                <p className={styles.emptyNote}>No learning paths yet. Take the career quiz to get roadmap recommendations that match your profile.</p>
+              )}
             </article>
 
             {/* BunBot Form Panel */}
@@ -512,9 +478,9 @@ export default function DashboardClient({ roadmapsInfo }) {
             <h2>Three moves to keep today on track.</h2>
           </div>
           <div className={styles.rhythmTags}>
-            <span>Complete one SOC case note</span>
-            <span>Review a frontend task</span>
-            <span>Ask BunBot about blockers</span>
+            {focusQueueTags.map((tag) => (
+              <span key={tag}>{tag}</span>
+            ))}
           </div>
         </section>
       </div>

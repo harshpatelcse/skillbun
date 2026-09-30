@@ -19,7 +19,6 @@ function SettingsContent() {
     profile,
     authLoading,
     profileLoading,
-    isProfileComplete,
     resetPassword,
     resendVerification,
     deleteAccount,
@@ -28,6 +27,7 @@ function SettingsContent() {
   const [status, setStatus] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [deletingAccount, setDeletingAccount] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   // Email Unsubscribe state
@@ -53,17 +53,16 @@ function SettingsContent() {
 
   // Standard authentication gate redirect
   useEffect(() => {
-    if (isUnsubscribeAction) return;
+    if (isUnsubscribeAction || deletingAccount) return;
 
     if (!authLoading && !user) {
       router.replace('/auth?next=/settings');
       return;
     }
 
-    if (!authLoading && !profileLoading && user && !isProfileComplete) {
-      router.replace('/onboarding?next=/settings');
-    }
-  }, [authLoading, isProfileComplete, isUnsubscribeAction, profileLoading, router, user]);
+    // Account controls must remain reachable when onboarding is incomplete or
+    // an interrupted erasure has already removed the student profile.
+  }, [authLoading, deletingAccount, isUnsubscribeAction, router, user]);
 
   const handleUnsubscribeToggle = async (action = 'unsubscribe') => {
     const target = unsubscribeEmail || user?.email;
@@ -161,7 +160,7 @@ function SettingsContent() {
     );
   }
 
-  if (authLoading || profileLoading || !profile.hydrated || !user || !isProfileComplete) {
+  if (authLoading || profileLoading || !profile.hydrated || !user) {
     return (
       <div style={{ opacity: 1, display: 'flex', flexDirection: 'column', minHeight: '100vh', paddingTop: '60px', alignItems: 'center', justifyContent: 'center', color: 'var(--text)' }}>
         Loading Settings...
@@ -207,20 +206,26 @@ function SettingsContent() {
   }
 
   async function handleDeleteAccount() {
+    if (deletingAccount) return;
     setError('');
-    setStatus('');
+    setStatus('Deleting your account. Please keep this page open while we confirm completion.');
     setLoading(true);
+    setDeletingAccount(true);
     setShowDeleteModal(false);
 
     try {
-      await deleteAccount();
+      const result = await deleteAccount();
+      if (result?.warning) window.alert(result.warning);
+      router.replace('/');
     } catch (err) {
+      setStatus('');
       if (err.code === 'auth/requires-recent-login') {
-        setError('🔒 Security check: Please log out and log back in, then immediately delete your account.');
+        setError('Security check: Please log out and log back in, then immediately delete your account.');
       } else {
         setError(err.message || 'Could not delete your account. Please try again.');
       }
       setLoading(false);
+      setDeletingAccount(false);
     }
   }
 
@@ -233,8 +238,8 @@ function SettingsContent() {
           <p className={styles.subtitle}>Manage your login methods, email preferences, and security.</p>
         </div>
 
-        {status && <div className={styles.statusBanner}>{status}</div>}
-        {error && <div className={styles.errorBanner}>{error}</div>}
+        {status && <div className={styles.statusBanner} role="status">{status}</div>}
+        {error && <div className={styles.errorBanner} role="alert">{error}</div>}
 
         {/* SECTION 1: Account Information */}
         <section className={styles.card}>
@@ -363,7 +368,7 @@ function SettingsContent() {
         <section className={`${styles.card} ${styles.dangerZone}`}>
           <h2 className={styles.cardTitleDanger}>Danger Zone</h2>
           <p className={styles.cardSubtitle}>
-            Permanently delete your SkillBun profile, roadmap progress, and account data.
+            Permanently delete your login account, profile, roadmap progress, quiz/exam history, and roadmap certificates. Workforce credentials and legal records are retained.
           </p>
           <div className={styles.actionRow}>
             <button
@@ -371,7 +376,7 @@ function SettingsContent() {
               className={styles.btnDanger}
               disabled={loading}
             >
-              Delete My Account
+              {deletingAccount ? 'Deleting Account...' : 'Delete My Account'}
             </button>
           </div>
         </section>
@@ -382,7 +387,7 @@ function SettingsContent() {
             <div className={styles.modalContent}>
               <h3 className={styles.modalTitle}>Delete Account?</h3>
               <p className={styles.modalText}>
-                Are you sure you want to permanently delete your account (<strong>{user.email}</strong>)? All of your roadmap progress, certificates, and profile data will be permanently erased.
+                Are you sure you want to permanently delete your account (<strong>{user.email}</strong>)? Your profile, roadmap progress, quiz/exam history, and roadmap certificates will be erased. Workforce credentials, employment records, and legal documents will be retained. This cannot be undone.
               </p>
               <div className={styles.modalActions}>
                 <button

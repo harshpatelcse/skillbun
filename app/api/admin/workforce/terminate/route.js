@@ -175,14 +175,13 @@ export async function POST(request) {
         if (userRecord?.uid) {
           await adminAuth.revokeRefreshTokens(userRecord.uid);
           const userDocRef = db.collection('users').doc(userRecord.uid);
-          await userDocRef.set(
+          await userDocRef.update(
             {
               workforce_access: false,
               portal_access_revoked: true,
               portal_access_revoked_at: now,
               updated_at: now,
-            },
-            { merge: true }
+            }
           );
           authRevoked = true;
         }

@@ -1,5 +1,6 @@
 import { cert, getApps, initializeApp } from 'firebase-admin/app'
 import { getFirestore } from 'firebase-admin/firestore'
+import { assertAccountActive } from './accountLifecycle.mjs'
 // getAuth loaded dynamically on-demand
 
 import {
@@ -45,7 +46,7 @@ function getAdminApp() {
  */
 export function getFirebaseAdminAuth() {
   return {
-    async verifyIdToken(token) {
+    async verifyIdToken(token, { allowDeleting = false } = {}) {
       if (!token || typeof token !== 'string') {
         throw new Error('Decoding Firebase ID token failed. Invalid token.')
       }
@@ -53,12 +54,32 @@ export function getFirebaseAdminAuth() {
       const app = getAdminApp()
       if (!app) throw new Error('Firebase Admin service credentials required for token verification.')
       const { getAuth } = await import('firebase-admin/auth')
-      const decodedToken = await getAuth(app).verifyIdToken(token, true)
+      let decodedToken
+      try {
+        decodedToken = await getAuth(app).verifyIdToken(token, true)
+      } catch (error) {
+        // A lost response can occur after Auth removal but before the erasure
+        // marker is finalized. Only that missing account may resume cleanup.
+        if (!allowDeleting || error?.code !== 'auth/user-not-found') throw error
+        decodedToken = await getAuth(app).verifyIdToken(token, false)
+        const marker = await getFirestore(app).collection('accountDeletions').doc(decodedToken.uid).get()
+        const state = marker.data() || {}
+        if (!marker.exists || (state.phase !== 'auth' && state.status !== 'complete')) throw error
+        const stillMissing = await getAuth(app).getUser(decodedToken.uid).then(
+          () => false,
+          lookupError => {
+            if (lookupError?.code === 'auth/user-not-found') return true
+            throw lookupError
+          },
+        )
+        if (!stillMissing) throw error
+      }
       if (decodedToken.email_verified !== true) {
         const error = new Error('Verify your email before accessing your SkillBun account.')
         error.code = 'auth/email-not-verified'
         throw error
       }
+      if (!allowDeleting) await assertAccountActive(getFirestore(app), decodedToken.uid)
       return decodedToken
     },
 

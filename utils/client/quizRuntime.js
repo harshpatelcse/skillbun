@@ -43,6 +43,8 @@ export function mountQuizRuntime() {
   const state = createState(eventController);
 
   let nextInsight = '';
+  let quizQuestionsLoading = false;
+  let quizLoadQueued = false;
 
   function getDominantPillar() {
     if (state.identifiedPillar && state.pillarScores[state.identifiedPillar] !== undefined) {
@@ -604,9 +606,16 @@ RESPONSE FORMAT (JSON ONLY, no markdown):
 
   const startQuizBtnEl = document.getElementById('startQuizBtn');
   if (startQuizBtnEl) {
-    startQuizBtnEl.addEventListener('click', async () => {
+    startQuizBtnEl.addEventListener('click', async (e) => {
       const startBtn = document.getElementById('startQuizBtn');
       if (!startBtn) return;
+
+      if (!state.quizQuestions || quizQuestionsLoading || state.quizQuestionsLoadFailed) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (state.quizQuestionsLoadFailed) showQuizLoadError(state.quizLoadErrorInstance);
+        return;
+      }
 
       const welcomeScreen = document.getElementById('welcomeScreen');
       const quizScreen = document.getElementById('quizScreen');
@@ -642,7 +651,7 @@ RESPONSE FORMAT (JSON ONLY, no markdown):
       // Parallel background security verification if captcha enabled
       if (state.securityConfig.captchaEnabled && !hasFreshHumanProof(state)) {
         void verifyHumanProof(state, async () => {
-          await initCaptcha(state);
+          await initCaptcha(state, loadQuizQuestions);
         });
       }
     }, { signal: state.signal });
@@ -655,35 +664,104 @@ RESPONSE FORMAT (JSON ONLY, no markdown):
     }, { signal: state.signal });
   }
 
+  const quizRetryBtnEl = document.getElementById('quizRetryBtn');
+  if (quizRetryBtnEl) {
+    quizRetryBtnEl.addEventListener('click', loadQuizQuestions, { signal: state.signal });
+  }
+
   const loadMoreBtnEl = document.getElementById('loadMoreBtn');
   if (loadMoreBtnEl) {
     loadMoreBtnEl.dataset.defaultLabel = loadMoreBtnEl.textContent;
     loadMoreBtnEl.addEventListener('click', loadMoreCareers, { signal: state.signal });
   }
 
+  function showQuizLoadError(err) {
+    state.quizQuestionsLoadFailed = true;
+    state.quizLoadErrorInstance = err;
+    const wrap = document.getElementById('quizLoadError');
+    const msg = document.getElementById('quizLoadErrorMessage');
+    if (msg) {
+      msg.textContent = err?.status === 401
+        ? 'Your login session expired. Please sign in again to load the quiz.'
+        : err?.status === 403
+          ? 'Please complete human verification, then retry.'
+          : 'We could not load the quiz right now. Please retry in a moment.';
+    }
+    if (wrap) wrap.style.display = 'flex';
+  }
+
+  function hideQuizLoadError() {
+    state.quizQuestionsLoadFailed = false;
+    state.quizLoadErrorInstance = null;
+    const wrap = document.getElementById('quizLoadError');
+    if (wrap) wrap.style.display = 'none';
+  }
+
+  async function loadQuizQuestions() {
+    if (state.signal.aborted) return;
+    if (state.quizQuestions && !state.quizQuestionsLoadFailed) return;
+    if (quizQuestionsLoading) {
+      quizLoadQueued = true;
+      return;
+    }
+    quizQuestionsLoading = true;
+    const startBtn = document.getElementById('startQuizBtn');
+    if (startBtn) startBtn.disabled = true;
+    if (quizRetryBtnEl) quizRetryBtnEl.disabled = true;
+
+    try {
+      const verified = await verifyHumanProof(state, () => initCaptcha(state, loadQuizQuestions));
+      if (state.signal.aborted) return;
+      if (!verified) {
+        // A newly rendered CAPTCHA is still waiting for the student. Its callback
+        // resumes loading after the challenge has actually completed.
+        if (state.securityConfig.captchaEnabled && !state.captchaToken) return;
+        const error = new Error('Human verification required.');
+        error.status = 403;
+        throw error;
+      }
+
+      const questions = await fetchQuizQuestions(state);
+      if (state.signal.aborted) return;
+      state.quizQuestions = questions;
+      hideQuizLoadError();
+      setCaptchaStatus('Verification complete. You can start now.', 'ok');
+    } catch (err) {
+      if (state.signal.aborted) return;
+      console.error('Could not load encrypted quiz questions:', err.message);
+      showQuizLoadError(err);
+    } finally {
+      quizQuestionsLoading = false;
+      if (!state.signal.aborted) {
+        if (startBtn) startBtn.disabled = !state.quizQuestions || state.quizQuestionsLoadFailed;
+        if (quizRetryBtnEl) quizRetryBtnEl.disabled = false;
+        if (quizLoadQueued) {
+          quizLoadQueued = false;
+          void loadQuizQuestions();
+        }
+      }
+    }
+  }
+
   async function initQuizPage() {
     const startBtn = document.getElementById('startQuizBtn');
-    if (startBtn) startBtn.disabled = false;
+    if (startBtn) startBtn.disabled = true;
 
     const hasProfile = loadProfile(state);
     if (!hasProfile) return;
 
     await fetchSecurityConfig(state);
     const hasReusableProof = await refreshHumanProofSession(state);
+    if (state.signal.aborted) return;
 
     if (hasReusableProof) {
       const wrap = document.getElementById('captchaWrap');
       if (wrap) wrap.style.display = 'none';
       setCaptchaStatus('Security already verified for this session.', 'ok');
-    } else if (state.securityConfig.captchaEnabled) {
-      await initCaptcha(state);
     }
 
-    try {
-      state.quizQuestions = await fetchQuizQuestions(state);
-    } catch (err) {
-      console.error('Could not load encrypted quiz questions:', err.message);
-    }
+    await loadQuizQuestions();
+    if (state.signal.aborted) return;
 
     const userBadge = document.getElementById('userBadge');
     if (userBadge) userBadge.addEventListener('click', toggleDropdown, { signal: state.signal });
@@ -691,12 +769,15 @@ RESPONSE FORMAT (JSON ONLY, no markdown):
     const logoutBtn = document.getElementById('logoutBtn');
     if (logoutBtn) logoutBtn.addEventListener('click', () => logoutUser(state), { signal: state.signal });
 
-    if (startBtn) startBtn.disabled = false;
   }
 
-  void initQuizPage();
+  initQuizPage().catch(err => console.error('Quiz page init failed:', err));
 
   return () => {
     eventController.abort();
+    if (state.captchaWidgetId !== null && window.turnstile) {
+      window.turnstile.remove(state.captchaWidgetId);
+      state.captchaWidgetId = null;
+    }
   };
 }

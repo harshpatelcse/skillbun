@@ -568,7 +568,7 @@ export default function AdminCertificatesPage() {
           email: mintEmail.trim(),
           stream_or_track: mintTrack.trim(),
           roadmapTitle: mintTrack.trim(),
-          score: Number(mintScore) || 100,
+          score: Number(mintScore),
           department: mintDepartment,
           designation: mintDesignation,
           start_date: mintStartDate || null,
@@ -1571,7 +1571,7 @@ export default function AdminCertificatesPage() {
                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}><Icon name="zap" size={18} /> Manual Certificate Minting Studio</span>
               </div>
               <p style={{ margin: 0, fontSize: '0.84rem', color: 'var(--muted)' }}>
-                Directly issue verified Academic or Workforce credentials to students and interns. Generates unambiguous Base32 IDs and registers records into Firestore `/certificates`.
+                Issue academic or workforce credentials after checking the recipient and details. Issued details cannot be edited; to correct them, revoke the original and issue a new certificate. This manual issuance is separate from the student exam flow.
               </p>
             </div>
 

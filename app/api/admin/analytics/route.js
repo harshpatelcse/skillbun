@@ -6,6 +6,7 @@ import path from 'path';
 import { enrichEmailProgress } from '@/utils/server/emailStudentContext';
 import { emailTime } from '@/utils/shared/emailRecommendation';
 import { getOrSetCache, createCachedJsonResponse } from '@/utils/server/redisCache';
+import { checkServerRateLimit } from '@/utils/server/rateLimitStore';
 
 export const runtime = 'nodejs';
 
@@ -68,8 +69,10 @@ async function computeAdminAnalytics() {
   try {
     const adminAuth = getFirebaseAdminAuth();
     if (adminAuth) {
-      const listUsersResult = await adminAuth.listUsers(1000);
-      listUsersResult.users.forEach((userRecord) => {
+      let pageToken;
+      do {
+        const listUsersResult = await adminAuth.listUsers(1000, pageToken);
+        listUsersResult.users.forEach((userRecord) => {
         authUsersMap[userRecord.uid] = {
           lastSignInTime: userRecord.metadata?.lastSignInTime
             ? new Date(userRecord.metadata.lastSignInTime).toISOString()
@@ -81,7 +84,9 @@ async function computeAdminAnalytics() {
           displayName: userRecord.displayName || '',
           providers: userRecord.providerData?.map((p) => p.providerId) || [],
         };
-      });
+        });
+        pageToken = listUsersResult.pageToken;
+      } while (pageToken);
     }
   } catch (authErr) {
     console.warn('[Admin Analytics API] Firebase Auth listUsers warning:', authErr.message);
@@ -125,7 +130,7 @@ async function computeAdminAnalytics() {
       // Fetch all real user documents from Firestore with selective field projection
       const usersSnap = await db
         .collection('users')
-        .select('name', 'email', 'degree', 'year', 'interest', 'createdAt', 'updatedAt', 'emailVerified', 'role', 'status')
+        .select('name', 'displayName', 'fullName', 'email', 'degree', 'year', 'current_year', 'interest', 'interest_area', 'providers', 'sentEmailHistory', 'createdAt', 'updatedAt', 'emailVerified', 'role', 'status')
         .get();
       const processedUids = new Set();
       const activeUserUids = new Set();
@@ -303,6 +308,7 @@ export async function GET(request) {
       return NextResponse.json({ error: 'Authentication required for admin access' }, { status: 401 });
     }
 
+    let adminUid;
     try {
       const adminAuth = getFirebaseAdminAuth();
       if (!adminAuth) {
@@ -313,9 +319,18 @@ export async function GET(request) {
       if (!isAdmin) {
         return NextResponse.json({ error: 'Forbidden: Admin privileges required' }, { status: 403 });
       }
+      adminUid = decodedToken.uid;
     } catch (authErr) {
       return NextResponse.json({ error: 'Invalid or expired authentication token' }, { status: 401 });
     }
+
+    const limit = await checkServerRateLimit({
+      namespace: 'adminAnalytics', subject: adminUid,
+      limits: [{ name: 'minute', windowMs: 60_000, maxRequests: 60 }],
+    });
+    if (!limit.allowed) return NextResponse.json({ error: 'Too many analytics requests. Please try again shortly.' }, {
+      status: 429, headers: { 'Retry-After': String(Math.max(1, Math.ceil(limit.retryAfterMs / 1000))) },
+    });
 
     // High-speed cached execution with SWR and single-flight protection
     const analyticsData = await getOrSetCache(

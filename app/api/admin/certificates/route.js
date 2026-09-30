@@ -6,6 +6,7 @@ import { getActiveTemplateVersion } from '@/utils/common/docTemplateRegistry';
 import { checkServerRateLimit } from '@/utils/server/rateLimitStore';
 import { getClientAddress } from '@/utils/server/requestUtils';
 import { getOrSetCache, invalidateCacheTag, createCachedJsonResponse } from '@/utils/server/redisCache';
+import { CertificateMutationError, createIssuedCertificate, validateCertificateIssue } from '@/utils/server/certificateIntegrity.mjs';
 
 export const runtime = 'nodejs';
 
@@ -193,7 +194,8 @@ export async function POST(request) {
       return NextResponse.json({ error: 'Payload must be valid JSON.' }, { status: 400 });
     }
 
-    const certType = String(body.cert_type || 'ROADMAP').toUpperCase();
+    body = validateCertificateIssue(body);
+    const certType = body.cert_type;
     const candidateName = String(body.name || '').trim();
     const candidateEmail = String(body.email || '').trim().toLowerCase();
     const streamOrTrack = String(body.stream_or_track || body.roadmapTitle || '').trim();
@@ -220,7 +222,7 @@ export async function POST(request) {
     }
 
     let certId = customCertId;
-    let displayId = customCertId;
+    let displayId = customCertId ? formatWorkforceDisplayId(customCertId) : '';
 
     if (!certId) {
       if (certType === 'ROADMAP') {
@@ -241,13 +243,23 @@ export async function POST(request) {
       }
     }
 
+    let recipientUid = '';
+    if (candidateEmail) {
+      try {
+        const recipient = await getFirebaseAdminAuth().getUserByEmail(candidateEmail);
+        if (recipient.emailVerified === true && recipient.email?.toLowerCase() === candidateEmail) recipientUid = recipient.uid;
+      } catch (error) {
+        if (error?.code !== 'auth/user-not-found') throw error;
+      }
+    }
     const now = new Date();
     const newCert = {
       id: certId,
       display_id: displayId,
       cert_type: certType,
       name: candidateName,
-      email: candidateEmail || 'student@skillbun.tech',
+      email: candidateEmail,
+      ...(recipientUid ? { uid: recipientUid } : {}),
       roadmapTitle: streamOrTrack,
       roadmapSlug: roadmapSlug || streamOrTrack.toLowerCase().replace(/[^a-z0-9]/g, '_'),
       stream_or_track: streamOrTrack,
@@ -265,7 +277,7 @@ export async function POST(request) {
       updatedAt: now,
     };
 
-    await db.collection('certificates').doc(certId).set(newCert);
+    await createIssuedCertificate(db, newCert);
 
     // Invalidate cached certificate records and analytics
     try {
@@ -283,7 +295,10 @@ export async function POST(request) {
       message: `✅ Certificate (${displayId}) issued successfully!`,
     });
   } catch (err) {
-    console.error('[Admin Certificates POST Error]:', err);
-    return NextResponse.json({ error: `Failed to issue certificate: ${err.message}` }, { status: 500 });
+    if (err instanceof CertificateMutationError || err?.code === 'auth/account-deleting') {
+      return NextResponse.json({ error: err.message, code: err.code }, { status: err.status || 409 });
+    }
+    console.error('[Admin Certificates POST Error]:', err?.code || 'INTERNAL_ERROR');
+    return NextResponse.json({ error: 'Failed to issue certificate. Please try again.' }, { status: 500 });
   }
 }

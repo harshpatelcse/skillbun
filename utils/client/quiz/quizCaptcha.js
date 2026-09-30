@@ -63,7 +63,7 @@ export function setCaptchaStatus(message, tone) {
   if (tone === 'error') statusEl.classList.add('error');
 }
 
-export async function initCaptcha(state) {
+export async function initCaptcha(state, onVerified) {
   if (!state.securityConfig.captchaEnabled || hasFreshHumanProof(state)) return;
 
   const wrap = document.getElementById('captchaWrap');
@@ -92,6 +92,8 @@ export async function initCaptcha(state) {
       return;
     }
 
+    if (state.signal.aborted) return;
+
     if (!window.turnstile) {
       setCaptchaStatus('Captcha unavailable. Please refresh and try again.', 'error');
       return;
@@ -101,8 +103,10 @@ export async function initCaptcha(state) {
       sitekey: state.securityConfig.captchaSiteKey,
       theme: localStorage.getItem('sb_theme') || 'dark',
       callback: (token) => {
+        if (state.signal.aborted) return;
         state.captchaToken = token;
-        setCaptchaStatus('Verification complete. You can start now.', 'ok');
+        setCaptchaStatus('Verification complete. Loading your quiz...', 'ok');
+        if (onVerified) void onVerified();
       },
       'expired-callback': () => {
         state.captchaToken = '';

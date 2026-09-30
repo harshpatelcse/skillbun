@@ -5,6 +5,7 @@ import { getSavedDraft } from '@/utils/server/emailDraftLibrary';
 import { renderSavedEmail } from '@/utils/shared/emailDraft';
 import { recommendEmail, emailCategory } from '@/utils/shared/emailRecommendation';
 import { NextResponse } from 'next/server';
+import { assertAccountActive } from '@/utils/server/accountLifecycle.mjs';
 import { getFirebaseAdminAuth, getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import { generateRetentionEmailHtml, buildBaseEmailWrapper } from '@/utils/server/retentionEmails';
 import {
@@ -441,7 +442,9 @@ export async function POST(request) {
                 forceOverride: Boolean(forceOverride),
               };
               await db.runTransaction(async tx => {
+                await assertAccountActive(db, userRef.id, tx);
                 const snapshot = await tx.get(userRef);
+                if (!snapshot.exists) return;
                 const existingLogs = Array.isArray(snapshot.data()?.sentEmailHistory) ? snapshot.data().sentEmailHistory : [];
                 tx.set(userRef, { sentEmailHistory: [...existingLogs, newLog] }, { merge: true });
               });

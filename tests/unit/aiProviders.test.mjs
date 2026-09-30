@@ -132,18 +132,19 @@ test('Hugging Face fallback uses its supported chat endpoint with an explicit mo
   assert.equal(await handler.fetchHuggingFaceResponse('test-hf', contents), 'Start with a small frontend project.');
 });
 
-test('quiz obtains a server-issued human proof for localhost, disabled CAPTCHA, and cached legacy tokens', async () => {
+test('quiz obtains a server-issued human proof for real tokens, disabled CAPTCHA, and cached legacy tokens', async () => {
   let source = await fs.readFile(new URL('../../utils/client/quiz/quizApi.js', import.meta.url), 'utf8');
   source = source.replace(/^import[\s\S]*?from ['"][^'"]+['"];?\r?\n/gm, '').replace(/export /g, '');
   for (const scenario of [
-    { captchaEnabled: true, hostname: 'localhost' },
     { captchaEnabled: false, hostname: 'skillbun.tech' },
-    { captchaEnabled: true, hostname: 'localhost', humanProofToken: 'dev-human-proof-token' },
+    { captchaEnabled: true, hostname: 'skillbun.tech', captchaToken: 'cf-turnstile-token' },
+    { captchaEnabled: true, hostname: 'localhost', humanProofToken: 'dev-human-proof-token', captchaToken: 'cf-turnstile-token' },
   ]) {
     const state = { ...scenario, securityConfig: { captchaEnabled: scenario.captchaEnabled } };
     let calls = 0;
     const deps = {
       window: { location: { hostname: scenario.hostname }, localStorage: { getItem: () => null } },
+      getFirebaseServices: () => ({ auth: { currentUser: { uid: 'test-student', getIdToken: async () => 'test-id-token' } } }),
       restoreHumanProof() {},
       hasFreshHumanProof: s => Boolean(s.humanProofToken),
       clearHumanProof: s => { s.humanProofToken = ''; },
@@ -151,7 +152,8 @@ test('quiz obtains a server-issued human proof for localhost, disabled CAPTCHA, 
       fetch: async (url, options) => {
         calls++;
         assert.equal(url, '/api/human/verify');
-        if (scenario.captchaEnabled) assert.equal(JSON.parse(options.body).token, 'bypass-captcha-dev');
+        assert.equal(options.headers.Authorization, 'Bearer test-id-token');
+        if (scenario.captchaEnabled) assert.equal(JSON.parse(options.body).token, scenario.captchaToken);
         return Response.json({ humanToken: 'server-signed-proof', expiresAt: Date.now() + 60000 });
       },
     };
@@ -159,6 +161,21 @@ test('quiz obtains a server-issued human proof for localhost, disabled CAPTCHA, 
     assert.equal(await verify(state), true);
     assert.equal(state.humanProofToken, 'server-signed-proof');
     assert.equal(calls, 1);
+  }
+
+  // With the client bypass removed, a captcha-enabled session with no token and no
+  // widget renderer must fail fast without hitting the verify endpoint.
+  {
+    const state = { securityConfig: { captchaEnabled: true }, captchaToken: '' };
+    let calls = 0;
+    const deps = {
+      window: { location: { hostname: 'localhost' }, localStorage: { getItem: () => null } },
+      restoreHumanProof() {}, hasFreshHumanProof: () => false, clearHumanProof() {}, persistHumanProof() {},
+      fetch: async () => { calls++; return Response.json({}); },
+    };
+    const verify = new Function(...Object.keys(deps), `${source}; return verifyHumanProof;`)(...Object.values(deps));
+    assert.equal(await verify(state), false);
+    assert.equal(calls, 0);
   }
 });
 

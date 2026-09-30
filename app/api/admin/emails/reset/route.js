@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { getFirebaseAdminAuth, getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import { isUserAuthorizedAdmin } from '@/utils/server/workforceEmployees';
+import { checkServerRateLimit } from '@/utils/server/rateLimitStore';
+import { invalidateCacheTag } from '@/utils/server/redisCache';
 
 export const runtime = 'nodejs';
 
@@ -14,6 +16,7 @@ export async function POST(request) {
       return NextResponse.json({ error: 'Authentication required for admin access' }, { status: 401 });
     }
 
+    let adminUid;
     try {
       const adminAuth = getFirebaseAdminAuth();
       if (!adminAuth) {
@@ -24,6 +27,7 @@ export async function POST(request) {
       if (!isAdmin) {
         return NextResponse.json({ error: 'Forbidden: Admin privileges required' }, { status: 403 });
       }
+      adminUid = decodedToken.uid;
     } catch (authErr) {
       return NextResponse.json({ error: 'Invalid or expired authentication token' }, { status: 401 });
     }
@@ -53,6 +57,14 @@ export async function POST(request) {
     ))) {
       return NextResponse.json({ error: 'Choose a bulk reset or provide a valid student UID and/or email' }, { status: 400 });
     }
+
+    const limit = await checkServerRateLimit({
+      namespace: resetAll ? 'adminEmailResetAll' : 'adminEmailReset', subject: adminUid,
+      limits: [{ name: 'minute', windowMs: 60_000, maxRequests: resetAll ? 3 : 30 }],
+    });
+    if (!limit.allowed) return NextResponse.json({ error: 'Too many email reset requests. Please try again shortly.' }, {
+      status: 429, headers: { 'Retry-After': String(Math.max(1, Math.ceil(limit.retryAfterMs / 1000))) },
+    });
 
     const normalizedEmail = hasEmail ? targetEmail.trim().toLowerCase() : '';
     const db = getFirebaseAdminFirestore();
@@ -87,7 +99,8 @@ export async function POST(request) {
         return NextResponse.json({ error: 'Student document not found in Firestore' }, { status: 404 });
       }
 
-      await userDocRef.set({ sentEmailHistory: [] }, { merge: true });
+      await userDocRef.update({ sentEmailHistory: [] });
+      await invalidateCacheTag('admin:analytics');
       return NextResponse.json({
         success: true,
         message: `Sent email counter reset to 0 for ${normalizedEmail || targetUid}.`,
@@ -114,16 +127,13 @@ export async function POST(request) {
       const chunk = docs.slice(i, i + batchSize);
       const batch = db.batch();
       chunk.forEach((docSnap) => {
-        batch.set(docSnap.ref, { sentEmailHistory: [] }, { merge: true });
+        batch.update(docSnap.ref, { sentEmailHistory: [] });
         totalUpdated++;
       });
       await batch.commit();
     }
 
-    try {
-      const { invalidateCacheTag } = await import('@/utils/server/redisCache');
-      await invalidateCacheTag('admin:analytics');
-    } catch {}
+    await invalidateCacheTag('admin:analytics');
 
     return NextResponse.json({
       success: true,

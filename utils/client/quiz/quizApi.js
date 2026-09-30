@@ -72,17 +72,13 @@ export async function verifyHumanProof(state, renderCaptchaCallback) {
   // Old clients cached an unsigned placeholder that the server cannot verify.
   if (state.humanProofToken === 'dev-human-proof-token') clearHumanProof(state);
   if (hasFreshHumanProof(state)) {
-    return true;
+    const uid = getFirebaseServices().auth?.currentUser?.uid;
+    if (uid && state.humanProofSession === `${uid}:${state.humanProofToken}`) return true;
+    if (await refreshHumanProofSession(state)) return true;
   }
 
   if (state.securityConfig.captchaEnabled && !state.captchaToken) {
-    const isLocalhost = typeof window !== 'undefined' &&
-      (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
-    const bypassKey = typeof window !== 'undefined' ? window.localStorage.getItem('sb_bypass_captcha') : null;
-
-    if (isLocalhost || bypassKey === 'bypass-captcha-dev') {
-      state.captchaToken = 'bypass-captcha-dev';
-    } else if (renderCaptchaCallback) {
+    if (renderCaptchaCallback) {
       await renderCaptchaCallback();
     }
     if (!state.captchaToken) return false;
@@ -90,10 +86,18 @@ export async function verifyHumanProof(state, renderCaptchaCallback) {
 
   const body = state.securityConfig.captchaEnabled ? { token: state.captchaToken } : {};
   const headers = { 'Content-Type': 'application/json' };
-  const bypassKey = typeof window !== 'undefined' ? window.localStorage.getItem('sb_bypass_captcha') : null;
-  if (state.captchaToken === 'bypass-captcha-dev' || bypassKey === 'bypass-captcha-dev') {
-    headers['x-skillbun-bypass'] = 'bypass-captcha-dev';
+  const proofUser = getFirebaseServices().auth?.currentUser;
+  if (!proofUser) {
+    clearHumanProof(state);
+    return false;
   }
+  try {
+    headers.Authorization = `Bearer ${await proofUser.getIdToken()}`;
+  } catch {
+    if (getFirebaseServices().auth?.currentUser?.uid === proofUser.uid) clearHumanProof(state);
+    return false;
+  }
+  if (getFirebaseServices().auth?.currentUser?.uid !== proofUser.uid) return false;
 
   try {
     const response = await fetch('/api/human/verify', {
@@ -101,6 +105,7 @@ export async function verifyHumanProof(state, renderCaptchaCallback) {
       headers,
       body: JSON.stringify(body)
     });
+    if (getFirebaseServices().auth?.currentUser?.uid !== proofUser.uid) return false;
 
     if (!response.ok) {
       clearHumanProof(state);
@@ -108,6 +113,7 @@ export async function verifyHumanProof(state, renderCaptchaCallback) {
     }
 
     const data = await response.json();
+    if (getFirebaseServices().auth?.currentUser?.uid !== proofUser.uid) return false;
     const token = typeof data?.humanToken === 'string' ? data.humanToken : '';
     const parsedExpiresAt = Number.parseInt(data?.expiresAt, 10);
 
@@ -117,6 +123,7 @@ export async function verifyHumanProof(state, renderCaptchaCallback) {
     }
 
     persistHumanProof(state, token, parsedExpiresAt);
+    state.humanProofSession = `${proofUser.uid}:${token}`;
 
     if (state.securityConfig.captchaEnabled && window.turnstile && state.captchaWidgetId !== null) {
       window.turnstile.reset(state.captchaWidgetId);
@@ -131,16 +138,25 @@ export async function verifyHumanProof(state, renderCaptchaCallback) {
 
 export async function refreshHumanProofSession(state) {
   if (!restoreHumanProof(state)) return false;
+  const proofUser = getFirebaseServices().auth?.currentUser;
+  if (!proofUser) {
+    clearHumanProof(state);
+    return false;
+  }
 
   try {
+    const idToken = await proofUser.getIdToken();
+    if (getFirebaseServices().auth?.currentUser?.uid !== proofUser.uid) return false;
     const response = await fetch('/api/human/verify', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: `Bearer ${idToken}`,
         [HUMAN_PROOF_HEADER]: state.humanProofToken
       },
       body: JSON.stringify({})
     });
+    if (getFirebaseServices().auth?.currentUser?.uid !== proofUser.uid) return false;
 
     if (!response.ok) {
       clearHumanProof(state);
@@ -148,6 +164,7 @@ export async function refreshHumanProofSession(state) {
     }
 
     const data = await response.json();
+    if (getFirebaseServices().auth?.currentUser?.uid !== proofUser.uid) return false;
     const token = typeof data?.humanToken === 'string' ? data.humanToken : '';
     const expiresAt = Number.parseInt(data?.expiresAt, 10);
 
@@ -157,9 +174,11 @@ export async function refreshHumanProofSession(state) {
     }
 
     persistHumanProof(state, token, expiresAt);
+    state.humanProofSession = `${proofUser.uid}:${token}`;
     return true;
   } catch (err) {
-    return hasFreshHumanProof(state);
+    if (getFirebaseServices().auth?.currentUser?.uid === proofUser.uid) clearHumanProof(state);
+    return false;
   }
 }
 
@@ -250,6 +269,7 @@ export async function fetchGeminiPayload(state, payload) {
 }
 
 export async function fetchQuizQuestions(state) {
+  const requestUid = getFirebaseServices().auth?.currentUser?.uid;
   const idToken = await getFirebaseIdToken();
   const headers = {
     Authorization: `Bearer ${idToken}`
@@ -263,7 +283,10 @@ export async function fetchQuizQuestions(state) {
 
   if (!res.ok) {
     const errData = await res.json().catch(() => ({}));
-    throw new Error(errData.error || 'Failed to fetch quiz questions');
+    if (res.status === 403 && getFirebaseServices().auth?.currentUser?.uid === requestUid) clearHumanProof(state);
+    const error = new Error(errData.error || 'Failed to fetch quiz questions');
+    error.status = res.status;
+    throw error;
   }
 
   return await res.json();

@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
-import { getFirebaseServices } from '@/utils/client/firebaseClient';
-import { doc, getDoc } from 'firebase/firestore';
+import { CertificateLookupError, fetchPublicCertificate } from '@/utils/client/publicCertificate.mjs';
 import Link from 'next/link';
 import { cinzel, pixelify } from '@/app/fonts';
 import { triggerDocumentPrint } from '@/utils/client/printAndDownload';
@@ -49,11 +48,13 @@ function PrintIcon() {
 export default function CertificatePage() {
   const params = useParams();
   const id = params.id;
+  return <CertificateContent key={Array.isArray(id) ? id.join('/') : id} id={id} />;
+}
 
+function CertificateContent({ id }) {
   const [cert, setCert] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const [versionError, setVersionError] = useState(null);
   const [toast, setToast] = useState('');
   const [showShareModal, setShowShareModal] = useState(false);
   const [customPostText, setCustomPostText] = useState('');
@@ -71,68 +72,36 @@ export default function CertificatePage() {
   useEffect(() => {
     if (!id) return;
 
-    const fetchCertificate = async () => {
-      const services = getFirebaseServices();
-      if (!services.configured) {
-        setError('Database connection is not configured.');
-        setLoading(false);
-        return;
-      }
+    const controller = new AbortController();
 
+    const fetchCertificate = async () => {
       try {
         const rawId = Array.isArray(id) ? id.join('/') : String(id || '');
-        const decodedId = decodeURIComponent(rawId).trim();
-        const normalizedId = decodedId.replace(/\//g, '-');
-
-        let snapshot = await getDoc(doc(services.db, 'certificates', normalizedId));
-        if (!snapshot.exists() && normalizedId !== decodedId) {
-          try {
-            snapshot = await getDoc(doc(services.db, 'certificates', decodedId));
-          } catch {}
-        }
-
-        if (snapshot && snapshot.exists()) {
-          const data = snapshot.data();
-          let date = new Date();
-          if (data.createdAt?.toDate) {
-            date = data.createdAt.toDate();
-          } else if (data.createdAt) {
-            date = new Date(data.createdAt);
-          }
-          const loadedCert = {
-            id: snapshot.id,
-            display_id: data.display_id || (snapshot.id.startsWith('SKB-') && snapshot.id.includes('-HR-') ? snapshot.id.replace(/-/g, '/') : snapshot.id),
-            ...data,
-            createdAtDate: date,
-          };
-          setCert(loadedCert);
-
-          const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'https://skillbun.tech';
-          const certUrl = `${baseUrl}/certificate/${snapshot.id}`;
-          const certType = (data.cert_type || 'ROADMAP').toUpperCase();
-          const title = data.stream_or_track || data.roadmapTitle || 'Professional Track';
-
-          if (certType === 'INTERNSHIP') {
-            setCustomPostText(`I'm excited to share that I have earned the Verified Certificate of Internship in ${title} at @SkillBun! 🚀\n\nVerify my credential here: ${certUrl}`);
-          } else if (certType === 'TRAINING') {
-            setCustomPostText(`I'm excited to share that I have completed the Professional Training in ${title} on @SkillBun! 🚀\n\nVerify my credential here: ${certUrl}`);
-          } else if (certType === 'LOR') {
-            setCustomPostText(`I am honoured to share my Official Letter of Recommendation from @SkillBun! 🌟\n\nVerify here: ${certUrl}`);
-          } else {
-            setCustomPostText(`I'm excited to share that I have completed the ${data.roadmapTitle || 'Roadmap'} Certification on @SkillBun! 🚀\n\nVerify my credential here: ${certUrl}`);
-          }
+        const loadedCert = await fetchPublicCertificate(rawId, { signal: controller.signal });
+        if (controller.signal.aborted) return;
+        setCert(loadedCert);
+        const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'https://skillbun.tech';
+        const certUrl = `${baseUrl}/certificate/${encodeURIComponent(loadedCert.id)}`;
+        const certType = (loadedCert.cert_type || 'ROADMAP').toUpperCase();
+        const title = loadedCert.stream_or_track || loadedCert.roadmapTitle || 'Professional Track';
+        if (certType === 'INTERNSHIP') {
+          setCustomPostText(`I'm excited to share that I have earned the Verified Certificate of Internship in ${title} at @SkillBun! 🚀\n\nVerify my credential here: ${certUrl}`);
+        } else if (certType === 'TRAINING') {
+          setCustomPostText(`I'm excited to share that I have completed the Professional Training in ${title} on @SkillBun! 🚀\n\nVerify my credential here: ${certUrl}`);
+        } else if (certType === 'LOR') {
+          setCustomPostText(`I am honoured to share my Official Letter of Recommendation from @SkillBun! 🌟\n\nVerify here: ${certUrl}`);
         } else {
-          setError('Certificate not found. Verify the ID is correct.');
+          setCustomPostText(`I'm excited to share that I have completed the ${loadedCert.roadmapTitle || 'Roadmap'} Certification on @SkillBun! 🚀\n\nVerify my credential here: ${certUrl}`);
         }
       } catch (err) {
-        console.error('Failed to load certificate:', err);
-        setError('Error loading certificate details.');
+        if (!controller.signal.aborted) setError(err instanceof CertificateLookupError ? err.message : 'Certificate verification is temporarily unavailable. Please try again.');
       } finally {
-        setLoading(false);
+        if (!controller.signal.aborted) setLoading(false);
       }
     };
 
     fetchCertificate();
+    return () => controller.abort();
   }, [id]);
 
   const handlePrint = () => {

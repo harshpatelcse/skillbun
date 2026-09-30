@@ -75,7 +75,7 @@ export default function TermsPage() {
       </p>
       <ul>
         <li>SkillBun certificates are <strong>not degrees, diplomas, or government-recognised qualifications</strong>, and are not affiliated with, accredited by, or endorsed by any university, UGC, AICTE, or government body.</li>
-        <li>Certificates are designed to be tamper-evident and immutable. A certificate may be <strong>revoked</strong> (marked invalid on the public verification page) if it was obtained in breach of these Terms, but the underlying credential record is designed to remain verifiable over time.</li>
+        <li>Issued credential details are intended to remain unchanged. A certificate may be <strong>revoked</strong> (marked invalid on the public verification page) if it was obtained in breach of these Terms. Deleting your student account also deletes its earned roadmap certificates, so those verification links will stop working. Workforce credentials and legal records are handled separately under our <a href="/privacy">Privacy Policy</a>.</li>
         <li>Anyone with a certificate link or ID can view the public verification page, which displays the holder's name, credential details, and issue date.</li>
       </ul>
 

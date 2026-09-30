@@ -100,6 +100,10 @@ export default function QuizPage() {
               <div className="profile-tag">Year: {year}</div>
             </div>
             
+            <div id="quizLoadError" className="quiz-load-error" role="alert" aria-live="polite" style={{ display: 'none' }}>
+                <p id="quizLoadErrorMessage" className="quiz-load-error-message"></p>
+                <button type="button" id="quizRetryBtn" className="btn-primary quiz-retry-btn">Retry</button>
+            </div>
             <div id="captchaWrap" className="quiz-captcha-wrap" style={{ display: 'none' }}>
                 <div id="captchaWidget" className="quiz-captcha-widget"></div>
                 <p id="captchaStatus" className="quiz-captcha-status"></p>
@@ -108,6 +112,7 @@ export default function QuizPage() {
               type="button"
               className="btn-primary quiz-start-btn"
               id="startQuizBtn"
+              disabled
               onClick={(e) => {
                 trackEvent('quiz_started', { degree, year });
                 const btn = e.currentTarget;

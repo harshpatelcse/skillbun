@@ -1,3 +1,5 @@
+import { assertAccountActive } from './accountLifecycle.mjs';
+
 // Firestore transactions serialize competing submissions/mints of the same attempt.
 export class ExamError extends Error {
   constructor(message, status = 400) { super(message); this.status = status; }
@@ -13,6 +15,7 @@ export async function submitExamAttempt(db, { uid, attemptId, answers, grade, no
   validateSubmission(attemptId, answers);
   const ref = db.collection('examAttempts').doc(attemptId);
   return db.runTransaction(async (transaction) => {
+    await assertAccountActive(db, uid, transaction);
     const snapshot = await transaction.get(ref);
     if (!snapshot.exists) throw new ExamError('Exam attempt not found.', 404);
     const attempt = snapshot.data();
@@ -37,6 +40,7 @@ export async function mintExamCertificate(db, { uid, email, attemptId, roadmapSl
   const attemptRef = db.collection('examAttempts').doc(attemptId);
   const certRef = db.collection('certificates').doc(certId);
   return db.runTransaction(async (transaction) => {
+    await assertAccountActive(db, uid, transaction);
     const snapshot = await transaction.get(attemptRef);
     if (!snapshot.exists) throw new ExamError('Exam attempt record not found.', 404);
     const attempt = snapshot.data();

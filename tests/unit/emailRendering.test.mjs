@@ -3,10 +3,18 @@ import { test } from 'node:test';
 import fs from 'node:fs/promises';
 import { emailSamples } from '../fixtures/emailSamples.mjs';
 import { generateRetentionEmailHtml } from '../../utils/server/retentionEmails.js';
-import { buildEmail, TOKENS, WORDMARK } from '../../utils/server/emailTheme.js';
+import { buildEmail, escapeHtml as escapeEmailHtml, TOKENS, WORDMARK } from '../../utils/server/emailTheme.js';
 import { decodeEmailEntities, emailHtmlToText, isEmailDocument, prepareEmailPreview } from '../../utils/shared/emailContent.js';
 import { emailRoadmapContext, normalizeEmailRoadmapSlug } from '../../utils/shared/emailRoadmap.js';
 import { loadEmailRoadmapContext } from '../../utils/server/emailRoadmapContext.js';
+
+test('the mailer escapeHtml export escapes untrusted text like the shared email theme', async () => {
+  const source = await fs.readFile(new URL('../../utils/server/zohoMailer.js', import.meta.url), 'utf8');
+  const helper = source.match(/export function escapeHtml\(value\)\s*\{[\s\S]*?\r?\n\}/)?.[0];
+  assert.ok(helper);
+  const escapeHtml = new Function('escapeEmailHtml', `${helper.replace('export ', '')}; return escapeHtml;`)(escapeEmailHtml);
+  assert.equal(escapeHtml('<img src=x> & "name"'), '&lt;img src=x&gt; &amp; &quot;name&quot;');
+});
 
 test('all 24 templates retain branding, theme rules, usable links and complete text', async () => {
   const samples = await emailSamples();

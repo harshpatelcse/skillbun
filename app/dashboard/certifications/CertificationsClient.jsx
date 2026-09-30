@@ -240,7 +240,7 @@ export default function CertificationsClient({ roadmapsInfo }) {
                   <CertificateIcon />
                   <h2>Unlock Your First Certificate!</h2>
                   <p className={styles.emptySub}>
-                    Earn verified certificates to prove your expertise. Complete 100% of any roadmap, take the quiz, and score 70% or higher to get certified.
+                    Earn verified certificates to prove your expertise. Complete 60% of any roadmap, take the quiz, and score 70% or higher to get certified.
                   </p>
                   <Link href="/roadmap" className={styles.primaryButton}>
                     Explore Roadmaps

@@ -101,6 +101,7 @@ function readRoadmapsMap() {
         roadmaps[slug] = {
           title,
           totalNodes: nodes.length,
+          nodes: nodes.map(({ id, exp }) => ({ id, exp: exp || 100 })),
         };
       } catch (err) {
         console.error(`Failed to read/parse roadmap: ${fileName}`, err);

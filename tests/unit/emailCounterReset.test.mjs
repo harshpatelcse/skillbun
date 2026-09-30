@@ -8,15 +8,19 @@ const routeSource = (await readFile(new URL('../../app/api/admin/emails/reset/ro
   .replace(/^import .*;\r?\n/gm, '')
   .replace(/^export /gm, '');
 
-function setup({ records = [], admin = true, invalidToken = false, authConfigured = true } = {}) {
+function setup({ records = [], admin = true, invalidToken = false, authConfigured = true, limited = false, deletedBeforeWrite = false } = {}) {
   const writes = [];
   const batches = [];
+  const invalidations = [];
   let databaseCalls = 0;
   let collectionReads = 0;
   const refs = new Map(records.map(record => [record.uid, {
     id: record.uid,
     get: async () => ({ exists: true, data: () => record }),
-    set: async (data, options) => writes.push({ uid: record.uid, ...JSON.parse(JSON.stringify({ data, options })) }),
+    update: async data => {
+      if (deletedBeforeWrite) throw new Error('Document no longer exists');
+      writes.push({ uid: record.uid, data: JSON.parse(JSON.stringify(data)) });
+    },
   }]));
   const snapshots = records.map(record => ({ ref: refs.get(record.uid) }));
   const db = {
@@ -41,8 +45,8 @@ function setup({ records = [], admin = true, invalidToken = false, authConfigure
     batch: () => {
       const pending = [];
       return {
-        set: (ref, data, options) => pending.push({ uid: ref.id, ...JSON.parse(JSON.stringify({ data, options })) }),
-        commit: async () => { batches.push(pending.length); writes.push(...pending); },
+        update: (ref, data) => pending.push({ uid: ref.id, data: JSON.parse(JSON.stringify(data)) }),
+        commit: async () => { if (deletedBeforeWrite) throw new Error('Document no longer exists'); batches.push(pending.length); writes.push(...pending); },
       };
     },
   };
@@ -53,11 +57,16 @@ function setup({ records = [], admin = true, invalidToken = false, authConfigure
       return { uid: 'admin-user' };
     } } : null,
     isUserAuthorizedAdmin: async () => admin,
+    checkServerRateLimit: async ({ subject }) => {
+      assert.equal(subject, 'admin-user');
+      return { allowed: !limited, retryAfterMs: 12000 };
+    },
+    invalidateCacheTag: async tag => { invalidations.push(tag); },
     getFirebaseAdminFirestore: () => { databaseCalls++; return db; },
     console,
   });
   return {
-    writes, batches,
+    writes, batches, invalidations,
     get databaseCalls() { return databaseCalls; },
     get collectionReads() { return collectionReads; },
     post: (body, { authorization = 'Bearer admin-token', malformed = false } = {}) => handler({
@@ -114,9 +123,10 @@ test('valid UID, email, and matching combined targets reset only the selected st
     const response = await app.post({ resetAll: false, ...target });
     assert.equal(response.status, 200);
     assert.equal(response.body.resetCount, 1);
-    assert.deepEqual(app.writes, [{ uid: 'chosen', data: { sentEmailHistory: [] }, options: { merge: true } }]);
+    assert.deepEqual(app.writes, [{ uid: 'chosen', data: { sentEmailHistory: [] } }]);
     assert.equal(app.collectionReads, 0);
     assert.deepEqual(app.batches, []);
+    assert.deepEqual(app.invalidations, ['admin:analytics']);
   }
 });
 
@@ -148,9 +158,18 @@ test('explicit bulk reset merges only counters in bounded committed batches', as
   assert.deepEqual(app.batches, [400, 400, 5]);
   assert.equal(app.collectionReads, 1);
   assert.deepEqual(app.writes.map(write => write.uid), records.map(record => record.uid));
-  for (const { data, options } of app.writes) {
+  for (const { data } of app.writes) {
     assert.deepEqual(data, { sentEmailHistory: [] });
-    assert.deepEqual(options, { merge: true });
+  }
+});
+
+test('a counter reset cannot recreate a student erased after the initial read', async () => {
+  for (const body of [{ resetAll: true }, { resetAll: false, targetUid: 'chosen' }]) {
+    const app = setup({ records: [{ uid: 'chosen', email: 'chosen@example.com' }], deletedBeforeWrite: true });
+    const response = await app.post(body);
+    assert.equal(response.status, 500);
+    assert.equal(response.body.success, undefined);
+    assert.deepEqual(app.writes, []);
   }
 });
 
@@ -161,4 +180,14 @@ test('an empty bulk reset returns zero without committing a write', async () => 
   assert.equal(response.body.resetCount, 0);
   assert.deepEqual(app.writes, []);
   assert.deepEqual(app.batches, []);
+});
+
+test('rate-limited single and bulk resets never access student data', async () => {
+  for (const body of [{ resetAll: true }, { resetAll: false, targetUid: 'chosen' }]) {
+    const app = setup({ limited: true });
+    assert.equal((await app.post(body)).status, 429);
+    assert.equal(app.databaseCalls, 0);
+    assert.deepEqual(app.writes, []);
+    assert.deepEqual(app.invalidations, []);
+  }
 });

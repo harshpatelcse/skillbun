@@ -3,6 +3,7 @@ import { getFirebaseAdminAuth, getFirebaseAdminFirestore } from '@/utils/server/
 import { isUserAuthorizedAdmin } from '@/utils/server/workforceEmployees';
 import { checkServerRateLimit } from '@/utils/server/rateLimitStore';
 import { getClientAddress } from '@/utils/server/requestUtils';
+import { CertificateMutationError, changeCertificateRevocation, normalizeAdminCertificateId } from '@/utils/server/certificateIntegrity.mjs';
 
 export const runtime = 'nodejs';
 
@@ -51,7 +52,8 @@ export async function GET(request, { params }) {
     if (!id) return NextResponse.json({ error: 'Certificate ID is required.' }, { status: 400 });
 
     const db = getFirebaseAdminFirestore();
-    const certRef = db.collection('certificates').doc(id.trim());
+    if (!db) return NextResponse.json({ error: 'Database connection unavailable.' }, { status: 503 });
+    const certRef = db.collection('certificates').doc(normalizeAdminCertificateId(id));
     const certDoc = await certRef.get();
 
     if (!certDoc.exists) {
@@ -63,6 +65,7 @@ export async function GET(request, { params }) {
       certificate: { id: certDoc.id, ...certDoc.data() },
     });
   } catch (err) {
+    if (err instanceof CertificateMutationError) return NextResponse.json({ error: err.message, code: err.code }, { status: err.status });
     console.error('[Admin Certificate GET Error]:', err);
     return NextResponse.json({ error: 'Internal server error.' }, { status: 500 });
   }
@@ -90,32 +93,8 @@ export async function PATCH(request, { params }) {
     }
 
     const db = getFirebaseAdminFirestore();
-    const certRef = db.collection('certificates').doc(id.trim());
-    const certDoc = await certRef.get();
-
-    if (!certDoc.exists) {
-      return NextResponse.json({ error: 'Certificate not found.' }, { status: 404 });
-    }
-
-    const updates = {
-      updatedAt: new Date(),
-    };
-
-    if (typeof body.is_revoked === 'boolean') {
-      updates.is_revoked = body.is_revoked;
-      updates.revoked_at = body.is_revoked ? new Date() : null;
-      updates.revoked_by = body.is_revoked ? auth.email : null;
-    }
-
-    if (body.name) updates.name = String(body.name).trim();
-    if (body.email) updates.email = String(body.email).trim().toLowerCase();
-    if (body.stream_or_track || body.roadmapTitle) {
-      updates.stream_or_track = String(body.stream_or_track || body.roadmapTitle).trim();
-      updates.roadmapTitle = updates.stream_or_track;
-    }
-    if (body.score !== undefined) updates.score = Number(body.score);
-
-    await certRef.update(updates);
+    if (!db) return NextResponse.json({ error: 'Database connection unavailable.' }, { status: 503 });
+    const updates = await changeCertificateRevocation(db, { id, body, adminEmail: auth.email });
 
     try {
       const { invalidateCacheTag } = await import('@/utils/server/redisCache');
@@ -134,8 +113,11 @@ export async function PATCH(request, { params }) {
         : '✅ Certificate updated successfully.',
     });
   } catch (err) {
-    console.error('[Admin Certificate PATCH Error]:', err);
-    return NextResponse.json({ error: `Update failed: ${err.message}` }, { status: 500 });
+    if (err instanceof CertificateMutationError || err?.code === 'auth/account-deleting') {
+      return NextResponse.json({ error: err.message, code: err.code }, { status: err.status || 409 });
+    }
+    console.error('[Admin Certificate PATCH Error]:', err?.code || 'INTERNAL_ERROR');
+    return NextResponse.json({ error: 'Certificate update failed. Please try again.' }, { status: 500 });
   }
 }
 
@@ -154,7 +136,8 @@ export async function DELETE(request, { params }) {
     if (!id) return NextResponse.json({ error: 'Certificate ID is required.' }, { status: 400 });
 
     const db = getFirebaseAdminFirestore();
-    const certRef = db.collection('certificates').doc(id.trim());
+    if (!db) return NextResponse.json({ error: 'Database connection unavailable.' }, { status: 503 });
+    const certRef = db.collection('certificates').doc(normalizeAdminCertificateId(id));
     const certDoc = await certRef.get();
 
     if (!certDoc.exists) {
@@ -177,7 +160,8 @@ export async function DELETE(request, { params }) {
       message: `🗑️ Certificate (${id}) permanently deleted.`,
     });
   } catch (err) {
-    console.error('[Admin Certificate DELETE Error]:', err);
-    return NextResponse.json({ error: `Deletion failed: ${err.message}` }, { status: 500 });
+    if (err instanceof CertificateMutationError) return NextResponse.json({ error: err.message, code: err.code }, { status: err.status });
+    console.error('[Admin Certificate DELETE Error]:', err?.code || 'INTERNAL_ERROR');
+    return NextResponse.json({ error: 'Certificate deletion failed. Please try again.' }, { status: 500 });
   }
 }

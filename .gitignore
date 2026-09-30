@@ -12,6 +12,8 @@ out/
 .playwright-cli/
 .codex-tmp/
 output/
+scratch/
+.zwork/
 public/data/docs/
 *-firebase-adminsdk-*.json
 *.pem

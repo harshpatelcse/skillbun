@@ -66,18 +66,6 @@ export async function apiFetch(url, options = {}) {
     resolvedHeaders.Authorization = `Bearer ${token}`
   }
 
-  // Auto-attach dev bypass header if set locally
-  if (typeof window !== 'undefined') {
-    try {
-      const bypass = window.localStorage.getItem('sb_bypass_captcha')
-      if (bypass) {
-        resolvedHeaders['x-skillbun-bypass'] = bypass
-      }
-    } catch {
-      // Ignore localStorage access restrictions
-    }
-  }
-
   let attempt = 0
   const maxAttempts = Math.max(1, retries + 1)
 

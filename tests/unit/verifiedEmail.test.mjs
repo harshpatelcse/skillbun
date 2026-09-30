@@ -2,16 +2,18 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { assertVerifiedSignup } from '../../firebase-functions/signupPolicy.mjs';
+import { assertAccountActive } from '../../utils/server/accountLifecycle.mjs';
 
 // Execute the actual Admin wrapper with explicit SDK doubles. These tests never
 // initialize Firebase, create an account, send an email, or contact production.
-async function loadAdminWrapper(sdk, { configured = true } = {}) {
+async function loadAdminWrapper(sdk, { configured = true, deleting = false, marker = {} } = {}) {
   const app = { name: 'skillbun-admin' };
   const deps = {
     cert: () => { throw new Error('Unexpected credential initialization'); },
     getApps: () => configured ? [app] : [],
     initializeApp: () => { throw new Error('Unexpected Firebase initialization'); },
-    getFirestore: () => { throw new Error('Unexpected database access'); },
+    getFirestore: () => ({ collection: () => ({ doc: () => ({ get: async () => ({ exists: deleting, data: () => marker }) }) }) }),
+    assertAccountActive,
     getFirebaseAdminClientEmail: () => '',
     getFirebaseAdminPrivateKey: () => '',
     getFirebaseAdminProjectId: () => '',
@@ -48,6 +50,44 @@ test('revoked sessions still fail before application verification', async () => 
   await assert.rejects(auth.verifyIdToken('revoked-token'), { code: 'auth/id-token-revoked' });
 });
 
+test('a deletion marker blocks ordinary API access but allows the authenticated erasure endpoint', async () => {
+  const verified = { uid: 'student', email_verified: true };
+  const auth = await loadAdminWrapper({ verifyIdToken: async () => verified }, { deleting: true });
+  await assert.rejects(auth.verifyIdToken('token'), { code: 'auth/account-deleting' });
+  assert.equal(await auth.verifyIdToken('token', { allowDeleting: true }), verified);
+});
+
+test('only a missing Auth identity in the final deletion phase can recover a lost completion response', async () => {
+  for (const marker of [{ phase: 'auth', status: 'pending' }, { status: 'complete' }]) {
+    const calls = [];
+    const absent = Object.assign(new Error('missing'), { code: 'auth/user-not-found' });
+    const verified = { uid: 'student', email_verified: true };
+    const auth = await loadAdminWrapper({
+      verifyIdToken: async (token, checkRevoked) => { calls.push(checkRevoked); if (checkRevoked) throw absent; return verified; },
+      getUser: async () => { throw absent; },
+    }, { deleting: true, marker });
+    assert.equal(await auth.verifyIdToken('token', { allowDeleting: true }), verified);
+    assert.deepEqual(calls, [true, false]);
+    await assert.rejects(auth.verifyIdToken('token'), { code: 'auth/user-not-found' });
+  }
+});
+
+test('resume authentication never admits a revoked, recreated, or unrelated missing account', async () => {
+  for (const state of [
+    { code: 'auth/id-token-revoked', deleting: true, marker: { phase: 'auth' } },
+    { code: 'auth/user-not-found', deleting: false, marker: {} },
+    { code: 'auth/user-not-found', deleting: true, marker: { phase: 'exams' } },
+    { code: 'auth/user-not-found', deleting: true, marker: { phase: 'auth' }, exists: true },
+  ]) {
+    const failure = Object.assign(new Error('denied'), { code: state.code });
+    const auth = await loadAdminWrapper({
+      verifyIdToken: async (token, checkRevoked) => { if (checkRevoked) throw failure; return { uid: 'student', email_verified: true }; },
+      getUser: async () => { if (!state.exists) throw failure; return { uid: 'student' }; },
+    }, state);
+    await assert.rejects(auth.verifyIdToken('token', { allowDeleting: true }), { code: state.code });
+  }
+});
+
 test('Admin account creation and updates pass validated engine input to Firebase', async () => {
   const calls = [];
   const auth = await loadAdminWrapper({
@@ -80,11 +120,14 @@ test('registration hook preserves verified Google and server OTP-created account
   assert.doesNotThrow(() => assertVerifiedSignup({ email: 'student@example.test', emailVerified: true, providerData: [{ providerId: 'password' }] }));
 });
 
-test('Firestore source guards require token verification, preserve public certificates and server-only exams', async () => {
+test('Firestore source guards require verified identities, private raw certificates and server-only exams', async () => {
   const rules = await readFile(new URL('../../firestore.rules', import.meta.url), 'utf8');
   assert.match(rules, /function signedInAs\(uid\)\s*\{\s*return signedIn\(\) && request\.auth\.uid == uid;/);
-  assert.match(rules, /function signedIn\(\)\s*\{\s*return request\.auth != null && request\.auth\.token\.get\('email_verified', false\) == true;/);
-  assert.match(rules, /match \/certificates\/\{certId\}\s*\{\s*allow get: if true;/);
+  assert.match(rules, /function signedIn\(\)\s*\{\s*return request\.auth != null && request\.auth\.token\.get\('email_verified', false\) == true &&/);
+  assert.match(rules, /!exists\(\/databases\/\$\(database\)\/documents\/accountDeletions\/\$\(request\.auth\.uid\)\)/);
+  assert.match(rules, /allow get: if isAdmin\(\) \|\| signedInAs\(resource\.data\.uid\);/);
+  assert.doesNotMatch(rules, /allow get: if true;/);
+  assert.equal((rules.match(/allow create, update: if !exists\(\/databases\/\$\(database\)\/documents\/accountDeletions\/\$\(uid\)\)/g) || []).length, 2);
   assert.match(rules, /match \/examAttempts\/\{attemptId\}\s*\{\s*allow read: if false;/);
   assert.match(rules, /match \/emailSignupChallenges\/\{challengeId\}\s*\{\s*allow read, write: if false;/);
 });

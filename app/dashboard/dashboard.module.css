@@ -146,6 +146,13 @@
   border-radius: 22px;
 }
 
+.emptyNote {
+  margin: 0.75rem 0 0.25rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--muted, #8a94a6);
+}
+
 .sidebarKicker {
   margin: 1.1rem 0 0;
   color: var(--green);

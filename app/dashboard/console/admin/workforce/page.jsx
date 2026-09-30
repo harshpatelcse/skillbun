@@ -494,8 +494,8 @@ export default function WorkforcePage() {
       if (isAdmin) loadEmployees()
     }, 0)
 
-    const unsubscribe = subscribeDataSync((tag) => {
-      if (tag === 'admin:workforce' || tag === 'admin:crm') {
+    const unsubscribe = subscribeDataSync(({ tag }) => {
+      if (isAdmin && (tag === 'admin:workforce' || tag === 'admin:crm')) {
         loadEmployees()
       }
     })

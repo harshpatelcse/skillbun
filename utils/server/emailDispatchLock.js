@@ -1,4 +1,5 @@
 import { randomUUID } from 'node:crypto';
+import { assertAccountActive } from './accountLifecycle.mjs';
 import { EMAIL_GAP_MS, emailCategory, emailTime } from '../shared/emailRecommendation.js';
 
 export const EMAIL_DISPATCH_LOCK_MS = 5 * 60 * 1000;
@@ -40,6 +41,7 @@ export async function claimRecommendedEmailDispatch({
   const owner = randomUUID();
 
   return db.runTransaction(async tx => {
+    await assertAccountActive(db, uid, tx);
     const lockSnapshot = await tx.get(lockRef);
     if (lockSnapshot.exists) {
       const currentLock = lockSnapshot.data() || {};
@@ -101,6 +103,7 @@ export async function finalizeRecommendedEmailDispatch({ db, uid, owner, message
   const userRef = db.collection('users').doc(uid);
 
   return db.runTransaction(async tx => {
+    await assertAccountActive(db, uid, tx);
     const lockSnapshot = await tx.get(lockRef);
     if (!lockSnapshot.exists || lockSnapshot.data()?.owner !== owner) throw new Error('The email dispatch lock could not be confirmed.');
     const lock = lockSnapshot.data() || {};
@@ -137,6 +140,7 @@ export async function resolveEmailDispatch({ db, uid, resolution, adminEmail = '
   const userRef = db.collection('users').doc(uid);
 
   return db.runTransaction(async tx => {
+    await assertAccountActive(db, uid, tx);
     const lockSnapshot = await tx.get(lockRef);
     if (!lockSnapshot.exists) return { kind: 'missing' };
     const lock = lockSnapshot.data() || {};

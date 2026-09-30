@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { assertAccountActive } from '@/utils/server/accountLifecycle.mjs';
 import { getFirebaseAdminAuth, getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import { validateSchema } from '@/utils/server/inputValidator';
 import { checkServerRateLimit } from '@/utils/server/rateLimitStore';
@@ -146,6 +147,7 @@ export async function POST(request) {
 
     // Reserve quota and create the attempt together; parallel starts cannot bypass limits.
     const eligibility = await db.runTransaction(async (transaction) => {
+      await assertAccountActive(db, uid, transaction);
       const checked = await verifyExamEligibility({ uid, slug: roadmapSlug, roadmapData, transaction });
       if (!checked.eligible) return checked;
       const historyRef = db.collection('users').doc(uid).collection('quizAttempts').doc(roadmapSlug);

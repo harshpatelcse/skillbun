@@ -38,6 +38,16 @@ const grade = (questions, answers) => {
 const submit = (db, args = {}) => submitExamAttempt(db, { uid: 'student', attemptId, answers: Array(10).fill(2), now: 50000, grade, ...args });
 const mint = (db, args = {}) => mintExamCertificate(db, { uid: 'student', email: 'student@example.test', attemptId, roadmapSlug: 'web', certId: 'cert-one', ...args });
 
+test('deletion marker transactionally blocks grading and certificate recreation', async () => {
+  const db = database({
+    'accountDeletions/student': { status: 'pending' },
+    [attemptPath]: { ...fixture(), status: 'COMPLETED', passed: true, score: 100 },
+  });
+  await assert.rejects(mint(db), { code: 'auth/account-deleting' });
+  await assert.rejects(submit(db), { code: 'auth/account-deleting' });
+  assert.equal(db.read('certificates/cert-one'), undefined);
+});
+
 test('Production CSP allows nonced scripts without unsafe inline/eval', () => {
   const policy = buildContentSecurityPolicy({ nonce: 'abc123+/==', production: true });
   const scripts = policy.split('; ').find((directive) => directive.startsWith('script-src '));

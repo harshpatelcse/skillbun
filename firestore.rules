@@ -69,7 +69,8 @@ service cloud.firestore {
     }
 
     function signedIn() {
-      return request.auth != null && request.auth.token.get('email_verified', false) == true;
+      return request.auth != null && request.auth.token.get('email_verified', false) == true &&
+        !exists(/databases/$(database)/documents/accountDeletions/$(request.auth.uid));
     }
 
     function isAdmin() {
@@ -93,11 +94,13 @@ service cloud.firestore {
 
     match /users/{uid} {
       allow read, delete: if signedInAs(uid) || isAdmin();
-      allow create, update: if (signedInAs(uid) && validUserProfile(uid)) || isAdmin();
+      allow create, update: if !exists(/databases/$(database)/documents/accountDeletions/$(uid)) &&
+        ((signedInAs(uid) && validUserProfile(uid)) || isAdmin());
 
       match /roadmapProgress/{slug} {
         allow read, delete: if signedInAs(uid) || isAdmin();
-        allow create, update: if (signedInAs(uid) && validProgress(slug)) || isAdmin();
+        allow create, update: if !exists(/databases/$(database)/documents/accountDeletions/$(uid)) &&
+          ((signedInAs(uid) && validProgress(slug)) || isAdmin());
       }
 
       match /quizAttempts/{slug} {
@@ -107,7 +110,8 @@ service cloud.firestore {
     }
 
     match /certificates/{certId} {
-      allow get: if true;           // Public single-document verification by exact certificate ID
+      // Public verification uses the sanitized server API; raw identity fields stay private.
+      allow get: if isAdmin() || signedInAs(resource.data.uid);
       allow list: if isAdmin() || signedInAs(resource.data.uid); // Owners must query by their own uid.
       allow write: if false; // Certificates must only be minted via authenticated backend API (/api/certify/mint)
     }
@@ -119,6 +123,10 @@ service cloud.firestore {
 
     match /emailSignupChallenges/{challengeId} {
       allow read, write: if false; // OTP state is exclusively managed by the trusted server.
+    }
+
+    match /accountDeletions/{uid} {
+      allow read, write: if false; // Server-only resumable erasure and stale-session guard.
     }
 
     // Workforce Hub: Employees collection (Admin full CRUD; Intern read-only on their own record)

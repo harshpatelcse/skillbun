@@ -14,25 +14,109 @@ const inFlightRequests = new Map()
 
 // Tag registry for deterministic multi-key invalidation: tag -> Set<safeKey>
 const tagRegistry = new Map()
+const cacheSourceKeys = new Map()
+const localTagVersions = new Map()
+const pendingTagInvalidations = new Map()
+const pendingCacheDeletes = new Set()
+let invalidationFlush = null
+
+async function redisCommand(command) {
+  const controller = new AbortController()
+  const timeout = setTimeout(() => controller.abort(), 1500)
+  try {
+    const response = await fetch(getUpstashRedisRestUrl().replace(/\/+$/, ''), {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${getUpstashRedisRestToken()}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify(command),
+      signal: controller.signal,
+    })
+    if (!response.ok) throw new Error(`Redis returned ${response.status}`)
+    const payload = await response.json()
+    if (payload.error) throw new Error(payload.error)
+    return payload.result
+  } finally {
+    clearTimeout(timeout)
+  }
+}
+
+function tagVersionKey(tag) {
+  return `cache:v2:tag:${crypto.createHash('sha256').update(tag).digest('hex')}`
+}
+
+function sourceKeyTag(key) {
+  return `cache-key:${crypto.createHash('sha256').update(String(key)).digest('hex')}`
+}
+
+async function flushPendingInvalidations() {
+  if (!pendingTagInvalidations.size && !pendingCacheDeletes.size) return
+  if (invalidationFlush) return invalidationFlush
+  invalidationFlush = (async () => {
+    while (pendingTagInvalidations.size || pendingCacheDeletes.size) {
+      if (pendingTagInvalidations.size) {
+        const [tag, version] = pendingTagInvalidations.entries().next().value
+        await redisCommand(['INCR', tagVersionKey(tag)])
+        if (pendingTagInvalidations.get(tag) === version) pendingTagInvalidations.delete(tag)
+      } else {
+        const keys = [...pendingCacheDeletes]
+        await redisCommand(['DEL', ...keys])
+        keys.forEach(key => pendingCacheDeletes.delete(key))
+      }
+    }
+  })()
+  try {
+    await invalidationFlush
+  } finally {
+    invalidationFlush = null
+  }
+}
+
+async function resolveCacheKey(key, tags) {
+  let versions = tags.map(tag => localTagVersions.get(tag) || 0)
+  if (tags.length && isRedisConfigured()) {
+    try {
+      await flushPendingInvalidations()
+      versions = await redisCommand(['MGET', ...tags.map(tagVersionKey)])
+      if (!Array.isArray(versions) || versions.length !== tags.length) throw new Error('Invalid cache tag versions')
+    } catch (error) {
+      // A missed shared revision must never revive a stale local payload.
+      // Reads remain available from the authoritative source during an outage.
+      console.warn('[Cache Tag Read Warning]:', error?.message)
+      return null
+    }
+  }
+  // A new namespace also prevents pre-fix Redis values from being reused.
+  return `cache:v2:${crypto.createHash('sha256').update(JSON.stringify([key, tags, versions])).digest('hex')}`
+}
+
+function forgetMemoryEntry(key) {
+  const entry = memoryL1Cache.get(key)
+  for (const tag of entry?.tags || []) {
+    const keys = tagRegistry.get(tag)
+    keys?.delete(key)
+    if (!keys?.size) tagRegistry.delete(tag)
+  }
+  memoryL1Cache.delete(key)
+  cacheSourceKeys.delete(key)
+}
 
 function pruneL1Cache() {
   const now = Date.now()
   // Clean expired entries first
   for (const [key, entry] of memoryL1Cache.entries()) {
     if (entry.swrUntil && entry.swrUntil < now) {
-      memoryL1Cache.delete(key)
+      forgetMemoryEntry(key)
     } else if (!entry.swrUntil && entry.expiresAt < now) {
-      memoryL1Cache.delete(key)
+      forgetMemoryEntry(key)
     }
   }
 
   // If still above capacity, evict oldest entries (FIFO/LRU insertion order)
-  if (memoryL1Cache.size > MAX_L1_ENTRIES) {
-    const toRemove = memoryL1Cache.size - MAX_L1_ENTRIES
+  if (memoryL1Cache.size >= MAX_L1_ENTRIES) {
+    const toRemove = memoryL1Cache.size - MAX_L1_ENTRIES + 1
     const keys = memoryL1Cache.keys()
     for (let i = 0; i < toRemove; i++) {
       const nextKey = keys.next().value
-      if (nextKey) memoryL1Cache.delete(nextKey)
+      if (nextKey) forgetMemoryEntry(nextKey)
     }
   }
 }
@@ -40,7 +124,7 @@ function pruneL1Cache() {
 /**
  * Multi-layer Cache Manager (L1 Instance Memory -> L2 Upstash Redis -> L3 Source Data)
  */
-export async function getCache(key) {
+export async function getCache(key, { allowStale = false } = {}) {
   const safeKey = sanitizeCacheKey(key)
   const now = Date.now()
 
@@ -51,7 +135,7 @@ export async function getCache(key) {
       return l1Hit.value
     }
     // If within SWR grace window, still return stale data
-    if (l1Hit.swrUntil && l1Hit.swrUntil > now) {
+    if (allowStale && l1Hit.swrUntil && l1Hit.swrUntil > now) {
       return l1Hit.value
     }
   }
@@ -63,38 +147,24 @@ export async function getCache(key) {
 
     if (restUrl && restToken) {
       try {
-        const controller = new AbortController()
-        const timeout = setTimeout(() => controller.abort(), 1500)
-
-        const response = await fetch(`${restUrl.replace(/\/+$/, '')}/get/${encodeURIComponent(safeKey)}`, {
-          headers: { Authorization: `Bearer ${restToken}` },
-          signal: controller.signal,
-        })
-        clearTimeout(timeout)
-
-        if (response.ok) {
-          const data = await response.json()
-          if (data?.result) {
-            try {
-              const parsed = JSON.parse(data.result)
-              // Cache in L1 memory for 30 seconds to reduce Redis roundtrips
-              memoryL1Cache.set(safeKey, {
-                value: parsed,
-                expiresAt: now + 30_000,
-                swrUntil: now + 90_000,
-                tags: [],
-              })
-              return parsed
-            } catch {
-              memoryL1Cache.set(safeKey, {
-                value: data.result,
-                expiresAt: now + 30_000,
-                swrUntil: now + 90_000,
-                tags: [],
-              })
-              return data.result
-            }
+        const result = await redisCommand(['GET', safeKey])
+        if (result !== null && result !== undefined) {
+          const entry = JSON.parse(result)
+          if (entry?.cacheVersion !== 2 || !Number.isFinite(entry.expiresAt) || entry.expiresAt <= now) return null
+          if (!memoryL1Cache.has(safeKey) && memoryL1Cache.size >= MAX_L1_ENTRIES) pruneL1Cache()
+          const tags = Array.isArray(entry.tags) ? entry.tags : []
+          memoryL1Cache.set(safeKey, {
+            value: entry.value,
+            // L2 hydration must not extend the source's original freshness.
+            expiresAt: Math.min(entry.expiresAt, now + 30_000),
+            swrUntil: entry.expiresAt,
+            tags,
+          })
+          for (const tag of tags) {
+            if (!tagRegistry.has(tag)) tagRegistry.set(tag, new Set())
+            tagRegistry.get(tag).add(safeKey)
           }
+          return entry.value
         }
       } catch (err) {
         console.warn('[Redis Cache Get Error]:', err?.message)
@@ -111,7 +181,7 @@ export async function setCache(key, value, ttlSeconds = 300, tags = []) {
   const swrGraceMs = Math.min(ttlSeconds * 1000 * 2, 600_000) // up to 10 min grace for SWR
 
   // Ensure L1 bounds
-  if (memoryL1Cache.size >= MAX_L1_ENTRIES) {
+  if (!memoryL1Cache.has(safeKey) && memoryL1Cache.size >= MAX_L1_ENTRIES) {
     pruneL1Cache()
   }
 
@@ -140,11 +210,8 @@ export async function setCache(key, value, ttlSeconds = 300, tags = []) {
 
     if (restUrl && restToken) {
       try {
-        const stringVal = typeof value === 'string' ? value : JSON.stringify(value)
-        fetch(`${restUrl.replace(/\/+$/, '')}/setex/${encodeURIComponent(safeKey)}/${ttlSeconds}/${encodeURIComponent(stringVal)}`, {
-          method: 'POST',
-          headers: { Authorization: `Bearer ${restToken}` },
-        }).catch(() => {})
+        const stringVal = JSON.stringify({ cacheVersion: 2, value, expiresAt: now + ttlSeconds * 1000, tags: Array.isArray(tags) ? tags : [] })
+        await redisCommand(['SETEX', safeKey, ttlSeconds, stringVal])
       } catch (err) {
         console.warn('[Redis Cache Set Error]:', err?.message)
       }
@@ -156,13 +223,15 @@ export async function setCache(key, value, ttlSeconds = 300, tags = []) {
  * Remove specific key from L1 and L2 cache
  */
 export async function deleteCache(key) {
+  await invalidateCacheTag(sourceKeyTag(key))
   const safeKey = sanitizeCacheKey(key)
-  memoryL1Cache.delete(safeKey)
+  forgetMemoryEntry(safeKey)
   inFlightRequests.delete(safeKey)
 
   // Remove from tag registry
-  for (const set of tagRegistry.values()) {
+  for (const [tag, set] of tagRegistry) {
     set.delete(safeKey)
+    if (!set.size) tagRegistry.delete(tag)
   }
 
   if (isRedisConfigured()) {
@@ -170,10 +239,7 @@ export async function deleteCache(key) {
     const restToken = getUpstashRedisRestToken()
     if (restUrl && restToken) {
       try {
-        fetch(`${restUrl.replace(/\/+$/, '')}/del/${encodeURIComponent(safeKey)}`, {
-          method: 'POST',
-          headers: { Authorization: `Bearer ${restToken}` },
-        }).catch(() => {})
+        await redisCommand(['DEL', safeKey])
       } catch (err) {
         console.warn('[Redis Cache Del Error]:', err?.message)
       }
@@ -187,6 +253,10 @@ export async function deleteCache(key) {
 export async function invalidateCacheTag(tag) {
   if (!tag) return
   const safeTag = String(tag).trim()
+  localTagVersions.set(safeTag, (localTagVersions.get(safeTag) || 0) + 1)
+  if (isRedisConfigured()) {
+    pendingTagInvalidations.set(safeTag, localTagVersions.get(safeTag))
+  }
   const keys = tagRegistry.get(safeTag)
 
   if (keys && keys.size > 0) {
@@ -194,24 +264,27 @@ export async function invalidateCacheTag(tag) {
     tagRegistry.delete(safeTag)
 
     for (const k of keyArray) {
-      memoryL1Cache.delete(k)
+      // Direct setCache/getCache callers use a fixed key rather than a revisioned
+      // read-through key, so preserve physical deletion for those entries.
+      if (isRedisConfigured() && !cacheSourceKeys.has(k)) pendingCacheDeletes.add(k)
+      forgetMemoryEntry(k)
       inFlightRequests.delete(k)
     }
 
-    if (isRedisConfigured() && keyArray.length > 0) {
-      const restUrl = getUpstashRedisRestUrl()
-      const restToken = getUpstashRedisRestToken()
-      if (restUrl && restToken) {
-        // Purge keys in Redis
-        for (const k of keyArray) {
-          fetch(`${restUrl.replace(/\/+$/, '')}/del/${encodeURIComponent(k)}`, {
-            method: 'POST',
-            headers: { Authorization: `Bearer ${restToken}` },
-          }).catch(() => {})
-        }
-      }
+    // Old Redis generations expire naturally; readers cannot address them again.
+  }
+  // Increment even on workers that never cached this tag. If Redis is offline,
+  // retain the invalidation for recovery. Cache outages must not make a completed
+  // database mutation or mail dispatch appear to have failed to the user.
+  if (isRedisConfigured()) {
+    try {
+      await flushPendingInvalidations()
+    } catch (error) {
+      console.warn('[Cache Tag Invalidation Pending]:', error?.message)
+      return false
     }
   }
+  return true
 }
 
 /**
@@ -221,12 +294,12 @@ export async function invalidateCachePattern(prefix) {
   if (!prefix) return
   const safePrefix = String(prefix)
 
-  for (const k of Array.from(memoryL1Cache.keys())) {
-    if (k.startsWith(safePrefix)) {
-      memoryL1Cache.delete(k)
-      inFlightRequests.delete(k)
-    }
+  const sourceKeys = new Set()
+  for (const k of memoryL1Cache.keys()) {
+    const sourceKey = cacheSourceKeys.get(k) || k
+    if (sourceKey.startsWith(safePrefix)) sourceKeys.add(sourceKey)
   }
+  await Promise.all([...sourceKeys].map(deleteCache))
 }
 
 /**
@@ -234,9 +307,11 @@ export async function invalidateCachePattern(prefix) {
  * Ensures concurrent requests for the same key do NOT cause cache stampedes.
  */
 export async function getOrSetCache(key, ttlSeconds, fetcherFn, options = {}) {
-  const safeKey = sanitizeCacheKey(key)
+  const tags = [...new Set([sourceKeyTag(key), ...(options.tags || [])].map(tag => String(tag).trim()).filter(Boolean))].sort()
+  const safeKey = await resolveCacheKey(key, tags)
+  if (!safeKey) return fetcherFn()
+  cacheSourceKeys.set(safeKey, String(key))
   const now = Date.now()
-  const tags = options.tags || []
   const swrEnabled = options.swr !== false
 
   // 1. Check L1 memory cache
@@ -260,6 +335,7 @@ export async function getOrSetCache(key, ttlSeconds, fetcherFn, options = {}) {
             console.warn('[Cache SWR Background Revalidation Warning]:', err?.message)
           } finally {
             inFlightRequests.delete(safeKey)
+            if (!memoryL1Cache.has(safeKey)) cacheSourceKeys.delete(safeKey)
           }
         })()
         inFlightRequests.set(safeKey, bgPromise)
@@ -289,6 +365,7 @@ export async function getOrSetCache(key, ttlSeconds, fetcherFn, options = {}) {
       return freshData
     } finally {
       inFlightRequests.delete(safeKey)
+      if (!memoryL1Cache.has(safeKey)) cacheSourceKeys.delete(safeKey)
     }
   })()
 

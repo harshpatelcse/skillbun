@@ -218,9 +218,10 @@ export default function UserMenu() {
   const handleDeleteAccount = async (event) => {
     event.preventDefault();
     event.stopPropagation();
+    if (deletingAccount || signingOut) return;
 
     const confirmed = window.confirm(
-      'Delete your SkillBun account? This removes your Firebase account, profile, and saved roadmap progress. This cannot be undone.'
+      'Delete your SkillBun account? This removes your login account, profile, roadmap progress, quiz/exam history, and roadmap certificates. Workforce credentials, employment records, and legal documents are retained. This cannot be undone.'
     );
 
     if (!confirmed) {
@@ -231,7 +232,8 @@ export default function UserMenu() {
     setAccountError('');
 
     try {
-      await deleteAccount();
+      const result = await deleteAccount();
+      if (result?.warning) window.alert(result.warning);
       setAccountOpen(false);
       closeNavMenu();
       router.push('/');
@@ -239,7 +241,7 @@ export default function UserMenu() {
       console.error('Failed to delete account:', error);
       const message = error?.code === 'auth/requires-recent-login'
         ? 'For safety, log out and log back in before deleting your account.'
-        : 'Could not delete your account. Please try again.';
+        : error?.message || 'Could not delete your account. Please try again.';
       setAccountError(message);
       setDeletingAccount(false);
     }

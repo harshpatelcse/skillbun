@@ -1,68 +1,55 @@
-# 🐰 SkillBun — Hop into the Right Career
+# SkillBun
 
-[![Next.js](https://img.shields.io/badge/Framework-Next.js%2016-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/Library-React%2019-blue?style=for-the-badge&logo=react)](https://react.dev/)
-[![Access](https://img.shields.io/badge/Access-100%25%20Free%20Forever-brightgreen?style=for-the-badge)](https://skillbun.tech)
-[![License](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey?style=for-the-badge)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+SkillBun is a career discovery and learning platform for tech students. It combines profile-based career guidance, 100 learning roadmaps, protected study guides, Bun-Bot counselling, certification exams, and workforce administration.
 
-SkillBun is an AI-powered career discovery, learning roadmap, and skill certification platform designed specifically for Indian tech students pursuing BCA, BSc (CS/IT/Data Science), B.Tech/BE, and MCA degrees. Built using Next.js 16 App Router, React 19, and vanilla CSS, the platform bridges the gap between academic education and industry demands through personalized guidance, 100+ structured learning roadmaps, interactive study guides, and verified certifications.
+The application uses Next.js App Router, React, Firebase Auth/Firestore, and shared dark/light themes. Student features have no application paywall; hosting and external services retain their own quotas and costs.
 
----
+## Current implementation
 
-## 🎁 100% Free Access Policy
+- Career discovery uses ten preference/scenario questions and ranked recommendations. It is separate from the scored certification exam. Quiz results and counsellor history are currently session-only.
+- The roadmap catalog contains 100 paths with node completion, XP, learning resources, and encrypted guides. See the current inventory for counts and verification limits.
+- Certification uses a server-authoritative start, submit, and mint flow with eligibility checks, fixed question banks, attempt limits, and version-pinned certificates.
+- Projects is a catalog of practice blueprints, without project submissions or grading.
+- Admin tools cover students, analytics, reviewed email drafts/dispatch, credentials, workforce documents, and milestones.
 
-Production documentation: [current audit and release gates](docs/HARDENING_RELEASE_REPORT_2026-09-08.md) · [architecture and workflow charts](docs/ARCHITECTURE_WORKFLOW_2026-09-08.md) · [email design system](docs/EMAIL_DESIGN_SYSTEM.md).
+Some features are incomplete or need production verification, particularly the code playground and full-site translations. Resumable student-account erasure and certificate privacy/integrity fixes require the updated Firestore rules at deployment. Read [Current feature status](docs/CURRENT_STATUS.md) before treating a feature as production-ready.
 
-- **Zero Cost for All Features**: All 100+ career roadmaps, adaptive AI quizzes, Bun-Bot counsellor chats, encrypted study guides, and verifiable PDF digital certificates are **100% free forever**.
-- **No Paywalls or Hidden Subscriptions**: No credit card registration required.
-- **Publicly Verifiable Digital Certificates**: Earned at zero cost upon completing roadmap progress and passing proctored skill assessments.
+## Run locally
 
----
+Use **Node.js 22.x**. Configure a local environment file from [`.env.example`](.env.example) without overwriting existing credentials, then:
 
-## 🚀 Core Features & Product Overview
+```powershell
+$env:ONNXRUNTIME_NODE_INSTALL = 'skip'
+npm ci
+npm run dev
+```
 
-### 🗺️ 100+ Dynamic Interactive Tech Roadmaps
-- **100 Curated Learning Paths**: Complete step-by-step roadmaps across top tech domains:
-  - **AI & Data Science**: AI/ML Engineer, AI Research Engineer, Data Scientist, MLOps Engineer, Generative AI Developer, Data Engineer, NLP Engineer.
-  - **Web & Fullstack**: Full Stack Developer, Frontend Developer, Backend Developer, Next.js Developer, Python/Django, Node.js, Go Developer, PHP/Laravel, Ruby on Rails.
-  - **Mobile Engineering**: Android (Kotlin/Jetpack Compose), iOS (Swift/SwiftUI), Flutter, React Native.
-  - **Cloud, DevOps & Cybersecurity**: DevOps Engineer, AWS/Azure/GCP Cloud Specialist, Kubernetes Engineer, SRE, Cybersecurity Specialist, Penetration Tester, SOC Analyst.
-  - **Systems & Emerging Tech**: C/C++ Systems Developer, Embedded IoT, Rust Developer, Game Development (Unity/Unreal Engine), AR/VR Developer, Blockchain Web3.
-- **Visual Prerequisite Trees**: Core skill nodes branch into child skills with clear completion tracking.
-- **Interrelation System**: Suggests the next logical roadmap to support continuous student growth.
+Open the localhost URL printed by the server. Reuse an existing repository server when one is already running. Firebase, encryption, and mail features require their existing service configuration; see [Operations](docs/OPERATIONS.md).
 
-### 🎯 Adaptive AI Career Quiz Engine
-- **Dynamic Assessment**: Evaluates technical knowledge based on student profile (degree, current year, and target domain).
-- **Intelligent Career Matching**: Analyzes quiz performance to recommend the ideal specialization track and roadmap.
+## Checks
 
-### 🤖 Bun-Bot: AI Career Counsellor
-- **24/7 Context-Aware Mentor**: AI conversational advisor providing instant guidance, curriculum breakdowns, study tips, and roadmap support.
+```text
+npm run guard:templates
+npm run lint
+npm test
+npm run build
+```
 
-### 📚 Interactive Study Guides & Resource Library
-- **3,300+ Embedded Study Guides**: Rich markdown study materials attached to every roadmap node.
-- **Verified Video Playlists**: Curated YouTube tutorials from 100+ trusted channels with scanned link integrity.
-- **Slide-out Study Drawer**: Responsive UI panel featuring markdown rendering, topic checklists, and instant AI counsellor assistance.
+These checks do not deploy Firebase rules, verify live mail delivery, or exercise every signed-in production journey. Keep secrets, local source backups, generated output, and machine-local agent tools out of Git.
 
-### 🎓 Verifiable Digital Certification System
-- **Adaptive Proctored Exam**: 10-question assessment (3 Easy, 5 Moderate, 2 Hard) unlocked at 60%+ roadmap completion.
-- **Anti-Cheating Safeguards**: Enforces focus-loss detection, text selection blocking, watermark identification, and proctoring controls.
-- **Instant Digital Certificate**: Generates shareable verified certificates at `https://skillbun.tech/certificate/[id]` with automated LinkedIn certification integration.
+## Documentation
 
-### ✉️ Lifecycle Email System
+| Guide | Use it for |
+| --- | --- |
+| [Current feature status](docs/CURRENT_STATUS.md) | Implemented features, verification evidence, limitations, and pending work |
+| [Operations](docs/OPERATIONS.md) | Local setup, service configuration, deployment, content maintenance, and recovery |
+| [Verified email signup](docs/EMAIL_SIGNUP_SECURITY.md) | OTP rules, verified-email access, and the optional registration hook |
+| [Certificate design and print](docs/CERTIFICATE_DESIGN_AND_PRINT_SPEC.md) | Immutable templates, IDs, QR links, and print validation |
+| [Email design system](docs/EMAIL_DESIGN_SYSTEM.md) | Shared rendering, inbox compatibility, and synthetic previews |
+| [Email recommendation engine](docs/EMAIL_RECOMMENDATION_ENGINE.md) | Eligibility, frequency limits, draft generation, and explicit dispatch |
+| [AI email standard](docs/ai-email-standard.md) | Reusable copy, validation, public grounding, and approved graphics |
+| [RAG architecture](docs/rag-architecture.md) | Public corpus boundaries, retrieval, optional models, and index maintenance |
 
-- **One Shared Design System**: Every outgoing email — 18 student lifecycle templates, 4 workforce letters, and the password reset — is composed from [`utils/server/emailTheme.js`](utils/server/emailTheme.js). No template writes its own shell, masthead or styles.
-- **Technical-Document Layout**: Masthead, title block, content and footer on a single flat sheet. Ornament is drawn with table cells and CSS gradients rather than image files, so it survives inboxes that block images by default.
-- **Responsive Sheet**: The sheet widens with the reader's viewport (600 → 680 → 740 → 860px) and goes full-bleed under 620px, with the side padding and body size stepping up alongside it so the line measure stays between 67 and 84 characters. Outlook for Windows keeps a fixed 600px column via the `width` attribute, which is the intended fallback.
-- **Automatic Theme Sync**: Emails follow the reader's device theme via `color-scheme` metadata, `prefers-color-scheme`, and the `[data-ogsc]` / `[data-ogsb]` attributes Outlook stamps in place of the media query. Light stays inline as the always-readable fallback.
-- **Outlook-Safe Composition**: Outlook for Windows renders through Word and supports only `display:none`, so buttons and tags are built as table cells with `mso-padding-alt` instead of inline-block boxes.
-- **Honest Copy**: No invented course values, rankings, hiring statistics or scarcity claims — the platform is free, and the emails say only that.
-- Full reference: [docs/EMAIL_DESIGN_SYSTEM.md](docs/EMAIL_DESIGN_SYSTEM.md).
+Update these guides when behavior changes. Completed phase plans, dated audits, and placeholder specifications are not maintained alongside them.
 
-### 🔍 Generative Engine Optimization (GEO) & Search Readiness
-- **Dynamic Sitemap (`app/sitemap.js`)**: Dynamically indexes all core static pages and 100+ career roadmap paths.
-- **AI Search Engine Rules (`public/llms.txt` & `public/llms-full.txt`)**: Machine-readable platform overview used by AI search engines (ChatGPT Search, Perplexity, Claude, Gemini).
-- **Structured Data (JSON-LD)**: Schema.org `EducationalOrganization`, `WebSite`, `FAQPage`, and `Course` tags for rich Google search cards.
-
----
-
-🌐 Built and maintained by **Reish** (Govt. of India MSME Registered Startup).
+Built and maintained by Reish. See [LICENSE](LICENSE) for usage terms.

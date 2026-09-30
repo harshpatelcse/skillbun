@@ -70,6 +70,28 @@ function claimArgs(db, overrides = {}) {
   };
 }
 
+test('account erasure blocks new dispatch claims, including force-send requests', async () => {
+  const db = createDb({ 'accountDeletions/student-1': { status: 'pending' } });
+  for (const forceOverride of [false, true]) {
+    await assert.rejects(claimRecommendedEmailDispatch(claimArgs(db, { forceOverride })), { code: 'auth/account-deleting' });
+  }
+  assert.equal(db.read('emailDispatchLocks', 'student-1'), undefined);
+  assert.equal(db.read('users', 'student-1'), undefined);
+});
+
+test('in-flight dispatch completion and review cannot recreate an erased profile', async () => {
+  const db = createDb({
+    'accountDeletions/student-1': { status: 'complete' },
+    'emailDispatchLocks/student-1': {
+      status: 'UNKNOWN', owner: 'in-flight', uid: 'student-1', templateId: 'reengagement_v1',
+      expiresAt: 0, createdAt: 2_000_000_000_000,
+    },
+  });
+  await assert.rejects(finalizeRecommendedEmailDispatch({ db, uid: 'student-1', owner: 'in-flight' }), { code: 'auth/account-deleting' });
+  await assert.rejects(resolveEmailDispatch({ db, uid: 'student-1', resolution: 'sent' }), { code: 'auth/account-deleting' });
+  assert.equal(db.read('users', 'student-1'), undefined);
+});
+
 test('a student has one in-flight recommended dispatch across concurrent callers', async () => {
   const db = createDb({ 'users/student-1': { sentEmailHistory: [] } });
   const claims = await Promise.all([claimRecommendedEmailDispatch(claimArgs(db)), claimRecommendedEmailDispatch(claimArgs(db))]);

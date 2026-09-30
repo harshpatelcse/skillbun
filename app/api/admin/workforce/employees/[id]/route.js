@@ -134,11 +134,14 @@ export async function DELETE(request, { params }) {
     if (hardParam === 'false') {
       const now = new Date()
       await employeeRef.update({ status: 'ARCHIVED', archived_at: now, updated_at: now })
+      await Promise.all([
+        invalidateCacheTag('admin:workforce'),
+        invalidateCacheTag('admin:analytics'),
+      ])
       return NextResponse.json({ success: true, id: employeeRef.id, status: 'ARCHIVED' })
     }
 
     // Cascade deletion of all linked certificates, milestones, workforce_docs, and the employee
-    const batch = db.batch()
 
     // 1. Certificates linked to this employee
     const [certByEmpSnap, certByEmailSnap] = await Promise.all([
@@ -153,11 +156,9 @@ export async function DELETE(request, { params }) {
         certDocRefs.set(d.id, d.ref)
       }
     })
-    certDocRefs.forEach((ref) => batch.delete(ref))
 
     // 2. Milestones linked to this employee
     const milestoneSnap = await db.collection('milestones').where('employee_id', '==', employeeRef.id).get()
-    milestoneSnap.docs.forEach((d) => batch.delete(d.ref))
 
     // 3. Workforce docs linked to this employee
     const [docsByEmpSnap, docsByEmailSnap] = await Promise.all([
@@ -167,11 +168,15 @@ export async function DELETE(request, { params }) {
     const workforceDocRefs = new Map()
     docsByEmpSnap.docs.forEach((d) => workforceDocRefs.set(d.id, d.ref))
     docsByEmailSnap.docs.forEach((d) => workforceDocRefs.set(d.id, d.ref))
-    workforceDocRefs.forEach((ref) => batch.delete(ref))
+    const deleteRefs = [...certDocRefs.values(), ...milestoneSnap.docs.map((doc) => doc.ref), ...workforceDocRefs.values(), employeeRef]
+    // Preserve the atomic cascade contract. Splitting this into committed chunks
+    // could leave a partially deleted employee if a later chunk fails.
+    if (deleteRefs.length > 500) {
+      return apiError('This employee has too many linked records for one atomic deletion. No records were deleted; archive the employee and arrange a maintenance deletion.', 409, 'CASCADE_TOO_LARGE')
+    }
 
-    // 4. Employee record
-    batch.delete(employeeRef)
-
+    const batch = db.batch()
+    deleteRefs.forEach((ref) => batch.delete(ref))
     await batch.commit()
 
     await Promise.all([

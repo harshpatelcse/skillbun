@@ -1,6 +1,6 @@
 # Verified email signup
 
-The public application is **https://skillbun.tech**. **https://skillbun.vercel.app** redirects there. Google authentication retains `NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=skillbun.tech` and its existing Firebase helper configuration.
+The canonical production origin is **https://skillbun.tech**; configure the **https://skillbun.vercel.app** entry to redirect there. Production Google authentication uses `NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=skillbun.tech` and the Firebase helper proxy in `next.config.mjs`. Confirm deployed domain and OAuth settings using [Operations](OPERATIONS.md).
 
 Email/password signup through the SkillBun interface sends a six-digit email code before creating a Firebase account. The server validates the code and creates the account with `emailVerified: true`; the client then signs in with the chosen password. Passwords are never saved in the signup challenge collection. Google keeps its existing provider-verified flow.
 
@@ -18,8 +18,9 @@ This choice adds no new paid authentication service. Existing hosting, mail, dat
 - Verification requests are limited to thirty per hour per email, and thirty per minute, one hundred per hour, and five hundred per day per IP.
 - Shared Redis or Firestore limits fail closed for signup when durable enforcement is unavailable. Signup does not use isolated process-memory limits as a production fallback.
 - Origin and request-body validation precede signup processing. Human verification is required when the existing CAPTCHA integration is enabled.
+- Signup requests use a pre-auth human proof. After signing in, protected quiz and AI requests require a proof bound to that exact Firebase UID; a pre-auth proof or a different user's proof is rejected. The client obtains a new verification when the account changes.
 - OTP records and state changes are transactionally managed in the server-only `emailSignupChallenges` collection. Client access is denied even to a signed-in administrator. Expiration is checked by the application; Firestore cleanup timing never extends code validity.
-- API authentication checks revoked/disabled sessions and requires the Firebase token's authoritative `email_verified === true` claim. Firestore's owner-access rules also require this claim. A client-writable profile field cannot grant verified status.
+- API authentication checks revoked/disabled sessions and requires the Firebase token's authoritative `email_verified === true` claim. Firestore's owner-access rules also require this claim. A client-writable profile field cannot grant verified status. Ordinary access also rejects accounts with a server-only deletion marker; only the authenticated erasure endpoint can resume its own pending job. See [Operations](OPERATIONS.md) for the narrow lost-response recovery and deployment requirements.
 - Existing unverified password-only accounts can finish verification without deleting their profile or progress. After code verification, recovery replaces the password while the account remains unverified, revokes old sessions, then marks the email verified. Verified, federated, and disabled accounts are not changed by this recovery path.
 
 ## Production configuration and deployment
@@ -31,7 +32,7 @@ These are the required release steps for the selected policy. A Vercel applicati
 3. **Deploy the application to Vercel** so the OTP endpoints and new auth interface are available. Redeploy after environment-variable changes so the running application receives them. Confirm the canonical origin is `https://skillbun.tech`; include only owned application origins in any configured allowlist.
 4. **Deploy Firestore rules:** from the repository root, run `firebase deploy --only firestore:rules --project skillbun-75d10`. This closes direct unverified access to profiles, progress, and other authenticated client data, and explicitly denies all client access to OTP records.
 
-**Optional Firestore cleanup:** a TTL policy can use collection group `emailSignupChallenges`, field `deleteAfter`. Records carry a cleanup timestamp approximately 24 hours after their update. TTL cleanup is asynchronous and incurs document-delete usage; it is not enabled as part of the free-first rollout. The application enforces code expiry without this cleanup policy.
+**Optional Firestore cleanup:** a TTL policy can use collection group `emailSignupChallenges`, field `deleteAfter`. Records carry a cleanup timestamp approximately 24 hours after their update. TTL cleanup is asynchronous and incurs document-delete usage. The repository does not configure this cloud policy; check its actual state before changing it. The application enforces code expiry without this cleanup policy.
 
 **Do not globally disable user signup or disable the email provider.** Firebase's `client.permissions.disabledUserSignup` setting applies to creation through all public authentication methods and can prevent first-time Google signup. Disabling email auth also disables existing password login.
 
@@ -61,17 +62,9 @@ References:
 - [Firebase pricing and free allowances](https://firebase.google.com/pricing)
 - [Cloud Functions plan and quota requirements](https://firebase.google.com/docs/functions/quotas)
 
-## Deployment verification recorded on 2026-09-23
-
-- Production `APP_ORIGIN` and the server-only `SIGNUP_OTP_SECRET` were configured in Vercel and applied by redeploying the application.
-- Deployed Firestore rules were read back and matched the repository rules.
-- A malformed request from `https://skillbun.tech` reached payload validation; a foreign-origin request was rejected. These checks did not send email or create an account.
-- Firebase remained on standard Authentication with no registered blocking trigger. The unused `requireVerifiedSignup` cloud function, its container images/source uploads, and its added build permission were removed after selecting the free-first policy. The optional source code remains available in the repository.
-- Live OTP delivery, successful Google/password signup, account recovery, and access checks using controlled test accounts remain to be verified. Past build/storage billing was not verified; resource removal does not reverse any usage already incurred.
-
 ## Verification and operational checks
 
-Local tests use service doubles and never create real accounts or send email. They cover verified/invalid token claims, revocation handling, privileged provisioning adapters, the registration hook policy, and Firestore source guardrails. The rules checks are source checks, not an assertion that cloud rules have been deployed.
+Run `npm test` for the signup, HTTP validation, verified-email, human-proof, and distributed-rate-limit suites. These tests use service doubles and never create real accounts or send email. They cover verified/invalid token claims, revocation handling, privileged provisioning adapters, the registration hook policy, and Firestore source guardrails. The rules checks inspect repository source; they do not establish deployed cloud state. Current release verification and outstanding checks belong in [Current status](CURRENT_STATUS.md).
 
 After deployment, use a controlled test mailbox to verify delivery, code expiry, resend invalidation, wrong-code exhaustion, completed signup/login, and recovery of an existing unverified password account. Confirm verified Google signup still succeeds and unverified ID tokens cannot read/write protected Firestore documents or call authenticated APIs. Direct public Firebase signup is not expected to be rejected under the selected policy. Test that rejection only if the optional hook is deliberately deployed and registered. Run these checks only against an approved test account; never email unrelated users or alter their accounts for testing.
 

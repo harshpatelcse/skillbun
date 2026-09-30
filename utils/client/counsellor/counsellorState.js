@@ -40,6 +40,7 @@ export function persistHumanProof(state, token, expiresAt) {
 export function clearHumanProof(state) {
   state.humanProofToken = '';
   state.humanProofExpiresAt = 0;
+  state.humanProofSession = '';
 
   try {
     localStorage.removeItem(HUMAN_PROOF_STORAGE_KEY);

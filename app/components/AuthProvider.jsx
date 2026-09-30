@@ -2,7 +2,6 @@
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import {
-  deleteUser,
   onAuthStateChanged,
   sendEmailVerification,
   signInWithEmailAndPassword,
@@ -11,15 +10,14 @@ import {
 } from 'firebase/auth';
 import {
   collection,
-  deleteDoc,
   doc,
   getDoc,
-  getDocs,
   onSnapshot,
   serverTimestamp,
   setDoc,
 } from 'firebase/firestore';
 import { getFirebaseServices } from '@/utils/client/firebaseClient';
+import { requestAccountDeletion } from '@/utils/client/accountDeletion';
 import { clearStoredProfile, notifyProfileChanged, readProfileSnapshot, saveStoredProfile } from '@/utils/shared/profileStore';
 import {
   clearStoredRoadmapProgress,
@@ -187,17 +185,6 @@ function clearSessionCache() {
   window.localStorage.removeItem('sb_human_proof');
   window.localStorage.removeItem('sb_dest');
   window.localStorage.removeItem('sb_last_xp');
-}
-
-function assertRecentSignIn(user) {
-  const lastSignInTime = user?.metadata?.lastSignInTime ? Date.parse(user.metadata.lastSignInTime) : 0;
-  const signedInRecently = lastSignInTime && Date.now() - lastSignInTime < 2 * 60 * 1000;
-
-  if (!signedInRecently) {
-    const error = new Error('Please log out and log back in before deleting your account.');
-    error.code = 'auth/requires-recent-login';
-    throw error;
-  }
 }
 
 export function AuthProvider({ children }) {
@@ -459,14 +446,37 @@ export function AuthProvider({ children }) {
     }
 
     const currentUser = services.auth.currentUser;
-    assertRecentSignIn(currentUser);
+    const result = await requestAccountDeletion({
+      user: currentUser,
+      getCurrentUser: () => services.auth.currentUser,
+    });
 
-    const progressSnapshot = await getDocs(collection(services.db, 'users', currentUser.uid, 'roadmapProgress'));
-    await Promise.all(progressSnapshot.docs.map((progressDoc) => deleteDoc(progressDoc.ref)));
-    await deleteDoc(doc(services.db, 'users', currentUser.uid));
-    await deleteUser(currentUser);
-    clearSessionCache();
-    notifyProfileChanged();
+    // The server owns erasure. Local cleanup starts only after confirmed success
+    // and must never sign out or clear the cache of a different account.
+    if (services.auth.currentUser && services.auth.currentUser.uid !== currentUser.uid) return result;
+    let cleanupFailed = false;
+    if (services.auth.currentUser) {
+      try {
+        await signOut(services.auth);
+      } catch (error) {
+        cleanupFailed = true;
+        console.warn('Account deleted, but local sign-out failed:', error);
+      }
+    }
+    if (!services.auth.currentUser || services.auth.currentUser.uid === currentUser.uid) {
+      try {
+        clearSessionCache();
+        notifyProfileChanged();
+      } catch (error) {
+        cleanupFailed = true;
+        console.warn('Account deleted, but local cache cleanup failed:', error);
+      }
+    }
+
+    return cleanupFailed ? {
+      ...result,
+      warning: 'Your account was deleted, but this browser could not finish clearing its session. Refresh this page and sign out if the old account still appears.',
+    } : result;
   }, [services]);
 
   const value = useMemo(() => ({

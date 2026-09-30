@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { useAuth } from '@/app/components/AuthProvider';
 import { useAdminAccess } from '@/utils/client/adminAuth';
 import { getFirebaseServices } from '@/utils/client/firebaseClient';
-import { collection, getDocs, doc, deleteDoc } from 'firebase/firestore';
+import { collection, getDocs } from 'firebase/firestore';
+import { requestAccountDeletion } from '@/utils/client/accountDeletion';
 import { recommendEmail as getRecommendedTemplate, emailCategory } from '@/utils/shared/emailRecommendation';
 import BulkRetentionCampaign from './BulkRetentionCampaign';
 import EmailDraftLibrary from '../emails/EmailDraftLibrary';
@@ -432,45 +433,18 @@ export default function AnalyticsDashboardPage() {
 
   // Delete User Handler
   const handleDeleteUser = async (targetUser) => {
-    const confirmMsg = `DELETE USER CONFIRMATION\n\nAre you sure you want to permanently delete student "${targetUser.name}" (${targetUser.email})?\n\nThis will permanently delete their profile, active roadmap progress, and Auth account. The email "${targetUser.email}" will be freed up for a brand new account signup.\n\nProceed with deletion?`;
+    const confirmMsg = `DELETE USER CONFIRMATION\n\nAre you sure you want to permanently delete student "${targetUser.name}" (${targetUser.email})?\n\nThis removes their login account, profile, roadmap progress, quiz/exam history, and roadmap certificates. Workforce credentials, employment records, and legal documents are retained.\n\nProceed with deletion?`;
     if (!window.confirm(confirmMsg)) return;
 
     setDeletingUid(targetUser.uid);
     setStatusMessage(null);
 
     try {
-      let idToken = '';
-      if (user?.getIdToken) {
-        try {
-          idToken = await user.getIdToken();
-        } catch {}
-      }
-
-      try {
-        const res = await fetch(`/api/admin/users/${targetUser.uid}?adminEmail=${encodeURIComponent(userEmail)}&email=${encodeURIComponent(targetUser.email || '')}`, {
-          method: 'DELETE',
-          headers: {
-            'Content-Type': 'application/json',
-            ...(idToken ? { Authorization: `Bearer ${idToken}` } : {}),
-          },
-        });
-
-        if (!res.ok) {
-          console.warn(`[Admin User Delete API non-200: ${res.status}], attempting direct client Firestore delete`);
-        }
-      } catch (apiErr) {
-        console.warn('[Admin User Delete API Exception], attempting direct client Firestore delete:', apiErr);
-      }
-
-      // Always execute client Firestore delete for guaranteed consistency
-      try {
-        const { db } = getFirebaseServices();
-        if (db) {
-          await deleteDoc(doc(db, 'users', targetUser.uid));
-        }
-      } catch (clientDelErr) {
-        console.warn('[Client Delete Fallback Warning]:', clientDelErr);
-      }
+      await requestAccountDeletion({
+        user,
+        endpoint: `/api/admin/users/${encodeURIComponent(targetUser.uid)}?email=${encodeURIComponent(targetUser.email || '')}`,
+        getCurrentUser: () => getFirebaseServices().auth?.currentUser,
+      });
 
       setData((prev) => {
         if (!prev) return prev;
@@ -491,7 +465,7 @@ export default function AnalyticsDashboardPage() {
 
       setStatusMessage({
         type: 'success',
-        text: `Student account "${targetUser.name}" (${targetUser.email}) successfully deleted! Email is now freed up for new registration.`,
+        text: `Student account "${targetUser.name}" (${targetUser.email}) and its roadmap certificates were deleted. Workforce credentials and legal records were retained.`,
       });
       notifyDataMutated('admin:analytics', { deletedUid: targetUser.uid });
     } catch (err) {

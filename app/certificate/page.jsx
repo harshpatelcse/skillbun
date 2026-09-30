@@ -1,9 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { getFirebaseServices } from '@/utils/client/firebaseClient';
-import { doc, getDoc, collection, query, where, getDocs, limit } from 'firebase/firestore';
+import { CertificateLookupError, fetchPublicCertificate } from '@/utils/client/publicCertificate.mjs';
 import styles from './verify.module.css';
 
 export default function VerifyRegistryPage() {
@@ -12,6 +11,10 @@ export default function VerifyRegistryPage() {
   const [loading, setLoading] = useState(false);
   const [searched, setSearched] = useState(false);
   const [error, setError] = useState('');
+  const [errorCode, setErrorCode] = useState('');
+  const pendingRequest = useRef(null);
+
+  useEffect(() => () => pendingRequest.current?.abort(), []);
 
   const handleVerify = async (e) => {
     e.preventDefault();
@@ -23,87 +26,21 @@ export default function VerifyRegistryPage() {
     setCert(null);
     setSearched(true);
 
-    const services = getFirebaseServices();
-    if (!services.configured) {
-      setError('Database services are not configured.');
-      setLoading(false);
-      return;
-    }
-
+    setErrorCode('');
+    pendingRequest.current?.abort();
+    const controller = new AbortController();
+    pendingRequest.current = controller;
     try {
-      const normalizedId = rawInput.replace(/\//g, '-');
-      const displayId = rawInput.replace(/-/g, '/');
-
-      let snapshot = null;
-
-      // Step 1: Try direct document lookup with hyphenated ID
-      try {
-        const docRef = doc(services.db, 'certificates', normalizedId);
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) {
-          snapshot = docSnap;
-        }
-      } catch (e) {
-        console.warn('Direct doc lookup error:', e);
-      }
-
-      // Step 2: If raw input didn't have slashes and differs from normalized, try raw input
-      if (!snapshot && !rawInput.includes('/') && rawInput !== normalizedId) {
-        try {
-          const docRef = doc(services.db, 'certificates', rawInput);
-          const docSnap = await getDoc(docRef);
-          if (docSnap.exists()) {
-            snapshot = docSnap;
-          }
-        } catch (e) {
-          console.warn('Raw doc lookup error:', e);
-        }
-      }
-
-      // Step 3: Query by display_id field
-      if (!snapshot) {
-        try {
-          const certsCol = collection(services.db, 'certificates');
-          const q = query(
-            certsCol,
-            where('display_id', 'in', [rawInput, displayId, normalizedId]),
-            limit(1)
-          );
-          const querySnap = await getDocs(q);
-          if (!querySnap.empty) {
-            snapshot = querySnap.docs[0];
-          }
-        } catch (e) {
-          console.warn('Query by display_id error:', e);
-        }
-      }
-
-      if (snapshot && snapshot.exists()) {
-        const data = snapshot.data();
-        let date = new Date();
-        if (data.createdAt?.toDate) {
-          date = data.createdAt.toDate();
-        } else if (data.createdAt) {
-          date = new Date(data.createdAt);
-        }
-        setCert({
-          id: snapshot.id,
-          display_id: data.display_id || (snapshot.id.startsWith('SKB-') && snapshot.id.includes('-') ? snapshot.id.replace(/-/g, '/') : snapshot.id),
-          ...data,
-          createdAtDate: date,
-        });
-      } else {
-        setError(`No certificate found matching verification ID "${rawInput}". Please double-check the characters.`);
-      }
+      const certificate = await fetchPublicCertificate(rawInput, { signal: controller.signal });
+      if (!controller.signal.aborted && pendingRequest.current === controller) setCert(certificate);
     } catch (err) {
-      console.error('Failed to verify certificate ID:', err);
-      if (typeof window !== 'undefined' && !window.navigator.onLine) {
-        setError('Network offline. Please check your internet connection and try again.');
-      } else {
-        setError('An error occurred during verification query. Please try again.');
-      }
+      if (controller.signal.aborted || pendingRequest.current !== controller) return;
+      setErrorCode(err instanceof CertificateLookupError ? err.code : 'VERIFICATION_UNAVAILABLE');
+      setError(typeof window !== 'undefined' && !window.navigator.onLine
+        ? 'Network offline. Please check your internet connection and try again.'
+        : err instanceof CertificateLookupError ? err.message : 'Certificate verification is temporarily unavailable. Please try again.');
     } finally {
-      setLoading(false);
+      if (!controller.signal.aborted && pendingRequest.current === controller) setLoading(false);
     }
   };
 
@@ -131,6 +68,9 @@ export default function VerifyRegistryPage() {
                   placeholder="e.g. SKB/2026/INT-REC/EJGHNG or SKB8F92-4C-10-9A7E"
                   className={styles.searchInput}
                   disabled={loading}
+                  maxLength={128}
+                  aria-invalid={errorCode === 'INVALID_ID'}
+                  aria-describedby={error ? 'verification-error' : undefined}
                 />
                 <button type="submit" className={styles.primaryButton} disabled={loading || !searchId.trim()}>
                   {loading ? 'Verifying...' : 'Verify ID'}
@@ -142,25 +82,25 @@ export default function VerifyRegistryPage() {
           {searched && (
             <div className={styles.resultSection}>
               {loading && (
-                <div className={styles.loadingBlock}>
+                <div className={styles.loadingBlock} role="status" aria-live="polite">
                   <div className={styles.spinner}></div>
                   <p>Searching the secure registry...</p>
                 </div>
               )}
 
               {!loading && error && (
-                <div className={styles.errorCard}>
-                  <span className={styles.statusBadgeFail}>❌ INVALID ID</span>
-                  <h3>Verification Failed</h3>
+                <div className={styles.errorCard} role="alert" id="verification-error">
+                  <span className={styles.statusBadgeFail}>{errorCode === 'INVALID_ID' ? 'INVALID ID' : errorCode === 'NOT_FOUND' ? 'NOT FOUND' : errorCode === 'AMBIGUOUS_ID' ? 'AMBIGUOUS ID' : 'VERIFICATION UNAVAILABLE'}</span>
+                  <h3>{errorCode === 'NOT_FOUND' || errorCode === 'INVALID_ID' ? 'Certificate Not Verified' : 'Unable to Complete Verification'}</h3>
                   <p>{error}</p>
                 </div>
               )}
 
               {!loading && cert && (
-                <div className={styles.successCard}>
+                <div className={cert.is_revoked ? styles.errorCard : styles.successCard} role="status" aria-live="polite">
                   <div className={styles.cardHeader}>
-                    <span className={styles.statusBadgePass}>✅ AUTHENTIC CREDENTIAL</span>
-                    <h3>Certificate Successfully Verified</h3>
+                    <span className={cert.is_revoked ? styles.statusBadgeFail : styles.statusBadgePass}>{cert.is_revoked ? 'REVOKED CREDENTIAL' : 'AUTHENTIC CREDENTIAL'}</span>
+                    <h3>{cert.is_revoked ? 'This Credential Has Been Revoked' : 'Certificate Successfully Verified'}</h3>
                   </div>
 
                   <div className={styles.detailsList}>
@@ -185,11 +125,11 @@ export default function VerifyRegistryPage() {
                     <div className={styles.detailItem}>
                       <span className={styles.detailLabel}>Issue Date:</span>
                       <span className={styles.detailValue}>
-                        {cert.createdAtDate.toLocaleDateString('en-IN', {
+                        {cert.createdAtDate ? cert.createdAtDate.toLocaleDateString('en-IN', {
                           day: 'numeric',
                           month: 'long',
                           year: 'numeric',
-                        })}
+                        }) : cert.issue_date || 'Not recorded'}
                       </span>
                     </div>
                     <div className={styles.detailItem}>
@@ -200,16 +140,18 @@ export default function VerifyRegistryPage() {
 
                   <div style={{ margin: '1.25rem 0', textAlign: 'center' }}>
                     <Link
-                      href={`/certificate/${cert.id}`}
+                      href={`/certificate/${encodeURIComponent(cert.id)}`}
                       className={styles.primaryButton}
                       style={{ width: '100%', textDecoration: 'none', boxSizing: 'border-box' }}
                     >
-                      🎓 View Full Official Certificate
+                      {cert.is_revoked ? 'View Revoked Credential Details' : 'View Full Official Certificate'}
                     </Link>
                   </div>
 
                   <div className={styles.securityNote}>
-                    🔒 <strong>Security Registry Notice:</strong> This public verification record confirms the cryptographic authenticity of this credential in the SkillBun database registry.
+                    <strong>Registry Notice:</strong> {cert.is_revoked
+                      ? 'The issuing authority has revoked this credential. It is not valid as an active SkillBun credential.'
+                      : 'This record confirms that the credential is present and has not been marked revoked in the SkillBun registry.'}
                   </div>
                 </div>
               )}

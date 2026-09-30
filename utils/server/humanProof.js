@@ -57,12 +57,13 @@ export function issueHumanProofToken(claims = {}) {
 export function isHumanProofBoundTo(verification, uid) {
   if (!verification?.valid) return false
 
-  const boundUid = typeof verification.payload?.uid === 'string' ? verification.payload.uid : ''
+  const claim = verification.payload?.uid
+  if (claim !== undefined && typeof claim !== 'string') return false
+  if (typeof uid !== 'string') return false
 
-  // Tokens minted before uid binding (legacy, or the pre-auth signup OTP flow) carry no
-  // uid. They stay valid so no existing flow breaks; a token bound to a different
-  // student is always rejected.
-  return boundUid === '' || boundUid === uid
+  // Pre-auth proofs are only valid before authentication. Allowing them for a
+  // signed-in user would let one anonymous proof bypass every account binding.
+  return (claim || '') === uid
 }
 
 export function verifyHumanProofToken(token) {

@@ -136,7 +136,7 @@ export default function PrivacyPage() {
         Certificates you earn are verifiable by anyone who has your certificate link or ID at <code>/certificate/[id]</code>. The public verification display shows your <strong>name, program/department details, credential title, score (for some certificate types), and issue date</strong>. Your email address and internal identifiers are stored in the verification record to make verification reliable, but they are not rendered on the public page.
       </p>
       <p>
-        Certificates are issued as immutable credential records — see our <a href="/terms">Terms of Use</a> for how this interacts with your rights. SkillBun certificates are records of completion of SkillBun's own assessments; they are <strong>not</strong> degrees, diplomas, or government-recognised qualifications.
+        Deleting your account also deletes its roadmap certificates, so their verification links will no longer work. Workforce credentials and legal documents are retained separately and are not erased by account deletion. See our <a href="/terms">Terms of Use</a> for how credentials interact with your rights. SkillBun certificates are records of completion of SkillBun's own assessments; they are <strong>not</strong> degrees, diplomas, or government-recognised qualifications.
       </p>
 
       <h2>9. International Data Transfers</h2>
@@ -147,8 +147,8 @@ export default function PrivacyPage() {
       <h2>10. Data Retention</h2>
       <ul>
         <li><strong>Profile &amp; progress data:</strong> retained while your account is active.</li>
-        <li><strong>Certification attempt records:</strong> retained for integrity, audit, and cooldown enforcement; expired attempts become ineligible for grading after 8.5 minutes plus a short grace window.</li>
-        <li><strong>Certificates:</strong> retained as immutable credential records so third parties can verify them over time. Requests for erasure of a certificate are handled individually (see Section 11) and may involve revoking rather than deleting the credential.</li>
+        <li><strong>Certification attempt records:</strong> retained for integrity, audit, and cooldown enforcement while your account exists, and removed by account deletion; expired attempts become ineligible for grading after 8.5 minutes plus a short grace window.</li>
+        <li><strong>Certificates:</strong> roadmap certificates are retained while your account exists and removed by account deletion. Workforce credentials, employment records, and legal documents are retained separately; requests concerning those records are handled individually (see Section 11).</li>
         <li><strong>Email dispatch history:</strong> retained so we can honour frequency limits and your unsubscribe preference.</li>
         <li><strong>Rate-limit and security records:</strong> retained for short rolling windows (minutes to hours) in our rate-limit stores.</li>
         <li><strong>System logs:</strong> retained per our security policies and applicable Indian requirements (including CERT-In's log-retention direction).</li>
@@ -167,7 +167,7 @@ export default function PrivacyPage() {
         <li><strong>EU/UK additional rights</strong> — restriction of processing, data portability, objection to processing, and the right not to be subject to purely automated decisions with significant effects, with responses within one month (extendable for complex requests).</li>
       </ul>
       <p>
-        <strong>Self-service deletion:</strong> you can delete your account through your Profile Settings page. This deletes your Firebase authentication record, your Firestore profile document, your roadmap progress, and your quiz attempt history. Some records may be retained where required for integrity, legal compliance, or credential verification, and immutable public certificates are handled as described in Section 8. For manual requests — access, correction, deletion, or anything else privacy-related — email <a href="mailto:harsh@skillbun.tech">harsh@skillbun.tech</a>.
+        <strong>Self-service deletion:</strong> you can delete your account through your Profile Settings page. Once the server confirms completion, your Firebase authentication record, Firestore profile, roadmap progress, quiz/exam attempt history, and roadmap certificates have been deleted. Workforce credentials, employment records, and legal documents are retained separately. If deletion is interrupted or remains pending, retry to finish it; an error is not confirmation that all records were removed. Some security and operational records may be retained under the policies described above. For manual requests — access, correction, deletion, or anything else privacy-related — email <a href="mailto:harsh@skillbun.tech">harsh@skillbun.tech</a>.
       </p>
 
       <h2>12. Children's Privacy</h2>

@@ -194,19 +194,16 @@ export default function CertifyPage() {
 
   // Captcha token handler
   const handleTurnstileCallback = useCallback(async (token) => {
+    if (!user) return;
     try {
-      // Localhost bypass check
-      if (token === 'bypass-captcha-dev') {
-        setCaptchaToken('bypass-captcha-dev');
-        return;
-      }
-
+      const idToken = await user.getIdToken();
       const response = await fetch('/api/human/verify', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${idToken}` },
         body: JSON.stringify({ token }),
       });
       const data = await response.json();
+      if (getFirebaseServices().auth?.currentUser?.uid !== user.uid) return;
       if (response.ok && data.humanToken) {
         setCaptchaToken(data.humanToken);
         setCaptchaError('');
@@ -216,7 +213,7 @@ export default function CertifyPage() {
     } catch (err) {
       setCaptchaError('Failed to verify captcha.');
     }
-  }, []);
+  }, [user]);
 
   // Submits the exam answers to the server for authoritative evaluation
   const submitExam = useCallback(async (finalAnswers, isDevBypass = false) => {

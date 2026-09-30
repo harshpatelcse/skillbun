@@ -13,7 +13,7 @@ const FLOATER_TEXTS = [
   'console.log("career")', 'import skills', 'git commit -m "future"',
   'npm i success', 'def find_path():', 'SELECT * FROM jobs',
   '404: fear not found', 'while(learning) grow()', 'sudo make me a developer',
-  '<BunBot />', '{ const path = "tech"; }', 'git checkout new-life',
+  'git checkout new-life',
   'try { succeed() } catch (e) { learn() }', 'public static void main()',
   'SELECT dream FROM opportunities'
 ];
@@ -237,7 +237,6 @@ export default function Home() {
               <div className="sb-console-topline">
                 <span className="sb-console-dot"></span>
                 <span>skillbun.guidance.flow</span>
-                <code>sample_mode: true</code>
               </div>
 
               <div className="sb-moment-rail" aria-hidden="true">
@@ -347,7 +346,7 @@ export default function Home() {
           <div className="sb-copy-block">
             <div className="section-label">{t('sections.quizEngine.tag', 'AI Quiz Engine')}</div>
             <h2 className="section-title">{t('sections.quizEngine.title', 'A quiz that behaves more like a career interview')}</h2>
-            <p className="section-sub">{t('sections.quizEngine.subtitle', 'SkillBun asks 10 to 18 questions, adapts to your responses, and waits until it has enough signal before recommending careers.')}</p>
+            <p className="section-sub">{t('sections.quizEngine.subtitle', 'SkillBun asks 10 adaptive questions that respond to your answers and recommends careers built on your signal.')}</p>
             <div className="sb-check-list">
               <span>{t('sections.quizEngine.check1', 'Interest, strengths, and learning-style discovery')}</span>
               <span>{t('sections.quizEngine.check2', 'Branching questions that narrow the path')}</span>
@@ -357,7 +356,7 @@ export default function Home() {
           <div className="sb-quiz-panel" aria-label="Adaptive quiz preview">
             <div className="sb-panel-top">
               <span>{t('sections.quizEngine.phase', 'Phase 1: Discovery')}</span>
-              <span>{t('sections.quizEngine.questionMeta', 'Question 7 / 15')}</span>
+              <span>{t('sections.quizEngine.questionMeta', 'Question 7 / 10')}</span>
             </div>
             <div className="sb-progress-shell"><span></span></div>
             <h3>{t('sections.quizEngine.sampleQ', 'Which problem sounds exciting to solve?')}</h3>
@@ -486,7 +485,7 @@ export default function Home() {
               </div>
 
               {/* Overlay: Recipient Name */}
-              <h1 className={`sb-cert-mock-name ${cinzel.className}`}>STUDENT NAME</h1>
+              <p className={`sb-cert-mock-name ${cinzel.className}`}>STUDENT NAME</p>
 
               {/* Overlay: Roadmap Title */}
               <h2

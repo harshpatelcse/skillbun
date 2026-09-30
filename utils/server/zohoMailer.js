@@ -13,6 +13,7 @@ import {
   emailButton,
   emailNote,
   emailCredentialStrip,
+  escapeHtml as escapeEmailHtml,
 } from '@/utils/server/emailTheme'
 
 export function getTransporter() {
@@ -41,7 +42,7 @@ export function getTransporter() {
 }
 
 export function escapeHtml(value) {
-  return String(value ?? '')
+  return escapeEmailHtml(value)
 }
 
 export async function sendSkillBunPasswordResetEmail({ email, resetLink }) {

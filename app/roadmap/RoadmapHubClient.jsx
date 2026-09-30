@@ -161,7 +161,7 @@ export default function RoadmapHubClient({ categories, roadmaps }) {
     window.addEventListener('storage', syncProgress);
     window.addEventListener('sb_progress_change', syncProgress);
 
-    const unsubscribe = subscribeDataSync((tag) => {
+    const unsubscribe = subscribeDataSync(({ tag }) => {
       if (tag === 'user:progress' || tag === 'user:profile') {
         syncProgress();
       }

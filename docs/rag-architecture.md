@@ -1,10 +1,10 @@
 # Central SkillBun retrieval
 
-The counsellor and AI email generator share `utils/server/rag/index.js`. The catalogue is read from public roadmap metadata; platform facts live in one allowlisted corpus module. A request retrieves evidence once and reuses it through the existing generation-provider fallback chain. This does not change the quiz engine, public search route, authentication, human verification, rate limits, saved email shape, or roadmap rendering.
+The counsellor and AI email generator share `utils/server/rag/index.js`. The catalogue is read from public roadmap metadata; platform facts live in one allowlisted corpus module. A request retrieves evidence once and reuses it through the answer-generation provider fallback chain. The public `/api/search` route is a separate title search and does not use this retrieval pipeline.
 
-## Decision
+## Architecture
 
-Three approaches were considered: lexical retrieval alone is inexpensive but misses semantic matches; a hosted vector database plus inference service adds operational setup for a small catalogue; local precomputed vectors with replaceable inference adapters provides real hybrid retrieval without requiring new credentials. The third option is the default. Explicit HTTP inference supports persistent production services without coupling callers to a vendor or database.
+Local precomputed vectors and replaceable inference adapters provide hybrid retrieval without requiring new credentials. Explicit HTTP inference supports persistent production services without coupling callers to a vendor or database. Lexical retrieval remains available when neural inference cannot complete within its budget.
 
 ```mermaid
 flowchart TD
@@ -43,7 +43,7 @@ flowchart TD
 
 ## Retrieval and correction behavior
 
-The current public corpus contains 100 roadmaps and 916 documents, including platform facts. File reads are capped at 1 MB, eight concurrent reads, two seconds overall and 1,200 documents. Five-minute caching avoids repeated work; failed refreshes retry sooner and may retain previous safe public documents. A partial catalogue is explicitly labelled incomplete, never advertised as a confirmed total. A redirected Windows workspace is resolved first, while individual catalogue symlinks and paths escaping its public directory are rejected.
+The corpus is derived from the current public roadmap files and allowlisted platform facts; its size changes with the catalog. File reads are capped at 1 MB, eight concurrent reads, two seconds overall and 1,200 documents. Five-minute caching avoids repeated work; failed refreshes retry sooner and may retain previous safe public documents. A partial catalogue is explicitly labelled incomplete, never advertised as a confirmed total. A redirected Windows workspace is resolved first, while individual catalogue symlinks and paths escaping its public directory are rejected.
 
 BM25 and cosine results are fused by rank, not by adding incompatible raw scores. Focused questions consider 30 candidates per retriever and rerank at most 14; comparisons and exploration use 40 and 20. A source-diversity cap prevents one roadmap from filling the evidence window. The default retrieval deadline is six seconds; email retrieval uses 4.5 seconds within its existing generation deadline. Native inference can finish after a caller times out, but its slot stays occupied until it settles, so repeated requests cannot build an unbounded queue.
 
@@ -61,16 +61,16 @@ The counsellor retains its optional DuckDuckGo lookup for time-sensitive tech qu
 
 ## Setup and deployment
 
-The dependency is pinned to `@huggingface/transformers` 4.2.0. Node 22 remains the project's runtime requirement. Local defaults use `Xenova/all-MiniLM-L6-v2` for 384-dimensional normalized mean-pooled embeddings and `Xenova/ms-marco-MiniLM-L-6-v2` for reranking, both with `q8` weights on CPU. Their initial model download is cached outside the repository, in the operating system's temporary directory under `skillbun-rag-models` unless configured otherwise. Initial model loading can exceed a request budget; lexical results remain available while the models warm up.
+The dependency is pinned in `package.json` and `package-lock.json`; use those files for the installed Transformers.js version. Node 22 is the project's runtime requirement. Local defaults use `Xenova/all-MiniLM-L6-v2` for 384-dimensional normalized mean-pooled embeddings and `Xenova/ms-marco-MiniLM-L-6-v2` for reranking, both with `q8` weights on CPU. Their initial model download is cached outside the repository, in the operating system's temporary directory under `skillbun-rag-models` unless configured otherwise. Initial model loading can exceed a request budget; lexical results remain available while the models warm up.
 
 ```sh
-npm ci
+ONNXRUNTIME_NODE_INSTALL=skip npm ci
 npm run rag:prepare
 npm run rag:evaluate
 npm run test:rag
 ```
 
-`rag:prepare` downloads/loads the embedding model if needed, embeds only public documents in batches of eight, and atomically writes `content/rag/embeddings.json`. It refuses to replace an index with an incomplete catalogue. The prepared public index is a deployable source artifact; model binaries and temporary files are not committed. `rag:evaluate` warms both models and runs eight public synthetic cases, including technical identifiers, typos, Hinglish, semantic queries, comparisons, certification and an unrelated query. It checks retrieval results, not the correctness of generated AI answers.
+`rag:prepare` downloads/loads the embedding model if needed, embeds only public documents in batches of eight, and atomically writes `content/rag/embeddings.json`. It refuses to replace an index with an incomplete catalogue. The prepared public index is a deployable source artifact; model binaries and temporary files are not committed. `rag:evaluate` warms both models and runs the public synthetic cases defined in `scripts/evaluate-rag.mjs`, including technical identifiers, typos, Hinglish, semantic queries, comparisons, certification and an unrelated query. It checks retrieval results, not the correctness of generated AI answers.
 
 Rebuild the index after public metadata/product-fact changes or an embedding-model change, and deploy the matching artifact with the code. Stale model/corpus signatures are rejected automatically. Next's route tracing includes public metadata and vectors for the counsellor and admin draft routes. Transformers.js and ONNX are automatically externalized by the installed Next version.
 
@@ -89,6 +89,8 @@ The production trace keeps ONNX native binaries for the build machine's OS/archi
 No new key is required for local mode. For a persistent Node deployment, provide a writable model cache and warm both models before traffic. For constrained/serverless deployment, configure separately hosted TEI embedding and reranking endpoints, or explicitly choose lexical-only mode. Remote embeddings must have 384 dimensions and match the model used to prepare the index. HTTP requires HTTPS except for loopback development endpoints, rejects URL credentials, and does not follow redirects. There is no automatic switch to an unconfigured remote service.
 
 `node scripts/evaluate-rag.mjs --lexical` measures the degraded path independently; semantic-only matches can be weaker there. The unit suite uses injected model/service doubles and does not download models or send emails. Deployment-specific HTTP credentials, real inbox delivery and production load need validation in the destination environment.
+
+Use [Operations](OPERATIONS.md) for release setup and [Current status](CURRENT_STATUS.md) for the latest verification scope. A passing unit suite or successful Transformers.js import does not establish that both neural models loaded, that the prepared index matches the deployed catalog, or that production requests meet their latency budget.
 
 ## Primary references
 

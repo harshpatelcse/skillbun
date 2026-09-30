@@ -201,17 +201,6 @@ function AuthForm() {
       return;
     }
 
-    const isLocalhost = typeof window !== 'undefined' &&
-      (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
-    const bypassKey = typeof window !== 'undefined' ? window.localStorage.getItem('sb_bypass_captcha') : null;
-
-    if (isLocalhost || bypassKey === 'bypass-captcha-dev') {
-      setTimeout(() => {
-        setCaptchaToken('bypass-captcha-dev');
-      }, 0);
-      return;
-    }
-
     let active = true;
 
     function waitForScript() {
@@ -350,11 +339,6 @@ function AuthForm() {
     }
 
     const headers = { 'Content-Type': 'application/json' };
-    const bypassKey = window.localStorage.getItem('sb_bypass_captcha');
-    if (captchaToken === 'bypass-captcha-dev' || bypassKey === 'bypass-captcha-dev') {
-      headers['x-skillbun-bypass'] = 'bypass-captcha-dev';
-    }
-
     try {
       const response = await fetch('/api/human/verify', {
         method: 'POST',
@@ -376,7 +360,7 @@ function AuthForm() {
       if (window.turnstile && captchaWidgetId.current !== null) {
         window.turnstile.reset(captchaWidgetId.current);
         setCaptchaToken('');
-      } else if (captchaToken !== 'bypass-captcha-dev') {
+      } else {
         setCaptchaToken('');
       }
     }
