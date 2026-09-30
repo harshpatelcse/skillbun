@@ -1,39 +1,65 @@
 "use client";
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useId } from 'react';
 import { useRouter } from 'next/navigation';
 import { trackEvent } from '@/lib/analytics';
 import { useTranslation } from './I18nProvider';
+import { startSearchRequest, nextSearchIndex } from '@/utils/client/searchRequest.mjs';
 
 export default function SearchBar() {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState('');
-  const [results, setResults] = useState({ pages: [], roadmaps: [] });
-  const [isLoading, setIsLoading] = useState(false);
+  const [response, setResponse] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(-1);
+  const listId = useId();
+  const cancelRequest = useRef(null);
+  const isLoading = !response || response.query !== query;
+  const hasError = !isLoading && response.error;
+  const results = !isLoading && !hasError ? response.data : { pages: [], roadmaps: [] };
+  const options = [
+    ...results.pages.map((page) => ({ href: page.href, type: 'page' })),
+    ...results.roadmaps.map((roadmap) => ({ href: `/roadmap/${roadmap.slug}`, type: 'roadmap' })),
+  ];
   const searchRef = useRef(null);
   const inputRef = useRef(null);
+  const mobileTriggerRef = useRef(null);
   const router = useRouter();
 
   const openSearch = () => {
     setIsOpen(true);
-    setTimeout(() => inputRef.current?.focus(), 50);
   };
 
   const closeSearch = () => {
+    cancelRequest.current?.();
     setIsOpen(false);
-    inputRef.current?.blur();
+    setResponse(null);
+    setActiveIndex(-1);
   };
+
+  useEffect(() => {
+    if (isOpen) inputRef.current?.focus();
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (isOpen && activeIndex >= 0) {
+      document.getElementById(`${listId}-${activeIndex}`)?.scrollIntoView({ block: 'nearest' });
+    }
+  }, [isOpen, activeIndex, listId]);
 
   // Keyboard shortcut (Cmd+K or Ctrl+K)
   useEffect(() => {
     const handleKeyDown = (e) => {
+      if (e.isComposing || e.keyCode === 229) return;
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
         e.preventDefault();
         openSearch();
       }
       if (e.key === 'Escape' && isOpen) {
         closeSearch();
+        // The desktop combobox keeps focus; the hidden mobile panel returns
+        // focus to its trigger. Outside-click and Tab never move focus here.
+        if (mobileTriggerRef.current?.getClientRects().length) mobileTriggerRef.current.focus();
       }
     };
     window.addEventListener('keydown', handleKeyDown);
@@ -51,33 +77,24 @@ export default function SearchBar() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Debounced Search
+  // Debounced search: closing, changing the query, and unmounting cancel old work.
   useEffect(() => {
     if (!isOpen) return;
-
-    const fetchResults = async () => {
-      setIsLoading(true);
-      try {
-        const res = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
-        if (res.ok) {
-          const data = await res.json();
-          setResults(data);
-          if (query.trim().length > 1) {
-            trackEvent('search_query', {
-              query_length: query.trim().length,
-              results_count: (data.pages?.length || 0) + (data.roadmaps?.length || 0),
-            });
-          }
+    const cancel = startSearchRequest({
+      query,
+      onResult: (data) => {
+        setResponse({ query, data });
+        if (query.trim().length > 1) {
+          trackEvent('search_query', {
+            query_length: query.trim().length,
+            results_count: data.pages.length + data.roadmaps.length,
+          });
         }
-      } catch (error) {
-        console.error('Search error:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    const timer = setTimeout(fetchResults, 300);
-    return () => clearTimeout(timer);
+      },
+      onError: () => setResponse({ query, error: true }),
+    });
+    cancelRequest.current = cancel;
+    return cancel;
   }, [query, isOpen]);
 
   const handleResultClick = (href, resultType) => {
@@ -87,10 +104,30 @@ export default function SearchBar() {
     router.push(href);
   };
 
+  const handleInputKeyDown = (event) => {
+    if (event.isComposing || event.nativeEvent.isComposing) return;
+    if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+      event.preventDefault();
+      openSearch();
+      setActiveIndex(nextSearchIndex(event.key, activeIndex, options.length));
+    } else if (event.key === 'Enter' && isOpen && options[activeIndex]) {
+      event.preventDefault();
+      const selected = options[activeIndex];
+      handleResultClick(selected.href, selected.type);
+    }
+  };
+
   return (
-    <div className={`search-container ${isOpen ? 'is-open' : ''}`} ref={searchRef}>
+    <div
+      className={`search-container ${isOpen ? 'is-open' : ''}`}
+      ref={searchRef}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) closeSearch();
+      }}
+    >
       <button
         type="button"
+        ref={mobileTriggerRef}
         className="search-mobile-trigger"
         aria-label="Open search"
         aria-expanded={isOpen}
@@ -112,11 +149,25 @@ export default function SearchBar() {
           <input
             ref={inputRef}
             type="text"
+            role="combobox"
+            aria-autocomplete="list"
+            aria-expanded={isOpen}
+            aria-controls={isOpen ? listId : undefined}
+            aria-activedescendant={isOpen && options[activeIndex] ? `${listId}-${activeIndex}` : undefined}
+            autoComplete="off"
+            maxLength={100}
             className="search-input"
             placeholder={t('nav.searchPlaceholder', 'Search roadmaps, pages...')}
             aria-label={t('nav.searchPlaceholder', 'Search roadmaps and pages')}
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => {
+              cancelRequest.current?.();
+              setResponse(null);
+              setActiveIndex(-1);
+              setQuery(e.target.value);
+              openSearch();
+            }}
+            onKeyDown={handleInputKeyDown}
             onFocus={openSearch}
           />
           <div className="search-shortcut">
@@ -126,19 +177,34 @@ export default function SearchBar() {
 
         {isOpen && (
           <div className="search-dropdown">
-            {isLoading && !results.pages.length && !results.roadmaps.length ? (
-              <div className="search-loading">
+            {isLoading ? (
+              <div className="search-loading" role="status">
                 <span className="search-spinner"></span> {t('common.searching', 'Searching...')}
               </div>
-            ) : (
+            ) : hasError ? (
+              <div className="search-empty" role="status">
+                {t('common.searchUnavailable', 'Search is unavailable. Please try again.')}
+              </div>
+            ) : results.pages.length === 0 && results.roadmaps.length === 0 ? (
+              <div className="search-empty" role="status">
+                {t('common.noResults', 'No results found for')} "{query}"
+              </div>
+            ) : null}
+            <div id={listId} role="listbox" aria-label={t('nav.searchResults', 'Search results')} aria-busy={isLoading}>
+            {!isLoading && !hasError && (
               <>
                 {results.pages.length > 0 && (
-                  <div className="search-group">
-                    <div className="search-group-label">{t('common.pages', 'Pages')}</div>
-                    {results.pages.map((page) => (
+                  <div className="search-group" role="group" aria-labelledby={`${listId}-pages`}>
+                    <div className="search-group-label" id={`${listId}-pages`} role="presentation">{t('common.pages', 'Pages')}</div>
+                    {results.pages.map((page, index) => (
                       <div
                         key={page.title}
                         className="search-item"
+                        id={`${listId}-${index}`}
+                        role="option"
+                        aria-selected={activeIndex === index}
+                        onMouseDown={(event) => event.preventDefault()}
+                        onMouseEnter={() => setActiveIndex(index)}
                         onClick={() => handleResultClick(page.href, 'page')}
                       >
                         <svg className="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -151,12 +217,17 @@ export default function SearchBar() {
                 )}
 
                 {results.roadmaps.length > 0 && (
-                  <div className="search-group">
-                    <div className="search-group-label">{t('common.roadmaps', 'Roadmaps')}</div>
-                    {results.roadmaps.map((roadmap) => (
+                  <div className="search-group" role="group" aria-labelledby={`${listId}-roadmaps`}>
+                    <div className="search-group-label" id={`${listId}-roadmaps`} role="presentation">{t('common.roadmaps', 'Roadmaps')}</div>
+                    {results.roadmaps.map((roadmap, index) => (
                       <div
                         key={roadmap.slug}
                         className="search-item"
+                        id={`${listId}-${results.pages.length + index}`}
+                        role="option"
+                        aria-selected={activeIndex === results.pages.length + index}
+                        onMouseDown={(event) => event.preventDefault()}
+                        onMouseEnter={() => setActiveIndex(results.pages.length + index)}
                         onClick={() => handleResultClick(`/roadmap/${roadmap.slug}`, 'roadmap')}
                       >
                         <svg className="item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -168,13 +239,9 @@ export default function SearchBar() {
                   </div>
                 )}
 
-                {results.pages.length === 0 && results.roadmaps.length === 0 && !isLoading && (
-                  <div className="search-empty">
-                    {t('common.noResults', 'No results found for')} "{query}"
-                  </div>
-                )}
               </>
             )}
+            </div>
           </div>
         )}
       </div>

@@ -697,7 +697,7 @@ export default function Home() {
               <Image src="/logo.png" alt="SkillBun Logo" width={56} height={56} unoptimized />
             </div>
             <h2>{t('sections.finalCta.title', 'Ready to Hop In?')}</h2>
-            <p>{t('sections.finalCta.subtitle', "Join thousands of students who found their perfect tech career path with SkillBun. It's free to start.")}</p>
+            <p>{t('sections.finalCta.subtitle', "Explore your interests, find a roadmap, and take your next step with SkillBun. It's free to start.")}</p>
             <button onClick={() => openAuthModal('/quiz')} className="btn-primary" style={{ margin: '0 auto' }}>{t('sections.finalCta.button', "Start Your Quiz — It's Free")}</button>
           </div>
         </div>

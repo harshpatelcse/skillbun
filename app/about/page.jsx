@@ -21,7 +21,7 @@ export default function AboutPage() {
   return (
     <div className="static-page">
       <h1>About SkillBun</h1>
-      <p><em>Last updated: May 3, 2026</em></p>
+      <p><em>Last updated: September 30, 2026</em></p>
 
       <p>
         SkillBun is an AI-powered career discovery and skill verification platform designed for computer science, software engineering, and tech students worldwide.
@@ -39,16 +39,16 @@ export default function AboutPage() {
         Our ecosystem revolves around five core capabilities designed to provide a continuous, adaptive learning journey:
       </p>
       <ul>
-        <li><strong>Adaptive AI Quiz Engine:</strong> A dynamic assessment that adjusts to your responses in real-time, pinpointing your theoretical strengths, practical gaps, and latent affinities.</li>
+        <li><strong>Adaptive AI Quiz Engine:</strong> A career discovery quiz that adapts to your answers about interests, work preferences, and technical scenarios to recommend career paths.</li>
         <li><strong>100+ Interactive Career Roadmaps:</strong> High-fidelity, granular career trees (AI/ML, Fullstack, DevOps, Cybersecurity, Mobile Development, Systems Programming) that visually demonstrate exactly what skills to learn, and in what order.</li>
-        <li><strong>Bun-Bot (AI Career Counsellor):</strong> An integrated, context-aware AI chatbot that remembers your profile and quiz results to answer specific career queries and keep you on track.</li>
-        <li><strong>SkillBun Vault (SBV1) Study Guides:</strong> 3,300+ encrypted interactive study guides, verified video playlists, and curated documentation links embedded directly into roadmap nodes.</li>
-        <li><strong>Verified Digital Certification:</strong> Proctored 10-MCQ exams awarded upon reaching 60%+ roadmap completion, generating publicly shareable verified certificates at <code>/certificate/[id]</code>.</li>
+        <li><strong>Bun-Bot (AI Career Counsellor):</strong> A dedicated AI chat that uses your profile and current conversation to help with career questions, roadmap choices, and study planning.</li>
+        <li><strong>SkillBun Vault (SBV1) Study Guides:</strong> Encrypted topic guides with curated video and documentation resources available through roadmap nodes. Resources vary by topic, and full guides require sign-in.</li>
+        <li><strong>Verified Digital Certification:</strong> Reaching 60% roadmap progress unlocks a 10-question exam with focus and copy controls. A score of at least 70% earns a publicly verifiable certificate at <code>/certificate/[id]</code>.</li>
       </ul>
 
       <h2>100% Free Policy</h2>
       <p>
-        SkillBun is <strong>100% Completely Free</strong> for all students. We believe high-quality career guidance and skill verification should be universally accessible. All 100+ roadmaps, study guides, AI quizzes, Bun-Bot counsellor chats, and digital certificates are 100% free forever without subscriptions, paywalls, or credit card requirements.
+        SkillBun is <strong>100% Completely Free</strong> for all students. We believe high-quality career guidance and skill verification should be universally accessible. All 100+ roadmaps, study guides, AI quizzes, Bun-Bot counsellor chats, and digital certificates are 100% free without subscriptions, paywalls, or credit card requirements.
       </p>
 
       <h2>Our Technology & Ethics</h2>
@@ -64,7 +64,7 @@ export default function AboutPage() {
 
       <h2>Team</h2>
       <p>
-        Built and maintained by Reish with the active contributions of senior engineers and tech industry mentors.
+        Built and maintained by Reish.
       </p>
       <div style={{ marginTop: '2rem' }}>
         <Link href="/contact" className="cta-button" style={{ display: 'inline-block', padding: '0.75rem 1.5rem', backgroundColor: 'var(--brand-color, #22c55e)', color: '#fff', textDecoration: 'none', borderRadius: '4px', fontWeight: 'bold' }}>

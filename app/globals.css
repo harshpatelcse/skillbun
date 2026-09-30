@@ -6880,7 +6880,8 @@ footer {
   transition: all 0.15s;
 }
 
-.search-item:hover {
+.search-item:hover,
+.search-item[aria-selected="true"] {
   background: var(--green-subtle);
   color: var(--green);
 }
@@ -6893,7 +6894,8 @@ footer {
   transition: color 0.15s;
 }
 
-.search-item:hover .item-icon {
+.search-item:hover .item-icon,
+.search-item[aria-selected="true"] .item-icon {
   color: var(--green);
 }
 

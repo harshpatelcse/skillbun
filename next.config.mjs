@@ -78,10 +78,9 @@ const nextConfig = {
         headers: securityHeaders,
       },
       {
-        // Firebase owns these proxied helper documents, including their inline
-        // bootstrap scripts and cross-origin iframe messaging. Preserve its
-        // response policy instead of layering the app's CSP/framing policy on it.
-        source: '/((?!__/auth(?:/|$)).*)',
+        // Firebase owns its helper policy. The exact playground bridge has its
+        // own opaque-origin sandbox CSP; all other paths retain the app policy.
+        source: '/((?!__/auth(?:/|$)|api/playground/sandbox$).*)',
         headers: appDocumentSecurityHeaders,
       },
 

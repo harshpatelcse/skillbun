@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import Link from 'next/link';
+import { buildStaticPreviewDocument, startPlaygroundRun } from '@/utils/client/playgroundRunner';
+import { normalizePlaygroundLanguage as normalizeLanguage, playgroundSupportMessage, PLAYGROUND_LIMITS } from '@/utils/shared/playground.mjs';
 
 // Predefined starter templates for each supported environment
 const STARTER_TEMPLATES = {
@@ -101,34 +103,23 @@ print(json.dumps(results, indent=2))
 <body>
   <div class="card">
     <span class="badge">SKILLBUN SANDBOX</span>
-    <h2>Interactive Live Preview</h2>
-    <p>Test web components and styles in real-time.</p>
-    <div id="counter">0</div>
-    <button onclick="increment()">Click to Counter</button>
+    <h2>Static HTML/CSS Preview</h2>
+    <p>Preview HTML structure and CSS styles.</p>
+    <div id="counter">Hello, CSS!</div>
+    <p>JavaScript is disabled in HTML previews.</p>
   </div>
-  <script>
-    let count = 0;
-    function increment() {
-      count++;
-      document.getElementById('counter').innerText = count;
-      console.log('Button clicked! Current count:', count);
-    }
-  </script>
+
 </body>
 </html>
 `,
 };
 
-function normalizeLanguage(lang) {
-  if (!lang) return 'javascript';
-  const clean = lang.toLowerCase().trim();
-  if (['py', 'python', 'python3'].includes(clean)) return 'python';
-  if (['html', 'htm', 'xml', 'svg', 'web'].includes(clean)) return 'html';
-  if (['js', 'javascript', 'ts', 'typescript', 'jsx', 'tsx', 'node'].includes(clean)) return 'javascript';
-  return 'javascript';
+export default function CodePlayground(props) {
+  const sessionKey = JSON.stringify([props.initialCode || '', props.initialLanguage || 'javascript', props.topicName || '']);
+  return <CodePlaygroundSession key={sessionKey} {...props} />;
 }
 
-export default function CodePlayground({
+function CodePlaygroundSession({
   initialCode = '',
   initialLanguage = 'javascript',
   topicName = 'Study Topic',
@@ -136,35 +127,34 @@ export default function CodePlayground({
 }) {
   const normLang = normalizeLanguage(initialLanguage);
   const [language, setLanguage] = useState(normLang);
-  const [code, setCode] = useState(initialCode || STARTER_TEMPLATES[normLang] || STARTER_TEMPLATES.javascript);
-  const [outputs, setOutputs] = useState([]);
+  const [code, setCode] = useState(initialCode || STARTER_TEMPLATES[normLang] || '');
+  const [outputs, setOutputs] = useState(() => {
+    const message = playgroundSupportMessage(initialLanguage);
+    return message ? [{ type: 'system', content: message, timestamp: '' }] : [];
+  });
   const [isRunning, setIsRunning] = useState(false);
   const [activeTab, setActiveTab] = useState('console'); // 'console' | 'preview'
   const [executionTime, setExecutionTime] = useState(null);
   const [pyodideStatus, setPyodideStatus] = useState('idle'); // 'idle' | 'loading' | 'ready' | 'error'
   const [copied, setCopied] = useState(false);
 
-  // Synchronize incoming prop changes during render (React recommended pattern)
-  const [prevProps, setPrevProps] = useState({ code: initialCode, language: initialLanguage });
-  if (initialCode !== prevProps.code || initialLanguage !== prevProps.language) {
-    const updatedLang = normalizeLanguage(initialLanguage);
-    setPrevProps({ code: initialCode, language: initialLanguage });
-    setLanguage(updatedLang);
-    setCode(initialCode || STARTER_TEMPLATES[updatedLang] || STARTER_TEMPLATES.javascript);
-    setOutputs([
-      {
-        type: 'system',
-        content: `Loaded code snippet for "${topicName}" (${updatedLang.toUpperCase()})`,
-        timestamp: new Date().toLocaleTimeString(),
-      },
-    ]);
-    setExecutionTime(null);
-  }
-
   const editorRef = useRef(null);
   const lineNumbersRef = useRef(null);
   const iframeRef = useRef(null);
-  const pyodideRef = useRef(null);
+  const executionRef = useRef(null);
+
+  useEffect(() => () => {
+    executionRef.current?.cancel();
+    executionRef.current = null;
+  }, []);
+
+  const cancelCurrentRun = useCallback(() => {
+    const run = executionRef.current;
+    executionRef.current = null;
+    run?.cancel();
+    setIsRunning(false);
+    setPyodideStatus('idle');
+  }, []);
 
   // Compute line count for gutter
   const lineCount = useMemo(() => {
@@ -199,11 +189,16 @@ export default function CodePlayground({
 
   // Reset current language template
   const resetToTemplate = useCallback(() => {
+    cancelCurrentRun();
+    if (language === 'unsupported') {
+      appendOutput('system', playgroundSupportMessage(initialLanguage));
+      return;
+    }
     const template = STARTER_TEMPLATES[language] || STARTER_TEMPLATES.javascript;
     setCode(template);
     clearConsole();
     appendOutput('system', `Reset editor to default ${language.toUpperCase()} template.`);
-  }, [language, clearConsole, appendOutput]);
+  }, [language, initialLanguage, cancelCurrentRun, clearConsole, appendOutput]);
 
   // Copy code to clipboard
   const copyCode = useCallback(async () => {
@@ -216,270 +211,55 @@ export default function CodePlayground({
     }
   }, [code]);
 
-  // -------------------------------------------------------------
-  // JAVASCRIPT RUNNER (Sandboxed Iframe with Console Interception)
-  // -------------------------------------------------------------
-  const runJavaScript = useCallback(async (src) => {
-    const startTime = performance.now();
-    clearConsole();
-    appendOutput('system', 'Executing JavaScript in isolated sandbox...');
-
-    return new Promise((resolve) => {
-      // Create a temporary hidden sandboxed iframe
-      const iframe = document.createElement('iframe');
-      iframe.style.display = 'none';
-      // Strict security: sandbox only scripts, NO allow-same-origin (blocks cookies/storage)
-      iframe.sandbox = 'allow-scripts';
-
-      const timeoutId = setTimeout(() => {
-        appendOutput('error', 'Execution timed out (limit: 3000ms). Possible infinite loop detected.');
-        cleanup();
-        resolve();
-      }, 3000);
-
-      const messageListener = (event) => {
-        // Ensure message came from our worker
-        if (event.source !== iframe.contentWindow) return;
-        const { type, logType, message } = event.data || {};
-        if (type === 'sk_log') {
-          appendOutput(logType || 'log', message);
-        } else if (type === 'sk_complete') {
-          const duration = Math.round(performance.now() - startTime);
-          setExecutionTime(duration);
-          if (message !== undefined && message !== 'undefined') {
-            appendOutput('result', `Return: ${message}`);
-          }
-          appendOutput('system', `✓ Execution finished in ${duration}ms`);
-          cleanup();
-          resolve();
-        } else if (type === 'sk_error') {
-          const duration = Math.round(performance.now() - startTime);
-          setExecutionTime(duration);
-          appendOutput('error', message);
-          cleanup();
-          resolve();
-        }
-      };
-
-      const cleanup = () => {
-        clearTimeout(timeoutId);
-        window.removeEventListener('message', messageListener);
-        if (iframe.parentNode) {
-          iframe.parentNode.removeChild(iframe);
-        }
-      };
-
-      window.addEventListener('message', messageListener);
-
-      const safeHtml = `
-        <!DOCTYPE html>
-        <html>
-        <head><meta charset="utf-8"></head>
-        <body>
-          <script>
-            (function() {
-              function send(type, logType, message) {
-                window.parent.postMessage({ type: type, logType: logType, message: message }, '*');
-              }
-              function formatArg(arg) {
-                if (arg === undefined) return 'undefined';
-                if (arg === null) return 'null';
-                if (typeof arg === 'object') {
-                  try { return JSON.stringify(arg); } catch (e) { return String(arg); }
-                }
-                return String(arg);
-              }
-
-              console.log = function() {
-                var args = Array.prototype.slice.call(arguments).map(formatArg).join(' ');
-                send('sk_log', 'log', args);
-              };
-              console.info = function() {
-                var args = Array.prototype.slice.call(arguments).map(formatArg).join(' ');
-                send('sk_log', 'info', args);
-              };
-              console.warn = function() {
-                var args = Array.prototype.slice.call(arguments).map(formatArg).join(' ');
-                send('sk_log', 'warn', args);
-              };
-              console.error = function() {
-                var args = Array.prototype.slice.call(arguments).map(formatArg).join(' ');
-                send('sk_log', 'error', args);
-              };
-
-              window.onerror = function(msg, url, line, col, err) {
-                send('sk_error', 'error', (err && err.message) ? err.message : msg);
-                return true;
-              };
-              window.onunhandledrejection = function(e) {
-                send('sk_error', 'error', 'Unhandled Promise Rejection: ' + (e.reason ? (e.reason.message || e.reason) : 'Error'));
-              };
-
-              try {
-                var codeToRun = ${JSON.stringify(src)};
-                var result = eval(codeToRun);
-                if (result instanceof Promise) {
-                  result.then(function(res) {
-                    send('sk_complete', 'result', formatArg(res));
-                  }).catch(function(err) {
-                    send('sk_error', 'error', err ? (err.message || String(err)) : 'Promise Error');
-                  });
-                } else {
-                  send('sk_complete', 'result', formatArg(result));
-                }
-              } catch (err) {
-                send('sk_error', 'error', err ? (err.stack || err.message || String(err)) : 'Runtime error');
-              }
-            })();
-          </script>
-        </body>
-        </html>
-      `;
-
-      document.body.appendChild(iframe);
-      iframe.srcdoc = safeHtml;
-    });
-  }, [clearConsole, appendOutput]);
-
-  // -------------------------------------------------------------
-  // PYTHON RUNNER (Pyodide WebAssembly in Browser)
-  // -------------------------------------------------------------
-  const initPyodide = useCallback(async () => {
-    if (pyodideRef.current) return pyodideRef.current;
-    if (typeof window !== 'undefined' && window.__skillbun_pyodide__) {
-      pyodideRef.current = window.__skillbun_pyodide__;
-      return pyodideRef.current;
-    }
-
-    setPyodideStatus('loading');
-    appendOutput('system', 'Initializing Python WebAssembly environment (Pyodide)...');
-
-    // Load Pyodide CDN script dynamically if not present
-    if (typeof window !== 'undefined' && !window.loadPyodide) {
-      await new Promise((resolve, reject) => {
-        const script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js';
-        script.async = true;
-        script.onload = resolve;
-        script.onerror = () => reject(new Error('Failed to load Pyodide WebAssembly script from CDN.'));
-        document.head.appendChild(script);
-      });
-    }
-
-    const pyodide = await window.loadPyodide({
-      indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.26.4/full/',
-    });
-
-    window.__skillbun_pyodide__ = pyodide;
-    pyodideRef.current = pyodide;
-    setPyodideStatus('ready');
-    appendOutput('system', '✓ Python 3.12 WebAssembly environment ready!');
-    return pyodide;
-  }, [appendOutput]);
-
-  const runPython = useCallback(async (src) => {
-    const startTime = performance.now();
-    clearConsole();
-
-    try {
-      const pyodide = await initPyodide();
-      appendOutput('system', 'Executing Python script...');
-
-      // Redirect stdout and stderr using Python StringIO
-      pyodide.runPython(`
-import sys
-from io import StringIO
-__sb_stdout__ = StringIO()
-__sb_stderr__ = StringIO()
-sys.stdout = __sb_stdout__
-sys.stderr = __sb_stderr__
-`);
-
-      // Run student code
-      const result = await pyodide.runPythonAsync(src);
-
-      // Extract captured output
-      const stdout = pyodide.runPython('__sb_stdout__.getvalue()');
-      const stderr = pyodide.runPython('__sb_stderr__.getvalue()');
-
-      if (stdout) {
-        stdout.split('\n').forEach(line => {
-          if (line) appendOutput('log', line);
-        });
-      }
-      if (stderr) {
-        stderr.split('\n').forEach(line => {
-          if (line) appendOutput('warn', line);
-        });
-      }
-      if (result !== undefined && result !== null) {
-        appendOutput('result', `Return: ${result}`);
-      }
-
-      const duration = Math.round(performance.now() - startTime);
-      setExecutionTime(duration);
-      appendOutput('system', `✓ Python execution finished in ${duration}ms`);
-    } catch (err) {
-      const duration = Math.round(performance.now() - startTime);
-      setExecutionTime(duration);
-      appendOutput('error', err.message || String(err));
-    }
-  }, [initPyodide, clearConsole, appendOutput]);
-
-  // -------------------------------------------------------------
-  // HTML / WEB LIVE PREVIEW RUNNER
-  // -------------------------------------------------------------
-  const runHtmlPreview = useCallback((src) => {
-    clearConsole();
-    appendOutput('system', 'Rendering live HTML preview in isolated sandbox...');
-    setActiveTab('preview');
-
-    if (iframeRef.current) {
-      // Intercept console.log inside iframe
-      const injectedScript = `
-        <script>
-          (function() {
-            var oldLog = console.log;
-            console.log = function() {
-              var args = Array.prototype.slice.call(arguments).join(' ');
-              window.parent.postMessage({ type: 'sk_html_log', message: args }, '*');
-              if (oldLog) oldLog.apply(console, arguments);
-            };
-          })();
-        </script>
-      `;
-      iframeRef.current.srcdoc = injectedScript + src;
-      setExecutionTime(1);
-    }
-  }, [clearConsole, appendOutput]);
-
-  // Listen for messages from live HTML preview
-  useEffect(() => {
-    const handleHtmlLog = (e) => {
-      if (e.data && e.data.type === 'sk_html_log') {
-        appendOutput('log', `[Live Preview] ${e.data.message}`);
-      }
-    };
-    window.addEventListener('message', handleHtmlLog);
-    return () => window.removeEventListener('message', handleHtmlLog);
-  }, [appendOutput]);
-
-  // Master Run Dispatcher
   const runCode = useCallback(async () => {
-    if (isRunning) return;
-    setIsRunning(true);
-    try {
-      if (language === 'javascript') {
-        await runJavaScript(code);
-      } else if (language === 'python') {
-        await runPython(code);
-      } else if (language === 'html') {
-        runHtmlPreview(code);
-      }
-    } finally {
-      setIsRunning(false);
+    if (isRunning || executionRef.current) return;
+    clearConsole();
+    if (language === 'unsupported') {
+      appendOutput('error', playgroundSupportMessage(initialLanguage));
+      return;
     }
-  }, [isRunning, language, code, runJavaScript, runPython, runHtmlPreview]);
+    setIsRunning(true);
+    if (language === 'html') {
+      try {
+        const preview = buildStaticPreviewDocument(code);
+        if (iframeRef.current) iframeRef.current.srcdoc = preview;
+        setActiveTab('preview');
+        appendOutput('system', 'Static HTML/CSS preview rendered. Scripts, forms, links and external resources are disabled.');
+      } catch (error) {
+        setActiveTab('console');
+        appendOutput('error', error.message || 'Could not render this HTML preview.');
+      } finally {
+        setIsRunning(false);
+      }
+      return;
+    }
+
+    setActiveTab('console');
+    setPyodideStatus(language === 'python' ? 'loading' : 'idle');
+    appendOutput('system', language === 'python'
+      ? 'Preparing an isolated Python worker. The first run downloads the pinned WebAssembly runtime.'
+      : 'Starting an isolated browser JavaScript worker...');
+    const run = startPlaygroundRun({
+      language, code,
+      onOutput: (kind, message) => {
+        if (executionRef.current === run) appendOutput(kind, kind === 'result' ? `Return: ${message}` : message);
+      },
+      onReady: () => {
+        if (executionRef.current !== run) return;
+        if (language === 'python') setPyodideStatus('ready');
+        appendOutput('system', `Running ${language === 'python' ? 'Python' : 'browser JavaScript'}...`);
+      },
+    });
+    executionRef.current = run;
+    const result = await run.promise;
+    if (executionRef.current !== run) return;
+    executionRef.current = null;
+    setIsRunning(false);
+    setPyodideStatus('idle');
+    setExecutionTime(result.durationMs);
+    if (result.status === 'complete') appendOutput('system', `Execution finished in ${result.durationMs}ms. Worker closed.`);
+    else appendOutput(result.status === 'cancelled' ? 'system' : 'error', result.message);
+  }, [isRunning, language, code, initialLanguage, clearConsole, appendOutput]);
 
   // Handle Tab key and Auto-Indent
   const handleKeyDown = useCallback((e) => {
@@ -563,6 +343,7 @@ sys.stderr = __sb_stderr__
             className="sk-playground-select"
             value={language}
             onChange={(e) => {
+              cancelCurrentRun();
               const newLang = e.target.value;
               setLanguage(newLang);
               setCode(STARTER_TEMPLATES[newLang] || '');
@@ -571,14 +352,15 @@ sys.stderr = __sb_stderr__
               else setActiveTab('console');
             }}
           >
-            <option value="javascript">JavaScript (ES6 / Node)</option>
+            <option value="javascript">Browser JavaScript (ES6+)</option>
             <option value="python">Python 3 (Pyodide WASM)</option>
-            <option value="html">HTML5 / Web (Live Preview)</option>
+            <option value="html">HTML / CSS (Static Preview)</option>
+            {language === 'unsupported' && <option value="unsupported" disabled>{initialLanguage || 'Unsupported language'} (not supported)</option>}
           </select>
 
           {language === 'python' && (
             <span className={`sk-pyodide-status ${pyodideStatus}`}>
-              {pyodideStatus === 'loading' ? '⚡ Loading WASM...' : pyodideStatus === 'ready' ? '✓ WASM Ready' : 'Python 3'}
+              {pyodideStatus === 'loading' ? 'Loading Python...' : pyodideStatus === 'ready' ? 'Python running' : 'Python 3'}
             </span>
           )}
         </div>
@@ -613,17 +395,17 @@ sys.stderr = __sb_stderr__
           <button
             type="button"
             className="sk-btn-run"
-            onClick={runCode}
-            disabled={isRunning || (language === 'python' && pyodideStatus === 'loading')}
-            aria-label="Run code (Ctrl + Enter)"
-            title="Run code (Ctrl + Enter)"
+            onClick={() => isRunning ? executionRef.current?.cancel() : runCode()}
+            disabled={language === 'unsupported'}
+            aria-label={isRunning ? 'Stop code execution' : 'Run code (Ctrl + Enter)'}
+            title={isRunning ? 'Stop code execution' : 'Run code (Ctrl + Enter)'}
           >
             {isRunning ? (
               <div className="sk-spinner-small" />
             ) : (
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
             )}
-            <span>{isRunning ? 'Running...' : 'Run Code'}</span>
+            <span>{isRunning ? 'Stop' : 'Run Code'}</span>
             <kbd className="sk-shortcut-badge">Ctrl+↵</kbd>
           </button>
         </div>
@@ -649,6 +431,7 @@ sys.stderr = __sb_stderr__
               onChange={(e) => setCode(e.target.value)}
               onScroll={handleScroll}
               onKeyDown={handleKeyDown}
+              maxLength={PLAYGROUND_LIMITS.codeCharacters}
               spellCheck="false"
               autoCapitalize="off"
               autoComplete="off"
@@ -678,7 +461,7 @@ sys.stderr = __sb_stderr__
                 className={`sk-output-tab ${activeTab === 'preview' ? 'active' : ''}`}
                 onClick={() => setActiveTab('preview')}
               >
-                Live Preview
+                Static Preview
               </button>
             )}
 
@@ -726,16 +509,18 @@ sys.stderr = __sb_stderr__
             </div>
           )}
 
-          {/* HTML Live Preview Iframe */}
+          {/* Scripts and navigation remain disabled in this static preview. */}
           <div
             className="sk-preview-wrapper"
             style={{ display: activeTab === 'preview' ? 'block' : 'none' }}
           >
+            <p className="sk-playground-label" role="note">Static preview: HTML/CSS only. Scripts, links and external resources are disabled.</p>
             <iframe
               ref={iframeRef}
               className="sk-preview-iframe"
-              sandbox="allow-scripts"
-              title="Live HTML Preview"
+              sandbox=""
+              referrerPolicy="no-referrer"
+              title="Static HTML and CSS Preview"
             />
           </div>
 

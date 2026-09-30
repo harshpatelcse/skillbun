@@ -1407,6 +1407,9 @@
 .sk-playground-lang-group {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  min-width: 0;
+  max-width: 100%;
   gap: 10px;
 }
 
@@ -1417,6 +1420,8 @@
 }
 
 .sk-playground-select {
+  min-width: 0;
+  max-width: 100%;
   background: var(--surface);
   border: 1px solid var(--border);
   color: var(--text);
@@ -1449,6 +1454,9 @@
 .sk-playground-actions {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  min-width: 0;
+  max-width: 100%;
   gap: 8px;
 }
 

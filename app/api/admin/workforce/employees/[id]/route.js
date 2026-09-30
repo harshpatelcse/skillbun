@@ -20,6 +20,11 @@ function toTimestampMilliseconds(value) {
   return Number.NaN
 }
 
+function hasConflictingEmployee(data, employeeId) {
+  return data.employee_id !== undefined && data.employee_id !== null
+    && data.employee_id !== '' && data.employee_id !== employeeId
+}
+
 export async function PATCH(request, { params }) {
   try {
     const { id } = await params
@@ -152,7 +157,14 @@ export async function DELETE(request, { params }) {
     certByEmpSnap.docs.forEach((d) => certDocRefs.set(d.id, d.ref))
     certByEmailSnap.docs.forEach((d) => {
       const data = d.data()
-      if (data.cert_type !== 'ROADMAP' || data.employee_id === employeeRef.id) {
+      if (hasConflictingEmployee(data, employeeRef.id)) {
+        certDocRefs.delete(d.id)
+        return
+      }
+      const certType = typeof data.cert_type === 'string' ? data.cert_type.trim().toUpperCase() : ''
+      // Email alone cannot establish that an untyped legacy credential belongs
+      // to this employment. Preserve academic and unidentified certificates.
+      if (['INTERNSHIP', 'TRAINING', 'LOR'].includes(certType) || data.employee_id === employeeRef.id) {
         certDocRefs.set(d.id, d.ref)
       }
     })
@@ -167,7 +179,13 @@ export async function DELETE(request, { params }) {
     ])
     const workforceDocRefs = new Map()
     docsByEmpSnap.docs.forEach((d) => workforceDocRefs.set(d.id, d.ref))
-    docsByEmailSnap.docs.forEach((d) => workforceDocRefs.set(d.id, d.ref))
+    docsByEmailSnap.docs.forEach((d) => {
+      if (hasConflictingEmployee(d.data(), employeeRef.id)) {
+        workforceDocRefs.delete(d.id)
+        return
+      }
+      workforceDocRefs.set(d.id, d.ref)
+    })
     const deleteRefs = [...certDocRefs.values(), ...milestoneSnap.docs.map((doc) => doc.ref), ...workforceDocRefs.values(), employeeRef]
     // Preserve the atomic cascade contract. Splitting this into committed chunks
     // could leave a partially deleted employee if a later chunk fails.

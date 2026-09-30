@@ -1,6 +1,7 @@
 export const metadata = {
   title: 'Bun-Bot AI Career Counsellor | SkillBun',
-  description: 'Chat with Bun-Bot, your personal 24/7 AI career mentor for tech degree guidance, roadmap advice, and interview preparation.',
+  description: 'Chat with Bun-Bot for tech degree guidance, roadmap advice, study planning, and interview preparation.',
+  robots: { index: false, follow: false, googleBot: { index: false, follow: false } },
 };
 
 export default function CounsellorLayout({ children }) {

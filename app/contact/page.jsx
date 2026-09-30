@@ -68,7 +68,7 @@ const faqItems = [
   {
     question: 'How does the AI career quiz work?',
     answer:
-      'Our adaptive quiz analyzes your background, logical aptitude, technical interests, and work preferences in real-time. Based on your inputs, it ranks and suggests the top tech career paths that best align with your strengths.',
+      'Our adaptive career discovery quiz uses your background, technical interests, work preferences, and answers to practical scenarios to suggest career paths. The recommendations help you explore options; the quiz does not certify technical proficiency.',
   },
   {
     question: 'Are the career roadmaps and certifications completely free?',
@@ -78,27 +78,27 @@ const faqItems = [
   {
     question: 'How do I earn and verify an official SkillBun Certificate?',
     answer:
-      'Once you achieve at least 60% progress on any career roadmap, you unlock the certification exam. Passing the proctored 10-question adaptive assessment (scoring 70% or higher) automatically generates an official, tamper-proof digital certificate with a verifiable QR code and public URL.',
+      'At 60% roadmap progress, you unlock a timed exam with 10 questions randomly selected from a fixed 50-question bank. Scoring at least 70% lets you earn a SkillBun certificate with a QR code and public verification URL. The exam includes focus-loss warnings and copy controls.',
   },
   {
     question: 'How do I talk to Bun-Bot AI Counsellor?',
     answer:
-      'Bun-Bot is available directly within each roadmap and career guidance view. You can ask role-specific questions, request clarification on difficult technical concepts, get project inspiration, and ask for career advice tailored to your learning pace.',
+      'Open the Bun-Bot counsellor page from SkillBun or a roadmap link, then sign in to chat. You can ask role-specific questions, clarify technical concepts, explore project ideas, and discuss your learning plans.',
   },
   {
     question: 'How is my learning progress tracked and saved?',
     answer:
-      'Your milestone progress and completed topic nodes are automatically synced to your cloud profile in real-time. Whenever you log in from any device, your roadmaps, quiz results, and unlocked certificates are right where you left them.',
+      'When you are signed in, completed roadmap nodes are saved to your account so you can resume on another device. Your profile and earned certificates are also linked to your account. Career quiz results stay in the current quiz session and are not saved across devices.',
   },
   {
     question: 'Can I retake the career quiz or explore multiple roadmaps?',
     answer:
-      'Absolutely! You can retake the quiz anytime as your interests evolve, or independently explore, bookmark, and study any of our 100+ career roadmaps concurrently across AI, Fullstack, DevOps, Cybersecurity, Mobile, and more.',
+      'Yes. You can retake the career discovery quiz as your interests evolve, or explore and study multiple roadmaps across AI, Fullstack, DevOps, Cybersecurity, Mobile, and more. Roadmaps with recorded progress appear in your saved paths. Certification exams have separate attempt limits and cooldowns.',
   },
   {
     question: 'What resources are included in each roadmap topic?',
     answer:
-      'Each interactive roadmap node features comprehensive markdown study guides, curated high-quality YouTube video tutorials, official documentation links, milestone project ideas, and practical skill checklists.',
+      'Roadmap topics can include study guides, video tutorials, documentation links, and project ideas. Available resources vary by topic. Full study guides require a signed-in account.',
   },
   {
     question: 'Why do I need to log in to read full study guides?',
@@ -108,12 +108,12 @@ const faqItems = [
   {
     question: 'Can I share my SkillBun Certificate on LinkedIn or resumes?',
     answer:
-      'Yes! Every certificate comes with a permanent, public verification link at skillbun.tech/certificate/[id] that recruiters and employers can visit to verify your credential, name, roadmap subject, issue date, and authenticity.',
+      'Yes. Certificates have a public verification link at skillbun.tech/certificate/[id] that shows the recorded credential details and revocation status while the record exists. Deleting your student account also deletes its roadmap certificates; workforce and legal records are retained separately.',
   },
   {
     question: 'How can I suggest a new roadmap, report an issue, or contribute?',
     answer:
-      'We welcome community feedback! You can reach us directly via the contact form above, send an email to our support team, or connect with us on GitHub and Discord to suggest new topics, report broken links, or propose roadmap improvements.',
+      'Email harsh@skillbun.tech to suggest topics, report broken links, or propose roadmap improvements. Include the relevant page link and steps to reproduce an issue. Our official Instagram and LinkedIn channels are listed above for public updates.',
   },
 ];
 

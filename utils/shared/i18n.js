@@ -175,7 +175,7 @@ export const DICTIONARIES = {
       },
       finalCta: {
         title: 'Ready to Hop In?',
-        subtitle: "Join thousands of students who found their perfect tech career path with SkillBun. It's free to start.",
+        subtitle: "Explore your interests, find a roadmap, and take your next step with SkillBun. It's free to start.",
         button: "Start Your Quiz — It's Free",
       },
     },
@@ -373,7 +373,7 @@ export const DICTIONARIES = {
       },
       finalCta: {
         title: '¿Listo para Dar el Salto?',
-        subtitle: 'Únete a miles de estudiantes que encontraron su camino ideal en tech con SkillBun. Empezar es 100% gratis.',
+        subtitle: 'Explora tus intereses, encuentra una ruta de aprendizaje y da tu próximo paso con SkillBun. Empezar es gratis.',
         button: 'Iniciar Tu Test — Es Gratis',
       },
     },
@@ -571,7 +571,7 @@ export const DICTIONARIES = {
       },
       finalCta: {
         title: 'क्या आप शुरुआत करने के लिए तैयार हैं?',
-        subtitle: 'हजारों छात्रों से जुड़ें जिन्होंने SkillBun के साथ अपना सही करियर पाया। शुरुआत पूरी तरह मुफ़्त है।',
+        subtitle: 'अपनी रुचियों को जानें, एक रोडमैप चुनें और SkillBun के साथ अगला कदम बढ़ाएँ। शुरुआत मुफ़्त है।',
         button: 'क्विज़ शुरू करें — यह मुफ़्त है',
       },
     },
@@ -769,7 +769,7 @@ export const DICTIONARIES = {
       },
       finalCta: {
         title: 'Prêt à vous lancer dans la Tech ?',
-        subtitle: 'Rejoignez des milliers d’étudiants qui ont trouvé leur voie avec SkillBun. Commencez gratuitement.',
+        subtitle: 'Explorez vos centres d’intérêt, trouvez un parcours et faites le prochain pas avec SkillBun. Commencez gratuitement.',
         button: 'Lancer Mon Quiz — C’est Gratuit',
       },
     },
@@ -967,7 +967,7 @@ export const DICTIONARIES = {
       },
       finalCta: {
         title: 'Bereit für deinen Sprung in die Tech-Welt?',
-        subtitle: 'Schließe dich tausenden Studierenden an, die mit SkillBun ihren Weg gefunden haben. Der Einstieg ist kostenlos.',
+        subtitle: 'Entdecke deine Interessen, finde einen Lernpfad und gehe mit SkillBun den nächsten Schritt. Der Einstieg ist kostenlos.',
         button: 'Jetzt Quiz Starten — 100% Gratis',
       },
     },
@@ -1165,7 +1165,7 @@ export const DICTIONARIES = {
       },
       finalCta: {
         title: 'Pronto para Construir seu Futuro em Tecnologia?',
-        subtitle: 'Junte-se a milhares de estudantes que encontraram seu caminho com o SkillBun. É gratuito.',
+        subtitle: 'Explore seus interesses, encontre uma trilha e dê o próximo passo com o SkillBun. Começar é grátis.',
         button: 'Iniciar o Teste — É Grátis',
       },
     },
@@ -1363,7 +1363,7 @@ export const DICTIONARIES = {
       },
       finalCta: {
         title: 'あなたに合ったテックの未来へ踏み出そう',
-        subtitle: '何千人もの学生がSkillBunで理想のキャリアを見つけています。完全無料で始められます。',
+        subtitle: '自分の興味を探り、ロードマップを見つけて、SkillBunと次の一歩を踏み出しましょう。無料で始められます。',
         button: '診断を開始する — 完全無料',
       },
     },
@@ -1561,7 +1561,7 @@ export const DICTIONARIES = {
       },
       finalCta: {
         title: 'Siap Menentukan Masa Depan Tech Anda?',
-        subtitle: 'Bergabunglah bersama ribuan mahasiswa yang menemukan jalur karir ideal mereka dengan SkillBun. Mulai secara gratis.',
+        subtitle: 'Jelajahi minat Anda, temukan roadmap, dan ambil langkah berikutnya bersama SkillBun. Mulai secara gratis.',
         button: 'Mulai Kuis Karir — 100% Gratis',
       },
     },

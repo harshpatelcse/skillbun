@@ -850,7 +850,8 @@ export default function WorkforcePage() {
       })
       const data = await res.json()
       if (!res.ok) {
-        throw new Error(data.error || 'Failed to delete employee record.')
+        const message = typeof data.error === 'string' ? data.error : data.error?.message
+        throw new Error(typeof message === 'string' && message.trim() ? message : 'Failed to delete employee record.')
       }
       setEmployees((prev) => prev.filter((e) => e.id !== employeeToDelete.id))
       setModal(null)

@@ -37,43 +37,42 @@
 
 ## 📚 How a Student Progresses
 1. **Onboarding** — create a free account, record degree and current year.
-2. **Career discovery quiz** — an adaptive assessment that recommends a specialization track.
-3. **Roadmap** — work through topic nodes, each with an encrypted in-depth study guide, curated video tutorials, and documentation links.
+2. **Career discovery quiz** — an adaptive quiz about interests, work preferences, and practical scenarios that recommends career paths. It does not certify technical proficiency, and its results stay in the current quiz session.
+3. **Roadmap** — work through topic nodes with available study guides, video tutorials, and documentation links. Resources vary by topic, and full guides require sign-in.
 4. **Progress tracking** — completed topic nodes accumulate against the track.
-5. **Certification** — the proctored exam unlocks at 60% roadmap completion.
-6. **Credential** — a passing score mints a publicly verifiable certificate.
+5. **Certification** — the timed exam unlocks at 60% roadmap completion and includes focus and copy controls.
+6. **Credential** — a score of at least 70% qualifies for a publicly verifiable certificate.
+
+Bun-Bot is a dedicated AI career chat that uses the student's profile and current conversation. The projects hub offers practice ideas and step-by-step blueprints; it does not host or grade student submissions.
 
 ## 🎓 Free Certification System & Anti-Cheating Controls
 - Users complete 60%+ of any roadmap to unlock certification.
-- 10-question adaptive assessment selected from a 50-question bank (3 Easy, 5 Moderate, 2 Hard).
+- 10 questions randomly selected from a fixed 50-question bank (3 Easy, 5 Moderate, 2 Hard), with shuffled question and option order.
 - 45-second timer per question, 70% passing grade.
 - Focus-loss detection, text-selection blocking, and watermark identification during the exam.
-- Grading is performed on the server; the answer key is never sent to the browser.
-- Retakes are free. Up to 3 attempts are allowed per 24 hours, and a 1-hour study cooldown applies after two attempts.
-- 100% Free instant public verification URL hosted at `https://skillbun.tech/certificate/[id]`, with a searchable registry at `https://skillbun.tech/certificate`.
+- Grading is performed on the server. Correct answers are withheld during the active attempt; the graded review can include correct answers and explanations.
+- Retakes are free. Up to 3 attempts are allowed per 24 hours per roadmap, and a 1-hour study cooldown applies after two consecutive failures.
+- Free public verification at `https://skillbun.tech/certificate/[id]`, with an ID lookup at `https://skillbun.tech/certificate`. Verification shows credential details and revocation status while the record exists. Deleting a student account deletes its roadmap certificates; workforce and legal records are retained separately.
 
 ## ✉️ Email Communication Policy
 
-SkillBun sends email only about a student's own account and learning progress. There is no billing, so there is never a payment, invoice, or card-details email.
+SkillBun sends account email, admin-reviewed learning reminders, and workforce correspondence. The student platform has no billing or card-payment flow.
 
-**Categories sent:**
-- **Onboarding** — welcome and getting-started guidance after account creation.
-- **Progress** — reminders to resume an in-progress roadmap.
-- **Certification** — notice that the exam has unlocked at 60% completion, and what to expect.
-- **Retake** — notice after an unsuccessful attempt; retakes are free.
-- **Credential** — certificate delivery and verification details.
-- **Security & account** — sign-in notices, password-change confirmations, and account updates. These are transactional and are always sent.
+**Supported categories:**
+- **Account access** — signup verification codes and requested password-reset links.
+- **Learning reminders** — onboarding guidance, progress reminders, exam eligibility, retake guidance, and certificate information. Admins review and dispatch these messages; they are not automatically sent at every milestone.
+- **Workforce** — formal correspondence such as offer, extension, termination, and relieving letters.
 
 **Addresses — this list is exhaustive:**
-- `noreply@skillbun.tech` — the only address SkillBun sends from. It is outgoing-only and never receives replies.
+- `noreply@skillbun.tech` — the automated platform sender. It is outgoing-only and never receives replies.
 - `harsh@skillbun.tech` — the only address that receives mail. All correspondence, replies, and signed documents go here.
 
 SkillBun does **not** operate `support@`, `careers@`, `hiring@`, `hello@`, `admin@` or `contact@` addresses on any domain, and does not use the domain `skillbun.com`. Mail claiming to be from SkillBun at any of those addresses did not come from SkillBun.
 
-**Guarantees:**
+**Mail handling:**
 - SkillBun never requests a password, one-time code, card number, or payment by email.
-- Every non-transactional email carries a working unsubscribe link that reaches account preferences.
-- Emails render in both light and dark mode and contain no tracking-only image payload — all visual structure is markup, so a blocked-image inbox loses nothing.
+- Learning reminder emails include an unsubscribe link; transactional account and workforce messages are separate from those preferences.
+- Email templates include light and dark theme support with fallback styles. Rendering varies by email client, and hosted logos may be hidden when images are blocked.
 
 ## 🌐 Contact & Platform Access
 - Official Website: https://skillbun.tech

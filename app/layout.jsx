@@ -66,23 +66,12 @@ export const metadata = {
     },
   },
   alternates: {
-    canonical: '/',
-    languages: {
-      en: '/?lang=en',
-      es: '/?lang=es',
-      hi: '/?lang=hi',
-      fr: '/?lang=fr',
-      de: '/?lang=de',
-      pt: '/?lang=pt',
-      ja: '/?lang=ja',
-      id: '/?lang=id',
-      'x-default': '/',
-    },
+    canonical: './',
   },
   openGraph: {
     title: 'SkillBun – 100% Free AI Tech Career Roadmaps & Verified Certifications',
     description: '100% Free tech career roadmaps, adaptive AI quizzes, Bun-Bot AI mentor, and verified certificates for computer science and tech students globally.',
-    url: siteUrl,
+    url: './',
     siteName: 'SkillBun',
     images: [
       {
@@ -126,81 +115,11 @@ const jsonLdStructuredData = {
       '@id': `${siteUrl}/#website`,
       url: siteUrl,
       name: 'SkillBun',
-      description: '100% Free AI-powered tech career discovery, adaptive quizzes, and verified roadmaps.',
+      description: '100% Free AI-powered tech career discovery, adaptive career quizzes, and structured learning roadmaps.',
       isAccessibleForFree: true,
       publisher: {
         '@id': `${siteUrl}/#organization`,
       },
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: {
-          '@type': 'EntryPoint',
-          urlTemplate: `${siteUrl}/roadmap?q={search_term_string}`,
-        },
-        'query-input': 'required name=search_term_string',
-      },
-    },
-    {
-      '@type': 'FAQPage',
-      '@id': `${siteUrl}/#faq`,
-      mainEntity: [
-        {
-          '@type': 'Question',
-          name: 'Is SkillBun completely free?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Yes! SkillBun is 100% free for all students. All 100+ tech career roadmaps, study guides, adaptive AI quizzes, Bun-Bot AI counsellor chats, and official verified certificates are completely free with zero hidden paywalls or subscription fees.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'How does the AI career quiz work?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'SkillBun\'s adaptive quiz analyzes your background, aptitude, technical interests, and work style in real-time to recommend and rank the best-fit technology career roadmaps for you.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'What features does SkillBun offer?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'SkillBun provides 100+ step-by-step career roadmaps (AI/ML, Fullstack, DevOps, Cybersecurity, Mobile), an adaptive technical quiz engine, Bun-Bot AI career counsellor, interactive study guides, video courses, and free proctored digital certifications.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'How do SkillBun career roadmaps work?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Each SkillBun roadmap breaks down complex tech roles into interactive topic nodes with curated study guides, video tutorials, milestone projects, and clear skill milestones.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'How do I earn a free SkillBun Certificate?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'When you achieve at least 60% progress on any career roadmap, you unlock the free certification exam. Passing the 10-question adaptive assessment (scoring 70% or higher) earns a publicly verifiable digital certificate with a unique ID and QR code.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'What is Bun-Bot and how does it help learners?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Bun-Bot is an AI-powered technical career counsellor integrated into every roadmap. It helps students understand difficult concepts, provides code guidance, suggests portfolio project ideas, and answers career questions 24/7.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'Can I verify SkillBun certificates online?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Yes, every SkillBun certificate has a unique verification URL at skillbun.tech/certificate/[id] where employers and recruiters can verify candidate credentials, issue date, and specialization.',
-          },
-        },
-      ],
     },
   ],
 };

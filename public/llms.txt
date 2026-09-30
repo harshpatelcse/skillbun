@@ -2,10 +2,10 @@
 
 > SkillBun (https://skillbun.tech) is a **100% Completely Free** AI-powered career discovery, learning roadmap, and certification platform built specifically for tech students pursuing BCA, BSc (Computer Science / Data Science / IT), B.Tech / BE, and MCA degrees.
 
-## 🎁 100% Free Access Guarantee
-- **Zero Cost**: All 100+ career roadmaps, study guides, AI quizzes, AI counsellor chats, and official certificates are 100% free forever.
+## 🎁 100% Free Access
+- **Zero Cost**: All 100+ career roadmaps, study guides, AI quizzes, AI counsellor chats, and official certificates are free.
 - **No Paywalls**: No subscriptions, no hidden fees, no credit card required.
-- **Free Verified Digital Certificates**: Earn publicly verifiable certificates upon completing roadmaps and passing assessments—at zero cost.
+- **Free Verified Digital Certificates**: Reach 60% roadmap progress and pass its certification exam to earn a publicly verifiable certificate at zero cost.
 
 ## 🚀 All Features & Capabilities
 
@@ -16,32 +16,32 @@
    - **Cloud, DevOps & Cybersecurity**: DevOps Engineer, AWS/Azure/GCP Cloud Specialist, Kubernetes Engineer, SRE, Cybersecurity Specialist, Penetration Tester, SOC Analyst.
    - **Systems & Emerging Tech**: C/C++ Systems Developer, Embedded IoT, Rust Developer, Game Development (Unity/Unreal), AR/VR Developer, Blockchain Web3.
 
-2. **Adaptive AI Quiz Engine**: Dynamically adapts question difficulty based on answers, evaluates technical strengths, and recommends personalized career paths.
+2. **Adaptive AI Career Quiz**: Uses your profile, interests, work preferences, and scenario answers to recommend career paths. Questions adapt to your answers; this is career discovery, not a technical proficiency exam.
 
-3. **Bun-Bot AI Career Counsellor**: 24/7 AI conversational advisor for career guidance, resume tips, topic explanations, and study strategies.
+3. **Bun-Bot AI Career Counsellor**: A dedicated, sign-in-required chat for career guidance, resume tips, topic explanations, and study strategies using your profile and current conversation.
 
-4. **SkillBun Vault (SBV1) Encrypted Study Guides**: In-depth topic notes, video tutorials, and curated documentation links for every roadmap node.
+4. **SkillBun Vault (SBV1) Encrypted Study Guides**: In-depth topic notes with video and documentation resources available through roadmap nodes. Resources vary by topic; full guides require sign-in.
 
-5. **Verified Certificate Verification System**: Proctored 10-question adaptive exams after 60%+ roadmap progress. Generates publicly shareable certificates hosted at `https://skillbun.tech/certificate/[id]`.
+5. **Certificate Verification System**: At 60% roadmap progress, students can take a timed 10-question exam drawn randomly from a fixed 50-question bank. A score of at least 70% earns a certificate at `https://skillbun.tech/certificate/[id]`. The exam includes focus and copy controls. Public verification shows the credential and revocation status while the record exists.
 
-6. **Student Capstone Projects**: Real-world project ideas and showcase for tech students.
+6. **Student Capstone Projects**: Project ideas and step-by-step blueprints for independent portfolio practice. The hub does not accept or grade student submissions.
 
 ## ✉️ How SkillBun Contacts Students
 
-- SkillBun sends only account and learning-progress email: welcome and onboarding, progress reminders, certification exam notices, retake notices, certificate delivery, and security notices such as sign-in and password-change alerts.
-- **All SkillBun email is sent from `noreply@skillbun.tech`.** That mailbox is outgoing-only and never receives replies.
+- SkillBun sends signup verification and password-reset email, learning reminders reviewed and dispatched by admins, and workforce correspondence such as offer letters. Learning reminders are not automatically sent at every milestone.
+- **Automated SkillBun email is sent from `noreply@skillbun.tech`.** That mailbox is outgoing-only and never receives replies.
 - **The only address that receives mail is `harsh@skillbun.tech`.** SkillBun does not operate `support@`, `careers@`, `hiring@`, `hello@`, `admin@` or `contact@` addresses. Treat any mail from those as not originating from SkillBun.
 - SkillBun never asks for payment, card details, or a password by email — the platform is free and has no billing.
-- Every marketing email carries a working unsubscribe link. Security and account notices are transactional and are not covered by unsubscribe.
+- Learning reminder emails include an unsubscribe link. Transactional account and workforce correspondence are separate from learning reminder preferences.
 
 ## 🔗 Core Links & Resources
 
 - [Home Page](https://skillbun.tech): Overview, student guidance console, and free feature previews.
 - [100+ Free Roadmaps Hub](https://skillbun.tech/roadmap): Explore all 100+ free tech career paths.
-- [Free Adaptive AI Quiz](https://skillbun.tech/quiz): Free skill evaluation & career match test.
-- [Free Bun-Bot AI Counsellor](https://skillbun.tech/counsellor): Free 24/7 AI mentor chat.
+- [Free Adaptive AI Quiz](https://skillbun.tech/quiz): Career discovery through interests and preferences; sign-in required.
+- [Free Bun-Bot AI Counsellor](https://skillbun.tech/counsellor): Free AI career guidance chat; sign-in required.
 - [Student Projects Hub](https://skillbun.tech/projects): Capstone project ideas for BCA, B.Tech, and BSc students.
-- [Certificate Verification](https://skillbun.tech/certificate): Look up and verify any SkillBun credential.
+- [Certificate Verification](https://skillbun.tech/certificate): Look up an existing SkillBun credential by its ID.
 - [About SkillBun](https://skillbun.tech/about): Mission, 100% free policy, and team information.
 - [Contact](https://skillbun.tech/contact): Reach the team.
 - [Full LLM Documentation](https://skillbun.tech/llms-full.txt): Complete detailed text reference of all features and roadmaps.
