@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import { CertificateLookupError, fetchPublicCertificate } from '@/utils/client/publicCertificate.mjs';
+import { certificateShareUrl, linkedInCertificateUrl } from '@/utils/client/certificateSharing.mjs';
 import Link from 'next/link';
 import { cinzel, pixelify } from '@/app/fonts';
 import { triggerDocumentPrint } from '@/utils/client/printAndDownload';
@@ -80,8 +81,7 @@ function CertificateContent({ id }) {
         const loadedCert = await fetchPublicCertificate(rawId, { signal: controller.signal });
         if (controller.signal.aborted) return;
         setCert(loadedCert);
-        const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'https://skillbun.tech';
-        const certUrl = `${baseUrl}/certificate/${encodeURIComponent(loadedCert.id)}`;
+        const certUrl = certificateShareUrl(loadedCert.id, process.env.NEXT_PUBLIC_APP_URL);
         const certType = (loadedCert.cert_type || 'ROADMAP').toUpperCase();
         const title = loadedCert.stream_or_track || loadedCert.roadmapTitle || 'Professional Track';
         if (certType === 'INTERNSHIP') {
@@ -118,9 +118,7 @@ function CertificateContent({ id }) {
 
   const getCertUrl = () => {
     if (!cert) return '';
-    const rawId = cert.id || cert.display_id || '';
-    const cleanId = rawId.replace(/\//g, '-');
-    return `https://skillbun.vercel.app/certificate/${cleanId}`;
+    return certificateShareUrl(cert.id || cert.display_id, process.env.NEXT_PUBLIC_APP_URL);
   };
 
   const certType = (cert?.cert_type || 'ROADMAP').toUpperCase();
@@ -141,27 +139,10 @@ function CertificateContent({ id }) {
 
   const getLinkedInAddProfileUrl = () => {
     if (!cert) return '#';
-
-    const certUrl = getCertUrl();
-    const orgId = process.env.NEXT_PUBLIC_LINKEDIN_ORGANIZATION_ID;
-    let name = `${cert.roadmapTitle || 'Career Roadmap'} Certification`;
-    if (certType === 'INTERNSHIP') {
-      name = `Internship Certificate - ${cert.stream_or_track || cert.department || 'Engineering'}`;
-    } else if (certType === 'TRAINING') {
-      name = `Training Certificate - ${cert.stream_or_track || 'Technical Track'}`;
-    }
-
-    const params = new URLSearchParams({
-      startTask: 'CERTIFICATION_NAME',
-      name,
-      organizationId: orgId || '',
-      issueYear: cert.createdAtDate?.getFullYear?.() ? String(cert.createdAtDate.getFullYear()) : '2026',
-      issueMonth: cert.createdAtDate?.getMonth ? String(cert.createdAtDate.getMonth() + 1) : '1',
-      certUrl,
-      certId: cert.display_id || cert.id,
+    return linkedInCertificateUrl(cert, {
+      siteUrl: process.env.NEXT_PUBLIC_APP_URL,
+      organizationId: process.env.NEXT_PUBLIC_LINKEDIN_ORGANIZATION_ID,
     });
-
-    return `https://www.linkedin.com/profile/add?${params.toString()}`;
   };
 
   const handleShareOnFeed = () => {

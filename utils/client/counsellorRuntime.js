@@ -47,6 +47,7 @@ const MAX_HISTORY_TEXT = 22000;
 export function mountCounsellorRuntime() {
   const eventController = new AbortController();
   const state = createState(eventController);
+  let conversationRevision = 0;
 
   const limitInterval = setInterval(() => {
     updateUsageLimitCard();
@@ -154,7 +155,7 @@ Do not output raw JSON format. Provide standard conversational markdown text onl
 
   // --- Send Message Action ---
   async function sendMessage() {
-    if (state.isSending) return;
+    if (state.isSending || state.signal.aborted) return;
 
     const textarea = getEl('chatInput');
     if (!textarea) return;
@@ -172,19 +173,33 @@ Do not output raw JSON format. Provide standard conversational markdown text onl
     // Verify Human Proof validation BEFORE clearing inputs or showing bubbles
     const sendBtn = getEl('sendBtn');
     if (sendBtn) sendBtn.disabled = true;
+    state.isSending = true;
+    const revision = conversationRevision;
+    const isCurrentRequest = () => !state.signal.aborted && revision === conversationRevision;
 
-    const verified = await verifyHumanProof(state, async () => {
-      toggleSecurityBanner(true);
-      await initCaptcha();
-    });
+    let verified;
+    try {
+      verified = await verifyHumanProof(state, async () => {
+        if (!isCurrentRequest()) return;
+        toggleSecurityBanner(true);
+        await initCaptcha();
+      });
+    } catch (err) {
+      if (!isCurrentRequest()) return;
+      if (sendBtn) sendBtn.disabled = false;
+      state.isSending = false;
+      setCaptchaStatus('Verification failed. Please retry.', 'error');
+      return;
+    }
+    if (!isCurrentRequest()) return;
 
     if (!verified) {
       // Keep user's text in textarea and enable send button so they don't lose typed text
       if (sendBtn) sendBtn.disabled = false;
+      state.isSending = false;
       return;
     }
 
-    state.isSending = true;
     textarea.value = '';
     textarea.style.height = '52px';
     textarea.dispatchEvent(new Event('input'));
@@ -237,6 +252,7 @@ Do not output raw JSON format. Provide standard conversational markdown text onl
 
     try {
       const data = await fetchCounsellorPayload(state, payload);
+      if (!isCurrentRequest()) return;
       const botResponse = extractGeminiText(data);
 
       if (thinkingRow) thinkingRow.remove();
@@ -251,6 +267,7 @@ Do not output raw JSON format. Provide standard conversational markdown text onl
       });
 
       appendStreamingMessage(state, 'bot', botResponse, () => {
+        if (!isCurrentRequest()) return;
         const followUps = getFollowUpSuggestions(text, botResponse);
         const headerTitle = getEl('suggestionsTitle');
         if (headerTitle) headerTitle.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> Suggested Follow-ups`;
@@ -267,6 +284,7 @@ Do not output raw JSON format. Provide standard conversational markdown text onl
       updateUsageLimitCard();
 
     } catch (err) {
+      if (!isCurrentRequest()) return;
       if (thinkingRow) thinkingRow.remove();
 
       if (state.conversationHistory.at(-1)?.role === 'user') {
@@ -276,8 +294,10 @@ Do not output raw JSON format. Provide standard conversational markdown text onl
       const friendlyMsg = getFriendlyAiErrorMessage(err);
       appendMessage(state, 'bot', `⚠️ Error: ${friendlyMsg}`);
     } finally {
-      if (sendBtn) sendBtn.disabled = false;
-      state.isSending = false;
+      if (isCurrentRequest()) {
+        if (sendBtn) sendBtn.disabled = false;
+        state.isSending = false;
+      }
     }
   }
 
@@ -324,15 +344,17 @@ Do not output raw JSON format. Provide standard conversational markdown text onl
 
       try {
         await loadTurnstileScript();
+        if (state.signal.aborted) return;
         if (!window.turnstile) throw new Error('Turnstile failed');
 
         state.captchaWidgetId = window.turnstile.render('#captchaWidget', {
           sitekey: state.securityConfig.captchaSiteKey,
           theme: localStorage.getItem('sb_theme') || 'dark',
           callback: (token) => {
+            if (state.signal.aborted) return;
             state.captchaToken = token;
             setCaptchaStatus('Security check passed.', 'ok');
-            setTimeout(() => toggleSecurityBanner(false), 2000);
+            setTimeout(() => { if (!state.signal.aborted) toggleSecurityBanner(false); }, 2000);
 
             if (state.pendingAutoSubmit) {
               state.pendingAutoSubmit = false;
@@ -443,6 +465,10 @@ Do not output raw JSON format. Provide standard conversational markdown text onl
       clearBtn.addEventListener('click', () => {
         const container = getEl('chatMessages');
         if (!container) return;
+        conversationRevision += 1;
+        state.isSending = false;
+        state.pendingAutoSubmit = false;
+        sendBtn.disabled = false;
         container.innerHTML = '';
         state.conversationHistory = [];
         const freshChips = getPersonalizedInitialChips(state.userProfile);
@@ -453,7 +479,9 @@ Do not output raw JSON format. Provide standard conversational markdown text onl
 
     try {
       await fetchSecurityConfig(state);
+      if (state.signal.aborted) return;
       const hasReusableProof = await refreshHumanProofSession(state);
+      if (state.signal.aborted) return;
 
       if (hasReusableProof) {
         toggleSecurityBanner(false);
@@ -470,6 +498,7 @@ Do not output raw JSON format. Provide standard conversational markdown text onl
     } catch (err) {
       console.error('Security init error:', err);
     }
+    if (state.signal.aborted) return;
     
     const urlParams = new URLSearchParams(window.location.search);
     const initialQuery = urlParams.get('q');
@@ -498,5 +527,9 @@ Do not output raw JSON format. Provide standard conversational markdown text onl
   return () => {
     clearInterval(limitInterval);
     eventController.abort();
+    if (state.captchaWidgetId !== null && window.turnstile) {
+      window.turnstile.remove(state.captchaWidgetId);
+      state.captchaWidgetId = null;
+    }
   };
 }

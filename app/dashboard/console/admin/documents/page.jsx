@@ -7,6 +7,7 @@ import { useAdminAccess } from '@/utils/client/adminAuth';
 import { getFirebaseServices } from '@/utils/client/firebaseClient';
 import { collection, getDocs } from 'firebase/firestore';
 import { downloadBase64Pdf } from '@/utils/client/printAndDownload';
+import { fetchAllWorkforceDocuments } from '@/utils/client/workforceDocuments.mjs';
 import styles from './documents.module.css';
 
 function Icon({ name, size = 16, className = '', style = {} }) {
@@ -257,28 +258,7 @@ export default function DocumentManagerPage() {
     setLoadingDocs(true);
     try {
       const token = await user.getIdToken();
-      const params = new URLSearchParams();
-      if (typeFilter !== 'ALL') params.append('doc_type', typeFilter);
-
-      const res = await fetch(`/api/admin/workforce/documents?${params.toString()}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-
-      const data = await res.json().catch(() => ({}));
-      if (res.ok && data.success && Array.isArray(data.documents)) {
-        setDocuments(data.documents || []);
-      } else {
-        try {
-          const { db } = getFirebaseServices();
-          if (db) {
-            const snap = await getDocs(collection(db, 'workforce_docs'));
-            const docsList = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
-            setDocuments(docsList);
-          }
-        } catch (clientErr) {
-          console.warn('[Documents Client Fallback Warning]:', clientErr);
-        }
-      }
+      setDocuments(await fetchAllWorkforceDocuments(token));
     } catch (err) {
       try {
         const { db } = getFirebaseServices();
@@ -292,7 +272,7 @@ export default function DocumentManagerPage() {
     } finally {
       setLoadingDocs(false);
     }
-  }, [user, isAdmin, typeFilter]);
+  }, [user, isAdmin]);
 
   // Initial Load
   useEffect(() => {
@@ -301,22 +281,8 @@ export default function DocumentManagerPage() {
       const init = async () => {
         try {
           const token = await user.getIdToken();
-          const res = await fetch('/api/admin/workforce/documents', {
-            headers: { Authorization: `Bearer ${token}` },
-          });
-          const data = await res.json().catch(() => ({}));
-          if (isMounted && res.ok && data.success && Array.isArray(data.documents)) {
-            setDocuments(data.documents || []);
-          } else if (isMounted) {
-            try {
-              const { db } = getFirebaseServices();
-              if (db) {
-                const snap = await getDocs(collection(db, 'workforce_docs'));
-                const docsList = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
-                setDocuments(docsList);
-              }
-            } catch {}
-          }
+          const allDocuments = await fetchAllWorkforceDocuments(token);
+          if (isMounted) setDocuments(allDocuments);
         } catch (e) {
           if (isMounted) {
             try {
@@ -343,6 +309,7 @@ export default function DocumentManagerPage() {
   // Filtered documents
   const filteredDocuments = useMemo(() => {
     return documents.filter((doc) => {
+      if (typeFilter !== 'ALL' && doc.doc_type !== typeFilter) return false;
       if (searchTerm) {
         const q = searchTerm.toLowerCase();
         const matches =
@@ -358,7 +325,7 @@ export default function DocumentManagerPage() {
       if (statusFilter === 'REVOKED' && !doc.is_revoked) return false;
       return true;
     });
-  }, [documents, searchTerm, statusFilter]);
+  }, [documents, searchTerm, statusFilter, typeFilter]);
 
   // Metrics
   const metrics = useMemo(() => {

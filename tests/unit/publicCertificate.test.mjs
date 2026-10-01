@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { certificateLookupKeys, createPublicCertificateHandler, lookupPublicCertificate, toPublicCertificate } from '../../utils/server/publicCertificate.mjs';
 import { CertificateLookupError, fetchPublicCertificate } from '../../utils/client/publicCertificate.mjs';
+import { certificateShareUrl, linkedInCertificateUrl } from '../../utils/client/certificateSharing.mjs';
 
 const id = 'SKB8F92-4C-29-9A7E';
 const base = { name: 'Example Student', roadmapTitle: 'Frontend', roadmapSlug: 'frontend', score: 80, createdAt: new Date('2026-09-01T00:00:00Z'), template_version: 'v1', cert_type: 'ROADMAP', is_revoked: false };
@@ -183,4 +184,21 @@ test('browser adapter uses controlled errors and does not reflect server details
   }
   await assert.rejects(fetchPublicCertificate('../private'), { code: 'INVALID_ID' });
   await assert.rejects(fetchPublicCertificate(id, { fetchImpl: async () => Response.json({ success: true, certificate: { id: '../private' } }) }), { code: 'VERIFICATION_UNAVAILABLE' });
+});
+
+test('certificate sharing uses the canonical site and a truthful issuer and issue date', () => {
+  assert.equal(certificateShareUrl(id), `https://skillbun.tech/certificate/${id}`);
+  assert.equal(certificateShareUrl('SKB/2026/INT-REC/EJGHNG', 'https://example.test/'), 'https://example.test/certificate/SKB-2026-INT-REC-EJGHNG');
+  const unknownDate = new URL(linkedInCertificateUrl({ id, roadmapTitle: 'Frontend', createdAtDate: null }));
+  assert.equal(unknownDate.searchParams.get('certUrl'), `https://skillbun.tech/certificate/${id}`);
+  assert.equal(unknownDate.searchParams.get('organizationName'), 'SkillBun');
+  assert.equal(unknownDate.searchParams.has('organizationId'), false);
+  assert.equal(unknownDate.searchParams.has('issueYear'), false);
+  assert.equal(unknownDate.searchParams.has('issueMonth'), false);
+  const issued = new URL(linkedInCertificateUrl({ id, cert_type: 'TRAINING', stream_or_track: 'Web Engineering', createdAtDate: new Date(2025, 7, 15) }, { organizationId: '123456', siteUrl: 'https://example.test' }));
+  assert.equal(issued.searchParams.get('name'), 'Training Certificate - Web Engineering');
+  assert.equal(issued.searchParams.get('organizationId'), '123456');
+  assert.equal(issued.searchParams.has('organizationName'), false);
+  assert.equal(issued.searchParams.get('issueYear'), '2025');
+  assert.equal(issued.searchParams.get('issueMonth'), '8');
 });

@@ -3,7 +3,7 @@ import path from 'path';
 import CertificationsClient from './CertificationsClient';
 
 export const metadata = {
-  title: 'My Certifications - SkillBun',
+  title: { absolute: 'My Certifications - SkillBun' },
   description: 'View, verify, and download your earned SkillBun career roadmap certificates.',
 };
 

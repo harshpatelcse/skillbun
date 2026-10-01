@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import { apiError, requireWorkforceAdmin } from '@/utils/server/workforceEmployees';
 import { formatWorkforceDisplayId } from '@/utils/server/workforceId';
+import { validateWorkforceDocumentId } from '@/utils/server/workforceDocumentPagination.mjs';
 
 export const runtime = 'nodejs';
 
@@ -25,17 +26,16 @@ export async function GET(request, { params }) {
     if (admin.response) return admin.response;
 
     const { id } = await params;
-    if (!id || typeof id !== 'string' || id.trim().length === 0) {
-      return apiError('Document ID is required.', 400, 'VALIDATION_ERROR');
-    }
+    const idCheck = validateWorkforceDocumentId(id);
+    if (!idCheck.isValid) return apiError(idCheck.error, 400, 'VALIDATION_ERROR');
 
     const db = getFirebaseAdminFirestore();
-    const docRef = db.collection('workforce_docs').doc(id.trim());
+    const docRef = db.collection('workforce_docs').doc(idCheck.value);
     const docSnap = await docRef.get();
 
     if (!docSnap.exists) {
       // Try uppercase variant
-      const altRef = db.collection('workforce_docs').doc(id.trim().toUpperCase());
+      const altRef = db.collection('workforce_docs').doc(idCheck.value.toUpperCase());
       const altSnap = await altRef.get();
       if (!altSnap.exists) {
         return apiError(`Document "${id}" not found.`, 404, 'NOT_FOUND');

@@ -126,7 +126,7 @@ const faqColumns = [
 const siteUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://skillbun.tech';
 
 export const metadata = {
-  title: 'Contact Us – SkillBun Support & Inquiries',
+  title: { absolute: 'Contact Us – SkillBun Support & Inquiries' },
   description: 'Have questions, feedback, or need help with SkillBun roadmaps or certifications? Get in touch with the SkillBun team.',
   alternates: {
     canonical: `${siteUrl}/contact`,

@@ -71,7 +71,7 @@ export async function generateMetadata({ params }) {
   const siteUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://skillbun.tech'
 
   if (!data) {
-    return { title: 'Roadmap Not Found | SkillBun' }
+    return { title: { absolute: 'Roadmap Not Found | SkillBun' } }
   }
 
   const title = `100% Free ${data.title} Career Roadmap & Certificate | SkillBun`
@@ -79,7 +79,7 @@ export async function generateMetadata({ params }) {
   const pageUrl = `${siteUrl}/roadmap/${slug}`
 
   return {
-    title,
+    title: { absolute: title },
     description,
     keywords: [
       data.title,

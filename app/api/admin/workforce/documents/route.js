@@ -3,6 +3,8 @@ import { getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import { apiError, requireWorkforceAdmin } from '@/utils/server/workforceEmployees';
 import { formatWorkforceDisplayId } from '@/utils/server/workforceId';
 import { getOrSetCache, createCachedJsonResponse, invalidateCacheTag } from '@/utils/server/redisCache';
+import { paginateWorkforceDocuments, parseWorkforceDocumentCursor, validateWorkforceDocumentId, WorkforceDocumentQueryError } from '@/utils/server/workforceDocumentPagination.mjs';
+import { validateSchema } from '@/utils/server/inputValidator';
 
 export const runtime = 'nodejs';
 
@@ -39,44 +41,34 @@ export async function GET(request) {
 
     // Validate limit
     let limit = 50;
-    if (limitParam) {
-      limit = parseInt(limitParam, 10);
-      if (Number.isNaN(limit) || limit < 1 || limit > 100) {
+    if (limitParam !== null) {
+      limit = Number(limitParam);
+      if (!/^\d+$/.test(limitParam) || !Number.isInteger(limit) || limit < 1 || limit > 100) {
         return apiError('limit must be an integer between 1 and 100.', 400, 'VALIDATION_ERROR');
       }
     }
+    const cursor = parseWorkforceDocumentCursor(pageToken);
 
     const db = getFirebaseAdminFirestore();
-    const cacheKey = `admin:workforce_docs:${docType || 'ALL'}:${pageToken || 'FIRST'}:${limit}`;
+    const cacheKey = `admin:workforce_docs:v2:${docType || 'ALL'}`;
 
-    const result = await getOrSetCache(
+    const allDocuments = await getOrSetCache(
       cacheKey,
       60,
       async () => {
-        let query = db.collection('workforce_docs').orderBy('issued_at', 'desc');
+        // Firestore orderBy excludes records without that field. Historical
+        // activation logs use dispatched_at, so sort their resolved dates below.
+        let query = db.collection('workforce_docs');
 
         // Apply doc_type filter
         if (docType) {
           query = query.where('doc_type', '==', docType);
         }
 
-        // Apply cursor-based pagination
-        if (pageToken) {
-          try {
-            const cursorDate = new Date(pageToken);
-            if (!Number.isNaN(cursorDate.getTime())) {
-              query = query.startAfter(cursorDate);
-            }
-          } catch {
-            // Ignore invalid pageToken, start from beginning
-          }
-        }
-
-        // Fetch limit + 1 to determine if there are more results
-        const snapshot = await query.limit(limit + 1).get();
+        const snapshot = await query.get();
 
     const documents = [];
-    const docs = snapshot.docs.slice(0, limit);
+    const docs = snapshot.docs;
 
     for (const doc of docs) {
       const data = doc.data();
@@ -113,24 +105,14 @@ export async function GET(request) {
       });
     }
 
-        const hasMore = snapshot.docs.length > limit;
-        const nextPageToken = hasMore && documents.length > 0
-          ? documents[documents.length - 1].issued_at
-          : null;
-
-        return {
-          success: true,
-          documents,
-          count: documents.length,
-          nextPageToken,
-          has_more: hasMore,
-        };
+        return documents;
       },
       { tags: ['admin:workforce_docs'], swr: true }
     );
 
-    return createCachedJsonResponse(request, result);
+    return createCachedJsonResponse(request, { success: true, ...paginateWorkforceDocuments(allDocuments, { limit, cursor }) });
   } catch (error) {
+    if (error instanceof WorkforceDocumentQueryError) return apiError(error.message, 400, 'VALIDATION_ERROR');
     console.error('[Workforce Documents GET Error]', error);
     return apiError(error?.message || 'Unable to retrieve workforce documents.', 500, 'INTERNAL_ERROR');
   }
@@ -152,14 +134,12 @@ export async function PATCH(request) {
       return apiError('Invalid JSON body.', 400, 'BAD_REQUEST');
     }
 
-    const { docId, is_revoked } = body || {};
-
-    if (!docId || typeof docId !== 'string') {
-      return apiError('docId is required and must be a string.', 400, 'VALIDATION_ERROR');
-    }
-    if (typeof is_revoked !== 'boolean') {
-      return apiError('is_revoked must be a boolean.', 400, 'VALIDATION_ERROR');
-    }
+    const validation = validateSchema(body, {
+      docId: { required: true, validator: validateWorkforceDocumentId },
+      is_revoked: { required: true, validator: value => ({ isValid: typeof value === 'boolean', value, error: 'is_revoked must be a boolean.' }) },
+    }, { allowUnknown: false, fieldName: 'Document revocation payload' });
+    if (!validation.isValid) return apiError(validation.error, 400, 'VALIDATION_ERROR');
+    const { docId, is_revoked } = validation.value;
 
     const db = getFirebaseAdminFirestore();
     const docRef = db.collection('workforce_docs').doc(docId.trim());
@@ -176,7 +156,6 @@ export async function PATCH(request) {
     });
 
     try {
-      const { invalidateCacheTag } = await import('@/utils/server/redisCache');
       await invalidateCacheTag('admin:workforce_docs');
     } catch {}
 

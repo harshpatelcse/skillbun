@@ -189,7 +189,7 @@ test('quiz accepts a valid four-second AI answer and still falls back on timeout
       const helperStart = source.indexOf('  async function callGeminiWithTimeout(');
       const helper = helperStart < 0 ? '' : source.slice(helperStart, source.indexOf('  const fallbackCatalog', helperStart));
       const deps = {
-        state: { questionCount, userAnswers: [] },
+        state: { questionCount, userAnswers: [], signal: new AbortController().signal },
         document: { getElementById: () => ({ style: {}, querySelector: () => ({}) }) },
         callGemini: () => timedOut ? new Promise(() => {}) : new Promise(resolve => setTimeout(() => resolve({ question: 'AI question', careers: ['AI result'] }), 4000)),
         getAiCall1Prompt: () => 'Question prompt', getAiCall2Prompt: () => 'Result prompt',

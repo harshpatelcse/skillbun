@@ -249,7 +249,7 @@
     ],
     "correctIndex": 2,
     "explanation": "SSH (Secure Shell) is a cryptographic network protocol for operating network services securely over an unsecured network. It's widely used for secure remote login and command-line execution on Linux servers. FTP is for file transfer, HTTP for web, and SMTP for email.",
-    "difficulty": "easy"
+    "difficulty": "moderate"
   },
   {
     "question": "A startup is deploying its web application on a cloud provider like AWS or Azure, aiming for high availability and scalability. Instead of managing physical servers, they use virtualized resources that can be provisioned and de-provisioned on demand. What fundamental characteristic of cloud computing are they primarily leveraging?",

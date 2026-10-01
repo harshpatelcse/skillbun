@@ -1,5 +1,5 @@
 'use client';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import projectsData from '@/public/data/projects_curated.json';
 import styles from './projects.module.css';
@@ -24,11 +24,55 @@ const DIFFICULTY_OPTIONS = [
   { key: 'Advanced', label: 'Advanced' },
 ];
 
+function ProjectIcon({ name }) {
+  const paths = {
+    clock: <><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></>,
+    blueprint: <><rect x="6" y="4" width="14" height="18" rx="2" /><path d="M10 4V2h6v2M10 10h6M10 14h6M10 18h4" /></>,
+    map: <><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3V6Z" /><path d="M9 3v15M15 6v15" /></>,
+    tools: <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.18 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />,
+    check: <path d="m5 12 4 4L19 6" />,
+    close: <path d="m6 6 12 12M6 18 18 6" />,
+  };
+  return <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: '5px' }}>{paths[name]}</svg>;
+}
+
 export default function ProjectsPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedDomain, setSelectedDomain] = useState('all');
   const [selectedDifficulty, setSelectedDifficulty] = useState('all');
   const [activeModalProject, setActiveModalProject] = useState(null);
+  const modalRef = useRef(null);
+
+  useEffect(() => {
+    if (!activeModalProject) return;
+    const previousFocus = document.activeElement;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    modalRef.current?.querySelector('button')?.focus();
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        setActiveModalProject(null);
+      } else if (event.key === 'Tab') {
+        const items = [...(modalRef.current?.querySelectorAll('button:not(:disabled), a[href]') || [])];
+        const first = items[0];
+        const last = items.at(-1);
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last?.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first?.focus();
+        }
+      }
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+      document.body.style.overflow = previousOverflow;
+      if (previousFocus?.isConnected) previousFocus.focus();
+    };
+  }, [activeModalProject]);
 
   const filteredProjects = useMemo(() => {
     return projectsData.filter((project) => {
@@ -109,6 +153,7 @@ export default function ProjectsPage() {
             type="text"
             className={styles.searchInput}
             placeholder="Search projects by title, keyword, or tech stack (e.g. React, Python, Docker)..."
+            aria-label="Search projects"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -123,6 +168,7 @@ export default function ProjectsPage() {
               type="button"
               className={`${styles.filterChip} ${selectedDomain === opt.key ? styles.filterChipActive : ''}`}
               onClick={() => setSelectedDomain(opt.key)}
+              aria-pressed={selectedDomain === opt.key}
             >
               {opt.label}
             </button>
@@ -138,6 +184,7 @@ export default function ProjectsPage() {
               type="button"
               className={`${styles.filterChip} ${selectedDifficulty === opt.key ? styles.filterChipActive : ''}`}
               onClick={() => setSelectedDifficulty(opt.key)}
+              aria-pressed={selectedDifficulty === opt.key}
             >
               {opt.label}
             </button>
@@ -165,7 +212,7 @@ export default function ProjectsPage() {
                   <p className={styles.projectSummary}>{project.summary}</p>
 
                   <div className={styles.timeTag}>
-                    <span>⏱️ Est. Time:</span>
+                    <span><ProjectIcon name="clock" /> Est. Time:</span>
                     <span>{project.estimatedHours}</span>
                   </div>
 
@@ -191,10 +238,10 @@ export default function ProjectsPage() {
                       setActiveModalProject(project);
                     }}
                   >
-                    <span>📋 View Blueprint</span>
+                    <span><ProjectIcon name="blueprint" /> View Blueprint</span>
                   </button>
                   <Link href={`/roadmap/${project.roadmapSlug}`} className={styles.btnSecondary}>
-                    <span>🗺️ Roadmap</span>
+                    <span><ProjectIcon name="map" /> Roadmap</span>
                   </Link>
                 </div>
               </div>
@@ -228,14 +275,14 @@ export default function ProjectsPage() {
       {/* Modal View for Project Blueprint */}
       {activeModalProject && (
         <div className={styles.modalOverlay} onClick={() => setActiveModalProject(null)}>
-          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+          <div ref={modalRef} className={styles.modalContent} onClick={(e) => e.stopPropagation()} role="dialog" aria-modal="true" aria-labelledby="project-blueprint-title">
             <button
               type="button"
               className={styles.closeBtn}
               onClick={() => setActiveModalProject(null)}
               aria-label="Close modal"
             >
-              ✕
+              <ProjectIcon name="close" />
             </button>
 
             <div className={styles.modalHeader}>
@@ -243,13 +290,13 @@ export default function ProjectsPage() {
                 <span className={styles.domainBadge}>{activeModalProject.domain.replace('_', ' ')}</span>
                 <span className={styles.difficultyBadge}>{activeModalProject.difficulty}</span>
               </div>
-              <h2 className={styles.modalTitle}>{activeModalProject.title}</h2>
-              <div className={styles.timeTag}>⏱️ Estimated duration: {activeModalProject.estimatedHours}</div>
+              <h2 id="project-blueprint-title" className={styles.modalTitle}>{activeModalProject.title}</h2>
+              <div className={styles.timeTag}><ProjectIcon name="clock" /> Estimated duration: {activeModalProject.estimatedHours}</div>
             </div>
 
             <p className={styles.projectSummary}>{activeModalProject.summary}</p>
 
-            <div className={styles.modalSectionTitle}>🛠️ Technologies & Tools</div>
+            <div className={styles.modalSectionTitle}><ProjectIcon name="tools" /> Technologies & Tools</div>
             <div className={styles.techStack} style={{ marginBottom: '1.5rem' }}>
               {activeModalProject.techStack.map((tech) => (
                 <span key={tech} className={styles.techTag}>
@@ -258,11 +305,11 @@ export default function ProjectsPage() {
               ))}
             </div>
 
-            <div className={styles.modalSectionTitle}>✅ Key Deliverables & Requirements</div>
+            <div className={styles.modalSectionTitle}><ProjectIcon name="check" /> Key Deliverables & Requirements</div>
             <ul className={styles.deliverablesList}>
               {activeModalProject.deliverables.map((item, index) => (
                 <li key={index} className={styles.deliverableItem}>
-                  <span className={styles.checkIcon}>✓</span>
+                  <span className={styles.checkIcon}><ProjectIcon name="check" /></span>
                   <span>{item}</span>
                 </li>
               ))}
@@ -274,7 +321,7 @@ export default function ProjectsPage() {
                 className={styles.quizBtn}
                 style={{ flex: 1, justifyContent: 'center' }}
               >
-                🗺️ Open Career Skill Tree
+                <ProjectIcon name="map" /> Open Career Skill Tree
               </Link>
             </div>
           </div>

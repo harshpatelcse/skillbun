@@ -149,6 +149,10 @@ export default function GameMap({ roadmap, slug, initialTab }) {
   const [expanded, setExpanded] = useState(null);
   const [confetti, setConfetti] = useState(null);
   const [progressNotice, setProgressNotice] = useState('');
+  const [isSavingProgress, setIsSavingProgress] = useState(false);
+  const progressSaveRef = useRef(false);
+  const progressOwnerRef = useRef(user?.uid);
+  useEffect(() => { progressOwnerRef.current = user?.uid; }, [user?.uid]);
   const [selectedDocNode, setSelectedDocNode] = useState(null);
   const compactRoadmap = useSyncExternalStore(subscribeCompactRoadmap, getCompactRoadmapSnapshot, getCompactRoadmapServerSnapshot);
   const [viewChoice, setViewChoice] = useState(null);
@@ -218,7 +222,7 @@ export default function GameMap({ roadmap, slug, initialTab }) {
   const allNodes = flattenTree(roadmapTree);
   const total = allNodes.length;
   const doneCount = allNodes.filter(n => progress.includes(n.id)).length;
-  const pct = total === 0 ? 0 : Math.round((doneCount / total) * 100);
+  const pct = total === 0 ? 0 : Math.floor((doneCount / total) * 100);
   const totalXp = useMemo(() => {
     return typeof roadmap?.total_exp === 'number'
       ? roadmap.total_exp
@@ -239,6 +243,12 @@ export default function GameMap({ roadmap, slug, initialTab }) {
       return;
     }
 
+    // Whole-progress writes must not overlap or a late save can undo a newer click.
+    if (progressSaveRef.current) return;
+    progressSaveRef.current = true;
+    setIsSavingProgress(true);
+    const owner = user.uid;
+
     const wasDone = progress.includes(id);
     const next = wasDone ? progress.filter(x => x !== id) : [...progress, id];
     const previous = progress;
@@ -248,6 +258,7 @@ export default function GameMap({ roadmap, slug, initialTab }) {
 
     try {
       await saveRoadmapProgress(slug, next);
+      if (progressOwnerRef.current !== owner) return;
       if (!wasDone) {
         const completedNode = allNodes.find((node) => node.id === id);
         trackEvent('roadmap_node_completed', {
@@ -260,8 +271,12 @@ export default function GameMap({ roadmap, slug, initialTab }) {
       }
     } catch (error) {
       console.error('Failed to save roadmap progress:', error);
+      if (progressOwnerRef.current !== owner) return;
       setProgress(previous);
       setProgressNotice('Could not save progress to Firebase. Please try again.');
+    } finally {
+      progressSaveRef.current = false;
+      setIsSavingProgress(false);
     }
   };
 
@@ -381,7 +396,7 @@ export default function GameMap({ roadmap, slug, initialTab }) {
                       {node.name}
                     </button>
                   </h3>
-                  {node.tag === 'advanced' && <span className="sk-pill adv">⚡ ADV</span>}
+                  {node.tag === 'advanced' && <span className="sk-pill adv"><ReaderIcon name="bolt" size={12} /> ADV</span>}
                   {node.tag === 'essential' && <span className="sk-pill ess">CORE</span>}
                   <span className="sk-pill exp">+{node.exp || 100} XP</span>
                 </div>
@@ -392,7 +407,7 @@ export default function GameMap({ roadmap, slug, initialTab }) {
                   className={`sk-check ${isDone ? 'done' : ''}`}
                   type="button"
                   aria-label={`${isDone ? 'Undo completion of' : 'Complete'} ${node.name}`}
-                  disabled={!isUnlocked || authLoading}
+                  disabled={!isUnlocked || authLoading || isSavingProgress}
                   onClick={(e) => { e.stopPropagation(); if (isUnlocked) toggle(node.id); }}
                   title={isUnlocked ? (user ? (isDone ? 'Undo' : 'Complete') : 'Log in to save progress') : 'Complete prerequisite first'}
                 >
@@ -409,14 +424,14 @@ export default function GameMap({ roadmap, slug, initialTab }) {
                 {isOpen && <>
                 <button
                   className={`sk-btn-mark ${isDone ? 'done' : ''}`}
-                  disabled={!isUnlocked || authLoading}
+                  disabled={!isUnlocked || authLoading || isSavingProgress}
                   onClick={(e) => { e.stopPropagation(); if (isUnlocked) toggle(node.id); }}
                 >
-                  {isUnlocked ? (isDone ? '✅ Completed — Undo?' : `🎯 Mark Complete (+${node.exp || 100} XP)`) : 'Complete prerequisite first'}
+                  <ReaderIcon name={isDone ? 'check' : 'target'} size={16} /> {isUnlocked ? (isDone ? 'Completed — Undo?' : `Mark Complete (+${node.exp || 100} XP)`) : 'Complete prerequisite first'}
                 </button>
                 {node.resources?.filter(r => isSafeUrl(r.url)).length > 0 && (
                   <div className="sk-res-section">
-                    <h4>📚 Resources</h4>
+                    <h4><ReaderIcon name="book" size={16} /> Resources</h4>
                     {node.resources.filter(r => isSafeUrl(r.url)).map((r, i) => (
                       <a
                         href={r.url}
@@ -526,7 +541,7 @@ export default function GameMap({ roadmap, slug, initialTab }) {
         <div className="sk-hero-glow"></div>
         <div className="sk-hero-inner">
           <div className="sk-hero-left">
-            <div className="sk-badge">🌳 SKILL TREE</div>
+            <div className="sk-badge"><ReaderIcon name="tree" size={16} /> SKILL TREE</div>
             <h1 className="sk-title">{roadmap.title}</h1>
             <p className="sk-desc">{roadmap.description}</p>
             <div className="sk-stats">
@@ -543,7 +558,7 @@ export default function GameMap({ roadmap, slug, initialTab }) {
                   className="sk-cert-btn unlocked"
                   onClick={() => router.push(`/roadmap/${slug}/certify`)}
                 >
-                  🏆 Get Certified — Take Quiz!
+                  <ReaderIcon name="trophy" size={18} /> Get Certified — Take Quiz!
                 </button>
               ) : (
                 <button
@@ -551,7 +566,7 @@ export default function GameMap({ roadmap, slug, initialTab }) {
                   disabled
                   title="Complete at least 60% of this roadmap to unlock the certification quiz!"
                 >
-                  🔒 Get Certified ({pct}%)
+                  <ReaderIcon name="lock" size={18} /> Get Certified ({pct}%)
                 </button>
               )}
             </div>
@@ -579,7 +594,7 @@ export default function GameMap({ roadmap, slug, initialTab }) {
             className={`sk-pillar-tab ${activeTab === 'learn' ? 'active' : ''}`}
             onClick={() => handleTabChange('learn')}
           >
-            <span className="sk-pillar-tab-icon">📘</span>
+            <span className="sk-pillar-tab-icon"><ReaderIcon name="book" size={22} /></span>
             <span className="sk-pillar-tab-text">Learn</span>
             <span className="sk-pillar-tab-badge">{total} Nodes</span>
           </button>
@@ -590,7 +605,7 @@ export default function GameMap({ roadmap, slug, initialTab }) {
             className={`sk-pillar-tab ${activeTab === 'goal' ? 'active' : ''}`}
             onClick={() => handleTabChange('goal')}
           >
-            <span className="sk-pillar-tab-icon">🎯</span>
+            <span className="sk-pillar-tab-icon"><ReaderIcon name="target" size={22} /></span>
             <span className="sk-pillar-tab-text">Goal</span>
             <span className="sk-pillar-tab-badge">Global $ & ₹</span>
           </button>
@@ -601,7 +616,7 @@ export default function GameMap({ roadmap, slug, initialTab }) {
             className={`sk-pillar-tab ${activeTab === 'boost' ? 'active' : ''}`}
             onClick={() => handleTabChange('boost')}
           >
-            <span className="sk-pillar-tab-icon">🚀</span>
+            <span className="sk-pillar-tab-icon"><ReaderIcon name="rocket" size={22} /></span>
             <span className="sk-pillar-tab-text">Boost</span>
             <span className="sk-pillar-tab-badge">Projects & Certs</span>
           </button>
@@ -689,7 +704,7 @@ export default function GameMap({ roadmap, slug, initialTab }) {
       {activeTab === 'goal' && (
         <div className="sk-pillar-panel sk-goal-panel">
           <div className="sk-panel-card sk-goal-hero-card">
-            <div className="sk-panel-badge">🎯 CAREER OBJECTIVE</div>
+            <div className="sk-panel-badge"><ReaderIcon name="target" size={16} /> CAREER OBJECTIVE</div>
             <h2>{roadmap.title} Mission</h2>
             <p className="sk-goal-lead">{roadmap.goal?.objective || roadmap.description}</p>
             <div className="sk-goal-meta-row">
@@ -699,7 +714,7 @@ export default function GameMap({ roadmap, slug, initialTab }) {
           </div>
 
           <div className="sk-panel-card sk-salary-card">
-            <div className="sk-panel-badge">💰 GLOBAL COMPENSATION BENCHMARKS</div>
+            <div className="sk-panel-badge"><ReaderIcon name="coin" size={16} /> GLOBAL COMPENSATION BENCHMARKS</div>
             <h3>Dual-Currency Salary Spectrum</h3>
             <p className="sk-salary-sub">Calibrated benchmarks across remote engineering teams, Silicon Valley hubs, and regional tech ecosystems.</p>
             <div className="sk-salary-grid">
@@ -728,7 +743,7 @@ export default function GameMap({ roadmap, slug, initialTab }) {
 
           {roadmap.goal?.target_roles?.length > 0 && (
             <div className="sk-panel-card">
-              <div className="sk-panel-badge">💼 TARGET ROLES</div>
+              <div className="sk-panel-badge"><ReaderIcon name="briefcase" size={16} /> TARGET ROLES</div>
               <h3>Industry Job Titles</h3>
               <p className="sk-panel-desc">Key engineering roles hiring worldwide for this skill profile.</p>
               <div className="sk-role-pills">
@@ -743,7 +758,7 @@ export default function GameMap({ roadmap, slug, initialTab }) {
           )}
 
           <div className="sk-panel-card">
-            <div className="sk-panel-badge">🏛️ ARCHITECTURAL PILLARS</div>
+            <div className="sk-panel-badge"><ReaderIcon name="building" size={16} /> ARCHITECTURAL PILLARS</div>
             <h3>Core Engineering Pillars</h3>
             <div className="sk-pillar-grid">
               {(roadmap.goal?.career_pillars || ['Foundational Systems', 'Architecture & Scale', 'Production Reliability']).map((pillar, i) => (
@@ -775,13 +790,13 @@ export default function GameMap({ roadmap, slug, initialTab }) {
       {activeTab === 'boost' && (
         <div className="sk-pillar-panel sk-boost-panel">
           <div className="sk-panel-card sk-boost-hero-card">
-            <div className="sk-panel-badge">🚀 CAREER ACCELERATION</div>
+            <div className="sk-panel-badge"><ReaderIcon name="rocket" size={16} /> CAREER ACCELERATION</div>
             <h2>Proof of Work & Portfolio Boost</h2>
             <p className="sk-goal-lead">Stand out to global engineering managers and technical recruiters with portfolio-grade capstones, industry certifications, and Bun-Bot interview preparation.</p>
           </div>
 
           <div className="sk-panel-card">
-            <div className="sk-panel-badge">🏆 PORTFOLIO-GRADE CAPSTONES</div>
+            <div className="sk-panel-badge"><ReaderIcon name="trophy" size={16} /> PORTFOLIO-GRADE CAPSTONES</div>
             <h3>Recommended Projects for {roadmap.title}</h3>
             <p className="sk-panel-desc">Production-grade deliverables to showcase genuine engineering depth on your GitHub profile and resume.</p>
             <div className="sk-project-list">
@@ -804,12 +819,12 @@ export default function GameMap({ roadmap, slug, initialTab }) {
 
           <div className="sk-boost-dual-grid">
             <div className="sk-panel-card">
-              <div className="sk-panel-badge">📜 INDUSTRY CREDENTIALS</div>
+              <div className="sk-panel-badge"><ReaderIcon name="book" size={16} /> INDUSTRY CREDENTIALS</div>
               <h3>Globally Recognized Certifications</h3>
               <ul className="sk-bullet-list">
                 {(roadmap.boost?.certifications || ['Standard Cloud Associate', 'Domain Professional']).map((cert, i) => (
                   <li key={i}>
-                    <span className="sk-list-check">✓</span>
+                    <span className="sk-list-check"><ReaderIcon name="check" size={16} /></span>
                     <span>{cert}</span>
                   </li>
                 ))}
@@ -817,12 +832,12 @@ export default function GameMap({ roadmap, slug, initialTab }) {
             </div>
 
             <div className="sk-panel-card">
-              <div className="sk-panel-badge">⚡ INTERVIEW FOCUS</div>
+              <div className="sk-panel-badge"><ReaderIcon name="bolt" size={16} /> INTERVIEW FOCUS</div>
               <h3>Key Technical Interview Topics</h3>
               <ul className="sk-bullet-list">
                 {(roadmap.boost?.interview_focus || ['System Design', 'Algorithms & Problem Solving', 'Domain Depth']).map((topic, i) => (
                   <li key={i}>
-                    <span className="sk-list-check">⚡</span>
+                    <span className="sk-list-check"><ReaderIcon name="bolt" size={16} /></span>
                     <span>{topic}</span>
                   </li>
                 ))}
@@ -831,7 +846,7 @@ export default function GameMap({ roadmap, slug, initialTab }) {
           </div>
 
           <div className="sk-panel-card sk-cta-card">
-            <div className="sk-panel-badge">🤖 MENTORSHIP & VERIFICATION</div>
+            <div className="sk-panel-badge"><ReaderIcon name="chat" size={16} /> MENTORSHIP & VERIFICATION</div>
             <h3>Ready to accelerate your {roadmap.title} journey?</h3>
             <p className="sk-panel-desc">Practice technical interview questions with Bun-Bot or take the official SkillBun proctored certification exam.</p>
             <div className="sk-cta-buttons">
@@ -839,13 +854,13 @@ export default function GameMap({ roadmap, slug, initialTab }) {
                 href={`/counsellor?${new URLSearchParams({ q: `Simulate a technical interview for a ${roadmap.title} role. Ask me real interview questions one by one.`, context: `${roadmap.title} Roadmap` })}`}
                 className="sk-btn-ai sk-cta-ai"
               >
-                🤖 Simulate Interview with BunBot
+                <ReaderIcon name="chat" size={18} /> Simulate Interview with BunBot
               </Link>
               <Link
                 href={`/roadmap/${slug}/certify`}
                 className="sk-cert-btn unlocked sk-cta-cert"
               >
-                🏆 Take Certification Exam
+                <ReaderIcon name="trophy" size={18} /> Take Certification Exam
               </Link>
             </div>
           </div>
@@ -862,6 +877,7 @@ export default function GameMap({ roadmap, slug, initialTab }) {
           onToggleComplete={() => toggle(selectedDocNode.nodeId)}
           progressNotice={progressNotice}
           authLoading={authLoading}
+          savingProgress={isSavingProgress}
         />
       )}
     </div>
@@ -880,11 +896,19 @@ function ReaderIcon({ name, size = 20 }) {
     lock: 'M6 10V7a6 6 0 0 1 12 0v3M4 10h16v12H4V10Zm8 5v3',
     refresh: 'M3 11a9 9 0 1 1 2.7 7M3 4v7h7',
     chat: 'M21 11.5a8.5 8.5 0 0 1-8.5 8.5H4l-3 3V11.5a10 10 0 0 1 20 0ZM7 10h8M7 14h5',
+    tree: 'M10 3h4v4h-4V3Zm2 4v5M4 12h16M4 12v5m16-5v5M2 17h4v4H2v-4Zm16 0h4v4h-4v-4Z',
+    target: 'M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-4 0a5 5 0 1 1-10 0 5 5 0 0 1 10 0Zm-5-1v2',
+    rocket: 'm12 15-3-3c1-5 5-9 13-10-1 8-5 12-10 13Zm-3-3H4l2-5 5-1m1 9v5l5-2 1-5M7 17l-4 4 1-5m11-9h2',
+    trophy: 'M8 3h8v9a4 4 0 0 1-8 0V3Zm0 2H3v3a5 5 0 0 0 5 5m8-8h5v3a5 5 0 0 1-5 5m-4 3v5m-4 0h8',
+    coin: 'M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-6-4H9v4h6v4H9m3-10v12',
+    briefcase: 'M9 6V3h6v3M3 6h18v15H3V6Zm0 5 9 4 9-4m-9 2v4',
+    building: 'M3 10h18L12 3l-9 7Zm2 3v7m7-7v7m7-7v7M3 22h18',
+    bolt: 'm13 2-9 12h7l-1 8 10-12h-7l1-8Z',
   };
-  return <svg aria-hidden="true" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d={paths[name] || paths.book} /></svg>;
+  return <svg aria-hidden="true" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ verticalAlign: 'middle', flexShrink: 0 }}><path d={paths[name] || paths.book} /></svg>;
 }
 
-function StudyGuideDrawer({ node, user, onClose, onToggleComplete, authLoading, progressNotice }) {
+function StudyGuideDrawer({ node, user, onClose, onToggleComplete, authLoading, savingProgress, progressNotice }) {
   const dialogRef = useRef(null);
   const bodyRef = useRef(null);
   const articleRef = useRef(null);
@@ -1146,7 +1170,7 @@ function StudyGuideDrawer({ node, user, onClose, onToggleComplete, authLoading, 
           <div className="sk-reader-status" role="status"><ReaderIcon name={node.isDone ? 'check' : !node.isUnlocked ? 'lock' : 'book'} size={18} /><span>{progressNotice || (node.isDone ? 'Topic completed' : !node.isUnlocked ? 'Complete the prerequisite to unlock progress' : status === 'ready' ? `About ${guide.minutes} min read` : 'Learn at your own pace')}</span></div>
           <div className="sk-reader-footer-buttons">
             <Link href={askBunBot(node.topicName, node.roadmapTitle)} className="sk-btn-ai"><ReaderIcon name="chat" size={18} /> Ask BunBot</Link>
-            <button type="button" className={`sk-btn-mark ${node.isDone ? 'done' : ''}`} disabled={!node.isUnlocked || authLoading || saving} onClick={async () => { setSaving(true); try { await onToggleComplete(); } finally { setSaving(false); } }}><ReaderIcon name={node.isDone ? 'refresh' : 'check'} size={18} />{saving ? 'Saving...' : node.isDone ? 'Undo completion' : !user ? 'Log in to save progress' : node.exp ? `Mark complete (+${node.exp} XP)` : 'Mark complete'}</button>
+            <button type="button" className={`sk-btn-mark ${node.isDone ? 'done' : ''}`} disabled={!node.isUnlocked || authLoading || saving || savingProgress} onClick={async () => { setSaving(true); try { await onToggleComplete(); } finally { setSaving(false); } }}><ReaderIcon name={node.isDone ? 'refresh' : 'check'} size={18} />{saving || savingProgress ? 'Saving...' : node.isDone ? 'Undo completion' : !user ? 'Log in to save progress' : node.exp ? `Mark complete (+${node.exp} XP)` : 'Mark complete'}</button>
           </div>
         </footer>
       </div>

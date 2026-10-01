@@ -1,12 +1,19 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useId } from 'react';
 import { useTranslation } from './I18nProvider';
 
 export default function LanguageSelector({ variant = 'nav' }) {
   const { locale, setLocale, locales, currentLocaleInfo } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef(null);
+  const triggerRef = useRef(null);
+  const optionRefs = useRef([]);
+  const listId = useId();
+
+  useEffect(() => {
+    if (isOpen) optionRefs.current[locales.findIndex((loc) => loc.code === locale)]?.focus();
+  }, [isOpen, locale, locales]);
 
   // Close dropdown on click outside or escape key
   useEffect(() => {
@@ -18,6 +25,7 @@ export default function LanguageSelector({ variant = 'nav' }) {
     function handleKeyDown(event) {
       if (event.key === 'Escape') {
         setIsOpen(false);
+        triggerRef.current?.focus();
       }
     }
 
@@ -36,6 +44,7 @@ export default function LanguageSelector({ variant = 'nav' }) {
   const selectLocale = (code) => {
     setLocale(code);
     setIsOpen(false);
+    triggerRef.current?.focus();
   };
 
   const isFooter = variant === 'footer';
@@ -43,17 +52,34 @@ export default function LanguageSelector({ variant = 'nav' }) {
   return (
     <div
       ref={containerRef}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) setIsOpen(false);
+      }}
+      onKeyDown={(event) => {
+        if (!['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(event.key)) return;
+        event.preventDefault();
+        if (!isOpen) {
+          setIsOpen(true);
+          return;
+        }
+        const current = optionRefs.current.indexOf(event.target);
+        const next = event.key === 'Home' ? 0 : event.key === 'End' ? locales.length - 1 :
+          (current + (event.key === 'ArrowDown' ? 1 : -1) + locales.length) % locales.length;
+        optionRefs.current[next]?.focus();
+      }}
       style={{
         position: 'relative',
         display: 'inline-block',
       }}
     >
       <button
+        ref={triggerRef}
         type="button"
         onClick={toggleDropdown}
         aria-label="Select language"
         aria-haspopup="listbox"
         aria-expanded={isOpen}
+        aria-controls={isOpen ? listId : undefined}
         style={{
           display: 'inline-flex',
           alignItems: 'center',
@@ -65,10 +91,9 @@ export default function LanguageSelector({ variant = 'nav' }) {
           fontSize: '0.85rem',
           fontWeight: '600',
           fontFamily: 'var(--font-nunito), sans-serif',
-          color: 'var(--foreground, #1e293b)',
+          color: 'var(--text)',
           cursor: 'pointer',
           transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
-          outline: 'none',
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.borderColor = 'var(--green, #22c55e)';
@@ -120,6 +145,7 @@ export default function LanguageSelector({ variant = 'nav' }) {
 
       {isOpen && (
         <div
+          id={listId}
           role="listbox"
           aria-label="Available languages"
           style={{
@@ -139,11 +165,13 @@ export default function LanguageSelector({ variant = 'nav' }) {
             gap: '2px',
           }}
         >
-          {locales.map((loc) => {
+          {locales.map((loc, index) => {
             const isSelected = loc.code === locale;
             return (
               <button
                 key={loc.code}
+                ref={(element) => { optionRefs.current[index] = element; }}
+                type="button"
                 role="option"
                 aria-selected={isSelected}
                 onClick={() => selectLocale(loc.code)}
@@ -154,8 +182,8 @@ export default function LanguageSelector({ variant = 'nav' }) {
                   padding: '8px 10px',
                   borderRadius: '6px',
                   border: 'none',
-                  background: isSelected ? 'rgba(34, 197, 94, 0.12)' : 'transparent',
-                  color: isSelected ? 'var(--green, #22c55e)' : 'var(--foreground, #1e293b)',
+                  background: isSelected ? 'var(--green-subtle-strong)' : 'transparent',
+                  color: isSelected ? 'var(--green)' : 'var(--text)',
                   fontWeight: isSelected ? '700' : '500',
                   fontSize: '0.84rem',
                   fontFamily: 'var(--font-nunito), sans-serif',
@@ -165,7 +193,7 @@ export default function LanguageSelector({ variant = 'nav' }) {
                 }}
                 onMouseEnter={(e) => {
                   if (!isSelected) {
-                    e.currentTarget.style.background = 'rgba(0, 0, 0, 0.05)';
+                    e.currentTarget.style.background = 'var(--green-subtle)';
                   }
                 }}
                 onMouseLeave={(e) => {

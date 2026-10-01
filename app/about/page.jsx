@@ -3,7 +3,7 @@ import Link from 'next/link';
 const siteUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://skillbun.tech';
 
 export const metadata = {
-  title: 'About SkillBun – Empowering Tech Students with AI Career Guidance',
+  title: { absolute: 'About SkillBun – Empowering Tech Students with AI Career Guidance' },
   description: 'Learn how SkillBun bridges the gap between academic computer science curricula and modern tech industry expectations through AI guidance, roadmaps, and verified certifications worldwide.',
   alternates: {
     canonical: `${siteUrl}/about`,

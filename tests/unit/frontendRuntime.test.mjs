@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { startCertificationQuestionTimer } from '../../utils/client/certificationTimer.mjs';
 import fs from 'node:fs/promises';
 
 async function loadClientModule(path, names, dependencies = {}) {
@@ -202,3 +203,328 @@ test('dashboard counts only current roadmap nodes and uses their actual XP weigh
   assert.deepEqual(projects, [{ slug: 'frontend', label: 'Frontend', done: 1, total: 2, earnedXp: 20 }]);
   assert.equal(buildDashboardProjects([{ slug: 'frontend', completedNodeIds: ['removed-node'] }], catalog).length, 0);
 });
+
+test('certification question deadline expires once despite changed answers or delayed browser ticks', () => {
+  let clock = 1000;
+  let tick;
+  let expired = 0;
+  let cancellations = 0;
+  const countdown = [];
+  let latestAnswer = 0;
+  const stop = startCertificationQuestionTimer({
+    now: () => clock,
+    schedule: callback => { tick = callback; return 123; },
+    cancel: interval => { assert.equal(interval, 123); cancellations++; },
+    onTick: remaining => countdown.push(remaining),
+    onExpire: () => { expired++; assert.equal(latestAnswer, 3); },
+  });
+  clock += 20000;
+  tick();
+  latestAnswer = 3;
+  clock += 10000;
+  tick();
+  assert.deepEqual(countdown, [25, 15]);
+  clock += 30000;
+  tick();
+  assert.equal(countdown.at(-1), 0);
+  assert.equal(expired, 1);
+  tick();
+  assert.equal(expired, 1);
+  assert.equal(cancellations, 1);
+  stop();
+});
+
+test('leaving a certification question cancels its deadline before it can advance', () => {
+  let tick;
+  const stop = startCertificationQuestionTimer({
+    now: () => 0,
+    schedule: callback => { tick = callback; return 1; },
+    cancel: () => {},
+    onTick: () => assert.fail('Cancelled timer must not update the question'),
+    onExpire: () => assert.fail('Cancelled timer must not advance the question'),
+  });
+  stop();
+  tick();
+});
+
+test('profile cache migration accepts guests and the same owner, but rejects other accounts', async () => {
+  const { isProfileCacheForUser } = await loadClientModule('utils/shared/profileStore.js', ['isProfileCacheForUser']);
+  const user = { uid: 'student-a', email: 'student@gmail.com' };
+  assert.equal(isProfileCacheForUser({}, user), true);
+  assert.equal(isProfileCacheForUser({ uid: 'student-a', email: 'STUDENT@GMAIL.COM' }, user), true);
+  assert.equal(isProfileCacheForUser({ email: 'other@gmail.com' }, user), false, 'legacy caches still carry their email owner');
+  assert.equal(isProfileCacheForUser({ uid: 'student-b', email: user.email }, user), false, 'a recreated account cannot inherit an older UID cache');
+  assert.equal(isProfileCacheForUser({}, null), false);
+});
+
+test('cloud profile initialization keeps an existing name and rejects foreign cached profile details', async () => {
+  const { isProfileCacheForUser } = await loadClientModule('utils/shared/profileStore.js', ['isProfileCacheForUser']);
+  const fullSource = await fs.readFile(new URL('../../app/components/AuthProvider.jsx', import.meta.url), 'utf8');
+  const source = fullSource.slice(0, fullSource.indexOf('export function AuthProvider'))
+    .replace(/^import[\s\S]*?from ['"][^'"]+['"];?\r?\n/gm, '');
+  for (const existing of [{ name: 'Cloud Name', degree: 'Cloud Degree' }, null]) {
+    const writes = [];
+    const dependencies = {
+      createContext: () => null,
+      isProfileCacheForUser,
+      readProfileSnapshot: () => ({ uid: 'other-user', email: 'other@gmail.com', name: 'Other Name', hasName: true, degree: 'Other Degree', year: '4th Year', interest: 'AI' }),
+      doc: () => 'users/current-user',
+      getDoc: async () => ({ exists: () => Boolean(existing), data: () => existing }),
+      serverTimestamp: () => 'server-timestamp',
+      setDoc: async (path, data) => writes.push(data),
+    };
+    const ensureUserProfile = new Function(...Object.keys(dependencies), `${source}; return ensureUserProfile;`)(...Object.values(dependencies));
+    await ensureUserProfile({}, { uid: 'current-user', email: 'student@gmail.com', displayName: 'Current Name', providerData: [] });
+    assert.equal(writes[0].name, existing ? undefined : 'Current Name');
+    assert.equal(writes[0].degree, existing ? undefined : '');
+    assert.equal(writes[0].year, existing ? undefined : '');
+  }
+});
+
+async function settingsPreferences({ publicPage = false, statusResponse, updateResponse } = {}) {
+  const fullSource = await fs.readFile(new URL('../../app/settings/page.jsx', import.meta.url), 'utf8');
+  const source = fullSource.slice(fullSource.indexOf('function SettingsContent()'), fullSource.indexOf('  // If visitor clicked Unsubscribe link'));
+  const { validateEmail } = await loadClientModule('utils/shared/emailValidator.js', ['validateEmail']);
+  const values = [];
+  const effectSlots = new Map();
+  const effects = [];
+  const timers = new Map();
+  const requests = [];
+  let cursor = 0;
+  let timerId = 0;
+  let userEmail = 'student@gmail.com';
+  const localStorage = memoryStorage();
+  const dependencies = {
+    useState(initial) {
+      const index = cursor++;
+      if (!(index in values)) values[index] = initial;
+      return [values[index], next => { values[index] = typeof next === 'function' ? next(values[index]) : next; }];
+    },
+    useRef(initial) {
+      const index = cursor++;
+      if (!(index in values)) values[index] = { current: initial };
+      return values[index];
+    },
+    useEffect(callback, deps) {
+      const index = cursor++;
+      const previous = effectSlots.get(index);
+      if (previous && deps.every((value, idx) => Object.is(value, previous.deps[idx]))) return;
+      effects.push(() => {
+        previous?.cleanup?.();
+        effectSlots.set(index, { deps, cleanup: callback() });
+      });
+    },
+    useAuth: () => ({ user: { uid: userEmail, email: userEmail }, profile: {}, authLoading: false }),
+    useRouter: () => ({ replace() {} }),
+    useSearchParams: () => ({ get: key => ({ action: publicPage ? 'unsubscribe' : null, email: publicPage ? 'student@gmail.com' : null })[key] || null }),
+    validateEmail,
+    localStorage,
+    window: {
+      setTimeout: callback => { timers.set(++timerId, callback); return timerId; },
+      clearTimeout: id => timers.delete(id),
+    },
+    fetch: async (url, options) => {
+      requests.push({ url, options });
+      if (options?.method === 'POST') return updateResponse ? updateResponse.promise : { ok: true, json: async () => ({ success: true, message: 'Preference saved.' }) };
+      return statusResponse ? statusResponse.promise : { ok: true, json: async () => ({ unsubscribed: true }) };
+    },
+  };
+  const SettingsContent = new Function(...Object.keys(dependencies), `${source}; return { unsubscribeEmail, hasPreferenceStatus, isUnsubscribed, handleUnsubscribeToggle, setCustomUnsubscribeEmail, unsubStatus }; } return SettingsContent;`)(...Object.values(dependencies));
+  function render() {
+    cursor = 0;
+    const output = SettingsContent();
+    while (effects.length) effects.shift()();
+    return output;
+  }
+  const flushTimers = async () => {
+    const pending = [...timers.values()].map(callback => callback());
+    timers.clear();
+    await Promise.all(pending);
+    await settle();
+  };
+  const cleanup = () => { for (const slot of effectSlots.values()) slot.cleanup?.(); };
+  return { render, flushTimers, requests, cleanup, localStorage, setUserEmail: email => { userEmail = email; } };
+}
+
+test('settings loads the signed-in email preference and can re-enable an existing unsubscribe', async () => {
+  const runtime = await settingsPreferences();
+  try {
+    runtime.render();
+    await runtime.flushTimers();
+    const page = runtime.render();
+    assert.equal(page.isUnsubscribed, true);
+    assert.match(runtime.requests[0].url, /email=student%40gmail\.com/);
+    await page.handleUnsubscribeToggle('resubscribe');
+    assert.deepEqual(JSON.parse(runtime.requests.at(-1).options.body), { email: 'student@gmail.com', action: 'resubscribe' });
+    assert.equal(runtime.render().isUnsubscribed, false);
+  } finally { runtime.cleanup(); }
+});
+
+test('public email preferences can clear their address without silently updating the original email', async () => {
+  const runtime = await settingsPreferences({ publicPage: true });
+  try {
+    const page = runtime.render();
+    page.setCustomUnsubscribeEmail('');
+    const cleared = runtime.render();
+    assert.equal(cleared.unsubscribeEmail, '');
+    await cleared.handleUnsubscribeToggle();
+    assert.equal(runtime.requests.length, 0);
+    assert.match(runtime.render().unsubStatus, /enter your email/i);
+  } finally { runtime.cleanup(); }
+});
+
+test('a late preference status lookup cannot overwrite a confirmed preference update', async () => {
+  const statusResponse = deferred();
+  const runtime = await settingsPreferences({ statusResponse });
+  try {
+    const page = runtime.render();
+    const lookup = runtime.flushTimers();
+    await settle();
+    await page.handleUnsubscribeToggle('resubscribe');
+    statusResponse.resolve({ ok: true, json: async () => ({ unsubscribed: true }) });
+    await lookup;
+    assert.equal(runtime.render().isUnsubscribed, false);
+  } finally { runtime.cleanup(); }
+});
+
+for (const change of ['account switch', 'unmount']) {
+  test(`a late email preference update cannot restore the old session flag after ${change}`, async () => {
+    const updateResponse = deferred();
+    const runtime = await settingsPreferences({ updateResponse });
+    try {
+      const page = runtime.render();
+      const update = page.handleUnsubscribeToggle('unsubscribe');
+      await settle();
+      if (change === 'account switch') {
+        runtime.setUserEmail('other@gmail.com');
+        runtime.render();
+      } else runtime.cleanup();
+      runtime.localStorage.setItem('sb_email_unsubscribed', 'new-session-value');
+      updateResponse.resolve({ ok: true, json: async () => ({ success: true, message: 'Old account updated.' }) });
+      await update;
+      assert.equal(runtime.localStorage.getItem('sb_email_unsubscribed'), 'new-session-value');
+      assert.notEqual(runtime.render().unsubStatus, 'Old account updated.');
+    } finally { runtime.cleanup(); }
+  });
+}
+
+async function authSaveActions() {
+  const fullSource = await fs.readFile(new URL('../../app/components/AuthProvider.jsx', import.meta.url), 'utf8');
+  const source = fullSource.slice(fullSource.indexOf('  const saveProfile = useCallback'), fullSource.indexOf('  const signOutUser = useCallback'));
+  const pending = deferred();
+  const localWrites = [];
+  const cloudWrites = [];
+  const services = { configured: true, db: {}, auth: { currentUser: { uid: 'student-a', email: 'student@gmail.com', emailVerified: true } } };
+  const dependencies = {
+    services,
+    useCallback: fn => fn,
+    assertVerifiedEmail: () => {},
+    getProviders: () => ['password'],
+    fallbackNameFromUser: () => 'Student',
+    serverTimestamp: () => 'server-timestamp',
+    doc: (...args) => args.slice(1).join('/'),
+    setDoc: async (path, data) => { cloudWrites.push({ path, data }); await pending.promise; },
+    saveStoredProfile: data => localWrites.push(data),
+    saveStoredRoadmapProgress: (slug, ids) => localWrites.push({ slug, ids }),
+  };
+  const actions = new Function(...Object.keys(dependencies), `${source}; return { saveProfile, saveRoadmapProgress };`)(...Object.values(dependencies));
+  return { actions, pending, services, localWrites, cloudWrites };
+}
+
+for (const nextUid of [null, 'student-b']) {
+  for (const action of ['saveProfile', 'saveRoadmapProgress']) {
+    test(`auth: pending ${action} cannot restore cache after ${nextUid ? 'account switch' : 'signout'}`, async () => {
+      const runtime = await authSaveActions();
+      const save = action === 'saveProfile'
+        ? runtime.actions[action]({ name: 'Old Student', degree: 'BCA', year: '1st Year', interest: '' })
+        : runtime.actions[action]('frontend', ['intro']);
+      assert.match(runtime.cloudWrites[0].path, /^users\/student-a/);
+      runtime.services.auth.currentUser = nextUid ? { uid: nextUid } : null;
+      runtime.pending.resolve();
+      await save;
+      assert.deepEqual(runtime.localWrites, []);
+    });
+  }
+}
+
+async function counsellorRuntime({ proof, response } = {}) {
+  const elements = new Map();
+  const messages = [];
+  const makeElement = () => ({
+    value: '', disabled: false, style: {}, innerHTML: '', scrollHeight: 52,
+    addEventListener(type, handler) { this[type] = handler; },
+    dispatchEvent() {}, appendChild() {}, remove() {},
+  });
+  for (const id of ['chatInput', 'sendBtn', 'chatMessages', 'clearChatBtn']) elements.set(id, makeElement());
+  Object.defineProperty(elements.get('chatMessages'), 'innerHTML', { set() { messages.length = 0; } });
+  const stateApi = await loadClientModule('utils/client/counsellor/counsellorState.js', ['createState']);
+  let state;
+  let proofCalls = 0;
+  let requestCalls = 0;
+  const dependencies = {
+    window: { location: { search: '' } },
+    document: { createElement: makeElement },
+    getEl: id => elements.get(id) || null,
+    createState: controller => { state = stateApi.createState(controller); return state; },
+    loadProfile: current => { current.userProfile = { name: 'Student', degree: 'BCA', year: '1st Year' }; return true; },
+    updateUsageLimitCard() {},
+    checkRateLimit: () => ({ allowed: true }),
+    incrementRateLimit() {},
+    fetchSecurityConfig: async () => {},
+    refreshHumanProofSession: async () => true,
+    hasFreshHumanProof: () => true,
+    toggleSecurityBanner() {}, setCaptchaStatus() {},
+    getPersonalizedInitialChips: () => [], renderSuggestionChips() {}, hideSuggestionsSection() {},
+    getFollowUpSuggestions: () => [],
+    verifyHumanProof: async () => { proofCalls += 1; return proof ? proof.promise : true; },
+    fetchCounsellorPayload: async () => {
+      requestCalls += 1;
+      return response ? response.promise : { candidates: [{ content: { parts: [{ text: 'Use the frontend roadmap.' }] } }] };
+    },
+    appendMessage: (current, role, text) => messages.push({ role, text }),
+    appendStreamingMessage: (current, role, text, callback) => { messages.push({ role, text }); callback(); },
+    getFriendlyAiErrorMessage: error => error.message,
+    posthog: { capture() {} },
+  };
+  const { mountCounsellorRuntime } = await loadClientModule('utils/client/counsellorRuntime.js', ['mountCounsellorRuntime'], dependencies);
+  const cleanup = mountCounsellorRuntime();
+  await settle();
+  return { elements, state, messages, cleanup, proofCalls: () => proofCalls, requestCalls: () => requestCalls };
+}
+
+test('counsellor blocks duplicate keyboard sends while human verification is pending', async () => {
+  const proof = deferred();
+  const runtime = await counsellorRuntime({ proof });
+  try {
+    runtime.elements.get('chatInput').value = 'How do I start frontend?';
+    const first = runtime.elements.get('sendBtn').click();
+    await runtime.elements.get('sendBtn').click();
+    assert.equal(runtime.proofCalls(), 1);
+    proof.resolve(true);
+    await first;
+    assert.equal(runtime.requestCalls(), 1);
+    assert.equal(runtime.messages.length, 2);
+    assert.equal(runtime.state.isSending, false);
+  } finally { runtime.cleanup(); }
+});
+
+for (const action of ['clear', 'unmount']) {
+  test(`counsellor ignores an old AI response after ${action}`, async () => {
+    const response = deferred();
+    const runtime = await counsellorRuntime({ response });
+    try {
+      runtime.elements.get('chatInput').value = 'How do I start frontend?';
+      const send = runtime.elements.get('sendBtn').click();
+      await settle();
+      assert.equal(runtime.requestCalls(), 1);
+      if (action === 'clear') runtime.elements.get('clearChatBtn').click();
+      else runtime.cleanup();
+      const historyLength = runtime.state.conversationHistory.length;
+      const visibleLength = runtime.messages.length;
+      response.resolve({ candidates: [{ content: { parts: [{ text: 'Late response from the old chat.' }] } }] });
+      await send;
+      assert.equal(runtime.state.conversationHistory.length, historyLength);
+      assert.equal(runtime.messages.length, visibleLength);
+    } finally { runtime.cleanup(); }
+  });
+}

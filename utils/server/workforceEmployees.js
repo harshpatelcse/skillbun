@@ -6,6 +6,7 @@ import { validateFirestoreId, validateSchema, validateString } from '@/utils/ser
 import { checkServerRateLimit } from '@/utils/server/rateLimitStore'
 import { getClientAddress } from '@/utils/server/requestUtils'
 import { encryptCredentials } from '@/utils/server/workforceCrypto'
+import { validateWorkforceCredentials } from './workforceActionValidation.mjs'
 
 export const EMPLOYEE_STATUSES = Object.freeze([
   'OFFER_SENT',
@@ -58,18 +59,6 @@ function validateStipend(value) {
   return { isValid: true, error: null, value }
 }
 
-function validateCredentialsData(value) {
-  return validateSchema(value, {
-    work_email: { type: 'email', required: true },
-    password: { type: 'string', required: true, minLength: 1, maxLength: 512, rejectSqlInjection: false },
-    access_notes: { type: 'string', maxLength: 1000, allowEmpty: true },
-  }, {
-    fieldName: 'credentials_data',
-    allowUnknown: false,
-    maxKeys: 3,
-  })
-}
-
 const EMPLOYEE_FIELDS = Object.freeze({
   salutation: { type: 'enum', allowedValues: ['Mr.', 'Ms.'], label: 'Salutation' },
   full_name: { type: 'string', minLength: 2, maxLength: 100, label: 'Full name' },
@@ -88,7 +77,7 @@ const EMPLOYEE_FIELDS = Object.freeze({
   stipend_amount: { validator: validateStipend },
   stipend_currency: { type: 'enum', allowedValues: ['INR'], defaultValue: 'INR', label: 'Stipend currency' },
   work_email: { type: 'email', label: 'Work email' },
-  credentials_data: { validator: validateCredentialsData },
+  credentials_data: { validator: validateWorkforceCredentials },
   skip_offer_email: { type: 'boolean', defaultValue: false, label: 'Skip offer email' },
 })
 

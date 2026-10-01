@@ -25,6 +25,22 @@ export async function submitExamAttempt(db, { uid, attemptId, answers, grade, no
     if (!Number.isFinite(expiry) || now > expiry + 15000) throw new ExamError('Exam attempt expired.');
     if (!Array.isArray(attempt.serverQuestions) || attempt.serverQuestions.length !== 10) throw new ExamError('Invalid exam record.', 500);
     const result = grade(attempt.serverQuestions, answers);
+    const historyRef = db.collection('users').doc(uid).collection('quizAttempts').doc(attempt.roadmapSlug);
+    const historySnapshot = await transaction.get(historyRef);
+    const history = historySnapshot.exists ? historySnapshot.data() : {};
+    // Starts consume the daily quota; only authoritative failed grades count
+    // toward the two-failure study cooldown. Serving a cooldown resets the run.
+    const cooldownServed = Number.isFinite(history.cooldownUntil) && history.cooldownUntil <= now;
+    const previousFailures = !cooldownServed && Number.isInteger(history.consecutiveFailures) && history.consecutiveFailures > 0
+      ? history.consecutiveFailures : 0;
+    const consecutiveFailures = result.passed ? 0 : previousFailures + 1;
+    transaction.set(historyRef, {
+      consecutiveFailures,
+      cooldownUntil: consecutiveFailures >= 2 ? now + 60 * 60 * 1000 : null,
+      lastSubmittedAt: now,
+      lastExamPassed: result.passed,
+      updatedAt: new Date(now),
+    }, { merge: true });
     transaction.update(ref, {
       status: 'COMPLETED', submitted: true, submittedAt: new Date(now),
       submittedAnswers: answers, correctCount: result.correctCount,

@@ -13,6 +13,7 @@ import { buildOfferDispatchEmail } from '@/utils/server/workforceEmailTemplates'
 import { decryptCredentials, encryptCredentials } from '@/utils/server/workforceCrypto';
 import { getActiveTemplateVersion, DOCUMENT_CATEGORIES } from '@/utils/common/docTemplateRegistry';
 import { invalidateCacheTag } from '@/utils/server/redisCache';
+import { validateWorkforceAction } from '@/utils/server/workforceActionValidation.mjs';
 
 export const runtime = 'nodejs';
 
@@ -31,7 +32,9 @@ export async function POST(request) {
       return apiError('Payload must be valid JSON.', 400, 'BAD_REQUEST');
     }
 
-    const { employeeId, credentials_data } = body;
+    const validation = validateWorkforceAction(body, 'offer');
+    if (!validation.isValid) return apiError(validation.error, 400, 'VALIDATION_ERROR');
+    const { employeeId, credentials_data } = validation.value;
     if (!employeeId || typeof employeeId !== 'string') {
       return apiError('employeeId is required.', 400, 'VALIDATION_ERROR');
     }
@@ -83,6 +86,7 @@ export async function POST(request) {
           });
         } catch (encErr) {
           console.warn('[Offer Dispatch] Could not persist new credentials:', encErr.message);
+          return apiError('Workspace credentials could not be saved. Please try again after checking the server encryption configuration.', 503, 'INTERNAL_ERROR');
         }
       }
     }
@@ -177,6 +181,7 @@ export async function POST(request) {
       } catch (updateErr) {
         console.error('[Failed to update employee status to DISPATCH_FAILED]', updateErr);
       }
+      await invalidateCacheTag('admin:workforce');
 
       // Return fallback download payload with base64 PDF
       return NextResponse.json(

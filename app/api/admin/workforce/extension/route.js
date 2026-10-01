@@ -12,6 +12,7 @@ import { sendMailWithAttachment } from '@/utils/server/zohoMailer';
 import { buildExtensionDispatchEmail } from '@/utils/server/workforceEmailTemplates';
 import { getActiveTemplateVersion, DOCUMENT_CATEGORIES } from '@/utils/common/docTemplateRegistry';
 import { invalidateCacheTag } from '@/utils/server/redisCache';
+import { validateWorkforceAction } from '@/utils/server/workforceActionValidation.mjs';
 
 export const runtime = 'nodejs';
 
@@ -36,7 +37,9 @@ export async function POST(request) {
       return apiError('Payload must be valid JSON.', 400, 'BAD_REQUEST');
     }
 
-    const { employeeId, new_contract_end_date, original_reference_id } = body;
+    const validation = validateWorkforceAction(body, 'extension');
+    if (!validation.isValid) return apiError(validation.error, 400, 'VALIDATION_ERROR');
+    const { employeeId, new_contract_end_date, original_reference_id } = validation.value;
     if (!employeeId || typeof employeeId !== 'string') {
       return apiError('employeeId is required.', 400, 'VALIDATION_ERROR');
     }

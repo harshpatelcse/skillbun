@@ -1,10 +1,11 @@
 'use client';
 
-import { useEffect, useState, Suspense } from 'react';
+import { useEffect, useRef, useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { useAuth } from '../components/AuthProvider';
 import WorkspaceSidebar from '../components/WorkspaceSidebar';
+import { validateEmail } from '@/utils/shared/emailValidator';
 import styles from './settings.module.css';
 
 function SettingsContent() {
@@ -31,25 +32,40 @@ function SettingsContent() {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   // Email Unsubscribe state
-  const [customUnsubscribeEmail, setCustomUnsubscribeEmail] = useState('');
-  const unsubscribeEmail = customUnsubscribeEmail || queryEmail || user?.email || '';
-  const [isUnsubscribed, setIsUnsubscribed] = useState(false);
+  const [customUnsubscribeEmail, setCustomUnsubscribeEmail] = useState(null);
+  const unsubscribeEmail = isUnsubscribeAction
+    ? customUnsubscribeEmail ?? (queryEmail || user?.email || '')
+    : user?.email || '';
+  const preferenceEmail = unsubscribeEmail.trim().toLowerCase();
+  const [emailPreference, setEmailPreference] = useState(null);
+  const preferenceRevision = useRef(0);
+  const hasPreferenceStatus = emailPreference?.email === preferenceEmail;
+  const isUnsubscribed = hasPreferenceStatus && emailPreference.unsubscribed;
   const [unsubStatus, setUnsubStatus] = useState('');
   const [unsubLoading, setUnsubLoading] = useState(false);
 
   // Handle Unsubscribe Action from Email Footer Link
   useEffect(() => {
-    if (!queryEmail) return;
-
-    fetch(`/api/unsubscribe?email=${encodeURIComponent(queryEmail)}`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.unsubscribed) {
-          setIsUnsubscribed(true);
+    const revision = ++preferenceRevision.current;
+    if (!validateEmail(preferenceEmail).isValid) return;
+    const controller = new AbortController();
+    // Wait for public email edits to settle instead of querying each keystroke.
+    const timer = window.setTimeout(async () => {
+      try {
+        const response = await fetch(`/api/unsubscribe?email=${encodeURIComponent(preferenceEmail)}`, { signal: controller.signal });
+        const data = await response.json();
+        if (!response.ok || typeof data.unsubscribed !== 'boolean') return;
+        if (!controller.signal.aborted && revision === preferenceRevision.current) {
+          setEmailPreference({ email: preferenceEmail, unsubscribed: data.unsubscribed });
         }
-      })
-      .catch(() => {});
-  }, [queryEmail]);
+      } catch {}
+    }, isUnsubscribeAction ? 400 : 0);
+    return () => {
+      window.clearTimeout(timer);
+      controller.abort();
+      preferenceRevision.current += 1;
+    };
+  }, [isUnsubscribeAction, preferenceEmail]);
 
   // Standard authentication gate redirect
   useEffect(() => {
@@ -65,11 +81,14 @@ function SettingsContent() {
   }, [authLoading, deletingAccount, isUnsubscribeAction, router, user]);
 
   const handleUnsubscribeToggle = async (action = 'unsubscribe') => {
-    const target = unsubscribeEmail || user?.email;
-    if (!target || !target.includes('@')) {
-      setUnsubStatus('❌ Please enter a valid email address.');
+    if (unsubLoading) return;
+    const emailCheck = validateEmail(unsubscribeEmail);
+    if (!emailCheck.isValid) {
+      setUnsubStatus(emailCheck.error);
       return;
     }
+    const target = emailCheck.normalizedEmail;
+    const revision = ++preferenceRevision.current;
 
     setUnsubLoading(true);
     setUnsubStatus('');
@@ -81,17 +100,21 @@ function SettingsContent() {
         body: JSON.stringify({ email: target, action }),
       });
       const data = await res.json();
+      if (revision !== preferenceRevision.current) return;
 
-      if (data.success) {
-        setIsUnsubscribed(action === 'unsubscribe');
+      if (res.ok && data.success) {
+        setEmailPreference({ email: target, unsubscribed: action === 'unsubscribe' });
         setUnsubStatus(data.message);
         if (typeof window !== 'undefined') {
-          localStorage.setItem('sb_email_unsubscribed', action === 'unsubscribe' ? 'true' : 'false');
+          try {
+            localStorage.setItem('sb_email_unsubscribed', action === 'unsubscribe' ? 'true' : 'false');
+          } catch {}
         }
       } else {
         setUnsubStatus(`❌ ${data.error || 'Failed to update preferences.'}`);
       }
     } catch (err) {
+      if (revision !== preferenceRevision.current) return;
       setUnsubStatus(`❌ ${err.message || 'Network error updating email preferences.'}`);
     } finally {
       setUnsubLoading(false);
@@ -123,13 +146,14 @@ function SettingsContent() {
           <input
             type="email"
             value={unsubscribeEmail}
-            onChange={(e) => setCustomUnsubscribeEmail(e.target.value)}
+            onChange={(e) => { setCustomUnsubscribeEmail(e.target.value); setUnsubStatus(''); }}
+            disabled={unsubLoading}
             placeholder="Enter your registered email..."
             style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '10px', border: '1px solid var(--border)', background: 'var(--card-bg)', color: 'var(--text)', fontSize: '0.9rem', outline: 'none', boxSizing: 'border-box' }}
           />
 
           <div style={{ marginTop: '1rem', fontSize: '0.85rem', color: 'var(--text)' }}>
-            <strong>Status:</strong> {isUnsubscribed ? <span style={{ color: '#ef4444', fontWeight: '800' }}>Unsubscribed from Marketing Emails</span> : <span style={{ color: 'var(--green)', fontWeight: '800' }}>Active Subscriber</span>}
+            <strong>Status:</strong> {!hasPreferenceStatus ? 'Current preference has not been confirmed.' : isUnsubscribed ? <span style={{ color: '#ef4444', fontWeight: '800' }}>Unsubscribed from Marketing Emails</span> : <span style={{ color: 'var(--green)', fontWeight: '800' }}>Active Subscriber</span>}
           </div>
         </div>
 

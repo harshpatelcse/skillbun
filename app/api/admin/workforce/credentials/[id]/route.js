@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import { apiError, requireWorkforceAdmin } from '@/utils/server/workforceEmployees';
 import { invalidateCacheTag } from '@/utils/server/redisCache';
+import { CertificateMutationError, changeCertificateRevocation } from '@/utils/server/certificateIntegrity.mjs';
 
 export const runtime = 'nodejs';
 
@@ -22,23 +23,11 @@ export async function PATCH(request, { params }) {
       return apiError('Payload must be valid JSON.', 400, 'BAD_REQUEST');
     }
 
-    if (body.is_revoked === undefined || typeof body.is_revoked !== 'boolean') {
-      return apiError('is_revoked must be a boolean.', 400, 'VALIDATION_ERROR');
-    }
-
     const db = getFirebaseAdminFirestore();
-    const certRef = db.collection('certificates').doc(id.trim());
-    const certDoc = await certRef.get();
-
-    if (!certDoc.exists) {
-      return apiError('Certificate credential not found.', 404, 'NOT_FOUND');
-    }
-
-    await certRef.update({
-      is_revoked: body.is_revoked,
-      revoked_at: body.is_revoked ? new Date() : null,
-      revoked_by: body.is_revoked ? adminCheck.email : null,
-      updatedAt: new Date(),
+    const updates = await changeCertificateRevocation(db, {
+      id,
+      body,
+      adminEmail: adminCheck.email,
     });
 
     await Promise.all([
@@ -50,10 +39,13 @@ export async function PATCH(request, { params }) {
     return NextResponse.json({
       success: true,
       id,
-      is_revoked: body.is_revoked,
-      message: body.is_revoked ? 'Credential revoked successfully.' : 'Credential reinstated successfully.',
+      is_revoked: updates.is_revoked,
+      message: updates.is_revoked ? 'Credential revoked successfully.' : 'Credential reinstated successfully.',
     });
   } catch (error) {
+    if (error instanceof CertificateMutationError) {
+      return apiError(error.message, error.status, error.code);
+    }
     console.error('[Credential PATCH Error]:', error);
     return apiError('Unable to update credential status.', 500, 'INTERNAL_ERROR');
   }

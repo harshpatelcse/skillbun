@@ -44,7 +44,7 @@ const STATIC_PAGES = [
   { title: 'How it Works', href: '/#how', type: 'page' },
   { title: 'Career Paths', href: '/#careers', type: 'page' },
   { title: 'BunBot', href: '/counsellor', type: 'page' },
-  { title: 'Connect with us', href: '/#contact', type: 'page' },
+  { title: 'Connect with us', href: '/contact', type: 'page' },
 ];
 
 export async function GET(request) {
@@ -66,7 +66,7 @@ export async function GET(request) {
   const query = (rawQ || '').toLowerCase().trim();
 
   // Multi-tier cache: Check L1 memory / L2 Redis cache first
-  const cacheKey = sanitizeCacheKey(`sb:search:${query || '_default'}`);
+  const cacheKey = sanitizeCacheKey(`sb:search:v2:${query || '_default'}`);
   const responseData = await getOrSetCache(cacheKey, 300, async () => {
     const roadmaps = getRoadmaps();
 

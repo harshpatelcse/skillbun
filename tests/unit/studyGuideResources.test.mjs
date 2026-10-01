@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import { test } from 'node:test';
 import { getStudyGuideResources } from '../../utils/shared/studyGuideResources.js';
 
@@ -189,4 +190,29 @@ test('every catalog YouTube resource exposes embedded and external YouTube playb
   for (const file of files) walk(JSON.parse(await fs.readFile(new URL(file, directory), 'utf8')), file);
   assert.ok(checked > 0, 'The catalog audit must exercise YouTube resources.');
   context.diagnostic(`Validated ${checked} YouTube resources across ${files.length} roadmaps.`);
+});
+
+test('every catalog study guide resolves to an existing SBV1 encrypted file', async context => {
+  const directory = new URL('../../public/data/roadmaps/', import.meta.url);
+  const files = (await fs.readdir(directory)).filter(file => file.endsWith('.json'));
+  const references = new Set();
+  const walk = value => {
+    if (!value || typeof value !== 'object') return;
+    if (value.type === 'doc') {
+      assert.match(value.url, /^\/data\/docs\/[a-z0-9_]+\/[A-Za-z0-9_-]+\.md$/);
+      references.add(value.url);
+    }
+    Object.values(value).forEach(child => { if (child && typeof child === 'object') walk(child); });
+  };
+  for (const file of files) walk(JSON.parse(await fs.readFile(new URL(file, directory), 'utf8')));
+  for (const reference of references) {
+    const identity = reference.replace('/data/docs/', '').replace(/\.md$/, '');
+    const hash = createHash('sha256').update(`sbv1:${identity}`).digest('hex').slice(0, 24);
+    const encrypted = await fs.readFile(new URL(`../../content/docs/${hash.slice(0, 2)}/${hash}.sbv`, import.meta.url));
+    assert.ok(encrypted.length > 81, `${reference}: vault payload must not be empty`);
+    assert.equal(encrypted.subarray(0, 4).toString(), 'SBV1', `${reference}: vault header`);
+    assert.equal(encrypted[4], 1, `${reference}: vault version`);
+  }
+  assert.ok(references.size > 0);
+  context.diagnostic(`Validated ${references.size} distinct study guides across ${files.length} roadmaps.`);
 });

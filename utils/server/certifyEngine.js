@@ -172,10 +172,10 @@ export async function verifyExamEligibility({ uid, slug, roadmapData, transactio
       }
 
       // Rule: 2 consecutive failures enforce 1-hour cooldown
-      if (attempts.length >= 2) {
-        const lastAttempt = data.lastAttemptAt || attempts[attempts.length - 1];
-        if (now - lastAttempt < 60 * 60 * 1000) {
-          const cooldownRemaining = Math.max(1, Math.ceil((lastAttempt + 60 * 60 * 1000 - now) / 1000));
+      if (data.consecutiveFailures >= 2) {
+        const cooldownUntil = data.cooldownUntil;
+        if (Number.isFinite(cooldownUntil) && cooldownUntil > now) {
+          const cooldownRemaining = Math.max(1, Math.ceil((cooldownUntil - now) / 1000));
           return {
             eligible: false,
             reason: 'COOLDOWN_ACTIVE',

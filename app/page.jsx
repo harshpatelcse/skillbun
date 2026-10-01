@@ -43,11 +43,11 @@ const CAREER_FIELD_LINKS = [
 const BUNBOT_DEMO_PROMPTS = [
   {
     id: 'swe_playbook',
-    chipLabel: '💰 6-Figure Tech Playbook',
+    chipLabel: 'Tech Career Playbook',
     userMsg: 'I am a 2nd year CS student. How do I target high-compensation software engineer roles?',
     botIntro: 'Hey! For an early CS student, focus on Full Stack Web Dev or Backend Distributed Systems first. Here is your roadmap:',
     tags: [
-      { text: 'Target: $80k+ / 12-20 LPA', green: false },
+      { text: 'Goal: Software Engineering', green: false },
       { text: 'Roadmap: Fullstack', green: true },
       { text: 'Portfolio & Referral Ready', green: true },
     ],
@@ -57,13 +57,13 @@ const BUNBOT_DEMO_PROMPTS = [
   },
   {
     id: 'devops_vs_fullstack',
-    chipLabel: '⚡ Fullstack vs DevOps',
+    chipLabel: 'Fullstack vs DevOps',
     userMsg: 'DevOps vs Full Stack Developer: Which path hires faster in 2026 for junior developers?',
-    botIntro: 'Full Stack has 3x more entry-level job openings, but DevOps commands higher mid-level compensation (~$120k / 16 LPA avg).',
+    botIntro: 'Compare the work you enjoy: Full Stack focuses on building web products, while DevOps focuses on deployment, automation, and reliability. Hiring and pay vary by location and experience.',
     tags: [
-      { text: 'Fastest Hiring: Fullstack', green: true },
+      { text: 'Build Products: Fullstack', green: true },
       { text: 'Roadmap: DevOps & Cloud', green: true },
-      { text: 'High Growth: $120k / 16 LPA', green: false },
+      { text: 'Compare Local Opportunities', green: false },
     ],
     botAdvice: 'Best Strategy: Learn React & Node first, then add Docker + CI/CD to unlock high-paying DevOps hybrid roles.',
     actionHref: '/counsellor?q=Fullstack+vs+DevOps+global+salary+spectrum+and+remote+roles%3F',
@@ -71,7 +71,7 @@ const BUNBOT_DEMO_PROMPTS = [
   },
   {
     id: 'cybersecurity_certs',
-    chipLabel: '🛡️ Cybersecurity Entry',
+    chipLabel: 'Cybersecurity Entry',
     userMsg: 'Is CEH certification mandatory for getting a junior SOC Analyst job?',
     botIntro: 'Skip expensive theoretical certs for now! Master Linux networking basics, TryHackMe labs, and get your SkillBun Cybersecurity Certificate first.',
     tags: [
@@ -84,6 +84,14 @@ const BUNBOT_DEMO_PROMPTS = [
     actionText: 'Explore Security path live →'
   }
 ];
+
+function PreviewIcon({ shield = false }) {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: '4px' }}>
+      {shield ? <><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="m9 11 2 2 4-4" /></> : <><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 3H20v19H6.5A2.5 2.5 0 0 1 4 19.5v-14A2.5 2.5 0 0 1 6.5 3z" /><path d="M8 7h8M8 11h6" /></>}
+    </svg>
+  );
+}
 
 export default function Home() {
   const router = useRouter();
@@ -98,6 +106,7 @@ export default function Home() {
       window.history.replaceState({}, '', '/');
     }
 
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     // Shuffle text animation (starts immediately on mount)
     const shuffleTexts = document.querySelectorAll('.shuffle-text');
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&';
@@ -105,10 +114,11 @@ export default function Home() {
     // Scramble immediately on client mount so it doesn't flash the final word first
     shuffleTexts.forEach((el) => {
       const finalWord = el.getAttribute('data-final') || '';
-      el.innerText = finalWord.split('').map(() => chars[Math.floor(Math.random() * chars.length)]).join('');
+      el.innerText = reducedMotion ? finalWord : finalWord.split('').map(() => chars[Math.floor(Math.random() * chars.length)]).join('');
     });
 
     shuffleTexts.forEach((el, idx) => {
+      if (reducedMotion) return;
       const finalWord = el.getAttribute('data-final') || '';
       let iteration = 0;
       const timeoutId = window.setTimeout(() => {
@@ -177,8 +187,13 @@ export default function Home() {
   }, [locale]);
 
   const openAuthModal = (destination) => {
-    localStorage.setItem('sb_dest', normalizeInternalPath(destination, '/quiz'));
-    router.push(`/auth?next=${encodeURIComponent(destination)}`);
+    const next = normalizeInternalPath(destination, '/quiz');
+    try {
+      localStorage.setItem('sb_dest', next);
+    } catch {
+      // The URL carries the destination when browser storage is unavailable.
+    }
+    router.push(`/auth?next=${encodeURIComponent(next)}`);
   };
 
   return (
@@ -509,7 +524,7 @@ export default function Home() {
               fontSize: '0.8rem',
               color: 'var(--text)'
             }}>
-              <strong style={{ color: 'var(--danger)', display: 'block', marginBottom: '4px' }}>🛡️ {t('sections.certs.antiCheatingTitle', 'Anti-Cheating Exam Proctoring')}</strong>
+              <strong style={{ color: 'var(--danger)', display: 'block', marginBottom: '4px' }}><PreviewIcon shield />{t('sections.certs.antiCheatingTitle', 'Anti-Cheating Exam Proctoring')}</strong>
               <p style={{ margin: 0, fontSize: '0.78rem', color: 'var(--muted)', lineHeight: '1.4' }}>
                 {t('sections.certs.antiCheatingDesc', 'Quizzes enforce text-selection & copy blocking, right-click prevention, background blurring on focus loss, student-identifying watermarks (email, IP, timestamp), and AI-assistant refusal tags.')}
               </p>
@@ -551,10 +566,10 @@ export default function Home() {
             <p className="section-sub">{t('sections.counsellor.subtitle', 'Trained on global tech industry realities. Ask follow-up questions about salaries, degree playbooks, roadmap tradeoffs, certifications, and international remote strategies.')}</p>
 
             <div className="sb-bot-signal-strip">
-              <span className="sb-bot-signal-pill">⚡ 100+ Roadmaps Sync</span>
-              <span className="sb-bot-signal-pill">🧠 Profile Memory Engine</span>
-              <span className="sb-bot-signal-pill">🔥 Global Salary Radar</span>
-              <span className="sb-bot-signal-pill">🛡️ 100% Free</span>
+              <span className="sb-bot-signal-pill"><PreviewIcon />100+ Roadmaps Sync</span>
+              <span className="sb-bot-signal-pill"><PreviewIcon />Profile Memory Engine</span>
+              <span className="sb-bot-signal-pill"><PreviewIcon />Global Salary Radar</span>
+              <span className="sb-bot-signal-pill"><PreviewIcon shield />100% Free</span>
             </div>
             
             <div className="sb-bot-pillar-grid">
@@ -615,7 +630,7 @@ export default function Home() {
                 <span className="status-dot"></span>
                 <strong style={{ fontSize: '0.82rem', letterSpacing: '0.5px' }}>bunbot.engine</strong>
               </div>
-              <span className="sb-bot-badge">⚡ 110ms RAG</span>
+              <span className="sb-bot-badge">Illustrative preview</span>
             </div>
             
             <div className="sb-bot-prompts-bar">
@@ -625,6 +640,7 @@ export default function Home() {
                   key={prompt.id}
                   type="button"
                   className={`sb-bot-prompt-chip ${activeBunBotPrompt === idx ? 'active' : ''}`}
+                  aria-pressed={activeBunBotPrompt === idx}
                   onClick={() => setActiveBunBotPrompt(idx)}
                 >
                   <span>{prompt.chipLabel}</span>

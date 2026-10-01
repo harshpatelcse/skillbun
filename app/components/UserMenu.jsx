@@ -152,6 +152,7 @@ function ThemeMenuRow() {
 export default function UserMenu() {
   const router = useRouter();
   const menuRef = useRef(null);
+  const menuTriggerRef = useRef(null);
   const { user, profile, authLoading, profileLoading, isProfileComplete, signOutUser, deleteAccount } = useAuth();
   const [accountOpen, setAccountOpen] = useState(false);
   const [navOpen, setNavOpen] = useState(false);
@@ -175,8 +176,25 @@ export default function UserMenu() {
       if (event.key === 'Escape') {
         setAccountOpen(false);
         setNavOpen(false);
+        menuTriggerRef.current?.focus();
+        return;
+      }
+      const panel = menuRef.current?.querySelector('[role="menu"]');
+      if (!panel?.contains(event.target)) return;
+      const items = [...panel.querySelectorAll('[role="menuitem"], .user-menu-theme-row button')].filter((item) => !item.disabled);
+      const index = items.indexOf(document.activeElement);
+      let nextIndex;
+      if (event.key === 'ArrowDown') nextIndex = (index + 1) % items.length;
+      if (event.key === 'ArrowUp') nextIndex = (index - 1 + items.length) % items.length;
+      if (event.key === 'Home') nextIndex = 0;
+      if (event.key === 'End') nextIndex = items.length - 1;
+      if (nextIndex !== undefined && items.length > 0) {
+        event.preventDefault();
+        items[nextIndex]?.focus();
       }
     };
+
+    menuRef.current?.querySelector('[role="menu"] [role="menuitem"], [role="menu"] button')?.focus();
 
     document.addEventListener('click', handleClick);
     document.addEventListener('keydown', handleEscape);
@@ -191,8 +209,16 @@ export default function UserMenu() {
     setNavOpen(false);
   };
 
+  const handleMenuBlur = (event) => {
+    if (!event.currentTarget.contains(event.relatedTarget)) {
+      setAccountOpen(false);
+      setNavOpen(false);
+    }
+  };
+
   const toggleNavMenu = (event) => {
     event.stopPropagation();
+    menuTriggerRef.current = event.currentTarget;
     setNavOpen((current) => !current);
     setAccountOpen(false);
   };
@@ -200,6 +226,7 @@ export default function UserMenu() {
   const handleSignOut = async (event) => {
     event.preventDefault();
     event.stopPropagation();
+    if (signingOut || deletingAccount) return;
 
     setSigningOut(true);
     setAccountError('');
@@ -211,6 +238,9 @@ export default function UserMenu() {
       router.push('/');
     } catch (error) {
       console.error('Failed to sign out:', error);
+      setAccountError(error?.message || 'Could not sign out. Please try again.');
+      setAccountOpen(true);
+    } finally {
       setSigningOut(false);
     }
   };
@@ -249,6 +279,7 @@ export default function UserMenu() {
 
   const toggleAccountMenu = (event) => {
     event.stopPropagation();
+    menuTriggerRef.current = event.currentTarget;
     setAccountOpen((current) => !current);
     closeNavMenu();
   };
@@ -275,7 +306,7 @@ export default function UserMenu() {
   if (authLoading || (user && profileLoading) || !profile?.hydrated) {
     return (
       <div className="mobile-dropdown-group user-menu-shell">
-        <div className="user-menu-wrapper" ref={menuRef}>
+        <div className="user-menu-wrapper" ref={menuRef} onBlur={handleMenuBlur}>
           {siteMenuButton}
           {navOpen && (
             <div
@@ -299,7 +330,7 @@ export default function UserMenu() {
   if (!user) {
     return (
       <div className="mobile-dropdown-group user-menu-shell">
-        <div className="user-menu-wrapper" ref={menuRef}>
+        <div className="user-menu-wrapper" ref={menuRef} onBlur={handleMenuBlur}>
           <div className={`user-control-cluster user-control-cluster-guest ${accountOpen ? 'is-account-open' : ''} ${navOpen ? 'is-nav-open' : ''}`}>
             <button
               type="button"
@@ -380,7 +411,7 @@ export default function UserMenu() {
 
   return (
     <div className="mobile-dropdown-group user-menu-shell user-menu-shell-authenticated">
-      <div className="user-menu-wrapper" ref={menuRef}>
+      <div className="user-menu-wrapper" ref={menuRef} onBlur={handleMenuBlur}>
         <div className={`user-control-cluster user-control-cluster-auth ${accountOpen ? 'is-account-open' : ''} ${navOpen ? 'is-nav-open' : ''}`}>
           <button
             type="button"

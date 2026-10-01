@@ -5,6 +5,19 @@ import path from 'node:path';
 
 const ROADMAPS_DIR = path.join(process.cwd(), 'public', 'data', 'roadmaps');
 
+test('every roadmap certification bank has 50 questions with the required 14/26/10 distribution', () => {
+  for (const file of fs.readdirSync(ROADMAPS_DIR).filter(file => file.endsWith('.json'))) {
+    const bank = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'public', 'data', 'quizzes', file), 'utf8'));
+    assert.equal(bank.length, 50, file);
+    const distribution = ['easy', 'moderate', 'hard'].map(level => bank.filter(question => question.difficulty === level).length);
+    assert.deepEqual(distribution, [14, 26, 10], file);
+    for (const question of bank) {
+      assert.equal(question.options.length, 4, file);
+      assert.ok(Number.isInteger(question.correctIndex) && question.correctIndex >= 0 && question.correctIndex <= 3, file);
+    }
+  }
+});
+
 test('SkillBun 100 Roadmaps Global Standard Suite', async (t) => {
   const files = fs.readdirSync(ROADMAPS_DIR).filter((f) => f.endsWith('.json')).sort();
 

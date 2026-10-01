@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Alumni Network & Verified Credentials | SkillBun',
+  title: { absolute: 'Alumni Network & Verified Credentials | SkillBun' },
   description: 'Explore verified alumni achievements and certified career milestones from SkillBun students.',
 };
 

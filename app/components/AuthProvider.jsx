@@ -18,7 +18,7 @@ import {
 } from 'firebase/firestore';
 import { getFirebaseServices } from '@/utils/client/firebaseClient';
 import { requestAccountDeletion } from '@/utils/client/accountDeletion';
-import { clearStoredProfile, notifyProfileChanged, readProfileSnapshot, saveStoredProfile } from '@/utils/shared/profileStore';
+import { clearStoredProfile, isProfileCacheForUser, notifyProfileChanged, readProfileSnapshot, saveStoredProfile } from '@/utils/shared/profileStore';
 import {
   clearStoredRoadmapProgress,
   readAllStoredRoadmapProgress,
@@ -101,6 +101,9 @@ function normalizeProfileDoc(user, data = {}) {
 
 function localProfileForMigration(user) {
   const localProfile = readProfileSnapshot();
+  if (!isProfileCacheForUser(localProfile, user)) {
+    return { name: fallbackNameFromUser(user), degree: '', year: '', interest: '' };
+  }
   const name = localProfile.hasName ? localProfile.name : fallbackNameFromUser(user);
 
   return {
@@ -142,8 +145,6 @@ async function ensureUserProfile(db, user) {
   } else {
     if (!existing.name) {
       profilePatch.name = localProfile.name || fallbackNameFromUser(user) || '';
-    } else if (localProfile.name && localProfile.name !== existing.name) {
-      profilePatch.name = localProfile.name;
     }
     if (!existing.degree && localProfile.degree) profilePatch.degree = localProfile.degree;
     if (!existing.year && localProfile.year) profilePatch.year = localProfile.year;
@@ -227,13 +228,16 @@ export function AuthProvider({ children }) {
         setProfile({ hydrated: true, name: 'Student', hasName: false, degree: '', year: '', interest: '' });
         setProfileLoading(false);
         setProgressVersion((current) => current + 1);
-        if (nextUser) {
-          setAuthError(EMAIL_VERIFICATION_REQUIRED);
+        const cachedProfile = readProfileSnapshot();
+        if (nextUser || cachedProfile.uid || cachedProfile.email) {
           try {
             clearSessionCache();
           } catch (error) {
             console.warn('Could not clear cached account data:', error);
           }
+        }
+        if (nextUser) {
+          setAuthError(EMAIL_VERIFICATION_REQUIRED);
           try {
             if (services.auth.currentUser?.uid === nextUser.uid) {
               await signOut(services.auth);
@@ -249,10 +253,21 @@ export function AuthProvider({ children }) {
       setUser(nextUser);
       setProfileLoading(true);
 
+      // Browser caches are shared across accounts. Never migrate another
+      // student's profile or progress when Firebase changes the signed-in user.
+      const canMigrateCache = isProfileCacheForUser(readProfileSnapshot(), nextUser);
+      if (!canMigrateCache) {
+        try {
+          clearSessionCache();
+        } catch (error) {
+          console.warn('Could not clear another account\'s cached data:', error);
+        }
+      }
+
       try {
         await ensureUserProfile(services.db, nextUser);
         if (cancelled || revision !== authRevision) return;
-        await migrateLocalProgress(services.db, nextUser);
+        if (canMigrateCache) await migrateLocalProgress(services.db, nextUser);
 
         if (cancelled || revision !== authRevision) {
           return;
@@ -412,6 +427,7 @@ export function AuthProvider({ children }) {
     };
 
     await setDoc(doc(services.db, 'users', currentUser.uid), nextProfile, { merge: true });
+    if (services.auth.currentUser?.uid !== currentUser.uid) return;
     saveStoredProfile(nextProfile);
   }, [services]);
 
@@ -421,13 +437,15 @@ export function AuthProvider({ children }) {
     if (!services.configured || !services.auth.currentUser) {
       throw new Error('Sign in before saving roadmap progress.');
     }
-    assertVerifiedEmail(services.auth.currentUser);
+    const currentUser = services.auth.currentUser;
+    assertVerifiedEmail(currentUser);
 
-    await setDoc(doc(services.db, 'users', services.auth.currentUser.uid, 'roadmapProgress', slug), {
+    await setDoc(doc(services.db, 'users', currentUser.uid, 'roadmapProgress', slug), {
       slug,
       completedNodeIds: cleanIds,
       updatedAt: serverTimestamp(),
     }, { merge: true });
+    if (services.auth.currentUser?.uid !== currentUser.uid) return;
     saveStoredRoadmapProgress(slug, cleanIds);
   }, [services]);
 

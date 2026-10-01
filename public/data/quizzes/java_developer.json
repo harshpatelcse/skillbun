@@ -93,7 +93,7 @@
     ],
     "correctIndex": 0,
     "explanation": "@Component is a generic stereotype annotation that indicates a class is a Spring component. @Autowired is for injecting dependencies, @Value for injecting configuration properties, and @Bean is used on methods to declare a bean.",
-    "difficulty": "easy"
+    "difficulty": "moderate"
   },
   {
     "question": "When building a REST API with Spring Boot, which annotation is typically placed on a class to combine `@Controller` and `@ResponseBody`, indicating that the class handles incoming web requests and directly returns the data as the response body?",
@@ -141,7 +141,7 @@
     ],
     "correctIndex": 1,
     "explanation": "For JWT-based authentication in REST APIs, the standard practice is for the client to include the token in the Authorization header of each subsequent request, prefixed with \"Bearer \". This allows the server to validate the token and authorize the request without requiring re-login or session management.",
-    "difficulty": "hard"
+    "difficulty": "moderate"
   },
   {
     "question": "You want to define a custom bean in your Spring Boot application that requires specific initialization logic. Where is the most appropriate place to declare this bean?",

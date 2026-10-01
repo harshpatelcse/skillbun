@@ -5,6 +5,7 @@ import { useRouter, useParams } from 'next/navigation';
 import { useAuth } from '../../../components/AuthProvider';
 import { getFirebaseServices } from '@/utils/client/firebaseClient';
 import { readStoredRoadmapProgress } from '@/utils/shared/progressStore';
+import { startCertificationQuestionTimer } from '@/utils/client/certificationTimer.mjs';
 import { doc, getDoc, setDoc, collection, serverTimestamp, query, where, getDocs } from 'firebase/firestore';
 import { trackEvent } from '@/lib/analytics';
 import styles from './certify.module.css';
@@ -87,11 +88,13 @@ function normalizeRoadmapTree(roadmap) {
 }
 
 export default function CertifyPage() {
-  const router = useRouter();
   const params = useParams();
-  const slug = params.slug;
-
   const { user, profile, authLoading } = useAuth();
+  return <CertificationSession key={`${params.slug}:${user?.uid || 'guest'}`} slug={params.slug} user={user} profile={profile} authLoading={authLoading} />;
+}
+
+function CertificationSession({ slug, user, profile, authLoading }) {
+  const router = useRouter();
   const [roadmapTitle, setRoadmapTitle] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -99,9 +102,11 @@ export default function CertifyPage() {
 
   // Pre-quiz state
   const [quizState, setQuizState] = useState('instructions'); // instructions | active | results
-  const [certName, setCertName] = useState('');
+  const [certNameInput, setCertName] = useState(null);
+  const certName = certNameInput ?? profile?.name ?? user?.displayName ?? '';
   const [agreed, setAgreed] = useState(false);
   const [captchaToken, setCaptchaToken] = useState('');
+  const [captchaExpiresAt, setCaptchaExpiresAt] = useState(0);
   const [captchaError, setCaptchaError] = useState('');
   const [siteKey, setSiteKey] = useState('');
 
@@ -118,7 +123,9 @@ export default function CertifyPage() {
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [questionTimer, setQuestionTimer] = useState(45);
   const [ipAddress, setIpAddress] = useState('127.0.0.1');
+  const [examTimestamp, setExamTimestamp] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submissionStarted, setSubmissionStarted] = useState(false);
   const [examResult, setExamResult] = useState({ score: 0, passed: false, correctCount: 0, review: [] });
 
   // Cheating protection
@@ -131,7 +138,16 @@ export default function CertifyPage() {
   const lastViolationRef = useRef(0);
 
   const timerRef = useRef(null);
+  const nextQuestionRef = useRef(null);
+  const advancedQuestionRef = useRef(-1);
+  const submittingRef = useRef(false);
   const captchaWidgetRef = useRef(null);
+  const sessionActiveRef = useRef(true);
+  useEffect(() => {
+    sessionActiveRef.current = true;
+    return () => { sessionActiveRef.current = false; };
+  }, []);
+  const isCurrentSession = useCallback(() => sessionActiveRef.current && getFirebaseServices().auth?.currentUser?.uid === user?.uid, [user?.uid]);
 
   // Pre-compute confetti particle data to avoid Math.random() during render
   const confettiPieces = useMemo(() => {
@@ -154,6 +170,7 @@ export default function CertifyPage() {
 
     const docRef = doc(services.db, 'users', user.uid, 'quizAttempts', slug);
     const snapshot = await getDoc(docRef);
+    if (!isCurrentSession()) return;
 
     if (snapshot.exists()) {
       const data = snapshot.data();
@@ -167,7 +184,7 @@ export default function CertifyPage() {
       const oneDayAgo = now - 24 * 60 * 60 * 1000;
 
       // Filter attempts in last 24 hours
-      const last24hAttempts = attempts.filter((t) => t > oneDayAgo);
+      const last24hAttempts = attempts.filter((t) => Number.isFinite(t) && t > oneDayAgo);
 
       // Check daily limit (3 attempts)
       if (last24hAttempts.length >= 3 && process.env.NODE_ENV !== 'development') {
@@ -179,50 +196,67 @@ export default function CertifyPage() {
         return;
       }
 
-      // Check consecutive failure cooldown: if user has failed twice, enforce 1 hour cooldown since last attempt
-      if (attempts.length >= 2 && process.env.NODE_ENV !== 'development') {
-        const lastAttempt = data.lastAttemptAt || attempts[attempts.length - 1];
-        if (now - lastAttempt < 60 * 60 * 1000) {
+      // The server records failures separately from reserved attempt starts.
+      if (data.consecutiveFailures >= 2 && process.env.NODE_ENV !== 'development') {
+        if (Number.isFinite(data.cooldownUntil) && data.cooldownUntil > now) {
           setIsLocked(true);
           setLockReason('cooldown');
-          setCooldownRemaining(Math.ceil((lastAttempt + 60 * 60 * 1000 - now) / 1000));
+          setCooldownRemaining(Math.ceil((data.cooldownUntil - now) / 1000));
           return;
         }
       }
     }
-  }, [slug, user]);
+  }, [slug, user, isCurrentSession]);
 
   // Captcha token handler
   const handleTurnstileCallback = useCallback(async (token) => {
     if (!user) return;
     try {
       const idToken = await user.getIdToken();
+      if (!isCurrentSession()) return;
       const response = await fetch('/api/human/verify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${idToken}` },
-        body: JSON.stringify({ token }),
+        body: JSON.stringify(token ? { token } : {}),
+        signal: AbortSignal.timeout(12000),
       });
       const data = await response.json();
-      if (getFirebaseServices().auth?.currentUser?.uid !== user.uid) return;
-      if (response.ok && data.humanToken) {
+      if (!isCurrentSession()) return;
+      if (response.ok && data.humanToken && Number.isFinite(data.expiresAt)) {
         setCaptchaToken(data.humanToken);
+        setCaptchaExpiresAt(data.expiresAt);
         setCaptchaError('');
       } else {
-        setCaptchaError(data.error || 'Human proof validation failed.');
+        setCaptchaToken('');
+        setCaptchaError(typeof data.error === 'string' ? data.error : data.error?.message || 'Human proof validation failed.');
       }
     } catch (err) {
+      if (!isCurrentSession()) return;
       setCaptchaError('Failed to verify captcha.');
     }
-  }, [user]);
+  }, [user, isCurrentSession]);
+
+  useEffect(() => {
+    if (!captchaToken || !captchaExpiresAt || quizState !== 'instructions') return;
+    const timeout = setTimeout(() => {
+      setCaptchaToken('');
+      setCaptchaError('Human verification expired. Please verify again.');
+      if (captchaWidgetRef.current !== null) window.turnstile?.reset(captchaWidgetRef.current);
+    }, Math.max(0, captchaExpiresAt - Date.now()));
+    return () => clearTimeout(timeout);
+  }, [captchaToken, captchaExpiresAt, quizState]);
 
   // Submits the exam answers to the server for authoritative evaluation
   const submitExam = useCallback(async (finalAnswers, isDevBypass = false) => {
-    if (isSubmitting || !user) return;
+    if (submittingRef.current || !user) return;
+    submittingRef.current = true;
     setIsSubmitting(true);
-    clearInterval(timerRef.current);
+    setSubmissionStarted(true);
+    timerRef.current?.();
 
     try {
       const token = await user.getIdToken();
+      if (!isCurrentSession()) return;
       const res = await fetch('/api/certify/submit', {
         method: 'POST',
         headers: {
@@ -237,6 +271,7 @@ export default function CertifyPage() {
       });
 
       const data = await res.json();
+      if (!isCurrentSession()) return;
       if (!res.ok || !data.success) {
         throw new Error(data.error || 'Failed to evaluate exam.');
       }
@@ -249,16 +284,21 @@ export default function CertifyPage() {
       });
       setQuizState('results');
     } catch (err) {
+      if (!isCurrentSession()) return;
       console.error('[Certify Submit Error]:', err);
+      advancedQuestionRef.current = -1;
       alert(err.message || 'Submission error. Please try again.');
     } finally {
+      submittingRef.current = false;
       setIsSubmitting(false);
     }
-  }, [user, attemptId, isSubmitting]);
+  }, [user, attemptId, isCurrentSession]);
 
   // Handles moving to next question or triggering submission on question 10
   const handleNextQuestion = useCallback((forcedVal = undefined) => {
-    clearInterval(timerRef.current);
+    if (submittingRef.current || advancedQuestionRef.current === currentIndex) return;
+    advancedQuestionRef.current = currentIndex;
+    timerRef.current?.();
     const selected = forcedVal !== undefined ? forcedVal : selectedAnswers[currentIndex];
     const resolvedChoice = selected !== undefined ? selected : -1;
 
@@ -275,6 +315,7 @@ export default function CertifyPage() {
       submitExam(nextAnswers, false);
     }
   }, [currentIndex, selectedAnswers, submitExam]);
+  useEffect(() => { nextQuestionRef.current = handleNextQuestion; }, [handleNextQuestion]);
 
   // Fetch roadmap, quiz questions, and config on mount
   useEffect(() => {
@@ -294,6 +335,7 @@ export default function CertifyPage() {
           return;
         }
         const roadmapData = await roadmapRes.json();
+        if (!isCurrentSession()) return;
         setRoadmapTitle(roadmapData.title);
 
         // 1b. Verify 60% progress before allowing quiz access
@@ -303,37 +345,45 @@ export default function CertifyPage() {
           const allNodes = flattenTree(tree);
           const totalNodes = allNodes.length;
           const doneCount = allNodes.filter(n => storedProgress.includes(n.id)).length;
-          const donePercent = totalNodes === 0 ? 0 : Math.round((doneCount / totalNodes) * 100);
-          if (totalNodes > 0 && donePercent < 60) {
+          if (totalNodes > 0 && doneCount / totalNodes < 0.6) {
             setProgressInsufficient(true);
             setLoading(false);
             return;
           }
         }
 
-        // 2. Set default certificate name
-        setCertName(profile?.name || user.displayName || '');
-
         // 4. Fetch Turnstile Site Key from Config API
         const configRes = await fetch('/api/config');
         if (configRes.ok) {
           const configData = await configRes.json();
+          if (!isCurrentSession()) return;
           const captcha = configData?.captcha || {};
           if (captcha.enabled && captcha.siteKey) {
             setSiteKey(captcha.siteKey);
           }
+          if (process.env.NODE_ENV === 'development') {
+            await handleTurnstileCallback('bypass-captcha-dev');
+          } else if (!captcha.enabled) {
+            await handleTurnstileCallback('');
+          } else if (!captcha.siteKey) {
+            throw new Error('Human verification is not configured.');
+          }
+        } else {
+          throw new Error('Could not load human verification settings.');
         }
 
         // 5. Fetch Attempts history from Firestore
         await checkAttemptsLimit();
+        if (!isCurrentSession()) return;
 
         // 6. Check if user is already certified for this roadmap
         const services = getFirebaseServices();
         if (services.configured && user) {
           if (process.env.NODE_ENV !== 'development') {
             const certsRef = collection(services.db, 'certificates');
-            const q = query(certsRef, where('uid', '==', user.uid), where('roadmapSlug', '==', slug));
+            const q = query(certsRef, where('uid', '==', user.uid), where('roadmapSlug', '==', slug), where('is_revoked', '==', false));
             const querySnapshot = await getDocs(q);
+            if (!isCurrentSession()) return;
             if (!querySnapshot.empty) {
               setIsAlreadyCertified(true);
               setExistingCertId(querySnapshot.docs[0].id);
@@ -342,10 +392,11 @@ export default function CertifyPage() {
           }
         }
       } catch (err) {
+        if (!isCurrentSession()) return;
         console.error(err);
         setError('Failed to load quiz metadata.');
       } finally {
-        setLoading(false);
+        if (isCurrentSession()) setLoading(false);
       }
     };
 
@@ -354,13 +405,13 @@ export default function CertifyPage() {
     // Fetch IP for watermark
     fetch('https://api.ipify.org?format=json')
       .then((r) => r.json())
-      .then((data) => setIpAddress(data.ip || '127.0.0.1'))
+      .then((data) => { if (isCurrentSession()) setIpAddress(data.ip || '127.0.0.1'); })
       .catch(() => {});
-  }, [slug, user, authLoading, profile, checkAttemptsLimit, router]);
+  }, [slug, user, authLoading, checkAttemptsLimit, handleTurnstileCallback, isCurrentSession, router]);
 
   // Load Turnstile script dynamically
   useEffect(() => {
-    if (quizState !== 'instructions' || !siteKey) return;
+    if (quizState !== 'instructions' || !siteKey || loading || process.env.NODE_ENV === 'development') return;
 
     const existing = document.querySelector('script[data-turnstile="true"]');
     if (!existing && !window.turnstile) {
@@ -369,6 +420,7 @@ export default function CertifyPage() {
       script.async = true;
       script.defer = true;
       script.dataset.turnstile = 'true';
+      script.onerror = () => setCaptchaError('Captcha could not load. Please refresh and try again.');
       document.body.appendChild(script);
     }
 
@@ -382,7 +434,12 @@ export default function CertifyPage() {
               handleTurnstileCallback(token);
             },
             'error-callback': () => {
+              setCaptchaToken('');
               setCaptchaError('Captcha verification failed. Please refresh and try again.');
+            },
+            'expired-callback': () => {
+              setCaptchaToken('');
+              setCaptchaError('Captcha expired. Please verify again.');
             },
           });
           captchaWidgetRef.current = widgetId;
@@ -394,8 +451,12 @@ export default function CertifyPage() {
 
     return () => {
       clearInterval(renderInterval);
+      if (captchaWidgetRef.current !== null) {
+        window.turnstile?.remove(captchaWidgetRef.current);
+        captchaWidgetRef.current = null;
+      }
     };
-  }, [quizState, siteKey, handleTurnstileCallback]);
+  }, [quizState, siteKey, handleTurnstileCallback, loading]);
 
   // Cooldown countdown timer
   useEffect(() => {
@@ -425,7 +486,7 @@ export default function CertifyPage() {
       alert('You must agree to the integrity guidelines.');
       return;
     }
-    if (siteKey && !captchaToken) {
+    if (!captchaToken || captchaExpiresAt <= Date.now()) {
       alert('Please complete the captcha verification.');
       return;
     }
@@ -433,11 +494,13 @@ export default function CertifyPage() {
     try {
       setLoading(true);
       const token = await user.getIdToken();
+      if (!isCurrentSession()) return;
       const res = await fetch('/api/certify/start', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
+          'x-skillbun-human': captchaToken,
         },
         body: JSON.stringify({
           roadmapSlug: slug,
@@ -446,6 +509,7 @@ export default function CertifyPage() {
       });
 
       const data = await res.json();
+      if (!isCurrentSession()) return;
       if (!res.ok || !data.success) {
         if (data.reason === 'ALREADY_CERTIFIED') {
           setIsAlreadyCertified(true);
@@ -472,8 +536,10 @@ export default function CertifyPage() {
       }
 
       setAttemptId(data.attemptId);
+      setExamTimestamp(new Date().toISOString());
       setShuffledQuestions(data.questions || []);
       setCurrentIndex(0);
+      advancedQuestionRef.current = -1;
       setSelectedAnswers({});
       setQuestionTimer(45);
       setQuizState('active');
@@ -485,6 +551,7 @@ export default function CertifyPage() {
       violationRef.current = 0;
       lastViolationRef.current = 0;
     } catch (err) {
+      if (!isCurrentSession()) return;
       console.error('[Start Exam Error]:', err);
       alert(err.message || 'Could not start exam. Please try again.');
     } finally {
@@ -495,24 +562,13 @@ export default function CertifyPage() {
   // Live Timer logic (using absolute time to prevent throttling on tab switch)
   useEffect(() => {
     if (quizState !== 'active') return;
-
-    const startTime = Date.now();
-    
-    timerRef.current = setInterval(() => {
-      const elapsed = Math.floor((Date.now() - startTime) / 1000);
-      const remaining = 45 - elapsed;
-      
-      if (remaining <= 0) {
-        clearInterval(timerRef.current);
-        setQuestionTimer(0);
-        handleNextQuestion(-1);
-      } else {
-        setQuestionTimer(remaining);
-      }
-    }, 500); // 500ms for more precision when returning from background
-
-    return () => clearInterval(timerRef.current);
-  }, [quizState, currentIndex, handleNextQuestion]);
+    const stop = startCertificationQuestionTimer({
+      onTick: setQuestionTimer,
+      onExpire: () => nextQuestionRef.current?.(-1),
+    });
+    timerRef.current = stop;
+    return stop;
+  }, [quizState, currentIndex]);
 
   const handleSelectAnswer = (optionIdx) => {
     setSelectedAnswers({
@@ -535,9 +591,11 @@ export default function CertifyPage() {
     // 2. Intercept keys
     const handleKeyDown = (e) => {
       if (
-        (e.ctrlKey && ['c', 'v', 'x', 'u', 'a'].includes(e.key.toLowerCase())) ||
+        ((e.ctrlKey || e.metaKey) && ['c', 'v', 'x', 'u', 'a'].includes(e.key.toLowerCase())) ||
         e.key === 'F12' ||
-        (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'i')
+        e.key === 'PrintScreen' ||
+        ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === 'i') ||
+        (e.metaKey && e.shiftKey && ['3', '4', '5'].includes(e.key))
       ) {
         e.preventDefault();
       }
@@ -556,7 +614,7 @@ export default function CertifyPage() {
 
       if (count >= 5) {
         setQuizState('disqualified');
-        clearInterval(timerRef.current);
+        timerRef.current?.();
       } else {
         setShowBlurModal(true);
       }
@@ -638,6 +696,7 @@ export default function CertifyPage() {
 
     try {
       const token = await user.getIdToken();
+      if (!isCurrentSession()) return;
       const res = await fetch('/api/certify/mint', {
         method: 'POST',
         headers: {
@@ -653,6 +712,7 @@ export default function CertifyPage() {
       });
 
       const data = await res.json();
+      if (!isCurrentSession()) return;
 
       if (!res.ok || !data.success) {
         throw new Error(data.error || 'Failed to issue certificate.');
@@ -661,6 +721,7 @@ export default function CertifyPage() {
       trackEvent('cert_issued', { cert_id: data.certId, slug, score: data.score || score });
       router.push(`/certificate/${data.certId}`);
     } catch (err) {
+      if (!isCurrentSession()) return;
       console.error('Failed to mint certificate:', err);
       alert(err.message || 'Failed to save certificate to database. Please try again.');
       setIsMinting(false);
@@ -766,7 +827,7 @@ export default function CertifyPage() {
         <div className={styles.watermarkOverlay}>
           {Array.from({ length: 15 }).map((_, idx) => (
             <div key={idx} className={styles.watermarkText}>
-              {certName} • {user?.email} • {ipAddress}
+              {certName} • {user?.email} • {ipAddress} • {examTimestamp}
             </div>
           ))}
         </div>
@@ -807,11 +868,12 @@ export default function CertifyPage() {
                 <span className={styles.inputHelp}>Make sure this matches your official identification. It cannot be changed after minting.</span>
               </div>
 
-              {siteKey && (
+              {(siteKey || captchaError) && (
                 <div className={styles.captchaGroup}>
                   <label>Human Verification:</label>
-                  <div id="quiz-captcha-container" className={styles.captchaContainer}></div>
+                  {siteKey && process.env.NODE_ENV !== 'development' && <div id="quiz-captcha-container" className={styles.captchaContainer}></div>}
                   {captchaError && <p className={styles.captchaError}>{captchaError}</p>}
+                  {captchaError && (!siteKey || process.env.NODE_ENV === 'development') && <button type="button" className={styles.cancelBtn} onClick={() => handleTurnstileCallback(process.env.NODE_ENV === 'development' ? 'bypass-captcha-dev' : '')}>Retry Human Verification</button>}
                 </div>
               )}
 
@@ -831,7 +893,7 @@ export default function CertifyPage() {
                 <button
                   className={styles.primaryButton}
                   onClick={startQuiz}
-                  disabled={!agreed || (siteKey && !captchaToken)}
+                  disabled={!agreed || !certName.trim() || !captchaToken}
                 >
                   Start Certification Quiz
                 </button>
@@ -883,7 +945,7 @@ export default function CertifyPage() {
                       key={oIdx}
                       className={`${styles.optionBtn} ${isSelected ? styles.selected : ''}`}
                       onClick={() => handleSelectAnswer(oIdx)}
-                      disabled={showBlurModal}
+                      disabled={showBlurModal || submissionStarted}
                     >
                       <span className={styles.optionLetter}>{['A', 'B', 'C', 'D'][oIdx]}</span>
                       <span className={styles.optionText}>{showBlurModal ? "••••••••••••••••" : opt}</span>
@@ -897,9 +959,9 @@ export default function CertifyPage() {
               <button
                 className={styles.primaryButton}
                 onClick={() => handleNextQuestion()}
-                disabled={selectedAnswers[currentIndex] === undefined}
+                disabled={selectedAnswers[currentIndex] === undefined || isSubmitting || showBlurModal}
               >
-                {currentIndex < 9 ? 'Next Question' : 'Submit Exam'}
+                {isSubmitting ? 'Submitting...' : currentIndex < 9 ? 'Next Question' : submissionStarted ? 'Retry Submission' : 'Submit Exam'}
               </button>
             </div>
           </section>

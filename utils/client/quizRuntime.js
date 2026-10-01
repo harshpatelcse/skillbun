@@ -405,6 +405,7 @@ RESPONSE FORMAT (JSON ONLY, no markdown):
   }
 
   async function advanceQuestion() {
+    if (state.signal.aborted) return;
     const qNum = state.questionCount + 1;
     state.questionCount = qNum;
 
@@ -417,6 +418,7 @@ RESPONSE FORMAT (JSON ONLY, no markdown):
 
         try {
           const aiQuestion = await callGeminiWithTimeout(getAiCall1Prompt());
+          if (state.signal.aborted) return;
 
           document.getElementById('quizLoading').style.display = 'none';
           document.getElementById('optionsContainer').style.display = 'grid';
@@ -431,6 +433,7 @@ RESPONSE FORMAT (JSON ONLY, no markdown):
           }, selectOption);
           nextInsight = '';
         } catch (err) {
+          if (state.signal.aborted) return;
           console.warn('AI Call 1 timeout/failed, using seamless local fallback Q8:', err.message);
           document.getElementById('quizLoading').style.display = 'none';
           document.getElementById('optionsContainer').style.display = 'grid';
@@ -472,6 +475,7 @@ RESPONSE FORMAT (JSON ONLY, no markdown):
 
       try {
         const aiResults = await callGeminiWithTimeout(getAiCall2Prompt());
+        if (state.signal.aborted) return;
 
         document.getElementById('quizLoading').style.display = 'none';
         showResults(state, aiResults);
@@ -481,6 +485,7 @@ RESPONSE FORMAT (JSON ONLY, no markdown):
           dominant_pillar: getDominantPillar(),
         });
       } catch (err) {
+        if (state.signal.aborted) return;
         console.warn('AI Call 2 timeout/failed, rendering instant score-based recommendations:', err.message);
         document.getElementById('quizLoading').style.display = 'none';
         const fallbackResults = getLocalFallbackResults();
@@ -495,6 +500,7 @@ RESPONSE FORMAT (JSON ONLY, no markdown):
   }
 
   function selectOption(option, element) {
+    if (state.signal.aborted || element.disabled) return;
     state.lastSelectedOption = option;
 
     const optPillar = option.pillar;
@@ -530,7 +536,7 @@ RESPONSE FORMAT (JSON ONLY, no markdown):
     element.classList.add('selected');
 
     setTimeout(() => {
-      advanceQuestion();
+      if (!state.signal.aborted) advanceQuestion();
     }, 250);
   }
 
@@ -627,6 +633,7 @@ RESPONSE FORMAT (JSON ONLY, no markdown):
       state.tagScores = {};
       state.usedQuestionIds = [];
       state.pillarScores = { systems: 0, data_ai: 0, design_product: 0, cloud_infra: 0, security: 0, operations: 0 };
+      state.identifiedPillar = null;
       nextInsight = '';
 
       if (state.quizQuestions?.profileMapping && state.userProfile) {

@@ -122,8 +122,9 @@ export async function POST(request) {
     email = schemaCheck.value.email
 
     const address = getClientAddress(request)
-    // 1. Check rate limit (without incrementing)
-    const rateLimit = await checkRateLimit({ address, email, increment: false })
+    // Reserve before looking up the user or sending mail; concurrent requests
+    // must not all pass the same unconsumed allowance.
+    const rateLimit = await checkRateLimit({ address, email, increment: true })
     if (!rateLimit.allowed) {
       return NextResponse.json(
         { error: 'Please wait before requesting another reset email.', retryAfterMs: rateLimit.retryAfterMs },
@@ -140,10 +141,6 @@ export async function POST(request) {
       await auth.getUserByEmail(email)
     } catch (error) {
       if (error?.code === 'auth/user-not-found') {
-        // Increment rate limit to prevent brute force email enumeration
-        await checkRateLimit({ address, email, increment: true }).catch((err) => {
-          console.error('Failed to increment rate limit on user-not-found:', err)
-        })
         return okResponse()
       }
 
@@ -155,11 +152,6 @@ export async function POST(request) {
     const resetLink = rawResetLink.replace(/^https:\/\/[^\/]+/, baseUrl)
 
     await sendSkillBunPasswordResetEmail({ email, resetLink })
-
-    // 2. Increment rate limit on successful mail delivery
-    await checkRateLimit({ address, email, increment: true }).catch((err) => {
-      console.error('Failed to increment rate limit after successful send:', err)
-    })
 
     return okResponse()
   } catch (error) {

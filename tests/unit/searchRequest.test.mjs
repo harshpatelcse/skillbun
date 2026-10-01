@@ -5,11 +5,11 @@ import { startSearchRequest, nextSearchIndex } from '../../utils/client/searchRe
 
 const empty = { pages: [], roadmaps: [] };
 
-test('search encodes input and delivers the current result', async () => {
+test('search encodes input, bypasses old release caches and delivers the current result', async () => {
   const result = await new Promise((resolve, reject) => {
     startSearchRequest({ query: 'data & AI', delay: 0, onResult: resolve, onError: reject,
       fetchImpl: async (url, options) => {
-        assert.equal(url, '/api/search?q=data%20%26%20AI');
+        assert.equal(url, '/api/search?q=data%20%26%20AI&v=2');
         assert.ok(options.signal instanceof AbortSignal);
         return { ok: true, json: async () => empty };
       },

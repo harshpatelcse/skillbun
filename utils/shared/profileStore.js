@@ -7,6 +7,7 @@ const DEFAULT_PROFILE = Object.freeze({
   hydrated: false,
   name: 'Student',
   hasName: false,
+  uid: '',
   email: '',
   degree: '',
   year: '',
@@ -39,6 +40,7 @@ export function readProfileSnapshot() {
       hydrated: true,
       name: storedName || 'Student',
       hasName: Boolean(storedName),
+      uid: window.localStorage.getItem('sb_profile_uid') || '',
       email: window.localStorage.getItem('sb_email') || '',
       degree: window.localStorage.getItem('sb_degree') || '',
       year: window.localStorage.getItem('sb_year') || '',
@@ -52,6 +54,7 @@ export function readProfileSnapshot() {
     lastSnapshot.hydrated === nextSnapshot.hydrated &&
     lastSnapshot.name === nextSnapshot.name &&
     lastSnapshot.hasName === nextSnapshot.hasName &&
+    lastSnapshot.uid === nextSnapshot.uid &&
     lastSnapshot.email === nextSnapshot.email &&
     lastSnapshot.degree === nextSnapshot.degree &&
     lastSnapshot.year === nextSnapshot.year &&
@@ -73,7 +76,15 @@ function setOrRemove(key, value) {
   }
 }
 
-export function saveStoredProfile({ name, email, degree, year, interest }) {
+export function isProfileCacheForUser(profile, user) {
+  if (!user?.uid) return false;
+  if (profile?.uid && profile.uid !== user.uid) return false;
+  const cachedEmail = String(profile?.email || '').trim().toLowerCase();
+  return !cachedEmail || cachedEmail === String(user.email || '').trim().toLowerCase();
+}
+
+export function saveStoredProfile({ uid, name, email, degree, year, interest }) {
+  setOrRemove('sb_profile_uid', uid || '');
   setOrRemove('sb_name', name || '');
   setOrRemove('sb_email', email || '');
   setOrRemove('sb_degree', degree || '');
@@ -88,6 +99,7 @@ export function clearStoredProfile() {
   }
 
   window.localStorage.removeItem('sb_name');
+  window.localStorage.removeItem('sb_profile_uid');
   window.localStorage.removeItem('sb_email');
   window.localStorage.removeItem('sb_degree');
   window.localStorage.removeItem('sb_year');

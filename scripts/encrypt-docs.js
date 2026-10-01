@@ -23,6 +23,7 @@
  * 
  * Usage:
  *   node scripts/encrypt-docs.js
+ *   node scripts/encrypt-docs.js --missing-only (preserve existing ciphertext)
  * 
  * Requires DOCS_ENCRYPTION_KEY in .env (64-char hex string = 32 bytes).
  */
@@ -59,6 +60,7 @@ const FORMAT_VERSION = 0x01;
 
 const SOURCE_DIR = path.join(__dirname, '..', 'public', 'data', 'docs');
 const TARGET_DIR = path.join(__dirname, '..', 'content', 'docs');
+const MISSING_ONLY = process.argv.includes('--missing-only');
 
 // SkillBun secret pepper — XOR scramble pattern (adds custom layer on top of AES)
 const SB_PEPPER = Buffer.from('SkillBunVault2026!HopIntoSecurity@SBV1#Pepper$Key%Guard', 'utf8');
@@ -179,6 +181,34 @@ function main() {
   const mappings = {}; // slug/topicId → obfuscated hash
   let total = 0;
   let success = 0;
+  let preserved = 0;
+
+  if (MISSING_ONLY) {
+    // Authenticate an existing file before writing anything so a wrong local
+    // key cannot create a mixed-key vault while restoring missing guides.
+    let verified = false;
+    for (const slug of slugDirs) {
+      for (const file of fs.readdirSync(path.join(SOURCE_DIR, slug)).filter(file => file.endsWith('.md'))) {
+        const identity = `${slug}/${file.replace('.md', '')}`;
+        const hash = obfuscateFilename(slug, file.replace('.md', ''));
+        const existingPath = path.join(TARGET_DIR, hash.slice(0, 2), `${hash}.sbv`);
+        if (!fs.existsSync(existingPath)) continue;
+        try {
+          const existing = fs.readFileSync(existingPath);
+          const fileKey = deriveFileKey(MASTER_KEY, existing.subarray(5, 21), identity);
+          const decipher = crypto.createDecipheriv('aes-256-gcm', fileKey, existing.subarray(21, 33));
+          decipher.setAuthTag(existing.subarray(33, 49));
+          decipher.update(existing.subarray(81));
+          decipher.final();
+          verified = true;
+        } catch {
+          throw new Error('The configured key cannot authenticate the existing vault. No files were changed.');
+        }
+        break;
+      }
+      if (verified) break;
+    }
+  }
 
   for (const slug of slugDirs) {
     const slugDir = path.join(SOURCE_DIR, slug);
@@ -198,6 +228,11 @@ function main() {
       mappings[fileIdentity] = obfuscatedName;
 
       try {
+        if (MISSING_ONLY && fs.existsSync(outputPath)) {
+          preserved++;
+          success++;
+          continue;
+        }
         encryptFile(inputPath, outputPath, fileIdentity);
         success++;
       } catch (err) {
@@ -218,6 +253,10 @@ function main() {
   console.log(`  Total files:  ${total}`);
   console.log(`  Encrypted:    ${success}`);
   console.log(`  Failed:       ${total - success}`);
+  if (MISSING_ONLY) {
+    console.log(`  Preserved:    ${preserved}`);
+    console.log(`  Added:        ${success - preserved}`);
+  }
   console.log(`  Index:        _index.sbv (encrypted manifest)`);
   console.log(`  Format:       SBV1 (AES-256-GCM + HKDF + XOR + SHA-256)`);
   console.log(`  Filenames:    Obfuscated (SHA-256 hash, sharded)`);

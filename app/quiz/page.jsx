@@ -54,7 +54,11 @@ export default function QuizPage() {
     const handleInternalClick = (e) => {
       if (!isQuizActive()) return;
 
-      const link = e.target.closest('a, button');
+      if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      const link = e.target.closest('a[href]');
+      if (!link || link.target === '_blank' || link.hasAttribute('download')) return;
+      const destination = new URL(link.href, window.location.href);
+      if (destination.pathname === window.location.pathname && destination.search === window.location.search) return;
       if (link && !link.closest('#quizScreen') && !link.closest('#resultScreen')) {
         const confirmLeave = window.confirm('Are you sure you want to exit the quiz? Your quiz progress will be lost.');
         if (!confirmLeave) {

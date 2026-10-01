@@ -4,7 +4,7 @@ export function startSearchRequest({ query, onResult, onError, fetchImpl = fetch
   let cancelled = false;
   const timer = setTimeout(async () => {
     try {
-      const response = await fetchImpl(`/api/search?q=${encodeURIComponent(query)}`, {
+      const response = await fetchImpl(`/api/search?q=${encodeURIComponent(query)}&v=2`, {
         signal: controller.signal,
       });
       if (!response.ok) throw new Error('Search unavailable');

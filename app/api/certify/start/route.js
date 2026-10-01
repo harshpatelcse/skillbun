@@ -4,6 +4,7 @@ import { getFirebaseAdminAuth, getFirebaseAdminFirestore } from '@/utils/server/
 import { validateSchema } from '@/utils/server/inputValidator';
 import { checkServerRateLimit } from '@/utils/server/rateLimitStore';
 import { getClientAddress } from '@/utils/server/requestUtils';
+import { verifyHumanProofToken, isHumanProofBoundTo } from '@/utils/server/humanProof';
 import {
   loadRoadmapData,
   loadQuizBank,
@@ -43,6 +44,10 @@ export async function POST(request) {
     const uid = decodedToken.uid;
     const email = (decodedToken.email || '').toLowerCase();
     const address = getClientAddress(request);
+    const humanProof = verifyHumanProofToken(request.headers.get('x-skillbun-human') || '');
+    if (!isHumanProofBoundTo(humanProof, uid)) {
+      return NextResponse.json({ error: 'Human verification required.' }, { status: 403 });
+    }
 
     // 2. Rate Limiting Protection
     const rateLimit = await checkServerRateLimit({
@@ -150,6 +155,26 @@ export async function POST(request) {
       await assertAccountActive(db, uid, transaction);
       const checked = await verifyExamEligibility({ uid, slug: roadmapSlug, roadmapData, transaction });
       if (!checked.eligible) return checked;
+      // Use the existing single-field user index, then inspect the authoritative
+      // records. The quota document written below serializes parallel starts,
+      // so the losing transaction sees the first reservation when it retries.
+      const priorAttempts = await transaction.get(db.collection('examAttempts').where('uid', '==', uid));
+      const activeAttempt = priorAttempts.docs.find((document) => {
+        const attempt = document.data();
+        const expiry = attempt.expiresAt?.toDate?.().getTime() ?? new Date(attempt.expiresAt).getTime();
+        return attempt.roadmapSlug === roadmapSlug && attempt.status === 'ACTIVE'
+          && Number.isFinite(expiry) && now.getTime() <= expiry + 15000;
+      });
+      if (activeAttempt) {
+        const expiry = activeAttempt.data().expiresAt;
+        const expiresMs = expiry?.toDate?.().getTime() ?? new Date(expiry).getTime();
+        return {
+          eligible: false,
+          reason: 'ATTEMPT_IN_PROGRESS',
+          error: 'An exam for this roadmap is already in progress. Finish it or wait for it to expire before starting again.',
+          cooldownRemaining: Math.max(1, Math.ceil((expiresMs + 15000 - now.getTime()) / 1000)),
+        };
+      }
       const historyRef = db.collection('users').doc(uid).collection('quizAttempts').doc(roadmapSlug);
       const history = await transaction.get(historyRef);
       const historyData = history.exists ? history.data() : {};
@@ -159,7 +184,7 @@ export async function POST(request) {
       transaction.set(historyRef, {
         slug: roadmapSlug, attempts: [...attempts, now.getTime()],
         lastAttemptAt: now.getTime(), updatedAt: now,
-      });
+      }, { merge: true });
       return checked;
     });
     if (!eligibility.eligible) {

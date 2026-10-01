@@ -1,7 +1,7 @@
 const siteUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://skillbun.tech';
 
 export const metadata = {
-  title: 'Terms of Use – SkillBun',
+  title: { absolute: 'Terms of Use – SkillBun' },
   description: 'SkillBun Terms of Use — conditions, guidelines, and rules for platform usage.',
   alternates: {
     canonical: `${siteUrl}/terms`,

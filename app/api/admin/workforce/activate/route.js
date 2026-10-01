@@ -10,6 +10,7 @@ import { sendMailWithAttachment } from '@/utils/server/zohoMailer';
 import { buildActivationWelcomeEmail } from '@/utils/server/workforceEmailTemplates';
 import { decryptCredentials, encryptCredentials } from '@/utils/server/workforceCrypto';
 import { invalidateCacheTag } from '@/utils/server/redisCache';
+import { validateWorkforceAction } from '@/utils/server/workforceActionValidation.mjs';
 
 export const runtime = 'nodejs';
 
@@ -28,7 +29,9 @@ export async function POST(request) {
       return apiError('Payload must be valid JSON.', 400, 'BAD_REQUEST');
     }
 
-    const { employeeId, credentials_data, skipEmail = false } = body;
+    const validation = validateWorkforceAction(body, 'activate');
+    if (!validation.isValid) return apiError(validation.error, 400, 'VALIDATION_ERROR');
+    const { employeeId, credentials_data, skipEmail = false } = validation.value;
     if (!employeeId || typeof employeeId !== 'string') {
       return apiError('employeeId is required.', 400, 'VALIDATION_ERROR');
     }
@@ -69,6 +72,7 @@ export async function POST(request) {
           });
         } catch (encErr) {
           console.warn('[Activation] Could not persist credentials:', encErr.message);
+          return apiError('Workspace credentials could not be saved. Please try again after checking the server encryption configuration.', 503, 'INTERNAL_ERROR');
         }
       }
     }
@@ -117,6 +121,9 @@ export async function POST(request) {
           work_email: credentials?.work_email || employeeData.work_email || null,
           has_credentials: Boolean(credentials?.work_email && credentials?.password),
           subject: emailPayload.subject,
+          title: 'Welcome & Workspace Access',
+          status: 'DISPATCHED',
+          issued_at: now,
           dispatched_at: now,
           dispatched_by: admin.email,
           created_at: now,

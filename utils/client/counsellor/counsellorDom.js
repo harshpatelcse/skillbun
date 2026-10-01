@@ -227,6 +227,7 @@ export function appendStreamingMessage(state, role, text, onComplete) {
   let currentText = '';
 
   function typeNextToken() {
+    if (state.signal.aborted || !row.isConnected) return;
     if (currentIndex >= tokens.length) {
       msgDiv.innerHTML = renderBotHTML(text);
       container.scrollTop = container.scrollHeight;
@@ -246,6 +247,9 @@ export function appendStreamingMessage(state, role, text, onComplete) {
     setTimeout(typeNextToken, 16);
   }
 
+  if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
+    currentIndex = tokens.length;
+  }
   typeNextToken();
 }
 

@@ -17,8 +17,12 @@ function readPasswordResetAvailableAt() {
     return 0;
   }
 
-  const availableAt = Number(window.localStorage.getItem(PASSWORD_RESET_COOLDOWN_KEY) || 0);
-  return Number.isFinite(availableAt) ? availableAt : 0;
+  try {
+    const availableAt = Number(window.localStorage.getItem(PASSWORD_RESET_COOLDOWN_KEY) || 0);
+    return Number.isFinite(availableAt) ? availableAt : 0;
+  } catch {
+    return 0;
+  }
 }
 
 function friendlyAuthError(error) {
@@ -114,6 +118,7 @@ function AuthForm() {
   const [status, setStatus] = useState('');
   const [error, setError] = useState('');
   const [resetCooldownSeconds, setResetCooldownSeconds] = useState(0);
+  const resetAvailableAt = useRef(0);
 
   const [captchaEnabled, setCaptchaEnabled] = useState(false);
   const [captchaSiteKey, setCaptchaSiteKey] = useState('');
@@ -149,13 +154,14 @@ function AuthForm() {
 
   useEffect(() => {
     const updateResetCooldown = () => {
-      const availableAt = readPasswordResetAvailableAt();
+      const availableAt = Math.max(readPasswordResetAvailableAt(), resetAvailableAt.current);
       const nextCooldownSeconds = Math.max(0, Math.ceil((availableAt - Date.now()) / 1000));
 
       setResetCooldownSeconds(nextCooldownSeconds);
 
       if (nextCooldownSeconds === 0 && availableAt > 0) {
-        window.localStorage.removeItem(PASSWORD_RESET_COOLDOWN_KEY);
+        resetAvailableAt.current = 0;
+        try { window.localStorage.removeItem(PASSWORD_RESET_COOLDOWN_KEY); } catch {}
       }
     };
 
@@ -202,6 +208,9 @@ function AuthForm() {
     }
 
     let active = true;
+    let scriptPoll = null;
+    let scriptTimeout = null;
+    const scriptController = new AbortController();
 
     function waitForScript() {
       return new Promise((resolve, reject) => {
@@ -211,15 +220,21 @@ function AuthForm() {
         }
         const existing = document.querySelector('script[data-turnstile="true"]');
         if (existing) {
-          existing.addEventListener('load', () => resolve());
-          existing.addEventListener('error', () => reject(new Error('Failed to load Turnstile script')));
+          const finish = (error) => {
+            clearInterval(scriptPoll);
+            clearTimeout(scriptTimeout);
+            if (error) reject(error);
+            else resolve();
+          };
+          existing.addEventListener('load', () => finish(), { once: true, signal: scriptController.signal });
+          existing.addEventListener('error', () => finish(new Error('Failed to load Turnstile script')), { once: true, signal: scriptController.signal });
           // Polling fallback just in case script loads but load event is missed
-          const intervalId = setInterval(() => {
+          scriptPoll = setInterval(() => {
             if (window.turnstile) {
-              clearInterval(intervalId);
-              resolve();
+              finish();
             }
           }, 50);
+          scriptTimeout = setTimeout(() => finish(new Error('Turnstile script timed out')), 15000);
           return;
         }
         const script = document.createElement('script');
@@ -244,7 +259,7 @@ function AuthForm() {
       try {
         const widgetId = window.turnstile.render('#auth-captcha-widget', {
           sitekey: captchaSiteKey,
-          theme: localStorage.getItem('sb_theme') || 'dark',
+          theme: document.documentElement.dataset.theme === 'light' ? 'light' : 'dark',
           callback: (token) => {
             setCaptchaToken(token);
             setCaptchaError('');
@@ -277,7 +292,7 @@ function AuthForm() {
           }
         }
       } catch (err) {
-        setCaptchaError('Failed to load verification script.');
+        if (active) setCaptchaError('Failed to load verification script.');
       }
     }
 
@@ -285,6 +300,9 @@ function AuthForm() {
 
     return () => {
       active = false;
+      scriptController.abort();
+      clearInterval(scriptPoll);
+      clearTimeout(scriptTimeout);
       if (captchaWidgetId.current !== null && window.turnstile) {
         try {
           window.turnstile.remove(captchaWidgetId.current);
@@ -512,14 +530,16 @@ function AuthForm() {
     try {
       await resetPassword(email.trim());
       const availableAt = Date.now() + PASSWORD_RESET_COOLDOWN_MS;
-      window.localStorage.setItem(PASSWORD_RESET_COOLDOWN_KEY, String(availableAt));
+      resetAvailableAt.current = availableAt;
+      try { window.localStorage.setItem(PASSWORD_RESET_COOLDOWN_KEY, String(availableAt)); } catch {}
       setResetCooldownSeconds(Math.ceil(PASSWORD_RESET_COOLDOWN_MS / 1000));
       setStatus('Password reset email sent. You can request another in 60 seconds.');
     } catch (resetError) {
       setError(friendlyAuthError(resetError));
       if (resetError.retryAfterMs > 0) {
         const availableAt = Date.now() + resetError.retryAfterMs;
-        window.localStorage.setItem(PASSWORD_RESET_COOLDOWN_KEY, String(availableAt));
+        resetAvailableAt.current = availableAt;
+        try { window.localStorage.setItem(PASSWORD_RESET_COOLDOWN_KEY, String(availableAt)); } catch {}
         setResetCooldownSeconds(Math.ceil(resetError.retryAfterMs / 1000));
       }
     } finally {

@@ -3,7 +3,7 @@ import PrivacyPreferences from '../components/PrivacyPreferences';
 const siteUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://skillbun.tech';
 
 export const metadata = {
-  title: 'Privacy Policy – SkillBun',
+  title: { absolute: 'Privacy Policy – SkillBun' },
   description: 'SkillBun Privacy Policy — details on how we collect, protect, and handle your data.',
   alternates: {
     canonical: `${siteUrl}/privacy`,
