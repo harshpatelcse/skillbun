@@ -457,8 +457,13 @@
               "type": "article"
             },
             {
-              "title": "Implementing Native Notifications (Electron/Tauri Examples)",
-              "url": "https://www.electronjs.org/docs/latest/api/notification and https://tauri.app/v1/guides/features/notification/",
+              "title": "Native Notifications (Electron)",
+              "url": "https://www.electronjs.org/docs/latest/api/notification",
+              "type": "article"
+            },
+            {
+              "title": "Native Notifications Plugin (Tauri 2)",
+              "url": "https://v2.tauri.app/plugin/notification/",
               "type": "article"
             },
             {
@@ -1165,8 +1170,13 @@
               "type": "article"
             },
             {
-              "title": "Mock Interview Platforms (e.g., Pramp, LeetCode Discuss)",
-              "url": "https://www.pramp.com/ and https://leetcode.com/discuss/interview-questions/",
+              "title": "Peer Mock Interview Practice (Pramp)",
+              "url": "https://www.pramp.com/",
+              "type": "article"
+            },
+            {
+              "title": "Interview Experiences and Discussions (LeetCode)",
+              "url": "https://leetcode.com/discuss/",
               "type": "article"
             },
             {

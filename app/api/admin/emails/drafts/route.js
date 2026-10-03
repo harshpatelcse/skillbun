@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { requireWorkforceAdmin } from '@/utils/server/workforceEmployees';
 import { getFirebaseAdminAuth, getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import { checkServerRateLimit } from '@/utils/server/rateLimitStore';

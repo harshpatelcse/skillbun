@@ -334,7 +334,7 @@
         },
         {
           "title": "Learn You Some Erlang for Great Good! (Covers OTP fundamentals)",
-          "url": "http://learnyousomeerlang.com/what-is-otp/basics.html",
+          "url": "https://learnyousomeerlang.com/what-is-otp/basics.html",
           "type": "course"
         },
         {
@@ -2125,8 +2125,8 @@
           "description": "Master Elixir technical interviews: Explain the actor model, supervise tree failure recovery, GenServer concurrency semantics, and design scalable real-time systems.",
           "resources": [
             {
-              "title": "Elixir Interview Questions",
-              "url": "https://www.interviewbit.com/elixir-interview-questions/",
+              "title": "Elixir Language Concepts to Review (Official Documentation)",
+              "url": "https://hexdocs.pm/elixir/introduction.html",
               "type": "article"
             },
             {

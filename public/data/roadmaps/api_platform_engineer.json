@@ -1242,8 +1242,8 @@
           "description": "Implement API monetization and billing: Tiered subscription quotas, usage-based metering with Stripe or Lago, developer billing portals, and partner enterprise licensing.",
           "resources": [
             {
-              "title": "API Monetization: Top Strategies & Best Practices (Moesif)",
-              "url": "https://www.moesif.com/blog/api-monetization-strategy",
+              "title": "Enabling API Monetization (Moesif)",
+              "url": "https://www.moesif.com/blog/technical/stripe/Enabling-API-Monetization-With-Moesif/",
               "type": "article"
             },
             {

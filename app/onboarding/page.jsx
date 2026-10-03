@@ -52,12 +52,16 @@ function OnboardingForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const next = normalizeInternalPath(searchParams.get('next'), '/dashboard');
+  const continuePath = next === '/dashboard' ? '/quiz' : next;
   const editMode = searchParams.get('edit') === '1';
   const { user, profile, authLoading, profileLoading, isProfileComplete, saveProfile } = useAuth();
 
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const [savedDestination, setSavedDestination] = useState('');
+  const [adultDeclarationInput, setAdultDeclaration] = useState(null);
+  const adultDeclaration = adultDeclarationInput ?? profile.ageBand === '18-plus';
 
   useEffect(() => {
     if (!authLoading && !user) {
@@ -65,10 +69,10 @@ function OnboardingForm() {
       return;
     }
 
-    if (!authLoading && !profileLoading && isProfileComplete && !editMode) {
-      router.replace(next === '/dashboard' ? '/quiz' : next);
+    if (!saving && !savedDestination && !authLoading && !profileLoading && isProfileComplete && !editMode) {
+      router.replace(continuePath);
     }
-  }, [authLoading, editMode, isProfileComplete, next, profileLoading, router, user]);
+  }, [authLoading, continuePath, editMode, isProfileComplete, next, profileLoading, router, savedDestination, saving, user]);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -82,6 +86,10 @@ function OnboardingForm() {
       setError('Please fill in all required fields (Name, Degree, and Current Year).');
       return;
     }
+    if (!adultDeclaration) {
+      setError('Confirm that you are 18 or older. Accounts for younger students require a guardian approval flow that is not currently available.');
+      return;
+    }
 
     setSaving(true);
     setError('');
@@ -92,7 +100,7 @@ function OnboardingForm() {
     const customDestination = submitter?.getAttribute('data-destination');
 
     try {
-      await saveProfile({ name, degree, year, interest });
+      await saveProfile({ name, degree, year, interest, ageBand: '18-plus' });
 
       if (editMode) {
         posthog.capture('profile_updated', {
@@ -108,13 +116,30 @@ function OnboardingForm() {
           router.push(customDestination);
         }
       } else {
-        const targetPath = customDestination || (next === '/dashboard' ? '/quiz' : next);
+        const targetPath = normalizeInternalPath(customDestination, continuePath);
         posthog.capture('profile_completed', {
           degree,
           academic_year: year,
           has_interest: Boolean(interest),
           destination: targetPath,
         });
+        if (formData.get('marketingConsent') === 'on') {
+          try {
+            const token = await user.getIdToken();
+            const response = await fetch('/api/unsubscribe', {
+              method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+              body: JSON.stringify({ email: user.email, action: 'resubscribe' }),
+              signal: AbortSignal.timeout(10_000),
+            });
+            if (!response.ok) throw new Error('Email preference was not confirmed.');
+          } catch {
+            // A failed optional preference update must not misreport a saved profile as failed.
+            setSuccess('Profile saved. We could not confirm your email preference. You can review it in Account Settings or continue now.');
+            setSavedDestination(targetPath);
+            setSaving(false);
+            return;
+          }
+        }
         router.replace(targetPath);
       }
     } catch (saveError) {
@@ -124,7 +149,7 @@ function OnboardingForm() {
     }
   }
 
-  if (authLoading || profileLoading || !profile.hydrated || !user || (isProfileComplete && !editMode)) {
+  if (authLoading || profileLoading || !profile.hydrated || !user || (isProfileComplete && !editMode && !saving && !savedDestination)) {
     return (
       <div className={styles.loadingContainer}>
         <div className={`welcome-bunny ${styles.welcomeBunny}`}>
@@ -210,7 +235,7 @@ function OnboardingForm() {
       )}
 
       {success && (
-        <div className={styles.successBanner}>
+        <div className={styles.successBanner} role="status">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M20 6 9 17l-5-5" />
           </svg>
@@ -229,7 +254,18 @@ function OnboardingForm() {
         </div>
       )}
 
-      <form onSubmit={handleSubmit}>
+      {savedDestination ? (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+          <button type="button" className={`btn-form ${styles.btnSubmit}`} onClick={() => router.replace(savedDestination)}>
+            Continue
+          </button>
+          <Link href="/settings" className={styles.btnSecondary}>Review Email Preferences</Link>
+        </div>
+      ) : <form onSubmit={handleSubmit}>
+        <label style={{ display: 'flex', gap: '0.65rem', alignItems: 'flex-start', marginBottom: '1.25rem', color: 'var(--text)' }}>
+          <input type="checkbox" checked={adultDeclaration} onChange={(event) => setAdultDeclaration(event.target.checked)} required disabled={saving} />
+          <span>I am 18 or older. SkillBun self-service accounts are currently available to adults.</span>
+        </label>
         <div className="form-group">
           <label>Your Full Name *</label>
           <input
@@ -299,13 +335,17 @@ function OnboardingForm() {
           </div>
         ) : (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', marginTop: '1.25rem' }}>
+            <label style={{ display: 'flex', gap: '0.65rem', alignItems: 'flex-start', color: 'var(--text)', fontSize: '0.9rem' }}>
+              <input type="checkbox" name="marketingConsent" disabled={saving} />
+              <span>Send me optional learning reminders and SkillBun updates by email. I can unsubscribe anytime. Essential account messages are separate.</span>
+            </label>
             <button
               type="submit"
-              data-destination="/quiz"
+              data-destination={continuePath}
               className={`btn-form ${styles.btnSubmit}`}
               disabled={saving}
             >
-              {saving ? 'Saving...' : 'Save & Take Diagnostic Quiz (Recommended) 🚀'}
+              {saving ? 'Saving...' : continuePath === '/quiz' ? 'Save & Take Diagnostic Quiz (Recommended)' : 'Save & Continue'}
             </button>
             <button
               type="submit"
@@ -313,7 +353,7 @@ function OnboardingForm() {
               className={styles.btnSecondary}
               disabled={saving}
             >
-              Skip Quiz & Explore Roadmaps Directly
+              {continuePath === '/quiz' ? 'Skip Quiz & Explore Roadmaps Directly' : 'Explore Roadmaps Instead'}
             </button>
           </div>
         )}
@@ -328,7 +368,7 @@ function OnboardingForm() {
             This helps our AI quiz and counsellor give you personalized advice. You can update this anytime in your Profile Settings.
           </p>
         )}
-      </form>
+      </form>}
     </div>
   );
 }

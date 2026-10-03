@@ -1151,8 +1151,8 @@
           "description": "Master IAM technical interviews: Whiteboard OAuth 2.0 / SAML 2.0 federation flows, explain STS token assumption, design Zero Trust architectures, and target certifications (CISSP, AWS Security, SC-300).",
           "resources": [
             {
-              "title": "Top Identity & Access Management (IAM) Technical Interview Guide",
-              "url": "https://www.greatlearning.in/blog/iam-interview-questions/",
+              "title": "Identity and Access Management Concepts (AWS IAM)",
+              "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html",
               "type": "article"
             },
             {

@@ -47,8 +47,10 @@ export function I18nProvider({ children, initialLocale = DEFAULT_LOCALE }) {
   useEffect(() => {
     if (typeof document !== 'undefined') {
       const activeLocale = SUPPORTED_LOCALES.find((l) => l.code === locale) || SUPPORTED_LOCALES[0];
-      document.documentElement.lang = activeLocale.code;
-      document.documentElement.dir = activeLocale.dir || 'ltr';
+      // Core account and learning workflows are currently English. Translated
+      // regions declare their own language instead of relabelling English text.
+      document.documentElement.lang = 'en';
+      document.documentElement.dir = 'ltr';
       document.cookie = `sb_locale=${activeLocale.code}; path=/; max-age=31536000; SameSite=Lax`;
     }
   }, [locale]);

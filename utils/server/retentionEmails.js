@@ -116,6 +116,7 @@ export function generateRetentionEmailHtml(templateId, data = {}) {
     contentHtml,
     isMarketing,
     email,
+    preferenceUrl: data.preferenceUrl || '',
   });
 
   return { subject: plainSubject, html, text: emailHtmlToText(html), isMarketing };

@@ -812,8 +812,8 @@
           "description": "Conduct manual application penetration tests: business logic vulnerability discovery, race condition exploitation, CVSS v3.1/v4.0 vulnerability scoring, and triage workflows.",
           "resources": [
             {
-              "title": "Penetration Testing Execution Standard (PTES)",
-              "url": "http://www.pentest-standard.org/index.php/Main_Page",
+              "title": "Web Security Testing Guide and Methodology (OWASP)",
+              "url": "https://owasp.org/www-project-web-security-testing-guide/",
               "type": "article"
             },
             {
@@ -1181,8 +1181,8 @@
           "description": "Excel in Application Security technical interviews: live secure code review (finding and remediating vulnerabilities in code snippets), architectural threat modeling on whiteboards, and explaining complex exploit mechanics under pressure.",
           "resources": [
             {
-              "title": "AppSec Interview Questions and Answers",
-              "url": "https://www.geeksforgeeks.org/application-security-interview-questions/",
+              "title": "Application Security Risk Areas to Review (OWASP Top 10)",
+              "url": "https://owasp.org/www-project-top-ten/",
               "type": "article"
             },
             {

@@ -77,8 +77,24 @@
       "Offline vs Online Evaluation (NDCG, MAP@K, Hit Rate vs Click-Through Rate, A/B Testing)"
     ],
     "certifications": [
-      "TensorFlow Developer Certificate",
-      "AWS Certified Machine Learning - Specialty"
+      "Google Cloud Professional Machine Learning Engineer",
+      "AWS Certified Machine Learning Engineer - Associate"
+    ],
+    "certification_details": [
+      {
+        "name": "Google Cloud Professional Machine Learning Engineer",
+        "official_url": "https://cloud.google.com/learn/certification/machine-learning-engineer",
+        "type": "professional_certification",
+        "note": "Cloud ML engineering certification; recommended industry experience applies.",
+        "checked_on": "2026-10-02"
+      },
+      {
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "official_url": "https://aws.amazon.com/certification/certified-machine-learning-engineer-associate/",
+        "type": "professional_certification",
+        "note": "Role-based ML engineering certification; review the current exam guide and experience requirements.",
+        "checked_on": "2026-10-02"
+      }
     ]
   },
   "format": "tree",
@@ -593,7 +609,7 @@
           "resources": [
             {
               "title": "Session-based recommendation with recurrent neural networks - Research Paper",
-              "url": "http://arxiv.org/pdf/1511.06939.pdf",
+              "url": "https://arxiv.org/pdf/1511.06939.pdf",
               "type": "article"
             },
             {
@@ -1198,8 +1214,8 @@
           "description": "Master recommendation system design interviews: Whiteboard large-scale feeds (Netflix, Spotify, TikTok), explain offline-online metric gaps, and solve algorithm optimization problems.",
           "resources": [
             {
-              "title": "Machine Learning System Design Interview Guide",
-              "url": "https://github.com/alexeygrigorev/data-science-interviews/blob/master/ml-system-design.md",
+              "title": "Production ML Systems (Google Machine Learning Crash Course)",
+              "url": "https://developers.google.com/machine-learning/crash-course/production-ml-systems",
               "type": "article"
             },
             {

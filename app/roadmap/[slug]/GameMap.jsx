@@ -369,7 +369,7 @@ export default function GameMap({ roadmap, slug, initialTab }) {
       : TREE_CARD_WIDTH;
     const lineLeft = childWidths.length ? childWidths[0] / 2 : 0;
     const lineRight = childWidths.length ? childWidths[childWidths.length - 1] / 2 : 0;
-    const icon = node.icon || '📘';
+    const icon = isDone ? 'check' : !isUnlocked ? 'lock' : node.tag === 'advanced' ? 'rocket' : 'book';
 
     return (
       <div
@@ -381,7 +381,7 @@ export default function GameMap({ roadmap, slug, initialTab }) {
           <div className="sk-node-card">
             <div className="sk-node-shimmer"></div>
             <div className="sk-node-row">
-              <div className={`sk-node-icon ${isDone ? 'done' : ''}`}>{icon}</div>
+              <div className={`sk-node-icon ${isDone ? 'done' : ''}`} aria-hidden="true"><ReaderIcon name={icon} size={22} /></div>
               <div className="sk-node-info">
                 <div className="sk-node-title-row">
                   <h3>
@@ -714,29 +714,29 @@ export default function GameMap({ roadmap, slug, initialTab }) {
           </div>
 
           <div className="sk-panel-card sk-salary-card">
-            <div className="sk-panel-badge"><ReaderIcon name="coin" size={16} /> GLOBAL COMPENSATION BENCHMARKS</div>
-            <h3>Dual-Currency Salary Spectrum</h3>
-            <p className="sk-salary-sub">Calibrated benchmarks across remote engineering teams, Silicon Valley hubs, and regional tech ecosystems.</p>
+            <div className="sk-panel-badge"><ReaderIcon name="coin" size={16} /> INDICATIVE COMPENSATION</div>
+            <h3>Salary Planning Estimates</h3>
+            <p className="sk-salary-sub">SkillBun editorial estimates, not a verified salary survey. Actual offers vary by location, employer, experience, and date. These ranges are not job or pay guarantees.</p>
             <div className="sk-salary-grid">
               <div className="sk-salary-box">
-                <span className="sk-salary-tag">Big Tech & Global Remote</span>
+                <span className="sk-salary-tag">US Market Estimate</span>
                 <div className="sk-salary-amount sk-green">
                   {roadmap.goal?.salary_range?.usd
                     ? `$${(roadmap.goal.salary_range.usd.min / 1000).toFixed(0)}k - $${(roadmap.goal.salary_range.usd.max / 1000).toFixed(0)}k`
-                    : '$80k - $140k'}
+                    : 'Range unavailable'}
                   <span className="sk-salary-period">/ yr USD</span>
                 </div>
-                <span className="sk-salary-note">Worldwide Remote & US / European Tech Hubs</span>
+                <span className="sk-salary-note">Annual USD, before tax; US-oriented planning range</span>
               </div>
               <div className="sk-salary-box">
-                <span className="sk-salary-tag">Regional Tech Hubs</span>
+                <span className="sk-salary-tag">India Market Estimate</span>
                 <div className="sk-salary-amount">
                   {roadmap.goal?.salary_range?.inr_lpa
                     ? `₹${roadmap.goal.salary_range.inr_lpa.min} - ₹${roadmap.goal.salary_range.inr_lpa.max}`
-                    : '₹6 - ₹20'}
+                    : 'Range unavailable'}
                   <span className="sk-salary-period">LPA (INR)</span>
                 </div>
-                <span className="sk-salary-note">India, APAC & Emerging Tech Startup Hubs</span>
+                <span className="sk-salary-note">Lakhs of INR per year, before tax; India only</span>
               </div>
             </div>
           </div>
@@ -820,12 +820,15 @@ export default function GameMap({ roadmap, slug, initialTab }) {
           <div className="sk-boost-dual-grid">
             <div className="sk-panel-card">
               <div className="sk-panel-badge"><ReaderIcon name="book" size={16} /> INDUSTRY CREDENTIALS</div>
-              <h3>Globally Recognized Certifications</h3>
+              <h3>Certifications &amp; Course Credentials</h3>
               <ul className="sk-bullet-list">
-                {(roadmap.boost?.certifications || ['Standard Cloud Associate', 'Domain Professional']).map((cert, i) => (
+                {(roadmap.boost?.certifications || []).map((cert, i) => (
                   <li key={i}>
                     <span className="sk-list-check"><ReaderIcon name="check" size={16} /></span>
-                    <span>{cert}</span>
+                    <span>{(() => {
+                      const detail = roadmap.boost?.certification_details?.find((item) => item.name === cert);
+                      return detail ? <><a href={detail.official_url} target="_blank" rel="noopener noreferrer">{cert}</a><small style={{ display: 'block', color: 'var(--muted)' }}>{detail.type === 'course_certificate' ? 'Course completion credential' : 'Professional certification'} · Availability checked {detail.checked_on}{detail.note ? ` · ${detail.note}` : ''}</small></> : cert;
+                    })()}</span>
                   </li>
                 ))}
               </ul>

@@ -1,4 +1,6 @@
-import { getFirebaseAdminAuth } from './firebaseAdmin.js';
+import { isActiveWorkforceMember } from './workforcePolicy.mjs';
+import { PrivateResponse } from './privateResponse.mjs';
+import { getFirebaseAdminAuth, getFirebaseAdminFirestore } from './firebaseAdmin.js';
 import { isUserAuthorizedAdmin } from './workforceEmployees.js';
 import { validateFirestoreId, validateSchema, validateString } from './inputValidator.js';
 
@@ -110,9 +112,9 @@ export async function authenticateMilestoneCaller(request) {
   const authHeader = request.headers.get('Authorization') || request.headers.get('authorization');
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
     return {
-      response: new Response(
-        JSON.stringify({ error: { message: 'Authentication required. Bearer token missing.', code: 'UNAUTHORIZED' } }),
-        { status: 401, headers: { 'Content-Type': 'application/json' } }
+      response: PrivateResponse.json(
+        { error: { message: 'Authentication required. Bearer token missing.', code: 'UNAUTHORIZED' } },
+        { status: 401 }
       ),
     };
   }
@@ -124,7 +126,15 @@ export async function authenticateMilestoneCaller(request) {
     const email = (decoded.email || '').toLowerCase().trim();
     const isAdmin = await isUserAuthorizedAdmin(decoded);
 
+    let employeeIds = [];
+    if (!isAdmin) {
+      const db = getFirebaseAdminFirestore();
+      const employees = await db.collection('employees').where('personal_email', '==', email).get();
+      employeeIds = employees.docs.filter(doc => isActiveWorkforceMember(doc.data(), email)).map(doc => doc.id);
+      if (!employeeIds.length) return { response: PrivateResponse.json({ error: { message: 'Active workforce membership is required.', code: 'FORBIDDEN' } }, { status: 403 }) };
+    }
     return {
+      employeeIds,
       uid: decoded.uid,
       email,
       isAdmin,
@@ -132,9 +142,9 @@ export async function authenticateMilestoneCaller(request) {
     };
   } catch (err) {
     return {
-      response: new Response(
-        JSON.stringify({ error: { message: 'Invalid or expired authentication token.', code: 'UNAUTHORIZED' } }),
-        { status: 401, headers: { 'Content-Type': 'application/json' } }
+      response: PrivateResponse.json(
+        { error: { message: 'Invalid or expired authentication token.', code: 'UNAUTHORIZED' } },
+        { status: 401 }
       ),
     };
   }

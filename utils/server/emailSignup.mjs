@@ -94,8 +94,9 @@ export function createEmailSignupService({ db, auth, sendCode, checkRateLimit, s
     }
   }
 
-  async function requestCode({ email: inputEmail, address }) {
+  async function requestCode({ email: inputEmail, address, ageBand }) {
     const email = normalizeEmail(inputEmail);
+    if (ageBand !== '18-plus') throw new EmailSignupError('AGE_DECLARATION_REQUIRED', 'Student signup currently requires age 18 or above.', 403);
     await enforceRateLimit('emailSignupSend', email, address, SEND_LIMITS);
     const timestamp = now();
     const challengeId = randomBytes(32).toString('base64url');
@@ -127,6 +128,8 @@ export function createEmailSignupService({ db, auth, sendCode, checkRateLimit, s
       // Reserve the send BEFORE SMTP. Concurrent requests cannot send extra mail.
       tx.set(ref, {
         status: 'SENDING',
+        ageBand: '18-plus',
+        ageDeclaredAt: timestamp,
         emailHash: digest('email', email),
         challengeHash,
         codeHash: digest('code', `${email}:${challengeId}:${code}`),
@@ -186,7 +189,7 @@ export function createEmailSignupService({ db, auth, sendCode, checkRateLimit, s
       // Bind verification to the address proved by this OTP in the same Auth
       // update; a concurrent email/password change must never verify another address.
       await auth.updateUser(existing.uid, { email, password, emailVerified: true });
-      return;
+      return existing.uid;
     }
     try {
       await auth.createUser({ uid, email, password, emailVerified: true });
@@ -195,12 +198,13 @@ export function createEmailSignupService({ db, auth, sendCode, checkRateLimit, s
       // UID reserved by this verified challenge, never an unrelated account.
       let created;
       try { created = await auth.getUser(uid); } catch { /* Still absent or unavailable. */ }
-      if (created?.uid === uid && created.email?.toLowerCase() === email && created.emailVerified && !created.disabled) return;
+      if (created?.uid === uid && created.email?.toLowerCase() === email && created.emailVerified && !created.disabled) return uid;
       if (error?.code === 'auth/email-already-exists') {
         throw new EmailSignupError('ACCOUNT_EXISTS', 'This email already has an account. Log in or reset your password.', 409);
       }
       throw error;
     }
+    return uid;
   }
 
   async function verifyCode({ email: inputEmail, password, code, challengeId, address }) {
@@ -219,7 +223,7 @@ export function createEmailSignupService({ db, auth, sendCode, checkRateLimit, s
     const result = await transaction(async (tx) => {
       const snapshot = await tx.get(ref);
       const current = snapshot.exists ? snapshot.data() : {};
-      if (current.status !== 'ACTIVE' || !equalDigest(current.challengeHash, challengeHash) || !equalDigest(current.emailHash, digest('email', email))) {
+      if (current.status !== 'ACTIVE' || current.ageBand !== '18-plus' || !equalDigest(current.challengeHash, challengeHash) || !equalDigest(current.emailHash, digest('email', email))) {
         return { error: 'INVALID_CODE' };
       }
       if (!Number.isSafeInteger(current.attempts) || current.attempts < 0 || current.attempts > MAX_GUESSES ||
@@ -247,7 +251,10 @@ export function createEmailSignupService({ db, auth, sendCode, checkRateLimit, s
     }
     try {
       // Never call external Auth APIs inside the retried Firestore transaction.
-      await provisionAccount(email, password, uid);
+      const accountUid = await provisionAccount(email, password, uid);
+      await transaction(async tx => {
+        tx.set(db.collection('users').doc(accountUid), { uid: accountUid, email, ageBand: '18-plus', ageDeclaredAt: new Date(timestamp).toISOString() }, { merge: true });
+      });
     } catch (error) {
       await transaction(async (tx) => {
         const snapshot = await tx.get(ref);

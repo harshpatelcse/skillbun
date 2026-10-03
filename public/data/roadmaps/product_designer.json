@@ -1580,8 +1580,8 @@
           "description": "Track emerging design paradigms: AI-assisted product design, spatial computing interfaces (visionOS), multi-modal input design, and design automation.",
           "resources": [
             {
-              "title": "AI in Design: A Designer's Guide",
-              "url": "https://www.nngroup.com/articles/ai-in-design/",
+              "title": "Designing AI Products and Features (Nielsen Norman Group)",
+              "url": "https://www.nngroup.com/articles/designing-ai-study-guide/",
               "type": "article"
             },
             {

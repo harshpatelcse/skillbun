@@ -50,7 +50,7 @@ function RoadmapCard({ categories, roadmap, featured = false }) {
       <h3>{roadmap.title}</h3>
       <p>{roadmap.description}</p>
       <div className={styles.cardMeta}>
-        <span>{roadmap.salary || `${roadmap.resourceCount || 0} resources`}</span>
+        <span>{roadmap.salary ? `Editorial estimate: ${roadmap.salary}` : `${roadmap.resourceCount || 0} resources`}</span>
         <span>{featured ? 'Featured path' : 'Skill tree'}</span>
       </div>
       <Link href={`/roadmap/${roadmap.slug}`} className={styles.secondaryButton}>

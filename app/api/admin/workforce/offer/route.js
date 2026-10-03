@@ -1,4 +1,5 @@
-import { NextResponse } from 'next/server';
+import { assertWorkforceAction, transitionWorkforceEmployee, finishWorkforceAction, WorkforcePolicyError } from '@/utils/server/workforcePolicy.mjs';
+import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import {
   apiError,
@@ -51,6 +52,8 @@ export async function POST(request) {
     }
 
     const employeeData = employeeDoc.data();
+    assertWorkforceAction(employeeData, 'offer');
+    let credentialPatch = {};
 
     // 1. Generate unique reference ID & active template version
     const referenceId = generateWorkforceId(WORKFORCE_PREFIXES.OFFER);
@@ -79,13 +82,9 @@ export async function POST(request) {
         };
         try {
           const encrypted = encryptCredentials(credentials);
-          await employeeRef.update({
-            encrypted_credentials: encrypted,
-            work_email: workEmail || employeeData.work_email || null,
-            updated_at: new Date(),
-          });
+          credentialPatch = { encrypted_credentials: encrypted, work_email: workEmail || employeeData.work_email || null };
         } catch (encErr) {
-          console.warn('[Offer Dispatch] Could not persist new credentials:', encErr.message);
+          console.warn('[SkillBun server operation]', { code: encErr?.code || 'INTERNAL_ERROR' });
           return apiError('Workspace credentials could not be saved. Please try again after checking the server encryption configuration.', 503, 'INTERNAL_ERROR');
         }
       }
@@ -95,7 +94,7 @@ export async function POST(request) {
       try {
         credentials = decryptCredentials(employeeData.encrypted_credentials);
       } catch (decErr) {
-        console.warn('[Offer Dispatch] Could not decrypt credentials for email inclusion:', decErr.message);
+        console.warn('[SkillBun server operation]', { code: decErr?.code || 'INTERNAL_ERROR' });
       }
     }
 
@@ -110,6 +109,13 @@ export async function POST(request) {
     });
 
     const now = new Date();
+
+    const docRef = db.collection('workforce_docs').doc(referenceId);
+    await transitionWorkforceEmployee(db, employeeRef, {
+      action: 'offer', nextStatus: 'OFFER_SENT', expectedStatus: employeeData.status,
+      patch: { ...credentialPatch, offer_reference_id: referenceId },
+      document: { ref: docRef, data: { id: referenceId, employee_id: employeeId, doc_type: 'OFFER_PACK', template_version: activeVersion, title: 'Internship Offer Letter & Terms of Engagement', status: 'ISSUED', metadata_snapshot: metadataSnapshot, issued_by: admin.email || admin.uid, issued_at: now } },
+    });
 
     // 4. Attempt Email Dispatch via Zoho SMTP
     try {
@@ -129,33 +135,8 @@ export async function POST(request) {
         ],
       });
 
-      // 5. Successful Dispatch -> Record in /workforce_docs and update /employees
-      const workforceDocs = db.collection('workforce_docs');
-      const docRef = workforceDocs.doc(referenceId);
-
-      const batch = db.batch();
-
-      batch.create(docRef, {
-        id: referenceId,
-        employee_id: employeeId,
-        doc_type: 'OFFER_PACK',
-        template_version: activeVersion,
-        title: 'Internship Offer Letter & Terms of Engagement',
-        status: 'DISPATCHED',
-        metadata_snapshot: metadataSnapshot,
-        dispatched_to: employeeData.personal_email,
-        issued_by: admin.email || admin.uid,
-        issued_at: now,
-      });
-
-      batch.update(employeeRef, {
-        status: 'OFFER_SENT',
-        offer_reference_id: referenceId,
-        offer_dispatched_at: now,
-        updated_at: now,
-      });
-
-      await batch.commit();
+      await docRef.update({ status: 'DISPATCHED', dispatched_to: employeeData.personal_email, dispatched_at: now });
+      await finishWorkforceAction(db, employeeRef, 'offer', { offer_dispatched_at: now });
 
       await Promise.all([
         invalidateCacheTag('admin:workforce'),
@@ -169,18 +150,10 @@ export async function POST(request) {
         message: `Offer Letter (${referenceId}) dispatched successfully to ${employeeData.personal_email}.`,
       });
     } catch (smtpError) {
-      console.error('[Zoho SMTP Dispatch Failed]', smtpError);
+      console.error('[SkillBun server operation]', { code: smtpError?.code || 'INTERNAL_ERROR' });
 
-      // Record dispatch failure in employee status for admin visibility
-      try {
-        await employeeRef.update({
-          status: 'DISPATCH_FAILED',
-          last_dispatch_error: smtpError?.message || 'SMTP transmission failure',
-          updated_at: now,
-        });
-      } catch (updateErr) {
-        console.error('[Failed to update employee status to DISPATCH_FAILED]', updateErr);
-      }
+      await docRef.update({ status: 'DELIVERY_UNKNOWN' });
+      await finishWorkforceAction(db, employeeRef, 'offer', { status: 'DISPATCH_FAILED', delivery_uncertain: true, last_dispatch_error: 'SMTP delivery could not be confirmed.' });
       await invalidateCacheTag('admin:workforce');
 
       // Return fallback download payload with base64 PDF
@@ -188,18 +161,20 @@ export async function POST(request) {
         {
           success: false,
           fallbackDownload: true,
+          deliveryUncertain: true,
           referenceId,
           filename,
           pdfBase64: buffer.toString('base64'),
           recipient: employeeData.personal_email,
           subject: emailPayload.subject,
-          error: `SMTP Dispatch failed: ${smtpError?.message || 'Unknown network error'}. Manual PDF download ready.`,
+          error: 'SMTP delivery could not be confirmed. Review the dispatch before retrying. Manual PDF download ready.',
         },
         { status: 200 }
       );
     }
   } catch (error) {
-    console.error('[Workforce Offer Dispatch Error]', error);
+    if (error instanceof WorkforcePolicyError) return apiError(error.message, error.status, error.code);
+    console.error('[SkillBun server operation]', { code: error?.code || 'INTERNAL_ERROR' });
     return apiError('Unable to process offer letter dispatch.', 500, 'INTERNAL_ERROR');
   }
 }

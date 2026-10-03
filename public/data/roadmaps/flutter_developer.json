@@ -76,8 +76,24 @@
       "App Launch Time & Frame Rate Optimization"
     ],
     "certifications": [
-      "Google Associate Android Developer Certification",
-      "Meta Mobile Specialization"
+      "AWS Certified Developer - Associate",
+      "Meta Android Developer Professional Certificate"
+    ],
+    "certification_details": [
+      {
+        "name": "AWS Certified Developer - Associate",
+        "official_url": "https://aws.amazon.com/certification/certified-developer-associate/",
+        "type": "professional_certification",
+        "note": "Optional cloud/backend credential for mobile developers; this is not an Android or Flutter certification.",
+        "checked_on": "2026-10-02"
+      },
+      {
+        "name": "Meta Android Developer Professional Certificate",
+        "official_url": "https://www.coursera.org/professional-certificates/meta-android-developer",
+        "type": "course_certificate",
+        "note": "Course completion credential from Meta on Coursera; not a Flutter vendor certification or proctored professional exam.",
+        "checked_on": "2026-10-02"
+      }
     ]
   },
   "format": "tree",

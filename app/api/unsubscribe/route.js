@@ -1,130 +1,81 @@
-import { NextResponse } from 'next/server';
-import { getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
+import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
+import { getFirebaseAdminAuth, getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import { validateEmail, validateSchema } from '@/utils/server/inputValidator';
 import { checkServerRateLimit } from '@/utils/server/rateLimitStore';
 import { getClientAddress } from '@/utils/server/requestUtils';
+import { verifyUnsubscribeToken, hasMarketingConsent } from '@/utils/server/emailPreferences.mjs';
+import { logSafeError } from '@/utils/server/safeDiagnostics.mjs';
 
 export const runtime = 'nodejs';
 
-const UNSUBSCRIBE_RATE_LIMITS = [
-  { name: 'ipMinute', windowMs: 60 * 1000, maxRequests: 10, getSubject: ({ address }) => `ip:${address}` },
-  { name: 'ipHour', windowMs: 60 * 60 * 1000, maxRequests: 60, getSubject: ({ address }) => `ip:${address}` },
-  { name: 'emailHour', windowMs: 60 * 60 * 1000, maxRequests: 5, getSubject: ({ email }) => `email:${email}` },
-];
-
+async function owner(request, email) {
+  const authorization = request.headers.get('authorization') || '';
+  if (!authorization.startsWith('Bearer ')) return null;
+  try {
+    // The shared Auth wrapper checks revocation, disabled accounts and erasure
+    // markers; retain an explicit verified-mailbox boundary for preferences.
+    const user = await getFirebaseAdminAuth().verifyIdToken(authorization.slice(7).trim());
+    return user.email_verified === true && user.email?.trim().toLowerCase() === email ? user : null;
+  } catch { return null; }
+}
+async function limit(request, email, mutate) {
+  return checkServerRateLimit({
+    namespace: mutate ? 'unsubscribePost' : 'unsubscribeGet',
+    subject: { address: getClientAddress(request), email },
+    limits: [
+      { name: 'ipMinute', windowMs: 60000, maxRequests: mutate ? 10 : 30, getSubject: s => `ip:${s.address}` },
+      { name: 'emailHour', windowMs: 3600000, maxRequests: mutate ? 10 : 60, getSubject: s => `email:${s.email}` },
+    ], requireDistributed: process.env.NODE_ENV === 'production',
+  });
+}
 export async function GET(request) {
   try {
-    const address = getClientAddress(request);
-    const ipRateLimit = await checkServerRateLimit({
-      namespace: 'unsubscribeGet',
-      subject: { address },
-      limits: [{ name: 'ipMinute', windowMs: 60 * 1000, maxRequests: 30, getSubject: ({ address }) => `ip:${address}` }],
-      increment: true,
-    });
-
-    if (!ipRateLimit.allowed) {
-      return NextResponse.json({ error: 'Too many requests. Please wait a moment.' }, { status: 429 });
-    }
-
-    const { searchParams } = new URL(request.url);
-    const rawEmail = searchParams.get('email');
-
-    if (!rawEmail) {
-      return NextResponse.json({ error: 'Email parameter is required.' }, { status: 400 });
-    }
-
-    const emailCheck = validateEmail(rawEmail);
-    if (!emailCheck.isValid) {
-      return NextResponse.json({ error: emailCheck.error }, { status: 400 });
-    }
-
-    const email = emailCheck.normalizedEmail;
+    const query = new URL(request.url).searchParams;
+    const check = validateEmail(query.get('email'));
+    if (!check.isValid) return NextResponse.json({ error: 'A valid email address is required.' }, { status: 400 });
+    const email = check.normalizedEmail;
+    const user = await owner(request, email);
+    if (!user && !verifyUnsubscribeToken(query.get('token'), email)) return NextResponse.json({ error: 'Sign in as the email owner or use a valid email preference link.' }, { status: 403 });
+    const quota = await limit(request, email, false);
+    if (!quota.allowed) return NextResponse.json({ error: 'Too many requests. Please wait.' }, { status: 429 });
     const db = getFirebaseAdminFirestore();
-    if (db) {
-      const docRef = await db.collection('unsubscribes').doc(email).get();
-      if (docRef.exists) {
-        return NextResponse.json({ unsubscribed: true, date: docRef.data()?.unsubscribedAt || null });
-      }
-    }
-
-    return NextResponse.json({ unsubscribed: false });
-  } catch (err) {
-    return NextResponse.json({ error: 'Failed to fetch subscription status.' }, { status: 500 });
+    if (!db) return NextResponse.json({ error: 'Preferences are temporarily unavailable.' }, { status: 503 });
+    const unsub = await db.collection('unsubscribes').doc(email).get();
+    const profile = user ? (await db.collection('users').doc(user.uid).get()).data() : {};
+    const subscribed = hasMarketingConsent(profile, unsub.exists);
+    return NextResponse.json({ unsubscribed: user ? !subscribed : unsub.exists, ...(user ? { marketingConsent: subscribed } : {}) });
+  } catch (error) {
+    const requestId = logSafeError('[Email preference read]', error);
+    return NextResponse.json({ error: 'Preferences are temporarily unavailable.', requestId }, { status: 503 });
   }
 }
-
 export async function POST(request) {
   try {
-    const address = getClientAddress(request);
-
-    let rawBody;
-    try {
-      rawBody = await request.json();
-    } catch {
-      return NextResponse.json({ error: 'Payload must be valid JSON.' }, { status: 400 });
-    }
-
-    const schemaCheck = validateSchema(rawBody, {
-      email: { type: 'email', required: true, label: 'Email address' },
-      action: {
-        type: 'enum',
-        required: false,
-        allowedValues: ['unsubscribe', 'resubscribe'],
-        defaultValue: 'unsubscribe',
-        label: 'Action',
-      },
-    }, {
-      fieldName: 'Unsubscribe payload',
-      allowUnknown: false,
-      maxKeys: 2,
-    });
-
-    if (!schemaCheck.isValid) {
-      return NextResponse.json({ error: schemaCheck.error }, { status: 400 });
-    }
-
-    const { email, action } = schemaCheck.value;
-
-    const rateLimit = await checkServerRateLimit({
-      namespace: 'unsubscribePost',
-      subject: { address, email },
-      limits: UNSUBSCRIBE_RATE_LIMITS,
-      increment: true,
-    });
-
-    if (!rateLimit.allowed) {
-      return NextResponse.json(
-        { error: 'Too many preference update requests. Please wait a moment.' },
-        {
-          status: 429,
-          headers: { 'Retry-After': String(Math.max(1, Math.ceil(rateLimit.retryAfterMs / 1000))) },
-        }
-      );
-    }
-
+    let body;
+    try { body = await request.json(); } catch { return NextResponse.json({ error: 'Payload must be valid JSON.' }, { status: 400 }); }
+    const check = validateSchema(body, {
+      email: { type: 'email', required: true },
+      action: { type: 'enum', allowedValues: ['unsubscribe', 'resubscribe'], defaultValue: 'unsubscribe' },
+      token: { type: 'string', maxLength: 1024 },
+    }, { allowUnknown: false, maxKeys: 3 });
+    if (!check.isValid) return NextResponse.json({ error: check.error }, { status: 400 });
+    const { email, action, token } = check.value;
+    const user = await owner(request, email);
+    if (!user && (action !== 'unsubscribe' || !verifyUnsubscribeToken(token, email))) return NextResponse.json({ error: 'Sign in as the email owner or use a valid unsubscribe link.' }, { status: 403 });
+    const quota = await limit(request, email, true);
+    if (!quota.allowed) return NextResponse.json({ error: 'Too many preference changes. Please wait.' }, { status: 429, headers: { 'Retry-After': String(Math.max(1, Math.ceil(quota.retryAfterMs / 1000))) } });
     const db = getFirebaseAdminFirestore();
-    if (db) {
-      if (action === 'unsubscribe') {
-        await db.collection('unsubscribes').doc(email).set({
-          email,
-          unsubscribedAt: new Date().toISOString(),
-          source: 'email_footer_link',
-        }, { merge: true });
-      } else {
-        await db.collection('unsubscribes').doc(email).delete();
-      }
-    }
-
-    return NextResponse.json({
-      success: true,
-      email,
-      unsubscribed: action === 'unsubscribe',
-      message: action === 'unsubscribe'
-        ? `✅ You have been successfully unsubscribed from SkillBun marketing & retention emails.`
-        : `✅ Email notifications re-enabled for ${email}.`,
+    if (!db) return NextResponse.json({ error: 'Preferences are temporarily unavailable.' }, { status: 503 });
+    const ref = db.collection('unsubscribes').doc(email);
+    await db.runTransaction(async tx => {
+      const now = new Date().toISOString();
+      if (action === 'unsubscribe') tx.set(ref, { email, unsubscribedAt: now, source: user ? 'authenticated_settings' : 'signed_email_link' }, { merge: true });
+      else tx.delete(ref);
+      if (user) tx.set(db.collection('users').doc(user.uid), { marketingConsent: action === 'resubscribe', marketingConsentAt: now, isUnsubscribed: action === 'unsubscribe' }, { merge: true });
     });
-  } catch (err) {
-    console.error('[Unsubscribe API Error]:', err);
-    return NextResponse.json({ error: 'Failed to update email preferences.' }, { status: 500 });
+    return NextResponse.json({ success: true, unsubscribed: action === 'unsubscribe', message: action === 'unsubscribe' ? 'Marketing emails disabled.' : 'You opted in to marketing emails.' });
+  } catch (error) {
+    const requestId = logSafeError('[Email preference update]', error);
+    return NextResponse.json({ error: 'Preferences are temporarily unavailable.', requestId }, { status: 503 });
   }
 }

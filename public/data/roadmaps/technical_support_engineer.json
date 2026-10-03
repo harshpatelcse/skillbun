@@ -249,7 +249,7 @@
             },
             {
               "title": "The Linux Command Line Book",
-              "url": "http://linuxcommand.org/tlcl.php",
+              "url": "https://linuxcommand.org/tlcl.php",
               "type": "article"
             },
             {
@@ -884,8 +884,8 @@
               "type": "article"
             },
             {
-              "title": "From Support Engineer to SRE",
-              "url": "https://sre.google/sre-book/chapters/appendix/career-development/",
+              "title": "Being On-Call: SRE Responsibilities (Google SRE Book)",
+              "url": "https://sre.google/sre-book/being-on-call/",
               "type": "article"
             },
             {

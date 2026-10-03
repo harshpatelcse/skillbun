@@ -21,6 +21,8 @@ const PLATFORM_FACTS = [
     'Roadmap certification becomes available at 60% roadmap progress. The assessment has 10 questions: 3 easy, 5 moderate and 2 hard, with 45 seconds per question. Passing requires at least 7 correct answers out of 10 (70%). Two consecutive failed attempts cause a 1-hour study cooldown. At most 3 attempts are allowed per 24-hour window per roadmap. Earned certificates have a public verification page at /certificate/[id].'],
   ['contact', 'SkillBun contact and founder', '/',
     'Harsh Patel is the founder of SkillBun. Human replies and support communications go to harsh@skillbun.tech. The noreply@skillbun.tech address is for outgoing system mail and does not receive replies.'],
+  ['salary-estimates', 'Roadmap salary estimate scope', '/roadmap',
+    'Roadmap Goal tabs publish indicative SkillBun editorial salary ranges. These are exploration aids, not verified salary surveys or promised offers. USD and India INR figures describe separate markets. The retrieval text omits compensation amounts and cannot verify current salaries.'],
 ];
 
 function plain(value, maxLength) {

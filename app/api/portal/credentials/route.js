@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { getFirebaseAdminAuth, getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import { decryptCredentials } from '@/utils/server/workforceCrypto';
 import { checkServerRateLimit } from '@/utils/server/rateLimitStore';
@@ -36,7 +36,7 @@ export async function GET(request) {
       const auth = getFirebaseAdminAuth();
       decodedToken = await auth.verifyIdToken(token);
     } catch (authErr) {
-      console.error('[PORTAL_CREDENTIALS] Token verification failed:', authErr.message);
+      console.error('[SkillBun server operation]', { code: authErr?.code || 'INTERNAL_ERROR' });
       return NextResponse.json({ error: 'Invalid or expired authentication token.' }, { status: 401 });
     }
 
@@ -81,6 +81,7 @@ export async function GET(request) {
 
     const doc = snapshot.docs[0];
     const data = doc.data();
+    if (data.portal_access_revoked === true) return NextResponse.json({ error: 'Workspace access has been revoked.' }, { status: 403 });
 
     let decrypted = {
       work_email: '',
@@ -92,7 +93,7 @@ export async function GET(request) {
       try {
         decrypted = decryptCredentials(data.encrypted_credentials);
       } catch (cryptoErr) {
-        console.error('[PORTAL_CREDENTIALS] Failed to decrypt credentials for employee', doc.id, cryptoErr);
+        console.error('[Portal credential decryption failed]', { code: 'CREDENTIAL_DECRYPTION_FAILED' });
         return NextResponse.json(
           { error: 'Failed to decrypt workspace credentials on server.' },
           { status: 500 }
@@ -130,7 +131,7 @@ export async function GET(request) {
       },
     });
   } catch (err) {
-    console.error('[PORTAL_CREDENTIALS] Unhandled exception:', err);
+    console.error('[SkillBun server operation]', { code: err?.code || 'INTERNAL_ERROR' });
     return NextResponse.json(
       { error: 'Internal server error while accessing workspace credentials.' },
       { status: 500 }

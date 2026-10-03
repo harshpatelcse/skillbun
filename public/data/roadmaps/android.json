@@ -70,7 +70,7 @@
       }
     ],
     "certifications": [
-      "Google Associate Android Developer Certification",
+      "AWS Certified Developer - Associate",
       "Meta Android Developer Professional Certificate"
     ],
     "interview_focus": [
@@ -78,6 +78,22 @@
       "Jetpack Compose Recomposition Optimization",
       "Coroutines Dispatchers & Exception Handling",
       "Memory Leak Detection with LeakCanary"
+    ],
+    "certification_details": [
+      {
+        "name": "AWS Certified Developer - Associate",
+        "official_url": "https://aws.amazon.com/certification/certified-developer-associate/",
+        "type": "professional_certification",
+        "note": "Optional cloud/backend credential for mobile developers; this is not an Android or Flutter certification.",
+        "checked_on": "2026-10-02"
+      },
+      {
+        "name": "Meta Android Developer Professional Certificate",
+        "official_url": "https://www.coursera.org/professional-certificates/meta-android-developer",
+        "type": "course_certificate",
+        "note": "Course completion credential from Meta on Coursera; distinct from a proctored professional certification.",
+        "checked_on": "2026-10-02"
+      }
     ]
   },
   "stages": [

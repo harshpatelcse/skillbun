@@ -70,7 +70,7 @@
       }
     ],
     "certifications": [
-      "AWS Certified Machine Learning - Specialty",
+      "AWS Certified Machine Learning Engineer - Associate",
       "Databricks Certified Machine Learning Professional"
     ],
     "interview_focus": [
@@ -79,6 +79,15 @@
       "Model Serialization Formats (ONNX, TorchScript, TensorRT, PMML)",
       "Data & Concept Drift Detection Algorithms (Kolmogorov-Smirnov Test, Population Stability Index / PSI)",
       "A/B Testing, Shadow Deployments & Canary Releases for Machine Learning Models"
+    ],
+    "certification_details": [
+      {
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "official_url": "https://aws.amazon.com/certification/certified-machine-learning-engineer-associate/",
+        "type": "professional_certification",
+        "note": "Role-based ML engineering certification; review the current exam guide and experience requirements.",
+        "checked_on": "2026-10-02"
+      }
     ]
   },
   "format": "tree",
@@ -1189,8 +1198,8 @@
               "type": "article"
             },
             {
-              "title": "ML Security Fundamentals (Google)",
-              "url": "https://cloud.google.com/architecture/ml-security-fundamentals",
+              "title": "Security Controls for Generative AI (Google Cloud)",
+              "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/security-controls",
               "type": "article"
             },
             {

@@ -21,7 +21,7 @@ export default function PrivacyPage() {
     <div className="static-page">
       <h1>Privacy Policy</h1>
       <PrivacyPreferences />
-      <p><em>Last updated: September 28, 2026</em></p>
+      <p><em>Last updated: October 2, 2026</em></p>
 
       <p>
         At SkillBun, accessible from <a href="https://skillbun.tech" target="_blank" rel="noopener noreferrer">skillbun.tech</a> (and its subdomains), one of our main priorities is the privacy of our visitors and users. This Privacy Policy outlines the types of information collected and recorded by SkillBun, how we use it, who we share it with, how long we keep it, and the rights you have over your data. It is written to align with India's Digital Personal Data Protection Act, 2023 (DPDP Act) and the IT (Reasonable Security Practices) Rules, 2011, as well as internationally recognised privacy standards such as the EU/UK General Data Protection Regulation (GDPR).
@@ -49,7 +49,7 @@ export default function PrivacyPage() {
       <ul>
         <li><strong>Account Information:</strong> When you register using Google Sign-In or email/password authentication, we receive your email address, display name, and profile picture URL via Firebase Authentication.</li>
         <li><strong>User Profile Data:</strong> During onboarding you may provide your academic degree/program, year of study, learning interests, and target tech roles. Parts of your profile are also cached in your own browser's local storage (for example, your name, email, degree, year, and interest) so the quiz and Bun-Bot can pre-fill context on your device.</li>
-        <li><strong>Progress &amp; Quiz Responses:</strong> We store your answers to the adaptive career quiz, assessment scores, certification attempt history, and completed roadmap nodes.</li>
+        <li><strong>Progress &amp; Quiz Responses:</strong> Career discovery quiz answers and recommendations stay in the current browser session and are not saved for cross-device continuation. Relevant quiz context is sent to the AI gateway when generating guidance. We store roadmap progress, certification assessment answers and scores, and certification attempt history in your account.</li>
         <li><strong>Certification &amp; Proctoring Data:</strong> During proctored certification exams, your on-screen exam watermark displays your name, email address, and IP address to deter impersonation and external assistance. Your IP address is also used (transiently) for exam rate limiting and abuse prevention. Attempt records stored by the server include your email address, roadmap, scores, and timestamps.</li>
         <li><strong>Certificates:</strong> When you earn a certificate, a verification record is created that includes your name, email, user identifier, roadmap title, score, and issue date. Your <em>name and roadmap title</em> are displayed on the public verification page (see Section 8).</li>
         <li><strong>Security &amp; Interaction Data:</strong> We process IP addresses, device/browser signals, and human-verification results (via Cloudflare Turnstile) for security, rate limiting, bot mitigation, and abuse prevention.</li>
@@ -172,7 +172,7 @@ export default function PrivacyPage() {
 
       <h2>12. Children's Privacy</h2>
       <p>
-        SkillBun is designed for university and college technology students, and we do not knowingly collect personal information from children. Under India's DPDP framework, individuals below 18 are treated as children and require verifiable parental or guardian consent; under the EU/UK GDPR, the consent age for children ranges from 13 to 16 depending on the country; and under US COPPA the threshold is 13. We are building age-appropriate consent flows to meet the strictest applicable standard. If you believe a child has provided us with personal information, contact us immediately at <a href="mailto:harsh@skillbun.tech">harsh@skillbun.tech</a> so we can remove it.
+        Self-service SkillBun accounts are currently restricted to adults aged 18 or older. Signup and onboarding require an adult age declaration, and student APIs check the saved eligibility declaration. We store the age band, not your date of birth. This is self-reported eligibility and is not independent age verification. A verified guardian approval flow is not currently available, so younger students must not create an account. If you believe a child has provided us with personal information, contact <a href="mailto:harsh@skillbun.tech">harsh@skillbun.tech</a> so we can investigate and remove it.
       </p>
 
       <h2>13. Security</h2>

@@ -1497,9 +1497,9 @@
 
   .categorySearch {
     order: -1;
-    position: sticky;
-    left: 0;
-    z-index: 2;
+    position: relative;
+    left: auto;
+    z-index: auto;
     flex: 0 0 min(76vw, 310px);
     min-width: min(76vw, 310px);
     min-height: 44px;

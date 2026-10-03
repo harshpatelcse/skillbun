@@ -85,6 +85,14 @@ const nextConfig = {
       },
 
       {
+        source: '/api/(admin|portal|unsubscribe|auth/password-reset)/:path*',
+        headers: [
+          { key: 'Cache-Control', value: 'private, no-store, max-age=0' },
+          { key: 'CDN-Cache-Control', value: 'no-store' },
+          { key: 'Vercel-CDN-Cache-Control', value: 'no-store' },
+        ],
+      },
+      {
         source: '/(logo.png|splash-logo.png|certificate-template.png|favicon.ico)',
         headers: [
           { key: 'Cache-Control', value: 'public, max-age=604800, s-maxage=2592000, stale-while-revalidate=86400' },

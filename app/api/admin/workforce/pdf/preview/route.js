@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { apiError, requireWorkforceAdmin } from '@/utils/server/workforceEmployees';
 import { generateOfferLetterPdf } from '@/utils/server/pdf/offerLetterGenerator';
 import { generateExtensionLetterPdf } from '@/utils/server/pdf/extensionLetterGenerator';
@@ -57,7 +57,7 @@ export async function POST(request) {
       pdfBase64: result.buffer.toString('base64'),
     });
   } catch (error) {
-    console.error('[Workforce PDF Preview API Error]:', error);
-    return apiError(error?.message || 'Failed to generate PDF preview.', 500, 'INTERNAL_ERROR');
+    console.error('[SkillBun server operation]', { code: error?.code || 'INTERNAL_ERROR' });
+    return apiError('Failed to generate PDF preview.', 500, 'INTERNAL_ERROR');
   }
 }

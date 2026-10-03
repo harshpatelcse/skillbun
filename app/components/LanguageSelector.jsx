@@ -76,7 +76,8 @@ export default function LanguageSelector({ variant = 'nav' }) {
         ref={triggerRef}
         type="button"
         onClick={toggleDropdown}
-        aria-label="Select language"
+        aria-label="Select homepage and navigation language"
+        aria-describedby={`${listId}-scope`}
         aria-haspopup="listbox"
         aria-expanded={isOpen}
         aria-controls={isOpen ? listId : undefined}
@@ -120,7 +121,7 @@ export default function LanguageSelector({ variant = 'nav' }) {
           <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
         </svg>
 
-        <span>{currentLocaleInfo.nativeName}</span>
+        <span lang={locale}>{currentLocaleInfo.nativeName}</span>
 
         {/* Chevron SVG Vector Icon */}
         <svg
@@ -142,12 +143,11 @@ export default function LanguageSelector({ variant = 'nav' }) {
           <polyline points="6 9 12 15 18 9" />
         </svg>
       </button>
+      <span id={`${listId}-scope`} className="sr-only">Translations cover the homepage and navigation. Account and learning workflows are currently in English.</span>
 
       {isOpen && (
         <div
-          id={listId}
-          role="listbox"
-          aria-label="Available languages"
+          title="Homepage and navigation translations. Account and learning workflows are in English."
           style={{
             position: 'absolute',
             top: isFooter ? 'auto' : 'calc(100% + 6px)',
@@ -165,6 +165,8 @@ export default function LanguageSelector({ variant = 'nav' }) {
             gap: '2px',
           }}
         >
+          <p lang="en" style={{ margin: '4px 6px 8px', maxWidth: '220px', fontSize: '0.75rem', lineHeight: 1.5, color: 'var(--muted)' }}>Homepage and navigation translations. Account and learning tools are in English.</p>
+          <div id={listId} role="listbox" aria-label="Available languages" style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
           {locales.map((loc, index) => {
             const isSelected = loc.code === locale;
             return (
@@ -202,7 +204,7 @@ export default function LanguageSelector({ variant = 'nav' }) {
                   }
                 }}
               >
-                <span>{loc.nativeName}</span>
+                <span lang={loc.code}>{loc.nativeName}</span>
                 <span
                   style={{
                     fontSize: '0.72rem',
@@ -216,6 +218,7 @@ export default function LanguageSelector({ variant = 'nav' }) {
               </button>
             );
           })}
+          </div>
         </div>
       )}
     </div>

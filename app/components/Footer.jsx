@@ -6,10 +6,10 @@ import LanguageSelector from './LanguageSelector';
 import { useTranslation } from './I18nProvider';
 
 export default function Footer() {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
 
   return (
-    <footer>
+    <footer lang={locale}>
       <div className="footer-grid">
         <div className="footer-brand">
           <div className="logo">

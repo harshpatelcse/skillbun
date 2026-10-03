@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Page Not Found – SkillBun',
+  title: 'Page Not Found',
   description: 'Oops! This page hopped away. Head back to SkillBun and find your perfect tech career path.',
 };
 

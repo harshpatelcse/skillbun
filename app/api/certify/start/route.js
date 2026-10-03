@@ -1,9 +1,11 @@
-import { NextResponse } from 'next/server';
+import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { assertAccountActive } from '@/utils/server/accountLifecycle.mjs';
 import { getFirebaseAdminAuth, getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import { validateSchema } from '@/utils/server/inputValidator';
 import { checkServerRateLimit } from '@/utils/server/rateLimitStore';
 import { getClientAddress } from '@/utils/server/requestUtils';
+import { EXAM_TIMING_PROTOCOL, QUESTION_DURATION_MS } from '@/utils/server/certificationState.mjs';
+import { assertAdultStudent, StudentEligibilityError } from '@/utils/server/studentEligibility.mjs';
 import { verifyHumanProofToken, isHumanProofBoundTo } from '@/utils/server/humanProof';
 import {
   loadRoadmapData,
@@ -55,6 +57,7 @@ export async function POST(request) {
       subject: { uid, address },
       limits: START_RATE_LIMITS,
       increment: true,
+      requireDistributed: process.env.NODE_ENV === 'production',
     });
 
     if (!rateLimit.allowed) {
@@ -106,6 +109,9 @@ export async function POST(request) {
     }
 
     const { roadmapSlug, certName } = schemaCheck.value;
+    const db = getFirebaseAdminFirestore();
+    if (!db) return NextResponse.json({ error: 'Database service unavailable.' }, { status: 503 });
+    await assertAdultStudent(db, uid);
 
     // 4. Load Roadmap Data
     const roadmapData = await loadRoadmapData(roadmapSlug);
@@ -124,10 +130,6 @@ export async function POST(request) {
 
     // 8. Generate and Record Attempt in Firestore
     const attemptId = generateAttemptId();
-    const db = getFirebaseAdminFirestore();
-    if (!db) {
-      return NextResponse.json({ error: 'Database service unavailable.' }, { status: 500 });
-    }
 
     const now = new Date();
     const expiresAt = new Date(now.getTime() + 510 * 1000); // 8.5 minutes (10 * 45s + 60s network buffer)
@@ -140,7 +142,11 @@ export async function POST(request) {
       roadmapTitle: roadmapData.title || roadmapSlug,
       certName: certName.trim(),
       serverQuestions,
-      clientQuestions,
+      timingProtocol: EXAM_TIMING_PROTOCOL,
+      questionIndex: 0,
+      questionDeadline: new Date(now.getTime() + QUESTION_DURATION_MS),
+      recordedAnswers: {},
+      answerReceipts: {},
       status: 'ACTIVE',
       startedAt: now,
       expiresAt,
@@ -199,13 +205,17 @@ export async function POST(request) {
       success: true,
       attemptId,
       roadmapTitle: roadmapData.title || roadmapSlug,
-      questions: clientQuestions,
+      questions: clientQuestions.slice(0, 1),
       totalQuestions: clientQuestions.length,
       timeLimitPerQuestion: 45,
       expiresAt: expiresAt.toISOString(),
+      serverNow: now.getTime(),
+      questionDeadline: new Date(now.getTime() + QUESTION_DURATION_MS).toISOString(),
     }, { headers: { 'Cache-Control': 'private, no-store' } });
   } catch (error) {
-    console.error('[Certify Start API Error]:', error);
+    if (error instanceof StudentEligibilityError) return NextResponse.json({ error: error.message, code: error.code }, { status: error.status });
+    if (error.message === 'Distributed rate limiting is unavailable.') return NextResponse.json({ error: 'Exam service temporarily unavailable.' }, { status: 503 });
+    console.error('[Certify Start API Error]:', { code: error.code || 'EXAM_START_FAILED' });
     return NextResponse.json({ error: 'Failed to initiate certification exam. Please try again.' }, { status: 500 });
   }
 }

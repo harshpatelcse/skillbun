@@ -122,6 +122,9 @@ function CertificationSession({ slug, user, profile, authLoading }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [questionTimer, setQuestionTimer] = useState(45);
+  const [questionDeadlineAt, setQuestionDeadlineAt] = useState(0);
+  const [isAdvancing, setIsAdvancing] = useState(false);
+  const [answerError, setAnswerError] = useState('');
   const [ipAddress, setIpAddress] = useState('127.0.0.1');
   const [examTimestamp, setExamTimestamp] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -141,6 +144,8 @@ function CertificationSession({ slug, user, profile, authLoading }) {
   const nextQuestionRef = useRef(null);
   const advancedQuestionRef = useRef(-1);
   const submittingRef = useRef(false);
+  const lastSubmissionBypassRef = useRef(false);
+  const advancingRef = useRef(false);
   const captchaWidgetRef = useRef(null);
   const sessionActiveRef = useRef(true);
   useEffect(() => {
@@ -250,6 +255,7 @@ function CertificationSession({ slug, user, profile, authLoading }) {
   const submitExam = useCallback(async (finalAnswers, isDevBypass = false) => {
     if (submittingRef.current || !user) return;
     submittingRef.current = true;
+    lastSubmissionBypassRef.current = isDevBypass;
     setIsSubmitting(true);
     setSubmissionStarted(true);
     timerRef.current?.();
@@ -295,8 +301,9 @@ function CertificationSession({ slug, user, profile, authLoading }) {
   }, [user, attemptId, isCurrentSession]);
 
   // Handles moving to next question or triggering submission on question 10
-  const handleNextQuestion = useCallback((forcedVal = undefined) => {
-    if (submittingRef.current || advancedQuestionRef.current === currentIndex) return;
+  const handleNextQuestion = useCallback(async (forcedVal = undefined) => {
+    if (submittingRef.current || advancingRef.current || advancedQuestionRef.current === currentIndex) return;
+    advancingRef.current = true;
     advancedQuestionRef.current = currentIndex;
     timerRef.current?.();
     const selected = forcedVal !== undefined ? forcedVal : selectedAnswers[currentIndex];
@@ -307,14 +314,39 @@ function CertificationSession({ slug, user, profile, authLoading }) {
       [currentIndex]: resolvedChoice,
     };
     setSelectedAnswers(nextAnswers);
-
-    if (currentIndex < 9) {
-      setCurrentIndex((prev) => prev + 1);
-      setQuestionTimer(45);
-    } else {
-      submitExam(nextAnswers, false);
+    setIsAdvancing(true);
+    setAnswerError('');
+    try {
+      const token = await user.getIdToken();
+      if (!isCurrentSession()) return;
+      const requestedAt = Date.now();
+      const response = await fetch('/api/certify/answer', {
+        method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+        body: JSON.stringify({ attemptId, questionIndex: currentIndex, choice: resolvedChoice }),
+        signal: AbortSignal.timeout(15000),
+      });
+      const data = await response.json();
+      if (!isCurrentSession()) return;
+      if (!response.ok || !data.success) throw new Error(data.error || 'Could not save your answer.');
+      if (data.complete) {
+        await submitExam({}, false);
+      } else {
+        const remaining = Math.max(0, Date.parse(data.questionDeadline) - data.serverNow - (Date.now() - requestedAt) / 2);
+        setShuffledQuestions((questions) => { const next = [...questions]; next[data.questionIndex] = data.question; return next; });
+        setQuestionDeadlineAt(Date.now() + remaining);
+        setQuestionTimer(Math.min(45, Math.ceil(remaining / 1000)));
+        setCurrentIndex(data.questionIndex);
+      }
+    } catch (error) {
+      if (isCurrentSession()) {
+        advancedQuestionRef.current = -1;
+        setAnswerError(`${error.message || 'Network error saving answer.'} Retry to continue; the server deadline still applies.`);
+      }
+    } finally {
+      advancingRef.current = false;
+      if (isCurrentSession()) setIsAdvancing(false);
     }
-  }, [currentIndex, selectedAnswers, submitExam]);
+  }, [currentIndex, selectedAnswers, submitExam, attemptId, user, isCurrentSession]);
   useEffect(() => { nextQuestionRef.current = handleNextQuestion; }, [handleNextQuestion]);
 
   // Fetch roadmap, quiz questions, and config on mount
@@ -495,6 +527,7 @@ function CertificationSession({ slug, user, profile, authLoading }) {
       setLoading(true);
       const token = await user.getIdToken();
       if (!isCurrentSession()) return;
+      const requestedAt = Date.now();
       const res = await fetch('/api/certify/start', {
         method: 'POST',
         headers: {
@@ -538,14 +571,16 @@ function CertificationSession({ slug, user, profile, authLoading }) {
       setAttemptId(data.attemptId);
       setExamTimestamp(new Date().toISOString());
       setShuffledQuestions(data.questions || []);
+      const remaining = Math.max(0, Date.parse(data.questionDeadline) - data.serverNow - (Date.now() - requestedAt) / 2);
+      setQuestionDeadlineAt(Date.now() + remaining);
       setCurrentIndex(0);
       advancedQuestionRef.current = -1;
       setSelectedAnswers({});
-      setQuestionTimer(45);
+      setQuestionTimer(Math.min(45, Math.ceil(remaining / 1000)));
       setQuizState('active');
       trackEvent('certification_quiz_started', {
         roadmap_slug: slug,
-        question_count: (data.questions || []).length,
+        question_count: data.totalQuestions,
       });
       setViolationCount(0);
       violationRef.current = 0;
@@ -561,14 +596,15 @@ function CertificationSession({ slug, user, profile, authLoading }) {
 
   // Live Timer logic (using absolute time to prevent throttling on tab switch)
   useEffect(() => {
-    if (quizState !== 'active') return;
+    if (quizState !== 'active' || !questionDeadlineAt) return;
     const stop = startCertificationQuestionTimer({
+      deadlineAt: questionDeadlineAt,
       onTick: setQuestionTimer,
       onExpire: () => nextQuestionRef.current?.(-1),
     });
     timerRef.current = stop;
     return stop;
-  }, [quizState, currentIndex]);
+  }, [quizState, currentIndex, questionDeadlineAt]);
 
   const handleSelectAnswer = (optionIdx) => {
     setSelectedAnswers({
@@ -945,7 +981,7 @@ function CertificationSession({ slug, user, profile, authLoading }) {
                       key={oIdx}
                       className={`${styles.optionBtn} ${isSelected ? styles.selected : ''}`}
                       onClick={() => handleSelectAnswer(oIdx)}
-                      disabled={showBlurModal || submissionStarted}
+                      disabled={showBlurModal || submissionStarted || isAdvancing || Boolean(answerError)}
                     >
                       <span className={styles.optionLetter}>{['A', 'B', 'C', 'D'][oIdx]}</span>
                       <span className={styles.optionText}>{showBlurModal ? "••••••••••••••••" : opt}</span>
@@ -956,12 +992,13 @@ function CertificationSession({ slug, user, profile, authLoading }) {
             </div>
 
             <div className={styles.quizActions}>
+              {answerError && <p role="alert">{answerError}</p>}
               <button
                 className={styles.primaryButton}
-                onClick={() => handleNextQuestion()}
-                disabled={selectedAnswers[currentIndex] === undefined || isSubmitting || showBlurModal}
+                onClick={() => submissionStarted ? submitExam({}, lastSubmissionBypassRef.current) : handleNextQuestion()}
+                disabled={(!submissionStarted && selectedAnswers[currentIndex] === undefined) || isSubmitting || isAdvancing || showBlurModal}
               >
-                {isSubmitting ? 'Submitting...' : currentIndex < 9 ? 'Next Question' : submissionStarted ? 'Retry Submission' : 'Submit Exam'}
+                {isSubmitting ? 'Submitting...' : isAdvancing ? 'Saving answer...' : answerError ? 'Retry Answer' : currentIndex < 9 ? 'Next Question' : submissionStarted ? 'Retry Submission' : 'Submit Exam'}
               </button>
             </div>
           </section>

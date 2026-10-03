@@ -1,5 +1,5 @@
 import { FieldPath } from 'firebase-admin/firestore'
-import { NextResponse } from 'next/server'
+import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 
 import { getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin'
 import {
@@ -96,7 +96,7 @@ export async function GET(request) {
 
     return createCachedJsonResponse(request, result)
   } catch (error) {
-    console.error('[Workforce Employees GET]', error)
+    console.error('[SkillBun server operation]', { code: error?.code || 'INTERNAL_ERROR' });
     return apiError('Unable to load employee records.', 500, 'INTERNAL_ERROR')
   }
 }
@@ -242,17 +242,19 @@ export async function POST(request) {
           message: `Candidate added & Offer letter (${referenceId}) dispatched to ${prepared.value.personal_email}!`,
         }, { status: 201 })
       } catch (smtpError) {
-        console.error('[Workforce Employee POST - Zoho SMTP Failed]', smtpError)
+        console.error('[SkillBun server operation]', { code: smtpError?.code || 'INTERNAL_ERROR' });
 
         try {
           await employeeRef.update({
             status: 'DISPATCH_FAILED',
+            action_lock: { action: 'offer', requiresReview: true, expiresAt: 0 },
+            delivery_uncertain: true,
             offer_reference_id: referenceId,
-            last_dispatch_error: smtpError?.message || 'SMTP transmission failure',
+            last_dispatch_error: 'SMTP transmission failure',
             updated_at: now,
           })
         } catch (updateErr) {
-          console.error('[Failed to update employee status to DISPATCH_FAILED]', updateErr)
+          console.error('[SkillBun server operation]', { code: updateErr?.code || 'INTERNAL_ERROR' });
         }
 
         return NextResponse.json({
@@ -260,17 +262,18 @@ export async function POST(request) {
           id: employeeRef.id,
           offerDispatched: false,
           fallbackDownload: true,
+          deliveryUncertain: true,
           referenceId,
           filename,
           pdfBase64: buffer.toString('base64'),
           recipient: prepared.value.personal_email,
           subject: emailPayload.subject,
-          error: `Candidate created, but SMTP Dispatch failed: ${smtpError?.message || 'Network error'}. Manual PDF download ready.`,
+          error: 'Candidate created, but SMTP delivery could not be confirmed. Manual PDF download ready.',
           message: `Candidate created, but email dispatch failed. Manual PDF download is ready.`,
         }, { status: 201 })
       }
     } catch (pdfGenError) {
-      console.error('[Workforce Employee POST - PDF Generation Failed]', pdfGenError)
+      console.error('[SkillBun server operation]', { code: pdfGenError?.code || 'INTERNAL_ERROR' });
       return NextResponse.json({
         success: true,
         id: employeeRef.id,
@@ -282,7 +285,7 @@ export async function POST(request) {
     if (error?.code === 'DUPLICATE_EMAIL') {
       return apiError('An employee with this personal email already exists.', 409, 'DUPLICATE_EMAIL')
     }
-    console.error('[Workforce Employees POST]', error)
+    console.error('[SkillBun server operation]', { code: error?.code || 'INTERNAL_ERROR' });
     return apiError('Unable to create the employee record.', 500, 'INTERNAL_ERROR')
   }
 }

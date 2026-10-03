@@ -1,4 +1,5 @@
-import { NextResponse } from 'next/server';
+import { assertWorkforceAction, transitionWorkforceEmployee, finishWorkforceAction, WorkforcePolicyError } from '@/utils/server/workforcePolicy.mjs';
+import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import {
   apiError,
@@ -74,6 +75,8 @@ export async function POST(request) {
       return apiError('new_contract_end_date must be a valid YYYY-MM-DD date.', 400, 'VALIDATION_ERROR');
     }
 
+    assertWorkforceAction(employeeData, 'extension', targetEndDate);
+
     // 1. Generate unique reference ID & active template version
     const referenceId = generateWorkforceId(WORKFORCE_PREFIXES.EXTENSION);
     const activeVersion = getActiveTemplateVersion(DOCUMENT_CATEGORIES.EXTENSION_LETTER);
@@ -101,6 +104,13 @@ export async function POST(request) {
 
     const now = new Date();
 
+    const docRef = db.collection('workforce_docs').doc(referenceId);
+    await transitionWorkforceEmployee(db, employeeRef, {
+      action: 'extension', nextStatus: 'EXTENDED', expectedStatus: employeeData.status, newEndDate: targetEndDate,
+      patch: { contract_end_date: new Date(`${targetEndDate}T00:00:00.000Z`), extension_reference_id: referenceId },
+      document: { ref: docRef, data: { id: referenceId, employee_id: employeeId, doc_type: 'EXTENSION_LETTER', template_version: activeVersion, title: 'Extension of Internship Tenure', status: 'ISSUED', metadata_snapshot: metadataSnapshot, issued_by: admin.email || admin.uid, issued_at: now } },
+    });
+
     // 4. Attempt Email Dispatch via Zoho SMTP
     try {
       await sendMailWithAttachment({
@@ -119,34 +129,8 @@ export async function POST(request) {
         ],
       });
 
-      // 5. Successful Dispatch -> Record in /workforce_docs and update /employees
-      const workforceDocs = db.collection('workforce_docs');
-      const docRef = workforceDocs.doc(referenceId);
-
-      const batch = db.batch();
-
-      batch.create(docRef, {
-        id: referenceId,
-        employee_id: employeeId,
-        doc_type: 'EXTENSION_LETTER',
-        template_version: activeVersion,
-        title: 'Extension of Internship Tenure',
-        status: 'DISPATCHED',
-        metadata_snapshot: metadataSnapshot,
-        dispatched_to: employeeData.personal_email,
-        issued_by: admin.email || admin.uid || 'admin',
-        issued_at: now,
-      });
-
-      batch.update(employeeRef, {
-        status: 'EXTENDED',
-        contract_end_date: new Date(`${targetEndDate}T00:00:00.000Z`),
-        extension_reference_id: referenceId,
-        extension_dispatched_at: now,
-        updated_at: now,
-      });
-
-      await batch.commit();
+      await docRef.update({ status: 'DISPATCHED', dispatched_to: employeeData.personal_email, dispatched_at: now });
+      await finishWorkforceAction(db, employeeRef, 'extension', { extension_dispatched_at: now });
 
       await Promise.all([
         invalidateCacheTag('admin:workforce'),
@@ -161,24 +145,29 @@ export async function POST(request) {
         message: `Extension Letter (${referenceId}) dispatched successfully to ${employeeData.personal_email}.`,
       });
     } catch (smtpError) {
-      console.error('[Zoho SMTP Extension Dispatch Failed]', smtpError);
+      console.error('[SkillBun server operation]', { code: smtpError?.code || 'INTERNAL_ERROR' });
+
+      await docRef.update({ status: 'DELIVERY_UNKNOWN' });
+      await finishWorkforceAction(db, employeeRef, 'extension', { delivery_uncertain: true });
 
       return NextResponse.json(
         {
           success: false,
           fallbackDownload: true,
+          deliveryUncertain: true,
           referenceId,
           filename,
           pdfBase64: buffer.toString('base64'),
           recipient: employeeData.personal_email,
           subject: emailPayload.subject,
-          error: `SMTP Dispatch failed: ${smtpError?.message || 'Unknown network error'}. Manual PDF download ready.`,
+          error: 'SMTP delivery could not be confirmed. Review the dispatch before retrying. Manual PDF download ready.',
         },
         { status: 200 }
       );
     }
   } catch (error) {
-    console.error('[Workforce Extension Dispatch Error]', error);
-    return apiError(error?.message || 'Unable to process extension letter dispatch.', 500, 'INTERNAL_ERROR');
+    if (error instanceof WorkforcePolicyError) return apiError(error.message, error.status, error.code);
+    console.error('[SkillBun server operation]', { code: error?.code || 'INTERNAL_ERROR' });
+    return apiError('Unable to process extension letter dispatch.', 500, 'INTERNAL_ERROR');
   }
 }

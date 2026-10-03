@@ -1,3 +1,4 @@
+import { unsubscribeUrl } from '../../utils/server/emailPreferences.mjs';
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import fs from 'node:fs/promises';
@@ -93,7 +94,7 @@ test('in-flight dispatch completion and review cannot recreate an erased profile
 });
 
 test('a student has one in-flight recommended dispatch across concurrent callers', async () => {
-  const db = createDb({ 'users/student-1': { sentEmailHistory: [] } });
+  const db = createDb({ 'users/student-1': { marketingConsent: true, sentEmailHistory: [] } });
   const claims = await Promise.all([claimRecommendedEmailDispatch(claimArgs(db)), claimRecommendedEmailDispatch(claimArgs(db))]);
   assert.deepEqual(claims.map(claim => claim.kind).sort(), ['claimed', 'in_progress']);
   assert.equal(db.read('emailDispatchLocks', 'student-1').status, 'SENDING');
@@ -102,7 +103,7 @@ test('a student has one in-flight recommended dispatch across concurrent callers
 test('an expired sending lock becomes review-only and can be resolved as sent', async () => {
   const now = 2_000_000_000_000;
   const db = createDb({
-    'users/student-1': { sentEmailHistory: [{ templateId: 'welcome_v1', isTest: true }] },
+    'users/student-1': { marketingConsent: true, sentEmailHistory: [{ templateId: 'welcome_v1', isTest: true }] },
     'emailDispatchLocks/student-1': {
       status: 'SENDING', owner: 'old-owner', uid: 'student-1', templateId: 'reengagement_v1',
       category: 'reengagement', subject: 'Continue', createdAt: now - EMAIL_DISPATCH_LOCK_MS - 10,
@@ -122,7 +123,7 @@ test('an expired sending lock becomes review-only and can be resolved as sent', 
 });
 
 test('active locks cannot be manually resolved and a confirmed non-send releases the lock', async () => {
-  const db = createDb({ 'users/student-1': { sentEmailHistory: [] } });
+  const db = createDb({ 'users/student-1': { marketingConsent: true, sentEmailHistory: [] } });
   const claim = await claimRecommendedEmailDispatch(claimArgs(db));
   const pending = await resolveEmailDispatch({ db, uid: 'student-1', resolution: 'not_sent', now: 2_000_000_000_001 });
   assert.equal(pending.kind, 'in_progress');
@@ -138,30 +139,30 @@ test('active locks cannot be manually resolved and a confirmed non-send releases
   assert.equal(typeof claim.owner, 'string');
 });
 
-test('unsubscribe, duplicate variation, and 72-hour gap checks remain enforced unless explicitly overridden', async () => {
+test('unsubscribe cannot be overridden, while duplicate variation and gap checks remain enforced', async () => {
   const now = 2_000_000_000_000;
   const unsubscribed = createDb({
-    'users/student-1': { sentEmailHistory: [] },
+    'users/student-1': { marketingConsent: true, sentEmailHistory: [] },
     'unsubscribes/student@example.com': { unsubscribedAt: now },
   });
   assert.equal((await claimRecommendedEmailDispatch(claimArgs(unsubscribed, { now }))).kind, 'unsubscribed');
-  assert.equal((await claimRecommendedEmailDispatch(claimArgs(unsubscribed, { now, forceOverride: true }))).kind, 'claimed');
-  assert.equal(unsubscribed.read('emailDispatchLocks', 'student-1').forceOverride, true);
+  assert.equal((await claimRecommendedEmailDispatch(claimArgs(unsubscribed, { now, forceOverride: true }))).kind, 'unsubscribed');
+  assert.equal(unsubscribed.read('emailDispatchLocks', 'student-1'), undefined);
 
-  const duplicate = createDb({ 'users/student-1': { sentEmailHistory: [{ templateId: 'reengagement_v1', sentAt: now - 4 * 86400000 }] } });
+  const duplicate = createDb({ 'users/student-1': { marketingConsent: true, sentEmailHistory: [{ templateId: 'reengagement_v1', sentAt: now - 4 * 86400000 }] } });
   assert.equal((await claimRecommendedEmailDispatch(claimArgs(duplicate, { now }))).kind, 'already_sent');
 
-  const gap = createDb({ 'users/student-1': { sentEmailHistory: [{ templateId: 'welcome_v1', sentAt: now - 12 * 60 * 60 * 1000 }] } });
+  const gap = createDb({ 'users/student-1': { marketingConsent: true, sentEmailHistory: [{ templateId: 'welcome_v1', sentAt: now - 12 * 60 * 60 * 1000 }] } });
   assert.equal((await claimRecommendedEmailDispatch(claimArgs(gap, { now }))).kind, 'gap');
   assert.equal((await claimRecommendedEmailDispatch(claimArgs(gap, { now, forceOverride: true }))).kind, 'claimed');
 
-  const malformedHistory = createDb({ 'users/student-1': { sentEmailHistory: [null, 42, { templateId: 123, sentAt: 'not-a-date' }] } });
+  const malformedHistory = createDb({ 'users/student-1': { marketingConsent: true, sentEmailHistory: [null, 42, { templateId: 123, sentAt: 'not-a-date' }] } });
   assert.equal((await claimRecommendedEmailDispatch(claimArgs(malformedHistory, { now }))).kind, 'claimed');
 });
 
 test('successful finalization is idempotent and records a server-side dispatch log', async () => {
   const db = createDb({
-    'users/student-1': { sentEmailHistory: [{ templateId: 'welcome_v1', isTest: true }] },
+    'users/student-1': { marketingConsent: true, sentEmailHistory: [{ templateId: 'welcome_v1', isTest: true }] },
   });
   const claim = await claimRecommendedEmailDispatch(claimArgs(db, { now: 2_000_000_000_000, forceOverride: true }));
   const first = await finalizeRecommendedEmailDispatch({ db, uid: 'student-1', owner: claim.owner, messageId: 'smtp-id', now: 2_000_000_000_010 });
@@ -204,7 +205,7 @@ test('the admin resolve route returns retry timing for an active dispatch', asyn
 });
 
 test('the send route holds an SMTP-timeout recipient for review instead of sending twice', async () => {
-  const db = createDb({ 'users/student-1': { sentEmailHistory: [] } });
+  const db = createDb({ 'users/student-1': { marketingConsent: true, sentEmailHistory: [] } });
   let sendAttempts = 0;
   let sendMode = 'rejected';
   let source = await fs.readFile(new URL('../../app/api/admin/emails/send/route.js', import.meta.url), 'utf8');
@@ -219,11 +220,11 @@ test('the send route holds an SMTP-timeout recipient for review instead of sendi
     'buildActivationWelcomeEmail', 'buildExtensionDispatchEmail', 'buildTerminationDispatchEmail',
     'getTransporter', 'getPasswordResetFrom', 'emailCategory', 'claimRecommendedEmailDispatch',
     'finalizeRecommendedEmailDispatch', 'markEmailDispatchUnknown', 'releaseEmailDispatch',
-    'resolveEmailDispatch',
+    'resolveEmailDispatch', 'unsubscribeUrl',
   ];
   const values = [
     { json: Response.json },
-    () => ({ verifyIdToken: async () => ({ uid: 'admin', email: 'admin@example.com' }) }),
+    () => ({ verifyIdToken: async () => ({ uid: 'admin', email: 'admin@example.com' }), getUserByEmail: async () => ({ uid: 'student-1' }) }),
     () => db,
     async () => true,
     async () => ({ allowed: true }),
@@ -248,7 +249,7 @@ test('the send route holds an SMTP-timeout recipient for review instead of sendi
     finalizeRecommendedEmailDispatch,
     markEmailDispatchUnknown,
     releaseEmailDispatch,
-    resolveEmailDispatch,
+    resolveEmailDispatch, unsubscribeUrl,
   ];
   const post = new Function(...names, source + '; return POST;')(...values);
   const request = body => new Request('http://localhost/api/admin/emails/send', {

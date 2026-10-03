@@ -1,4 +1,5 @@
-import { NextResponse } from 'next/server';
+import { assertWorkforceAction, transitionWorkforceEmployee, finishWorkforceAction, WorkforcePolicyError } from '@/utils/server/workforcePolicy.mjs';
+import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import {
   apiError,
@@ -48,6 +49,8 @@ export async function POST(request) {
     }
 
     const employeeData = employeeDoc.data();
+    assertWorkforceAction(employeeData, 'activate');
+    let credentialPatch = {};
     const now = new Date();
 
     // 1. Process and save any provided Zoho credentials
@@ -65,13 +68,9 @@ export async function POST(request) {
         };
         try {
           const encrypted = encryptCredentials(credentials);
-          await employeeRef.update({
-            encrypted_credentials: encrypted,
-            work_email: workEmail || employeeData.work_email || null,
-            updated_at: now,
-          });
+          credentialPatch = { encrypted_credentials: encrypted, work_email: workEmail || employeeData.work_email || null };
         } catch (encErr) {
-          console.warn('[Activation] Could not persist credentials:', encErr.message);
+          console.warn('[SkillBun server operation]', { code: encErr?.code || 'INTERNAL_ERROR' });
           return apiError('Workspace credentials could not be saved. Please try again after checking the server encryption configuration.', 503, 'INTERNAL_ERROR');
         }
       }
@@ -82,9 +81,11 @@ export async function POST(request) {
       try {
         credentials = decryptCredentials(employeeData.encrypted_credentials);
       } catch (decErr) {
-        console.warn('[Activation] Could not decrypt credentials:', decErr.message);
+        console.warn('[SkillBun server operation]', { code: decErr?.code || 'INTERNAL_ERROR' });
       }
     }
+
+    await transitionWorkforceEmployee(db, employeeRef, { action: 'activate', nextStatus: 'ACTIVE', expectedStatus: employeeData.status, patch: { ...credentialPatch, activated_at: now } });
 
     // 2. Dispatch Welcome & Workspace Access Email if not skipped
     let emailSent = false;
@@ -129,17 +130,12 @@ export async function POST(request) {
           created_at: now,
         });
       } catch (mailErr) {
-        console.error('[Activation] Email dispatch error:', mailErr);
-        emailError = mailErr.message;
+        console.error('[SkillBun server operation]', { code: mailErr?.code || 'INTERNAL_ERROR' });
+        emailError = 'Email delivery failed. Review server configuration before retrying.';
       }
     }
 
-    // 3. Update employee status to ACTIVE
-    await employeeRef.update({
-      status: 'ACTIVE',
-      activated_at: now,
-      updated_at: now,
-    });
+    await finishWorkforceAction(db, employeeRef, 'activate', { delivery_uncertain: Boolean(emailError) });
 
     await Promise.all([
       invalidateCacheTag('admin:workforce'),
@@ -151,12 +147,14 @@ export async function POST(request) {
       status: 'ACTIVE',
       emailSent,
       emailError,
+      deliveryUncertain: Boolean(emailError),
       message: emailSent
         ? `Employee activated & Welcome / Workspace access email dispatched to ${employeeData.personal_email}!`
         : `Employee activated successfully.${emailError ? ' (Note: Email delivery failed: ' + emailError + ')' : ''}`,
     });
   } catch (err) {
-    console.error('[Workforce Activation Error]', err);
-    return apiError('Failed to activate employee: ' + err.message, 500, 'INTERNAL_ERROR');
+    if (err instanceof WorkforcePolicyError) return apiError(err.message, err.status, err.code);
+    console.error('[SkillBun server operation]', { code: err?.code || 'INTERNAL_ERROR' });
+    return apiError('Failed to activate employee. Please try again.', 500, 'INTERNAL_ERROR');
   }
 }

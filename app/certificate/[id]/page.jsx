@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation';
 import { CertificateLookupError, fetchPublicCertificate } from '@/utils/client/publicCertificate.mjs';
 import { certificateShareUrl, linkedInCertificateUrl } from '@/utils/client/certificateSharing.mjs';
 import Link from 'next/link';
+import AccessibleModal from '../../components/AccessibleModal';
 import { cinzel, pixelify } from '@/app/fonts';
 import { triggerDocumentPrint } from '@/utils/client/printAndDownload';
 import { normalizeDocumentCategory, resolveTemplateVersion } from '@/utils/common/docTemplateRegistry';
@@ -311,15 +312,15 @@ function CertificateContent({ id }) {
         />
 
         <p className={styles.verificationNote}>
-          SkillBun credentials are fully secure and backed by cryptographic record IDs in our database. View verification details anytime at: <code>{typeof window !== 'undefined' ? window.location.href : `/certificate/${cert.id}`}</code>.
+          SkillBun credentials are issued by the server and linked to an individual verification record. View verification details anytime at: <code>{typeof window !== 'undefined' ? window.location.href : `/certificate/${cert.id}`}</code>.
         </p>
 
         {showShareModal && (
-          <div className={styles.modalOverlay} onClick={() => setShowShareModal(false)}>
+          <AccessibleModal className={styles.modalOverlay} labelledBy="certificate-share-title" initialFocus="#post-text-area" dismissOnBackdrop onClose={() => setShowShareModal(false)}>
             <div className={styles.modalCard} onClick={(e) => e.stopPropagation()}>
               <div className={styles.modalHeader}>
-                <h3>Share Certificate on LinkedIn</h3>
-                <button className={styles.closeBtn} onClick={() => setShowShareModal(false)}>&times;</button>
+                <h3 id="certificate-share-title">Share Certificate on LinkedIn</h3>
+                <button className={styles.closeBtn} aria-label="Close certificate sharing" onClick={() => setShowShareModal(false)}>&times;</button>
               </div>
               <div className={styles.modalBody}>
                 <label htmlFor="post-text-area">Customize your post text:</label>
@@ -359,7 +360,7 @@ function CertificateContent({ id }) {
                 </button>
               </div>
             </div>
-          </div>
+          </AccessibleModal>
         )}
       </div>
     </main>

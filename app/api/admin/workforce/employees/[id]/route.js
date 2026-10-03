@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server'
+import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 
 import { getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin'
 import {
@@ -107,7 +107,7 @@ export async function PATCH(request, { params }) {
     if (error?.code === 'DUPLICATE_EMAIL') return apiError('An employee with this personal email already exists.', 409, 'DUPLICATE_EMAIL')
     if (error?.code === 'INVALID_STATUS_TRANSITION') return apiError('This employee status transition is not allowed.', 400, 'VALIDATION_ERROR')
     if (error?.code === 'INVALID_CONTRACT_DATES') return apiError('Contract end date must be on or after joining date.', 400, 'VALIDATION_ERROR')
-    console.error('[Workforce Employee PATCH]', error)
+    console.error('[SkillBun server operation]', { code: error?.code || 'INTERNAL_ERROR' });
     return apiError('Unable to update the employee record.', 500, 'INTERNAL_ERROR')
   }
 }
@@ -217,7 +217,7 @@ export async function DELETE(request, { params }) {
     })
   } catch (error) {
     if (error?.code === 'NOT_FOUND') return apiError('Employee record not found.', 404, 'NOT_FOUND')
-    console.error('[Workforce Employee DELETE]', error)
+    console.error('[SkillBun server operation]', { code: error?.code || 'INTERNAL_ERROR' });
     return apiError('Unable to delete the employee record.', 500, 'INTERNAL_ERROR')
   }
 }

@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import {
   apiError,
@@ -112,7 +112,7 @@ export async function POST(request) {
       replyTo: payload.replyTo || 'harsh@skillbun.tech',
     });
   } catch (error) {
-    console.error('[Workforce Email Preview Error]', error);
-    return apiError(error?.message || 'Unable to generate email preview.', 500, 'INTERNAL_ERROR');
+    console.error('[SkillBun server operation]', { code: error?.code || 'INTERNAL_ERROR' });
+    return apiError('Unable to generate email preview.', 500, 'INTERNAL_ERROR');
   }
 }

@@ -3,19 +3,21 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useAuth } from '../components/AuthProvider';
+import { normalizeInternalPath } from '@/utils/shared/routes';
 
 export default function CounsellorPage() {
   const router = useRouter();
   const { user, profile, authLoading, profileLoading, isProfileComplete } = useAuth();
 
   useEffect(() => {
+    const destination = normalizeInternalPath(`/counsellor${window.location.search}`, '/counsellor');
     if (!authLoading && !user) {
-      router.replace('/auth?next=/counsellor');
+      router.replace(`/auth?next=${encodeURIComponent(destination)}`);
       return;
     }
 
     if (!authLoading && !profileLoading && user && !isProfileComplete) {
-      router.replace('/onboarding?next=/counsellor');
+      router.replace(`/onboarding?next=${encodeURIComponent(destination)}`);
     }
   }, [authLoading, isProfileComplete, profileLoading, router, user]);
 
@@ -210,6 +212,7 @@ export default function CounsellorPage() {
 
             {/* Input area wrapper containing prompt starters and input console */}
             <div className="chat-input-wrapper">
+              <p className="chat-session-note">This chat stays in this tab until you refresh or leave. Copy any advice you want to keep.</p>
               <div className="chat-suggestions-wrapper" id="chatSuggestionsWrapper">
                 <div className="chat-suggestions-header">
                   <span id="suggestionsTitle">

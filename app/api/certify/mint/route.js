@@ -1,7 +1,8 @@
-import { NextResponse } from 'next/server';
+import { assertWorkforceCertificate, WorkforcePolicyError } from '@/utils/server/workforcePolicy.mjs';
+import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { mintExamCertificate, ExamError } from '@/utils/server/certificationState.mjs';
 import { getFirebaseAdminAuth, getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
-import { validateSchema } from '@/utils/server/inputValidator';
+import { validateSchema, validateFirestoreId } from '@/utils/server/inputValidator';
 import { checkServerRateLimit } from '@/utils/server/rateLimitStore';
 import { getClientAddress } from '@/utils/server/requestUtils';
 import { isUserAuthorizedAdmin } from '@/utils/server/workforceEmployees';
@@ -118,6 +119,27 @@ export async function POST(request) {
         return NextResponse.json({ error: 'Only administrators can issue workforce credentials.' }, { status: 403 });
       }
 
+      const workforceBody = { ...rawBody, cert_type: certType };
+      for (const field of ['start_date', 'end_date', 'recommendation_text', 'issued_by']) {
+        if (workforceBody[field] === '' || workforceBody[field] === null) delete workforceBody[field];
+      }
+      const calendarDate = value => {
+        const date = typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) ? new Date(`${value}T00:00:00.000Z`) : null;
+        return { isValid: Boolean(date && Number.isFinite(date.getTime()) && date.toISOString().slice(0, 10) === value), value, error: 'Credential dates must be valid YYYY-MM-DD dates.' };
+      };
+      const workforceCheck = validateSchema(workforceBody, {
+        cert_type: { type: 'enum', required: true, allowedValues: ['INTERNSHIP', 'TRAINING', 'LOR'] },
+        employee_id: { required: true, validator: value => validateFirestoreId(value, { fieldName: 'Employee ID' }) },
+        name: { type: 'string', required: true, minLength: 2, maxLength: 100 },
+        email: { type: 'email', required: true },
+        stream_or_track: { type: 'string', required: true, minLength: 1, maxLength: 150 },
+        start_date: { validator: calendarDate },
+        end_date: { validator: calendarDate },
+        recommendation_text: { type: 'string', minLength: 20, maxLength: 5000 },
+        issued_by: { type: 'string', minLength: 1, maxLength: 100 },
+      }, { allowUnknown: false, maxKeys: 9 });
+      if (!workforceCheck.isValid) return NextResponse.json({ error: workforceCheck.error }, { status: 400 });
+
       const {
         employee_id,
         name,
@@ -127,7 +149,7 @@ export async function POST(request) {
         end_date,
         recommendation_text,
         issued_by,
-      } = rawBody;
+      } = workforceCheck.value;
 
       if (!employee_id || typeof employee_id !== 'string') {
         return NextResponse.json({ error: 'employee_id is required.' }, { status: 400 });
@@ -145,6 +167,8 @@ export async function POST(request) {
         return NextResponse.json({ error: 'Stream or training track title is required.' }, { status: 400 });
       }
 
+      if (start_date && end_date && start_date > end_date) return NextResponse.json({ error: 'Credential end date must be on or after its start date.' }, { status: 400 });
+
       // Check employee record
       const employeeDoc = await db.collection('employees').doc(employee_id.trim()).get();
       if (!employeeDoc.exists) {
@@ -152,8 +176,15 @@ export async function POST(request) {
       }
 
       const employeeData = employeeDoc.data();
-      if (employeeData.status === 'TERMINATED') {
-        return NextResponse.json({ error: 'Cannot issue credentials to a terminated employee.' }, { status: 400 });
+      assertWorkforceCertificate(employeeData, certType);
+      const recipientEmail = String(employeeData.personal_email || '').trim().toLowerCase();
+      if (candidateEmail !== recipientEmail || name.trim() !== employeeData.full_name) return NextResponse.json({ error: 'Candidate identity must match the employee record.' }, { status: 400 });
+      let recipientUid = null;
+      try {
+        const account = await getFirebaseAdminAuth().getUserByEmail(recipientEmail);
+        if (account.emailVerified && !account.disabled) recipientUid = account.uid;
+      } catch (lookupError) {
+        if (lookupError?.code !== 'auth/user-not-found') throw lookupError;
       }
 
       if (certType === 'LOR') {
@@ -177,9 +208,10 @@ export async function POST(request) {
         display_id: displayId,
         cert_type: certType,
         employee_id: employee_id.trim(),
-        uid: employeeData.user_uid || uid,
-        name: name.trim(),
-        email: candidateEmail.trim().toLowerCase(),
+        ...(recipientUid ? { uid: recipientUid } : {}),
+        name: employeeData.full_name,
+        email: recipientEmail,
+        issued_by_uid: uid,
         department: employeeData.department || '',
         designation: employeeData.designation || '',
         stream_or_track: stream_or_track.trim(),
@@ -194,7 +226,14 @@ export async function POST(request) {
         updatedAt: now,
       };
 
-      await certRef.set(certData);
+      await db.runTransaction(async tx => {
+        const currentEmployee = await tx.get(db.collection('employees').doc(employee_id));
+        if (!currentEmployee.exists) throw new WorkforcePolicyError('Employee record not found.', 404);
+        const current = currentEmployee.data();
+        assertWorkforceCertificate(current, certType);
+        if (current.personal_email !== employeeData.personal_email || current.full_name !== employeeData.full_name) throw new WorkforcePolicyError('Employee identity changed. Refresh before issuing.');
+        tx.create(certRef, certData);
+      });
 
       try {
         const { invalidateCacheTag } = await import('@/utils/server/redisCache');
@@ -216,8 +255,9 @@ export async function POST(request) {
 
     return NextResponse.json({ error: `Invalid cert_type: "${certType}".` }, { status: 400 });
   } catch (error) {
+    if (error instanceof WorkforcePolicyError) return NextResponse.json({ error: error.message }, { status: error.status });
     if (error instanceof ExamError) return NextResponse.json({ error: error.message }, { status: error.status });
-    console.error('[Certify Mint API Error]:', error);
+    console.error('[SkillBun server operation]', { code: error?.code || 'INTERNAL_ERROR' });
     return NextResponse.json({ error: 'Failed to mint certificate. Please try again.' }, { status: 500 });
   }
 }

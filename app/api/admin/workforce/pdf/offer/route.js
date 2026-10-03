@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import {
   apiError,
@@ -55,7 +55,7 @@ export async function POST(request) {
           historicalVersion = wfData.template_version || undefined;
         }
       } catch (wfErr) {
-        console.warn('[PDF Offer] Could not read historical workforce_docs snapshot:', wfErr.message);
+        console.warn('[PDF Offer] Historical snapshot unavailable.', { code: 'SNAPSHOT_UNAVAILABLE' });
       }
     }
 
@@ -91,11 +91,13 @@ export async function POST(request) {
         'Content-Type': 'application/pdf',
         'Content-Disposition': `attachment; filename="${filename}"`,
         'X-SkillBun-Reference-Id': referenceId,
-        'Cache-Control': 'no-store, max-age=0',
+        'Cache-Control': 'private, no-store, max-age=0',
+        'CDN-Cache-Control': 'no-store',
+        'Vercel-CDN-Cache-Control': 'no-store',
       },
     });
   } catch (error) {
-    console.error('[Workforce PDF Offer Generation Error]', error);
+    console.error('[SkillBun server operation]', { code: error?.code || 'INTERNAL_ERROR' });
     return apiError('Unable to generate Offer Letter PDF.', 500, 'INTERNAL_ERROR');
   }
 }

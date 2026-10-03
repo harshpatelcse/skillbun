@@ -6,6 +6,7 @@ const MAX_BODY_BYTES = 20_000;
 const emailRule = { type: 'email', required: true, label: 'Email address' };
 const requestSchema = {
   email: emailRule,
+  ageBand: { type: 'enum', required: true, allowedValues: ['18-plus'], label: 'Adult age declaration' },
   humanToken: { type: 'string', maxLength: 2048, rejectSqlInjection: false },
 };
 const verifySchema = {

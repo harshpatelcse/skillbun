@@ -1249,13 +1249,13 @@
       "description": "Build a demonstrable Platform Engineering capstone: Golden Path developer platform, enterprise documentation, and technical career positioning.",
       "resources": [
         {
-          "title": "Building a Robust Portfolio for Platform Engineers",
-          "url": "https://www.example.com/platform-engineer-portfolio-guide",
+          "title": "Presenting Your Projects in a GitHub Profile README",
+          "url": "https://docs.github.com/en/account-and-profile/how-tos/profile-customization/managing-your-profile-readme",
           "type": "article"
         },
         {
-          "title": "Interviewing for Platform Engineering Roles",
-          "url": "https://www.example.com/platform-engineer-interview-prep",
+          "title": "Platform Engineering White Paper (CNCF)",
+          "url": "https://tag-app-delivery.cncf.io/whitepapers/platforms/",
           "type": "article"
         },
         {
@@ -1282,9 +1282,9 @@
           "description": "Build an enterprise IDP capstone: End-to-end self-service portal using Backstage, Crossplane cloud provisioning, ArgoCD GitOps deployment, and Prometheus monitoring.",
           "resources": [
             {
-              "title": "Example: Building an IDP with Backstage, Kubernetes, and Terraform",
-              "url": "https://www.example.com/idp-capstone-project-walkthrough",
-              "type": "course"
+              "title": "Build a Developer Portal: Backstage Getting Started",
+              "url": "https://backstage.io/docs/getting-started/",
+              "type": "article"
             },
             {
               "title": "Cloud Native Buildpacks for Reproducible Builds",
@@ -1352,8 +1352,8 @@
           "description": "Master platform engineering interviews: Whiteboard large-scale Kubernetes platform architectures, explain GitOps drift reconciliation, and articulate DevEx ROI.",
           "resources": [
             {
-              "title": "Platform Engineer Interview Questions (Example Set)",
-              "url": "https://www.example.com/platform-engineer-interview-questions",
+              "title": "Platform Engineering Concepts to Review (CNCF)",
+              "url": "https://tag-app-delivery.cncf.io/whitepapers/platforms/",
               "type": "article"
             },
             {

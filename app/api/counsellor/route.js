@@ -1,4 +1,5 @@
-import { NextResponse } from 'next/server'
+import { assertAdultStudent, StudentEligibilityError } from '@/utils/server/studentEligibility.mjs'
+import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs'
 import {
   getCounsellorAiProvider,
   getGroqApiKey,
@@ -10,7 +11,7 @@ import {
   getGeminiRateLimitPerHour,
   getGeminiTimeoutMs,
 } from '@/utils/server/env'
-import { getFirebaseAdminAuth } from '@/utils/server/firebaseAdmin'
+import { getFirebaseAdminAuth, getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin'
 import { verifyHumanProofToken, isHumanProofBoundTo } from '@/utils/server/humanProof'
 import { checkServerRateLimit } from '@/utils/server/rateLimitStore'
 import { generateOfflineCounsellorResponse } from '@/utils/server/counsellor/offlineEngine'
@@ -27,8 +28,9 @@ const MAX_PARTS_PER_MESSAGE = 12
 const MAX_PART_TEXT_CHARS = 18_000
 
 const RATE_LIMIT_BUCKETS = [
-  { name: 'minute', windowMs: 60 * 1000, getLimit: getGeminiRateLimitPerMinute },
-  { name: 'hour', windowMs: 60 * 60 * 1000, getLimit: getGeminiRateLimitPerHour },
+  { name: 'minute', windowMs: 60 * 1000, getLimit: getGeminiRateLimitPerMinute, getSubject: s => `uid:${s.uid}` },
+  { name: 'hour', windowMs: 60 * 60 * 1000, getLimit: getGeminiRateLimitPerHour, getSubject: s => `uid:${s.uid}` },
+  { name: 'ipHour', windowMs: 60 * 60 * 1000, getLimit: () => getGeminiRateLimitPerHour() * 3, getSubject: s => `ip:${s.address}` },
 ]
 
 function getBearerToken(request) {
@@ -46,14 +48,16 @@ async function verifyAuthenticatedUser(request) {
 
   try {
     const user = await getFirebaseAdminAuth().verifyIdToken(idToken)
+    await assertAdultStudent(getFirebaseAdminFirestore(), user.uid)
     return { user }
-  } catch {
+  } catch (error) {
+    if (error instanceof StudentEligibilityError) return { error: NextResponse.json({ error: error.message, code: error.code }, { status: error.status }) }
     return { error: NextResponse.json({ error: 'Login required.' }, { status: 401 }) }
   }
 }
 
 function getRateLimitSubject(request, uid) {
-  return `uid:${uid}:ip:${getClientAddress(request)}`
+  return { uid, address: getClientAddress(request) }
 }
 
 function validatePayload(body) {
@@ -370,6 +374,7 @@ export async function POST(request) {
         namespace: 'counsellor',
         subject: getRateLimitSubject(request, authResult.user.uid),
         limits: RATE_LIMIT_BUCKETS,
+        requireDistributed: process.env.NODE_ENV === 'production',
       })
     } catch (error) {
       console.error('Counsellor rate limit check failed:', error?.message || error)

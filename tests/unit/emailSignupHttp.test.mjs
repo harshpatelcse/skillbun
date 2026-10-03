@@ -49,7 +49,7 @@ function setup({ production = true, captcha = false, proofValid = true, origins 
         if (value === null) headers.delete(name);
         else headers.set(name, value);
       }
-      const body = Object.hasOwn(options, 'rawBody') ? options.rawBody : JSON.stringify(options.payload ?? (action === 'request' ? { email: EMAIL } : VERIFY));
+      const body = Object.hasOwn(options, 'rawBody') ? options.rawBody : JSON.stringify(options.payload ?? (action === 'request' ? { email: EMAIL, ageBand: '18-plus' } : VERIFY));
       const request = new Request(options.url || 'https://skillbun.tech/api/auth/signup/request', {
         method: 'POST', headers, body, ...(body instanceof ReadableStream ? { duplex: 'half' } : {}),
       });
@@ -193,7 +193,7 @@ test('signup verification preserves password whitespace and treats it as an opaq
 });
 
 test('enabled human verification requires a valid proof before any mail service access', async () => {
-  for (const payload of [{ email: EMAIL }, { email: EMAIL, humanToken: 'invalid-human-proof' }]) {
+  for (const payload of [{ email: EMAIL, ageBand: '18-plus' }, { email: EMAIL, ageBand: '18-plus', humanToken: 'invalid-human-proof' }]) {
     const app = setup({ captcha: true, proofValid: false });
     const response = await app.post('request', { payload });
     assert.equal(response.status, 403);
@@ -201,7 +201,7 @@ test('enabled human verification requires a valid proof before any mail service 
     assertNoServiceAccess(app);
   }
   const app = setup({ captcha: true });
-  assert.equal((await app.post('request', { payload: { email: EMAIL, humanToken: 'valid-human-proof' } })).status, 200);
+  assert.equal((await app.post('request', { payload: { email: EMAIL, ageBand: '18-plus', humanToken: 'valid-human-proof' } })).status, 200);
   assert.deepEqual(app.proofs, ['valid-human-proof']);
   assert.equal(app.calls.length, 1);
 });

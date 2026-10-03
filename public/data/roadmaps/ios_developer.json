@@ -1038,8 +1038,8 @@
               "type": "article"
             },
             {
-              "title": "Continuous Integration with GitHub Actions for iOS",
-              "url": "https://nalexn.github.io/github-actions-for-ios/",
+              "title": "Configure a macOS CI Workflow for iOS (GitHub Actions)",
+              "url": "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax",
               "type": "article"
             },
             {

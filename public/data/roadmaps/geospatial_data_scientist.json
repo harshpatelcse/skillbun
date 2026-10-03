@@ -2049,8 +2049,8 @@
           "description": "Master geospatial technical interviews: Whiteboard spatial joins, derive projection transformation equations, explain raster map algebra, and solve system design challenges for location-based services.",
           "resources": [
             {
-              "title": "Geospatial Data Scientist Interview Questions",
-              "url": "https://www.interviewquery.com/blog/geospatial-data-scientist-interview-questions",
+              "title": "Geospatial Data Analysis Topics to Review (GeoPandas)",
+              "url": "https://geopandas.org/en/stable/docs/user_guide.html",
               "type": "article"
             },
             {

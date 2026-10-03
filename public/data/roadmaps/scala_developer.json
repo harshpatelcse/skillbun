@@ -1294,7 +1294,7 @@
           "resources": [
             {
               "title": "Logback Documentation",
-              "url": "http://logback.qos.ch/manual/index.html",
+              "url": "https://logback.qos.ch/manual/index.html",
               "type": "article"
             },
             {
@@ -1560,8 +1560,8 @@
               "type": "course"
             },
             {
-              "title": "Scala Interview Questions",
-              "url": "https://www.interviewbit.com/scala-interview-questions/",
+              "title": "Tour of Scala: Concepts to Review for Interviews",
+              "url": "https://docs.scala-lang.org/tour/tour-of-scala.html",
               "type": "article"
             },
             {

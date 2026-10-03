@@ -389,6 +389,7 @@ export function generateETag(data) {
  * with zero body payload, saving transit and parsing overhead.
  */
 export function createCachedJsonResponse(request, data, options = {}) {
+  const sensitive = /\/api\/(admin|portal)(\/|$)/.test(request?.url || '')
   const etag = options.etag || generateETag(data)
   const clientEtag = request?.headers?.get?.('if-none-match')
   const swr = options.swr ?? 60
@@ -397,9 +398,10 @@ export function createCachedJsonResponse(request, data, options = {}) {
     ETag: etag,
     'Cache-Control': `private, no-cache, stale-while-revalidate=${swr}`,
     ...(options.headers || {}),
+    ...(sensitive ? { 'Cache-Control': 'private, no-store, max-age=0', 'CDN-Cache-Control': 'no-store', 'Vercel-CDN-Cache-Control': 'no-store' } : {}),
   }
 
-  if (clientEtag && clientEtag === etag) {
+  if (!sensitive && clientEtag && clientEtag === etag) {
     return new Response(null, { status: 304, headers })
   }
 

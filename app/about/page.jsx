@@ -67,7 +67,7 @@ export default function AboutPage() {
         Built and maintained by Reish.
       </p>
       <div style={{ marginTop: '2rem' }}>
-        <Link href="/contact" className="cta-button" style={{ display: 'inline-block', padding: '0.75rem 1.5rem', backgroundColor: 'var(--brand-color, #22c55e)', color: '#fff', textDecoration: 'none', borderRadius: '4px', fontWeight: 'bold' }}>
+        <Link href="/contact" className="cta-button" style={{ display: 'inline-block', padding: '0.75rem 1.5rem', backgroundColor: 'var(--green)', color: 'var(--card-bg)', textDecoration: 'none', borderRadius: '4px', fontWeight: 'bold' }}>
           Contact Us
         </Link>
       </div>

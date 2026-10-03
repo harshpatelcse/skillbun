@@ -90,14 +90,9 @@
       "description": "Master foundational release engineering principles: Software delivery lifecycles, artifact immutability, hermetic builds, and zero-downtime release automation.",
       "resources": [
         {
-          "title": "Introduction to Release Engineering",
-          "url": "https://example.com/intro-release-eng",
+          "title": "Release Engineering (Google SRE Book)",
+          "url": "https://sre.google/sre-book/release-engineering/",
           "type": "article"
-        },
-        {
-          "title": "Cyber Security Full Course for Beginner",
-          "url": "https://www.youtube.com/watch?v=U_P23SqJaDc",
-          "type": "video"
         },
         {
           "title": "GitHub Actions Tutorial (TechWorld with Nana)",
@@ -118,8 +113,8 @@
           "description": "Define the Release Engineer role: Driving predictable release velocity, maintaining production auditability, reducing deployment failure rates, and bridging Dev and Ops.",
           "resources": [
             {
-              "title": "The Release Engineer Role Explained",
-              "url": "https://example.com/release-engineer-role",
+              "title": "The Role of a Release Engineer (Google SRE Book)",
+              "url": "https://sre.google/sre-book/release-engineering/",
               "type": "article"
             },
             {
@@ -148,8 +143,8 @@
           "description": "Navigate the software release lifecycle: Code freeze policies, release branches, release candidate (RC) validation, sign-off gates, and post-release verification.",
           "resources": [
             {
-              "title": "Understanding the SDLC: A Complete Guide",
-              "url": "https://example.com/sdlc-guide",
+              "title": "Software Development Lifecycle (AWS)",
+              "url": "https://aws.amazon.com/what-is/sdlc/",
               "type": "article"
             },
             {
@@ -223,11 +218,6 @@
               "type": "article"
             },
             {
-              "title": "Cyber Security Full Course for Beginner",
-              "url": "https://www.youtube.com/watch?v=U_P23SqJaDc",
-              "type": "video"
-            },
-            {
               "title": "GitHub Actions Tutorial (TechWorld with Nana)",
               "url": "https://www.youtube.com/watch?v=R8_veQiYBjI",
               "type": "video"
@@ -253,8 +243,8 @@
               "type": "article"
             },
             {
-              "title": "Immutable Infrastructure and its Benefits",
-              "url": "https://example.com/immutable-infra",
+              "title": "Infrastructure as Code and Immutable Infrastructure (HashiCorp)",
+              "url": "https://developer.hashicorp.com/terraform/tutorials/aws-get-started/infrastructure-as-code",
               "type": "article"
             },
             {
@@ -287,8 +277,8 @@
       "description": "Master build systems, artifact storage, container management, and continuous delivery pipeline engineering.",
       "resources": [
         {
-          "title": "The Ultimate Guide to CI/CD",
-          "url": "https://example.com/ultimate-cicd-guide",
+          "title": "Understanding GitHub Actions and CI/CD",
+          "url": "https://docs.github.com/en/actions/get-started/understand-github-actions",
           "type": "article"
         },
         {
@@ -358,11 +348,6 @@
               "title": "Sonatype Nexus Repository Manager Overview",
               "url": "https://www.sonatype.com/nexus-repository-oss",
               "type": "article"
-            },
-            {
-              "title": "Cyber Security Full Course for Beginner",
-              "url": "https://www.youtube.com/watch?v=U_P23SqJaDc",
-              "type": "video"
             },
             {
               "title": "GitHub Actions Tutorial (TechWorld with Nana)",
@@ -465,8 +450,8 @@
               "type": "article"
             },
             {
-              "title": "Automated Testing in CI/CD Pipelines",
-              "url": "https://example.com/automated-testing-cicd",
+              "title": "GitHub Actions Workflow Syntax for Automated Testing",
+              "url": "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax",
               "type": "article"
             },
             {
@@ -500,8 +485,8 @@
               "type": "article"
             },
             {
-              "title": "Secrets Management Best Practices in CI/CD",
-              "url": "https://example.com/secrets-best-practices",
+              "title": "Using Secrets in GitHub Actions",
+              "url": "https://docs.github.com/en/actions/how-tos/security-for-github-actions/security-guides/using-secrets-in-github-actions",
               "type": "article"
             },
             {
@@ -539,9 +524,9 @@
       "description": "Execute advanced progressive delivery strategies: Canary deployments, automated rollbacks, release trains, and disaster recovery.",
       "resources": [
         {
-          "title": "The Phoenix Project: A Novel About IT, DevOps, and Helping Your Business Win",
-          "url": "https://example.com/phoenix-project",
-          "type": "course"
+          "title": "The Phoenix Project (Publisher Overview; Book Is Paid)",
+          "url": "https://itrevolution.com/product/the-phoenix-project/",
+          "type": "article"
         },
         {
           "title": "Jenkins Full Course for Beginners (freeCodeCamp)",
@@ -572,8 +557,8 @@
               "type": "article"
             },
             {
-              "title": "What is a Canary Release?",
-              "url": "https://example.com/what-is-canary",
+              "title": "Canarying Releases (Google SRE Workbook)",
+              "url": "https://sre.google/workbook/canarying-releases/",
               "type": "article"
             },
             {
@@ -637,19 +622,14 @@
           "description": "Coordinate release planning and change management: Release calendars, Change Advisory Board (CAB) reviews, release notes generation, and compliance audit trails.",
           "resources": [
             {
-              "title": "ITIL Change Management Process Explained",
-              "url": "https://example.com/itil-change-management",
+              "title": "IT Service Change Management (Atlassian)",
+              "url": "https://www.atlassian.com/itsm/change-management",
               "type": "article"
             },
             {
-              "title": "Mastering Release Planning in Agile Teams",
-              "url": "https://example.com/agile-release-planning",
+              "title": "Agile Release Planning (Atlassian)",
+              "url": "https://www.atlassian.com/agile/project-management/release-plan",
               "type": "article"
-            },
-            {
-              "title": "Cyber Security Full Course for Beginner",
-              "url": "https://www.youtube.com/watch?v=U_P23SqJaDc",
-              "type": "video"
             },
             {
               "title": "GitHub Actions Tutorial (TechWorld with Nana)",
@@ -677,8 +657,8 @@
               "type": "article"
             },
             {
-              "title": "Designing a Robust Rollback Strategy",
-              "url": "https://example.com/rollback-strategy",
+              "title": "Kubernetes Deployment Rollouts and Rollbacks",
+              "url": "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/",
               "type": "article"
             },
             {
@@ -707,8 +687,8 @@
           "description": "Monitor release health in real time: Tracking deployment frequency, change failure rate, p99 latency regressions, and error rate spikes in Datadog/Prometheus.",
           "resources": [
             {
-              "title": "The Three Pillars of Observability",
-              "url": "https://example.com/three-pillars-observability",
+              "title": "Observability Signals: Traces, Metrics and Logs (OpenTelemetry)",
+              "url": "https://opentelemetry.io/docs/concepts/signals/",
               "type": "article"
             },
             {
@@ -747,8 +727,8 @@
               "type": "article"
             },
             {
-              "title": "Blameless Post Mortem Culture",
-              "url": "https://example.com/blameless-post-mortem",
+              "title": "Postmortem Culture: Learning from Failure (Google SRE Book)",
+              "url": "https://sre.google/sre-book/postmortem-culture/",
               "type": "article"
             },
             {
@@ -777,8 +757,8 @@
           "description": "Enforce supply chain security: Software Bill of Materials (SBOM) generation (SPDX/CycloneDX), image vulnerability scanning (Trivy), and cryptographic signing with Sigstore/Cosign.",
           "resources": [
             {
-              "title": "Introduction to DevSecOps",
-              "url": "https://example.com/intro-devsecops",
+              "title": "What Is DevSecOps? (Red Hat)",
+              "url": "https://www.redhat.com/en/topics/devops/what-is-devsecops",
               "type": "article"
             },
             {
@@ -816,9 +796,9 @@
       "description": "Scale enterprise release practices: Multi-team release trains, infrastructure as code, stakeholder communication, and career development.",
       "resources": [
         {
-          "title": "Accelerate: The Science of Lean Software and DevOps",
-          "url": "https://example.com/accelerate-book",
-          "type": "course"
+          "title": "Accelerate (Publisher Overview; Book Is Paid)",
+          "url": "https://itrevolution.com/product/accelerate/",
+          "type": "article"
         },
         {
           "title": "Jenkins Full Course for Beginners (freeCodeCamp)",
@@ -889,8 +869,8 @@
               "type": "article"
             },
             {
-              "title": "Coordinating Multi-Service Releases",
-              "url": "https://example.com/multi-service-releases",
+              "title": "Release Coordination and Repeatable Builds (Google SRE Book)",
+              "url": "https://sre.google/sre-book/release-engineering/",
               "type": "article"
             },
             {
@@ -919,19 +899,14 @@
           "description": "Facilitate cross-functional communication: Automated release notifications in Slack/Teams, publishing user-facing changelogs, and aligning product managers and engineers.",
           "resources": [
             {
-              "title": "Effective Communication for Technical Leaders",
-              "url": "https://example.com/tech-comm-leaders",
-              "type": "course"
-            },
-            {
-              "title": "Managing Stakeholders in Software Projects",
-              "url": "https://example.com/stakeholder-management-article",
+              "title": "Technical Writing Courses for Engineers (Google; No Certificate)",
+              "url": "https://developers.google.com/tech-writing/overview",
               "type": "article"
             },
             {
-              "title": "Cyber Security Full Course for Beginner",
-              "url": "https://www.youtube.com/watch?v=U_P23SqJaDc",
-              "type": "video"
+              "title": "Stakeholder Communications (Atlassian Team Playbook)",
+              "url": "https://www.atlassian.com/team-playbook/plays/stakeholder-communications-plan",
+              "type": "article"
             },
             {
               "title": "GitHub Actions Tutorial (TechWorld with Nana)",
@@ -954,8 +929,8 @@
           "description": "Advance as a Release Engineer: Preparing for senior infrastructure roles, mastering DORA metric tracking, and targeting certifications (CWA, CKA).",
           "resources": [
             {
-              "title": "Guide to Release Engineer Interviews",
-              "url": "https://example.com/release-engineer-interview-guide",
+              "title": "Release Engineering Concepts to Review for Interviews",
+              "url": "https://sre.google/sre-book/release-engineering/",
               "type": "article"
             },
             {
@@ -989,9 +964,9 @@
               "type": "article"
             },
             {
-              "title": "Building a Full CI/CD Pipeline (Project Guide)",
-              "url": "https://example.com/cicd-capstone-project",
-              "type": "course"
+              "title": "Build a CI Workflow (GitHub Actions Tutorial)",
+              "url": "https://docs.github.com/en/actions/tutorials/create-an-example-workflow",
+              "type": "article"
             },
             {
               "title": "ArgoCD Tutorial for Beginners (TechWorld with Nana)",
@@ -1024,14 +999,14 @@
               "type": "article"
             },
             {
-              "title": "How to Write Great Release Notes",
-              "url": "https://example.com/great-release-notes",
+              "title": "Automatically Generated Release Notes (GitHub)",
+              "url": "https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes",
               "type": "article"
             },
             {
-              "title": "Technical Writing for DevOps Engineers",
-              "url": "https://example.com/tech-writing-devops",
-              "type": "course"
+              "title": "Technical Writing Courses (Google; No Certificate)",
+              "url": "https://developers.google.com/tech-writing/overview",
+              "type": "article"
             },
             {
               "title": "What is Semantic Versioning? (semver) (Syntax)",

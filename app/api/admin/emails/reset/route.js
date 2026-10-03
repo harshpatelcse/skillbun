@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { getFirebaseAdminAuth, getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import { isUserAuthorizedAdmin } from '@/utils/server/workforceEmployees';
 import { checkServerRateLimit } from '@/utils/server/rateLimitStore';
@@ -141,10 +141,10 @@ export async function POST(request) {
       resetCount: totalUpdated,
     });
   } catch (err) {
-    console.error('Reset Sent Email Counter API Error:', err);
+    console.error('[SkillBun server operation]', { code: err?.code || 'INTERNAL_ERROR' });
     return NextResponse.json({
       error: 'Internal server error while resetting sent email counters.',
-      details: err?.message,
+      code: 'INTERNAL_ERROR',
     }, { status: 500 });
   }
 }

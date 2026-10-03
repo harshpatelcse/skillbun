@@ -255,8 +255,8 @@
           "description": "Adhere to legal and professional standards: Rules of Engagement (RoE), scoping documents, non-disclosure agreements (NDAs), and structured penetration testing methodologies (PTES, OWASP WSTG, NIST SP 800-115).",
           "resources": [
             {
-              "title": "PTES Technical Guidelines",
-              "url": "http://www.pentest-standard.org/index.php/PTES_Technical_Guidelines",
+              "title": "Web Security Testing Techniques (OWASP WSTG)",
+              "url": "https://owasp.org/www-project-web-security-testing-guide/latest/",
               "type": "article"
             },
             {
@@ -1221,8 +1221,8 @@
               "type": "article"
             },
             {
-              "title": "The Cyber Mentor's PNPT Review",
-              "url": "https://tcm-sec.com/pnpt-review/",
+              "title": "Practical Network Penetration Tester (Official Exam Overview)",
+              "url": "https://certifications.tcm-sec.com/pnpt/",
               "type": "article"
             },
             {

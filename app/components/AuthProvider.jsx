@@ -94,6 +94,7 @@ function normalizeProfileDoc(user, data = {}) {
     degree: data.degree || '',
     year: data.year || data.current_year || '',
     interest: data.interest || data.interest_area || '',
+    ageBand: data.ageBand || '',
     emailVerified: Boolean(user?.emailVerified || data.emailVerified),
     providers: Array.isArray(data.providers) ? data.providers : getProviders(user),
   };
@@ -115,7 +116,7 @@ function localProfileForMigration(user) {
 }
 
 function profileNeedsSetup(profile) {
-  return !profile?.degree || !profile?.year;
+  return !profile?.degree || !profile?.year || profile?.ageBand !== '18-plus';
 }
 
 async function ensureUserProfile(db, user) {
@@ -338,13 +339,13 @@ export function AuthProvider({ children }) {
     return credential;
   }, [services]);
 
-  const requestEmailSignup = useCallback(async ({ email, humanToken }) => {
+  const requestEmailSignup = useCallback(async ({ email, humanToken, ageBand }) => {
     if (!services.configured) {
       throw new Error('Firebase is not configured yet.');
     }
 
     setAuthError('');
-    return emailSignupRequest('/api/auth/signup/request', { email, humanToken });
+    return emailSignupRequest('/api/auth/signup/request', { email, humanToken, ageBand });
   }, [services]);
 
   const signInWithEmail = useCallback(async (email, password) => {
@@ -405,13 +406,14 @@ export function AuthProvider({ children }) {
     return sendEmailVerification(services.auth.currentUser);
   }, [services]);
 
-  const saveProfile = useCallback(async ({ name, degree, year, interest }) => {
+  const saveProfile = useCallback(async ({ name, degree, year, interest, ageBand }) => {
     if (!services.configured || !services.auth.currentUser) {
       throw new Error('Sign in before saving your SkillBun profile.');
     }
 
     const currentUser = services.auth.currentUser;
     assertVerifiedEmail(currentUser);
+    if (ageBand !== '18-plus') throw new Error('Self-service SkillBun accounts are currently available to adults aged 18 or over.');
     const nextProfile = {
       uid: currentUser.uid,
       email: currentUser.email || '',
@@ -421,6 +423,7 @@ export function AuthProvider({ children }) {
       degree: degree || '',
       year: year || '',
       interest: interest || '',
+      ageBand,
       emailVerified: Boolean(currentUser.emailVerified),
       providers: getProviders(currentUser),
       updatedAt: serverTimestamp(),

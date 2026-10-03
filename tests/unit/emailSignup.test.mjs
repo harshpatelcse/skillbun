@@ -141,7 +141,7 @@ function setup({ existing, secret = SECRET } = {}) {
     advance: milliseconds => { clock += milliseconds; },
     seedChallenge: (email, data) => db.seed(`emailSignupChallenges/${hash('mailbox', email)}`, data),
     hash,
-    request: (overrides = {}) => service.requestCode({ email: EMAIL, address: ADDRESS, ...overrides }),
+    request: (overrides = {}) => service.requestCode({ email: EMAIL, address: ADDRESS, ageBand: '18-plus', ...overrides }),
     verify: (challenge, overrides = {}) => service.verifyCode({
       email: EMAIL,
       address: ADDRESS,
@@ -193,6 +193,9 @@ test('a verified code creates exactly one verified password account after a comm
   assert.equal(creation.data.password, PASSWORD);
   assert.equal(creation.data.emailVerified, true);
   assert.equal(app.users.size, 1);
+  const profile = app.db.snapshot().find(([path]) => path === `users/${creation.data.uid}`)?.[1];
+  assert.equal(profile.ageBand, '18-plus');
+  assert.equal(profile.email, EMAIL);
   assertNoStoredSecrets(app);
 });
 
@@ -599,4 +602,14 @@ test('unavailable account lookup cannot be mistaken for a nonexistent account', 
   app.controls.failAuthLookup = true;
   await assert.rejects(app.verify(challenge));
   assert.deepEqual(accountWrites(app), []);
+});
+
+
+test('adult declaration is required before any signup mail or account creation', async () => {
+  for (const ageBand of [undefined, 'under-13', '13-17', true]) {
+    const app = setup();
+    await assert.rejects(app.request({ ageBand }), { code: 'AGE_DECLARATION_REQUIRED' });
+    assert.equal(app.messages.length, 0);
+    assert.equal(app.authCalls.length, 0);
+  }
 });

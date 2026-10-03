@@ -60,6 +60,6 @@ export function renderSavedEmail(draft, data = {}) {
     + emailSectionLabel('Put it into practice')
     + emailStepRail(steps.map(step => ({ title: htmlText(step.title), body: htmlText(step.body) })))
     + emailNote(htmlText(visual.note));
-  const html = buildEmail({ title: subject, headline: htmlText(content.headline), lede: htmlText(content.intro), eyebrow: EMAIL_CATEGORIES[draft.category], docTag: 'LEARNING UPDATE', contentHtml, isMarketing: true, email: data.email || '' });
+  const html = buildEmail({ title: subject, headline: htmlText(content.headline), lede: htmlText(content.intro), eyebrow: EMAIL_CATEGORIES[draft.category], docTag: 'LEARNING UPDATE', contentHtml, isMarketing: true, preferenceUrl: data.preferenceUrl || '' });
   return { subject, html, text: emailHtmlToText(html), isMarketing: true };
 }

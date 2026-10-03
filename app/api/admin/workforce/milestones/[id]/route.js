@@ -1,4 +1,5 @@
-import { NextResponse } from 'next/server';
+import { isActiveWorkforceMember } from '@/utils/server/workforcePolicy.mjs';
+import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import {
   apiError,
@@ -51,6 +52,8 @@ export async function PATCH(request, { params }) {
       // Keep ownership verification in the same transaction as the write so
       // an intern cannot update a milestone after a concurrent reassignment.
       if (caller.isIntern) {
+        const employee = await transaction.get(db.collection('employees').doc(currentData.employee_id));
+        if (!employee.exists || !isActiveWorkforceMember(employee.data(), caller.email)) throw Object.assign(new Error('Active workforce membership is required.'), { status: 403, code: 'FORBIDDEN' });
         const assignedEmail = (currentData.employee_email || '').toLowerCase().trim();
         if (!assignedEmail || assignedEmail !== caller.email) {
           throw Object.assign(new Error('You are not authorized to update this milestone.'), { status: 403, code: 'FORBIDDEN' });
@@ -80,7 +83,7 @@ export async function PATCH(request, { params }) {
     });
   } catch (error) {
     if (error?.code === 'NOT_FOUND' || error?.code === 'FORBIDDEN') return apiError(error.message, error.status, error.code);
-    console.error('[Milestone PATCH]', error);
+    console.error('[SkillBun server operation]', { code: error?.code || 'INTERNAL_ERROR' });
     return apiError('Unable to update milestone.', 500, 'INTERNAL_ERROR');
   }
 }
@@ -121,7 +124,7 @@ export async function DELETE(request, { params }) {
       message: 'Milestone deleted successfully.',
     });
   } catch (error) {
-    console.error('[Milestone DELETE]', error);
+    console.error('[SkillBun server operation]', { code: error?.code || 'INTERNAL_ERROR' });
     return apiError('Unable to delete milestone.', 500, 'INTERNAL_ERROR');
   }
 }

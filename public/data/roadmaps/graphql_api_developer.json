@@ -1722,8 +1722,8 @@
       "description": "Build a demonstrable GraphQL portfolio: Architecting end-to-end full-stack applications, documenting schema designs, and preparing for GraphQL technical interviews.",
       "resources": [
         {
-          "title": "How to Build a Portfolio Website (freeCodeCamp.org)",
-          "url": "https://www.freecodecamp.org/news/how-to-build-a-developer-portfolio/",
+          "title": "Presenting Your Developer Portfolio in a GitHub Profile README",
+          "url": "https://docs.github.com/en/account-and-profile/how-tos/profile-customization/managing-your-profile-readme",
           "type": "article"
         },
         {
@@ -1795,8 +1795,8 @@
               "type": "article"
             },
             {
-              "title": "GraphQL Interview Questions & Answers (Edureka)",
-              "url": "https://www.edureka.co/blog/interview-questions/graphql-interview-questions/",
+              "title": "GraphQL Concepts to Review for Interviews (Official Documentation)",
+              "url": "https://graphql.org/learn/",
               "type": "article"
             },
             {

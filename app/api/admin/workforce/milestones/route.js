@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import {
   apiError,
@@ -23,6 +23,9 @@ export async function GET(request) {
     const caller = await authenticateMilestoneCaller(request);
     if (caller.response) return caller.response;
 
+    const limited = await enforceEmployeeRateLimit(request, caller.uid);
+    if (limited) return limited;
+
     const url = new URL(request.url);
     const employeeId = url.searchParams.get('employeeId');
 
@@ -31,7 +34,7 @@ export async function GET(request) {
       if (!idCheck.isValid) return apiError(idCheck.error, 400, 'VALIDATION_ERROR');
     }
 
-    const cacheScope = caller.isAdmin ? (employeeId || 'all') : caller.email;
+    const cacheScope = caller.isAdmin ? (employeeId || 'all') : `${caller.email}:${caller.employeeIds.join(',')}`;
     const cacheKey = `admin:milestones:${cacheScope}`;
 
     const data = await getOrSetCache(
@@ -53,7 +56,7 @@ export async function GET(request) {
         }
 
         const snapshot = await query.get();
-        const list = snapshot.docs.map((doc) => serializeMilestone(doc.id, doc.data()));
+        const list = snapshot.docs.filter(doc => caller.isAdmin || caller.employeeIds.includes(doc.data().employee_id)).map((doc) => serializeMilestone(doc.id, doc.data()));
 
         list.sort((a, b) => {
           if (a.due_date && b.due_date) {
@@ -75,7 +78,7 @@ export async function GET(request) {
     if (!data) return apiError('Access forbidden.', 403, 'FORBIDDEN');
     return createCachedJsonResponse(request, data);
   } catch (error) {
-    console.error('[Milestones GET]', error);
+    console.error('[SkillBun server operation]', { code: error?.code || 'INTERNAL_ERROR' });
     return apiError('Unable to fetch milestone records.', 500, 'INTERNAL_ERROR');
   }
 }
@@ -138,7 +141,7 @@ export async function POST(request) {
       { status: 201 }
     );
   } catch (error) {
-    console.error('[Milestones POST]', error);
+    console.error('[SkillBun server operation]', { code: error?.code || 'INTERNAL_ERROR' });
     return apiError('Unable to create milestone.', 500, 'INTERNAL_ERROR');
   }
 }

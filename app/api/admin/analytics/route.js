@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { getFirebaseAdminAuth, getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import { isUserAuthorizedAdmin } from '@/utils/server/workforceEmployees';
 import fs from 'fs';
@@ -89,7 +89,7 @@ async function computeAdminAnalytics() {
       } while (pageToken);
     }
   } catch (authErr) {
-    console.warn('[Admin Analytics API] Firebase Auth listUsers warning:', authErr.message);
+    console.warn('[SkillBun server operation]', { code: authErr?.code || 'INTERNAL_ERROR' });
   }
 
   // 2. Fetch Firestore Users, Unsubscribes, Roadmap Progress, Quiz Attempts, and Certificates
@@ -106,7 +106,7 @@ async function computeAdminAnalytics() {
           };
         });
       } catch (unsubErr) {
-        console.warn('[Admin Analytics API] Unsubscribes fetch warning:', unsubErr.message);
+        console.warn('[SkillBun server operation]', { code: unsubErr?.code || 'INTERNAL_ERROR' });
       }
 
       // Fetch all raw certificates from Firestore
@@ -279,7 +279,7 @@ async function computeAdminAnalytics() {
       });
     }
   } catch (err) {
-    console.warn('[Admin Analytics API] Firestore server fetch:', err.message);
+    console.warn('[SkillBun server operation]', { code: err?.code || 'INTERNAL_ERROR' });
   }
 
   return {
@@ -345,7 +345,7 @@ export async function GET(request) {
 
     return createCachedJsonResponse(request, analyticsData);
   } catch (error) {
-    console.error('[Admin Analytics API Error]:', error);
+    console.error('[SkillBun server operation]', { code: error?.code || 'INTERNAL_ERROR' });
     return NextResponse.json(
       { success: false, error: 'Failed to fetch analytics stats' },
       { status: 500 }

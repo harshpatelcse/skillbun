@@ -247,6 +247,23 @@ test('leaving a certification question cancels its deadline before it can advanc
   tick();
 });
 
+test('a server-provided question deadline cannot be extended by restarting the browser timer', () => {
+  let tick;
+  let clock = 30000;
+  let remaining;
+  let expired = 0;
+  startCertificationQuestionTimer({ deadlineAt: 45000, now: () => clock,
+    schedule: callback => { tick = callback; return 1; }, cancel: () => {},
+    onTick: value => { remaining = value; }, onExpire: () => { expired++; },
+  });
+  tick();
+  assert.equal(remaining, 15);
+  clock = 46000;
+  tick();
+  assert.equal(remaining, 0);
+  assert.equal(expired, 1);
+});
+
 test('profile cache migration accepts guests and the same owner, but rejects other accounts', async () => {
   const { isProfileCacheForUser } = await loadClientModule('utils/shared/profileStore.js', ['isProfileCacheForUser']);
   const user = { uid: 'student-a', email: 'student@gmail.com' };
@@ -281,7 +298,7 @@ test('cloud profile initialization keeps an existing name and rejects foreign ca
   }
 });
 
-async function settingsPreferences({ publicPage = false, statusResponse, updateResponse } = {}) {
+async function settingsPreferences({ publicPage = false, statusResponse, statusResponses, updateResponse, tokenResponse } = {}) {
   const fullSource = await fs.readFile(new URL('../../app/settings/page.jsx', import.meta.url), 'utf8');
   const source = fullSource.slice(fullSource.indexOf('function SettingsContent()'), fullSource.indexOf('  // If visitor clicked Unsubscribe link'));
   const { validateEmail } = await loadClientModule('utils/shared/emailValidator.js', ['validateEmail']);
@@ -293,6 +310,7 @@ async function settingsPreferences({ publicPage = false, statusResponse, updateR
   let cursor = 0;
   let timerId = 0;
   let userEmail = 'student@gmail.com';
+  let preferenceUser = { uid: userEmail, email: userEmail, getIdToken: async () => tokenResponse ? tokenResponse.promise : 'synthetic-preference-token' };
   const localStorage = memoryStorage();
   const dependencies = {
     useState(initial) {
@@ -314,22 +332,23 @@ async function settingsPreferences({ publicPage = false, statusResponse, updateR
         effectSlots.set(index, { deps, cleanup: callback() });
       });
     },
-    useAuth: () => ({ user: { uid: userEmail, email: userEmail }, profile: {}, authLoading: false }),
+    useAuth: () => ({ user: preferenceUser, profile: {}, authLoading: false }),
     useRouter: () => ({ replace() {} }),
     useSearchParams: () => ({ get: key => ({ action: publicPage ? 'unsubscribe' : null, email: publicPage ? 'student@gmail.com' : null })[key] || null }),
     validateEmail,
     localStorage,
     window: {
-      setTimeout: callback => { timers.set(++timerId, callback); return timerId; },
+      setTimeout: (callback, delay = 0) => { timers.set(++timerId, { callback, delay }); return timerId; },
       clearTimeout: id => timers.delete(id),
     },
     fetch: async (url, options) => {
       requests.push({ url, options });
       if (options?.method === 'POST') return updateResponse ? updateResponse.promise : { ok: true, json: async () => ({ success: true, message: 'Preference saved.' }) };
+      if (statusResponses) return statusResponses.shift();
       return statusResponse ? statusResponse.promise : { ok: true, json: async () => ({ unsubscribed: true }) };
     },
   };
-  const SettingsContent = new Function(...Object.keys(dependencies), `${source}; return { unsubscribeEmail, hasPreferenceStatus, isUnsubscribed, handleUnsubscribeToggle, setCustomUnsubscribeEmail, unsubStatus }; } return SettingsContent;`)(...Object.values(dependencies));
+  const SettingsContent = new Function(...Object.keys(dependencies), `${source}; return { unsubscribeEmail, hasPreferenceStatus, isUnsubscribed, handleUnsubscribeToggle, handlePreferenceAction, preferenceActionLabel, preferenceActionDisabled, preferenceChecking, preferenceLookupFailed, retryPreferenceCheck, setCustomUnsubscribeEmail, unsubStatus }; } return SettingsContent;`)(...Object.values(dependencies));
   function render() {
     cursor = 0;
     const output = SettingsContent();
@@ -337,14 +356,138 @@ async function settingsPreferences({ publicPage = false, statusResponse, updateR
     return output;
   }
   const flushTimers = async () => {
-    const pending = [...timers.values()].map(callback => callback());
-    timers.clear();
+    const ready = [...timers.entries()].filter(([, timer]) => timer.delay <= 400);
+    ready.forEach(([id]) => timers.delete(id));
+    const pending = ready.map(([, timer]) => timer.callback());
     await Promise.all(pending);
     await settle();
   };
+  const expireRequestDeadline = async () => {
+    const ready = [...timers.entries()].filter(([, timer]) => timer.delay === 10_000);
+    assert.equal(ready.length, 1, 'a status lookup has one bounded deadline');
+    ready.forEach(([id, timer]) => { timers.delete(id); timer.callback(); });
+    await settle();
+  };
   const cleanup = () => { for (const slot of effectSlots.values()) slot.cleanup?.(); };
-  return { render, flushTimers, requests, cleanup, localStorage, setUserEmail: email => { userEmail = email; } };
+  return { render, flushTimers, expireRequestDeadline, requests, cleanup, localStorage, setUserEmail: email => { userEmail = email; preferenceUser = { uid: email, email, getIdToken: async () => 'synthetic-preference-token' }; } };
 }
+
+test('settings ends a failed lookup and retries its status without changing marketing preferences', async () => {
+  const failedResponse = deferred();
+  const retriedResponse = deferred();
+  const runtime = await settingsPreferences({ statusResponses: [
+    failedResponse.promise,
+    retriedResponse.promise,
+  ] });
+  try {
+    runtime.render();
+    const lookup = runtime.flushTimers();
+    await settle();
+    assert.equal(runtime.render().preferenceChecking, true);
+    assert.equal(runtime.render().preferenceActionDisabled, true);
+    failedResponse.resolve({ ok: false, status: 403, json: async () => ({ error: { message: 'This preference could not be confirmed.' } }) });
+    await lookup;
+    const failed = runtime.render();
+    assert.equal(failed.hasPreferenceStatus, false);
+    assert.equal(failed.preferenceChecking, false);
+    assert.equal(failed.preferenceActionDisabled, false);
+    assert.equal(failed.preferenceActionLabel, 'Retry preference check');
+    assert.equal(failed.unsubStatus, 'This preference could not be confirmed.');
+    await failed.handlePreferenceAction();
+    runtime.render();
+    const retry = runtime.flushTimers();
+    await settle();
+    assert.equal(runtime.render().preferenceChecking, true);
+    retriedResponse.resolve({ ok: true, json: async () => ({ unsubscribed: false }) });
+    await retry;
+    const confirmed = runtime.render();
+    assert.equal(confirmed.hasPreferenceStatus, true);
+    assert.equal(confirmed.isUnsubscribed, false);
+    assert.equal(confirmed.preferenceActionLabel, 'Unsubscribe');
+    assert.equal(confirmed.unsubStatus, '');
+    assert.equal(runtime.requests.length, 2);
+    assert.equal(runtime.requests.every(request => request.options.method !== 'POST'), true);
+    assert.equal(runtime.localStorage.getItem('sb_email_unsubscribed'), null);
+  } finally { runtime.cleanup(); }
+});
+
+test('a stalled preference lookup times out and a retry can recover without accepting its late result', async () => {
+  const oldStatus = deferred();
+  const runtime = await settingsPreferences({ statusResponses: [oldStatus.promise, { ok: true, json: async () => ({ unsubscribed: false }) }] });
+  try {
+    runtime.render();
+    const oldLookup = runtime.flushTimers();
+    await settle();
+    await runtime.expireRequestDeadline();
+    const failed = runtime.render();
+    assert.equal(failed.preferenceChecking, false);
+    assert.equal(failed.preferenceActionDisabled, false);
+    assert.match(failed.unsubStatus, /timed out/i);
+    assert.equal(runtime.requests[0].options.signal.aborted, true);
+    await failed.handlePreferenceAction();
+    runtime.render();
+    await runtime.flushTimers();
+    assert.equal(runtime.render().isUnsubscribed, false);
+    oldStatus.resolve({ ok: true, json: async () => ({ unsubscribed: true }) });
+    await oldLookup;
+    assert.equal(runtime.render().isUnsubscribed, false);
+    assert.equal(runtime.render().unsubStatus, '');
+  } finally { runtime.cleanup(); }
+});
+
+test('a stalled preference token refresh ends checking without issuing a late status request', async () => {
+  const tokenResponse = deferred();
+  const runtime = await settingsPreferences({ tokenResponse });
+  try {
+    runtime.render();
+    const lookup = runtime.flushTimers();
+    await settle();
+    await runtime.expireRequestDeadline();
+    assert.equal(runtime.render().preferenceActionLabel, 'Retry preference check');
+    assert.equal(runtime.render().preferenceActionDisabled, false);
+    tokenResponse.resolve('late-session-token');
+    await lookup;
+    assert.equal(runtime.requests.length, 0);
+  } finally { runtime.cleanup(); }
+});
+
+test('a late failed preference lookup cannot replace a confirmed update message', async () => {
+  const statusResponse = deferred();
+  const runtime = await settingsPreferences({ statusResponse });
+  try {
+    const page = runtime.render();
+    const lookup = runtime.flushTimers();
+    await settle();
+    await page.handleUnsubscribeToggle('resubscribe');
+    assert.equal(runtime.render().unsubStatus, 'Preference saved.');
+    statusResponse.resolve({ ok: false, status: 403, json: async () => ({ error: 'Old lookup failed.' }) });
+    await lookup;
+    assert.equal(runtime.render().unsubStatus, 'Preference saved.');
+    assert.equal(runtime.render().isUnsubscribed, false);
+    assert.equal(runtime.render().preferenceChecking, false);
+  } finally { runtime.cleanup(); }
+});
+
+test('a late failed preference lookup cannot replace the new account status', async () => {
+  const oldStatus = deferred();
+  const runtime = await settingsPreferences({ statusResponses: [oldStatus.promise, { ok: true, json: async () => ({ unsubscribed: false }) }] });
+  try {
+    runtime.render();
+    const oldLookup = runtime.flushTimers();
+    await settle();
+    runtime.setUserEmail('other@gmail.com');
+    runtime.render();
+    await runtime.flushTimers();
+    assert.equal(runtime.render().hasPreferenceStatus, true);
+    oldStatus.resolve({ ok: false, status: 403, json: async () => ({ error: 'Old account could not be checked.' }) });
+    await oldLookup;
+    const current = runtime.render();
+    assert.equal(current.unsubscribeEmail, 'other@gmail.com');
+    assert.equal(current.unsubStatus, '');
+    assert.equal(current.isUnsubscribed, false);
+    assert.equal(current.preferenceChecking, false);
+  } finally { runtime.cleanup(); }
+});
 
 test('settings loads the signed-in email preference and can re-enable an existing unsubscribe', async () => {
   const runtime = await settingsPreferences();
@@ -436,7 +579,7 @@ for (const nextUid of [null, 'student-b']) {
     test(`auth: pending ${action} cannot restore cache after ${nextUid ? 'account switch' : 'signout'}`, async () => {
       const runtime = await authSaveActions();
       const save = action === 'saveProfile'
-        ? runtime.actions[action]({ name: 'Old Student', degree: 'BCA', year: '1st Year', interest: '' })
+        ? runtime.actions[action]({ name: 'Old Student', degree: 'BCA', year: '1st Year', interest: '', ageBand: '18-plus' })
         : runtime.actions[action]('frontend', ['intro']);
       assert.match(runtime.cloudWrites[0].path, /^users\/student-a/);
       runtime.services.auth.currentUser = nextUid ? { uid: nextUid } : null;
@@ -528,3 +671,107 @@ for (const action of ['clear', 'unmount']) {
     } finally { runtime.cleanup(); }
   });
 }
+
+async function onboardingRuntime({ next = '/quiz', preferenceResponse, profileSaveError } = {}) {
+  const fullSource = await fs.readFile(new URL('../../app/onboarding/page.jsx', import.meta.url), 'utf8');
+  const source = fullSource.slice(fullSource.indexOf('function OnboardingForm()'), fullSource.indexOf('  if (authLoading ||'));
+  const { normalizeInternalPath } = await loadClientModule('utils/shared/routes.js', ['normalizeInternalPath']);
+  const values = [];
+  let index = 0;
+  let effects = [];
+  let complete = false;
+  const destinations = [];
+  const profiles = [];
+  const requests = [];
+  const dependencies = {
+    normalizeInternalPath,
+    useRouter: () => ({ replace: path => destinations.push(path), push: path => destinations.push(path) }),
+    useSearchParams: () => new URLSearchParams({ next }),
+    useAuth: () => ({
+      user: { email: 'student@example.com', getIdToken: async () => 'owner-token' },
+      profile: { hydrated: true, ageBand: '18-plus' },
+      authLoading: false, profileLoading: false, isProfileComplete: complete,
+      saveProfile: async data => { if (profileSaveError) throw profileSaveError; profiles.push(data); complete = true; },
+    }),
+    useState: initial => {
+      const stateIndex = index++;
+      if (!(stateIndex in values)) values[stateIndex] = initial;
+      return [values[stateIndex], value => { values[stateIndex] = value; }];
+    },
+    useEffect: fn => { effects.push(fn); },
+    FormData: class { constructor(form) { this.form = form; } get(key) { return this.form[key]; } },
+    fetch: async (url, options) => {
+      requests.push({ url, ...options });
+      if (preferenceResponse instanceof Error) throw preferenceResponse;
+      return preferenceResponse || { ok: true };
+    },
+    AbortSignal,
+    posthog: { capture() {} },
+    console: { error() {} },
+  };
+  const renderForm = new Function(...Object.keys(dependencies), `${source}; return { handleSubmit, continuePath, saving, error, success, savedDestination }; }; return OnboardingForm;`)(...Object.values(dependencies));
+  function render() {
+    index = 0;
+    effects = [];
+    const form = renderForm();
+    for (const effect of effects) effect();
+    return form;
+  }
+  return {
+    render, destinations, profiles, requests,
+    submit: ({ destination, consent = false } = {}) => render().handleSubmit({
+      preventDefault() {},
+      currentTarget: { name: 'Student', degree: 'BCA', year: '1st Year', interest: 'Web Development', marketingConsent: consent ? 'on' : null },
+      nativeEvent: { submitter: destination ? { getAttribute: () => destination } : null },
+    }),
+  };
+}
+
+for (const next of ['/quiz', '/counsellor?q=Compare%20frontend%20%26%20backend&context=roadmap', 'https://untrusted.example/']) {
+  test(`onboarding continues to the safe requested destination after profile save: ${next}`, async () => {
+    const runtime = await onboardingRuntime({ next });
+    const expected = next.startsWith('https:') ? '/quiz' : next;
+    assert.equal(runtime.render().continuePath, expected);
+    await runtime.submit();
+    assert.deepEqual(runtime.destinations, [expected]);
+    assert.equal(runtime.profiles[0].ageBand, '18-plus');
+    assert.equal(runtime.requests.length, 0, 'optional email consent must never be assumed');
+  });
+}
+
+test('onboarding still honors the explicit Explore Roadmaps alternative', async () => {
+  const runtime = await onboardingRuntime({ next: '/counsellor?q=Frontend' });
+  await runtime.submit({ destination: '/roadmap' });
+  assert.deepEqual(runtime.destinations, ['/roadmap']);
+});
+
+for (const response of [{ ok: false }, new Error('Network unavailable')]) {
+  test(`an optional email preference ${response instanceof Error ? 'network failure' : 'rejection'} keeps the saved profile and visible continuation`, async () => {
+    const next = '/counsellor?q=Keep%20this%20topic';
+    const runtime = await onboardingRuntime({ next, preferenceResponse: response });
+    await runtime.submit({ consent: true });
+    const form = runtime.render();
+    assert.equal(runtime.profiles.length, 1);
+    assert.equal(form.savedDestination, next);
+    assert.match(form.success, /Profile saved.*could not confirm your email preference/);
+    assert.equal(form.error, '');
+    assert.equal(form.saving, false);
+    assert.deepEqual(runtime.destinations, [], 'automatic completed-profile redirect must not hide the preference warning');
+    assert.equal(runtime.requests[0].headers.Authorization, 'Bearer owner-token');
+  });
+}
+
+test('onboarding confirms an explicitly selected email opt-in before continuing', async () => {
+  const runtime = await onboardingRuntime();
+  await runtime.submit({ consent: true });
+  assert.deepEqual(JSON.parse(runtime.requests[0].body), { email: 'student@example.com', action: 'resubscribe' });
+  assert.deepEqual(runtime.destinations, ['/quiz']);
+});
+
+test('a failed profile save does not submit optional email consent or continue', async () => {
+  const runtime = await onboardingRuntime({ profileSaveError: new Error('Profile unavailable') });
+  await runtime.submit({ consent: true });
+  assert.match(runtime.render().error, /Could not save your profile/);
+  assert.deepEqual(runtime.destinations, []);
+  assert.equal(runtime.requests.length, 0);
+});

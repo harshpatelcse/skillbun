@@ -71,7 +71,7 @@
     ],
     "certifications": [
       "DeepLearning.AI Natural Language Processing Specialization",
-      "AWS Certified Machine Learning - Specialty"
+      "AWS Certified Machine Learning Engineer - Associate"
     ],
     "interview_focus": [
       "Transformer Architecture (Multi-Head Self-Attention, Positional Embeddings, LayerNorm)",
@@ -79,6 +79,15 @@
       "Parameter-Efficient Fine-Tuning (LoRA, QLoRA, Prefix Tuning, Adapters)",
       "Semantic Search & Dense Retrieval (Sentence Transformers, Bi-Encoders vs Cross-Encoders)",
       "Evaluation Metrics in NLP (BLEU, ROUGE, Exact Match / F1, Perplexity, Embedding Cosine Similarity)"
+    ],
+    "certification_details": [
+      {
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "official_url": "https://aws.amazon.com/certification/certified-machine-learning-engineer-associate/",
+        "type": "professional_certification",
+        "note": "Role-based ML engineering certification; review the current exam guide and experience requirements.",
+        "checked_on": "2026-10-02"
+      }
     ]
   },
   "format": "tree",
@@ -462,13 +471,13 @@
           "description": "Train foundational deep neural networks in PyTorch: Multilayer perceptrons for text classification, embedding lookups, dropout regularization, and cross-entropy loss.",
           "resources": [
             {
-              "title": "Neural Networks and Deep Learning Book",
-              "url": "http://neuralnetworksanddeeplearning.com/",
+              "title": "Neural Networks and Deep Learning: Author Repository",
+              "url": "https://github.com/mnielsen/neural-networks-and-deep-learning",
               "type": "article"
             },
             {
               "title": "Stanford CS231n: Convolutional Neural Networks for Visual Recognition (covers NN basics)",
-              "url": "http://cs231n.stanford.edu/slides/2021/lecture_3.pdf",
+              "url": "https://cs231n.stanford.edu/slides/2021/lecture_3.pdf",
               "type": "article"
             },
             {
@@ -503,7 +512,7 @@
             },
             {
               "title": "The Unreasonable Effectiveness of Recurrent Neural Networks (Andreessen Horowitz)",
-              "url": "http://karpathy.github.io/2015/05/21/rnn-effectiveness/",
+              "url": "https://karpathy.github.io/2015/05/21/rnn-effectiveness/",
               "type": "article"
             },
             {

@@ -1,5 +1,8 @@
-import { NextResponse } from 'next/server'
-import { getFirebaseAdminAuth } from '@/utils/server/firebaseAdmin'
+import { assertAdultStudent, StudentEligibilityError } from '@/utils/server/studentEligibility.mjs';
+import { checkServerRateLimit } from '@/utils/server/rateLimitStore';
+import { getClientAddress } from '@/utils/server/requestUtils';
+import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs'
+import { getFirebaseAdminAuth, getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin'
 import { verifyHumanProofToken, isHumanProofBoundTo } from '@/utils/server/humanProof'
 import { readFileSync, existsSync } from 'fs'
 import { join } from 'path'
@@ -87,11 +90,25 @@ export async function GET(request) {
     )
   }
 
+  try { await assertAdultStudent(getFirebaseAdminFirestore(), quizUid); }
+  catch (error) { return NextResponse.json({ error: error instanceof StudentEligibilityError ? error.message : 'Student eligibility is temporarily unavailable.' }, { status: error instanceof StudentEligibilityError ? error.status : 503 }); }
+
   const token = request.headers.get('x-skillbun-human') || ''
   const verification = verifyHumanProofToken(token)
   if (!isHumanProofBoundTo(verification, quizUid)) {
     return NextResponse.json({ error: 'Human verification required.' }, { status: 403 })
   }
+
+  try {
+    const quota = await checkServerRateLimit({
+      namespace: 'quizQuestions', subject: { uid: quizUid, address: getClientAddress(request) },
+      limits: [
+        { name: 'userMinute', windowMs: 60000, maxRequests: 12, getSubject: s => `uid:${s.uid}` },
+        { name: 'ipHour', windowMs: 3600000, maxRequests: 120, getSubject: s => `ip:${s.address}` },
+      ], requireDistributed: process.env.NODE_ENV === 'production',
+    });
+    if (!quota.allowed) return NextResponse.json({ error: 'Too many quiz reloads. Please wait.' }, { status: 429, headers: { 'Retry-After': String(Math.max(1, Math.ceil(quota.retryAfterMs / 1000))) } });
+  } catch { return NextResponse.json({ error: 'Quiz protection is temporarily unavailable.' }, { status: 503 }); }
 
   const encryptionKey = normalizeEncryptionKey(process.env.DOCS_ENCRYPTION_KEY)
   if (!/^[a-fA-F0-9]{64}$/.test(encryptionKey)) {

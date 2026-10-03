@@ -1,4 +1,5 @@
-import { NextResponse } from 'next/server'
+import { isWorkforceTransitionAllowed } from './workforcePolicy.mjs'
+import { PrivateResponse as NextResponse } from './privateResponse.mjs'
 
 import { isAuthorizedAdminEmail } from '@/utils/server/env'
 import { getFirebaseAdminAuth, getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin'
@@ -17,16 +18,6 @@ export const EMPLOYEE_STATUSES = Object.freeze([
   'DISPATCH_FAILED',
   'ARCHIVED',
 ])
-
-const STATUS_TRANSITIONS = Object.freeze({
-  OFFER_SENT: new Set(['ACTIVE', 'TERMINATED', 'ARCHIVED']),
-  ACTIVE: new Set(['EXTENDED', 'COMPLETED', 'TERMINATED', 'ARCHIVED']),
-  EXTENDED: new Set(['COMPLETED', 'TERMINATED', 'ARCHIVED']),
-  COMPLETED: new Set(['ARCHIVED']),
-  TERMINATED: new Set(['ARCHIVED']),
-  DISPATCH_FAILED: new Set(['OFFER_SENT', 'TERMINATED', 'ARCHIVED']),
-  ARCHIVED: new Set(),
-})
 
 const EMPLOYEE_RATE_LIMITS = [
   { name: 'adminMinute', windowMs: 60 * 1000, maxRequests: 240, getSubject: ({ uid }) => `user:${uid}` },
@@ -91,9 +82,7 @@ function withRequiredFields(schema) {
 }
 
 export function apiError(message, status, code, options = {}) {
-  const headers = options.retryAfterMs
-    ? { 'Retry-After': String(Math.max(1, Math.ceil(options.retryAfterMs / 1000))) }
-    : undefined
+  const headers = { 'Cache-Control': 'private, no-store, max-age=0', 'CDN-Cache-Control': 'no-store', 'Vercel-CDN-Cache-Control': 'no-store', ...(options.retryAfterMs ? { 'Retry-After': String(Math.max(1, Math.ceil(options.retryAfterMs / 1000))) } : {}) }
 
   return NextResponse.json({
     success: false,
@@ -164,6 +153,10 @@ export async function requireWorkforceAdmin(request) {
       return { response: apiError('Admin privileges are required.', 403, 'FORBIDDEN') }
     }
 
+    if (request.method === 'GET' || new URL(request.url).pathname.endsWith('/preview')) {
+      const limited = await enforceEmployeeRateLimit(request, decodedToken.uid)
+      if (limited) return { response: limited }
+    }
     return { uid: decodedToken.uid, email }
   } catch {
     return { response: apiError('Invalid or expired authentication token.', 401, 'UNAUTHORIZED') }
@@ -175,12 +168,14 @@ export async function enforceEmployeeRateLimit(request, uid) {
     return null;
   }
 
-  const rateLimit = await checkServerRateLimit({
+  let rateLimit
+  try { rateLimit = await checkServerRateLimit({
     namespace: 'workforceEmployees',
     subject: { uid, address: getClientAddress(request) },
     limits: EMPLOYEE_RATE_LIMITS,
     increment: true,
-  })
+    requireDistributed: process.env.NODE_ENV === 'production',
+  }) } catch { return apiError('Workforce protection is temporarily unavailable.', 503, 'PROTECTION_UNAVAILABLE') }
 
   if (!rateLimit.allowed) {
     return apiError('Too many workforce employee requests. Please try again shortly.', 429, 'RATE_LIMIT_EXCEEDED', {
@@ -237,7 +232,7 @@ export function prepareEmployeeData(validated) {
 }
 
 export function isStatusTransitionAllowed(currentStatus, nextStatus) {
-  return currentStatus === nextStatus || STATUS_TRANSITIONS[currentStatus]?.has(nextStatus) === true
+  return isWorkforceTransitionAllowed(currentStatus, nextStatus)
 }
 
 function serializeTimestamp(value) {

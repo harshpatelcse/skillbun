@@ -71,7 +71,7 @@
     ],
     "certifications": [
       "Linux Foundation Certified Kubernetes Administrator (CKA)",
-      "AWS Certified Machine Learning - Specialty",
+      "AWS Certified Machine Learning Engineer - Associate",
       "Databricks Certified Generative AI Engineer"
     ],
     "interview_focus": [
@@ -80,6 +80,15 @@
       "Semantic Caching Mechanics & Vector Distance Threshold Calibration",
       "RAG Evaluation Metrics (Context Precision, Context Recall, Faithfulness, Answer Relevance)",
       "LLM Cost Optimization, Latency Budgets & Prompt Token Compression Techniques"
+    ],
+    "certification_details": [
+      {
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "official_url": "https://aws.amazon.com/certification/certified-machine-learning-engineer-associate/",
+        "type": "professional_certification",
+        "note": "Role-based ML engineering certification; review the current exam guide and experience requirements.",
+        "checked_on": "2026-10-02"
+      }
     ]
   },
   "format": "tree",
@@ -1316,8 +1325,8 @@
           "description": "Master LLMOps technical interviews: System design of high-throughput LLM platforms, deriving KV-cache memory footprints, explaining LoRA mathematics, and solving live debugging scenarios.",
           "resources": [
             {
-              "title": "Preparing for Machine Learning Engineer Interviews",
-              "url": "https://www.freecodecamp.org/news/machine-learning-engineer-interview-prep/",
+              "title": "ML Engineering Topics and Certification Preparation (Google Cloud)",
+              "url": "https://cloud.google.com/learn/certification/machine-learning-engineer",
               "type": "article"
             },
             {

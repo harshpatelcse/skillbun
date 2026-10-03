@@ -796,8 +796,8 @@
           "description": "Standardize structured logging across microservices: Enforcing JSON schemas, contextual attributes (service name, environment, user ID), and embedding trace/span correlation IDs.",
           "resources": [
             {
-              "title": "Structured Logging Best Practices",
-              "url": "https://example.com/structured-logging-best-practices",
+              "title": "Structured Log Data Model (OpenTelemetry)",
+              "url": "https://opentelemetry.io/docs/specs/otel/logs/data-model/",
               "type": "article"
             },
             {
@@ -968,8 +968,8 @@
           "description": "Analyze trace data for root-cause diagnosis: Identifying critical path latency bottlenecks, database slow queries, cascading network timeouts, and microservice deadlocks.",
           "resources": [
             {
-              "title": "Troubleshooting with Distributed Tracing",
-              "url": "https://example.com/troubleshooting-with-tracing-article",
+              "title": "Distributed Traces and Spans (OpenTelemetry)",
+              "url": "https://opentelemetry.io/docs/concepts/signals/traces/",
               "type": "article"
             },
             {
@@ -1451,8 +1451,8 @@
       "description": "Harden observability infrastructure for production: Scaling backends, multi-tenant isolation, data governance, and capstone deployment.",
       "resources": [
         {
-          "title": "Designing Scalable Observability Systems",
-          "url": "https://example.com/scalable-observability-design-guide",
+          "title": "Scaling the OpenTelemetry Collector",
+          "url": "https://opentelemetry.io/docs/collector/scaling/",
           "type": "article"
         },
         {
@@ -1549,13 +1549,13 @@
           "description": "Build an enterprise observability capstone: Deploy an end-to-end system featuring OpenTelemetry Collector, Prometheus/Thanos, Grafana Loki, Grafana Tempo, SLO burn-rate alerts, and eBPF.",
           "resources": [
             {
-              "title": "Building a Robust Observability Stack (Project Guide)",
-              "url": "https://example.com/observability-capstone-project-guide",
+              "title": "OpenTelemetry Demo: A Complete Observability Example",
+              "url": "https://opentelemetry.io/docs/demo/",
               "type": "article"
             },
             {
-              "title": "Effective Project Documentation",
-              "url": "https://example.com/project-documentation-best-practices",
+              "title": "Writing Useful Project READMEs (GitHub)",
+              "url": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes",
               "type": "article"
             },
             {

@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { getFirebaseAdminAuth, getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import { isUserAuthorizedAdmin } from '@/utils/server/workforceEmployees';
 import { generateCertificateId, generateWorkforceId, formatWorkforceDisplayId, WORKFORCE_PREFIXES } from '@/utils/server/workforceId';
@@ -165,7 +165,7 @@ export async function GET(request) {
       },
     });
   } catch (err) {
-    console.error('[Admin Certificates GET Error]:', err);
+    console.error('[SkillBun server operation]', { code: err?.code || 'INTERNAL_ERROR' });
     return NextResponse.json({ error: 'Failed to retrieve certificate records.' }, { status: 500 });
   }
 }
@@ -298,7 +298,7 @@ export async function POST(request) {
     if (err instanceof CertificateMutationError || err?.code === 'auth/account-deleting') {
       return NextResponse.json({ error: err.message, code: err.code }, { status: err.status || 409 });
     }
-    console.error('[Admin Certificates POST Error]:', err?.code || 'INTERNAL_ERROR');
+    console.error('[SkillBun server operation]', { code: err?.code || 'INTERNAL_ERROR' });
     return NextResponse.json({ error: 'Failed to issue certificate. Please try again.' }, { status: 500 });
   }
 }

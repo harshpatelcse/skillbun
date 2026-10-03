@@ -1,6 +1,7 @@
-import { NextResponse } from 'next/server'
+import { passwordResetOrigin, canonicalPasswordResetLink } from '@/utils/server/passwordResetOrigin.mjs'
+import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 
-import { getAllowedAppOrigins, getAppOrigin } from '@/utils/server/env'
+import { getAppOrigin } from '@/utils/server/env'
 import { getFirebaseAdminAuth } from '@/utils/server/firebaseAdmin'
 import { checkServerRateLimit, hashRateLimitSubject } from '@/utils/server/rateLimitStore'
 import { sendSkillBunPasswordResetEmail } from '@/utils/server/zohoMailer'
@@ -25,6 +26,7 @@ async function checkRateLimit({ address, email, increment = true }) {
     subject: { address, email },
     limits: RATE_LIMITS,
     increment,
+    requireDistributed: process.env.NODE_ENV === 'production',
   })
 }
 
@@ -36,55 +38,8 @@ function okResponse() {
   return NextResponse.json({ ok: true })
 }
 
-function normalizeOrigin(value) {
-  try {
-    return new URL(value).origin.replace('://127.0.0.1:', '://localhost:')
-  } catch {
-    return ''
-  }
-}
-
-function isLocalOrigin(origin) {
-  try {
-    const parsed = new URL(origin)
-    return parsed.protocol === 'http:' && parsed.hostname === 'localhost'
-  } catch {
-    return false
-  }
-}
-
 function getPasswordResetBaseUrl(request) {
-  const requestOrigin = normalizeOrigin(request.headers.get('origin') || new URL(request.url).origin)
-  if (requestOrigin) {
-    try {
-      const parsedOrigin = new URL(requestOrigin)
-      const hostname = parsedOrigin.hostname
-      const allowedDomains = [
-        'localhost',
-        '127.0.0.1',
-        'skillbun-v2.vercel.app',
-        'skillbun.tech',
-        'www.skillbun.tech',
-        'skillbun-75d10.firebaseapp.com',
-        'skillbun-75d10.web.app'
-      ]
-      if (allowedDomains.includes(hostname)) {
-        return requestOrigin
-      }
-    } catch (e) {
-      console.error('Failed to parse request origin URL:', e)
-    }
-  }
-
-  const configuredOrigin = normalizeOrigin(getAppOrigin())
-  if (configuredOrigin) return configuredOrigin
-
-  const allowedOrigins = new Set(getAllowedAppOrigins().map(normalizeOrigin).filter(Boolean))
-
-  if (allowedOrigins.has(requestOrigin)) return requestOrigin
-  if (process.env.NODE_ENV !== 'production' && isLocalOrigin(requestOrigin)) return requestOrigin
-
-  throw new Error('APP_ORIGIN is not configured.')
+  return passwordResetOrigin({ configuredOrigin: getAppOrigin(), requestOrigin: request.headers.get('origin') || new URL(request.url).origin });
 }
 
 function buildActionCodeSettings(request) {
@@ -149,7 +104,7 @@ export async function POST(request) {
 
     const rawResetLink = await auth.generatePasswordResetLink(email, buildActionCodeSettings(request))
     const baseUrl = getPasswordResetBaseUrl(request)
-    const resetLink = rawResetLink.replace(/^https:\/\/[^\/]+/, baseUrl)
+    const resetLink = canonicalPasswordResetLink(rawResetLink, baseUrl)
 
     await sendSkillBunPasswordResetEmail({ email, resetLink })
 
@@ -157,10 +112,10 @@ export async function POST(request) {
   } catch (error) {
     console.error('Password reset request failed:', {
       code: error?.code || '',
-      message: error?.message || 'Unknown error',
+      message: 'Password reset operation failed.',
       emailHash: email ? hashRateLimitSubject(email).slice(0, 32) : '',
     })
 
-    return NextResponse.json({ error: 'Could not send password reset email. Please try again later.' }, { status: 500 })
+    return NextResponse.json({ error: 'Could not send password reset email. Please try again later.' }, { status: 503 })
   }
 }

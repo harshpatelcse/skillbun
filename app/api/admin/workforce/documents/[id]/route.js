@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import { apiError, requireWorkforceAdmin } from '@/utils/server/workforceEmployees';
 import { formatWorkforceDisplayId } from '@/utils/server/workforceId';
@@ -45,8 +45,8 @@ export async function GET(request, { params }) {
 
     return buildResponse(docSnap);
   } catch (error) {
-    console.error('[Workforce Document Detail GET Error]', error);
-    return apiError(error?.message || 'Unable to retrieve document.', 500, 'INTERNAL_ERROR');
+    console.error('[SkillBun server operation]', { code: error?.code || 'INTERNAL_ERROR' });
+    return apiError('Unable to retrieve document.', 500, 'INTERNAL_ERROR');
   }
 }
 

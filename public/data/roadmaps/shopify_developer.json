@@ -824,8 +824,8 @@
           "description": "Build an enterprise Shopify capstone: High-performance Online Store 2.0 theme featuring custom Metaobject product builder, dynamic cart drawer, Theme App Extension, and 95+ PageSpeed score.",
           "resources": [
             {
-              "title": "Shopify Developer Challenges",
-              "url": "https://shopify.dev/challenges",
+              "title": "Build a Shopify App (Official Developer Guides)",
+              "url": "https://shopify.dev/docs/apps/build",
               "type": "article"
             },
             {

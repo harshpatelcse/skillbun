@@ -130,10 +130,9 @@ export default async function RootLayout({ children }) {
   const cookieStore = await cookies();
   const savedLocale = cookieStore.get('sb_locale')?.value;
   const initialLocale = SUPPORTED_LOCALES.some((l) => l.code === savedLocale) ? savedLocale : DEFAULT_LOCALE;
-  const activeLocaleInfo = SUPPORTED_LOCALES.find((l) => l.code === initialLocale) || SUPPORTED_LOCALES[0];
 
   return (
-    <html lang={initialLocale} dir={activeLocaleInfo.dir || 'ltr'} className={`${fredoka.variable} ${nunito.variable}`} suppressHydrationWarning>
+    <html lang="en" dir="ltr" className={`${fredoka.variable} ${nunito.variable}`} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/logo.png" type="image/png" />
         <meta name="color-scheme" content="light dark" />

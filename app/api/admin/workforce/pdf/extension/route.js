@@ -1,4 +1,5 @@
-import { NextResponse } from 'next/server';
+import { assertWorkforceAction, transitionWorkforceEmployee, finishWorkforceAction, WorkforcePolicyError } from '@/utils/server/workforcePolicy.mjs';
+import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import {
   apiError,
@@ -52,6 +53,7 @@ export async function POST(request) {
     }
 
     const employeeData = doc.data();
+    assertWorkforceAction(employeeData, 'extension', new_contract_end_date);
     const activeVersion = getActiveTemplateVersion(DOCUMENT_CATEGORIES.EXTENSION_LETTER);
 
     const { buffer, filename, referenceId, metadataSnapshot } = await generateExtensionLetterPdf(
@@ -70,23 +72,15 @@ export async function POST(request) {
     // Keep the immutable render snapshot in the workforce audit trail and align
     // the active contract record with the letter that was issued.
     const now = new Date();
-    const batch = db.batch();
-    batch.create(db.collection('workforce_docs').doc(referenceId), {
-      id: referenceId,
-      employee_id: doc.id,
-      doc_type: 'EXTENSION_LETTER',
-      template_version: activeVersion,
-      title: 'Extension of Internship Tenure',
-      metadata_snapshot: metadataSnapshot,
-      issued_by: admin.email || admin.uid || 'admin',
-      issued_at: now,
+    await transitionWorkforceEmployee(db, doc.ref, {
+      action: 'extension', nextStatus: 'EXTENDED', expectedStatus: employeeData.status, newEndDate: new_contract_end_date,
+      patch: { contract_end_date: new Date(`${new_contract_end_date}T00:00:00.000Z`) },
+      document: { ref: db.collection('workforce_docs').doc(referenceId), data: {
+        id: referenceId, employee_id: doc.id, doc_type: 'EXTENSION_LETTER', template_version: activeVersion,
+        title: 'Extension of Internship Tenure', metadata_snapshot: metadataSnapshot, issued_by: admin.email || admin.uid, issued_at: now,
+      } },
     });
-    batch.update(doc.ref, {
-      contract_end_date: new Date(`${new_contract_end_date}T00:00:00.000Z`),
-      status: 'EXTENDED',
-      updated_at: now,
-    });
-    await batch.commit();
+    await finishWorkforceAction(db, doc.ref, 'extension');
 
     const url = new URL(request.url);
     const format = url.searchParams.get('format');
@@ -107,11 +101,14 @@ export async function POST(request) {
         'Content-Type': 'application/pdf',
         'Content-Disposition': `attachment; filename="${filename}"`,
         'X-SkillBun-Reference-Id': referenceId,
-        'Cache-Control': 'no-store, max-age=0',
+        'Cache-Control': 'private, no-store, max-age=0',
+        'CDN-Cache-Control': 'no-store',
+        'Vercel-CDN-Cache-Control': 'no-store',
       },
     });
   } catch (error) {
-    console.error('[Workforce PDF Extension Generation Error]', error);
-    return apiError(error?.message || 'Unable to generate Extension Letter PDF.', 500, 'INTERNAL_ERROR');
+    if (error instanceof WorkforcePolicyError) return apiError(error.message, error.status, error.code);
+    console.error('[SkillBun server operation]', { code: error?.code || 'INTERNAL_ERROR' });
+    return apiError('Unable to generate Extension Letter PDF.', 500, 'INTERNAL_ERROR');
   }
 }

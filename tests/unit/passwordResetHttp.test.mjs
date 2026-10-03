@@ -1,3 +1,4 @@
+import { passwordResetOrigin, canonicalPasswordResetLink } from '../../utils/server/passwordResetOrigin.mjs';
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { readFile } from 'node:fs/promises';
@@ -13,7 +14,7 @@ function setup({ missingUser = false, mailFailure = false } = {}) {
   let mails = 0;
   const incrementFlags = [];
   const handler = vm.runInNewContext(`${source}; POST;`, {
-    URL, console: { error() {} }, process: { env: { NODE_ENV: 'production' } },
+    passwordResetOrigin, canonicalPasswordResetLink, URL, console: { error() {} }, process: { env: { NODE_ENV: 'production' } },
     NextResponse: { json: Response.json }, validateSchema,
     getAppOrigin: () => 'https://skillbun.tech', getAllowedAppOrigins: () => ['https://skillbun.tech'],
     getClientAddress: () => '127.0.0.1', hashRateLimitSubject: () => 'email-hash',
@@ -62,7 +63,7 @@ test('unknown accounts keep the generic response and consume the same reset allo
 });
 test('an SMTP failure cannot turn a reset endpoint into an unlimited retry loop', async () => {
   const app = setup({ mailFailure: true });
-  assert.equal((await app.call()).status, 500);
+  assert.equal((await app.call()).status, 503);
   assert.equal((await app.call()).status, 429);
   assert.equal(app.mails, 1);
 });

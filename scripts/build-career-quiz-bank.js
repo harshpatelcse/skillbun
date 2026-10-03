@@ -2,7 +2,7 @@
  * SkillBun Career Discovery Quiz Bank Builder
  * 
  * Reads modular question data files from scripts/quiz-bank/
- * and assembles the final public/data/quizQuestions.json
+ * and assembles the private encryption source content/quiz/source_quizQuestions.json
  * 
  * Usage: node scripts/build-career-quiz-bank.js
  * Then:  node scripts/encrypt-quiz.js
@@ -54,16 +54,24 @@ try { phase4 = require('./quiz-bank/phase4'); } catch (e) { console.warn('Phase 
 
 // --- Validate questions ---
 let errors = 0;
+const seenIds = new Set();
 function validateQuestion(q, source) {
   if (!q.id) { console.error(`Missing id in ${source}`); errors++; }
+  if (seenIds.has(q.id)) { console.error(`Duplicate question id in ${source}: ${q.id}`); errors++; }
+  seenIds.add(q.id);
   if (!q.q) { console.error(`Missing question text in ${source}, id=${q.id}`); errors++; }
-  if (!Array.isArray(q.options) || q.options.length < 3) {
-    console.error(`Need at least 3 options in ${source}, id=${q.id}`); errors++;
+  if (!Array.isArray(q.options) || q.options.length !== 4) {
+    console.error(`Need exactly 4 options in ${source}, id=${q.id}`); errors++;
   }
+  const choices = new Set((q.options || []).map(option => JSON.stringify(option.tags)));
+  if (choices.size !== 4) { console.error(`Options need distinct career signals in ${source}, id=${q.id}`); errors++; }
   for (const opt of (q.options || [])) {
     if (!opt.t) { console.error(`Missing option text in ${source}, id=${q.id}`); errors++; }
     if (!Array.isArray(opt.tags) || opt.tags.length === 0) {
       console.error(`Missing tags in ${source}, id=${q.id}, option="${opt.t?.slice(0, 30)}"`); errors++;
+    }
+    if ((opt.tags || []).some(tag => !Object.hasOwn(config.roadmapToPillar, tag))) {
+      console.error(`Unknown career tag in ${source}, id=${q.id}`); errors++;
     }
     if (!opt.i) { console.error(`Missing insight in ${source}, id=${q.id}`); errors++; }
   }
@@ -84,6 +92,7 @@ for (const q of phase4) validateQuestion(q, 'phase4');
 const phase2Total = Object.values(phase2).reduce((sum, arr) => sum + arr.length, 0);
 const phase3Total = Object.values(phase3Fallback).reduce((sum, arr) => sum + arr.length, 0);
 const grandTotal = phase1.length + phase2Total + phase3Total + phase4.length;
+if (grandTotal !== 2531) { console.error(`Expected 2,531 discovery questions, received ${grandTotal}`); errors++; }
 
 console.log('--- Question Bank Stats ---');
 console.log(`Phase 1 (Core DNA):        ${phase1.length}`);

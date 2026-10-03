@@ -24,8 +24,8 @@ service cloud.firestore {
         (request.resource.data.providers is list && request.resource.data.providers.size() <= 20);
     }
 
-    function validUserProfile(uid) {
-      return request.resource.data.keys().hasOnly([
+    function userProfileKeys() {
+      return [
           'uid',
           'email',
           'displayName',
@@ -40,9 +40,12 @@ service cloud.firestore {
           'emailVerified',
           'providers',
           'createdAt',
-          'updatedAt'
-        ]) &&
-        request.resource.data.uid == uid &&
+          'updatedAt', 'ageBand'
+        ];
+    }
+
+    function validUserProfile(uid) {
+      return request.resource.data.uid == uid &&
         optionalString('email', 254) &&
         optionalString('displayName', 120) &&
         optionalString('photoURL', 2048) &&
@@ -54,6 +57,7 @@ service cloud.firestore {
         optionalString('interest', 120) &&
         optionalString('interest_area', 120) &&
         optionalBool('emailVerified') &&
+        (!('ageBand' in request.resource.data) || (request.resource.data.ageBand == '18-plus')) &&
         validProviderList() &&
         optionalTimestamp('createdAt') &&
         optionalTimestamp('updatedAt');
@@ -94,8 +98,10 @@ service cloud.firestore {
 
     match /users/{uid} {
       allow read, delete: if signedInAs(uid) || isAdmin();
-      allow create, update: if !exists(/databases/$(database)/documents/accountDeletions/$(uid)) &&
-        ((signedInAs(uid) && validUserProfile(uid)) || isAdmin());
+      allow create: if !exists(/databases/$(database)/documents/accountDeletions/$(uid)) &&
+        ((signedInAs(uid) && request.resource.data.keys().hasOnly(userProfileKeys()) && validUserProfile(uid)) || isAdmin());
+      allow update: if !exists(/databases/$(database)/documents/accountDeletions/$(uid)) &&
+        ((signedInAs(uid) && request.resource.data.diff(resource.data).affectedKeys().hasOnly(userProfileKeys()) && validUserProfile(uid)) || isAdmin());
 
       match /roadmapProgress/{slug} {
         allow read, delete: if signedInAs(uid) || isAdmin();
@@ -139,19 +145,32 @@ service cloud.firestore {
       allow write: if isAdmin();
     }
 
+    function activeMilestoneOwner(data) {
+      let employee = get(/databases/$(database)/documents/employees/$(data.employee_id));
+      return isEmployeeOwner(data.employee_email) && employee.data.status in ['ACTIVE', 'EXTENDED'] &&
+        employee.data.get('portal_access_revoked', false) != true && isEmployeeOwner(employee.data.personal_email);
+    }
+
+    function validInternMilestoneUpdate() {
+      return request.resource.data.status in ['TODO', 'IN_PROGRESS', 'UNDER_REVIEW', 'COMPLETED'] &&
+        request.resource.data.get('deliverable_url', '') is string && request.resource.data.get('deliverable_url', '').size() <= 500 &&
+        (request.resource.data.get('deliverable_url', '') == '' || request.resource.data.get('deliverable_url', '').matches('^https?://[^\\s]+$')) &&
+        request.resource.data.updated_at is timestamp && request.resource.data.updated_at == request.time;
+    }
+
     // Workforce Hub: Milestones collection (Admin full CRUD; Intern can read and update only status, deliverable_url, updated_at)
     match /milestones/{milestoneId} {
       allow read: if isAdmin() || (
         signedIn() && 
         resource != null && 
-        isEmployeeOwner(resource.data.employee_email)
+        activeMilestoneOwner(resource.data)
       );
       allow create, delete: if isAdmin();
       allow update: if isAdmin() || (
         signedIn() &&
         resource != null &&
-        isEmployeeOwner(resource.data.employee_email) &&
-        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'deliverable_url', 'updated_at'])
+        activeMilestoneOwner(resource.data) &&
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'deliverable_url', 'updated_at']) && validInternMilestoneUpdate()
       );
     }
 

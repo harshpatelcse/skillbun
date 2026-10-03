@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { getFirebaseAdminAuth, getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import { checkServerRateLimit } from '@/utils/server/rateLimitStore';
 import { getClientAddress } from '@/utils/server/requestUtils';
@@ -42,6 +42,7 @@ export async function POST(request) {
       subject: { uid, address },
       limits: SUBMIT_RATE_LIMITS,
       increment: true,
+      requireDistributed: process.env.NODE_ENV === 'production',
     });
 
     if (!rateLimit.allowed) {
@@ -74,6 +75,7 @@ export async function POST(request) {
 
     const result = await submitExamAttempt(db, {
       uid, attemptId, answers,
+      developmentBypass: isDevBypass,
       grade: (questions, submitted) => {
         if (isDevBypass) return gradeExamAttempt(questions, Object.fromEntries(questions.map((q, i) => [i, q.correctIndex])));
         return gradeExamAttempt(questions, submitted);
@@ -82,7 +84,8 @@ export async function POST(request) {
     return NextResponse.json(result, { headers: { 'Cache-Control': 'private, no-store' } });
   } catch (error) {
     if (error instanceof ExamError) return NextResponse.json({ error: error.message }, { status: error.status });
-    console.error('[Certify Submit API Error]:', error);
+    if (error.message === 'Distributed rate limiting is unavailable.') return NextResponse.json({ error: 'Exam service temporarily unavailable.' }, { status: 503 });
+    console.error('[Certify Submit API Error]:', { code: error.code || 'EXAM_SUBMIT_FAILED' });
     return NextResponse.json({ error: 'Failed to evaluate exam answers. Please try again.' }, { status: 500 });
   }
 }

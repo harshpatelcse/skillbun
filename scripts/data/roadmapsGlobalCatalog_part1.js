@@ -527,7 +527,7 @@ const PART1_CATALOG = {
       capstone_projects: [
         { title: 'Offline-First Fitness & Workout Companion', tech_stack: ['Kotlin', 'Jetpack Compose', 'Room DB', 'Hilt', 'Coroutines'], description: 'Build an offline-first fitness tracker with animated exercise routines, SQLite synchronization, and background notification alarms.' }
       ],
-      certifications: ['Google Associate Android Developer Certification'],
+      certifications: ['AWS Certified Developer - Associate'],
       interview_focus: ['Android Activity & Fragment Lifecycles', 'Jetpack Compose Recomposition Optimization', 'Coroutines Dispatchers & Exception Handling', 'Memory Leak Detection with LeakCanary']
     }
   },

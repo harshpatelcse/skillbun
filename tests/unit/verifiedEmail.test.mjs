@@ -127,7 +127,10 @@ test('Firestore source guards require verified identities, private raw certifica
   assert.match(rules, /!exists\(\/databases\/\$\(database\)\/documents\/accountDeletions\/\$\(request\.auth\.uid\)\)/);
   assert.match(rules, /allow get: if isAdmin\(\) \|\| signedInAs\(resource\.data\.uid\);/);
   assert.doesNotMatch(rules, /allow get: if true;/);
-  assert.equal((rules.match(/allow create, update: if !exists\(\/databases\/\$\(database\)\/documents\/accountDeletions\/\$\(uid\)\)/g) || []).length, 2);
+  const userRules = rules.split('match /users/{uid} {')[1].split('match /roadmapProgress/{slug} {')[0];
+  assert.match(userRules, /allow create: if !exists\(\/databases\/\$\(database\)\/documents\/accountDeletions\/\$\(uid\)\) &&\s*\(\(signedInAs\(uid\) && request\.resource\.data\.keys\(\)\.hasOnly\(userProfileKeys\(\)\) && validUserProfile\(uid\)\) \|\| isAdmin\(\)\)/);
+  assert.match(userRules, /allow update: if !exists\(\/databases\/\$\(database\)\/documents\/accountDeletions\/\$\(uid\)\) &&\s*\(\(signedInAs\(uid\) && request\.resource\.data\.diff\(resource\.data\)\.affectedKeys\(\)\.hasOnly\(userProfileKeys\(\)\) && validUserProfile\(uid\)\) \|\| isAdmin\(\)\)/);
+  assert.equal((rules.match(/allow create, update: if !exists\(\/databases\/\$\(database\)\/documents\/accountDeletions\/\$\(uid\)\)/g) || []).length, 1);
   assert.match(rules, /match \/examAttempts\/\{attemptId\}\s*\{\s*allow read: if false;/);
   assert.match(rules, /match \/emailSignupChallenges\/\{challengeId\}\s*\{\s*allow read, write: if false;/);
 });

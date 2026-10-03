@@ -600,8 +600,8 @@
               "type": "video"
             },
             {
-              "title": "Example Terraform Project for Portfolio",
-              "url": "https://github.com/learn-terraform-btp/terraform-aws-ec2-cluster",
+              "title": "Build an AWS Infrastructure Project (HashiCorp Terraform Tutorials)",
+              "url": "https://developer.hashicorp.com/terraform/tutorials/aws-get-started",
               "type": "article"
             }
           ],

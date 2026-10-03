@@ -964,8 +964,8 @@
               "type": "article"
             },
             {
-              "title": "ExtentReports Introduction",
-              "url": "http://extentreports.com/",
+              "title": "ExtentReports for Java (Legacy Project; Superseded by ChainTest)",
+              "url": "https://github.com/extent-framework/extentreports-java",
               "type": "article"
             },
             {

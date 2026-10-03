@@ -1136,8 +1136,8 @@
               "type": "article"
             },
             {
-              "title": "SvelteKit + Prisma + PostgreSQL Guide",
-              "url": "https://www.prisma.io/docs/guides/other/sveltekit-prisma",
+              "title": "SvelteKit with Prisma (Official Guide)",
+              "url": "https://www.prisma.io/docs/guides/sveltekit",
               "type": "article"
             },
             {

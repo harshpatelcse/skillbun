@@ -719,7 +719,7 @@ function styleBlock() {
  * @param {string[]} [opts.chips]  Short facts rendered as a quiet meta line
  * @param {string} opts.contentHtml
  * @param {boolean} [opts.isMarketing]  Adds the unsubscribe line
- * @param {string} [opts.email]         Recipient, for the unsubscribe link
+ * @param {string} [opts.preferenceUrl] Server-signed preference URL; previews use Settings
  */
 export function buildEmail({
   title,
@@ -730,9 +730,11 @@ export function buildEmail({
   chips = [],
   contentHtml,
   isMarketing = true,
-  email = '',
+  preferenceUrl = '',
 }) {
-  const unsubscribeUrl = `${SITE_URL}/settings?action=unsubscribe&email=${encodeURIComponent(email)}`;
+  // This renderer is also used for browser previews. Signing and secret access
+  // belong to the server dispatch route, never the shared rendering graph.
+  const unsubscribeUrl = escapeHtml(preferenceUrl || `${SITE_URL}/settings`);
 
   // Inbox preview text. `lede` is trusted markup that already carries its own
   // entities, so it only needs its tags removed — escaping it again would show
@@ -821,7 +823,7 @@ export function buildEmail({
                   </td>
                 </tr>
               </table>
-              ${isMarketing ? `<div class="sb-muted" style="font-family:${BODY_FONT}; margin-top:18px; font-size:11.5px; color:${L.muted}; line-height:1.6;">You're receiving this because you have a SkillBun account. <a href="${unsubscribeUrl}" target="_blank" class="sb-muted" style="color:${L.muted}; text-decoration:underline;">Unsubscribe or manage preferences</a>.</div>` : ''}
+              ${isMarketing ? `<div class="sb-muted" style="font-family:${BODY_FONT}; margin-top:18px; font-size:11.5px; color:${L.muted}; line-height:1.6;">You're receiving this because you opted in to SkillBun marketing emails. <a href="${unsubscribeUrl}" target="_blank" class="sb-muted" style="color:${L.muted}; text-decoration:underline;">Unsubscribe or manage preferences</a>.</div>` : ''}
             </td>
           </tr>
 
@@ -837,12 +839,13 @@ export function buildEmail({
  * Back-compat shell for callers that only have a blob of body HTML (the admin
  * console's custom-HTML path).
  */
-export function buildBaseEmailWrapper(contentHtml, titleText, isMarketing = true, email = '') {
+export function buildBaseEmailWrapper(contentHtml, titleText, isMarketing = true, email = '', preferenceUrl = '') {
   return buildEmail({
     title: titleText,
     headline: escapeHtml(titleText || 'SkillBun'),
     contentHtml,
     isMarketing,
     email,
+    preferenceUrl,
   });
 }

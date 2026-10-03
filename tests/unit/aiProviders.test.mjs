@@ -187,7 +187,7 @@ test('quiz accepts a valid four-second AI answer and still falls back on timeout
     for (const timedOut of [false, true]) {
       let shown;
       const helperStart = source.indexOf('  async function callGeminiWithTimeout(');
-      const helper = helperStart < 0 ? '' : source.slice(helperStart, source.indexOf('  const fallbackCatalog', helperStart));
+      const helper = helperStart < 0 ? '' : source.slice(helperStart, source.indexOf('  function getLocalFallbackResults(', helperStart));
       const deps = {
         state: { questionCount, userAnswers: [], signal: new AbortController().signal },
         document: { getElementById: () => ({ style: {}, querySelector: () => ({}) }) },
@@ -197,6 +197,7 @@ test('quiz accepts a valid four-second AI answer and still falls back on timeout
         showResults: (_state, data) => { shown = data.careers[0]; },
         pickQuestionForStep: () => ({ question: 'Local question', options: [] }),
         getLocalFallbackResults: () => ({ careers: ['Local result'] }),
+        groundDiscoveryResults: data => data, careerCatalog: {},
         getDominantPillar: () => 'systems', selectOption() {},
         posthog: { capture() {} }, console: { warn() {} },
       };

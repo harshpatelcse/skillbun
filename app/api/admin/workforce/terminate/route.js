@@ -1,4 +1,5 @@
-import { NextResponse } from 'next/server';
+import { isWorkforceTransitionAllowed, assertWorkforceCertificate, WorkforcePolicyError } from '@/utils/server/workforcePolicy.mjs';
+import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { getFirebaseAdminFirestore, getFirebaseAdminAuth } from '@/utils/server/firebaseAdmin';
 import {
   apiError,
@@ -61,6 +62,17 @@ export async function POST(request) {
     }
 
     const employeeData = employeeDoc.data();
+    if (employeeData.terminated_at || ['TERMINATED', 'ARCHIVED'].includes(employeeData.status)) throw new WorkforcePolicyError('This employee has already been offboarded. Review the existing record before taking another action.');
+    if (grantInternshipCert) assertWorkforceCertificate(employeeData, 'INTERNSHIP');
+    if (grantTrainingCert) assertWorkforceCertificate(employeeData, 'TRAINING');
+    if (grantLor) assertWorkforceCertificate(employeeData, 'LOR');
+    let recipientUid = null;
+    if (grantInternshipCert || grantTrainingCert || grantLor) {
+      try {
+        const recipient = await adminAuth.getUserByEmail(employeeData.personal_email.trim().toLowerCase());
+        if (recipient.emailVerified && !recipient.disabled) recipientUid = recipient.uid;
+      } catch (lookupError) { if (lookupError?.code !== 'auth/user-not-found') throw lookupError; }
+    }
     const now = new Date();
     const referenceId = generateWorkforceId(WORKFORCE_PREFIXES.TERMINATION);
 
@@ -78,7 +90,8 @@ export async function POST(request) {
     const endDate = toIsoDate(employeeData.contract_end_date) || now.toISOString().slice(0, 10);
 
     // 1. Grant requested verified credentials
-    const certBatch = db.batch();
+    const credentialWrites = [];
+    const certBatch = { set: (ref, data) => credentialWrites.push({ ref, data: { ...data, issued_by_uid: admin.uid, ...(recipientUid ? { uid: recipientUid } : {}) } }) };
 
     if (grantInternshipCert) {
       const certId = generateWorkforceId(WORKFORCE_PREFIXES.INTERNSHIP);
@@ -153,21 +166,26 @@ export async function POST(request) {
       grantedCredentials.push(`Official Letter of Recommendation (${displayId})`);
     }
 
-    if (grantedCredentials.length > 0) {
-      await certBatch.commit();
-    }
-
-    // 2. Update Employee Record to TERMINATED
-    await employeeRef.update({
-      status: 'TERMINATED',
-      terminated_at: now,
-      terminated_by: admin.email || admin.uid || 'admin',
-      termination_reason_code: reasonCode,
-      termination_reason: reason || '',
-      granted_credentials: grantedCredentials,
-      portal_access_revoked: Boolean(revokeAccess),
-      portal_access_revoked_at: revokeAccess ? now : null,
-      updated_at: now,
+    await db.runTransaction(async tx => {
+      const snapshot = await tx.get(employeeRef);
+      if (!snapshot.exists) throw new WorkforcePolicyError('Employee record not found.', 404);
+      const current = snapshot.data();
+      // Completed employees keep their completion status, so the persisted
+      // offboarding marker must also guard retries and concurrent requests.
+      if (current.terminated_at || ['TERMINATED', 'ARCHIVED'].includes(current.status)) throw new WorkforcePolicyError('This employee has already been offboarded. Review the existing record before taking another action.');
+      if (current.status !== employeeData.status || current.personal_email !== employeeData.personal_email || current.full_name !== employeeData.full_name) throw new WorkforcePolicyError('Employee record changed. Refresh before offboarding.');
+      const nextStatus = current.status === 'COMPLETED' ? 'COMPLETED' : 'TERMINATED';
+      if (!isWorkforceTransitionAllowed(current.status, nextStatus)) throw new WorkforcePolicyError('This status cannot be offboarded.');
+      for (const credential of credentialWrites) {
+        assertWorkforceCertificate(current, credential.data.cert_type);
+        tx.create(credential.ref, credential.data);
+      }
+      tx.update(employeeRef, {
+        status: nextStatus, terminated_at: now, terminated_by: admin.email || admin.uid,
+        termination_reason_code: reasonCode, termination_reason: reason || '',
+        granted_credentials: grantedCredentials, portal_access_revoked: Boolean(revokeAccess),
+        portal_access_revoked_at: revokeAccess ? now : null, updated_at: now,
+      });
     });
 
     // 3. Revoke Firebase Auth session tokens & user portal flags (if requested)
@@ -189,7 +207,7 @@ export async function POST(request) {
           authRevoked = true;
         }
       } catch (authErr) {
-        console.log('[Workforce Terminate] No active Firebase Auth user account to revoke:', authErr?.message);
+        console.log('[SkillBun server operation]', { code: authErr?.code || 'INTERNAL_ERROR' });
       }
     }
 
@@ -244,8 +262,8 @@ export async function POST(request) {
           issued_at: now,
         });
       } catch (smtpErr) {
-        console.error('[Zoho SMTP Termination Dispatch Failed]', smtpErr);
-        emailError = smtpErr?.message || 'SMTP Dispatch failed';
+        console.error('[SkillBun server operation]', { code: smtpErr?.code || 'INTERNAL_ERROR' });
+        emailError = 'Email delivery could not be confirmed. Review the existing offboarding record and mail delivery before retrying.';
       }
     }
 
@@ -267,7 +285,8 @@ export async function POST(request) {
       message: `Offboarding processed successfully. ${grantedCredentials.length} credentials granted. ${emailDispatched ? 'Confirmation email dispatched to candidate.' : ''}`,
     });
   } catch (error) {
-    console.error('[Workforce Terminate Error]', error);
-    return apiError(error?.message || 'Unable to process offboarding and access update.', 500, 'INTERNAL_ERROR');
+    if (error instanceof WorkforcePolicyError) return apiError(error.message, error.status, error.code);
+    console.error('[SkillBun server operation]', { code: error?.code || 'INTERNAL_ERROR' });
+    return apiError('Unable to process offboarding and access update.', 500, 'INTERNAL_ERROR');
   }
 }

@@ -1,3 +1,4 @@
+import { hasMarketingConsent } from './emailPreferences.mjs';
 import { randomUUID } from 'node:crypto';
 import { assertAccountActive } from './accountLifecycle.mjs';
 import { EMAIL_GAP_MS, emailCategory, emailTime } from '../shared/emailRecommendation.js';
@@ -57,7 +58,7 @@ export async function claimRecommendedEmailDispatch({
     const userSnapshot = await tx.get(userRef);
     const userData = userSnapshot.data() || {};
     const unsubscribeSnapshot = await tx.get(unsubscribeRef);
-    if (!forceOverride && (userData.isUnsubscribed || unsubscribeSnapshot.exists)) return { kind: 'unsubscribed' };
+    if (!hasMarketingConsent(userData, unsubscribeSnapshot.exists)) return { kind: 'unsubscribed' };
 
     const history = normalizeHistory(userData.sentEmailHistory);
     if (history.some(log => log.templateId === templateId)) return { kind: 'already_sent' };

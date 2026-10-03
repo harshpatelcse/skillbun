@@ -71,13 +71,22 @@
     "certifications": [
       "DeepLearning.AI Deep Learning Specialization",
       "Stanford Online Machine Learning Specialization",
-      "AWS Certified Machine Learning - Specialty"
+      "AWS Certified Machine Learning Engineer - Associate"
     ],
     "interview_focus": [
       "Mathematical Proofs of Attention Complexity",
       "Distributed Training Parallelism (Tensor, Pipeline, Data)",
       "Gradient Vanishing / Exploding Dynamics",
       "Research Paper Analysis & Critique"
+    ],
+    "certification_details": [
+      {
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "official_url": "https://aws.amazon.com/certification/certified-machine-learning-engineer-associate/",
+        "type": "professional_certification",
+        "note": "Role-based ML engineering certification; review the current exam guide and experience requirements.",
+        "checked_on": "2026-10-02"
+      }
     ]
   },
   "format": "tree",
@@ -273,7 +282,7 @@
             },
             {
               "title": "The Linux Command Line: A Complete Introduction (William E. Shotts Jr.)",
-              "url": "http://linuxcommand.org/tlcl.php",
+              "url": "https://linuxcommand.org/tlcl.php",
               "type": "article"
             },
             {
@@ -405,12 +414,12 @@
             },
             {
               "title": "Stanford CS231n: Convolutional Neural Networks for Visual Recognition",
-              "url": "http://cs231n.stanford.edu/",
+              "url": "https://cs231n.stanford.edu/",
               "type": "course"
             },
             {
               "title": "Stanford CS224n: Natural Language Processing with Deep Learning",
-              "url": "http://web.stanford.edu/class/cs224n/",
+              "url": "https://web.stanford.edu/class/cs224n/",
               "type": "course"
             },
             {
@@ -1152,13 +1161,13 @@
           "description": "Track cutting-edge AI breakthroughs: Review daily arXiv papers, follow research discussions on X/Bluesky and Lab Discords, and engage in peer review for international workshops and conferences.",
           "resources": [
             {
-              "title": "ArXiv Sanity Preserver",
-              "url": "http://www.arxiv-sanity.com/",
+              "title": "arXiv Sanity Lite: Research Discovery Tool (Author Repository)",
+              "url": "https://github.com/karpathy/arxiv-sanity-lite",
               "type": "article"
             },
             {
-              "title": "Top AI Conferences (e.g., NeurIPS, ICML, ICLR, CVPR, ACL)",
-              "url": "https://ai.google/research/conferences/",
+              "title": "NeurIPS: Official Conference and Research Program",
+              "url": "https://neurips.cc/",
               "type": "article"
             },
             {

@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import { apiError, requireWorkforceAdmin } from '@/utils/server/workforceEmployees';
 import { formatWorkforceDisplayId } from '@/utils/server/workforceId';
@@ -113,8 +113,8 @@ export async function GET(request) {
     return createCachedJsonResponse(request, { success: true, ...paginateWorkforceDocuments(allDocuments, { limit, cursor }) });
   } catch (error) {
     if (error instanceof WorkforceDocumentQueryError) return apiError(error.message, 400, 'VALIDATION_ERROR');
-    console.error('[Workforce Documents GET Error]', error);
-    return apiError(error?.message || 'Unable to retrieve workforce documents.', 500, 'INTERNAL_ERROR');
+    console.error('[SkillBun server operation]', { code: error?.code || 'INTERNAL_ERROR' });
+    return apiError('Unable to retrieve workforce documents.', 500, 'INTERNAL_ERROR');
   }
 }
 
@@ -166,7 +166,7 @@ export async function PATCH(request) {
       message: is_revoked ? 'Document has been revoked.' : 'Document has been restored.',
     });
   } catch (error) {
-    console.error('[Workforce Documents PATCH Error]', error);
-    return apiError(error?.message || 'Unable to update document.', 500, 'INTERNAL_ERROR');
+    console.error('[SkillBun server operation]', { code: error?.code || 'INTERNAL_ERROR' });
+    return apiError('Unable to update document.', 500, 'INTERNAL_ERROR');
   }
 }

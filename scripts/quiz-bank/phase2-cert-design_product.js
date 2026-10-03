@@ -1,51 +1,49 @@
-/**
- * Phase 2 Cert-inspired Relatable Questions for Pillar: design_product
- */
-
+/** Student preference scenarios for design_product; generated offline. */
 module.exports = [
   {
     "id": 1326,
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "business_analyst",
-    "topic": "primary responsibility business (business analyst)",
-    "q": "Hey {name}, during a college hackathon project involving primary responsibility business (business analyst), which aspect would excite you most?",
+    "sourceQuestionIndex": 0,
+    "topic": "understand a team process and explain what needs to change",
+    "q": "{name}, at a campus hackathon, your team has a chance to understand a team process and explain what needs to change. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Learn how to understand a team process and explain what needs to change.",
         "pillar": "design_product",
         "tags": [
           "business_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to understand a team process and explain what needs to change, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Work with a teammate to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "business_analyst"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
+        "t": "Make a small example that shows how to turn a spreadsheet into a clear answer about what happened.",
         "pillar": "data_ai",
         "tags": [
-          "business_analyst"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
+        "t": "Try a hands-on exercise to automate the steps that publish an app online.",
         "pillar": "cloud_infra",
         "tags": [
-          "business_analyst"
+          "devops_cloud"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -54,44 +52,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "business_analyst",
-    "topic": "before initiating project (business analyst)",
-    "q": "{name}, if your campus tech club asks you to build a before initiating project (business analyst) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 1,
+    "topic": "understand a team process and explain what needs to change",
+    "q": "At a student club project, the team wants to understand a team process and explain what needs to change. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Work with a teammate to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "business_analyst"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Make a small example that shows how to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "site_reliability_engineer"
+        ],
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
+        "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Explore the tools needed to understand a team process and explain what needs to change.",
         "pillar": "design_product",
         "tags": [
           "business_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "business_analyst"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "business_analyst"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to understand a team process and explain what needs to change, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -100,44 +99,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "business_analyst",
-    "topic": "business analyst wants (business analyst)",
-    "q": "When working on a team project centered around business analyst wants (business analyst), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 2,
+    "topic": "understand a team process and explain what needs to change",
+    "q": "{name}, imagine joining a small startup internship to understand a team process and explain what needs to change. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "business_analyst"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Try a hands-on exercise to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to understand a team process and explain what needs to change.",
         "pillar": "design_product",
         "tags": [
           "business_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "business_analyst"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to understand a team process and explain what needs to change, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
+        "t": "Learn how to connect computers so information reaches the right place.",
         "pillar": "cloud_infra",
         "tags": [
-          "business_analyst"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -146,44 +146,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "business_analyst",
-    "topic": "what type diagram (business analyst)",
-    "q": "{name}, imagine a local startup hires you for a week to help with what type diagram (business analyst). What challenge would you jump at first?",
+    "sourceQuestionIndex": 3,
+    "topic": "understand a team process and explain what needs to change",
+    "q": "Your teammates at a weekend learning challenge plan to understand a team process and explain what needs to change. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to build an app for Android phones.",
+        "pillar": "systems",
         "tags": [
-          "business_analyst"
+          "android"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Explore the tools needed to understand a team process and explain what needs to change.",
         "pillar": "design_product",
         "tags": [
           "business_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to understand a team process and explain what needs to change, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Learn how to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "business_analyst"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "business_analyst"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -192,44 +193,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "business_analyst",
-    "topic": "business analyst documenting (business analyst)",
-    "q": "Hey {name}, during a college hackathon project involving business analyst documenting (business analyst), which aspect would excite you most?",
+    "sourceQuestionIndex": 4,
+    "topic": "understand a team process and explain what needs to change",
+    "q": "{name}, you can choose a role at a community technology workshop while the team learns to understand a team process and explain what needs to change. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Explore the tools needed to understand a team process and explain what needs to change.",
         "pillar": "design_product",
         "tags": [
           "business_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to understand a team process and explain what needs to change, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Learn how to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "business_analyst"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Work with a teammate to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "business_analyst"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
         "tags": [
-          "business_analyst"
+          "data_engineering"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -238,44 +240,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "business_analyst",
-    "topic": "before system feature (business analyst)",
-    "q": "{name}, if your campus tech club asks you to build a before system feature (business analyst) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 5,
+    "topic": "understand a team process and explain what needs to change",
+    "q": "{name}, at a team assignment with new classmates, your team has a chance to understand a team process and explain what needs to change. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Learn how to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "business_analyst"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Work with a teammate to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_analyst"
+        ],
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Make a small example that shows how to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "devops_cloud"
+        ],
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Try a hands-on exercise to understand a team process and explain what needs to change.",
         "pillar": "design_product",
         "tags": [
           "business_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "business_analyst"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "business_analyst"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to understand a team process and explain what needs to change, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -284,44 +287,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "business_analyst",
-    "topic": "which following tools (business analyst)",
-    "q": "When working on a team project centered around which following tools (business analyst), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 6,
+    "topic": "understand a team process and explain what needs to change",
+    "q": "At a practice project for your portfolio, the team wants to understand a team process and explain what needs to change. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Work with a teammate to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
         "tags": [
-          "business_analyst"
+          "site_reliability_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Make a small example that shows how to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
+        "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to understand a team process and explain what needs to change.",
         "pillar": "design_product",
         "tags": [
           "business_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "business_analyst"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to understand a team process and explain what needs to change, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Explore the tools needed to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "business_analyst"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -330,44 +334,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "business_analyst",
-    "topic": "business analyst identifies (business analyst)",
-    "q": "{name}, imagine a local startup hires you for a week to help with business analyst identifies (business analyst). What challenge would you jump at first?",
+    "sourceQuestionIndex": 7,
+    "topic": "understand a team process and explain what needs to change",
+    "q": "{name}, imagine joining a volunteer project for a local group to understand a team process and explain what needs to change. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to build a small game with rules and player interactions.",
+        "pillar": "operations",
         "tags": [
-          "business_analyst"
+          "game_development"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Try a hands-on exercise to understand a team process and explain what needs to change.",
         "pillar": "design_product",
         "tags": [
           "business_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to understand a team process and explain what needs to change, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Explore the tools needed to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
         "tags": [
-          "business_analyst"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Learn how to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "business_analyst"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -376,44 +381,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "business_analyst",
-    "topic": "during stakeholder analysis (business analyst)",
-    "q": "Hey {name}, during a college hackathon project involving during stakeholder analysis (business analyst), which aspect would excite you most?",
+    "sourceQuestionIndex": 8,
+    "topic": "understand a team process and explain what needs to change",
+    "q": "Your teammates at a demo for your college technology fair plan to understand a team process and explain what needs to change. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Try a hands-on exercise to understand a team process and explain what needs to change.",
         "pillar": "design_product",
         "tags": [
           "business_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to understand a team process and explain what needs to change, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "business_analyst"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Learn how to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "business_analyst"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to build an app for Android phones.",
+        "pillar": "systems",
         "tags": [
-          "business_analyst"
+          "android"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -422,44 +428,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "business_analyst",
-    "topic": "business analyst needs (business analyst)",
-    "q": "{name}, if your campus tech club asks you to build a business analyst needs (business analyst) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 9,
+    "topic": "understand a team process and explain what needs to change",
+    "q": "{name}, you can choose a role at a shared project with a friend while the team learns to understand a team process and explain what needs to change. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "business_analyst"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Learn how to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
+        "tags": [
+          "fullstack"
+        ],
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Work with a teammate to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_engineering"
+        ],
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Make a small example that shows how to understand a team process and explain what needs to change.",
         "pillar": "design_product",
         "tags": [
           "business_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "business_analyst"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "business_analyst"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to understand a team process and explain what needs to change, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -468,44 +475,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "business_analyst",
-    "topic": "after mapping current (business analyst)",
-    "q": "When working on a team project centered around after mapping current (business analyst), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 10,
+    "topic": "understand a team process and explain what needs to change",
+    "q": "{name}, at a beginner-friendly open-source project, your team has a chance to understand a team process and explain what needs to change. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Learn how to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
         "tags": [
-          "business_analyst"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Work with a teammate to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "devops_cloud"
+        ],
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Make a small example that shows how to understand a team process and explain what needs to change.",
         "pillar": "design_product",
         "tags": [
           "business_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "business_analyst"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to understand a team process and explain what needs to change, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Try a hands-on exercise to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "business_analyst"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -514,44 +522,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "business_analyst",
-    "topic": "when creating business (business analyst)",
-    "q": "{name}, imagine a local startup hires you for a week to help with when creating business (business analyst). What challenge would you jump at first?",
+    "sourceQuestionIndex": 11,
+    "topic": "understand a team process and explain what needs to change",
+    "q": "At a prototype for a student competition, the team wants to understand a team process and explain what needs to change. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Work with a teammate to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
         "tags": [
-          "business_analyst"
+          "iam_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Make a small example that shows how to understand a team process and explain what needs to change.",
         "pillar": "design_product",
         "tags": [
           "business_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to understand a team process and explain what needs to change, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
+        "t": "Try a hands-on exercise to use data and experiments to answer a useful question.",
         "pillar": "data_ai",
         "tags": [
-          "business_analyst"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
+        "t": "Explore the tools needed to keep an online app available and recover when it stops working.",
         "pillar": "cloud_infra",
         "tags": [
-          "business_analyst"
+          "site_reliability_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -560,44 +569,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "business_analyst",
-    "topic": "business analyst needs (business analyst)",
-    "q": "Hey {name}, during a college hackathon project involving business analyst needs (business analyst), which aspect would excite you most?",
+    "sourceQuestionIndex": 12,
+    "topic": "understand a team process and explain what needs to change",
+    "q": "{name}, imagine joining a summer project you can test with classmates to understand a team process and explain what needs to change. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Make a small example that shows how to understand a team process and explain what needs to change.",
         "pillar": "design_product",
         "tags": [
           "business_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to understand a team process and explain what needs to change, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
         "tags": [
-          "business_analyst"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Explore the tools needed to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "business_analyst"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Learn how to build a small game with rules and player interactions.",
+        "pillar": "operations",
         "tags": [
-          "business_analyst"
+          "game_development"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -606,44 +616,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "business_analyst",
-    "topic": "business analyst completed (business analyst)",
-    "q": "{name}, if your campus tech club asks you to build a business analyst completed (business analyst) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 13,
+    "topic": "understand a team process and explain what needs to change",
+    "q": "Your teammates at a short project with a student mentor plan to understand a team process and explain what needs to change. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "business_analyst"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Explore the tools needed to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
+        "tags": [
+          "embedded_iot"
+        ],
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Learn how to build an app for Android phones.",
+        "pillar": "systems",
+        "tags": [
+          "android"
+        ],
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Work with a teammate to understand a team process and explain what needs to change.",
         "pillar": "design_product",
         "tags": [
           "business_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "business_analyst"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "business_analyst"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to understand a team process and explain what needs to change, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -652,44 +663,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "business_analyst",
-    "topic": "agile project business (business analyst)",
-    "q": "When working on a team project centered around agile project business (business analyst), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 14,
+    "topic": "understand a team process and explain what needs to change",
+    "q": "{name}, you can choose a role at a campus technology club meeting while the team learns to understand a team process and explain what needs to change. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "business_analyst"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Learn how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_engineering"
+        ],
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Work with a teammate to understand a team process and explain what needs to change.",
         "pillar": "design_product",
         "tags": [
           "business_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "business_analyst"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to understand a team process and explain what needs to change, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "business_analyst"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -698,44 +710,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "business_analyst",
-    "topic": "user story states (business analyst)",
-    "q": "{name}, imagine a local startup hires you for a week to help with user story states (business analyst). What challenge would you jump at first?",
+    "sourceQuestionIndex": 15,
+    "topic": "understand a team process and explain what needs to change",
+    "q": "{name}, at a small project with a limited budget, your team has a chance to understand a team process and explain what needs to change. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Learn how to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
         "tags": [
-          "business_analyst"
+          "devops_cloud"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Work with a teammate to understand a team process and explain what needs to change.",
         "pillar": "design_product",
         "tags": [
           "business_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to understand a team process and explain what needs to change, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Make a small example that shows how to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "business_analyst"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Try a hands-on exercise to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
         "tags": [
-          "business_analyst"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -744,44 +757,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "business_analyst",
-    "topic": "when compiling comprehensive (business analyst)",
-    "q": "Hey {name}, during a college hackathon project involving when compiling comprehensive (business analyst), which aspect would excite you most?",
+    "sourceQuestionIndex": 16,
+    "topic": "understand a team process and explain what needs to change",
+    "q": "At a two-week team experiment, the team wants to understand a team process and explain what needs to change. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Work with a teammate to understand a team process and explain what needs to change.",
         "pillar": "design_product",
         "tags": [
           "business_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to understand a team process and explain what needs to change, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "business_analyst"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Try a hands-on exercise to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
         "tags": [
-          "business_analyst"
+          "site_reliability_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Explore the tools needed to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
         "tags": [
-          "business_analyst"
+          "iam_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -790,44 +804,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "business_analyst",
-    "topic": "business analyst preparing (business analyst)",
-    "q": "{name}, if your campus tech club asks you to build a business analyst preparing (business analyst) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 17,
+    "topic": "understand a team process and explain what needs to change",
+    "q": "{name}, imagine joining a project that needs clear instructions for newcomers to understand a team process and explain what needs to change. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
         "tags": [
-          "business_analyst"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Try a hands-on exercise to review security alerts and decide which need investigation.",
+        "pillar": "security",
+        "tags": [
+          "soc_analyst"
+        ],
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Learn how to understand a team process and explain what needs to change.",
         "pillar": "design_product",
         "tags": [
           "business_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "business_analyst"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "business_analyst"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to understand a team process and explain what needs to change, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -836,44 +851,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "business_analyst",
-    "topic": "business analyst needs (business analyst)",
-    "q": "When working on a team project centered around business analyst needs (business analyst), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 18,
+    "topic": "understand a team process and explain what needs to change",
+    "q": "Your teammates at a demo you will show to first-time users plan to understand a team process and explain what needs to change. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "business_analyst"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Explore the tools needed to build an app for Android phones.",
+        "pillar": "systems",
+        "tags": [
+          "android"
+        ],
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Learn how to understand a team process and explain what needs to change.",
         "pillar": "design_product",
         "tags": [
           "business_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "business_analyst"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to understand a team process and explain what needs to change, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "business_analyst"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -882,44 +898,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "business_analyst",
-    "topic": "during user acceptance (business analyst)",
-    "q": "{name}, imagine a local startup hires you for a week to help with during user acceptance (business analyst). What challenge would you jump at first?",
+    "sourceQuestionIndex": 19,
+    "topic": "understand a team process and explain what needs to change",
+    "q": "{name}, you can choose a role at a project that needs a careful check before sharing while the team learns to understand a team process and explain what needs to change. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
         "tags": [
-          "business_analyst"
+          "data_engineering"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Learn how to understand a team process and explain what needs to change.",
         "pillar": "design_product",
         "tags": [
           "business_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to understand a team process and explain what needs to change, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Work with a teammate to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "business_analyst"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "business_analyst"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -928,44 +945,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "business_analyst",
-    "topic": "business analyst managing (business analyst)",
-    "q": "Hey {name}, during a college hackathon project involving business analyst managing (business analyst), which aspect would excite you most?",
+    "sourceQuestionIndex": 20,
+    "topic": "understand a team process and explain what needs to change",
+    "q": "{name}, at a group project you will explain to a teacher, your team has a chance to understand a team process and explain what needs to change. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Learn how to understand a team process and explain what needs to change.",
         "pillar": "design_product",
         "tags": [
           "business_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to understand a team process and explain what needs to change, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Work with a teammate to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "business_analyst"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
+        "t": "Make a small example that shows how to turn a spreadsheet into a clear answer about what happened.",
         "pillar": "data_ai",
         "tags": [
-          "business_analyst"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
+        "t": "Try a hands-on exercise to automate the steps that publish an app online.",
         "pillar": "cloud_infra",
         "tags": [
-          "business_analyst"
+          "devops_cloud"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -974,44 +992,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "business_analyst",
-    "topic": "business analyst completed (business analyst)",
-    "q": "{name}, if your campus tech club asks you to build a business analyst completed (business analyst) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 21,
+    "topic": "understand a team process and explain what needs to change",
+    "q": "At a practice task you can learn step by step, the team wants to understand a team process and explain what needs to change. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Work with a teammate to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "business_analyst"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Make a small example that shows how to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "site_reliability_engineer"
+        ],
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
+        "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Explore the tools needed to understand a team process and explain what needs to change.",
         "pillar": "design_product",
         "tags": [
           "business_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "business_analyst"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "business_analyst"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to understand a team process and explain what needs to change, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -1020,44 +1039,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "business_analyst",
-    "topic": "business analyst tasked (business analyst)",
-    "q": "When working on a team project centered around business analyst tasked (business analyst), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 22,
+    "topic": "understand a team process and explain what needs to change",
+    "q": "{name}, imagine joining a project where everyone picks a different contribution to understand a team process and explain what needs to change. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "business_analyst"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Try a hands-on exercise to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to understand a team process and explain what needs to change.",
         "pillar": "design_product",
         "tags": [
           "business_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "business_analyst"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to understand a team process and explain what needs to change, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
+        "t": "Learn how to connect computers so information reaches the right place.",
         "pillar": "cloud_infra",
         "tags": [
-          "business_analyst"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -1066,44 +1086,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "business_analyst",
-    "topic": "agile environment product (business analyst)",
-    "q": "{name}, imagine a local startup hires you for a week to help with agile environment product (business analyst). What challenge would you jump at first?",
+    "sourceQuestionIndex": 23,
+    "topic": "understand a team process and explain what needs to change",
+    "q": "Your teammates at a project you want to improve after receiving feedback plan to understand a team process and explain what needs to change. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to build an app for Android phones.",
+        "pillar": "systems",
         "tags": [
-          "business_analyst"
+          "android"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Explore the tools needed to understand a team process and explain what needs to change.",
         "pillar": "design_product",
         "tags": [
           "business_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to understand a team process and explain what needs to change, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Learn how to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "business_analyst"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "business_analyst"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -1112,1194 +1133,1220 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "business_analyst",
-    "topic": "critical regulatory change (business analyst)",
-    "q": "Hey {name}, during a college hackathon project involving critical regulatory change (business analyst), which aspect would excite you most?",
+    "sourceQuestionIndex": 24,
+    "topic": "understand a team process and explain what needs to change",
+    "q": "{name}, you can choose a role at a learning project you will revisit next month while the team learns to understand a team process and explain what needs to change. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Explore the tools needed to understand a team process and explain what needs to change.",
         "pillar": "design_product",
         "tags": [
           "business_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to understand a team process and explain what needs to change, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Learn how to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "business_analyst"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Work with a teammate to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "business_analyst"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
         "tags": [
-          "business_analyst"
+          "data_engineering"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
       }
     ]
   },
   {
-    "id": 1426,
+    "id": 1451,
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "content_designer",
-    "topic": "product team struggling (content designer)",
-    "q": "Hey {name}, during a college hackathon project involving product team struggling (content designer), which aspect would excite you most?",
+    "sourceQuestionIndex": 0,
+    "topic": "write clear labels and instructions for an app",
+    "q": "{name}, at a campus hackathon, your team has a chance to write clear labels and instructions for an app. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Learn how to write clear labels and instructions for an app.",
         "pillar": "design_product",
         "tags": [
           "content_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to write clear labels and instructions for an app, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Work with a teammate to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "content_designer"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
+        "t": "Make a small example that shows how to turn a spreadsheet into a clear answer about what happened.",
         "pillar": "data_ai",
         "tags": [
-          "content_designer"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
+        "t": "Try a hands-on exercise to automate the steps that publish an app online.",
         "pillar": "cloud_infra",
         "tags": [
-          "content_designer"
+          "devops_cloud"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
       }
     ]
   },
   {
-    "id": 1427,
+    "id": 1452,
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "content_designer",
-    "topic": "context content design (content designer)",
-    "q": "{name}, if your campus tech club asks you to build a context content design (content designer) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 1,
+    "topic": "write clear labels and instructions for an app",
+    "q": "At a student club project, the team wants to write clear labels and instructions for an app. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Work with a teammate to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "content_designer"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
         "tags": [
-          "content_designer"
+          "site_reliability_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
+        "t": "Try a hands-on exercise to give people the access they need without granting unnecessary permissions.",
         "pillar": "security",
         "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Explore the tools needed to write clear labels and instructions for an app.",
+        "pillar": "design_product",
+        "tags": [
           "content_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to write clear labels and instructions for an app, {name}. You can test that interest with a small project."
       }
     ]
   },
   {
-    "id": 1428,
+    "id": 1453,
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "content_designer",
-    "topic": "when designing content (content designer)",
-    "q": "When working on a team project centered around when designing content (content designer), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 2,
+    "topic": "write clear labels and instructions for an app",
+    "q": "{name}, imagine joining a small startup internship to write clear labels and instructions for an app. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
-      }
-    ]
-  },
-  {
-    "id": 1429,
-    "phase": 2,
-    "pillar": "design_product",
-    "sourceSlug": "content_designer",
-    "topic": "content designer needs (content designer)",
-    "q": "{name}, imagine a local startup hires you for a week to help with content designer needs (content designer). What challenge would you jump at first?",
-    "options": [
-      {
-        "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
-      }
-    ]
-  },
-  {
-    "id": 1430,
-    "phase": 2,
-    "pillar": "design_product",
-    "sourceSlug": "content_designer",
-    "topic": "before launching product (content designer)",
-    "q": "Hey {name}, during a college hackathon project involving before launching product (content designer), which aspect would excite you most?",
-    "options": [
-      {
-        "l": "A",
-        "t": "Building the core logic and backend architecture",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
-      }
-    ]
-  },
-  {
-    "id": 1431,
-    "phase": 2,
-    "pillar": "design_product",
-    "sourceSlug": "content_designer",
-    "topic": "content designer completed (content designer)",
-    "q": "{name}, if your campus tech club asks you to build a content designer completed (content designer) tool, where would you add your biggest contribution?",
-    "options": [
-      {
-        "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
+        "t": "Make a small example that shows how to review security alerts and decide which need investigation.",
         "pillar": "security",
         "tags": [
-          "content_designer"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
-      }
-    ]
-  },
-  {
-    "id": 1432,
-    "phase": 2,
-    "pillar": "design_product",
-    "sourceSlug": "content_designer",
-    "topic": "what primary purpose (content designer)",
-    "q": "When working on a team project centered around what primary purpose (content designer), what role feels most natural to you, {name}?",
-    "options": [
-      {
-        "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Try a hands-on exercise to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to write clear labels and instructions for an app.",
         "pillar": "design_product",
         "tags": [
           "content_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to write clear labels and instructions for an app, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
+        "t": "Learn how to connect computers so information reaches the right place.",
         "pillar": "cloud_infra",
         "tags": [
-          "content_designer"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       }
     ]
   },
   {
-    "id": 1433,
+    "id": 1454,
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "content_designer",
-    "topic": "feature being developed (content designer)",
-    "q": "{name}, imagine a local startup hires you for a week to help with feature being developed (content designer). What challenge would you jump at first?",
+    "sourceQuestionIndex": 3,
+    "topic": "write clear labels and instructions for an app",
+    "q": "Your teammates at a weekend learning challenge plan to write clear labels and instructions for an app. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to build an app for Android phones.",
+        "pillar": "systems",
         "tags": [
-          "content_designer"
+          "android"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Explore the tools needed to write clear labels and instructions for an app.",
         "pillar": "design_product",
         "tags": [
           "content_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to write clear labels and instructions for an app, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
-      }
-    ]
-  },
-  {
-    "id": 1434,
-    "phase": 2,
-    "pillar": "design_product",
-    "sourceSlug": "content_designer",
-    "topic": "your team implementing (content designer)",
-    "q": "Hey {name}, during a college hackathon project involving your team implementing (content designer), which aspect would excite you most?",
-    "options": [
-      {
-        "l": "A",
-        "t": "Building the core logic and backend architecture",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
-      }
-    ]
-  },
-  {
-    "id": 1435,
-    "phase": 2,
-    "pillar": "design_product",
-    "sourceSlug": "content_designer",
-    "topic": "content designer integrating (content designer)",
-    "q": "{name}, if your campus tech club asks you to build a content designer integrating (content designer) tool, where would you add your biggest contribution?",
-    "options": [
-      {
-        "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
+        "t": "Learn how to help a team document security risks and follow its policies.",
         "pillar": "security",
         "tags": [
-          "content_designer"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Work with a teammate to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
+        "tags": [
+          "embedded_iot"
+        ],
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       }
     ]
   },
   {
-    "id": 1436,
+    "id": 1455,
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "content_designer",
-    "topic": "designing error messages (content designer)",
-    "q": "When working on a team project centered around designing error messages (content designer), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 4,
+    "topic": "write clear labels and instructions for an app",
+    "q": "{name}, you can choose a role at a community technology workshop while the team learns to write clear labels and instructions for an app. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
+        "t": "Explore the tools needed to write clear labels and instructions for an app.",
         "pillar": "design_product",
         "tags": [
           "content_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to write clear labels and instructions for an app, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
-        "pillar": "design_product",
+        "t": "Learn how to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "content_designer"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
+        "t": "Work with a teammate to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "content_designer"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
+        "t": "Make a small example that shows how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_engineering"
+        ],
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
+      }
+    ]
+  },
+  {
+    "id": 1456,
+    "phase": 2,
+    "pillar": "design_product",
+    "sourceSlug": "content_designer",
+    "sourceQuestionIndex": 5,
+    "topic": "write clear labels and instructions for an app",
+    "q": "{name}, at a team assignment with new classmates, your team has a chance to write clear labels and instructions for an app. Which contribution would you enjoy most?",
+    "options": [
+      {
+        "l": "A",
+        "t": "Learn how to build the screens and buttons of a website.",
+        "pillar": "systems",
+        "tags": [
+          "frontend"
+        ],
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "B",
+        "t": "Work with a teammate to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_analyst"
+        ],
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Make a small example that shows how to automate the steps that publish an app online.",
         "pillar": "cloud_infra",
         "tags": [
+          "devops_cloud"
+        ],
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Try a hands-on exercise to write clear labels and instructions for an app.",
+        "pillar": "design_product",
+        "tags": [
           "content_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to write clear labels and instructions for an app, {name}. You can test that interest with a small project."
       }
     ]
   },
   {
-    "id": 1437,
+    "id": 1457,
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "content_designer",
-    "topic": "when defining voice (content designer)",
-    "q": "{name}, imagine a local startup hires you for a week to help with when defining voice (content designer). What challenge would you jump at first?",
+    "sourceQuestionIndex": 6,
+    "topic": "write clear labels and instructions for an app",
+    "q": "At a practice project for your portfolio, the team wants to write clear labels and instructions for an app. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
+        "t": "Work with a teammate to keep an online app available and recover when it stops working.",
         "pillar": "cloud_infra",
         "tags": [
-          "content_designer"
+          "site_reliability_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
-      }
-    ]
-  },
-  {
-    "id": 1438,
-    "phase": 2,
-    "pillar": "design_product",
-    "sourceSlug": "content_designer",
-    "topic": "content designer tasked (content designer)",
-    "q": "Hey {name}, during a college hackathon project involving content designer tasked (content designer), which aspect would excite you most?",
-    "options": [
-      {
-        "l": "A",
-        "t": "Building the core logic and backend architecture",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
-      }
-    ]
-  },
-  {
-    "id": 1439,
-    "phase": 2,
-    "pillar": "design_product",
-    "sourceSlug": "content_designer",
-    "topic": "reviewing content feature (content designer)",
-    "q": "{name}, if your campus tech club asks you to build a reviewing content feature (content designer) tool, where would you add your biggest contribution?",
-    "options": [
-      {
-        "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
+        "t": "Make a small example that shows how to give people the access they need without granting unnecessary permissions.",
         "pillar": "security",
         "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to write clear labels and instructions for an app.",
+        "pillar": "design_product",
+        "tags": [
           "content_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to write clear labels and instructions for an app, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Explore the tools needed to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_science"
+        ],
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       }
     ]
   },
   {
-    "id": 1440,
+    "id": 1458,
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "content_designer",
-    "topic": "content designer finished (content designer)",
-    "q": "When working on a team project centered around content designer finished (content designer), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 7,
+    "topic": "write clear labels and instructions for an app",
+    "q": "{name}, imagine joining a volunteer project for a local group to write clear labels and instructions for an app. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to build a small game with rules and player interactions.",
+        "pillar": "operations",
         "tags": [
-          "content_designer"
+          "game_development"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Try a hands-on exercise to write clear labels and instructions for an app.",
         "pillar": "design_product",
         "tags": [
           "content_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to write clear labels and instructions for an app, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
+        "t": "Explore the tools needed to connect computers so information reaches the right place.",
         "pillar": "cloud_infra",
         "tags": [
-          "content_designer"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
-      }
-    ]
-  },
-  {
-    "id": 1441,
-    "phase": 2,
-    "pillar": "design_product",
-    "sourceSlug": "content_designer",
-    "topic": "when designing content (content designer)",
-    "q": "{name}, imagine a local startup hires you for a week to help with when designing content (content designer). What challenge would you jump at first?",
-    "options": [
-      {
-        "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
-      }
-    ]
-  },
-  {
-    "id": 1442,
-    "phase": 2,
-    "pillar": "design_product",
-    "sourceSlug": "content_designer",
-    "topic": "part team delivery (content designer)",
-    "q": "Hey {name}, during a college hackathon project involving part team delivery (content designer), which aspect would excite you most?",
-    "options": [
-      {
-        "l": "A",
-        "t": "Building the core logic and backend architecture",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
-      }
-    ]
-  },
-  {
-    "id": 1443,
-    "phase": 2,
-    "pillar": "design_product",
-    "sourceSlug": "content_designer",
-    "topic": "when writing case (content designer)",
-    "q": "{name}, if your campus tech club asks you to build a when writing case (content designer) tool, where would you add your biggest contribution?",
-    "options": [
-      {
-        "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
+        "t": "Learn how to review security alerts and decide which need investigation.",
         "pillar": "security",
         "tags": [
-          "content_designer"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       }
     ]
   },
   {
-    "id": 1444,
+    "id": 1459,
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "content_designer",
-    "topic": "content designer creating (content designer)",
-    "q": "When working on a team project centered around content designer creating (content designer), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 8,
+    "topic": "write clear labels and instructions for an app",
+    "q": "Your teammates at a demo for your college technology fair plan to write clear labels and instructions for an app. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
+        "t": "Try a hands-on exercise to write clear labels and instructions for an app.",
         "pillar": "design_product",
         "tags": [
           "content_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to write clear labels and instructions for an app, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
-      }
-    ]
-  },
-  {
-    "id": 1445,
-    "phase": 2,
-    "pillar": "design_product",
-    "sourceSlug": "content_designer",
-    "topic": "product multiple instances (content designer)",
-    "q": "{name}, imagine a local startup hires you for a week to help with product multiple instances (content designer). What challenge would you jump at first?",
-    "options": [
-      {
-        "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
-      }
-    ]
-  },
-  {
-    "id": 1446,
-    "phase": 2,
-    "pillar": "design_product",
-    "sourceSlug": "content_designer",
-    "topic": "content designer working (content designer)",
-    "q": "Hey {name}, during a college hackathon project involving content designer working (content designer), which aspect would excite you most?",
-    "options": [
-      {
-        "l": "A",
-        "t": "Building the core logic and backend architecture",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
-      }
-    ]
-  },
-  {
-    "id": 1447,
-    "phase": 2,
-    "pillar": "design_product",
-    "sourceSlug": "content_designer",
-    "topic": "during security audit (content designer)",
-    "q": "{name}, if your campus tech club asks you to build a during security audit (content designer) tool, where would you add your biggest contribution?",
-    "options": [
-      {
-        "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
-        "pillar": "design_product",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
+        "t": "Explore the tools needed to help a team document security risks and follow its policies.",
         "pillar": "security",
         "tags": [
-          "content_designer"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Learn how to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
+        "tags": [
+          "embedded_iot"
+        ],
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Work with a teammate to build an app for Android phones.",
+        "pillar": "systems",
+        "tags": [
+          "android"
+        ],
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
       }
     ]
   },
   {
-    "id": 1448,
+    "id": 1460,
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "content_designer",
-    "topic": "your team launching (content designer)",
-    "q": "When working on a team project centered around your team launching (content designer), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 9,
+    "topic": "write clear labels and instructions for an app",
+    "q": "{name}, you can choose a role at a shared project with a friend while the team learns to write clear labels and instructions for an app. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "content_designer"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Learn how to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
+        "tags": [
+          "fullstack"
+        ],
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Work with a teammate to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_engineering"
+        ],
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Make a small example that shows how to write clear labels and instructions for an app.",
         "pillar": "design_product",
         "tags": [
           "content_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to write clear labels and instructions for an app, {name}. You can test that interest with a small project."
       }
     ]
   },
   {
-    "id": 1449,
+    "id": 1461,
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "content_designer",
-    "topic": "content component which (content designer)",
-    "q": "{name}, imagine a local startup hires you for a week to help with content component which (content designer). What challenge would you jump at first?",
+    "sourceQuestionIndex": 10,
+    "topic": "write clear labels and instructions for an app",
+    "q": "{name}, at a beginner-friendly open-source project, your team has a chance to write clear labels and instructions for an app. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Learn how to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
         "tags": [
-          "content_designer"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Work with a teammate to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "devops_cloud"
+        ],
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Make a small example that shows how to write clear labels and instructions for an app.",
         "pillar": "design_product",
         "tags": [
           "content_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
-        "tags": [
-          "content_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to write clear labels and instructions for an app, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Try a hands-on exercise to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "content_designer"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       }
     ]
   },
   {
-    "id": 1450,
+    "id": 1462,
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "content_designer",
-    "topic": "youre presenting your (content designer)",
-    "q": "Hey {name}, during a college hackathon project involving youre presenting your (content designer), which aspect would excite you most?",
+    "sourceQuestionIndex": 11,
+    "topic": "write clear labels and instructions for an app",
+    "q": "At a prototype for a student competition, the team wants to write clear labels and instructions for an app. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
-        "pillar": "design_product",
+        "t": "Work with a teammate to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
         "tags": [
-          "content_designer"
+          "iam_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
+        "t": "Make a small example that shows how to write clear labels and instructions for an app.",
         "pillar": "design_product",
         "tags": [
           "content_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to write clear labels and instructions for an app, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
+        "t": "Try a hands-on exercise to use data and experiments to answer a useful question.",
         "pillar": "data_ai",
         "tags": [
-          "content_designer"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
+        "t": "Explore the tools needed to keep an online app available and recover when it stops working.",
         "pillar": "cloud_infra",
+        "tags": [
+          "site_reliability_engineer"
+        ],
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
+      }
+    ]
+  },
+  {
+    "id": 1463,
+    "phase": 2,
+    "pillar": "design_product",
+    "sourceSlug": "content_designer",
+    "sourceQuestionIndex": 12,
+    "topic": "write clear labels and instructions for an app",
+    "q": "{name}, imagine joining a summer project you can test with classmates to write clear labels and instructions for an app. Where would you like to spend your time?",
+    "options": [
+      {
+        "l": "A",
+        "t": "Make a small example that shows how to write clear labels and instructions for an app.",
+        "pillar": "design_product",
         "tags": [
           "content_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to write clear labels and instructions for an app, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "B",
+        "t": "Try a hands-on exercise to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "network_engineer"
+        ],
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to review security alerts and decide which need investigation.",
+        "pillar": "security",
+        "tags": [
+          "soc_analyst"
+        ],
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Learn how to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      }
+    ]
+  },
+  {
+    "id": 1464,
+    "phase": 2,
+    "pillar": "design_product",
+    "sourceSlug": "content_designer",
+    "sourceQuestionIndex": 13,
+    "topic": "write clear labels and instructions for an app",
+    "q": "Your teammates at a short project with a student mentor plan to write clear labels and instructions for an app. Which part sounds most interesting to learn, {name}?",
+    "options": [
+      {
+        "l": "A",
+        "t": "Try a hands-on exercise to help a team document security risks and follow its policies.",
+        "pillar": "security",
+        "tags": [
+          "grc_analyst"
+        ],
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "B",
+        "t": "Explore the tools needed to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
+        "tags": [
+          "embedded_iot"
+        ],
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Learn how to build an app for Android phones.",
+        "pillar": "systems",
+        "tags": [
+          "android"
+        ],
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Work with a teammate to write clear labels and instructions for an app.",
+        "pillar": "design_product",
+        "tags": [
+          "content_designer"
+        ],
+        "i": "This choice suggests that you would like to write clear labels and instructions for an app, {name}. You can test that interest with a small project."
+      }
+    ]
+  },
+  {
+    "id": 1465,
+    "phase": 2,
+    "pillar": "design_product",
+    "sourceSlug": "content_designer",
+    "sourceQuestionIndex": 14,
+    "topic": "write clear labels and instructions for an app",
+    "q": "{name}, you can choose a role at a campus technology club meeting while the team learns to write clear labels and instructions for an app. Which contribution suits your interests?",
+    "options": [
+      {
+        "l": "A",
+        "t": "Explore the tools needed to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
+        "tags": [
+          "fullstack"
+        ],
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "B",
+        "t": "Learn how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_engineering"
+        ],
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Work with a teammate to write clear labels and instructions for an app.",
+        "pillar": "design_product",
+        "tags": [
+          "content_designer"
+        ],
+        "i": "This choice suggests that you would like to write clear labels and instructions for an app, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Make a small example that shows how to make a useful app with visual building blocks.",
+        "pillar": "operations",
+        "tags": [
+          "no_code_low_code_developer"
+        ],
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
+      }
+    ]
+  },
+  {
+    "id": 1466,
+    "phase": 2,
+    "pillar": "design_product",
+    "sourceSlug": "content_designer",
+    "sourceQuestionIndex": 15,
+    "topic": "write clear labels and instructions for an app",
+    "q": "{name}, at a small project with a limited budget, your team has a chance to write clear labels and instructions for an app. Which contribution would you enjoy most?",
+    "options": [
+      {
+        "l": "A",
+        "t": "Learn how to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "devops_cloud"
+        ],
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "B",
+        "t": "Work with a teammate to write clear labels and instructions for an app.",
+        "pillar": "design_product",
+        "tags": [
+          "content_designer"
+        ],
+        "i": "This choice suggests that you would like to write clear labels and instructions for an app, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Make a small example that shows how to build the screens and buttons of a website.",
+        "pillar": "systems",
+        "tags": [
+          "frontend"
+        ],
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Try a hands-on exercise to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_analyst"
+        ],
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
+      }
+    ]
+  },
+  {
+    "id": 1467,
+    "phase": 2,
+    "pillar": "design_product",
+    "sourceSlug": "content_designer",
+    "sourceQuestionIndex": 16,
+    "topic": "write clear labels and instructions for an app",
+    "q": "At a two-week team experiment, the team wants to write clear labels and instructions for an app. Which task would you volunteer to explore, {name}?",
+    "options": [
+      {
+        "l": "A",
+        "t": "Work with a teammate to write clear labels and instructions for an app.",
+        "pillar": "design_product",
+        "tags": [
+          "content_designer"
+        ],
+        "i": "This choice suggests that you would like to write clear labels and instructions for an app, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "B",
+        "t": "Make a small example that shows how to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_science"
+        ],
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "site_reliability_engineer"
+        ],
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Explore the tools needed to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
+        "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      }
+    ]
+  },
+  {
+    "id": 1468,
+    "phase": 2,
+    "pillar": "design_product",
+    "sourceSlug": "content_designer",
+    "sourceQuestionIndex": 17,
+    "topic": "write clear labels and instructions for an app",
+    "q": "{name}, imagine joining a project that needs clear instructions for newcomers to write clear labels and instructions for an app. Where would you like to spend your time?",
+    "options": [
+      {
+        "l": "A",
+        "t": "Make a small example that shows how to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "network_engineer"
+        ],
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "B",
+        "t": "Try a hands-on exercise to review security alerts and decide which need investigation.",
+        "pillar": "security",
+        "tags": [
+          "soc_analyst"
+        ],
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Learn how to write clear labels and instructions for an app.",
+        "pillar": "design_product",
+        "tags": [
+          "content_designer"
+        ],
+        "i": "This choice suggests that you would like to write clear labels and instructions for an app, {name}. You can test that interest with a small project."
+      }
+    ]
+  },
+  {
+    "id": 1469,
+    "phase": 2,
+    "pillar": "design_product",
+    "sourceSlug": "content_designer",
+    "sourceQuestionIndex": 18,
+    "topic": "write clear labels and instructions for an app",
+    "q": "Your teammates at a demo you will show to first-time users plan to write clear labels and instructions for an app. Which part sounds most interesting to learn, {name}?",
+    "options": [
+      {
+        "l": "A",
+        "t": "Try a hands-on exercise to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
+        "tags": [
+          "embedded_iot"
+        ],
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "B",
+        "t": "Explore the tools needed to build an app for Android phones.",
+        "pillar": "systems",
+        "tags": [
+          "android"
+        ],
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Learn how to write clear labels and instructions for an app.",
+        "pillar": "design_product",
+        "tags": [
+          "content_designer"
+        ],
+        "i": "This choice suggests that you would like to write clear labels and instructions for an app, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Work with a teammate to help a team document security risks and follow its policies.",
+        "pillar": "security",
+        "tags": [
+          "grc_analyst"
+        ],
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
+      }
+    ]
+  },
+  {
+    "id": 1470,
+    "phase": 2,
+    "pillar": "design_product",
+    "sourceSlug": "content_designer",
+    "sourceQuestionIndex": 19,
+    "topic": "write clear labels and instructions for an app",
+    "q": "{name}, you can choose a role at a project that needs a careful check before sharing while the team learns to write clear labels and instructions for an app. Which contribution suits your interests?",
+    "options": [
+      {
+        "l": "A",
+        "t": "Explore the tools needed to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_engineering"
+        ],
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "B",
+        "t": "Learn how to write clear labels and instructions for an app.",
+        "pillar": "design_product",
+        "tags": [
+          "content_designer"
+        ],
+        "i": "This choice suggests that you would like to write clear labels and instructions for an app, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Work with a teammate to make a useful app with visual building blocks.",
+        "pillar": "operations",
+        "tags": [
+          "no_code_low_code_developer"
+        ],
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Make a small example that shows how to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
+        "tags": [
+          "fullstack"
+        ],
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
+      }
+    ]
+  },
+  {
+    "id": 1471,
+    "phase": 2,
+    "pillar": "design_product",
+    "sourceSlug": "content_designer",
+    "sourceQuestionIndex": 20,
+    "topic": "write clear labels and instructions for an app",
+    "q": "{name}, at a group project you will explain to a teacher, your team has a chance to write clear labels and instructions for an app. Which contribution would you enjoy most?",
+    "options": [
+      {
+        "l": "A",
+        "t": "Learn how to write clear labels and instructions for an app.",
+        "pillar": "design_product",
+        "tags": [
+          "content_designer"
+        ],
+        "i": "This choice suggests that you would like to write clear labels and instructions for an app, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "B",
+        "t": "Work with a teammate to build the screens and buttons of a website.",
+        "pillar": "systems",
+        "tags": [
+          "frontend"
+        ],
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Make a small example that shows how to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_analyst"
+        ],
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Try a hands-on exercise to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "devops_cloud"
+        ],
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
+      }
+    ]
+  },
+  {
+    "id": 1472,
+    "phase": 2,
+    "pillar": "design_product",
+    "sourceSlug": "content_designer",
+    "sourceQuestionIndex": 21,
+    "topic": "write clear labels and instructions for an app",
+    "q": "At a practice task you can learn step by step, the team wants to write clear labels and instructions for an app. Which task would you volunteer to explore, {name}?",
+    "options": [
+      {
+        "l": "A",
+        "t": "Work with a teammate to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_science"
+        ],
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "B",
+        "t": "Make a small example that shows how to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "site_reliability_engineer"
+        ],
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
+        "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Explore the tools needed to write clear labels and instructions for an app.",
+        "pillar": "design_product",
+        "tags": [
+          "content_designer"
+        ],
+        "i": "This choice suggests that you would like to write clear labels and instructions for an app, {name}. You can test that interest with a small project."
+      }
+    ]
+  },
+  {
+    "id": 1473,
+    "phase": 2,
+    "pillar": "design_product",
+    "sourceSlug": "content_designer",
+    "sourceQuestionIndex": 22,
+    "topic": "write clear labels and instructions for an app",
+    "q": "{name}, imagine joining a project where everyone picks a different contribution to write clear labels and instructions for an app. Where would you like to spend your time?",
+    "options": [
+      {
+        "l": "A",
+        "t": "Make a small example that shows how to review security alerts and decide which need investigation.",
+        "pillar": "security",
+        "tags": [
+          "soc_analyst"
+        ],
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "B",
+        "t": "Try a hands-on exercise to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to write clear labels and instructions for an app.",
+        "pillar": "design_product",
+        "tags": [
+          "content_designer"
+        ],
+        "i": "This choice suggests that you would like to write clear labels and instructions for an app, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Learn how to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "network_engineer"
+        ],
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
+      }
+    ]
+  },
+  {
+    "id": 1474,
+    "phase": 2,
+    "pillar": "design_product",
+    "sourceSlug": "content_designer",
+    "sourceQuestionIndex": 23,
+    "topic": "write clear labels and instructions for an app",
+    "q": "Your teammates at a project you want to improve after receiving feedback plan to write clear labels and instructions for an app. Which part sounds most interesting to learn, {name}?",
+    "options": [
+      {
+        "l": "A",
+        "t": "Try a hands-on exercise to build an app for Android phones.",
+        "pillar": "systems",
+        "tags": [
+          "android"
+        ],
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "B",
+        "t": "Explore the tools needed to write clear labels and instructions for an app.",
+        "pillar": "design_product",
+        "tags": [
+          "content_designer"
+        ],
+        "i": "This choice suggests that you would like to write clear labels and instructions for an app, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Learn how to help a team document security risks and follow its policies.",
+        "pillar": "security",
+        "tags": [
+          "grc_analyst"
+        ],
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Work with a teammate to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
+        "tags": [
+          "embedded_iot"
+        ],
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
+      }
+    ]
+  },
+  {
+    "id": 1475,
+    "phase": 2,
+    "pillar": "design_product",
+    "sourceSlug": "content_designer",
+    "sourceQuestionIndex": 24,
+    "topic": "write clear labels and instructions for an app",
+    "q": "{name}, you can choose a role at a learning project you will revisit next month while the team learns to write clear labels and instructions for an app. Which contribution suits your interests?",
+    "options": [
+      {
+        "l": "A",
+        "t": "Explore the tools needed to write clear labels and instructions for an app.",
+        "pillar": "design_product",
+        "tags": [
+          "content_designer"
+        ],
+        "i": "This choice suggests that you would like to write clear labels and instructions for an app, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "B",
+        "t": "Learn how to make a useful app with visual building blocks.",
+        "pillar": "operations",
+        "tags": [
+          "no_code_low_code_developer"
+        ],
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Work with a teammate to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
+        "tags": [
+          "fullstack"
+        ],
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Make a small example that shows how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_engineering"
+        ],
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -2308,44 +2355,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "design_systems_engineer",
-    "topic": "product team struggling (design systems engineer)",
-    "q": "Hey {name}, during a college hackathon project involving product team struggling (design systems engineer), which aspect would excite you most?",
+    "sourceQuestionIndex": 0,
+    "topic": "create reusable buttons and layouts that stay consistent",
+    "q": "{name}, at a campus hackathon, your team has a chance to create reusable buttons and layouts that stay consistent. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Learn how to create reusable buttons and layouts that stay consistent.",
         "pillar": "design_product",
         "tags": [
           "design_systems_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to create reusable buttons and layouts that stay consistent, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Work with a teammate to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "design_systems_engineer"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
+        "t": "Make a small example that shows how to turn a spreadsheet into a clear answer about what happened.",
         "pillar": "data_ai",
         "tags": [
-          "design_systems_engineer"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
+        "t": "Try a hands-on exercise to automate the steps that publish an app online.",
         "pillar": "cloud_infra",
         "tags": [
-          "design_systems_engineer"
+          "devops_cloud"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -2354,44 +2402,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "design_systems_engineer",
-    "topic": "when discussing design (design systems engineer)",
-    "q": "{name}, if your campus tech club asks you to build a when discussing design (design systems engineer) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 1,
+    "topic": "create reusable buttons and layouts that stay consistent",
+    "q": "At a student club project, the team wants to create reusable buttons and layouts that stay consistent. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Work with a teammate to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "design_systems_engineer"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Make a small example that shows how to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "site_reliability_engineer"
+        ],
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
+        "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Explore the tools needed to create reusable buttons and layouts that stay consistent.",
         "pillar": "design_product",
         "tags": [
           "design_systems_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "design_systems_engineer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "design_systems_engineer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to create reusable buttons and layouts that stay consistent, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -2400,44 +2449,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "design_systems_engineer",
-    "topic": "design systems engineer (design systems engineer)",
-    "q": "When working on a team project centered around design systems engineer (design systems engineer), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 2,
+    "topic": "create reusable buttons and layouts that stay consistent",
+    "q": "{name}, imagine joining a small startup internship to create reusable buttons and layouts that stay consistent. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "design_systems_engineer"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Try a hands-on exercise to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to create reusable buttons and layouts that stay consistent.",
         "pillar": "design_product",
         "tags": [
           "design_systems_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "design_systems_engineer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to create reusable buttons and layouts that stay consistent, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
+        "t": "Learn how to connect computers so information reaches the right place.",
         "pillar": "cloud_infra",
         "tags": [
-          "design_systems_engineer"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -2446,44 +2496,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "design_systems_engineer",
-    "topic": "when implementing button (design systems engineer)",
-    "q": "{name}, imagine a local startup hires you for a week to help with when implementing button (design systems engineer). What challenge would you jump at first?",
+    "sourceQuestionIndex": 3,
+    "topic": "create reusable buttons and layouts that stay consistent",
+    "q": "Your teammates at a weekend learning challenge plan to create reusable buttons and layouts that stay consistent. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to build an app for Android phones.",
+        "pillar": "systems",
         "tags": [
-          "design_systems_engineer"
+          "android"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Explore the tools needed to create reusable buttons and layouts that stay consistent.",
         "pillar": "design_product",
         "tags": [
           "design_systems_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to create reusable buttons and layouts that stay consistent, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Learn how to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "design_systems_engineer"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "design_systems_engineer"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -2492,44 +2543,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "design_systems_engineer",
-    "topic": "designing component architecture (design systems engineer)",
-    "q": "Hey {name}, during a college hackathon project involving designing component architecture (design systems engineer), which aspect would excite you most?",
+    "sourceQuestionIndex": 4,
+    "topic": "create reusable buttons and layouts that stay consistent",
+    "q": "{name}, you can choose a role at a community technology workshop while the team learns to create reusable buttons and layouts that stay consistent. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Explore the tools needed to create reusable buttons and layouts that stay consistent.",
         "pillar": "design_product",
         "tags": [
           "design_systems_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to create reusable buttons and layouts that stay consistent, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Learn how to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "design_systems_engineer"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Work with a teammate to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "design_systems_engineer"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
         "tags": [
-          "design_systems_engineer"
+          "data_engineering"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -2538,44 +2590,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "design_systems_engineer",
-    "topic": "prevent unintended visual (design systems engineer)",
-    "q": "{name}, if your campus tech club asks you to build a prevent unintended visual (design systems engineer) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 5,
+    "topic": "create reusable buttons and layouts that stay consistent",
+    "q": "{name}, at a team assignment with new classmates, your team has a chance to create reusable buttons and layouts that stay consistent. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Learn how to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "design_systems_engineer"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Work with a teammate to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_analyst"
+        ],
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Make a small example that shows how to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "devops_cloud"
+        ],
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Try a hands-on exercise to create reusable buttons and layouts that stay consistent.",
         "pillar": "design_product",
         "tags": [
           "design_systems_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "design_systems_engineer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "design_systems_engineer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to create reusable buttons and layouts that stay consistent, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -2584,44 +2637,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "design_systems_engineer",
-    "topic": "design system been (design systems engineer)",
-    "q": "When working on a team project centered around design system been (design systems engineer), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 6,
+    "topic": "create reusable buttons and layouts that stay consistent",
+    "q": "At a practice project for your portfolio, the team wants to create reusable buttons and layouts that stay consistent. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Work with a teammate to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
         "tags": [
-          "design_systems_engineer"
+          "site_reliability_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Make a small example that shows how to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
+        "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to create reusable buttons and layouts that stay consistent.",
         "pillar": "design_product",
         "tags": [
           "design_systems_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "design_systems_engineer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to create reusable buttons and layouts that stay consistent, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Explore the tools needed to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "design_systems_engineer"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -2630,44 +2684,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "design_systems_engineer",
-    "topic": "when integrating thirdparty (design systems engineer)",
-    "q": "{name}, imagine a local startup hires you for a week to help with when integrating thirdparty (design systems engineer). What challenge would you jump at first?",
+    "sourceQuestionIndex": 7,
+    "topic": "create reusable buttons and layouts that stay consistent",
+    "q": "{name}, imagine joining a volunteer project for a local group to create reusable buttons and layouts that stay consistent. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to build a small game with rules and player interactions.",
+        "pillar": "operations",
         "tags": [
-          "design_systems_engineer"
+          "game_development"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Try a hands-on exercise to create reusable buttons and layouts that stay consistent.",
         "pillar": "design_product",
         "tags": [
           "design_systems_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to create reusable buttons and layouts that stay consistent, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Explore the tools needed to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
         "tags": [
-          "design_systems_engineer"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Learn how to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "design_systems_engineer"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -2676,44 +2731,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "design_systems_engineer",
-    "topic": "after implementing significant (design systems engineer)",
-    "q": "Hey {name}, during a college hackathon project involving after implementing significant (design systems engineer), which aspect would excite you most?",
+    "sourceQuestionIndex": 8,
+    "topic": "create reusable buttons and layouts that stay consistent",
+    "q": "Your teammates at a demo for your college technology fair plan to create reusable buttons and layouts that stay consistent. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Try a hands-on exercise to create reusable buttons and layouts that stay consistent.",
         "pillar": "design_product",
         "tags": [
           "design_systems_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to create reusable buttons and layouts that stay consistent, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "design_systems_engineer"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Learn how to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "design_systems_engineer"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to build an app for Android phones.",
+        "pillar": "systems",
         "tags": [
-          "design_systems_engineer"
+          "android"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -2722,44 +2778,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "design_systems_engineer",
-    "topic": "when preparing portfolio (design systems engineer)",
-    "q": "{name}, if your campus tech club asks you to build a when preparing portfolio (design systems engineer) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 9,
+    "topic": "create reusable buttons and layouts that stay consistent",
+    "q": "{name}, you can choose a role at a shared project with a friend while the team learns to create reusable buttons and layouts that stay consistent. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "design_systems_engineer"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Learn how to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
+        "tags": [
+          "fullstack"
+        ],
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Work with a teammate to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_engineering"
+        ],
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Make a small example that shows how to create reusable buttons and layouts that stay consistent.",
         "pillar": "design_product",
         "tags": [
           "design_systems_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "design_systems_engineer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "design_systems_engineer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to create reusable buttons and layouts that stay consistent, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -2768,44 +2825,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "design_systems_engineer",
-    "topic": "writing case study (design systems engineer)",
-    "q": "When working on a team project centered around writing case study (design systems engineer), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 10,
+    "topic": "create reusable buttons and layouts that stay consistent",
+    "q": "{name}, at a beginner-friendly open-source project, your team has a chance to create reusable buttons and layouts that stay consistent. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Learn how to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
         "tags": [
-          "design_systems_engineer"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Work with a teammate to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "devops_cloud"
+        ],
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Make a small example that shows how to create reusable buttons and layouts that stay consistent.",
         "pillar": "design_product",
         "tags": [
           "design_systems_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "design_systems_engineer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to create reusable buttons and layouts that stay consistent, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Try a hands-on exercise to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "design_systems_engineer"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -2814,44 +2872,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "design_systems_engineer",
-    "topic": "capstone project demonstrating (design systems engineer)",
-    "q": "{name}, imagine a local startup hires you for a week to help with capstone project demonstrating (design systems engineer). What challenge would you jump at first?",
+    "sourceQuestionIndex": 11,
+    "topic": "create reusable buttons and layouts that stay consistent",
+    "q": "At a prototype for a student competition, the team wants to create reusable buttons and layouts that stay consistent. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Work with a teammate to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
         "tags": [
-          "design_systems_engineer"
+          "iam_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Make a small example that shows how to create reusable buttons and layouts that stay consistent.",
         "pillar": "design_product",
         "tags": [
           "design_systems_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to create reusable buttons and layouts that stay consistent, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
+        "t": "Try a hands-on exercise to use data and experiments to answer a useful question.",
         "pillar": "data_ai",
         "tags": [
-          "design_systems_engineer"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
+        "t": "Explore the tools needed to keep an online app available and recover when it stops working.",
         "pillar": "cloud_infra",
         "tags": [
-          "design_systems_engineer"
+          "site_reliability_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -2860,44 +2919,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "design_systems_engineer",
-    "topic": "what primary benefit (design systems engineer)",
-    "q": "Hey {name}, during a college hackathon project involving what primary benefit (design systems engineer), which aspect would excite you most?",
+    "sourceQuestionIndex": 12,
+    "topic": "create reusable buttons and layouts that stay consistent",
+    "q": "{name}, imagine joining a summer project you can test with classmates to create reusable buttons and layouts that stay consistent. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Make a small example that shows how to create reusable buttons and layouts that stay consistent.",
         "pillar": "design_product",
         "tags": [
           "design_systems_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to create reusable buttons and layouts that stay consistent, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
         "tags": [
-          "design_systems_engineer"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Explore the tools needed to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "design_systems_engineer"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Learn how to build a small game with rules and player interactions.",
+        "pillar": "operations",
         "tags": [
-          "design_systems_engineer"
+          "game_development"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -2906,44 +2966,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "design_systems_engineer",
-    "topic": "design systems engineer (design systems engineer)",
-    "q": "{name}, if your campus tech club asks you to build a design systems engineer (design systems engineer) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 13,
+    "topic": "create reusable buttons and layouts that stay consistent",
+    "q": "Your teammates at a short project with a student mentor plan to create reusable buttons and layouts that stay consistent. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "design_systems_engineer"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Explore the tools needed to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
+        "tags": [
+          "embedded_iot"
+        ],
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Learn how to build an app for Android phones.",
+        "pillar": "systems",
+        "tags": [
+          "android"
+        ],
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Work with a teammate to create reusable buttons and layouts that stay consistent.",
         "pillar": "design_product",
         "tags": [
           "design_systems_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "design_systems_engineer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "design_systems_engineer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to create reusable buttons and layouts that stay consistent, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -2952,44 +3013,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "design_systems_engineer",
-    "topic": "when building component (design systems engineer)",
-    "q": "When working on a team project centered around when building component (design systems engineer), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 14,
+    "topic": "create reusable buttons and layouts that stay consistent",
+    "q": "{name}, you can choose a role at a campus technology club meeting while the team learns to create reusable buttons and layouts that stay consistent. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "design_systems_engineer"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Learn how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_engineering"
+        ],
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Work with a teammate to create reusable buttons and layouts that stay consistent.",
         "pillar": "design_product",
         "tags": [
           "design_systems_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "design_systems_engineer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to create reusable buttons and layouts that stay consistent, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "design_systems_engineer"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -2998,44 +3060,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "design_systems_engineer",
-    "topic": "during code review (design systems engineer)",
-    "q": "{name}, imagine a local startup hires you for a week to help with during code review (design systems engineer). What challenge would you jump at first?",
+    "sourceQuestionIndex": 15,
+    "topic": "create reusable buttons and layouts that stay consistent",
+    "q": "{name}, at a small project with a limited budget, your team has a chance to create reusable buttons and layouts that stay consistent. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Learn how to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
         "tags": [
-          "design_systems_engineer"
+          "devops_cloud"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Work with a teammate to create reusable buttons and layouts that stay consistent.",
         "pillar": "design_product",
         "tags": [
           "design_systems_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to create reusable buttons and layouts that stay consistent, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Make a small example that shows how to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "design_systems_engineer"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Try a hands-on exercise to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
         "tags": [
-          "design_systems_engineer"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -3044,44 +3107,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "design_systems_engineer",
-    "topic": "your design system (design systems engineer)",
-    "q": "Hey {name}, during a college hackathon project involving your design system (design systems engineer), which aspect would excite you most?",
+    "sourceQuestionIndex": 16,
+    "topic": "create reusable buttons and layouts that stay consistent",
+    "q": "At a two-week team experiment, the team wants to create reusable buttons and layouts that stay consistent. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Work with a teammate to create reusable buttons and layouts that stay consistent.",
         "pillar": "design_product",
         "tags": [
           "design_systems_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to create reusable buttons and layouts that stay consistent, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "design_systems_engineer"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Try a hands-on exercise to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
         "tags": [
-          "design_systems_engineer"
+          "site_reliability_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Explore the tools needed to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
         "tags": [
-          "design_systems_engineer"
+          "iam_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -3090,44 +3154,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "design_systems_engineer",
-    "topic": "core component your (design systems engineer)",
-    "q": "{name}, if your campus tech club asks you to build a core component your (design systems engineer) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 17,
+    "topic": "create reusable buttons and layouts that stay consistent",
+    "q": "{name}, imagine joining a project that needs clear instructions for newcomers to create reusable buttons and layouts that stay consistent. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
         "tags": [
-          "design_systems_engineer"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Try a hands-on exercise to review security alerts and decide which need investigation.",
+        "pillar": "security",
+        "tags": [
+          "soc_analyst"
+        ],
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Learn how to create reusable buttons and layouts that stay consistent.",
         "pillar": "design_product",
         "tags": [
           "design_systems_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "design_systems_engineer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "design_systems_engineer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to create reusable buttons and layouts that stay consistent, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -3136,44 +3201,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "design_systems_engineer",
-    "topic": "when naming components (design systems engineer)",
-    "q": "When working on a team project centered around when naming components (design systems engineer), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 18,
+    "topic": "create reusable buttons and layouts that stay consistent",
+    "q": "Your teammates at a demo you will show to first-time users plan to create reusable buttons and layouts that stay consistent. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "design_systems_engineer"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Explore the tools needed to build an app for Android phones.",
+        "pillar": "systems",
+        "tags": [
+          "android"
+        ],
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Learn how to create reusable buttons and layouts that stay consistent.",
         "pillar": "design_product",
         "tags": [
           "design_systems_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "design_systems_engineer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to create reusable buttons and layouts that stay consistent, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "design_systems_engineer"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -3182,44 +3248,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "design_systems_engineer",
-    "topic": "completed feature design (design systems engineer)",
-    "q": "{name}, imagine a local startup hires you for a week to help with completed feature design (design systems engineer). What challenge would you jump at first?",
+    "sourceQuestionIndex": 19,
+    "topic": "create reusable buttons and layouts that stay consistent",
+    "q": "{name}, you can choose a role at a project that needs a careful check before sharing while the team learns to create reusable buttons and layouts that stay consistent. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
         "tags": [
-          "design_systems_engineer"
+          "data_engineering"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Learn how to create reusable buttons and layouts that stay consistent.",
         "pillar": "design_product",
         "tags": [
           "design_systems_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to create reusable buttons and layouts that stay consistent, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Work with a teammate to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "design_systems_engineer"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "design_systems_engineer"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -3228,44 +3295,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "design_systems_engineer",
-    "topic": "need implement responsive (design systems engineer)",
-    "q": "Hey {name}, during a college hackathon project involving need implement responsive (design systems engineer), which aspect would excite you most?",
+    "sourceQuestionIndex": 20,
+    "topic": "create reusable buttons and layouts that stay consistent",
+    "q": "{name}, at a group project you will explain to a teacher, your team has a chance to create reusable buttons and layouts that stay consistent. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Learn how to create reusable buttons and layouts that stay consistent.",
         "pillar": "design_product",
         "tags": [
           "design_systems_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to create reusable buttons and layouts that stay consistent, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Work with a teammate to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "design_systems_engineer"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
+        "t": "Make a small example that shows how to turn a spreadsheet into a clear answer about what happened.",
         "pillar": "data_ai",
         "tags": [
-          "design_systems_engineer"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
+        "t": "Try a hands-on exercise to automate the steps that publish an app online.",
         "pillar": "cloud_infra",
         "tags": [
-          "design_systems_engineer"
+          "devops_cloud"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -3274,44 +3342,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "design_systems_engineer",
-    "topic": "design systems engineer (design systems engineer)",
-    "q": "{name}, if your campus tech club asks you to build a design systems engineer (design systems engineer) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 21,
+    "topic": "create reusable buttons and layouts that stay consistent",
+    "q": "At a practice task you can learn step by step, the team wants to create reusable buttons and layouts that stay consistent. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Work with a teammate to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "design_systems_engineer"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Make a small example that shows how to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "site_reliability_engineer"
+        ],
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
+        "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Explore the tools needed to create reusable buttons and layouts that stay consistent.",
         "pillar": "design_product",
         "tags": [
           "design_systems_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "design_systems_engineer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "design_systems_engineer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to create reusable buttons and layouts that stay consistent, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -3320,44 +3389,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "design_systems_engineer",
-    "topic": "after version design (design systems engineer)",
-    "q": "When working on a team project centered around after version design (design systems engineer), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 22,
+    "topic": "create reusable buttons and layouts that stay consistent",
+    "q": "{name}, imagine joining a project where everyone picks a different contribution to create reusable buttons and layouts that stay consistent. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "design_systems_engineer"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Try a hands-on exercise to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to create reusable buttons and layouts that stay consistent.",
         "pillar": "design_product",
         "tags": [
           "design_systems_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "design_systems_engineer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to create reusable buttons and layouts that stay consistent, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
+        "t": "Learn how to connect computers so information reaches the right place.",
         "pillar": "cloud_infra",
         "tags": [
-          "design_systems_engineer"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -3366,44 +3436,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "design_systems_engineer",
-    "topic": "crucial aspect reliable (design systems engineer)",
-    "q": "{name}, imagine a local startup hires you for a week to help with crucial aspect reliable (design systems engineer). What challenge would you jump at first?",
+    "sourceQuestionIndex": 23,
+    "topic": "create reusable buttons and layouts that stay consistent",
+    "q": "Your teammates at a project you want to improve after receiving feedback plan to create reusable buttons and layouts that stay consistent. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to build an app for Android phones.",
+        "pillar": "systems",
         "tags": [
-          "design_systems_engineer"
+          "android"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Explore the tools needed to create reusable buttons and layouts that stay consistent.",
         "pillar": "design_product",
         "tags": [
           "design_systems_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to create reusable buttons and layouts that stay consistent, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Learn how to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "design_systems_engineer"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "design_systems_engineer"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -3412,44 +3483,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "design_systems_engineer",
-    "topic": "design systems engineer (design systems engineer)",
-    "q": "Hey {name}, during a college hackathon project involving design systems engineer (design systems engineer), which aspect would excite you most?",
+    "sourceQuestionIndex": 24,
+    "topic": "create reusable buttons and layouts that stay consistent",
+    "q": "{name}, you can choose a role at a learning project you will revisit next month while the team learns to create reusable buttons and layouts that stay consistent. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Explore the tools needed to create reusable buttons and layouts that stay consistent.",
         "pillar": "design_product",
         "tags": [
           "design_systems_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to create reusable buttons and layouts that stay consistent, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Learn how to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "design_systems_engineer"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Work with a teammate to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "design_systems_engineer"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
         "tags": [
-          "design_systems_engineer"
+          "data_engineering"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -3458,44 +3530,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_designer",
-    "topic": "what primary goal (product designer)",
-    "q": "Hey {name}, during a college hackathon project involving what primary goal (product designer), which aspect would excite you most?",
+    "sourceQuestionIndex": 0,
+    "topic": "turn a user need into a clear app design",
+    "q": "{name}, at a campus hackathon, your team has a chance to turn a user need into a clear app design. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Learn how to turn a user need into a clear app design.",
         "pillar": "design_product",
         "tags": [
           "product_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to turn a user need into a clear app design, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Work with a teammate to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "product_designer"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
+        "t": "Make a small example that shows how to turn a spreadsheet into a clear answer about what happened.",
         "pillar": "data_ai",
         "tags": [
-          "product_designer"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
+        "t": "Try a hands-on exercise to automate the steps that publish an app online.",
         "pillar": "cloud_infra",
         "tags": [
-          "product_designer"
+          "devops_cloud"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -3504,44 +3577,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_designer",
-    "topic": "which following best (product designer)",
-    "q": "{name}, if your campus tech club asks you to build a which following best (product designer) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 1,
+    "topic": "turn a user need into a clear app design",
+    "q": "At a student club project, the team wants to turn a user need into a clear app design. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Work with a teammate to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "product_designer"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Make a small example that shows how to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "site_reliability_engineer"
+        ],
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
+        "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Explore the tools needed to turn a user need into a clear app design.",
         "pillar": "design_product",
         "tags": [
           "product_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "product_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "product_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to turn a user need into a clear app design, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -3550,44 +3624,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_designer",
-    "topic": "which tool commonly (product designer)",
-    "q": "When working on a team project centered around which tool commonly (product designer), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 2,
+    "topic": "turn a user need into a clear app design",
+    "q": "{name}, imagine joining a small startup internship to turn a user need into a clear app design. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "product_designer"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Try a hands-on exercise to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to turn a user need into a clear app design.",
         "pillar": "design_product",
         "tags": [
           "product_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "product_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to turn a user need into a clear app design, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
+        "t": "Learn how to connect computers so information reaches the right place.",
         "pillar": "cloud_infra",
         "tags": [
-          "product_designer"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -3596,44 +3671,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_designer",
-    "topic": "when designing product (product designer)",
-    "q": "{name}, imagine a local startup hires you for a week to help with when designing product (product designer). What challenge would you jump at first?",
+    "sourceQuestionIndex": 3,
+    "topic": "turn a user need into a clear app design",
+    "q": "Your teammates at a weekend learning challenge plan to turn a user need into a clear app design. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to build an app for Android phones.",
+        "pillar": "systems",
         "tags": [
-          "product_designer"
+          "android"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Explore the tools needed to turn a user need into a clear app design.",
         "pillar": "design_product",
         "tags": [
           "product_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to turn a user need into a clear app design, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Learn how to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "product_designer"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "product_designer"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -3642,44 +3718,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_designer",
-    "topic": "agile team what (product designer)",
-    "q": "Hey {name}, during a college hackathon project involving agile team what (product designer), which aspect would excite you most?",
+    "sourceQuestionIndex": 4,
+    "topic": "turn a user need into a clear app design",
+    "q": "{name}, you can choose a role at a community technology workshop while the team learns to turn a user need into a clear app design. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Explore the tools needed to turn a user need into a clear app design.",
         "pillar": "design_product",
         "tags": [
           "product_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to turn a user need into a clear app design, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Learn how to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "product_designer"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Work with a teammate to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "product_designer"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
         "tags": [
-          "product_designer"
+          "data_engineering"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -3688,44 +3765,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_designer",
-    "topic": "what main objective (product designer)",
-    "q": "{name}, if your campus tech club asks you to build a what main objective (product designer) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 5,
+    "topic": "turn a user need into a clear app design",
+    "q": "{name}, at a team assignment with new classmates, your team has a chance to turn a user need into a clear app design. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Learn how to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "product_designer"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Work with a teammate to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_analyst"
+        ],
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Make a small example that shows how to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "devops_cloud"
+        ],
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Try a hands-on exercise to turn a user need into a clear app design.",
         "pillar": "design_product",
         "tags": [
           "product_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "product_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "product_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to turn a user need into a clear app design, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -3734,44 +3812,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_designer",
-    "topic": "what significance handoff (product designer)",
-    "q": "When working on a team project centered around what significance handoff (product designer), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 6,
+    "topic": "turn a user need into a clear app design",
+    "q": "At a practice project for your portfolio, the team wants to turn a user need into a clear app design. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Work with a teammate to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
         "tags": [
-          "product_designer"
+          "site_reliability_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Make a small example that shows how to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
+        "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to turn a user need into a clear app design.",
         "pillar": "design_product",
         "tags": [
           "product_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "product_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to turn a user need into a clear app design, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Explore the tools needed to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "product_designer"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -3780,44 +3859,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_designer",
-    "topic": "product designer tasked (product designer)",
-    "q": "{name}, imagine a local startup hires you for a week to help with product designer tasked (product designer). What challenge would you jump at first?",
+    "sourceQuestionIndex": 7,
+    "topic": "turn a user need into a clear app design",
+    "q": "{name}, imagine joining a volunteer project for a local group to turn a user need into a clear app design. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to build a small game with rules and player interactions.",
+        "pillar": "operations",
         "tags": [
-          "product_designer"
+          "game_development"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Try a hands-on exercise to turn a user need into a clear app design.",
         "pillar": "design_product",
         "tags": [
           "product_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to turn a user need into a clear app design, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Explore the tools needed to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
         "tags": [
-          "product_designer"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Learn how to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "product_designer"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -3826,44 +3906,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_designer",
-    "topic": "when facing design (product designer)",
-    "q": "Hey {name}, during a college hackathon project involving when facing design (product designer), which aspect would excite you most?",
+    "sourceQuestionIndex": 8,
+    "topic": "turn a user need into a clear app design",
+    "q": "Your teammates at a demo for your college technology fair plan to turn a user need into a clear app design. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Try a hands-on exercise to turn a user need into a clear app design.",
         "pillar": "design_product",
         "tags": [
           "product_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to turn a user need into a clear app design, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "product_designer"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Learn how to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "product_designer"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to build an app for Android phones.",
+        "pillar": "systems",
         "tags": [
-          "product_designer"
+          "android"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -3872,44 +3953,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_designer",
-    "topic": "product designer needs (product designer)",
-    "q": "{name}, if your campus tech club asks you to build a product designer needs (product designer) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 9,
+    "topic": "turn a user need into a clear app design",
+    "q": "{name}, you can choose a role at a shared project with a friend while the team learns to turn a user need into a clear app design. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "product_designer"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Learn how to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
+        "tags": [
+          "fullstack"
+        ],
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Work with a teammate to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_engineering"
+        ],
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Make a small example that shows how to turn a user need into a clear app design.",
         "pillar": "design_product",
         "tags": [
           "product_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "product_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "product_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to turn a user need into a clear app design, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -3918,44 +4000,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_designer",
-    "topic": "during initial research (product designer)",
-    "q": "When working on a team project centered around during initial research (product designer), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 10,
+    "topic": "turn a user need into a clear app design",
+    "q": "{name}, at a beginner-friendly open-source project, your team has a chance to turn a user need into a clear app design. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Learn how to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
         "tags": [
-          "product_designer"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Work with a teammate to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "devops_cloud"
+        ],
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Make a small example that shows how to turn a user need into a clear app design.",
         "pillar": "design_product",
         "tags": [
           "product_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "product_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to turn a user need into a clear app design, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Try a hands-on exercise to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "product_designer"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -3964,44 +4047,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_designer",
-    "topic": "when designing component (product designer)",
-    "q": "{name}, imagine a local startup hires you for a week to help with when designing component (product designer). What challenge would you jump at first?",
+    "sourceQuestionIndex": 11,
+    "topic": "turn a user need into a clear app design",
+    "q": "At a prototype for a student competition, the team wants to turn a user need into a clear app design. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Work with a teammate to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
         "tags": [
-          "product_designer"
+          "iam_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Make a small example that shows how to turn a user need into a clear app design.",
         "pillar": "design_product",
         "tags": [
           "product_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to turn a user need into a clear app design, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
+        "t": "Try a hands-on exercise to use data and experiments to answer a useful question.",
         "pillar": "data_ai",
         "tags": [
-          "product_designer"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
+        "t": "Explore the tools needed to keep an online app available and recover when it stops working.",
         "pillar": "cloud_infra",
         "tags": [
-          "product_designer"
+          "site_reliability_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -4010,44 +4094,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_designer",
-    "topic": "product designer reviewing (product designer)",
-    "q": "Hey {name}, during a college hackathon project involving product designer reviewing (product designer), which aspect would excite you most?",
+    "sourceQuestionIndex": 12,
+    "topic": "turn a user need into a clear app design",
+    "q": "{name}, imagine joining a summer project you can test with classmates to turn a user need into a clear app design. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Make a small example that shows how to turn a user need into a clear app design.",
         "pillar": "design_product",
         "tags": [
           "product_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to turn a user need into a clear app design, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
         "tags": [
-          "product_designer"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Explore the tools needed to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "product_designer"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Learn how to build a small game with rules and player interactions.",
+        "pillar": "operations",
         "tags": [
-          "product_designer"
+          "game_development"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -4056,44 +4141,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_designer",
-    "topic": "product designer given (product designer)",
-    "q": "{name}, if your campus tech club asks you to build a product designer given (product designer) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 13,
+    "topic": "turn a user need into a clear app design",
+    "q": "Your teammates at a short project with a student mentor plan to turn a user need into a clear app design. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "product_designer"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Explore the tools needed to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
+        "tags": [
+          "embedded_iot"
+        ],
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Learn how to build an app for Android phones.",
+        "pillar": "systems",
+        "tags": [
+          "android"
+        ],
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Work with a teammate to turn a user need into a clear app design.",
         "pillar": "design_product",
         "tags": [
           "product_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "product_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "product_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to turn a user need into a clear app design, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -4102,44 +4188,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_designer",
-    "topic": "design been handed (product designer)",
-    "q": "When working on a team project centered around design been handed (product designer), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 14,
+    "topic": "turn a user need into a clear app design",
+    "q": "{name}, you can choose a role at a campus technology club meeting while the team learns to turn a user need into a clear app design. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "product_designer"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Learn how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_engineering"
+        ],
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Work with a teammate to turn a user need into a clear app design.",
         "pillar": "design_product",
         "tags": [
           "product_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "product_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to turn a user need into a clear app design, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "product_designer"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -4148,44 +4235,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_designer",
-    "topic": "product designer working (product designer)",
-    "q": "{name}, imagine a local startup hires you for a week to help with product designer working (product designer). What challenge would you jump at first?",
+    "sourceQuestionIndex": 15,
+    "topic": "turn a user need into a clear app design",
+    "q": "{name}, at a small project with a limited budget, your team has a chance to turn a user need into a clear app design. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Learn how to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
         "tags": [
-          "product_designer"
+          "devops_cloud"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Work with a teammate to turn a user need into a clear app design.",
         "pillar": "design_product",
         "tags": [
           "product_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to turn a user need into a clear app design, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Make a small example that shows how to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "product_designer"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Try a hands-on exercise to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
         "tags": [
-          "product_designer"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -4194,44 +4282,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_designer",
-    "topic": "during sprint review (product designer)",
-    "q": "Hey {name}, during a college hackathon project involving during sprint review (product designer), which aspect would excite you most?",
+    "sourceQuestionIndex": 16,
+    "topic": "turn a user need into a clear app design",
+    "q": "At a two-week team experiment, the team wants to turn a user need into a clear app design. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Work with a teammate to turn a user need into a clear app design.",
         "pillar": "design_product",
         "tags": [
           "product_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to turn a user need into a clear app design, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "product_designer"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Try a hands-on exercise to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
         "tags": [
-          "product_designer"
+          "site_reliability_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Explore the tools needed to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
         "tags": [
-          "product_designer"
+          "iam_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -4240,44 +4329,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_designer",
-    "topic": "when compiling portfolio (product designer)",
-    "q": "{name}, if your campus tech club asks you to build a when compiling portfolio (product designer) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 17,
+    "topic": "turn a user need into a clear app design",
+    "q": "{name}, imagine joining a project that needs clear instructions for newcomers to turn a user need into a clear app design. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
         "tags": [
-          "product_designer"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Try a hands-on exercise to review security alerts and decide which need investigation.",
+        "pillar": "security",
+        "tags": [
+          "soc_analyst"
+        ],
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Learn how to turn a user need into a clear app design.",
         "pillar": "design_product",
         "tags": [
           "product_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "product_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "product_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to turn a user need into a clear app design, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -4286,44 +4376,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_designer",
-    "topic": "product designer writing (product designer)",
-    "q": "When working on a team project centered around product designer writing (product designer), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 18,
+    "topic": "turn a user need into a clear app design",
+    "q": "Your teammates at a demo you will show to first-time users plan to turn a user need into a clear app design. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "product_designer"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Explore the tools needed to build an app for Android phones.",
+        "pillar": "systems",
+        "tags": [
+          "android"
+        ],
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Learn how to turn a user need into a clear app design.",
         "pillar": "design_product",
         "tags": [
           "product_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "product_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to turn a user need into a clear app design, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "product_designer"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -4332,44 +4423,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_designer",
-    "topic": "portfolio capstone project (product designer)",
-    "q": "{name}, imagine a local startup hires you for a week to help with portfolio capstone project (product designer). What challenge would you jump at first?",
+    "sourceQuestionIndex": 19,
+    "topic": "turn a user need into a clear app design",
+    "q": "{name}, you can choose a role at a project that needs a careful check before sharing while the team learns to turn a user need into a clear app design. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
         "tags": [
-          "product_designer"
+          "data_engineering"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Learn how to turn a user need into a clear app design.",
         "pillar": "design_product",
         "tags": [
           "product_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to turn a user need into a clear app design, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Work with a teammate to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "product_designer"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "product_designer"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -4378,44 +4470,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_designer",
-    "topic": "product designer tasked (product designer)",
-    "q": "Hey {name}, during a college hackathon project involving product designer tasked (product designer), which aspect would excite you most?",
+    "sourceQuestionIndex": 20,
+    "topic": "turn a user need into a clear app design",
+    "q": "{name}, at a group project you will explain to a teacher, your team has a chance to turn a user need into a clear app design. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Learn how to turn a user need into a clear app design.",
         "pillar": "design_product",
         "tags": [
           "product_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to turn a user need into a clear app design, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Work with a teammate to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "product_designer"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
+        "t": "Make a small example that shows how to turn a spreadsheet into a clear answer about what happened.",
         "pillar": "data_ai",
         "tags": [
-          "product_designer"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
+        "t": "Try a hands-on exercise to automate the steps that publish an app online.",
         "pillar": "cloud_infra",
         "tags": [
-          "product_designer"
+          "devops_cloud"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -4424,44 +4517,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_designer",
-    "topic": "large product ecosystem (product designer)",
-    "q": "{name}, if your campus tech club asks you to build a large product ecosystem (product designer) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 21,
+    "topic": "turn a user need into a clear app design",
+    "q": "At a practice task you can learn step by step, the team wants to turn a user need into a clear app design. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Work with a teammate to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "product_designer"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Make a small example that shows how to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "site_reliability_engineer"
+        ],
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
+        "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Explore the tools needed to turn a user need into a clear app design.",
         "pillar": "design_product",
         "tags": [
           "product_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "product_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "product_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to turn a user need into a clear app design, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -4470,44 +4564,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_designer",
-    "topic": "newly launched feature (product designer)",
-    "q": "When working on a team project centered around newly launched feature (product designer), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 22,
+    "topic": "turn a user need into a clear app design",
+    "q": "{name}, imagine joining a project where everyone picks a different contribution to turn a user need into a clear app design. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "product_designer"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Try a hands-on exercise to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to turn a user need into a clear app design.",
         "pillar": "design_product",
         "tags": [
           "product_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "product_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to turn a user need into a clear app design, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
+        "t": "Learn how to connect computers so information reaches the right place.",
         "pillar": "cloud_infra",
         "tags": [
-          "product_designer"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -4516,44 +4611,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_designer",
-    "topic": "product designer designing (product designer)",
-    "q": "{name}, imagine a local startup hires you for a week to help with product designer designing (product designer). What challenge would you jump at first?",
+    "sourceQuestionIndex": 23,
+    "topic": "turn a user need into a clear app design",
+    "q": "Your teammates at a project you want to improve after receiving feedback plan to turn a user need into a clear app design. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to build an app for Android phones.",
+        "pillar": "systems",
         "tags": [
-          "product_designer"
+          "android"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Explore the tools needed to turn a user need into a clear app design.",
         "pillar": "design_product",
         "tags": [
           "product_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to turn a user need into a clear app design, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Learn how to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "product_designer"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "product_designer"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -4562,44 +4658,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_designer",
-    "topic": "during product launch (product designer)",
-    "q": "Hey {name}, during a college hackathon project involving during product launch (product designer), which aspect would excite you most?",
+    "sourceQuestionIndex": 24,
+    "topic": "turn a user need into a clear app design",
+    "q": "{name}, you can choose a role at a learning project you will revisit next month while the team learns to turn a user need into a clear app design. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Explore the tools needed to turn a user need into a clear app design.",
         "pillar": "design_product",
         "tags": [
           "product_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to turn a user need into a clear app design, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Learn how to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "product_designer"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Work with a teammate to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "product_designer"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
         "tags": [
-          "product_designer"
+          "data_engineering"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -4608,44 +4705,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_manager",
-    "topic": "product manager initiating (product manager)",
-    "q": "Hey {name}, during a college hackathon project involving product manager initiating (product manager), which aspect would excite you most?",
+    "sourceQuestionIndex": 0,
+    "topic": "help a team choose which user problem to solve next",
+    "q": "{name}, at a campus hackathon, your team has a chance to help a team choose which user problem to solve next. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Learn how to help a team choose which user problem to solve next.",
         "pillar": "design_product",
         "tags": [
           "product_manager"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team choose which user problem to solve next, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Work with a teammate to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "product_manager"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
+        "t": "Make a small example that shows how to turn a spreadsheet into a clear answer about what happened.",
         "pillar": "data_ai",
         "tags": [
-          "product_manager"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
+        "t": "Try a hands-on exercise to automate the steps that publish an app online.",
         "pillar": "cloud_infra",
         "tags": [
-          "product_manager"
+          "devops_cloud"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -4654,44 +4752,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_manager",
-    "topic": "product manager youve (product manager)",
-    "q": "{name}, if your campus tech club asks you to build a product manager youve (product manager) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 1,
+    "topic": "help a team choose which user problem to solve next",
+    "q": "At a student club project, the team wants to help a team choose which user problem to solve next. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Work with a teammate to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "product_manager"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Make a small example that shows how to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "site_reliability_engineer"
+        ],
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
+        "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Explore the tools needed to help a team choose which user problem to solve next.",
         "pillar": "design_product",
         "tags": [
           "product_manager"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "product_manager"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "product_manager"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to help a team choose which user problem to solve next, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -4700,44 +4799,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_manager",
-    "topic": "product manager evaluating (product manager)",
-    "q": "When working on a team project centered around product manager evaluating (product manager), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 2,
+    "topic": "help a team choose which user problem to solve next",
+    "q": "{name}, imagine joining a small startup internship to help a team choose which user problem to solve next. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "product_manager"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Try a hands-on exercise to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to help a team choose which user problem to solve next.",
         "pillar": "design_product",
         "tags": [
           "product_manager"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "product_manager"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a team choose which user problem to solve next, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
+        "t": "Learn how to connect computers so information reaches the right place.",
         "pillar": "cloud_infra",
         "tags": [
-          "product_manager"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -4746,44 +4846,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_manager",
-    "topic": "your product team (product manager)",
-    "q": "{name}, imagine a local startup hires you for a week to help with your product team (product manager). What challenge would you jump at first?",
+    "sourceQuestionIndex": 3,
+    "topic": "help a team choose which user problem to solve next",
+    "q": "Your teammates at a weekend learning challenge plan to help a team choose which user problem to solve next. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to build an app for Android phones.",
+        "pillar": "systems",
         "tags": [
-          "product_manager"
+          "android"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Explore the tools needed to help a team choose which user problem to solve next.",
         "pillar": "design_product",
         "tags": [
           "product_manager"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team choose which user problem to solve next, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Learn how to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "product_manager"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "product_manager"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -4792,44 +4893,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_manager",
-    "topic": "product manager faced (product manager)",
-    "q": "Hey {name}, during a college hackathon project involving product manager faced (product manager), which aspect would excite you most?",
+    "sourceQuestionIndex": 4,
+    "topic": "help a team choose which user problem to solve next",
+    "q": "{name}, you can choose a role at a community technology workshop while the team learns to help a team choose which user problem to solve next. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Explore the tools needed to help a team choose which user problem to solve next.",
         "pillar": "design_product",
         "tags": [
           "product_manager"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team choose which user problem to solve next, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Learn how to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "product_manager"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Work with a teammate to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "product_manager"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
         "tags": [
-          "product_manager"
+          "data_engineering"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -4838,44 +4940,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_manager",
-    "topic": "writing user story (product manager)",
-    "q": "{name}, if your campus tech club asks you to build a writing user story (product manager) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 5,
+    "topic": "help a team choose which user problem to solve next",
+    "q": "{name}, at a team assignment with new classmates, your team has a chance to help a team choose which user problem to solve next. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Learn how to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "product_manager"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Work with a teammate to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_analyst"
+        ],
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Make a small example that shows how to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "devops_cloud"
+        ],
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Try a hands-on exercise to help a team choose which user problem to solve next.",
         "pillar": "design_product",
         "tags": [
           "product_manager"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "product_manager"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "product_manager"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to help a team choose which user problem to solve next, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -4884,44 +4987,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_manager",
-    "topic": "preparing feature prioritization (product manager)",
-    "q": "When working on a team project centered around preparing feature prioritization (product manager), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 6,
+    "topic": "help a team choose which user problem to solve next",
+    "q": "At a practice project for your portfolio, the team wants to help a team choose which user problem to solve next. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Work with a teammate to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
         "tags": [
-          "product_manager"
+          "site_reliability_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Make a small example that shows how to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
+        "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to help a team choose which user problem to solve next.",
         "pillar": "design_product",
         "tags": [
           "product_manager"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "product_manager"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a team choose which user problem to solve next, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Explore the tools needed to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "product_manager"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -4930,44 +5034,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_manager",
-    "topic": "your team launching (product manager)",
-    "q": "{name}, imagine a local startup hires you for a week to help with your team launching (product manager). What challenge would you jump at first?",
+    "sourceQuestionIndex": 7,
+    "topic": "help a team choose which user problem to solve next",
+    "q": "{name}, imagine joining a volunteer project for a local group to help a team choose which user problem to solve next. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to build a small game with rules and player interactions.",
+        "pillar": "operations",
         "tags": [
-          "product_manager"
+          "game_development"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Try a hands-on exercise to help a team choose which user problem to solve next.",
         "pillar": "design_product",
         "tags": [
           "product_manager"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team choose which user problem to solve next, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Explore the tools needed to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
         "tags": [
-          "product_manager"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Learn how to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "product_manager"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -4976,44 +5081,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_manager",
-    "topic": "product manager wants (product manager)",
-    "q": "Hey {name}, during a college hackathon project involving product manager wants (product manager), which aspect would excite you most?",
+    "sourceQuestionIndex": 8,
+    "topic": "help a team choose which user problem to solve next",
+    "q": "Your teammates at a demo for your college technology fair plan to help a team choose which user problem to solve next. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Try a hands-on exercise to help a team choose which user problem to solve next.",
         "pillar": "design_product",
         "tags": [
           "product_manager"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team choose which user problem to solve next, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "product_manager"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Learn how to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "product_manager"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to build an app for Android phones.",
+        "pillar": "systems",
         "tags": [
-          "product_manager"
+          "android"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -5022,44 +5128,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_manager",
-    "topic": "tasked with creating (product manager)",
-    "q": "{name}, if your campus tech club asks you to build a tasked with creating (product manager) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 9,
+    "topic": "help a team choose which user problem to solve next",
+    "q": "{name}, you can choose a role at a shared project with a friend while the team learns to help a team choose which user problem to solve next. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "product_manager"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Learn how to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
+        "tags": [
+          "fullstack"
+        ],
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Work with a teammate to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_engineering"
+        ],
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Make a small example that shows how to help a team choose which user problem to solve next.",
         "pillar": "design_product",
         "tags": [
           "product_manager"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "product_manager"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "product_manager"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to help a team choose which user problem to solve next, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -5068,44 +5175,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_manager",
-    "topic": "during product manager (product manager)",
-    "q": "When working on a team project centered around during product manager (product manager), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 10,
+    "topic": "help a team choose which user problem to solve next",
+    "q": "{name}, at a beginner-friendly open-source project, your team has a chance to help a team choose which user problem to solve next. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Learn how to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
         "tags": [
-          "product_manager"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Work with a teammate to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "devops_cloud"
+        ],
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Make a small example that shows how to help a team choose which user problem to solve next.",
         "pillar": "design_product",
         "tags": [
           "product_manager"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "product_manager"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a team choose which user problem to solve next, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Try a hands-on exercise to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "product_manager"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -5114,44 +5222,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_manager",
-    "topic": "youve collected extensive (product manager)",
-    "q": "{name}, imagine a local startup hires you for a week to help with youve collected extensive (product manager). What challenge would you jump at first?",
+    "sourceQuestionIndex": 11,
+    "topic": "help a team choose which user problem to solve next",
+    "q": "At a prototype for a student competition, the team wants to help a team choose which user problem to solve next. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Work with a teammate to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
         "tags": [
-          "product_manager"
+          "iam_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Make a small example that shows how to help a team choose which user problem to solve next.",
         "pillar": "design_product",
         "tags": [
           "product_manager"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team choose which user problem to solve next, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
+        "t": "Try a hands-on exercise to use data and experiments to answer a useful question.",
         "pillar": "data_ai",
         "tags": [
-          "product_manager"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
+        "t": "Explore the tools needed to keep an online app available and recover when it stops working.",
         "pillar": "cloud_infra",
         "tags": [
-          "product_manager"
+          "site_reliability_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -5160,44 +5269,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_manager",
-    "topic": "product manager creating (product manager)",
-    "q": "Hey {name}, during a college hackathon project involving product manager creating (product manager), which aspect would excite you most?",
+    "sourceQuestionIndex": 12,
+    "topic": "help a team choose which user problem to solve next",
+    "q": "{name}, imagine joining a summer project you can test with classmates to help a team choose which user problem to solve next. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Make a small example that shows how to help a team choose which user problem to solve next.",
         "pillar": "design_product",
         "tags": [
           "product_manager"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team choose which user problem to solve next, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
         "tags": [
-          "product_manager"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Explore the tools needed to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "product_manager"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Learn how to build a small game with rules and player interactions.",
+        "pillar": "operations",
         "tags": [
-          "product_manager"
+          "game_development"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -5206,44 +5316,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_manager",
-    "topic": "your products pricing (product manager)",
-    "q": "{name}, if your campus tech club asks you to build a your products pricing (product manager) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 13,
+    "topic": "help a team choose which user problem to solve next",
+    "q": "Your teammates at a short project with a student mentor plan to help a team choose which user problem to solve next. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "product_manager"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Explore the tools needed to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
+        "tags": [
+          "embedded_iot"
+        ],
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Learn how to build an app for Android phones.",
+        "pillar": "systems",
+        "tags": [
+          "android"
+        ],
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Work with a teammate to help a team choose which user problem to solve next.",
         "pillar": "design_product",
         "tags": [
           "product_manager"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "product_manager"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "product_manager"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to help a team choose which user problem to solve next, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -5252,44 +5363,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_manager",
-    "topic": "during sprint planning (product manager)",
-    "q": "When working on a team project centered around during sprint planning (product manager), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 14,
+    "topic": "help a team choose which user problem to solve next",
+    "q": "{name}, you can choose a role at a campus technology club meeting while the team learns to help a team choose which user problem to solve next. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "product_manager"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Learn how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_engineering"
+        ],
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Work with a teammate to help a team choose which user problem to solve next.",
         "pillar": "design_product",
         "tags": [
           "product_manager"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "product_manager"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a team choose which user problem to solve next, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "product_manager"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -5298,44 +5410,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_manager",
-    "topic": "presenting feature proposal (product manager)",
-    "q": "{name}, imagine a local startup hires you for a week to help with presenting feature proposal (product manager). What challenge would you jump at first?",
+    "sourceQuestionIndex": 15,
+    "topic": "help a team choose which user problem to solve next",
+    "q": "{name}, at a small project with a limited budget, your team has a chance to help a team choose which user problem to solve next. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Learn how to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
         "tags": [
-          "product_manager"
+          "devops_cloud"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Work with a teammate to help a team choose which user problem to solve next.",
         "pillar": "design_product",
         "tags": [
           "product_manager"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team choose which user problem to solve next, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Make a small example that shows how to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "product_manager"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Try a hands-on exercise to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
         "tags": [
-          "product_manager"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -5344,44 +5457,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_manager",
-    "topic": "when defining acceptance (product manager)",
-    "q": "Hey {name}, during a college hackathon project involving when defining acceptance (product manager), which aspect would excite you most?",
+    "sourceQuestionIndex": 16,
+    "topic": "help a team choose which user problem to solve next",
+    "q": "At a two-week team experiment, the team wants to help a team choose which user problem to solve next. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Work with a teammate to help a team choose which user problem to solve next.",
         "pillar": "design_product",
         "tags": [
           "product_manager"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team choose which user problem to solve next, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "product_manager"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Try a hands-on exercise to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
         "tags": [
-          "product_manager"
+          "site_reliability_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Explore the tools needed to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
         "tags": [
-          "product_manager"
+          "iam_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -5390,44 +5504,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_manager",
-    "topic": "your product free (product manager)",
-    "q": "{name}, if your campus tech club asks you to build a your product free (product manager) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 17,
+    "topic": "help a team choose which user problem to solve next",
+    "q": "{name}, imagine joining a project that needs clear instructions for newcomers to help a team choose which user problem to solve next. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
         "tags": [
-          "product_manager"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Try a hands-on exercise to review security alerts and decide which need investigation.",
+        "pillar": "security",
+        "tags": [
+          "soc_analyst"
+        ],
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Learn how to help a team choose which user problem to solve next.",
         "pillar": "design_product",
         "tags": [
           "product_manager"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "product_manager"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "product_manager"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to help a team choose which user problem to solve next, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -5436,44 +5551,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_manager",
-    "topic": "after running test (product manager)",
-    "q": "When working on a team project centered around after running test (product manager), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 18,
+    "topic": "help a team choose which user problem to solve next",
+    "q": "Your teammates at a demo you will show to first-time users plan to help a team choose which user problem to solve next. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "product_manager"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Explore the tools needed to build an app for Android phones.",
+        "pillar": "systems",
+        "tags": [
+          "android"
+        ],
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Learn how to help a team choose which user problem to solve next.",
         "pillar": "design_product",
         "tags": [
           "product_manager"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "product_manager"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a team choose which user problem to solve next, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "product_manager"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -5482,44 +5598,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_manager",
-    "topic": "preparing product sense (product manager)",
-    "q": "{name}, imagine a local startup hires you for a week to help with preparing product sense (product manager). What challenge would you jump at first?",
+    "sourceQuestionIndex": 19,
+    "topic": "help a team choose which user problem to solve next",
+    "q": "{name}, you can choose a role at a project that needs a careful check before sharing while the team learns to help a team choose which user problem to solve next. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
         "tags": [
-          "product_manager"
+          "data_engineering"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Learn how to help a team choose which user problem to solve next.",
         "pillar": "design_product",
         "tags": [
           "product_manager"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team choose which user problem to solve next, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Work with a teammate to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "product_manager"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "product_manager"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -5528,44 +5645,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_manager",
-    "topic": "which following would (product manager)",
-    "q": "Hey {name}, during a college hackathon project involving which following would (product manager), which aspect would excite you most?",
+    "sourceQuestionIndex": 20,
+    "topic": "help a team choose which user problem to solve next",
+    "q": "{name}, at a group project you will explain to a teacher, your team has a chance to help a team choose which user problem to solve next. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Learn how to help a team choose which user problem to solve next.",
         "pillar": "design_product",
         "tags": [
           "product_manager"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team choose which user problem to solve next, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Work with a teammate to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "product_manager"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
+        "t": "Make a small example that shows how to turn a spreadsheet into a clear answer about what happened.",
         "pillar": "data_ai",
         "tags": [
-          "product_manager"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
+        "t": "Try a hands-on exercise to automate the steps that publish an app online.",
         "pillar": "cloud_infra",
         "tags": [
-          "product_manager"
+          "devops_cloud"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -5574,44 +5692,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_manager",
-    "topic": "your product team (product manager)",
-    "q": "{name}, if your campus tech club asks you to build a your product team (product manager) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 21,
+    "topic": "help a team choose which user problem to solve next",
+    "q": "At a practice task you can learn step by step, the team wants to help a team choose which user problem to solve next. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Work with a teammate to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "product_manager"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Make a small example that shows how to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "site_reliability_engineer"
+        ],
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
+        "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Explore the tools needed to help a team choose which user problem to solve next.",
         "pillar": "design_product",
         "tags": [
           "product_manager"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "product_manager"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "product_manager"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to help a team choose which user problem to solve next, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -5620,44 +5739,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_manager",
-    "topic": "product manager frequently (product manager)",
-    "q": "When working on a team project centered around product manager frequently (product manager), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 22,
+    "topic": "help a team choose which user problem to solve next",
+    "q": "{name}, imagine joining a project where everyone picks a different contribution to help a team choose which user problem to solve next. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "product_manager"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Try a hands-on exercise to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to help a team choose which user problem to solve next.",
         "pillar": "design_product",
         "tags": [
           "product_manager"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "product_manager"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a team choose which user problem to solve next, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
+        "t": "Learn how to connect computers so information reaches the right place.",
         "pillar": "cloud_infra",
         "tags": [
-          "product_manager"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -5666,44 +5786,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_manager",
-    "topic": "before committing building (product manager)",
-    "q": "{name}, imagine a local startup hires you for a week to help with before committing building (product manager). What challenge would you jump at first?",
+    "sourceQuestionIndex": 23,
+    "topic": "help a team choose which user problem to solve next",
+    "q": "Your teammates at a project you want to improve after receiving feedback plan to help a team choose which user problem to solve next. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to build an app for Android phones.",
+        "pillar": "systems",
         "tags": [
-          "product_manager"
+          "android"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Explore the tools needed to help a team choose which user problem to solve next.",
         "pillar": "design_product",
         "tags": [
           "product_manager"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team choose which user problem to solve next, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Learn how to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "product_manager"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "product_manager"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -5712,44 +5833,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "product_manager",
-    "topic": "have list potential (product manager)",
-    "q": "Hey {name}, during a college hackathon project involving have list potential (product manager), which aspect would excite you most?",
+    "sourceQuestionIndex": 24,
+    "topic": "help a team choose which user problem to solve next",
+    "q": "{name}, you can choose a role at a learning project you will revisit next month while the team learns to help a team choose which user problem to solve next. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Explore the tools needed to help a team choose which user problem to solve next.",
         "pillar": "design_product",
         "tags": [
           "product_manager"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team choose which user problem to solve next, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Learn how to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "product_manager"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Work with a teammate to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "product_manager"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
         "tags": [
-          "product_manager"
+          "data_engineering"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -5758,44 +5880,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "scrum_master_agile_coach",
-    "topic": "newly formed agile (scrum master agile coach)",
-    "q": "Hey {name}, during a college hackathon project involving newly formed agile (scrum master agile coach), which aspect would excite you most?",
+    "sourceQuestionIndex": 0,
+    "topic": "help a project team plan work and remove obstacles",
+    "q": "{name}, at a campus hackathon, your team has a chance to help a project team plan work and remove obstacles. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Learn how to help a project team plan work and remove obstacles.",
         "pillar": "design_product",
         "tags": [
           "scrum_master_agile_coach"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a project team plan work and remove obstacles, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Work with a teammate to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "scrum_master_agile_coach"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
+        "t": "Make a small example that shows how to turn a spreadsheet into a clear answer about what happened.",
         "pillar": "data_ai",
         "tags": [
-          "scrum_master_agile_coach"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
+        "t": "Try a hands-on exercise to automate the steps that publish an app online.",
         "pillar": "cloud_infra",
         "tags": [
-          "scrum_master_agile_coach"
+          "devops_cloud"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -5804,44 +5927,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "scrum_master_agile_coach",
-    "topic": "during sprint development (scrum master agile coach)",
-    "q": "{name}, if your campus tech club asks you to build a during sprint development (scrum master agile coach) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 1,
+    "topic": "help a project team plan work and remove obstacles",
+    "q": "At a student club project, the team wants to help a project team plan work and remove obstacles. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Work with a teammate to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "scrum_master_agile_coach"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Make a small example that shows how to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "site_reliability_engineer"
+        ],
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
+        "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Explore the tools needed to help a project team plan work and remove obstacles.",
         "pillar": "design_product",
         "tags": [
           "scrum_master_agile_coach"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "scrum_master_agile_coach"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "scrum_master_agile_coach"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to help a project team plan work and remove obstacles, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -5850,44 +5974,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "scrum_master_agile_coach",
-    "topic": "agile team consistently (scrum master agile coach)",
-    "q": "When working on a team project centered around agile team consistently (scrum master agile coach), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 2,
+    "topic": "help a project team plan work and remove obstacles",
+    "q": "{name}, imagine joining a small startup internship to help a project team plan work and remove obstacles. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "scrum_master_agile_coach"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Try a hands-on exercise to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to help a project team plan work and remove obstacles.",
         "pillar": "design_product",
         "tags": [
           "scrum_master_agile_coach"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "scrum_master_agile_coach"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a project team plan work and remove obstacles, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
+        "t": "Learn how to connect computers so information reaches the right place.",
         "pillar": "cloud_infra",
         "tags": [
-          "scrum_master_agile_coach"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -5896,44 +6021,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "scrum_master_agile_coach",
-    "topic": "what primary purpose (scrum master agile coach)",
-    "q": "{name}, imagine a local startup hires you for a week to help with what primary purpose (scrum master agile coach). What challenge would you jump at first?",
+    "sourceQuestionIndex": 3,
+    "topic": "help a project team plan work and remove obstacles",
+    "q": "Your teammates at a weekend learning challenge plan to help a project team plan work and remove obstacles. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to build an app for Android phones.",
+        "pillar": "systems",
         "tags": [
-          "scrum_master_agile_coach"
+          "android"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Explore the tools needed to help a project team plan work and remove obstacles.",
         "pillar": "design_product",
         "tags": [
           "scrum_master_agile_coach"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a project team plan work and remove obstacles, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Learn how to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "scrum_master_agile_coach"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "scrum_master_agile_coach"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -5942,44 +6068,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "scrum_master_agile_coach",
-    "topic": "scrum team consistently (scrum master agile coach)",
-    "q": "Hey {name}, during a college hackathon project involving scrum team consistently (scrum master agile coach), which aspect would excite you most?",
+    "sourceQuestionIndex": 4,
+    "topic": "help a project team plan work and remove obstacles",
+    "q": "{name}, you can choose a role at a community technology workshop while the team learns to help a project team plan work and remove obstacles. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Explore the tools needed to help a project team plan work and remove obstacles.",
         "pillar": "design_product",
         "tags": [
           "scrum_master_agile_coach"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a project team plan work and remove obstacles, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Learn how to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "scrum_master_agile_coach"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Work with a teammate to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "scrum_master_agile_coach"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
         "tags": [
-          "scrum_master_agile_coach"
+          "data_engineering"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -5988,44 +6115,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "scrum_master_agile_coach",
-    "topic": "which following best (scrum master agile coach)",
-    "q": "{name}, if your campus tech club asks you to build a which following best (scrum master agile coach) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 5,
+    "topic": "help a project team plan work and remove obstacles",
+    "q": "{name}, at a team assignment with new classmates, your team has a chance to help a project team plan work and remove obstacles. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Learn how to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "scrum_master_agile_coach"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Work with a teammate to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_analyst"
+        ],
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Make a small example that shows how to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "devops_cloud"
+        ],
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Try a hands-on exercise to help a project team plan work and remove obstacles.",
         "pillar": "design_product",
         "tags": [
           "scrum_master_agile_coach"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "scrum_master_agile_coach"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "scrum_master_agile_coach"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to help a project team plan work and remove obstacles, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -6034,44 +6162,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "scrum_master_agile_coach",
-    "topic": "kanban system what (scrum master agile coach)",
-    "q": "When working on a team project centered around kanban system what (scrum master agile coach), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 6,
+    "topic": "help a project team plan work and remove obstacles",
+    "q": "At a practice project for your portfolio, the team wants to help a project team plan work and remove obstacles. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Work with a teammate to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
         "tags": [
-          "scrum_master_agile_coach"
+          "site_reliability_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Make a small example that shows how to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
+        "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to help a project team plan work and remove obstacles.",
         "pillar": "design_product",
         "tags": [
           "scrum_master_agile_coach"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "scrum_master_agile_coach"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a project team plan work and remove obstacles, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Explore the tools needed to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "scrum_master_agile_coach"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -6080,44 +6209,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "scrum_master_agile_coach",
-    "topic": "scrum team experiencing (scrum master agile coach)",
-    "q": "{name}, imagine a local startup hires you for a week to help with scrum team experiencing (scrum master agile coach). What challenge would you jump at first?",
+    "sourceQuestionIndex": 7,
+    "topic": "help a project team plan work and remove obstacles",
+    "q": "{name}, imagine joining a volunteer project for a local group to help a project team plan work and remove obstacles. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to build a small game with rules and player interactions.",
+        "pillar": "operations",
         "tags": [
-          "scrum_master_agile_coach"
+          "game_development"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Try a hands-on exercise to help a project team plan work and remove obstacles.",
         "pillar": "design_product",
         "tags": [
           "scrum_master_agile_coach"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a project team plan work and remove obstacles, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Explore the tools needed to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
         "tags": [
-          "scrum_master_agile_coach"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Learn how to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "scrum_master_agile_coach"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -6126,44 +6256,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "scrum_master_agile_coach",
-    "topic": "development team frequently (scrum master agile coach)",
-    "q": "Hey {name}, during a college hackathon project involving development team frequently (scrum master agile coach), which aspect would excite you most?",
+    "sourceQuestionIndex": 8,
+    "topic": "help a project team plan work and remove obstacles",
+    "q": "Your teammates at a demo for your college technology fair plan to help a project team plan work and remove obstacles. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Try a hands-on exercise to help a project team plan work and remove obstacles.",
         "pillar": "design_product",
         "tags": [
           "scrum_master_agile_coach"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a project team plan work and remove obstacles, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "scrum_master_agile_coach"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Learn how to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "scrum_master_agile_coach"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to build an app for Android phones.",
+        "pillar": "systems",
         "tags": [
-          "scrum_master_agile_coach"
+          "android"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -6172,44 +6303,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "scrum_master_agile_coach",
-    "topic": "remote agile team (scrum master agile coach)",
-    "q": "{name}, if your campus tech club asks you to build a remote agile team (scrum master agile coach) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 9,
+    "topic": "help a project team plan work and remove obstacles",
+    "q": "{name}, you can choose a role at a shared project with a friend while the team learns to help a project team plan work and remove obstacles. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "scrum_master_agile_coach"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Learn how to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
+        "tags": [
+          "fullstack"
+        ],
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Work with a teammate to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_engineering"
+        ],
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Make a small example that shows how to help a project team plan work and remove obstacles.",
         "pillar": "design_product",
         "tags": [
           "scrum_master_agile_coach"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "scrum_master_agile_coach"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "scrum_master_agile_coach"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to help a project team plan work and remove obstacles, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -6218,44 +6350,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "scrum_master_agile_coach",
-    "topic": "during project scrum (scrum master agile coach)",
-    "q": "When working on a team project centered around during project scrum (scrum master agile coach), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 10,
+    "topic": "help a project team plan work and remove obstacles",
+    "q": "{name}, at a beginner-friendly open-source project, your team has a chance to help a project team plan work and remove obstacles. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Learn how to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
         "tags": [
-          "scrum_master_agile_coach"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Work with a teammate to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "devops_cloud"
+        ],
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Make a small example that shows how to help a project team plan work and remove obstacles.",
         "pillar": "design_product",
         "tags": [
           "scrum_master_agile_coach"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "scrum_master_agile_coach"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a project team plan work and remove obstacles, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Try a hands-on exercise to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "scrum_master_agile_coach"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -6264,44 +6397,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "scrum_master_agile_coach",
-    "topic": "scrum team identifies (scrum master agile coach)",
-    "q": "{name}, imagine a local startup hires you for a week to help with scrum team identifies (scrum master agile coach). What challenge would you jump at first?",
+    "sourceQuestionIndex": 11,
+    "topic": "help a project team plan work and remove obstacles",
+    "q": "At a prototype for a student competition, the team wants to help a project team plan work and remove obstacles. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Work with a teammate to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
         "tags": [
-          "scrum_master_agile_coach"
+          "iam_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Make a small example that shows how to help a project team plan work and remove obstacles.",
         "pillar": "design_product",
         "tags": [
           "scrum_master_agile_coach"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a project team plan work and remove obstacles, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
+        "t": "Try a hands-on exercise to use data and experiments to answer a useful question.",
         "pillar": "data_ai",
         "tags": [
-          "scrum_master_agile_coach"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
+        "t": "Explore the tools needed to keep an online app available and recover when it stops working.",
         "pillar": "cloud_infra",
         "tags": [
-          "scrum_master_agile_coach"
+          "site_reliability_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -6310,44 +6444,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "scrum_master_agile_coach",
-    "topic": "product owner struggling (scrum master agile coach)",
-    "q": "Hey {name}, during a college hackathon project involving product owner struggling (scrum master agile coach), which aspect would excite you most?",
+    "sourceQuestionIndex": 12,
+    "topic": "help a project team plan work and remove obstacles",
+    "q": "{name}, imagine joining a summer project you can test with classmates to help a project team plan work and remove obstacles. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Make a small example that shows how to help a project team plan work and remove obstacles.",
         "pillar": "design_product",
         "tags": [
           "scrum_master_agile_coach"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a project team plan work and remove obstacles, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
         "tags": [
-          "scrum_master_agile_coach"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Explore the tools needed to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "scrum_master_agile_coach"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Learn how to build a small game with rules and player interactions.",
+        "pillar": "operations",
         "tags": [
-          "scrum_master_agile_coach"
+          "game_development"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -6356,44 +6491,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "scrum_master_agile_coach",
-    "topic": "aspiring scrum master (scrum master agile coach)",
-    "q": "{name}, if your campus tech club asks you to build a aspiring scrum master (scrum master agile coach) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 13,
+    "topic": "help a project team plan work and remove obstacles",
+    "q": "Your teammates at a short project with a student mentor plan to help a project team plan work and remove obstacles. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "scrum_master_agile_coach"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Explore the tools needed to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
+        "tags": [
+          "embedded_iot"
+        ],
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Learn how to build an app for Android phones.",
+        "pillar": "systems",
+        "tags": [
+          "android"
+        ],
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Work with a teammate to help a project team plan work and remove obstacles.",
         "pillar": "design_product",
         "tags": [
           "scrum_master_agile_coach"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "scrum_master_agile_coach"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "scrum_master_agile_coach"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to help a project team plan work and remove obstacles, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -6402,44 +6538,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "scrum_master_agile_coach",
-    "topic": "when writing case (scrum master agile coach)",
-    "q": "When working on a team project centered around when writing case (scrum master agile coach), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 14,
+    "topic": "help a project team plan work and remove obstacles",
+    "q": "{name}, you can choose a role at a campus technology club meeting while the team learns to help a project team plan work and remove obstacles. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "scrum_master_agile_coach"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Learn how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_engineering"
+        ],
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Work with a teammate to help a project team plan work and remove obstacles.",
         "pillar": "design_product",
         "tags": [
           "scrum_master_agile_coach"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "scrum_master_agile_coach"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a project team plan work and remove obstacles, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "scrum_master_agile_coach"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -6448,44 +6585,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "scrum_master_agile_coach",
-    "topic": "scrum team consistently (scrum master agile coach)",
-    "q": "{name}, imagine a local startup hires you for a week to help with scrum team consistently (scrum master agile coach). What challenge would you jump at first?",
+    "sourceQuestionIndex": 15,
+    "topic": "help a project team plan work and remove obstacles",
+    "q": "{name}, at a small project with a limited budget, your team has a chance to help a project team plan work and remove obstacles. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Learn how to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
         "tags": [
-          "scrum_master_agile_coach"
+          "devops_cloud"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Work with a teammate to help a project team plan work and remove obstacles.",
         "pillar": "design_product",
         "tags": [
           "scrum_master_agile_coach"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a project team plan work and remove obstacles, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Make a small example that shows how to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "scrum_master_agile_coach"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Try a hands-on exercise to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
         "tags": [
-          "scrum_master_agile_coach"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -6494,44 +6632,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "scrum_master_agile_coach",
-    "topic": "team developed feature (scrum master agile coach)",
-    "q": "Hey {name}, during a college hackathon project involving team developed feature (scrum master agile coach), which aspect would excite you most?",
+    "sourceQuestionIndex": 16,
+    "topic": "help a project team plan work and remove obstacles",
+    "q": "At a two-week team experiment, the team wants to help a project team plan work and remove obstacles. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Work with a teammate to help a project team plan work and remove obstacles.",
         "pillar": "design_product",
         "tags": [
           "scrum_master_agile_coach"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a project team plan work and remove obstacles, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "scrum_master_agile_coach"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Try a hands-on exercise to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
         "tags": [
-          "scrum_master_agile_coach"
+          "site_reliability_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Explore the tools needed to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
         "tags": [
-          "scrum_master_agile_coach"
+          "iam_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -6540,44 +6679,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "scrum_master_agile_coach",
-    "topic": "scrum master introduces (scrum master agile coach)",
-    "q": "{name}, if your campus tech club asks you to build a scrum master introduces (scrum master agile coach) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 17,
+    "topic": "help a project team plan work and remove obstacles",
+    "q": "{name}, imagine joining a project that needs clear instructions for newcomers to help a project team plan work and remove obstacles. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
         "tags": [
-          "scrum_master_agile_coach"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Try a hands-on exercise to review security alerts and decide which need investigation.",
+        "pillar": "security",
+        "tags": [
+          "soc_analyst"
+        ],
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Learn how to help a project team plan work and remove obstacles.",
         "pillar": "design_product",
         "tags": [
           "scrum_master_agile_coach"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "scrum_master_agile_coach"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "scrum_master_agile_coach"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to help a project team plan work and remove obstacles, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -6586,44 +6726,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "scrum_master_agile_coach",
-    "topic": "when creating scrum (scrum master agile coach)",
-    "q": "When working on a team project centered around when creating scrum (scrum master agile coach), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 18,
+    "topic": "help a project team plan work and remove obstacles",
+    "q": "Your teammates at a demo you will show to first-time users plan to help a project team plan work and remove obstacles. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "scrum_master_agile_coach"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Explore the tools needed to build an app for Android phones.",
+        "pillar": "systems",
+        "tags": [
+          "android"
+        ],
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Learn how to help a project team plan work and remove obstacles.",
         "pillar": "design_product",
         "tags": [
           "scrum_master_agile_coach"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "scrum_master_agile_coach"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a project team plan work and remove obstacles, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "scrum_master_agile_coach"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -6632,44 +6773,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "scrum_master_agile_coach",
-    "topic": "agile team frequently (scrum master agile coach)",
-    "q": "{name}, imagine a local startup hires you for a week to help with agile team frequently (scrum master agile coach). What challenge would you jump at first?",
+    "sourceQuestionIndex": 19,
+    "topic": "help a project team plan work and remove obstacles",
+    "q": "{name}, you can choose a role at a project that needs a careful check before sharing while the team learns to help a project team plan work and remove obstacles. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
         "tags": [
-          "scrum_master_agile_coach"
+          "data_engineering"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Learn how to help a project team plan work and remove obstacles.",
         "pillar": "design_product",
         "tags": [
           "scrum_master_agile_coach"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a project team plan work and remove obstacles, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Work with a teammate to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "scrum_master_agile_coach"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "scrum_master_agile_coach"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -6678,44 +6820,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "scrum_master_agile_coach",
-    "topic": "experienced scrum master (scrum master agile coach)",
-    "q": "Hey {name}, during a college hackathon project involving experienced scrum master (scrum master agile coach), which aspect would excite you most?",
+    "sourceQuestionIndex": 20,
+    "topic": "help a project team plan work and remove obstacles",
+    "q": "{name}, at a group project you will explain to a teacher, your team has a chance to help a project team plan work and remove obstacles. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Learn how to help a project team plan work and remove obstacles.",
         "pillar": "design_product",
         "tags": [
           "scrum_master_agile_coach"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a project team plan work and remove obstacles, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Work with a teammate to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "scrum_master_agile_coach"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
+        "t": "Make a small example that shows how to turn a spreadsheet into a clear answer about what happened.",
         "pillar": "data_ai",
         "tags": [
-          "scrum_master_agile_coach"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
+        "t": "Try a hands-on exercise to automate the steps that publish an app online.",
         "pillar": "cloud_infra",
         "tags": [
-          "scrum_master_agile_coach"
+          "devops_cloud"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -6724,44 +6867,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "scrum_master_agile_coach",
-    "topic": "organization multiple interdependent (scrum master agile coach)",
-    "q": "{name}, if your campus tech club asks you to build a organization multiple interdependent (scrum master agile coach) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 21,
+    "topic": "help a project team plan work and remove obstacles",
+    "q": "At a practice task you can learn step by step, the team wants to help a project team plan work and remove obstacles. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Work with a teammate to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "scrum_master_agile_coach"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Make a small example that shows how to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "site_reliability_engineer"
+        ],
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
+        "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Explore the tools needed to help a project team plan work and remove obstacles.",
         "pillar": "design_product",
         "tags": [
           "scrum_master_agile_coach"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "scrum_master_agile_coach"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "scrum_master_agile_coach"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to help a project team plan work and remove obstacles, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -6770,44 +6914,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "scrum_master_agile_coach",
-    "topic": "agile team under (scrum master agile coach)",
-    "q": "When working on a team project centered around agile team under (scrum master agile coach), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 22,
+    "topic": "help a project team plan work and remove obstacles",
+    "q": "{name}, imagine joining a project where everyone picks a different contribution to help a project team plan work and remove obstacles. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "scrum_master_agile_coach"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Try a hands-on exercise to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to help a project team plan work and remove obstacles.",
         "pillar": "design_product",
         "tags": [
           "scrum_master_agile_coach"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "scrum_master_agile_coach"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a project team plan work and remove obstacles, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
+        "t": "Learn how to connect computers so information reaches the right place.",
         "pillar": "cloud_infra",
         "tags": [
-          "scrum_master_agile_coach"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -6816,44 +6961,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "scrum_master_agile_coach",
-    "topic": "agile coach working (scrum master agile coach)",
-    "q": "{name}, imagine a local startup hires you for a week to help with agile coach working (scrum master agile coach). What challenge would you jump at first?",
+    "sourceQuestionIndex": 23,
+    "topic": "help a project team plan work and remove obstacles",
+    "q": "Your teammates at a project you want to improve after receiving feedback plan to help a project team plan work and remove obstacles. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to build an app for Android phones.",
+        "pillar": "systems",
         "tags": [
-          "scrum_master_agile_coach"
+          "android"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Explore the tools needed to help a project team plan work and remove obstacles.",
         "pillar": "design_product",
         "tags": [
           "scrum_master_agile_coach"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a project team plan work and remove obstacles, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Learn how to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "scrum_master_agile_coach"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "scrum_master_agile_coach"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -6862,44 +7008,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "scrum_master_agile_coach",
-    "topic": "highperforming scrum team (scrum master agile coach)",
-    "q": "Hey {name}, during a college hackathon project involving highperforming scrum team (scrum master agile coach), which aspect would excite you most?",
+    "sourceQuestionIndex": 24,
+    "topic": "help a project team plan work and remove obstacles",
+    "q": "{name}, you can choose a role at a learning project you will revisit next month while the team learns to help a project team plan work and remove obstacles. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Explore the tools needed to help a project team plan work and remove obstacles.",
         "pillar": "design_product",
         "tags": [
           "scrum_master_agile_coach"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a project team plan work and remove obstacles, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Learn how to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "scrum_master_agile_coach"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Work with a teammate to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "scrum_master_agile_coach"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
         "tags": [
-          "scrum_master_agile_coach"
+          "data_engineering"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -6908,44 +7055,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "service_designer",
-    "topic": "company experiencing high (service designer)",
-    "q": "Hey {name}, during a college hackathon project involving company experiencing high (service designer), which aspect would excite you most?",
+    "sourceQuestionIndex": 0,
+    "topic": "improve the steps people take across an entire service",
+    "q": "{name}, at a campus hackathon, your team has a chance to improve the steps people take across an entire service. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Learn how to improve the steps people take across an entire service.",
         "pillar": "design_product",
         "tags": [
           "service_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to improve the steps people take across an entire service, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Work with a teammate to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "service_designer"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
+        "t": "Make a small example that shows how to turn a spreadsheet into a clear answer about what happened.",
         "pillar": "data_ai",
         "tags": [
-          "service_designer"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
+        "t": "Try a hands-on exercise to automate the steps that publish an app online.",
         "pillar": "cloud_infra",
         "tags": [
-          "service_designer"
+          "devops_cloud"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -6954,44 +7102,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "service_designer",
-    "topic": "service designer tasked (service designer)",
-    "q": "{name}, if your campus tech club asks you to build a service designer tasked (service designer) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 1,
+    "topic": "improve the steps people take across an entire service",
+    "q": "At a student club project, the team wants to improve the steps people take across an entire service. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Work with a teammate to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "service_designer"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Make a small example that shows how to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "site_reliability_engineer"
+        ],
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
+        "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Explore the tools needed to improve the steps people take across an entire service.",
         "pillar": "design_product",
         "tags": [
           "service_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "service_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "service_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to improve the steps people take across an entire service, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -7000,44 +7149,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "service_designer",
-    "topic": "after identifying several (service designer)",
-    "q": "When working on a team project centered around after identifying several (service designer), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 2,
+    "topic": "improve the steps people take across an entire service",
+    "q": "{name}, imagine joining a small startup internship to improve the steps people take across an entire service. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "service_designer"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Try a hands-on exercise to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to improve the steps people take across an entire service.",
         "pillar": "design_product",
         "tags": [
           "service_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "service_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to improve the steps people take across an entire service, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
+        "t": "Learn how to connect computers so information reaches the right place.",
         "pillar": "cloud_infra",
         "tags": [
-          "service_designer"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -7046,44 +7196,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "service_designer",
-    "topic": "service design what (service designer)",
-    "q": "{name}, imagine a local startup hires you for a week to help with service design what (service designer). What challenge would you jump at first?",
+    "sourceQuestionIndex": 3,
+    "topic": "improve the steps people take across an entire service",
+    "q": "Your teammates at a weekend learning challenge plan to improve the steps people take across an entire service. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to build an app for Android phones.",
+        "pillar": "systems",
         "tags": [
-          "service_designer"
+          "android"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Explore the tools needed to improve the steps people take across an entire service.",
         "pillar": "design_product",
         "tags": [
           "service_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to improve the steps people take across an entire service, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Learn how to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "service_designer"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "service_designer"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -7092,44 +7243,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "service_designer",
-    "topic": "service designer researching (service designer)",
-    "q": "Hey {name}, during a college hackathon project involving service designer researching (service designer), which aspect would excite you most?",
+    "sourceQuestionIndex": 4,
+    "topic": "improve the steps people take across an entire service",
+    "q": "{name}, you can choose a role at a community technology workshop while the team learns to improve the steps people take across an entire service. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Explore the tools needed to improve the steps people take across an entire service.",
         "pillar": "design_product",
         "tags": [
           "service_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to improve the steps people take across an entire service, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Learn how to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "service_designer"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Work with a teammate to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "service_designer"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
         "tags": [
-          "service_designer"
+          "data_engineering"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -7138,44 +7290,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "service_designer",
-    "topic": "government agency redesigning (service designer)",
-    "q": "{name}, if your campus tech club asks you to build a government agency redesigning (service designer) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 5,
+    "topic": "improve the steps people take across an entire service",
+    "q": "{name}, at a team assignment with new classmates, your team has a chance to improve the steps people take across an entire service. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Learn how to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "service_designer"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Work with a teammate to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_analyst"
+        ],
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Make a small example that shows how to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "devops_cloud"
+        ],
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Try a hands-on exercise to improve the steps people take across an entire service.",
         "pillar": "design_product",
         "tags": [
           "service_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "service_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "service_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to improve the steps people take across an entire service, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -7184,44 +7337,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "service_designer",
-    "topic": "when designing digital (service designer)",
-    "q": "When working on a team project centered around when designing digital (service designer), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 6,
+    "topic": "improve the steps people take across an entire service",
+    "q": "At a practice project for your portfolio, the team wants to improve the steps people take across an entire service. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Work with a teammate to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
         "tags": [
-          "service_designer"
+          "site_reliability_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Make a small example that shows how to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
+        "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to improve the steps people take across an entire service.",
         "pillar": "design_product",
         "tags": [
           "service_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "service_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to improve the steps people take across an entire service, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Explore the tools needed to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "service_designer"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -7230,44 +7384,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "service_designer",
-    "topic": "service designer launched (service designer)",
-    "q": "{name}, imagine a local startup hires you for a week to help with service designer launched (service designer). What challenge would you jump at first?",
+    "sourceQuestionIndex": 7,
+    "topic": "improve the steps people take across an entire service",
+    "q": "{name}, imagine joining a volunteer project for a local group to improve the steps people take across an entire service. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to build a small game with rules and player interactions.",
+        "pillar": "operations",
         "tags": [
-          "service_designer"
+          "game_development"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Try a hands-on exercise to improve the steps people take across an entire service.",
         "pillar": "design_product",
         "tags": [
           "service_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to improve the steps people take across an entire service, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Explore the tools needed to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
         "tags": [
-          "service_designer"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Learn how to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "service_designer"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -7276,44 +7431,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "service_designer",
-    "topic": "version control such (service designer)",
-    "q": "Hey {name}, during a college hackathon project involving version control such (service designer), which aspect would excite you most?",
+    "sourceQuestionIndex": 8,
+    "topic": "improve the steps people take across an entire service",
+    "q": "Your teammates at a demo for your college technology fair plan to improve the steps people take across an entire service. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Try a hands-on exercise to improve the steps people take across an entire service.",
         "pillar": "design_product",
         "tags": [
           "service_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to improve the steps people take across an entire service, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "service_designer"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Learn how to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "service_designer"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to build an app for Android phones.",
+        "pillar": "systems",
         "tags": [
-          "service_designer"
+          "android"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -7322,44 +7478,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "service_designer",
-    "topic": "during team delivery (service designer)",
-    "q": "{name}, if your campus tech club asks you to build a during team delivery (service designer) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 9,
+    "topic": "improve the steps people take across an entire service",
+    "q": "{name}, you can choose a role at a shared project with a friend while the team learns to improve the steps people take across an entire service. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "service_designer"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Learn how to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
+        "tags": [
+          "fullstack"
+        ],
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Work with a teammate to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_engineering"
+        ],
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Make a small example that shows how to improve the steps people take across an entire service.",
         "pillar": "design_product",
         "tags": [
           "service_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "service_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "service_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to improve the steps people take across an entire service, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -7368,44 +7525,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "service_designer",
-    "topic": "service designer completed (service designer)",
-    "q": "When working on a team project centered around service designer completed (service designer), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 10,
+    "topic": "improve the steps people take across an entire service",
+    "q": "{name}, at a beginner-friendly open-source project, your team has a chance to improve the steps people take across an entire service. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Learn how to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
         "tags": [
-          "service_designer"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Work with a teammate to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "devops_cloud"
+        ],
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Make a small example that shows how to improve the steps people take across an entire service.",
         "pillar": "design_product",
         "tags": [
           "service_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "service_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to improve the steps people take across an entire service, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Try a hands-on exercise to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "service_designer"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -7414,44 +7572,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "service_designer",
-    "topic": "service designer working (service designer)",
-    "q": "{name}, imagine a local startup hires you for a week to help with service designer working (service designer). What challenge would you jump at first?",
+    "sourceQuestionIndex": 11,
+    "topic": "improve the steps people take across an entire service",
+    "q": "At a prototype for a student competition, the team wants to improve the steps people take across an entire service. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Work with a teammate to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
         "tags": [
-          "service_designer"
+          "iam_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Make a small example that shows how to improve the steps people take across an entire service.",
         "pillar": "design_product",
         "tags": [
           "service_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to improve the steps people take across an entire service, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
+        "t": "Try a hands-on exercise to use data and experiments to answer a useful question.",
         "pillar": "data_ai",
         "tags": [
-          "service_designer"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
+        "t": "Explore the tools needed to keep an online app available and recover when it stops working.",
         "pillar": "cloud_infra",
         "tags": [
-          "service_designer"
+          "site_reliability_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -7460,44 +7619,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "service_designer",
-    "topic": "during design review (service designer)",
-    "q": "Hey {name}, during a college hackathon project involving during design review (service designer), which aspect would excite you most?",
+    "sourceQuestionIndex": 12,
+    "topic": "improve the steps people take across an entire service",
+    "q": "{name}, imagine joining a summer project you can test with classmates to improve the steps people take across an entire service. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Make a small example that shows how to improve the steps people take across an entire service.",
         "pillar": "design_product",
         "tags": [
           "service_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to improve the steps people take across an entire service, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
         "tags": [
-          "service_designer"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Explore the tools needed to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "service_designer"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Learn how to build a small game with rules and player interactions.",
+        "pillar": "operations",
         "tags": [
-          "service_designer"
+          "game_development"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -7506,44 +7666,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "service_designer",
-    "topic": "when documenting service (service designer)",
-    "q": "{name}, if your campus tech club asks you to build a when documenting service (service designer) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 13,
+    "topic": "improve the steps people take across an entire service",
+    "q": "Your teammates at a short project with a student mentor plan to improve the steps people take across an entire service. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "service_designer"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Explore the tools needed to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
+        "tags": [
+          "embedded_iot"
+        ],
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Learn how to build an app for Android phones.",
+        "pillar": "systems",
+        "tags": [
+          "android"
+        ],
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Work with a teammate to improve the steps people take across an entire service.",
         "pillar": "design_product",
         "tags": [
           "service_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "service_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "service_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to improve the steps people take across an entire service, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -7552,44 +7713,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "service_designer",
-    "topic": "service designer considering (service designer)",
-    "q": "When working on a team project centered around service designer considering (service designer), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 14,
+    "topic": "improve the steps people take across an entire service",
+    "q": "{name}, you can choose a role at a campus technology club meeting while the team learns to improve the steps people take across an entire service. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "service_designer"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Learn how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_engineering"
+        ],
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Work with a teammate to improve the steps people take across an entire service.",
         "pillar": "design_product",
         "tags": [
           "service_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "service_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to improve the steps people take across an entire service, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "service_designer"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -7598,44 +7760,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "service_designer",
-    "topic": "after focused skill (service designer)",
-    "q": "{name}, imagine a local startup hires you for a week to help with after focused skill (service designer). What challenge would you jump at first?",
+    "sourceQuestionIndex": 15,
+    "topic": "improve the steps people take across an entire service",
+    "q": "{name}, at a small project with a limited budget, your team has a chance to improve the steps people take across an entire service. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Learn how to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
         "tags": [
-          "service_designer"
+          "devops_cloud"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Work with a teammate to improve the steps people take across an entire service.",
         "pillar": "design_product",
         "tags": [
           "service_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to improve the steps people take across an entire service, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Make a small example that shows how to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "service_designer"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Try a hands-on exercise to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
         "tags": [
-          "service_designer"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -7644,44 +7807,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "service_designer",
-    "topic": "postlaunch service feature (service designer)",
-    "q": "Hey {name}, during a college hackathon project involving postlaunch service feature (service designer), which aspect would excite you most?",
+    "sourceQuestionIndex": 16,
+    "topic": "improve the steps people take across an entire service",
+    "q": "At a two-week team experiment, the team wants to improve the steps people take across an entire service. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Work with a teammate to improve the steps people take across an entire service.",
         "pillar": "design_product",
         "tags": [
           "service_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to improve the steps people take across an entire service, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "service_designer"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Try a hands-on exercise to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
         "tags": [
-          "service_designer"
+          "site_reliability_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Explore the tools needed to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
         "tags": [
-          "service_designer"
+          "iam_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -7690,44 +7854,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "service_designer",
-    "topic": "service designer examining (service designer)",
-    "q": "{name}, if your campus tech club asks you to build a service designer examining (service designer) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 17,
+    "topic": "improve the steps people take across an entire service",
+    "q": "{name}, imagine joining a project that needs clear instructions for newcomers to improve the steps people take across an entire service. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
         "tags": [
-          "service_designer"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Try a hands-on exercise to review security alerts and decide which need investigation.",
+        "pillar": "security",
+        "tags": [
+          "soc_analyst"
+        ],
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Learn how to improve the steps people take across an entire service.",
         "pillar": "design_product",
         "tags": [
           "service_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "service_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "service_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to improve the steps people take across an entire service, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -7736,44 +7901,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "service_designer",
-    "topic": "during development complex (service designer)",
-    "q": "When working on a team project centered around during development complex (service designer), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 18,
+    "topic": "improve the steps people take across an entire service",
+    "q": "Your teammates at a demo you will show to first-time users plan to improve the steps people take across an entire service. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "service_designer"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Explore the tools needed to build an app for Android phones.",
+        "pillar": "systems",
+        "tags": [
+          "android"
+        ],
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Learn how to improve the steps people take across an entire service.",
         "pillar": "design_product",
         "tags": [
           "service_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "service_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to improve the steps people take across an entire service, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "service_designer"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -7782,44 +7948,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "service_designer",
-    "topic": "when building portfolio (service designer)",
-    "q": "{name}, imagine a local startup hires you for a week to help with when building portfolio (service designer). What challenge would you jump at first?",
+    "sourceQuestionIndex": 19,
+    "topic": "improve the steps people take across an entire service",
+    "q": "{name}, you can choose a role at a project that needs a careful check before sharing while the team learns to improve the steps people take across an entire service. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
         "tags": [
-          "service_designer"
+          "data_engineering"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Learn how to improve the steps people take across an entire service.",
         "pillar": "design_product",
         "tags": [
           "service_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to improve the steps people take across an entire service, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Work with a teammate to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "service_designer"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "service_designer"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -7828,44 +7995,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "service_designer",
-    "topic": "portfoliograde service designer (service designer)",
-    "q": "Hey {name}, during a college hackathon project involving portfoliograde service designer (service designer), which aspect would excite you most?",
+    "sourceQuestionIndex": 20,
+    "topic": "improve the steps people take across an entire service",
+    "q": "{name}, at a group project you will explain to a teacher, your team has a chance to improve the steps people take across an entire service. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Learn how to improve the steps people take across an entire service.",
         "pillar": "design_product",
         "tags": [
           "service_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to improve the steps people take across an entire service, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Work with a teammate to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "service_designer"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
+        "t": "Make a small example that shows how to turn a spreadsheet into a clear answer about what happened.",
         "pillar": "data_ai",
         "tags": [
-          "service_designer"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
+        "t": "Try a hands-on exercise to automate the steps that publish an app online.",
         "pillar": "cloud_infra",
         "tags": [
-          "service_designer"
+          "devops_cloud"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -7874,44 +8042,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "service_designer",
-    "topic": "service designer tackling (service designer)",
-    "q": "{name}, if your campus tech club asks you to build a service designer tackling (service designer) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 21,
+    "topic": "improve the steps people take across an entire service",
+    "q": "At a practice task you can learn step by step, the team wants to improve the steps people take across an entire service. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Work with a teammate to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "service_designer"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Make a small example that shows how to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "site_reliability_engineer"
+        ],
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
+        "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Explore the tools needed to improve the steps people take across an entire service.",
         "pillar": "design_product",
         "tags": [
           "service_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "service_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "service_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to improve the steps people take across an entire service, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -7920,44 +8089,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "service_designer",
-    "topic": "service designer developing (service designer)",
-    "q": "When working on a team project centered around service designer developing (service designer), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 22,
+    "topic": "improve the steps people take across an entire service",
+    "q": "{name}, imagine joining a project where everyone picks a different contribution to improve the steps people take across an entire service. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "service_designer"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Try a hands-on exercise to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to improve the steps people take across an entire service.",
         "pillar": "design_product",
         "tags": [
           "service_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "service_designer"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to improve the steps people take across an entire service, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
+        "t": "Learn how to connect computers so information reaches the right place.",
         "pillar": "cloud_infra",
         "tags": [
-          "service_designer"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -7966,44 +8136,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "service_designer",
-    "topic": "service designer implemented (service designer)",
-    "q": "{name}, imagine a local startup hires you for a week to help with service designer implemented (service designer). What challenge would you jump at first?",
+    "sourceQuestionIndex": 23,
+    "topic": "improve the steps people take across an entire service",
+    "q": "Your teammates at a project you want to improve after receiving feedback plan to improve the steps people take across an entire service. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to build an app for Android phones.",
+        "pillar": "systems",
         "tags": [
-          "service_designer"
+          "android"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Explore the tools needed to improve the steps people take across an entire service.",
         "pillar": "design_product",
         "tags": [
           "service_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to improve the steps people take across an entire service, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Learn how to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "service_designer"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "service_designer"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -8012,44 +8183,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "service_designer",
-    "topic": "before major launch (service designer)",
-    "q": "Hey {name}, during a college hackathon project involving before major launch (service designer), which aspect would excite you most?",
+    "sourceQuestionIndex": 24,
+    "topic": "improve the steps people take across an entire service",
+    "q": "{name}, you can choose a role at a learning project you will revisit next month while the team learns to improve the steps people take across an entire service. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Explore the tools needed to improve the steps people take across an entire service.",
         "pillar": "design_product",
         "tags": [
           "service_designer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to improve the steps people take across an entire service, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Learn how to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "service_designer"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Work with a teammate to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "service_designer"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
         "tags": [
-          "service_designer"
+          "data_engineering"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -8058,44 +8230,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "technical_writing",
-    "topic": "technical writer starting (technical writing)",
-    "q": "Hey {name}, during a college hackathon project involving technical writer starting (technical writing), which aspect would excite you most?",
+    "sourceQuestionIndex": 0,
+    "topic": "write a guide that helps someone learn a technical tool",
+    "q": "{name}, at a campus hackathon, your team has a chance to write a guide that helps someone learn a technical tool. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Learn how to write a guide that helps someone learn a technical tool.",
         "pillar": "design_product",
         "tags": [
           "technical_writing"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to write a guide that helps someone learn a technical tool, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Work with a teammate to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "technical_writing"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
+        "t": "Make a small example that shows how to turn a spreadsheet into a clear answer about what happened.",
         "pillar": "data_ai",
         "tags": [
-          "technical_writing"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
+        "t": "Try a hands-on exercise to automate the steps that publish an app online.",
         "pillar": "cloud_infra",
         "tags": [
-          "technical_writing"
+          "devops_cloud"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -8104,44 +8277,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "technical_writing",
-    "topic": "improve readability directness (technical writing)",
-    "q": "{name}, if your campus tech club asks you to build a improve readability directness (technical writing) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 1,
+    "topic": "write a guide that helps someone learn a technical tool",
+    "q": "At a student club project, the team wants to write a guide that helps someone learn a technical tool. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Work with a teammate to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "technical_writing"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Make a small example that shows how to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "site_reliability_engineer"
+        ],
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
+        "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Explore the tools needed to write a guide that helps someone learn a technical tool.",
         "pillar": "design_product",
         "tags": [
           "technical_writing"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "technical_writing"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "technical_writing"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to write a guide that helps someone learn a technical tool, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -8150,44 +8324,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "technical_writing",
-    "topic": "technical writer needs (technical writing)",
-    "q": "When working on a team project centered around technical writer needs (technical writing), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 2,
+    "topic": "write a guide that helps someone learn a technical tool",
+    "q": "{name}, imagine joining a small startup internship to write a guide that helps someone learn a technical tool. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "technical_writing"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Try a hands-on exercise to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to write a guide that helps someone learn a technical tool.",
         "pillar": "design_product",
         "tags": [
           "technical_writing"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "technical_writing"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to write a guide that helps someone learn a technical tool, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
+        "t": "Learn how to connect computers so information reaches the right place.",
         "pillar": "cloud_infra",
         "tags": [
-          "technical_writing"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -8196,44 +8371,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "technical_writing",
-    "topic": "technical writer wants (technical writing)",
-    "q": "{name}, imagine a local startup hires you for a week to help with technical writer wants (technical writing). What challenge would you jump at first?",
+    "sourceQuestionIndex": 3,
+    "topic": "write a guide that helps someone learn a technical tool",
+    "q": "Your teammates at a weekend learning challenge plan to write a guide that helps someone learn a technical tool. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to build an app for Android phones.",
+        "pillar": "systems",
         "tags": [
-          "technical_writing"
+          "android"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Explore the tools needed to write a guide that helps someone learn a technical tool.",
         "pillar": "design_product",
         "tags": [
           "technical_writing"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to write a guide that helps someone learn a technical tool, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Learn how to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "technical_writing"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "technical_writing"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -8242,44 +8418,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "technical_writing",
-    "topic": "which following primary (technical writing)",
-    "q": "Hey {name}, during a college hackathon project involving which following primary (technical writing), which aspect would excite you most?",
+    "sourceQuestionIndex": 4,
+    "topic": "write a guide that helps someone learn a technical tool",
+    "q": "{name}, you can choose a role at a community technology workshop while the team learns to write a guide that helps someone learn a technical tool. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Explore the tools needed to write a guide that helps someone learn a technical tool.",
         "pillar": "design_product",
         "tags": [
           "technical_writing"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to write a guide that helps someone learn a technical tool, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Learn how to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "technical_writing"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Work with a teammate to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "technical_writing"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
         "tags": [
-          "technical_writing"
+          "data_engineering"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -8288,44 +8465,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "technical_writing",
-    "topic": "when building docsascode (technical writing)",
-    "q": "{name}, if your campus tech club asks you to build a when building docsascode (technical writing) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 5,
+    "topic": "write a guide that helps someone learn a technical tool",
+    "q": "{name}, at a team assignment with new classmates, your team has a chance to write a guide that helps someone learn a technical tool. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Learn how to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "technical_writing"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Work with a teammate to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_analyst"
+        ],
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Make a small example that shows how to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "devops_cloud"
+        ],
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Try a hands-on exercise to write a guide that helps someone learn a technical tool.",
         "pillar": "design_product",
         "tags": [
           "technical_writing"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "technical_writing"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "technical_writing"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to write a guide that helps someone learn a technical tool, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -8334,44 +8512,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "technical_writing",
-    "topic": "technical writer reviewing (technical writing)",
-    "q": "When working on a team project centered around technical writer reviewing (technical writing), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 6,
+    "topic": "write a guide that helps someone learn a technical tool",
+    "q": "At a practice project for your portfolio, the team wants to write a guide that helps someone learn a technical tool. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Work with a teammate to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
         "tags": [
-          "technical_writing"
+          "site_reliability_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Make a small example that shows how to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
+        "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to write a guide that helps someone learn a technical tool.",
         "pillar": "design_product",
         "tags": [
           "technical_writing"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "technical_writing"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to write a guide that helps someone learn a technical tool, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Explore the tools needed to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "technical_writing"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -8380,44 +8559,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "technical_writing",
-    "topic": "technical writer responsible (technical writing)",
-    "q": "{name}, imagine a local startup hires you for a week to help with technical writer responsible (technical writing). What challenge would you jump at first?",
+    "sourceQuestionIndex": 7,
+    "topic": "write a guide that helps someone learn a technical tool",
+    "q": "{name}, imagine joining a volunteer project for a local group to write a guide that helps someone learn a technical tool. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to build a small game with rules and player interactions.",
+        "pillar": "operations",
         "tags": [
-          "technical_writing"
+          "game_development"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Try a hands-on exercise to write a guide that helps someone learn a technical tool.",
         "pillar": "design_product",
         "tags": [
           "technical_writing"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to write a guide that helps someone learn a technical tool, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Explore the tools needed to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
         "tags": [
-          "technical_writing"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Learn how to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "technical_writing"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -8426,44 +8606,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "technical_writing",
-    "topic": "user guide complex (technical writing)",
-    "q": "Hey {name}, during a college hackathon project involving user guide complex (technical writing), which aspect would excite you most?",
+    "sourceQuestionIndex": 8,
+    "topic": "write a guide that helps someone learn a technical tool",
+    "q": "Your teammates at a demo for your college technology fair plan to write a guide that helps someone learn a technical tool. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Try a hands-on exercise to write a guide that helps someone learn a technical tool.",
         "pillar": "design_product",
         "tags": [
           "technical_writing"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to write a guide that helps someone learn a technical tool, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "technical_writing"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Learn how to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "technical_writing"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to build an app for Android phones.",
+        "pillar": "systems",
         "tags": [
-          "technical_writing"
+          "android"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -8472,44 +8653,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "technical_writing",
-    "topic": "technical writer needs (technical writing)",
-    "q": "{name}, if your campus tech club asks you to build a technical writer needs (technical writing) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 9,
+    "topic": "write a guide that helps someone learn a technical tool",
+    "q": "{name}, you can choose a role at a shared project with a friend while the team learns to write a guide that helps someone learn a technical tool. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "technical_writing"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Learn how to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
+        "tags": [
+          "fullstack"
+        ],
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Work with a teammate to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_engineering"
+        ],
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Make a small example that shows how to write a guide that helps someone learn a technical tool.",
         "pillar": "design_product",
         "tags": [
           "technical_writing"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "technical_writing"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "technical_writing"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to write a guide that helps someone learn a technical tool, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -8518,44 +8700,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "technical_writing",
-    "topic": "when collaborating documentation (technical writing)",
-    "q": "When working on a team project centered around when collaborating documentation (technical writing), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 10,
+    "topic": "write a guide that helps someone learn a technical tool",
+    "q": "{name}, at a beginner-friendly open-source project, your team has a chance to write a guide that helps someone learn a technical tool. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Learn how to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
         "tags": [
-          "technical_writing"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Work with a teammate to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "devops_cloud"
+        ],
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Make a small example that shows how to write a guide that helps someone learn a technical tool.",
         "pillar": "design_product",
         "tags": [
           "technical_writing"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "technical_writing"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to write a guide that helps someone learn a technical tool, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Try a hands-on exercise to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "technical_writing"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -8564,44 +8747,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "technical_writing",
-    "topic": "technical writer documenting (technical writing)",
-    "q": "{name}, imagine a local startup hires you for a week to help with technical writer documenting (technical writing). What challenge would you jump at first?",
+    "sourceQuestionIndex": 11,
+    "topic": "write a guide that helps someone learn a technical tool",
+    "q": "At a prototype for a student competition, the team wants to write a guide that helps someone learn a technical tool. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Work with a teammate to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
         "tags": [
-          "technical_writing"
+          "iam_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Make a small example that shows how to write a guide that helps someone learn a technical tool.",
         "pillar": "design_product",
         "tags": [
           "technical_writing"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to write a guide that helps someone learn a technical tool, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
+        "t": "Try a hands-on exercise to use data and experiments to answer a useful question.",
         "pillar": "data_ai",
         "tags": [
-          "technical_writing"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
+        "t": "Explore the tools needed to keep an online app available and recover when it stops working.",
         "pillar": "cloud_infra",
         "tags": [
-          "technical_writing"
+          "site_reliability_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -8610,44 +8794,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "technical_writing",
-    "topic": "when documenting technical (technical writing)",
-    "q": "Hey {name}, during a college hackathon project involving when documenting technical (technical writing), which aspect would excite you most?",
+    "sourceQuestionIndex": 12,
+    "topic": "write a guide that helps someone learn a technical tool",
+    "q": "{name}, imagine joining a summer project you can test with classmates to write a guide that helps someone learn a technical tool. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Make a small example that shows how to write a guide that helps someone learn a technical tool.",
         "pillar": "design_product",
         "tags": [
           "technical_writing"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to write a guide that helps someone learn a technical tool, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
         "tags": [
-          "technical_writing"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Explore the tools needed to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "technical_writing"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Learn how to build a small game with rules and player interactions.",
+        "pillar": "operations",
         "tags": [
-          "technical_writing"
+          "game_development"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -8656,44 +8841,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "technical_writing",
-    "topic": "product team wants (technical writing)",
-    "q": "{name}, if your campus tech club asks you to build a product team wants (technical writing) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 13,
+    "topic": "write a guide that helps someone learn a technical tool",
+    "q": "Your teammates at a short project with a student mentor plan to write a guide that helps someone learn a technical tool. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "technical_writing"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Explore the tools needed to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
+        "tags": [
+          "embedded_iot"
+        ],
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Learn how to build an app for Android phones.",
+        "pillar": "systems",
+        "tags": [
+          "android"
+        ],
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Work with a teammate to write a guide that helps someone learn a technical tool.",
         "pillar": "design_product",
         "tags": [
           "technical_writing"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "technical_writing"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "technical_writing"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to write a guide that helps someone learn a technical tool, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -8702,44 +8888,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "technical_writing",
-    "topic": "user following howto (technical writing)",
-    "q": "When working on a team project centered around user following howto (technical writing), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 14,
+    "topic": "write a guide that helps someone learn a technical tool",
+    "q": "{name}, you can choose a role at a campus technology club meeting while the team learns to write a guide that helps someone learn a technical tool. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "technical_writing"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Learn how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_engineering"
+        ],
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Work with a teammate to write a guide that helps someone learn a technical tool.",
         "pillar": "design_product",
         "tags": [
           "technical_writing"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "technical_writing"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to write a guide that helps someone learn a technical tool, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "technical_writing"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -8748,44 +8935,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "technical_writing",
-    "topic": "technical writer preparing (technical writing)",
-    "q": "{name}, imagine a local startup hires you for a week to help with technical writer preparing (technical writing). What challenge would you jump at first?",
+    "sourceQuestionIndex": 15,
+    "topic": "write a guide that helps someone learn a technical tool",
+    "q": "{name}, at a small project with a limited budget, your team has a chance to write a guide that helps someone learn a technical tool. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Learn how to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
         "tags": [
-          "technical_writing"
+          "devops_cloud"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Work with a teammate to write a guide that helps someone learn a technical tool.",
         "pillar": "design_product",
         "tags": [
           "technical_writing"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to write a guide that helps someone learn a technical tool, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Make a small example that shows how to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "technical_writing"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Try a hands-on exercise to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
         "tags": [
-          "technical_writing"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -8794,44 +8982,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "technical_writing",
-    "topic": "technical writer building (technical writing)",
-    "q": "Hey {name}, during a college hackathon project involving technical writer building (technical writing), which aspect would excite you most?",
+    "sourceQuestionIndex": 16,
+    "topic": "write a guide that helps someone learn a technical tool",
+    "q": "At a two-week team experiment, the team wants to write a guide that helps someone learn a technical tool. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Work with a teammate to write a guide that helps someone learn a technical tool.",
         "pillar": "design_product",
         "tags": [
           "technical_writing"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to write a guide that helps someone learn a technical tool, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "technical_writing"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Try a hands-on exercise to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
         "tags": [
-          "technical_writing"
+          "site_reliability_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Explore the tools needed to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
         "tags": [
-          "technical_writing"
+          "iam_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -8840,44 +9029,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "technical_writing",
-    "topic": "after deploying version (technical writing)",
-    "q": "{name}, if your campus tech club asks you to build a after deploying version (technical writing) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 17,
+    "topic": "write a guide that helps someone learn a technical tool",
+    "q": "{name}, imagine joining a project that needs clear instructions for newcomers to write a guide that helps someone learn a technical tool. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
         "tags": [
-          "technical_writing"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Try a hands-on exercise to review security alerts and decide which need investigation.",
+        "pillar": "security",
+        "tags": [
+          "soc_analyst"
+        ],
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Learn how to write a guide that helps someone learn a technical tool.",
         "pillar": "design_product",
         "tags": [
           "technical_writing"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "technical_writing"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "technical_writing"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to write a guide that helps someone learn a technical tool, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -8886,44 +9076,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "technical_writing",
-    "topic": "when documenting small (technical writing)",
-    "q": "When working on a team project centered around when documenting small (technical writing), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 18,
+    "topic": "write a guide that helps someone learn a technical tool",
+    "q": "Your teammates at a demo you will show to first-time users plan to write a guide that helps someone learn a technical tool. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "technical_writing"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Explore the tools needed to build an app for Android phones.",
+        "pillar": "systems",
+        "tags": [
+          "android"
+        ],
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Learn how to write a guide that helps someone learn a technical tool.",
         "pillar": "design_product",
         "tags": [
           "technical_writing"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "technical_writing"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to write a guide that helps someone learn a technical tool, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "technical_writing"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -8932,44 +9123,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "technical_writing",
-    "topic": "technical writer tasked (technical writing)",
-    "q": "{name}, imagine a local startup hires you for a week to help with technical writer tasked (technical writing). What challenge would you jump at first?",
+    "sourceQuestionIndex": 19,
+    "topic": "write a guide that helps someone learn a technical tool",
+    "q": "{name}, you can choose a role at a project that needs a careful check before sharing while the team learns to write a guide that helps someone learn a technical tool. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
         "tags": [
-          "technical_writing"
+          "data_engineering"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Learn how to write a guide that helps someone learn a technical tool.",
         "pillar": "design_product",
         "tags": [
           "technical_writing"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to write a guide that helps someone learn a technical tool, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Work with a teammate to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "technical_writing"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "technical_writing"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -8978,44 +9170,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "technical_writing",
-    "topic": "technical writer auditing (technical writing)",
-    "q": "Hey {name}, during a college hackathon project involving technical writer auditing (technical writing), which aspect would excite you most?",
+    "sourceQuestionIndex": 20,
+    "topic": "write a guide that helps someone learn a technical tool",
+    "q": "{name}, at a group project you will explain to a teacher, your team has a chance to write a guide that helps someone learn a technical tool. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Learn how to write a guide that helps someone learn a technical tool.",
         "pillar": "design_product",
         "tags": [
           "technical_writing"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to write a guide that helps someone learn a technical tool, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Work with a teammate to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "technical_writing"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
+        "t": "Make a small example that shows how to turn a spreadsheet into a clear answer about what happened.",
         "pillar": "data_ai",
         "tags": [
-          "technical_writing"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
+        "t": "Try a hands-on exercise to automate the steps that publish an app online.",
         "pillar": "cloud_infra",
         "tags": [
-          "technical_writing"
+          "devops_cloud"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -9024,44 +9217,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "technical_writing",
-    "topic": "technical writer documenting (technical writing)",
-    "q": "{name}, if your campus tech club asks you to build a technical writer documenting (technical writing) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 21,
+    "topic": "write a guide that helps someone learn a technical tool",
+    "q": "At a practice task you can learn step by step, the team wants to write a guide that helps someone learn a technical tool. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Work with a teammate to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "technical_writing"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Make a small example that shows how to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "site_reliability_engineer"
+        ],
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
+        "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Explore the tools needed to write a guide that helps someone learn a technical tool.",
         "pillar": "design_product",
         "tags": [
           "technical_writing"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "technical_writing"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "technical_writing"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to write a guide that helps someone learn a technical tool, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -9070,44 +9264,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "technical_writing",
-    "topic": "technical writer tasked (technical writing)",
-    "q": "When working on a team project centered around technical writer tasked (technical writing), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 22,
+    "topic": "write a guide that helps someone learn a technical tool",
+    "q": "{name}, imagine joining a project where everyone picks a different contribution to write a guide that helps someone learn a technical tool. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "technical_writing"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Try a hands-on exercise to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to write a guide that helps someone learn a technical tool.",
         "pillar": "design_product",
         "tags": [
           "technical_writing"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "technical_writing"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to write a guide that helps someone learn a technical tool, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
+        "t": "Learn how to connect computers so information reaches the right place.",
         "pillar": "cloud_infra",
         "tags": [
-          "technical_writing"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -9116,44 +9311,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "technical_writing",
-    "topic": "technical writing team (technical writing)",
-    "q": "{name}, imagine a local startup hires you for a week to help with technical writing team (technical writing). What challenge would you jump at first?",
+    "sourceQuestionIndex": 23,
+    "topic": "write a guide that helps someone learn a technical tool",
+    "q": "Your teammates at a project you want to improve after receiving feedback plan to write a guide that helps someone learn a technical tool. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to build an app for Android phones.",
+        "pillar": "systems",
         "tags": [
-          "technical_writing"
+          "android"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Explore the tools needed to write a guide that helps someone learn a technical tool.",
         "pillar": "design_product",
         "tags": [
           "technical_writing"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to write a guide that helps someone learn a technical tool, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Learn how to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "technical_writing"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "technical_writing"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -9162,44 +9358,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "technical_writing",
-    "topic": "technical writer notices (technical writing)",
-    "q": "Hey {name}, during a college hackathon project involving technical writer notices (technical writing), which aspect would excite you most?",
+    "sourceQuestionIndex": 24,
+    "topic": "write a guide that helps someone learn a technical tool",
+    "q": "{name}, you can choose a role at a learning project you will revisit next month while the team learns to write a guide that helps someone learn a technical tool. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Explore the tools needed to write a guide that helps someone learn a technical tool.",
         "pillar": "design_product",
         "tags": [
           "technical_writing"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to write a guide that helps someone learn a technical tool, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Learn how to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "technical_writing"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Work with a teammate to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "technical_writing"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
         "tags": [
-          "technical_writing"
+          "data_engineering"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -9208,44 +9405,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ui_ux_design",
-    "topic": "team developing mobile (ui ux design)",
-    "q": "Hey {name}, during a college hackathon project involving team developing mobile (ui ux design), which aspect would excite you most?",
+    "sourceQuestionIndex": 0,
+    "topic": "make an app easy to understand and comfortable to use",
+    "q": "{name}, at a campus hackathon, your team has a chance to make an app easy to understand and comfortable to use. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Learn how to make an app easy to understand and comfortable to use.",
         "pillar": "design_product",
         "tags": [
           "ui_ux_design"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make an app easy to understand and comfortable to use, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Work with a teammate to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "ui_ux_design"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
+        "t": "Make a small example that shows how to turn a spreadsheet into a clear answer about what happened.",
         "pillar": "data_ai",
         "tags": [
-          "ui_ux_design"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
+        "t": "Try a hands-on exercise to automate the steps that publish an app online.",
         "pillar": "cloud_infra",
         "tags": [
-          "ui_ux_design"
+          "devops_cloud"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -9254,44 +9452,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ui_ux_design",
-    "topic": "researcher tasked with (ui ux design)",
-    "q": "{name}, if your campus tech club asks you to build a researcher tasked with (ui ux design) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 1,
+    "topic": "make an app easy to understand and comfortable to use",
+    "q": "At a student club project, the team wants to make an app easy to understand and comfortable to use. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Work with a teammate to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "ui_ux_design"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Make a small example that shows how to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "site_reliability_engineer"
+        ],
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
+        "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Explore the tools needed to make an app easy to understand and comfortable to use.",
         "pillar": "design_product",
         "tags": [
           "ui_ux_design"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "ui_ux_design"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "ui_ux_design"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to make an app easy to understand and comfortable to use, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -9300,44 +9499,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ui_ux_design",
-    "topic": "contentheavy news website (ui ux design)",
-    "q": "When working on a team project centered around contentheavy news website (ui ux design), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 2,
+    "topic": "make an app easy to understand and comfortable to use",
+    "q": "{name}, imagine joining a small startup internship to make an app easy to understand and comfortable to use. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "ui_ux_design"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Try a hands-on exercise to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to make an app easy to understand and comfortable to use.",
         "pillar": "design_product",
         "tags": [
           "ui_ux_design"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "ui_ux_design"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to make an app easy to understand and comfortable to use, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
+        "t": "Learn how to connect computers so information reaches the right place.",
         "pillar": "cloud_infra",
         "tags": [
-          "ui_ux_design"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -9346,44 +9546,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ui_ux_design",
-    "topic": "designer creating mobile (ui ux design)",
-    "q": "{name}, imagine a local startup hires you for a week to help with designer creating mobile (ui ux design). What challenge would you jump at first?",
+    "sourceQuestionIndex": 3,
+    "topic": "make an app easy to understand and comfortable to use",
+    "q": "Your teammates at a weekend learning challenge plan to make an app easy to understand and comfortable to use. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to build an app for Android phones.",
+        "pillar": "systems",
         "tags": [
-          "ui_ux_design"
+          "android"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Explore the tools needed to make an app easy to understand and comfortable to use.",
         "pillar": "design_product",
         "tags": [
           "ui_ux_design"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make an app easy to understand and comfortable to use, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Learn how to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "ui_ux_design"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "ui_ux_design"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -9392,44 +9593,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ui_ux_design",
-    "topic": "page contains long (ui ux design)",
-    "q": "Hey {name}, during a college hackathon project involving page contains long (ui ux design), which aspect would excite you most?",
+    "sourceQuestionIndex": 4,
+    "topic": "make an app easy to understand and comfortable to use",
+    "q": "{name}, you can choose a role at a community technology workshop while the team learns to make an app easy to understand and comfortable to use. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Explore the tools needed to make an app easy to understand and comfortable to use.",
         "pillar": "design_product",
         "tags": [
           "ui_ux_design"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make an app easy to understand and comfortable to use, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Learn how to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "ui_ux_design"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Work with a teammate to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "ui_ux_design"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
         "tags": [
-          "ui_ux_design"
+          "data_engineering"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -9438,44 +9640,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ui_ux_design",
-    "topic": "designer creating form (ui ux design)",
-    "q": "{name}, if your campus tech club asks you to build a designer creating form (ui ux design) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 5,
+    "topic": "make an app easy to understand and comfortable to use",
+    "q": "{name}, at a team assignment with new classmates, your team has a chance to make an app easy to understand and comfortable to use. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Learn how to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "ui_ux_design"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Work with a teammate to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_analyst"
+        ],
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Make a small example that shows how to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "devops_cloud"
+        ],
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Try a hands-on exercise to make an app easy to understand and comfortable to use.",
         "pillar": "design_product",
         "tags": [
           "ui_ux_design"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "ui_ux_design"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "ui_ux_design"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to make an app easy to understand and comfortable to use, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -9484,44 +9687,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ui_ux_design",
-    "topic": "during usability critique (ui ux design)",
-    "q": "When working on a team project centered around during usability critique (ui ux design), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 6,
+    "topic": "make an app easy to understand and comfortable to use",
+    "q": "At a practice project for your portfolio, the team wants to make an app easy to understand and comfortable to use. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Work with a teammate to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
         "tags": [
-          "ui_ux_design"
+          "site_reliability_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Make a small example that shows how to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
+        "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to make an app easy to understand and comfortable to use.",
         "pillar": "design_product",
         "tags": [
           "ui_ux_design"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "ui_ux_design"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to make an app easy to understand and comfortable to use, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Explore the tools needed to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "ui_ux_design"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -9530,44 +9734,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ui_ux_design",
-    "topic": "designer collaborating large (ui ux design)",
-    "q": "{name}, imagine a local startup hires you for a week to help with designer collaborating large (ui ux design). What challenge would you jump at first?",
+    "sourceQuestionIndex": 7,
+    "topic": "make an app easy to understand and comfortable to use",
+    "q": "{name}, imagine joining a volunteer project for a local group to make an app easy to understand and comfortable to use. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to build a small game with rules and player interactions.",
+        "pillar": "operations",
         "tags": [
-          "ui_ux_design"
+          "game_development"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Try a hands-on exercise to make an app easy to understand and comfortable to use.",
         "pillar": "design_product",
         "tags": [
           "ui_ux_design"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make an app easy to understand and comfortable to use, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Explore the tools needed to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
         "tags": [
-          "ui_ux_design"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Learn how to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "ui_ux_design"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -9576,44 +9781,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ui_ux_design",
-    "topic": "designing button component (ui ux design)",
-    "q": "Hey {name}, during a college hackathon project involving designing button component (ui ux design), which aspect would excite you most?",
+    "sourceQuestionIndex": 8,
+    "topic": "make an app easy to understand and comfortable to use",
+    "q": "Your teammates at a demo for your college technology fair plan to make an app easy to understand and comfortable to use. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Try a hands-on exercise to make an app easy to understand and comfortable to use.",
         "pillar": "design_product",
         "tags": [
           "ui_ux_design"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make an app easy to understand and comfortable to use, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "ui_ux_design"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Learn how to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "ui_ux_design"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to build an app for Android phones.",
+        "pillar": "systems",
         "tags": [
-          "ui_ux_design"
+          "android"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -9622,44 +9828,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ui_ux_design",
-    "topic": "growing product team (ui ux design)",
-    "q": "{name}, if your campus tech club asks you to build a growing product team (ui ux design) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 9,
+    "topic": "make an app easy to understand and comfortable to use",
+    "q": "{name}, you can choose a role at a shared project with a friend while the team learns to make an app easy to understand and comfortable to use. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "ui_ux_design"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Learn how to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
+        "tags": [
+          "fullstack"
+        ],
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Work with a teammate to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_engineering"
+        ],
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Make a small example that shows how to make an app easy to understand and comfortable to use.",
         "pillar": "design_product",
         "tags": [
           "ui_ux_design"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "ui_ux_design"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "ui_ux_design"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to make an app easy to understand and comfortable to use, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -9668,44 +9875,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ui_ux_design",
-    "topic": "after completing significant (ui ux design)",
-    "q": "When working on a team project centered around after completing significant (ui ux design), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 10,
+    "topic": "make an app easy to understand and comfortable to use",
+    "q": "{name}, at a beginner-friendly open-source project, your team has a chance to make an app easy to understand and comfortable to use. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Learn how to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
         "tags": [
-          "ui_ux_design"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Work with a teammate to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "devops_cloud"
+        ],
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Make a small example that shows how to make an app easy to understand and comfortable to use.",
         "pillar": "design_product",
         "tags": [
           "ui_ux_design"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "ui_ux_design"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to make an app easy to understand and comfortable to use, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Try a hands-on exercise to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "ui_ux_design"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -9714,44 +9922,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ui_ux_design",
-    "topic": "team developed feature (ui ux design)",
-    "q": "{name}, imagine a local startup hires you for a week to help with team developed feature (ui ux design). What challenge would you jump at first?",
+    "sourceQuestionIndex": 11,
+    "topic": "make an app easy to understand and comfortable to use",
+    "q": "At a prototype for a student competition, the team wants to make an app easy to understand and comfortable to use. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Work with a teammate to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
         "tags": [
-          "ui_ux_design"
+          "iam_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Make a small example that shows how to make an app easy to understand and comfortable to use.",
         "pillar": "design_product",
         "tags": [
           "ui_ux_design"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make an app easy to understand and comfortable to use, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
+        "t": "Try a hands-on exercise to use data and experiments to answer a useful question.",
         "pillar": "data_ai",
         "tags": [
-          "ui_ux_design"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
+        "t": "Explore the tools needed to keep an online app available and recover when it stops working.",
         "pillar": "cloud_infra",
         "tags": [
-          "ui_ux_design"
+          "site_reliability_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -9760,44 +9969,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ui_ux_design",
-    "topic": "during design critique (ui ux design)",
-    "q": "Hey {name}, during a college hackathon project involving during design critique (ui ux design), which aspect would excite you most?",
+    "sourceQuestionIndex": 12,
+    "topic": "make an app easy to understand and comfortable to use",
+    "q": "{name}, imagine joining a summer project you can test with classmates to make an app easy to understand and comfortable to use. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Make a small example that shows how to make an app easy to understand and comfortable to use.",
         "pillar": "design_product",
         "tags": [
           "ui_ux_design"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make an app easy to understand and comfortable to use, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
         "tags": [
-          "ui_ux_design"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Explore the tools needed to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "ui_ux_design"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Learn how to build a small game with rules and player interactions.",
+        "pillar": "operations",
         "tags": [
-          "ui_ux_design"
+          "game_development"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -9806,44 +10016,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ui_ux_design",
-    "topic": "designer compiling their (ui ux design)",
-    "q": "{name}, if your campus tech club asks you to build a designer compiling their (ui ux design) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 13,
+    "topic": "make an app easy to understand and comfortable to use",
+    "q": "Your teammates at a short project with a student mentor plan to make an app easy to understand and comfortable to use. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "ui_ux_design"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Explore the tools needed to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
+        "tags": [
+          "embedded_iot"
+        ],
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Learn how to build an app for Android phones.",
+        "pillar": "systems",
+        "tags": [
+          "android"
+        ],
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Work with a teammate to make an app easy to understand and comfortable to use.",
         "pillar": "design_product",
         "tags": [
           "ui_ux_design"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "ui_ux_design"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "ui_ux_design"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to make an app easy to understand and comfortable to use, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -9852,44 +10063,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ui_ux_design",
-    "topic": "product manager asks (ui ux design)",
-    "q": "When working on a team project centered around product manager asks (ui ux design), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 14,
+    "topic": "make an app easy to understand and comfortable to use",
+    "q": "{name}, you can choose a role at a campus technology club meeting while the team learns to make an app easy to understand and comfortable to use. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "ui_ux_design"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Learn how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_engineering"
+        ],
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Work with a teammate to make an app easy to understand and comfortable to use.",
         "pillar": "design_product",
         "tags": [
           "ui_ux_design"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "ui_ux_design"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to make an app easy to understand and comfortable to use, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "ui_ux_design"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -9898,44 +10110,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ui_ux_design",
-    "topic": "global ecommerce site (ui ux design)",
-    "q": "{name}, imagine a local startup hires you for a week to help with global ecommerce site (ui ux design). What challenge would you jump at first?",
+    "sourceQuestionIndex": 15,
+    "topic": "make an app easy to understand and comfortable to use",
+    "q": "{name}, at a small project with a limited budget, your team has a chance to make an app easy to understand and comfortable to use. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Learn how to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
         "tags": [
-          "ui_ux_design"
+          "devops_cloud"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Work with a teammate to make an app easy to understand and comfortable to use.",
         "pillar": "design_product",
         "tags": [
           "ui_ux_design"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make an app easy to understand and comfortable to use, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Make a small example that shows how to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "ui_ux_design"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Try a hands-on exercise to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
         "tags": [
-          "ui_ux_design"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -9944,44 +10157,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ui_ux_design",
-    "topic": "when designing complex (ui ux design)",
-    "q": "Hey {name}, during a college hackathon project involving when designing complex (ui ux design), which aspect would excite you most?",
+    "sourceQuestionIndex": 16,
+    "topic": "make an app easy to understand and comfortable to use",
+    "q": "At a two-week team experiment, the team wants to make an app easy to understand and comfortable to use. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Work with a teammate to make an app easy to understand and comfortable to use.",
         "pillar": "design_product",
         "tags": [
           "ui_ux_design"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make an app easy to understand and comfortable to use, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "ui_ux_design"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Try a hands-on exercise to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
         "tags": [
-          "ui_ux_design"
+          "site_reliability_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Explore the tools needed to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
         "tags": [
-          "ui_ux_design"
+          "iam_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -9990,44 +10204,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ui_ux_design",
-    "topic": "organization mandated make (ui ux design)",
-    "q": "{name}, if your campus tech club asks you to build a organization mandated make (ui ux design) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 17,
+    "topic": "make an app easy to understand and comfortable to use",
+    "q": "{name}, imagine joining a project that needs clear instructions for newcomers to make an app easy to understand and comfortable to use. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
         "tags": [
-          "ui_ux_design"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Try a hands-on exercise to review security alerts and decide which need investigation.",
+        "pillar": "security",
+        "tags": [
+          "soc_analyst"
+        ],
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Learn how to make an app easy to understand and comfortable to use.",
         "pillar": "design_product",
         "tags": [
           "ui_ux_design"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "ui_ux_design"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "ui_ux_design"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to make an app easy to understand and comfortable to use, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -10036,44 +10251,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ui_ux_design",
-    "topic": "team migrating existing (ui ux design)",
-    "q": "When working on a team project centered around team migrating existing (ui ux design), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 18,
+    "topic": "make an app easy to understand and comfortable to use",
+    "q": "Your teammates at a demo you will show to first-time users plan to make an app easy to understand and comfortable to use. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "ui_ux_design"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Explore the tools needed to build an app for Android phones.",
+        "pillar": "systems",
+        "tags": [
+          "android"
+        ],
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Learn how to make an app easy to understand and comfortable to use.",
         "pillar": "design_product",
         "tags": [
           "ui_ux_design"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "ui_ux_design"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to make an app easy to understand and comfortable to use, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "ui_ux_design"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -10082,44 +10298,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ui_ux_design",
-    "topic": "your companys design (ui ux design)",
-    "q": "{name}, imagine a local startup hires you for a week to help with your companys design (ui ux design). What challenge would you jump at first?",
+    "sourceQuestionIndex": 19,
+    "topic": "make an app easy to understand and comfortable to use",
+    "q": "{name}, you can choose a role at a project that needs a careful check before sharing while the team learns to make an app easy to understand and comfortable to use. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
         "tags": [
-          "ui_ux_design"
+          "data_engineering"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Learn how to make an app easy to understand and comfortable to use.",
         "pillar": "design_product",
         "tags": [
           "ui_ux_design"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make an app easy to understand and comfortable to use, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Work with a teammate to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "ui_ux_design"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "ui_ux_design"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -10128,44 +10345,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ui_ux_design",
-    "topic": "during moderated usability (ui ux design)",
-    "q": "Hey {name}, during a college hackathon project involving during moderated usability (ui ux design), which aspect would excite you most?",
+    "sourceQuestionIndex": 20,
+    "topic": "make an app easy to understand and comfortable to use",
+    "q": "{name}, at a group project you will explain to a teacher, your team has a chance to make an app easy to understand and comfortable to use. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Learn how to make an app easy to understand and comfortable to use.",
         "pillar": "design_product",
         "tags": [
           "ui_ux_design"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make an app easy to understand and comfortable to use, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Work with a teammate to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "ui_ux_design"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
+        "t": "Make a small example that shows how to turn a spreadsheet into a clear answer about what happened.",
         "pillar": "data_ai",
         "tags": [
-          "ui_ux_design"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
+        "t": "Try a hands-on exercise to automate the steps that publish an app online.",
         "pillar": "cloud_infra",
         "tags": [
-          "ui_ux_design"
+          "devops_cloud"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -10174,44 +10392,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ui_ux_design",
-    "topic": "designer creating responsive (ui ux design)",
-    "q": "{name}, if your campus tech club asks you to build a designer creating responsive (ui ux design) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 21,
+    "topic": "make an app easy to understand and comfortable to use",
+    "q": "At a practice task you can learn step by step, the team wants to make an app easy to understand and comfortable to use. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Work with a teammate to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "ui_ux_design"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Make a small example that shows how to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "site_reliability_engineer"
+        ],
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
+        "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Explore the tools needed to make an app easy to understand and comfortable to use.",
         "pillar": "design_product",
         "tags": [
           "ui_ux_design"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "ui_ux_design"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "ui_ux_design"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to make an app easy to understand and comfortable to use, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -10220,44 +10439,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ui_ux_design",
-    "topic": "when designing interactive (ui ux design)",
-    "q": "When working on a team project centered around when designing interactive (ui ux design), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 22,
+    "topic": "make an app easy to understand and comfortable to use",
+    "q": "{name}, imagine joining a project where everyone picks a different contribution to make an app easy to understand and comfortable to use. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "ui_ux_design"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Try a hands-on exercise to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to make an app easy to understand and comfortable to use.",
         "pillar": "design_product",
         "tags": [
           "ui_ux_design"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "ui_ux_design"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to make an app easy to understand and comfortable to use, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
+        "t": "Learn how to connect computers so information reaches the right place.",
         "pillar": "cloud_infra",
         "tags": [
-          "ui_ux_design"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -10266,44 +10486,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ui_ux_design",
-    "topic": "designer completed final (ui ux design)",
-    "q": "{name}, imagine a local startup hires you for a week to help with designer completed final (ui ux design). What challenge would you jump at first?",
+    "sourceQuestionIndex": 23,
+    "topic": "make an app easy to understand and comfortable to use",
+    "q": "Your teammates at a project you want to improve after receiving feedback plan to make an app easy to understand and comfortable to use. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to build an app for Android phones.",
+        "pillar": "systems",
         "tags": [
-          "ui_ux_design"
+          "android"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Explore the tools needed to make an app easy to understand and comfortable to use.",
         "pillar": "design_product",
         "tags": [
           "ui_ux_design"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make an app easy to understand and comfortable to use, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Learn how to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "ui_ux_design"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "ui_ux_design"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -10312,44 +10533,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ui_ux_design",
-    "topic": "company successfully implemented (ui ux design)",
-    "q": "Hey {name}, during a college hackathon project involving company successfully implemented (ui ux design), which aspect would excite you most?",
+    "sourceQuestionIndex": 24,
+    "topic": "make an app easy to understand and comfortable to use",
+    "q": "{name}, you can choose a role at a learning project you will revisit next month while the team learns to make an app easy to understand and comfortable to use. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Explore the tools needed to make an app easy to understand and comfortable to use.",
         "pillar": "design_product",
         "tags": [
           "ui_ux_design"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make an app easy to understand and comfortable to use, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Learn how to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "ui_ux_design"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Work with a teammate to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "ui_ux_design"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
         "tags": [
-          "ui_ux_design"
+          "data_engineering"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -10358,44 +10580,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ux_researcher",
-    "topic": "product team member (ux researcher)",
-    "q": "Hey {name}, during a college hackathon project involving product team member (ux researcher), which aspect would excite you most?",
+    "sourceQuestionIndex": 0,
+    "topic": "ask people about their needs and observe how they use an app",
+    "q": "{name}, at a campus hackathon, your team has a chance to ask people about their needs and observe how they use an app. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Learn how to ask people about their needs and observe how they use an app.",
         "pillar": "design_product",
         "tags": [
           "ux_researcher"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to ask people about their needs and observe how they use an app, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Work with a teammate to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "ux_researcher"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
+        "t": "Make a small example that shows how to turn a spreadsheet into a clear answer about what happened.",
         "pillar": "data_ai",
         "tags": [
-          "ux_researcher"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
+        "t": "Try a hands-on exercise to automate the steps that publish an app online.",
         "pillar": "cloud_infra",
         "tags": [
-          "ux_researcher"
+          "devops_cloud"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -10404,44 +10627,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ux_researcher",
-    "topic": "which following research (ux researcher)",
-    "q": "{name}, if your campus tech club asks you to build a which following research (ux researcher) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 1,
+    "topic": "ask people about their needs and observe how they use an app",
+    "q": "At a student club project, the team wants to ask people about their needs and observe how they use an app. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Work with a teammate to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "ux_researcher"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Make a small example that shows how to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "site_reliability_engineer"
+        ],
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
+        "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Explore the tools needed to ask people about their needs and observe how they use an app.",
         "pillar": "design_product",
         "tags": [
           "ux_researcher"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "ux_researcher"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "ux_researcher"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to ask people about their needs and observe how they use an app, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -10450,44 +10674,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ux_researcher",
-    "topic": "before conducting research (ux researcher)",
-    "q": "When working on a team project centered around before conducting research (ux researcher), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 2,
+    "topic": "ask people about their needs and observe how they use an app",
+    "q": "{name}, imagine joining a small startup internship to ask people about their needs and observe how they use an app. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "ux_researcher"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Try a hands-on exercise to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to ask people about their needs and observe how they use an app.",
         "pillar": "design_product",
         "tags": [
           "ux_researcher"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "ux_researcher"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to ask people about their needs and observe how they use an app, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
+        "t": "Learn how to connect computers so information reaches the right place.",
         "pillar": "cloud_infra",
         "tags": [
-          "ux_researcher"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -10496,44 +10721,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ux_researcher",
-    "topic": "researcher tasked with (ux researcher)",
-    "q": "{name}, imagine a local startup hires you for a week to help with researcher tasked with (ux researcher). What challenge would you jump at first?",
+    "sourceQuestionIndex": 3,
+    "topic": "ask people about their needs and observe how they use an app",
+    "q": "Your teammates at a weekend learning challenge plan to ask people about their needs and observe how they use an app. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to build an app for Android phones.",
+        "pillar": "systems",
         "tags": [
-          "ux_researcher"
+          "android"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Explore the tools needed to ask people about their needs and observe how they use an app.",
         "pillar": "design_product",
         "tags": [
           "ux_researcher"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to ask people about their needs and observe how they use an app, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Learn how to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "ux_researcher"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "ux_researcher"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -10542,44 +10768,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ux_researcher",
-    "topic": "what primary purpose (ux researcher)",
-    "q": "Hey {name}, during a college hackathon project involving what primary purpose (ux researcher), which aspect would excite you most?",
+    "sourceQuestionIndex": 4,
+    "topic": "ask people about their needs and observe how they use an app",
+    "q": "{name}, you can choose a role at a community technology workshop while the team learns to ask people about their needs and observe how they use an app. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Explore the tools needed to ask people about their needs and observe how they use an app.",
         "pillar": "design_product",
         "tags": [
           "ux_researcher"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to ask people about their needs and observe how they use an app, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Learn how to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "ux_researcher"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Work with a teammate to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "ux_researcher"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
         "tags": [
-          "ux_researcher"
+          "data_engineering"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -10588,44 +10815,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ux_researcher",
-    "topic": "when synthesizing qualitative (ux researcher)",
-    "q": "{name}, if your campus tech club asks you to build a when synthesizing qualitative (ux researcher) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 5,
+    "topic": "ask people about their needs and observe how they use an app",
+    "q": "{name}, at a team assignment with new classmates, your team has a chance to ask people about their needs and observe how they use an app. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Learn how to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "ux_researcher"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Work with a teammate to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_analyst"
+        ],
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Make a small example that shows how to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "devops_cloud"
+        ],
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Try a hands-on exercise to ask people about their needs and observe how they use an app.",
         "pillar": "design_product",
         "tags": [
           "ux_researcher"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "ux_researcher"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "ux_researcher"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to ask people about their needs and observe how they use an app, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -10634,44 +10862,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ux_researcher",
-    "topic": "researcher needs present (ux researcher)",
-    "q": "When working on a team project centered around researcher needs present (ux researcher), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 6,
+    "topic": "ask people about their needs and observe how they use an app",
+    "q": "At a practice project for your portfolio, the team wants to ask people about their needs and observe how they use an app. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Work with a teammate to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
         "tags": [
-          "ux_researcher"
+          "site_reliability_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Make a small example that shows how to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
+        "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to ask people about their needs and observe how they use an app.",
         "pillar": "design_product",
         "tags": [
           "ux_researcher"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "ux_researcher"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to ask people about their needs and observe how they use an app, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Explore the tools needed to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "ux_researcher"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -10680,44 +10909,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ux_researcher",
-    "topic": "product manager asks (ux researcher)",
-    "q": "{name}, imagine a local startup hires you for a week to help with product manager asks (ux researcher). What challenge would you jump at first?",
+    "sourceQuestionIndex": 7,
+    "topic": "ask people about their needs and observe how they use an app",
+    "q": "{name}, imagine joining a volunteer project for a local group to ask people about their needs and observe how they use an app. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to build a small game with rules and player interactions.",
+        "pillar": "operations",
         "tags": [
-          "ux_researcher"
+          "game_development"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Try a hands-on exercise to ask people about their needs and observe how they use an app.",
         "pillar": "design_product",
         "tags": [
           "ux_researcher"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to ask people about their needs and observe how they use an app, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Explore the tools needed to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
         "tags": [
-          "ux_researcher"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Learn how to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "ux_researcher"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -10726,44 +10956,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ux_researcher",
-    "topic": "during user interview (ux researcher)",
-    "q": "Hey {name}, during a college hackathon project involving during user interview (ux researcher), which aspect would excite you most?",
+    "sourceQuestionIndex": 8,
+    "topic": "ask people about their needs and observe how they use an app",
+    "q": "Your teammates at a demo for your college technology fair plan to ask people about their needs and observe how they use an app. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Try a hands-on exercise to ask people about their needs and observe how they use an app.",
         "pillar": "design_product",
         "tags": [
           "ux_researcher"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to ask people about their needs and observe how they use an app, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "ux_researcher"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Learn how to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "ux_researcher"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to build an app for Android phones.",
+        "pillar": "systems",
         "tags": [
-          "ux_researcher"
+          "android"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -10772,44 +11003,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ux_researcher",
-    "topic": "researcher conducted several (ux researcher)",
-    "q": "{name}, if your campus tech club asks you to build a researcher conducted several (ux researcher) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 9,
+    "topic": "ask people about their needs and observe how they use an app",
+    "q": "{name}, you can choose a role at a shared project with a friend while the team learns to ask people about their needs and observe how they use an app. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "ux_researcher"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Learn how to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
+        "tags": [
+          "fullstack"
+        ],
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Work with a teammate to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_engineering"
+        ],
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Make a small example that shows how to ask people about their needs and observe how they use an app.",
         "pillar": "design_product",
         "tags": [
           "ux_researcher"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "ux_researcher"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "ux_researcher"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to ask people about their needs and observe how they use an app, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -10818,44 +11050,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ux_researcher",
-    "topic": "researcher designing survey (ux researcher)",
-    "q": "When working on a team project centered around researcher designing survey (ux researcher), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 10,
+    "topic": "ask people about their needs and observe how they use an app",
+    "q": "{name}, at a beginner-friendly open-source project, your team has a chance to ask people about their needs and observe how they use an app. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Learn how to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
         "tags": [
-          "ux_researcher"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Work with a teammate to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "devops_cloud"
+        ],
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Make a small example that shows how to ask people about their needs and observe how they use an app.",
         "pillar": "design_product",
         "tags": [
           "ux_researcher"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "ux_researcher"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to ask people about their needs and observe how they use an app, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Try a hands-on exercise to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "ux_researcher"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -10864,44 +11097,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ux_researcher",
-    "topic": "when conducting usability (ux researcher)",
-    "q": "{name}, imagine a local startup hires you for a week to help with when conducting usability (ux researcher). What challenge would you jump at first?",
+    "sourceQuestionIndex": 11,
+    "topic": "ask people about their needs and observe how they use an app",
+    "q": "At a prototype for a student competition, the team wants to ask people about their needs and observe how they use an app. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Work with a teammate to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
         "tags": [
-          "ux_researcher"
+          "iam_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Make a small example that shows how to ask people about their needs and observe how they use an app.",
         "pillar": "design_product",
         "tags": [
           "ux_researcher"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to ask people about their needs and observe how they use an app, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
+        "t": "Try a hands-on exercise to use data and experiments to answer a useful question.",
         "pillar": "data_ai",
         "tags": [
-          "ux_researcher"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
+        "t": "Explore the tools needed to keep an online app available and recover when it stops working.",
         "pillar": "cloud_infra",
         "tags": [
-          "ux_researcher"
+          "site_reliability_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -10910,44 +11144,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ux_researcher",
-    "topic": "researcher needs present (ux researcher)",
-    "q": "Hey {name}, during a college hackathon project involving researcher needs present (ux researcher), which aspect would excite you most?",
+    "sourceQuestionIndex": 12,
+    "topic": "ask people about their needs and observe how they use an app",
+    "q": "{name}, imagine joining a summer project you can test with classmates to ask people about their needs and observe how they use an app. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Make a small example that shows how to ask people about their needs and observe how they use an app.",
         "pillar": "design_product",
         "tags": [
           "ux_researcher"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to ask people about their needs and observe how they use an app, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
         "tags": [
-          "ux_researcher"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Explore the tools needed to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "ux_researcher"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Learn how to build a small game with rules and player interactions.",
+        "pillar": "operations",
         "tags": [
-          "ux_researcher"
+          "game_development"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -10956,44 +11191,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ux_researcher",
-    "topic": "researcher preparing stakeholder (ux researcher)",
-    "q": "{name}, if your campus tech club asks you to build a researcher preparing stakeholder (ux researcher) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 13,
+    "topic": "ask people about their needs and observe how they use an app",
+    "q": "Your teammates at a short project with a student mentor plan to ask people about their needs and observe how they use an app. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "ux_researcher"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Explore the tools needed to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
+        "tags": [
+          "embedded_iot"
+        ],
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Learn how to build an app for Android phones.",
+        "pillar": "systems",
+        "tags": [
+          "android"
+        ],
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Work with a teammate to ask people about their needs and observe how they use an app.",
         "pillar": "design_product",
         "tags": [
           "ux_researcher"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "ux_researcher"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "ux_researcher"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to ask people about their needs and observe how they use an app, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -11002,44 +11238,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ux_researcher",
-    "topic": "researcher identifies common (ux researcher)",
-    "q": "When working on a team project centered around researcher identifies common (ux researcher), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 14,
+    "topic": "ask people about their needs and observe how they use an app",
+    "q": "{name}, you can choose a role at a campus technology club meeting while the team learns to ask people about their needs and observe how they use an app. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "ux_researcher"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Learn how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
+        "tags": [
+          "data_engineering"
+        ],
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Work with a teammate to ask people about their needs and observe how they use an app.",
         "pillar": "design_product",
         "tags": [
           "ux_researcher"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "ux_researcher"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to ask people about their needs and observe how they use an app, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "ux_researcher"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -11048,44 +11285,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ux_researcher",
-    "topic": "company launching feature (ux researcher)",
-    "q": "{name}, imagine a local startup hires you for a week to help with company launching feature (ux researcher). What challenge would you jump at first?",
+    "sourceQuestionIndex": 15,
+    "topic": "ask people about their needs and observe how they use an app",
+    "q": "{name}, at a small project with a limited budget, your team has a chance to ask people about their needs and observe how they use an app. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Learn how to automate the steps that publish an app online.",
+        "pillar": "cloud_infra",
         "tags": [
-          "ux_researcher"
+          "devops_cloud"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Work with a teammate to ask people about their needs and observe how they use an app.",
         "pillar": "design_product",
         "tags": [
           "ux_researcher"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to ask people about their needs and observe how they use an app, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Make a small example that shows how to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "ux_researcher"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Try a hands-on exercise to turn a spreadsheet into a clear answer about what happened.",
+        "pillar": "data_ai",
         "tags": [
-          "ux_researcher"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -11094,44 +11332,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ux_researcher",
-    "topic": "researcher integrating into (ux researcher)",
-    "q": "Hey {name}, during a college hackathon project involving researcher integrating into (ux researcher), which aspect would excite you most?",
+    "sourceQuestionIndex": 16,
+    "topic": "ask people about their needs and observe how they use an app",
+    "q": "At a two-week team experiment, the team wants to ask people about their needs and observe how they use an app. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Work with a teammate to ask people about their needs and observe how they use an app.",
         "pillar": "design_product",
         "tags": [
           "ux_researcher"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to ask people about their needs and observe how they use an app, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "ux_researcher"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Try a hands-on exercise to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
         "tags": [
-          "ux_researcher"
+          "site_reliability_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Explore the tools needed to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
         "tags": [
-          "ux_researcher"
+          "iam_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -11140,44 +11379,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ux_researcher",
-    "topic": "when documenting research (ux researcher)",
-    "q": "{name}, if your campus tech club asks you to build a when documenting research (ux researcher) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 17,
+    "topic": "ask people about their needs and observe how they use an app",
+    "q": "{name}, imagine joining a project that needs clear instructions for newcomers to ask people about their needs and observe how they use an app. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to connect computers so information reaches the right place.",
+        "pillar": "cloud_infra",
         "tags": [
-          "ux_researcher"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Try a hands-on exercise to review security alerts and decide which need investigation.",
+        "pillar": "security",
+        "tags": [
+          "soc_analyst"
+        ],
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Learn how to ask people about their needs and observe how they use an app.",
         "pillar": "design_product",
         "tags": [
           "ux_researcher"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "ux_researcher"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "ux_researcher"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to ask people about their needs and observe how they use an app, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -11186,44 +11426,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ux_researcher",
-    "topic": "researcher asked evaluate (ux researcher)",
-    "q": "When working on a team project centered around researcher asked evaluate (ux researcher), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 18,
+    "topic": "ask people about their needs and observe how they use an app",
+    "q": "Your teammates at a demo you will show to first-time users plan to ask people about their needs and observe how they use an app. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "ux_researcher"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Explore the tools needed to build an app for Android phones.",
+        "pillar": "systems",
+        "tags": [
+          "android"
+        ],
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Learn how to ask people about their needs and observe how they use an app.",
         "pillar": "design_product",
         "tags": [
           "ux_researcher"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "ux_researcher"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to ask people about their needs and observe how they use an app, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "ux_researcher"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -11232,44 +11473,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ux_researcher",
-    "topic": "researcher wants demonstrate (ux researcher)",
-    "q": "{name}, imagine a local startup hires you for a week to help with researcher wants demonstrate (ux researcher). What challenge would you jump at first?",
+    "sourceQuestionIndex": 19,
+    "topic": "ask people about their needs and observe how they use an app",
+    "q": "{name}, you can choose a role at a project that needs a careful check before sharing while the team learns to ask people about their needs and observe how they use an app. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Explore the tools needed to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
         "tags": [
-          "ux_researcher"
+          "data_engineering"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Learn how to ask people about their needs and observe how they use an app.",
         "pillar": "design_product",
         "tags": [
           "ux_researcher"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to ask people about their needs and observe how they use an app, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Work with a teammate to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "ux_researcher"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "ux_researcher"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -11278,44 +11520,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ux_researcher",
-    "topic": "researcher discovers through (ux researcher)",
-    "q": "Hey {name}, during a college hackathon project involving researcher discovers through (ux researcher), which aspect would excite you most?",
+    "sourceQuestionIndex": 20,
+    "topic": "ask people about their needs and observe how they use an app",
+    "q": "{name}, at a group project you will explain to a teacher, your team has a chance to ask people about their needs and observe how they use an app. Which contribution would you enjoy most?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Learn how to ask people about their needs and observe how they use an app.",
         "pillar": "design_product",
         "tags": [
           "ux_researcher"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to ask people about their needs and observe how they use an app, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Work with a teammate to build the screens and buttons of a website.",
+        "pillar": "systems",
         "tags": [
-          "ux_researcher"
+          "frontend"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build the screens and buttons of a website, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
+        "t": "Make a small example that shows how to turn a spreadsheet into a clear answer about what happened.",
         "pillar": "data_ai",
         "tags": [
-          "ux_researcher"
+          "data_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to turn a spreadsheet into a clear answer about what happened, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
+        "t": "Try a hands-on exercise to automate the steps that publish an app online.",
         "pillar": "cloud_infra",
         "tags": [
-          "ux_researcher"
+          "devops_cloud"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to automate the steps that publish an app online, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -11324,44 +11567,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ux_researcher",
-    "topic": "after conducting global (ux researcher)",
-    "q": "{name}, if your campus tech club asks you to build a after conducting global (ux researcher) tool, where would you add your biggest contribution?",
+    "sourceQuestionIndex": 21,
+    "topic": "ask people about their needs and observe how they use an app",
+    "q": "At a practice task you can learn step by step, the team wants to ask people about their needs and observe how they use an app. Which task would you volunteer to explore, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Writing clean, efficient code for the main features",
-        "pillar": "design_product",
+        "t": "Work with a teammate to use data and experiments to answer a useful question.",
+        "pillar": "data_ai",
         "tags": [
-          "ux_researcher"
+          "data_science"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to use data and experiments to answer a useful question, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Understanding student feedback and polishing the user experience",
+        "t": "Make a small example that shows how to keep an online app available and recover when it stops working.",
+        "pillar": "cloud_infra",
+        "tags": [
+          "site_reliability_engineer"
+        ],
+        "i": "This choice suggests that you would like to keep an online app available and recover when it stops working, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Try a hands-on exercise to give people the access they need without granting unnecessary permissions.",
+        "pillar": "security",
+        "tags": [
+          "iam_engineer"
+        ],
+        "i": "This choice suggests that you would like to give people the access they need without granting unnecessary permissions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "D",
+        "t": "Explore the tools needed to ask people about their needs and observe how they use an app.",
         "pillar": "design_product",
         "tags": [
           "ux_researcher"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "Optimizing database queries and tracking usage analytics",
-        "pillar": "data_ai",
-        "tags": [
-          "ux_researcher"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
-      },
-      {
-        "l": "D",
-        "t": "Testing for bugs, security vulnerabilities, and deployment reliability",
-        "pillar": "security",
-        "tags": [
-          "ux_researcher"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards security roles."
+        "i": "This choice suggests that you would like to ask people about their needs and observe how they use an app, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -11370,44 +11614,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ux_researcher",
-    "topic": "research lead establishing (ux researcher)",
-    "q": "When working on a team project centered around research lead establishing (ux researcher), what role feels most natural to you, {name}?",
+    "sourceQuestionIndex": 22,
+    "topic": "ask people about their needs and observe how they use an app",
+    "q": "{name}, imagine joining a project where everyone picks a different contribution to ask people about their needs and observe how they use an app. Where would you like to spend your time?",
     "options": [
       {
         "l": "A",
-        "t": "The Developer: Coding core features and managing data structures",
-        "pillar": "design_product",
+        "t": "Make a small example that shows how to review security alerts and decide which need investigation.",
+        "pillar": "security",
         "tags": [
-          "ux_researcher"
+          "soc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to review security alerts and decide which need investigation, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "The Designer: Wireframing screens and styling UI elements",
+        "t": "Try a hands-on exercise to build a small game with rules and player interactions.",
+        "pillar": "operations",
+        "tags": [
+          "game_development"
+        ],
+        "i": "This choice suggests that you would like to build a small game with rules and player interactions, {name}. You can test that interest with a small project."
+      },
+      {
+        "l": "C",
+        "t": "Explore the tools needed to ask people about their needs and observe how they use an app.",
         "pillar": "design_product",
         "tags": [
           "ux_researcher"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
-      },
-      {
-        "l": "C",
-        "t": "The Data Specialist: Handling datasets and predictive models",
-        "pillar": "data_ai",
-        "tags": [
-          "ux_researcher"
-        ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to ask people about their needs and observe how they use an app, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "The Systems Admin: Managing hosting, APIs, and security protocols",
+        "t": "Learn how to connect computers so information reaches the right place.",
         "pillar": "cloud_infra",
         "tags": [
-          "ux_researcher"
+          "network_engineer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to connect computers so information reaches the right place, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -11416,44 +11661,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ux_researcher",
-    "topic": "project researcher portfolio (ux researcher)",
-    "q": "{name}, imagine a local startup hires you for a week to help with project researcher portfolio (ux researcher). What challenge would you jump at first?",
+    "sourceQuestionIndex": 23,
+    "topic": "ask people about their needs and observe how they use an app",
+    "q": "Your teammates at a project you want to improve after receiving feedback plan to ask people about their needs and observe how they use an app. Which part sounds most interesting to learn, {name}?",
     "options": [
       {
         "l": "A",
-        "t": "Solving complex coding bugs and speeding up feature delivery",
-        "pillar": "design_product",
+        "t": "Try a hands-on exercise to build an app for Android phones.",
+        "pillar": "systems",
         "tags": [
-          "ux_researcher"
+          "android"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to build an app for Android phones, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Redesigning the app screens to make them super intuitive for customers",
+        "t": "Explore the tools needed to ask people about their needs and observe how they use an app.",
         "pillar": "design_product",
         "tags": [
           "ux_researcher"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to ask people about their needs and observe how they use an app, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Uncovering actionable insights from customer data logs",
-        "pillar": "data_ai",
+        "t": "Learn how to help a team document security risks and follow its policies.",
+        "pillar": "security",
         "tags": [
-          "ux_researcher"
+          "grc_analyst"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to help a team document security risks and follow its policies, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Hardening system security and automating cloud deployment pipelines",
-        "pillar": "cloud_infra",
+        "t": "Work with a teammate to write code that reads a sensor and controls a small device.",
+        "pillar": "operations",
         "tags": [
-          "ux_researcher"
+          "embedded_iot"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to write code that reads a sensor and controls a small device, {name}. You can test that interest with a small project."
       }
     ]
   },
@@ -11462,44 +11708,45 @@ module.exports = [
     "phase": 2,
     "pillar": "design_product",
     "sourceSlug": "ux_researcher",
-    "topic": "researcher asked evaluate (ux researcher)",
-    "q": "Hey {name}, during a college hackathon project involving researcher asked evaluate (ux researcher), which aspect would excite you most?",
+    "sourceQuestionIndex": 24,
+    "topic": "ask people about their needs and observe how they use an app",
+    "q": "{name}, you can choose a role at a learning project you will revisit next month while the team learns to ask people about their needs and observe how they use an app. Which contribution suits your interests?",
     "options": [
       {
         "l": "A",
-        "t": "Building the core logic and backend architecture",
+        "t": "Explore the tools needed to ask people about their needs and observe how they use an app.",
         "pillar": "design_product",
         "tags": [
           "ux_researcher"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to ask people about their needs and observe how they use an app, {name}. You can test that interest with a small project."
       },
       {
         "l": "B",
-        "t": "Designing the user interface and visual workflow",
-        "pillar": "design_product",
+        "t": "Learn how to make a useful app with visual building blocks.",
+        "pillar": "operations",
         "tags": [
-          "ux_researcher"
+          "no_code_low_code_developer"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards design product roles."
+        "i": "This choice suggests that you would like to make a useful app with visual building blocks, {name}. You can test that interest with a small project."
       },
       {
         "l": "C",
-        "t": "Analyzing the data patterns and adding smart AI features",
-        "pillar": "data_ai",
+        "t": "Work with a teammate to connect a website screen to the code that stores its information.",
+        "pillar": "systems",
         "tags": [
-          "ux_researcher"
+          "fullstack"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards data ai roles."
+        "i": "This choice suggests that you would like to connect a website screen to the code that stores its information, {name}. You can test that interest with a small project."
       },
       {
         "l": "D",
-        "t": "Setting up server deployment, cloud, and security checks",
-        "pillar": "cloud_infra",
+        "t": "Make a small example that shows how to move and organize data so a team can use it reliably.",
+        "pillar": "data_ai",
         "tags": [
-          "ux_researcher"
+          "data_engineering"
         ],
-        "i": "Awesome preference choice, {name}! This reveals your inclination towards cloud infra roles."
+        "i": "This choice suggests that you would like to move and organize data so a team can use it reliably, {name}. You can test that interest with a small project."
       }
     ]
   }

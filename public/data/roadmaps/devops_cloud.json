@@ -539,11 +539,6 @@
               "type": "video"
             },
             {
-              "title": "Cyber Security Full Course for Beginner",
-              "url": "https://www.youtube.com/watch?v=U_P23SqJaDc",
-              "type": "video"
-            },
-            {
               "title": "Study Guide & Notes",
               "url": "/data/docs/devops_cloud/docker_fundamentals_best_practices.md",
               "type": "doc"

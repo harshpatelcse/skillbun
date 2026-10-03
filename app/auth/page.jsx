@@ -109,6 +109,7 @@ function AuthForm() {
   const [email, setEmail] = useState('');
   // Credentials stay in this component's memory until verification completes.
   const [password, setPassword] = useState('');
+  const [adultDeclaration, setAdultDeclaration] = useState(false);
   const [signupChallenge, setSignupChallenge] = useState(null);
   const [verificationCode, setVerificationCode] = useState('');
   const [signupAvailableAt, setSignupAvailableAt] = useState(0);
@@ -321,7 +322,7 @@ function AuthForm() {
       return 'Verify the code sent to your email to create your account. Your profile starts after verification.';
     }
 
-    return 'Use Google or email to continue your quiz, roadmap, and dashboard on any device.';
+    return 'Use Google or email to access your profile, saved roadmap progress, and certificates on any device.';
   }, [configured, mode]);
 
   function updateSignupCooldown(retryAfterMs) {
@@ -385,11 +386,12 @@ function AuthForm() {
   }
 
   async function sendSignupCode(signupEmail) {
+    if (!adultDeclaration) throw new Error('Confirm that you are 18 or older before creating an account.');
     if (signupCooldownSeconds > 0) {
       throw new Error(`Please wait ${signupCooldownSeconds} seconds before requesting another code.`);
     }
     const humanToken = await getSignupHumanProof();
-    const result = await requestEmailSignup({ email: signupEmail, humanToken });
+    const result = await requestEmailSignup({ email: signupEmail, humanToken, ageBand: '18-plus' });
     if (typeof result.challengeId !== 'string' || !Number.isFinite(result.expiresAt)) {
       throw new Error('Could not start email verification. Please try again.');
     }
@@ -489,6 +491,10 @@ function AuthForm() {
   async function handleGoogle() {
     setError('');
     setStatus('');
+    if (!adultDeclaration) {
+      setError('Confirm that you are 18 or older before continuing with Google.');
+      return;
+    }
     setSubmitting(true);
 
     try {
@@ -588,7 +594,7 @@ function AuthForm() {
             <div className="auth-path-step">
               <span>02</span>
               <strong>Adaptive quiz</strong>
-              <p>Continue from the same career signals across devices.</p>
+              <p>Explore career signals in this quiz session. Saved roadmap progress syncs across devices.</p>
             </div>
             <div className="auth-path-step">
               <span>03</span>
@@ -626,6 +632,10 @@ function AuthForm() {
             </button>
           </div>
 
+          <label className="auth-age-declaration" style={{ display: 'flex', gap: '0.65rem', alignItems: 'flex-start', margin: '1rem 0', color: 'var(--text)', fontSize: '0.9rem' }}>
+            <input type="checkbox" checked={adultDeclaration} onChange={(event) => setAdultDeclaration(event.target.checked)} disabled={submitting || isVerifyingSignup} />
+            <span>I am 18 or older. Self-service account creation is currently for adults; guardian approval for younger students is not yet available.</span>
+          </label>
           <button type="button" className="auth-google-btn" onClick={handleGoogle} disabled={!configured || submitting}>
             <span aria-hidden="true">G</span>
             Continue with Google

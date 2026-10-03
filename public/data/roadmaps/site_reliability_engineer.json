@@ -856,8 +856,8 @@
           "description": "Capstone Project: Architect, deploy, and operate a multi-region production platform with a 99.99% availability target: multi-burn-rate Prometheus alerting, automated canary rollouts with Argo Rollouts, automated chaos testing pipeline, and comprehensive disaster recovery runbooks.",
           "resources": [
             {
-              "title": "SRE Classroom: Mini-Project",
-              "url": "https://sre.google/workbook/mini-projects/",
+              "title": "Implement SLOs for a Service (Google SRE Workbook)",
+              "url": "https://sre.google/workbook/implementing-slos/",
               "type": "article"
             },
             {

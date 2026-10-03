@@ -40,8 +40,8 @@ export default function TermsPage() {
       <ul>
         <li>You agree to provide accurate, current, and complete profile information during the onboarding flow.</li>
         <li>You are solely responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.</li>
-        <li>If you are below 18, you confirm that you have the consent of a parent or legal guardian to use the Platform, consistent with India's Digital Personal Data Protection Act, 2023 and other applicable age-of-consent laws.</li>
-        <li>You must not use the Platform if you are below 13.</li>
+        <li>Self-service accounts are currently available only to adults aged 18 or older. You must confirm this age eligibility before signup and onboarding. Do not create an account if you are below 18.</li>
+        <li>SkillBun does not currently offer a verified parental or guardian approval flow for younger students. An age declaration is self-reported and is not independent age verification.</li>
         <li>SkillBun reserves the right to terminate accounts that are inactive, fraudulent, or involved in malicious activity.</li>
       </ul>
 

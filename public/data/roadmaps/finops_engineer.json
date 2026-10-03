@@ -1607,8 +1607,8 @@
               "type": "article"
             },
             {
-              "title": "Automate Cloud Cost Savings (Project Ideas)",
-              "url": "https://www.example.com/automate-cloud-cost-savings-project-ideas",
+              "title": "Usage Optimization and Automation Examples (FinOps Foundation)",
+              "url": "https://www.finops.org/framework/capabilities/usage-optimization/",
               "type": "article"
             },
             {
@@ -1672,8 +1672,8 @@
           "description": "Prepare for FinOps engineering interviews: Explain showback vs chargeback mechanics, calculate commitment break-even points, and present cost-reduction frameworks.",
           "resources": [
             {
-              "title": "Common FinOps Interview Questions",
-              "url": "https://www.example.com/finops-interview-questions",
+              "title": "FinOps Framework: Concepts to Review for Interviews",
+              "url": "https://www.finops.org/framework/",
               "type": "article"
             },
             {

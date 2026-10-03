@@ -70,15 +70,31 @@
       }
     ],
     "certifications": [
-      "AWS Certified Machine Learning - Specialty",
+      "AWS Certified Machine Learning Engineer - Associate",
       "Google Cloud Professional Machine Learning Engineer",
-      "TensorFlow Developer Certificate"
+      "AWS Certified AI Practitioner"
     ],
     "interview_focus": [
       "Backpropagation Mathematics & Gradient Descent Variants",
       "Bias-Variance Tradeoff & Regularization Techniques",
       "Transformer Architecture (Self-Attention, KV Caching)",
       "Model Serving Latency vs Throughput Tradeoffs"
+    ],
+    "certification_details": [
+      {
+        "name": "AWS Certified Machine Learning Engineer - Associate",
+        "official_url": "https://aws.amazon.com/certification/certified-machine-learning-engineer-associate/",
+        "type": "professional_certification",
+        "note": "Role-based ML engineering certification; review the current exam guide and experience requirements.",
+        "checked_on": "2026-10-02"
+      },
+      {
+        "name": "AWS Certified AI Practitioner",
+        "official_url": "https://aws.amazon.com/certification/certified-ai-practitioner/",
+        "type": "professional_certification",
+        "note": "Foundational AI/cloud credential; distinct from an advanced ML engineering exam.",
+        "checked_on": "2026-10-02"
+      }
     ]
   },
   "format": "tree",
@@ -593,7 +609,7 @@
           "resources": [
             {
               "title": "Stanford CS231n: Convolutional Neural Networks for Visual Recognition",
-              "url": "http://cs231n.stanford.edu/",
+              "url": "https://cs231n.stanford.edu/",
               "type": "course"
             },
             {
@@ -628,7 +644,7 @@
             },
             {
               "title": "Stanford CS224N: Natural Language Processing with Deep Learning",
-              "url": "http://web.stanford.edu/class/cs224n/",
+              "url": "https://web.stanford.edu/class/cs224n/",
               "type": "course"
             },
             {
@@ -663,7 +679,7 @@
             },
             {
               "title": "The Illustrated Transformer",
-              "url": "http://jalammar.github.io/illustrated-transformer/",
+              "url": "https://jalammar.github.io/illustrated-transformer/",
               "type": "article"
             },
             {

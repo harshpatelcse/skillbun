@@ -25,7 +25,7 @@ const PART2_CATALOG = {
         { title: 'Real-Time Multimodal Semantic Search & RAG System', tech_stack: ['Python', 'PyTorch', 'Qdrant/Pinecone', 'FastAPI', 'Docker'], description: 'Build an enterprise semantic retrieval engine utilizing CLIP embeddings and cross-encoder rerankers with sub-50ms latency.' },
         { title: 'Distributed Image Classification & Model Serving Pipeline', tech_stack: ['PyTorch', 'Triton Inference Server', 'Kubernetes', 'MLflow'], description: 'Train and deploy a ResNet/Vision Transformer pipeline with automated drift monitoring and canary model deployments.' }
       ],
-      certifications: ['AWS Certified Machine Learning - Specialty', 'Google Cloud Professional Machine Learning Engineer', 'TensorFlow Developer Certificate'],
+      certifications: ['AWS Certified Machine Learning Engineer - Associate', 'Google Cloud Professional Machine Learning Engineer', 'AWS Certified AI Practitioner'],
       interview_focus: ['Backpropagation Mathematics & Gradient Descent Variants', 'Bias-Variance Tradeoff & Regularization Techniques', 'Transformer Architecture (Self-Attention, KV Caching)', 'Model Serving Latency vs Throughput Tradeoffs']
     }
   },
@@ -125,7 +125,7 @@ const PART2_CATALOG = {
       capstone_projects: [
         { title: 'End-to-End Automated Continuous Retraining Pipeline', tech_stack: ['Python', 'MLflow', 'Airflow', 'DVC', 'Docker', 'Kubernetes'], description: 'Build an automated pipeline that detects model performance degradation, triggers retraining, logs metrics, and registers candidate models.' }
       ],
-      certifications: ['AWS Certified Machine Learning - Specialty', 'Databricks Certified Machine Learning Professional'],
+      certifications: ['AWS Certified Machine Learning Engineer - Associate', 'Databricks Certified Machine Learning Professional'],
       interview_focus: ['Data Drift vs Concept Drift Detection Algorithms', 'Feature Store Architecture (Online vs Offline Stores)', 'Zero-Downtime Model Deployment (Shadow, Canary, Blue/Green)', 'Data Lineage and Reproducibility Guarantees']
     }
   },

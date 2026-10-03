@@ -1,5 +1,6 @@
+import { assertAdultStudent, StudentEligibilityError } from '@/utils/server/studentEligibility.mjs';
 import { NextResponse } from 'next/server'
-import { getFirebaseAdminAuth } from '@/utils/server/firebaseAdmin'
+import { getFirebaseAdminAuth, getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin'
 import { checkServerRateLimit } from '@/utils/server/rateLimitStore'
 import { getClientAddress } from '@/utils/server/requestUtils'
 import { readFileSync, existsSync } from 'fs'
@@ -136,6 +137,9 @@ export async function GET(request, { params }) {
       { status: 401 }
     )
   }
+
+  try { await assertAdultStudent(getFirebaseAdminFirestore(), uid); }
+  catch (error) { return NextResponse.json({ error: error instanceof StudentEligibilityError ? error.message : 'Student eligibility is temporarily unavailable.' }, { status: error instanceof StudentEligibilityError ? error.status : 503 }); }
 
   // Rate limit check: prevent scraping attacks
   const address = getClientAddress(request)

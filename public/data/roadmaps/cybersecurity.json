@@ -431,8 +431,8 @@
           "description": "Detailed exploration of penetration testing phases: Reconnaissance (OSINT, active scanning with Nmap, vulnerability scanning), Enumeration (SMB, DNS, SNMP), Gaining Access (exploitation of various services, brute-force attacks, phishing vectors), Post-Exploitation (meterpreter, C2 frameworks), Privilege Escalation (Linux/Windows techniques), Maintaining Access (backdoors, persistent shells), Covering Tracks (log manipulation), and professional report writing with executive summaries and technical findings.",
           "resources": [
             {
-              "title": "Penetration Testing Execution Standard (PTES)",
-              "url": "http://www.pentest-standard.org/index.php/Main_Page",
+              "title": "Web Security Testing Guide and Methodology (OWASP)",
+              "url": "https://owasp.org/www-project-web-security-testing-guide/",
               "type": "article"
             },
             {
@@ -1023,8 +1023,8 @@
           "description": "Execute structured penetration tests following the PTES framework: OSINT reconnaissance (Amass, Shodan), vulnerability scanning, weaponization, exploitation (Metasploit, manual proof-of-concept exploits), post-exploitation (BloodHound, Mimikatz), and executive reporting.",
           "resources": [
             {
-              "title": "Penetration Testing Execution Standard (PTES)",
-              "url": "http://www.pentest-standard.org/index.php/Main_Page",
+              "title": "Web Security Testing Guide and Methodology (OWASP)",
+              "url": "https://owasp.org/www-project-web-security-testing-guide/",
               "type": "article"
             },
             {

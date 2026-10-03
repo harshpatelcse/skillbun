@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { getFirebaseAdminAuth, getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import { isUserAuthorizedAdmin } from '@/utils/server/workforceEmployees';
 import { checkServerRateLimit } from '@/utils/server/rateLimitStore';
@@ -66,7 +66,7 @@ export async function GET(request, { params }) {
     });
   } catch (err) {
     if (err instanceof CertificateMutationError) return NextResponse.json({ error: err.message, code: err.code }, { status: err.status });
-    console.error('[Admin Certificate GET Error]:', err);
+    console.error('[SkillBun server operation]', { code: err?.code || 'INTERNAL_ERROR' });
     return NextResponse.json({ error: 'Internal server error.' }, { status: 500 });
   }
 }
@@ -116,7 +116,7 @@ export async function PATCH(request, { params }) {
     if (err instanceof CertificateMutationError || err?.code === 'auth/account-deleting') {
       return NextResponse.json({ error: err.message, code: err.code }, { status: err.status || 409 });
     }
-    console.error('[Admin Certificate PATCH Error]:', err?.code || 'INTERNAL_ERROR');
+    console.error('[SkillBun server operation]', { code: err?.code || 'INTERNAL_ERROR' });
     return NextResponse.json({ error: 'Certificate update failed. Please try again.' }, { status: 500 });
   }
 }
@@ -161,7 +161,7 @@ export async function DELETE(request, { params }) {
     });
   } catch (err) {
     if (err instanceof CertificateMutationError) return NextResponse.json({ error: err.message, code: err.code }, { status: err.status });
-    console.error('[Admin Certificate DELETE Error]:', err?.code || 'INTERNAL_ERROR');
+    console.error('[SkillBun server operation]', { code: err?.code || 'INTERNAL_ERROR' });
     return NextResponse.json({ error: 'Certificate deletion failed. Please try again.' }, { status: 500 });
   }
 }

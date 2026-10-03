@@ -7,7 +7,7 @@ import { useTranslation } from './I18nProvider';
 import { startSearchRequest, nextSearchIndex } from '@/utils/client/searchRequest.mjs';
 
 export default function SearchBar() {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [response, setResponse] = useState(null);
@@ -120,6 +120,7 @@ export default function SearchBar() {
   return (
     <div
       className={`search-container ${isOpen ? 'is-open' : ''}`}
+      lang={locale}
       ref={searchRef}
       onBlur={(event) => {
         if (!event.currentTarget.contains(event.relatedTarget)) closeSearch();

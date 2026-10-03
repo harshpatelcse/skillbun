@@ -263,7 +263,8 @@ export function getStoredProfile() {
   const name = localStorage.getItem('sb_name') || '';
   const degree = localStorage.getItem('sb_degree') || '';
   const year = localStorage.getItem('sb_year') || '';
-  return { name, degree, year };
+  const interest = localStorage.getItem('sb_interest') || '';
+  return { name, degree, year, interest };
 }
 
 export function redirectToProfileSetup(destination) {
@@ -272,13 +273,13 @@ export function redirectToProfileSetup(destination) {
 }
 
 export function loadProfile(state) {
-  const { name, degree, year } = getStoredProfile();
+  const { name, degree, year, interest } = getStoredProfile();
   if (!degree || !year) {
     redirectToProfileSetup('quiz');
     return false;
   }
 
-  state.userProfile = { name: name || 'Student', degree, year };
+  state.userProfile = { name: name || 'Student', degree, year, interest };
 
   const userNameEl = document.getElementById('userName');
   if (userNameEl) userNameEl.textContent = name;
@@ -592,6 +593,7 @@ export function inferRoadmapSlugFromCareer(career) {
 
 export function resolveRoadmapSlug(career) {
   const fromAiUrl = extractRoadmapSlug(career?.roadmapUrl);
+  if (career?.catalogGrounded === true && KNOWN_ROADMAP_SLUGS.has(fromAiUrl)) return fromAiUrl;
   const fromKeywords = inferRoadmapSlugFromCareer(career);
 
   if (fromKeywords && KNOWN_ROADMAP_SLUGS.has(fromKeywords)) {
@@ -716,16 +718,15 @@ export function normalizeCareerEntry(career, index) {
   const title = String(career.title || '').trim();
   if (!title) return null;
 
-  const matchRaw = Number.parseInt(career.matchPercent, 10);
-  const matchPercent = Number.isFinite(matchRaw) ? Math.max(0, Math.min(matchRaw, 100)) : Math.max(60, 95 - index * 5);
   const normalizedCareer = {
+    catalogGrounded: career.catalogGrounded === true,
     title,
     description: String(career.description || 'Recommended based on your quiz answers.').trim(),
     skills: normalizeSkills(career.skills),
     salaryRange: String(career.salaryRange || 'Varies by role and experience').trim(),
-    demand: String(career.demand || 'Growing').trim(),
     nextSteps: String(career.nextSteps || 'Start with the roadmap and build small projects.').trim(),
-    matchPercent,
+    salaryNote: String(career.salaryNote || '').trim(),
+    recommendationLabel: career.recommendationLabel === 'Related path to explore' ? career.recommendationLabel : 'Suggested path',
     roadmapUrl: String(career.roadmapUrl || '').trim()
   };
 
@@ -769,8 +770,6 @@ export function extractCareers(response) {
 }
 
 export function renderCareerCard(career, index) {
-  const medalEmojis = ['🥇', '🥈', '🥉', '🏅', '⭐', '✨', '💎', '🎯', '🚀'];
-  const medal = safeGetIndex(medalEmojis, index - 1) || '⭐';
   const roadmapSlug = resolveRoadmapSlug(career);
 
   const skillsHtml = (career.skills || [])
@@ -783,20 +782,20 @@ export function renderCareerCard(career, index) {
   const actionLinkHtml = '<a href="' + sanitize(finalUrl) + '" ' + 
     (isExternal ? 'target="_blank" rel="noopener noreferrer"' : '') + 
     ' class="btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; text-decoration: none; font-size: 0.9rem;">' +
-    '🗺️ Dive Deeper Roadmap' +
+    'Explore Roadmap' +
     '</a>';
 
   return '<div class="result-card new" data-roadmap-slug="' + sanitize(roadmapSlug) + '" style="animation-delay:' + ((index - 1) * 0.15) + 's">' +
     '<div class="result-card-header">' +
-      '<span class="result-medal">' + medal + '</span>' +
-      '<span class="result-match">' + sanitize(String(career.matchPercent)) + '% Match</span>' +
+      '<span class="result-medal" aria-label="Suggestion ' + index + '">' + index + '</span>' +
+      '<span class="result-match">' + sanitize(career.recommendationLabel || 'Suggested path') + '</span>' +
     '</div>' +
     '<h3>' + sanitize(career.title) + '</h3>' +
     '<p class="result-desc">' + sanitize(career.description) + '</p>' +
     '<div class="result-meta">' +
-      '<span class="result-tag salary">💰 ' + sanitize(career.salaryRange) + '</span>' +
-      '<span class="result-tag demand">📈 ' + sanitize(career.demand) + ' Demand</span>' +
+      '<span class="result-tag salary">Indicative pay: ' + sanitize(career.salaryRange) + '</span>' +
     '</div>' +
+    (career.salaryNote ? '<p class="result-desc">' + sanitize(career.salaryNote) + '</p>' : '') +
     '<div class="result-skills">' +
       '<h4>Key Skills</h4>' +
       '<div class="skill-pills">' +
@@ -901,8 +900,9 @@ export function normalizeQuizResponse(state, response) {
     throw createQuizFormatError('AI question did not include a question with options', 'AI_QUESTION_SHAPE');
   }
 
-  while (options.length < 4) {
-    options.push({ label: String.fromCharCode(65 + options.length), text: 'Other / None of the above' });
+  const tagChoices = new Set(options.map(option => [...(option.tags || [])].sort().join(',')));
+  if (options.length !== 4 || options.some(option => !option.tags?.length) || tagChoices.size !== 4) {
+    throw createQuizFormatError('AI question must include four distinct career preference choices', 'AI_QUESTION_SHAPE');
   }
 
   options = options.slice(0, 4).map((option, index) => ({
@@ -941,7 +941,13 @@ export function normalizeQuestionOptions(options) {
 
       if (!text || seenTexts.has(dedupeKey)) return null;
       seenTexts.add(dedupeKey);
-      return { label: safeGetIndex(['A', 'B', 'C', 'D'], index) || label || 'A', text };
+      const tags = [...new Set(Array.isArray(option?.tags) ? option.tags : [])]
+        .filter(tag => typeof tag === 'string' && KNOWN_ROADMAP_SLUGS.has(tag));
+      const pillar = ['systems', 'data_ai', 'design_product', 'cloud_infra', 'security', 'operations'].includes(option?.pillar) ? option.pillar : undefined;
+      return { label: safeGetIndex(['A', 'B', 'C', 'D'], index) || label || 'A', text,
+        ...(tags.length ? { tags } : {}), ...(pillar ? { pillar } : {}),
+        ...(typeof option?.i === 'string' ? { i: option.i.trim() } : {}),
+      };
     })
     .filter(Boolean)
     .slice(0, 4);

@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import { apiError, requireWorkforceAdmin, validateEmployeeId } from '@/utils/server/workforceEmployees';
 import { getOrSetCache, createCachedJsonResponse } from '@/utils/server/redisCache';
@@ -71,7 +71,7 @@ export async function GET(request) {
 
     return createCachedJsonResponse(request, result);
   } catch (error) {
-    console.error('[Workforce Credentials GET Error]:', error);
+    console.error('[SkillBun server operation]', { code: error?.code || 'INTERNAL_ERROR' });
     return apiError('Unable to fetch workforce credentials.', 500, 'INTERNAL_ERROR');
   }
 }

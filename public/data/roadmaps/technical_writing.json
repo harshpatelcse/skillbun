@@ -71,7 +71,7 @@
     ],
     "certifications": [
       "Society for Technical Communication (STC) Certification",
-      "Google Technical Writing Certified Credential"
+      "Technical Communicator (tekom) - Professional Level"
     ],
     "interview_focus": [
       "The Diátaxis Documentation Framework (Tutorials, How-To Guides, Reference, Explanation)",
@@ -79,6 +79,15 @@
       "Creating High-Quality REST & GraphQL API Documentation (Endpoints, Parameters, Error Codes)",
       "Information Architecture & Structuring Navigable Technical Portals",
       "Translating Complex Engineering Specs into Actionable Developer Documentation"
+    ],
+    "certification_details": [
+      {
+        "name": "Technical Communicator (tekom) - Professional Level",
+        "official_url": "https://www.technical-communication.org/technical-writing/tekom-certification/professional-level-and-expert-level-certification",
+        "type": "professional_certification",
+        "note": "Eligibility requires relevant professional experience or an accredited training program; check examination availability with tekom.",
+        "checked_on": "2026-10-02"
+      }
     ]
   },
   "format": "tree",
@@ -1231,8 +1240,8 @@
               "type": "article"
             },
             {
-              "title": "The Evolution of Technical Writing",
-              "url": "https://www.iastate.edu/sites/default/files/files/Technical%20Communication/The%20Evolution%20of%20Technical%20Writing.pdf",
+              "title": "Technical Documentation Style Guide (Google)",
+              "url": "https://developers.google.com/style",
               "type": "article"
             },
             {

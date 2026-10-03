@@ -35,6 +35,8 @@ import {
   logoutUser
 } from './quiz/quizDom';
 import posthog from 'posthog-js';
+import { careerCatalog } from '../shared/careerCatalog';
+import { catalogCareer, groundDiscoveryResults, rankDiscoveryCareers, scoreDiscoveryChoice } from './quiz/careerDiscovery.mjs';
 
 const SUPPORT_EMAIL = 'harsh@skillbun.tech';
 
@@ -47,9 +49,6 @@ export function mountQuizRuntime() {
   let quizLoadQueued = false;
 
   function getDominantPillar() {
-    if (state.identifiedPillar && state.pillarScores[state.identifiedPillar] !== undefined) {
-      return state.identifiedPillar;
-    }
     const sorted = Object.entries(state.pillarScores).sort((a, b) => b[1] - a[1]);
     return sorted[0]?.[0] || 'systems';
   }
@@ -79,8 +78,9 @@ STUDENT ANSWERS SO FAR (Questions 1-7):
 ${qSummary}
 
 YOUR TASK:
-Based on their answers above, generate ONE highly tailored, realistic modern tech workplace scenario question for Question 8 (Phase 3: AI Niche Deep-Dive).
-Test their preference between 2 competing technical sub-specializations inside their dominant pillar (${dominantPillar}).
+Based on their answers above, generate ONE tailored student team-project preference question for Question 8 (Phase 3: AI Niche Deep-Dive).
+Use plain first-year-friendly language. Explain any necessary technical term; do not test existing knowledge or ask for a right answer.
+Give four genuinely different activities inside their dominant pillar (${dominantPillar}). Every option must carry a different valid career slug from this list: ${Object.keys(careerCatalog).filter(slug => careerCatalog[slug].pillar === dominantPillar).join(', ')}.
 
 RESPONSE FORMAT (JSON ONLY, no markdown):
 {
@@ -142,18 +142,15 @@ RESPONSE FORMAT (JSON ONLY, no markdown):
     {
       "rank": 1,
       "title": "Career Title",
-      "matchPercent": 94,
       "description": "2-3 sentences explaining WHY based on their specific answers.",
-      "skills": ["Skill 1", "Skill 2", "Skill 3", "Skill 4", "Skill 5"],
-      "salaryRange": "$XXk - $YYk USD / regional equivalent (entry level)",
-      "demand": "High/Medium/Growing",
       "nextSteps": "Specific, actionable steps for a tech student or junior developer.",
       "roadmapUrl": "exact_slug_from_list"
     },
     { "rank": 2, ... },
     { "rank": 3, ... }
   ]
-}`;
+}
+Do not generate a match percentage, salary figure, demand rating, employment guarantee or estimated chance of success. Ranking is exploratory and must be explained using the student's actual answers. The interface supplies salary estimates and skills from the public catalog.`;
   }
 
   async function callGemini(promptText) {
@@ -206,138 +203,182 @@ RESPONSE FORMAT (JSON ONLY, no markdown):
     }
   }
 
-  const fallbackCatalog = {
-    // Systems
-    fullstack: { title: 'Full Stack Web Developer', desc: 'Build scalable web applications end-to-end with modern frontend and backend frameworks.', salary: '$75k - $130k / yr (₹6 - ₹14 LPA)', demand: 'High', skills: ['JavaScript', 'React/Next.js', 'Node.js', 'PostgreSQL', 'REST APIs'] },
-    frontend: { title: 'Frontend Developer', desc: 'Craft high-performance, responsive web interfaces and modern UI design systems.', salary: '$70k - $120k / yr (₹5 - ₹13 LPA)', demand: 'High', skills: ['HTML/CSS', 'JavaScript', 'React', 'Tailwind', 'Web Performance'] },
-    backend: { title: 'Backend Systems Engineer', desc: 'Design microservices, high-throughput APIs, data pipelines, and database models.', salary: '$80k - $140k / yr (₹7 - ₹16 LPA)', demand: 'High', skills: ['Node.js/Go/Python', 'System Design', 'Databases', 'Docker', 'API Security'] },
-    nextjs_developer: { title: 'Next.js & React Developer', desc: 'Build modern server-rendered web applications with Next.js & React.', salary: '$75k - $135k / yr (₹6 - ₹15 LPA)', demand: 'High', skills: ['Next.js', 'React', 'TypeScript', 'Server Components', 'GraphQL'] },
-    android: { title: 'Android Mobile Developer', desc: 'Build native Android apps used by millions globally using Kotlin and Jetpack Compose.', salary: '$70k - $125k / yr (₹5 - ₹14 LPA)', demand: 'High', skills: ['Kotlin', 'Android SDK', 'Jetpack Compose', 'REST APIs', 'MVVM'] },
-    ios_developer: { title: 'iOS Mobile Developer', desc: 'Craft sleek, high-end native iOS applications for Apple devices.', salary: '$80k - $145k / yr (₹7 - ₹16 LPA)', demand: 'High', skills: ['Swift', 'SwiftUI', 'Xcode', 'CoreData', 'iOS Design'] },
-    flutter_developer: { title: 'Flutter Developer', desc: 'Build multi-platform mobile apps from a single codebase using Flutter.', salary: '$70k - $120k / yr (₹5 - ₹13 LPA)', demand: 'High', skills: ['Dart', 'Flutter', 'State Management', 'Firebase', 'Mobile UI'] },
-    react_native_developer: { title: 'React Native Developer', desc: 'Build cross-platform iOS and Android apps using React and JavaScript.', salary: '$75k - $130k / yr (₹6 - ₹14 LPA)', demand: 'High', skills: ['React Native', 'JavaScript', 'Redux', 'Native Modules', 'Mobile Optimization'] },
-    python_developer: { title: 'Python Software Engineer', desc: 'Build backend microservices, automation engines, and data applications.', salary: '$75k - $135k / yr (₹6 - ₹15 LPA)', demand: 'High', skills: ['Python', 'Django/FastAPI', 'PostgreSQL', 'Data Structures', 'Async IO'] },
-    java_developer: { title: 'Java Enterprise Engineer', desc: 'Engineer robust enterprise platforms and backend microservices using Java & Spring.', salary: '$75k - $135k / yr (₹6 - ₹15 LPA)', demand: 'High', skills: ['Java', 'Spring Boot', 'Microservices', 'Hibernate', 'SQL'] },
-    go_developer: { title: 'Go Systems Engineer', desc: 'Build ultra-fast, concurrent backend microservices and cloud infrastructure engines.', salary: '$85k - $155k / yr (₹8 - ₹18 LPA)', demand: 'High', skills: ['Go', 'Concurrency', 'gRPC', 'Docker', 'Distributed Systems'] },
-
-    // Data & AI
-    ai_ml_engineer: { title: 'AI & Machine Learning Engineer', desc: 'Develop intelligent AI models, neural networks, and LLM applications.', salary: '$90k - $160k / yr (₹8 - ₹18 LPA)', demand: 'High', skills: ['Python', 'PyTorch/TensorFlow', 'LLMs & RAG', 'Scikit-Learn', 'Math & Stats'] },
-    data_science: { title: 'Data Scientist', desc: 'Extract strategic insights and predictive models from complex corporate datasets.', salary: '$80k - $140k / yr (₹6 - ₹15 LPA)', demand: 'High', skills: ['Python/R', 'Pandas', 'Statistical Modeling', 'Machine Learning', 'SQL'] },
-    data_engineering: { title: 'Data Engineer', desc: 'Build distributed data pipelines, ETL flows, and cloud data warehouses.', salary: '$85k - $150k / yr (₹7 - ₹16 LPA)', demand: 'High', skills: ['Apache Spark', 'SQL', 'Kafka', 'Python/Scala', 'Data Warehouses'] },
-    data_analyst: { title: 'Data Analyst', desc: 'Analyze data trends, build interactive dashboards, and drive business decision-making.', salary: '$60k - $100k / yr (₹4.5 - ₹10 LPA)', demand: 'High', skills: ['SQL', 'Excel', 'Tableau/PowerBI', 'Python', 'Business Metrics'] },
-
-    // Cloud & Infra & Security
-    devops_cloud: { title: 'DevOps & Cloud Engineer', desc: 'Automate CI/CD pipelines, Docker containers, and cloud infrastructure.', salary: '$85k - $150k / yr (₹7 - ₹16 LPA)', demand: 'High', skills: ['AWS/Azure', 'Docker & Kubernetes', 'Terraform', 'CI/CD', 'Linux'] },
-    cybersecurity: { title: 'Cybersecurity Specialist', desc: 'Protect corporate networks, perform vulnerability audits, and safeguard data.', salary: '$75k - $140k / yr (₹6 - ₹15 LPA)', demand: 'High', skills: ['Network Security', 'Ethical Hacking', 'SIEM Tools', 'Cryptography', 'Linux'] },
-    penetration_tester: { title: 'Penetration Tester / Red Teamer', desc: 'Simulate real-world cyberattacks to identify vulnerabilities in security posture.', salary: '$80k - $150k / yr (₹7 - ₹16 LPA)', demand: 'High', skills: ['Metasploit', 'Burp Suite', 'Web Security', 'Reverse Engineering', 'OSCP'] },
-    cloud_architect: { title: 'Cloud Solutions Architect', desc: 'Design resilient, cost-effective, and secure enterprise multi-cloud architectures.', salary: '$110k - $190k / yr (₹10 - ₹22 LPA)', demand: 'High', skills: ['AWS/GCP/Azure', 'System Design', 'Cloud Security', 'Cost Optimization', 'Networking'] },
-
-    // Design & Product
-    ui_ux_design: { title: 'UI/UX Product Designer', desc: 'Craft delightful, user-centered digital interfaces and design systems.', salary: '$65k - $120k / yr (₹5 - ₹12 LPA)', demand: 'High', skills: ['Figma', 'User Research', 'Wireframing', 'Prototyping', 'Design Systems'] },
-    product_manager: { title: 'Technical Product Manager', desc: 'Bridge business strategy, user empathy, and engineering execution.', salary: '$85k - $160k / yr (₹8 - ₹18 LPA)', demand: 'Growing', skills: ['Product Roadmap', 'Agile/Scrum', 'User Analytics', 'Feature Specifying', 'Leadership'] },
-    qa_automation: { title: 'QA Automation Engineer', desc: 'Build automated testing suites and ensure software release quality across applications.', salary: '$65k - $115k / yr (₹5 - ₹12 LPA)', demand: 'High', skills: ['Selenium/Cypress', 'Playwright', 'JavaScript/Python', 'API Testing', 'CI/CD'] }
-  };
-
-  function getMeta(slug) {
-    return fallbackCatalog[slug] || {
-      title: slug.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
-      desc: 'Master the core skills and technology stack for this high-demand career path.',
-      salary: '$75k - $130k / yr (₹6 - ₹14 LPA)',
-      demand: 'High',
-      skills: ['Core Fundamentals', 'Problem Solving', 'Tools & Frameworks', 'Agile Workflows']
-    };
-  }
-
   function getLocalFallbackResults() {
-    const sortedTags = Object.entries(state.tagScores || {}).sort((a, b) => b[1] - a[1]);
-    const topSlug1 = sortedTags[0]?.[0] || 'fullstack';
-    const topSlug2 = sortedTags[1]?.[0] || 'backend';
-    const topSlug3 = sortedTags[2]?.[0] || 'ai_ml_engineer';
-
-    const m1 = getMeta(topSlug1);
-    const m2 = getMeta(topSlug2);
-    const m3 = getMeta(topSlug3);
-
-    return {
-      type: 'result',
-      careers: [
-        {
-          rank: 1,
-          title: m1.title,
-          matchPercent: 94,
-          description: m1.desc,
-          skills: m1.skills || ['Problem Solving', 'Architecture', 'Clean Code', 'Git', 'Agile'],
-          salaryRange: m1.salary,
-          demand: m1.demand,
-          nextSteps: 'Start mastering the core fundamentals on SkillBun roadmap.',
-          roadmapUrl: topSlug1
-        },
-        {
-          rank: 2,
-          title: m2.title,
-          matchPercent: 88,
-          description: m2.desc,
-          skills: m2.skills || ['System Design', 'API Integration', 'Data Structures', 'Testing'],
-          salaryRange: m2.salary,
-          demand: m2.demand,
-          nextSteps: 'Explore real-world projects in this career domain.',
-          roadmapUrl: topSlug2
-        },
-        {
-          rank: 3,
-          title: m3.title,
-          matchPercent: 82,
-          description: m3.desc,
-          skills: m3.skills || ['Cloud & Tools', 'Analytics', 'Security', 'Automation'],
-          salaryRange: m3.salary,
-          demand: m3.demand,
-          nextSteps: 'Check out the detailed step-by-step roadmap for your career.',
-          roadmapUrl: topSlug3
-        }
-      ]
-    };
+    return groundDiscoveryResults({}, state, careerCatalog);
   }
 
   const localFallbackQuestions = {
-    phase1: [
+    "phase1": [
       {
-        id: 101, phase: 1,
-        q: "Your college team is building a major project for an international tech hackathon. Which part of the project do you naturally take charge of, {name}?",
-        options: [
-          { l: "A", t: "Designing and building the core application logic, APIs, and databases so everything runs reliably.", pillar: "systems", tags: ["fullstack", "backend", "frontend"], i: "Solid engineering instinct, {name}! You naturally focus on core application architecture." },
-          { l: "B", t: "Training an intelligent model or analyzing datasets to give your project smart predictive capabilities.", pillar: "data_ai", tags: ["ai_ml_engineer", "data_science"], i: "Analytical mindset, {name}! You look for patterns and intelligence in data." },
-          { l: "C", t: "Crafting a beautiful, intuitive user interface in Figma and ensuring user flow is seamless.", pillar: "design_product", tags: ["ui_ux_design", "product_designer"], i: "Great user empathy, {name}! You prioritize user experience and visual interface design." },
-          { l: "D", t: "Setting up cloud hosting on AWS/GCP, Docker containers, and CI/CD pipelines so deployment never fails.", pillar: "cloud_infra", tags: ["devops_cloud", "cloud_architect"], i: "Infrastructure-first thinking, {name}! You ensure high availability and smooth deployments." }
+        "id": 101,
+        "phase": 1,
+        "q": "{name}, your student team is making its first app. Which contribution sounds interesting?",
+        "options": [
+          {
+            "l": "A",
+            "t": "Explore the everyday work of a fullstack.",
+            "pillar": "systems",
+            "tags": [
+              "fullstack"
+            ],
+            "i": "This is an interest to explore through a small project, {name}."
+          },
+          {
+            "l": "B",
+            "t": "Explore the everyday work of a data analyst.",
+            "pillar": "data_ai",
+            "tags": [
+              "data_analyst"
+            ],
+            "i": "This is an interest to explore through a small project, {name}."
+          },
+          {
+            "l": "C",
+            "t": "Explore the everyday work of a ui ux design.",
+            "pillar": "design_product",
+            "tags": [
+              "ui_ux_design"
+            ],
+            "i": "This is an interest to explore through a small project, {name}."
+          },
+          {
+            "l": "D",
+            "t": "Explore the everyday work of a devops cloud.",
+            "pillar": "cloud_infra",
+            "tags": [
+              "devops_cloud"
+            ],
+            "i": "This is an interest to explore through a small project, {name}."
+          }
         ]
       },
       {
-        id: 102, phase: 1,
-        q: "During a global product launch event, the e-commerce backend experiences severe lag. What is your immediate diagnostic reaction, {name}?",
-        options: [
-          { l: "A", t: "Inspect server-side execution traces, database queries, and async code execution bottlenecks.", pillar: "systems", tags: ["backend", "java_developer", "go_developer"], i: "Deep troubleshooter, {name}! You jump right into code execution performance." },
-          { l: "B", t: "Analyze real-time event telemetry to understand drop-offs, user funnel anomalies, and anomaly alerts.", pillar: "data_ai", tags: ["data_analyst", "analytics_engineer"], i: "Data-driven approach, {name}! You look at system health through metrics and user data." },
-          { l: "C", t: "Redesign the checkout flow to gracefully inform users, queue traffic, and prevent cart abandonment frustration.", pillar: "design_product", tags: ["product_manager", "ux_researcher"], i: "Product-first vision, {name}! You focus on preserving user trust during downtime." },
-          { l: "D", t: "Audit firewall traffic, auto-scaling worker groups, load balancers, and network ingress paths.", pillar: "cloud_infra", tags: ["site_reliability_engineer", "network_engineer"], i: "Resilience expert, {name}! You look at traffic routing, load balancers, and cloud infra capacity." }
+        "id": 102,
+        "phase": 1,
+        "q": "A student club website needs improvements. Which activity would you try, {name}?",
+        "options": [
+          {
+            "l": "A",
+            "t": "Explore the everyday work of a frontend.",
+            "pillar": "systems",
+            "tags": [
+              "frontend"
+            ],
+            "i": "This is an interest to explore through a small project, {name}."
+          },
+          {
+            "l": "B",
+            "t": "Explore the everyday work of a site reliability engineer.",
+            "pillar": "cloud_infra",
+            "tags": [
+              "site_reliability_engineer"
+            ],
+            "i": "This is an interest to explore through a small project, {name}."
+          },
+          {
+            "l": "C",
+            "t": "Explore the everyday work of a ux researcher.",
+            "pillar": "design_product",
+            "tags": [
+              "ux_researcher"
+            ],
+            "i": "This is an interest to explore through a small project, {name}."
+          },
+          {
+            "l": "D",
+            "t": "Explore the everyday work of a qa automation.",
+            "pillar": "operations",
+            "tags": [
+              "qa_automation"
+            ],
+            "i": "This is an interest to explore through a small project, {name}."
+          }
         ]
       },
       {
-        id: 103, phase: 1,
-        q: "When exploring a new open-source repository on GitHub, what part of the repository pulls your interest first, {name}?",
-        options: [
-          { l: "A", t: "The clean directory layout, design patterns, object structures, and modular codebase logic.", pillar: "systems", tags: ["python_developer", "rust_developer"], i: "Architecture focused, {name}! Clean modular code is your technical benchmark." },
-          { l: "B", t: "The data pipelines, PyTorch/TensorFlow scripts, data cleanups, and evaluation metrics.", pillar: "data_ai", tags: ["generative_ai_app_developer", "nlp_engineer"], i: "AI-curious mind, {name}! Machine learning and data pipelines catch your eye instantly." },
-          { l: "C", t: "The frontend component library, design tokens, responsive CSS micro-animations, and UI components.", pillar: "design_product", tags: ["frontend", "design_systems_engineer"], i: "Eye for detail, {name}! Clean design tokens and frontend components excite you." },
-          { l: "D", t: "The Dockerfile, Kubernetes helm charts, Terraform infrastructure scripts, and GitHub workflow actions.", pillar: "cloud_infra", tags: ["terraform_iac_engineer", "kubernetes_engineer"], i: "Automation pro, {name}! Infrastructure-as-code and container setups are your playground." }
+        "id": 103,
+        "phase": 1,
+        "q": "{name}, a mentor offers four beginner workshops. Which would you pick?",
+        "options": [
+          {
+            "l": "A",
+            "t": "Explore the everyday work of a python developer.",
+            "pillar": "systems",
+            "tags": [
+              "python_developer"
+            ],
+            "i": "This is an interest to explore through a small project, {name}."
+          },
+          {
+            "l": "B",
+            "t": "Explore the everyday work of a computer vision engineer.",
+            "pillar": "data_ai",
+            "tags": [
+              "computer_vision_engineer"
+            ],
+            "i": "This is an interest to explore through a small project, {name}."
+          },
+          {
+            "l": "C",
+            "t": "Explore the everyday work of a application security engineer.",
+            "pillar": "security",
+            "tags": [
+              "application_security_engineer"
+            ],
+            "i": "This is an interest to explore through a small project, {name}."
+          },
+          {
+            "l": "D",
+            "t": "Explore the everyday work of a embedded iot.",
+            "pillar": "operations",
+            "tags": [
+              "embedded_iot"
+            ],
+            "i": "This is an interest to explore through a small project, {name}."
+          }
         ]
       },
       {
-        id: 104, phase: 1,
-        q: "What type of technical problem feels most rewarding for you to solve after hours of effort, {name}?",
-        options: [
-          { l: "A", t: "Optimizing a slow API endpoint or database query from 2.5s down to 40ms.", pillar: "systems", tags: ["backend", "database_admin"], i: "Performance enthusiast, {name}! Speed and efficiency optimization drive your work." },
-          { l: "B", t: "Getting a machine learning model to reach 96% accuracy on a complex, messy real-world dataset.", pillar: "data_ai", tags: ["computer_vision_engineer", "ai_ml_engineer"], i: "Precision seeker, {name}! Extracting high accuracy from noisy datasets is your specialty." },
-          { l: "C", t: "Transforming a confusing 5-step user journey into a single, effortless 1-click action.", pillar: "design_product", tags: ["ui_ux_design", "service_designer"], i: "Simplicity champion, {name}! You turn complex user friction into elegant simple flows." },
-          { l: "D", t: "Automating zero-downtime rolling upgrades across a multi-region cloud cluster.", pillar: "cloud_infra", tags: ["devops_cloud", "aws_cloud_engineer"], i: "Reliability builder, {name}! High availability and seamless upgrades give you peace of mind." }
+        "id": 104,
+        "phase": 1,
+        "q": "Which activity would you enjoy practicing in a small team project, {name}?",
+        "options": [
+          {
+            "l": "A",
+            "t": "Explore the everyday work of a backend.",
+            "pillar": "systems",
+            "tags": [
+              "backend"
+            ],
+            "i": "This is an interest to explore through a small project, {name}."
+          },
+          {
+            "l": "B",
+            "t": "Explore the everyday work of a data visualization specialist.",
+            "pillar": "data_ai",
+            "tags": [
+              "data_visualization_specialist"
+            ],
+            "i": "This is an interest to explore through a small project, {name}."
+          },
+          {
+            "l": "C",
+            "t": "Explore the everyday work of a content designer.",
+            "pillar": "design_product",
+            "tags": [
+              "content_designer"
+            ],
+            "i": "This is an interest to explore through a small project, {name}."
+          },
+          {
+            "l": "D",
+            "t": "Explore the everyday work of a iam engineer.",
+            "pillar": "security",
+            "tags": [
+              "iam_engineer"
+            ],
+            "i": "This is an interest to explore through a small project, {name}."
+          }
         ]
       }
     ]
@@ -346,6 +387,15 @@ RESPONSE FORMAT (JSON ONLY, no markdown):
   function pickQuestionForStep(qNum) {
     const questionsObj = state.quizQuestions || localFallbackQuestions;
     const used = new Set(state.usedQuestionIds || []);
+
+    if (qNum === 8) {
+      const pool = (questionsObj.phase3Fallback?.[getDominantPillar()] || []).filter(q => !used.has(q.id));
+      if (pool.length) {
+        const picked = pool[Math.floor(Math.random() * pool.length)];
+        state.usedQuestionIds.push(picked.id);
+        return picked;
+      }
+    }
 
     if (qNum <= 3) {
       if (state.identifiedPillar && Array.isArray(questionsObj.phase2?.[state.identifiedPillar])) {
@@ -478,7 +528,7 @@ RESPONSE FORMAT (JSON ONLY, no markdown):
         if (state.signal.aborted) return;
 
         document.getElementById('quizLoading').style.display = 'none';
-        showResults(state, aiResults);
+        showResults(state, groundDiscoveryResults(aiResults, state, careerCatalog));
         posthog.capture('quiz_completed', {
           recommendation_source: 'ai',
           questions_answered: state.userAnswers.length,
@@ -503,15 +553,7 @@ RESPONSE FORMAT (JSON ONLY, no markdown):
     if (state.signal.aborted || element.disabled) return;
     state.lastSelectedOption = option;
 
-    const optPillar = option.pillar;
-    if (optPillar && state.pillarScores[optPillar] !== undefined) {
-      state.pillarScores[optPillar] += 1;
-    }
-
-    const tags = Array.isArray(option.tags) ? option.tags : [];
-    tags.forEach((tag) => {
-      state.tagScores[tag] = (state.tagScores[tag] || 0) + 1;
-    });
+    const { tags, pillar: optPillar } = scoreDiscoveryChoice(state, option, careerCatalog);
 
     if (option.i) {
       nextInsight = option.i;
@@ -545,7 +587,7 @@ RESPONSE FORMAT (JSON ONLY, no markdown):
     if (!loadBtn) return;
     const defaultLabel = loadBtn.dataset.defaultLabel || loadBtn.textContent;
     loadBtn.dataset.defaultLabel = defaultLabel;
-    loadBtn.textContent = '⏳ Finding more paths...';
+    loadBtn.textContent = 'Finding more paths...';
     loadBtn.disabled = true;
 
     try {
@@ -558,37 +600,18 @@ RESPONSE FORMAT (JSON ONLY, no markdown):
           .filter(Boolean)
       );
 
-      const sortedTags = Object.entries(state.tagScores || {})
-        .sort((a, b) => b[1] - a[1])
-        .map(([slug]) => slug);
-
-      const catalogSlugs = Object.keys(fallbackCatalog);
-      const candidateSlugs = Array.from(new Set([...sortedTags, ...catalogSlugs]));
-
+      const candidateSlugs = rankDiscoveryCareers(state, careerCatalog);
       const unshownSlugs = candidateSlugs.filter(slug => !existingSlugs.has(slug));
       const next3Slugs = unshownSlugs.slice(0, 3);
 
       if (next3Slugs.length === 0) {
-        loadBtn.textContent = '✅ No More Unique Paths';
+        loadBtn.textContent = 'No More Unique Paths';
         loadBtn.disabled = false;
-        setTimeout(() => { loadBtn.textContent = '🔍 Load More Career Paths'; }, 2000);
+        setTimeout(() => { loadBtn.textContent = 'Explore More Career Paths'; }, 2000);
         return;
       }
 
-      const newCareers = next3Slugs.map((slug) => {
-        const meta = getMeta(slug);
-        const matchPct = Math.max(72, 90 - (existingSlugs.size * 3));
-        return {
-          title: meta.title,
-          matchPercent: matchPct,
-          description: meta.desc,
-          skills: meta.skills || ['Core Fundamentals', 'Problem Solving', 'Tools & Frameworks', 'Agile Workflows'],
-          salaryRange: meta.salary || '₹6 - ₹14 LPA',
-          demand: meta.demand || 'High',
-          nextSteps: 'Explore the step-by-step roadmap on SkillBun.',
-          roadmapUrl: slug
-        };
-      });
+      const newCareers = next3Slugs.map(slug => catalogCareer(slug, careerCatalog, { related: true }));
 
       const existingCount = container.children.length;
       newCareers.forEach((career, i) => {
@@ -600,13 +623,13 @@ RESPONSE FORMAT (JSON ONLY, no markdown):
         setTimeout(() => card.classList.add('visible'), i * 100);
       });
 
-      loadBtn.textContent = '🔍 Load More Career Paths';
+      loadBtn.textContent = 'Explore More Career Paths';
       loadBtn.disabled = false;
 
     } catch (err) {
-      loadBtn.textContent = '❌ Failed — Try Again';
+      loadBtn.textContent = 'Failed — Try Again';
       loadBtn.disabled = false;
-      setTimeout(() => { loadBtn.textContent = '🔍 Load More Career Paths'; }, 2000);
+      setTimeout(() => { loadBtn.textContent = 'Explore More Career Paths'; }, 2000);
     }
   }
 

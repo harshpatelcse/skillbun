@@ -3,7 +3,7 @@ import path from 'path';
 import DashboardClient from './DashboardClient';
 
 export const metadata = {
-  title: 'Dashboard - SkillBun',
+  title: 'Dashboard',
   description: 'SkillBun student progress dashboard for reviewing XP, projects, reminders, and career readiness.',
 };
 

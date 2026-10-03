@@ -7,6 +7,7 @@ import { useAuth } from '../components/AuthProvider';
 import WorkspaceSidebar from '../components/WorkspaceSidebar';
 import { validateEmail } from '@/utils/shared/emailValidator';
 import styles from './settings.module.css';
+import AccessibleModal from '../components/AccessibleModal';
 
 function SettingsContent() {
   const router = useRouter();
@@ -14,6 +15,7 @@ function SettingsContent() {
   const isUnsubscribeAction =
     searchParams.get('action') === 'unsubscribe' || searchParams.get('unsubscribe') === '1';
   const queryEmail = (searchParams.get('email') || '').trim();
+  const preferenceToken = searchParams.get('token') || '';
 
   const {
     user,
@@ -39,33 +41,78 @@ function SettingsContent() {
   const preferenceEmail = unsubscribeEmail.trim().toLowerCase();
   const [emailPreference, setEmailPreference] = useState(null);
   const preferenceRevision = useRef(0);
+  const [preferenceChecking, setPreferenceChecking] = useState(false);
+  const [preferenceLookupFailed, setPreferenceLookupFailed] = useState(false);
+  const [preferenceRetry, setPreferenceRetry] = useState(0);
   const hasPreferenceStatus = emailPreference?.email === preferenceEmail;
-  const isUnsubscribed = hasPreferenceStatus && emailPreference.unsubscribed;
+  const isUnsubscribed = !hasPreferenceStatus || emailPreference.unsubscribed;
+  const hasValidPreferenceEmail = validateEmail(preferenceEmail).isValid;
   const [unsubStatus, setUnsubStatus] = useState('');
   const [unsubLoading, setUnsubLoading] = useState(false);
 
   // Handle Unsubscribe Action from Email Footer Link
   useEffect(() => {
     const revision = ++preferenceRevision.current;
-    if (!validateEmail(preferenceEmail).isValid) return;
+    const validEmail = validateEmail(preferenceEmail).isValid;
     const controller = new AbortController();
+    let deadline;
+    const isCurrentLookup = () => !controller.signal.aborted && revision === preferenceRevision.current;
     // Wait for public email edits to settle instead of querying each keystroke.
     const timer = window.setTimeout(async () => {
+      if (!isCurrentLookup()) return;
+      setPreferenceChecking(validEmail);
+      setPreferenceLookupFailed(false);
+      setUnsubLoading(false);
+      setUnsubStatus('');
+      if (!validEmail) return;
+      // This also bounds token refresh, so a stalled session cannot leave the
+      // preference control permanently in its checking state.
+      deadline = window.setTimeout(() => {
+        if (!isCurrentLookup()) return;
+        controller.abort();
+        setPreferenceChecking(false);
+        setPreferenceLookupFailed(true);
+        setUnsubStatus('Checking your email preference timed out. Please try again.');
+      }, 10_000);
       try {
-        const response = await fetch(`/api/unsubscribe?email=${encodeURIComponent(preferenceEmail)}`, { signal: controller.signal });
+        const idToken = user ? await user.getIdToken() : '';
+        if (!isCurrentLookup()) return;
+        const query = new URLSearchParams({ email: preferenceEmail });
+        if (preferenceToken) query.set('token', preferenceToken);
+        const response = await fetch(`/api/unsubscribe?${query}`, {
+          signal: controller.signal, cache: 'no-store',
+          headers: idToken ? { Authorization: `Bearer ${idToken}` } : {},
+        });
         const data = await response.json();
-        if (!response.ok || typeof data.unsubscribed !== 'boolean') return;
-        if (!controller.signal.aborted && revision === preferenceRevision.current) {
-          setEmailPreference({ email: preferenceEmail, unsubscribed: data.unsubscribed });
+        if (!isCurrentLookup()) return;
+        if (!response.ok || typeof data.unsubscribed !== 'boolean') {
+          setPreferenceLookupFailed(true);
+          setUnsubStatus(typeof data.error === 'string' ? data.error : data.error?.message || 'Sign in to manage this email address, or open a recent signed unsubscribe link.');
+          return;
         }
-      } catch {}
-    }, isUnsubscribeAction ? 400 : 0);
+        setEmailPreference({ email: preferenceEmail, unsubscribed: data.unsubscribed });
+      } catch {
+        if (isCurrentLookup()) {
+          setPreferenceLookupFailed(true);
+          setUnsubStatus('Could not check your email preference. Please try again.');
+        }
+      } finally {
+        window.clearTimeout(deadline);
+        if (isCurrentLookup()) setPreferenceChecking(false);
+      }
+    }, validEmail && isUnsubscribeAction ? 400 : 0);
     return () => {
       window.clearTimeout(timer);
+      window.clearTimeout(deadline);
       controller.abort();
       preferenceRevision.current += 1;
     };
-  }, [isUnsubscribeAction, preferenceEmail]);
+  }, [isUnsubscribeAction, preferenceEmail, preferenceToken, preferenceRetry, user]);
+
+  const retryPreferenceCheck = () => {
+    if (unsubLoading || preferenceChecking || !hasValidPreferenceEmail) return;
+    setPreferenceRetry(value => value + 1);
+  };
 
   // Standard authentication gate redirect
   useEffect(() => {
@@ -91,13 +138,16 @@ function SettingsContent() {
     const revision = ++preferenceRevision.current;
 
     setUnsubLoading(true);
+    setPreferenceChecking(false);
+    setPreferenceLookupFailed(false);
     setUnsubStatus('');
 
     try {
+      const idToken = user ? await user.getIdToken() : '';
       const res = await fetch('/api/unsubscribe', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: target, action }),
+        headers: { 'Content-Type': 'application/json', ...(idToken ? { Authorization: `Bearer ${idToken}` } : {}) },
+        body: JSON.stringify({ email: target, action, ...(preferenceToken ? { token: preferenceToken } : {}) }),
       });
       const data = await res.json();
       if (revision !== preferenceRevision.current) return;
@@ -111,21 +161,27 @@ function SettingsContent() {
           } catch {}
         }
       } else {
-        setUnsubStatus(`❌ ${data.error || 'Failed to update preferences.'}`);
+        setUnsubStatus(data.error || 'Failed to update preferences.');
       }
     } catch (err) {
       if (revision !== preferenceRevision.current) return;
-      setUnsubStatus(`❌ ${err.message || 'Network error updating email preferences.'}`);
+      setUnsubStatus(err.message || 'Network error updating email preferences.');
     } finally {
-      setUnsubLoading(false);
+      if (revision === preferenceRevision.current) setUnsubLoading(false);
     }
   };
+
+  const preferenceActionDisabled = unsubLoading || preferenceChecking || (!hasPreferenceStatus && !hasValidPreferenceEmail);
+  const preferenceActionLabel = unsubLoading ? 'Updating...' : preferenceChecking ? 'Checking preference...' : !hasPreferenceStatus ? 'Retry preference check' : isUnsubscribed ? 'Opt in to Emails' : 'Unsubscribe';
+  const handlePreferenceAction = () => hasPreferenceStatus
+    ? handleUnsubscribeToggle(isUnsubscribed ? 'resubscribe' : 'unsubscribe')
+    : retryPreferenceCheck();
 
   // If visitor clicked Unsubscribe link from email (public access, no login wall required)
   if (isUnsubscribeAction) {
     return (
       <div style={{ maxWidth: '600px', margin: '4rem auto', padding: '2.5rem', background: 'var(--card-bg)', border: '1px solid var(--border)', borderRadius: '16px', textAlign: 'center', boxShadow: 'var(--card-shadow)', color: 'var(--text)' }}>
-        <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>📧</div>
+        <svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--green)" strokeWidth="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg>
         <h1 style={{ fontFamily: 'var(--font-fredoka), sans-serif', fontSize: '1.8rem', marginTop: 0 }}>
           SkillBun Email Preference Center
         </h1>
@@ -134,7 +190,7 @@ function SettingsContent() {
         </p>
 
         {unsubStatus && (
-          <div style={{ padding: '0.8rem 1rem', borderRadius: '10px', background: 'var(--green-subtle)', color: 'var(--green)', border: '1px solid var(--green)', fontWeight: '700', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
+          <div role={preferenceLookupFailed ? 'alert' : 'status'} style={{ padding: '0.8rem 1rem', borderRadius: '10px', background: 'var(--green-subtle)', color: 'var(--green)', border: '1px solid var(--green)', fontWeight: '700', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
             {unsubStatus}
           </div>
         )}
@@ -147,7 +203,7 @@ function SettingsContent() {
             type="email"
             value={unsubscribeEmail}
             onChange={(e) => { setCustomUnsubscribeEmail(e.target.value); setUnsubStatus(''); }}
-            disabled={unsubLoading}
+            disabled={unsubLoading || Boolean(preferenceToken)}
             placeholder="Enter your registered email..."
             style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '10px', border: '1px solid var(--border)', background: 'var(--card-bg)', color: 'var(--text)', fontSize: '0.9rem', outline: 'none', boxSizing: 'border-box' }}
           />
@@ -158,22 +214,29 @@ function SettingsContent() {
         </div>
 
         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-          {isUnsubscribed ? (
+          {preferenceLookupFailed && !hasPreferenceStatus && (
+            <button type="button" onClick={retryPreferenceCheck} disabled={preferenceActionDisabled} className="btn-secondary" style={{ padding: '0.8rem 1.6rem', borderRadius: '10px', fontWeight: '700' }}>
+              Retry preference check
+            </button>
+          )}
+          {isUnsubscribed && !user ? (
+            <Link href={`/auth?next=${encodeURIComponent('/settings')}`} className="btn-primary">Sign in to manage preferences</Link>
+          ) : isUnsubscribed ? (
             <button
               onClick={() => handleUnsubscribeToggle('resubscribe')}
-              disabled={unsubLoading}
+              disabled={unsubLoading || !hasPreferenceStatus}
               className="btn-primary"
               style={{ padding: '0.8rem 1.6rem', borderRadius: '10px', fontWeight: '700', cursor: 'pointer' }}
             >
-              {unsubLoading ? 'Saving...' : '🔔 Re-Enable Email Notifications'}
+              {unsubLoading ? 'Saving...' : 'Opt in to Marketing Emails'}
             </button>
           ) : (
             <button
               onClick={() => handleUnsubscribeToggle('unsubscribe')}
-              disabled={unsubLoading}
+              disabled={unsubLoading || !hasPreferenceStatus}
               style={{ padding: '0.8rem 1.6rem', borderRadius: '10px', background: 'rgba(239, 68, 68, 0.15)', color: '#ef4444', border: '1px solid #ef4444', fontWeight: '800', cursor: 'pointer' }}
             >
-              {unsubLoading ? 'Updating...' : '🔕 Unsubscribe from Marketing Emails'}
+              {unsubLoading ? 'Updating...' : 'Unsubscribe from Marketing Emails'}
             </button>
           )}
           <Link href="/" className="btn-secondary" style={{ padding: '0.8rem 1.6rem', borderRadius: '10px', textDecoration: 'none', fontWeight: '600' }}>
@@ -328,13 +391,13 @@ function SettingsContent() {
 
         {/* SECTION 2: Email Notification Preferences */}
         <section className={styles.card}>
-          <h2 className={styles.cardTitle}>📧 Email Notification Preferences</h2>
+          <h2 className={styles.cardTitle}>Email Notification Preferences</h2>
           <p className={styles.cardSubtitle} style={{ color: 'var(--muted)', fontSize: '0.85rem', marginBottom: '1rem' }}>
-            Control whether you receive career roadmap nudges, cert updates, and learning reminders.
+            Marketing reminders are optional and off until you opt in. Essential account, security, and requested certificate messages continue.
           </p>
 
           {unsubStatus && (
-            <div style={{ padding: '0.6rem 1rem', borderRadius: '8px', background: 'var(--green-subtle)', color: 'var(--green)', border: '1px solid var(--green)', fontWeight: '700', fontSize: '0.85rem', marginBottom: '1rem' }}>
+            <div role={preferenceLookupFailed ? 'alert' : 'status'} style={{ padding: '0.6rem 1rem', borderRadius: '8px', background: 'var(--green-subtle)', color: 'var(--green)', border: '1px solid var(--green)', fontWeight: '700', fontSize: '0.85rem', marginBottom: '1rem' }}>
               {unsubStatus}
             </div>
           )}
@@ -351,8 +414,8 @@ function SettingsContent() {
 
             <button
               type="button"
-              disabled={unsubLoading}
-              onClick={() => handleUnsubscribeToggle(isUnsubscribed ? 'resubscribe' : 'unsubscribe')}
+              disabled={preferenceActionDisabled}
+              onClick={handlePreferenceAction}
               style={{
                 cursor: 'pointer',
                 padding: '0.5rem 1rem',
@@ -364,7 +427,7 @@ function SettingsContent() {
                 fontSize: '0.82rem',
               }}
             >
-              {unsubLoading ? 'Updating...' : isUnsubscribed ? '🔔 Enable Emails' : '🔕 Unsubscribe'}
+              {preferenceActionLabel}
             </button>
           </div>
         </section>
@@ -407,14 +470,15 @@ function SettingsContent() {
 
         {/* Delete Confirmation Modal */}
         {showDeleteModal && (
-          <div className={styles.modalOverlay}>
-            <div className={styles.modalContent}>
-              <h3 className={styles.modalTitle}>Delete Account?</h3>
-              <p className={styles.modalText}>
+          <AccessibleModal className={styles.modalOverlay} labelledBy="delete-account-title" describedBy="delete-account-description" initialFocus="#cancel-account-delete" busy={loading} onClose={() => setShowDeleteModal(false)}>
+            <div className={styles.modal}>
+              <h3 id="delete-account-title">Delete Account?</h3>
+              <p id="delete-account-description">
                 Are you sure you want to permanently delete your account (<strong>{user.email}</strong>)? Your profile, roadmap progress, quiz/exam history, and roadmap certificates will be erased. Workforce credentials, employment records, and legal documents will be retained. This cannot be undone.
               </p>
               <div className={styles.modalActions}>
                 <button
+                  id="cancel-account-delete"
                   onClick={() => setShowDeleteModal(false)}
                   className={styles.btnSecondary}
                   disabled={loading}
@@ -430,7 +494,7 @@ function SettingsContent() {
                 </button>
               </div>
             </div>
-          </div>
+          </AccessibleModal>
         )}
       </main>
     </div>

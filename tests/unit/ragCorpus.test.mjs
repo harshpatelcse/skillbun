@@ -62,7 +62,8 @@ test('missing corrupt oversized and unusable files fail independently', async ()
   assert.ok(result.documents.some(document => document.id === 'platform:certification'));
   const missing = await loadRagCorpus({ files: ['frontend.json'], reader: async () => { throw new Error('Offline'); } });
   assert.equal(missing.roadmapCount, 0);
-  assert.equal(missing.documents.filter(document => document.kind === 'platform').length, 5);
+  assert.equal(missing.documents.filter(document => document.kind === 'platform').length, 6);
+  assert.match(missing.documents.find(document => document.id === 'platform:salary-estimates').text, /indicative.*editorial salary ranges/i);
 });
 
 test('filesystem reads reject symlinks, escaped real paths and oversized files before reading', async t => {

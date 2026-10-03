@@ -393,9 +393,9 @@
               "type": "course"
             },
             {
-              "title": "Probabilistic Robotics by Thrun, Burgard, Fox",
-              "url": "http://www.probabilistic-robotics.org/",
-              "type": "course"
+              "title": "Probabilistic Robotics (MIT Press Overview; Book Is Paid)",
+              "url": "https://mitpress.mit.edu/9780262201629/probabilistic-robotics/",
+              "type": "article"
             },
             {
               "title": "Arduino Full Course (freeCodeCamp)",
@@ -428,8 +428,8 @@
               "type": "course"
             },
             {
-              "title": "HyperPhysics by Georgia State University",
-              "url": "http://hyperphysics.phy-astr.gsu.edu/hbase/hph.html",
+              "title": "University Physics: Mechanics (OpenStax)",
+              "url": "https://openstax.org/books/university-physics-volume-1/pages/1-introduction",
               "type": "article"
             },
             {
@@ -502,8 +502,8 @@
           "type": "course"
         },
         {
-          "title": "Robotics: Science and Systems Proceedings",
-          "url": "http://www.robotics-stat.com/",
+          "title": "Robotics: Science and Systems (Official Conference)",
+          "url": "https://roboticsconference.org/",
           "type": "article"
         },
         {
@@ -908,12 +908,12 @@
           "resources": [
             {
               "title": "URDF Tutorials",
-              "url": "http://wiki.ros.org/urdf/Tutorials",
+              "url": "https://wiki.ros.org/urdf/Tutorials",
               "type": "article"
             },
             {
               "title": "ROS Wiki: XACRO",
-              "url": "http://wiki.ros.org/xacro",
+              "url": "https://wiki.ros.org/xacro",
               "type": "article"
             },
             {
@@ -1115,7 +1115,7 @@
             },
             {
               "title": "Computer Vision: Algorithms and Applications by Richard Szeliski",
-              "url": "http://szeliski.org/Book/",
+              "url": "https://szeliski.org/Book/",
               "type": "course"
             },
             {
@@ -1145,12 +1145,12 @@
           "resources": [
             {
               "title": "Point Cloud Library (PCL) Tutorials",
-              "url": "http://pointclouds.org/documentation/tutorials/",
+              "url": "https://pointclouds.org/documentation/tutorials/",
               "type": "article"
             },
             {
               "title": "PCL Documentation",
-              "url": "http://pointclouds.org/documentation/",
+              "url": "https://pointclouds.org/documentation/",
               "type": "article"
             },
             {
@@ -1184,9 +1184,9 @@
           "description": "Implement sensor fusion: Extended Kalman Filters (EKF), Unscented Kalman Filters (UKF), and fusing IMU with wheel odometry using `robot_localization`.",
           "resources": [
             {
-              "title": "Probabilistic Robotics by Thrun, Burgard, Fox (Sensor Fusion chapters)",
-              "url": "http://www.probabilistic-robotics.org/",
-              "type": "course"
+              "title": "Probabilistic Robotics (MIT Press Overview; Book Is Paid)",
+              "url": "https://mitpress.mit.edu/9780262201629/probabilistic-robotics/",
+              "type": "article"
             },
             {
               "title": "Sensor Fusion and Tracking (Coursera)",
@@ -1220,7 +1220,7 @@
           "resources": [
             {
               "title": "Deep Learning for Computer Vision (Stanford CS231n)",
-              "url": "http://cs231n.stanford.edu/",
+              "url": "https://cs231n.stanford.edu/",
               "type": "course"
             },
             {
@@ -1258,9 +1258,9 @@
       "description": "Master autonomous navigation: Mapping, Simultaneous Localization and Mapping (SLAM), global/local path planning, and obstacle avoidance.",
       "resources": [
         {
-          "title": "Probabilistic Robotics by Thrun, Burgard, Fox",
-          "url": "http://www.probabilistic-robotics.org/",
-          "type": "course"
+          "title": "Probabilistic Robotics (MIT Press Overview; Book Is Paid)",
+          "url": "https://mitpress.mit.edu/9780262201629/probabilistic-robotics/",
+          "type": "article"
         },
         {
           "title": "Nav2 Documentation",
@@ -1291,8 +1291,8 @@
           "description": "Construct environment maps: 2D occupancy grid maps, 3D Octomaps, costmaps (global/local costmap layers), and inflation radii.",
           "resources": [
             {
-              "title": "Occupancy Grid Mapping Tutorial",
-              "url": "http://www.cs.cmu.edu/~rasc/Download/Papers/Elfes.pdf",
+              "title": "Using Occupancy Grids for Mobile Robot Perception and Navigation (Elfes)",
+              "url": "https://www.cs.cmu.edu/~motionplanning/papers/sbp_papers/integrated4/elfes_occup_grids.pdf",
               "type": "article"
             },
             {
@@ -1326,8 +1326,8 @@
           "description": "Execute SLAM algorithms: Particle filter localization (AMCL), 2D LiDAR SLAM (Cartographer, SLAM Toolbox), and Visual SLAM (RTAB-Map, ORB-SLAM3).",
           "resources": [
             {
-              "title": "Probabilistic Robotics (SLAM chapters)",
-              "url": "http://www.probabilistic-robotics.org/part_II.html",
+              "title": "Robotic Mapping: A Survey (Sebastian Thrun)",
+              "url": "https://www.cs.cmu.edu/~carmen/papers/thrun.mapping-tr.pdf",
               "type": "article"
             },
             {
@@ -1372,7 +1372,7 @@
             },
             {
               "title": "Planning Algorithms by Steven M. LaValle",
-              "url": "http://planning.cs.uiuc.edu/",
+              "url": "https://planning.cs.uiuc.edu/",
               "type": "course"
             },
             {
@@ -1826,7 +1826,7 @@
           "resources": [
             {
               "title": "Deep Reinforcement Learning for Robotics (UC Berkeley)",
-              "url": "http://rail.eecs.berkeley.edu/deeprlcourse/",
+              "url": "https://rail.eecs.berkeley.edu/deeprlcourse/",
               "type": "course"
             },
             {
@@ -2033,7 +2033,7 @@
           "resources": [
             {
               "title": "DonkeyCar Autonomous RC Car Platform",
-              "url": "http://www.donkeycar.com/",
+              "url": "https://www.donkeycar.com/",
               "type": "article"
             },
             {
@@ -2082,8 +2082,8 @@
               "type": "article"
             },
             {
-              "title": "Writing a Technical Blog Post",
-              "url": "https://dev.to/ossamamehmood/how-to-write-a-technical-blog-post-3d97",
+              "title": "Technical Writing Courses for Engineers (Google)",
+              "url": "https://developers.google.com/tech-writing/overview",
               "type": "article"
             },
             {

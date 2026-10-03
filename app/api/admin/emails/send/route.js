@@ -1,10 +1,11 @@
+import { unsubscribeUrl } from '@/utils/server/emailPreferences.mjs';
 import { emailHtmlToText, isEmailDocument } from '@/utils/shared/emailContent';
 import { loadEmailRoadmapContext } from '@/utils/server/emailRoadmapContext';
 import { loadEmailStudent } from '@/utils/server/emailStudentContext';
 import { getSavedDraft } from '@/utils/server/emailDraftLibrary';
 import { renderSavedEmail } from '@/utils/shared/emailDraft';
 import { recommendEmail, emailCategory } from '@/utils/shared/emailRecommendation';
-import { NextResponse } from 'next/server';
+import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { assertAccountActive } from '@/utils/server/accountLifecycle.mjs';
 import { getFirebaseAdminAuth, getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import { generateRetentionEmailHtml, buildBaseEmailWrapper } from '@/utils/server/retentionEmails';
@@ -83,12 +84,13 @@ export async function POST(request) {
 
       // Rate limiting
       const address = getClientAddress(request);
-      const rateLimit = await checkServerRateLimit({ namespace: 'adminEmail', subject: { uid: decodedToken.uid, address }, limits: EMAIL_RATE_LIMITS, increment: true });
+      const rateLimit = await checkServerRateLimit({ namespace: 'adminEmail', subject: { uid: decodedToken.uid, address }, limits: EMAIL_RATE_LIMITS, increment: true, requireDistributed: process.env.NODE_ENV === 'production' });
       if (!rateLimit.allowed) {
         return NextResponse.json({ error: 'Too many email requests. Please wait.' }, { status: 429, headers: { 'Retry-After': String(Math.max(1, Math.ceil(rateLimit.retryAfterMs / 1000))) } });
       }
     } catch (authErr) {
-      console.warn('[Admin Send Email Auth Warning]:', authErr.message);
+      console.warn('[SkillBun server operation]', { code: authErr?.code || 'INTERNAL_ERROR' });
+      if (authErr?.message === 'Distributed rate limiting is unavailable.') return NextResponse.json({ error: 'Email protection is temporarily unavailable.' }, { status: 503 });
       return NextResponse.json({ error: 'Invalid or expired authentication token.' }, { status: 401 });
     }
 
@@ -148,7 +150,7 @@ export async function POST(request) {
         const sub = customSubject || `SkillBun Notification for ${data.name}`;
         return {
           subject: sub,
-          html: isEmailDocument(customHtml) ? customHtml : buildBaseEmailWrapper(customHtml, sub, !tId.startsWith('transactional') && !tId.startsWith('workforce'), data.email),
+          html: isEmailDocument(customHtml) ? customHtml : buildBaseEmailWrapper(customHtml, sub, !tId.startsWith('transactional') && !tId.startsWith('workforce'), data.email, data.preferenceUrl),
           isMarketing: !tId.startsWith('transactional') && !tId.startsWith('workforce'),
         };
       }
@@ -278,24 +280,18 @@ export async function POST(request) {
       return NextResponse.json({ error: 'Valid recipient email address is required.' }, { status: 400 });
     }
 
-    // Check if recipient has unsubscribed from marketing emails
-    if (!isPreview && !forceOverride && !templateId.startsWith('transactional_alert') && !templateId.startsWith('workforce')) {
-      try {
-        const db = getFirebaseAdminFirestore();
-        if (db) {
-          const docRef = await db.collection('unsubscribes').doc(targetEmail.toLowerCase()).get();
-          if (docRef.exists) {
-            return NextResponse.json({
-              error: `Recipient (${targetEmail}) has unsubscribed from SkillBun marketing emails. Use "⚡ Force Send" to override if necessary.`,
-              isUnsubscribed: true,
-            }, { status: 400 });
-          }
-        }
-      } catch (unsubErr) {
-        console.warn('[Unsubscribe Check Warning]:', unsubErr.message);
-      }
+    // A force-send override never overrides a student's marketing choice.
+    if (!isPreview && !isTest && isMarketing) {
+      const db = getFirebaseAdminFirestore();
+      if (!db) return NextResponse.json({ error: 'Email preference storage is unavailable.' }, { status: 503 });
+      const unsub = await db.collection('unsubscribes').doc(targetEmail.toLowerCase()).get();
+      const user = await getFirebaseAdminAuth().getUserByEmail(targetEmail.toLowerCase()).catch(() => null);
+      const profile = user ? (await db.collection('users').doc(user.uid).get()).data() : null;
+      if (unsub.exists || profile?.isUnsubscribed === true || profile?.marketingConsent !== true) return NextResponse.json({ error: 'The recipient has not opted in to marketing emails.', isUnsubscribed: true }, { status: 409 });
     }
 
+    // Sign on the server once; browser/admin previews never receive signing keys.
+    const preferenceUrl = isMarketing ? unsubscribeUrl(targetEmail) : '';
     // Generate HTML Email
     const { subject, html, text, from, cc, replyTo } = resolveEmailContent(templateId, {
       name: studentName,
@@ -303,6 +299,7 @@ export async function POST(request) {
       roadmapTitle,
       progressCount,
       degree,
+      preferenceUrl,
     });
 
     const plainTextBody = text || emailHtmlToText(html);
@@ -348,7 +345,7 @@ export async function POST(request) {
     try {
       const transporter = getTransporter();
       const fromAddress = getPasswordResetFrom() || 'SkillBun Support <noreply@skillbun.tech>';
-      const unsubscribeHeaderUrl = `https://skillbun.tech/settings?action=unsubscribe&email=${encodeURIComponent(targetEmail)}`;
+      const unsubscribeHeaderUrl = preferenceUrl;
 
       smtpAttempted = true;
       smtpResponse = await transporter.sendMail({
@@ -377,8 +374,8 @@ export async function POST(request) {
 
       emailSent = true;
     } catch (sendErr) {
-      errorDetail = sendErr.message || 'SMTP transmission failure';
-      console.warn('[Admin Email Dispatch Warning]:', sendErr);
+      errorDetail = 'SMTP delivery could not be confirmed.';
+      console.warn('[SkillBun server operation]', { code: sendErr?.code || 'INTERNAL_ERROR' });
       if (activeDispatch) {
         try {
           if (sendErr.definitiveRecipientRejection) {
@@ -391,7 +388,7 @@ export async function POST(request) {
             activeDispatch = null;
           }
         } catch (lockErr) {
-          console.warn('[Email Dispatch Lock Warning]:', lockErr.message);
+          console.warn('[SkillBun server operation]', { code: lockErr?.code || 'INTERNAL_ERROR' });
         }
       }
     }
@@ -402,7 +399,7 @@ export async function POST(request) {
           dispatchLog = await finalizeRecommendedEmailDispatch({ db: activeDispatch.db, uid: activeDispatch.uid, owner: activeDispatch.owner, messageId: smtpResponse?.messageId || null });
           activeDispatch = null;
         } catch (logErr) {
-          console.warn('[Sent Email History Log Warning]:', logErr.message);
+          console.warn('[SkillBun server operation]', { code: logErr?.code || 'INTERNAL_ERROR' });
           try {
             await markEmailDispatchUnknown({
               db: activeDispatch.db,
@@ -412,7 +409,7 @@ export async function POST(request) {
               smtpAcceptedAt: new Date().toISOString(),
             });
           } catch (lockErr) {
-            console.warn('[Email Dispatch Lock Warning]:', lockErr.message);
+            console.warn('[SkillBun server operation]', { code: lockErr?.code || 'INTERNAL_ERROR' });
           }
           return NextResponse.json({
             success: false,
@@ -451,7 +448,7 @@ export async function POST(request) {
             }
           }
         } catch (logErr) {
-          console.warn('[Sent Email History Log Warning]:', logErr.message);
+          console.warn('[SkillBun server operation]', { code: logErr?.code || 'INTERNAL_ERROR' });
         }
       }
 
@@ -479,10 +476,10 @@ export async function POST(request) {
           reason: 'The send request ended unexpectedly after reserving this recipient.',
         });
       } catch (lockErr) {
-        console.warn('[Email Dispatch Lock Warning]:', lockErr.message);
+        console.warn('[SkillBun server operation]', { code: lockErr?.code || 'INTERNAL_ERROR' });
       }
     }
-    console.error('Admin Send Email API Error:', err);
+    console.error('[SkillBun server operation]', { code: err?.code || 'INTERNAL_ERROR' });
     return NextResponse.json({
       success: false,
       error: 'Internal server error dispatching email.',

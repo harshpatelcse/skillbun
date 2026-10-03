@@ -1,3 +1,4 @@
+import { isActiveWorkforceMember, assertWorkforceAction, transitionWorkforceEmployee, finishWorkforceAction, WorkforcePolicyError } from '../../utils/server/workforcePolicy.mjs';
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { readFile } from 'node:fs/promises';
@@ -100,11 +101,11 @@ test('workforce credential revocation strictly validates payload and normalizes 
 test('milestone mutation verifies assignment within its write transaction and binds reassignment email', async () => {
   const source = await loadSource('app/api/admin/workforce/milestones/[id]/route.js');
   const key = 'milestones/milestone-1';
-  const db = fakeDb({ [key]: { ...create, employee_email: 'assigned@example.test' }, 'employees/employee-2': { personal_email: 'NEXT@example.test' } });
+  const db = fakeDb({ [key]: { ...create, employee_email: 'assigned@example.test' }, 'employees/employee-1': { personal_email: 'assigned@example.test', status: 'ACTIVE' }, 'employees/employee-2': { personal_email: 'NEXT@example.test', status: 'ACTIVE' } });
   let caller = { uid: 'intern', email: 'former@example.test', isIntern: true, isAdmin: false };
   const patch = vm.runInNewContext(`${source}; PATCH;`, {
     console, NextResponse: { json: Response.json }, apiError,
-    authenticateMilestoneCaller: async () => caller,
+    isActiveWorkforceMember, authenticateMilestoneCaller: async () => caller,
     getFirebaseAdminFirestore: () => db, enforceEmployeeRateLimit: async () => null,
     validateMilestoneId: id => ({ isValid: true, value: id.trim() }), validateMilestonePayload,
     serializeMilestone: (id, data) => ({ id, ...data }), invalidateCacheTag: async () => {},
@@ -152,12 +153,20 @@ async function activationHarness({ encryptionFailure = false } = {}) {
   const logs = [];
   let sends = 0;
   const employee = { full_name: 'Synthetic Intern', personal_email: 'synthetic-intern@example.org', status: 'OFFER_SENT' };
-  const db = { collection: name => ({
+  const db = {
+    async runTransaction(fn) {
+      const result = await fn({
+        get: async () => ({ exists: true, data: () => employee }),
+        update: (ref, data) => { Object.assign(employee, data); mutations.push(data); },
+      });
+      return result;
+    },
+    collection: name => ({
     doc: id => ({ id, get: async () => ({ exists: true, data: () => employee }), update: async data => mutations.push(data) }),
     add: async data => { assert.equal(name, 'workforce_docs'); logs.push(data); },
   }) };
   const post = vm.runInNewContext(`${source}; POST;`, {
-    console: { warn() {}, error() {} }, NextResponse: { json: Response.json }, apiError,
+    assertWorkforceAction, transitionWorkforceEmployee, finishWorkforceAction, WorkforcePolicyError, console: { warn() {}, error() {} }, NextResponse: { json: Response.json }, apiError,
     requireWorkforceAdmin: async () => ({ uid: 'admin', email: 'harsh@skillbun.tech' }),
     enforceEmployeeRateLimit: async () => null, validateEmployeeId: value => ({ isValid: true, value }), validateWorkforceAction,
     getFirebaseAdminFirestore: () => db,
@@ -175,11 +184,14 @@ test('activation rejects malformed bodies and persists a sortable dispatch recor
   assert.equal(app.sends, 0);
   assert.equal((await app.call({ employeeId: 'employee-1', skipEmail: true })).status, 200);
   assert.equal(app.sends, 0);
-  assert.equal((await app.call({ employeeId: 'employee-1' })).status, 200);
-  assert.equal(app.sends, 1);
-  assert.equal(app.logs.length, 1);
-  assert.equal(app.logs[0].status, 'DISPATCHED');
-  assert.equal(app.logs[0].issued_at.getTime(), app.logs[0].dispatched_at.getTime());
+  assert.equal((await app.call({ employeeId: 'employee-1' })).status, 409);
+  assert.equal(app.sends, 0);
+  const welcome = await activationHarness();
+  assert.equal((await welcome.call({ employeeId: 'employee-1' })).status, 200);
+  assert.equal(welcome.sends, 1);
+  assert.equal(welcome.logs.length, 1);
+  assert.equal(welcome.logs[0].status, 'DISPATCHED');
+  assert.equal(welcome.logs[0].issued_at.getTime(), welcome.logs[0].dispatched_at.getTime());
 });
 test('activation stops before sending or changing status when credentials cannot be encrypted', async () => {
   const app = await activationHarness({ encryptionFailure: true });

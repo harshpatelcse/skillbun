@@ -1,147 +1,65 @@
 /**
- * Quiz Question Generator from Certification Quizzes
- * 
- * Takes topics/domains from 100 certification quiz JSON files in public/data/quizzes/
- * and transforms them into 1st-year-friendly, highly relatable career discovery scenarios.
- * 
- * Usage: node scripts/generate-questions-from-quizzes.js
+ * Build 25 student preference scenarios for each certification career.
+ * Certification files establish career coverage and topic provenance; exam
+ * sentence fragments are never reused as discovery question wording.
+ * No provider or external service is used.
  */
-
 const fs = require('fs');
 const path = require('path');
 const { roadmapToPillar } = require('./quiz-bank/config');
+const { activities, situations, questionFrames, optionFrames, alternatives } = require('./quiz-bank/student-scenarios');
 
 const QUIZZES_DIR = path.join(__dirname, '..', 'public', 'data', 'quizzes');
 const BANK_DIR = path.join(__dirname, 'quiz-bank');
+const pillarIds = Object.keys(alternatives);
 
-const files = fs.readdirSync(QUIZZES_DIR).filter(f => f.endsWith('.json'));
-console.log(`Found ${files.length} certification quiz files.`);
-
-const pillarQuestions = {
-  systems: [],
-  data_ai: [],
-  design_product: [],
-  cloud_infra: [],
-  security: [],
-  operations: []
-};
-
-let startId = 1000;
-
-// Scenario templates based on common tech domains
-const scenarioAngleTemplates = [
-  {
-    qTemplate: "Hey {name}, during a college hackathon project involving {topic}, which aspect would excite you most?",
-    opts: [
-      { t: "Building the core logic and backend architecture", tagSuffix: "", pillar: "systems" },
-      { t: "Designing the user interface and visual workflow", tagSuffix: "_ui", pillar: "design_product" },
-      { t: "Analyzing the data patterns and adding smart AI features", tagSuffix: "_ai", pillar: "data_ai" },
-      { t: "Setting up server deployment, cloud, and security checks", tagSuffix: "_infra", pillar: "cloud_infra" }
-    ]
-  },
-  {
-    qTemplate: "{name}, if your campus tech club asks you to build a {topic} tool, where would you add your biggest contribution?",
-    opts: [
-      { t: "Writing clean, efficient code for the main features", tagSuffix: "", pillar: "systems" },
-      { t: "Understanding student feedback and polishing the user experience", tagSuffix: "_ux", pillar: "design_product" },
-      { t: "Optimizing database queries and tracking usage analytics", tagSuffix: "_data", pillar: "data_ai" },
-      { t: "Testing for bugs, security vulnerabilities, and deployment reliability", tagSuffix: "_sec", pillar: "security" }
-    ]
-  },
-  {
-    qTemplate: "When working on a team project centered around {topic}, what role feels most natural to you, {name}?",
-    opts: [
-      { t: "The Developer: Coding core features and managing data structures", tagSuffix: "", pillar: "systems" },
-      { t: "The Designer: Wireframing screens and styling UI elements", tagSuffix: "_design", pillar: "design_product" },
-      { t: "The Data Specialist: Handling datasets and predictive models", tagSuffix: "_ai", pillar: "data_ai" },
-      { t: "The Systems Admin: Managing hosting, APIs, and security protocols", tagSuffix: "_ops", pillar: "cloud_infra" }
-    ]
-  },
-  {
-    qTemplate: "{name}, imagine a local startup hires you for a week to help with {topic}. What challenge would you jump at first?",
-    opts: [
-      { t: "Solving complex coding bugs and speeding up feature delivery", tagSuffix: "", pillar: "systems" },
-      { t: "Redesigning the app screens to make them super intuitive for customers", tagSuffix: "_ui", pillar: "design_product" },
-      { t: "Uncovering actionable insights from customer data logs", tagSuffix: "_analytics", pillar: "data_ai" },
-      { t: "Hardening system security and automating cloud deployment pipelines", tagSuffix: "_devops", pillar: "cloud_infra" }
-    ]
-  }
-];
-
-// Simple helper to clean up raw cert question text into a short topic name
-function extractTopicFromCertQuestion(questionText, slug) {
-  const cleanSlug = slug.replace(/_/g, ' ');
-  if (!questionText || typeof questionText !== 'string') return cleanSlug;
-  
-  // Try extracting keywords
-  const words = questionText.replace(/[^a-zA-Z0-9\s]/g, '').split(/\s+/).filter(w => w.length > 3);
-  if (words.length >= 2) {
-    const keyword = words.slice(0, 3).join(' ').toLowerCase();
-    return `${keyword} (${cleanSlug})`;
-  }
-  return cleanSlug;
+function format(template, values) {
+  return template.replace(/\{(activity|situation)\}/g, (_match, key) => values[key]);
 }
 
-for (const file of files) {
-  const slug = path.basename(file, '.json');
-  const pillar = roadmapToPillar[slug] || 'systems';
-  const filePath = path.join(QUIZZES_DIR, file);
-
-  let quizData = [];
-  try {
-    quizData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-  } catch (e) {
-    continue;
-  }
-
-  if (!Array.isArray(quizData)) continue;
-
-  const validQuizzes = quizData.filter(q => typeof q.question === 'string' && q.question.length > 20);
-  const selected = validQuizzes.slice(0, 25);
-
-  selected.forEach((certQ, idx) => {
-    startId++;
-    const topic = extractTopicFromCertQuestion(certQ.question, slug);
-    const template = scenarioAngleTemplates[idx % scenarioAngleTemplates.length];
-    
-    const formattedQuestion = template.qTemplate.replace('{topic}', topic);
-
-    const qObj = {
-      id: startId,
-      phase: 2,
-      pillar: pillar,
-      sourceSlug: slug,
-      topic: topic,
-      q: formattedQuestion,
-      options: template.opts.map((opt, optIdx) => {
-        const labels = ['A', 'B', 'C', 'D'];
-        let optionPillar = opt.pillar;
-        
-        // Ensure primary option stays aligned with current roadmap pillar
-        if (optIdx === 0) {
-          optionPillar = pillar;
-        }
-
-        return {
-          l: labels[optIdx],
-          t: opt.t,
-          pillar: optionPillar,
-          tags: [slug],
-          i: `Awesome preference choice, {name}! This reveals your inclination towards ${optionPillar.replace(/_/g, ' ')} roles.`
-        };
-      })
+function buildScenarios(slug, certificationQuestions, firstId) {
+  const pillar = roadmapToPillar[slug];
+  if (!pillar || !activities[slug]) throw new Error(`Missing editorial career activity: ${slug}`);
+  if (!Array.isArray(certificationQuestions) || certificationQuestions.length < 25) throw new Error(`Incomplete certification coverage: ${slug}`);
+  const otherPillars = pillarIds.filter(value => value !== pillar);
+  return situations.map((situation, index) => {
+    const alternatePillars = Array.from({ length: 3 }, (_, offset) => otherPillars[(index + offset) % otherPillars.length]);
+    const choices = [slug, ...alternatePillars.map(value => alternatives[value][index % alternatives[value].length])];
+    // Rotate the role-specific option so answering A repeatedly cannot select
+    // every question's source career.
+    const rotation = index % choices.length;
+    const ordered = [...choices.slice(rotation), ...choices.slice(0, rotation)];
+    return {
+      id: firstId + index, phase: 2, pillar, sourceSlug: slug,
+      sourceQuestionIndex: index, topic: activities[slug],
+      q: format(questionFrames[index % questionFrames.length], { situation, activity: activities[slug] }),
+      options: ordered.map((career, optionIndex) => ({
+        l: 'ABCD'[optionIndex],
+        t: format(optionFrames[(index + optionIndex) % optionFrames.length], { activity: activities[career] }),
+        pillar: roadmapToPillar[career], tags: [career],
+        i: `This choice suggests that you would like to ${activities[career]}, {name}. You can test that interest with a small project.`,
+      })),
     };
-
-    pillarQuestions[pillar].push(qObj);
   });
 }
 
-console.log('\n--- Transformed Career Discovery Scenario Stats ---');
-for (const [p, list] of Object.entries(pillarQuestions)) {
-  console.log(`Pillar ${p}: ${list.length} beginner-friendly career scenarios generated.`);
-  const outFile = path.join(BANK_DIR, `phase2-cert-${p}.js`);
-  const content = `/**\n * Phase 2 Cert-inspired Relatable Questions for Pillar: ${p}\n */\n\nmodule.exports = ${JSON.stringify(list, null, 2)};\n`;
-  fs.writeFileSync(outFile, content, 'utf8');
+function generate() {
+  const files = fs.readdirSync(QUIZZES_DIR).filter(file => file.endsWith('.json')).sort();
+  const pillarQuestions = Object.fromEntries(pillarIds.map(pillar => [pillar, []]));
+  let firstId = 1001;
+  for (const file of files) {
+    const slug = path.basename(file, '.json');
+    const questions = JSON.parse(fs.readFileSync(path.join(QUIZZES_DIR, file), 'utf8'));
+    const scenarios = buildScenarios(slug, questions, firstId);
+    pillarQuestions[roadmapToPillar[slug]].push(...scenarios);
+    firstId += scenarios.length;
+  }
+  if (files.length !== 100 || firstId !== 3501) throw new Error('Expected 100 careers and 2,500 derived scenarios');
+  for (const [pillar, questions] of Object.entries(pillarQuestions)) {
+    fs.writeFileSync(path.join(BANK_DIR, `phase2-cert-${pillar}.js`), `/** Student preference scenarios for ${pillar}; generated offline. */\nmodule.exports = ${JSON.stringify(questions, null, 2)};\n`);
+    console.log(`${pillar}: ${questions.length} scenarios`);
+  }
 }
 
-console.log('\n✅ Successfully regenerated beginner-friendly question bank in scripts/quiz-bank/!');
+if (require.main === module) generate();
+module.exports = { buildScenarios, generate };
