@@ -27,15 +27,17 @@ const nunito = Nunito({
   display: 'swap',
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://skillbun.tech';
+const siteUrl = (process.env.NEXT_PUBLIC_APP_URL || 'https://skillbun.tech').replace(/\/+$/, '');
+const siteTitle = 'Free Tech Career Roadmaps & AI Career Guidance | SkillBun';
+const siteDescription = 'Find your tech career path with SkillBun. Explore 100 free learning roadmaps, an adaptive career quiz, AI guidance and skill assessment certificates.';
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'SkillBun – 100% Free AI Tech Career Roadmaps & Verified Certifications',
+    default: siteTitle,
     template: '%s | SkillBun',
   },
-  description: 'SkillBun is a 100% Free AI-powered career discovery platform for computer science, software engineering, and tech students worldwide. Explore 100+ free step-by-step career roadmaps, adaptive AI quizzes, Bun-Bot AI counsellor, and earn free verified digital certificates.',
+  description: siteDescription,
   keywords: [
     'SkillBun',
     'Free Tech Career Roadmaps',
@@ -69,8 +71,8 @@ export const metadata = {
     canonical: './',
   },
   openGraph: {
-    title: 'SkillBun – 100% Free AI Tech Career Roadmaps & Verified Certifications',
-    description: '100% Free tech career roadmaps, adaptive AI quizzes, Bun-Bot AI mentor, and verified certificates for computer science and tech students globally.',
+    title: siteTitle,
+    description: siteDescription,
     url: './',
     siteName: 'SkillBun',
     images: [
@@ -86,8 +88,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary',
-    title: 'SkillBun – 100% Free AI Tech Career Roadmaps & Certifications',
-    description: '100% Free AI guidance, 100+ tech career roadmaps, adaptive quizzes, and free verified certificates for students worldwide.',
+    title: siteTitle,
+    description: siteDescription,
     images: ['/logo.png'],
     creator: '@SkillBun',
   },
@@ -140,7 +142,7 @@ export default async function RootLayout({ children }) {
         <script
           nonce={nonce}
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdStructuredData) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdStructuredData).replace(/</g, '\\u003c') }}
         />
         {/* Google Consent Mode v2 Default (denied until user grants consent) */}
         <script nonce={nonce} dangerouslySetInnerHTML={{ __html: `

@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { notFound } from 'next/navigation'
+import { headers } from 'next/headers'
 import GameMap from './GameMap'
 
 const ROADMAPS_DIR = path.join(process.cwd(), 'public', 'data', 'roadmaps')
@@ -68,14 +69,14 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { slug } = await params
   const data = readRoadmap(slug)
-  const siteUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://skillbun.tech'
+  const siteUrl = (process.env.NEXT_PUBLIC_APP_URL || 'https://skillbun.tech').replace(/\/+$/, '')
 
   if (!data) {
     return { title: { absolute: 'Roadmap Not Found | SkillBun' } }
   }
 
-  const title = `100% Free ${data.title} Career Roadmap & Certificate | SkillBun`
-  const description = data.description ? `${data.description} (100% Free with verified certificate).` : `Master ${data.title} for free with SkillBun's step-by-step career roadmap, interactive study guides, video resources, and free verified certification.`
+  const title = `${data.title} Roadmap | SkillBun`
+  const description = data.description || `Explore the free ${data.title} roadmap with step-by-step skills, study resources and practice topics on SkillBun.`
   const pageUrl = `${siteUrl}/roadmap/${slug}`
 
   return {
@@ -106,10 +107,10 @@ export async function generateMetadata({ params }) {
           alt: `${data.title} SkillBun Roadmap`,
         },
       ],
-      type: 'article',
+      type: 'website',
     },
     twitter: {
-      card: 'summary_large_image',
+      card: 'summary',
       title,
       description,
       images: ['/logo.png'],
@@ -121,43 +122,46 @@ export default async function RoadmapPage({ params, searchParams }) {
   const { slug } = await params
   const { tab } = (await searchParams) || {}
   const data = readRoadmap(slug)
-  const siteUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://skillbun.tech'
+  const siteUrl = (process.env.NEXT_PUBLIC_APP_URL || 'https://skillbun.tech').replace(/\/+$/, '')
+  const nonce = (await headers()).get('x-nonce') || undefined
 
   if (!data) {
     notFound()
   }
 
-  const courseJsonLd = {
+  const roadmapJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Course',
+    '@graph': [{
+    '@type': 'LearningResource',
+    '@id': `${siteUrl}/roadmap/${slug}#roadmap`,
     name: `${data.title} Learning Roadmap`,
     description: data.description,
     isAccessibleForFree: true,
-    provider: {
+    learningResourceType: 'Career roadmap',
+    inLanguage: 'en',
+    publisher: {
       '@type': 'Organization',
+      '@id': `${siteUrl}/#organization`,
       name: 'SkillBun',
-      sameAs: siteUrl,
+      url: siteUrl,
     },
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'USD',
-      availability: 'https://schema.org/InStock',
-    },
-    educationalLevel: 'Beginner to Advanced',
     url: `${siteUrl}/roadmap/${slug}`,
-    hasCourseInstance: {
-      '@type': 'CourseInstance',
-      courseMode: 'Online',
-      courseWorkload: 'Self-paced',
-    },
+    }, {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'SkillBun', item: siteUrl },
+        { '@type': 'ListItem', position: 2, name: 'Career roadmaps', item: `${siteUrl}/roadmap` },
+        { '@type': 'ListItem', position: 3, name: data.title, item: `${siteUrl}/roadmap/${slug}` },
+      ],
+    }],
   }
 
   return (
     <>
       <script
+        nonce={nonce}
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(roadmapJsonLd).replace(/</g, '\\u003c') }}
       />
       <GameMap key={slug} roadmap={data} slug={slug} initialTab={tab} />
     </>

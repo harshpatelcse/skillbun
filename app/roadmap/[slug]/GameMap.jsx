@@ -673,9 +673,9 @@ export default function GameMap({ roadmap, slug, initialTab }) {
           {nextRoadmap && (
             <div className="sk-next-section">
               <div className="sk-next-label">Next Career Milestone</div>
-              <button 
+              <Link
                 className="sk-next-card"
-                onClick={() => router.push(`/roadmap/${nextRoadmap.next}`)}
+                href={`/roadmap/${nextRoadmap.next}`}
                 title={`Go to ${nextRoadmap.title} Roadmap`}
               >
                 <div className="sk-next-glow"></div>
@@ -694,7 +694,7 @@ export default function GameMap({ roadmap, slug, initialTab }) {
                     <polyline points="9 18 15 12 9 6"/>
                   </svg>
                 </div>
-              </button>
+              </Link>
             </div>
           )}
         </>

@@ -1,6 +1,6 @@
 {
   "name": "skillbun",
-  "version": "2.10.65",
+  "version": "2.10.66",
   "description": "SkillBun - Hop into the Right Career",
   "private": true,
   "engines": {
@@ -18,7 +18,8 @@
     "rag:prepare": "node scripts/prepare-rag-index.mjs",
     "rag:evaluate": "node scripts/evaluate-rag.mjs",
     "certificates:reconcile": "node scripts/reconcile-certificates.mjs",
-    "audit:smoke": "node scripts/production-smoke.mjs"
+    "audit:smoke": "node scripts/production-smoke.mjs",
+    "audit:seo": "node scripts/seo-smoke.mjs"
   },
   "dependencies": {
     "@google-cloud/firestore": "^8.7.1",

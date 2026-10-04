@@ -138,6 +138,12 @@ export const metadata = {
     siteName: 'SkillBun',
     images: [{ url: '/logo.png', width: 512, height: 512, alt: 'Contact SkillBun' }],
   },
+  twitter: {
+    card: 'summary',
+    title: 'Contact Us – SkillBun Support & Inquiries',
+    description: 'Get in touch with the SkillBun team for help with roadmaps, certificates or platform feedback.',
+    images: ['/logo.png'],
+  },
 };
 
 export default function ContactPage() {

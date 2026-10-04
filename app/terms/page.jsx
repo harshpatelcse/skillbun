@@ -11,6 +11,13 @@ export const metadata = {
     description: 'SkillBun Terms of Use — conditions, guidelines, and rules for platform usage.',
     url: `${siteUrl}/terms`,
     siteName: 'SkillBun',
+    images: [{ url: '/logo.png', width: 512, height: 512, alt: 'SkillBun Logo' }],
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Terms of Use – SkillBun',
+    description: 'Conditions, guidelines and rules for using SkillBun.',
+    images: ['/logo.png'],
   },
 };
 

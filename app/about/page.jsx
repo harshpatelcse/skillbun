@@ -3,17 +3,23 @@ import Link from 'next/link';
 const siteUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://skillbun.tech';
 
 export const metadata = {
-  title: { absolute: 'About SkillBun – Empowering Tech Students with AI Career Guidance' },
-  description: 'Learn how SkillBun bridges the gap between academic computer science curricula and modern tech industry expectations through AI guidance, roadmaps, and verified certifications worldwide.',
+  title: { absolute: 'About SkillBun | Free Tech Career Guidance for Students' },
+  description: 'Learn how SkillBun helps tech students explore career interests, follow free learning roadmaps, practise skills and earn assessment-based certificates.',
   alternates: {
     canonical: `${siteUrl}/about`,
   },
   openGraph: {
-    title: 'About SkillBun – Empowering Tech Students with AI Career Guidance',
+    title: 'About SkillBun | Free Tech Career Guidance for Students',
     description: 'Learn how SkillBun helps tech and computer science students worldwide find their ideal career path through AI guidance, structured roadmaps, and verified certifications.',
     url: `${siteUrl}/about`,
     siteName: 'SkillBun',
     images: [{ url: '/logo.png', width: 512, height: 512, alt: 'SkillBun About' }],
+  },
+  twitter: {
+    card: 'summary',
+    title: 'About SkillBun | Free Tech Career Guidance for Students',
+    description: 'Explore the purpose behind SkillBun career quizzes, free learning roadmaps and skill assessments.',
+    images: ['/logo.png'],
   },
 };
 
@@ -35,6 +41,9 @@ export default function AboutPage() {
       </p>
 
       <h2>What We Built</h2>
+      <p>
+        Choosing where to start? Read our <Link href="/career-guidance">tech career guidance guide</Link> to compare your interests with practical work, or browse the <Link href="/roadmap">complete career roadmap directory</Link>.
+      </p>
       <p>
         Our ecosystem revolves around five core capabilities designed to provide a continuous, adaptive learning journey:
       </p>

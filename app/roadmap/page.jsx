@@ -1,6 +1,8 @@
 import fs from 'fs';
 import path from 'path';
+import { headers } from 'next/headers';
 import RoadmapHubClient from './RoadmapHubClient';
+import RoadmapDirectory from './RoadmapDirectory';
 
 const ROADMAPS_DIR = path.join(process.cwd(), 'public', 'data', 'roadmaps');
 const ROADMAP_SLUG_PATTERN = /^[a-z0-9_]+$/;
@@ -27,11 +29,11 @@ const featuredSlugs = new Set([
   'flutter_developer',
 ]);
 
-const siteUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://skillbun.tech';
+const siteUrl = (process.env.NEXT_PUBLIC_APP_URL || 'https://skillbun.tech').replace(/\/+$/, '');
 
 export const metadata = {
-  title: { absolute: '100+ Tech Career Roadmaps & Learning Paths | SkillBun' },
-  description: 'Explore 100+ step-by-step tech career roadmaps for AI/ML, Fullstack, Backend, DevOps, Cybersecurity, Mobile, Cloud, and Systems Architecture designed for software engineers, students, and self-taught developers worldwide.',
+  title: { absolute: 'Free Tech Career Roadmaps & Learning Paths | SkillBun' },
+  description: 'Explore free developer and tech career roadmaps for frontend, backend, AI, data science, cybersecurity and cloud. Find what to learn and build next.',
   keywords: [
     'Tech Career Roadmaps',
     'Developer Learning Paths',
@@ -46,16 +48,16 @@ export const metadata = {
     canonical: `${siteUrl}/roadmap`,
   },
   openGraph: {
-    title: '100+ Tech Career Roadmaps & Learning Paths | SkillBun',
-    description: 'Explore 100+ step-by-step tech career roadmaps for AI/ML, Fullstack, Backend, DevOps, Cybersecurity, and Mobile Development.',
+    title: 'Free Tech Career Roadmaps & Learning Paths | SkillBun',
+    description: 'Explore free developer and tech career roadmaps for frontend, backend, AI, data science, cybersecurity and cloud.',
     url: `${siteUrl}/roadmap`,
     siteName: 'SkillBun',
     images: [{ url: '/logo.png', width: 512, height: 512, alt: 'SkillBun Roadmaps' }],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: '100+ Tech Career Roadmaps | SkillBun',
-    description: 'Step-by-step tech career roadmaps, study guides, and verified certifications.',
+    card: 'summary',
+    title: 'Free Tech Career Roadmaps | SkillBun',
+    description: 'Find what to learn next with developer roadmaps, study resources and project ideas.',
     images: ['/logo.png'],
   },
 };
@@ -223,8 +225,32 @@ function readRoadmaps() {
   }
 }
 
-export default function RoadmapHubPage() {
+export default async function RoadmapHubPage() {
   const roadmaps = readRoadmaps();
+  const nonce = (await headers()).get('x-nonce') || undefined;
+  const directorySchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    '@id': `${siteUrl}/roadmap#roadmap-directory`,
+    name: 'SkillBun tech career roadmaps',
+    numberOfItems: roadmaps.length,
+    itemListElement: roadmaps.map((roadmap, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: `${roadmap.title} roadmap`,
+      url: `${siteUrl}/roadmap/${roadmap.slug}`,
+    })),
+  };
 
-  return <RoadmapHubClient categories={categories} roadmaps={roadmaps} />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        nonce={nonce}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(directorySchema).replace(/</g, '\\u003c') }}
+      />
+      <RoadmapHubClient categories={categories} roadmaps={roadmaps} />
+      <RoadmapDirectory categories={categories} roadmaps={roadmaps} />
+    </>
+  );
 }

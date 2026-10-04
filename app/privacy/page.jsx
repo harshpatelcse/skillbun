@@ -13,6 +13,13 @@ export const metadata = {
     description: 'SkillBun Privacy Policy — details on how we collect, protect, and handle your data.',
     url: `${siteUrl}/privacy`,
     siteName: 'SkillBun',
+    images: [{ url: '/logo.png', width: 512, height: 512, alt: 'SkillBun Logo' }],
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Privacy Policy – SkillBun',
+    description: 'How SkillBun collects, protects and handles your data.',
+    images: ['/logo.png'],
   },
 };
 

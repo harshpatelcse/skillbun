@@ -1,15 +1,17 @@
 export default function robots() {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://skillbun.tech';
+  const baseUrl = (process.env.NEXT_PUBLIC_APP_URL || 'https://skillbun.tech').replace(/\/+$/, '');
 
   return {
     rules: [
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/dashboard/'],
+        // Account pages must remain crawlable so bots can read their noindex.
+        // Access control is enforced separately; robots.txt is not an auth gate.
+        disallow: ['/api/'],
       },
       {
-        // Explicitly allow AI Search Engines & Knowledge Crawlers (GEO)
+        // Preserve crawler access; allowing a bot does not guarantee search visibility.
         userAgent: [
           'GPTBot',
           'ClaudeBot',
@@ -23,7 +25,7 @@ export default function robots() {
           'FacebookBot',
         ],
         allow: '/',
-        disallow: ['/api/', '/dashboard/'],
+        disallow: ['/api/'],
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,

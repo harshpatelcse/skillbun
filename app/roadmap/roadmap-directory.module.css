@@ -1,0 +1,145 @@
+.directory {
+  --directory-link: var(--dark-green);
+  width: min(1160px, calc(100% - 2rem));
+  max-width: none;
+  margin: 0 auto;
+  padding: 2.5rem 0 5rem;
+  color: var(--text);
+  scroll-margin-top: 7rem;
+}
+
+:global([data-theme='dark']) .directory {
+  --directory-link: var(--green);
+}
+
+.header {
+  max-width: 72ch;
+  margin-bottom: 2rem;
+}
+
+.eyebrow {
+  color: var(--directory-link);
+  font-size: 0.875rem;
+  font-weight: 800;
+}
+
+.header h2 {
+  margin: 0.6rem 0 1rem;
+  font-family: var(--font-fredoka), sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.header p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.related {
+  margin-top: 0.75rem;
+}
+
+.directory a {
+  color: var(--directory-link);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+
+.directory a:hover {
+  color: var(--text);
+  text-decoration-thickness: 2px;
+}
+
+.directory a:focus-visible,
+.group summary:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.groups {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.group {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+}
+
+.group summary {
+  padding: 1.15rem 1.5rem;
+  cursor: pointer;
+  color: var(--green);
+}
+
+.group summary:hover {
+  background: var(--green-subtle);
+  border-radius: 16px;
+}
+
+.group summary h3 {
+  display: inline;
+  margin-left: 0.35rem;
+  color: var(--text);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.count {
+  display: inline-block;
+  margin-left: 0.75rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.15rem 1.5rem;
+  padding: 0.25rem 1.5rem 1.25rem;
+  margin: 0;
+  list-style: none;
+}
+
+.links a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.6rem 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 900px) {
+  .links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 580px) {
+  .directory {
+    padding-top: 1.5rem;
+  }
+
+  .group summary {
+    padding: 1rem;
+  }
+
+  .count {
+    display: block;
+    margin: 0.4rem 0 0 1.4rem;
+  }
+
+  .links {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 0 1rem 1rem;
+  }
+}
