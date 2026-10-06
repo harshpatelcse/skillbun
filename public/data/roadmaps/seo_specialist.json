@@ -128,16 +128,6 @@
               "type": "article"
             },
             {
-              "title": "Robots.txt Specifications",
-              "url": "https://developers.google.com/search/docs/crawling-indexing/robots/robots-txt",
-              "type": "article"
-            },
-            {
-              "title": "What is Rendering? A Guide for SEO (Search Engine Journal)",
-              "url": "https://www.searchenginejournal.com/what-is-rendering-seo-guide/339234/",
-              "type": "article"
-            },
-            {
               "title": "How to use Google Search Console to Improve Your SEO (Ahrefs)",
               "url": "https://www.youtube.com/watch?v=FXVEb_eklhk",
               "type": "video"
@@ -165,11 +155,6 @@
             {
               "title": "Google's Core Updates Explained",
               "url": "https://developers.google.com/search/blog/2019/08/core-updates",
-              "type": "article"
-            },
-            {
-              "title": "What is E-E-A-T? (Search Engine Journal)",
-              "url": "https://www.searchenginejournal.com/what-is-e-a-t/270404/",
               "type": "article"
             },
             {
@@ -208,11 +193,6 @@
               "type": "article"
             },
             {
-              "title": "How to do Competitor Keyword Research (SEMrush)",
-              "url": "https://www.semrush.com/blog/competitor-keyword-research/",
-              "type": "article"
-            },
-            {
               "title": "Keyword Research Tutorial (Ahrefs)",
               "url": "https://www.youtube.com/watch?v=OMJQPqG2Uas",
               "type": "video"
@@ -237,11 +217,6 @@
           "tag": "essential",
           "description": "Optimize for modern SERP features: Featured snippets, People Also Ask (PAA), knowledge panels, video packs, local map packs, and mapping user search journeys.",
           "resources": [
-            {
-              "title": "Google Search Gallery",
-              "url": "https://developers.google.com/search/docs/appearance/about-search-gallery",
-              "type": "article"
-            },
             {
               "title": "How to Win Google Featured Snippets (Ahrefs)",
               "url": "https://ahrefs.com/blog/featured-snippets/",
@@ -315,11 +290,6 @@
               "type": "article"
             },
             {
-              "title": "Image SEO Best Practices (Google)",
-              "url": "https://developers.google.com/search/docs/appearance/image-seo",
-              "type": "article"
-            },
-            {
               "title": "Technical SEO Best Practices for Beginners - 4.2. SEO Course by Ahrefs (Ahrefs)",
               "url": "https://www.youtube.com/watch?v=RFlpwKQ0bEs",
               "type": "video"
@@ -350,8 +320,8 @@
               "type": "article"
             },
             {
-              "title": "How to write an SEO content brief (Semrush)",
-              "url": "https://www.semrush.com/blog/how-to-write-an-seo-content-brief/",
+              "title": "Content Briefs — Semrush",
+              "url": "https://www.semrush.com/blog/content-brief/",
               "type": "article"
             },
             {
@@ -415,16 +385,6 @@
           "description": "Design internal linking architecture: PageRank flow distribution, contextual in-body anchor text, silo structures, eliminating orphan pages, and automated internal link auditing.",
           "resources": [
             {
-              "title": "Ahrefs Internal Link Building Guide",
-              "url": "https://ahrefs.com/blog/internal-links/",
-              "type": "article"
-            },
-            {
-              "title": "How to do Content Siloing for SEO (SEMrush)",
-              "url": "https://www.semrush.com/blog/content-siloing-seo/",
-              "type": "article"
-            },
-            {
               "title": "How to use Google Search Console to Improve Your SEO (Ahrefs)",
               "url": "https://www.youtube.com/watch?v=FXVEb_eklhk",
               "type": "video"
@@ -450,13 +410,8 @@
           "description": "Audit content portfolios: Content decay analysis, identifying keyword cannibalization, pruning thin/underperforming content, and 301 consolidation strategies.",
           "resources": [
             {
-              "title": "How to do a Content Audit (Moz)",
-              "url": "https://moz.com/blog/how-to-do-a-content-audit",
-              "type": "article"
-            },
-            {
-              "title": "How to Repurpose Content for SEO (SEMrush)",
-              "url": "https://www.semrush.com/blog/how-to-repurpose-content-for-seo/",
+              "title": "Repurposing Content — Semrush",
+              "url": "https://www.semrush.com/blog/repurposing-content/",
               "type": "article"
             },
             {
@@ -494,11 +449,6 @@
           "type": "article"
         },
         {
-          "title": "The Advanced Guide to Link Building (Backlinko)",
-          "url": "https://backlinko.com/link-building-guide",
-          "type": "article"
-        },
-        {
           "title": "Keyword Research Tutorial (Ahrefs)",
           "url": "https://www.youtube.com/watch?v=OMJQPqG2Uas",
           "type": "video"
@@ -522,13 +472,8 @@
           "description": "Earn high-authority backlinks: Digital PR data studies, original survey distribution, HARO / Connectively journalist pitching, guest editorial thought leadership, and broken link building.",
           "resources": [
             {
-              "title": "Broken Link Building Guide (Moz)",
-              "url": "https://moz.com/blog/the-broken-link-building-guide",
-              "type": "article"
-            },
-            {
-              "title": "Digital PR for SEO: The Ultimate Guide (SEMrush)",
-              "url": "https://www.semrush.com/blog/digital-pr-for-seo/",
+              "title": "Digital PR — Semrush",
+              "url": "https://www.semrush.com/blog/digital-pr/",
               "type": "article"
             },
             {
@@ -556,11 +501,6 @@
           "tag": "advanced",
           "description": "Audit backlink profiles: Analyzing referring domain authority (Ahrefs DR / Moz DA), identifying toxic link spam networks, link velocity, and managing Google Disavow files.",
           "resources": [
-            {
-              "title": "Google Disavow Tool Guide",
-              "url": "https://developers.google.com/search/docs/crawling-indexing/disavow-links",
-              "type": "article"
-            },
             {
               "title": "How to Perform a Backlink Audit (Ahrefs)",
               "url": "https://ahrefs.com/blog/backlink-audit/",
@@ -627,16 +567,6 @@
           "description": "Automate link prospecting: Scraping competitor backlink gaps with Ahrefs API / Python, prioritizing high-value domains, and automating email outreach pipelines with Pitchbox.",
           "resources": [
             {
-              "title": "Link Gap Analysis (Ahrefs)",
-              "url": "https://ahrefs.com/blog/link-intersections/",
-              "type": "article"
-            },
-            {
-              "title": "SEO Link Building Outreach Tools (Search Engine Journal)",
-              "url": "https://www.searchenginejournal.com/link-building-outreach-tools/270404/",
-              "type": "article"
-            },
-            {
               "title": "Keyword Research Tutorial (Ahrefs)",
               "url": "https://www.youtube.com/watch?v=OMJQPqG2Uas",
               "type": "video"
@@ -666,8 +596,8 @@
       "description": "Master technical SEO: Core Web Vitals, site crawlability, log file analysis, and JavaScript rendering optimization.",
       "resources": [
         {
-          "title": "Technical SEO Audit Checklist (SEMrush)",
-          "url": "https://www.semrush.com/blog/technical-seo-audit-checklist/",
+          "title": "Technical SEO Audit — Semrush",
+          "url": "https://www.semrush.com/blog/technical-seo-audit/",
           "type": "article"
         },
         {
@@ -704,11 +634,6 @@
               "type": "article"
             },
             {
-              "title": "Mobile-First Indexing (Google)",
-              "url": "https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-first-indexing",
-              "type": "article"
-            },
-            {
               "title": "How to use Google Search Console to Improve Your SEO (Ahrefs)",
               "url": "https://www.youtube.com/watch?v=FXVEb_eklhk",
               "type": "video"
@@ -734,16 +659,6 @@
           "description": "Architect international and technical website structures: Flat URL hierarchies, XML sitemaps, robots.txt directives, and international SEO with hreflang tags.",
           "resources": [
             {
-              "title": "Google Hreflang Tags",
-              "url": "https://developers.google.com/search/docs/specialty/international/tell-google-about-localized-versions-of-your-page",
-              "type": "article"
-            },
-            {
-              "title": "Information Architecture for SEO (Moz)",
-              "url": "https://moz.com/learn/seo/information-architecture",
-              "type": "article"
-            },
-            {
               "title": "Technical SEO Best Practices for Beginners - 4.2. SEO Course by Ahrefs (Ahrefs)",
               "url": "https://www.youtube.com/watch?v=RFlpwKQ0bEs",
               "type": "video"
@@ -768,11 +683,6 @@
           "tag": "advanced",
           "description": "Optimize crawl budget: Web server access log analysis (ELK/Screaming Frog Log Analyzer), identifying crawl waste, faceted navigation parameter control, and noindex directives.",
           "resources": [
-            {
-              "title": "Server Log File Analysis for SEO (OnCrawl)",
-              "url": "https://www.oncrawl.com/technical-seo/server-log-file-analysis-seo/",
-              "type": "article"
-            },
             {
               "title": "Optimize your crawl budget (Google)",
               "url": "https://developers.google.com/search/docs/crawling-indexing/large-site-managing-crawl-budget",
@@ -809,8 +719,8 @@
               "type": "article"
             },
             {
-              "title": "The Ultimate Guide to JavaScript SEO (SEMrush)",
-              "url": "https://www.semrush.com/blog/javascript-seo-ultimate-guide/",
+              "title": "JavaScript SEO Basics — Google Search Central",
+              "url": "https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics",
               "type": "article"
             },
             {
@@ -843,11 +753,6 @@
       "description": "Measure SEO impact: Google Search Console, GA4 organic performance, and automated reporting dashboards.",
       "resources": [
         {
-          "title": "Google Analytics 4 Documentation",
-          "url": "https://support.google.com/analytics/answer/9164600?hl=en",
-          "type": "article"
-        },
-        {
           "title": "Google Search Console Performance Report",
           "url": "https://support.google.com/webmasters/answer/7576553?hl=en",
           "type": "article"
@@ -876,8 +781,8 @@
           "description": "Master Google Search Console: Index Coverage troubleshooting, Core Web Vitals reports, URL Inspection API, canonical selection overrides, and manual action resolution.",
           "resources": [
             {
-              "title": "Mastering Google Search Console (SEMrush)",
-              "url": "https://www.semrush.com/blog/google-search-console-guide/",
+              "title": "Getting Started with Search Console — Google Search Central",
+              "url": "https://developers.google.com/search/docs/monitor-debug/search-console-start",
               "type": "article"
             },
             {
@@ -905,16 +810,6 @@
           "tag": "essential",
           "description": "Analyze organic search traffic in GA4: Organic acquisition channels, landing page engagement, conversion attribution, and BigQuery organic event exports.",
           "resources": [
-            {
-              "title": "GA4 for SEO: A Complete Guide (Search Engine Journal)",
-              "url": "https://www.searchenginejournal.com/ga4-for-seo/496223/",
-              "type": "article"
-            },
-            {
-              "title": "Google Analytics 4 Academy (Google)",
-              "url": "https://skillshop.withgoogle.com/category/google-analytics",
-              "type": "course"
-            },
             {
               "title": "Keyword Research Tutorial (Ahrefs)",
               "url": "https://www.youtube.com/watch?v=OMJQPqG2Uas",
@@ -946,11 +841,6 @@
               "type": "article"
             },
             {
-              "title": "How to Create an SEO Dashboard (Ahrefs)",
-              "url": "https://ahrefs.com/blog/seo-dashboard/",
-              "type": "article"
-            },
-            {
               "title": "SEO Full Course for Beginners (Ahrefs)",
               "url": "https://www.youtube.com/watch?v=xsVTqzratPs",
               "type": "video"
@@ -975,16 +865,6 @@
           "tag": "advanced",
           "description": "Track organic market share: Share of Voice (SoV) monitoring, tracking competitor SERP volatility, algorithm update impact tracking, and SERP feature win/loss analysis.",
           "resources": [
-            {
-              "title": "Competitor Analysis for SEO (Moz)",
-              "url": "https://moz.com/learn/seo/competitor-analysis",
-              "type": "article"
-            },
-            {
-              "title": "How to Track Your Competitors' SEO (SEMrush)",
-              "url": "https://www.semrush.com/blog/how-to-track-competitors-seo/",
-              "type": "article"
-            },
             {
               "title": "How to use Google Search Console to Improve Your SEO (Ahrefs)",
               "url": "https://www.youtube.com/watch?v=FXVEb_eklhk",
@@ -1015,11 +895,6 @@
       "description": "Drive growth through SEO experimentation, AI search adaptation, and portfolio development.",
       "resources": [
         {
-          "title": "SEO A/B Testing Guide (Optimizely)",
-          "url": "https://www.optimizely.com/optimization-glossary/seo-a-b-testing/",
-          "type": "article"
-        },
-        {
           "title": "Technical SEO Best Practices for Beginners - 4.2. SEO Course by Ahrefs (Ahrefs)",
           "url": "https://www.youtube.com/watch?v=RFlpwKQ0bEs",
           "type": "video"
@@ -1042,11 +917,6 @@
           "tag": "advanced",
           "description": "Run scientific SEO experiments: SEO A/B testing (SplitSignal, SearchPilot) comparing control vs variant URL groups, and measuring causal traffic impact using CausalImpact in R/Python.",
           "resources": [
-            {
-              "title": "How to Run SEO A/B Tests (Ahrefs)",
-              "url": "https://ahrefs.com/blog/seo-ab-testing/",
-              "type": "article"
-            },
             {
               "title": "Keyword Research Tutorial (Ahrefs)",
               "url": "https://www.youtube.com/watch?v=OMJQPqG2Uas",
@@ -1073,16 +943,6 @@
           "description": "Curate an elite SEO portfolio: Documenting technical audit findings, migration case studies, algorithm recovery strategies, and measurable organic revenue growth.",
           "resources": [
             {
-              "title": "How to Build an SEO Portfolio (Ahrefs)",
-              "url": "https://ahrefs.com/blog/seo-portfolio/",
-              "type": "article"
-            },
-            {
-              "title": "Creating SEO Case Studies (SEMrush)",
-              "url": "https://www.semrush.com/blog/seo-case-study/",
-              "type": "article"
-            },
-            {
               "title": "SEO Full Course for Beginners (Ahrefs)",
               "url": "https://www.youtube.com/watch?v=xsVTqzratPs",
               "type": "video"
@@ -1108,18 +968,13 @@
           "description": "Build an enterprise SEO capstone: Comprehensive technical audit of a 50,000+ page e-commerce or SaaS website with Screaming Frog, Core Web Vitals remediation plan, schema markup, and GTM strategy.",
           "resources": [
             {
-              "title": "SEO Strategy Template (SEMrush)",
-              "url": "https://www.semrush.com/blog/seo-strategy-template/",
+              "title": "Creating an SEO Strategy — Semrush",
+              "url": "https://www.semrush.com/blog/seo-strategy/",
               "type": "article"
             },
             {
               "title": "Lighthouse Documentation",
               "url": "https://developer.chrome.com/docs/lighthouse/overview",
-              "type": "article"
-            },
-            {
-              "title": "How to Create an SEO Plan (Moz)",
-              "url": "https://moz.com/blog/seo-plan",
               "type": "article"
             },
             {

@@ -100,11 +100,6 @@
       "description": "Master foundational LLMOps principles: Understanding how generative AI architectures, non-deterministic outputs, and massive GPU inference footprints transform traditional MLOps.",
       "resources": [
         {
-          "title": "The Rise of LLMOps: From Research to Production with Large Language Models (Databricks Blog)",
-          "url": "https://www.databricks.com/blog/rise-llmops-from-research-production-large-language-models",
-          "type": "article"
-        },
-        {
           "title": "MLOps Specialization (Coursera - DeepLearning.AI)",
           "url": "https://www.coursera.org/specializations/machine-learning-engineering-for-production-mlops",
           "type": "course"
@@ -168,11 +163,6 @@
               "type": "article"
             },
             {
-              "title": "What are Embeddings? (Google Developers)",
-              "url": "https://developers.google.com/machine-learning/glossary/embedding",
-              "type": "article"
-            },
-            {
               "title": "Hugging Face Transformers Course",
               "url": "https://huggingface.co/course/chapter1/1",
               "type": "course"
@@ -202,11 +192,6 @@
           "tag": "essential",
           "description": "Navigate the LLMOps lifecycle: Prompt engineering, retrieval-augmented generation (RAG), parameter-efficient fine-tuning (PEFT), model routing, safety guardrails, and real-time monitoring.",
           "resources": [
-            {
-              "title": "LLMOps: The Key to Taking LLMs to Production (Weights & Biases)",
-              "url": "https://wandb.ai/site/articles/llmops-the-key-to-taking-llms-to-production",
-              "type": "article"
-            },
             {
               "title": "LLMOps Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=Fquj2u7ay40",
@@ -390,11 +375,6 @@
           "description": "Architect production RAG systems: Chunking strategies (recursive, semantic, window-based), embedding models (bge, text-embedding-3), vector stores (Qdrant, Milvus, Pinecone), and similarity search.",
           "resources": [
             {
-              "title": "RAG: How to Build a Production-Ready LLM Application (Towards Data Science)",
-              "url": "https://towardsdatascience.com/rag-how-to-build-a-production-ready-llm-application-f2322304918e",
-              "type": "article"
-            },
-            {
               "title": "Getting Started with Pinecone",
               "url": "https://www.pinecone.io/learn/series/rag/",
               "type": "article"
@@ -424,16 +404,6 @@
           "tag": "advanced",
           "description": "Optimize RAG retrieval: Hybrid search (dense vectors + BM25), reciprocal rank fusion (RRF), cross-encoder re-ranking (Cohere/BGE), contextual query compression, and hypothetical document embeddings (HyDE).",
           "resources": [
-            {
-              "title": "Advanced RAG Techniques: A Comprehensive Guide",
-              "url": "https://www.ml6.eu/blog/advanced-rag-techniques",
-              "type": "article"
-            },
-            {
-              "title": "LlamaIndex RAG Cookbook",
-              "url": "https://docs.llamaindex.ai/en/stable/optimizing/rag_cookbook.html",
-              "type": "article"
-            },
             {
               "title": "RAG Tutorial - Build AI Apps (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=T-D1OfcDW1M",
@@ -492,11 +462,6 @@
             {
               "title": "LangChain Agents Documentation",
               "url": "https://python.langchain.com/docs/modules/agents/",
-              "type": "article"
-            },
-            {
-              "title": "Hugging Face Blog: Understanding LLM Agents",
-              "url": "https://huggingface.co/blog/llm-agents",
               "type": "article"
             },
             {
@@ -561,11 +526,6 @@
           "tag": "essential",
           "description": "Version control prompts and system configurations: Using tools like Promptfoo, Langfuse, or Arize Phoenix to manage prompt diffs, track variables, and tie prompt commits to release tags.",
           "resources": [
-            {
-              "title": "Version Control for LLM Prompts (DVC)",
-              "url": "https://dvc.org/blog/version-control-for-llm-prompts",
-              "type": "article"
-            },
             {
               "title": "Fine-tuning LLMs Tutorial (Weights & Biases)",
               "url": "https://www.youtube.com/watch?v=eC6Hd1hFvos",
@@ -687,11 +647,6 @@
               "type": "article"
             },
             {
-              "title": "Best Practices for Labeling Data for LLMs",
-              "url": "https://labelbox.com/blog/best-practices-for-labeling-data-for-llms/",
-              "type": "article"
-            },
-            {
               "title": "LLMOps Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=Fquj2u7ay40",
               "type": "video"
@@ -721,8 +676,8 @@
       "description": "Deploy and optimize high-throughput, low-latency LLM inference infrastructure across cloud and on-premises GPU clusters.",
       "resources": [
         {
-          "title": "Serving LLMs: A Guide to Optimizing LLM Inference (Towards Data Science)",
-          "url": "https://towardsdatascience.com/serving-llms-a-guide-to-optimizing-llm-inference-2c0919530514",
+          "title": "Online LLM Serving with vLLM",
+          "url": "https://docs.vllm.ai/en/latest/serving/online_serving/",
           "type": "article"
         },
         {
@@ -854,16 +809,6 @@
           "description": "Implement intelligent model routing: Gateway proxies (LiteLLM, Portkey, Cloudflare AI Gateway) for automated fallbacks, semantic caching with Redis, load balancing, and rate limiting.",
           "resources": [
             {
-              "title": "Why Model Routing is Important in Production LLM Applications (Scale AI)",
-              "url": "https://scale.com/blog/model-routing-production-llm-applications",
-              "type": "article"
-            },
-            {
-              "title": "Model Gateways for LLMs (Lightbend)",
-              "url": "https://www.lightbend.com/blog/model-gateways-for-llms",
-              "type": "article"
-            },
-            {
               "title": "Fine-tuning LLMs Tutorial (Weights & Biases)",
               "url": "https://www.youtube.com/watch?v=eC6Hd1hFvos",
               "type": "video"
@@ -915,16 +860,6 @@
           "tag": "essential",
           "description": "Implement distributed LLM tracing: Instrumenting applications with OpenInference, Langfuse, or Phoenix to visualize complete execution traces, token latencies, and tool call payloads.",
           "resources": [
-            {
-              "title": "OpenTelemetry for LLMs (Lightstep)",
-              "url": "https://lightstep.com/blog/opentelemetry-for-llms",
-              "type": "article"
-            },
-            {
-              "title": "Building Observability for LLMs with LangSmith (LangChain)",
-              "url": "https://blog.langchain.dev/building-observability-for-llms-with-langsmith/",
-              "type": "article"
-            },
             {
               "title": "RAG Tutorial - Build AI Apps (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=T-D1OfcDW1M",
@@ -1041,11 +976,6 @@
           "description": "Execute safe LLM deployments: Canary releases of new prompts or fine-tuned model checkpoints, shadow traffic evaluation, and automated rollback triggers on evaluation metric dips.",
           "resources": [
             {
-              "title": "A/B Testing for LLM Applications (Explorium)",
-              "url": "https://explorium.ai/blog/ab-testing-for-llm-applications/",
-              "type": "article"
-            },
-            {
               "title": "Fine-tuning LLMs Tutorial (Weights & Biases)",
               "url": "https://www.youtube.com/watch?v=eC6Hd1hFvos",
               "type": "video"
@@ -1102,16 +1032,6 @@
           "tag": "advanced",
           "description": "Defend against prompt injection and jailbreaks: Dual-model input validation, delimiter token isolation, heuristic scanners (Rebuff, Vigil), and adversarial red-teaming.",
           "resources": [
-            {
-              "title": "Prompt Injection Explained (Giskard)",
-              "url": "https://giskard.ai/blog/prompt-injection-llms/",
-              "type": "article"
-            },
-            {
-              "title": "Detecting Prompt Injections in LLMs",
-              "url": "https://www.assemblyai.com/blog/detecting-prompt-injections-in-llms/",
-              "type": "article"
-            },
             {
               "title": "RAG Tutorial - Build AI Apps (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=T-D1OfcDW1M",
@@ -1173,11 +1093,6 @@
           "description": "Conduct systematic LLM red-teaming: Automated fuzzing using Garak, testing for training data extraction vulnerabilities, system prompt leakage, and unauthorized tool execution.",
           "resources": [
             {
-              "title": "Red Teaming LLMs (Hugging Face)",
-              "url": "https://huggingface.co/blog/red-teaming-llama",
-              "type": "article"
-            },
-            {
               "title": "LLMOps Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=Fquj2u7ay40",
               "type": "video"
@@ -1202,11 +1117,6 @@
           "tag": "advanced",
           "description": "Mitigate demographic bias and toxicity: Designing constitutional AI principles, evaluating representation across diverse user segments, and filtering harmful completions.",
           "resources": [
-            {
-              "title": "Responsible AI with LLMs (Microsoft Azure)",
-              "url": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/responsible-ai",
-              "type": "article"
-            },
             {
               "title": "Fairness in AI: An Introduction (IBM)",
               "url": "https://www.ibm.com/topics/fairness-in-ai",
@@ -1294,11 +1204,6 @@
           "tag": "advanced",
           "description": "Draft comprehensive LLMOps architecture case studies: Documenting latency optimizations, cost reduction strategies ($/1M tokens), evaluation metrics, and incident recovery playbooks.",
           "resources": [
-            {
-              "title": "How to Write a Technical Case Study",
-              "url": "https://careerfoundry.com/en/blog/ux-design/how-to-write-a-ux-case-study/",
-              "type": "article"
-            },
             {
               "title": "RAG Tutorial - Build AI Apps (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=T-D1OfcDW1M",

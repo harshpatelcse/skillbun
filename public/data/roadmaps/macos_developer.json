@@ -168,11 +168,6 @@
               "type": "article"
             },
             {
-              "title": "Cocoa Overview",
-              "url": "https://developer.apple.com/documentation/cocoa/cocoa_overview",
-              "type": "article"
-            },
-            {
               "title": "Foundation Framework Documentation",
               "url": "https://developer.apple.com/documentation/foundation",
               "type": "article"
@@ -208,16 +203,6 @@
               "type": "article"
             },
             {
-              "title": "Managing Dependencies with Swift Package Manager",
-              "url": "https://developer.apple.com/documentation/xcode/managing-dependencies-with-swift-package-manager",
-              "type": "article"
-            },
-            {
-              "title": "Debugging with Xcode",
-              "url": "https://developer.apple.com/documentation/xcode/debugging-your-app",
-              "type": "article"
-            },
-            {
               "title": "Build your first iOS app with SwiftUI (Paul Hudson)",
               "url": "https://www.youtube.com/watch?v=aP-SQXTtWhY",
               "type": "video"
@@ -248,11 +233,6 @@
               "type": "article"
             },
             {
-              "title": "Using Git and GitHub with Xcode",
-              "url": "https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/setting-up-github-desktop/connecting-to-github-with-xcode",
-              "type": "article"
-            },
-            {
               "title": "Swift Programming Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=8Xg7E9shq0U",
               "type": "video"
@@ -277,11 +257,6 @@
           "tag": "essential",
           "description": "Master macOS CLI and scripting: Terminal operations, `defaults` system database, Homebrew, and shell scripting for build automation.",
           "resources": [
-            {
-              "title": "Command Line Primer",
-              "url": "https://developer.apple.com/library/archive/documentation/OpenSource/Conceptual/ShellScripting/ShellScripting.html",
-              "type": "article"
-            },
             {
               "title": "Homebrew Package Manager",
               "url": "https://brew.sh/",
@@ -385,16 +360,6 @@
           "description": "Master AppKit essentials: `NSWindow`, `NSWindowController`, `NSViewController`, `NSView`, target-action mechanisms, and responding to native mouse/keyboard events.",
           "resources": [
             {
-              "title": "App Programming Guide for macOS",
-              "url": "https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/AppPrograms/AppPrograms.html",
-              "type": "article"
-            },
-            {
-              "title": "Using Views in AppKit Apps",
-              "url": "https://developer.apple.com/documentation/appkit/views_and_controls/using_views_in_appkit_apps",
-              "type": "article"
-            },
-            {
               "title": "Xcode Tutorial for Beginners (CodeWithChris)",
               "url": "https://www.youtube.com/watch?v=HXoVSbwWUIk",
               "type": "video"
@@ -450,11 +415,6 @@
           "description": "Implement native macOS controls: `NSTableView` / `Table`, `NSSplitView`, toolbars, touch bar integrations, and standard search fields.",
           "resources": [
             {
-              "title": "macOS UI Kit: Controls",
-              "url": "https://developer.apple.com/design/human-interface-guidelines/macos/controls/buttons",
-              "type": "article"
-            },
-            {
               "title": "Working with Stacks in SwiftUI",
               "url": "https://www.hackingwithswift.com/quick-start/swiftui/how-to-arrange-views-in-a-grid-using-lazyvgrid-and-lazyhgrid",
               "type": "article"
@@ -485,16 +445,6 @@
           "description": "Architect macOS app navigation: Multi-window management, document-based apps (`ReferenceFileDocument`), NavigationSplitView sidebars, and tabbed window layouts.",
           "resources": [
             {
-              "title": "Creating a Document-Based App",
-              "url": "https://developer.apple.com/tutorials/appkit/document-based-apps",
-              "type": "article"
-            },
-            {
-              "title": "Adding a Sidebar to Your App",
-              "url": "https://developer.apple.com/documentation/swiftui/adding-a-sidebar-to-your-app",
-              "type": "article"
-            },
-            {
               "title": "Xcode Tutorial for Beginners (CodeWithChris)",
               "url": "https://www.youtube.com/watch?v=HXoVSbwWUIk",
               "type": "video"
@@ -519,16 +469,6 @@
           "tag": "advanced",
           "description": "Build Menu Bar applications: Creating `NSStatusItem`, status bar popover windows, custom menu items, and background-running agent applications (`LSUIElement`).",
           "resources": [
-            {
-              "title": "Adding a menu to your app",
-              "url": "https://developer.apple.com/documentation/appkit/menus_and_pop-up_buttons/adding_a_menu_to_your_app",
-              "type": "article"
-            },
-            {
-              "title": "Creating a Status Bar App (Tutorial)",
-              "url": "https://www.raywenderlich.com/6045-creating-a-status-bar-app",
-              "type": "article"
-            },
             {
               "title": "Build your first iOS app with SwiftUI (Paul Hudson)",
               "url": "https://www.youtube.com/watch?v=aP-SQXTtWhY",
@@ -560,11 +500,6 @@
               "type": "article"
             },
             {
-              "title": "Using NSUserDefaults in AppKit",
-              "url": "https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/UserDefaults/UserDefaults.html",
-              "type": "article"
-            },
-            {
               "title": "Swift Programming Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=8Xg7E9shq0U",
               "type": "video"
@@ -593,11 +528,6 @@
       "tag": "essential",
       "description": "Master macOS data persistence: UserDefaults, filesystem sandboxing, SwiftData, Core Data, and iCloud synchronization.",
       "resources": [
-        {
-          "title": "About Data Management",
-          "url": "https://developer.apple.com/documentation/technologies/data_management/",
-          "type": "article"
-        },
         {
           "title": "Xcode Tutorial for Beginners (CodeWithChris)",
           "url": "https://www.youtube.com/watch?v=HXoVSbwWUIk",
@@ -662,11 +592,6 @@
               "type": "article"
             },
             {
-              "title": "Accessing the File System (App Sandbox)",
-              "url": "https://developer.apple.com/documentation/security/app_sandbox/accessing_the_file_system",
-              "type": "article"
-            },
-            {
               "title": "Configuring App Groups",
               "url": "https://developer.apple.com/documentation/xcode/configuring-app-groups",
               "type": "article"
@@ -696,11 +621,6 @@
           "tag": "essential",
           "description": "Serialize data with Swift Codable: `JSONEncoder`, `JSONDecoder`, custom decoding keys, and handling polymorphic JSON payloads.",
           "resources": [
-            {
-              "title": "Encoding and Decoding Custom Types",
-              "url": "https://docs.swift.org/swift-book/documentation/theswiftprogramminglanguage/encodinganddecodingcustomtypes/",
-              "type": "article"
-            },
             {
               "title": "JSONEncoder and JSONDecoder Documentation",
               "url": "https://developer.apple.com/documentation/foundation/jsonencoder",
@@ -802,11 +722,6 @@
               "type": "article"
             },
             {
-              "title": "iCloud Design Guide",
-              "url": "https://developer.apple.com/library/archive/documentation/General/Conceptual/iCloudDesignGuide/Introduction/Introduction.html",
-              "type": "article"
-            },
-            {
               "title": "Xcode Tutorial for Beginners (CodeWithChris)",
               "url": "https://www.youtube.com/watch?v=HXoVSbwWUIk",
               "type": "video"
@@ -835,11 +750,6 @@
       "tag": "advanced",
       "description": "Integrate advanced macOS capabilities: Concurrency, networking, app extensions, XPC services, and hardware access.",
       "resources": [
-        {
-          "title": "App Extensions Documentation",
-          "url": "https://developer.apple.com/documentation/xcode/creating_an_app_extension",
-          "type": "article"
-        },
         {
           "title": "Concurrency in Swift",
           "url": "https://docs.swift.org/swift-book/LanguageGuide/Concurrency.html",
@@ -969,18 +879,8 @@
           "description": "Build macOS App Extensions: WidgetKit desktop widgets, Share Extensions, Finder Sync extensions, and Quick Look preview plugins.",
           "resources": [
             {
-              "title": "Creating an App Extension",
-              "url": "https://developer.apple.com/documentation/xcode/creating_an_app_extension",
-              "type": "article"
-            },
-            {
               "title": "WidgetKit Documentation",
               "url": "https://developer.apple.com/documentation/widgetkit",
-              "type": "article"
-            },
-            {
-              "title": "Finder Sync Extensions",
-              "url": "https://developer.apple.com/documentation/coreservices/finder_sync_extensions",
               "type": "article"
             },
             {
@@ -1014,11 +914,6 @@
               "type": "article"
             },
             {
-              "title": "Building a secure XPC service for your macOS app",
-              "url": "https://blog.eidinger.info/building-a-secure-xpc-service-for-your-macos-app",
-              "type": "article"
-            },
-            {
               "title": "Xcode Tutorial for Beginners (CodeWithChris)",
               "url": "https://www.youtube.com/watch?v=HXoVSbwWUIk",
               "type": "video"
@@ -1046,11 +941,6 @@
             {
               "title": "AppleScript Language Guide",
               "url": "https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/introduction/ASLR_intro.html",
-              "type": "article"
-            },
-            {
-              "title": "Integrate your app with Shortcuts",
-              "url": "https://developer.apple.com/documentation/shortcuts",
               "type": "article"
             },
             {
@@ -1117,11 +1007,6 @@
       "tag": "advanced",
       "description": "Harden macOS applications: Instruments profiling, App Sandboxing, privacy manifests, and comprehensive testing.",
       "resources": [
-        {
-          "title": "Writing Automated Tests in Xcode",
-          "url": "https://developer.apple.com/documentation/xcode/writing-automated-tests-in-xcode",
-          "type": "article"
-        },
         {
           "title": "App Sandbox Design Guide",
           "url": "https://developer.apple.com/library/archive/documentation/Security/Conceptual/AppSandboxDesignGuide/Introduction.html",
@@ -1246,11 +1131,6 @@
           "description": "Implement macOS Accessibility: Accessibility Inspector, NSAccessibility protocols, VoiceOver screen reader support, and full keyboard navigation.",
           "resources": [
             {
-              "title": "Accessibility for macOS Apps",
-              "url": "https://developer.apple.com/documentation/appkit/accessibility_for_macos_apps",
-              "type": "article"
-            },
-            {
               "title": "Build your first iOS app with SwiftUI (Paul Hudson)",
               "url": "https://www.youtube.com/watch?v=aP-SQXTtWhY",
               "type": "video"
@@ -1275,16 +1155,6 @@
           "tag": "advanced",
           "description": "Localize macOS applications: String Catalogs (`.xcstrings`), pluralization rules, localized date/number formatters, and pseudo-localization testing.",
           "resources": [
-            {
-              "title": "Internationalization and Localization Guide",
-              "url": "https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/BPInternational.html",
-              "type": "article"
-            },
-            {
-              "title": "Localizing your app with Xcode",
-              "url": "https://developer.apple.com/documentation/xcode/localizing_your_app_with_xcode",
-              "type": "article"
-            },
             {
               "title": "Swift Programming Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=8Xg7E9shq0U",
@@ -1311,11 +1181,6 @@
           "description": "Optimize macOS performance: Reducing launch times, minimizing disk writes, optimizing memory footprint, and Metal graphics acceleration.",
           "resources": [
             {
-              "title": "Profiling with Xcode and Instruments",
-              "url": "https://www.kodeco.com/26456729-profiling-with-xcode-and-instruments",
-              "type": "article"
-            },
-            {
               "title": "Xcode Tutorial for Beginners (CodeWithChris)",
               "url": "https://www.youtube.com/watch?v=HXoVSbwWUIk",
               "type": "video"
@@ -1340,11 +1205,6 @@
           "tag": "advanced",
           "description": "Log and handle errors: Unified Logging System with `os.Logger`, subsystems, privacy levels (private/public), and custom Swift error enums.",
           "resources": [
-            {
-              "title": "Error Handling in Swift",
-              "url": "https://docs.swift.org/swift-book/documentation/theswiftprogramminglanguage/errorhandling/",
-              "type": "article"
-            },
             {
               "title": "Logging in Swift with OSLog",
               "url": "https://developer.apple.com/documentation/oslog",
@@ -1379,11 +1239,6 @@
       "tag": "advanced",
       "description": "Deploy macOS applications: Developer ID code signing, Apple Notarization, Mac App Store distribution, and Sparkle auto-updates.",
       "resources": [
-        {
-          "title": "Distribute your app for beta testing and release",
-          "url": "https://developer.apple.com/documentation/xcode/distributing-your-app-for-beta-testing-and-release",
-          "type": "article"
-        },
         {
           "title": "App Store Connect Documentation",
           "url": "https://developer.apple.com/documentation/appstoreconnectapi",
@@ -1450,11 +1305,6 @@
             {
               "title": "Distributing on the Mac App Store",
               "url": "https://developer.apple.com/macos/distribution/",
-              "type": "article"
-            },
-            {
-              "title": "Distributing your app for beta testing with TestFlight",
-              "url": "https://developer.apple.com/documentation/xcode/distributing-your-app-for-beta-testing-and-release",
               "type": "article"
             },
             {
@@ -1588,11 +1438,6 @@
               "type": "article"
             },
             {
-              "title": "App Analytics in App Store Connect",
-              "url": "https://developer.apple.com/documentation/appstoreconnectapi/app_analytics",
-              "type": "article"
-            },
-            {
               "title": "Swift Programming Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=8Xg7E9shq0U",
               "type": "video"
@@ -1617,16 +1462,6 @@
           "tag": "advanced",
           "description": "Maintain backward compatibility: Handling new macOS versions, deprecation warnings, and managing database schema migrations.",
           "resources": [
-            {
-              "title": "Adopting New APIs and Frameworks",
-              "url": "https://developer.apple.com/documentation/technologies/adopting_new_apis_and_frameworks",
-              "type": "article"
-            },
-            {
-              "title": "Maintaining a Legacy macOS App (Article)",
-              "url": "https://mjtsai.com/blog/2021/01/18/maintaining-a-legacy-macos-app/",
-              "type": "article"
-            },
             {
               "title": "Xcode Tutorial for Beginners (CodeWithChris)",
               "url": "https://www.youtube.com/watch?v=HXoVSbwWUIk",
@@ -1656,11 +1491,6 @@
       "tag": "advanced",
       "description": "Build an elite macOS developer portfolio: Native App Store applications, open-source Swift packages, and technical interview readiness.",
       "resources": [
-        {
-          "title": "Building Your Software Engineering Portfolio",
-          "url": "https://www.freecodecamp.org/news/how-to-build-a-strong-software-engineering-portfolio/",
-          "type": "article"
-        },
         {
           "title": "Cracking the Coding Interview",
           "url": "https://www.amazon.com/Cracking-Coding-Interview-Programing-Questions/dp/0984782850",
@@ -1759,16 +1589,6 @@
           "tag": "advanced",
           "description": "Establish professional credibility: Publishing open-source Swift packages, authoring technical macOS development blogs, and engaging with the Apple developer community.",
           "resources": [
-            {
-              "title": "How to Build a Powerful Developer Portfolio",
-              "url": "https://dev.to/elvis_e/how-to-build-a-powerful-developer-portfolio-379f",
-              "type": "article"
-            },
-            {
-              "title": "Personal Branding for Developers",
-              "url": "https://www.freecodecamp.org/news/personal-branding-for-developers/",
-              "type": "article"
-            },
             {
               "title": "Contributing to a Project and Its Community (GitHub)",
               "url": "https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project",

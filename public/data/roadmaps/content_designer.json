@@ -160,11 +160,6 @@
           "description": "Differentiate disciplines: Clarifying roles and intersections between Content Design, UX Writing, Copywriting, Technical Writing, and Content Strategy.",
           "resources": [
             {
-              "title": "What's the difference between UX writing and content design?",
-              "url": "https://www.uxwritinghub.com/content-design-vs-ux-writing/",
-              "type": "article"
-            },
-            {
               "title": "Content Strategy vs. Content Design vs. UX Writing: What's the Difference?",
               "url": "https://www.gathercontent.com/blog/content-strategy-vs-content-design-vs-ux-writing",
               "type": "article"
@@ -235,11 +230,6 @@
           "description": "Audit and structure content: Content inventories, qualitative content audits, ROT analysis (Redundant, Outdated, Trivial), and gap analysis.",
           "resources": [
             {
-              "title": "Content Inventory and Audit: A Step-by-Step Guide",
-              "url": "https://www.optimizely.com/optimization-glossary/content-inventory-audit/",
-              "type": "article"
-            },
-            {
               "title": "Understanding Content Types and Their Attributes",
               "url": "https://www.contentful.com/blog/understanding-content-types/",
               "type": "article"
@@ -274,11 +264,6 @@
           "tag": "essential",
           "description": "Utilize content design tools: Figma, FigJam, Hemingway App, Readable.io, Frontitude / Ditto for copy component management, and dictionary databases.",
           "resources": [
-            {
-              "title": "Figma for UX Writers: A Beginner's Guide",
-              "url": "https://uxwritinghub.com/figma-for-ux-writers/",
-              "type": "article"
-            },
             {
               "title": "Introduction to Content Management Systems (CMS)",
               "url": "https://www.gartner.com/en/information-technology/glossary/content-management-system-cms",
@@ -354,11 +339,6 @@
       "description": "Craft product content: UX writing, microcopy, information architecture, and voice/tone design.",
       "resources": [
         {
-          "title": "Everyday Information Architecture",
-          "url": "https://alistapart.com/article/everydayia/",
-          "type": "article"
-        },
-        {
           "title": "What is UX Writing? A Beginner's Guide (Sharmilee Sarkar | Content Designer)",
           "url": "https://www.youtube.com/watch?v=iK4d7nL4VV0",
           "type": "video"
@@ -381,11 +361,6 @@
           "tag": "essential",
           "description": "Structure product content: Navigational labeling, taxonomies, hierarchy, and structuring complex workflows with intuitive mental models.",
           "resources": [
-            {
-              "title": "Information Architecture Basics",
-              "url": "https://www.uxmatters.com/mt/archives/2007/04/information-architecture-basics.php",
-              "type": "article"
-            },
             {
               "title": "Content Inventories and Audits in Information Architecture",
               "url": "https://www.contentstrategyalliance.com/what-is-content-strategy/content-inventories-audits/",
@@ -472,8 +447,8 @@
               "type": "article"
             },
             {
-              "title": "How to Create a Content Style Guide",
-              "url": "https://www.semrush.com/blog/how-to-create-a-content-style-guide/",
+              "title": "Content Style Guide — Semrush",
+              "url": "https://www.semrush.com/blog/content-style-guide/",
               "type": "article"
             },
             {
@@ -507,11 +482,6 @@
               "type": "article"
             },
             {
-              "title": "UX Writing for Onboarding Flows",
-              "url": "https://uxwritinghub.com/ux-writing-onboarding-flows/",
-              "type": "article"
-            },
-            {
               "title": "UX Writing: How To Write Microcopy (With Examples)",
               "url": "https://www.youtube.com/watch?v=ylx67a1v7_M",
               "type": "video"
@@ -536,11 +506,6 @@
           "tag": "essential",
           "description": "Prototype content in design tools: Pairing with product designers in Figma, writing real copy instead of lorem ipsum, and testing copy variations in prototypes.",
           "resources": [
-            {
-              "title": "Figma for Content Designers: Workflows and Best Practices",
-              "url": "https://www.uxwritinghub.com/figma-for-content-designers/",
-              "type": "article"
-            },
             {
               "title": "Content Prototyping with Figma",
               "url": "https://medium.com/design-at-microsoft/content-prototyping-with-figma-a-game-changer-for-ux-writing-d5c2e5e1e1a8",
@@ -571,16 +536,6 @@
           "tag": "advanced",
           "description": "Model structured content: Headless CMS schemas (Contentful, Sanity), content modeling, modular content blocks, and metadata taxonomies.",
           "resources": [
-            {
-              "title": "An Introduction to Content Modeling",
-              "url": "https://alistapart.com/article/introduction-to-content-modeling/",
-              "type": "article"
-            },
-            {
-              "title": "Structured Content Explained",
-              "url": "https://www.braintraffic.com/insights/structured-content-explained",
-              "type": "article"
-            },
             {
               "title": "Headless CMS and Content Modeling",
               "url": "https://www.contentful.com/r/knowledge/what-is-headless-cms-content-modeling/",
@@ -616,11 +571,6 @@
       "description": "Master advanced content design: Accessibility, localization, experimentation, AI integration, and content governance.",
       "resources": [
         {
-          "title": "Content Strategy for the Web (Book)",
-          "url": "https://books.google.com/books/about/Content_Strategy_for_the_Web.html?id=lq-cQgAACAAJ",
-          "type": "course"
-        },
-        {
           "title": "Web Accessibility Tutorial for Beginners - Learn how to build accessible websites",
           "url": "https://www.youtube.com/watch?v=e2nkq3h1P68",
           "type": "video"
@@ -649,11 +599,6 @@
               "type": "article"
             },
             {
-              "title": "Writing for Accessibility",
-              "url": "https://www.deque.com/blog/writing-for-accessibility-inclusive-content/",
-              "type": "article"
-            },
-            {
               "title": "Learn Accessibility Fundamentals - A Complete Guide",
               "url": "https://www.youtube.com/watch?v=e2nkq3h1P68",
               "type": "video"
@@ -673,11 +618,6 @@
           "tag": "advanced",
           "description": "Plan for localization and translation: Internationalization (i18n) copy rules, accommodating text expansion (up to 40% in German), avoiding cultural idioms, and pseudo-localization.",
           "resources": [
-            {
-              "title": "Introduction to Content Localization",
-              "url": "https://www.shopify.com/partners/blog/content-localization",
-              "type": "article"
-            },
             {
               "title": "Writing for International Audiences",
               "url": "https://www.uxcontent.com/writing-for-international-audiences/",
@@ -711,16 +651,6 @@
             {
               "title": "How to Conduct a Content Usability Test",
               "url": "https://uxdesign.cc/how-to-conduct-a-content-usability-test-7538a8e3d231",
-              "type": "article"
-            },
-            {
-              "title": "Measuring Content Performance: A Guide",
-              "url": "https://rockcontent.com/blog/content-performance/",
-              "type": "article"
-            },
-            {
-              "title": "A/B Testing for UX Writing",
-              "url": "https://uxwritinghub.com/a-b-testing-for-ux-writing/",
               "type": "article"
             },
             {
@@ -759,11 +689,6 @@
               "type": "article"
             },
             {
-              "title": "The Elements of a Content Strategy",
-              "url": "https://www.uxmatters.com/mt/archives/2012/05/the-elements-of-a-content-strategy.php",
-              "type": "article"
-            },
-            {
               "title": "What is Content Strategy? The #BrainTraffic Difference",
               "url": "https://www.youtube.com/watch?v=HGZnMJFLuqE",
               "type": "video"
@@ -788,11 +713,6 @@
           "tag": "advanced",
           "description": "Leverage AI in content workflows: Prompt engineering for content ideation, automated tone-of-voice checking, managing LLM hallucinations, and writing AI system prompt guardrails.",
           "resources": [
-            {
-              "title": "Generative AI for UX Writing: A Practical Guide",
-              "url": "https://www.uxwritinghub.com/generative-ai-for-ux-writing/",
-              "type": "article"
-            },
             {
               "title": "The Role of AI in Content Strategy",
               "url": "https://contentstrategy.com/blog/ai-in-content-strategy",
@@ -868,8 +788,8 @@
       "description": "Drive Content Operations (ContentOps) and cross-functional advocacy.",
       "resources": [
         {
-          "title": "Content Ops: Bridging Strategy and Execution",
-          "url": "https://www.contentstrategyalliance.com/what-is-content-strategy/content-operations/",
+          "title": "Content Strategy: Planning, Delivery and Governance (Nielsen Norman Group)",
+          "url": "https://www.nngroup.com/articles/content-strategy/",
           "type": "article"
         },
         {
@@ -898,16 +818,6 @@
             {
               "title": "Content Designer & Product Designer Collaboration",
               "url": "https://xd.adobe.com/ideas/principles/content-design/content-designer-product-designer-collaboration/",
-              "type": "article"
-            },
-            {
-              "title": "Integrating Content into Agile Workflows",
-              "url": "https://www.semrush.com/blog/content-strategy-agile-development/",
-              "type": "article"
-            },
-            {
-              "title": "Working with Developers as a UX Writer",
-              "url": "https://uxwritinghub.com/working-with-developers-as-a-ux-writer/",
               "type": "article"
             },
             {
@@ -978,11 +888,6 @@
             {
               "title": "How to Get Buy-In for Content Strategy",
               "url": "https://www.nngroup.com/articles/content-strategy-buy-in/",
-              "type": "article"
-            },
-            {
-              "title": "Presenting Your UX Writing Work",
-              "url": "https://uxwritinghub.com/presenting-your-ux-writing-work/",
               "type": "article"
             },
             {
@@ -1060,11 +965,6 @@
       "description": "Build an elite content design portfolio: Deep-dive case studies, interview mastery, and career growth.",
       "resources": [
         {
-          "title": "Building Your UX Writing Portfolio",
-          "url": "https://uxwritinghub.com/building-ux-writing-portfolio/",
-          "type": "article"
-        },
-        {
           "title": "BUILDING YOUR UX WRITING PORTFOLIO - My TOP TIPS for getting a JOB",
           "url": "https://www.youtube.com/watch?v=fCoZ226aTiA",
           "type": "video"
@@ -1090,11 +990,6 @@
             {
               "title": "How to Write a UX Case Study",
               "url": "https://www.nngroup.com/articles/how-to-write-ux-case-study/",
-              "type": "article"
-            },
-            {
-              "title": "Content Design Portfolio Examples",
-              "url": "https://www.uxwritinghub.com/content-design-portfolio-examples/",
               "type": "article"
             },
             {
@@ -1153,13 +1048,8 @@
           "description": "Master content design interviews: Portfolio walkthrough presentations, live writing exercises, app critique sessions, and fielding pushback questions.",
           "resources": [
             {
-              "title": "Top Content Design Interview Questions",
-              "url": "https://contentdesign.academy/content-design-interview-questions/",
-              "type": "article"
-            },
-            {
-              "title": "Crafting Your UX Writing Resume",
-              "url": "https://uxwritinghub.com/crafting-your-ux-writing-resume/",
+              "title": "Common UX Interview Questions (UX Design Institute)",
+              "url": "https://www.uxdesigninstitute.com/blog/ux-interview-questions/",
               "type": "article"
             },
             {
@@ -1198,8 +1088,8 @@
               "type": "article"
             },
             {
-              "title": "Content Strategy Conference List",
-              "url": "https://contentstrategyalliance.com/events/",
+              "title": "Documentation and Content Conferences (Write the Docs)",
+              "url": "https://www.writethedocs.org/conf/",
               "type": "article"
             },
             {

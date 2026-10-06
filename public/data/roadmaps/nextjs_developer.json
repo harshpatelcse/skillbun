@@ -351,11 +351,6 @@
               "type": "article"
             },
             {
-              "title": "Secure Next.js Authentication Patterns",
-              "url": "https://vercel.com/guides/authentication-patterns-nextjs",
-              "type": "article"
-            },
-            {
               "title": "Next.js Full Tutorial for Beginners | Next.js 13 (Dave Gray)",
               "url": "https://www.youtube.com/watch?v=843nec-IvW0",
               "type": "video"
@@ -471,11 +466,6 @@
               "type": "course"
             },
             {
-              "title": "Prisma Documentation",
-              "url": "https://www.prisma.io/docs/orm/more/platforms/nextjs",
-              "type": "article"
-            },
-            {
               "title": "Next.js App Router Authentication (Sessions, Cookies, JWTs) (leerob)",
               "url": "https://www.youtube.com/watch?v=DJvM2lSPn6w",
               "type": "video"
@@ -548,11 +538,6 @@
               "type": "article"
             },
             {
-              "title": "AWS Amplify Documentation",
-              "url": "https://docs.amplify.aws/console/start/nextjs/",
-              "type": "article"
-            },
-            {
               "title": "Next.js Full Tutorial for Beginners | Next.js 13 (Dave Gray)",
               "url": "https://www.youtube.com/watch?v=843nec-IvW0",
               "type": "video"
@@ -580,11 +565,6 @@
             {
               "title": "Sentry for Error Monitoring",
               "url": "https://docs.sentry.io/platforms/javascript/guides/nextjs/",
-              "type": "article"
-            },
-            {
-              "title": "Vercel Analytics",
-              "url": "https://vercel.com/docs/analytics/overview",
               "type": "article"
             },
             {
@@ -663,11 +643,6 @@
               "type": "article"
             },
             {
-              "title": "Handling Webhooks in Next.js (Example)",
-              "url": "https://vercel.com/guides/how-to-implement-webhooks-with-nextjs-and-serverless-functions",
-              "type": "article"
-            },
-            {
               "title": "Next.js App Router Authentication (Sessions, Cookies, JWTs) (leerob)",
               "url": "https://www.youtube.com/watch?v=DJvM2lSPn6w",
               "type": "video"
@@ -735,18 +710,8 @@
               "type": "article"
             },
             {
-              "title": "Integrating GraphQL with Next.js",
-              "url": "https://www.apollographql.com/blog/next-js/next-js-graphql-server-components-app-router/",
-              "type": "article"
-            },
-            {
               "title": "tRPC Documentation",
               "url": "https://trpc.io/docs/nextjs",
-              "type": "article"
-            },
-            {
-              "title": "Prisma with Next.js",
-              "url": "https://www.prisma.io/docs/orm/more/platforms/nextjs",
               "type": "article"
             },
             {
@@ -774,11 +739,6 @@
           "tag": "advanced",
           "description": "Design complex enterprise Next.js architectures: multi-tenant subdomains using Edge Middleware rewrites, micro-frontends with Module Federation, and Content Security Policy (CSP) nonces to mitigate XSS in Server Components.",
           "resources": [
-            {
-              "title": "Building a Scalable Next.js App - Vercel Blog",
-              "url": "https://vercel.com/blog/building-a-scalable-next-js-app",
-              "type": "article"
-            },
             {
               "title": "Monorepo with Next.js and Turborepo",
               "url": "https://nextjs.org/docs/getting-started/installation#turborepo",
@@ -817,11 +777,6 @@
             {
               "title": "ShipFast - Boilerplate for SaaS with Next.js",
               "url": "https://shipfa.st/",
-              "type": "article"
-            },
-            {
-              "title": "Next.js E-commerce Example",
-              "url": "https://github.com/vercel/nextjs-commerce",
               "type": "article"
             },
             {

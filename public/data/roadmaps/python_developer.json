@@ -226,11 +226,6 @@
           "description": "Master Python algorithmic efficiency: Big-O analysis of built-in types (lists dynamic array amortized resizing, dictionaries and sets compact hash table implementation with open addressing), double-ended queues (`collections.deque` O(1) append/pop), priority heaps with `heapq`, binary search optimization with `bisect`, and implementing custom graph, tree, and dynamic programming algorithms.",
           "resources": [
             {
-              "title": "Python Data Structures and Algorithms",
-              "url": "https://www.freecodecamp.org/news/data-structures-and-algorithms-in-python/",
-              "type": "article"
-            },
-            {
               "title": "Big O Notation Explained",
               "url": "https://www.freecodecamp.org/news/big-o-notation-explained-with-examples/",
               "type": "article"
@@ -394,7 +389,7 @@
             },
             {
               "title": "OWASP API Security Top 10",
-              "url": "https://owasp.org/www-project-api-security-top-10/",
+              "url": "https://api-security.owasp.org/editions/2023/en/0x00-header/",
               "type": "article"
             },
             {
@@ -721,16 +716,6 @@
           "tag": "advanced",
           "description": "Architect resilient, scalable distributed systems: load balancing with NGINX, reverse proxies and API gateways, horizontal scaling stateless services, message queues for asynchronous decoupling, Redis cache-aside caching to prevent database overload, database read replicas with connection routing, and disaster recovery strategies.",
           "resources": [
-            {
-              "title": "Grokking System Design Interview (Course)",
-              "url": "https://www.educative.io/courses/grokking-system-design-interview",
-              "type": "course"
-            },
-            {
-              "title": "Anatomy of a Cloud-Native Application",
-              "url": "https://www.redhat.com/en/topics/cloud-native-development/what-is-cloud-native",
-              "type": "article"
-            },
             {
               "title": "System Design for Beginners — freeCodeCamp",
               "url": "https://www.youtube.com/watch?v=m8Icp_Cid5o",

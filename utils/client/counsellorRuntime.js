@@ -47,6 +47,9 @@ const MAX_HISTORY_TEXT = 22000;
 export function mountCounsellorRuntime() {
   const eventController = new AbortController();
   const state = createState(eventController);
+  // The initial question is removed from browser history after it is read.
+  // Keep its roadmap context for this conversation and after Clear Chat.
+  const contextParam = new URLSearchParams(window.location.search).get('context');
   let conversationRevision = 0;
 
   const limitInterval = setInterval(() => {
@@ -54,8 +57,6 @@ export function mountCounsellorRuntime() {
   }, 1000);
 
   function getSystemPrompt() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const contextParam = urlParams.get('context');
     let dynamicContext = "";
     
     if (contextParam) {
@@ -325,7 +326,7 @@ Do not output raw JSON format. Provide standard conversational markdown text onl
   }
 
   async function initCaptcha() {
-    if (!state.securityConfig.captchaEnabled || hasFreshHumanProof(state)) return;
+    if (state.signal.aborted || !state.securityConfig.captchaEnabled || hasFreshHumanProof(state)) return;
 
     if (state.captchaWidgetId !== null && window.turnstile) {
       toggleSecurityBanner(true);
@@ -349,7 +350,7 @@ Do not output raw JSON format. Provide standard conversational markdown text onl
 
         state.captchaWidgetId = window.turnstile.render('#captchaWidget', {
           sitekey: state.securityConfig.captchaSiteKey,
-          theme: localStorage.getItem('sb_theme') || 'dark',
+          theme: document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light',
           callback: (token) => {
             if (state.signal.aborted) return;
             state.captchaToken = token;
@@ -364,16 +365,19 @@ Do not output raw JSON format. Provide standard conversational markdown text onl
             }
           },
           'expired-callback': () => {
+            if (state.signal.aborted) return;
             state.captchaToken = '';
             setCaptchaStatus('Security check expired. Please verify again.', 'error');
             toggleSecurityBanner(true);
           },
           'error-callback': (errorCode) => {
+            if (state.signal.aborted) return;
             state.captchaToken = '';
             setCaptchaStatus(getCaptchaErrorMessage(errorCode), 'error');
           }
         });
       } catch (err) {
+        if (state.signal.aborted) return;
         setCaptchaStatus('Security widget failed to load.', 'error');
       }
     })();

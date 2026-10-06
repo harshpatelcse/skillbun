@@ -50,8 +50,9 @@ export const SQL_INJECTION_PATTERNS = [
   /\bunion\s+(?:all\s+)?select\b/i,
   // Stacked queries with dangerous DML/DDL operations
   /;\s*(?:select|insert|update|delete|drop|alter|create|truncate|exec|execute|grant|revoke|union)\b/i,
-  // SQL comments in suspicious syntax
-  /(?:--|#)\s*(?:$|\r|\n)/,
+  // Require SQL-breaking context before a line comment. A bare trailing hash
+  // is valid technical vocabulary (C#, F#), not an injection signature.
+  /(?:['"`]|\b\d+)\s*(?:--|#)(?:\s|$)/,
   /\/\*[\s\S]*?\*\//,
   // Time-based and blind SQL injection functions
   /\b(?:sleep|benchmark|waitfor\s+delay|pg_sleep)\s*\(/i,

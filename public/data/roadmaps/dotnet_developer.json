@@ -148,8 +148,8 @@
           "description": "Master advanced C# constructs: LINQ deferred execution, delegates, expressions, reflection, memory-efficient `Span<T>` and `Memory<T>`, and unmanaged interop.",
           "resources": [
             {
-              "title": "Asynchronous programming with async and await (Microsoft Docs)",
-              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/async-and-await",
+              "title": "Asynchronous programming with async and await",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/",
               "type": "article"
             },
             {
@@ -219,7 +219,7 @@
             },
             {
               "title": "Install Visual Studio",
-              "url": "https://visualstudio.microsoft.com/vs/install/",
+              "url": "https://learn.microsoft.com/en-us/visualstudio/install/install-visual-studio",
               "type": "article"
             },
             {
@@ -302,11 +302,6 @@
           "type": "article"
         },
         {
-          "title": "Building Web APIs with ASP.NET Core (Pluralsight)",
-          "url": "https://www.pluralsight.com/courses/asp-dot-net-core-web-api-building",
-          "type": "course"
-        },
-        {
           "title": "Entity Framework Core Tutorial (IAmTimCorey)",
           "url": "https://www.youtube.com/watch?v=SryQxUeChMc",
           "type": "video"
@@ -330,13 +325,8 @@
           "description": "Design RESTful APIs: HTTP status codes, idempotent verbs, content negotiation, REST maturity levels, and resource representation in JSON.",
           "resources": [
             {
-              "title": "Introduction to Web APIs",
-              "url": "https://learn.microsoft.com/en-us/aspnet/core/tutorials/web-api-definition",
-              "type": "article"
-            },
-            {
-              "title": "REST API Design Best Practices",
-              "url": "https://www.moesif.com/blog/technical/api-design/REST-API-Design-Best-Practices/",
+              "title": "Tutorial: Create a controller-based web API with ASP.NET Core",
+              "url": "https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api",
               "type": "article"
             },
             {
@@ -411,7 +401,7 @@
             },
             {
               "title": "Create web APIs with ASP.NET Core",
-              "url": "https://learn.microsoft.com/en-us/aspnet/core/tutorials/web-api-introduction",
+              "url": "https://learn.microsoft.com/en-us/aspnet/core/web-api/",
               "type": "article"
             },
             {
@@ -490,8 +480,8 @@
               "type": "article"
             },
             {
-              "title": "Bearer token authentication with ASP.NET Core Identity",
-              "url": "https://learn.microsoft.com/en-us/aspnet/core/security/authentication/bearer-token-with-identity",
+              "title": "How to use Identity to secure a Web API backend for SPAs",
+              "url": "https://learn.microsoft.com/en-us/aspnet/core/security/authentication/identity-api-authorization",
               "type": "article"
             },
             {
@@ -525,8 +515,8 @@
           "description": "Manage API versioning: `Asp.Versioning.Http`, URL path/header versioning, Swagger/OpenAPI documentation generation with Swashbuckle or NSwag.",
           "resources": [
             {
-              "title": "Versioning in ASP.NET Core Web APIs",
-              "url": "https://learn.microsoft.com/en-us/aspnet/core/web-api/versioning",
+              "title": "API versioning for ASP.NET Core (dotnet)",
+              "url": "https://github.com/dotnet/aspnet-api-versioning/wiki",
               "type": "article"
             },
             {
@@ -567,11 +557,6 @@
           "title": "Entity Framework Core Documentation",
           "url": "https://learn.microsoft.com/en-us/ef/core/",
           "type": "article"
-        },
-        {
-          "title": "EF Core in Depth (Pluralsight)",
-          "url": "https://www.pluralsight.com/courses/entity-framework-core-6-deep-dive",
-          "type": "course"
         },
         {
           "title": "ASP.NET Core Web API Tutorial (Les Jackson)",
@@ -672,14 +657,9 @@
               "type": "article"
             },
             {
-              "title": "Performance considerations (EF Core)",
-              "url": "https://learn.microsoft.com/en-us/ef/core/performance/overview",
+              "title": "Entity Framework Core performance guide",
+              "url": "https://learn.microsoft.com/en-us/ef/core/performance/",
               "type": "article"
-            },
-            {
-              "title": "EF Core Advanced Topics (Pluralsight)",
-              "url": "https://www.pluralsight.com/courses/entity-framework-core-advanced-topics",
-              "type": "course"
             },
             {
               "title": "C# Full Course for free (Bro Code)",
@@ -707,8 +687,8 @@
           "description": "Implement caching and NoSQL persistence: Distributed caching with Redis (`IDistributedCache`), MongoDB / Cosmos DB document stores, and cache-aside patterns.",
           "resources": [
             {
-              "title": "Introduction to NoSQL Databases",
-              "url": "https://learn.microsoft.com/en-us/azure/architecture/data-guide/big-data/nosql-data",
+              "title": "Understand data models",
+              "url": "https://learn.microsoft.com/en-us/azure/architecture/data-guide/big-data/non-relational-data",
               "type": "article"
             },
             {
@@ -717,8 +697,8 @@
               "type": "article"
             },
             {
-              "title": "Azure Cosmos DB for .NET Developers",
-              "url": "https://learn.microsoft.com/en-us/azure/cosmos-db/sql/sql-api-dotnetcore-get-started",
+              "title": "Quickstart: Use Azure Cosmos DB for NoSQL with Azure SDK for .NET",
+              "url": "https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/quickstart-dotnet",
               "type": "article"
             },
             {
@@ -791,11 +771,6 @@
           "type": "article"
         },
         {
-          "title": "Clean Architecture with .NET (Pluralsight)",
-          "url": "https://www.pluralsight.com/courses/clean-architecture-dot-net",
-          "type": "course"
-        },
-        {
           "title": "C# Design Patterns (Raw Coding)",
           "url": "https://www.youtube.com/watch?v=tAuRQs_d9F8",
           "type": "video"
@@ -859,8 +834,8 @@
           "description": "Implement enterprise patterns: Clean Architecture, Vertical Slice Architecture, CQRS (Command Query Responsibility Segregation) with MediatR, and Repository/Unit of Work.",
           "resources": [
             {
-              "title": "Architecting Cloud Native .NET Applications for Azure",
-              "url": "https://learn.microsoft.com/en-us/dotnet/architecture/cloud-native/architectural-styles",
+              "title": "Architecture styles",
+              "url": "https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/",
               "type": "article"
             },
             {
@@ -901,11 +876,6 @@
             {
               "title": "Implement background tasks with hosted services in ASP.NET Core",
               "url": "https://learn.microsoft.com/en-us/aspnet/core/fundamentals/host/hosted-services",
-              "type": "article"
-            },
-            {
-              "title": "An introduction to message brokers",
-              "url": "https://www.rabbitmq.com/tutorials/amqp-overview.html",
               "type": "article"
             },
             {
@@ -1068,11 +1038,6 @@
           "type": "article"
         },
         {
-          "title": "DevOps for .NET Developers (Pluralsight)",
-          "url": "https://www.pluralsight.com/courses/devops-dot-net-developers",
-          "type": "course"
-        },
-        {
           "title": "Entity Framework Core Tutorial (IAmTimCorey)",
           "url": "https://www.youtube.com/watch?v=SryQxUeChMc",
           "type": "video"
@@ -1141,8 +1106,8 @@
               "type": "article"
             },
             {
-              "title": "Introduction to Azure Kubernetes Service (AKS)",
-              "url": "https://learn.microsoft.com/en-us/azure/aks/intro-to-aks",
+              "title": "What is Azure Kubernetes Service (AKS)?",
+              "url": "https://learn.microsoft.com/en-us/azure/aks/what-is-aks",
               "type": "article"
             },
             {

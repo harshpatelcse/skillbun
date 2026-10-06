@@ -163,8 +163,8 @@
               "type": "article"
             },
             {
-              "title": "Responsive Web Design Basics",
-              "url": "https://developer.mozilla.org/en-US/docs/Web/Guide/Responsive",
+              "title": "Responsive Web Design (MDN Web Docs)",
+              "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design",
               "type": "article"
             },
             {
@@ -300,16 +300,6 @@
           "description": "Build modular theme sections: Section rendering API, customizable block types, dynamic presets, app blocks, and writing JSON schema configurations.",
           "resources": [
             {
-              "title": "Theme Sections",
-              "url": "https://shopify.dev/docs/themes/architecture/sections-and-blocks",
-              "type": "article"
-            },
-            {
-              "title": "JSON Templates in Shopify",
-              "url": "https://shopify.dev/docs/themes/json-templates",
-              "type": "article"
-            },
-            {
               "title": "Learn Shopify Hydrogen from an engineer at Shopify (Kelvin Omereshone)",
               "url": "https://www.youtube.com/watch?v=dTh1esIxw1k",
               "type": "video"
@@ -375,11 +365,6 @@
               "type": "article"
             },
             {
-              "title": "Theme Development with JavaScript Best Practices",
-              "url": "https://shopify.dev/docs/themes/best-practices/javascript",
-              "type": "article"
-            },
-            {
               "title": "Building Your First Shopify App with Node.js and Express // Andrew McCauley | Shopify Partners (ShopifyDevs)",
               "url": "https://www.youtube.com/watch?v=D3iO4mZHgLk",
               "type": "video"
@@ -415,11 +400,6 @@
               "type": "article"
             },
             {
-              "title": "Schema.org for E-commerce",
-              "url": "https://schema.org/ECommerceBusiness",
-              "type": "article"
-            },
-            {
               "title": "Learn Liquid for Shopify (Shopify Devs)",
               "url": "https://www.youtube.com/watch?v=zBtwd2OfZsI",
               "type": "video"
@@ -444,11 +424,6 @@
           "tag": "essential",
           "description": "Project: Build a high-converting custom theme feature: Multi-tier sliding cart drawer with free shipping progress bar, product upsells, and discount validation via Ajax API.",
           "resources": [
-            {
-              "title": "Shopify Developer Blog - Case Studies",
-              "url": "https://shopify.dev/custom-storefronts/blog",
-              "type": "article"
-            },
             {
               "title": "Learn Shopify Hydrogen from an engineer at Shopify (Kelvin Omereshone)",
               "url": "https://www.youtube.com/watch?v=dTh1esIxw1k",
@@ -547,11 +522,6 @@
           "description": "Build Shopify App Extensions: Theme App Extensions (app blocks/embeds), Checkout UI Extensions using Shopify Functions, and Admin action extensions.",
           "resources": [
             {
-              "title": "Shopify UI Extensions",
-              "url": "https://shopify.dev/docs/apps/ui-extensions",
-              "type": "article"
-            },
-            {
               "title": "Checkout Extensibility Overview",
               "url": "https://shopify.dev/docs/api/checkout-extensions",
               "type": "article"
@@ -581,11 +551,6 @@
           "tag": "advanced",
           "description": "Integrate third-party services: Connecting Enterprise Resource Planning (ERP), Customer Relationship Management (Klaviyo), review systems, and 3PL fulfillment APIs.",
           "resources": [
-            {
-              "title": "Building Custom Integrations with the Admin API",
-              "url": "https://shopify.dev/docs/api/admin-graphql/latest/guides/making-requests",
-              "type": "article"
-            },
             {
               "title": "Shopify App Store",
               "url": "https://apps.shopify.com/",
@@ -756,11 +721,6 @@
             {
               "title": "Shopify Hydrogen Documentation",
               "url": "https://shopify.dev/docs/custom-storefronts/hydrogen",
-              "type": "article"
-            },
-            {
-              "title": "Building Headless with Shopify",
-              "url": "https://www.shopify.com/partners/blog/headless-commerce",
               "type": "article"
             },
             {

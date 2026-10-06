@@ -3,11 +3,16 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { readFile } from 'node:fs/promises';
 import vm from 'node:vm';
-import { validateFirestoreId, validateSchema, validateString } from '../../utils/server/inputValidator.js';
+import { validateFirestoreId, validateSchema, validateString, validatePlainObject } from '../../utils/server/inputValidator.js';
 import { CertificateMutationError, changeCertificateRevocation } from '../../utils/server/certificateIntegrity.mjs';
 import { validateWorkforceAction, validateWorkforceCredentials } from '../../utils/server/workforceActionValidation.mjs';
 import { paginateWorkforceDocuments, parseWorkforceDocumentCursor, validateWorkforceDocumentId, WorkforceDocumentQueryError } from '../../utils/server/workforceDocumentPagination.mjs';
 import { fetchAllWorkforceDocuments } from '../../utils/client/workforceDocuments.mjs';
+import { formatWorkforceDisplayId, generateWorkforceId, isValidWorkforceId, normalizeWorkforceDbId, WORKFORCE_PREFIXES } from '../../utils/server/workforceId.js';
+import { generateOfferLetterPdf } from '../../utils/server/pdf/offerLetterGenerator.js';
+import { generateExtensionLetterPdf } from '../../utils/server/pdf/extensionLetterGenerator.js';
+import { generateDocumentPdf } from '../../utils/server/pdf/documentPdfService.js';
+import { DOCUMENT_CATEGORIES, getActiveTemplateVersion, UnsupportedTemplateVersionError } from '../../utils/common/docTemplateRegistry.js';
 
 async function loadSource(relative) {
   return (await readFile(new URL(`../../${relative}`, import.meta.url), 'utf8'))
@@ -69,6 +74,277 @@ function fakeDb(seed = {}) {
   };
 }
 const apiError = (message, status, code) => Response.json({ success: false, error: { message, code } }, { status });
+
+test('PDF studio rejects malformed and unbounded inputs before rendering, preserves samples and enforces quota', async () => {
+  const source = await loadSource('app/api/admin/workforce/pdf/preview/route.js');
+  const guardSource = await loadSource('utils/server/workforceEmployees.js');
+  const rendered = [];
+  let limited = false;
+  let denied = false;
+  let quotaChecks = 0;
+  const generate = async (employee, options) => {
+    rendered.push({ employee, options });
+    return { referenceId: options.referenceId, filename: 'synthetic.pdf', buffer: Buffer.from('synthetic-pdf') };
+  };
+  const requireWorkforceAdmin = vm.runInNewContext(`${guardSource}; requireWorkforceAdmin;`, {
+    URL, process: { env: { NODE_ENV: 'production' } }, NextResponse: { json: Response.json },
+    validateFirestoreId, validateSchema, validateString, validateWorkforceCredentials,
+    getFirebaseAdminAuth: () => ({ verifyIdToken: async () => {
+      if (denied) throw new Error('Synthetic invalid session');
+      return { uid: 'admin', admin: true, email: 'admin@example.test' };
+    } }),
+    checkServerRateLimit: async () => { quotaChecks++; return { allowed: !limited, retryAfterMs: 1000 }; },
+    getClientAddress: () => '127.0.0.1',
+  });
+  const post = vm.runInNewContext(`${source}; POST;`, {
+    console, Date, NextResponse: { json: Response.json }, apiError,
+    validateSchema, validatePlainObject,
+    requireWorkforceAdmin,
+    generateOfferLetterPdf: generate, generateExtensionLetterPdf: generate,
+  });
+  const request = body => new Request('https://skillbun.test/api/admin/workforce/pdf/preview', {
+    method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: 'Bearer synthetic-session' }, body: JSON.stringify(body),
+  });
+  for (const body of [null, [], 123, { employee: null }, { employee: [] }, { employee: 'invalid' },
+    { docType: 'UNKNOWN' }, { employee: { full_name: 'a'.repeat(101) } }, { employee: { full_name: {} } },
+    { employee: { stipend_amount: -1 } }, { employee: { template_version: 'v99' } },
+    { referenceId: '../secret' }, { isAdmin: true }]) {
+    assert.equal((await post(request(body))).status, 400, JSON.stringify(body));
+  }
+  assert.equal(rendered.length, 0);
+  const checksBeforeValidPreview = quotaChecks;
+  assert.equal((await post(request({}))).status, 200, 'empty preview retains sample defaults');
+  assert.equal(quotaChecks, checksBeforeValidPreview + 1, 'each preview must consume shared quota exactly once');
+  assert.equal(rendered[0].employee.full_name, 'Alex Sharma');
+  assert.equal((await post(request({ docType: 'EXTENSION_LETTER', referenceId: 'SKB/2026/HR-EXT/8K29DF', newContractEndDate: '30 November 2026',
+    employee: { full_name: 'Synthetic Intern', personal_email: 'intern@example.org', joining_date: '01 September 2026', stipend_amount: 0 } }))).status, 200);
+  assert.equal(rendered[1].employee.joining_date, '01 September 2026');
+  assert.equal(rendered[1].employee.stipend_amount, 0);
+  assert.equal(rendered[1].options.newContractEndDate, '30 November 2026');
+  limited = true;
+  assert.equal((await post(request({}))).status, 429);
+  denied = true;
+  assert.equal((await post(request({}))).status, 401);
+  assert.equal(rendered.length, 2);
+});
+
+async function extensionFixture(employeeOverrides = {}) {
+  const source = await loadSource('app/api/admin/workforce/pdf/extension/route.js');
+  const employee = { status: 'ACTIVE', full_name: 'Synthetic Intern', joining_date: '2026-07-01', contract_end_date: '2026-10-01', ...employeeOverrides };
+  const issued = [];
+  const doc = { id: 'intern', ref: { path: 'employees/intern' }, exists: true, data: () => employee };
+  const db = { collection: name => ({ doc: id => {
+    assert.doesNotMatch(id, /\//, 'Firestore IDs must not contain display separators');
+    return name === 'employees' ? { get: async () => doc } : { path: `${name}/${id}` };
+  } }) };
+  const post = vm.runInNewContext(`${source}; POST;`, {
+    console, Date, Response, URL, NextResponse: { json: Response.json }, apiError,
+    getFirebaseAdminFirestore: () => db, requireWorkforceAdmin: async () => ({ uid: 'admin' }), enforceEmployeeRateLimit: async () => null,
+    validateEmployeeId: validateFirestoreId, validateWorkforceAction, normalizeWorkforceDbId, generateWorkforceId, WORKFORCE_PREFIXES,
+    assertWorkforceAction, WorkforcePolicyError, generateExtensionLetterPdf,
+    getActiveTemplateVersion: () => 'v1', DOCUMENT_CATEGORIES: { EXTENSION_LETTER: 'EXTENSION_LETTER' },
+    transitionWorkforceEmployee: async (_db, _ref, action) => issued.push(action), finishWorkforceAction: async () => {},
+  });
+  const call = body => post(new Request('https://skillbun.test/api/admin/workforce/pdf/extension?format=json', {
+    method: 'POST', body: JSON.stringify(body),
+  }));
+  return { employee, issued, call };
+}
+
+test('extension PDF issuance stores the generated display reference as a safe document key', async () => {
+  const { issued, call } = await extensionFixture();
+  assert.equal((await call(null)).status, 400);
+  const response = await call({ employeeId: 'intern', new_contract_end_date: '2026-11-30' });
+  assert.equal(response.status, 200);
+  const result = await response.json();
+  assert.match(result.referenceId, /^SKB\/\d{4}\/HR-EXT\/[A-Z0-9]{6}$/);
+  const documentId = normalizeWorkforceDbId(result.referenceId);
+  assert.equal(issued[0].document.ref.path, `workforce_docs/${documentId}`);
+  assert.equal(issued[0].document.data.id, documentId);
+  assert.equal(issued[0].document.data.display_id, result.referenceId);
+  assert.equal(issued[0].patch.extension_reference_id, documentId);
+  assert.equal(issued[0].document.data.template_version, 'v1');
+});
+
+test('new extensions use current employee data and a new reference despite a legacy employee-held offer snapshot', async () => {
+  const legacy = { reference_id: 'SKB/2026/HR-OFF/8K29DF', full_name: 'Old Synthetic Name',
+    joining_date: '2025-07-01', issued_at: '2025-06-15T00:00:00.000Z', designation: 'Old Role' };
+  const { employee, issued, call } = await extensionFixture({ offer_reference_id: legacy.reference_id,
+    issued_at: legacy.issued_at, metadata_snapshot: legacy, designation: 'Current Role' });
+  const beforeIssuance = Date.now();
+  const response = await call({ employeeId: 'intern', new_contract_end_date: '2026-11-30' });
+  assert.equal(response.status, 200);
+  const result = await response.json();
+  assert.match(result.referenceId, /^SKB\/\d{4}\/HR-EXT\/[A-Z0-9]{6}$/);
+  assert.notEqual(result.referenceId, legacy.reference_id);
+  assert.equal(result.metadataSnapshot.original_reference_id, legacy.reference_id);
+  assert.equal(result.metadataSnapshot.full_name, employee.full_name);
+  assert.equal(result.metadataSnapshot.designation, employee.designation);
+  assert.equal(result.metadataSnapshot.joining_date, employee.joining_date);
+  assert.equal(result.metadataSnapshot.extended_contract_end_date, '2026-11-30');
+  assert.ok(Date.parse(result.metadataSnapshot.issued_at) >= beforeIssuance);
+  assert.equal(result.metadataSnapshot.issued_at, issued[0].document.data.issued_at.toISOString());
+  assert.equal(employee.metadata_snapshot, legacy, 'the original employee-held offer remains unchanged');
+});
+
+async function offerFixture(seed) {
+  const source = await loadSource('app/api/admin/workforce/pdf/offer/route.js');
+  const rows = new Map(Object.entries(seed));
+  const revisions = new Map();
+  const state = { unavailable: false, rendered: 0, writes: 0, transactionAttempts: 0, invalidations: [] };
+  const db = {
+    collection: name => ({ doc: id => {
+      assert.doesNotMatch(id, /\//, 'historical display references must be normalized before lookup');
+      return { path: `${name}/${id}`, id };
+    } }),
+    async runTransaction(callback) {
+      for (let attempt = 0; attempt < 5; attempt++) {
+        state.transactionAttempts++;
+        const reads = new Map();
+        const writes = [];
+        const result = await callback({
+          async get(ref) {
+            if (state.unavailable && ref.path.startsWith('workforce_docs/')) throw new Error('Synthetic storage outage');
+            reads.set(ref.path, revisions.get(ref.path) || 0);
+            const data = structuredClone(rows.get(ref.path));
+            return { id: ref.id, exists: rows.has(ref.path), data: () => data };
+          },
+          create: (ref, data) => writes.push({ ref, data, create: true }),
+          update: (ref, data) => writes.push({ ref, data }),
+        });
+        if ([...reads].some(([key, version]) => (revisions.get(key) || 0) !== version)) continue;
+        for (const { ref, create } of writes) if (create && rows.has(ref.path)) throw new Error('Document already exists');
+        for (const { ref, data, create } of writes) {
+          rows.set(ref.path, structuredClone(create ? data : { ...rows.get(ref.path), ...data }));
+          revisions.set(ref.path, (revisions.get(ref.path) || 0) + 1);
+          state.writes++;
+        }
+        return result;
+      }
+      throw new Error('Synthetic transaction retry limit exceeded');
+    },
+  };
+  const post = vm.runInNewContext(`${source}; POST;`, {
+    console: { warn() {}, error() {} }, Date, Response, URL, NextResponse: { json: Response.json }, apiError,
+    getFirebaseAdminFirestore: () => db, requireWorkforceAdmin: async () => ({ uid: 'admin' }), enforceEmployeeRateLimit: async () => null,
+    validateEmployeeId: validateFirestoreId, validateSchema, validatePlainObject, formatWorkforceDisplayId, isValidWorkforceId, normalizeWorkforceDbId,
+    DOCUMENT_CATEGORIES, getActiveTemplateVersion, UnsupportedTemplateVersionError,
+    invalidateCacheTag: async tag => state.invalidations.push(tag),
+    generateDocumentPdf: async (...args) => { state.rendered++; return generateDocumentPdf(...args); },
+  });
+  const call = body => post(new Request('https://skillbun.test/api/admin/workforce/pdf/offer?format=json', {
+    method: 'POST', body: JSON.stringify(body),
+  }));
+  return { rows, state, call };
+}
+
+test('offer PDFs preserve legacy snapshots and fail closed when their historical record is missing or unsupported', async () => {
+  const original = {
+    full_name: 'Original Synthetic Intern', personal_email: 'original@example.test',
+    joining_date: '2026-07-01', contract_end_date: '2026-10-01', issued_at: '2026-06-15T00:00:00.000Z',
+  };
+  const key = 'workforce_docs/SKB-2026-HR-OFF-8K29DF';
+  const { rows, state, call } = await offerFixture({
+    'employees/intern': { ...original, full_name: 'Changed Current Name', personal_email: 'changed@example.test',
+      joining_date: '2026-08-01', contract_end_date: '2026-12-01', offer_reference_id: 'SKB/2026/HR-OFF/8K29DF',
+      offer_dispatched_at: '2026-06-15T00:00:00.000Z' },
+    [key]: { employee_id: 'intern', status: 'DISPATCHED', metadata_snapshot: original },
+  });
+  assert.equal((await call(null)).status, 400);
+  const historical = await call({ employeeId: 'intern' });
+  assert.equal(historical.status, 200);
+  const { metadataSnapshot } = await historical.json();
+  for (const field of Object.keys(original)) assert.equal(metadataSnapshot[field], original[field]);
+  assert.equal(metadataSnapshot.template_version, 'v1', 'legacy missing versions retain their original v1 renderer');
+  assert.equal(state.writes, 0);
+  assert.equal(rows.get(key).status, 'DISPATCHED', 'downloading an already-sent offer preserves dispatch state');
+  assert.equal(rows.get('employees/intern').offer_dispatched_at, '2026-06-15T00:00:00.000Z');
+  state.unavailable = true;
+  assert.equal((await call({ employeeId: 'intern' })).status, 503, 'a historical lookup outage must not recreate the offer from mutable data');
+  state.unavailable = false;
+  rows.delete(key);
+  assert.equal((await call({ employeeId: 'intern' })).status, 503, 'missing records must not reconstruct historical offers');
+  rows.set(key, { metadata_snapshot: {} });
+  assert.equal((await call({ employeeId: 'intern' })).status, 503);
+  rows.set(key, { employee_id: 'different-employee', metadata_snapshot: original });
+  assert.equal((await call({ employeeId: 'intern' })).status, 503);
+  assert.equal(state.rendered, 1);
+  rows.set(key, { template_version: 'v99', metadata_snapshot: original });
+  assert.equal((await call({ employeeId: 'intern' })).status, 422, 'an unsupported historical template must never silently render v1');
+  assert.equal(state.writes, 0);
+});
+
+test('first offer PDF download atomically pins its reference, template and full snapshot before returning', async () => {
+  const original = { full_name: 'Synthetic Intern', personal_email: 'intern@example.test', status: 'ACTIVE',
+    joining_date: '2026-07-01', contract_end_date: '2026-10-01', stipend_amount: 0 };
+  const { rows, state, call } = await offerFixture({ 'employees/intern': original });
+  const fresh = await call({ employeeId: 'intern' });
+  assert.equal(fresh.status, 200);
+  const issued = await fresh.json();
+  const documentId = normalizeWorkforceDbId(issued.referenceId);
+  const stored = rows.get(`workforce_docs/${documentId}`);
+  assert.equal(rows.get('employees/intern').offer_reference_id, documentId);
+  assert.equal(rows.get('employees/intern').status, 'ACTIVE', 'download does not change workforce lifecycle status');
+  assert.equal(stored.template_version, 'v1');
+  assert.equal(stored.employee_id, 'intern');
+  assert.equal(stored.status, 'ISSUED');
+  assert.deepEqual(stored.metadata_snapshot, issued.metadataSnapshot);
+  assert.equal(state.writes, 2);
+  assert.deepEqual(state.invalidations, ['admin:workforce', 'admin:workforce_docs']);
+  rows.set('employees/intern', { ...rows.get('employees/intern'), full_name: 'Changed Name',
+    personal_email: 'changed@example.test', joining_date: '2026-09-01', contract_end_date: '2026-12-01', stipend_amount: 9000 });
+  const repeated = await call({ employeeId: 'intern' });
+  assert.equal(repeated.status, 200);
+  const repeatedBody = await repeated.json();
+  assert.equal(repeatedBody.referenceId, issued.referenceId);
+  assert.deepEqual(repeatedBody.metadataSnapshot, issued.metadataSnapshot);
+  assert.equal(state.writes, 2, 'repeat downloads cannot mutate the original snapshot');
+});
+
+test('simultaneous first offer downloads converge on one immutable issued document', async () => {
+  const { rows, state, call } = await offerFixture({ 'employees/intern': { full_name: 'Synthetic Intern', personal_email: 'intern@example.test' } });
+  const responses = await Promise.all([call({ employeeId: 'intern' }), call({ employeeId: 'intern' })]);
+  for (const response of responses) assert.equal(response.status, 200);
+  const [first, second] = await Promise.all(responses.map(response => response.json()));
+  assert.equal(first.referenceId, second.referenceId);
+  assert.deepEqual(first.metadataSnapshot, second.metadataSnapshot);
+  assert.equal([...rows.keys()].filter(key => key.startsWith('workforce_docs/')).length, 1);
+  assert.equal(state.writes, 2);
+  assert.ok(state.transactionAttempts >= 3, 'the losing request must retry against the committed offer');
+});
+
+test('offer downloads preserve mixed-case legacy IDs and explicitly linked employee-held snapshots', async () => {
+  const reference = 'LegacyOfferAbc123XYZ';
+  const original = { full_name: 'Legacy Intern', reference_id: reference, issued_at: '2026-06-15T00:00:00.000Z' };
+  const { rows, state, call } = await offerFixture({
+    'employees/intern': { full_name: 'Changed Name', offer_reference_id: reference, metadata_snapshot: original },
+  });
+  assert.equal((await call({ employeeId: 'intern' })).status, 200);
+  assert.equal(state.writes, 0);
+  rows.set('employees/intern', { full_name: 'Changed Name', offer_reference_id: reference });
+  rows.set(`workforce_docs/${reference}`, { metadata_snapshot: original });
+  const response = await call({ employeeId: 'intern' });
+  assert.equal(response.status, 200);
+  assert.equal((await response.json()).referenceId, reference);
+});
+
+test('legacy SB-OFF storage keys accept the canonical corporate reference emitted by their original generator', async () => {
+  const reference = 'SB-OFF-2026-8K29DF';
+  const original = { full_name: 'Legacy Intern', personal_email: 'original@example.test', issued_at: '2026-06-15T00:00:00.000Z' };
+  const { metadataSnapshot } = await generateOfferLetterPdf(original, { referenceId: reference });
+  assert.equal(metadataSnapshot.reference_id, 'SKB/2026/HR-OFF/8K29DF');
+  const { rows, state, call } = await offerFixture({
+    'employees/intern': { full_name: 'Changed Name', offer_reference_id: reference },
+    [`workforce_docs/${reference}`]: { employee_id: 'intern', metadata_snapshot: metadataSnapshot },
+  });
+  const storedDocument = await call({ employeeId: 'intern' });
+  assert.equal(storedDocument.status, 200);
+  assert.equal((await storedDocument.json()).metadataSnapshot.personal_email, original.personal_email);
+  rows.delete(`workforce_docs/${reference}`);
+  rows.set('employees/intern', { ...rows.get('employees/intern'), metadata_snapshot: metadataSnapshot });
+  assert.equal((await call({ employeeId: 'intern' })).status, 200);
+  assert.equal(state.writes, 0);
+});
 
 test('workforce credential revocation strictly validates payload and normalizes corporate IDs', async () => {
   const source = await loadSource('app/api/admin/workforce/credentials/[id]/route.js');

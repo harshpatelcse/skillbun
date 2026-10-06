@@ -172,11 +172,6 @@
           "description": "Master mathematical foundations of NLP: Probability theory, Markov chains, cross-entropy loss, softmax distributions, matrix factorization, and vector space geometry.",
           "resources": [
             {
-              "title": "Linear Algebra for Machine Learning (Machine Learning Mastery)",
-              "url": "https://machinelearningmastery.com/linear-algebra-for-machine-learning/",
-              "type": "article"
-            },
-            {
               "title": "Calculus for Machine Learning (Machine Learning Mastery)",
               "url": "https://machinelearningmastery.com/calculus-for-machine-learning/",
               "type": "article"
@@ -237,13 +232,13 @@
           "description": "Implement classical statistical NLP: N-gram language models, smoothing algorithms (Kneser-Ney), Hidden Markov Models (HMMs), and Maximum Entropy classifiers.",
           "resources": [
             {
-              "title": "Text Classification with Naive Bayes (Analytics Vidhya)",
-              "url": "https://www.analyticsvidhya.com/blog/2017/09/naive-bayes-for-text-classification/",
+              "title": "Text Classification with Sparse Features (scikit-learn)",
+              "url": "https://scikit-learn.org/stable/auto_examples/text/plot_document_classification_20newsgroups.html",
               "type": "article"
             },
             {
-              "title": "An Introduction to Conditional Random Fields (CRFs)",
-              "url": "https://towardsdatascience.com/an-introduction-to-conditional-random-fields-crfs-a645228c2957",
+              "title": "Conditional Random Fields for Named Entity Recognition (sklearn-crfsuite)",
+              "url": "https://sklearn-crfsuite.readthedocs.io/en/latest/tutorial.html",
               "type": "article"
             },
             {
@@ -276,9 +271,9 @@
       "description": "Transform raw text into numerical feature spaces: One-hot encoding, bag-of-words (BoW), TF-IDF weighting, BM25 ranking, and cosine similarity matching.",
       "resources": [
         {
-          "title": "Text Preprocessing for NLP (Towards Data Science)",
-          "url": "https://towardsdatascience.com/text-preprocessing-for-nlp-and-why-it-is-important-2503d5178789",
-          "type": "article"
+          "title": "Tokenization and Text Preprocessing (Hugging Face)",
+          "url": "https://huggingface.co/learn/llm-course/en/chapter2/4",
+          "type": "course"
         },
         {
           "title": "Transformers Explained (3Blue1Brown)",
@@ -338,11 +333,6 @@
           "tag": "essential",
           "description": "Engineer linguistic features: Part-of-speech tag distributions, readability scores (Flesch-Kincaid), named entity density, sentiment lexicons (VADER), and syntactic features.",
           "resources": [
-            {
-              "title": "Understanding TF-IDF (MonkeyLearn)",
-              "url": "https://monkeylearn.com/blog/tf-idf-algorithm/",
-              "type": "article"
-            },
             {
               "title": "Scikit-learn Feature Extraction: Text",
               "url": "https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction",
@@ -409,9 +399,9 @@
               "type": "article"
             },
             {
-              "title": "Byte Pair Encoding (BPE) for Text (Analytics Vidhya)",
-              "url": "https://www.analyticsvidhya.com/blog/2020/09/how-to-implement-byte-pair-encoding-bpe-from-scratch-in-python/",
-              "type": "article"
+              "title": "Byte-Pair Encoding Tokenization (Hugging Face)",
+              "url": "https://huggingface.co/learn/llm-course/en/chapter6/5",
+              "type": "course"
             },
             {
               "title": "Transformers Explained (3Blue1Brown)",
@@ -541,8 +531,8 @@
           "description": "Apply convolutional architectures to text: Kim's TextCNN, multi-scale 1D convolutions for n-gram feature extraction, max-over-time pooling, and character-level CNNs.",
           "resources": [
             {
-              "title": "A Comprehensive Guide to Convolutional Neural Networks for NLP (Analytics Vidhya)",
-              "url": "https://www.analyticsvidhya.com/blog/2021/08/a-comprehensive-guide-to-convolutional-neural-networks-for-nlp/",
+              "title": "Sentiment Analysis with Convolutional Neural Networks (Dive into Deep Learning)",
+              "url": "https://d2l.ai/chapter_natural-language-processing-applications/sentiment-analysis-cnn.html",
               "type": "article"
             },
             {
@@ -723,8 +713,8 @@
               "type": "article"
             },
             {
-              "title": "Practical Transfer Learning for NLP (Towards Data Science)",
-              "url": "https://towardsdatascience.com/practical-transfer-learning-for-nlp-5634629633e",
+              "title": "Fine-Tune a Pretrained Transformer (Hugging Face)",
+              "url": "https://huggingface.co/docs/transformers/training",
               "type": "article"
             },
             {
@@ -823,11 +813,6 @@
           "description": "Align language models to human intent: Supervised Fine-Tuning (SFT), Reinforcement Learning from Human Feedback (RLHF) with PPO, Direct Preference Optimization (DPO), and ORPO.",
           "resources": [
             {
-              "title": "Aligning Language Models to Follow Instructions (Stanford)",
-              "url": "https://crfm.stanford.edu/2023/12/17/instruction-tuning.html",
-              "type": "article"
-            },
-            {
               "title": "Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback (OpenAI)",
               "url": "https://openai.com/research/instruction-following",
               "type": "article"
@@ -862,11 +847,6 @@
       "description": "Build end-to-end production NLP systems across high-value business domains: Semantic search, conversational assistants, extraction pipelines, and agentic workflows.",
       "resources": [
         {
-          "title": "Practical Natural Language Processing: A Guide to the State of the Art",
-          "url": "https://www.amazon.com/Practical-Natural-Language-Processing-State/dp/1492080309",
-          "type": "article"
-        },
-        {
           "title": "BERT Explained (Jay Alammar)",
           "url": "https://www.youtube.com/watch?v=xI0HHN5XKDo",
           "type": "video"
@@ -889,16 +869,6 @@
           "tag": "essential",
           "description": "Deploy robust text classifiers: Multi-class and multi-label intent detection, toxic comment classification, aspect-based sentiment analysis (ABSA), and zero-shot classification.",
           "resources": [
-            {
-              "title": "Sentiment Analysis with Transformers (Hugging Face Blog)",
-              "url": "https://huggingface.co/blog/sentiment-analysis-with-transformers",
-              "type": "article"
-            },
-            {
-              "title": "Text Classification with BERT and TensorFlow (Keras)",
-              "url": "https://keras.io/examples/nlp/text_classification_with_bert/",
-              "type": "article"
-            },
             {
               "title": "Python TensorFlow for Machine Learning – Neural Network Text Classification Tutorial (freeCodeCamp.org)",
               "url": "https://www.youtube.com/watch?v=VtRLrQ3Ev-U",
@@ -924,11 +894,6 @@
           "tag": "essential",
           "description": "Extract structured entities: Named Entity Recognition (NER) with RoBERTa-CRF, biomedical entity extraction, Part-of-Speech tagging, and relation extraction.",
           "resources": [
-            {
-              "title": "Named Entity Recognition (NER) with spaCy",
-              "url": "https://spacy.io/usage/training/ner",
-              "type": "article"
-            },
             {
               "title": "Transformer for Named Entity Recognition (Hugging Face)",
               "url": "https://huggingface.co/docs/transformers/tasks/token_classification",
@@ -962,11 +927,6 @@
             {
               "title": "Question Answering with a fine-tuned BERT (Hugging Face)",
               "url": "https://huggingface.co/transformers/task_summary.html#question-answering",
-              "type": "article"
-            },
-            {
-              "title": "Abstractive Text Summarization with T5 (Keras)",
-              "url": "https://keras.io/examples/nlp/t5_fine_tuning/",
               "type": "article"
             },
             {
@@ -1070,8 +1030,8 @@
               "type": "article"
             },
             {
-              "title": "Retrieval-Augmented Generation (RAG) Explained (Towards Data Science)",
-              "url": "https://towardsdatascience.com/retrieval-augmented-generation-rag-from-theory-to-llm-applications-c1e1494916a0",
+              "title": "Retrieval-Augmented Generation Models (Hugging Face)",
+              "url": "https://huggingface.co/docs/transformers/model_doc/rag",
               "type": "article"
             },
             {
@@ -1130,8 +1090,8 @@
           "description": "Discover latent semantic structures: BERTopic with sentence-transformers and UMAP/HDBSCAN clustering, Latent Dirichlet Allocation (LDA), and dynamic topic evolution tracking.",
           "resources": [
             {
-              "title": "Topic Modeling with LDA using Gensim (Kaggle)",
-              "url": "https://www.kaggle.com/code/rakael/topic-modeling-with-lda-using-gensim",
+              "title": "Topic Modeling with Latent Dirichlet Allocation (Gensim)",
+              "url": "https://radimrehurek.com/gensim/auto_examples/tutorials/run_lda.html",
               "type": "article"
             },
             {
@@ -1272,11 +1232,6 @@
               "type": "article"
             },
             {
-              "title": "Iterative MLOps for Real-World Scenarios (DVC)",
-              "url": "https://dvc.org/doc/start/ml-workflows/mlops",
-              "type": "article"
-            },
-            {
               "title": "BERT Explained (Jay Alammar)",
               "url": "https://www.youtube.com/watch?v=xI0HHN5XKDo",
               "type": "video"
@@ -1337,11 +1292,6 @@
           "description": "Deploy NLP systems at scale: High-throughput LLM serving engines (vLLM, TGI, TensorRT-LLM) on Kubernetes with continuous batching and PagedAttention.",
           "resources": [
             {
-              "title": "Deploying Machine Learning Models to Production (Google Cloud)",
-              "url": "https://cloud.google.com/architecture/overview-ml-deployment",
-              "type": "article"
-            },
-            {
               "title": "Kubernetes Basics (Kubernetes Docs)",
               "url": "https://kubernetes.io/docs/tutorials/kubernetes-basics/",
               "type": "article"
@@ -1371,16 +1321,6 @@
           "tag": "advanced",
           "description": "Monitor production NLP applications: Tracking token throughput (tokens/sec), time-to-first-token (TTFT), semantic drift, hallucination frequency, and logging user query traces with Langfuse.",
           "resources": [
-            {
-              "title": "ML Model Monitoring in Production (Databricks)",
-              "url": "https://www.databricks.com/glossary/ml-model-monitoring",
-              "type": "article"
-            },
-            {
-              "title": "Why you need to monitor your ML models (Google Cloud)",
-              "url": "https://cloud.google.com/architecture/why-you-need-to-monitor-your-ml-models",
-              "type": "article"
-            },
             {
               "title": "Transformers Explained (3Blue1Brown)",
               "url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
@@ -1479,11 +1419,6 @@
               "type": "article"
             },
             {
-              "title": "Federated Learning: Collaborative Machine Learning without Centralized Training Data (Google AI)",
-              "url": "https://ai.google/research/pubs/pub45324",
-              "type": "article"
-            },
-            {
               "title": "NLP Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=dIUTsFT2MeQ",
               "type": "video"
@@ -1508,16 +1443,6 @@
           "tag": "essential",
           "description": "Navigate ethical challenges in NLP: Copyright and intellectual property in training datasets, environmental footprint of large model training, and societal impact of synthetic text.",
           "resources": [
-            {
-              "title": "Ethics in NLP (ACL Workshop)",
-              "url": "https://2020.aclweb.org/ethical-guidelines/",
-              "type": "article"
-            },
-            {
-              "title": "A Guide to AI Ethics (MIT Technology Review)",
-              "url": "https://www.technologyreview.com/2020/07/28/1005952/guide-ai-ethics/",
-              "type": "article"
-            },
             {
               "title": "Transformers Explained (3Blue1Brown)",
               "url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
@@ -1547,11 +1472,6 @@
       "tag": "advanced",
       "description": "Build a demonstrable NLP portfolio: Publishing open-source Hugging Face models, creating interactive demos on Spaces, and writing technical deep dives.",
       "resources": [
-        {
-          "title": "How to Build an NLP Portfolio (Towards Data Science)",
-          "url": "https://towardsdatascience.com/how-to-build-a-data-science-portfolio-thats-not-boring-9d8a5940082f",
-          "type": "article"
-        },
         {
           "title": "BERT Explained (Jay Alammar)",
           "url": "https://www.youtube.com/watch?v=xI0HHN5XKDo",
@@ -1605,16 +1525,6 @@
           "tag": "advanced",
           "description": "Curate your NLP engineering portfolio: Showcase GitHub repositories with clean documentation, Dockerfiles, test suites, and interactive live Gradio/Streamlit demos.",
           "resources": [
-            {
-              "title": "Structuring a Data Science Portfolio Project (freeCodeCamp)",
-              "url": "https://www.freecodecamp.org/news/structuring-a-data-science-portfolio-project/",
-              "type": "article"
-            },
-            {
-              "title": "Crafting a Compelling Data Science Portfolio (Medium)",
-              "url": "https://towardsdatascience.com/crafting-a-compelling-data-science-portfolio-42a98f7e6f8b",
-              "type": "article"
-            },
             {
               "title": "NLP Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=dIUTsFT2MeQ",

@@ -132,16 +132,6 @@
           "description": "Analyze technical audiences: Profiling beginner vs senior developer readers, creating reader personas, and designing logical document navigation hierarchies.",
           "resources": [
             {
-              "title": "Google Technical Writing One: Principles",
-              "url": "https://developers.google.com/tech-writing/one/principles",
-              "type": "course"
-            },
-            {
-              "title": "Information Architecture for Technical Communicators",
-              "url": "https://www.iastate.edu/sites/default/files/files/Technical%20Communication/InformationArchitectureforTC.pdf",
-              "type": "article"
-            },
-            {
               "title": "API Documentation Best Practices – Full Course (freeCodeCamp.org)",
               "url": "https://www.youtube.com/watch?v=0CSyIBHQy9g",
               "type": "video"
@@ -166,11 +156,6 @@
           "tag": "essential",
           "description": "Master clear and concise writing: Active voice over passive voice, eliminating jargon, sentence length discipline (< 25 words), parallel structure, and scannable formatting.",
           "resources": [
-            {
-              "title": "Google Technical Writing One: Style",
-              "url": "https://developers.google.com/tech-writing/one/style",
-              "type": "course"
-            },
             {
               "title": "Plain Language Action and Information Network",
               "url": "https://www.plainlanguage.gov/guidelines/",
@@ -376,11 +361,6 @@
             {
               "title": "XML Tutorial",
               "url": "https://www.w3schools.com/xml/",
-              "type": "article"
-            },
-            {
-              "title": "YAML Tutorial",
-              "url": "https://www.w3schools.io/file/yaml-tutorial/",
               "type": "article"
             },
             {
@@ -646,11 +626,6 @@
           "description": "Author tutorials and how-to guides: Step-by-step learning-oriented tutorials for beginners, and task-oriented recipes solving real-world developer problems.",
           "resources": [
             {
-              "title": "How-To Guides: The Complete Guide",
-              "url": "https://technicalwriterhq.com/how-to-guide/",
-              "type": "article"
-            },
-            {
               "title": "API Documentation Best Practices – Full Course (freeCodeCamp.org)",
               "url": "https://www.youtube.com/watch?v=0CSyIBHQy9g",
               "type": "video"
@@ -675,11 +650,6 @@
           "tag": "essential",
           "description": "Write conceptual and explanatory documentation: System architecture overviews, design rationales, core conceptual models, and technical trade-off analyses.",
           "resources": [
-            {
-              "title": "The importance of conceptual documentation",
-              "url": "https://idratherbewriting.com/2020/09/20/importance-of-conceptual-documentation/",
-              "type": "article"
-            },
             {
               "title": "Writing Explanations (Diátaxis)",
               "url": "https://diataxis.fr/explanation/",
@@ -740,11 +710,6 @@
           "tag": "essential",
           "description": "Write customer-facing release notes: Keep a Changelog conventions, categorizing changes (Added, Changed, Deprecated, Removed, Fixed, Security), and migration guides.",
           "resources": [
-            {
-              "title": "How to Write Great Release Notes",
-              "url": "https://linear.app/blog/how-to-write-great-release-notes",
-              "type": "article"
-            },
             {
               "title": "Keep a Changelog Guide",
               "url": "https://keepachangelog.com/en/1.0.0/",
@@ -983,11 +948,6 @@
               "type": "article"
             },
             {
-              "title": "PlantUML Language Reference Guide",
-              "url": "https://plantuml.com/sitemap-language-reference",
-              "type": "article"
-            },
-            {
               "title": "Docs as Code: Write for Developers as a Developer (Wizeline Academy)",
               "url": "https://www.youtube.com/watch?v=fvVusHA5ISw",
               "type": "video"
@@ -1048,11 +1008,6 @@
               "type": "article"
             },
             {
-              "title": "Analytics for Technical Documentation",
-              "url": "https://www.writethedocs.org/guide/analytics/",
-              "type": "article"
-            },
-            {
               "title": "API Documentation Best Practices – Full Course (freeCodeCamp.org)",
               "url": "https://www.youtube.com/watch?v=0CSyIBHQy9g",
               "type": "video"
@@ -1105,11 +1060,6 @@
           "description": "Curate an elite technical writing portfolio: Showcasing an end-to-end documentation site, a complete OpenAPI reference, a conceptual architecture guide, and a tutorial.",
           "resources": [
             {
-              "title": "How to Build a Technical Writing Portfolio",
-              "url": "https://technicalwriterhq.com/technical-writing-portfolio/",
-              "type": "article"
-            },
-            {
               "title": "Technical Writing Portfolio Examples",
               "url": "https://medium.com/technical-writing-is-easy/technical-writing-portfolio-examples-d64e311a3b5a",
               "type": "article"
@@ -1139,11 +1089,6 @@
           "tag": "essential",
           "description": "Collaborate across engineering and product: Reviewing PRDs, running doc review cycles, managing SME review bottlenecks, and advocating for clear documentation culture.",
           "resources": [
-            {
-              "title": "Collaborating with Developers (Write the Docs)",
-              "url": "https://www.writethedocs.org/guide/collaborating-with-developers/",
-              "type": "article"
-            },
             {
               "title": "Stakeholder Management in Technical Communication",
               "url": "https://www.stc.org/notebook/2016/10/24/stakeholder-management-in-technical-communication/",
@@ -1175,11 +1120,6 @@
           "description": "Test documentation usability: Tracking 'Was this page helpful?' ratings, analyzing search queries for unindexed terms, and conducting developer documentation testing sessions.",
           "resources": [
             {
-              "title": "Usability Testing for Documentation",
-              "url": "https://www.writethedocs.org/guide/usability-testing/",
-              "type": "article"
-            },
-            {
               "title": "Docs as Code: Write for Developers as a Developer (Wizeline Academy)",
               "url": "https://www.youtube.com/watch?v=fvVusHA5ISw",
               "type": "video"
@@ -1204,11 +1144,6 @@
           "tag": "advanced",
           "description": "Build an enterprise developer documentation capstone: Complete Docs-as-Code site built with Docusaurus/MkDocs, featuring Diátaxis structure, OpenAPI interactive playground, Mermaid diagrams, and automated Vale linting in CI.",
           "resources": [
-            {
-              "title": "Open Source Projects Suitable for Documentation Contributions",
-              "url": "https://www.firsttimersonly.com/open-source-projects/",
-              "type": "article"
-            },
             {
               "title": "Technical Writing Course for Beginners (freeCodeCamp.org)",
               "url": "https://www.youtube.com/watch?v=vT5pcc30Ffw",

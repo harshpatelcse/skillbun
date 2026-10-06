@@ -123,16 +123,6 @@
           "description": "Master Ruby syntax: Dynamic typing, duck typing, mixins with modules, enumerable methods (`map`, `select`, `reduce`), exceptions, and gem package management with Bundler.",
           "resources": [
             {
-              "title": "The Ruby Way: Solutions in Ruby from 2000s to Today",
-              "url": "https://www.amazon.com/Ruby-Way-Solutions-2000s-Today/dp/0321714631",
-              "type": "course"
-            },
-            {
-              "title": "Eloquent Ruby by Russ Olsen",
-              "url": "https://www.amazon.com/Eloquent-Ruby-Russ-Olsen/dp/0321580626",
-              "type": "article"
-            },
-            {
               "title": "Ruby Koans",
               "url": "https://www.rubykoans.com/",
               "type": "course"
@@ -166,11 +156,6 @@
               "title": "HTTP: The Definitive Guide",
               "url": "https://www.amazon.com/HTTP-Definitive-Guide-David-Gourley/dp/1565925092",
               "type": "article"
-            },
-            {
-              "title": "Learn HTML, CSS, JavaScript (The Odin Project)",
-              "url": "https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/foundations",
-              "type": "course"
             },
             {
               "title": "Build a Blog with Rails (Traversy Media)",
@@ -304,11 +289,6 @@
           "tag": "essential",
           "description": "Implement MVC separation of concerns: Thin controllers, fat models, and modular views ensuring maintainable and readable codebases.",
           "resources": [
-            {
-              "title": "Rails Architecture: MVC and Beyond",
-              "url": "https://www.freecodecamp.org/news/rails-architecture-mvc-and-beyond/",
-              "type": "article"
-            },
             {
               "title": "Build a Blog with Rails (Traversy Media)",
               "url": "https://www.youtube.com/watch?v=pPy0GQJLZUM",
@@ -474,16 +454,6 @@
       "description": "Architect advanced Rails systems: Authentication, API mode, background jobs, real-time websockets, and Hotwire interfaces.",
       "resources": [
         {
-          "title": "Advanced Rails Recipes (The Pragmatic Programmers)",
-          "url": "https://www.amazon.com/Advanced-Rails-Recipes-Pragmatic-Programmers/dp/097873926X",
-          "type": "article"
-        },
-        {
-          "title": "Learn Rails 7 with Hotwire (GoRails)",
-          "url": "https://gorails.com/courses/hotwire",
-          "type": "course"
-        },
-        {
           "title": "Hotwire & Turbo Tutorial (GoRails)",
           "url": "https://www.youtube.com/watch?v=eKY-QES1XQQ",
           "type": "video"
@@ -541,11 +511,6 @@
           "tag": "essential",
           "description": "Build Rails API-only applications: Serializing data with Jbuilder or Alba, JWT authentication, CORS configuration with `rack-cors`, and OpenAPI documentation.",
           "resources": [
-            {
-              "title": "Building a REST API with Rails",
-              "url": "https://www.honeybadger.io/blog/rails-api-tutorial/",
-              "type": "article"
-            },
             {
               "title": "Active Model Serializers",
               "url": "https://github.com/rails-api/active_model_serializers",
@@ -727,11 +692,6 @@
               "type": "course"
             },
             {
-              "title": "Rails Design Patterns (Book)",
-              "url": "https://www.amazon.com/Rails-Design-Patterns-Code-Maintainable/dp/1680502127",
-              "type": "article"
-            },
-            {
               "title": "Build a Blog with Rails (Traversy Media)",
               "url": "https://www.youtube.com/watch?v=pPy0GQJLZUM",
               "type": "video"
@@ -764,11 +724,6 @@
           "title": "A Guide to Testing Rails Applications",
           "url": "https://guides.rubyonrails.org/testing.html",
           "type": "article"
-        },
-        {
-          "title": "Everyday Rails Testing with RSpec",
-          "url": "https://everydayrails.com/books/",
-          "type": "course"
         },
         {
           "title": "Hotwire & Turbo Tutorial (GoRails)",
@@ -829,11 +784,6 @@
           "description": "Test models and controllers: Testing Active Record validations, associations, scopes, and controller request specs with RSpec.",
           "resources": [
             {
-              "title": "Testing Models in Rails",
-              "url": "https://www.freecodecamp.org/news/how-to-test-rails-model-unit-tests/",
-              "type": "article"
-            },
-            {
               "title": "Rails Tutorial (GoRails)",
               "url": "https://www.youtube.com/watch?v=B3Fbujmgo60",
               "type": "video"
@@ -893,11 +843,6 @@
           "tag": "advanced",
           "description": "Test JSON APIs: Request specs verifying HTTP status codes, JSON response schemas, authentication headers, and edge-case errors.",
           "resources": [
-            {
-              "title": "Testing APIs in Rails with RSpec",
-              "url": "https://www.honeybadger.io/blog/rails-api-testing-rspec/",
-              "type": "article"
-            },
             {
               "title": "Hotwire & Turbo Tutorial (GoRails)",
               "url": "https://www.youtube.com/watch?v=eKY-QES1XQQ",
@@ -1121,16 +1066,6 @@
           "description": "Monitor production Rails: Semantic logging with Lograge, error tracking with Sentry/Honeybadger, and application performance monitoring (APM) with Scout / Skylight.",
           "resources": [
             {
-              "title": "Rails Logging",
-              "url": "https://guides.rubyonrails.org/debugging_rails.html#the-logger",
-              "type": "article"
-            },
-            {
-              "title": "Introduction to Application Monitoring",
-              "url": "https://newrelic.com/blog/best-practices/application-monitoring-introduction",
-              "type": "article"
-            },
-            {
               "title": "Build a Blog with Rails (Traversy Media)",
               "url": "https://www.youtube.com/watch?v=pPy0GQJLZUM",
               "type": "video"
@@ -1155,11 +1090,6 @@
           "tag": "advanced",
           "description": "Optimize Rails performance: Page and Russian Doll fragment caching, database index optimization, bullet gem for N+1 detection, and database query caching.",
           "resources": [
-            {
-              "title": "Rails Performance Guide",
-              "url": "https://guides.rubyonrails.org/performance_testing.html",
-              "type": "article"
-            },
             {
               "title": "Caching with Rails: An Overview",
               "url": "https://guides.rubyonrails.org/caching_with_rails.html",
@@ -1230,11 +1160,6 @@
       "description": "Build a demonstrable Rails portfolio: Production capstone application, open-source gem contributions, and technical interview readiness.",
       "resources": [
         {
-          "title": "How to Build a Portfolio Website for Developers (freeCodeCamp)",
-          "url": "https://www.freecodecamp.org/news/how-to-build-a-portfolio-website-for-developers/",
-          "type": "article"
-        },
-        {
           "title": "Cracking the Coding Interview",
           "url": "https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850",
           "type": "article"
@@ -1298,11 +1223,6 @@
               "type": "course"
             },
             {
-              "title": "The Ruby Way",
-              "url": "https://www.amazon.com/Ruby-Way-Solutions-2000s-Today/dp/0321714631",
-              "type": "article"
-            },
-            {
               "title": "Hotwire & Turbo Tutorial (GoRails)",
               "url": "https://www.youtube.com/watch?v=eKY-QES1XQQ",
               "type": "video"
@@ -1327,11 +1247,6 @@
           "tag": "advanced",
           "description": "Prepare for Ruby on Rails interviews: Metaprogramming concepts, Active Record query execution lifecycle, Hotwire vs React tradeoffs, and architectural design.",
           "resources": [
-            {
-              "title": "Awesome Ruby Interview Questions",
-              "url": "https://github.com/ganmacs/awesome-ruby-interviews",
-              "type": "article"
-            },
             {
               "title": "Ruby on Rails Guides: Concepts to Review for Interviews",
               "url": "https://guides.rubyonrails.org/",

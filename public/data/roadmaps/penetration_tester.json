@@ -215,8 +215,8 @@
           "description": "Understand web application architecture for exploitation: HTTP request/response state machines, session cookies, REST API conventions, GraphQL schema introspection, and WebSocket framing.",
           "resources": [
             {
-              "title": "How the Internet Works: A Practical Guide",
-              "url": "https://web.dev/how-the-web-works/",
+              "title": "How the Web Works (MDN Web Docs)",
+              "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works",
               "type": "article"
             },
             {
@@ -300,8 +300,8 @@
               "type": "article"
             },
             {
-              "title": "Wireshark 101: Essential Skills for Network Analysis",
-              "url": "https://www.amazon.com/Wireshark-101-Essential-Skills-Network/dp/0321743621",
+              "title": "Wireshark User’s Guide — Official Documentation",
+              "url": "https://www.wireshark.org/docs/wsug_html_chunked/",
               "type": "article"
             },
             {
@@ -392,11 +392,6 @@
           "description": "Master Burp Suite Professional: traffic interception, Intruder custom payloads and pitchfork attacks, Repeater manual testing, Burp Collaborator for Out-of-Band Application Security Testing (OAST), and Turbo Intruder for race conditions.",
           "resources": [
             {
-              "title": "PortSwigger Web Security Academy (Burp Suite Tutorials)",
-              "url": "https://portswigger.net/web-security/academy/burp-suite",
-              "type": "course"
-            },
-            {
               "title": "OWASP ZAP User Guide",
               "url": "https://www.zaproxy.org/docs/desktop/",
               "type": "article"
@@ -461,11 +456,6 @@
           "tag": "essential",
           "description": "Exploit authentication and session weaknesses: Broken Object Level Authorization (BOLA/IDOR), multi-factor authentication (MFA) bypasses, session fixation, JWT tampering (algorithm confusion, signature exclusion, weak secret cracking), and OAuth 2.0 redirect URI hijacking.",
           "resources": [
-            {
-              "title": "Broken Authentication (OWASP)",
-              "url": "https://owasp.org/www-community/vulnerabilities/Broken_Authentication",
-              "type": "article"
-            },
             {
               "title": "Broken Access Control Explained (PortSwigger)",
               "url": "https://portswigger.net/web-security/access-control",
@@ -569,11 +559,6 @@
             {
               "title": "OWASP API Security Top 10",
               "url": "https://owasp.org/API-Security/",
-              "type": "article"
-            },
-            {
-              "title": "Practical GraphQL Security Testing (PortSwigger)",
-              "url": "https://portswigger.net/research/practical-graphql-security-testing",
               "type": "article"
             },
             {
@@ -706,11 +691,6 @@
             {
               "title": "OSINT Framework",
               "url": "https://osintframework.com/",
-              "type": "article"
-            },
-            {
-              "title": "Advanced Google Dorking for Pentesters",
-              "url": "https://www.exploit-db.com/ghdb",
               "type": "article"
             },
             {
@@ -909,11 +889,6 @@
               "type": "course"
             },
             {
-              "title": "Active Directory Exploitation Cheat Sheet (HarmJ0y)",
-              "url": "https://gist.github.com/HarmJ0y/541f4860d5b6515c0e12e1ffb144b6c3",
-              "type": "article"
-            },
-            {
               "title": "Penetration Testing Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=3Kq1MIfTWCE",
               "type": "video"
@@ -938,11 +913,6 @@
           "tag": "advanced",
           "description": "Execute post-exploitation and lateral movement: pivoting through internal subnets with Chisel and SSH dynamic port forwarding, harvesting memory credentials with Mimikatz, and establishing stealthy persistence mechanisms.",
           "resources": [
-            {
-              "title": "Impacket Examples for Post-Exploitation (Blog)",
-              "url": "https://byt3bl33d3r.github.io/posts/the-ultimate-guide-to-impacket-a-beginners-approach-part-1/",
-              "type": "article"
-            },
             {
               "title": "Nmap Tutorial (NetworkChuck)",
               "url": "https://www.youtube.com/watch?v=4t4kBkMsDbQ",
@@ -999,16 +969,6 @@
           "description": "Assess cloud environments: discovering exposed S3 buckets, exploiting compromised IAM credentials, and escalating privileges across cloud resources.",
           "resources": [
             {
-              "title": "AWS Cloud Security Fundamentals",
-              "url": "https://aws.amazon.com/security/introduction/",
-              "type": "article"
-            },
-            {
-              "title": "Azure Security Best Practices (Microsoft Docs)",
-              "url": "https://docs.microsoft.com/en-us/azure/security/fundamentals/best-practices",
-              "type": "article"
-            },
-            {
               "title": "GCP Cloud Security Overview",
               "url": "https://cloud.google.com/security/",
               "type": "article"
@@ -1043,14 +1003,9 @@
       "description": "Master professional penetration testing operations: reporting, red team adversary simulations, and mobile app assessments.",
       "resources": [
         {
-          "title": "Penetration Testing: A Hands-On Introduction to Hacking",
-          "url": "https://www.amazon.com/Penetration-Testing-Hands-Introduction-Hacking/dp/1597499834",
-          "type": "article"
-        },
-        {
-          "title": "The Art of Invisibility (Kevin Mitnick)",
-          "url": "https://www.amazon.com/Art-Invisibility-World-Most-Wanted/dp/0316380536",
-          "type": "article"
+          "title": "Penetration Testing: A Hands-On Introduction to Hacking — Georgia Weidman",
+          "url": "https://nostarch.com/pentesting",
+          "type": "book"
         },
         {
           "title": "Penetration Testing Full Course (freeCodeCamp)",
@@ -1075,11 +1030,6 @@
           "tag": "essential",
           "description": "Author client-ready penetration testing reports: executive summaries for C-level leadership, detailed technical vulnerability breakdowns, step-by-step reproduction steps with sanitized screenshots, CVSS v3.1 scoring, and actionable remediation engineering guidance.",
           "resources": [
-            {
-              "title": "OWASP Vulnerability Report Template",
-              "url": "https://owasp.org/www-project-vulnerability-reporting-guide/latest/",
-              "type": "article"
-            },
             {
               "title": "CVSS Calculator (FIRST.org)",
               "url": "https://www.first.org/cvss/calculator/3.1",
@@ -1110,11 +1060,6 @@
           "tag": "advanced",
           "description": "Understand social engineering assessments: spear-phishing simulation frameworks (GoPhish), credential harvesting portals, and physical security walkthrough methodologies.",
           "resources": [
-            {
-              "title": "Social Engineering: The Art of Human Hacking (Chris Hadnagy)",
-              "url": "https://www.amazon.com/Social-Engineering-Art-Human-Hacking/dp/1118420422",
-              "type": "article"
-            },
             {
               "title": "Web App Pentesting (The Cyber Mentor)",
               "url": "https://www.youtube.com/watch?v=X4eRbHgRawI",
@@ -1181,13 +1126,13 @@
           "description": "Penetration test mobile applications: dynamic analysis using Frida for SSL pinning bypass, static decompilation with Jadx and APKTool, and inspecting insecure local storage.",
           "resources": [
             {
-              "title": "OWASP Mobile Security Testing Guide (MSTG)",
-              "url": "https://owasp.org/www-project-mobile-security-testing-guide/",
+              "title": "OWASP Mobile Application Security Testing Guide (MASTG)",
+              "url": "https://mas.owasp.org/MASTG/",
               "type": "article"
             },
             {
-              "title": "Android & iOS App Hacking (Practical Guide)",
-              "url": "https://www.amazon.com/Android-iOS-App-Hacking-Practical/dp/1098106208",
+              "title": "Mobile Application Security Testing Guide — OWASP",
+              "url": "https://mas.owasp.org/MASTG/",
               "type": "article"
             },
             {
@@ -1215,11 +1160,6 @@
           "tag": "advanced",
           "description": "Prepare for industry offensive security certifications: Offensive Security Certified Professional (OSCP), Certified Red Team Operator (CRTO), or eLearnSecurity Junior Penetration Tester (eJPT); and master technical pentest interviews.",
           "resources": [
-            {
-              "title": "OSCP Review & Prep Guide (NetSec Focus)",
-              "url": "https://netsecfocus.com/oscp/2021/04/05/OSCP-Review.html",
-              "type": "article"
-            },
             {
               "title": "Practical Network Penetration Tester (Official Exam Overview)",
               "url": "https://certifications.tcm-sec.com/pnpt/",
@@ -1250,11 +1190,6 @@
           "tag": "advanced",
           "description": "Capstone Project: Execute an End-to-End Enterprise Penetration Test: external perimeter reconnaissance, web application exploitation (SSRF to RCE), internal network pivoting via Chisel, Active Directory domain takeover via Kerberoasting and DCSync, and authoring a comprehensive professional remediation report.",
           "resources": [
-            {
-              "title": "Practical Ethical Hacking Course (TCM Security)",
-              "url": "https://tcm-sec.com/practical-ethical-hacking-course/",
-              "type": "course"
-            },
             {
               "title": "Cyber Defend Institute - Red Team Ops Lab",
               "url": "https://cyberdefend.ca/labs/redteam-operations-lab/",

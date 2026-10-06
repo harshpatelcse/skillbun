@@ -1121,8 +1121,8 @@
           "description": "Implement defense-in-depth security across the backend stack. Secure secret management with HashiCorp Vault or cloud KMS (zero plaintext credentials in code). Enforce parameterized SQL queries to eliminate SQL injection, protect against Server-Side Request Forgery (SSRF) by validating external URLs against private subnet ranges, hash passwords using Argon2id or bcrypt with appropriate work factors, and apply rate limiting and input sanitization.",
           "resources": [
             {
-              "title": "OWASP API Security Top 10",
-              "url": "https://owasp.org/www-project-api-security/",
+              "title": "OWASP API Security Top 10 (2023)",
+              "url": "https://api-security.owasp.org/editions/2023/en/0x00-header/",
               "type": "article"
             },
             {

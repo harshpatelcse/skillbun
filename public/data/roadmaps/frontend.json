@@ -123,9 +123,9 @@
           "description": "Master semantic HTML5 elements, understand document structure, create accessible forms, embed multimedia, and implement ARIA attributes for screen readers.",
           "resources": [
             {
-              "title": "Learn HTML (MDN Web Docs)",
-              "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Learning",
-              "type": "course"
+              "title": "Structuring Content with HTML (MDN Web Docs)",
+              "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content",
+              "type": "article"
             },
             {
               "title": "Learn Accessibility - Full a11y Tutorial (freeCodeCamp.org)",
@@ -183,8 +183,8 @@
               "type": "article"
             },
             {
-              "title": "A Complete Guide to CSS Grid (CSS-Tricks)",
-              "url": "https://css-tricks.com/snippets/css/a-guide-to-css-grid/",
+              "title": "CSS Grid Layout Guide (CSS-Tricks)",
+              "url": "https://css-tricks.com/css-grid-layout-guide/",
               "type": "article"
             },
             {
@@ -347,11 +347,6 @@
           "description": "Explore ES Modules (import/export syntax) for organizing code. Understand prototypal inheritance and ES6 classes for object-oriented programming in JavaScript.",
           "resources": [
             {
-              "title": "JavaScript Modules: A Practical Guide",
-              "url": "https://www.freecodecamp.org/news/javascript-modules-a-practical-guide/",
-              "type": "article"
-            },
-            {
               "title": "Classes (MDN Web Docs)",
               "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes",
               "type": "article"
@@ -425,11 +420,6 @@
           "tag": "essential",
           "description": "Understand the role of Node.js package managers. Learn to use npm/Yarn to initialize projects, install, update, and uninstall packages. Manage dependencies (package.json, package-lock.json/yarn.lock) and define scripts.",
           "resources": [
-            {
-              "title": "What is npm? A Crash Course",
-              "url": "https://www.freecodecamp.org/news/what-is-npm-a-crash-course/",
-              "type": "article"
-            },
             {
               "title": "Yarn Docs",
               "url": "https://classic.yarnpkg.com/en/docs/",
@@ -505,11 +495,6 @@
           "description": "Master `useState` for local component state, `useEffect` for side effects (data fetching, subscriptions, DOM manipulation) with proper cleanup. Introduce `useContext` for simpler global state management.",
           "resources": [
             {
-              "title": "A Complete Guide to React Hooks (freeCodeCamp)",
-              "url": "https://www.freecodecamp.org/news/a-complete-guide-to-react-hooks/",
-              "type": "article"
-            },
-            {
               "title": "React Hooks - Полный Курс (Про Все Хуки в 1 видео!) (Владилен Минин)",
               "url": "https://www.youtube.com/watch?v=9KJxaFHotqI",
               "type": "video"
@@ -530,8 +515,8 @@
           "description": "Implement client-side routing using React Router DOM (BrowserRouter, Routes, Route, useNavigate, useParams). Handle forms with controlled components and basic client-side validation.",
           "resources": [
             {
-              "title": "React Router Tutorial",
-              "url": "https://reactrouter.com/en/main/start/tutorial",
+              "title": "Build an Address Book with React Router (Official Tutorial)",
+              "url": "https://reactrouter.com/tutorials/address-book",
               "type": "article"
             },
             {
@@ -564,11 +549,6 @@
           "tag": "essential",
           "description": "Explore various styling methods in React: CSS Modules, Styled Components, Emotion, and utility-first CSS frameworks like Tailwind CSS. Understand their pros and cons.",
           "resources": [
-            {
-              "title": "How To Style React Components: The Complete Guide",
-              "url": "https://www.freecodecamp.org/news/how-to-style-react-components-the-complete-guide/",
-              "type": "article"
-            },
             {
               "title": "Styled Components Documentation",
               "url": "https://styled-components.com/docs",
@@ -708,11 +688,6 @@
           "tag": "essential",
           "description": "Set up ESLint for identifying and reporting on patterns in JavaScript code to maintain code quality. Integrate Prettier for automatic code formatting to ensure consistent style across a team.",
           "resources": [
-            {
-              "title": "Configuring ESLint and Prettier for React",
-              "url": "https://www.freecodecamp.org/news/setting-up-eslint-and-prettier-in-react/",
-              "type": "article"
-            },
             {
               "title": "VSCode ESLint, Prettier & Airbnb Style Guide Setup (Traversy Media)",
               "url": "https://www.youtube.com/watch?v=SydnKbGc7W8",
@@ -948,11 +923,6 @@
               "type": "article"
             },
             {
-              "title": "Chakra UI Documentation",
-              "url": "https://chakra-ui.com/docs/getting-started",
-              "type": "article"
-            },
-            {
               "title": "Material UI 5 (MUI) React Tutorial | MUI Responsive Real Project (Lama Dev)",
               "url": "https://www.youtube.com/watch?v=fzxEECHnsvU",
               "type": "video"
@@ -977,11 +947,6 @@
           "tag": "advanced",
           "description": "Gain a basic understanding of common frontend security vulnerabilities such as Cross-Site Scripting (XSS), Cross-Site Request Forgery (CSRF), and CORS policies. Learn best practices for secure coding.",
           "resources": [
-            {
-              "title": "Frontend Security Checklist",
-              "url": "https://dev.to/sdebarros/frontend-security-checklist-part-1-of-2-411a",
-              "type": "article"
-            },
             {
               "title": "OWASP Top 10 Web Application Security Risks",
               "url": "https://owasp.org/www-project-top-ten/",
@@ -1063,9 +1028,9 @@
           "description": "Engineer accessible and semantic web applications. Master landmark elements (<main>, <nav>, <article>, <aside>, <dialog>), WAI-ARIA roles, states, and properties (aria-expanded, aria-live, aria-describedby), keyboard focus navigation (focus trapping in modals, visible focus indicators, roving tabindex), screen reader accessibility, and meeting WCAG 2.2 Level AA compliance.",
           "resources": [
             {
-              "title": "Learn HTML (MDN Web Docs)",
-              "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Learning",
-              "type": "course"
+              "title": "Structuring Content with HTML (MDN Web Docs)",
+              "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content",
+              "type": "article"
             },
             {
               "title": "Learn Accessibility - Full a11y Tutorial (freeCodeCamp.org)",
@@ -1123,8 +1088,8 @@
               "type": "article"
             },
             {
-              "title": "A Complete Guide to CSS Grid (CSS-Tricks)",
-              "url": "https://css-tricks.com/snippets/css/a-guide-to-css-grid/",
+              "title": "CSS Grid Layout Guide (CSS-Tricks)",
+              "url": "https://css-tricks.com/css-grid-layout-guide/",
               "type": "article"
             },
             {
@@ -1284,11 +1249,6 @@
           "description": "Architect clean JavaScript code using ES Modules (ESM). Compare static imports with dynamic import() for code-splitting, manage circular dependency hazards, understand tree-shaking mechanics (sideEffects in package.json), and implement modular design patterns (Observer, Factory, Singleton) for clean client-side architecture.",
           "resources": [
             {
-              "title": "JavaScript Modules: A Practical Guide",
-              "url": "https://www.freecodecamp.org/news/javascript-modules-a-practical-guide/",
-              "type": "article"
-            },
-            {
               "title": "Classes (MDN Web Docs)",
               "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes",
               "type": "article"
@@ -1359,11 +1319,6 @@
           "tag": "essential",
           "description": "Master frontend dependency management with npm, pnpm, and yarn. Understand lockfile determinism, semantic versioning (^, ~, exact), peerDependencies resolution, monorepo workspaces, auditing vulnerabilities (npm audit), and pruning unused dependencies to prevent supply chain attacks.",
           "resources": [
-            {
-              "title": "What is npm? A Crash Course",
-              "url": "https://www.freecodecamp.org/news/what-is-npm-a-crash-course/",
-              "type": "article"
-            },
             {
               "title": "Yarn Docs",
               "url": "https://classic.yarnpkg.com/en/docs/",
@@ -1436,11 +1391,6 @@
           "description": "Master state management and hook composition in React. Understand state immutability, batched re-renders, and React 19 hooks (useActionState, useOptimistic, use). Master custom hook creation, avoiding stale closures in useEffect, replacing useEffect with derived state calculations, and properly cleaning up event listeners and timers.",
           "resources": [
             {
-              "title": "A Complete Guide to React Hooks (freeCodeCamp)",
-              "url": "https://www.freecodecamp.org/news/a-complete-guide-to-react-hooks/",
-              "type": "article"
-            },
-            {
               "title": "React Hooks - Полный Курс (Про Все Хуки в 1 видео!) (Владилен Минин)",
               "url": "https://www.youtube.com/watch?v=9KJxaFHotqI",
               "type": "video"
@@ -1461,8 +1411,8 @@
           "description": "Build complex web flows with modern routing and forms. Master nested routing, data loaders, and actions with React Router / TanStack Router. Implement high-performance form state management using React Hook Form, declarative schema validation with Zod, and optimistic form updates.",
           "resources": [
             {
-              "title": "React Router Tutorial",
-              "url": "https://reactrouter.com/en/main/start/tutorial",
+              "title": "Build an Address Book with React Router (Official Tutorial)",
+              "url": "https://reactrouter.com/tutorials/address-book",
               "type": "article"
             },
             {
@@ -1495,11 +1445,6 @@
           "tag": "essential",
           "description": "Evaluate and implement modern React styling systems. Master Tailwind CSS utility-first styling, CSS Modules for scoped component styles, and zero-runtime CSS-in-JS (Panda CSS, StyleX). Learn token-driven theming and managing dynamic dark/light theme switching.",
           "resources": [
-            {
-              "title": "How To Style React Components: The Complete Guide",
-              "url": "https://www.freecodecamp.org/news/how-to-style-react-components-the-complete-guide/",
-              "type": "article"
-            },
             {
               "title": "Styled Components Documentation",
               "url": "https://styled-components.com/docs",
@@ -1636,11 +1581,6 @@
           "tag": "essential",
           "description": "Enforce automated code quality across frontend codebases. Configure ESLint 9 Flat Config, Prettier formatting, TypeScript strict compiler flags, and automate pre-commit checks using Husky and lint-staged to guarantee code consistency.",
           "resources": [
-            {
-              "title": "Configuring ESLint and Prettier for React",
-              "url": "https://www.freecodecamp.org/news/setting-up-eslint-and-prettier-in-react/",
-              "type": "article"
-            },
             {
               "title": "VSCode ESLint, Prettier & Airbnb Style Guide Setup (Traversy Media)",
               "url": "https://www.youtube.com/watch?v=SydnKbGc7W8",
@@ -1873,11 +1813,6 @@
               "type": "article"
             },
             {
-              "title": "Chakra UI Documentation",
-              "url": "https://chakra-ui.com/docs/getting-started",
-              "type": "article"
-            },
-            {
               "title": "Material UI 5 (MUI) React Tutorial | MUI Responsive Real Project (Lama Dev)",
               "url": "https://www.youtube.com/watch?v=fzxEECHnsvU",
               "type": "video"
@@ -1902,11 +1837,6 @@
           "tag": "advanced",
           "description": "Harden frontend applications against web security threats. Prevent Cross-Site Scripting (XSS) via context-aware escaping and DOMPurify, implement strict Content Security Policy (CSP Level 3), prevent CSRF with SameSite cookies, securely store authentication tokens (HttpOnly cookies), and defend against Clickjacking and prototype pollution.",
           "resources": [
-            {
-              "title": "Frontend Security Checklist",
-              "url": "https://dev.to/sdebarros/frontend-security-checklist-part-1-of-2-411a",
-              "type": "article"
-            },
             {
               "title": "OWASP Top 10 Web Application Security Risks",
               "url": "https://owasp.org/www-project-top-ten/",

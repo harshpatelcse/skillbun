@@ -118,11 +118,6 @@
           "description": "Understand serverless compute: Function-as-a-Service (FaaS) lifecycles, cold starts vs warm starts, concurrency limits, execution timeouts, and managed backend services.",
           "resources": [
             {
-              "title": "What is Serverless? (AWS)",
-              "url": "https://aws.amazon.com/serverless/what-is-serverless/",
-              "type": "article"
-            },
-            {
               "title": "Serverless Architectures (Martin Fowler)",
               "url": "https://martinfowler.com/articles/serverless.html",
               "type": "article"
@@ -325,11 +320,6 @@
               "type": "article"
             },
             {
-              "title": "Understanding AWS Lambda Invocation Models",
-              "url": "https://aws.amazon.com/blogs/compute/understanding-the-various-invocation-models-for-aws-lambda/",
-              "type": "article"
-            },
-            {
               "title": "Deploying a backend on Vercel (APIs and Functions) (Vercel)",
               "url": "https://www.youtube.com/watch?v=yLMODEUPJdU",
               "type": "video"
@@ -430,11 +420,6 @@
               "type": "article"
             },
             {
-              "title": "S3 for Serverless Applications",
-              "url": "https://aws.amazon.com/blogs/aws/s3-for-serverless-application-data/",
-              "type": "article"
-            },
-            {
               "title": "What is Amazon Aurora Serverless?",
               "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html",
               "type": "article"
@@ -468,11 +453,6 @@
               "title": "Building event-driven architectures with Amazon EventBridge",
               "url": "https://aws.amazon.com/eventbridge/resources/",
               "type": "course"
-            },
-            {
-              "title": "Decoupling Microservices with SQS and SNS",
-              "url": "https://docs.aws.amazon.com/whitepapers/latest/architecting-microservices-aws/decoupling-microservices-with-sqs-and-sns.html",
-              "type": "article"
             },
             {
               "title": "Deploying a backend on Vercel (APIs and Functions) (Vercel)",
@@ -510,11 +490,6 @@
               "type": "article"
             },
             {
-              "title": "Introduction to AWS CDK for Serverless",
-              "url": "https://aws.amazon.com/blogs/compute/going-serverless-with-the-aws-cdk/",
-              "type": "article"
-            },
-            {
               "title": "Intro to Serverless: why and how (with basic tutorial) (freeCodeCamp.org)",
               "url": "https://www.youtube.com/watch?v=un8-zGFXEfU",
               "type": "video"
@@ -539,11 +514,6 @@
           "tag": "essential",
           "description": "Test serverless applications locally: LocalStack for AWS emulation, SAM CLI local invocation, unit testing handler functions, and integration testing against cloud staging environments.",
           "resources": [
-            {
-              "title": "Testing Serverless Applications (Serverless Land)",
-              "url": "https://serverlessland.com/patterns/testing",
-              "type": "article"
-            },
             {
               "title": "Testing Lambda Functions (AWS Lambda Docs)",
               "url": "https://docs.aws.amazon.com/lambda/latest/dg/testing-functions.html",
@@ -642,11 +612,6 @@
           "description": "Harden serverless security posture: Least-privilege IAM roles per function, Secrets Manager / SSM Parameter Store integration, and dependency vulnerability scanning.",
           "resources": [
             {
-              "title": "Serverless Security Best Practices (AWS)",
-              "url": "https://aws.amazon.com/blogs/compute/serverless-security-best-practices/",
-              "type": "article"
-            },
-            {
               "title": "AWS Well-Architected Framework - Security Pillar",
               "url": "https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/security-pillar.html",
               "type": "article"
@@ -677,16 +642,6 @@
           "description": "Optimize serverless expenditure: Tuning Lambda memory with AWS Lambda Power Tuning, optimizing DynamoDB on-demand vs provisioned capacity, and lifecycle archival.",
           "resources": [
             {
-              "title": "Cost Optimization for Serverless (Serverless Land)",
-              "url": "https://serverlessland.com/patterns/cost-optimization",
-              "type": "article"
-            },
-            {
-              "title": "Optimizing AWS Lambda cost and performance",
-              "url": "https://aws.amazon.com/blogs/compute/optimizing-aws-lambda-cost-and-performance/",
-              "type": "article"
-            },
-            {
               "title": "Serverless in 100 Seconds (Fireship)",
               "url": "https://www.youtube.com/watch?v=W_VV2Fx32_Y",
               "type": "video"
@@ -714,11 +669,6 @@
             {
               "title": "AWS Step Functions Developer Guide",
               "url": "https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html",
-              "type": "article"
-            },
-            {
-              "title": "Serverless Architectural Patterns and Best Practices",
-              "url": "https://aws.amazon.com/blogs/compute/serverless-architectural-patterns-and-best-practices/",
               "type": "article"
             },
             {
@@ -816,16 +766,6 @@
           "tag": "advanced",
           "description": "Automate serverless CI/CD: Automated deployment pipelines with GitHub Actions, ephemeral preview environments per PR, and automated canary deployments with AWS CodeDeploy.",
           "resources": [
-            {
-              "title": "Building a CI/CD pipeline for serverless applications using AWS SAM and AWS CodePipeline",
-              "url": "https://aws.amazon.com/blogs/compute/building-a-ci-cd-pipeline-for-serverless-applications-using-aws-sam-and-aws-codepipeline/",
-              "type": "article"
-            },
-            {
-              "title": "Serverless CI/CD (Serverless Framework)",
-              "url": "https://www.serverless.com/blog/serverless-cicd-with-github-actions",
-              "type": "article"
-            },
             {
               "title": "Serverless in 100 Seconds (Fireship)",
               "url": "https://www.youtube.com/watch?v=W_VV2Fx32_Y",
@@ -934,11 +874,6 @@
           "description": "Draft architectural case studies: Documenting event-driven migration from monoliths, cold start mitigation strategies, and cost savings calculations.",
           "resources": [
             {
-              "title": "Writing Effective Documentation for Your Projects",
-              "url": "https://www.freecodecamp.org/news/how-to-write-great-documentation-for-your-projects/",
-              "type": "article"
-            },
-            {
               "title": "Intro to Serverless: why and how (with basic tutorial) (freeCodeCamp.org)",
               "url": "https://www.youtube.com/watch?v=un8-zGFXEfU",
               "type": "video"
@@ -963,11 +898,6 @@
           "tag": "advanced",
           "description": "Build an enterprise serverless capstone: Event-driven e-commerce order processing engine using AWS Lambda, EventBridge, Step Functions Saga, DynamoDB single-table design, and SAM/CDK.",
           "resources": [
-            {
-              "title": "Serverless E-commerce Application Reference Architecture",
-              "url": "https://aws.amazon.com/blogs/mt/serverless-patterns-series-a-serverless-e-commerce-application-part-1/",
-              "type": "article"
-            },
             {
               "title": "Serverless Workshop (AWS)",
               "url": "https://serverless-workshops.com/",

@@ -14,6 +14,7 @@ const DEFAULT_PROFILE = Object.freeze({
   interest: '',
 });
 let lastSnapshot = DEFAULT_PROFILE;
+let sessionProfile = null;
 
 export function notifyProfileChanged() {
   if (typeof window !== 'undefined') {
@@ -32,6 +33,8 @@ export function readProfileSnapshot() {
   if (typeof window === 'undefined') {
     return DEFAULT_PROFILE;
   }
+
+  if (sessionProfile) return sessionProfile;
 
   let nextSnapshot;
   try {
@@ -84,12 +87,24 @@ export function isProfileCacheForUser(profile, user) {
 }
 
 export function saveStoredProfile({ uid, name, email, degree, year, interest }) {
-  setOrRemove('sb_profile_uid', uid || '');
-  setOrRemove('sb_name', name || '');
-  setOrRemove('sb_email', email || '');
-  setOrRemove('sb_degree', degree || '');
-  setOrRemove('sb_year', year || '');
-  setOrRemove('sb_interest', interest || '');
+  if (typeof window === 'undefined') return;
+  // Browser caching must not turn a successful cloud profile read/save into
+  // a failed session when storage is blocked or its quota is exhausted.
+  sessionProfile = {
+    hydrated: true, uid: uid || '', name: name || 'Student', hasName: Boolean(name),
+    email: email || '', degree: degree || '', year: year || '', interest: interest || '',
+  };
+  try {
+    setOrRemove('sb_profile_uid', uid || '');
+    setOrRemove('sb_name', name || '');
+    setOrRemove('sb_email', email || '');
+    setOrRemove('sb_degree', degree || '');
+    setOrRemove('sb_year', year || '');
+    setOrRemove('sb_interest', interest || '');
+    sessionProfile = null;
+  } catch {
+    // Keep only this tab's current account profile until storage works again.
+  }
   notifyProfileChanged();
 }
 
@@ -98,11 +113,12 @@ export function clearStoredProfile() {
     return;
   }
 
-  window.localStorage.removeItem('sb_name');
-  window.localStorage.removeItem('sb_profile_uid');
-  window.localStorage.removeItem('sb_email');
-  window.localStorage.removeItem('sb_degree');
-  window.localStorage.removeItem('sb_year');
-  window.localStorage.removeItem('sb_interest');
+  // Mask stale persisted values even when this browser rejects their removal.
+  sessionProfile = { ...DEFAULT_PROFILE, hydrated: true };
+  let removed = true;
+  for (const key of ['sb_name', 'sb_profile_uid', 'sb_email', 'sb_degree', 'sb_year', 'sb_interest']) {
+    try { window.localStorage.removeItem(key); } catch { removed = false; }
+  }
+  if (removed) sessionProfile = null;
   notifyProfileChanged();
 }

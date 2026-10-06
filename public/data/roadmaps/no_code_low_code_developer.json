@@ -168,16 +168,6 @@
           "description": "Design relational database schemas: Tables, field types, primary/foreign keys, one-to-one, one-to-many, and many-to-many relationships in Airtable / Supabase / Bubble.",
           "resources": [
             {
-              "title": "Airtable Guides",
-              "url": "https://support.airtable.com/docs",
-              "type": "article"
-            },
-            {
-              "title": "Understanding Data Models in Bubble",
-              "url": "https://bubble.io/manual/reference/data-models",
-              "type": "article"
-            },
-            {
               "title": "Zapier AI Tutorial for Beginners: Automation Made Simple (Kevin Stratvert)",
               "url": "https://www.youtube.com/watch?v=JtdUgJGI_Oo",
               "type": "video"
@@ -280,11 +270,6 @@
           "description": "Evaluate the no-code ecosystem: Web applications (Bubble, Webflow), mobile apps (FlutterFlow, Adalo), and internal tools (Retool, Appsmith).",
           "resources": [
             {
-              "title": "What is Low-Code Development?",
-              "url": "https://www.outsystems.com/low-code/what-is-low-code/",
-              "type": "article"
-            },
-            {
               "title": "Zapier AI Tutorial for Beginners: Automation Made Simple (Kevin Stratvert)",
               "url": "https://www.youtube.com/watch?v=JtdUgJGI_Oo",
               "type": "video"
@@ -350,16 +335,6 @@
               "type": "course"
             },
             {
-              "title": "Bubble Manual - Workflows",
-              "url": "https://manual.bubble.io/core-concepts/building-an-application/workflows",
-              "type": "article"
-            },
-            {
-              "title": "AppSheet Documentation - Actions & Workflows",
-              "url": "https://support.google.com/appsheet/answer/10107297?hl=en",
-              "type": "article"
-            },
-            {
               "title": "How to use Microsoft Power Apps - Beginner Tutorial (Kevin Stratvert)",
               "url": "https://www.youtube.com/watch?v=2RzCbd5XgJg",
               "type": "video"
@@ -384,11 +359,6 @@
           "tag": "essential",
           "description": "Secure user access: User sign-up/login flows, session management, social logins (OAuth), and role-based data privacy rules in Bubble / Supabase.",
           "resources": [
-            {
-              "title": "User Authentication in Bubble",
-              "url": "https://manual.bubble.io/core-concepts/data/authentication",
-              "type": "article"
-            },
             {
               "title": "How to use Microsoft Power Apps - Beginner Tutorial (Kevin Stratvert)",
               "url": "https://www.youtube.com/watch?v=2RzCbd5XgJg",
@@ -609,11 +579,6 @@
               "type": "article"
             },
             {
-              "title": "No-Code Security Best Practices",
-              "url": "https://www.softr.io/blog/no-code-security",
-              "type": "article"
-            },
-            {
               "title": "How to use Microsoft Power Apps - Beginner Tutorial (Kevin Stratvert)",
               "url": "https://www.youtube.com/watch?v=2RzCbd5XgJg",
               "type": "video"
@@ -638,11 +603,6 @@
           "tag": "advanced",
           "description": "Manage project lifecycles: Agile delivery, sprint milestones, client handoff documentation, and user training guides.",
           "resources": [
-            {
-              "title": "Agile Project Management for No-Code",
-              "url": "https://www.glideapps.com/blog/agile-for-no-code",
-              "type": "article"
-            },
             {
               "title": "How to use Microsoft Power Apps - Beginner Tutorial (Kevin Stratvert)",
               "url": "https://www.youtube.com/watch?v=2RzCbd5XgJg",

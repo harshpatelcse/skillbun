@@ -123,21 +123,6 @@
               "type": "article"
             },
             {
-              "title": "UiPath - Process Definition Document (PDD) Template",
-              "url": "https://www.uipath.com/hubfs/UiPath_PDD_Template.docx",
-              "type": "article"
-            },
-            {
-              "title": "Estimating RPA ROI",
-              "url": "https://www.uipath.com/resources/rpa-calculators/roi-calculator",
-              "type": "article"
-            },
-            {
-              "title": "RPA Business Analyst Training",
-              "url": "https://academy.uipath.com/learning-plan/rpa-business-analyst-training",
-              "type": "course"
-            },
-            {
               "title": "UiPath Tutorial for Beginners (Intellipaat)",
               "url": "https://www.youtube.com/watch?v=OyQAhrcBr9U",
               "type": "video"
@@ -212,11 +197,6 @@
           "type": "course"
         },
         {
-          "title": "Microsoft Power Automate Learning Path",
-          "url": "https://learn.microsoft.com/en-us/training/paths/rpa-developer/",
-          "type": "course"
-        },
-        {
           "title": "RPA Blue Prism Tutorial For Beginners | Introduction To Blue Prism | RPA Training | Edureka (edureka!)",
           "url": "https://www.youtube.com/watch?v=jzuq94cH8Fk",
           "type": "video"
@@ -239,11 +219,6 @@
           "tag": "essential",
           "description": "Master UiPath Studio: Sequences, Flowcharts, State Machines, Robotic Enterprise (REFramework) architecture, and selector tuning (UI Explorer, fuzzy selectors).",
           "resources": [
-            {
-              "title": "UiPath Academy - UI Automation",
-              "url": "https://academy.uipath.com/learning-plan/uipath-activities-automation-basics",
-              "type": "course"
-            },
             {
               "title": "Understanding UiPath Selectors",
               "url": "https://docs.uipath.com/studio/docs/selectors",
@@ -285,16 +260,6 @@
               "type": "article"
             },
             {
-              "title": "Power Automate Desktop Getting Started",
-              "url": "https://learn.microsoft.com/en-us/power-automate/desktop-flows/get-started",
-              "type": "article"
-            },
-            {
-              "title": "Microsoft Learn - Build advanced flows with Power Automate",
-              "url": "https://learn.microsoft.com/en-us/training/paths/build-advanced-flows-power-automate/",
-              "type": "course"
-            },
-            {
               "title": "UiPath Tutorial for Beginners (Intellipaat)",
               "url": "https://www.youtube.com/watch?v=OyQAhrcBr9U",
               "type": "video"
@@ -320,18 +285,8 @@
           "description": "Implement advanced automation patterns: Surface automation with Computer Vision (CV), virtual desktop interface (VDI/Citrix) automation, and API-led robotic integration.",
           "resources": [
             {
-              "title": "UiPath - Advanced UI Automation",
-              "url": "https://academy.uipath.com/learning-plan/advanced-ui-automation-with-uipath",
-              "type": "course"
-            },
-            {
               "title": "Working with APIs in UiPath Studio",
               "url": "https://docs.uipath.com/studio/docs/using-web-api-activities",
-              "type": "article"
-            },
-            {
-              "title": "Power Automate HTTP connector for API calls",
-              "url": "https://learn.microsoft.com/en-us/connectors/http/",
               "type": "article"
             },
             {
@@ -410,11 +365,6 @@
               "type": "article"
             },
             {
-              "title": "Introduction to Git and GitHub (UiPath Academy)",
-              "url": "https://academy.uipath.com/learning-plan/introduction-to-git-and-github",
-              "type": "course"
-            },
-            {
               "title": "RPA Full Course - Robotic Process Automation (Edureka)",
               "url": "https://www.youtube.com/watch?v=9URSbTOE4YI",
               "type": "video"
@@ -443,16 +393,6 @@
       "tag": "advanced",
       "description": "Build resilient automation: Robust exception handling, retry logic, centralized logging, and workload queue distribution.",
       "resources": [
-        {
-          "title": "UiPath Academy - Advanced Exception Handling",
-          "url": "https://academy.uipath.com/learning-plan/advanced-exception-handling",
-          "type": "course"
-        },
-        {
-          "title": "Power Automate - Handling errors in flows",
-          "url": "https://learn.microsoft.com/en-us/power-automate/error-handling",
-          "type": "article"
-        },
         {
           "title": "UiPath Tutorial for Beginners (Intellipaat)",
           "url": "https://www.youtube.com/watch?v=OyQAhrcBr9U",
@@ -517,11 +457,6 @@
               "type": "article"
             },
             {
-              "title": "Power Automate - Working with Dataverse queues",
-              "url": "https://learn.microsoft.com/en-us/power-apps/maker/data-platform/manage-queues",
-              "type": "article"
-            },
-            {
               "title": "RPA Blue Prism Tutorial For Beginners | Introduction To Blue Prism | RPA Training | Edureka (edureka!)",
               "url": "https://www.youtube.com/watch?v=jzuq94cH8Fk",
               "type": "video"
@@ -549,11 +484,6 @@
             {
               "title": "UiPath Test Suite Overview",
               "url": "https://docs.uipath.com/test-suite/docs/about-test-suite",
-              "type": "article"
-            },
-            {
-              "title": "Debugging Power Automate Desktop flows",
-              "url": "https://learn.microsoft.com/en-us/power-automate/desktop-flows/debugging-desktop-flows",
               "type": "article"
             },
             {
@@ -592,11 +522,6 @@
               "type": "article"
             },
             {
-              "title": "Power Automate Analytics and Reporting",
-              "url": "https://learn.microsoft.com/en-us/power-platform/admin/analytics-power-automate",
-              "type": "article"
-            },
-            {
               "title": "UiPath Tutorial for Beginners (Intellipaat)",
               "url": "https://www.youtube.com/watch?v=OyQAhrcBr9U",
               "type": "video"
@@ -621,11 +546,6 @@
           "tag": "advanced",
           "description": "Practice Project: Build an advanced transactional bot using REFramework with dynamic queue loading, PDF invoice data extraction, and ERP data entry.",
           "resources": [
-            {
-              "title": "UiPath - Advanced REFramework Practice",
-              "url": "https://academy.uipath.com/learning-plan/advanced-reframework",
-              "type": "course"
-            },
             {
               "title": "RPA In 5 Minutes | What Is RPA - Robotic Process Automation? | RPA Explained | Simplilearn (Simplilearn)",
               "url": "https://www.youtube.com/watch?v=9URSbTOE4YI",
@@ -655,16 +575,6 @@
       "tag": "advanced",
       "description": "Establish enterprise RPA governance: Security compliance, credential vaults, deployment pipelines, and Solution Design Documents (SDD).",
       "resources": [
-        {
-          "title": "UiPath - RPA Governance Guide",
-          "url": "https://www.uipath.com/resources/rpa-whitepapers/rpa-governance-guide",
-          "type": "article"
-        },
-        {
-          "title": "Microsoft Power Platform Governance",
-          "url": "https://learn.microsoft.com/en-us/power-platform/admin/governance-powerplatform",
-          "type": "article"
-        },
         {
           "title": "RPA Blue Prism Tutorial For Beginners | Introduction To Blue Prism | RPA Training | Edureka (edureka!)",
           "url": "https://www.youtube.com/watch?v=jzuq94cH8Fk",
@@ -699,11 +609,6 @@
               "type": "article"
             },
             {
-              "title": "Best Practices for PII Handling in RPA",
-              "url": "https://www.uipath.com/resources/automation-blog/rpa-and-data-security",
-              "type": "article"
-            },
-            {
               "title": "RPA Full Course - Robotic Process Automation (Edureka)",
               "url": "https://www.youtube.com/watch?v=9URSbTOE4YI",
               "type": "video"
@@ -731,11 +636,6 @@
             {
               "title": "UiPath Deployment Best Practices",
               "url": "https://docs.uipath.com/orchestrator/docs/publishing-packages",
-              "type": "article"
-            },
-            {
-              "title": "Power Automate solution management",
-              "url": "https://learn.microsoft.com/en-us/power-automate/create-flows-from-a-solution",
               "type": "article"
             },
             {
@@ -769,21 +669,6 @@
           "description": "Document RPA solutions: Authoring Solution Design Documents (SDD), Operational Handover Documents (OHD), and maintenance playbooks.",
           "resources": [
             {
-              "title": "UiPath Solution Design Document (SDD) Template",
-              "url": "https://www.uipath.com/hubfs/UiPath_SDD_Template.docx",
-              "type": "article"
-            },
-            {
-              "title": "Agile Methodology for RPA Projects",
-              "url": "https://www.uipath.com/resources/rpa-case-studies/agile-rpa-implementation",
-              "type": "article"
-            },
-            {
-              "title": "RPA Development Standards and Best Practices",
-              "url": "https://www.uipath.com/resources/automation-blog/rpa-best-practices",
-              "type": "article"
-            },
-            {
               "title": "RPA In 5 Minutes | What Is RPA - Robotic Process Automation? | RPA Explained | Simplilearn (Simplilearn)",
               "url": "https://www.youtube.com/watch?v=9URSbTOE4YI",
               "type": "video"
@@ -814,11 +699,6 @@
               "type": "article"
             },
             {
-              "title": "Power Automate - Scale Desktop flows",
-              "url": "https://learn.microsoft.com/en-us/power-automate/desktop-flows/manage-desktop-flow-queues",
-              "type": "article"
-            },
-            {
               "title": "RPA Blue Prism Tutorial For Beginners | Introduction To Blue Prism | RPA Training | Edureka (edureka!)",
               "url": "https://www.youtube.com/watch?v=jzuq94cH8Fk",
               "type": "video"
@@ -843,11 +723,6 @@
           "tag": "advanced",
           "description": "Build an enterprise RPA capstone: End-to-end automated invoice processing robot built on UiPath REFramework, extracting tabular data from PDF invoices using Document Understanding, and updating database.",
           "resources": [
-            {
-              "title": "UiPath Academy - Build Your First Automation (Project based)",
-              "url": "https://academy.uipath.com/learning-plan/automation-developer-associate-course",
-              "type": "course"
-            },
             {
               "title": "Get Started with Power Automate (Microsoft)",
               "url": "https://learn.microsoft.com/en-us/power-automate/getting-started",

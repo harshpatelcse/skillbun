@@ -198,11 +198,6 @@
           "description": "Master web fundamentals and security: HTTP request/response lifecycles, sessions, cookies, and preventing OWASP Top 10 vulnerabilities (XSS, CSRF, SQLi) in PHP.",
           "resources": [
             {
-              "title": "MVC Architecture Explained",
-              "url": "https://www.freecodecamp.org/news/model-view-controller-mvc-architecture-and-how-to-use-it/",
-              "type": "article"
-            },
-            {
               "title": "OWASP Top 10",
               "url": "https://owasp.org/www-project-top-ten/",
               "type": "article"
@@ -597,11 +592,6 @@
               "type": "article"
             },
             {
-              "title": "Laravel Performance Optimization Tips",
-              "url": "https://dev.to/aschmelyun/10-ways-to-speed-up-your-laravel-application-2n5k",
-              "type": "article"
-            },
-            {
               "title": "Vite with Laravel",
               "url": "https://laravel.com/docs/vite",
               "type": "article"
@@ -682,11 +672,6 @@
               "type": "article"
             },
             {
-              "title": "Spatie Packages Overview",
-              "url": "https://spatie.be/open-source/packages/laravel",
-              "type": "article"
-            },
-            {
               "title": "Laravel PHP Framework Tutorial - Full Course for Beginners (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=ImtZ5yENzgE",
               "type": "video"
@@ -754,11 +739,6 @@
               "type": "article"
             },
             {
-              "title": "GitHub Actions for Laravel CI/CD",
-              "url": "https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-php",
-              "type": "article"
-            },
-            {
               "title": "PHP in 100 Seconds (Fireship)",
               "url": "https://www.youtube.com/watch?v=a7_WFUlFS94",
               "type": "video"
@@ -783,11 +763,6 @@
           "tag": "advanced",
           "description": "Containerize Laravel with Docker: Laravel Sail for development, multi-stage production Dockerfiles with PHP-FPM, Nginx, and Redis microservices.",
           "resources": [
-            {
-              "title": "Dockerizing a Laravel Application",
-              "url": "https://docs.docker.com/samples/laravel/",
-              "type": "article"
-            },
             {
               "title": "Laravel Authentication Full Tutorial (Laravel Daily)",
               "url": "https://www.youtube.com/watch?v=MFh0Fd7BsjE",

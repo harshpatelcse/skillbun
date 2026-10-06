@@ -268,8 +268,8 @@
           "description": "Master Flutter's layout constraint system: 'Constraints go down, Sizes go up, Parent sets position'; mastering Flex layouts (Row, Column, Flex, Flexible, Expanded), Stack and Positioned, CustomScrollView with Slivers, and building responsive Material 3 and Cupertino interfaces.",
           "resources": [
             {
-              "title": "Layout and widgets",
-              "url": "https://docs.flutter.dev/ui/layout/layout-overview",
+              "title": "Layouts in Flutter",
+              "url": "https://docs.flutter.dev/ui/layout",
               "type": "article"
             },
             {
@@ -308,8 +308,8 @@
               "type": "article"
             },
             {
-              "title": "Handling gestures in Flutter",
-              "url": "https://docs.flutter.dev/ui/interaction/gestures",
+              "title": "Gestures in Flutter",
+              "url": "https://docs.flutter.dev/ui/interactivity/gestures",
               "type": "article"
             },
             {
@@ -380,11 +380,6 @@
               "type": "article"
             },
             {
-              "title": "Bloc Library Documentation",
-              "url": "https://bloclibrary.dev/docs/getting-started",
-              "type": "article"
-            },
-            {
               "title": "Flutter State Management (BLoC, Provider, Riverpod, GetX) Tutorial",
               "url": "https://www.youtube.com/watch?v=yklUzYcZXi0",
               "type": "video"
@@ -440,8 +435,8 @@
           "description": "Engineer offline-first mobile applications: relational database persistence with Drift (type-safe SQLite with migrations and reactive queries), high-speed key-value caching with Hive or Isar, and hardware-backed secure credential storage with `flutter_secure_storage` (Android Keystore, iOS Keychain).",
           "resources": [
             {
-              "title": "Persist data with SQLite",
-              "url": "https://docs.flutter.dev/data-and-backend/sqlite",
+              "title": "Persist Data with SQLite (Flutter Cookbook)",
+              "url": "https://docs.flutter.dev/cookbook/persistence/sqlite",
               "type": "article"
             },
             {
@@ -480,11 +475,6 @@
               "type": "article"
             },
             {
-              "title": "Dependency Injection in Dart & Flutter",
-              "url": "https://www.filledstacks.com/post/dependency-injection-in-dart-and-flutter/",
-              "type": "article"
-            },
-            {
               "title": "Flutter & Firebase Tutorial - #23 Dependency Injection (GetIt & Injectable)",
               "url": "https://www.youtube.com/watch?v=ORTAoyR82jQ",
               "type": "video"
@@ -510,13 +500,13 @@
           "description": "Master declarative routing with `go_router`: URI-based deep linking, nested navigation with `ShellRoute` / `StatefulShellRoute` (preserving bottom tab state), route redirect guards for authentication state, and path parameter extraction.",
           "resources": [
             {
-              "title": "Declarative navigation in Flutter",
-              "url": "https://docs.flutter.dev/data-and-backend/navigation/router",
+              "title": "Navigation and Routing in Flutter",
+              "url": "https://docs.flutter.dev/ui/navigation",
               "type": "article"
             },
             {
               "title": "Deep Linking in Flutter",
-              "url": "https://flutter.dev/docs/development/data-and-backend/url-strategies",
+              "url": "https://docs.flutter.dev/ui/navigation/deep-linking",
               "type": "article"
             },
             {
@@ -580,11 +570,6 @@
           "description": "Apply Clean Architecture principles in Flutter: separating Domain layer (Entities, Use Cases, Repository Interfaces), Data layer (Models, Data Sources, Repository Implementations), and Presentation layer (BLoC/Cubit, UI Views, Widgets).",
           "resources": [
             {
-              "title": "Flutter Architecture Samples",
-              "url": "https://github.com/flutter/samples/tree/main/architectures",
-              "type": "article"
-            },
-            {
               "title": "Flutter - Architectural Patterns & State Management explained simply",
               "url": "https://www.youtube.com/watch?v=SDk_GldOtK8",
               "type": "video"
@@ -609,11 +594,6 @@
           "tag": "essential",
           "description": "Build an Advanced Recipe & Nutrition Application: clean architecture, Riverpod/BLoC state management, REST API integration with caching, offline bookmarking with Drift, and interactive smooth animations.",
           "resources": [
-            {
-              "title": "Flutter Recipe App UI (Example)",
-              "url": "https://github.com/flutter/samples/tree/main/cookbook/recipes",
-              "type": "article"
-            },
             {
               "title": "Flutter REST API Tutorial - Build a News App",
               "url": "https://www.youtube.com/watch?v=JyieR5hY1Mo",
@@ -742,18 +722,18 @@
           "description": "Implement rigorous automated testing: unit tests with `test` and `mocktail`, widget tests with `WidgetTester` (simulating user gestures, `pumpAndSettle`), golden UI snapshot tests for pixel-perfect regression prevention, and integration testing on real devices using `integration_test`.",
           "resources": [
             {
-              "title": "Unit test a Flutter app",
-              "url": "https://docs.flutter.dev/cookbook/testing/unit-testing",
+              "title": "An Introduction to Unit Testing (Flutter Cookbook)",
+              "url": "https://docs.flutter.dev/cookbook/testing/unit/introduction",
               "type": "article"
             },
             {
-              "title": "Widget testing",
-              "url": "https://docs.flutter.dev/cookbook/testing/widget-testing",
+              "title": "An Introduction to Widget Testing (Flutter Cookbook)",
+              "url": "https://docs.flutter.dev/cookbook/testing/widget/introduction",
               "type": "article"
             },
             {
-              "title": "Integration testing",
-              "url": "https://docs.flutter.dev/cookbook/testing/integration-tests",
+              "title": "Integration Testing (Flutter Documentation)",
+              "url": "https://docs.flutter.dev/testing/integration-tests",
               "type": "article"
             },
             {
@@ -822,8 +802,8 @@
               "type": "article"
             },
             {
-              "title": "Custom painting in Flutter",
-              "url": "https://docs.flutter.dev/ui/advanced/custom-painting",
+              "title": "CustomPainter API (Flutter Documentation)",
+              "url": "https://api.flutter.dev/flutter/rendering/CustomPainter-class.html",
               "type": "article"
             },
             {
@@ -852,8 +832,8 @@
           "description": "Implement enterprise multi-language support: configuring `flutter_localizations` and ARB files (`intl`), handling pluralization and gender, dynamic locale switching, and supporting Right-to-Left (RTL) Arabic/Hebrew layouts.",
           "resources": [
             {
-              "title": "Internationalizing Flutter apps",
-              "url": "https://docs.flutter.dev/data-and-backend/internationalization",
+              "title": "Internationalizing Flutter Apps",
+              "url": "https://docs.flutter.dev/ui/accessibility-and-internationalization/internationalization",
               "type": "article"
             },
             {
@@ -1019,8 +999,8 @@
               "type": "article"
             },
             {
-              "title": "Build and release a desktop app",
-              "url": "https://docs.flutter.dev/deployment/desktop",
+              "title": "Desktop Support for Flutter",
+              "url": "https://docs.flutter.dev/platform-integration/desktop",
               "type": "article"
             },
             {
@@ -1054,8 +1034,8 @@
               "type": "article"
             },
             {
-              "title": "Flutter CI/CD with GitHub Actions",
-              "url": "https://docs.flutter.dev/resources/ci-cd",
+              "title": "Continuous Delivery with Flutter",
+              "url": "https://docs.flutter.dev/deployment/cd",
               "type": "article"
             },
             {
@@ -1078,11 +1058,6 @@
           "tag": "advanced",
           "description": "Implement production telemetry: tracking user engagement with Firebase Analytics, capturing symbolicated crash stack traces in Crashlytics, and tracking network performance with Sentry/Datadog.",
           "resources": [
-            {
-              "title": "Firebase Analytics for Flutter",
-              "url": "https://firebase.google.com/docs/analytics/flutter/start",
-              "type": "article"
-            },
             {
               "title": "Firebase Crashlytics for Flutter",
               "url": "https://firebase.google.com/docs/crashlytics/get-started?platform=flutter",
@@ -1113,11 +1088,6 @@
           "tag": "advanced",
           "description": "Master enterprise multi-package monorepos, engine architecture, and complete production capstone engineering.",
           "resources": [
-            {
-              "title": "Clean Architecture in Flutter (Article Series)",
-              "url": "https://resocoder.com/2019/08/04/flutter-tdd-clean-architecture-course-1-explanation-project-setup/",
-              "type": "article"
-            },
             {
               "title": "Flutter Authentication with Go Router & Bloc – Full Tutorial (Clean Architecture)",
               "url": "https://www.youtube.com/watch?v=vibFzDAhl_o",

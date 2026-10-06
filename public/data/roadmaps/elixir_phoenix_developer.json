@@ -194,8 +194,8 @@
               "type": "article"
             },
             {
-              "title": "Elixir School: Aliases, Imports and Requires",
-              "url": "https://elixirschool.com/en/lessons/basics/aliases/",
+              "title": "Alias, Require and Import (Elixir Documentation)",
+              "url": "https://hexdocs.pm/elixir/alias-require-and-import.html",
               "type": "article"
             },
             {
@@ -259,13 +259,13 @@
           "description": "Handle errors idiomatically: The 'let it crash' philosophy, `with` statements for chaining operations that return `{:ok, val}` or `{:error, reason}`, and exception handling.",
           "resources": [
             {
-              "title": "Elixir School: Error Handling",
-              "url": "https://elixirschool.com/en/lessons/basics/try_catch_throw_and_rescue/",
+              "title": "Try, Catch and Rescue (Elixir Documentation)",
+              "url": "https://hexdocs.pm/elixir/try-catch-and-rescue.html",
               "type": "article"
             },
             {
-              "title": "Elixir School: With",
-              "url": "https://elixirschool.com/en/lessons/basics/with/",
+              "title": "With Expressions (Elixir Kernel Special Forms)",
+              "url": "https://hexdocs.pm/elixir/Kernel.SpecialForms.html#with/1",
               "type": "article"
             },
             {
@@ -328,11 +328,6 @@
           "type": "course"
         },
         {
-          "title": "Programming Phoenix LiveView (Book, covers OTP)",
-          "url": "https://pragprog.com/titles/phoenix_storybook/programming-phoenix-liveview/",
-          "type": "course"
-        },
-        {
           "title": "Learn You Some Erlang for Great Good! (Covers OTP fundamentals)",
           "url": "https://learnyousomeerlang.com/what-is-otp/basics.html",
           "type": "course"
@@ -361,13 +356,8 @@
           "description": "Spawn and manage BEAM processes: Process mailboxes, asynchronous message passing (`send`/`receive`), process links (`spawn_link`), and process monitors (`spawn_monitor`).",
           "resources": [
             {
-              "title": "Elixir School: Processes",
-              "url": "https://elixirschool.com/en/lessons/advanced/processes/",
-              "type": "article"
-            },
-            {
-              "title": "Working with Processes in Elixir (Thoughtbot)",
-              "url": "https://thoughtbot.com/blog/working-with-processes-in-elixir",
+              "title": "Processes and Message Passing (Elixir Documentation)",
+              "url": "https://hexdocs.pm/elixir/processes.html",
               "type": "article"
             },
             {
@@ -391,8 +381,8 @@
           "description": "Master GenServer: Client-server callbacks (`init`, `handle_call`, `handle_cast`, `handle_info`), managing state, synchronous vs asynchronous calls, and timeouts.",
           "resources": [
             {
-              "title": "Elixir School: GenServer",
-              "url": "https://elixirschool.com/en/lessons/advanced/genserver/",
+              "title": "GenServer Behavior (Elixir Documentation)",
+              "url": "https://hexdocs.pm/elixir/GenServer.html",
               "type": "article"
             },
             {
@@ -426,13 +416,13 @@
           "description": "Utilize OTP abstractions: `Agent` for simplified shared state encapsulation, and `Task` / `Task.Supervisor` for concurrent asynchronous background execution.",
           "resources": [
             {
-              "title": "Elixir School: Agent",
-              "url": "https://elixirschool.com/en/lessons/advanced/agent/",
+              "title": "Agent Behavior (Elixir Documentation)",
+              "url": "https://hexdocs.pm/elixir/Agent.html",
               "type": "article"
             },
             {
-              "title": "Elixir School: Task",
-              "url": "https://elixirschool.com/en/lessons/advanced/task/",
+              "title": "Task Behavior (Elixir Documentation)",
+              "url": "https://hexdocs.pm/elixir/Task.html",
               "type": "article"
             },
             {
@@ -461,8 +451,8 @@
           "description": "Design resilient supervision trees: Restart strategies (`:one_for_one`, `:one_for_all`, `:rest_for_one`), supervisor hierarchies, and dynamic child processes with `DynamicSupervisor`.",
           "resources": [
             {
-              "title": "Elixir School: Supervisors",
-              "url": "https://elixirschool.com/en/lessons/advanced/supervisors/",
+              "title": "Supervision Trees (Elixir Supervisor Documentation)",
+              "url": "https://hexdocs.pm/elixir/Supervisor.html",
               "type": "article"
             },
             {
@@ -491,13 +481,13 @@
           "description": "Package OTP applications: Application callbacks, environment configurations, and generating self-contained production releases using `mix release`.",
           "resources": [
             {
-              "title": "Elixir School: Applications",
-              "url": "https://elixirschool.com/en/lessons/advanced/applications/",
+              "title": "OTP Applications (Elixir Application Documentation)",
+              "url": "https://hexdocs.pm/elixir/Application.html",
               "type": "article"
             },
             {
-              "title": "Elixir: Releases",
-              "url": "https://elixir-lang.org/getting-started/mix-otp/releases.html",
+              "title": "Build and Deploy Elixir Releases (Mix Release)",
+              "url": "https://hexdocs.pm/mix/Mix.Tasks.Release.html",
               "type": "article"
             },
             {
@@ -633,8 +623,8 @@
               "type": "article"
             },
             {
-              "title": "Phoenix Guides: Plugs",
-              "url": "https://hexdocs.pm/phoenix/plugs.html",
+              "title": "Plug Middleware (Phoenix Guides)",
+              "url": "https://hexdocs.pm/phoenix/plug.html",
               "type": "article"
             },
             {
@@ -663,8 +653,8 @@
           "description": "Render dynamic views: Phoenix.Component, HEEx (HTML + Embedded Elixir) templating engine, component slots, layouts, and compile-time HTML validation.",
           "resources": [
             {
-              "title": "Phoenix.View Guide",
-              "url": "https://hexdocs.pm/phoenix/Phoenix.View.html",
+              "title": "Phoenix.View (Phoenix View Documentation)",
+              "url": "https://hexdocs.pm/phoenix_view/Phoenix.View.html",
               "type": "article"
             },
             {
@@ -698,13 +688,8 @@
           "description": "Enforce Domain-Driven Design with Contexts: Decoupling business logic from the web interface using dedicated Elixir context modules.",
           "resources": [
             {
-              "title": "Phoenix Contexts (Official Blog Post)",
-              "url": "https://phoenixframework.org/blog/introducing-phoenix-contexts",
-              "type": "article"
-            },
-            {
-              "title": "Phoenix.Context module (Hexdocs)",
-              "url": "https://hexdocs.pm/phoenix/Phoenix.Context.html",
+              "title": "Contexts and Application Boundaries (Phoenix Guides)",
+              "url": "https://hexdocs.pm/phoenix/contexts.html",
               "type": "article"
             },
             {
@@ -733,8 +718,8 @@
           "description": "Manage static assets: Tailwind CSS integration, Esbuild bundling, asset digests with `mix phx.digest`, and cache headers.",
           "resources": [
             {
-              "title": "Phoenix Static Files (Official Docs)",
-              "url": "https://hexdocs.pm/phoenix/static_files.html",
+              "title": "Asset Management (Phoenix Guides)",
+              "url": "https://hexdocs.pm/phoenix/asset_management.html",
               "type": "article"
             },
             {
@@ -797,11 +782,6 @@
           "type": "course"
         },
         {
-          "title": "Programming Ecto (Book)",
-          "url": "https://pragprog.com/titles/ectox/programming-ecto/",
-          "type": "course"
-        },
-        {
           "title": "Elixir & Phoenix Crash Course - Ecto + Deploying to Heroku (Part 2)",
           "url": "https://www.youtube.com/watch?v=WdfIUyLaa7E",
           "type": "video"
@@ -830,8 +810,8 @@
               "type": "article"
             },
             {
-              "title": "Ecto.Migration Guide",
-              "url": "https://hexdocs.pm/ecto/Ecto.Migration.html",
+              "title": "Ecto Database Migrations (Ecto SQL Documentation)",
+              "url": "https://hexdocs.pm/ecto_sql/Ecto.Migration.html",
               "type": "article"
             },
             {
@@ -1157,8 +1137,8 @@
               "type": "article"
             },
             {
-              "title": "LiveView Streaming (Official Docs)",
-              "url": "https://hexdocs.pm/phoenix_live_view/streams.html",
+              "title": "Streaming Collections with LiveView (Phoenix.LiveView)",
+              "url": "https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html#stream/4",
               "type": "article"
             },
             {
@@ -1187,8 +1167,8 @@
           "description": "Secure LiveView applications: Session-based authentication via `phx.gen.auth`, live session hooks (`on_mount`), and securing websocket connections.",
           "resources": [
             {
-              "title": "Phoenix.Auth (Hexdocs, common patterns)",
-              "url": "https://hexdocs.pm/phoenix/authentication.html",
+              "title": "Authentication (Phoenix Guides)",
+              "url": "https://hexdocs.pm/phoenix/mix_phx_gen_auth.html",
               "type": "article"
             },
             {
@@ -1246,9 +1226,9 @@
       "description": "Ensure application quality: Automated testing with ExUnit, property testing, database sandboxes, and static analysis.",
       "resources": [
         {
-          "title": "Elixir School: Testing",
-          "url": "https://elixirschool.com/en/lessons/specifics/testing/",
-          "type": "course"
+          "title": "ExUnit: Unit Testing in Elixir",
+          "url": "https://hexdocs.pm/ex_unit/ExUnit.html",
+          "type": "article"
         },
         {
           "title": "Hexdocs: ExUnit",
@@ -1279,8 +1259,8 @@
           "description": "Test with ExUnit: Writing unit tests, assertions (`assert`, `refute`), test setup blocks, doctests, and parallel test execution.",
           "resources": [
             {
-              "title": "Writing Tests (Elixir Lang Docs)",
-              "url": "https://elixir-lang.org/getting-started/mix-otp/testing.html",
+              "title": "Mix Projects and Running Tests (Elixir Getting Started)",
+              "url": "https://hexdocs.pm/elixir/introduction-to-mix.html",
               "type": "article"
             },
             {
@@ -1308,11 +1288,6 @@
           "tag": "advanced",
           "description": "Mock external dependencies: Mox library, defining behaviors (`@callback`), and verifying mock expectations without altering global state.",
           "resources": [
-            {
-              "title": "Testing Elixir with Mocks and Stubs",
-              "url": "https://blog.appsignal.com/2020/07/07/testing-elixir-with-mocks-and-stubs.html",
-              "type": "article"
-            },
             {
               "title": "Mox - Simple mocking library",
               "url": "https://hexdocs.pm/mox/Mox.html",
@@ -1409,8 +1384,8 @@
           "description": "Enforce code quality: Static analysis with Dialyzer and Dialyxir, code formatting with `mix format`, and linting with Credo.",
           "resources": [
             {
-              "title": "Mix Format (Official Elixir Docs)",
-              "url": "https://elixir-lang.org/getting-started/mix-otp/code-formatter.html",
+              "title": "Mix Format (Official Elixir Documentation)",
+              "url": "https://hexdocs.pm/mix/Mix.Tasks.Format.html",
               "type": "article"
             },
             {
@@ -1444,13 +1419,8 @@
           "description": "Debug running BEAM systems: Erlang Observer GUI, `IEx.pry`, logging with Logger, and inspecting process message queues.",
           "resources": [
             {
-              "title": "Elixir School: Logging",
-              "url": "https://elixirschool.com/en/lessons/specifics/logging/",
-              "type": "article"
-            },
-            {
-              "title": "Using the Erlang Observer in Elixir",
-              "url": "https://www.honeybadger.io/blog/erlang-observer-elixir/",
+              "title": "Logging in Elixir (Logger Documentation)",
+              "url": "https://hexdocs.pm/logger/Logger.html",
               "type": "article"
             },
             {
@@ -1488,9 +1458,9 @@
           "type": "article"
         },
         {
-          "title": "Elixir School: Deployment",
-          "url": "https://elixirschool.com/en/lessons/specifics/deployment/",
-          "type": "course"
+          "title": "Deployment (Phoenix Guides)",
+          "url": "https://hexdocs.pm/phoenix/deployment.html",
+          "type": "article"
         },
         {
           "title": "Deploy a Phoenix App to Gigalixir in 2023",
@@ -1516,8 +1486,8 @@
               "type": "article"
             },
             {
-              "title": "Dockerizing Elixir & Phoenix Applications",
-              "url": "https://hexdocs.pm/phoenix/container_deployment.html",
+              "title": "Phoenix Releases and Docker Deployment",
+              "url": "https://hexdocs.pm/phoenix/releases.html",
               "type": "article"
             },
             {
@@ -1546,13 +1516,8 @@
           "description": "Manage configuration: Runtime configuration with `config/runtime.exs`, environment variables, and secure credential management.",
           "resources": [
             {
-              "title": "Managing Configuration (Elixir School)",
-              "url": "https://elixirschool.com/en/lessons/specifics/configuration/",
-              "type": "article"
-            },
-            {
-              "title": "How to Store Production Secrets for Elixir Apps",
-              "url": "https://blog.appsignal.com/2021/09/21/how-to-store-production-secrets-for-elixir-apps.html",
+              "title": "Application and Runtime Configuration (Elixir Config)",
+              "url": "https://hexdocs.pm/elixir/Config.html",
               "type": "article"
             },
             {
@@ -1580,11 +1545,6 @@
           "tag": "advanced",
           "description": "Automate CI/CD: GitHub Actions pipelines running compilation checks, Credo linting, Dialyzer type-checks, and ExUnit test suites.",
           "resources": [
-            {
-              "title": "CI/CD for Elixir and Phoenix with GitHub Actions",
-              "url": "https://blog.appsignal.com/2020/09/15/ci-cd-for-elixir-and-phoenix-with-github-actions.html",
-              "type": "article"
-            },
             {
               "title": "Building Elixir Releases with GitLab CI",
               "url": "https://medium.com/flatiron-labs/building-elixir-releases-with-gitlab-ci-4c54019fb00d",
@@ -1616,13 +1576,8 @@
           "description": "Implement observability: Telemetry library (`:telemetry`), Phoenix LiveDashboard for real-time BEAM metrics, and PromEx for Prometheus scraping.",
           "resources": [
             {
-              "title": "Telemetry: Metrics for Elixir Applications",
-              "url": "https://hexdocs.pm/telemetry/Telemetry.html",
-              "type": "article"
-            },
-            {
-              "title": "Monitoring Elixir applications with Prometheus and Grafana",
-              "url": "https://www.erlang-solutions.com/blog/monitoring-elixir-applications-with-prometheus-and-grafana/",
+              "title": "Telemetry: Events and Metrics for Erlang and Elixir",
+              "url": "https://hexdocs.pm/telemetry/telemetry.html",
               "type": "article"
             },
             {
@@ -1650,11 +1605,6 @@
           "tag": "advanced",
           "description": "Optimize BEAM performance: Profiling with `:fprof`, memory management, ETS (Erlang Term Storage) in-memory caching, and optimizing LiveView diffs.",
           "resources": [
-            {
-              "title": "Optimizing Elixir applications (AppSignal)",
-              "url": "https://appsignal.com/elixir/guides/performance",
-              "type": "article"
-            },
             {
               "title": "Ecto performance tips",
               "url": "https://hexdocs.pm/ecto/Ecto.Repo.html#module-performance-tips",
@@ -1758,13 +1708,8 @@
           "description": "Build distributed clusters: Connecting Erlang nodes (`Node.connect`), libcluster for automated cluster discovery, and distributed pub/sub with Phoenix PubSub.",
           "resources": [
             {
-              "title": "Elixir School: Distributed Elixir",
-              "url": "https://elixirschool.com/en/lessons/advanced/distributed/",
-              "type": "article"
-            },
-            {
-              "title": "Hexdocs: Erlang Distribution Guide",
-              "url": "https://www.erlang.org/doc/apps/erts/dist_overview.html",
+              "title": "Distributed Nodes (Elixir Node Documentation)",
+              "url": "https://hexdocs.pm/elixir/Node.html",
               "type": "article"
             },
             {
@@ -1833,8 +1778,8 @@
               "type": "article"
             },
             {
-              "title": "Elixir: Macros",
-              "url": "https://elixir-lang.org/getting-started/meta/macros.html",
+              "title": "Macros (Elixir Documentation)",
+              "url": "https://hexdocs.pm/elixir/macros.html",
               "type": "article"
             },
             {
@@ -1937,11 +1882,6 @@
           "type": "course"
         },
         {
-          "title": "Build an online presence as a developer",
-          "url": "https://www.freecodecamp.org/news/how-to-build-an-online-presence-as-a-developer/",
-          "type": "article"
-        },
-        {
           "title": "Phoenix Framework Full Course for Beginners",
           "url": "https://www.youtube.com/watch?v=9xaN44PNxps",
           "type": "video"
@@ -1959,11 +1899,6 @@
           "tag": "essential",
           "description": "Execute targeted skill drills: Building a distributed key-value store, a real-time collaborative chat room, and a rate-limiting plug.",
           "resources": [
-            {
-              "title": "Phoenix TodoMVC Example",
-              "url": "https://github.com/phoenixframework/phoenix_todo",
-              "type": "course"
-            },
             {
               "title": "Build a Real-time Chat with Phoenix LiveView",
               "url": "https://www.youtube.com/watch?v=MZvmYaFkNJI",
@@ -1989,11 +1924,6 @@
           "tag": "advanced",
           "description": "Build an enterprise Phoenix LiveView capstone: Real-time collaborative dashboard featuring distributed LiveView components, Oban background processing, Ecto multi-tenant persistence, and Fly.io multi-region clustering.",
           "resources": [
-            {
-              "title": "Project ideas for your portfolio",
-              "url": "https://www.freecodecamp.org/news/web-developer-portfolio-projects/",
-              "type": "article"
-            },
             {
               "title": "Example Elixir/Phoenix Projects on GitHub",
               "url": "https://github.com/topics/elixir-phoenix-project",

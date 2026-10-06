@@ -248,11 +248,6 @@
               "type": "article"
             },
             {
-              "title": "Linear Algebra for Game Developers",
-              "url": "https://www.3dgep.com/fundamentals-of-linear-algebra-for-game-developers/",
-              "type": "article"
-            },
-            {
               "title": "Intro to Python for Tech Artists (cgcircuitLLC)",
               "url": "https://www.youtube.com/watch?v=EtyLKNV5z-0",
               "type": "video"
@@ -283,11 +278,6 @@
               "type": "article"
             },
             {
-              "title": "Unity C# Scripting Fundamentals",
-              "url": "https://learn.unity.com/tutorial/create-a-simple-script",
-              "type": "article"
-            },
-            {
               "title": "Technical Artist Bootcamp: Introduction to Proceduralism (GDC Festival of Gaming)",
               "url": "https://www.youtube.com/watch?v=-LHj7-kROoo",
               "type": "video"
@@ -312,16 +302,6 @@
           "tag": "essential",
           "description": "Manage game art assets in version control: Perforce (P4) and Git LFS; asset locking workflows, and large binary file synchronization.",
           "resources": [
-            {
-              "title": "Git for Game Development",
-              "url": "https://docs.unity3d.com/Manual/BestPracticeGuides.html",
-              "type": "article"
-            },
-            {
-              "title": "Perforce Basic Workflow",
-              "url": "https://www.perforce.com/manuals/vcs/Content/P4V/basic_workflow.html",
-              "type": "article"
-            },
             {
               "title": "Blender Tutorial for Beginners (Blender Guru)",
               "url": "https://www.youtube.com/watch?v=nIoXOplUvAw",
@@ -555,11 +535,6 @@
           "description": "Automate animation pipelines: Custom DCC export scripts, automated skeleton retargeting, and animation curve compression.",
           "resources": [
             {
-              "title": "Unity Animator Controller Guide",
-              "url": "https://docs.unity3d.com/Manual/AnimatorController.html",
-              "type": "article"
-            },
-            {
               "title": "Unreal Engine Animation Blueprints",
               "url": "https://docs.unrealengine.com/4.27/en-US/AnimatingObjects/AnimationBlueprints/",
               "type": "article"
@@ -592,11 +567,6 @@
             {
               "title": "Unreal Niagara Particle System Introduction",
               "url": "https://docs.unrealengine.com/4.27/en-US/AnimatingObjects/Niagara/",
-              "type": "article"
-            },
-            {
-              "title": "Unity Shuriken Particle System Guide",
-              "url": "https://docs.unity3d.com/Manual/ParticleSystem.html",
               "type": "article"
             },
             {
@@ -752,11 +722,6 @@
           "description": "Customize rendering pipelines: Scriptable Render Pipeline (SRP) in Unity, custom render passes, stencil buffer tricks, and screen-space post-processing.",
           "resources": [
             {
-              "title": "Building a Custom Render Pipeline (Unity)",
-              "url": "https://docs.unity3d.com/Packages/com.unity.render-pipelines.core@latest/manual/CustomRenderPipeline.html",
-              "type": "article"
-            },
-            {
               "title": "Unreal Engine Custom Shading Models",
               "url": "https://docs.unrealengine.com/4.27/en-US/RenderingAndGraphics/Materials/ShadingModels/",
               "type": "article"
@@ -786,11 +751,6 @@
           "tag": "advanced",
           "description": "Automate asset validation in CI: Automated mesh polycount checks, texture dimension power-of-two linting, and automated headless build cooking.",
           "resources": [
-            {
-              "title": "Setting up a CI/CD Pipeline for Game Dev",
-              "url": "https://www.perforce.com/blog/vcs/ci-cd-gaming-perforce",
-              "type": "article"
-            },
             {
               "title": "Jenkins for Game Development",
               "url": "https://www.jenkins.io/doc/book/pipeline/",
@@ -824,11 +784,6 @@
             {
               "title": "Introduction to RenderDoc",
               "url": "https://renderdoc.org/docs/index.html",
-              "type": "article"
-            },
-            {
-              "title": "Debugging Graphics with PIX (Microsoft)",
-              "url": "https://devblogs.microsoft.com/directx/pix/",
               "type": "article"
             },
             {
@@ -1043,11 +998,6 @@
           "tag": "advanced",
           "description": "Master technical artist interviews: Whiteboard vector math, write custom HLSL shader functions, diagnose GPU frame drops from RenderDoc captures, and explain rigging mechanics.",
           "resources": [
-            {
-              "title": "Technical Art Interview Questions",
-              "url": "https://www.techartaid.com/interview-questions/",
-              "type": "article"
-            },
             {
               "title": "Intro to Python for Tech Artists (cgcircuitLLC)",
               "url": "https://www.youtube.com/watch?v=EtyLKNV5z-0",

@@ -73,7 +73,7 @@ export const DICTIONARIES = {
         quizDesc: 'If you lean toward building, data, security, or cloud, the quiz narrows instead of staying generic.',
         recClarity: 'Recommendation clarity',
         recTitle: 'Not just a career name',
-        recDesc: 'Fit reason, skills, demand, salary context, and the next step sit together so comparison feels calmer.',
+        recDesc: 'Explore career suggestions, relevant skills, editorial salary estimates, and next steps together.',
         roadmapBunbot: 'Roadmap + BunBot',
         roadmapTitle: 'Keep moving after results',
         roadmapDesc: 'Open a skill tree, build projects, track progress, and ask BunBot when a topic feels foggy.',
@@ -87,7 +87,7 @@ export const DICTIONARIES = {
         cap2Title: 'Ask adaptive questions',
         cap2Desc: 'The quiz changes direction based on your answers instead of forcing every student through the same form.',
         cap3Title: 'Explain career matches',
-        cap3Desc: 'Recommendations include match strength, skills, demand, salary context, and next steps you can compare.',
+        cap3Desc: 'Compare interest-based career suggestions, skills, editorial salary estimates, and learning steps.',
         cap4Title: 'Turn decisions into action',
         cap4Desc: 'Native roadmap pages break careers into staged skill trees, projects, resources, and progress checkpoints.',
         adaptiveEngine: 'Adaptive Assessment Engine',
@@ -125,6 +125,7 @@ export const DICTIONARIES = {
       },
       recOutput: {
         tag: 'Career Recommendations',
+        previewLabel: 'Example',
         title: 'Results that explain why a path fits you',
         subtitle: 'The quiz does not stop at a career name. It gives you context you can actually use while deciding what to learn next.',
         topMatch: 'Top Match',
@@ -154,7 +155,7 @@ export const DICTIONARIES = {
       counsellor: {
         tag: 'BunBot AI Advisor',
         title: 'Your 24/7 AI companion for tech career decisions',
-        subtitle: 'Trained on global tech industry realities. Ask follow-up questions about salaries, degree playbooks, roadmap tradeoffs, certifications, and international remote strategies.',
+        subtitle: 'Guidance grounded in SkillBun’s career catalog. Ask follow-up questions about learning paths, roadmap tradeoffs, certifications, and remote work. Check important decisions against current primary sources.',
         chatBtn: 'Chat with BunBot Now',
       },
       careerFields: {
@@ -271,7 +272,7 @@ export const DICTIONARIES = {
         quizDesc: 'Si te inclinas por desarrollo, datos, ciberseguridad o nube, el test se enfoca en lugar de ser genérico.',
         recClarity: 'Claridad en la recomendación',
         recTitle: 'No solo el nombre de una carrera',
-        recDesc: 'Motivo de afinidad, habilidades, demanda, contexto salarial y siguientes pasos juntos para decidir con calma.',
+        recDesc: 'Motivo de la sugerencia, habilidades, estimaciones salariales orientativas y siguientes pasos juntos para comparar opciones.',
         roadmapBunbot: 'Ruta + BunBot',
         roadmapTitle: 'Sigue avanzando tras los resultados',
         roadmapDesc: 'Abre un árbol de habilidades, crea proyectos, mide tu progreso y consulta a BunBot ante cualquier duda.',
@@ -285,7 +286,7 @@ export const DICTIONARIES = {
         cap2Title: 'Preguntas adaptativas',
         cap2Desc: 'El test cambia según tus respuestas en vez de obligar a todos al mismo cuestionario.',
         cap3Title: 'Explica afinidad profesional',
-        cap3Desc: 'Las recomendaciones detallan nivel de match, competencias, demanda y salarios comparables.',
+        cap3Desc: 'Las recomendaciones explican las rutas sugeridas, las competencias, las estimaciones salariales orientativas y los próximos pasos.',
         cap4Title: 'Convierte decisiones en acción',
         cap4Desc: 'Páginas de rutas nativas desglosan carreras en árboles de habilidades, proyectos y metas.',
         adaptiveEngine: 'Motor de Evaluación Adaptativo',
@@ -323,6 +324,7 @@ export const DICTIONARIES = {
       },
       recOutput: {
         tag: 'Recomendaciones de Carrera',
+        previewLabel: 'Ejemplo',
         title: 'Resultados que explican por qué un camino encaja contigo',
         subtitle: 'El test no se limita a darte un título. Te brinda contexto útil para decidir qué aprender a continuación.',
         topMatch: 'Mejor Coincidencia',
@@ -352,7 +354,7 @@ export const DICTIONARIES = {
       counsellor: {
         tag: 'BunBot Asesor IA',
         title: 'Tu compañero de IA 24/7 para decisiones en tecnología',
-        subtitle: 'Entrenado con la realidad laboral global. Pregunta sobre sueldos, transiciones de carrera, certificaciones y oportunidades remotas.',
+        subtitle: 'Orientación basada en el catálogo de carreras de SkillBun. Haz preguntas sobre rutas de aprendizaje, alternativas, certificaciones y trabajo remoto. Verifica las decisiones importantes con fuentes primarias actuales.',
         chatBtn: 'Chatear con BunBot Ahora',
       },
       careerFields: {
@@ -469,7 +471,7 @@ export const DICTIONARIES = {
         quizDesc: 'यदि आपकी रुचि वेब, डेटा, सुरक्षा या क्लाउड में है, तो क्विज़ उसी ओर केंद्रित होता है।',
         recClarity: 'स्पष्ट सिफारिशें',
         recTitle: 'केवल करियर का नाम नहीं',
-        recDesc: 'उपयुक्तता का कारण, कौशल, मांग, वेतन संदर्भ और अगले कदम सब एक साथ मिलते हैं।',
+        recDesc: 'सुझाव का कारण, कौशल, वेतन के संपादकीय अनुमान और अगले कदम एक साथ मिलते हैं, ताकि विकल्पों की तुलना आसान हो।',
         roadmapBunbot: 'रोडमैप + बन-बॉट',
         roadmapTitle: 'परिणामों के बाद निरंतर सीखें',
         roadmapDesc: 'स्किल ट्री खोलें, प्रोजेक्ट्स बनाएं, प्रगति ट्रैक करें और संशय होने पर बन-बॉट से पूछें।',
@@ -483,7 +485,7 @@ export const DICTIONARIES = {
         cap2Title: 'अनुकूली प्रश्न पूछें',
         cap2Desc: 'क्विज़ हर छात्र के लिए एक जैसी नहीं, बल्कि आपके जवाबों के अनुसार ढलती है।',
         cap3Title: 'करियर चयन का कारण जानें',
-        cap3Desc: 'सुझावों में मैच प्रतिशत, आवश्यक कौशल, बाजार मांग और वेतन की स्पष्ट तुलना शामिल है।',
+        cap3Desc: 'सुझावों में करियर विकल्पों का कारण, आवश्यक कौशल, वेतन के संपादकीय अनुमान और अगले कदम शामिल हैं।',
         cap4Title: 'निर्णय को क्रियान्वयन में बदलें',
         cap4Desc: 'रोडमैप जटिल तकनीकी भूमिकाओं को आसान चरणों, प्रोजेक्ट्स और संसाधनों में बांटते हैं।',
         adaptiveEngine: 'अनुकूली मूल्यांकन इंजन',
@@ -521,6 +523,7 @@ export const DICTIONARIES = {
       },
       recOutput: {
         tag: 'करियर अनुशंसाएं',
+        previewLabel: 'उदाहरण',
         title: 'नतीजे जो बताते हैं कि कोई करियर आपके लिए क्यों सही है',
         subtitle: 'क्विज़ केवल नाम नहीं बताती, बल्कि निर्णय लेने के लिए आवश्यक संपूर्ण संदर्भ प्रदान करती है।',
         topMatch: 'सर्वोत्तम मिलान',
@@ -550,7 +553,7 @@ export const DICTIONARIES = {
       counsellor: {
         tag: 'बन-बॉट AI सलाहकार',
         title: 'तकनीकी निर्णयों के लिए आपका 24/7 AI साथी',
-        subtitle: 'वैश्विक टेक उद्योग के आधार पर प्रशिक्षित। वेतन, डिग्री की योजना, रोडमैप और रिमोट नौकरियों पर सवाल पूछें।',
+        subtitle: 'SkillBun के करियर कैटलॉग पर आधारित मार्गदर्शन। सीखने के रास्तों, रोडमैप विकल्पों, प्रमाणपत्रों और रिमोट काम पर सवाल पूछें। महत्वपूर्ण निर्णयों के लिए वर्तमान प्राथमिक स्रोतों से जानकारी जाँचें।',
         chatBtn: 'बन-बॉट से अभी बात करें',
       },
       careerFields: {
@@ -667,7 +670,7 @@ export const DICTIONARIES = {
         quizDesc: 'Si vous préférez le dev web, la data, la sécurité ou le cloud, le quiz s’affine automatiquement.',
         recClarity: 'Clarté de la recommandation',
         recTitle: 'Bien plus qu’un intitulé de poste',
-        recDesc: 'Raison du choix, compétences, salaire moyen et plan d’action réunis pour comparer sereinement.',
+        recDesc: 'Raison de la suggestion, compétences, estimations salariales indicatives et prochaines étapes réunies pour comparer les options.',
         roadmapBunbot: 'Parcours + BunBot',
         roadmapTitle: 'Passer à l’action après les résultats',
         roadmapDesc: 'Découvrez votre arbre de compétences, créez des projets et posez vos questions à BunBot.',
@@ -681,7 +684,7 @@ export const DICTIONARIES = {
         cap2Title: 'Poser des questions adaptatives',
         cap2Desc: 'Le questionnaire s’ajuste à votre profil au lieu d’imposer un formulaire générique.',
         cap3Title: 'Expliquer les débouchés',
-        cap3Desc: 'Des fiches claires avec taux de correspondance, compétences clés et salaires du marché.',
+        cap3Desc: 'Des recommandations qui expliquent les parcours suggérés, les compétences, les estimations salariales indicatives et les prochaines étapes.',
         cap4Title: 'Transformer vos choix en projets',
         cap4Desc: 'Des arbres de compétences interactifs jalonnés de cours vidéo et de validations pratiques.',
         adaptiveEngine: 'Moteur d’Évaluation Adaptatif',
@@ -719,6 +722,7 @@ export const DICTIONARIES = {
       },
       recOutput: {
         tag: 'Recommandations Métiers',
+        previewLabel: 'Exemple',
         title: 'Des résultats qui expliquent pourquoi ce métier vous correspond',
         subtitle: 'Nous ne donnons pas seulement un titre de poste. Vous disposez de toutes les clés pour décider.',
         topMatch: 'Meilleur Choix',
@@ -748,7 +752,7 @@ export const DICTIONARIES = {
       counsellor: {
         tag: 'Conseiller BunBot IA',
         title: 'Votre mentor IA disponible 24/7 pour vos décisions tech',
-        subtitle: 'Entraîné sur les standards internationaux. Posez vos questions sur les salaires, stacks, reconversions et emplois à distance.',
+        subtitle: 'Des conseils fondés sur le catalogue de carrières de SkillBun. Posez vos questions sur les parcours, les choix de roadmap, les certifications et le travail à distance. Vérifiez les décisions importantes auprès de sources primaires à jour.',
         chatBtn: 'Discuter avec BunBot',
       },
       careerFields: {
@@ -865,7 +869,7 @@ export const DICTIONARIES = {
         quizDesc: 'Egal ob Webentwicklung, Datenanalyse oder Security – der Test fokussiert sich präzise.',
         recClarity: 'Eindeutige Empfehlung',
         recTitle: 'Mehr als nur ein Berufsname',
-        recDesc: 'Passgenauigkeit, Kernskills, Gehaltsspanne und nächste Schritte auf einen Blick.',
+        recDesc: 'Begründung des Vorschlags, Kernkompetenzen, redaktionelle Gehaltsschätzungen und nächste Schritte auf einen Blick.',
         roadmapBunbot: 'Lernpfad + BunBot',
         roadmapTitle: 'Nach den Ergebnissen durchstarten',
         roadmapDesc: 'Öffne den Skilltree, baue eigene Projekte und frage BunBot bei offenen Fragen.',
@@ -879,7 +883,7 @@ export const DICTIONARIES = {
         cap2Title: 'Adaptive Fragestellung',
         cap2Desc: 'Das Quiz passt sich an, anstatt jeden Studenten durch denselben Bogen zu schleusen.',
         cap3Title: 'Karriere-Matches begründen',
-        cap3Desc: 'Detaillierte Erklärungen zu Marktchancen, Gehaltsbenchmarks und erforderlichen Skills.',
+        cap3Desc: 'Empfehlungen erklären vorgeschlagene Karrierewege, erforderliche Kompetenzen, redaktionelle Gehaltsschätzungen und nächste Schritte.',
         cap4Title: 'Entscheidungen in Taten umsetzen',
         cap4Desc: 'Interaktive Skilltrees mit empfohlenen Tutorials und praktischen Meilensteinen.',
         adaptiveEngine: 'Adaptive Bewertungs-Engine',
@@ -917,6 +921,7 @@ export const DICTIONARIES = {
       },
       recOutput: {
         tag: 'Karriere-Empfehlungen',
+        previewLabel: 'Beispiel',
         title: 'Ergebnisse, die dir genau erklären, warum der Pfad passt',
         subtitle: 'Nicht bloß ein Titel, sondern konkreter Kontext für deine nächsten Lernschritte.',
         topMatch: 'Beste Übereinstimmung',
@@ -946,7 +951,7 @@ export const DICTIONARIES = {
       counsellor: {
         tag: 'BunBot KI-Berater',
         title: 'Dein 24/7 KI-Begleiter für alle Karrierefragen in der Tech-Welt',
-        subtitle: 'Trainiert mit aktuellen Branchenrealitäten. Stelle Fragen zu Gehältern, Stacks, Quereinstieg und Remote-Jobs.',
+        subtitle: 'Orientierung auf Basis des SkillBun-Karrierekatalogs. Stelle Fragen zu Lernwegen, Roadmap-Alternativen, Zertifikaten und Remote-Arbeit. Prüfe wichtige Entscheidungen anhand aktueller Primärquellen.',
         chatBtn: 'Jetzt mit BunBot Chatten',
       },
       careerFields: {
@@ -1063,7 +1068,7 @@ export const DICTIONARIES = {
         quizDesc: 'Seja para desenvolvimento web, dados ou segurança, o teste foca no seu interesse.',
         recClarity: 'Clareza na recomendação',
         recTitle: 'Muito além do nome de um cargo',
-        recDesc: 'Motivo da afinidade, habilidades exigidas, salário médio e próximos passos explicados.',
+        recDesc: 'Motivo da sugestão, habilidades, estimativas salariais indicativas e próximos passos juntos para comparar opções.',
         roadmapBunbot: 'Trilha + BunBot',
         roadmapTitle: 'Continue aprendendo após os resultados',
         roadmapDesc: 'Abra a árvore de habilidades, desenvolva projetos e tire dúvidas com o BunBot.',
@@ -1077,7 +1082,7 @@ export const DICTIONARIES = {
         cap2Title: 'Perguntas adaptativas',
         cap2Desc: 'O questionário muda conforme suas respostas para evitar testes genéricos.',
         cap3Title: 'Explique suas afinidades',
-        cap3Desc: 'Recomendações com índice de compatibilidade, competências demandadas e panorama salarial.',
+        cap3Desc: 'Recomendações que explicam os caminhos sugeridos, as competências, as estimativas salariais indicativas e os próximos passos.',
         cap4Title: 'Transforme escolhas em prática',
         cap4Desc: 'Trilhas nativas estruturam sua evolução com cursos selecionados e metas práticas.',
         adaptiveEngine: 'Motor de Avaliação Adaptativo',
@@ -1115,6 +1120,7 @@ export const DICTIONARIES = {
       },
       recOutput: {
         tag: 'Recomendações de Carreira',
+        previewLabel: 'Exemplo',
         title: 'Resultados que justificam o porquê de cada caminho',
         subtitle: 'Não indicamos apenas o nome de uma profissão; damos o contexto necessário para você decidir o que estudar.',
         topMatch: 'Melhor Escolha',
@@ -1144,7 +1150,7 @@ export const DICTIONARIES = {
       counsellor: {
         tag: 'BunBot Orientador IA',
         title: 'Seu parceiro de IA 24/7 para decisões na carreira tech',
-        subtitle: 'Treinado com o mercado global de tecnologia. Tire dúvidas sobre remunerações, stacks, estágio e trabalho remoto.',
+        subtitle: 'Orientação baseada no catálogo de carreiras do SkillBun. Tire dúvidas sobre trilhas de aprendizagem, alternativas de roadmap, certificações e trabalho remoto. Confira decisões importantes em fontes primárias atuais.',
         chatBtn: 'Conversar com BunBot Agora',
       },
       careerFields: {
@@ -1261,7 +1267,7 @@ export const DICTIONARIES = {
         quizDesc: 'アプリ開発、データ、セキュリティ、クラウドなど、回答傾向に合わせて的確に絞り込みます。',
         recClarity: '明快な推奨理由',
         recTitle: '単なる職種名の提示ではありません',
-        recDesc: '適性の理由、求められるスキル、平均年収、次にやるべき学習ステップを一度に確認できます。',
+        recDesc: '提案の理由、必要なスキル、参考となる給与の推定値、次の学習ステップをまとめて比較できます。',
         roadmapBunbot: 'ロードマップ + BunBot',
         roadmapTitle: '診断後も迷わず学習を継続',
         roadmapDesc: 'スキルツリーを確認し、制作課題をこなし、疑問があればいつでもBunBotに質問できます。',
@@ -1275,7 +1281,7 @@ export const DICTIONARIES = {
         cap2Title: '最適化される質問',
         cap2Desc: '全員に同じ質問を繰り返すのではなく、関心に合わせて深掘りします。',
         cap3Title: '適性の根拠を提示',
-        cap3Desc: 'マッチ度、必要技術、グローバルな需要動向を分かりやすく比較できます。',
+        cap3Desc: '提案されたキャリアの理由、必要なスキル、参考となる給与の推定値、次のステップを分かりやすく説明します。',
         cap4Title: '決定を行動に変える',
         cap4Desc: '選んだ職種を体系的なスキルツリーに落とし込み、段階的に習得できます。',
         adaptiveEngine: '適応型評価エンジン',
@@ -1313,6 +1319,7 @@ export const DICTIONARIES = {
       },
       recOutput: {
         tag: '職種レコメンデーション',
+        previewLabel: '例',
         title: 'なぜその道が向いているのかを丁寧に解説',
         subtitle: '職種名を伝えるだけでなく、何から学習を開始すべきかの判断材料をすべて提供します。',
         topMatch: 'ベストマッチ',
@@ -1342,7 +1349,7 @@ export const DICTIONARIES = {
       counsellor: {
         tag: 'BunBot AIアドバイザー',
         title: 'キャリアの疑問をいつでも解決する24時間AIパートナー',
-        subtitle: '世界のIT求人事情を反映。年収相場、スキルの優先順位、海外リモート開発のトレンドまで回答します。',
+        subtitle: 'SkillBunのキャリアカタログに基づくガイダンスです。学習パス、ロードマップの選択肢、資格、リモートワークについて質問できます。重要な判断は最新の一次情報で確認してください。',
         chatBtn: 'BunBotとチャットする',
       },
       careerFields: {
@@ -1459,7 +1466,7 @@ export const DICTIONARIES = {
         quizDesc: 'Jika Anda condong ke web development, data, keamanan, atau cloud, kuis langsung mengerucut.',
         recClarity: 'Rekomendasi yang jelas',
         recTitle: 'Bukan sekadar nama profesi',
-        recDesc: 'Alasan kecocokan, skill yang dibutuhkan, kisaran gaji, dan langkah konkret disajikan lengkap.',
+        recDesc: 'Alasan saran, keterampilan, perkiraan gaji sebagai panduan, dan langkah berikutnya disajikan untuk membantu membandingkan pilihan.',
         roadmapBunbot: 'Roadmap + BunBot',
         roadmapTitle: 'Terus melangkah setelah tahu hasilnya',
         roadmapDesc: 'Buka pohon skill, bangun portofolio proyek, dan tanyakan konsep sulit ke BunBot.',
@@ -1473,7 +1480,7 @@ export const DICTIONARIES = {
         cap2Title: 'Pertanyaan adaptif cerdas',
         cap2Desc: 'Kuis menyesuaikan diri dengan minat Anda alih-alih memberikan formulir statis.',
         cap3Title: 'Penjelasan kecocokan karir',
-        cap3Desc: 'Menyajikan persentase kecocokan, tuntutan industri, dan komparasi gaji yang transparan.',
+        cap3Desc: 'Rekomendasi menjelaskan jalur yang disarankan, keterampilan, perkiraan gaji sebagai panduan, dan langkah berikutnya.',
         cap4Title: 'Wujudkan keputusan jadi aksi',
         cap4Desc: 'Pohon keahlian terstruktur dengan kurikulum video dan proyek dunia nyata.',
         adaptiveEngine: 'Mesin Penilaian Adaptif',
@@ -1511,6 +1518,7 @@ export const DICTIONARIES = {
       },
       recOutput: {
         tag: 'Rekomendasi Karir',
+        previewLabel: 'Contoh',
         title: 'Hasil yang menjabarkan mengapa suatu profesi cocok untuk Anda',
         subtitle: 'Kami tidak sekadar menyebutkan judul karir, tetapi memberi panduan lengkap untuk langkah belajar selanjutnya.',
         topMatch: 'Paling Cocok',
@@ -1540,7 +1548,7 @@ export const DICTIONARIES = {
       counsellor: {
         tag: 'Konselor BunBot AI',
         title: 'Teman diskusi AI 24/7 untuk keputusan karir teknologi Anda',
-        subtitle: 'Dilatih dengan dinamika industri tech global. Tanyakan gaji, prioritas teknologi, karir magang, dan lowongan remote.',
+        subtitle: 'Panduan berdasarkan katalog karier SkillBun. Ajukan pertanyaan tentang jalur belajar, pilihan roadmap, sertifikasi, dan kerja jarak jauh. Periksa keputusan penting dengan sumber primer terkini.',
         chatBtn: 'Chat dengan BunBot Sekarang',
       },
       careerFields: {

@@ -122,8 +122,8 @@
               "type": "article"
             },
             {
-              "title": "Unity Learn: C# Survival Guide",
-              "url": "https://learn.unity.com/course/programming-for-beginners-with-c",
+              "title": "Junior Programmer: C# and Unity (Unity Learn)",
+              "url": "https://learn.unity.com/pathway/junior-programmer",
               "type": "course"
             },
             {
@@ -152,8 +152,8 @@
               "type": "article"
             },
             {
-              "title": "Introduction to Unity (Unity Learn)",
-              "url": "https://learn.unity.com/course/introduction-to-unity",
+              "title": "Unity Essentials (Unity Learn)",
+              "url": "https://learn.unity.com/pathway/unity-essentials",
               "type": "course"
             },
             {
@@ -182,8 +182,8 @@
               "type": "article"
             },
             {
-              "title": "Unity Learn: Advanced Programming Patterns",
-              "url": "https://learn.unity.com/course/advanced-programming-patterns-for-game-development",
+              "title": "Design Patterns in Unity (Unity Learn)",
+              "url": "https://learn.unity.com/course/design-patterns",
               "type": "course"
             },
             {
@@ -217,8 +217,8 @@
               "type": "article"
             },
             {
-              "title": "Unity Learn: Graphics Essentials",
-              "url": "https://learn.unity.com/course/graphics-essentials",
+              "title": "Creative Core: Unity 3D Graphics (Unity Learn)",
+              "url": "https://learn.unity.com/pathway/creative-core",
               "type": "course"
             },
             {
@@ -319,9 +319,9 @@
               "type": "article"
             },
             {
-              "title": "Building AR Apps with Unity AR Foundation Course",
-              "url": "https://learn.unity.com/project/building-ar-apps-with-ar-foundation",
-              "type": "course"
+              "title": "AR Foundation Manual (Unity)",
+              "url": "https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@6.1/manual/index.html",
+              "type": "article"
             },
             {
               "title": "Unity AR Foundation Tutorial For Beginners",
@@ -349,9 +349,9 @@
               "type": "article"
             },
             {
-              "title": "Unity Learn: Introduction to the XR Interaction Toolkit",
-              "url": "https://learn.unity.com/project/introduction-to-the-xr-interaction-toolkit",
-              "type": "course"
+              "title": "XR Interaction Toolkit Manual (Unity)",
+              "url": "https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@3.3/manual/index.html",
+              "type": "article"
             },
             {
               "title": "Unity XR Interaction Toolkit - Hand Presence, Continuous Movement & Turning, Grabbing",
@@ -464,13 +464,8 @@
           "description": "Implement advanced spatial capabilities: Hand tracking gestures, spatial anchors, passthrough mixed reality (MR), and eye/face tracking.",
           "resources": [
             {
-              "title": "Meta Quest Hand Tracking Documentation",
-              "url": "https://developer.oculus.com/documentation/unity/unity-hand-tracking/",
-              "type": "article"
-            },
-            {
-              "title": "Unity Netcode for GameObjects",
-              "url": "https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest/manual/",
+              "title": "Netcode for GameObjects",
+              "url": "https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@2.4/manual/index.html",
               "type": "article"
             },
             {
@@ -536,8 +531,8 @@
               "type": "article"
             },
             {
-              "title": "Performance Optimization Tips for VR/AR (Unity)",
-              "url": "https://unity.com/how-to/optimize-vr-ar-performance-tips",
+              "title": "VR frame timing",
+              "url": "https://docs.unity3d.com/6000.0/Documentation/Manual/VRFrameTiming.html",
               "type": "article"
             },
             {
@@ -571,11 +566,6 @@
               "type": "article"
             },
             {
-              "title": "XR Troubleshooting and Debugging (Unity)",
-              "url": "https://docs.unity3d.com/Packages/com.unity.xr.management@latest/manual/Troubleshooting.html",
-              "type": "article"
-            },
-            {
               "title": "Unity Performance Optimization (Unity Profiler basics and advanced)",
               "url": "https://www.youtube.com/watch?v=xjsqv8nj0cw",
               "type": "video"
@@ -601,13 +591,8 @@
           "description": "Optimize 3D assets for XR: Low-poly modeling guidelines, texture atlasing, LOD (Level of Detail) groups, and PBR material setup for mobile GPU architectures.",
           "resources": [
             {
-              "title": "Unity Manual: Importing Assets",
-              "url": "https://docs.unity3d.com/Manual/AssetImportWorkflow.html",
-              "type": "article"
-            },
-            {
-              "title": "Optimizing Content for XR (Meta Quest)",
-              "url": "https://developer.oculus.com/documentation/unity/unity-optimize-content/",
+              "title": "Introduction to importing assets",
+              "url": "https://docs.unity3d.com/6000.0/Documentation/Manual/ImportingAssets.html",
               "type": "article"
             },
             {
@@ -636,18 +621,18 @@
           "description": "Author XR-optimized shaders: Shader Graph for mobile VR, avoiding expensive alpha blending, matcap shaders, and stylized post-processing.",
           "resources": [
             {
-              "title": "Unity Manual: Shader Graph",
-              "url": "https://docs.unity3d.com/Manual/ShaderGraph.html",
+              "title": "Shader Graph",
+              "url": "https://docs.unity3d.com/Packages/com.unity.shadergraph@17.0/manual/index.html",
               "type": "article"
             },
             {
-              "title": "Unity Learn: Introduction to Shader Graph",
-              "url": "https://learn.unity.com/course/introduction-to-shader-graph",
+              "title": "Get Started with Shader Graph (Unity Learn)",
+              "url": "https://learn.unity.com/course/get-started-with-shader-graph",
               "type": "course"
             },
             {
-              "title": "Unity Manual: URP Overview",
-              "url": "https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest/manual/index.html",
+              "title": "Introduction to the Universal Render Pipeline",
+              "url": "https://docs.unity3d.com/6000.0/Documentation/Manual/urp/urp-introduction.html",
               "type": "article"
             },
             {
@@ -797,11 +782,6 @@
           "tag": "advanced",
           "description": "Package for XR stores: Meta Quest Store / App Lab submission, visionOS App Store guidelines, Android manifest permissions, and VRC (Virtual Reality Checks) compliance.",
           "resources": [
-            {
-              "title": "Meta Quest Store Submission Guidelines",
-              "url": "https://developer.oculus.com/documentation/app-submission/",
-              "type": "article"
-            },
             {
               "title": "Publishing to Google Play Store",
               "url": "https://developer.android.com/distribute/console",

@@ -157,8 +157,8 @@
               "type": "article"
             },
             {
-              "title": "Regions and Zones",
-              "url": "https://cloud.google.com/docs/overview/regions-zones",
+              "title": "Geography and regions",
+              "url": "https://docs.cloud.google.com/docs/geography-and-regions?hl=en",
               "type": "article"
             },
             {
@@ -320,7 +320,7 @@
           "resources": [
             {
               "title": "Cloud Load Balancing overview",
-              "url": "https://cloud.google.com/load-balancing/docs/overview",
+              "url": "https://docs.cloud.google.com/load-balancing/docs/load-balancing-overview?hl=en",
               "type": "article"
             },
             {
@@ -364,8 +364,8 @@
               "type": "article"
             },
             {
-              "title": "Managed Instance Groups (MIGs) Overview",
-              "url": "https://cloud.google.com/compute/docs/instance-groups/overview",
+              "title": "Instance groups",
+              "url": "https://docs.cloud.google.com/compute/docs/instance-groups?hl=en",
               "type": "article"
             },
             {
@@ -394,13 +394,13 @@
           "description": "Deploy scalable serverless applications: Cloud Run (container-to-production in seconds, concurrency tuning per container instance, min/max instances, serverless VPC access connectors, and traffic splitting for canary deployments), and event-driven Cloud Functions (2nd gen on Cloud Run).",
           "resources": [
             {
-              "title": "Cloud Run overview",
-              "url": "https://cloud.google.com/run/docs/overview",
+              "title": "What is Cloud Run",
+              "url": "https://docs.cloud.google.com/run/docs/overview/what-is-cloud-run?hl=en",
               "type": "article"
             },
             {
-              "title": "Cloud Functions overview",
-              "url": "https://cloud.google.com/functions/docs/overview",
+              "title": "Cloud Run functions overview",
+              "url": "https://docs.cloud.google.com/run/docs/functions/overview?hl=en",
               "type": "article"
             },
             {
@@ -435,7 +435,7 @@
           "resources": [
             {
               "title": "GKE overview",
-              "url": "https://cloud.google.com/kubernetes-engine/docs/overview",
+              "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/kubernetes-engine-overview?hl=en",
               "type": "article"
             },
             {
@@ -584,8 +584,8 @@
               "type": "article"
             },
             {
-              "title": "Setting up a CI/CD pipeline on Google Cloud (Google Cloud Architecture Center)",
-              "url": "https://cloud.google.com/architecture/setting-up-a-cicd-pipeline",
+              "title": "Deploying to Cloud Run using Cloud Build",
+              "url": "https://docs.cloud.google.com/build/docs/deploying-builds/deploy-cloud-run?hl=en",
               "type": "article"
             },
             {
@@ -686,13 +686,13 @@
           "description": "Troubleshoot complex cloud incidents: analyzing VPC Flow Logs in BigQuery, debugging serial console outputs, Network Intelligence Center Connectivity Tests for firewall and routing verification, and conducting incident root cause analysis.",
           "resources": [
             {
-              "title": "Troubleshooting Google Cloud operations",
-              "url": "https://cloud.google.com/architecture/framework/operations/troubleshooting",
+              "title": "Manage incidents and problems",
+              "url": "https://docs.cloud.google.com/architecture/framework/operational-excellence/manage-incidents-and-problems?hl=en",
               "type": "article"
             },
             {
-              "title": "Site Reliability Engineering (SRE) Workbook",
-              "url": "https://landing.google.com/sre/workbook/chapters/",
+              "title": "The Site Reliability Workbook (Google SRE)",
+              "url": "https://sre.google/workbook/table-of-contents/",
               "type": "article"
             },
             {
@@ -732,7 +732,7 @@
             },
             {
               "title": "Security Command Center overview",
-              "url": "https://cloud.google.com/security-command-center/docs/overview",
+              "url": "https://docs.cloud.google.com/security-command-center/docs/security-command-center-overview?hl=en",
               "type": "article"
             },
             {
@@ -741,8 +741,8 @@
               "type": "article"
             },
             {
-              "title": "Cloud KMS overview",
-              "url": "https://cloud.google.com/kms/docs/overview",
+              "title": "Cloud Key Management Service overview",
+              "url": "https://docs.cloud.google.com/kms/docs/key-management-service?hl=en",
               "type": "article"
             },
             {
@@ -883,8 +883,8 @@
               "type": "article"
             },
             {
-              "title": "Documenting Your Architecture",
-              "url": "https://cloud.google.com/architecture/framework/architecture/document-your-architecture",
+              "title": "Document your cloud architecture (Google Cloud)",
+              "url": "https://docs.cloud.google.com/architecture/framework?hl=en#document_your_architecture",
               "type": "article"
             },
             {

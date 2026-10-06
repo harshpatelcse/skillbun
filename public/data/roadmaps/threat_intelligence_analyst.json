@@ -91,11 +91,6 @@
       "description": "Master the strategic, operational, and tactical tiers of Cyber Threat Intelligence (CTI). Establish structured intelligence collection plans, define Priority Intelligence Requirements (PIRs) aligned with organizational risk, and build intelligence-driven defensive postures.",
       "resources": [
         {
-          "title": "Introduction to Cyber Threat Intelligence (Recorded Future)",
-          "url": "https://www.recordedfuture.com/resources/introduction-cyber-threat-intelligence",
-          "type": "article"
-        },
-        {
           "title": "Understanding the Intelligence Cycle",
           "url": "https://www.fbi.gov/about/leadership-and-structure/intelligence/the-intelligence-cycle",
           "type": "article"
@@ -183,16 +178,6 @@
           "tag": "essential",
           "description": "Implement the six-phase Intelligence Cycle: Planning and Direction, Collection, Processing, Analysis and Production, Dissemination, and Feedback. Translate stakeholder business risks into Specific Intelligence Requirements (SIRs) and Indicators of Compromise (IOCs).",
           "resources": [
-            {
-              "title": "The Intelligence Cycle Explained in Detail",
-              "url": "https://www.threatintelligenceplatform.com/intelligence-cycle/",
-              "type": "article"
-            },
-            {
-              "title": "Defining Priority Intelligence Requirements (PIRs)",
-              "url": "https://www.sans.org/blog/the-importance-of-priority-intelligence-requirements/",
-              "type": "article"
-            },
             {
               "title": "Threat Hunting 101 : What, How and basics of it | Threat Hunting | Episode 1 (THOR-HQ)",
               "url": "https://www.youtube.com/watch?v=tXLVmAbW8iU",
@@ -299,16 +284,6 @@
           "description": "Navigate legal and operational security boundaries: Computer Fraud and Abuse Act (CFAA), GDPR indicator privacy mandates, non-attribution infrastructure setup, VPN/Tor routing, and OPSEC protocols when researching adversary dark web forums.",
           "resources": [
             {
-              "title": "Ethics in Cyber Threat Intelligence (Recorded Future)",
-              "url": "https://www.recordedfuture.com/resources/ethics-cyber-threat-intelligence",
-              "type": "article"
-            },
-            {
-              "title": "Legal Aspects of Threat Intelligence Sharing",
-              "url": "https://www.cisa.gov/resources-tools/resources/cyber-threat-information-sharing-legal-resources",
-              "type": "article"
-            },
-            {
               "title": "Threat Hunting 101 : What, How and basics of it | Threat Hunting | Episode 1 (THOR-HQ)",
               "url": "https://www.youtube.com/watch?v=tXLVmAbW8iU",
               "type": "video"
@@ -406,18 +381,8 @@
           "description": "Evaluate and normalize commercial vs open-source threat feeds (AlienVault OTX, URLhaus, AbuseIPDB, Feodo Tracker). Implement feed scoring, automated deduplication, false positive pruning, and confidence weighting.",
           "resources": [
             {
-              "title": "Top Threat Intelligence Feeds and Platforms",
-              "url": "https://www.recordedfuture.com/blog/best-threat-intelligence-feeds",
-              "type": "article"
-            },
-            {
               "title": "National Vulnerability Database (NVD)",
               "url": "https://nvd.nist.gov/",
-              "type": "article"
-            },
-            {
-              "title": "MISP Threat Sharing Platform Overview",
-              "url": "https://www.misp-project.org/info.html",
               "type": "article"
             },
             {
@@ -516,11 +481,6 @@
           "description": "Perform rapid malware triage for intelligence extraction: Compute cryptographic and fuzzy hashes (MD5, SHA256, SSDEEP, TLSH), calculate imphash, inspect PE sections, and extract hardcoded C2 domains, user-agents, and encryption keys.",
           "resources": [
             {
-              "title": "Introduction to Malware Analysis (SANS)",
-              "url": "https://www.sans.org/blog/what-is-malware-analysis-introduction-to-malware-analysis-for-beginners/",
-              "type": "article"
-            },
-            {
               "title": "Basic Static and Dynamic Malware Analysis",
               "url": "https://book.malware.re/introduction/basic-static-analysis",
               "type": "article"
@@ -550,11 +510,6 @@
           "tag": "essential",
           "description": "Prioritize zero-day and n-day vulnerabilities using CVE, CVSS v3.1/v4 metrics, Exploit Prediction Scoring System (EPSS) probabilities, and CISA's Known Exploited Vulnerabilities (KEV) catalog. Track underground exploit trading.",
           "resources": [
-            {
-              "title": "Vulnerability Management Best Practices",
-              "url": "https://www.cisa.gov/uscert/bsm/vulnerability-management-technical-capabilities",
-              "type": "article"
-            },
             {
               "title": "Exploit Database (Exploit-DB)",
               "url": "https://www.exploit-db.com/",
@@ -591,11 +546,6 @@
               "type": "article"
             },
             {
-              "title": "Analysis of Competing Hypotheses (ACH) Explained",
-              "url": "https://www.cia.gov/resources/csi/studies/vol46no3/article02.html",
-              "type": "article"
-            },
-            {
               "title": "What are Yara Rules (and How Cybersecurity Analysts Use Them) (Simply Cyber - Gerald Auger, PhD)",
               "url": "https://www.youtube.com/watch?v=BM23_H2GGMA",
               "type": "video"
@@ -620,11 +570,6 @@
           "tag": "advanced",
           "description": "Establish rigorous evidentiary standards for cyber attribution: Evaluate malware code reuse, compile timestamps, language artifacts, infrastructure overlap, and identify intentional false-flag deception techniques.",
           "resources": [
-            {
-              "title": "The Challenges of Cyber Attribution",
-              "url": "https://www.cfr.org/cyber-attribution",
-              "type": "article"
-            },
             {
               "title": "Tracking APT Groups: A Practical Guide",
               "url": "https://www.fireeye.com/blog/threat-research/2018/01/apt-groups-practical-guide.html",
@@ -694,11 +639,6 @@
       "tag": "essential",
       "description": "Standardize intelligence dissemination pipelines: Structure tactical flash alerts for immediate blocking, operational reports with actionable detection rules (YARA, Sigma, Snort), and strategic quarterly threat briefings for executive teams.",
       "resources": [
-        {
-          "title": "Threat Intelligence Reporting Best Practices (SANS)",
-          "url": "https://www.sans.org/blog/cti-reporting-best-practices/",
-          "type": "article"
-        },
         {
           "title": "STIX Documentation",
           "url": "https://oasis-open.github.io/cti-documentation/",
@@ -773,11 +713,6 @@
               "type": "article"
             },
             {
-              "title": "Implementing a Threat Intelligence Platform: A Practical Guide",
-              "url": "https://www.anomali.com/blog/how-to-implement-a-threat-intelligence-platform-an-executive-guide",
-              "type": "article"
-            },
-            {
               "title": "OSINT Tutorial for Beginners (NetworkChuck)",
               "url": "https://www.youtube.com/watch?v=qwA6MmbeGNo",
               "type": "video"
@@ -803,16 +738,6 @@
           "description": "Author polished technical and strategic intelligence products: Executive 1-page impact briefs, deep-dive technical research papers, and IOC dissemination packages with clear confidence levels and actionable recommendations.",
           "resources": [
             {
-              "title": "How to Write Actionable Threat Intelligence Reports",
-              "url": "https://www.sans.org/blog/how-to-write-actionable-threat-intelligence-reports/",
-              "type": "article"
-            },
-            {
-              "title": "Writing for Different Audiences in Cyber Security",
-              "url": "https://www.cisecurity.org/insights/blog/cyber-security-communication-tips",
-              "type": "article"
-            },
-            {
               "title": "What are Yara Rules (and How Cybersecurity Analysts Use Them) (Simply Cyber - Gerald Auger, PhD)",
               "url": "https://www.youtube.com/watch?v=BM23_H2GGMA",
               "type": "video"
@@ -837,11 +762,6 @@
           "tag": "advanced",
           "description": "Deliver high-impact verbal and visual threat briefings to CISOs, boards, and engineering leadership. Quantify probability and uncertainty using ICD 203 analytical standards and business risk metrics.",
           "resources": [
-            {
-              "title": "Effective Communication for Cyber Professionals (Course)",
-              "url": "https://www.coursera.org/courses?query=communication%20for%20cybersecurity",
-              "type": "course"
-            },
             {
               "title": "Briefing Executive Leadership on Cyber Threats",
               "url": "https://securityintelligence.com/articles/how-to-effectively-brief-the-board-on-cybersecurity/",
@@ -873,16 +793,6 @@
           "description": "Establish continuous feedback loops with SOC tier-2/3 analysts, incident responders, and detection engineers. Measure IOC false positive rates, time-to-detection gains, and adjust collection priorities accordingly.",
           "resources": [
             {
-              "title": "Establishing a Threat Intelligence Feedback Loop",
-              "url": "https://www.cyber-threat-intelligence.com/threat-intelligence-feedback-loop/",
-              "type": "article"
-            },
-            {
-              "title": "Measuring the Impact of Cyber Threat Intelligence",
-              "url": "https://www.recordedfuture.com/resources/measuring-impact-threat-intelligence",
-              "type": "article"
-            },
-            {
               "title": "OSINT Tutorial for Beginners (NetworkChuck)",
               "url": "https://www.youtube.com/watch?v=qwA6MmbeGNo",
               "type": "video"
@@ -912,16 +822,6 @@
       "description": "Architect automated intelligence workflows: Event-driven webhooks, enrichment microservices, dynamic firewall blocklist generation, and automated SOAR playbook triggering for automated adversary containment.",
       "resources": [
         {
-          "title": "Automating Threat Intelligence Workflows (Recorded Future)",
-          "url": "https://www.recordedfuture.com/resources/automating-threat-intelligence-workflows",
-          "type": "article"
-        },
-        {
-          "title": "Integrating CTI with SIEM and SOAR (Splunk)",
-          "url": "https://www.splunk.com/en_us/blog/security/operationalizing-threat-intelligence-into-splunk-enterprise-security.html",
-          "type": "article"
-        },
-        {
           "title": "What are Yara Rules (and How Cybersecurity Analysts Use Them) (Simply Cyber - Gerald Auger, PhD)",
           "url": "https://www.youtube.com/watch?v=BM23_H2GGMA",
           "type": "video"
@@ -944,11 +844,6 @@
           "tag": "advanced",
           "description": "Bridge intelligence with SOC operations and Digital Forensics & Incident Response (DFIR). Provide real-time adversary campaign context during active breaches and rapidly correlate intrusion artifacts with known threat groups.",
           "resources": [
-            {
-              "title": "How Threat Intelligence Powers Your SOC",
-              "url": "https://www.paloaltonetworks.com/cyberpedia/threat-intelligence-in-soc",
-              "type": "article"
-            },
             {
               "title": "CTI in the Incident Response Lifecycle (NIST)",
               "url": "https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final",
@@ -985,11 +880,6 @@
               "type": "course"
             },
             {
-              "title": "Using APIs for Threat Intelligence Collection and Orchestration",
-              "url": "https://www.splunk.com/en_us/blog/security/threat-intelligence-with-python.html",
-              "type": "article"
-            },
-            {
               "title": "OSINT Tutorial for Beginners (NetworkChuck)",
               "url": "https://www.youtube.com/watch?v=qwA6MmbeGNo",
               "type": "video"
@@ -1014,16 +904,6 @@
           "tag": "advanced",
           "description": "Drive hypothesis-based threat hunting campaigns: Formulate threat hypotheses based on newly emerged adversary TTPs, query enterprise SIEM/EDR data lakes (Splunk, Microsoft Sentinel KQL), and hunt for silent persistence.",
           "resources": [
-            {
-              "title": "Threat Hunting with Cyber Threat Intelligence (CrowdStrike)",
-              "url": "https://www.crowdstrike.com/blog/threat-hunting-with-cyber-threat-intelligence/",
-              "type": "article"
-            },
-            {
-              "title": "Developing Proactive Defense Strategies based on CTI",
-              "url": "https://www.paloaltonetworks.com/cyberpedia/proactive-cybersecurity-strategies",
-              "type": "article"
-            },
             {
               "title": "What are Yara Rules (and How Cybersecurity Analysts Use Them) (Simply Cyber - Gerald Auger, PhD)",
               "url": "https://www.youtube.com/watch?v=BM23_H2GGMA",
@@ -1085,16 +965,6 @@
           "description": "Establish quantitative CTI metrics: Track Mean Time to Detect (MTTD) reduction, percentage of alerts enriched with threat context, detection rule fidelity, and coverage ratio across organization-specific MITRE ATT&CK techniques.",
           "resources": [
             {
-              "title": "Measuring the ROI of Threat Intelligence (Forrester)",
-              "url": "https://www.anomali.com/resources/whitepaper/the-total-economic-impact-of-anomali-threat-intelligence-platform",
-              "type": "article"
-            },
-            {
-              "title": "CTI Program Maturity Models (NIST CTI Guide)",
-              "url": "https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.06232020-updated.pdf",
-              "type": "article"
-            },
-            {
               "title": "OSINT Tutorial for Beginners (NetworkChuck)",
               "url": "https://www.youtube.com/watch?v=qwA6MmbeGNo",
               "type": "video"
@@ -1124,16 +994,6 @@
       "description": "Assemble a public threat intelligence portfolio: Publish technical threat intelligence reports, contribute YARA/Sigma detection rules to open-source repositories, and document malware family tracking research.",
       "resources": [
         {
-          "title": "Building a Strong Cyber Security Portfolio (SANS)",
-          "url": "https://www.sans.org/blog/how-to-build-a-cyber-security-portfolio/",
-          "type": "article"
-        },
-        {
-          "title": "Top Threat Intelligence Interview Questions",
-          "url": "https://www.recordedfuture.com/resources/threat-intelligence-analyst-interview-questions",
-          "type": "article"
-        },
-        {
           "title": "What are Yara Rules (and How Cybersecurity Analysts Use Them) (Simply Cyber - Gerald Auger, PhD)",
           "url": "https://www.youtube.com/watch?v=BM23_H2GGMA",
           "type": "video"
@@ -1156,16 +1016,6 @@
           "tag": "advanced",
           "description": "Execute an end-to-end CTI capstone project: Ingest multi-source feed telemetry, track a simulated APT campaign, map TTPs in ATT&CK Navigator, author STIX 2.1 bundles, write Sigma detection rules, and present an executive threat briefing.",
           "resources": [
-            {
-              "title": "Project Idea: Building a Simple Threat Feed Integrator with Python",
-              "url": "https://github.com/luigidr/awesome-cti-projects/tree/main/threat_feed_integrator",
-              "type": "article"
-            },
-            {
-              "title": "Project Idea: Adversary Tracking & Profile Development for a recent campaign",
-              "url": "https://github.com/luigidr/awesome-cti-projects/tree/main/adversary_tracking",
-              "type": "article"
-            },
             {
               "title": "Threat Hunting 101 : What, How and basics of it | Threat Hunting | Episode 1 (THOR-HQ)",
               "url": "https://www.youtube.com/watch?v=tXLVmAbW8iU",
@@ -1191,11 +1041,6 @@
           "tag": "advanced",
           "description": "Publish exhaustive post-mortem case studies dissecting landmark cyber attacks (SolarWinds SUNBURST, NotPetya, Colonial Pipeline), analyzing root-cause access, supply chain mechanisms, and defensive lessons learned.",
           "resources": [
-            {
-              "title": "How to Write a Technical Case Study for Your Portfolio",
-              "url": "https://www.pluralsight.com/blog/careers/technical-case-study-portfolio",
-              "type": "article"
-            },
             {
               "title": "Showcasing Your CTI Skills on GitHub and LinkedIn",
               "url": "https://resources.infosecinstitute.com/topic/github-for-cybersecurity-professionals/",

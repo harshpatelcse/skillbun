@@ -92,8 +92,8 @@
           "type": "video"
         },
         {
-          "title": "Azure Fundamentals - Microsoft Learn Path",
-          "url": "https://learn.microsoft.com/en-us/training/paths/az-900-explore-cloud-concepts/",
+          "title": "Introduction to Cloud Infrastructure: Describe cloud concepts",
+          "url": "https://learn.microsoft.com/en-us/training/paths/microsoft-azure-fundamentals-describe-cloud-concepts/",
           "type": "course"
         },
         {
@@ -115,9 +115,9 @@
               "type": "article"
             },
             {
-              "title": "Cloud computing fundamentals",
-              "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-fundamentals/cloud-computing-fundamentals",
-              "type": "article"
+              "title": "Describe cloud computing",
+              "url": "https://learn.microsoft.com/en-us/training/modules/describe-cloud-compute/",
+              "type": "course"
             },
             {
               "title": "Study Guide & Notes",
@@ -135,9 +135,9 @@
           "description": "Master the Azure global backbone: Geographies, paired Regions (data residency and cross-region recovery), Availability Zones (AZs), fault domains and update domains within datacenters, and edge locations.",
           "resources": [
             {
-              "title": "Explore Azure architectural components",
-              "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-fundamentals/azure-architectural-components",
-              "type": "article"
+              "title": "Describe the core architectural components of Azure",
+              "url": "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/",
+              "type": "course"
             },
             {
               "title": "Azure global infrastructure",
@@ -170,8 +170,8 @@
               "type": "article"
             },
             {
-              "title": "Introduction to Azure PowerShell",
-              "url": "https://learn.microsoft.com/en-us/powershell/azure/what-is-az-module",
+              "title": "What is Azure PowerShell?",
+              "url": "https://learn.microsoft.com/en-us/powershell/azure/what-is-azure-powershell",
               "type": "article"
             },
             {
@@ -190,8 +190,8 @@
           "description": "Master Azure cost estimation and financial governance: Azure Pricing Calculator, Total Cost of Ownership (TCO) calculator, understanding composite Service Level Agreements (SLAs), and selecting enterprise support tiers.",
           "resources": [
             {
-              "title": "Predict and optimize costs with Azure Cost Management and Billing",
-              "url": "https://learn.microsoft.com/en-us/training/paths/azure-cost-management/",
+              "title": "Describe cost management in Azure",
+              "url": "https://learn.microsoft.com/en-us/training/modules/describe-cost-management-azure/",
               "type": "course"
             },
             {
@@ -219,8 +219,8 @@
       "description": "Master enterprise zero-trust identity and access control: Microsoft Entra ID (formerly Azure AD), role-based access control, privileged identity lifecycles, and secure credential storage.",
       "resources": [
         {
-          "title": "Implement identity and access management",
-          "url": "https://learn.microsoft.com/en-us/training/paths/az-104-manage-identity-access/",
+          "title": "AZ-104: Manage identities and governance in Azure",
+          "url": "https://learn.microsoft.com/en-us/training/paths/az-104-manage-identities-governance/",
           "type": "course"
         },
         {
@@ -247,8 +247,8 @@
               "type": "article"
             },
             {
-              "title": "Manage users and groups in Azure Active Directory",
-              "url": "https://learn.microsoft.com/en-us/training/modules/manage-users-groups-azure-active-directory/",
+              "title": "Create, configure, and manage identities",
+              "url": "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/",
               "type": "course"
             },
             {
@@ -347,8 +347,8 @@
               "type": "article"
             },
             {
-              "title": "Configure managed identities for Azure resources",
-              "url": "https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/how-to-manage-system-assigned-managed-identities",
+              "title": "Configure managed identities on Azure virtual machines (VMs)",
+              "url": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities",
               "type": "article"
             },
             {
@@ -431,13 +431,13 @@
       "description": "Architect secure, isolated enterprise virtual networks: hybrid connectivity, micro-segmentation, traffic routing, and perimeter security.",
       "resources": [
         {
-          "title": "Configure and manage virtual networking",
-          "url": "https://learn.microsoft.com/en-us/training/paths/az-104-configure-manage-virtual-networking/",
+          "title": "AZ-104: Configure and manage virtual networks for Azure administrators",
+          "url": "https://learn.microsoft.com/en-us/training/paths/az-104-manage-virtual-networks/",
           "type": "course"
         },
         {
-          "title": "Implement intersite connectivity",
-          "url": "https://learn.microsoft.com/en-us/training/paths/az-104-implement-intersite-connectivity/",
+          "title": "Configure Azure Virtual Network peering",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/",
           "type": "course"
         },
         {
@@ -555,7 +555,7 @@
             },
             {
               "title": "What is Azure ExpressRoute?",
-              "url": "https://learn.microsoft.com/en-us/azure/expressroute/expressroute-overview",
+              "url": "https://learn.microsoft.com/en-us/azure/expressroute/expressroute-introduction",
               "type": "article"
             },
             {
@@ -771,9 +771,9 @@
           "description": "Build event-driven microservices with Azure Functions: consumption vs premium plans, isolated worker process model (.NET 8/Python/Node.js), event triggers (Blob, Service Bus, Cosmos DB, Event Grid), and durable functions for stateful orchestration.",
           "resources": [
             {
-              "title": "An introduction to Azure Functions",
-              "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-functions/",
-              "type": "course"
+              "title": "What is Azure Functions?",
+              "url": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-overview",
+              "type": "article"
             },
             {
               "title": "What is Azure Logic Apps?",
@@ -836,13 +836,13 @@
           "description": "Master Azure Kubernetes Service (AKS): managed control plane, Azure CNI vs Kubenet networking, Azure Entra ID integration with Kubernetes RBAC, system and user node pools, cluster autoscaler, and deploying with Helm.",
           "resources": [
             {
-              "title": "Introduction to Azure Kubernetes Service",
-              "url": "https://learn.microsoft.com/en-us/azure/aks/intro-aks",
+              "title": "What is Azure Kubernetes Service (AKS)?",
+              "url": "https://learn.microsoft.com/en-us/azure/aks/what-is-aks",
               "type": "article"
             },
             {
-              "title": "Build and run containerized applications with Azure Kubernetes Service",
-              "url": "https://learn.microsoft.com/en-us/training/paths/aks-get-started/",
+              "title": "Azure Kubernetes Service (AKS)",
+              "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-kubernetes-service/",
               "type": "course"
             },
             {
@@ -870,8 +870,8 @@
           "type": "course"
         },
         {
-          "title": "Explore relational data offerings in Azure",
-          "url": "https://learn.microsoft.com/en-us/training/modules/explore-relational-data-offerings-azure/",
+          "title": "Explore relational database services in Azure",
+          "url": "https://learn.microsoft.com/en-us/training/modules/explore-provision-deploy-relational-database-offerings-azure/",
           "type": "course"
         },
         {
@@ -888,8 +888,8 @@
           "description": "Master Azure Storage Accounts: Blob storage tiers (Hot, Cool, Cold, Archive), lifecycle management policies, immutability (WORM compliance), redundancy models (LRS, ZRS, GRS, GZRS), and Shared Access Signatures (SAS) with stored access policies.",
           "resources": [
             {
-              "title": "Introduction to Azure storage",
-              "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-storage/",
+              "title": "Describe Azure storage services",
+              "url": "https://learn.microsoft.com/en-us/training/modules/describe-azure-storage-services/",
               "type": "course"
             },
             {
@@ -994,7 +994,7 @@
           "resources": [
             {
               "title": "What is Azure File Sync?",
-              "url": "https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-overview",
+              "url": "https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-introduction",
               "type": "article"
             },
             {
@@ -1062,13 +1062,13 @@
       "description": "Implement enterprise observability and FinOps governance: distributed metrics, logs, diagnostic settings, and proactive cost controls.",
       "resources": [
         {
-          "title": "Monitor Azure resources",
-          "url": "https://learn.microsoft.com/en-us/training/paths/az-104-monitor-azure-resources/",
+          "title": "AZ-104: Monitor and back up Azure resources",
+          "url": "https://learn.microsoft.com/en-us/training/paths/az-104-monitor-backup-resources/",
           "type": "course"
         },
         {
-          "title": "Predict and optimize costs with Azure Cost Management and Billing",
-          "url": "https://learn.microsoft.com/en-us/training/paths/azure-cost-management/",
+          "title": "Describe cost management in Azure",
+          "url": "https://learn.microsoft.com/en-us/training/modules/describe-cost-management-azure/",
           "type": "course"
         },
         {
@@ -1170,8 +1170,8 @@
               "type": "article"
             },
             {
-              "title": "Optimize your cloud investment with Azure Cost Management",
-              "url": "https://learn.microsoft.com/en-us/training/modules/optimize-cloud-investment-azure-cost-management/",
+              "title": "Describe cost management in Azure",
+              "url": "https://learn.microsoft.com/en-us/training/modules/describe-cost-management-azure/",
               "type": "course"
             },
             {
@@ -1194,13 +1194,13 @@
       "description": "Enforce enterprise governance and compliance: hierarchical resource organization, policy guardrails, and compliance tracking.",
       "resources": [
         {
-          "title": "Implement governance and compliance solutions",
-          "url": "https://learn.microsoft.com/en-us/training/paths/az-104-implement-governance/",
+          "title": "AZ-104: Manage identities and governance in Azure",
+          "url": "https://learn.microsoft.com/en-us/training/paths/az-104-manage-identities-governance/",
           "type": "course"
         },
         {
-          "title": "Introduction to Azure governance",
-          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-governance/",
+          "title": "Describe features and tools in Azure for governance and compliance",
+          "url": "https://learn.microsoft.com/en-us/training/modules/describe-features-tools-azure-for-governance-compliance/",
           "type": "course"
         },
         {
@@ -1222,9 +1222,9 @@
               "type": "article"
             },
             {
-              "title": "Organize your resources with Azure management groups",
-              "url": "https://learn.microsoft.com/en-us/training/modules/organize-resources-with-management-groups/",
-              "type": "course"
+              "title": "What are Azure management groups?",
+              "url": "https://learn.microsoft.com/en-us/azure/governance/management-groups/overview",
+              "type": "article"
             },
             {
               "title": "Study Guide & Notes",
@@ -1292,9 +1292,9 @@
           "description": "Audit regulatory compliance: Microsoft Defender for Cloud Regulatory Compliance dashboard (CIS Azure Foundations, NIST, ISO 27001), and Azure Activity Log auditing.",
           "resources": [
             {
-              "title": "Introduction to Azure security, privacy, and compliance",
-              "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-security-privacy-compliance/",
-              "type": "course"
+              "title": "Azure, Dynamics 365, Microsoft 365, and Power Platform compliance offerings",
+              "url": "https://learn.microsoft.com/en-us/azure/compliance/offerings/",
+              "type": "article"
             },
             {
               "title": "Azure activity log",
@@ -1321,9 +1321,9 @@
       "description": "Automate cloud infrastructure and configuration: declarative templates, Infrastructure as Code, and automated state configuration.",
       "resources": [
         {
-          "title": "Automate Azure tasks by using runbooks and Azure Automation",
-          "url": "https://learn.microsoft.com/en-us/training/paths/az-104-implement-automation/",
-          "type": "course"
+          "title": "What is Azure Automation?",
+          "url": "https://learn.microsoft.com/en-us/azure/automation/overview",
+          "type": "article"
         },
         {
           "title": "Automate your deployments with Azure Resource Manager templates",
@@ -1345,12 +1345,12 @@
           "resources": [
             {
               "title": "What is Azure Automation?",
-              "url": "https://learn.microsoft.com/en-us/azure/automation/automation-overview",
+              "url": "https://learn.microsoft.com/en-us/azure/automation/overview",
               "type": "article"
             },
             {
-              "title": "PowerShell Runbook tutorial",
-              "url": "https://learn.microsoft.com/en-us/azure/automation/learn/powershell-runbook-tutorial",
+              "title": "Tutorial: Create Automation PowerShell runbook using managed identity",
+              "url": "https://learn.microsoft.com/en-us/azure/automation/learn/powershell-runbook-managed-identity",
               "type": "article"
             },
             {
@@ -1379,9 +1379,9 @@
               "type": "article"
             },
             {
-              "title": "Use Terraform to create Azure infrastructure",
-              "url": "https://learn.microsoft.com/en-us/training/modules/create-infrastructure-azure-terraform/",
-              "type": "course"
+              "title": "Configure Terraform in Azure Cloud Shell with Bash",
+              "url": "https://learn.microsoft.com/en-us/azure/developer/terraform/get-started-cloud-shell-bash",
+              "type": "article"
             },
             {
               "title": "Study Guide & Notes",
@@ -1433,8 +1433,8 @@
           "type": "article"
         },
         {
-          "title": "Create a CI/CD pipeline with Azure DevOps",
-          "url": "https://learn.microsoft.com/en-us/training/paths/azure-devops-create-pipelines/",
+          "title": "AZ-400: Implement CI with Azure Pipelines and GitHub Actions",
+          "url": "https://learn.microsoft.com/en-us/training/paths/az-400-implement-ci-azure-pipelines-github-actions/",
           "type": "course"
         },
         {
@@ -1471,13 +1471,8 @@
           "description": "Implement enterprise Git workflows in Azure Repos: branch protection policies, PR code reviews, build validation triggers, and commit signing.",
           "resources": [
             {
-              "title": "Learn Git",
-              "url": "https://www.atlassian.com/git/tutorials/learn-git",
-              "type": "article"
-            },
-            {
-              "title": "Share your code with Git in Azure Repos",
-              "url": "https://learn.microsoft.com/en-us/training/paths/git-azure-repos/",
+              "title": "AZ-400: Development for Enterprise DevOps",
+              "url": "https://learn.microsoft.com/en-us/training/paths/az-400-work-git-for-enterprise-devops/",
               "type": "course"
             },
             {
@@ -1496,8 +1491,8 @@
           "description": "Build multi-stage YAML pipelines in Azure Pipelines: build stages, test automation, self-hosted vs Microsoft-hosted build agents, variable groups with Azure Key Vault integration, and container image generation.",
           "resources": [
             {
-              "title": "Key concepts for Azure Pipelines",
-              "url": "https://learn.microsoft.com/en-us/azure/devops/pipelines/get-started/key-concepts?view=azure-devops",
+              "title": "What is Azure Pipelines?",
+              "url": "https://learn.microsoft.com/en-us/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops",
               "type": "article"
             },
             {
@@ -1521,13 +1516,8 @@
           "description": "Deploy zero-downtime releases: deployment environments with manual approval checks, deployment gates (querying Azure Monitor alerts), blue/green deployments, and canary rollouts.",
           "resources": [
             {
-              "title": "Deployment strategies (Microsoft Learn)",
-              "url": "https://learn.microsoft.com/en-us/azure/architecture/guide/developer/deployment-strategies",
-              "type": "article"
-            },
-            {
-              "title": "Progressive Exposure Deployment Patterns",
-              "url": "https://www.infoq.com/articles/deployment-patterns-blue-green-canary/",
+              "title": "Architecture strategies for safe deployment practices",
+              "url": "https://learn.microsoft.com/en-us/azure/well-architected/operational-excellence/safe-deployments",
               "type": "article"
             },
             {
@@ -1546,8 +1536,8 @@
           "description": "Manage package feeds: publishing and consuming private NuGet, npm, Maven, and Python packages via Azure Artifacts with upstream sources.",
           "resources": [
             {
-              "title": "Get started with Azure Artifacts",
-              "url": "https://learn.microsoft.com/en-us/azure/devops/artifacts/start-using-artifacts?view=azure-devops",
+              "title": "What is Azure Artifacts?",
+              "url": "https://learn.microsoft.com/en-us/azure/devops/artifacts/start-using-azure-artifacts",
               "type": "article"
             },
             {
@@ -1598,8 +1588,8 @@
           "description": "Architect enterprise disaster recovery: multi-region active-active vs active-passive failover, calculating RTO and RPO, and global traffic routing with Azure Front Door.",
           "resources": [
             {
-              "title": "High availability for Azure applications",
-              "url": "https://learn.microsoft.com/en-us/azure/architecture/framework/resiliency/app-resiliency",
+              "title": "Architecture strategies for disaster recovery",
+              "url": "https://learn.microsoft.com/en-us/azure/well-architected/reliability/disaster-recovery",
               "type": "article"
             },
             {
@@ -1718,8 +1708,8 @@
           "description": "Execute enterprise cloud migrations: Azure Migrate discovery, assessment, dependency mapping, and agentless replication for VMware and Hyper-V workloads.",
           "resources": [
             {
-              "title": "Common cloud migration strategies",
-              "url": "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/strategy/common-migration-strategies",
+              "title": "Plan your migration",
+              "url": "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/migrate/azure-migration-guide/",
               "type": "article"
             },
             {
@@ -1744,7 +1734,7 @@
           "resources": [
             {
               "title": "What is Azure Service Bus?",
-              "url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-overview",
+              "url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview",
               "type": "article"
             },
             {
@@ -1778,8 +1768,8 @@
               "type": "article"
             },
             {
-              "title": "Network virtual appliances",
-              "url": "https://learn.microsoft.com/en-us/azure/architecture/guide/technology-choices/network-virtual-appliance",
+              "title": "Deploy highly available NVAs",
+              "url": "https://learn.microsoft.com/en-us/azure/architecture/networking/guide/network-virtual-appliance-high-availability",
               "type": "article"
             },
             {
@@ -1843,8 +1833,8 @@
               "type": "article"
             },
             {
-              "title": "Architect an application in Azure",
-              "url": "https://learn.microsoft.com/en-us/training/paths/architect-application-design/",
+              "title": "AZ-305 Microsoft Azure Architect Design Prerequisites",
+              "url": "https://learn.microsoft.com/en-us/training/paths/microsoft-azure-architect-design-prerequisites/",
               "type": "course"
             },
             {
@@ -1915,11 +1905,6 @@
               "type": "article"
             },
             {
-              "title": "Effective Runbook Automation",
-              "url": "https://www.redhat.com/en/topics/automation/what-is-runbook-automation",
-              "type": "article"
-            },
-            {
               "title": "Technical Writing 101 - A FREE Full Course on How to Write Technical Documentation",
               "url": "https://www.youtube.com/watch?v=vT5pcc30Ffw",
               "type": "video"
@@ -1940,13 +1925,13 @@
           "description": "Troubleshoot complex Azure infrastructure issues: analyzing Network Watcher packet captures, debugging VM boot diagnostics, and optimizing database performance with Azure SQL Query Performance Insight.",
           "resources": [
             {
-              "title": "Troubleshooting applications in Azure",
-              "url": "https://learn.microsoft.com/en-us/azure/app-service/troubleshoot-diagnostic-tools",
+              "title": "Diagnostics in Azure App Service",
+              "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-diagnostics",
               "type": "article"
             },
             {
-              "title": "Azure performance diagnostics",
-              "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/app/performance-diagnostics",
+              "title": "Find and diagnose performance issues with Application Insights",
+              "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/app/tutorial-performance",
               "type": "article"
             },
             {

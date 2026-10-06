@@ -175,8 +175,8 @@
               "type": "article"
             },
             {
-              "title": "The Promise of Decentralization",
-              "url": "https://a16z.com/2020/03/17/the-promise-of-decentralization/",
+              "title": "Ethereum and Decentralized Applications",
+              "url": "https://ethereum.org/en/developers/docs/intro-to-ethereum/",
               "type": "article"
             },
             {
@@ -195,8 +195,8 @@
           "description": "Master Web3 identity and key management: hierarchical deterministic (HD) wallets, mnemonic seeds (BIP-39), master private keys (BIP-32), derivation paths (BIP-44 standard `m/44'/60'/0'/0/x`), deriving Ethereum addresses from public keys via Keccak-256 hashing, hardware wallets, and secure signing workflows.",
           "resources": [
             {
-              "title": "How do wallets work?",
-              "url": "https://ethereum.org/en/wallets/docs/how-wallets-work/",
+              "title": "Ethereum Accounts, Keys and Addresses",
+              "url": "https://ethereum.org/en/developers/docs/accounts/",
               "type": "article"
             },
             {
@@ -322,8 +322,8 @@
               "type": "article"
             },
             {
-              "title": "Understanding Ethereum's EIP-1559",
-              "url": "https://www.alchemy.com/overviews/eip-1559",
+              "title": "Ethereum Gas, Fees and EIP-1559",
+              "url": "https://ethereum.org/en/developers/docs/gas/",
               "type": "article"
             },
             {
@@ -372,8 +372,8 @@
               "type": "article"
             },
             {
-              "title": "What is Infura?",
-              "url": "https://docs.infura.io/infura/getting-started/what-is-infura",
+              "title": "Infura Services and Blockchain APIs (MetaMask)",
+              "url": "https://docs.metamask.io/services/",
               "type": "article"
             },
             {
@@ -504,11 +504,6 @@
               "type": "article"
             },
             {
-              "title": "Solidity Data Location",
-              "url": "https://www.alchemy.com/overviews/solidity-data-location",
-              "type": "article"
-            },
-            {
               "title": "Solidity Storage vs Memory vs Calldata - Solidity Tutorial",
               "url": "https://www.youtube.com/watch?v=a-Zik0OvwJc",
               "type": "video"
@@ -564,8 +559,8 @@
               "type": "article"
             },
             {
-              "title": "Deploying Your First Smart Contract",
-              "url": "https://www.alchemy.com/blog/deploy-smart-contract",
+              "title": "Deploy Smart Contracts on Ethereum",
+              "url": "https://ethereum.org/en/developers/docs/smart-contracts/deploying/",
               "type": "article"
             },
             {
@@ -660,11 +655,6 @@
           "tag": "essential",
           "description": "Implement essential smart contract architectural patterns: Checks-Effects-Interactions (CEI) to eliminate reentrancy, Pull over Push payment patterns to prevent denial-of-service, Mutex locks, Factory pattern for deterministic contract cloning, and Commit-Reveal schemes to prevent frontrunning.",
           "resources": [
-            {
-              "title": "Smart Contract Design Patterns (OpenZeppelin Blog)",
-              "url": "https://blog.openzeppelin.com/categories/design-patterns/",
-              "type": "article"
-            },
             {
               "title": "Solidity Design Patterns",
               "url": "https://fravoll.github.io/solidity-patterns/",
@@ -805,8 +795,8 @@
           "type": "article"
         },
         {
-          "title": "Smart Contract Development Tools",
-          "url": "https://ethereum.org/en/developers/docs/smart-contracts/getting-started/",
+          "title": "Introduction to Ethereum Smart Contracts",
+          "url": "https://ethereum.org/en/developers/docs/smart-contracts/",
           "type": "article"
         },
         {
@@ -848,8 +838,8 @@
           "description": "Enforce automated Solidity code standards: automated formatting with `forge fmt`, static linting with `solhint`, and comprehensive NatSpec documentation (`@notice`, `@dev`, `@param`, `@return`) for automated ABI documentation generation.",
           "resources": [
             {
-              "title": "Solhint Documentation",
-              "url": "https://solhint.readthedocs.io/en/latest/",
+              "title": "Solhint: Solidity linting documentation",
+              "url": "https://protofire.github.io/solhint/",
               "type": "article"
             },
             {
@@ -883,8 +873,8 @@
           "description": "Debug complex smart contract execution: transaction tracing with `forge test -vvvv`, setting breakpoints with the Foundry interactive debugger (`forge debug`), inspecting stack and memory states, and analyzing EVM opcode execution step-by-step.",
           "resources": [
             {
-              "title": "Hardhat Debugging Guide",
-              "url": "https://hardhat.org/hardhat-runner/docs/guides/debugger",
+              "title": "Debug and Test Smart Contracts with Hardhat",
+              "url": "https://v2.hardhat.org/hardhat-runner/docs/guides/test-contracts",
               "type": "article"
             },
             {
@@ -908,8 +898,8 @@
           "description": "Master comprehensive testing in Foundry: writing unit tests in native Solidity, stateless fuzz testing (`forge test --fuzz-runs`), stateful property-based invariant testing with test handler contracts, cheatcodes (`vm.prank`, `vm.warp`, `vm.roll`, `vm.deal`, `vm.expectRevert`), and forking live Ethereum mainnet state for realistic integration testing.",
           "resources": [
             {
-              "title": "Testing Contracts (Hardhat)",
-              "url": "https://hardhat.org/hardhat-runner/docs/guides/waffle-testing",
+              "title": "Test Smart Contracts with Hardhat",
+              "url": "https://v2.hardhat.org/hardhat-runner/docs/guides/test-contracts",
               "type": "article"
             },
             {
@@ -958,13 +948,13 @@
           "description": "Build enterprise CI/CD pipelines with GitHub Actions: running automated formatting checks, executing the full Foundry test suite with invariant tests, generating gas snapshot regression reports (`forge snapshot`), and running automated security scans.",
           "resources": [
             {
-              "title": "Hardhat CI/CD Guide",
-              "url": "https://hardhat.org/hardhat-runner/docs/guides/continuous-integration",
+              "title": "Continuous Integration for Smart Contracts (Foundry)",
+              "url": "https://getfoundry.sh/config/continuous-integration/",
               "type": "article"
             },
             {
-              "title": "Foundry with GitHub Actions",
-              "url": "https://book.getfoundry.sh/forge/ci",
+              "title": "Continuous Integration with Foundry",
+              "url": "https://getfoundry.sh/config/continuous-integration/",
               "type": "article"
             },
             {
@@ -1040,8 +1030,8 @@
           "description": "Implement seamless wallet connectivity: multi-wallet onboarding with ConnectKit / RainbowKit / AppKit, supporting EIP-6963 multi-injected provider discovery (MetaMask, Coinbase Wallet, Phantom), WalletConnect v2 for mobile wallets, network switching, and graceful error handling for rejected transactions.",
           "resources": [
             {
-              "title": "Connect Wallet with wagmi",
-              "url": "https://wagmi.sh/react/wallet-connection",
+              "title": "Connect Wallets to React Applications (wagmi)",
+              "url": "https://wagmi.sh/react/guides/connect-wallet",
               "type": "article"
             },
             {
@@ -1065,8 +1055,8 @@
           "description": "Integrate Web3 state in modern Next.js App Router applications: managing server-side rendering (SSR) hydration with Wagmi context providers, handling optimistic UI updates, and tracking transaction confirmation states.",
           "resources": [
             {
-              "title": "Build a Dapp with React and Ethers",
-              "url": "https://www.blockchain-council.org/blockchain/how-to-build-a-dapp-with-react-and-ethers-js/",
+              "title": "Build a Full-Stack Smart Contract Application (Ethereum)",
+              "url": "https://ethereum.org/en/developers/tutorials/hello-world-smart-contract-fullstack/",
               "type": "article"
             },
             {
@@ -1090,8 +1080,8 @@
               "type": "article"
             },
             {
-              "title": "Handling Events in Dapps",
-              "url": "https://docs.alchemy.com/reference/alchemy-sdk-getlogs",
+              "title": "Read Blockchain Event Logs with eth_getLogs (Alchemy)",
+              "url": "https://www.alchemy.com/docs/reference/eth-getlogs",
               "type": "article"
             },
             {
@@ -1110,13 +1100,8 @@
           "description": "Process on-chain events off-chain: listening to smart contract events via WebSockets, indexing historical event logs with Viem `getLogs`, building backend event indexers in Node.js/Go, and notifying users via webhooks or push notifications.",
           "resources": [
             {
-              "title": "Alchemy SDK: Get Logs",
-              "url": "https://docs.alchemy.com/reference/alchemy-sdk-getlogs",
-              "type": "article"
-            },
-            {
-              "title": "How to listen to Ethereum Events in JavaScript",
-              "url": "https://www.quicknode.com/guides/ethereum-development/how-to-listen-to-ethereum-events-in-javascript",
+              "title": "Read Blockchain Event Logs with eth_getLogs (Alchemy)",
+              "url": "https://www.alchemy.com/docs/reference/eth-getlogs",
               "type": "article"
             },
             {
@@ -1202,8 +1187,8 @@
           "description": "Master classic and modern smart contract exploit vectors: single-function, cross-function, and read-only reentrancy attacks, flash loan attack mechanics, price oracle manipulation (spot price DEX manipulation vs time-weighted average prices TWAP), frontrunning and Maximal Extractable Value (MEV/sandwich attacks), unprotected initialization, signature replay attacks (missing nonce/chainId in EIP-712), and precision loss / integer division pitfalls.",
           "resources": [
             {
-              "title": "List of Common Smart Contract Vulnerabilities",
-              "url": "https://github.com/solidified-platform/smart-contract-vulnerabilities",
+              "title": "(Not So) Smart Contracts: Solidity Vulnerability Examples",
+              "url": "https://github.com/crytic/not-so-smart-contracts",
               "type": "article"
             },
             {
@@ -1271,11 +1256,6 @@
           "tag": "advanced",
           "description": "Master the security auditing workflow: authoring comprehensive audit reports detailing vulnerability impact and proof-of-concept exploits, participating in competitive audit contests (Code4rena, Sherlock), finding vulnerabilities in live protocols on Immunefi, and responsible disclosure ethics.",
           "resources": [
-            {
-              "title": "Smart Contract Audits Explained",
-              "url": "https://www.chainlinklabs.com/education/smart-contract-audits",
-              "type": "article"
-            },
             {
               "title": "Immunefi - Crypto Bug Bounties",
               "url": "https://immunefi.com/",
@@ -1368,11 +1348,6 @@
           "tag": "advanced",
           "description": "Integrate decentralized oracle networks: Chainlink Data Feeds (price feeds with heartbeat, staleness checks, and deviation thresholds), Chainlink VRF (Verifiable Random Function) for cryptographically provable randomness in gaming/lotteries, Chainlink Automation, and Pyth Network pull oracles.",
           "resources": [
-            {
-              "title": "What is an Oracle?",
-              "url": "https://docs.chain.link/chainlink-basics/what-is-an-oracle",
-              "type": "article"
-            },
             {
               "title": "Chainlink Price Feeds",
               "url": "https://docs.chain.link/data-feeds/price-feeds/",
@@ -1469,11 +1444,6 @@
           "description": "Master cross-chain communication and liquidity: bridge architectures (canonical lock-and-mint vs burn-and-mint), cross-chain messaging protocols (Chainlink CCIP, LayerZero v2, Wormhole), security risks of multi-sig bridges, and building omnichain applications.",
           "resources": [
             {
-              "title": "Blockchain Bridges Explained",
-              "url": "https://ethereum.org/en/developers/docs/cross-chain-bridges/",
-              "type": "article"
-            },
-            {
               "title": "LayerZero Documentation",
               "url": "https://layerzero.gitbook.io/docs/",
               "type": "article"
@@ -1503,11 +1473,6 @@
           "tag": "advanced",
           "description": "Master ERC-4337 Account Abstraction: eliminating EOAs with smart contract wallets, understanding `UserOperations`, Bundlers, the canonical `EntryPoint` contract, Paymasters for sponsoring user gas fees (gasless transactions or paying gas in ERC-20 tokens), session keys, and social recovery.",
           "resources": [
-            {
-              "title": "What is Account Abstraction?",
-              "url": "https://www.alchemy.com/overviews/account-abstraction",
-              "type": "article"
-            },
             {
               "title": "ERC-4337: Account Abstraction via Entry Point",
               "url": "https://eips.ethereum.org/EIPS/eip-4337",
@@ -1543,13 +1508,8 @@
       "description": "Demonstrate Web3 engineering excellence: build production-grade DeFi and NFT protocols, contribute to audited open-source projects, and master technical Web3 interviews.",
       "resources": [
         {
-          "title": "How to Build a Web3 Portfolio",
-          "url": "https://www.coindesk.com/learn/how-to-build-a-web3-portfolio/",
-          "type": "article"
-        },
-        {
-          "title": "Awesome Web3 Bounties",
-          "url": "https://github.com/ChainShot/awesome-web3-bounties",
+          "title": "Ethereum Open-Source Contribution and Bounty Opportunities",
+          "url": "https://ethereum.org/en/community/get-involved/",
           "type": "article"
         },
         {
@@ -1620,11 +1580,6 @@
           "tag": "advanced",
           "description": "Contribute to the open-source Web3 ecosystem: contributing to OpenZeppelin Contracts, solving protocol bounties on GitHub and Gitcoin, and building public smart contract developer utilities.",
           "resources": [
-            {
-              "title": "Gitcoin Bounties",
-              "url": "https://gitcoin.co/bounties",
-              "type": "article"
-            },
             {
               "title": "How to Get Started in Open Source",
               "url": "https://opensource.guide/how-to-contribute/",

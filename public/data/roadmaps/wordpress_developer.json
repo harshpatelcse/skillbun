@@ -123,8 +123,8 @@
           "description": "Master web technologies for WordPress: Semantic HTML5, CSS3, JavaScript ES6+, and client-server HTTP lifecycles.",
           "resources": [
             {
-              "title": "How the Internet Works (MDN)",
-              "url": "https://developer.mozilla.org/en-US/docs/Web/How_the_Web_works",
+              "title": "How the Web Works (MDN Web Docs)",
+              "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works",
               "type": "article"
             },
             {
@@ -203,8 +203,8 @@
               "type": "article"
             },
             {
-              "title": "Docker for WordPress Development (Smashing Magazine)",
-              "url": "https://www.smashingmagazine.com/2021/02/docker-wordpress-development-environment/",
+              "title": "Local WordPress Environments with Docker and wp-env (WordPress Docs)",
+              "url": "https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/",
               "type": "article"
             },
             {
@@ -232,11 +232,6 @@
           "tag": "essential",
           "description": "Install and configure WordPress: Database creation, `wp-config.php` configuration (salts, debugging flags), file permissions, and directory structures (`wp-content`).",
           "resources": [
-            {
-              "title": "Installing WordPress (WordPress.org)",
-              "url": "https://wordpress.org/documentation/article/installing-wordpress/",
-              "type": "article"
-            },
             {
               "title": "Choosing a WordPress Host (WPBeginner)",
               "url": "https://www.wpbeginner.com/wordpress-hosting/",
@@ -267,11 +262,6 @@
           "tag": "essential",
           "description": "Master the WordPress dashboard: Posts, Pages, Media Library, Categories, Tags, user roles and capabilities (`current_user_can`), and site settings.",
           "resources": [
-            {
-              "title": "WordPress Support Docs (Getting Started)",
-              "url": "https://wordpress.org/documentation/getting-started/",
-              "type": "article"
-            },
             {
               "title": "WordPress User Roles Explained",
               "url": "https://kinsta.com/blog/wordpress-user-roles/",
@@ -339,16 +329,6 @@
           "tag": "essential",
           "description": "Master the Block Editor (Gutenberg): Core blocks, block transformations, reusable synced patterns, template parts, and block layout settings.",
           "resources": [
-            {
-              "title": "Using the Block Editor (WordPress.org)",
-              "url": "https://wordpress.org/documentation/article/block-editor/",
-              "type": "article"
-            },
-            {
-              "title": "Introduction to Block Patterns (Learn WordPress)",
-              "url": "https://learn.wordpress.org/lesson-plan/introduction-to-block-patterns/",
-              "type": "article"
-            },
             {
               "title": "How to Use the WordPress Block Editor for Beginners (Detailed Tutorial) (WPBeginner - WordPress Tutorials)",
               "url": "https://www.youtube.com/watch?v=yQ8JBM3Sb5c",
@@ -420,11 +400,6 @@
               "type": "article"
             },
             {
-              "title": "Creating Custom Block Patterns (Learn WordPress)",
-              "url": "https://learn.wordpress.org/lesson-plan/creating-custom-block-patterns/",
-              "type": "article"
-            },
-            {
               "title": "WordPress Plugin Development: Gutenberg Blocks, React & More (LearnWebCode)",
               "url": "https://www.youtube.com/watch?v=hbJiwm5YL5Q",
               "type": "video"
@@ -452,11 +427,6 @@
             {
               "title": "Global Styles (WordPress Developer Docs)",
               "url": "https://developer.wordpress.org/block-editor/how-to-guides/themes/global-settings-and-styles/",
-              "type": "article"
-            },
-            {
-              "title": "Customizing Your Site (WordPress.org)",
-              "url": "https://wordpress.org/documentation/article/customizing-your-site/",
               "type": "article"
             },
             {
@@ -592,11 +562,6 @@
               "type": "article"
             },
             {
-              "title": "Custom WordPress Query Loops (WPBeginner)",
-              "url": "https://www.wpbeginner.com/wp-tutorials/how-to-create-custom-wordpress-query-loops/",
-              "type": "article"
-            },
-            {
               "title": "WooCommerce Tutorial for Beginners 2026 (Darrel Wilson)",
               "url": "https://www.youtube.com/watch?v=1cI_retUgJk",
               "type": "video"
@@ -697,11 +662,6 @@
               "type": "article"
             },
             {
-              "title": "Translating WordPress Themes (WPBeginner)",
-              "url": "https://www.wpbeginner.com/wp-tutorials/how-to-translate-a-wordpress-theme-easy-way/",
-              "type": "article"
-            },
-            {
               "title": "WordPress Plugin Development: Gutenberg Blocks, React & More (LearnWebCode)",
               "url": "https://www.youtube.com/watch?v=hbJiwm5YL5Q",
               "type": "video"
@@ -734,11 +694,6 @@
             {
               "title": "theme.json Reference (WordPress Developer Docs)",
               "url": "https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-json/",
-              "type": "article"
-            },
-            {
-              "title": "Introduction to Full Site Editing (Learn WordPress)",
-              "url": "https://learn.wordpress.org/lesson-plan/introduction-to-full-site-editing/",
               "type": "article"
             },
             {
@@ -834,11 +789,6 @@
           "description": "Master plugin architecture: Plugin header comments, activation and deactivation hooks, uninstall hooks (`uninstall.php`), and directory structures.",
           "resources": [
             {
-              "title": "Plugin Basics (WordPress Developer Docs)",
-              "url": "https://developer.wordpress.org/plugins/basics/",
-              "type": "article"
-            },
-            {
               "title": "WordPress Plugin Development: Gutenberg Blocks, React & More (LearnWebCode)",
               "url": "https://www.youtube.com/watch?v=hbJiwm5YL5Q",
               "type": "video"
@@ -863,16 +813,6 @@
           "tag": "advanced",
           "description": "Master the Hook system: Priority arguments, parameter passing, custom action execution (`do_action`), and modifying data with filters (`apply_filters`).",
           "resources": [
-            {
-              "title": "Actions Reference (WordPress Developer Docs)",
-              "url": "https://developer.wordpress.org/reference/hooks/actions/",
-              "type": "article"
-            },
-            {
-              "title": "Filters Reference (WordPress Developer Docs)",
-              "url": "https://developer.wordpress.org/reference/hooks/filters/",
-              "type": "article"
-            },
             {
               "title": "WooCommerce Tutorial for Beginners 2026 (Darrel Wilson)",
               "url": "https://www.youtube.com/watch?v=1cI_retUgJk",
@@ -901,11 +841,6 @@
             {
               "title": "Settings API (WordPress Developer Docs)",
               "url": "https://developer.wordpress.org/plugins/settings/",
-              "type": "article"
-            },
-            {
-              "title": "Creating Admin Pages (WordPress Developer Docs)",
-              "url": "https://developer.wordpress.org/plugins/administration/custom-admin-pages/",
               "type": "article"
             },
             {
@@ -939,11 +874,6 @@
               "type": "article"
             },
             {
-              "title": "Creating Custom Tables (WordPress Developer Docs)",
-              "url": "https://developer.wordpress.org/plugins/introduction/data-management/",
-              "type": "article"
-            },
-            {
               "title": "WordPress Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=O79pJ7qXwoE",
               "type": "video"
@@ -971,11 +901,6 @@
             {
               "title": "REST API Handbook (WordPress Developer Docs)",
               "url": "https://developer.wordpress.org/rest-api/",
-              "type": "article"
-            },
-            {
-              "title": "Creating Custom REST Endpoints (Learn WordPress)",
-              "url": "https://learn.wordpress.org/tutorial/creating-custom-rest-api-endpoints/",
               "type": "article"
             },
             {
@@ -1069,11 +994,6 @@
           "description": "Incorporate modern JavaScript in plugins: React, `@wordpress/components` UI library, state management with `@wordpress/data` (Redux-like store), and API fetch.",
           "resources": [
             {
-              "title": "Using React in WordPress Plugins (Learn WordPress)",
-              "url": "https://learn.wordpress.org/tutorial/using-react-in-wordpress-plugins/",
-              "type": "article"
-            },
-            {
               "title": "Enqueueing Scripts and Styles (WordPress Developer Docs)",
               "url": "https://developer.wordpress.org/themes/basics/including-css-javascript/",
               "type": "article"
@@ -1103,11 +1023,6 @@
           "tag": "advanced",
           "description": "Harden plugin security: Nonce verification (`wp_verify_nonce`), capability checks, data sanitization (`sanitize_text_field`), and data escaping (`esc_html`, `esc_attr`, `esc_url`).",
           "resources": [
-            {
-              "title": "WordPress Security Best Practices for Developers",
-              "url": "https://wpengine.com/resources/wordpress-security-best-practices-for-developers/",
-              "type": "article"
-            },
             {
               "title": "Data Validation, Sanitization, and Escaping (WordPress Developer Docs)",
               "url": "https://developer.wordpress.org/plugins/security/data-validation/",
@@ -1148,11 +1063,6 @@
           "type": "article"
         },
         {
-          "title": "WordPress Performance (WP Beginner)",
-          "url": "https://www.wpbeginner.com/wordpress-performance/",
-          "type": "article"
-        },
-        {
           "title": "WooCommerce Tutorial for Beginners 2026 (Darrel Wilson)",
           "url": "https://www.youtube.com/watch?v=1cI_retUgJk",
           "type": "video"
@@ -1181,11 +1091,6 @@
               "type": "article"
             },
             {
-              "title": "WordPress Caching Guide (Kinsta)",
-              "url": "https://kinsta.com/wordpress-caching/",
-              "type": "article"
-            },
-            {
               "title": "How to Use the WordPress Block Editor for Beginners (Detailed Tutorial) (WPBeginner - WordPress Tutorials)",
               "url": "https://www.youtube.com/watch?v=yQ8JBM3Sb5c",
               "type": "video"
@@ -1210,16 +1115,6 @@
           "tag": "advanced",
           "description": "Optimize database and media: Database transient cleanup, indexing slow queries, WebP image conversion, lazy loading, and CDN offloading to S3/Cloudflare.",
           "resources": [
-            {
-              "title": "Optimizing WordPress Database (WPBeginner)",
-              "url": "https://www.wpbeginner.com/wp-tutorials/how-to-optimize-your-wordpress-database/",
-              "type": "article"
-            },
-            {
-              "title": "WordPress Image Optimization Guide",
-              "url": "https://kinsta.com/blog/wordpress-image-optimization/",
-              "type": "article"
-            },
             {
               "title": "WordPress Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=O79pJ7qXwoE",
@@ -1351,11 +1246,6 @@
           "description": "Automate WordPress CI/CD: GitHub Actions pipelines running PHPCS (WordPress Coding Standards), automated unit testing with PHPUnit, and deploying via rsync/SSH.",
           "resources": [
             {
-              "title": "CI/CD for WordPress with GitHub Actions (Delicious Brains)",
-              "url": "https://deliciousbrains.com/continuous-integration-deployment-wordpress-github-actions/",
-              "type": "article"
-            },
-            {
               "title": "Getting Started with GitLab CI/CD",
               "url": "https://docs.gitlab.com/ee/ci/quick_start/",
               "type": "article"
@@ -1392,11 +1282,6 @@
         {
           "title": "WooCommerce Developer Docs",
           "url": "https://developer.woocommerce.com/docs/",
-          "type": "article"
-        },
-        {
-          "title": "WooCommerce Tutorial for Beginners (WPBeginner)",
-          "url": "https://www.wpbeginner.com/woocommerce-tutorials/how-to-start-an-online-store-with-wordpress-and-woocommerce-step-by-step/",
           "type": "article"
         },
         {
@@ -1460,11 +1345,6 @@
             {
               "title": "Adding and Managing Products (WooCommerce Docs)",
               "url": "https://woocommerce.com/document/managing-products/",
-              "type": "article"
-            },
-            {
-              "title": "Product Attributes (WooCommerce Docs)",
-              "url": "https://woocommerce.com/document/product-attributes/",
               "type": "article"
             },
             {
@@ -1670,11 +1550,6 @@
           "description": "Scope WordPress projects: Estimating project hours, defining functional specifications, managing scope creep, and setting milestone deliverables.",
           "resources": [
             {
-              "title": "How to Write a Web Design Proposal (HubSpot)",
-              "url": "https://blog.hubspot.com/website/how-to-write-web-design-proposal",
-              "type": "article"
-            },
-            {
               "title": "Project Management for Web Developers (Toptal)",
               "url": "https://www.toptal.com/project-managers/web-development-project-management",
               "type": "article"
@@ -1704,16 +1579,6 @@
           "tag": "advanced",
           "description": "Perform quality assurance: Cross-browser testing, mobile responsiveness audits, broken link checking, and verifying form submission workflows.",
           "resources": [
-            {
-              "title": "Cross Browser Testing Guide",
-              "url": "https://www.browserstack.com/guide/what-is-cross-browser-testing",
-              "type": "article"
-            },
-            {
-              "title": "Introduction to Unit Testing in WordPress (WPShout)",
-              "url": "https://wpshout.com/introduction-unit-testing-wordpress/",
-              "type": "article"
-            },
             {
               "title": "WooCommerce Tutorial for Beginners 2026 (Darrel Wilson)",
               "url": "https://www.youtube.com/watch?v=1cI_retUgJk",
@@ -1745,11 +1610,6 @@
               "type": "article"
             },
             {
-              "title": "WordPress Maintenance Guide",
-              "url": "https://www.wpbeginner.com/wordpress-maintenance-guide/",
-              "type": "article"
-            },
-            {
               "title": "How to Use the WordPress Block Editor for Beginners (Detailed Tutorial) (WPBeginner - WordPress Tutorials)",
               "url": "https://www.youtube.com/watch?v=yQ8JBM3Sb5c",
               "type": "video"
@@ -1774,11 +1634,6 @@
           "tag": "advanced",
           "description": "Ensure legal compliance: Cookie consent banners (Complianz), Privacy Policy page generation, GDPR/CCPA data export/erasure compliance, and accessibility audits.",
           "resources": [
-            {
-              "title": "GDPR Compliance for WordPress (WPBeginner)",
-              "url": "https://www.wpbeginner.com/wordpress-gdpr/",
-              "type": "article"
-            },
             {
               "title": "Web Accessibility Initiative (W3C WAI)",
               "url": "https://www.w3.org/WAI/",

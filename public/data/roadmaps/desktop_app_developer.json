@@ -87,11 +87,6 @@
       "description": "Master desktop application development foundations: Operating system architectures, native windowing, process lifecycles, and cross-platform UI engineering.",
       "resources": [
         {
-          "title": "What is a Desktop Application? (GeeksforGeeks)",
-          "url": "https://www.geeksforgeeks.org/what-is-a-desktop-application/",
-          "type": "article"
-        },
-        {
           "title": "Desktop App vs Web App vs Mobile App (Logrocket)",
           "url": "https://blog.logrocket.com/desktop-app-vs-web-app-vs-mobile-app/",
           "type": "article"
@@ -120,8 +115,8 @@
           "description": "Compare desktop architectures: Native frameworks (WinUI, AppKit/SwiftUI) vs cross-platform runtimes (Electron, Tauri, Qt, Flutter Desktop); memory, disk footprint, and performance.",
           "resources": [
             {
-              "title": "Choosing Your Desktop App Framework (Smashing Magazine)",
-              "url": "https://www.smashingmagazine.com/2021/04/choosing-desktop-app-framework/",
+              "title": "Tauri Desktop Architecture and Framework Overview",
+              "url": "https://tauri.app/start/",
               "type": "article"
             },
             {
@@ -155,19 +150,9 @@
           "description": "Apply desktop design patterns: Model-View-ViewModel (MVVM), Model-View-Controller (MVC), event-driven messaging, dependency injection, and thread safety.",
           "resources": [
             {
-              "title": "Programming Paradigms Explained (freeCodeCamp)",
-              "url": "https://www.freecodecamp.org/news/programming-paradigms-explained/",
-              "type": "article"
-            },
-            {
               "title": "Data Structures & Algorithms in JavaScript (freeCodeCamp)",
               "url": "https://www.freecodecamp.org/news/data-structures-and-algorithms-in-javascript/",
               "type": "course"
-            },
-            {
-              "title": "Design Patterns in Software Engineering (GeeksforGeeks)",
-              "url": "https://www.geeksforgeeks.org/design-patterns-in-software-engineering/",
-              "type": "article"
             },
             {
               "title": "Intro to Object Oriented Programming - Crash Course",
@@ -200,11 +185,6 @@
               "type": "article"
             },
             {
-              "title": "Understanding Process Management (GeeksforGeeks)",
-              "url": "https://www.geeksforgeeks.org/process-management-in-operating-system/",
-              "type": "article"
-            },
-            {
               "title": "How Operating Systems Work (Computerphile)",
               "url": "https://www.youtube.com/watch?v=GjNp0bBrjmU",
               "type": "video"
@@ -232,11 +212,6 @@
             {
               "title": "Microsoft Fluent Design System",
               "url": "https://fluent2.microsoft.design/",
-              "type": "article"
-            },
-            {
-              "title": "Introduction to Desktop Accessibility (Deque Systems)",
-              "url": "https://www.deque.com/blog/introduction-to-desktop-accessibility-part-1/",
               "type": "article"
             },
             {
@@ -304,8 +279,8 @@
           "type": "video"
         },
         {
-          "title": "The Electron Ecosystem: An Overview (Electron Docs)",
-          "url": "https://www.electronjs.org/docs/latest/tutorial/quick-start",
+          "title": "Building Your First Electron App (Electron Docs)",
+          "url": "https://www.electronjs.org/docs/latest/tutorial/tutorial-first-app",
           "type": "article"
         },
         {
@@ -327,8 +302,8 @@
           "description": "Master Electron internals: Main process vs Renderer process, `BrowserWindow` lifecycle, security best practices (context isolation, nodeIntegration: false), and preload scripts.",
           "resources": [
             {
-              "title": "Electron Quick Start Guide (Electron Docs)",
-              "url": "https://www.electronjs.org/docs/latest/tutorial/quick-start",
+              "title": "Building Your First Electron App (Electron Docs)",
+              "url": "https://www.electronjs.org/docs/latest/tutorial/tutorial-first-app",
               "type": "article"
             },
             {
@@ -367,8 +342,8 @@
               "type": "video"
             },
             {
-              "title": "Tauri Architecture Overview (Tauri Docs)",
-              "url": "https://tauri.app/v1/guides/architecture/overview",
+              "title": "Tauri Architecture (Official Documentation)",
+              "url": "https://tauri.app/concept/architecture/",
               "type": "article"
             },
             {
@@ -392,13 +367,13 @@
               "type": "video"
             },
             {
-              "title": "Integrating React with Electron (Electron Docs)",
-              "url": "https://www.electronjs.org/docs/latest/tutorial/using-react-in-electron",
+              "title": "Integrating React (Electron Forge)",
+              "url": "https://www.electronforge.io/guides/framework-integration/react",
               "type": "article"
             },
             {
-              "title": "Building UI with Svelte in Tauri (Tauri Docs Forum Example)",
-              "url": "https://tauri.app/v1/guides/getting-started/next-steps/#build-your-frontend",
+              "title": "SvelteKit Frontend Integration (Tauri Docs)",
+              "url": "https://tauri.app/start/frontend/sveltekit/",
               "type": "article"
             },
             {
@@ -417,18 +392,18 @@
           "description": "Manage local persistence: SQLite databases with encryption (SQLCipher), embedded key-value stores, local file caching, and offline-first data sync.",
           "resources": [
             {
-              "title": "Working with the File System in Electron (Electron Docs)",
-              "url": "https://www.electronjs.org/docs/latest/api/fs",
+              "title": "Node.js File System API for Electron Main Processes",
+              "url": "https://nodejs.org/api/fs.html",
               "type": "article"
             },
             {
-              "title": "Using SQLite with Electron (Electron Community Guide)",
-              "url": "https://www.electronjs.org/docs/latest/tutorial/database-access",
+              "title": "SQLite Persistence with better-sqlite3 (API Reference)",
+              "url": "https://github.com/WiseLibs/better-sqlite3/blob/master/docs/api.md",
               "type": "article"
             },
             {
-              "title": "Secure Storage in Tauri (Tauri Plugin Store)",
-              "url": "https://tauri.app/v1/guides/plugins/store/",
+              "title": "Persistent Key-Value Storage (Tauri Store Plugin)",
+              "url": "https://tauri.app/plugin/store/",
               "type": "article"
             },
             {
@@ -542,11 +517,6 @@
           "description": "Handle concurrency in desktop applications: Offloading heavy computation to background worker threads / Rust tasks to ensure 60fps main UI responsiveness.",
           "resources": [
             {
-              "title": "JavaScript Async/Await Tutorial (freeCodeCamp)",
-              "url": "https://www.freecodecamp.org/news/javascript-async-await-tutorial/",
-              "type": "article"
-            },
-            {
               "title": "Concurrency in Rust (Rust Book)",
               "url": "https://doc.rust-lang.org/book/ch16-00-concurrency.html",
               "type": "article"
@@ -572,13 +542,13 @@
           "description": "Debug desktop applications: DevTools integration, inspecting memory leaks, file-based logging with electron-log / tracing, and handling uncaught exceptions.",
           "resources": [
             {
-              "title": "Debugging Electron Applications (Electron Docs)",
-              "url": "https://www.electronjs.org/docs/latest/tutorial/debugging",
+              "title": "Application Debugging (Electron Docs)",
+              "url": "https://www.electronjs.org/docs/latest/tutorial/application-debugging",
               "type": "article"
             },
             {
               "title": "Debugging Tauri Applications (Tauri Docs)",
-              "url": "https://tauri.app/v1/guides/development/debugging/",
+              "url": "https://tauri.app/develop/debug/",
               "type": "article"
             },
             {
@@ -611,8 +581,8 @@
           "type": "article"
         },
         {
-          "title": "The Four Pillars of Testing (Kent C. Dodds)",
-          "url": "https://kentcdodds.com/blog/the-four-pillars-of-testing",
+          "title": "Static, Unit, Integration and End-to-End Tests (Kent C. Dodds)",
+          "url": "https://kentcdodds.com/blog/static-vs-unit-vs-integration-vs-e2e-tests",
           "type": "article"
         },
         {
@@ -659,18 +629,13 @@
           "description": "Automate end-to-end desktop testing: Playwright for Electron, WebDriverIO, or Appium to automate cross-platform UI workflows across Windows, macOS, and Linux.",
           "resources": [
             {
-              "title": "End-to-End Testing Electron Apps with Playwright (Playwright Docs)",
-              "url": "https://playwright.dev/docs/electron",
+              "title": "Electron Automation API (Playwright Docs)",
+              "url": "https://playwright.dev/docs/api/class-electron",
               "type": "article"
             },
             {
-              "title": "Cypress for Desktop Apps (Cypress Blog)",
-              "url": "https://www.cypress.io/blog/2021/04/06/testing-electron-apps-with-cypress/",
-              "type": "article"
-            },
-            {
-              "title": "Automating UI Tests for Tauri (Tauri Community Guide)",
-              "url": "https://dev.to/jontewks/testing-tauri-apps-2gjf",
+              "title": "Automated Testing of Electron Apps (Electron Docs)",
+              "url": "https://www.electronjs.org/docs/latest/tutorial/automated-testing",
               "type": "article"
             },
             {
@@ -694,8 +659,8 @@
               "type": "article"
             },
             {
-              "title": "Tauri Performance Best Practices (Tauri Docs)",
-              "url": "https://tauri.app/v1/guides/development/performance/",
+              "title": "Application Size Optimization (Tauri Docs)",
+              "url": "https://tauri.app/concept/size/",
               "type": "article"
             },
             {
@@ -730,7 +695,7 @@
             },
             {
               "title": "Tauri Security Model (Tauri Docs)",
-              "url": "https://tauri.app/v1/guides/security/security-model/",
+              "url": "https://tauri.app/security/",
               "type": "article"
             },
             {
@@ -749,8 +714,8 @@
           "description": "Conduct user acceptance testing: Beta distribution channels, gathering telemetry, and validating keyboard navigation across diverse display resolutions.",
           "resources": [
             {
-              "title": "What is User Acceptance Testing? (BrowserStack)",
-              "url": "https://www.browserstack.com/guide/what-is-user-acceptance-testing",
+              "title": "User Acceptance Testing (BrowserStack Guide)",
+              "url": "https://www.browserstack.com/guide/user-acceptance-testing",
               "type": "article"
             },
             {
@@ -759,8 +724,8 @@
               "type": "article"
             },
             {
-              "title": "User Feedback Tools and Strategies (UserTesting)",
-              "url": "https://www.usertesting.com/blog/user-feedback-tools",
+              "title": "Usability Testing and User Feedback (Nielsen Norman Group)",
+              "url": "https://www.nngroup.com/articles/usability-testing-101/",
               "type": "article"
             },
             {
@@ -783,8 +748,8 @@
       "description": "Package, distribute, and maintain desktop applications: Cross-platform installers, code signing, and auto-updating.",
       "resources": [
         {
-          "title": "The Software Release Process (TechTarget)",
-          "url": "https://www.techtarget.com/whatis/definition/release-management",
+          "title": "Managing Software Releases (GitHub Docs)",
+          "url": "https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases",
           "type": "article"
         },
         {
@@ -816,8 +781,8 @@
               "type": "article"
             },
             {
-              "title": "Code Signing for Desktop Applications (DigiCert Guide)",
-              "url": "https://www.digicert.com/code-signing/how-to-code-sign-applications",
+              "title": "Code Signing Desktop Applications (Electron Docs)",
+              "url": "https://www.electronjs.org/docs/latest/tutorial/code-signing",
               "type": "article"
             },
             {
@@ -846,8 +811,8 @@
               "type": "article"
             },
             {
-              "title": "Building an Update Server (Tutorial/Example)",
-              "url": "https://www.electron.build/auto-update",
+              "title": "Updating Applications and Hosting Update Servers (Electron Docs)",
+              "url": "https://www.electronjs.org/docs/latest/tutorial/updates",
               "type": "article"
             },
             {
@@ -866,13 +831,13 @@
           "description": "Automate desktop CI/CD: GitHub Actions multi-runner matrices (Windows, macOS, Ubuntu), automated code signing, and publishing GitHub Releases.",
           "resources": [
             {
-              "title": "Building Electron Apps with GitHub Actions (Electron Community)",
-              "url": "https://www.electron.build/configuration/publish#github-actions",
+              "title": "Publishing with GitHub Releases and CI (electron-builder)",
+              "url": "https://www.electron.build/docs/publish/",
               "type": "article"
             },
             {
-              "title": "CI/CD for Tauri Apps with GitHub Actions (Tauri Docs)",
-              "url": "https://tauri.app/v1/guides/distribution/ci-cd/",
+              "title": "GitHub Actions CI/CD (Tauri Docs)",
+              "url": "https://tauri.app/distribute/pipelines/github/",
               "type": "article"
             },
             {
@@ -901,13 +866,13 @@
               "type": "article"
             },
             {
-              "title": "Setting up Crash Reporting in Tauri (Tauri Docs/Community)",
-              "url": "https://tauri.app/v1/guides/references/error-handling/",
+              "title": "Rust Error Monitoring and Crash Reporting (Sentry)",
+              "url": "https://docs.sentry.io/platforms/rust/",
               "type": "article"
             },
             {
-              "title": "Principles of Application Telemetry (Microsoft Docs)",
-              "url": "https://learn.microsoft.com/en-us/windows/apps/debug-test/telemetry-intro",
+              "title": "Introduction to Application Insights - OpenTelemetry observability",
+              "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview",
               "type": "article"
             },
             {
@@ -965,8 +930,8 @@
           "type": "article"
         },
         {
-          "title": "Effective Communication for Developers (freeCodeCamp)",
-          "url": "https://www.freecodecamp.org/news/effective-communication-for-developers/",
+          "title": "Writing Constructive Code Review Comments (Google Engineering Practices)",
+          "url": "https://google.github.io/eng-practices/review/reviewer/comments.html",
           "type": "article"
         },
         {
@@ -1023,8 +988,8 @@
               "type": "course"
             },
             {
-              "title": "Presenting Technical Information to Non-Technical Audiences (Harvard Business Review)",
-              "url": "https://hbr.org/2021/05/how-to-present-technical-information-to-a-nontechnical-audience",
+              "title": "Slide Presentations — MIT EECS Communication Lab",
+              "url": "https://mitcommlab.mit.edu/eecs/commkit/slideshow/",
               "type": "article"
             },
             {
@@ -1043,18 +1008,8 @@
           "description": "Maintain legacy desktop code: Migrating from Win32 / WPF to modern WinUI, or migrating Electron apps to Tauri to cut RAM consumption by 80%.",
           "resources": [
             {
-              "title": "Software Maintenance Best Practices (IBM Docs)",
-              "url": "https://www.ibm.com/docs/en/ztpf/20.1?topic=guide-software-maintenance-best-practices",
-              "type": "article"
-            },
-            {
-              "title": "Strategies for Managing Technical Debt (Martin Fowler)",
-              "url": "https://martinfowler.com/bliki/ManagingTechnicalDebt.html",
-              "type": "article"
-            },
-            {
-              "title": "Planning for Future Compatibility (Microsoft Docs)",
-              "url": "https://learn.microsoft.com/en-us/windows/apps/desktop/framework/migration/planning-future-compatibility",
+              "title": "Modern Windows features for desktop apps",
+              "url": "https://learn.microsoft.com/en-us/windows/apps/desktop/modernize/",
               "type": "article"
             },
             {
@@ -1082,8 +1037,8 @@
           "type": "article"
         },
         {
-          "title": "Crafting Your Developer Resume (freeCodeCamp)",
-          "url": "https://www.freecodecamp.org/news/how-to-write-a-developer-resume/",
+          "title": "Enhance Your Developer Resume with GitHub (GitHub Docs)",
+          "url": "https://docs.github.com/en/account-and-profile/tutorials/using-your-github-profile-to-enhance-your-resume",
           "type": "article"
         },
         {
@@ -1105,8 +1060,8 @@
               "type": "article"
             },
             {
-              "title": "How to Document Your Projects for a Portfolio (The Muse)",
-              "url": "https://www.themuse.com/advice/how-to-document-your-projects-to-build-a-portfolio-you-love",
+              "title": "Documenting Projects with READMEs — GitHub Docs",
+              "url": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes",
               "type": "article"
             },
             {
@@ -1135,14 +1090,14 @@
               "type": "article"
             },
             {
-              "title": "Showcasing Your GitHub Projects (GitHub Blog)",
-              "url": "https://github.blog/2021-08-04-how-to-showcase-your-projects-on-github/",
+              "title": "Showcase Projects by Pinning Repositories (GitHub Docs)",
+              "url": "https://docs.github.com/en/account-and-profile/how-tos/profile-customization/pinning-items-to-your-profile",
               "type": "article"
             },
             {
-              "title": "Creating a Personal Website/Portfolio (freeCodeCamp)",
-              "url": "https://www.freecodecamp.org/news/create-a-portfolio-website/",
-              "type": "course"
+              "title": "Build a Personal Site with GitHub Pages (Official Quickstart)",
+              "url": "https://docs.github.com/en/pages/quickstart",
+              "type": "article"
             },
             {
               "title": "Study Guide & Notes",
@@ -1160,8 +1115,8 @@
           "description": "Master desktop development interviews: Explaining process isolation, IPC serialization bottlenecks, code signing certificates, and memory profiling.",
           "resources": [
             {
-              "title": "Common Software Engineering Interview Questions (GeeksforGeeks)",
-              "url": "https://www.geeksforgeeks.org/software-engineering-interview-questions/",
+              "title": "Preparing for Software Engineering Interviews (Tech Interview Handbook)",
+              "url": "https://www.techinterviewhandbook.org/coding-interview-prep/",
               "type": "article"
             },
             {

@@ -122,9 +122,9 @@
               "type": "course"
             },
             {
-              "title": "Framing Data Science Problems (Kaggle)",
-              "url": "https://www.kaggle.com/code/mrsimran/framing-data-science-problems",
-              "type": "article"
+              "title": "Frame a Machine Learning Problem (Google)",
+              "url": "https://developers.google.com/machine-learning/problem-framing?hl=en",
+              "type": "course"
             },
             {
               "title": "Business Intelligence Full Course | Business Intelligence Tutorial for Beginners | Data Analyst Course",
@@ -152,16 +152,6 @@
               "type": "course"
             },
             {
-              "title": "Google Sheets Training & Tutorials",
-              "url": "https://support.google.com/a/users/answer/9202166?hl=en",
-              "type": "course"
-            },
-            {
-              "title": "Introduction to Power Query in Excel",
-              "url": "https://excelchamps.com/blog/power-query-tutorial/",
-              "type": "article"
-            },
-            {
               "title": "Excel Full Course - Learn Excel in 4 Hours",
               "url": "https://www.youtube.com/watch?v=rro5t8eHXaY",
               "type": "video"
@@ -187,13 +177,13 @@
           "description": "Understand data formats and types: discrete vs continuous variables, nominal, ordinal, interval, and ratio scales, and managing missingness, anomalies, and structural integrity in analytical datasets.",
           "resources": [
             {
-              "title": "Data Types Explained (Tableau)",
-              "url": "https://www.tableau.com/about/blog/2016/10/how-data-types-affect-your-analysis-59424",
+              "title": "Data Types in Tableau",
+              "url": "https://help.tableau.com/current/pro/desktop/en-us/datafields_typesandroles_datatypes.htm",
               "type": "article"
             },
             {
-              "title": "Data Structures for Data Scientists",
-              "url": "https://towardsdatascience.com/data-structures-for-data-scientists-b6840742d4a7",
+              "title": "pandas Data Structures: Series and DataFrame",
+              "url": "https://pandas.pydata.org/docs/user_guide/dsintro.html",
               "type": "article"
             },
             {
@@ -257,8 +247,8 @@
               "type": "article"
             },
             {
-              "title": "What is OLAP?",
-              "url": "https://www.tableau.com/learn/articles/olap-cubes-examples",
+              "title": "Online Analytical Processing and OLAP Cubes (AWS)",
+              "url": "https://aws.amazon.com/what-is/olap/",
               "type": "article"
             },
             {
@@ -429,8 +419,8 @@
           "description": "Implement disciplined version control for analytical code: managing Jupyter Notebooks and SQL repositories with Git, commit discipline, branching strategies, and collaborative peer code review.",
           "resources": [
             {
-              "title": "Git and GitHub for Data Science (Towards Data Science)",
-              "url": "https://towardsdatascience.com/git-and-github-for-data-science-a5a40974b6b6",
+              "title": "Git and GitHub for Versioning Data Science Projects",
+              "url": "https://docs.github.com/en/get-started/using-git/about-git",
               "type": "article"
             },
             {
@@ -464,11 +454,6 @@
               "type": "article"
             },
             {
-              "title": "Real-World Data Science Projects (Dataquest)",
-              "url": "https://www.dataquest.io/blog/data-science-project-walkthroughs/",
-              "type": "article"
-            },
-            {
               "title": "COMPLETE Data Analytics Portfolio Project in 6 EASY Steps | Python + SQL + Power BI",
               "url": "https://www.youtube.com/watch?v=5PrZvPeUw60",
               "type": "video"
@@ -493,8 +478,8 @@
       "description": "Master visual data communication, modern Business Intelligence dashboards, and executive data storytelling.",
       "resources": [
         {
-          "title": "Tableau Desktop Training",
-          "url": "https://www.tableau.com/learn/training/desktop",
+          "title": "Tableau Training and Learning Resources",
+          "url": "https://www.tableau.com/learn/training",
           "type": "course"
         },
         {
@@ -571,9 +556,9 @@
               "type": "course"
             },
             {
-              "title": "Looker Documentation & Training",
-              "url": "https://cloud.google.com/looker/docs/training",
-              "type": "course"
+              "title": "Looker",
+              "url": "https://docs.cloud.google.com/looker/docs/intro?hl=en",
+              "type": "article"
             },
             {
               "title": "Learn Power BI in 7 Hours | Full Beginner to Advanced Course with Dashboard Project (2025)",
@@ -596,8 +581,8 @@
           "description": "Query modern cloud analytical platforms: querying enterprise datasets in Snowflake and Google BigQuery, leveraging partitioned tables, and connecting cloud warehouses directly to BI dashboards.",
           "resources": [
             {
-              "title": "Introduction to Cloud Data Warehouses",
-              "url": "https://aws.amazon.com/compare/the-difference-between-data-lake-and-data-warehouse/",
+              "title": "What’s the Difference Between a Data Warehouse, Data Lake, and Data Mart?",
+              "url": "https://aws.amazon.com/compare/the-difference-between-a-data-warehouse-data-lake-and-data-mart/",
               "type": "article"
             },
             {
@@ -636,14 +621,9 @@
           "description": "Craft persuasive executive data narratives: structuring presentations using the Minto Pyramid Principle (Lead with the Recommendation), contextualizing data insights with business financial impact, and driving stakeholder action.",
           "resources": [
             {
-              "title": "Make Your Data Speak: A Practical Guide to Data Storytelling (Harvard Business Review)",
-              "url": "https://hbr.org/2020/09/make-your-data-speak-a-practical-guide-to-data-storytelling",
-              "type": "article"
-            },
-            {
-              "title": "The Big Book of Dashboards",
-              "url": "https://www.amazon.com/Big-Book-Dashboards-Visualizing-Understanding/dp/1119282761",
-              "type": "article"
+              "title": "The Big Book of Dashboards — Author Website",
+              "url": "https://www.bigbookofdashboards.com/",
+              "type": "book"
             },
             {
               "title": "Data Storytelling for Business Decisions",
@@ -738,9 +718,9 @@
           "description": "Understand foundational machine learning models for analysts: linear regression for trend forecasting, logistic regression for propensity scoring, k-means clustering for customer segmentation, and evaluating model metrics ($R^2$, Precision, Recall, AUC-ROC).",
           "resources": [
             {
-              "title": "Machine Learning for Absolute Beginners (Towards Data Science)",
-              "url": "https://towardsdatascience.com/machine-learning-for-absolute-beginners-a6b6c6b3e70d",
-              "type": "article"
+              "title": "Introduction to Machine Learning (Google)",
+              "url": "https://developers.google.com/machine-learning/intro-to-ml",
+              "type": "course"
             },
             {
               "title": "What is Machine Learning? (IBM)",
@@ -767,11 +747,6 @@
           "tag": "essential",
           "description": "Curate a professional Data Analytics portfolio: documenting end-to-end business cases on GitHub, publishing interactive dashboards on Tableau Public or NovyPro, and authoring clear problem-solution-impact READMEs.",
           "resources": [
-            {
-              "title": "GitHub Portfolio for Data Scientists and Analysts",
-              "url": "https://towardsdatascience.com/github-portfolio-for-data-scientists-and-analysts-9173a5a7590f",
-              "type": "article"
-            },
             {
               "title": "How to Build a Data Analyst Portfolio (Alex The Analyst)",
               "url": "https://www.youtube.com/watch?v=ocdwh0KYeUs",
@@ -808,11 +783,6 @@
               "type": "article"
             },
             {
-              "title": "Data Science Projects for Beginners (Analytics Vidhya)",
-              "url": "https://www.analyticsvidhya.com/blog/2021/04/top-10-data-science-projects-for-beginners-to-practice-in-2021/",
-              "type": "article"
-            },
-            {
               "title": "Power BI Full Course - From Beginner to Pro - Build a Dashboard in 12 Hours!",
               "url": "https://www.youtube.com/watch?v=KdC5R7oPCAI",
               "type": "video"
@@ -843,14 +813,9 @@
               "type": "article"
             },
             {
-              "title": "Ace the Data Science Interview",
-              "url": "https://www.amazon.com/Ace-Data-Science-Interview-Questions/dp/0578973977",
-              "type": "course"
-            },
-            {
-              "title": "LinkedIn Learning: Job Search Strategies",
-              "url": "https://www.linkedin.com/learning/topics/job-search-strategies",
-              "type": "course"
+              "title": "Ace the Data Science Interview — Author Website",
+              "url": "https://www.acethedatascienceinterview.com/",
+              "type": "book"
             },
             {
               "title": "Build a Data Analyst Resume & Land Your First Job (Step-by-Step Guide)",

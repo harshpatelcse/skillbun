@@ -110,7 +110,7 @@ export default function ProjectsPage() {
         </div>
         <h1 className={styles.title}>SkillBun Projects Hub</h1>
         <p className={styles.subtitle}>
-          Explore real-world, portfolio-ready projects across engineering tracks. Build practical skills, follow step-by-step blueprints, and accelerate your career.
+          Explore real-world, portfolio-ready project ideas across engineering tracks. Review project goals and deliverables, build practical skills, and plan your next portfolio piece.
         </p>
       </header>
 
@@ -126,9 +126,9 @@ export default function ProjectsPage() {
             </svg>
           </span>
           <div>
-            <div className={styles.quizBannerTitle}>Not sure which project fits your skill level?</div>
+            <div className={styles.quizBannerTitle}>Not sure which career path to build for?</div>
             <div className={styles.quizBannerDesc}>
-              Take our 2-minute diagnostic career quiz to get personalized recommendations matched to your strengths.
+              Explore your interests and preferred activities with our adaptive career discovery quiz.
             </div>
           </div>
         </div>

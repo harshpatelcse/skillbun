@@ -73,7 +73,7 @@ const faqItems = [
   {
     question: 'Are the career roadmaps and certifications completely free?',
     answer:
-      'Yes, 100%! All 100+ interactive tech roadmaps, curated study guides, video resources, Bun-Bot AI counsellor guidance, and official digital certificates are completely free for all students and learners with zero paywalls.',
+      'SkillBun roadmaps, study guides, Bun-Bot guidance, and SkillBun digital certificates are free with no SkillBun paywall. Linked third-party courses, books, and vendor certification exams may charge fees or set their own access requirements.',
   },
   {
     question: 'How do I earn and verify an official SkillBun Certificate?',

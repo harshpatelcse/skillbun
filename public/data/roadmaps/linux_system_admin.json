@@ -184,11 +184,6 @@
           "description": "Administer users and groups: Managing `/etc/passwd`, `/etc/shadow`, `/etc/group`; configuring fine-grained sudoer privileges via `/etc/sudoers` with `visudo`.",
           "resources": [
             {
-              "title": "Ubuntu Server Documentation - User Management",
-              "url": "https://ubuntu.com/server/docs/management/users",
-              "type": "article"
-            },
-            {
               "title": "Linux Security Hardening (HackerSploit)",
               "url": "https://www.youtube.com/watch?v=Sa0KqbpLye4",
               "type": "video"
@@ -213,11 +208,6 @@
           "tag": "essential",
           "description": "Manage software packages across distributions: Debian/Ubuntu (APT, dpkg), RHEL/CentOS/Rocky (DNF, RPM), repository configuration, package pinning, and verifying GPG signatures.",
           "resources": [
-            {
-              "title": "Debian Administrator's Handbook - Package Management",
-              "url": "https://www.debian.org/doc/manuals/debian-handbook/sect.package-management.en.html",
-              "type": "article"
-            },
             {
               "title": "Linux Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=sWbUDq4S6Y8",
@@ -273,11 +263,6 @@
           "tag": "essential",
           "description": "Master Linux boot sequence: BIOS/UEFI firmware, GRUB2 bootloader, initramfs/initrd, kernel initialization, systemd targets, and analyzing boot times with `systemd-analyze`.",
           "resources": [
-            {
-              "title": "The Linux Boot Process Explained",
-              "url": "https://www.howtogeek.com/177025/htg-explains-the-linux-boot-process-from-bios-to-bash/",
-              "type": "article"
-            },
             {
               "title": "How to Use the ip Command in Linux: A Beginner’s Guide (Learn Linux TV)",
               "url": "https://www.youtube.com/watch?v=wHfIFZlDxtU",
@@ -486,11 +471,6 @@
           "description": "Automate scheduled jobs: User and system crontabs (`crontab -e`), `/etc/cron.*` directories, syntax conventions, and modern systemd timers for calendar-based tasks.",
           "resources": [
             {
-              "title": "How to Schedule Tasks on Linux Using Cron",
-              "url": "https://www.howtogeek.com/101288/how-to-schedule-tasks-on-linux-using-cron/",
-              "type": "article"
-            },
-            {
               "title": "Linux System Administration (Edureka)",
               "url": "https://www.youtube.com/watch?v=UCr04qIB7uc",
               "type": "video"
@@ -608,11 +588,6 @@
           "description": "Master Logical Volume Management (LVM): Physical Volumes (PV), Volume Groups (VG), Logical Volumes (LV); online volume resizing, thin provisioning, and LVM snapshots.",
           "resources": [
             {
-              "title": "Getting Started with LVM",
-              "url": "https://www.redhat.com/sysadmin/lvm-guide",
-              "type": "article"
-            },
-            {
               "title": "Linux System Administration (Edureka)",
               "url": "https://www.youtube.com/watch?v=UCr04qIB7uc",
               "type": "video"
@@ -701,11 +676,6 @@
       "tag": "advanced",
       "description": "Harden enterprise Linux servers: Mandatory Access Control (SELinux/AppArmor), system auditing, kernel parameter tuning, and CVE vulnerability patching.",
       "resources": [
-        {
-          "title": "CIS Benchmarks for Linux",
-          "url": "https://www.cisecurity.org/cis-benchmarks/cis-benchmark-for-linux",
-          "type": "article"
-        },
         {
           "title": "Linux Full Course (freeCodeCamp)",
           "url": "https://www.youtube.com/watch?v=sWbUDq4S6Y8",
@@ -912,11 +882,6 @@
           "description": "Write advanced Bash scripts: Error handling (`set -euo pipefail`), command-line argument parsing with `getopts`, functions, trap signal handling, and regex pattern matching.",
           "resources": [
             {
-              "title": "Bash Guide for Beginners",
-              "url": "https://linuxcommand.org/lc3_adv_bash.php",
-              "type": "article"
-            },
-            {
               "title": "Linux Security Hardening (HackerSploit)",
               "url": "https://www.youtube.com/watch?v=Sa0KqbpLye4",
               "type": "video"
@@ -1064,11 +1029,6 @@
           "description": "Profile Linux performance: The USE method (Utilization, Saturation, Errors), analyzing metrics with `vmstat`, `iostat`, `mpstat`, `sar` (sysstat), and `dstat`.",
           "resources": [
             {
-              "title": "Linux Performance Monitoring Tools",
-              "url": "https://www.linode.com/docs/guides/linux-performance-monitoring-tools/",
-              "type": "article"
-            },
-            {
               "title": "Linux Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=sWbUDq4S6Y8",
               "type": "video"
@@ -1093,11 +1053,6 @@
           "tag": "advanced",
           "description": "Trace system execution: Tracing system calls with `strace`, library calls with `ltrace`, inspecting file locks with `lsof`, and analyzing kernel events with `perf` and eBPF.",
           "resources": [
-            {
-              "title": "Using Strace to Troubleshoot Linux Problems",
-              "url": "https://www.linuxjournal.com/content/using-strace-troubleshoot-linux-problems",
-              "type": "article"
-            },
             {
               "title": "Linux System Administration (Edureka)",
               "url": "https://www.youtube.com/watch?v=UCr04qIB7uc",
@@ -1276,11 +1231,6 @@
           "description": "Author operational runbooks: Clear step-by-step incident playbooks for disk full recovery, OOM killer investigation, service crash loops, and certificate renewal.",
           "resources": [
             {
-              "title": "What is a Runbook?",
-              "url": "https://www.pagerduty.com/resources/learn/what-is-runbook/",
-              "type": "article"
-            },
-            {
               "title": "Linux Security Hardening (HackerSploit)",
               "url": "https://www.youtube.com/watch?v=Sa0KqbpLye4",
               "type": "video"
@@ -1306,11 +1256,6 @@
           "description": "Conduct Root Cause Analysis (RCA): Five Whys methodology, fishbone diagrams, timeline reconstruction, and documenting blameless post-mortem reports.",
           "resources": [
             {
-              "title": "Root Cause Analysis Explained",
-              "url": "https://www.bmc.com/blogs/root-cause-analysis/",
-              "type": "article"
-            },
-            {
               "title": "Linux Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=sWbUDq4S6Y8",
               "type": "video"
@@ -1335,11 +1280,6 @@
           "tag": "advanced",
           "description": "Plan disaster recovery: Recovery Time Objective (RTO) and Recovery Point Objective (RPO) planning, off-site backup validation, and bare-metal restore drills.",
           "resources": [
-            {
-              "title": "Disaster Recovery Planning Guide",
-              "url": "https://www.ready.gov/business/planning/disaster-recovery-plan",
-              "type": "article"
-            },
             {
               "title": "Linux System Administration (Edureka)",
               "url": "https://www.youtube.com/watch?v=UCr04qIB7uc",

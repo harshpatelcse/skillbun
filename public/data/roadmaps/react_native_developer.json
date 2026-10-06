@@ -128,16 +128,6 @@
               "type": "article"
             },
             {
-              "title": "Expo Go vs. Development Builds",
-              "url": "https://docs.expo.dev/workflow/development-builds/",
-              "type": "article"
-            },
-            {
-              "title": "Choosing a Workflow (Expo vs Bare)",
-              "url": "https://docs.expo.dev/workflow/choosing-a-workflow/",
-              "type": "article"
-            },
-            {
               "title": "React Native Crash Course (Traversy Media)",
               "url": "https://www.youtube.com/watch?v=w7ejDZ8SWv8",
               "type": "video"
@@ -243,8 +233,8 @@
           "description": "Implement clean component design patterns: compound components, render props, slot patterns, custom hook abstractions, and establishing an enterprise-wide mobile design system.",
           "resources": [
             {
-              "title": "React Context API",
-              "url": "https://react.dev/learn/passing-props-with-a-consumer",
+              "title": "Passing Data Deeply with Context (React Documentation)",
+              "url": "https://react.dev/learn/passing-data-deeply-with-context",
               "type": "article"
             },
             {
@@ -350,8 +340,8 @@
           "description": "Master file-based mobile navigation with Expo Router: stack navigation, native bottom tabs, modal presentation screens, universal deep linking (custom schemes and universal links/app links), and typed route navigation.",
           "resources": [
             {
-              "title": "React Navigation Essentials",
-              "url": "https://reactnavigation.org/docs/fundamentals",
+              "title": "Getting Started with React Navigation",
+              "url": "https://reactnavigation.org/docs/getting-started",
               "type": "article"
             },
             {
@@ -440,8 +430,8 @@
               "type": "article"
             },
             {
-              "title": "Handling Authentication in React Native",
-              "url": "https://reactnative.dev/docs/auth",
+              "title": "Authentication Flows (React Navigation)",
+              "url": "https://reactnavigation.org/docs/auth-flow/",
               "type": "article"
             },
             {
@@ -475,11 +465,6 @@
               "type": "article"
             },
             {
-              "title": "Supabase React Native Quickstart",
-              "url": "https://supabase.com/docs/guides/getting-started/quickstarts/react-native",
-              "type": "article"
-            },
-            {
               "title": "React Native in 100 Seconds (Fireship)",
               "url": "https://www.youtube.com/watch?v=gvkqT_Uoahw",
               "type": "video"
@@ -505,8 +490,8 @@
           "description": "Implement ultra-fast mobile storage: synchronous C++ backed storage with `react-native-mmkv` (up to 30x faster than AsyncStorage), relational SQLite database persistence with Expo SQLite or WatermelonDB for offline-first data sync, and secure storage with `expo-secure-store`.",
           "resources": [
             {
-              "title": "AsyncStorage Documentation",
-              "url": "https://react-native-async-storage.github.io/async-storage/docs/install",
+              "title": "AsyncStorage Installation and Usage (Official Repository)",
+              "url": "https://github.com/react-native-async-storage/async-storage#installation",
               "type": "article"
             },
             {
@@ -657,13 +642,13 @@
           "description": "Bridge native iOS and Android code: authoring custom native modules using the Expo Modules API (writing native Swift for iOS and Kotlin for Android), and understanding the JavaScript Interface (JSI) for direct synchronous C++ memory access.",
           "resources": [
             {
-              "title": "React Native Native Modules Guide (Android)",
-              "url": "https://reactnative.dev/docs/native-modules-android",
+              "title": "Android Native Modules: Legacy Architecture (React Native Docs)",
+              "url": "https://reactnative.dev/docs/legacy/native-modules-android",
               "type": "article"
             },
             {
-              "title": "React Native Native Modules Guide (iOS)",
-              "url": "https://reactnative.dev/docs/native-modules-ios",
+              "title": "iOS Native Modules: Legacy Architecture (React Native Docs)",
+              "url": "https://reactnative.dev/docs/legacy/native-modules-ios",
               "type": "article"
             },
             {
@@ -704,11 +689,6 @@
             {
               "title": "React Native Testing Library",
               "url": "https://callstack.github.io/react-native-testing-library/",
-              "type": "article"
-            },
-            {
-              "title": "Jest for React Native",
-              "url": "https://jestjs.io/docs/react-native",
               "type": "article"
             },
             {
@@ -817,11 +797,6 @@
           "description": "Implement production error tracking: Sentry for React Native (capturing JS exceptions, native iOS/Android crashes, breadcrumbs, and source-map symbolication in CI), and Datadog mobile telemetry.",
           "resources": [
             {
-              "title": "Sentry for React Native",
-              "url": "https://docs.sentry.io/platforms/javascript/react-native/",
-              "type": "article"
-            },
-            {
               "title": "Firebase Crashlytics for React Native",
               "url": "https://rnfirebase.io/crashlytics/usage",
               "type": "article"
@@ -852,18 +827,8 @@
           "description": "Harden mobile application security: SSL/TLS certificate pinning, protecting API keys against reverse engineering, preventing screen capture on sensitive financial screens, root and jailbreak detection, and code shrinking with ProGuard/R8.",
           "resources": [
             {
-              "title": "OWASP Mobile Security Testing Guide",
-              "url": "https://owasp.org/www-project-mobile-security-testing-guide/",
-              "type": "article"
-            },
-            {
-              "title": "React Native Encrypted Storage",
-              "url": "https://github.com/emeraldsymphony/react-native-encrypted-storage",
-              "type": "article"
-            },
-            {
-              "title": "SSL Pinning in React Native",
-              "url": "https://docs.microsoft.com/en-us/appcenter/sdk/other-sdks/react-native#ssl-pinning",
+              "title": "OWASP Mobile Application Security Testing Guide (MASTG)",
+              "url": "https://mas.owasp.org/MASTG/",
               "type": "article"
             },
             {
@@ -934,11 +899,6 @@
               "type": "article"
             },
             {
-              "title": "Fastlane for React Native",
-              "url": "https://docs.fastlane.tools/getting-started/react-native/",
-              "type": "article"
-            },
-            {
               "title": "React Native in 100 Seconds (Fireship)",
               "url": "https://www.youtube.com/watch?v=gvkqT_Uoahw",
               "type": "video"
@@ -963,16 +923,6 @@
           "tag": "advanced",
           "description": "Automate builds with EAS Build and GitHub Actions: cloud compilation of native iOS/Android binaries, automated PR test runs, and Over-The-Air (OTA) runtime JavaScript bundle patching with EAS Update to fix bugs instantly without app store review.",
           "resources": [
-            {
-              "title": "GitHub Actions for React Native",
-              "url": "https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-react-native-apps",
-              "type": "article"
-            },
-            {
-              "title": "Bitrise for React Native",
-              "url": "https://www.bitrise.io/integrations/react-native",
-              "type": "article"
-            },
             {
               "title": "App Center for React Native",
               "url": "https://docs.microsoft.com/en-us/appcenter/sdk/getting-started/react-native",
@@ -1004,18 +954,8 @@
           "description": "Publish and optimize store presence: automated submission via EAS Submit to Apple App Store Connect and Google Play Console, managing phased releases, and tracking app store vitals (ANRs and crash rates).",
           "resources": [
             {
-              "title": "Introduction to App Store Optimization",
-              "url": "https://www.apptweak.com/aso/app-store-optimization-guide",
-              "type": "article"
-            },
-            {
               "title": "Firebase Analytics for React Native",
               "url": "https://rnfirebase.io/analytics/usage",
-              "type": "article"
-            },
-            {
-              "title": "Google Play Store ASO Guide",
-              "url": "https://support.google.com/googleplay/android-developer/answer/9063385?hl=en",
               "type": "article"
             },
             {

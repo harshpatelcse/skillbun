@@ -162,8 +162,8 @@
           "description": "Master strict TypeScript for enterprise Angular: strict null checks, utility types (Partial, Required, Readonly, Pick), discriminated unions, generics with extends constraints, and decorator metadata reflection.",
           "resources": [
             {
-              "title": "TypeScript for JavaScript Programmers (Official)",
-              "url": "https://www.typescriptlang.org/docs/handbook/typescript-for-javascript-programmers.html",
+              "title": "TypeScript for JavaScript Programmers (Official Handbook)",
+              "url": "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html",
               "type": "article"
             },
             {
@@ -523,11 +523,6 @@
           "type": "article"
         },
         {
-          "title": "Angular Enterprise-Grade Application Architecture (Thoughtram)",
-          "url": "https://blog.thoughtram.io/angular/2018/06/18/architecting-an-angular-application.html",
-          "type": "article"
-        },
-        {
           "title": "Angular NgRx Tutorial - Learn State Management with NgRx",
           "url": "https://www.youtube.com/watch?v=HILmsGiYC-Q",
           "type": "video"
@@ -596,11 +591,6 @@
               "type": "article"
             },
             {
-              "title": "Angular Performance Optimization Tips (inDepth.dev)",
-              "url": "https://indepth.dev/posts/1000/angular-performance-tips-and-best-practices",
-              "type": "article"
-            },
-            {
               "title": "Angular Performance Optimization Tutorial",
               "url": "https://www.youtube.com/watch?v=f8sA-i6gkGQ",
               "type": "video"
@@ -628,11 +618,6 @@
             {
               "title": "Angular Docs - Progressive Web Apps",
               "url": "https://angular.dev/docs/guide/service-worker-getting-started",
-              "type": "article"
-            },
-            {
-              "title": "Google Developers - Progressive Web Apps",
-              "url": "https://developer.chrome.com/docs/capabilities/how-to/your-first-pwa",
               "type": "article"
             },
             {
@@ -688,11 +673,6 @@
             {
               "title": "Angular Docs - Internationalization",
               "url": "https://angular.dev/docs/guide/i18n",
-              "type": "article"
-            },
-            {
-              "title": "Angular i18n Tutorial (freeCodeCamp.org)",
-              "url": "https://www.freecodecamp.org/news/angular-internationalization-tutorial/",
               "type": "article"
             },
             {
@@ -801,11 +781,6 @@
               "type": "article"
             },
             {
-              "title": "Implementing JWT in Angular (Auth0)",
-              "url": "https://auth0.com/blog/secure-angular-apps-with-jwt/",
-              "type": "article"
-            },
-            {
               "title": "Angular Tutorial for Beginners: Learn Angular & TypeScript",
               "url": "https://www.youtube.com/watch?v=3qBXWUpoPHo",
               "type": "video"
@@ -881,11 +856,6 @@
               "type": "article"
             },
             {
-              "title": "Deploying Angular to Vercel",
-              "url": "https://vercel.com/docs/frameworks/angular",
-              "type": "article"
-            },
-            {
               "title": "Deploying an Angular App to Netlify with GitHub Actions",
               "url": "https://www.youtube.com/watch?v=WTrvJOzs_9w",
               "type": "video"
@@ -912,11 +882,6 @@
         {
           "title": "Angular Documentation",
           "url": "https://angular.dev/",
-          "type": "article"
-        },
-        {
-          "title": "How to Build a Portfolio Website (freeCodeCamp)",
-          "url": "https://www.freecodecamp.org/news/how-to-build-a-portfolio-website/",
           "type": "article"
         },
         {
@@ -1047,16 +1012,6 @@
           "tag": "advanced",
           "description": "Excel in enterprise Angular interviews: deep explanations of Angular change detection mechanics and Signals internals, whiteboarding complex reactive data pipelines with RxJS, and live coding accessible UI components.",
           "resources": [
-            {
-              "title": "Frontend Interview Handbook (Angular Questions)",
-              "url": "https://www.frontendinterviewhandbook.com/angular-interview-questions/",
-              "type": "article"
-            },
-            {
-              "title": "Building a Strong Developer Portfolio (freeCodeCamp)",
-              "url": "https://www.freecodecamp.org/news/how-to-build-a-developer-portfolio-that-gets-you-hired/",
-              "type": "article"
-            },
             {
               "title": "Keeping up with Angular (Official Blog)",
               "url": "https://blog.angular.io/",

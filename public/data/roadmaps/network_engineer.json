@@ -90,8 +90,8 @@
       "description": "Master computer networking fundamentals: Layered communication models, Ethernet frames, IP addressing, ARP, ICMP, and essential transport protocols (TCP/UDP).",
       "resources": [
         {
-          "title": "CompTIA Network+ N10-008 Course (Professor Messer)",
-          "url": "https://www.professormesser.com/network-plus/n10-008/n10-008-video/n10-008-comptia-network-plus-course/",
+          "title": "Professor Messer’s CompTIA N10-009 Network+ Training Course",
+          "url": "https://www.professormesser.com/network-plus/n10-009/n10-009-video/n10-009-training-course/",
           "type": "course"
         },
         {
@@ -123,11 +123,6 @@
           "description": "Compare OSI 7-layer vs TCP/IP 4-layer architectures: Encapsulation/decapsulation lifecycles, protocol data units (PDUs), headers, and layer-by-layer troubleshooting.",
           "resources": [
             {
-              "title": "OSI Model Explained (GeeksforGeeks)",
-              "url": "https://www.geeksforgeeks.org/osi-model-architecture-tcp-ip-model/",
-              "type": "article"
-            },
-            {
               "title": "CompTIA Network+ Full Course (Professor Messer)",
               "url": "https://www.youtube.com/watch?v=As6g6IXcVa4",
               "type": "video"
@@ -152,11 +147,6 @@
           "tag": "essential",
           "description": "Master Ethernet and Layer 2 concepts: MAC addressing, frame formats, collision domains vs broadcast domains, CSMA/CD, duplex modes, and physical cabling standards.",
           "resources": [
-            {
-              "title": "Ethernet Tutorial (Cisco)",
-              "url": "https://www.cisco.com/c/en/us/products/switches/what-is-ethernet.html",
-              "type": "article"
-            },
             {
               "title": "CCNA Full Course (NetworkChuck)",
               "url": "https://www.youtube.com/watch?v=rv3QK2UquxM",
@@ -218,11 +208,6 @@
               "type": "article"
             },
             {
-              "title": "DHCP Explained (Fortinet)",
-              "url": "https://www.fortinet.com/resources/cyberglossary/dhcp-explained",
-              "type": "article"
-            },
-            {
               "title": "Computer Networking Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=qiQR5rTSshw",
               "type": "video"
@@ -250,11 +235,6 @@
             {
               "title": "Wireshark User Guide",
               "url": "https://www.wireshark.org/docs/wsug_html_chunked/",
-              "type": "article"
-            },
-            {
-              "title": "Network Troubleshooting Commands (Microsoft)",
-              "url": "https://learn.microsoft.com/en-us/windows-server/networking/troubleshoot/troubleshoot-tcpip-issues",
               "type": "article"
             },
             {
@@ -320,11 +300,6 @@
               "type": "article"
             },
             {
-              "title": "Spanning Tree Protocol (STP) Explained (Practical Networking)",
-              "url": "https://www.practicalnetworking.net/series/spanning-tree-protocol/",
-              "type": "article"
-            },
-            {
               "title": "Wireshark Tutorial (NetworkChuck)",
               "url": "https://www.youtube.com/watch?v=lb1Dw0elw0Q",
               "type": "video"
@@ -384,11 +359,6 @@
           "tag": "advanced",
           "description": "Implement First Hop Redundancy Protocols (FHRP): Virtual Router Redundancy Protocol (VRRP), Hot Standby Router Protocol (HSRP), and gateway load balancing.",
           "resources": [
-            {
-              "title": "First Hop Redundancy Protocols (Cisco)",
-              "url": "https://www.cisco.com/c/en/us/support/docs/ip/hot-standby-router-protocol-hsrp/10583-6.html",
-              "type": "article"
-            },
             {
               "title": "CompTIA Network+ Full Course (Professor Messer)",
               "url": "https://www.youtube.com/watch?v=As6g6IXcVa4",
@@ -489,16 +459,6 @@
       "description": "Secure enterprise networks: Perimeter firewalls, IPSec VPN tunnels, intrusion prevention systems, and 802.1X network access control.",
       "resources": [
         {
-          "title": "Introduction to Network Security (Cybrary)",
-          "url": "https://www.cybrary.it/course/introduction-network-security/",
-          "type": "course"
-        },
-        {
-          "title": "Palo Alto Networks Cybersecurity Learning",
-          "url": "https://www.paloaltonetworks.com/cybersecurity/what-is-cybersecurity",
-          "type": "article"
-        },
-        {
           "title": "Computer Networking Full Course (freeCodeCamp)",
           "url": "https://www.youtube.com/watch?v=qiQR5rTSshw",
           "type": "video"
@@ -557,11 +517,6 @@
           "description": "Configure intrusion detection and prevention: Snort/Suricata signature detection, anomaly-based inspection, and Data Loss Prevention (DLP) egress filters.",
           "resources": [
             {
-              "title": "IDS vs IPS (Fortinet)",
-              "url": "https://www.fortinet.com/resources/cyberglossary/ids-vs-ips",
-              "type": "article"
-            },
-            {
               "title": "CCNA Full Course (NetworkChuck)",
               "url": "https://www.youtube.com/watch?v=rv3QK2UquxM",
               "type": "video"
@@ -617,11 +572,6 @@
           "description": "Monitor network telemetry: SNMP (Simple Network Management Protocol v2c/v3), NetFlow / sFlow / IPFIX flow analysis, and centralized syslog forwarding.",
           "resources": [
             {
-              "title": "Introduction to Network Monitoring (Paessler)",
-              "url": "https://www.paessler.com/it-monitoring-guide/network-monitoring-introduction",
-              "type": "article"
-            },
-            {
               "title": "Computer Networking Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=qiQR5rTSshw",
               "type": "video"
@@ -646,11 +596,6 @@
           "tag": "advanced",
           "description": "Implement defense-in-depth network hardening: Disabling Telnet/HTTP, securing management planes with SSH/HTTPS, control plane policing (CoPP), and protecting against ARP spoofing with Dynamic ARP Inspection (DAI).",
           "resources": [
-            {
-              "title": "NIST Cybersecurity Framework",
-              "url": "https://www.nist.gov/cybersecurity/framework",
-              "type": "article"
-            },
             {
               "title": "CompTIA Network+ Full Course (Professor Messer)",
               "url": "https://www.youtube.com/watch?v=As6g6IXcVa4",
@@ -779,16 +724,6 @@
           "description": "Understand Software-Defined Networking (SDN): Decoupling control plane from data plane, OpenFlow, Cisco ACI, SD-WAN topologies, and Network Functions Virtualization (NFV).",
           "resources": [
             {
-              "title": "What is SDN? (Cisco)",
-              "url": "https://www.cisco.com/c/en/us/solutions/enterprise-networks/software-defined-networking/what-is-sdn.html",
-              "type": "article"
-            },
-            {
-              "title": "What is NFV? (VMware)",
-              "url": "https://www.vmware.com/topics/glossary/content/network-function-virtualization-nfv.html",
-              "type": "article"
-            },
-            {
               "title": "CompTIA Network+ Full Course (Professor Messer)",
               "url": "https://www.youtube.com/watch?v=As6g6IXcVa4",
               "type": "video"
@@ -848,11 +783,6 @@
           "tag": "advanced",
           "description": "Design resilient enterprise architectures: Three-tier hierarchical network design (Core, Distribution, Access), spine-leaf data center topologies, and disaster recovery redundancy.",
           "resources": [
-            {
-              "title": "Cisco Enterprise Network Design Guide",
-              "url": "https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Campus/campus-lan-design-new.html",
-              "type": "article"
-            },
             {
               "title": "Wireshark Tutorial (NetworkChuck)",
               "url": "https://www.youtube.com/watch?v=lb1Dw0elw0Q",
@@ -946,11 +876,6 @@
           "description": "Manage network configurations with Ansible: Writing declarative network playbooks, maintaining Git-backed network inventories, and enforcing configuration compliance.",
           "resources": [
             {
-              "title": "Ansible Network Automation Documentation",
-              "url": "https://docs.ansible.com/ansible/latest/network/index.html",
-              "type": "article"
-            },
-            {
               "title": "Git Handbook (GitHub)",
               "url": "https://guides.github.com/introduction/git-handbook/",
               "type": "article"
@@ -981,11 +906,6 @@
           "description": "Master modern programmatic network management: YANG data modeling, NETCONF (RFC 6241) XML RPCs, RESTCONF JSON APIs, and Cisco DNA Center / Meraki APIs.",
           "resources": [
             {
-              "title": "NETCONF and YANG Basics (Juniper)",
-              "url": "https://www.juniper.net/documentation/us/en/software/junos/program-automation/topics/topic-map/netconf-yang.html",
-              "type": "article"
-            },
-            {
               "title": "Wireshark Tutorial (NetworkChuck)",
               "url": "https://www.youtube.com/watch?v=lb1Dw0elw0Q",
               "type": "video"
@@ -1010,11 +930,6 @@
           "tag": "advanced",
           "description": "Provision cloud networks with Terraform: Declaring VPC topologies, subnets, routing rules, and security groups in version-controlled declarative code.",
           "resources": [
-            {
-              "title": "Terraform Networking Tutorials (HashiCorp)",
-              "url": "https://developer.hashicorp.com/terraform/tutorials/kubernetes/install-terraform-kubernetes",
-              "type": "article"
-            },
             {
               "title": "Computer Networking Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=qiQR5rTSshw",

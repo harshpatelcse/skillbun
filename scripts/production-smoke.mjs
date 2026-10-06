@@ -6,7 +6,7 @@ const checks = [
   ['/', [200]], ['/privacy', [200]], ['/robots.txt', [200]], ['/sitemap.xml', [200]],
   ...['/about', '/contact', '/terms', '/projects', '/roadmap', '/certificate', '/alumni', '/coming-soon',
     '/auth', '/onboarding?next=/quiz', '/quiz', '/counsellor', '/dashboard', '/dashboard/certifications',
-    '/settings', '/dashboard/console/portal', '/dashboard/console/admin', '/dashboard/console/admin/analytics',
+    '/settings', '/dashboard/analytics', '/dashboard/console/portal', '/dashboard/console/admin', '/dashboard/console/admin/analytics',
     '/dashboard/console/admin/workforce', '/dashboard/console/admin/certificates', '/dashboard/console/admin/documents',
     '/dashboard/console/admin/emails', '/roadmap/fullstack/goal', '/roadmap/fullstack/learn', '/roadmap/fullstack/boost',
     '/roadmap/fullstack/certify'].map(path => [path, [200]]),
@@ -23,7 +23,12 @@ const checks = [
 ];
 if (process.argv.includes('--all-roadmaps')) {
   for (const file of await readdir(new URL('../public/data/roadmaps/', import.meta.url))) {
-    if (file.endsWith('.json')) checks.push([`/roadmap/${encodeURIComponent(file.slice(0, -5))}`, [200]]);
+    if (!file.endsWith('.json')) continue;
+    const path = `/roadmap/${encodeURIComponent(file.slice(0, -5))}`;
+    checks.push([path, [200]]);
+    if (process.argv.includes('--all-roadmap-tabs')) {
+      for (const tab of ['goal', 'learn', 'boost']) checks.push([`${path}/${tab}`, [200]]);
+    }
   }
 }
 let failed = 0;

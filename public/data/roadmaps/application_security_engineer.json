@@ -90,11 +90,6 @@
       "description": "Establish an uncompromised Application Security foundation: master web application architecture, secure software development lifecycles (SSDLC), and security engineering principles.",
       "resources": [
         {
-          "title": "What is AppSec and Why it's Important",
-          "url": "https://www.acunetix.com/blog/web-security-zone/what-is-application-security/",
-          "type": "article"
-        },
-        {
           "title": "Cyber Security Full Course for Beginner",
           "url": "https://www.youtube.com/watch?v=U_P23SqJaDc",
           "type": "video"
@@ -208,13 +203,13 @@
           "description": "Implement Secure Software Development Lifecycles (SSDLC): integrating security into Agile/DevOps workflows (BSIMM, OWASP SAMM), security gates, and shifting security left from design to production.",
           "resources": [
             {
-              "title": "Introduction to Secure SDLC (SANS)",
-              "url": "https://www.sans.org/blog/an-introduction-to-the-secure-software-development-lifecycle/",
+              "title": "Secure Software Development Framework SSDF",
+              "url": "https://csrc.nist.gov/projects/ssdf",
               "type": "article"
             },
             {
-              "title": "OWASP SAMM: Software Assurance Maturity Model",
-              "url": "https://owasp.org/www-project-software-assurance-maturity-model/",
+              "title": "OWASP Software Assurance Maturity Model (SAMM)",
+              "url": "https://owaspsamm.org/model/",
               "type": "article"
             },
             {
@@ -242,11 +237,6 @@
           "tag": "essential",
           "description": "Define the modern AppSec Engineer role: partnering with product and engineering teams, threat modeling, automating security guardrails, and fostering a security champions network.",
           "resources": [
-            {
-              "title": "What Does an AppSec Engineer Do?",
-              "url": "https://blog.snyk.io/what-does-an-appsec-engineer-do/",
-              "type": "article"
-            },
             {
               "title": "Cyber Security Full Course for Beginner",
               "url": "https://www.youtube.com/watch?v=U_P23SqJaDc",
@@ -310,8 +300,8 @@
           "description": "Master architectural threat modeling: STRIDE methodology (Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege), constructing Data Flow Diagrams (DFDs), defining trust boundaries, attack trees, and risk scoring with DREAD.",
           "resources": [
             {
-              "title": "Threat Modeling: Designing for Security (Microsoft)",
-              "url": "https://docs.microsoft.com/en-us/security/engineering/threat-modeling-tool",
+              "title": "Microsoft Threat Modeling Tool",
+              "url": "https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool",
               "type": "article"
             },
             {
@@ -340,8 +330,8 @@
           "description": "Implement secure coding across stacks: defending against the OWASP Top 10: parameterized queries to eliminate SQL injection, context-aware output encoding to prevent Cross-Site Scripting (XSS), anti-CSRF token synchronization, and safe deserialization.",
           "resources": [
             {
-              "title": "OWASP Secure Coding Practices Cheat Sheet",
-              "url": "https://cheatsheetseries.owasp.org/cheatsheets/Secure_Coding_Practices_Cheat_Sheet.html",
+              "title": "OWASP Web Application Security Checklist",
+              "url": "https://devguide.owasp.org/en/04-design/02-web-app-checklist/",
               "type": "article"
             },
             {
@@ -475,8 +465,8 @@
               "type": "article"
             },
             {
-              "title": "OWASP Secure Configuration Management Cheat Sheet",
-              "url": "https://cheatsheetseries.owasp.org/cheatsheets/Secure_Configuration_Management_Cheat_Sheet.html",
+              "title": "OWASP Secrets Management Cheat Sheet",
+              "url": "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html",
               "type": "article"
             },
             {
@@ -627,9 +617,9 @@
           "description": "Deploy dynamic security testing: configuring OWASP ZAP and Burp Suite Enterprise in CI pipelines, understanding Interactive Application Security Testing (IAST), and Runtime Application Self-Protection (RASP) agents.",
           "resources": [
             {
-              "title": "PortSwigger Web Security Academy: Burp Suite Basics",
-              "url": "https://portswigger.net/web-security/burp",
-              "type": "course"
+              "title": "Getting started with Burp Suite",
+              "url": "https://portswigger.net/burp/documentation/desktop/getting-started",
+              "type": "article"
             },
             {
               "title": "OWASP ZAP User Guide",
@@ -657,13 +647,8 @@
           "description": "Secure REST and GraphQL APIs: testing against the OWASP API Security Top 10 (BOLA, broken object property level auth, rate limiting), GraphQL query depth and complexity limiting, and API schema fuzzing.",
           "resources": [
             {
-              "title": "OWASP API Security Top 10",
-              "url": "https://owasp.org/www-project-api-security/",
-              "type": "article"
-            },
-            {
-              "title": "Testing APIs for Security Vulnerabilities (Postman)",
-              "url": "https://www.postman.com/blog/testing-apis-for-security-vulnerabilities/",
+              "title": "OWASP API Security Top 10 (2023)",
+              "url": "https://api-security.owasp.org/editions/2023/en/0x00-header/",
               "type": "article"
             },
             {
@@ -692,11 +677,6 @@
               "type": "article"
             },
             {
-              "title": "Kubernetes Security Best Practices",
-              "url": "https://kubernetes.io/docs/concepts/security/security-considerations/",
-              "type": "article"
-            },
-            {
               "title": "Kubernetes Security Tutorial for Beginners | K8s Security Basics",
               "url": "https://www.youtube.com/watch?v=oBf5lrmquYI",
               "type": "video"
@@ -717,8 +697,8 @@
           "description": "Audit mobile application security: OWASP Mobile Top 10, reverse engineering with Jadx and Ghidra, runtime analysis with Frida, SSL pinning validation, and secure local storage inspection.",
           "resources": [
             {
-              "title": "OWASP Mobile Security Testing Guide",
-              "url": "https://owasp.org/www-project-mobile-security-testing-guide/",
+              "title": "OWASP Mobile Application Security Testing Guide (MASTG)",
+              "url": "https://mas.owasp.org/MASTG/",
               "type": "article"
             },
             {
@@ -750,11 +730,6 @@
               "title": "OWASP DevSecOps Verification Standard",
               "url": "https://owasp.org/www-project-devsecops-verification-standard/",
               "type": "article"
-            },
-            {
-              "title": "Practical DevSecOps - CI/CD Security (Course)",
-              "url": "https://www.practical-devsecops.com/ci-cd-security-training/",
-              "type": "course"
             },
             {
               "title": "What is DevSecOps? (DevSecOps Explained)",
@@ -851,11 +826,6 @@
       "description": "Govern production application security: cloud-native architectures, security observability, incident handling, and compliance.",
       "resources": [
         {
-          "title": "The Role of AppSec in Production Systems (Snyk)",
-          "url": "https://snyk.io/blog/application-security-in-production/",
-          "type": "article"
-        },
-        {
           "title": "Building a Security Culture in Development Teams",
           "url": "https://www.youtube.com/watch?v=pTQ0S35QgQ0",
           "type": "video"
@@ -889,8 +859,8 @@
               "type": "article"
             },
             {
-              "title": "Security Design Patterns for Microservices",
-              "url": "https://docs.microsoft.com/en-us/azure/architecture/microservices/securing-microservices",
+              "title": "Make secure .NET Microservices and Web Applications",
+              "url": "https://learn.microsoft.com/en-us/dotnet/architecture/microservices/secure-net-microservices-web-applications/",
               "type": "article"
             },
             {
@@ -954,11 +924,6 @@
               "type": "article"
             },
             {
-              "title": "ELK Stack for Security Monitoring",
-              "url": "https://www.elastic.co/blog/elk-for-security-monitoring",
-              "type": "article"
-            },
-            {
               "title": "What is SIEM, EDR, XDR? Security Operations Explained",
               "url": "https://www.youtube.com/watch?v=RdgiytPMHKU",
               "type": "video"
@@ -989,11 +954,6 @@
               "type": "article"
             },
             {
-              "title": "Crafting an Application Security Incident Response Plan",
-              "url": "https://www.invicti.com/blog/application-security-incident-response-plan/",
-              "type": "article"
-            },
-            {
               "title": "Cyber Security Incident Response (CSIR) Explained",
               "url": "https://www.youtube.com/watch?v=IRSQEO0koYY",
               "type": "video"
@@ -1019,8 +979,8 @@
               "type": "article"
             },
             {
-              "title": "OWASP Security Awareness",
-              "url": "https://owasp.org/www-project-security-awareness/",
+              "title": "OWASP Developer Guide: Security Culture and Processes",
+              "url": "https://devguide.owasp.org/en/08-culture-process/",
               "type": "article"
             },
             {
@@ -1090,11 +1050,6 @@
         {
           "title": "How to Build an Application Security Portfolio",
           "url": "https://www.stackrox.com/blog/how-to-build-an-application-security-portfolio/",
-          "type": "article"
-        },
-        {
-          "title": "Preparing for Your AppSec Interview (Snyk)",
-          "url": "https://snyk.io/blog/application-security-interview-questions/",
           "type": "article"
         },
         {

@@ -127,13 +127,8 @@
               "type": "article"
             },
             {
-              "title": "Key Service Design Principles (Design Council)",
-              "url": "https://www.designcouncil.org.uk/our-work/skills-learning/framework-for-innovation/design-principles/",
-              "type": "article"
-            },
-            {
-              "title": "The 5 Principles of Service Design (This is HCD)",
-              "url": "https://www.thisishcd.com/resources/the-5-principles-of-service-design",
+              "title": "The Double Diamond and Design Principles (Design Council)",
+              "url": "https://www.designcouncil.org.uk/our-resources/the-double-diamond/",
               "type": "article"
             },
             {
@@ -162,13 +157,8 @@
           "description": "Adopt the service design mindset: Holistic systems thinking, co-creative facilitation, iterative prototyping of intangible services, and user-centered transformation.",
           "resources": [
             {
-              "title": "Systems Thinking for Service Design (SDN Academy)",
-              "url": "https://www.service-design-network.org/journal/jnsd-v14-i2/systems-thinking-for-service-design",
-              "type": "article"
-            },
-            {
-              "title": "Human-Centered Design Toolkit (IDEO)",
-              "url": "https://www.ideo.com/post/human-centered-design-toolkit",
+              "title": "System Map (Service Design Tools)",
+              "url": "https://servicedesigntools.org/tools/system-map",
               "type": "article"
             },
             {
@@ -197,8 +187,8 @@
           "description": "Articulate the business value of service design: Breaking organizational silos, eliminating backstage operational waste, reducing customer churn, and aligning cross-departmental operations.",
           "resources": [
             {
-              "title": "Measuring the ROI of Service Design (SDN Academy)",
-              "url": "https://www.service-design-network.org/journal/jnsd-v10-i2/measuring-the-roi-of-service-design",
+              "title": "Measure Cost per Transaction (GOV.UK Service Manual)",
+              "url": "https://www.gov.uk/service-manual/measuring-success/measuring-cost-per-transaction",
               "type": "article"
             },
             {
@@ -236,13 +226,8 @@
       "description": "Execute strategic service research: Ethnographic field observations, shadowing frontline service staff, contextual inquiry, and stakeholder ecosystem mapping.",
       "resources": [
         {
-          "title": "User Research Fundamentals (NN/g)",
-          "url": "https://www.nngroup.com/topic/user-research/",
-          "type": "course"
-        },
-        {
-          "title": "Ethnographic Research in Service Design (SDN Academy)",
-          "url": "https://www.service-design-network.org/journal/jnsd-v12-i2/ethnographic-research-for-service-design",
+          "title": "Contextual Research and Observation (GOV.UK Service Manual)",
+          "url": "https://www.gov.uk/service-manual/user-research/contextual-research-and-observation",
           "type": "article"
         },
         {
@@ -268,11 +253,6 @@
           "tag": "essential",
           "description": "Plan service research: Designing research protocols for complex multi-stakeholder environments, ethical data handling, and informed consent across customer touchpoints.",
           "resources": [
-            {
-              "title": "Planning User Research (NN/g)",
-              "url": "https://www.nngroup.com/articles/planning-user-research/",
-              "type": "article"
-            },
             {
               "title": "Ethics in User Research (UX Collective)",
               "url": "https://uxdesign.cc/ethics-in-user-research-1f7c02b28c89",
@@ -303,16 +283,6 @@
           "tag": "essential",
           "description": "Analyze multi-stakeholder ecosystems: Frontline employees, support operations, vendor partners, end users, and mapping power/influence dynamics.",
           "resources": [
-            {
-              "title": "Mastering User Interviews (UX Mastery)",
-              "url": "https://uxmastery.com/mastering-user-interviews/",
-              "type": "article"
-            },
-            {
-              "title": "Stakeholder Analysis and Mapping (Miro)",
-              "url": "https://miro.com/templates/stakeholder-analysis-matrix/",
-              "type": "article"
-            },
             {
               "title": "Conducting Contextual Inquiry (NN/g)",
               "url": "https://www.nngroup.com/articles/contextual-inquiry/",
@@ -349,16 +319,6 @@
               "type": "article"
             },
             {
-              "title": "Service Blueprinting 101 (NN/g)",
-              "url": "https://www.nngroup.com/articles/service-blueprints/",
-              "type": "article"
-            },
-            {
-              "title": "Ecosystem Mapping: Visualize Complex Relationships (This is HCD)",
-              "url": "https://www.thisishcd.com/methods/ecosystem-mapping",
-              "type": "article"
-            },
-            {
               "title": "Design Thinking Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=_r0VX-aU_T8",
               "type": "video"
@@ -389,13 +349,8 @@
               "type": "article"
             },
             {
-              "title": "Crafting Effective Personas (NN/g)",
-              "url": "https://www.nngroup.com/articles/personas/",
-              "type": "article"
-            },
-            {
-              "title": "How to Write a Problem Statement for Service Design (SDN Academy)",
-              "url": "https://www.service-design-network.org/journal/jnsd-v11-i1/how-to-write-a-problem-statement-for-service-design",
+              "title": "Frame Your Design Challenge (IDEO Design Kit)",
+              "url": "https://www.designkit.org/methods/frame-your-design-challenge.html",
               "type": "article"
             },
             {
@@ -428,13 +383,8 @@
       "description": "Facilitate co-creation and concept development: Multi-disciplinary co-design workshops, participatory design methods, and generating future-state service concepts.",
       "resources": [
         {
-          "title": "The Art of Ideation (IDEO U)",
-          "url": "https://www.ideou.com/blogs/news/the-art-of-ideation-a-primer-for-design-thinking",
-          "type": "article"
-        },
-        {
-          "title": "From Insight to Concept: Developing Service Ideas (SDN Academy)",
-          "url": "https://www.service-design-network.org/journal/jnsd-v8-i1/from-insight-to-concept-developing-service-ideas",
+          "title": "Create a Concept (IDEO Design Kit)",
+          "url": "https://www.designkit.org/methods/create-a-concept.html",
           "type": "article"
         },
         {
@@ -463,11 +413,6 @@
             {
               "title": "Value Proposition Canvas Explained (Strategyzer)",
               "url": "https://www.strategyzer.com/canvas/value-proposition-canvas",
-              "type": "article"
-            },
-            {
-              "title": "How to Craft a Vision Statement (Mind the Product)",
-              "url": "https://www.mindtheproduct.com/how-to-craft-a-vision-statement/",
               "type": "article"
             },
             {
@@ -501,11 +446,6 @@
               "type": "article"
             },
             {
-              "title": "The Complete Guide to Brainstorming (Mural)",
-              "url": "https://mural.co/blog/the-complete-guide-to-brainstorming/",
-              "type": "article"
-            },
-            {
               "title": "User research Introduction & Basics | UX Design (Design & UX)",
               "url": "https://www.youtube.com/watch?v=7MTJrysCj8I",
               "type": "video"
@@ -530,11 +470,6 @@
           "tag": "essential",
           "description": "Develop future service scenarios: Storyboarding end-to-end customer journeys, speculative service futures, and drafting service charters.",
           "resources": [
-            {
-              "title": "Storyboarding for Service Design (This is HCD)",
-              "url": "https://www.thisishcd.com/methods/storyboarding",
-              "type": "article"
-            },
             {
               "title": "Concepting in Service Design (Service Design Network)",
               "url": "https://www.service-design-network.org/news/concepting-in-service-design",
@@ -598,18 +533,8 @@
           "description": "Apply service prototyping methods: Role-playing frontstage interactions, cardboard mockups of physical service desks, and simulated digital app interactions.",
           "resources": [
             {
-              "title": "Low-Fidelity Prototyping for Services (This is HCD)",
-              "url": "https://www.thisishcd.com/methods/storyboarding",
-              "type": "article"
-            },
-            {
-              "title": "Service Prototypes and Pilots: How to Test and Iterate (NN/g)",
-              "url": "https://www.nngroup.com/articles/service-prototypes-pilots/",
-              "type": "article"
-            },
-            {
-              "title": "Role-Playing and Improv for Service Design (SDN Academy)",
-              "url": "https://www.service-design-network.org/journal/jnsd-v13-i2/role-playing-and-improv-for-service-design",
+              "title": "Role Playing (Service Design Tools)",
+              "url": "https://servicedesigntools.org/tools/role-playing",
               "type": "article"
             },
             {
@@ -637,11 +562,6 @@
           "tag": "essential",
           "description": "Test service prototypes with real users: Moderating live service simulations with customers and frontline staff, observing friction points, and gathering feedback.",
           "resources": [
-            {
-              "title": "Conducting Usability Tests for Services (NN/g)",
-              "url": "https://www.nngroup.com/articles/usability-testing-for-services/",
-              "type": "article"
-            },
             {
               "title": "Feedback Gathering Techniques (UX Planet)",
               "url": "https://uxplanet.org/feedback-gathering-techniques-in-ux-research-e7c65b161c16",
@@ -707,13 +627,13 @@
       "description": "Author detailed service specifications: Service blueprints, touchpoint orchestration, ecosystem architecture, and ethical considerations.",
       "resources": [
         {
-          "title": "Designing for Service Delivery (SDN Academy)",
-          "url": "https://www.service-design-network.org/journal/jnsd-v10-i2/designing-for-service-delivery",
+          "title": "Solve a Whole Problem for Users (GOV.UK Service Standard)",
+          "url": "https://www.gov.uk/service-manual/service-standard/point-2-solve-a-whole-problem",
           "type": "article"
         },
         {
-          "title": "Future-State Service Blueprinting (Practical Service Design)",
-          "url": "https://www.practicalservicedesign.com/blog/future-state-service-blueprint",
+          "title": "Service Blueprint (Service Design Tools)",
+          "url": "https://servicedesigntools.org/tools/service-blueprint",
           "type": "article"
         },
         {
@@ -740,13 +660,8 @@
           "description": "Author future-state journey maps: Visualizing ideal customer experiences, emotional highs/lows, and identifying critical service moments that matter.",
           "resources": [
             {
-              "title": "Designing a Future Customer Journey Map (NN/g)",
-              "url": "https://www.nngroup.com/articles/future-customer-journey-maps/",
-              "type": "article"
-            },
-            {
-              "title": "Advanced Service Blueprinting: Levels and Layers (SDN Academy)",
-              "url": "https://www.service-design-network.org/journal/jnsd-v15-i2/advanced-service-blueprinting-levels-and-layers",
+              "title": "Service Blueprints: Definition and Layers (Nielsen Norman Group)",
+              "url": "https://www.nngroup.com/articles/service-blueprints-definition/",
               "type": "article"
             },
             {
@@ -785,11 +700,6 @@
               "type": "article"
             },
             {
-              "title": "Interaction Design Best Practices (NN/g)",
-              "url": "https://www.nngroup.com/articles/interaction-design-best-practices/",
-              "type": "article"
-            },
-            {
               "title": "Design Thinking Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=_r0VX-aU_T8",
               "type": "video"
@@ -815,13 +725,8 @@
           "description": "Build comprehensive Service Blueprints: Frontstage customer actions, backstage employee actions, support processes, physical evidence, and digital systems integrations.",
           "resources": [
             {
-              "title": "Service System Design: Connecting the Dots (This is HCD)",
-              "url": "https://www.thisishcd.com/methods/service-system-design",
-              "type": "article"
-            },
-            {
-              "title": "Designing the Backstage of a Service (SDN Academy)",
-              "url": "https://www.service-design-network.org/journal/jnsd-v16-i1/designing-the-backstage-of-a-service",
+              "title": "Service Design 101: Frontstage and Backstage (Nielsen Norman Group)",
+              "url": "https://www.nngroup.com/articles/service-design-101/",
               "type": "article"
             },
             {
@@ -860,11 +765,6 @@
               "type": "article"
             },
             {
-              "title": "Privacy by Design Principles (GDPR.eu)",
-              "url": "https://gdpr.eu/privacy-by-design/",
-              "type": "article"
-            },
-            {
               "title": "4 Key Components of Service Blueprints (NNgroup)",
               "url": "https://www.youtube.com/watch?v=bCRBaD2_dCQ",
               "type": "video"
@@ -894,13 +794,8 @@
       "description": "Drive service implementation and operations: Organizational change management, pilot rollout roadmaps, service governance, and metrics.",
       "resources": [
         {
-          "title": "Change Management in Service Design (SDN Academy)",
-          "url": "https://www.service-design-network.org/journal/jnsd-v13-i1/change-management-in-service-design",
-          "type": "article"
-        },
-        {
-          "title": "Defining Service KPIs and Metrics (Mind the Product)",
-          "url": "https://www.mindtheproduct.com/how-to-define-the-right-metrics-for-your-product-and-service/",
+          "title": "Implementing and Improving a Live Service (GOV.UK Service Manual)",
+          "url": "https://www.gov.uk/service-manual/agile-delivery/how-the-live-phase-works",
           "type": "article"
         },
         {
@@ -962,16 +857,6 @@
           "description": "Execute phased service rollouts: Minimum Viable Service (MVS) launches, regional pilot testing, feedback collection, and scaling nationwide.",
           "resources": [
             {
-              "title": "How to Launch a New Service (Harvard Business Review)",
-              "url": "https://hbr.org/2014/10/how-to-launch-a-new-service",
-              "type": "article"
-            },
-            {
-              "title": "Pilot Program Planning Guide (Qualtrics)",
-              "url": "https://www.qualtrics.com/experience-management/customer/pilot-program/",
-              "type": "article"
-            },
-            {
               "title": "4 Key Components of Service Blueprints (NNgroup)",
               "url": "https://www.youtube.com/watch?v=bCRBaD2_dCQ",
               "type": "video"
@@ -1002,11 +887,6 @@
               "type": "course"
             },
             {
-              "title": "Lean Service Principles (Lean Enterprise Institute)",
-              "url": "https://www.lean.org/lean-community/blogs/lean-service-principles/",
-              "type": "article"
-            },
-            {
               "title": "Design Thinking Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=_r0VX-aU_T8",
               "type": "video"
@@ -1032,13 +912,8 @@
           "description": "Track service performance metrics: Customer Effort Score (CES), Net Promoter Score (NPS), employee satisfaction (eNPS), operational cost per transaction, and service health dashboards.",
           "resources": [
             {
-              "title": "Metrics for Service Design Success (SDN Academy)",
-              "url": "https://www.service-design-network.org/journal/jnsd-v11-i2/metrics-for-service-design-success",
-              "type": "article"
-            },
-            {
-              "title": "OKR (Objectives and Key Results) Guide (What Matters)",
-              "url": "https://www.whatmatters.com/faqs/okr-meaning-definition-examples/",
+              "title": "Measuring the Success of Your Service (GOV.UK Service Manual)",
+              "url": "https://www.gov.uk/service-manual/measuring-success/measuring-the-success-of-your-service",
               "type": "article"
             },
             {
@@ -1076,11 +951,6 @@
           "type": "article"
         },
         {
-          "title": "The Service Designer's Toolkit (This is HCD)",
-          "url": "https://www.thisishcd.com/resources",
-          "type": "article"
-        },
-        {
           "title": "4 Key Components of Service Blueprints (NNgroup)",
           "url": "https://www.youtube.com/watch?v=bCRBaD2_dCQ",
           "type": "video"
@@ -1109,8 +979,8 @@
               "type": "course"
             },
             {
-              "title": "Top Service Design Tools (Practical Service Design)",
-              "url": "https://www.practicalservicedesign.com/blog/top-service-design-tools",
+              "title": "Service Design Methods and Tools (Service Design Tools)",
+              "url": "https://servicedesigntools.org/tools",
               "type": "article"
             },
             {
@@ -1139,13 +1009,8 @@
           "description": "Build a competitive Service Design portfolio: Detailed end-to-end service case studies highlighting research rigor, ecosystem mapping, service blueprints, and business impact.",
           "resources": [
             {
-              "title": "How to Structure a Service Design Case Study (UX Design Institute)",
-              "url": "https://uxdesigninstitute.com/blog/how-to-write-a-ux-case-study/",
-              "type": "article"
-            },
-            {
-              "title": "Interviewing for Service Design Roles (NN/g)",
-              "url": "https://www.nngroup.com/articles/ux-interviews-recruiters/",
+              "title": "UX Design Portfolios and Case Studies (Nielsen Norman Group)",
+              "url": "https://www.nngroup.com/articles/ux-design-portfolios/",
               "type": "article"
             },
             {
@@ -1174,14 +1039,9 @@
           "description": "Drive design leadership: Influencing C-level executives, championing service design culture, and guiding enterprise organizational transformation.",
           "resources": [
             {
-              "title": "Strategic Service Design (SDN Academy)",
-              "url": "https://www.service-design-network.org/journal/jnsd-v15-i1/strategic-service-design",
+              "title": "UX Strategy and Strategic Design Direction (Nielsen Norman Group)",
+              "url": "https://www.nngroup.com/articles/ux-strategy/",
               "type": "article"
-            },
-            {
-              "title": "Leading Design: Building and Scaling a Design Practice (Coursera)",
-              "url": "https://www.coursera.org/learn/leading-design",
-              "type": "course"
             },
             {
               "title": "Design Leadership: How to Build and Grow a Design Team (InVision)",
@@ -1214,8 +1074,8 @@
           "description": "Track service design trends: Public sector service design, circular economy services, AI-augmented service operations, and engaging with the Service Design Network (SDN).",
           "resources": [
             {
-              "title": "Sustainable Service Design (SDN Academy)",
-              "url": "https://www.service-design-network.org/journal/jnsd-v14-i1/sustainable-service-design",
+              "title": "Systemic Design Framework (Design Council)",
+              "url": "https://www.designcouncil.org.uk/our-resources/systemic-design-framework/",
               "type": "article"
             },
             {

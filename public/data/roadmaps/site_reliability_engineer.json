@@ -123,8 +123,8 @@
               "type": "course"
             },
             {
-              "title": "CompTIA Network+ N10-008 Course (Prof. Messer)",
-              "url": "https://www.professormesser.com/network-plus/n10-008/n10-008-video/n10-008-comptia-network-plus-course/",
+              "title": "Professor Messer’s CompTIA N10-009 Network+ Training Course",
+              "url": "https://www.professormesser.com/network-plus/n10-009/n10-009-video/n10-009-training-course/",
               "type": "course"
             },
             {
@@ -527,16 +527,6 @@
           "description": "Design high-signal alerting and on-call operations: eliminating alert fatigue through symptom-based alerting (alerting on user impact, not raw CPU spikes), configuring PagerDuty/Opsgenie escalation policies and rotation schedules, authoring clear and executable runbooks with diagnostic commands, and tracking on-call health and sleep interruptions.",
           "resources": [
             {
-              "title": "Alerting on SLIs (Prometheus)",
-              "url": "https://prometheus.io/blog/2020/06/24/alerting-on-slis/",
-              "type": "article"
-            },
-            {
-              "title": "Pillars of On-Call",
-              "url": "https://www.pagerduty.com/resources/on-call-handbook/the-pillars-of-on-call/",
-              "type": "article"
-            },
-            {
               "title": "Kubernetes Tutorial for Beginners (TechWorld with Nana)",
               "url": "https://www.youtube.com/watch?v=X48VuDVv0do",
               "type": "video"
@@ -820,11 +810,6 @@
           "tag": "essential",
           "description": "Conduct Operational Readiness Reviews (ORR): rigorous production launch checklists (monitoring coverage, verified alerts, tested runbooks, capacity headroom, rollback procedures), maintaining living service catalogs, and fostering continuous operational learning.",
           "resources": [
-            {
-              "title": "Google SRE Workbook - Effective Documentation",
-              "url": "https://sre.google/workbook/effective-documentation/",
-              "type": "article"
-            },
             {
               "title": "Technical Documentation Best Practices",
               "url": "https://www.writethedocs.org/guide/docs-as-code/",

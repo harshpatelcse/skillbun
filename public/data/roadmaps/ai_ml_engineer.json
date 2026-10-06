@@ -351,8 +351,8 @@
               "type": "article"
             },
             {
-              "title": "Applied Machine Learning (Columbia University)",
-              "url": "https://www.edx.org/course/applied-machine-learning",
+              "title": "Machine Learning (ColumbiaX)",
+              "url": "https://www.edx.org/learn/machine-learning/columbia-university-machine-learning",
               "type": "course"
             },
             {
@@ -441,8 +441,8 @@
               "type": "article"
             },
             {
-              "title": "Hyperparameter Tuning with Optuna",
-              "url": "https://optuna.org/docs/latest/",
+              "title": "Hyperparameter Optimization with Optuna",
+              "url": "https://optuna.readthedocs.io/en/stable/",
               "type": "article"
             },
             {
@@ -511,8 +511,8 @@
               "type": "course"
             },
             {
-              "title": "Towards Data Science - ML Projects",
-              "url": "https://towardsdatascience.com/tagged/machine-learning-project",
+              "title": "Applied Machine Learning Examples (scikit-learn)",
+              "url": "https://scikit-learn.org/stable/auto_examples/index.html",
               "type": "article"
             },
             {
@@ -713,8 +713,8 @@
               "type": "article"
             },
             {
-              "title": "Generative AI with Transformers (Google Cloud)",
-              "url": "https://www.coursera.org/specializations/generative-ai-with-transformers",
+              "title": "Introduction to Large Language Models (Google Cloud)",
+              "url": "https://www.coursera.org/learn/introduction-to-large-language-models",
               "type": "course"
             },
             {
@@ -792,8 +792,8 @@
           "type": "course"
         },
         {
-          "title": "Practical MLOps (Databricks/O'Reilly)",
-          "url": "https://www.databricks.com/resources/ebooks/practical-mlops",
+          "title": "MLOps Workflow on Databricks",
+          "url": "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-workflow",
           "type": "article"
         },
         {
@@ -823,11 +823,6 @@
               "title": "Designing Machine Learning Systems Book",
               "url": "https://www.oreilly.com/library/view/designing-machine-learning/9781098107956/",
               "type": "article"
-            },
-            {
-              "title": "Grokking Machine Learning System Design",
-              "url": "https://www.educative.io/courses/grokking-machine-learning-system-design",
-              "type": "course"
             },
             {
               "title": "Machine Learning System Design Interview Course",
@@ -965,8 +960,8 @@
               "type": "article"
             },
             {
-              "title": "Awesome MLOps Projects",
-              "url": "https://github.com/visenger/awesome-mlops-projects",
+              "title": "MLOps Examples (Microsoft)",
+              "url": "https://github.com/microsoft/MLOps",
               "type": "article"
             },
             {
@@ -992,11 +987,6 @@
             {
               "title": "Cracking the Coding Interview (for general tech)",
               "url": "https://www.crackingthecodinginterview.com/",
-              "type": "article"
-            },
-            {
-              "title": "ML System Design Interview Book",
-              "url": "https://www.amazon.com/Machine-Learning-System-Design-Interview/dp/B0B5P21YQJ",
               "type": "article"
             },
             {

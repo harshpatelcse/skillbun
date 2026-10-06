@@ -130,8 +130,8 @@
           "description": "Analyze the BI Developer role: collaborating with Data Engineers, business analysts, and executive leadership; architecting semantic models; and driving company-wide data literacy.",
           "resources": [
             {
-              "title": "BI Developer Job Description & Skills",
-              "url": "https://www.tableau.com/careers/job-descriptions/business-intelligence-developer",
+              "title": "Business Intelligence Roles: Tasks, Skills and Tools (O*NET)",
+              "url": "https://www.onetonline.org/link/summary/15-2051.01",
               "type": "article"
             },
             {
@@ -200,8 +200,8 @@
           "description": "Understand enterprise BI architecture tiers: data source layer, ingestion and storage layer, enterprise semantic layer, and presentation visualization layer.",
           "resources": [
             {
-              "title": "Understanding Data Warehousing Architectures",
-              "url": "https://www.tableau.com/learn/articles/data-warehouse-architecture",
+              "title": "Data Warehouse Architecture (AWS)",
+              "url": "https://aws.amazon.com/what-is/data-warehouse/",
               "type": "article"
             },
             {
@@ -225,8 +225,8 @@
               "type": "article"
             },
             {
-              "title": "Overview of Modern Data Stack",
-              "url": "https://fivetran.com/blog/modern-data-stack",
+              "title": "Modern Cloud Data Platform Architecture (Snowflake)",
+              "url": "https://docs.snowflake.com/en/user-guide/intro-key-concepts",
               "type": "article"
             },
             {
@@ -274,8 +274,8 @@
           "type": "video"
         },
         {
-          "title": "Data Modeling Concepts for Power BI",
-          "url": "https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-data-model-overview",
+          "title": "Understand star schema and the importance for Power BI",
+          "url": "https://learn.microsoft.com/en-us/power-bi/guidance/star-schema",
           "type": "article"
         },
         {
@@ -337,8 +337,8 @@
               "type": "article"
             },
             {
-              "title": "Database Indexing Explained (GeeksforGeeks)",
-              "url": "https://www.geeksforgeeks.org/database-indexing-in-dbms/",
+              "title": "Database Indexes and Query Performance (PostgreSQL)",
+              "url": "https://www.postgresql.org/docs/current/indexes.html",
               "type": "article"
             },
             {
@@ -359,11 +359,6 @@
             {
               "title": "What is Data Profiling? (IBM)",
               "url": "https://www.ibm.com/topics/data-profiling",
-              "type": "article"
-            },
-            {
-              "title": "Data Quality Best Practices",
-              "url": "https://www.experian.com/data-quality/data-quality-best-practices",
               "type": "article"
             },
             {
@@ -447,8 +442,8 @@
           "description": "Implement Slowly Changing Dimensions (SCD): SCD Type 1 (overwrite values), SCD Type 2 (maintain full history with surrogate keys and active date ranges), and SCD Type 3 (previous vs current column tracking).",
           "resources": [
             {
-              "title": "Slowly Changing Dimensions in a Data Warehouse (GeeksforGeeks)",
-              "url": "https://www.geeksforgeeks.org/slowly-changing-dimensions-in-a-data-warehouse/",
+              "title": "Slowly Changing Dimensions in a Star Schema (Microsoft)",
+              "url": "https://learn.microsoft.com/en-us/power-bi/guidance/star-schema#slowly-changing-dimensions",
               "type": "article"
             },
             {
@@ -487,8 +482,8 @@
           "description": "Analyze big data storage formats: row-oriented storage (CSV, Avro) vs columnar formats (Apache Parquet, ORC) optimized for analytical aggregation queries.",
           "resources": [
             {
-              "title": "Understanding Data Storage Formats: Parquet, ORC, Avro, and CSV",
-              "url": "https://www.databricks.com/glossary/data-storage-formats",
+              "title": "Data Files and Formats in Databricks",
+              "url": "https://docs.databricks.com/aws/en/files/",
               "type": "article"
             },
             {
@@ -604,8 +599,8 @@
           "description": "Understand data movement pipelines: comparing traditional ETL with cloud-native ELT, batch synchronization, and change capture mechanisms.",
           "resources": [
             {
-              "title": "What is ETL? (AWS)",
-              "url": "https://aws.amazon.com/big-data/what-is-etl/",
+              "title": "What Is ETL? (AWS)",
+              "url": "https://aws.amazon.com/what-is/etl/",
               "type": "article"
             },
             {
@@ -644,13 +639,13 @@
           "description": "Master data transformation tools: Power Query (M language) in Power BI/Excel, Alteryx, dbt, and Python data wrangling libraries.",
           "resources": [
             {
-              "title": "Getting Started with Power Query (Microsoft Learn)",
-              "url": "https://learn.microsoft.com/en-us/power-query/power-query-overview",
+              "title": "Use Power Query to transform data",
+              "url": "https://learn.microsoft.com/en-us/power-query/power-query-ui",
               "type": "article"
             },
             {
-              "title": "Tableau Prep Introduction",
-              "url": "https://help.tableau.com/current/prep/en-us/prep_getstarted.htm",
+              "title": "Get Started with Tableau Prep",
+              "url": "https://help.tableau.com/current/prep/en-us/prep_get_started.htm",
               "type": "article"
             },
             {
@@ -691,11 +686,6 @@
             {
               "title": "Scheduled data refresh in Power BI",
               "url": "https://learn.microsoft.com/en-us/power-bi/connect-data/refresh-data",
-              "type": "article"
-            },
-            {
-              "title": "Schedule Refreshes for Published Data Sources in Tableau",
-              "url": "https://help.tableau.com/current/pro/desktop/en-us/publish_datasources_schedule_refresh.htm",
               "type": "article"
             },
             {
@@ -749,11 +739,6 @@
           "description": "Implement robust pipeline error handling: capturing failed load rows, dead-letter tables, alerting on refresh failures, and retry logic.",
           "resources": [
             {
-              "title": "ETL Error Handling Best Practices",
-              "url": "https://www.integrate.io/blog/etl-error-handling-best-practices/",
-              "type": "article"
-            },
-            {
               "title": "Data Warehouse vs Data Lake vs Data Lakehouse | ETL, OLAP vs OLTP",
               "url": "https://www.youtube.com/watch?v=yRerKDM1h74",
               "type": "video"
@@ -779,8 +764,8 @@
           "description": "Enforce compliance in pipelines: ensuring GDPR right-to-be-forgotten compliance, PII data masking, and audit logging.",
           "resources": [
             {
-              "title": "Data Lineage and Governance in Modern Data Platforms",
-              "url": "https://www.databricks.com/blog/2021/04/08/data-lineage-and-governance-in-modern-data-platforms.html",
+              "title": "Data Lineage in Unity Catalog (Databricks)",
+              "url": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-lineage",
               "type": "article"
             },
             {
@@ -844,8 +829,8 @@
           "description": "Build real-time BI streaming dashboards: pushing live telemetry into Power BI streaming datasets or Tableau from Kafka / Event Hubs.",
           "resources": [
             {
-              "title": "Introduction to Stream Processing (Confluent)",
-              "url": "https://www.confluent.io/learn/what-is-stream-processing/",
+              "title": "Stream Processing Concepts (Confluent)",
+              "url": "https://www.confluent.io/learn/stream-processing/",
               "type": "article"
             },
             {
@@ -931,8 +916,8 @@
           "description": "Master data ingestion and shaping: Import mode vs DirectQuery vs Live Connection trade-offs, and Power Query M language data shaping.",
           "resources": [
             {
-              "title": "Connect to Data Sources in Power BI Desktop",
-              "url": "https://learn.microsoft.com/en-us/power-bi/connect-data/desktop-connect-to-data-sources",
+              "title": "Get data in Power BI Desktop",
+              "url": "https://learn.microsoft.com/en-us/power-bi/connect-data/desktop-data-sources",
               "type": "article"
             },
             {
@@ -951,8 +936,8 @@
           "description": "Architect enterprise semantic models: star schema relationships (one-to-many, active vs inactive relationships), avoiding bidirectional cross-filtering pitfalls, and defining standardized business measures.",
           "resources": [
             {
-              "title": "Introduction to Data Modeling in Power BI",
-              "url": "https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-data-model-overview",
+              "title": "Understand star schema and the importance for Power BI",
+              "url": "https://learn.microsoft.com/en-us/power-bi/guidance/star-schema",
               "type": "article"
             },
             {
@@ -976,8 +961,8 @@
           "description": "Master DAX (Data Analysis Expressions) fundamentals: calculated columns vs measures, evaluation contexts (Row Context vs Filter Context), and mastering the `CALCULATE` function and Context Transition.",
           "resources": [
             {
-              "title": "Mastering DAX in Power BI (SQLBI)",
-              "url": "https://www.sqlbi.com/courses/dax-video-course-for-power-bi/",
+              "title": "Mastering DAX (SQLBI; Paid Course)",
+              "url": "https://www.sqlbi.com/p/mastering-dax-video-course/",
               "type": "course"
             },
             {
@@ -1011,8 +996,8 @@
               "type": "article"
             },
             {
-              "title": "Top 15 Tableau LOD Expressions (Tableau)",
-              "url": "https://www.tableau.com/about/blog/2015/6/top-15-tableau-lod-expressions-39257",
+              "title": "Level of Detail Expressions in Tableau",
+              "url": "https://help.tableau.com/current/pro/desktop/en-us/calculations_calculatedfields_lod.htm",
               "type": "article"
             },
             {
@@ -1126,11 +1111,6 @@
           "description": "Apply dashboard UX design principles: progressive disclosure, the 5-second rule, grid alignment, intentional white space, and establishing cohesive color palettes.",
           "resources": [
             {
-              "title": "Dashboard Design Best Practices (Dresner Advisory Services)",
-              "url": "https://www.dresneradvisory.com/resources/dashboard-design-best-practices/",
-              "type": "article"
-            },
-            {
               "title": "Data Visualization Tutorial for Beginners - Learn how to visualize data",
               "url": "https://www.youtube.com/watch?v=MiiANxRHSv4",
               "type": "video"
@@ -1151,8 +1131,8 @@
           "description": "Build interactive dashboards: drill-through pages, cross-filtering, report page tooltips, bookmarks, and dynamic parameter switching.",
           "resources": [
             {
-              "title": "Power BI Interactive Reports Features",
-              "url": "https://learn.microsoft.com/en-us/power-bi/consumer/end-user-interact-with-report",
+              "title": "How visuals cross-filter each other in a Power BI report",
+              "url": "https://learn.microsoft.com/en-us/power-bi/consumer/end-user-interactions",
               "type": "article"
             },
             {
@@ -1181,11 +1161,6 @@
           "description": "Craft persuasive data stories: structuring analytical presentations, highlighting key business anomalies, and framing data insights with actionable recommendations.",
           "resources": [
             {
-              "title": "Data Storytelling: The essential data science skill everyone needs",
-              "url": "https://towardsdatascience.com/data-storytelling-the-essential-data-science-skill-everyone-needs-31f866418c3b",
-              "type": "article"
-            },
-            {
               "title": "How To Tell Stories With Data",
               "url": "https://www.youtube.com/watch?v=r5_34YnCmMY",
               "type": "video"
@@ -1211,13 +1186,8 @@
           "description": "Enable self-service analytics: creating certified shared semantic models, perspective views, and empowering business analysts to build custom reports.",
           "resources": [
             {
-              "title": "What is Self-Service BI?",
-              "url": "https://www.tableau.com/learn/articles/what-is-self-service-bi",
-              "type": "article"
-            },
-            {
-              "title": "How to Drive Self-Service BI Adoption",
-              "url": "https://www.sisense.com/glossary/self-service-bi-adoption/",
+              "title": "Governed Self-Service Analytics (Tableau Blueprint)",
+              "url": "https://help.tableau.com/current/blueprint/en-us/bp_governance.htm",
               "type": "article"
             },
             {
@@ -1246,8 +1216,8 @@
           "description": "Optimize visual rendering performance: analyzing visual render times with Performance Analyzer, limiting visual count per page, and reducing heavy visual query payloads.",
           "resources": [
             {
-              "title": "Optimize a report for performance in Power BI",
-              "url": "https://learn.microsoft.com/en-us/power-bi/guidance/report-performance-considerations",
+              "title": "Optimization guide for Power BI",
+              "url": "https://learn.microsoft.com/en-us/power-bi/guidance/power-bi-optimization",
               "type": "article"
             },
             {
@@ -1276,8 +1246,8 @@
           "description": "Integrate advanced analytics: embedding Python/R visualizations, AI visual insights (Key Influencers, Decomposition Tree), and natural language Q&A.",
           "resources": [
             {
-              "title": "Using What-If parameters to visualize variables in Power BI Desktop",
-              "url": "https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-what-if-parameters",
+              "title": "Create and use parameters to visualize variables in Power BI Desktop",
+              "url": "https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-what-if",
               "type": "article"
             },
             {
@@ -1336,13 +1306,8 @@
           "description": "Implement enterprise data privacy: Row-Level Security (RLS) with dynamic `USERPRINCIPALNAME()`, Object-Level Security (OLS) hiding sensitive salary/financial tables, and Microsoft Purview sensitivity labels.",
           "resources": [
             {
-              "title": "Object-level security in Power BI (Microsoft Learn)",
-              "url": "https://learn.microsoft.com/en-us/power-bi/transform-model/object-level-security",
-              "type": "article"
-            },
-            {
-              "title": "Data sensitivity labels in Power BI",
-              "url": "https://learn.microsoft.com/en-us/power-bi/admin/service-security-data-classification",
+              "title": "Object-level security (OLS)",
+              "url": "https://learn.microsoft.com/en-us/power-bi/enterprise/service-admin-ols",
               "type": "article"
             },
             {
@@ -1371,8 +1336,8 @@
           "description": "Design mobile-optimized dashboard layouts: responsive phone views, touch-friendly navigation, and mobile push alert triggers.",
           "resources": [
             {
-              "title": "Designing Mobile Dashboards in Power BI",
-              "url": "https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-create-mobile-optimized-report",
+              "title": "Create mobile-optimized Power BI reports",
+              "url": "https://learn.microsoft.com/en-us/power-bi/create-reports/power-bi-create-mobile-optimized-report-about",
               "type": "article"
             },
             {
@@ -1405,13 +1370,8 @@
       "description": "Operate enterprise BI platforms: workspace governance, version control with Git, deployment pipelines, and cost optimization.",
       "resources": [
         {
-          "title": "Power BI Service (Microsoft Learn)",
-          "url": "https://learn.microsoft.com/en-us/power-bi/fundamentals/service-overview",
-          "type": "article"
-        },
-        {
-          "title": "Tableau Server Overview",
-          "url": "https://help.tableau.com/current/server/en-us/server.htm",
+          "title": "What is Power BI?",
+          "url": "https://learn.microsoft.com/en-us/power-bi/fundamentals/power-bi-service-overview",
           "type": "article"
         },
         {
@@ -1498,8 +1458,8 @@
           "description": "Manage enterprise access governance: workspace roles (Admin, Member, Contributor, Viewer), app packaging, and sharing reports securely.",
           "resources": [
             {
-              "title": "Manage workspace access (Power BI)",
-              "url": "https://learn.microsoft.com/en-us/power-bi/collaborate-share/service-share-workspaces",
+              "title": "Workspaces in Power BI",
+              "url": "https://learn.microsoft.com/en-us/power-bi/collaborate-share/service-new-workspaces",
               "type": "article"
             },
             {
@@ -1608,11 +1568,6 @@
           "description": "Configure automated metric alerts: data-driven alerts notifying stakeholders via email or Teams when KPIs breach critical business thresholds.",
           "resources": [
             {
-              "title": "Power BI Monitoring Guide",
-              "url": "https://learn.microsoft.com/en-us/power-bi/guidance/monitor-power-bi-service",
-              "type": "article"
-            },
-            {
               "title": "What is Data Observability? | A Quick Intro & Explanation",
               "url": "https://www.youtube.com/watch?v=Xs7QJv4JjmA",
               "type": "video"
@@ -1638,8 +1593,8 @@
           "description": "Conduct impact and lineage analysis: tracing data lineage from data lakehouse sources through semantic models to downstream dashboards.",
           "resources": [
             {
-              "title": "Data lineage in Power BI",
-              "url": "https://learn.microsoft.com/en-us/power-bi/fundamentals/service-data-lineage",
+              "title": "Data lineage",
+              "url": "https://learn.microsoft.com/en-us/power-bi/collaborate-share/service-data-lineage",
               "type": "article"
             },
             {
@@ -1668,8 +1623,8 @@
               "type": "article"
             },
             {
-              "title": "Tableau Server Audit Information",
-              "url": "https://help.tableau.com/current/server/en-us/admin_monitoring_audit_info.htm",
+              "title": "Administrative Views for Monitoring Tableau Server",
+              "url": "https://help.tableau.com/current/server/en-us/adminview.htm",
               "type": "article"
             },
             {
@@ -1703,8 +1658,8 @@
               "type": "article"
             },
             {
-              "title": "Tableau Cloud Administration Guide",
-              "url": "https://help.tableau.com/current/online/en-us/admin.htm",
+              "title": "Set Up and Administer Tableau Cloud",
+              "url": "https://help.tableau.com/current/online/en-us/to_site_startup.htm",
               "type": "article"
             },
             {
@@ -1733,8 +1688,8 @@
           "description": "Optimize BI licensing and infrastructure costs: analyzing Pro vs Premium vs Fabric capacity licensing, and deprecating unused datasets.",
           "resources": [
             {
-              "title": "Optimizing Costs in Power BI Premium",
-              "url": "https://learn.microsoft.com/en-us/power-bi/enterprise/service-premium-capacity-planning-cost-optimization",
+              "title": "Plan your capacity size",
+              "url": "https://learn.microsoft.com/en-us/fabric/enterprise/plan-capacity",
               "type": "article"
             },
             {
@@ -1760,11 +1715,6 @@
             {
               "title": "Power BI Embedded Analytics Playground",
               "url": "https://playground.powerbi.com/en-us/",
-              "type": "article"
-            },
-            {
-              "title": "Tableau JavaScript API Tutorial",
-              "url": "https://help.tableau.com/current/api/js_api/en-us/javascript_api_tutorial.htm",
               "type": "article"
             },
             {
@@ -1860,11 +1810,6 @@
           "description": "Author standardized BI documentation: business metric definitions, technical data dictionaries, and user operating manuals.",
           "resources": [
             {
-              "title": "Why is Documentation Important for BI Projects?",
-              "url": "https://www.dataedo.com/blog/why-is-documentation-important-for-bi-projects",
-              "type": "article"
-            },
-            {
               "title": "Documenting your Power BI Data Model",
               "url": "https://www.youtube.com/watch?v=wKbB9fU8kEM",
               "type": "video"
@@ -1910,8 +1855,8 @@
           "description": "Manage stakeholder communication: leading dashboard design workshops, managing feature backlogs, and demonstrating delivered business ROI.",
           "resources": [
             {
-              "title": "Stakeholder Management for Data Projects",
-              "url": "https://www.coursera.org/articles/stakeholder-management-for-data-projects",
+              "title": "What Is Stakeholder Management? (Coursera)",
+              "url": "https://www.coursera.org/articles/stakeholder-management",
               "type": "article"
             },
             {
@@ -1939,11 +1884,6 @@
           "tag": "advanced",
           "description": "Execute Agile BI workflows: two-week sprint cycles, user story mapping for analytical questions, and continuous stakeholder feedback loops.",
           "resources": [
-            {
-              "title": "Agile BI Development Best Practices",
-              "url": "https://www.tableau.com/blog/agile-bi-development-best-practices",
-              "type": "article"
-            },
             {
               "title": "Agile Software Development - What is Agile? What is Scrum?",
               "url": "https://www.youtube.com/watch?v=8eVXTyIZ1Hs",
@@ -2022,8 +1962,8 @@
           "description": "Build a compelling BI portfolio: showcasing interactive public reports (NovyPro, Tableau Public), detailing business problem contexts, and explaining data modeling decisions.",
           "resources": [
             {
-              "title": "How to Build a Portfolio for Data Analytics (Coursera)",
-              "url": "https://www.coursera.org/articles/how-to-build-a-portfolio-for-data-analytics",
+              "title": "How to Build a Data Analyst Portfolio (Coursera)",
+              "url": "https://www.coursera.org/articles/how-to-build-a-data-analyst-portfolio",
               "type": "article"
             },
             {
@@ -2051,11 +1991,6 @@
           "tag": "advanced",
           "description": "Excel in BI technical interviews: live SQL data transformation problems, complex DAX / LOD formula derivations, and defending dashboard UX design choices.",
           "resources": [
-            {
-              "title": "BI Developer Interview Questions (InterviewBit)",
-              "url": "https://www.interviewbit.com/bi-developer-interview-questions/",
-              "type": "article"
-            },
             {
               "title": "Data Analyst Interview Questions and Answers (SQL, Excel, Tableau, Power BI, Python)",
               "url": "https://www.youtube.com/watch?v=2rWjCZuxtHE",
@@ -2106,11 +2041,6 @@
           "tag": "advanced",
           "description": "Stay ahead of industry developments: Microsoft Fabric unified analytics, AI copilot integration in BI tools, and modern semantic layer standards.",
           "resources": [
-            {
-              "title": "Top Business Intelligence Trends",
-              "url": "https://www.tableau.com/about/blog/2023/1/business-intelligence-trends",
-              "type": "article"
-            },
             {
               "title": "The Future of Data Analytics & BI (What's Next)",
               "url": "https://www.youtube.com/watch?v=BIv4PHA_rek",

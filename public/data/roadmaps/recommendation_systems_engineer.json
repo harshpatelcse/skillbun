@@ -111,9 +111,9 @@
           "type": "article"
         },
         {
-          "title": "RecSys Introduction and Overview",
-          "url": "https://towardsdatascience.com/introduction-to-recommender-systems-63792372f534",
-          "type": "article"
+          "title": "Recommendation Systems Overview (Google)",
+          "url": "https://developers.google.com/machine-learning/recommendation/overview?hl=en",
+          "type": "course"
         },
         {
           "title": "Recommendation Systems Full Course (freeCodeCamp)",
@@ -138,11 +138,6 @@
           "tag": "essential",
           "description": "Understand core recommender paradigms: Explicit vs implicit feedback, click-through rate (CTR), conversion rate (CVR), watch time optimization, and feedback loop polarization.",
           "resources": [
-            {
-              "title": "What are Recommender Systems?",
-              "url": "https://developers.google.com/machine-learning/recommendation/overview/what-are-recsys",
-              "type": "article"
-            },
             {
               "title": "Ethical Challenges in Recommender Systems",
               "url": "https://arxiv.org/pdf/2004.07406.pdf",
@@ -174,11 +169,6 @@
           "description": "Engineer data pipelines for recommendations: User interaction logs, item catalogs, user demographic attributes, context features (timestamp, device), and handling extreme data sparsity.",
           "resources": [
             {
-              "title": "RecBole Documentation: Data Preparation",
-              "url": "https://recbole.io/docs/user_guide/data_preparation.html",
-              "type": "article"
-            },
-            {
               "title": "Feature Engineering for Recommender Systems",
               "url": "https://medium.com/@kavyachandel2/feature-engineering-for-recommender-systems-7e5025a1e263",
               "type": "article"
@@ -209,8 +199,8 @@
           "description": "Evaluate recommender systems offline and online: Precision@K, Recall@K, Mean Average Precision (MAP@K), Normalized Discounted Cumulative Gain (NDCG@K), Hit Rate, and A/B test statistical significance.",
           "resources": [
             {
-              "title": "Recommender System Evaluation - Towards Data Science",
-              "url": "https://towardsdatascience.com/recommender-system-evaluation-f31317116e78",
+              "title": "Recommendation Evaluation Metrics (Microsoft Recommenders)",
+              "url": "https://recommenders-team.github.io/recommenders/evaluation.html",
               "type": "article"
             },
             {
@@ -248,11 +238,6 @@
       "description": "Implement classical baseline algorithms: Heuristics, collaborative filtering, matrix factorization, and content-based feature filtering.",
       "resources": [
         {
-          "title": "Microsoft Recommenders: Overview of algorithms",
-          "url": "https://github.com/recommenders-team/recommenders/blob/main/overview.md",
-          "type": "article"
-        },
-        {
           "title": "Chapter 2: Classic Recommender Systems - Recommender Systems Handbook",
           "url": "https://link.springer.com/chapter/10.1007/978-3-030-22475-7_2",
           "type": "article"
@@ -280,11 +265,6 @@
           "tag": "essential",
           "description": "Build non-personalized baselines: Popularity-based ranking, recency-weighted trending items, association rule mining (Apriori), and co-occurrence frequency matrices.",
           "resources": [
-            {
-              "title": "Building a Basic Recommender System (Popularity-Based)",
-              "url": "https://www.analyticsvidhya.com/blog/2021/06/recommender-system-a-comprehensive-guide/",
-              "type": "article"
-            },
             {
               "title": "Matrix Factorization Tutorial (Krish Naik)",
               "url": "https://www.youtube.com/watch?v=ZspR5PZemcs",
@@ -376,9 +356,9 @@
           "description": "Build content-based recommendation engines: TF-IDF item representations, metadata feature matching, BERT/text embedding similarity, and constructing user preference profiles.",
           "resources": [
             {
-              "title": "Content-Based Recommender Systems - Towards Data Science",
-              "url": "https://towardsdatascience.com/content-based-recommender-systems-d94896796245",
-              "type": "article"
+              "title": "Content-Based Recommendation Systems (Google)",
+              "url": "https://developers.google.com/machine-learning/recommendation/content-based/basics?hl=en",
+              "type": "course"
             },
             {
               "title": "Matrix Factorization Tutorial (Krish Naik)",
@@ -473,11 +453,6 @@
           "description": "Generate high-capacity entity embeddings: Word2Vec-style Item2Vec on user session trajectories, Graph Convolutional Networks (PinSage, LightGCN), and multimodal item embeddings.",
           "resources": [
             {
-              "title": "Graph Embeddings for Recommender Systems",
-              "url": "https://www.kdnuggets.com/2020/09/graph-embeddings-recommender-systems.html",
-              "type": "article"
-            },
-            {
               "title": "Matrix Factorization Tutorial (Krish Naik)",
               "url": "https://www.youtube.com/watch?v=ZspR5PZemcs",
               "type": "video"
@@ -540,11 +515,6 @@
             {
               "title": "Deep Neural Networks for YouTube Recommendations - Research Paper",
               "url": "https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45530.pdf",
-              "type": "article"
-            },
-            {
-              "title": "DLRM for Recommender Systems",
-              "url": "https://engineering.fb.com/2019/07/22/ai-research/dlrm/",
               "type": "article"
             },
             {
@@ -647,11 +617,6 @@
       "description": "Design industrial-scale recommendation architectures: Multi-stage funnels (Retrieval -> Filtering -> Scoring/Ranking -> Re-ranking/Diversity -> Business Rules).",
       "resources": [
         {
-          "title": "MLOps for Recommender Systems - Towards Data Science",
-          "url": "https://towardsdatascience.com/mlops-for-recommender-systems-f29e924a3e7e",
-          "type": "article"
-        },
-        {
           "title": "Production Machine Learning Systems Design Course",
           "url": "https://fullstackdeeplearning.com/course/2022/",
           "type": "course"
@@ -680,8 +645,8 @@
           "description": "Build high-throughput ingestion pipelines: Real-time event streaming with Apache Kafka / Flink, Parquet lakehouse storage with Apache Iceberg, and feature extraction.",
           "resources": [
             {
-              "title": "Building a Real-time Data Pipeline for Machine Learning",
-              "url": "https://www.databricks.com/blog/2021/04/06/building-a-real-time-data-pipeline-for-machine-learning.html",
+              "title": "Build Streaming Data Pipelines (Databricks)",
+              "url": "https://docs.databricks.com/aws/en/structured-streaming/",
               "type": "article"
             },
             {
@@ -714,11 +679,6 @@
           "tag": "essential",
           "description": "Scale candidate retrieval across millions of items: Vector indexing with ScaNN, Faiss, and HNSW graphs; graph-based candidate expansion; and multi-retrieval source blending.",
           "resources": [
-            {
-              "title": "Candidate Generation for Recommender Systems - Google ML",
-              "url": "https://developers.google.com/machine-learning/recommendation/candidate-generation/overview",
-              "type": "article"
-            },
             {
               "title": "Faiss: A library for efficient similarity search",
               "url": "https://github.com/facebookresearch/faiss",
@@ -820,8 +780,8 @@
               "type": "article"
             },
             {
-              "title": "Trustworthy Online Controlled Experiments",
-              "url": "https://experimentation-platform.github.io/experimentation-platform/",
+              "title": "Online Experimentation and A/B Testing Research (Microsoft)",
+              "url": "https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/",
               "type": "article"
             },
             {
@@ -849,16 +809,6 @@
           "tag": "advanced",
           "description": "Monitor recommender systems in production: Tracking data distribution drift, feature staleness, candidate pool coverage, model performance decay, and automated pipeline retraining.",
           "resources": [
-            {
-              "title": "MLOps Best Practices for Recommender Systems - Databricks",
-              "url": "https://databricks.com/blog/2021/04/13/mlops-best-practices-for-recommender-systems.html",
-              "type": "article"
-            },
-            {
-              "title": "Monitoring ML Models in Production",
-              "url": "https://www.evidentlyai.com/ml-observability/ml-model-monitoring",
-              "type": "article"
-            },
             {
               "title": "Collaborative Filtering Explained (StatQuest)",
               "url": "https://www.youtube.com/watch?v=ZspR5PZemcs",
@@ -888,11 +838,6 @@
       "tag": "advanced",
       "description": "Solve frontier recommender challenges: Position bias, popularity bias, filter bubbles, cold-start bottlenecks, and multi-stakeholder optimization.",
       "resources": [
-        {
-          "title": "RecBole Documentation: Advanced Topics",
-          "url": "https://recbole.io/docs/user_guide/model/model.html",
-          "type": "article"
-        },
         {
           "title": "Challenges in Recommender Systems: A Survey",
           "url": "https://arxiv.org/pdf/2007.12784.pdf",
@@ -952,11 +897,6 @@
           "description": "Mitigate algorithmic bias: Inverse propensity scoring (IPS) to correct selection bias, demographic parity checks, and generating user-facing recommendation explanations.",
           "resources": [
             {
-              "title": "Fairness in Recommender Systems - ACM RecSys",
-              "url": "https://recsys.acm.org/recsys21/callforpapers/fairness/",
-              "type": "article"
-            },
-            {
               "title": "Explainable Recommendation: A Survey and New Perspectives",
               "url": "https://arxiv.org/pdf/2005.02324.pdf",
               "type": "article"
@@ -989,11 +929,6 @@
             {
               "title": "Diversity and Recommender Systems: A Survey",
               "url": "https://dl.acm.org/doi/10.1145/2678125",
-              "type": "article"
-            },
-            {
-              "title": "Optimizing for Multiple Objectives in Recommender Systems",
-              "url": "https://developers.google.com/machine-learning/recommendation/multi-objective/overview",
               "type": "article"
             },
             {
@@ -1121,9 +1056,9 @@
           "type": "course"
         },
         {
-          "title": "Deep Learning Recommender Systems Project - Coursera",
-          "url": "https://www.coursera.org/projects/deep-learning-recommender-systems",
-          "type": "course"
+          "title": "Building a Retrieval Model — TensorFlow Recommenders",
+          "url": "https://www.tensorflow.org/recommenders/examples/basic_retrieval?hl=en",
+          "type": "article"
         },
         {
           "title": "Recommendation Systems Full Course (freeCodeCamp)",
@@ -1178,11 +1113,6 @@
           "tag": "advanced",
           "description": "Profile and tune recommendation systems: Reducing P99 inference latency, optimizing sparse embedding table memory, and maximizing GPU/CPU hardware utilization.",
           "resources": [
-            {
-              "title": "Optimizing Recommender Systems Performance - Nvidia Blog",
-              "url": "https://developer.nvidia.com/blog/optimizing-recommender-systems-performance/",
-              "type": "article"
-            },
             {
               "title": "Model Optimization for TensorFlow Lite",
               "url": "https://www.tensorflow.org/lite/performance/model_optimization",

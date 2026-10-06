@@ -202,11 +202,6 @@
               "type": "article"
             },
             {
-              "title": "What is Speech AI?",
-              "url": "https://aws.amazon.com/what-is/speech-ai/",
-              "type": "article"
-            },
-            {
               "title": "Speech Recognition with Python (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=mYUyaKmvu6Y",
               "type": "video"
@@ -241,11 +236,6 @@
           "type": "article"
         },
         {
-          "title": "Audio Preprocessing for Deep Learning",
-          "url": "https://www.assemblyai.com/blog/audio-preprocessing-for-deep-learning-with-python/",
-          "type": "article"
-        },
-        {
           "title": "Convert Text to Speech Using Python | GeeksforGeeks (GeeksforGeeks)",
           "url": "https://www.youtube.com/watch?v=buoSzgX9yM4",
           "type": "video"
@@ -268,16 +258,6 @@
           "tag": "essential",
           "description": "Build audio data pipelines: Managing variable-length utterances, dynamic padding, bucketing by audio length, and data augmentation with SpecAugment, pitch shifting, and background noise mixing.",
           "resources": [
-            {
-              "title": "Deep Learning for Audio with Python (practical introduction)",
-              "url": "https://towardsdatascience.com/deep-learning-for-audio-with-python-e609756b10",
-              "type": "article"
-            },
-            {
-              "title": "Augmenting Speech Data for ASR",
-              "url": "https://www.assemblyai.com/blog/data-augmentation-for-automatic-speech-recognition/",
-              "type": "article"
-            },
             {
               "title": "PyDub Documentation (Audio manipulation)",
               "url": "https://github.com/jiaaro/pydub",
@@ -311,16 +291,6 @@
             {
               "title": "An Intuitive Explanation of Mel-Frequency Cepstral Coefficients (MFCCs)",
               "url": "https://haythamfayek.com/2016/04/21/speech-processing-for-machine-learning.html",
-              "type": "article"
-            },
-            {
-              "title": "Understanding Audio Features for Deep Learning",
-              "url": "https://www.kdnuggets.com/2020/02/audio-features-deep-learning.html",
-              "type": "article"
-            },
-            {
-              "title": "A tutorial on PLP and MFCC computation",
-              "url": "https://www.cs.cmu.edu/~robust/Papers/rachel-icassp93.pdf",
               "type": "article"
             },
             {
@@ -358,11 +328,6 @@
           "type": "article"
         },
         {
-          "title": "ASR with CTC, Attention, and RNN-T",
-          "url": "https://www.assemblyai.com/blog/recurrent-neural-networks-and-speech-recognition/",
-          "type": "article"
-        },
-        {
           "title": "Convert Text to Speech Using Python | GeeksforGeeks (GeeksforGeeks)",
           "url": "https://www.youtube.com/watch?v=buoSzgX9yM4",
           "type": "video"
@@ -388,11 +353,6 @@
             {
               "title": "End-to-End ASR: CTC, Attention, RNN-T (IBM Research Blog)",
               "url": "https://www.ibm.com/blogs/research/2021/04/speech-recognition-deep-learning/",
-              "type": "article"
-            },
-            {
-              "title": "Fine-tuning Wav2Vec2 for English ASR with 🤗 Transformers",
-              "url": "https://huggingface.co/blog/fine-tune-wav2vec2-asr",
               "type": "article"
             },
             {
@@ -426,18 +386,8 @@
           "description": "Train and decode ASR models: Joint CTC/Attention decoding, beam search decoding with n-gram KenLM language models, byte-pair subword tokenization, and multi-GPU training.",
           "resources": [
             {
-              "title": "Beam Search for Speech Recognition",
-              "url": "https://www.assemblyai.com/blog/a-guide-to-beam-search-decoding/",
-              "type": "article"
-            },
-            {
               "title": "CTC Loss Explained",
               "url": "https://towardsdatascience.com/intuitively-understanding-connectionist-temporal-classification-3797e43a86c",
-              "type": "article"
-            },
-            {
-              "title": "RNN-T: Recurrent Neural Network Transducer explained",
-              "url": "https://www.assemblyai.com/blog/recurrent-neural-networks-and-speech-recognition/",
               "type": "article"
             },
             {
@@ -465,11 +415,6 @@
           "tag": "essential",
           "description": "Evaluate speech recognition performance: Word Error Rate (WER), Character Error Rate (CER), text normalization pipelines (whisper-normalizer), and analyzing phoneme-level substitutions/deletions.",
           "resources": [
-            {
-              "title": "Word Error Rate (WER) in ASR",
-              "url": "https://www.assemblyai.com/blog/word-error-rate-wer-in-asr/",
-              "type": "article"
-            },
             {
               "title": "Common Voice ASR Metrics Explained",
               "url": "https://commonvoice.mozilla.org/en/docs/asr-metrics",
@@ -509,11 +454,6 @@
       "tag": "essential",
       "description": "Architect modern neural Text-to-Speech (TTS) synthesis and high-fidelity waveform generation systems.",
       "resources": [
-        {
-          "title": "Tacotron 2 and WaveNet for TTS Explained",
-          "url": "https://nanonets.com/blog/text-to-speech/",
-          "type": "article"
-        },
         {
           "title": "ESPnet TTS Tutorial",
           "url": "https://espnet.github.io/espnet/espnet2_tutorial.html#tts",
@@ -585,11 +525,6 @@
             {
               "title": "Hifi-GAN: Generative Adversarial Networks for Efficient and High Fidelity Speech Synthesis",
               "url": "https://arxiv.org/abs/2010.05646",
-              "type": "article"
-            },
-            {
-              "title": "Parallel WaveGAN Explained",
-              "url": "https://www.assemblyai.com/blog/parallel-wavegan-a-high-fidelity-speech-synthesis-model/",
               "type": "article"
             },
             {
@@ -667,11 +602,6 @@
       "description": "Implement advanced speech processing systems: Speaker identification, source separation, and spoken language understanding.",
       "resources": [
         {
-          "title": "Speaker Diarization with PyTorch (PyTorch Official Tutorial)",
-          "url": "https://pytorch.org/audio/stable/tutorials/speaker_diarization_tutorial.html",
-          "type": "article"
-        },
-        {
           "title": "Speech Recognition with Python (freeCodeCamp)",
           "url": "https://www.youtube.com/watch?v=mYUyaKmvu6Y",
           "type": "video"
@@ -737,11 +667,6 @@
             {
               "title": "A Review of Deep Learning for Speech Enhancement",
               "url": "https://arxiv.org/abs/2003.01633",
-              "type": "article"
-            },
-            {
-              "title": "Speech Separation with Conv-TasNet",
-              "url": "https://pytorch.org/audio/stable/tutorials/conv_tasnet_tutorial.html",
               "type": "article"
             },
             {
@@ -815,11 +740,6 @@
               "type": "article"
             },
             {
-              "title": "RASA NLU (for intent and slot filling)",
-              "url": "https://rasa.com/docs/rasa/nlu/about/",
-              "type": "article"
-            },
-            {
               "title": "Convert Text to Speech Using Python | GeeksforGeeks (GeeksforGeeks)",
               "url": "https://www.youtube.com/watch?v=buoSzgX9yM4",
               "type": "video"
@@ -848,16 +768,6 @@
       "tag": "advanced",
       "description": "Deploy speech AI systems at enterprise scale: Latency profiling, streaming inference, and edge audio hardware optimization.",
       "resources": [
-        {
-          "title": "MLOps Best Practices for Voice AI",
-          "url": "https://www.assemblyai.com/blog/mlops-best-practices-for-voice-ai/",
-          "type": "article"
-        },
-        {
-          "title": "Responsible AI in Speech Technologies",
-          "url": "https://www.microsoft.com/en-us/ai/responsible-ai-principles",
-          "type": "article"
-        },
         {
           "title": "Deep Learning for Audio (Valerio Velardo)",
           "url": "https://www.youtube.com/watch?v=fMqL5vckiU0",
@@ -961,11 +871,6 @@
           "tag": "advanced",
           "description": "Ensure responsible speech AI: Mitigating accent and dialect bias, detecting synthetic deepfake voices, watermarking generated speech, and protecting voice biometric privacy.",
           "resources": [
-            {
-              "title": "Fairness and Bias in ASR Systems",
-              "url": "https://www.brookings.edu/articles/facial-and-voice-recognition-ai-and-discrimination/",
-              "type": "article"
-            },
             {
               "title": "What is Responsible AI?",
               "url": "https://www.ibm.com/topics/responsible-ai",
@@ -1113,11 +1018,6 @@
           "tag": "advanced",
           "description": "Prepare for speech AI technical interviews: Derive STFT and Mel-scale mathematics, whiteboard CTC loss alignment forward-backward equations, and design scalable streaming voice pipelines.",
           "resources": [
-            {
-              "title": "Structuring Your Data Science Portfolio",
-              "url": "https://towardsdatascience.com/structuring-your-data-science-portfolio-a77c34b17a10",
-              "type": "article"
-            },
             {
               "title": "AI Engineer Interview Questions (General)",
               "url": "https://www.datacamp.com/blog/ai-engineer-interview-questions",

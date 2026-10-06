@@ -551,7 +551,7 @@ for (const change of ['account switch', 'unmount']) {
   });
 }
 
-async function authSaveActions() {
+async function authSaveActions({ cache } = {}) {
   const fullSource = await fs.readFile(new URL('../../app/components/AuthProvider.jsx', import.meta.url), 'utf8');
   const source = fullSource.slice(fullSource.indexOf('  const saveProfile = useCallback'), fullSource.indexOf('  const signOutUser = useCallback'));
   const pending = deferred();
@@ -567,12 +567,97 @@ async function authSaveActions() {
     serverTimestamp: () => 'server-timestamp',
     doc: (...args) => args.slice(1).join('/'),
     setDoc: async (path, data) => { cloudWrites.push({ path, data }); await pending.promise; },
-    saveStoredProfile: data => localWrites.push(data),
-    saveStoredRoadmapProgress: (slug, ids) => localWrites.push({ slug, ids }),
+    saveStoredProfile: cache?.saveStoredProfile || (data => localWrites.push(data)),
+    saveStoredRoadmapProgress: cache?.saveStoredRoadmapProgress || ((slug, ids) => localWrites.push({ slug, ids })),
   };
   const actions = new Function(...Object.keys(dependencies), `${source}; return { saveProfile, saveRoadmapProgress };`)(...Object.values(dependencies));
   return { actions, pending, services, localWrites, cloudWrites };
 }
+
+async function browserCaches({ blocked = false, readOnly = false } = {}) {
+  const values = new Map();
+  const events = [];
+  const storage = {
+    get length() { return values.size; },
+    key: index => [...values.keys()][index] ?? null,
+    getItem: key => values.get(key) ?? null,
+    setItem: (key, value) => {
+      if (readOnly) throw new Error('Storage quota exceeded');
+      values.set(key, value);
+    },
+    removeItem: key => {
+      if (readOnly) throw new Error('Storage removal blocked');
+      values.delete(key);
+    },
+  };
+  const window = { dispatchEvent: event => events.push(event.type) };
+  Object.defineProperty(window, 'localStorage', {
+    get() { if (blocked) throw new Error('Storage access blocked'); return storage; },
+  });
+  const dependencies = { window, BroadcastChannel: undefined };
+  const profile = await loadClientModule('utils/shared/profileStore.js', ['saveStoredProfile', 'readProfileSnapshot', 'clearStoredProfile'], dependencies);
+  const progress = await loadClientModule('utils/shared/progressStore.js', ['saveStoredRoadmapProgress', 'readStoredRoadmapProgress', 'readAllStoredRoadmapProgress', 'clearStoredRoadmapProgress'], dependencies);
+  return { ...profile, ...progress, values, events, setReadOnly: value => { readOnly = value; } };
+}
+
+test('cloud profile and progress saves remain usable when browser storage access is blocked', async () => {
+  const cache = await browserCaches({ blocked: true });
+  const runtime = await authSaveActions({ cache });
+  const profileSave = runtime.actions.saveProfile({ name: 'Current Student', degree: 'BCA', year: '1st Year', interest: 'Web', ageBand: '18-plus' });
+  const progressSave = runtime.actions.saveRoadmapProgress('frontend', ['intro', 'intro']);
+  runtime.pending.resolve();
+  await Promise.all([profileSave, progressSave]);
+  assert.equal(cache.readProfileSnapshot().name, 'Current Student');
+  assert.equal(cache.readProfileSnapshot().uid, 'student-a');
+  assert.deepEqual(cache.readStoredRoadmapProgress('frontend'), ['intro']);
+  assert.deepEqual(cache.readAllStoredRoadmapProgress(), [{ slug: 'frontend', completedNodeIds: ['intro'] }]);
+  assert.ok(cache.events.includes('sb_profile_change'));
+  assert.ok(cache.events.includes('sb_progress_change'));
+  for (const kind of ['quiz', 'counsellor']) {
+    const { getStoredProfile } = await loadClientModule(`utils/client/${kind}/${kind}Dom.js`, ['getStoredProfile'], { readProfileSnapshot: cache.readProfileSnapshot, marked: null });
+    assert.equal(getStoredProfile().degree, 'BCA', `${kind} must use the cloud-backed session snapshot`);
+    assert.equal(getStoredProfile().year, '1st Year');
+  }
+});
+
+test('failed cache erasure masks the previous account before the next account saves its data', async () => {
+  const cache = await browserCaches();
+  cache.saveStoredProfile({ uid: 'student-a', name: 'Old Student', email: 'old@example.com', degree: 'BCA', year: '1st Year' });
+  cache.saveStoredRoadmapProgress('frontend', ['old-intro']);
+  cache.setReadOnly(true);
+  cache.clearStoredProfile();
+  cache.clearStoredRoadmapProgress();
+  assert.equal(cache.readProfileSnapshot().uid, '');
+  assert.equal(cache.readProfileSnapshot().degree, '');
+  assert.deepEqual(cache.readStoredRoadmapProgress('frontend'), []);
+  assert.deepEqual(cache.readAllStoredRoadmapProgress(), []);
+  cache.saveStoredProfile({ uid: 'student-b', name: 'New Student', email: 'new@example.com', degree: 'Bootcamp', year: 'Graduated' });
+  cache.saveStoredRoadmapProgress('backend', ['new-intro']);
+  assert.equal(cache.readProfileSnapshot().uid, 'student-b');
+  assert.deepEqual(cache.readAllStoredRoadmapProgress(), [{ slug: 'backend', completedNodeIds: ['new-intro'] }]);
+  assert.equal(cache.values.get('sb_profile_uid'), 'student-a', 'persisted stale data must be masked when its removal is denied');
+});
+
+test('a quota failure uses current values and normal storage resumes on a later successful save', async () => {
+  const cache = await browserCaches();
+  cache.saveStoredProfile({ uid: 'student-a', name: 'Old Name', degree: 'BCA', year: '1st Year' });
+  cache.saveStoredRoadmapProgress('frontend', ['intro']);
+  cache.setReadOnly(true);
+  cache.saveStoredProfile({ uid: 'student-a', name: 'New Name', degree: 'BCA', year: '2nd Year' });
+  cache.saveStoredRoadmapProgress('frontend', ['intro', 'project']);
+  assert.equal(cache.readProfileSnapshot().name, 'New Name');
+  assert.deepEqual(cache.readStoredRoadmapProgress('frontend'), ['intro', 'project']);
+  cache.setReadOnly(false);
+  cache.saveStoredProfile({ uid: 'student-a', name: 'Latest Name', degree: 'BCA', year: '3rd Year' });
+  cache.saveStoredRoadmapProgress('frontend', ['intro', 'project', 'review']);
+  assert.equal(cache.readProfileSnapshot().name, 'Latest Name');
+  assert.equal(cache.values.get('sb_name'), 'Latest Name');
+  assert.deepEqual(JSON.parse(cache.values.get('skillbun_progress_frontend')), ['intro', 'project', 'review']);
+  cache.clearStoredProfile();
+  cache.clearStoredRoadmapProgress();
+  assert.equal(cache.readProfileSnapshot().degree, '');
+  assert.deepEqual(cache.readAllStoredRoadmapProgress(), []);
+});
 
 for (const nextUid of [null, 'student-b']) {
   for (const action of ['saveProfile', 'saveRoadmapProgress']) {
@@ -590,7 +675,7 @@ for (const nextUid of [null, 'student-b']) {
   }
 }
 
-async function counsellorRuntime({ proof, response } = {}) {
+async function counsellorRuntime({ proof, response, query = '' } = {}) {
   const elements = new Map();
   const messages = [];
   const makeElement = () => ({
@@ -604,8 +689,11 @@ async function counsellorRuntime({ proof, response } = {}) {
   let state;
   let proofCalls = 0;
   let requestCalls = 0;
+  const location = { search: query, pathname: '/counsellor' };
+  const destinations = [];
+  const payloads = [];
   const dependencies = {
-    window: { location: { search: '' } },
+    window: { location, history: { replaceState: (_state, _title, path) => { destinations.push(path); location.search = ''; } } },
     document: { createElement: makeElement },
     getEl: id => elements.get(id) || null,
     createState: controller => { state = stateApi.createState(controller); return state; },
@@ -620,8 +708,9 @@ async function counsellorRuntime({ proof, response } = {}) {
     getPersonalizedInitialChips: () => [], renderSuggestionChips() {}, hideSuggestionsSection() {},
     getFollowUpSuggestions: () => [],
     verifyHumanProof: async () => { proofCalls += 1; return proof ? proof.promise : true; },
-    fetchCounsellorPayload: async () => {
+    fetchCounsellorPayload: async (_state, payload) => {
       requestCalls += 1;
+      payloads.push(structuredClone(payload));
       return response ? response.promise : { candidates: [{ content: { parts: [{ text: 'Use the frontend roadmap.' }] } }] };
     },
     appendMessage: (current, role, text) => messages.push({ role, text }),
@@ -632,7 +721,128 @@ async function counsellorRuntime({ proof, response } = {}) {
   const { mountCounsellorRuntime } = await loadClientModule('utils/client/counsellorRuntime.js', ['mountCounsellorRuntime'], dependencies);
   const cleanup = mountCounsellorRuntime();
   await settle();
-  return { elements, state, messages, cleanup, proofCalls: () => proofCalls, requestCalls: () => requestCalls };
+  return { elements, state, messages, cleanup, destinations, payloads, proofCalls: () => proofCalls, requestCalls: () => requestCalls };
+}
+
+test('Bun-Bot keeps the roadmap context after consuming an Ask BunBot deep link and clearing chat', async () => {
+  const query = `?${new URLSearchParams({ q: 'Explain CSS layouts', context: 'Frontend Developer Roadmap' })}`;
+  const runtime = await counsellorRuntime({ query });
+  try {
+    assert.deepEqual(runtime.destinations, ['/counsellor']);
+    assert.equal(runtime.requestCalls(), 1);
+    assert.match(runtime.payloads[0].contents[0].parts[0].text, /Frontend Developer Roadmap/);
+    assert.equal(runtime.payloads[0].contents.at(-1).parts[0].text, 'Explain CSS layouts');
+    runtime.elements.get('clearChatBtn').click();
+    runtime.elements.get('chatInput').value = 'What should I practice next?';
+    await runtime.elements.get('sendBtn').click();
+    assert.match(runtime.payloads[1].contents[0].parts[0].text, /Frontend Developer Roadmap/);
+  } finally { runtime.cleanup(); }
+});
+
+test('Bun-Bot keeps accurate per-account usage feedback when browser storage writes fail', async () => {
+  let uid = 'student-a';
+  const api = await loadClientModule('utils/client/counsellor/counsellorApi.js', ['getRateLimitData', 'checkRateLimit', 'incrementRateLimit'], {
+    getFirebaseServices: () => ({ auth: { currentUser: { uid } } }),
+    localStorage: { getItem: () => null, setItem() { throw new Error('Storage quota exceeded'); } },
+  });
+  for (let index = 0; index < 100; index += 1) api.incrementRateLimit();
+  assert.equal(api.getRateLimitData().count, 100);
+  assert.equal(api.checkRateLimit().allowed, false);
+  uid = 'student-b';
+  assert.equal(api.getRateLimitData().count, 0);
+  assert.equal(api.checkRateLimit().allowed, true);
+  api.incrementRateLimit();
+  assert.equal(api.getRateLimitData().count, 1);
+  const { updateUsageLimitCard } = await loadClientModule('utils/client/counsellor/counsellorDom.js', ['updateUsageLimitCard'], {
+    marked: null, getRateLimitData: api.getRateLimitData, RATE_LIMIT_MAX: 100, RATE_LIMIT_WINDOW_MS: 3_600_000,
+    document: { getElementById: id => controls[id] || null },
+  });
+  const controls = Object.fromEntries(['limitCount', 'limitBar', 'limitReset', 'mobileLimitCount'].map(id => [id, { style: {}, classList: { remove() {}, add() {} } }]));
+  updateUsageLimitCard();
+  assert.equal(controls.limitCount.textContent, '99 / 100');
+});
+
+for (const theme of ['light', 'dark']) {
+  test(`quiz human verification renders in the active ${theme} theme without reading browser storage`, async () => {
+    const state = { securityConfig: { captchaEnabled: true, captchaSiteKey: 'synthetic-test-sitekey' }, signal: new AbortController().signal, captchaWidgetId: null };
+    let options;
+    const control = { style: {}, classList: { remove() {}, add() {} } };
+    const { initCaptcha } = await loadClientModule('utils/client/quiz/quizCaptcha.js', ['initCaptcha'], {
+      hasFreshHumanProof: () => false,
+      document: { getElementById: () => control, documentElement: { getAttribute: () => theme } },
+      window: { turnstile: { render: (_selector, configuration) => { options = configuration; return 0; } } },
+      localStorage: { getItem() { assert.fail('CAPTCHA must use the applied theme without storage access'); } },
+    });
+    await initCaptcha(state);
+    assert.equal(options.theme, theme);
+    assert.equal(options.sitekey, 'synthetic-test-sitekey');
+    assert.equal(state.captchaWidgetId, 0);
+  });
+}
+
+async function captchaLifecycle(kind, { scriptReady = true } = {}) {
+  const controller = new AbortController();
+  const state = {
+    signal: controller.signal, captchaWidgetId: null, captchaToken: 'current-token',
+    securityConfig: { captchaEnabled: true, captchaSiteKey: 'synthetic-test-sitekey' },
+  };
+  const control = { style: {}, textContent: '', classList: { remove() {}, add() {} } };
+  const changes = [];
+  let options;
+  let script;
+  const dependencies = {
+    state,
+    hasFreshHumanProof: () => false,
+    setCaptchaStatus: message => changes.push(message),
+    toggleSecurityBanner: show => changes.push(show),
+    document: {
+      getElementById: () => control,
+      documentElement: { getAttribute: () => 'dark' },
+      querySelector: () => null,
+      createElement: () => ({ dataset: {} }),
+      head: { appendChild: element => { script = element; } },
+    },
+    window: scriptReady ? { turnstile: { render: (_selector, configuration) => { options = configuration; return 0; } } } : {},
+  };
+  let init;
+  if (kind === 'quiz') {
+    const { initCaptcha } = await loadClientModule('utils/client/quiz/quizCaptcha.js', ['initCaptcha'], dependencies);
+    init = () => initCaptcha(state);
+  } else {
+    const source = await fs.readFile(new URL('../../utils/client/counsellorRuntime.js', import.meta.url), 'utf8');
+    const captchaSource = source.slice(source.indexOf('  // --- Turnstile Captcha Lazy load ---'), source.indexOf('  // --- Initializer ---'));
+    init = new Function(...Object.keys(dependencies), `${captchaSource}; return initCaptcha;`)(...Object.values(dependencies));
+  }
+  const pending = init();
+  if (scriptReady) await pending;
+  return { controller, state, control, changes, options, script, pending, init };
+}
+
+for (const kind of ['quiz', 'counsellor']) {
+  test(`${kind}: disposed CAPTCHA callbacks cannot change the replacement page or token`, async () => {
+    const runtime = await captchaLifecycle(kind);
+    runtime.controller.abort();
+    const priorStatus = runtime.control.textContent;
+    const priorChanges = [...runtime.changes];
+    runtime.options['expired-callback']();
+    runtime.options['error-callback']('110600');
+    runtime.options.callback('late-token');
+    await runtime.init();
+    assert.equal(runtime.state.captchaToken, 'current-token');
+    assert.equal(runtime.control.textContent, priorStatus);
+    assert.deepEqual(runtime.changes, priorChanges);
+  });
+
+  test(`${kind}: a late CAPTCHA script failure is ignored after unmount`, async () => {
+    const runtime = await captchaLifecycle(kind, { scriptReady: false });
+    runtime.controller.abort();
+    const priorStatus = runtime.control.textContent;
+    const priorChanges = [...runtime.changes];
+    runtime.script.onerror();
+    await runtime.pending;
+    assert.equal(runtime.control.textContent, priorStatus);
+    assert.deepEqual(runtime.changes, priorChanges);
+  });
 }
 
 test('counsellor blocks duplicate keyboard sends while human verification is pending', async () => {

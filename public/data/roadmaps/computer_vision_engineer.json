@@ -324,11 +324,6 @@
           "description": "Accelerate visual inference with CUDA: Parallel GPU thread hierarchies, CUDA memory management, kernel launching, and utilizing TensorRT and cuDNN for real-time video stream throughput.",
           "resources": [
             {
-              "title": "NVIDIA CUDA Documentation",
-              "url": "https://docs.nvidia.com/cuda/cuda-toolkit-documentation/index.html",
-              "type": "article"
-            },
-            {
               "title": "Getting started with PyTorch on CUDA",
               "url": "https://pytorch.org/get-started/locally/",
               "type": "article"
@@ -483,11 +478,6 @@
             {
               "title": "Roboflow Docs",
               "url": "https://docs.roboflow.com/",
-              "type": "article"
-            },
-            {
-              "title": "FiftyOne Documentation",
-              "url": "https://docs.voxel51.com/fiftyone/index.html",
               "type": "article"
             },
             {

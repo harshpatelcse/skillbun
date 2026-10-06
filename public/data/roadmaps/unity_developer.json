@@ -119,16 +119,6 @@
           "description": "Master C# for Unity: Data types, control flow, methods, arrays, collections, and asynchronous execution with Coroutines and async/await.",
           "resources": [
             {
-              "title": "C# Programming Basics - Unity Learn",
-              "url": "https://learn.unity.com/course/csharp-programming-fundamentals",
-              "type": "course"
-            },
-            {
-              "title": "Introduction to C# in Unity - Unity Docs",
-              "url": "https://docs.unity3d.com/Manual/ScriptingOverview.html",
-              "type": "article"
-            },
-            {
               "title": "C# Introduction - Microsoft Docs",
               "url": "https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/",
               "type": "article"
@@ -159,11 +149,6 @@
           "description": "Apply OOP in Unity: Classes, inheritance, polymorphism, interfaces, and decoupling systems using C# delegates and events.",
           "resources": [
             {
-              "title": "Object-Oriented Programming (OOP) - Unity Learn",
-              "url": "https://learn.unity.com/course/object-oriented-programming-oop",
-              "type": "course"
-            },
-            {
               "title": "Unity 3D Game Tutorial (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=pwZpJzpE2lQ",
               "type": "video"
@@ -188,11 +173,6 @@
           "tag": "essential",
           "description": "Navigate the Unity Editor: Scene and Game views, Inspector, Project hierarchy, Console, layout customization, and Play Mode debugging.",
           "resources": [
-            {
-              "title": "Unity Editor Interface Overview - Unity Manual",
-              "url": "https://docs.unity3d.com/Manual/UnityOverview.html",
-              "type": "article"
-            },
             {
               "title": "Learn Unity Multiplayer (FREE Complete Course, Netcode for Game Objects Unity Tutorial 2026) (Code Monkey)",
               "url": "https://www.youtube.com/watch?v=7glCsF9fv3s",
@@ -224,11 +204,6 @@
               "type": "article"
             },
             {
-              "title": "Introduction to Prefabs - Unity Learn",
-              "url": "https://learn.unity.com/tutorial/introduction-to-prefabs",
-              "type": "course"
-            },
-            {
               "title": "Unity Full Course for Beginners (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=gB1F9G0JXOo",
               "type": "video"
@@ -254,11 +229,6 @@
           "description": "Master spatial coordinates: Local vs World space, vectors (`Vector3`), quaternions (`Quaternion.Euler`, `Quaternion.LookRotation`), and parent-child matrix hierarchies.",
           "resources": [
             {
-              "title": "Transforms - Unity Manual",
-              "url": "https://docs.unity3d.com/Manual/Transforms.html",
-              "type": "article"
-            },
-            {
               "title": "C# for Unity Tutorial (Brackeys)",
               "url": "https://www.youtube.com/watch?v=pSiIHe2uZ2w",
               "type": "video"
@@ -283,11 +253,6 @@
           "tag": "essential",
           "description": "Master MonoBehaviour execution lifecycle: `Awake`, `OnEnable`, `Start`, `FixedUpdate` (physics), `Update` (input/gameplay), `LateUpdate` (camera), and `OnDisable`.",
           "resources": [
-            {
-              "title": "Introduction to Scripting - Unity Learn",
-              "url": "https://learn.unity.com/course/introduction-to-scripting",
-              "type": "course"
-            },
             {
               "title": "Order of execution for event functions - Unity Docs",
               "url": "https://docs.unity3d.com/Manual/ExecutionOrder.html",
@@ -445,16 +410,6 @@
           "tag": "essential",
           "description": "Build user interfaces with Unity UI (uGUI) and UI Toolkit: Canvas render modes (Screen Space Overlay/Camera, World Space), anchors, layout groups, and responsive scaling.",
           "resources": [
-            {
-              "title": "Unity UI - Unity Learn",
-              "url": "https://learn.unity.com/course/unity-ui",
-              "type": "course"
-            },
-            {
-              "title": "Introduction to the Canvas - Unity Docs",
-              "url": "https://docs.unity3d.com/Manual/Canvas.html",
-              "type": "article"
-            },
             {
               "title": "Learn Unity Multiplayer (FREE Complete Course, Netcode for Game Objects Unity Tutorial 2026) (Code Monkey)",
               "url": "https://www.youtube.com/watch?v=7glCsF9fv3s",
@@ -636,11 +591,6 @@
               "type": "article"
             },
             {
-              "title": "Materials, Shaders & Textures - Unity Learn",
-              "url": "https://learn.unity.com/tutorial/materials-shaders-textures",
-              "type": "course"
-            },
-            {
               "title": "C# for Unity Tutorial (Brackeys)",
               "url": "https://www.youtube.com/watch?v=pSiIHe2uZ2w",
               "type": "video"
@@ -696,11 +646,6 @@
           "description": "Manage scenes: Asynchronous scene loading (`SceneManager.LoadSceneAsync`), additive scenes, preserving state with `DontDestroyOnLoad`, and save-game serialization.",
           "resources": [
             {
-              "title": "Scene Management - Unity Manual",
-              "url": "https://docs.unity3d.com/Manual/SceneManagement.html",
-              "type": "article"
-            },
-            {
               "title": "Learn Unity Multiplayer (FREE Complete Course, Netcode for Game Objects Unity Tutorial 2026) (Code Monkey)",
               "url": "https://www.youtube.com/watch?v=7glCsF9fv3s",
               "type": "video"
@@ -729,11 +674,6 @@
               "title": "Asset management - Unity Manual",
               "url": "https://docs.unity3d.com/Manual/AssetWorkflow.html",
               "type": "article"
-            },
-            {
-              "title": "Introduction to Addressables - Unity Learn",
-              "url": "https://learn.unity.com/tutorial/introduction-to-addressables",
-              "type": "course"
             },
             {
               "title": "Unity Full Course for Beginners (freeCodeCamp)",
@@ -765,11 +705,6 @@
       "description": "Master advanced Unity production: Performance profiling, design patterns, AI navigation, custom tools, and shaders.",
       "resources": [
         {
-          "title": "Unity Best Practices Guide",
-          "url": "https://docs.unity3d.com/Manual/BestPracticeGuides.html",
-          "type": "article"
-        },
-        {
           "title": "C# for Unity Tutorial (Brackeys)",
           "url": "https://www.youtube.com/watch?v=pSiIHe2uZ2w",
           "type": "video"
@@ -796,11 +731,6 @@
               "title": "Optimizing performance - Unity Manual",
               "url": "https://docs.unity3d.com/Manual/OptimizingGraphicsPerformance.html",
               "type": "article"
-            },
-            {
-              "title": "Unity Profiler - Unity Learn",
-              "url": "https://learn.unity.com/tutorial/unity-profiler-getting-started",
-              "type": "course"
             },
             {
               "title": "Unity 3D Game Tutorial (freeCodeCamp)",
@@ -893,16 +823,6 @@
           "description": "Implement AI with Unity NavMesh: NavMesh baking, NavMeshAgent movement, obstacle avoidance (NavMeshObstacle), off-mesh links, and patrol state machines.",
           "resources": [
             {
-              "title": "AI Navigation (NavMesh) - Unity Manual",
-              "url": "https://docs.unity3d.com/Manual/nav-BuildingARuntimeNavMesh.html",
-              "type": "article"
-            },
-            {
-              "title": "Behavior Trees for AI - Unity Learn",
-              "url": "https://learn.unity.com/tutorial/creating-a-behavior-tree-for-ai",
-              "type": "course"
-            },
-            {
               "title": "C# for Unity Tutorial (Brackeys)",
               "url": "https://www.youtube.com/watch?v=pSiIHe2uZ2w",
               "type": "video"
@@ -930,11 +850,6 @@
             {
               "title": "Extending the Editor - Unity Manual",
               "url": "https://docs.unity3d.com/Manual/ExtendingTheEditor.html",
-              "type": "article"
-            },
-            {
-              "title": "Editor Scripting in Unity - Catlike Coding",
-              "url": "https://catlikecoding.com/unity/tutorials/editor-extensions/",
               "type": "article"
             },
             {
@@ -1003,16 +918,6 @@
               "type": "article"
             },
             {
-              "title": "Shader Graph - Unity Learn",
-              "url": "https://learn.unity.com/course/shader-graph-basics",
-              "type": "course"
-            },
-            {
-              "title": "Introduction to PBR - Unity Blog",
-              "url": "https://unity.com/how-to/pbr-basics-game-development",
-              "type": "article"
-            },
-            {
               "title": "Unity Full Course for Beginners (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=gB1F9G0JXOo",
               "type": "video"
@@ -1037,11 +942,6 @@
           "tag": "advanced",
           "description": "Test Unity codebases: Unity Test Framework (UTF), writing EditMode and PlayMode unit tests, mocking components, and conditional compilation (`#if UNITY_EDITOR`).",
           "resources": [
-            {
-              "title": "Testing in Unity - Unity Manual",
-              "url": "https://docs.unity3d.com/Manual/testing-editortestsrunner.html",
-              "type": "article"
-            },
             {
               "title": "Debugging C# code in Unity - Unity Docs",
               "url": "https://docs.unity3d.com/Manual/ManagedCodeDebugging.html",
@@ -1073,16 +973,6 @@
           "description": "Build and deploy games: Build settings, player settings, target platform configurations (Windows, Android, iOS, WebGL), IL2CPP compilation, and optimization.",
           "resources": [
             {
-              "title": "Building a player - Unity Manual",
-              "url": "https://docs.unity3d.com/Manual/BuildingACustomPlayer.html",
-              "type": "article"
-            },
-            {
-              "title": "Unity Mobile Development - Unity Learn",
-              "url": "https://learn.unity.com/course/mobile-development-with-unity",
-              "type": "course"
-            },
-            {
               "title": "Unity 3D Game Tutorial (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=pwZpJzpE2lQ",
               "type": "video"
@@ -1108,19 +998,9 @@
           "description": "Integrate monetization and telemetry: Unity Analytics, remote configuration, Unity In-App Purchasing (IAP), and ad mediation.",
           "resources": [
             {
-              "title": "Unity Analytics - Unity Docs",
-              "url": "https://docs.unity3d.com/Manual/UnityAnalyticsOverview.html",
-              "type": "article"
-            },
-            {
               "title": "Unity Remote Config - Unity Docs",
               "url": "https://docs.unity3d.com/Packages/com.unity.remote-config@latest/index.html",
               "type": "article"
-            },
-            {
-              "title": "Unity Ads and In-App Purchasing - Unity Learn",
-              "url": "https://learn.unity.com/course/unity-monetization-essentials",
-              "type": "course"
             },
             {
               "title": "Learn Unity Multiplayer (FREE Complete Course, Netcode for Game Objects Unity Tutorial 2026) (Code Monkey)",
@@ -1151,11 +1031,6 @@
       "tag": "advanced",
       "description": "Build a professional Unity portfolio: Game documentation, production-ready gameplay mechanics, and technical interview readiness.",
       "resources": [
-        {
-          "title": "Unity Learn: Prepare for a Career in Games",
-          "url": "https://unity.com/learn/pathway/career-pathways/prepare-for-a-career-in-games",
-          "type": "course"
-        },
         {
           "title": "How to create a game development portfolio - Gamedev.net",
           "url": "https://www.gamedev.net/articles/business/how-to-create-a-game-development-portfolio-r4836/",
@@ -1220,16 +1095,6 @@
           "description": "Develop a commercial-ready game: Polished gameplay loop, game feel, sound effects, particle feedback, menus, and high-performance execution.",
           "resources": [
             {
-              "title": "Build Your First Game - Unity Learn",
-              "url": "https://learn.unity.com/project/create-your-first-game",
-              "type": "course"
-            },
-            {
-              "title": "Unity Capstone Project - Unity Learn",
-              "url": "https://learn.unity.com/project/create-your-first-game-project-capstone",
-              "type": "course"
-            },
-            {
               "title": "Unity 3D Game Tutorial (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=pwZpJzpE2lQ",
               "type": "video"
@@ -1254,11 +1119,6 @@
           "tag": "advanced",
           "description": "Collaborate in Unity teams: Asset workflow handoffs, code reviews, and maintaining consistent naming conventions across projects.",
           "resources": [
-            {
-              "title": "Unity Teams Advanced - Unity Docs",
-              "url": "https://docs.unity3d.com/Manual/UnityTeams.html",
-              "type": "article"
-            },
             {
               "title": "Agile Development for Games - Gamasutra",
               "url": "https://www.gamasutra.com/view/feature/130644/agile_development_for_games.php",

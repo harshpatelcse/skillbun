@@ -183,10 +183,9 @@ async function migrateLocalProgress(db, user) {
 function clearSessionCache() {
   clearStoredProfile();
   clearStoredRoadmapProgress();
-  window.localStorage.removeItem('sb_counsel_rl');
-  window.localStorage.removeItem('sb_human_proof');
-  window.localStorage.removeItem('sb_dest');
-  window.localStorage.removeItem('sb_last_xp');
+  for (const key of ['sb_counsel_rl', 'sb_human_proof', 'sb_dest', 'sb_last_xp']) {
+    try { window.localStorage.removeItem(key); } catch {}
+  }
 }
 
 export function AuthProvider({ children }) {

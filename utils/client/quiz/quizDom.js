@@ -3,6 +3,7 @@
 import { hasFreshHumanProof, clearHumanProof } from './quizState';
 import { setCaptchaStatus } from './quizCaptcha';
 import { formatWaitTime } from './quizApi';
+import { readProfileSnapshot } from '../../shared/profileStore';
 
 function safeGet(obj, key) {
   const keyStr = String(key);
@@ -260,10 +261,7 @@ export function sanitize(str) {
 }
 
 export function getStoredProfile() {
-  const name = localStorage.getItem('sb_name') || '';
-  const degree = localStorage.getItem('sb_degree') || '';
-  const year = localStorage.getItem('sb_year') || '';
-  const interest = localStorage.getItem('sb_interest') || '';
+  const { name, degree, year, interest } = readProfileSnapshot();
   return { name, degree, year, interest };
 }
 
@@ -378,9 +376,9 @@ export function updateProgress(state, qNum, phase) {
   document.getElementById('progressFill').style.width = `${percent}%`;
 
   const phaseNames = {
-    1: '🔍 Phase 1: Discovery',
-    2: '🎯 Phase 2: Narrowing Down',
-    3: '🚀 Phase 3: Deep Dive'
+    1: 'Phase 1: Discovery',
+    2: 'Phase 2: Narrowing Down',
+    3: 'Phase 3: Deep Dive'
   };
 
   document.getElementById('quizPhase').textContent = safeGet(phaseNames, phase) || '✨ Phase: Finalizing Match';

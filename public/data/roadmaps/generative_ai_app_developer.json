@@ -95,11 +95,6 @@
           "type": "course"
         },
         {
-          "title": "OpenAI API Documentation: Key Concepts",
-          "url": "https://platform.openai.com/docs/introduction/key-concepts",
-          "type": "article"
-        },
-        {
           "title": "Generative AI Explained In 5 Minutes | What Is GenAI? | Introduction To Generative AI | Simplilearn",
           "url": "https://www.youtube.com/watch?v=NRmAXDWJVnU",
           "type": "video"
@@ -335,11 +330,6 @@
           "description": "Implement advanced RAG optimizations: Hybrid dense-sparse retrieval (BM25 + vector search), Cohere reranking, contextual compression, Parent Document Retrievers, and multi-query expansion.",
           "resources": [
             {
-              "title": "Advanced RAG Techniques: A Deep Dive (Towards Data Science)",
-              "url": "https://towardsdatascience.com/advanced-rag-techniques-a-deep-dive-f77344933a7f",
-              "type": "article"
-            },
-            {
               "title": "HyDE: Hypothetical Document Embeddings (Paper)",
               "url": "https://arxiv.org/abs/2212.10496",
               "type": "article"
@@ -402,11 +392,6 @@
             {
               "title": "LangChain Agents",
               "url": "https://python.langchain.com/docs/modules/agents/",
-              "type": "article"
-            },
-            {
-              "title": "LlamaIndex Agents",
-              "url": "https://docs.llamaindex.ai/en/stable/module_guides/application/agent/",
               "type": "article"
             },
             {
@@ -552,11 +537,6 @@
               "type": "article"
             },
             {
-              "title": "Why LLM Observability Matters (Datadog)",
-              "url": "https://www.datadoghq.com/blog/llm-observability/",
-              "type": "article"
-            },
-            {
               "title": "Observability for LLM Applications with OpenTelemetry & LangChain",
               "url": "https://www.youtube.com/watch?v=fS9TN558UQY",
               "type": "video"
@@ -584,11 +564,6 @@
             {
               "title": "OWASP LLM Top 10 Vulnerabilities",
               "url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/",
-              "type": "article"
-            },
-            {
-              "title": "Generative AI Safety (Google DeepMind)",
-              "url": "https://deepmind.google/discover/blog/generative-ai-safety/",
               "type": "article"
             },
             {
@@ -627,8 +602,8 @@
               "type": "article"
             },
             {
-              "title": "Building Secure GenAI Applications with Amazon Bedrock (AWS)",
-              "url": "https://aws.amazon.com/blogs/security/building-secure-generative-ai-applications-with-amazon-bedrock/",
+              "title": "Security, Guardrails, and Observability in Amazon Bedrock",
+              "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/security.html",
               "type": "article"
             },
             {
@@ -699,8 +674,8 @@
               "type": "article"
             },
             {
-              "title": "AWS SageMaker for LLMs",
-              "url": "https://aws.amazon.com/sagemaker/llm/",
+              "title": "Amazon SageMaker JumpStart Foundation Models",
+              "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-foundation-models.html",
               "type": "article"
             },
             {

@@ -484,8 +484,8 @@
           "description": "Discover common security threats (phishing, malware), basic defensive measures (firewalls, encryption, strong passwords), and the importance of secure coding practices. Explore network security concepts and ethical hacking overview.",
           "resources": [
             {
-              "title": "Introduction to Cybersecurity (IBM)",
-              "url": "https://www.coursera.org/learn/introduction-to-cybersecurity-for-everyone",
+              "title": "Introduction to Cybersecurity Tools and Cyberattacks — IBM",
+              "url": "https://www.coursera.org/learn/introduction-cybersecurity-cyber-attacks",
               "type": "course"
             },
             {
@@ -533,11 +533,6 @@
               "type": "article"
             },
             {
-              "title": "What Kind of Developer Are You?",
-              "url": "https://www.freecodecamp.org/news/what-kind-of-developer-are-you/",
-              "type": "article"
-            },
-            {
               "title": "How to Start Your Dream Career in Tech in 7 Steps (with Susan Clark) (CareerFoundry)",
               "url": "https://www.youtube.com/watch?v=niz7o7LF8zQ",
               "type": "video"
@@ -562,11 +557,6 @@
           "tag": "essential",
           "description": "Research common tech roles (e.g., Frontend Developer, Backend Developer, Data Scientist, DevOps Engineer, Cybersecurity Analyst, UX Designer). Understand typical responsibilities, required skill sets, and current industry demand and trends for each.",
           "resources": [
-            {
-              "title": "Tech Roles Explained: A Guide",
-              "url": "https://builtin.com/tech-jobs/common-tech-roles-explained",
-              "type": "article"
-            },
             {
               "title": "Hired 2024 State of Tech Salaries Report",
               "url": "https://hired.com/blog/hired-blog/2024-state-of-tech-salaries/",
@@ -633,11 +623,6 @@
               "type": "article"
             },
             {
-              "title": "How to Create a 30-60-90 Day Plan",
-              "url": "https://www.themuse.com/advice/30-60-90-day-plan",
-              "type": "article"
-            },
-            {
               "title": "The Complete Backend Developer Roadmap (Programming with Mosh)",
               "url": "https://www.youtube.com/watch?v=OeEHJgzqS1k",
               "type": "video"
@@ -666,11 +651,6 @@
               "title": "The Power of Professional Networking",
               "url": "https://www.forbes.com/sites/forbescoachescouncil/2023/07/20/the-power-of-professional-networking/",
               "type": "article"
-            },
-            {
-              "title": "How to use LinkedIn for job hunting (LinkedIn Learning)",
-              "url": "https://www.linkedin.com/learning/paths/how-to-use-linkedin-for-job-hunting",
-              "type": "course"
             },
             {
               "title": "How to Network with ZERO Working Experience! (Jeff Su)",
@@ -1105,8 +1085,8 @@
           "description": "Explore cybersecurity fundamentals: the CIA triad (Confidentiality, Integrity, Availability), authentication vs authorization, password security, common social engineering and phishing vectors, and defensive safe coding practices.",
           "resources": [
             {
-              "title": "Introduction to Cybersecurity (IBM)",
-              "url": "https://www.coursera.org/learn/introduction-to-cybersecurity-for-everyone",
+              "title": "Introduction to Cybersecurity Tools and Cyberattacks — IBM",
+              "url": "https://www.coursera.org/learn/introduction-cybersecurity-cyber-attacks",
               "type": "course"
             },
             {
@@ -1151,11 +1131,6 @@
               "type": "article"
             },
             {
-              "title": "What Kind of Developer Are You?",
-              "url": "https://www.freecodecamp.org/news/what-kind-of-developer-are-you/",
-              "type": "article"
-            },
-            {
               "title": "How to Start Your Dream Career in Tech in 7 Steps (with Susan Clark) (CareerFoundry)",
               "url": "https://www.youtube.com/watch?v=niz7o7LF8zQ",
               "type": "video"
@@ -1180,11 +1155,6 @@
           "tag": "essential",
           "description": "Analyze technical roles and industry hiring demands: Software Engineer, Frontend Developer, Backend Developer, Full Stack Engineer, DevOps Engineer, Data Scientist, and Security Analyst, understanding daily responsibilities and required competencies.",
           "resources": [
-            {
-              "title": "Tech Roles Explained: A Guide",
-              "url": "https://builtin.com/tech-jobs/common-tech-roles-explained",
-              "type": "article"
-            },
             {
               "title": "Hired 2024 State of Tech Salaries Report",
               "url": "https://hired.com/blog/hired-blog/2024-state-of-tech-salaries/",
@@ -1251,11 +1221,6 @@
               "type": "article"
             },
             {
-              "title": "How to Create a 30-60-90 Day Plan",
-              "url": "https://www.themuse.com/advice/30-60-90-day-plan",
-              "type": "article"
-            },
-            {
               "title": "The Complete Backend Developer Roadmap (Programming with Mosh)",
               "url": "https://www.youtube.com/watch?v=OeEHJgzqS1k",
               "type": "video"
@@ -1284,11 +1249,6 @@
               "title": "The Power of Professional Networking",
               "url": "https://www.forbes.com/sites/forbescoachescouncil/2023/07/20/the-power-of-professional-networking/",
               "type": "article"
-            },
-            {
-              "title": "How to use LinkedIn for job hunting (LinkedIn Learning)",
-              "url": "https://www.linkedin.com/learning/paths/how-to-use-linkedin-for-job-hunting",
-              "type": "course"
             },
             {
               "title": "How to Network with ZERO Working Experience! (Jeff Su)",

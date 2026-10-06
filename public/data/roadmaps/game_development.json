@@ -215,11 +215,6 @@
               "type": "article"
             },
             {
-              "title": "Unity C# Survival Guide - Object Oriented Programming",
-              "url": "https://learn.unity.com/tutorial/object-oriented-programming",
-              "type": "course"
-            },
-            {
               "title": "Game Development Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=GDa8kZLNhJ4",
               "type": "video"
@@ -279,11 +274,6 @@
             {
               "title": "Getting Started with Godot",
               "url": "https://docs.godotengine.org/en/stable/getting_started/introduction/index.html",
-              "type": "article"
-            },
-            {
-              "title": "Unity Editor Overview",
-              "url": "https://docs.unity3d.com/Manual/UnityOverview.html",
               "type": "article"
             },
             {
@@ -492,11 +482,6 @@
               "type": "article"
             },
             {
-              "title": "Unity Mecanim Animation System",
-              "url": "https://docs.unity3d.com/Manual/Mecanim.html",
-              "type": "article"
-            },
-            {
               "title": "Game Development Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=GDa8kZLNhJ4",
               "type": "video"
@@ -525,11 +510,6 @@
               "title": "Unity Manual",
               "url": "https://docs.unity3d.com/Manual/index.html",
               "type": "article"
-            },
-            {
-              "title": "Unity ScriptableObjects Tutorial",
-              "url": "https://learn.unity.com/tutorial/scriptable-objects",
-              "type": "course"
             },
             {
               "title": "Godot Engine Full Course (GDQuest)",
@@ -619,11 +599,6 @@
           "description": "Engineer character controllers: 2D platformer jump curves, variable height jumps, coyote time, jump buffering, and 3D third-person character movement controllers.",
           "resources": [
             {
-              "title": "Godot Character Body 2D/3D",
-              "url": "https://docs.godotengine.org/en/stable/tutorials/physics/using_character_body_3d.html",
-              "type": "article"
-            },
-            {
               "title": "Game Development Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=GDa8kZLNhJ4",
               "type": "video"
@@ -648,11 +623,6 @@
           "tag": "advanced",
           "description": "Implement core game loops: Weapon hitscan and projectile ballistics, damage mitigation formulas, stamina systems, and interactive puzzle elements.",
           "resources": [
-            {
-              "title": "Unity Game Dev - Inventory System",
-              "url": "https://learn.unity.com/tutorial/inventory-system-2019",
-              "type": "course"
-            },
             {
               "title": "Godot Engine Full Course (GDQuest)",
               "url": "https://www.youtube.com/watch?v=mAbG8Oi-SvQ",
@@ -836,11 +806,6 @@
           "description": "Create visual effects and shaders: Particle systems (sparks, smoke, magic), screen shake, camera feedback, and custom vertex/fragment shaders.",
           "resources": [
             {
-              "title": "Godot Particle Systems",
-              "url": "https://docs.godotengine.org/en/stable/tutorials/3d/particle_systems.html",
-              "type": "article"
-            },
-            {
               "title": "Unity VFX Graph",
               "url": "https://docs.unity3d.com/Packages/com.unity.visualeffectgraph@10.0/manual/index.html",
               "type": "article"
@@ -870,11 +835,6 @@
           "tag": "advanced",
           "description": "Apply game design theory: MDA framework (Mechanics, Dynamics, Aesthetics), player agency, difficulty curves, tutorial pacing, and positive/negative feedback loops.",
           "resources": [
-            {
-              "title": "The Art of Game Design: A Book of Lenses",
-              "url": "https://www.amazon.com/Art-Game-Design-Lenses-Third/dp/1138634149",
-              "type": "article"
-            },
             {
               "title": "Game Development Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=GDa8kZLNhJ4",
@@ -938,11 +898,6 @@
             {
               "title": "Git Handbook",
               "url": "https://guides.github.com/introduction/git-handbook/",
-              "type": "article"
-            },
-            {
-              "title": "Git for Game Developers",
-              "url": "https://www.perforce.com/blog/git-game-development",
               "type": "article"
             },
             {

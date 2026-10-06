@@ -183,9 +183,9 @@
           "description": "Program high-performance C++ for robotics: RAII, smart pointers, Eigen linear algebra library, multithreading with `std::thread`, and low-latency execution.",
           "resources": [
             {
-              "title": "C++ Crash Course by John L. Vandevoorde",
-              "url": "https://www.amazon.com/C-Crash-Course-Beginner-Friendly-Approach/dp/0134057672",
-              "type": "course"
+              "title": "C++ Crash Course — Josh Lospinoso",
+              "url": "https://nostarch.com/cppcrashcourse",
+              "type": "book"
             },
             {
               "title": "Effective Modern C++ by Scott Meyers",
@@ -353,11 +353,6 @@
               "type": "course"
             },
             {
-              "title": "Stanford: Convex Optimization I",
-              "url": "https://web.stanford.edu/~boyd/cvxbook/bv_html/index.html",
-              "type": "course"
-            },
-            {
               "title": "Robotics 101: Introduction to Robotics | Kinematics & Modeling | Full course for beginners (Engineering Simplified)",
               "url": "https://www.youtube.com/watch?v=K_xIJBlbjg4",
               "type": "video"
@@ -423,8 +418,8 @@
           "description": "Understand rigid body mechanics: Newton-Euler equations, Lagrangian mechanics, centers of mass, inertia tensors, and torque calculations.",
           "resources": [
             {
-              "title": "MIT 8.01x: Classical Mechanics",
-              "url": "https://www.edx.org/course/mechanics-mastering-physics-part-1",
+              "title": "Classical Mechanics — MIT OpenCourseWare 8.01SC",
+              "url": "https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/",
               "type": "course"
             },
             {
@@ -461,11 +456,6 @@
               "title": "SparkFun Tutorials",
               "url": "https://learn.sparkfun.com/",
               "type": "article"
-            },
-            {
-              "title": "Make: Electronics (Book)",
-              "url": "https://www.amazon.com/Make-Electronics-Learning-Through-Discovery/dp/1680456868",
-              "type": "course"
             },
             {
               "title": "Designing Robot Manipulator Algorithms (MATLAB)",
@@ -565,11 +555,6 @@
           "description": "Model robot dynamics: Forward and inverse dynamics, Coriolis forces, gravity compensation, and joint torque computation using Recursive Newton-Euler Algorithm (RNEA).",
           "resources": [
             {
-              "title": "Modern Robotics (Dynamics chapters)",
-              "url": "https://modernrobotics.northwestern.edu/legacy/pdf/mr_book_v1_024.pdf",
-              "type": "article"
-            },
-            {
               "title": "Advanced Robotics by Bruno Siciliano",
               "url": "https://www.springer.com/gp/book/9781846289278",
               "type": "course"
@@ -630,11 +615,6 @@
           "description": "Tune PID controllers: Proportional-Integral-Derivative gain tuning, anti-windup mechanisms, derivative filtering, and cascaded velocity/position control loops.",
           "resources": [
             {
-              "title": "Understanding PID Control",
-              "url": "https://www.csimn.com/CSI_pages/PID_Control.html",
-              "type": "article"
-            },
-            {
               "title": "Robotics 101: Introduction to Robotics | Kinematics & Modeling | Full course for beginners (Engineering Simplified)",
               "url": "https://www.youtube.com/watch?v=K_xIJBlbjg4",
               "type": "video"
@@ -662,11 +642,6 @@
             {
               "title": "Introduction to State-Space Control (NPTEL)",
               "url": "https://nptel.ac.in/courses/108102043/",
-              "type": "course"
-            },
-            {
-              "title": "Applied Control Theory (MIT OCW)",
-              "url": "https://ocw.mit.edu/courses/16-30-applied-control-theory-fall-2004/",
               "type": "course"
             },
             {
@@ -767,9 +742,9 @@
               "type": "article"
             },
             {
-              "title": "ROS 2 Foxy: A Concise Guide (Book)",
-              "url": "https://www.amazon.com/ROS-Foxy-Concise-Guide-programming/dp/1800206894",
-              "type": "course"
+              "title": "ROS 2 Jazzy Tutorials — Official Documentation",
+              "url": "https://docs.ros.org/en/jazzy/Tutorials.html",
+              "type": "article"
             },
             {
               "title": "Robotics 101: Introduction to Robotics | Kinematics & Modeling | Full course for beginners (Engineering Simplified)",
@@ -977,16 +952,6 @@
           "description": "Write custom Gazebo plugins: Developing C++ Gazebo sensor and model plugins to simulate custom actuators, encoders, and environmental interactions.",
           "resources": [
             {
-              "title": "Gazebo Plugin Tutorials",
-              "url": "https://gazebosim.org/docs/latest/tutorials/plugins",
-              "type": "article"
-            },
-            {
-              "title": "Ignition Gazebo Plugin Tutorials",
-              "url": "https://ignitionrobotics.org/docs/garden/plugins_tutorial",
-              "type": "article"
-            },
-            {
               "title": "Computer Vision for Robotics (Sentdex)",
               "url": "https://www.youtube.com/watch?v=WQeoO7MI0Bs",
               "type": "video"
@@ -1078,11 +1043,6 @@
           "tag": "essential",
           "description": "Integrate robotic sensors: 2D/3D LiDAR, stereoscopic cameras, depth cameras (Intel RealSense), IMUs (accelerometer + gyroscope), wheel encoders, and GPS/GNSS.",
           "resources": [
-            {
-              "title": "Sensor Fusion and Perception (NVIDIA Deep Learning Institute)",
-              "url": "https://www.nvidia.com/en-us/training/course/sensor-fusion/",
-              "type": "course"
-            },
             {
               "title": "Arduino Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=zJ-LqeX_fLU",
@@ -1189,11 +1149,6 @@
               "type": "article"
             },
             {
-              "title": "Sensor Fusion and Tracking (Coursera)",
-              "url": "https://www.coursera.org/learn/sensor-fusion",
-              "type": "course"
-            },
-            {
               "title": "Robotics 101: Introduction to Robotics | Kinematics & Modeling | Full course for beginners (Engineering Simplified)",
               "url": "https://www.youtube.com/watch?v=K_xIJBlbjg4",
               "type": "video"
@@ -1222,11 +1177,6 @@
               "title": "Deep Learning for Computer Vision (Stanford CS231n)",
               "url": "https://cs231n.stanford.edu/",
               "type": "course"
-            },
-            {
-              "title": "Awesome Robotics List: Deep Learning",
-              "url": "https://github.com/Awesome-Robotics/awesome-robotics#deep-learning-for-robotics",
-              "type": "article"
             },
             {
               "title": "Arduino Full Course (freeCodeCamp)",
@@ -1366,11 +1316,6 @@
           "description": "Plan collision-free paths: Global planners (A*, Dijkstra, RRT / RRT*), and local trajectory planners (Dynamic Window Approach - DWA, TEB Local Planner).",
           "resources": [
             {
-              "title": "Nav2 Planning Concepts",
-              "url": "https://docs.nav2.org/concepts/index.html#planning",
-              "type": "article"
-            },
-            {
               "title": "Planning Algorithms by Steven M. LaValle",
               "url": "https://planning.cs.uiuc.edu/",
               "type": "course"
@@ -1431,14 +1376,9 @@
           "description": "Model robotic decision-making: Behavior Trees (BehaviorTree.CPP), Finite State Machines (FSM), and hierarchical task networks.",
           "resources": [
             {
-              "title": "Behavior Trees for AI in Robotics and Games (Book)",
-              "url": "https://www.amazon.com/Behavior-Trees-Robotics-Games-Introduction/dp/1000632363",
-              "type": "course"
-            },
-            {
-              "title": "Nav2 Behavior Trees",
-              "url": "https://docs.nav2.org/concepts/behaviors_concepts.html",
-              "type": "article"
+              "title": "Behavior Trees in Robotics and AI: An Introduction — Colledanchise and Ögren",
+              "url": "https://arxiv.org/abs/1709.00084",
+              "type": "book"
             },
             {
               "title": "Designing Robot Manipulator Algorithms (MATLAB)",
@@ -1510,9 +1450,9 @@
           "type": "article"
         },
         {
-          "title": "Robot Operating System (ROS) in Real-Time (Book)",
-          "url": "https://www.amazon.com/Robot-Operating-System-ROS-Real-Time/dp/1800206894",
-          "type": "course"
+          "title": "Understanding Real-Time Programming — ROS 2 Documentation",
+          "url": "https://docs.ros.org/en/jazzy/Tutorials/Demos/Real-Time-Programming.html",
+          "type": "article"
         },
         {
           "title": "Arduino Full Course (freeCodeCamp)",
@@ -1540,11 +1480,6 @@
             {
               "title": "Building ROS 2 Hardware Interfaces",
               "url": "https://docs.ros.org/en/humble/Tutorials/Intermediate/Ros2-Control/Controllers-and-hardware-interfaces.html",
-              "type": "article"
-            },
-            {
-              "title": "Modern Robotics: Control (Ch. 11)",
-              "url": "https://modernrobotics.northwestern.edu/legacy/pdf/mr_book_v1_024.pdf",
               "type": "article"
             },
             {
@@ -1613,11 +1548,6 @@
           "description": "Develop ROS 2 hardware drivers: Writing C++ ROS 2 nodes to interface with serial devices, USB cameras (v4l2), and micro-ROS on microcontrollers.",
           "resources": [
             {
-              "title": "ROS 2 Hardware Interface Tutorials",
-              "url": "https://control.ros.org/master/doc/ros2_control/hardware_interface/doc/writing_hardware_interface.html",
-              "type": "article"
-            },
-            {
               "title": "Manufacturer Datasheets & SDKs (examples from RealSense, Velodyne, etc.)",
               "url": "https://www.google.com/search?q=robotics+sensor+datasheet+examples",
               "type": "article"
@@ -1678,9 +1608,9 @@
           "description": "Conduct hardware field tests: Staged testing (simulation -> bench test -> tethered run -> autonomous field run), battery management, and thermal monitoring.",
           "resources": [
             {
-              "title": "Robot Operating System (ROS) in Real-Time (Ch. 12: Real-World Robot Development)",
-              "url": "https://www.amazon.com/Robot-Operating-System-ROS-Real-Time/dp/1800206894",
-              "type": "course"
+              "title": "Understanding Real-Time Programming — ROS 2 Documentation",
+              "url": "https://docs.ros.org/en/jazzy/Tutorials/Demos/Real-Time-Programming.html",
+              "type": "article"
             },
             {
               "title": "Best Practices for Robotics System Deployment (Intel)",
@@ -1763,11 +1693,6 @@
               "type": "article"
             },
             {
-              "title": "Robot Risk Assessment (OSHA)",
-              "url": "https://www.osha.gov/robotics/risk-assessment",
-              "type": "article"
-            },
-            {
               "title": "Robotics 101: Introduction to Robotics | Kinematics & Modeling | Full course for beginners (Engineering Simplified)",
               "url": "https://www.youtube.com/watch?v=K_xIJBlbjg4",
               "type": "video"
@@ -1828,11 +1753,6 @@
               "title": "Deep Reinforcement Learning for Robotics (UC Berkeley)",
               "url": "https://rail.eecs.berkeley.edu/deeprlcourse/",
               "type": "course"
-            },
-            {
-              "title": "TensorFlow/PyTorch for Robotics (various resources)",
-              "url": "https://www.tensorflow.org/robotics",
-              "type": "article"
             },
             {
               "title": "Robot Learning Course (Columbia University)",
@@ -1930,11 +1850,6 @@
           "description": "Architect cloud robotics: Offloading heavy mapping to cloud clusters, edge computing on NVIDIA Jetson, and fleet management with AWS RoboMaker / Formant.",
           "resources": [
             {
-              "title": "AWS RoboMaker Documentation",
-              "url": "https://docs.aws.amazon.com/robomaker/latest/dg/what-is-robomaker.html",
-              "type": "article"
-            },
-            {
               "title": "Google Cloud Robotics Platform (overview)",
               "url": "https://cloud.google.com/solutions/robotics",
               "type": "article"
@@ -2002,11 +1917,6 @@
               "type": "article"
             },
             {
-              "title": "AWS RoboMaker Tutorials",
-              "url": "https://docs.aws.amazon.com/robomaker/latest/dg/tutorial-samples.html",
-              "type": "article"
-            },
-            {
               "title": "Designing Robot Manipulator Algorithms (MATLAB)",
               "url": "https://www.youtube.com/watch?v=5DnKot3mMSc",
               "type": "video"
@@ -2071,11 +1981,6 @@
           "tag": "advanced",
           "description": "Showcase robotics expertise: Clean GitHub repositories with reproducible Docker development environments, detailed README architecture diagrams, and YouTube demonstration videos.",
           "resources": [
-            {
-              "title": "How to Build a Killer Robotics Portfolio",
-              "url": "https://www.theconstructsim.com/killer-robotics-portfolio/",
-              "type": "article"
-            },
             {
               "title": "Contributing to ROS 2",
               "url": "https://docs.ros.org/en/galactic/Contributing.html",

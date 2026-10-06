@@ -118,13 +118,8 @@
           "description": "Align marketing with business objectives: Customer Acquisition Cost (CAC), Return on Ad Spend (ROAS), Customer Lifetime Value (LTV), payback period, and revenue attribution.",
           "resources": [
             {
-              "title": "What is a Marketing Strategy?",
-              "url": "https://blog.hubspot.com/marketing/what-is-marketing-strategy",
-              "type": "article"
-            },
-            {
-              "title": "The Marketing Funnel Explained",
-              "url": "https://blog.hubspot.com/marketing/marketing-funnel",
+              "title": "Creating a Marketing Strategy — HubSpot",
+              "url": "https://blog.hubspot.com/marketing/marketing-strategy",
               "type": "article"
             },
             {
@@ -177,11 +172,6 @@
           "tag": "essential",
           "description": "Map multi-touch customer journeys: Tracking touchpoints across Awareness, Consideration, Conversion, and Retention phases, and identifying drop-off friction points.",
           "resources": [
-            {
-              "title": "What is Customer Journey Mapping?",
-              "url": "https://www.hotjar.com/blog/customer-journey-mapping/",
-              "type": "article"
-            },
             {
               "title": "What is Customer Journey Mapping? (And How to Do It)",
               "url": "https://www.youtube.com/watch?v=68ZXwI5L4kY",
@@ -370,8 +360,8 @@
               "type": "article"
             },
             {
-              "title": "GA4 Setup Guide",
-              "url": "https://www.lovesdata.com/blog/google-analytics-4-setup/",
+              "title": "Set Up Analytics for a Website or App — Google Analytics",
+              "url": "https://support.google.com/analytics/answer/9304153?hl=en",
               "type": "article"
             },
             {
@@ -455,13 +445,8 @@
           "description": "Ingest marketing data: Connecting ad platform APIs (Google Ads, Meta Graph API) into cloud data warehouses via Fivetran, Stitch, or custom Python scripts.",
           "resources": [
             {
-              "title": "Connect Google Ads to GA4",
-              "url": "https://support.google.com/analytics/answer/9355959?hl=en",
-              "type": "article"
-            },
-            {
-              "title": "An Overview of Marketing APIs",
-              "url": "https://www.supermetrics.com/blog/marketing-apis",
+              "title": "Google Ads API Overview — Google Developers",
+              "url": "https://developers.google.com/google-ads/api/docs/get-started/introduction?hl=en",
               "type": "article"
             },
             {
@@ -495,8 +480,8 @@
               "type": "article"
             },
             {
-              "title": "Debugging GA4 Implementations",
-              "url": "https://www.lovesdata.com/blog/google-analytics-4-debug/",
+              "title": "Monitor Events in DebugView — Google Analytics",
+              "url": "https://support.google.com/analytics/answer/7201382?hl=en",
               "type": "article"
             },
             {
@@ -612,11 +597,6 @@
           "description": "Apply marketing statistics: Descriptive statistics, hypothesis testing (t-tests, z-tests), sample size determination, confidence intervals, and correlation vs causation.",
           "resources": [
             {
-              "title": "Introduction to Statistics for Marketing",
-              "url": "https://www.coursera.org/learn/statistics-marketing",
-              "type": "course"
-            },
-            {
               "title": "Khan Academy: Statistics and Probability",
               "url": "https://www.khanacademy.org/math/statistics-probability",
               "type": "course"
@@ -652,8 +632,8 @@
               "type": "article"
             },
             {
-              "title": "Data Visualization Best Practices",
-              "url": "https://www.tableau.com/learn/articles/best-practices-data-visualization",
+              "title": "Best Practices for Effective Tableau Dashboards",
+              "url": "https://help.tableau.com/current/pro/desktop/en-us/dashboards_best_practices.htm",
               "type": "article"
             },
             {
@@ -681,11 +661,6 @@
           "tag": "essential",
           "description": "Master GA4 Exploration reports: Freeform tables, funnel exploration, path exploration, segment overlap, and cohort exploration for deep user journey analysis.",
           "resources": [
-            {
-              "title": "Explore your data in GA4",
-              "url": "https://support.google.com/analytics/answer/9371358?hl=en",
-              "type": "article"
-            },
             {
               "title": "GA4 Reports Walkthrough",
               "url": "https://www.youtube.com/watch?v=s8u6v-N8nao",
@@ -736,11 +711,6 @@
           "tag": "essential",
           "description": "Practice Lab: Author a quarterly campaign performance readout: Synthesize multi-channel data into an executive deck, calculate blended CAC/ROAS, and recommend budget shifts.",
           "resources": [
-            {
-              "title": "How to Write a Marketing Report",
-              "url": "https://www.shopify.com/blog/marketing-report",
-              "type": "article"
-            },
             {
               "title": "How to Measure Marketing ROI & Analyze Marketing Performance",
               "url": "https://www.youtube.com/watch?v=eg4I-RU_vKU",
@@ -859,11 +829,6 @@
           "description": "Analyze on-site behavior: Funnel drop-off analysis, heatmap analysis with Hotjar/Clarity, session replay analysis, and micro-conversion optimization.",
           "resources": [
             {
-              "title": "Introduction to Hotjar",
-              "url": "https://www.hotjar.com/learn/",
-              "type": "article"
-            },
-            {
               "title": "User Experience Analytics Guide",
               "url": "https://www.optimizely.com/optimization-glossary/user-experience-analytics/",
               "type": "article"
@@ -929,13 +894,13 @@
           "description": "Segment customers for retention: RFM (Recency, Frequency, Monetary) segmentation, behavioral clustering with k-means, and predictive LTV modeling.",
           "resources": [
             {
-              "title": "What is Customer Segmentation?",
-              "url": "https://www.forrester.com/blogs/what-is-customer-segmentation/",
+              "title": "Customer Segmentation — HubSpot",
+              "url": "https://blog.hubspot.com/service/customer-segmentation",
               "type": "article"
             },
             {
-              "title": "Understanding Customer Lifetime Value",
-              "url": "https://hbr.org/2014/11/what-is-customer-lifetime-value",
+              "title": "How to Calculate Customer Lifetime Value — HubSpot",
+              "url": "https://blog.hubspot.com/service/how-to-calculate-customer-lifetime-value",
               "type": "article"
             },
             {
@@ -964,13 +929,8 @@
           "description": "Evaluate attribution models: Comparing First-Click, Last-Click, Linear, Time-Decay, Data-Driven Attribution (DDA), and identifying channel cannibalization.",
           "resources": [
             {
-              "title": "Google Analytics Attribution Models Guide",
-              "url": "https://support.google.com/analytics/answer/10593732?hl=en",
-              "type": "article"
-            },
-            {
-              "title": "Understanding Attribution Models",
-              "url": "https://www.impact.com/marketing-glossary/attribution-models/",
+              "title": "Attribution Models — Google Analytics",
+              "url": "https://support.google.com/analytics/answer/10596866?hl=en",
               "type": "article"
             },
             {
@@ -1036,11 +996,6 @@
             {
               "title": "Predictive Analytics in Marketing",
               "url": "https://www.investopedia.com/terms/p/predictive-analytics-in-marketing.asp",
-              "type": "article"
-            },
-            {
-              "title": "Machine Learning for Marketing",
-              "url": "https://towardsdatascience.com/machine-learning-in-marketing-a-comprehensive-guide-a0b2c1f3c4d5",
               "type": "article"
             },
             {
@@ -1146,8 +1101,8 @@
           "description": "Present to executive leadership: Fielding skeptical stakeholder questions, defending analytical assumptions, and aligning marketing metrics with P&L goals.",
           "resources": [
             {
-              "title": "The Art of Presentation",
-              "url": "https://hbr.org/2013/05/the-art-of-presentation",
+              "title": "Slide Presentations — MIT EECS Communication Lab",
+              "url": "https://mitcommlab.mit.edu/eecs/commkit/slideshow/",
               "type": "article"
             },
             {
@@ -1180,11 +1135,6 @@
           "tag": "advanced",
           "description": "Build an enterprise marketing analytics capstone: End-to-end multi-channel campaign audit: GTM server-side tracking setup, BigQuery SQL attribution modeling, Looker Studio dashboard, and executive strategy deck.",
           "resources": [
-            {
-              "title": "Google Analytics Developers Blog: Case Studies",
-              "url": "https://developers.google.com/analytics/blog",
-              "type": "article"
-            },
             {
               "title": "Presenting Your Analysis Projects in a GitHub Profile README",
               "url": "https://docs.github.com/en/account-and-profile/how-tos/profile-customization/managing-your-profile-readme",

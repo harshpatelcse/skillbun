@@ -95,9 +95,9 @@
           "type": "article"
         },
         {
-          "title": "IAM for Beginners: Identity and Access Management Course (Cybersecurity & Infrastructure Security Agency)",
-          "url": "https://www.cisa.gov/resources-tools/resources/identity-and-access-management-iam-course",
-          "type": "course"
+          "title": "Identity and Access Management fundamentals (AWS)",
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html",
+          "type": "article"
         },
         {
           "title": "AWS IAM Full Course (freeCodeCamp)",
@@ -158,11 +158,6 @@
               "type": "article"
             },
             {
-              "title": "The Principle of Least Privilege Explained (CrowdStrike)",
-              "url": "https://www.crowdstrike.com/cybersecurity-101/identity-security/principle-of-least-privilege/",
-              "type": "article"
-            },
-            {
               "title": "Zero Trust Explained in 4 mins (IBM Technology)",
               "url": "https://www.youtube.com/watch?v=yn6CPQ9RioA",
               "type": "video"
@@ -187,31 +182,6 @@
           "tag": "essential",
           "description": "Master modern identity protocols: SAML 2.0 XML assertions, OAuth 2.0 authorization framework, OpenID Connect (OIDC) identity layer, and SCIM 2.0 user provisioning.",
           "resources": [
-            {
-              "title": "LDAP Tutorial for Beginners (GeeksforGeeks)",
-              "url": "https://www.geeksforgeeks.org/ldap-tutorial/",
-              "type": "article"
-            },
-            {
-              "title": "What is Kerberos? (Okta)",
-              "url": "https://www.okta.com/identity-101/what-is-kerberos/",
-              "type": "article"
-            },
-            {
-              "title": "SAML 2.0 Explained (Okta)",
-              "url": "https://www.okta.com/identity-101/saml/",
-              "type": "article"
-            },
-            {
-              "title": "OAuth 2.0 and OpenID Connect (Auth0 Docs)",
-              "url": "https://auth0.com/docs/get-started/authentication-and-authorization-flow/oauth-2-and-openid-connect",
-              "type": "article"
-            },
-            {
-              "title": "SCIM: System for Cross-domain Identity Management (Okta)",
-              "url": "https://www.okta.com/identity-101/what-is-scim/",
-              "type": "article"
-            },
             {
               "title": "Keycloak Tutorial for Beginners (TechWorld with Nana)",
               "url": "https://www.youtube.com/watch?v=duawSV69LDI",
@@ -238,13 +208,8 @@
           "description": "Administer identity stores: Lightweight Directory Access Protocol (LDAP), Microsoft Active Directory Domain Services (AD DS), Azure AD / Entra ID, and Kerberos ticket-granting architecture.",
           "resources": [
             {
-              "title": "Active Directory Explained (SearchWindowsServer)",
-              "url": "https://www.techtarget.com/searchwindowsserver/definition/Active-Directory",
-              "type": "article"
-            },
-            {
-              "title": "Introduction to Microsoft Entra ID (Azure Active Directory) (Microsoft Learn)",
-              "url": "https://learn.microsoft.com/en-us/entra/identity/fundamentals/whatis",
+              "title": "Microsoft Entra ID documentation",
+              "url": "https://learn.microsoft.com/en-us/entra/identity/",
               "type": "article"
             },
             {
@@ -282,14 +247,9 @@
       "description": "Architect core enterprise IAM pillars: Single Sign-On, Multi-Factor Authentication, Access Control models, and Privileged Access Management.",
       "resources": [
         {
-          "title": "Identity and Access Management (IAM) Best Practices (NIST)",
-          "url": "https://www.nist.gov/itg/identity-and-access-management",
+          "title": "NIST SP 800-63 Digital Identity Guidelines",
+          "url": "https://pages.nist.gov/800-63-4/",
           "type": "article"
-        },
-        {
-          "title": "Modern IAM Architectures: Course (Pluralsight)",
-          "url": "https://www.pluralsight.com/courses/modern-iam-architectures",
-          "type": "course"
         },
         {
           "title": "OAuth 2.0 and OpenID Connect Explained (OktaDev)",
@@ -315,18 +275,8 @@
           "description": "Implement enterprise Single Sign-On (SSO): Identity Provider (IdP) vs Service Provider (SP) roles, IdP-initiated vs SP-initiated SAML/OIDC flows, and cross-domain identity federation.",
           "resources": [
             {
-              "title": "What is Single Sign-On (SSO)? (Okta)",
-              "url": "https://www.okta.com/identity-101/what-is-sso/",
-              "type": "article"
-            },
-            {
-              "title": "Implementing SAML SSO with Azure AD (Microsoft Learn)",
-              "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/saml-sso-basic-tutorial",
-              "type": "article"
-            },
-            {
-              "title": "Setting up OpenID Connect in Keycloak (Keycloak Docs)",
-              "url": "https://www.keycloak.org/docs/latest/securing_apps/index.html#_openid_connect",
+              "title": "Enable SAML single sign-on for an enterprise application",
+              "url": "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/add-application-portal-setup-sso",
               "type": "article"
             },
             {
@@ -355,13 +305,8 @@
           "description": "Deploy Multi-Factor Authentication (MFA): TOTP (Time-based One-Time Passwords), FIDO2 / WebAuthn hardware security keys, push notifications, and risk-based adaptive contextual access.",
           "resources": [
             {
-              "title": "What is Multi-Factor Authentication (MFA)? (Cisco)",
-              "url": "https://www.cisco.com/c/en/us/products/security/what-is-multi-factor-authentication-mfa.html",
-              "type": "article"
-            },
-            {
-              "title": "Implementing Conditional Access with Microsoft Entra ID (Microsoft Learn)",
-              "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-what",
+              "title": "What is Conditional Access?",
+              "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview",
               "type": "article"
             },
             {
@@ -405,11 +350,6 @@
               "type": "article"
             },
             {
-              "title": "WebAuthn: A Guide to Passwordless Login (Auth0)",
-              "url": "https://auth0.com/docs/authenticate/passwordless/webauthn",
-              "type": "article"
-            },
-            {
               "title": "AWS IAM Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=ExjW3HCFG1U",
               "type": "video"
@@ -434,11 +374,6 @@
           "tag": "essential",
           "description": "Design granular access control models: Role-Based Access Control (RBAC), Attribute-Based Access Control (ABAC with XACML/ALFA), Discretionary (DAC), and Mandatory (MAC) access controls.",
           "resources": [
-            {
-              "title": "RBAC vs ABAC: Which Access Control Model Is Best? (Okta)",
-              "url": "https://www.okta.com/identity-101/rbac-vs-abac/",
-              "type": "article"
-            },
             {
               "title": "Understanding Different Access Control Models (Varonis)",
               "url": "https://www.varonis.com/blog/access-control-models",
@@ -520,18 +455,8 @@
           "description": "Automate the Joiner-Mover-Leaver (JML) lifecycle: Automated user onboarding, role changes, immediate offboarding revocation, and orphan account detection.",
           "resources": [
             {
-              "title": "Automated User Provisioning and Deprovisioning (Okta)",
-              "url": "https://www.okta.com/identity-101/user-provisioning-deprovisioning/",
-              "type": "article"
-            },
-            {
               "title": "SCIM Protocol Specification (RFC7644)",
               "url": "https://datatracker.ietf.org/doc/html/rfc7644",
-              "type": "article"
-            },
-            {
-              "title": "Identity Governance and Administration (IGA) Guide (SailPoint)",
-              "url": "https://www.sailpoint.com/identity-governance/identity-governance-guide/",
               "type": "article"
             },
             {
@@ -569,8 +494,8 @@
           "type": "article"
         },
         {
-          "title": "Cloud Identity Fundamentals: Course (Coursera/Google Cloud)",
-          "url": "https://www.coursera.org/learn/cloud-identity-fundamentals",
+          "title": "Introduction to Cloud Identity — Google Cloud",
+          "url": "https://www.coursera.org/learn/cloud-identity",
           "type": "course"
         },
         {
@@ -682,11 +607,6 @@
               "type": "article"
             },
             {
-              "title": "ForgeRock Identity Platform Documentation",
-              "url": "https://backstage.forgerock.com/docs/latest/",
-              "type": "article"
-            },
-            {
               "title": "Keycloak Tutorial for Beginners (TechWorld with Nana)",
               "url": "https://www.youtube.com/watch?v=duawSV69LDI",
               "type": "video"
@@ -751,11 +671,6 @@
       "description": "Operate enterprise IAM programs: Identity governance, automated orchestration, API security, Zero Trust, and identity auditing.",
       "resources": [
         {
-          "title": "Advanced Identity Management: Course (Cybrary)",
-          "url": "https://www.cybrary.it/course/advanced-identity-management/",
-          "type": "course"
-        },
-        {
           "title": "Zero Trust Architecture (NIST Special Publication 800-207)",
           "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf",
           "type": "article"
@@ -783,11 +698,6 @@
           "tag": "advanced",
           "description": "Implement Identity Governance and Administration (IGA): SailPoint IdentityIQ, access certification campaigns, separation of duties (SoD) enforcement, and compliance reporting.",
           "resources": [
-            {
-              "title": "What is Identity Governance? (SailPoint)",
-              "url": "https://www.sailpoint.com/identity-governance/what-is-identity-governance/",
-              "type": "article"
-            },
             {
               "title": "NIST SP 800-53: Security and Privacy Controls for Information Systems and Organizations (NIST)",
               "url": "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final",
@@ -824,18 +734,18 @@
           "description": "Automate IAM operations: SCIM automated provisioning pipelines, custom Python automation using MS Graph API / AWS Boto3, and webhook-driven account deprovisioning.",
           "resources": [
             {
-              "title": "Automate IAM tasks using AWS Lambda and Python (AWS Security Blog)",
-              "url": "https://aws.amazon.com/blogs/security/automate-iam-tasks-using-aws-lambda-and-python/",
+              "title": "IAM examples using SDK for Python (Boto3)",
+              "url": "https://docs.aws.amazon.com/code-library/latest/ug/python_3_iam_code_examples.html",
               "type": "article"
             },
             {
-              "title": "Microsoft Graph API for Identity and Access (Microsoft Learn)",
-              "url": "https://learn.microsoft.com/en-us/graph/api/resources/identity-access-overview?view=graph-rest-1.0",
+              "title": "Microsoft Graph user account API reference",
+              "url": "https://learn.microsoft.com/en-us/graph/api/resources/user?view=graph-rest-1.0",
               "type": "article"
             },
             {
-              "title": "Automating Identity Provisioning with Terraform (HashiCorp Learn)",
-              "url": "https://developer.hashicorp.com/terraform/tutorials/authentication/auth-provider-overview",
+              "title": "Create IAM policies",
+              "url": "https://developer.hashicorp.com/terraform/tutorials/aws/aws-iam-policy",
               "type": "article"
             },
             {
@@ -864,13 +774,8 @@
           "description": "Secure APIs with IAM: Protecting microservices with OAuth 2.0 scopes, token introspection (RFC 7662), JWT validation, and mTLS client certificates.",
           "resources": [
             {
-              "title": "API Security Best Practices (OWASP)",
-              "url": "https://owasp.org/www-project-api-security/",
-              "type": "article"
-            },
-            {
-              "title": "Securing APIs with OAuth 2.0 (Okta Developer)",
-              "url": "https://developer.okta.com/docs/guides/implement-oauth-for-api/overview/",
+              "title": "OWASP API Security Top 10 (2023)",
+              "url": "https://api-security.owasp.org/editions/2023/en/0x00-header/",
               "type": "article"
             },
             {
@@ -903,11 +808,6 @@
           "tag": "advanced",
           "description": "Operationalize Zero Trust: Never trust, always verify; assume breach; verify explicitly using device health, user context, and continuous risk assessment.",
           "resources": [
-            {
-              "title": "Zero Trust Security Model (Palo Alto Networks)",
-              "url": "https://www.paloaltonetworks.com/cybersecurity/zero-trust",
-              "type": "article"
-            },
             {
               "title": "Implementing a Zero Trust strategy (Microsoft Learn)",
               "url": "https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-overview",
@@ -944,13 +844,8 @@
           "description": "Monitor identity telemetry: Analyzing Okta system logs, AWS CloudTrail sign-in events, Entra ID risky sign-ins, detecting password spraying, and alert integration with SIEM.",
           "resources": [
             {
-              "title": "Monitor and Log Security Events in AWS IAM (AWS Security Blog)",
-              "url": "https://aws.amazon.com/blogs/security/monitor-log-security-events-in-aws-iam/",
-              "type": "article"
-            },
-            {
-              "title": "What is SIEM? (Splunk)",
-              "url": "https://www.splunk.com/en_us/data-solutions/security-operations/what-is-siem.html",
+              "title": "Logging IAM and AWS STS API calls with AWS CloudTrail",
+              "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html",
               "type": "article"
             },
             {
@@ -988,11 +883,6 @@
       "description": "Build a demonstrable IAM engineering portfolio: Hands-on implementation projects, architectural write-ups, and career interview preparation.",
       "resources": [
         {
-          "title": "Building a Cybersecurity Portfolio (Cybrary)",
-          "url": "https://www.cybrary.it/blog/building-a-cybersecurity-portfolio-from-scratch/",
-          "type": "article"
-        },
-        {
           "title": "Keycloak Tutorial for Beginners (TechWorld with Nana)",
           "url": "https://www.youtube.com/watch?v=duawSV69LDI",
           "type": "video"
@@ -1015,11 +905,6 @@
           "tag": "advanced",
           "description": "Project: Implement SSO & MFA: Configure Keycloak or Okta to authenticate a modern web application using OIDC, enforcing WebAuthn MFA and role claims.",
           "resources": [
-            {
-              "title": "Build a Simple Web App with Okta (Okta Developer)",
-              "url": "https://developer.okta.com/docs/guides/build-simple-webapp/main/",
-              "type": "article"
-            },
             {
               "title": "Securing a Spring Boot Application with Keycloak (Baeldung)",
               "url": "https://www.baeldung.com/spring-boot-keycloak",
@@ -1050,11 +935,6 @@
           "tag": "advanced",
           "description": "Project: Design access control policies: Model complex organizational hierarchy using AWS IAM JSON policies and Open Policy Agent (OPA) Rego rules.",
           "resources": [
-            {
-              "title": "Designing a Robust RBAC System (Article)",
-              "url": "https://www.netspi.com/blog/designing-robust-rbac-system/",
-              "type": "article"
-            },
             {
               "title": "AWS ABAC for S3 Buckets Example (AWS Docs)",
               "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_examples_abac.html",
@@ -1121,8 +1001,8 @@
           "description": "Project: Identity lifecycle automation: Build an automated Joiner-Mover-Leaver workflow using SCIM 2.0 endpoints and Python to sync HR system data to cloud directories.",
           "resources": [
             {
-              "title": "Automating Identity Management with PowerShell (Microsoft Learn)",
-              "url": "https://learn.microsoft.com/en-us/powershell/scripting/use-psget-powershellget?view=powershell-7.4",
+              "title": "Create Microsoft Entra users with PowerShell (New-MgUser)",
+              "url": "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.users/new-mguser",
               "type": "article"
             },
             {
@@ -1154,11 +1034,6 @@
               "title": "Identity and Access Management Concepts (AWS IAM)",
               "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html",
               "type": "article"
-            },
-            {
-              "title": "IAM Engineer Job Description & Skills (LinkedIn Learning)",
-              "url": "https://www.linkedin.com/learning/paths/become-an-identity-and-access-management-specialist",
-              "type": "course"
             },
             {
               "title": "AWS IAM Full Course (freeCodeCamp)",

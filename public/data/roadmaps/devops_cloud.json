@@ -130,11 +130,6 @@
               "type": "course"
             },
             {
-              "title": "Practical Linux Command Line Tips",
-              "url": "https://www.redhat.com/sysadmin/practical-linux-commands",
-              "type": "article"
-            },
-            {
               "title": "Linux for Everybody - Full Course",
               "url": "https://www.youtube.com/watch?v=sWbUDq4S6Y8",
               "type": "video"
@@ -230,8 +225,8 @@
           "description": "Master core networking for cloud engineers. Deep dive into TCP 3-way handshakes, window scaling, DNS record types (A, CNAME, ALIAS, TXT) and resolution paths, TLS 1.3 handshake encryption, mutual TLS (mTLS), subnetting, CIDR calculations, and packet inspection with Wireshark and tcpdump.",
           "resources": [
             {
-              "title": "CompTIA Network+ N10-008 Full Course (Professor Messer)",
-              "url": "https://www.professormesser.com/network-plus/n10-008/n10-008-video/n10-008-training-course/",
+              "title": "Professor Messer’s CompTIA N10-009 Network+ Training Course",
+              "url": "https://www.professormesser.com/network-plus/n10-009/n10-009-video/n10-009-training-course/",
               "type": "course"
             },
             {
@@ -263,11 +258,6 @@
       "tag": "essential",
       "description": "Design, build, and maintain automated delivery pipelines, security compliance gates, progressive deployment strategies, and declarative GitOps synchronization.",
       "resources": [
-        {
-          "title": "The CI/CD Pipeline - A Complete Guide",
-          "url": "https://www.atlassian.com/continuous-delivery/ci-cd-pipeline",
-          "type": "article"
-        },
         {
           "title": "Learn GitHub Actions (freeCodeCamp)",
           "url": "https://www.youtube.com/watch?v=Tz7FsunBbfQ",
@@ -324,11 +314,6 @@
             {
               "title": "OWASP Top 10 Web Application Security Risks",
               "url": "https://owasp.org/www-project-top-ten/",
-              "type": "article"
-            },
-            {
-              "title": "Shift Left Security with CI/CD",
-              "url": "https://www.redhat.com/en/topics/devops/what-is-shift-left-security",
               "type": "article"
             },
             {
@@ -426,11 +411,6 @@
           "tag": "advanced",
           "description": "Practice Drill: Troubleshoot and repair broken production CI/CD pipelines. Resolve Docker daemon socket permission errors, reconcile flaky test race conditions, debug out-of-disk runner failures, and implement exponential backoff on external API dependencies.",
           "resources": [
-            {
-              "title": "Debugging GitHub Actions Workflows",
-              "url": "https://docs.github.com/en/actions/managing-workflow-runs/debugging-workflows",
-              "type": "article"
-            },
             {
               "title": "Git and GitHub for Beginners - Crash Course",
               "url": "https://www.youtube.com/watch?v=RGOj5yH7evk",
@@ -624,11 +604,6 @@
               "type": "article"
             },
             {
-              "title": "Kubernetes Explained (Cloud Native Computing Foundation)",
-              "url": "https://www.cncf.io/what-is-kubernetes/",
-              "type": "article"
-            },
-            {
               "title": "Kubernetes Crash Course for Absolute Beginners",
               "url": "https://www.youtube.com/watch?v=s_o8dwzRlu4",
               "type": "video"
@@ -791,11 +766,6 @@
             {
               "title": "Kubernetes Custom Resources",
               "url": "https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/",
-              "type": "article"
-            },
-            {
-              "title": "Introduction to Kubernetes Operators",
-              "url": "https://operatorframework.io/learn/overview/",
               "type": "article"
             },
             {
@@ -1011,8 +981,8 @@
           "description": "Implement cloud security governance and FinOps: audit IAM permissions, enforce encryption at rest and in transit, deploy automated idle resource reapers, rightsize compute clusters using Spot instances and Autoscaling, and integrate Infracost into pull request workflows.",
           "resources": [
             {
-              "title": "AWS Security Best Practices",
-              "url": "https://aws.amazon.com/security/best-practices/",
+              "title": "Security Pillar - AWS Well-Architected Framework",
+              "url": "https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html",
               "type": "article"
             },
             {

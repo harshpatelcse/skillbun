@@ -95,8 +95,8 @@
           "type": "article"
         },
         {
-          "title": "What is FinOps? Cloud Cost Management explained",
-          "url": "https://aws.amazon.com/financial-management/finops/",
+          "title": "Practice Cloud Financial Management (AWS)",
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/practice-cloud-financial-management.html",
           "type": "article"
         },
         {
@@ -223,8 +223,8 @@
           "description": "Understand cloud infrastructure economics: Compute, storage, networking, managed databases, and multi-tenant billing constructs.",
           "resources": [
             {
-              "title": "Cloud Computing Explained",
-              "url": "https://azure.microsoft.com/en-us/resources/cloud-computing-explained/",
+              "title": "What is cloud computing?",
+              "url": "https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-cloud-computing",
               "type": "article"
             },
             {
@@ -257,11 +257,6 @@
           "tag": "essential",
           "description": "Dissect cloud billing models: On-demand hourly pricing, commitment-based discounting, egress network bandwidth tiers, and API request metering.",
           "resources": [
-            {
-              "title": "Cloud Pricing Explained: A Guide to AWS, Azure, and GCP",
-              "url": "https://www.netapp.com/cloud/what-is-cloud-pricing/",
-              "type": "article"
-            },
             {
               "title": "AWS Pricing Overview",
               "url": "https://aws.amazon.com/pricing/",
@@ -420,11 +415,6 @@
               "type": "article"
             },
             {
-              "title": "Hybrid Cloud Cost Management Strategies",
-              "url": "https://www.flexera.com/blog/cloud-management/hybrid-cloud-cost-management-strategies/",
-              "type": "article"
-            },
-            {
               "title": "Introduction to FinOps - Control your Cloud Spend!",
               "url": "https://www.youtube.com/watch?v=uu5BwzD2Xwo",
               "type": "video"
@@ -514,11 +504,6 @@
             {
               "title": "Implementing Showback/Chargeback",
               "url": "https://www.finops.org/framework/capabilities/allocate-cloud-spend/",
-              "type": "article"
-            },
-            {
-              "title": "Cloud Cost Allocation Strategies",
-              "url": "https://www.logicata.com/cloud-cost-allocation-strategies/",
               "type": "article"
             },
             {
@@ -669,8 +654,8 @@
               "type": "article"
             },
             {
-              "title": "GCP Rightsizing Recommendations",
-              "url": "https://cloud.google.com/compute/docs/tips-and-tricks#rightsizing",
+              "title": "Apply machine type recommendations to VM instances",
+              "url": "https://docs.cloud.google.com/compute/docs/instances/apply-machine-type-recommendations-for-instances?hl=en",
               "type": "article"
             },
             {
@@ -699,8 +684,8 @@
           "description": "Maximize cloud elasticity: Configuring Auto Scaling Groups, scheduled scaling, serverless architectures, and turning off development environments during non-business hours.",
           "resources": [
             {
-              "title": "Cost Optimization with Serverless Architectures",
-              "url": "https://aws.amazon.com/blogs/compute/cost-optimization-with-serverless-architectures/",
+              "title": "Cost optimization pillar",
+              "url": "https://docs.aws.amazon.com/wellarchitected/latest/serverless-applications-lens/cost-optimization.html",
               "type": "article"
             },
             {
@@ -749,8 +734,8 @@
               "type": "article"
             },
             {
-              "title": "GCP Committed Use Discounts",
-              "url": "https://cloud.google.com/docs/billing/save-with-committed-use-discounts",
+              "title": "Committed use discounts",
+              "url": "https://docs.cloud.google.com/docs/cuds?hl=en",
               "type": "article"
             },
             {
@@ -784,8 +769,8 @@
               "type": "article"
             },
             {
-              "title": "Azure Blob storage tiers",
-              "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-page-blob-overview",
+              "title": "Access tiers for blob data",
+              "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview",
               "type": "article"
             },
             {
@@ -819,8 +804,8 @@
           "description": "Control data transfer and egress costs: Utilizing VPC endpoints to bypass NAT gateways, CDN caching with CloudFront to reduce origin egress, and Direct Connect routing.",
           "resources": [
             {
-              "title": "Optimizing Data Transfer Costs",
-              "url": "https://aws.amazon.com/blogs/mt/optimizing-data-transfer-costs-in-aws/",
+              "title": "Plan for data transfer",
+              "url": "https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/plan-for-data-transfer.html",
               "type": "article"
             },
             {
@@ -829,8 +814,8 @@
               "type": "article"
             },
             {
-              "title": "GCP Network Pricing",
-              "url": "https://cloud.google.com/network-connectivity/docs/network-pricing",
+              "title": "Network pricing",
+              "url": "https://cloud.google.com/vpc/network-pricing?hl=en",
               "type": "article"
             },
             {
@@ -864,11 +849,6 @@
               "type": "article"
             },
             {
-              "title": "Cost optimization for serverless applications",
-              "url": "https://www.serverless.com/blog/cost-optimization-serverless-applications",
-              "type": "article"
-            },
-            {
               "title": "FinOps for Kubernetes",
               "url": "https://www.finops.org/framework/capabilities/manage-kubernetes-costs/",
               "type": "article"
@@ -899,8 +879,8 @@
           "description": "Optimize managed database costs: Provisioned IOPS tuning, Aurora Serverless v2 scaling boundaries, automated indexing to reduce CPU, and serverless cache tiering.",
           "resources": [
             {
-              "title": "AWS RDS Cost Optimization",
-              "url": "https://aws.amazon.com/blogs/database/optimize-amazon-rds-costs-by-choosing-the-right-instance-type/",
+              "title": "Recommendations from Amazon RDS",
+              "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/monitoring-recommendations.html",
               "type": "article"
             },
             {
@@ -976,8 +956,8 @@
               "type": "article"
             },
             {
-              "title": "Predicting AWS Cloud Costs using Machine Learning",
-              "url": "https://aws.amazon.com/blogs/mt/predicting-aws-cloud-costs-using-machine-learning/",
+              "title": "Forecasting with Cost Explorer",
+              "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/ce-forecast.html",
               "type": "article"
             },
             {
@@ -1006,8 +986,8 @@
               "type": "article"
             },
             {
-              "title": "Managing your AWS costs with AWS Budgets",
-              "url": "https://aws.amazon.com/blogs/aws/new-managing-your-aws-costs-with-aws-budgets/",
+              "title": "Managing your costs with AWS Budgets",
+              "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html",
               "type": "article"
             },
             {
@@ -1036,8 +1016,8 @@
               "type": "article"
             },
             {
-              "title": "Detect anomalies in your Azure costs",
-              "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/anomaly-detection",
+              "title": "Identify anomalies and unexpected changes in cost",
+              "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/understand/analyze-unexpected-charges",
               "type": "article"
             },
             {
@@ -1183,8 +1163,8 @@
               "type": "article"
             },
             {
-              "title": "Export Azure Cost Management data",
-              "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-export-data",
+              "title": "Tutorial: Create and manage Cost Management exports",
+              "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-improved-exports",
               "type": "article"
             },
             {
@@ -1218,13 +1198,13 @@
           "description": "Analyze billing datasets with SQL and Python: Writing complex SQL queries to identify billing spikes, unallocated spend, and calculate commitment coverage ratios.",
           "resources": [
             {
-              "title": "Analyzing AWS Cost and Usage Reports with Amazon Athena",
-              "url": "https://aws.amazon.com/blogs/mt/analyze-your-cost-and-usage-reports-with-amazon-athena/",
+              "title": "Querying Cost and Usage Reports using Amazon Athena",
+              "url": "https://docs.aws.amazon.com/cur/latest/userguide/cur-query-athena.html",
               "type": "article"
             },
             {
-              "title": "Querying Azure Cost Management data in Data Explorer",
-              "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/understand-cost-data-storage-account",
+              "title": "Understand Cost Management data",
+              "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/understand-cost-mgt-data",
               "type": "article"
             },
             {
@@ -1258,18 +1238,18 @@
           "description": "Automate cost savings: Lambda and Python scripts to stop idle EC2/RDS instances at night, delete unattached elastic IPs, and enforce tag hygiene.",
           "resources": [
             {
-              "title": "Automate AWS EC2 Instance Stop/Start using Lambda",
-              "url": "https://aws.amazon.com/blogs/compute/automating-the-start-and-stop-of-amazon-ec2-instances-with-aws-lambda-and-amazon-cloudwatch/",
+              "title": "Automate starting and stopping AWS instances",
+              "url": "https://docs.aws.amazon.com/solutions/latest/instance-scheduler-on-aws/solution-overview.html",
               "type": "article"
             },
             {
-              "title": "Azure Automation for cost management",
-              "url": "https://learn.microsoft.com/en-us/azure/automation/tutorial-configure-vm-auto-shutdown",
+              "title": "Auto-shutdown a virtual machine",
+              "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/auto-shutdown-vm",
               "type": "article"
             },
             {
-              "title": "GCP Cloud Functions for Automation",
-              "url": "https://cloud.google.com/functions/docs/tutorials/gcs",
+              "title": "Create triggers from Cloud Storage events",
+              "url": "https://docs.cloud.google.com/run/docs/triggering/storage-triggers?hl=en",
               "type": "article"
             },
             {
@@ -1298,18 +1278,13 @@
           "description": "Build interactive FinOps dashboards: Custom executive views in Amazon QuickSight, Grafana, Tableau, or Power BI showcasing spend velocity and savings opportunities.",
           "resources": [
             {
-              "title": "Building a Cloud Cost Dashboard with Grafana",
-              "url": "https://grafana.com/blog/2021/04/14/building-a-cloud-cost-dashboard-with-grafana/",
+              "title": "Exploring your data using Cost Explorer",
+              "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/ce-exploring-data.html",
               "type": "article"
             },
             {
-              "title": "Creating Custom Dashboards in AWS Cost Explorer",
-              "url": "https://aws.amazon.com/blogs/aws/new-customize-your-cost-explorer-experience-with-custom-dashboards/",
-              "type": "article"
-            },
-            {
-              "title": "Azure Cost Management Dashboards",
-              "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/quick-register-azure-vms",
+              "title": "Quickstart: Start using Cost Analysis",
+              "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/quick-acm-cost-analysis",
               "type": "article"
             },
             {
@@ -1440,11 +1415,6 @@
               "type": "article"
             },
             {
-              "title": "Negotiating Cloud Deals: AWS, Azure, GCP",
-              "url": "https://www.flexera.com/blog/cloud-management/negotiating-cloud-deals/",
-              "type": "article"
-            },
-            {
               "title": "Negotiate Better Cloud Contracts | Gartner",
               "url": "https://www.youtube.com/watch?v=80ZT5-e_6KA",
               "type": "video"
@@ -1505,8 +1475,8 @@
           "description": "Implement automated chargeback: Direct financial integration with ERP systems (SAP, NetSuite) for automated internal department debiting.",
           "resources": [
             {
-              "title": "Advanced Cloud Cost Allocation Strategies",
-              "url": "https://www.flexera.com/blog/cloud-management/cloud-cost-allocation-strategies/",
+              "title": "Organizing and Tracking Costs with Cost Allocation Tags — AWS",
+              "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html",
               "type": "article"
             },
             {
@@ -1602,8 +1572,8 @@
           "description": "Build an enterprise FinOps capstone: Ingest AWS CUR into Athena, build a QuickSight showback dashboard, deploy automated idle resource cleanup, and optimize commitment coverage.",
           "resources": [
             {
-              "title": "Build a Cost Monitoring Dashboard with Amazon QuickSight (Example Project)",
-              "url": "https://aws.amazon.com/blogs/mt/build-a-cost-monitoring-dashboard-with-amazon-quicksight/",
+              "title": "Cloud Intelligence Dashboards Framework",
+              "url": "https://docs.aws.amazon.com/guidance/latest/cloud-intelligence-dashboards/getting-started.html",
               "type": "article"
             },
             {
@@ -1637,8 +1607,8 @@
           "description": "Draft detailed FinOps case studies: Quantifying how 30% waste was eliminated, how commitment coverage reached 85%, and unit cost per customer decreased by 40%.",
           "resources": [
             {
-              "title": "How to Write a Technical Case Study (HubSpot)",
-              "url": "https://blog.hubspot.com/marketing/technical-case-study",
+              "title": "How to Write a Case Study — HubSpot",
+              "url": "https://blog.hubspot.com/blog/tabid/6307/bid/33282/the-ultimate-guide-to-creating-compelling-case-studies.aspx",
               "type": "article"
             },
             {
@@ -1674,11 +1644,6 @@
             {
               "title": "FinOps Framework: Concepts to Review for Interviews",
               "url": "https://www.finops.org/framework/",
-              "type": "article"
-            },
-            {
-              "title": "Building a Technical Portfolio",
-              "url": "https://www.freecodecamp.org/news/how-to-build-a-portfolio/",
               "type": "article"
             },
             {

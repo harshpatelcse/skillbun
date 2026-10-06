@@ -1,12 +1,20 @@
 # SkillBun audit fixes — simple deployment guide
 
-Release: `2.10.65`, 3 October 2026. `www.skillbun.tech` ka HTTPS/308 redirect fix live confirm ho chuka hai. Firebase CLI ne `skillbun-75d10` par sirf Firestore rules successfully compile aur deploy kar diye hain. Application ke liye authorized Git push ke baad hosting deployment ka revision/status confirm karna baaki hai.
+Release continuation: `2.10.67`, 6 October 2026. Is release mein storage/account isolation, C# search validation, BunBot context/CAPTCHA cleanup, truthful product copy, workforce PDF snapshot/validation aur learning resources ke targeted fixes hain. `www.skillbun.tech` redirect aur Firestore rules deployment ka pehle ka evidence neeche dated context mein retained hai; nayi application deployment ka actual revision/status verify karna zaroori hai.
+
+## Is continuation ke liye user-side steps
+
+1. **Hosting revision check karo.** Git release ke baad Vercel Production mein wahi commit Ready aur `skillbun.tech` par assigned hona chahiye. Failed deployment mein existing protections ko disable mat karo.
+2. **Existing guide key preserve karo.** `DOCS_ENCRYPTION_KEY` aur matching controlled source backups zaroor available rahein. 3,335 encrypted guides + index local authentication pass hue; deployment ke baad signed-in sample guide kholkar verify karo. Key rotate karna is patch ka part nahi hai.
+3. **Koi naya service/env setup required nahi hai.** Is continuation ne Firestore rules, schemas, AI provider keys, SMTP settings ya environment-variable names change nahi kiye. Neeche purane release ki configuration guidance sirf existing settings ko verify karne ke liye hai; rules ko bina change ke dobara deploy karna required nahi hai.
+4. **Controlled integration checks pending hain.** Owner/admin/intern access matrix, live certificate mint/PDF, actual SMTP delivery, Google popup/OTP inbox, backup restore aur cloud IAM ko approved test workflow mein verify karo. Audit mein real data deletion, certificate issuance ya mail send nahi hua.
+5. **Residual checks record karo.** Production dependency audit clean hai. Full audit mein ek unpatched lint-only `braces` advisory ke 5 dependency-chain entries hain; compatible patched release aane par tooling update/recheck karo. Resource audit mein blocked/inconclusive URLs retained hain; unko broken declare karke bulk remove mat karo.
 
 ## 1. Release se pehle checks complete karo
 
 Final unit tests, lint, production build aur template guard ka result [remediation report](AUDIT_REMEDIATION.md) mein record karo. Local preview `http://127.0.0.1:3000` par mobile roadmap categories, light/dark theme, BunBot topic return, language scope aur modal keyboard behavior check karo. Generated logs, cache folders, dependencies, local credentials aur agent tools release mein include mat karo.
 
-Repo rule ke hisaab se release version `2.10.64` se `2.10.65` kiya gaya hai; package aur lockfile root versions match karte hain. README ka removed inline changelog wapas add nahi kiya gaya.
+Repo rule ke hisaab se current release version `2.10.66` se `2.10.67` hai; package aur lockfile root versions match karte hain. README ka removed inline changelog wapas add nahi kiya gaya.
 
 ## 2. Hosting environment verify karo
 

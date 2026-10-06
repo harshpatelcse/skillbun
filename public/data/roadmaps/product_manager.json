@@ -214,11 +214,6 @@
           "description": "Master product economics: Unit economics, Customer Lifetime Value (LTV), Customer Acquisition Cost (CAC), payback periods, pricing strategies, and gross margins.",
           "resources": [
             {
-              "title": "Understanding Product Unit Economics",
-              "url": "https://www.mindtheproduct.com/understanding-product-unit-economics/",
-              "type": "article"
-            },
-            {
               "title": "Product Management 101: Everything You Need to Know (Full Course) (Explained Hub)",
               "url": "https://www.youtube.com/watch?v=5nAeyqNuZYU",
               "type": "video"
@@ -243,11 +238,6 @@
           "tag": "essential",
           "description": "Define strategic product roadmaps: Translating executive company vision into multi-year product strategy, strategic pillars, and measurable OKRs.",
           "resources": [
-            {
-              "title": "Measure What Matters (OKRs)",
-              "url": "https://www.whatmatters.com/the-okr-guide/",
-              "type": "article"
-            },
             {
               "title": "North Star Metric Playbook",
               "url": "https://amplitude.com/blog/north-star-metric",
@@ -341,8 +331,8 @@
           "description": "Build outcome-based roadmaps: Now-Next-Later roadmap formats, thematic roadmaps, managing dependency risks, and transparent stakeholder communication.",
           "resources": [
             {
-              "title": "Product Roadmapping Guide",
-              "url": "https://www.productplan.com/product-roadmaps/",
+              "title": "What Is a Product Roadmap? — ProductPlan",
+              "url": "https://www.productplan.com/glossary/roadmap",
               "type": "article"
             },
             {
@@ -563,11 +553,6 @@
               "type": "article"
             },
             {
-              "title": "Basic SQL for Product Managers",
-              "url": "https://www.mixpanel.com/blog/sql-for-product-managers/",
-              "type": "article"
-            },
-            {
               "title": "A/B Testing Explained (CXL)",
               "url": "https://www.youtube.com/watch?v=XDoAglqd7ss",
               "type": "video"
@@ -622,11 +607,6 @@
           "tag": "advanced",
           "description": "Close customer feedback loops: NPS surveys, customer advisory boards, churn interviews, and funneling feedback into product backlog iterations.",
           "resources": [
-            {
-              "title": "Net Promoter Score (NPS) Explained",
-              "url": "https://www.qualtrics.com/experience-management/customer/nps-score/",
-              "type": "article"
-            },
             {
               "title": "Product Management Full Course 2026 | Product Management Tutorial For Beginners | Simplilearn (Simplilearn)",
               "url": "https://www.youtube.com/watch?v=GZJUCm4MZ2w",
@@ -770,11 +750,6 @@
           "description": "Influence without authority: Aligning cross-functional priorities between engineering, design, marketing, legal, and sales leadership.",
           "resources": [
             {
-              "title": "Influence Without Authority for PMs",
-              "url": "https://www.productboard.com/blog/influence-without-authority-product-management/",
-              "type": "article"
-            },
-            {
               "title": "User Story Mapping Tutorial (ProductPlan)",
               "url": "https://www.youtube.com/watch?v=k_4SchJgAI4",
               "type": "video"
@@ -799,11 +774,6 @@
           "tag": "essential",
           "description": "Foster squad collaboration: Building healthy team culture, psychological safety, celebrating wins, and conducting blameless retrospectives.",
           "resources": [
-            {
-              "title": "Building Strong Relationships with Engineering",
-              "url": "https://www.productschool.com/blog/product-management-how-to-work-with-engineers",
-              "type": "article"
-            },
             {
               "title": "A/B Testing Explained (CXL)",
               "url": "https://www.youtube.com/watch?v=XDoAglqd7ss",
@@ -830,8 +800,8 @@
           "description": "Deliver executive updates: Writing concise 1-page monthly memos, QBR presentations, and communicating project risks and mitigations transparently.",
           "resources": [
             {
-              "title": "Communicating with Executives",
-              "url": "https://hbr.org/2018/11/how-to-communicate-with-executives",
+              "title": "Slide Presentations — MIT EECS Communication Lab",
+              "url": "https://mitcommlab.mit.edu/eecs/commkit/slideshow/",
               "type": "article"
             },
             {
@@ -859,11 +829,6 @@
           "tag": "essential",
           "description": "Resolve organizational conflicts: Navigating competing resource demands, managing difficult stakeholders, and building team consensus around data.",
           "resources": [
-            {
-              "title": "Conflict Resolution Skills for PMs",
-              "url": "https://www.productplan.com/blog/conflict-resolution-product-managers/",
-              "type": "article"
-            },
             {
               "title": "Product Management Full Course 2026 | Product Management Tutorial For Beginners | Simplilearn (Simplilearn)",
               "url": "https://www.youtube.com/watch?v=GZJUCm4MZ2w",
@@ -957,11 +922,6 @@
               "type": "article"
             },
             {
-              "title": "Building a Product Manager Portfolio",
-              "url": "https://www.productschool.com/blog/product-management-portfolio-guide",
-              "type": "article"
-            },
-            {
               "title": "Product Management 101: Everything You Need to Know (Full Course) (Explained Hub)",
               "url": "https://www.youtube.com/watch?v=5nAeyqNuZYU",
               "type": "video"
@@ -986,11 +946,6 @@
           "tag": "advanced",
           "description": "Build personal brand: Sharing product teardowns on LinkedIn/Substack, participating in PM communities (Lenny's Newsletter, Mind the Product), and mentoring.",
           "resources": [
-            {
-              "title": "Networking for Product Managers",
-              "url": "https://www.mindtheproduct.com/how-to-network-as-a-product-manager/",
-              "type": "article"
-            },
             {
               "title": "Product Management Full Course 2026 | Product Management Tutorial For Beginners | Simplilearn (Simplilearn)",
               "url": "https://www.youtube.com/watch?v=GZJUCm4MZ2w",

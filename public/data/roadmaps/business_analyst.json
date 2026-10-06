@@ -118,8 +118,8 @@
           "description": "Understand business analysis methodologies: Business Analysis Core Concept Model (BACCM - Change, Need, Solution, Stakeholder, Value, Context), and project lifecycles.",
           "resources": [
             {
-              "title": "Introduction to the BABOK Guide (IIBA)",
-              "url": "https://www.iiba.org/business-analysis-resources/babok-guide/introduction-to-babok-guide-v3/",
+              "title": "BABOK Guide — IIBA",
+              "url": "https://www.iiba.org/career-resources/a-business-analysis-professionals-foundation-for-success/babok/",
               "type": "article"
             },
             {
@@ -243,11 +243,6 @@
           "description": "Analyze and document requirements: Functional vs non-functional requirements (NFRs), business rules, traceability matrices (RTM), and validation criteria.",
           "resources": [
             {
-              "title": "Use Case Diagram Tutorial",
-              "url": "https://www.lucidchart.com/pages/use-case-diagram",
-              "type": "article"
-            },
-            {
               "title": "User Stories with Example (Techcanvass)",
               "url": "https://www.youtube.com/watch?v=Jz6UyKuPbRU",
               "type": "video"
@@ -310,8 +305,8 @@
               "type": "article"
             },
             {
-              "title": "Introduction to Lean and Six Sigma",
-              "url": "https://www.edx.org/course/introduction-to-lean-and-six-sigma-tu-delftx-lss1x",
+              "title": "Six Sigma Principles: Introduction to Six Sigma and Lean",
+              "url": "https://www.coursera.org/learn/six-sigma-principles2",
               "type": "course"
             },
             {
@@ -395,8 +390,8 @@
           "description": "Build business dashboards: Visualizing KPI trends, operational metrics, and executive summaries in Power BI, Tableau, or Excel advanced pivots.",
           "resources": [
             {
-              "title": "Power BI for Beginners (Microsoft)",
-              "url": "https://docs.microsoft.com/en-us/power-bi/fundamentals/power-bi-learning-path-for-beginners",
+              "title": "Get started with Microsoft data analytics",
+              "url": "https://learn.microsoft.com/en-us/training/paths/get-started-power-bi/",
               "type": "course"
             },
             {
@@ -432,11 +427,6 @@
             {
               "title": "What is an API? (MuleSoft)",
               "url": "https://www.mulesoft.com/resources/api/what-is-an-api",
-              "type": "article"
-            },
-            {
-              "title": "JSON vs XML for Beginners",
-              "url": "https://www.geeksforgeeks.org/difference-between-xml-and-json/",
               "type": "article"
             },
             {
@@ -572,8 +562,8 @@
           "description": "Manage product backlogs: Backlog grooming, prioritization frameworks (MoSCoW, Value vs Effort matrix), and sprint scope negotiation.",
           "resources": [
             {
-              "title": "Product Prioritization Techniques (ProductPlan)",
-              "url": "https://www.productplan.com/glossary/prioritization-techniques/",
+              "title": "RICE Scoring Model — ProductPlan",
+              "url": "https://www.productplan.com/glossary/rice-scoring-model",
               "type": "article"
             },
             {

@@ -110,13 +110,8 @@
           "description": "Define the Data Governance Specialist role: Bridging data engineering, legal compliance, and business analytics; establishing data accountability and value realization.",
           "resources": [
             {
-              "title": "Data Governance: A Comprehensive Guide",
-              "url": "https://www.tableau.com/learn/articles/data-governance",
-              "type": "article"
-            },
-            {
-              "title": "Data Governance Manager Job Description & Salary",
-              "url": "https://www.roberthalf.com/sites/default/files/2022-02/data-governance-manager-job-description.pdf",
+              "title": "Data and Content Governance (Tableau Blueprint)",
+              "url": "https://help.tableau.com/current/blueprint/en-us/bp_governance.htm",
               "type": "article"
             },
             {
@@ -150,11 +145,6 @@
               "type": "article"
             },
             {
-              "title": "Introduction to Data Management and Governance",
-              "url": "https://www.coursera.org/learn/introduction-data-management-governance",
-              "type": "course"
-            },
-            {
               "title": "What is Data Governance? Explained for Beginners",
               "url": "https://www.youtube.com/watch?v=uPsUjKLHLAg",
               "type": "video"
@@ -182,11 +172,6 @@
             {
               "title": "DAMA-DMBOK Chapter 10: Data Governance",
               "url": "https://www.dama.org/dama-dmbok-2",
-              "type": "article"
-            },
-            {
-              "title": "Building a Data Governance Framework",
-              "url": "https://www.collibra.com/us/en/blog/data-governance-framework",
               "type": "article"
             },
             {
@@ -250,11 +235,6 @@
           "description": "Govern emerging technology risks: EU AI Act compliance, governance of Large Language Model training datasets, prompt logging compliance, and synthetic data policies.",
           "resources": [
             {
-              "title": "The EU AI Act: What it Means for Businesses",
-              "url": "https://iapp.org/news/a/the-eu-ai-act-what-it-means-for-businesses/",
-              "type": "article"
-            },
-            {
               "title": "Understanding the EU Data Act",
               "url": "https://www.europarl.europa.eu/factsheets/en/sheet/172/the-data-act",
               "type": "article"
@@ -299,11 +279,6 @@
           "type": "article"
         },
         {
-          "title": "The Data Governance Act Explained",
-          "url": "https://commission.europa.eu/strategy-and-policy/policies/data-ai/eu-data-strategy/data-governance-act_en",
-          "type": "article"
-        },
-        {
           "title": "What is Data Governance? Explained",
           "url": "https://www.youtube.com/watch?v=uPsUjKLHLAg",
           "type": "video"
@@ -332,8 +307,8 @@
               "type": "article"
             },
             {
-              "title": "Introduction to Collibra Data Governance Center",
-              "url": "https://www.collibra.com/us/en/products/data-governance-center",
+              "title": "Collibra Data Governance",
+              "url": "https://www.collibra.com/products/data-governance",
               "type": "article"
             },
             {
@@ -367,8 +342,8 @@
               "type": "article"
             },
             {
-              "title": "What is Data Lineage? (AWS)",
-              "url": "https://aws.amazon.com/compare/the-difference-between-data-governance-data-lineage-data-quality/",
+              "title": "Data lineage in Amazon DataZone",
+              "url": "https://docs.aws.amazon.com/datazone/latest/userguide/datazone-data-lineage.html",
               "type": "article"
             },
             {
@@ -427,11 +402,6 @@
           "description": "Operationalize data stewardship: Defining domain data owners, technical stewards, business stewards, and formalizing data access approval workflows.",
           "resources": [
             {
-              "title": "Data Ownership vs. Data Stewardship: What's the Difference?",
-              "url": "https://www.datakitchen.io/data-governance/data-ownership-vs-data-stewardship/",
-              "type": "article"
-            },
-            {
               "title": "Data Stewardship Best Practices",
               "url": "https://www.talend.com/resources/data-stewardship-best-practices/",
               "type": "article"
@@ -462,16 +432,6 @@
           "description": "Enforce granular access control policies: Role-Based (RBAC) and Attribute-Based (ABAC) access control, dynamic data masking, row-level security, and tokenization with Immuta/Privacera.",
           "resources": [
             {
-              "title": "Implementing Data Access Controls",
-              "url": "https://www.okta.com/blog/2021/04/data-access-control/",
-              "type": "article"
-            },
-            {
-              "title": "Data Security and Protection Best Practices",
-              "url": "https://www.imperva.com/learn/data-security/data-security-best-practices/",
-              "type": "article"
-            },
-            {
               "title": "What is access control?",
               "url": "https://www.youtube.com/watch?v=2QTFiQVdrgg",
               "type": "video"
@@ -496,16 +456,6 @@
           "tag": "essential",
           "description": "Manage data lifecycles: Enterprise retention policies, automated legal hold workflows, cold storage archiving to Glacier, and defensible data disposal.",
           "resources": [
-            {
-              "title": "Data Retention Policy Best Practices",
-              "url": "https://www.netskope.com/glossary/data-retention-policy",
-              "type": "article"
-            },
-            {
-              "title": "Data Archiving Strategies for Compliance",
-              "url": "https://www.hitachi.com/products_services/data_archiving/compliance/",
-              "type": "article"
-            },
             {
               "title": "Data Lifecycle Management - DLM",
               "url": "https://www.youtube.com/watch?v=QpId_nfqOGo",
@@ -562,18 +512,13 @@
           "description": "Govern modern data architectures: Data Mesh governance (federated computational governance), Data Lakehouse governance (Unity Catalog, Iceberg metadata), and cloud data warehouses.",
           "resources": [
             {
-              "title": "Data Architecture Explained: Concepts & Best Practices",
-              "url": "https://www.tableau.com/learn/articles/data-architecture",
-              "type": "article"
-            },
-            {
               "title": "What is a Data Mesh?",
               "url": "https://martinfowler.com/articles/data-mesh-principles.html",
               "type": "article"
             },
             {
-              "title": "Cloud Data Governance Best Practices",
-              "url": "https://cloud.google.com/architecture/data-governance-best-practices",
+              "title": "Knowledge Catalog overview",
+              "url": "https://docs.cloud.google.com/dataplex/docs/introduction?hl=en",
               "type": "article"
             },
             {
@@ -606,11 +551,6 @@
       "description": "Operate data governance programs: Automated controls, incident resolution, program metrics, and executive reporting.",
       "resources": [
         {
-          "title": "Operationalizing Data Governance",
-          "url": "https://www.alation.com/blog/operationalizing-data-governance/",
-          "type": "article"
-        },
-        {
           "title": "Data Governance Explained in 5 Minutes",
           "url": "https://www.youtube.com/watch?v=uPsUjKLHLAg",
           "type": "video"
@@ -634,13 +574,8 @@
           "description": "Implement continuous data controls: Automated quality checks in CI/CD data pipelines, automated schema drift alerts, and unauthorized data access monitoring.",
           "resources": [
             {
-              "title": "How to Implement Data Governance Policies",
-              "url": "https://www.snowflake.com/blog/how-to-implement-data-governance-policies/",
-              "type": "article"
-            },
-            {
-              "title": "Monitoring Data Governance Metrics",
-              "url": "https://www.tableau.com/about/blog/2019/11/data-governance-metrics",
+              "title": "Implement Column-Level Data Governance Policies (Snowflake)",
+              "url": "https://docs.snowflake.com/en/user-guide/security-column-intro",
               "type": "article"
             },
             {
@@ -664,13 +599,13 @@
           "description": "Automate governance workflows: JIRA / ServiceNow integration for data access requests, automated metadata harvesting, and automated privacy scanning.",
           "resources": [
             {
-              "title": "Automating Data Governance with Azure Purview",
-              "url": "https://learn.microsoft.com/en-us/azure/purview/concept-data-governance-automation",
+              "title": "Data governance with Microsoft Purview",
+              "url": "https://learn.microsoft.com/en-us/purview/data-governance-overview",
               "type": "article"
             },
             {
-              "title": "Leveraging APIs for Data Governance Automation",
-              "url": "https://www.collibra.com/us/en/blog/automating-data-governance",
+              "title": "Collibra APIs for Governance Automation",
+              "url": "https://developer.collibra.com/api",
               "type": "article"
             },
             {
@@ -704,11 +639,6 @@
               "type": "article"
             },
             {
-              "title": "The Role of Change Management in Data Governance",
-              "url": "https://www.experian.com/blogs/data-governance/2020/03/change-management-data-governance/",
-              "type": "article"
-            },
-            {
               "title": "Project Management Ep. 4: Essential Stakeholder Engagement Strategies🚀 ✅",
               "url": "https://www.youtube.com/watch?v=O9a8k_6Ye_M",
               "type": "video"
@@ -733,16 +663,6 @@
           "tag": "advanced",
           "description": "Manage data quality incidents: Data incident response playbooks, root-cause analysis (RCA), notifying downstream dashboard consumers, and remediation SLAs.",
           "resources": [
-            {
-              "title": "Data Incident Response Plan Guide",
-              "url": "https://www.fortinet.com/resources/cyberglossary/incident-response-plan",
-              "type": "article"
-            },
-            {
-              "title": "Root Cause Analysis Techniques for Data Issues",
-              "url": "https://www.atlassian.com/incident-management/post-incident-review/root-cause-analysis",
-              "type": "article"
-            },
             {
               "title": "Cyber Incident Response Plan Explained",
               "url": "https://www.youtube.com/watch?v=UYW55gr1WKo",
@@ -771,11 +691,6 @@
             {
               "title": "Data Governance Scorecard: What to Measure",
               "url": "https://www.dataintegration.com/articles/data-governance/data-governance-scorecard-what-to-measure",
-              "type": "article"
-            },
-            {
-              "title": "Demonstrating ROI for Data Governance",
-              "url": "https://www.collibra.com/us/en/resources/blog/data-governance-roi",
               "type": "article"
             },
             {
@@ -841,11 +756,6 @@
               "type": "article"
             },
             {
-              "title": "Example Data Governance Success Stories",
-              "url": "https://www.collibra.com/us/en/resources/customer-stories",
-              "type": "article"
-            },
-            {
               "title": "Data Governance | Why it Matters, Best Practices & What to Avoid",
               "url": "https://www.youtube.com/watch?v=uPsUjKLHLAg",
               "type": "video"
@@ -870,11 +780,6 @@
           "tag": "advanced",
           "description": "Build an enterprise Data Governance capstone: Deploy OpenMetadata or DataHub, configure automated dbt column-level lineage, define DQ test suites with Great Expectations, and document access policies.",
           "resources": [
-            {
-              "title": "Designing a Data Governance Architecture",
-              "url": "https://www.dataversity.net/designing-a-data-governance-architecture/",
-              "type": "article"
-            },
             {
               "title": "Project: Open-Source Data Catalog with Amundsen",
               "url": "https://www.amundsen.io/amundsen/",
@@ -905,11 +810,6 @@
           "tag": "advanced",
           "description": "Master Data Governance interviews: Defend federated vs centralized governance tradeoffs, explain column-level lineage mechanics, and solve data ownership conflicts.",
           "resources": [
-            {
-              "title": "Top Data Governance Interview Questions",
-              "url": "https://www.simplilearn.com/data-governance-interview-questions-article",
-              "type": "article"
-            },
             {
               "title": "Behavioral Interview Questions for Data Roles",
               "url": "https://www.mockdata.ai/blog/behavioral-interview-questions-for-data-scientists/",

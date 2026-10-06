@@ -193,8 +193,8 @@
               "type": "article"
             },
             {
-              "title": "Microsoft Threat Modeling Tool",
-              "url": "https://www.microsoft.com/en-us/security/business/security-risk-management/threat-modeling",
+              "title": "Microsoft Threat Modeling Tool threats",
+              "url": "https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-threats",
               "type": "article"
             },
             {
@@ -285,8 +285,8 @@
           "description": "Design zero-trust cloud network perimeters: Hub-and-Spoke architectures with centralized stateful firewalls (AWS Network Firewall, Azure Firewall), eliminating public IPs with PrivateLink and Private Endpoints, micro-segmentation with Security Groups, and Web Application Firewalls (AWS WAF, Cloud Armor).",
           "resources": [
             {
-              "title": "AWS Network Security",
-              "url": "https://aws.amazon.com/vpc/details/security/",
+              "title": "Managing security responsibilities for Amazon Virtual Private Cloud",
+              "url": "https://docs.aws.amazon.com/vpc/latest/userguide/security.html",
               "type": "article"
             },
             {
@@ -429,11 +429,6 @@
             {
               "title": "AWS Security Hub Documentation",
               "url": "https://aws.amazon.com/documentation-overview/security-hub/",
-              "type": "article"
-            },
-            {
-              "title": "What is Cloud Security Posture Management (CSPM)?",
-              "url": "https://www.paloaltonetworks.com/cyberpedia/what-is-cspm",
               "type": "article"
             },
             {
@@ -654,13 +649,8 @@
           "description": "Harden CI/CD supply chain pipelines: securing GitHub Actions runners, generating Software Bill of Materials (SBOM), signing container images with Sigstore Cosign, and enforcing binary authorization before deployment.",
           "resources": [
             {
-              "title": "OWASP Top 10 for CI/CD Pipeline",
-              "url": "https://owasp.org/www-project-top-10-ci-cd/",
-              "type": "article"
-            },
-            {
-              "title": "What is the Supply-chain Levels for Software Artifacts (SLSA)?",
-              "url": "https://slsa.dev/spec/v0.1/what",
+              "title": "OWASP Top 10 CI/CD Security Risks",
+              "url": "https://owasp.org/www-project-top-10-ci-cd-security-risks/",
               "type": "article"
             },
             {
@@ -690,7 +680,7 @@
           "resources": [
             {
               "title": "OWASP API Security Top 10",
-              "url": "https://owasp.org/www-project-api-security-top-10/",
+              "url": "https://api-security.owasp.org/editions/2023/en/0x00-header/",
               "type": "article"
             },
             {
@@ -761,11 +751,6 @@
               "type": "article"
             },
             {
-              "title": "CIS Cloud Computing Benchmarks",
-              "url": "https://www.cisecurity.org/cis-benchmarks/cloud",
-              "type": "article"
-            },
-            {
               "title": "Cloud Security Governance, Risk, and Compliance | Cloud Security Training | Simplilearn",
               "url": "https://www.youtube.com/watch?v=Qt9lhzFhW_c",
               "type": "video"
@@ -791,8 +776,8 @@
               "type": "article"
             },
             {
-              "title": "GCP Cloud Architecture Center: Security",
-              "url": "https://cloud.google.com/architecture/security",
+              "title": "Enterprise foundations blueprint",
+              "url": "https://docs.cloud.google.com/architecture/security-foundations?hl=en",
               "type": "article"
             },
             {
@@ -878,11 +863,6 @@
           "description": "Hands-on Lab: audit complex IAM policies using AWS IAM Access Analyzer, identify cross-account escalation paths, and refactor policies into strictly bounded least-privilege definitions.",
           "resources": [
             {
-              "title": "Palo Alto Networks - Hands-on IAM Permissions Boundaries in AWS",
-              "url": "https://www.paloaltonetworks.com/cyberpedia/hands-on-iam-permissions-boundaries-in-aws",
-              "type": "article"
-            },
-            {
               "title": "AWS Certified Security - Specialty (SCS-C01) Full Course",
               "url": "https://www.youtube.com/watch?v=VeddCMK7HzY",
               "type": "video"
@@ -940,11 +920,6 @@
             {
               "title": "OWASP DevSecOps Guideline",
               "url": "https://owasp.org/www-project-devsecops-guideline/",
-              "type": "article"
-            },
-            {
-              "title": "Automating Security in CI/CD Pipelines (freeCodeCamp)",
-              "url": "https://www.freecodecamp.org/news/automating-security-in-ci-cd-pipelines/",
               "type": "article"
             },
             {

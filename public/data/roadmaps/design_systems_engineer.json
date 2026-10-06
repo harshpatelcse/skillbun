@@ -90,11 +90,6 @@
       "description": "Master Design Systems Engineering: Bridging design and frontend development, establishing multi-tier design token architectures, and building accessible UI component libraries.",
       "resources": [
         {
-          "title": "What is a Design System? - Figma",
-          "url": "https://www.figma.com/resource-library/what-is-a-design-system/",
-          "type": "article"
-        },
-        {
           "title": "Atomic Design by Brad Frost",
           "url": "https://atomicdesign.bradfrost.com/table-of-contents/",
           "type": "article"
@@ -158,11 +153,6 @@
               "type": "article"
             },
             {
-              "title": "Understanding the Role of a Design Systems Engineer",
-              "url": "https://www.uxpin.com/studio/blog/design-systems-engineer-role/",
-              "type": "article"
-            },
-            {
               "title": "What are Design Systems? Intro to Design Systems & How to Build One",
               "url": "https://www.youtube.com/watch?v=YLo6g58vUm0",
               "type": "video"
@@ -190,11 +180,6 @@
             {
               "title": "Node.js & npm/yarn/pnpm documentation",
               "url": "https://nodejs.org/en/docs/",
-              "type": "article"
-            },
-            {
-              "title": "Intro to Monorepos",
-              "url": "https://turborepo.org/docs/core-concepts/monorepos",
               "type": "article"
             },
             {
@@ -270,16 +255,6 @@
               "type": "article"
             },
             {
-              "title": "Style Dictionary Documentation",
-              "url": "https://amzn.github.io/style-dictionary/",
-              "type": "article"
-            },
-            {
-              "title": "Figma Tokens Plugin",
-              "url": "https://www.figma.com/community/plugin/842846727284074219/Figma-Tokens",
-              "type": "article"
-            },
-            {
               "title": "What are Design Tokens? | Supercharged #143",
               "url": "https://www.youtube.com/watch?v=wtTstdiBuUk",
               "type": "video"
@@ -305,19 +280,9 @@
           "description": "Engineer headless and compound component patterns: Controlled vs uncontrolled components, slot composition, polymorphism (`asChild`), and React/Web Components primitives.",
           "resources": [
             {
-              "title": "Building a Component Library: Best Practices",
-              "url": "https://www.patterns.dev/posts/component-library",
-              "type": "article"
-            },
-            {
-              "title": "Component Patterns in React",
-              "url": "https://kentcdodds.com/blog/compound-components",
-              "type": "article"
-            },
-            {
-              "title": "How to create a React component library",
-              "url": "https://www.smashingmagazine.com/2020/04/react-component-library/",
-              "type": "article"
+              "title": "Build a Reusable React Component with Storybook",
+              "url": "https://storybook.js.org/tutorials/intro-to-storybook/react/en/simple-component/",
+              "type": "course"
             },
             {
               "title": "React Component Patterns: HOC, Render Props, and Compound Components Explained",
@@ -345,8 +310,8 @@
           "description": "Evaluate design system styling architectures: CSS Custom Properties, Tailwind CSS theme plugins, CSS Modules, Vanilla Extract zero-runtime CSS, and CSS-in-JS tradeoffs.",
           "resources": [
             {
-              "title": "Modern CSS-in-JS Solutions",
-              "url": "https://css-tricks.com/a-comprehensive-guide-to-css-in-javascript/",
+              "title": "CSS-in-JS with Emotion: Introduction",
+              "url": "https://emotion.sh/docs/introduction",
               "type": "article"
             },
             {
@@ -383,11 +348,6 @@
               "title": "Storybook Documentation",
               "url": "https://storybook.js.org/docs",
               "type": "article"
-            },
-            {
-              "title": "Storybook Tutorial for React",
-              "url": "https://www.learnstorybook.com/react-component-guide/introduction/",
-              "type": "course"
             },
             {
               "title": "Storybook Addons",
@@ -469,11 +429,6 @@
           "type": "article"
         },
         {
-          "title": "Frontend Testing Strategy",
-          "url": "https://kentcdodds.com/blog/frontend-testing-strategy",
-          "type": "article"
-        },
-        {
           "title": "React Testing Tutorial (Jest & React Testing Library)",
           "url": "https://www.youtube.com/watch?v=JBSUgDxICg8",
           "type": "video"
@@ -539,11 +494,6 @@
             {
               "title": "Introduction to Visual Regression Testing",
               "url": "https://www.browserstack.com/guide/visual-regression-testing",
-              "type": "article"
-            },
-            {
-              "title": "Chromatic Documentation (Storybook Visual Testing)",
-              "url": "https://www.chromatic.com/docs/introduction",
               "type": "article"
             },
             {
@@ -724,11 +674,6 @@
               "type": "article"
             },
             {
-              "title": "GitHub Actions for Frontend Projects",
-              "url": "https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs-or-javascript",
-              "type": "article"
-            },
-            {
               "title": "Automating Publishing with CI",
               "url": "https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages",
               "type": "article"
@@ -761,11 +706,6 @@
             {
               "title": "Figma API Documentation",
               "url": "https://www.figma.com/developers/api",
-              "type": "article"
-            },
-            {
-              "title": "Using Supernova for DesignOps",
-              "url": "https://www.supernova.io/blog/what-is-design-ops",
               "type": "article"
             },
             {
@@ -804,11 +744,6 @@
               "type": "article"
             },
             {
-              "title": "Contribution Guidelines for Design Systems",
-              "url": "https://bradfrost.com/blog/post/contribution-models-for-design-systems/",
-              "type": "article"
-            },
-            {
               "title": "Design System Tutorial for Beginners | Frontend Master | Traversy Media",
               "url": "https://www.youtube.com/watch?v=lRaL-8qZ0mM",
               "type": "video"
@@ -834,13 +769,8 @@
           "description": "Optimize library runtime performance: Zero-runtime CSS extraction, tree-shaking unused icons/components, bundle size monitoring with Size Limit, and minimizing DOM node counts.",
           "resources": [
             {
-              "title": "Webpack Performance Guide",
-              "url": "https://webpack.js.org/guides/performance/",
-              "type": "article"
-            },
-            {
-              "title": "Optimizing React Performance",
-              "url": "https://react.dev/learn/understanding-your-ui#how-react-renders-your-ui",
+              "title": "Avoid Unnecessary Re-renders with memo (React Documentation)",
+              "url": "https://react.dev/reference/react/memo",
               "type": "article"
             },
             {
@@ -913,19 +843,14 @@
       "description": "Build a competitive Design Systems portfolio: Open-source component libraries, interactive documentation portals, and interview readiness.",
       "resources": [
         {
-          "title": "Building a Strong Technical Portfolio",
-          "url": "https://www.freecodecamp.org/news/how-to-build-a-strong-technical-portfolio-as-a-developer/",
-          "type": "article"
-        },
-        {
           "title": "Cracking the Coding Interview - Behavioral Section",
           "url": "https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850",
           "type": "course"
         },
         {
-          "title": "The Tech Resume Inside Out",
-          "url": "https://www.amazon.com/Tech-Resume-Inside-Out-Impressive/dp/1089921447",
-          "type": "article"
+          "title": "The Tech Resume Inside Out — Gergely Orosz",
+          "url": "https://thetechresume.com/",
+          "type": "book"
         },
         {
           "title": "Study Guide & Notes",
@@ -941,8 +866,8 @@
           "description": "Author design system case studies: Documenting how token architecture reduced UI bug tickets by 60%, accelerated sprint velocity, and unified multi-brand themes.",
           "resources": [
             {
-              "title": "How to Write a Technical Case Study",
-              "url": "https://www.hackerearth.com/blog/developers/how-to-write-a-technical-case-study/",
+              "title": "Writing Project Case Studies for a Design Portfolio (Nielsen Norman Group)",
+              "url": "https://www.nngroup.com/articles/ux-design-portfolios/",
               "type": "article"
             },
             {
@@ -976,8 +901,8 @@
               "type": "article"
             },
             {
-              "title": "Planning Your Open Source Project",
-              "url": "https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/planning-your-open-source-project",
+              "title": "Starting an Open Source Project (GitHub Open Source Guides)",
+              "url": "https://opensource.guide/starting-a-project/",
               "type": "article"
             },
             {
@@ -996,8 +921,8 @@
           "description": "Master Design Systems technical interviews: Whiteboard compound component APIs, derive design token inheritance models, explain WCAG 2.1 AA focus rings, and solve component architecture problems.",
           "resources": [
             {
-              "title": "Common Frontend Interview Questions",
-              "url": "https://www.frontendinterviewhandbook.com/questions/",
+              "title": "JavaScript Interview Questions (Frontend Interview Handbook)",
+              "url": "https://www.frontendinterviewhandbook.com/javascript-questions/",
               "type": "article"
             },
             {

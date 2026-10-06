@@ -15,13 +15,33 @@ const AI_RETRYABLE_STATUSES = new Set([408, 429, 500, 502, 503, 504]);
 export const RATE_LIMIT_MAX = 100;
 export const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000;
 export const RATE_LIMIT_KEY = 'sb_counsel_rl';
+const sessionRateLimits = new Map();
+
+function rateLimitOwner() {
+  return getFirebaseServices().auth?.currentUser?.uid || '';
+}
+
+function saveRateLimitData(data) {
+  const uid = rateLimitOwner();
+  try {
+    localStorage.setItem(RATE_LIMIT_KEY, JSON.stringify({ ...data, uid }));
+    sessionRateLimits.delete(uid);
+  } catch {
+    // This counter is UI feedback; authoritative limits remain on the server.
+    // A cache failure must not append an error after a successful AI response.
+    sessionRateLimits.set(uid, { ...data });
+  }
+}
 
 export function getRateLimitData() {
+  const uid = rateLimitOwner();
+  if (sessionRateLimits.has(uid)) return { ...sessionRateLimits.get(uid) };
   try {
     const raw = localStorage.getItem(RATE_LIMIT_KEY);
     if (!raw) return { count: 0, windowStart: Date.now() };
 
     const parsed = JSON.parse(raw);
+    if (typeof parsed?.uid === 'string' && parsed.uid !== uid) return { count: 0, windowStart: Date.now() };
     const count = Number.parseInt(parsed?.count, 10);
     const windowStart = Number.parseInt(parsed?.windowStart, 10);
 
@@ -41,7 +61,7 @@ export function checkRateLimit() {
 
   if (now - data.windowStart > RATE_LIMIT_WINDOW_MS) {
     data = { count: 0, windowStart: now };
-    localStorage.setItem(RATE_LIMIT_KEY, JSON.stringify(data));
+    saveRateLimitData(data);
   }
 
   if (data.count >= RATE_LIMIT_MAX) {
@@ -65,7 +85,7 @@ export function incrementRateLimit() {
   }
 
   data.count += 1;
-  localStorage.setItem(RATE_LIMIT_KEY, JSON.stringify(data));
+  saveRateLimitData(data);
 }
 
 function sleep(ms) {

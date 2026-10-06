@@ -189,11 +189,6 @@
           "description": "Master robust error handling and I/O architectures: checked vs unchecked runtime exceptions, try-with-resources with `AutoCloseable`, custom domain exception hierarchies, and Java NIO.2 non-blocking I/O (`Path`, `Files`, `ByteBuffer`, `FileChannel`, `AsynchronousSocketChannel`, and selector event demultiplexing).",
           "resources": [
             {
-              "title": "Java Exception Handling",
-              "url": "https://www.geeksforgeeks.org/exception-handling-in-java/",
-              "type": "article"
-            },
-            {
               "title": "NIO.2 File API in Java",
               "url": "https://www.baeldung.com/java-nio-2",
               "type": "article"
@@ -682,11 +677,6 @@
           "type": "article"
         },
         {
-          "title": "Spring AMQP Documentation",
-          "url": "https://docs.spring.io/spring-amqp/docs/current/reference/html/",
-          "type": "article"
-        },
-        {
           "title": "Spring Boot Full Course (Amigoscode)",
           "url": "https://www.youtube.com/watch?v=9SGDpanrc8U",
           "type": "video"
@@ -929,11 +919,6 @@
             {
               "title": "JUnit 5 Tutorial",
               "url": "https://www.baeldung.com/junit-5",
-              "type": "article"
-            },
-            {
-              "title": "TDD for Dummies",
-              "url": "https://www.freecodecamp.org/news/test-driven-development-for-dummies/",
               "type": "article"
             },
             {
@@ -1218,11 +1203,6 @@
           "type": "article"
         },
         {
-          "title": "Clean Code Summary",
-          "url": "https://www.freecodecamp.org/news/a-quick-summary-of-clean-code-by-robert-c-martin-d6a9a30d473b/",
-          "type": "article"
-        },
-        {
           "title": "Java Full Course for Beginners (freeCodeCamp)",
           "url": "https://www.youtube.com/watch?v=GdzRzWymT4c",
           "type": "video"
@@ -1286,11 +1266,6 @@
               "type": "article"
             },
             {
-              "title": "Code Review Best Practices",
-              "url": "https://www.atlassian.com/agile/devops/code-reviews",
-              "type": "article"
-            },
-            {
               "title": "Spring Boot REST API Tutorial (Amigoscode)",
               "url": "https://www.youtube.com/watch?v=9SGDpanrc8U",
               "type": "video"
@@ -1315,11 +1290,6 @@
           "tag": "advanced",
           "description": "Design enterprise RESTful APIs: consistent resource URI conventions, HTTP status code semantics, pagination and filtering standards, backward-compatible API versioning, and auto-generating interactive OpenAPI 3.0 documentation using Springdoc-OpenAPI.",
           "resources": [
-            {
-              "title": "REST API Design Best Practices",
-              "url": "https://restfulapi.net/rest-api-design-rules/",
-              "type": "article"
-            },
             {
               "title": "OpenAPI Specification",
               "url": "https://swagger.io/specification/",

@@ -93,9 +93,9 @@
           "description": "Deep dive into OSI and TCP/IP models, network devices (routers, switches, firewalls), common protocols (ARP, ICMP, TCP, UDP, DNS, DHCP, HTTP/S), subnetting, network segmentation, packet analysis with Wireshark, network troubleshooting, and understanding their security implications and common attack vectors.",
           "resources": [
             {
-              "title": "The TCP/IP Guide - Forouzan",
-              "url": "https://www.amazon.in/TCPIP-Guide-Ch-Forouzan-Behrouz/dp/0070636773",
-              "type": "article"
+              "title": "The TCP/IP Guide — Charles M. Kozierok (Publisher Overview)",
+              "url": "https://nostarch.com/tcpip.htm",
+              "type": "book"
             },
             {
               "title": "Computer Networking Course - Network Engineering [CompTIA Network+ Exam Prep] (freeCodeCamp.org)",
@@ -387,9 +387,9 @@
           "description": "Introduction to cloud computing models (IaaS, PaaS, SaaS), deployment models (public, private, hybrid), the shared responsibility model, common cloud security challenges, and basic security controls within major cloud providers like AWS (IAM, Security Groups, S3 security) and Azure (Azure AD, Network Security Groups).",
           "resources": [
             {
-              "title": "Introduction to Cloud Security (AWS Training)",
-              "url": "https://aws.amazon.com/training/course-descriptions/introduction-to-cloud-security/",
-              "type": "course"
+              "title": "AWS Cloud Security",
+              "url": "https://aws.amazon.com/security/",
+              "type": "article"
             },
             {
               "title": "Azure Security Fundamentals (Microsoft Learn)",
@@ -455,11 +455,6 @@
           "tag": "essential",
           "description": "In-depth understanding of various network security devices and controls: Next-Generation Firewalls (NGFWs), Intrusion Detection Systems (IDS), Intrusion Prevention Systems (IPS), Virtual Private Networks (VPNs - IPsec, SSL/TLS), Network Access Control (NAC) solutions, Data Loss Prevention (DLP), and Secure Web Gateways (SWG).",
           "resources": [
-            {
-              "title": "Introduction to Network Security Devices",
-              "url": "https://www.geeksforgeeks.org/introduction-to-network-security-devices/",
-              "type": "article"
-            },
             {
               "title": "How to use AWS WAF (Web application firewall)/Web ACL? - Step By Step Tutorial (Part-11)#aws #devops (Rahul Wagh)",
               "url": "https://www.youtube.com/watch?v=FHRXXrQ765M",
@@ -576,14 +571,9 @@
           "description": "Understanding different types of malware (viruses, worms, trojans, ransomware), basic static and dynamic analysis techniques, sandboxing environments, and an introduction to reverse engineering concepts using disassemblers (e.g., Ghidra) and debuggers.",
           "resources": [
             {
-              "title": "Practical Malware Analysis Book",
-              "url": "https://www.amazon.in/Practical-Malware-Analysis-Dissecting-Malicious/dp/1593272909",
-              "type": "article"
-            },
-            {
-              "title": "Malware Analysis Fundamentals Course (Cybrary)",
-              "url": "https://www.cybrary.it/course/malware-analysis-fundamentals/",
-              "type": "course"
+              "title": "Practical Malware Analysis — No Starch Press",
+              "url": "https://nostarch.com/malware",
+              "type": "book"
             },
             {
               "title": "Malware Analysis Crash Course - Analysis lab setup (dzuma)",
@@ -610,11 +600,6 @@
           "tag": "essential",
           "description": "Overview of industry-recognized certifications (CompTIA Security+, CySA+, CEH, OSWP, CCNA Security, Azure/AWS Security), resume building, interview preparation strategies, and identifying niche career paths in the global cybersecurity industry.",
           "resources": [
-            {
-              "title": "Top Cybersecurity Certifications (Simplilearn)",
-              "url": "https://www.simplilearn.com/cyber-security-certifications-article",
-              "type": "article"
-            },
             {
               "title": "How to Pass the Security+ Exam (Professor Messer)",
               "url": "https://www.youtube.com/watch?v=9NE33fpQuw8",
@@ -691,9 +676,9 @@
           "description": "Master network protocols from a security perspective: dissect packets with Wireshark and tcpdump, analyze TCP 3-way handshakes and TCP flag anomalies, understand ARP spoofing/poisoning, DNS tunneling, BGP hijacking, subnets, VLAN segmentation, and firewall rule evaluation.",
           "resources": [
             {
-              "title": "The TCP/IP Guide - Forouzan",
-              "url": "https://www.amazon.in/TCPIP-Guide-Ch-Forouzan-Behrouz/dp/0070636773",
-              "type": "article"
+              "title": "The TCP/IP Guide — Charles M. Kozierok (Publisher Overview)",
+              "url": "https://nostarch.com/tcpip.htm",
+              "type": "book"
             },
             {
               "title": "Computer Networking Course - Network Engineering [CompTIA Network+ Exam Prep] (freeCodeCamp.org)",
@@ -982,9 +967,9 @@
           "description": "Secure cloud workloads across AWS, GCP, and Azure: Shared Responsibility Model, IAM least privilege, Cloud Security Posture Management (CSPM), remediating S3/GCS bucket public exposures, and detecting lateral movement within cloud environments.",
           "resources": [
             {
-              "title": "Introduction to Cloud Security (AWS Training)",
-              "url": "https://aws.amazon.com/training/course-descriptions/introduction-to-cloud-security/",
-              "type": "course"
+              "title": "AWS Cloud Security",
+              "url": "https://aws.amazon.com/security/",
+              "type": "article"
             },
             {
               "title": "Azure Security Fundamentals (Microsoft Learn)",
@@ -1047,11 +1032,6 @@
           "tag": "essential",
           "description": "Deploy and configure enterprise perimeter defenses: Next-Generation Firewalls (NGFW), Intrusion Detection and Prevention Systems (Suricata, Snort), Web Application Firewalls (WAF), network DMZs, and 802.1X network access control.",
           "resources": [
-            {
-              "title": "Introduction to Network Security Devices",
-              "url": "https://www.geeksforgeeks.org/introduction-to-network-security-devices/",
-              "type": "article"
-            },
             {
               "title": "How to use AWS WAF (Web application firewall)/Web ACL? - Step By Step Tutorial (Part-11)#aws #devops (Rahul Wagh)",
               "url": "https://www.youtube.com/watch?v=FHRXXrQ765M",
@@ -1168,14 +1148,9 @@
           "description": "Analyze malicious binaries safely: perform static analysis (PE headers, imports/exports, strings with FLOSS), decompile code in Ghidra, execute dynamic behavioral analysis in isolated sandboxes, detect process injection techniques, and author resilient YARA detection rules.",
           "resources": [
             {
-              "title": "Practical Malware Analysis Book",
-              "url": "https://www.amazon.in/Practical-Malware-Analysis-Dissecting-Malicious/dp/1593272909",
-              "type": "article"
-            },
-            {
-              "title": "Malware Analysis Fundamentals Course (Cybrary)",
-              "url": "https://www.cybrary.it/course/malware-analysis-fundamentals/",
-              "type": "course"
+              "title": "Practical Malware Analysis — No Starch Press",
+              "url": "https://nostarch.com/malware",
+              "type": "book"
             },
             {
               "title": "Malware Analysis Crash Course - Analysis lab setup (dzuma)",
@@ -1202,11 +1177,6 @@
           "tag": "essential",
           "description": "Navigate professional cybersecurity certifications and career tracks: compare foundational credentials (CompTIA Security+, Network+), hands-on offensive certifications (OSCP, CEH Practical), blue team certifications (BTL1, CySA+, GCIH), and align skills with industry roles.",
           "resources": [
-            {
-              "title": "Top Cybersecurity Certifications (Simplilearn)",
-              "url": "https://www.simplilearn.com/cyber-security-certifications-article",
-              "type": "article"
-            },
             {
               "title": "How to Pass the Security+ Exam (Professor Messer)",
               "url": "https://www.youtube.com/watch?v=9NE33fpQuw8",

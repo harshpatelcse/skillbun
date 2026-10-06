@@ -223,11 +223,6 @@
           "description": "Set up enterprise design tooling: Figma organizational teams, FigJam whiteboard workspaces, design system libraries, and version-controlled branching workflows.",
           "resources": [
             {
-              "title": "Figma Learn: Getting Started",
-              "url": "https://www.figma.com/resource-library/getting-started/",
-              "type": "course"
-            },
-            {
               "title": "Product Design Full Course (Google UX Design)",
               "url": "https://www.youtube.com/watch?v=keoL0B7NaEs",
               "type": "video"
@@ -257,11 +252,6 @@
       "description": "Lead user research discovery: Qualitative and quantitative discovery methodologies, recruiting representative users, and uncovering unmet customer needs.",
       "resources": [
         {
-          "title": "A Guide to User Research Methods",
-          "url": "https://www.uxmatters.com/mt/archives/2007/07/a_guide_to_user_research_methods.php",
-          "type": "article"
-        },
-        {
           "title": "The Lean UX Book: Applying Lean Principles to Improve User Experience",
           "url": "https://www.oreilly.com/library/view/lean-ux-2nd/9781491953880/",
           "type": "course"
@@ -289,11 +279,6 @@
           "tag": "essential",
           "description": "Plan user research: Crafting research plans, conducting generative interviews, field contextual observations, and unmoderated usability tests.",
           "resources": [
-            {
-              "title": "User Research Methods: A Comprehensive Guide",
-              "url": "https://www.nngroup.com/articles/user-research-methods/",
-              "type": "article"
-            },
             {
               "title": "Contextual Inquiry for UX",
               "url": "https://www.nngroup.com/articles/contextual-inquiry/",
@@ -325,21 +310,6 @@
           "description": "Synthesize research data: Thematic coding, affinity mapping, user personas, customer journey maps, and framing actionable problem statements.",
           "resources": [
             {
-              "title": "Creating User Personas",
-              "url": "https://www.nngroup.com/articles/personas/",
-              "type": "article"
-            },
-            {
-              "title": "How to Create a User Journey Map",
-              "url": "https://www.usertesting.com/blog/user-journey-map",
-              "type": "article"
-            },
-            {
-              "title": "Service Blueprints: What They Are & How to Create Them",
-              "url": "https://www.nngroup.com/articles/service-blueprints-ux/",
-              "type": "article"
-            },
-            {
               "title": "Software Testing Tutorial - Full Course for Beginners",
               "url": "https://www.youtube.com/watch?v=u6QfIXgjwGQ",
               "type": "video"
@@ -364,11 +334,6 @@
           "tag": "essential",
           "description": "Analyze competitive markets: Direct and indirect competitor heuristic audits, feature matrix comparisons, value proposition mapping, and identifying white space opportunities.",
           "resources": [
-            {
-              "title": "Conducting a Competitive UX Analysis",
-              "url": "https://www.nngroup.com/articles/competitive-analysis-ux/",
-              "type": "article"
-            },
             {
               "title": "Product Design Full Course (Google UX Design)",
               "url": "https://www.youtube.com/watch?v=keoL0B7NaEs",
@@ -395,16 +360,6 @@
           "description": "Frame product strategy: Translating company vision into quarterly product roadmaps, opportunity solution trees, and formulating measurable OKRs.",
           "resources": [
             {
-              "title": "Product Vision vs Product Strategy",
-              "url": "https://www.productboard.com/blog/product-vision-vs-product-strategy/",
-              "type": "article"
-            },
-            {
-              "title": "Jobs To Be Done: A Framework for Product Innovation",
-              "url": "https://www.intercom.com/blog/jobs-to-be-done-framework/",
-              "type": "article"
-            },
-            {
               "title": "My 5-Step UX/UI Design Process — From Start to Deliver (Faizur Rehman)",
               "url": "https://www.youtube.com/watch?v=aoFMyMYhKCM",
               "type": "video"
@@ -430,11 +385,6 @@
           "description": "Design product experiments: Formulating falsifiable product hypotheses, defining primary/guardrail metrics, and collaborating on A/B test parameter setup.",
           "resources": [
             {
-              "title": "How to Design a UX Research Study",
-              "url": "https://www.nngroup.com/articles/design-ux-research-study/",
-              "type": "article"
-            },
-            {
               "title": "User research Introduction & Basics | UX Design (Design & UX)",
               "url": "https://www.youtube.com/watch?v=7MTJrysCj8I",
               "type": "video"
@@ -459,11 +409,6 @@
           "tag": "advanced",
           "description": "Collect continuous customer feedback: In-app feedback widgets, Net Promoter Score (NPS) surveys, customer review mining, and Hotjar session recording analysis.",
           "resources": [
-            {
-              "title": "Best Usability Testing Tools",
-              "url": "https://www.uxbeginner.com/best-usability-testing-tools/",
-              "type": "article"
-            },
             {
               "title": "Software Testing Tutorial - Full Course for Beginners",
               "url": "https://www.youtube.com/watch?v=u6QfIXgjwGQ",
@@ -494,11 +439,6 @@
       "description": "Architect information structures and interaction flows: Designing navigation mental models, task flows, wireframes, and responsive layout foundations.",
       "resources": [
         {
-          "title": "Information Architecture Basics for UX Designers",
-          "url": "https://www.nngroup.com/articles/ia-basics-ux/",
-          "type": "article"
-        },
-        {
           "title": "The Elements of User Experience by Jesse James Garrett",
           "url": "https://www.amazon.com/Elements-User-Experience-User-Centered-Design/dp/0321683684",
           "type": "article"
@@ -526,11 +466,6 @@
           "tag": "essential",
           "description": "Structure product information: Content models, taxonomic hierarchies, object-oriented UX (OOUX), and plain language content strategy.",
           "resources": [
-            {
-              "title": "Sitemaps and User Flows in UX Design",
-              "url": "https://careerfoundry.com/en/blog/ux-design/what-is-a-sitemap-and-how-to-create-one/",
-              "type": "article"
-            },
             {
               "title": "Card Sorting: A Definitive Guide",
               "url": "https://www.nngroup.com/articles/card-sorting-definition/",
@@ -604,16 +539,6 @@
             {
               "title": "Wireframing Guide: Best Practices",
               "url": "https://www.interaction-design.org/literature/topics/wireframes",
-              "type": "article"
-            },
-            {
-              "title": "Introduction to Low-Fidelity Prototyping",
-              "url": "https://www.uxmatters.com/mt/archives/2008/04/introduction_to_low-fidelity_prototyping.php",
-              "type": "article"
-            },
-            {
-              "title": "The Crazy Eights Method",
-              "url": "https://www.gv.com/sprint/crazy-eights/",
               "type": "article"
             },
             {
@@ -738,11 +663,6 @@
           "tag": "essential",
           "description": "Establish visual brand language: Brand identity translation into UI, typography hierarchy, elevation/shadow systems, and consistent visual rhythm.",
           "resources": [
-            {
-              "title": "Visual Design Principles for UI",
-              "url": "https://careerfoundry.com/en/blog/ui-design/the-7-most-important-visual-design-principles/",
-              "type": "article"
-            },
             {
               "title": "Color Theory for Designers",
               "url": "https://99designs.com/blog/tips/color-theory/",
@@ -914,8 +834,8 @@
           "description": "Design adaptive cross-platform experiences: Breakpoint strategies, touch-first responsive web apps, and native iOS / Android responsive considerations.",
           "resources": [
             {
-              "title": "Responsive Web Design Basics",
-              "url": "https://developer.mozilla.org/en-US/docs/Web/Guide/Responsive",
+              "title": "Responsive Web Design (MDN Web Docs)",
+              "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design",
               "type": "article"
             },
             {
@@ -947,11 +867,6 @@
       "tag": "essential",
       "description": "Validate product hypotheses: High-fidelity prototypes, usability testing, heuristic evaluations, and A/B experimentation.",
       "resources": [
-        {
-          "title": "Figma Learn: Prototyping Basics",
-          "url": "https://www.figma.com/resource-library/prototyping-basics/",
-          "type": "course"
-        },
         {
           "title": "Rocket Surgery Made Easy by Steve Krug",
           "url": "https://www.sensible.com/books/rocket-surgery-made-easy/",
@@ -1013,11 +928,6 @@
             {
               "title": "Usability Testing 101",
               "url": "https://www.nngroup.com/articles/usability-testing-101/",
-              "type": "article"
-            },
-            {
-              "title": "Remote Usability Testing Guide",
-              "url": "https://www.usertesting.com/blog/remote-usability-testing-guide",
               "type": "article"
             },
             {
@@ -1116,11 +1026,6 @@
               "type": "article"
             },
             {
-              "title": "Giving and Receiving Design Feedback",
-              "url": "https://www.nngroup.com/articles/giving-receiving-design-feedback/",
-              "type": "article"
-            },
-            {
               "title": "The Design Sprint: A 5-Day Process to Solve Big Problems",
               "url": "https://www.gv.com/sprint/",
               "type": "article"
@@ -1160,11 +1065,6 @@
           "type": "article"
         },
         {
-          "title": "Working with Developers: A Guide for Designers",
-          "url": "https://www.uxpin.com/studio/blog/working-with-developers-a-guide-for-designers/",
-          "type": "article"
-        },
-        {
           "title": "Software Testing Tutorial - Full Course for Beginners",
           "url": "https://www.youtube.com/watch?v=u6QfIXgjwGQ",
           "type": "video"
@@ -1187,16 +1087,6 @@
           "tag": "essential",
           "description": "Deliver engineering specifications: Figma Dev Mode handoff, interaction specs, edge case documentation, token mapping, and pair-designing with developers.",
           "resources": [
-            {
-              "title": "Figma's Developer Handoff Features",
-              "url": "https://help.figma.com/hc/en-us/articles/360041065794-Inspect-design-files",
-              "type": "article"
-            },
-            {
-              "title": "Zeplin for Design Handoff",
-              "url": "https://www.zeplin.io/blog/design-handoff-made-easy/",
-              "type": "article"
-            },
             {
               "title": "Product Design Full Course (Google UX Design)",
               "url": "https://www.youtube.com/watch?v=keoL0B7NaEs",
@@ -1223,13 +1113,8 @@
           "description": "Manage executive stakeholders: Managing pushback, building consensus across product/engineering/sales, and presenting design proposals in business terms.",
           "resources": [
             {
-              "title": "Product Design Collaboration Best Practices",
-              "url": "https://www.uxdesigninstitute.com/blog/product-design-collaboration/",
-              "type": "article"
-            },
-            {
-              "title": "Stakeholder Management in UX",
-              "url": "https://www.nngroup.com/articles/stakeholder-management/",
+              "title": "Stakeholder Interviews for UX Collaboration (Nielsen Norman Group)",
+              "url": "https://www.nngroup.com/articles/stakeholder-interviews/",
               "type": "article"
             },
             {
@@ -1258,16 +1143,6 @@
           "description": "Embed design in Agile sprints: Dual-track Agile (Discovery sprint + Delivery sprint), sprint planning participation, and story point sizing for design tasks.",
           "resources": [
             {
-              "title": "Agile Development for Designers",
-              "url": "https://www.nngroup.com/articles/agile-ux-design-process/",
-              "type": "article"
-            },
-            {
-              "title": "Kanban for UX Designers",
-              "url": "https://www.uxpin.com/studio/blog/kanban-for-ux-designers/",
-              "type": "article"
-            },
-            {
               "title": "User research Introduction & Basics | UX Design (Design & UX)",
               "url": "https://www.youtube.com/watch?v=7MTJrysCj8I",
               "type": "video"
@@ -1293,8 +1168,8 @@
           "description": "Contribute to design system lifecycles: Submitting component RFCs, participating in design reviews, and auditing component parity in production builds.",
           "resources": [
             {
-              "title": "Building a Design System",
-              "url": "https://www.designsystems.com/what-is-a-design-system/",
+              "title": "Design Systems 101 (Nielsen Norman Group)",
+              "url": "https://www.nngroup.com/articles/design-systems-101/",
               "type": "article"
             },
             {
@@ -1323,11 +1198,6 @@
           "description": "Implement DesignOps: Design tooling standardization, design research repositories, onboarding playbooks, and tracking designer happiness and velocity.",
           "resources": [
             {
-              "title": "What is DesignOps?",
-              "url": "https://www.nngroup.com/articles/designops/",
-              "type": "article"
-            },
-            {
               "title": "Product Design Full Course (Google UX Design)",
               "url": "https://www.youtube.com/watch?v=keoL0B7NaEs",
               "type": "video"
@@ -1352,11 +1222,6 @@
           "tag": "essential",
           "description": "Master design storytelling: Presenting vision decks, framing customer problem narratives, showing quantifiable business impact, and fielding executive Q&A.",
           "resources": [
-            {
-              "title": "Storytelling for Designers",
-              "url": "https://www.nngroup.com/articles/storytelling-for-designers/",
-              "type": "article"
-            },
             {
               "title": "My 5-Step UX/UI Design Process — From Start to Deliver (Faizur Rehman)",
               "url": "https://www.youtube.com/watch?v=aoFMyMYhKCM",
@@ -1386,16 +1251,6 @@
       "tag": "advanced",
       "description": "Advance your product design career: Crafting deep case studies, whiteboard challenge mastery, and building personal brand.",
       "resources": [
-        {
-          "title": "How to Build a Product Design Portfolio",
-          "url": "https://careerfoundry.com/en/blog/ux-design/how-to-build-a-product-design-portfolio/",
-          "type": "article"
-        },
-        {
-          "title": "Cracking the Product Design Interview",
-          "url": "https://www.amazon.com/Cracking-Product-Design-Interview-Essential/dp/1983058444",
-          "type": "article"
-        },
         {
           "title": "User research Introduction & Basics | UX Design (Design & UX)",
           "url": "https://www.youtube.com/watch?v=7MTJrysCj8I",
@@ -1455,13 +1310,8 @@
               "type": "article"
             },
             {
-              "title": "Mastering the Whiteboard Challenge",
-              "url": "https://www.nngroup.com/articles/whiteboard-challenge/",
-              "type": "article"
-            },
-            {
-              "title": "Product Design System Interview Questions",
-              "url": "https://designcode.io/product-design-interview/system-design",
+              "title": "How to Answer UX Job Interview Questions (Nielsen Norman Group)",
+              "url": "https://www.nngroup.com/articles/answer-ux-job-interview-questions/",
               "type": "article"
             },
             {
@@ -1490,11 +1340,6 @@
           "description": "Curate an elite design portfolio: Clean responsive personal website showcasing 3 flagship end-to-end case studies with clear visual artifacts.",
           "resources": [
             {
-              "title": "Best Product Design Portfolio Examples",
-              "url": "https://uxfol.io/blog/product-design-portfolio",
-              "type": "article"
-            },
-            {
               "title": "My 5-Step UX/UI Design Process — From Start to Deliver (Faizur Rehman)",
               "url": "https://www.youtube.com/watch?v=aoFMyMYhKCM",
               "type": "video"
@@ -1519,11 +1364,6 @@
           "tag": "advanced",
           "description": "Build professional presence: Mentoring junior designers on ADPList, publishing thought leadership articles, and active participation in design communities.",
           "resources": [
-            {
-              "title": "Building Your Personal Brand as a Designer",
-              "url": "https://www.shillingtoneducation.com/blog/personal-branding-designers/",
-              "type": "article"
-            },
             {
               "title": "User research Introduction & Basics | UX Design (Design & UX)",
               "url": "https://www.youtube.com/watch?v=7MTJrysCj8I",

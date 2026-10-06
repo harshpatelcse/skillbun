@@ -64,7 +64,7 @@ export function setCaptchaStatus(message, tone) {
 }
 
 export async function initCaptcha(state, onVerified) {
-  if (!state.securityConfig.captchaEnabled || hasFreshHumanProof(state)) return;
+  if (state.signal.aborted || !state.securityConfig.captchaEnabled || hasFreshHumanProof(state)) return;
 
   const wrap = document.getElementById('captchaWrap');
   const widget = document.getElementById('captchaWidget');
@@ -88,6 +88,7 @@ export async function initCaptcha(state, onVerified) {
     try {
       await loadTurnstileScript(state);
     } catch (err) {
+      if (state.signal.aborted) return;
       setCaptchaStatus('Captcha failed to load. Please refresh and try again.', 'error');
       return;
     }
@@ -101,7 +102,7 @@ export async function initCaptcha(state, onVerified) {
 
     state.captchaWidgetId = window.turnstile.render('#captchaWidget', {
       sitekey: state.securityConfig.captchaSiteKey,
-      theme: localStorage.getItem('sb_theme') || 'dark',
+      theme: document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light',
       callback: (token) => {
         if (state.signal.aborted) return;
         state.captchaToken = token;
@@ -109,10 +110,12 @@ export async function initCaptcha(state, onVerified) {
         if (onVerified) void onVerified();
       },
       'expired-callback': () => {
+        if (state.signal.aborted) return;
         state.captchaToken = '';
         setCaptchaStatus('Verification expired. Please verify again.', 'error');
       },
       'error-callback': (errorCode) => {
+        if (state.signal.aborted) return;
         state.captchaToken = '';
         setCaptchaStatus(getCaptchaErrorMessage(errorCode), 'error');
       }

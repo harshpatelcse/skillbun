@@ -91,8 +91,8 @@
       "description": "Master embedded systems fundamentals: Microcontroller architectures (ARM Cortex-M, RISC-V, AVR), bare-metal C/C++, and hardware registers.",
       "resources": [
         {
-          "title": "Introduction to Embedded Systems (Coursera)",
-          "url": "https://www.coursera.org/learn/introduction-to-embedded-systems",
+          "title": "Introduction to Embedded Systems Software and Development Environments — University of Colorado Boulder",
+          "url": "https://www.coursera.org/learn/introduction-embedded-systems",
           "type": "course"
         },
         {
@@ -154,11 +154,6 @@
           "description": "Interface with analog and digital electronics: Voltage dividers, pull-up/pull-down resistors, ADC sampling, DAC generation, and sensor signal conditioning.",
           "resources": [
             {
-              "title": "Practical Electronics for Inventors",
-              "url": "https://www.amazon.com/Practical-Electronics-Inventors-Fourth-Scherz/dp/1259587546",
-              "type": "article"
-            },
-            {
               "title": "Digital Electronics Basics Tutorial",
               "url": "https://www.allaboutcircuits.com/textbook/digital/",
               "type": "article"
@@ -189,14 +184,9 @@
           "description": "Master microcontroller hardware peripherals: GPIO configuration, hardware timers/counters, PWM signal generation, external interrupts (ISR), and Direct Memory Access (DMA).",
           "resources": [
             {
-              "title": "Introduction to Microcontrollers (Coursera)",
-              "url": "https://www.coursera.org/learn/introduction-to-microcontrollers",
+              "title": "Introduction to Embedded Systems Software and Development Environments — University of Colorado Boulder",
+              "url": "https://www.coursera.org/learn/introduction-embedded-systems",
               "type": "course"
-            },
-            {
-              "title": "STM32 Microcontroller Fundamentals",
-              "url": "https://www.st.com/content/st_com/en/campaigns/what-is-stm32.html",
-              "type": "article"
             },
             {
               "title": "What Is a Microcontroller?",
@@ -224,8 +214,8 @@
               "type": "article"
             },
             {
-              "title": "SPI Bus: An Introduction",
-              "url": "https://www.sparkfun.com/tutorials/198",
+              "title": "Serial Peripheral Interface (SPI) Explained (SparkFun)",
+              "url": "https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi/all",
               "type": "article"
             },
             {
@@ -253,11 +243,6 @@
           "tag": "essential",
           "description": "Utilize embedded toolchains: GCC ARM toolchains, JTAG/SWD hardware debuggers (ST-Link, J-Link), OpenOCD, GDB, logic analyzers, and digital oscilloscopes.",
           "resources": [
-            {
-              "title": "Embedded Debugging Techniques: A Comprehensive Guide",
-              "url": "https://interrupt.memfault.com/blog/embedded-debugging-techniques",
-              "type": "article"
-            },
             {
               "title": "PlatformIO IDE for VSCode Documentation",
               "url": "https://docs.platformio.org/en/latest/ide/vscode.html",
@@ -361,11 +346,6 @@
               "type": "course"
             },
             {
-              "title": "Zephyr RTOS Documentation & Tutorials",
-              "url": "https://docs.zephyrproject.org/latest/getting_started/index.html",
-              "type": "article"
-            },
-            {
               "title": "🔥 Streaming Data Architecture: Build Real-Time Systems with Kafka & Stream Processing",
               "url": "https://www.youtube.com/watch?v=VF8AfaN6FpE",
               "type": "video"
@@ -456,11 +436,6 @@
               "type": "article"
             },
             {
-              "title": "ESP32 Low Power Modes Tutorial",
-              "url": "https://randomnerdtutorials.com/esp32-sleep-modes-power-consumption/",
-              "type": "article"
-            },
-            {
               "title": "Understanding Low Power Design for IoT",
               "url": "https://www.youtube.com/watch?v=UBOubjLaLbs",
               "type": "video"
@@ -491,9 +466,9 @@
               "type": "article"
             },
             {
-              "title": "Test-Driven Development for Embedded C",
-              "url": "https://www.amazon.com/Test-Driven-Development-Embedded-James-Grenning/dp/1934356628",
-              "type": "article"
+              "title": "Test-Driven Development for Embedded C — James Grenning",
+              "url": "https://pragprog.com/titles/jgade/test-driven-development-for-embedded-c/",
+              "type": "book"
             },
             {
               "title": "What is Hardware-in-the-Loop Simulation?",
@@ -683,11 +658,6 @@
               "type": "course"
             },
             {
-              "title": "Advanced IoT Project Ideas & Implementations",
-              "url": "https://circuitdigest.com/iot-projects",
-              "type": "article"
-            },
-            {
               "title": "IoT Full Course - Learn IoT In 4 Hours | Internet Of Things | IoT Tutorial For Beginners | Edureka",
               "url": "https://www.youtube.com/watch?v=h0gWfVCSGQQ",
               "type": "video"
@@ -750,11 +720,6 @@
           "description": "Implement secure Over-the-Air (OTA) updates: Dual-bank flash partitioning, cryptographic signature verification of firmware binaries, rollback on boot failure, and fleet campaigns.",
           "resources": [
             {
-              "title": "Embedded Systems Blog: Over-the-Air Update Strategies",
-              "url": "https://interrupt.memfault.com/blog/categories/over-the-air-update",
-              "type": "article"
-            },
-            {
               "title": "Secure OTA Firmware Updates with ESP32",
               "url": "https://randomnerdtutorials.com/esp32-over-the-air-ota-programming/",
               "type": "article"
@@ -782,11 +747,6 @@
             {
               "title": "Memfault: Embedded Device Observability",
               "url": "https://interrupt.memfault.com/blog",
-              "type": "article"
-            },
-            {
-              "title": "Introduction to Remote Monitoring for IoT Devices",
-              "url": "https://www.balena.io/blog/remote-monitoring-iot-devices/",
               "type": "article"
             },
             {

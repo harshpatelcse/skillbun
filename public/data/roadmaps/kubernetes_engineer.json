@@ -113,11 +113,6 @@
           "description": "Master Linux kernel internals for containerization: cgroups v2 for CPU and memory resource constraints (CFS bandwidth control, OOM killer triggers), namespaces (PID, network, mount, IPC, UTS, user), systemd service management, bash automation scripts, and kernel networking tuning via `sysctl` (`net.ipv4.ip_forward`, `bridge-nf-call-iptables`, `net.core.somaxconn`).",
           "resources": [
             {
-              "title": "Linux Tutorial for Beginners: Learn Linux in 5 Days",
-              "url": "https://www.guru99.com/linux-tutorial.html",
-              "type": "article"
-            },
-            {
               "title": "Linux cgroups v1 and v2",
               "url": "https://lwn.net/Articles/670838/",
               "type": "article"
@@ -697,11 +692,6 @@
           "description": "Deploy and maintain enterprise observability: deploying Prometheus Operator (kube-prometheus-stack), configuring custom ServiceMonitors and PodMonitors, authoring PromQL alerting rules, visualizing cluster performance in Grafana, aggregating logs with Fluent Bit / Vector to Grafana Loki, and distributed tracing using OpenTelemetry and Tempo.",
           "resources": [
             {
-              "title": "Centralized Logging with ELK Stack on Kubernetes",
-              "url": "https://www.elastic.co/blog/centralized-logging-with-fluentd-elasticsearch-and-kibana-on-kubernetes",
-              "type": "article"
-            },
-            {
               "title": "Introduction to OpenTelemetry",
               "url": "https://opentelemetry.io/docs/what-is-opentelemetry/",
               "type": "article"
@@ -732,11 +722,6 @@
           "description": "Implement enterprise GitOps pipelines: automated declarative continuous delivery with Argo CD or Flux CD, managing multi-tenant repositories, automated drift detection and self-healing, and advanced progressive delivery using Argo Rollouts (Canary and Blue/Green deployments with automated metrics analysis).",
           "resources": [
             {
-              "title": "Introduction to GitOps with Argo CD",
-              "url": "https://argoproj.github.io/argo-cd/getting_started/",
-              "type": "article"
-            },
-            {
               "title": "Getting started with Flux CD",
               "url": "https://fluxcd.io/flux/get-started/",
               "type": "article"
@@ -766,16 +751,6 @@
           "tag": "advanced",
           "description": "Master advanced cloud-native networking: eBPF-powered CNI with Cilium (replacing kube-proxy with eBPF for high-throughput routing, XDP acceleration, and Layer 7 network security), and deploying Service Meshes (Istio or Linkerd) for transparent mutual TLS (mTLS), traffic splitting, and distributed fault injection.",
           "resources": [
-            {
-              "title": "Understanding Kubernetes Networking: Pods, Services, and CNI",
-              "url": "https://www.tigera.io/blog/understanding-kubernetes-networking-pods-services-and-cni/",
-              "type": "article"
-            },
-            {
-              "title": "What is a Service Mesh?",
-              "url": "https://aws.amazon.com/microservices/service-mesh/",
-              "type": "article"
-            },
             {
               "title": "Istio / Learn Istio",
               "url": "https://istio.io/latest/docs/concepts/what-is-istio/",
@@ -852,11 +827,6 @@
               "type": "article"
             },
             {
-              "title": "What is an Operator?",
-              "url": "https://operatorframework.io/operator-basics/",
-              "type": "article"
-            },
-            {
               "title": "Kubernetes in 100 Seconds (Fireship)",
               "url": "https://www.youtube.com/watch?v=PziYflu8cB8",
               "type": "video"
@@ -881,11 +851,6 @@
           "tag": "advanced",
           "description": "Manage cluster lifecycle and disaster recovery: zero-downtime cluster version upgrades (`kubeadm upgrade`, node cordoning and draining), performing `etcd` snapshot backups and disaster recovery restorations, node OS patching, and implementing whole-cluster multi-region backups with Velero.",
           "resources": [
-            {
-              "title": "Upgrading Kubernetes Clusters",
-              "url": "https://kubernetes.io/docs/tasks/administer-cluster/cluster-management/upgrade-cluster/",
-              "type": "article"
-            },
             {
               "title": "Velero for Kubernetes Backup and Restore",
               "url": "https://velero.io/docs/",
@@ -921,11 +886,6 @@
           "tag": "advanced",
           "description": "Optimize cluster performance and cloud infrastructure costs: tuning node kernel parameters, setting optimal resource requests to prevent CPU throttling and eliminate OOMKills, implementing right-sizing recommendations with Goldilocks, and monitoring cloud infrastructure spend with Kubecost.",
           "resources": [
-            {
-              "title": "Kubernetes Cost Optimization Best Practices",
-              "url": "https://www.cncf.io/blog/2023/02/10/kubernetes-cost-optimization-a-practical-guide/",
-              "type": "article"
-            },
             {
               "title": "Cluster Autoscaler",
               "url": "https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler",
@@ -967,11 +927,6 @@
               "type": "article"
             },
             {
-              "title": "Introduction to Chaos Engineering",
-              "url": "https://litmuschaos.github.io/litmus/docs/get-started/intro/",
-              "type": "article"
-            },
-            {
               "title": "Kubernetes Tutorial for Beginners FULL COURSE (TechWorld with Nana)",
               "url": "https://www.youtube.com/watch?v=X48VuDVv0do",
               "type": "video"
@@ -1000,11 +955,6 @@
       "tag": "advanced",
       "description": "Demonstrate production Kubernetes engineering mastery: build an enterprise-grade platform capstone, author real-world post-mortems, and excel in CKA/CKS scenario-based technical interviews.",
       "resources": [
-        {
-          "title": "Crafting a Compelling Tech Portfolio",
-          "url": "https://www.freecodecamp.org/news/how-to-build-a-portfolio-that-gets-you-hired/",
-          "type": "article"
-        },
         {
           "title": "Kubernetes Interview Questions and Answers",
           "url": "https://www.interviewbit.com/kubernetes-interview-questions/",
@@ -1063,11 +1013,6 @@
           "tag": "advanced",
           "description": "Capstone Project: Architect and deploy an enterprise multi-tenant Kubernetes platform: automated GitOps with Argo CD, Cilium eBPF CNI, Kyverno security policies, Cert-Manager with automated Let's Encrypt TLS, Prometheus/Grafana monitoring, Argo Rollouts canary progressive delivery, and Velero automated backup to cloud object storage.",
           "resources": [
-            {
-              "title": "Awesome Kubernetes Projects for Learning",
-              "url": "https://github.com/learnk8s/awesome-kubernetes",
-              "type": "article"
-            },
             {
               "title": "Cloud Native Buildpacks",
               "url": "https://buildpacks.io/",

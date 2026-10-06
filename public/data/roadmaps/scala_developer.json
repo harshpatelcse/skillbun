@@ -148,11 +148,6 @@
           "description": "Set up modern Scala environments: Coursier CLI (`cs`), Scala CLI, sbt build tool, and Metals language server in VS Code or IntelliJ IDEA.",
           "resources": [
             {
-              "title": "Installing Scala",
-              "url": "https://docs.scala-lang.org/getting-started/installing-scala.html",
-              "type": "article"
-            },
-            {
               "title": "sbt Reference Manual",
               "url": "https://www.scala-sbt.org/1.x/docs/",
               "type": "article"
@@ -265,9 +260,9 @@
               "type": "article"
             },
             {
-              "title": "Scala for the Impatient by Cay S. Horstmann (Chapter 1-3)",
-              "url": "https://www.amazon.com/Scala-Impatient-Cay-S-Horstmann/dp/0321752542",
-              "type": "course"
+              "title": "Scala for the Impatient — Cay S. Horstmann",
+              "url": "https://horstmann.com/scala/",
+              "type": "book"
             },
             {
               "title": "An Akka, Cats and Cassandra Project in Scala - Part 1 (Rock the JVM)",
@@ -490,21 +485,6 @@
           "description": "Handle errors functionally: Eliminating nulls and exceptions using `Option` (`Some`/`None`), `Either` (`Left`/`Right`), and `Try` (`Success`/`Failure`).",
           "resources": [
             {
-              "title": "Scala Documentation - Option",
-              "url": "https://docs.scala-lang.org/overviews/scala-book/options.html",
-              "type": "article"
-            },
-            {
-              "title": "Scala Documentation - Either",
-              "url": "https://docs.scala-lang.org/overviews/scala-book/either.html",
-              "type": "article"
-            },
-            {
-              "title": "Scala Documentation - Try",
-              "url": "https://docs.scala-lang.org/overviews/scala-book/try.html",
-              "type": "article"
-            },
-            {
               "title": "Scala Full Course for Beginners (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=i9o70PMqMGY",
               "type": "video"
@@ -565,23 +545,8 @@
           "description": "Master Scala 3 features: Given instances, `using` clauses, extension methods, type lambdas, union and intersection types, and opaque type aliases.",
           "resources": [
             {
-              "title": "Scala Documentation - Contextual Abstractions",
-              "url": "https://docs.scala-lang.org/scala3/guides/migration/contextual-abstractions-guide.html",
-              "type": "article"
-            },
-            {
               "title": "Scala Documentation - Extension Methods",
               "url": "https://docs.scala-lang.org/scala3/reference/contextual/extension-methods.html",
-              "type": "article"
-            },
-            {
-              "title": "Scala Documentation - Union and Intersection Types",
-              "url": "https://docs.scala-lang.org/scala3/reference/new-types/union-intersection-types.html",
-              "type": "article"
-            },
-            {
-              "title": "Scala Documentation - Opaque Types",
-              "url": "https://docs.scala-lang.org/scala3/reference/other-new-features/opaque-types.html",
               "type": "article"
             },
             {
@@ -614,11 +579,6 @@
       "description": "Master concurrent programming and functional effect systems: Futures, Akka/Pekko actors, Cats Effect, and ZIO.",
       "resources": [
         {
-          "title": "Advanced Scala with Cats (Underscore.io)",
-          "url": "https://underscore.io/books/advanced-scala/",
-          "type": "course"
-        },
-        {
           "title": "Functional Programming in Scala (Red Book)",
           "url": "https://www.manning.com/books/functional-programming-in-scala",
           "type": "course"
@@ -646,11 +606,6 @@
           "tag": "essential",
           "description": "Understand JVM concurrency: Threads, thread pools, Java memory model, race conditions, synchronization primitives, and non-blocking I/O.",
           "resources": [
-            {
-              "title": "Java Concurrency in Practice (Chapter Summaries)",
-              "url": "https://www.cs.umd.edu/~pugh/java/book.html",
-              "type": "article"
-            },
             {
               "title": "Introduction to Concurrency (Baeldung)",
               "url": "https://www.baeldung.com/java-concurrency",
@@ -712,11 +667,6 @@
           "description": "Implement Type Classes: Defining polymorphic behaviors, given instances, extension methods, and separating data structures from behavior.",
           "resources": [
             {
-              "title": "Type Classes in Scala",
-              "url": "https://docs.scala-lang.org/overviews/scala-book/type-classes.html",
-              "type": "article"
-            },
-            {
               "title": "Scala Full Course for Beginners (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=i9o70PMqMGY",
               "type": "video"
@@ -744,11 +694,6 @@
             {
               "title": "Typelevel Cats Documentation - Type Classes",
               "url": "https://typelevel.org/cats/typeclasses.html",
-              "type": "article"
-            },
-            {
-              "title": "ZIO Documentation - What is ZIO?",
-              "url": "https://zio.dev/docs/getting_started/what-is-zio",
               "type": "article"
             },
             {
@@ -817,11 +762,6 @@
               "type": "article"
             },
             {
-              "title": "ZIO Documentation - Core Concepts",
-              "url": "https://zio.dev/docs/reference/core/core_index",
-              "type": "article"
-            },
-            {
               "title": "Scala Full Course for Beginners (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=i9o70PMqMGY",
               "type": "video"
@@ -850,11 +790,6 @@
       "tag": "essential",
       "description": "Build, test, and package production Scala applications with sbt, property-based testing, and static analysis.",
       "resources": [
-        {
-          "title": "Practical sbt",
-          "url": "https://underscore.io/books/practical-sbt/",
-          "type": "course"
-        },
         {
           "title": "Apache Spark with Scala (freeCodeCamp)",
           "url": "https://www.youtube.com/watch?v=GFC2gOL1p9k",
@@ -916,11 +851,6 @@
             {
               "title": "ScalaTest Documentation",
               "url": "https://www.scalatest.org/user_guide",
-              "type": "article"
-            },
-            {
-              "title": "Introduction to Specs2",
-              "url": "https://etorreborre.github.io/specs2/guide/org.specs2.guide.QuickStart.html",
               "type": "article"
             },
             {
@@ -1086,11 +1016,6 @@
               "type": "article"
             },
             {
-              "title": "http4s Documentation",
-              "url": "https://http4s.org/v0.23/docs/",
-              "type": "article"
-            },
-            {
               "title": "Play Framework Documentation",
               "url": "https://www.playframework.com/documentation/latest/ScalaHome",
               "type": "article"
@@ -1131,8 +1056,8 @@
               "type": "article"
             },
             {
-              "title": "Doobie Documentation",
-              "url": "https://tpolecat.github.io/doobie/docs/index.html",
+              "title": "doobie: Functional Database Access for Scala",
+              "url": "https://typelevel.org/doobie/",
               "type": "article"
             },
             {
@@ -1198,11 +1123,6 @@
             {
               "title": "Akka Documentation - Streams",
               "url": "https://doc.akka.io/docs/akka/current/stream/index.html",
-              "type": "article"
-            },
-            {
-              "title": "Apache Flink Documentation",
-              "url": "https://flink.apache.org/docs/concepts/overview/",
               "type": "article"
             },
             {
@@ -1437,8 +1357,8 @@
       "description": "Build a demonstrable Scala portfolio: Open-source contributions, high-throughput systems, and interview preparation.",
       "resources": [
         {
-          "title": "Building a Strong Technical Portfolio",
-          "url": "https://developer.mozilla.org/en-US/docs/Web/Guide/Technical_portfolio",
+          "title": "Use Your GitHub Profile to Enhance Your Resume (GitHub Docs)",
+          "url": "https://docs.github.com/en/account-and-profile/tutorials/using-your-github-profile-to-enhance-your-resume",
           "type": "article"
         },
         {
@@ -1495,11 +1415,6 @@
           "description": "Build an enterprise Scala backend capstone: Type-safe microservice using http4s, Tapir, Doobie + PostgreSQL, Cats Effect, and Docker containerization.",
           "resources": [
             {
-              "title": "Full Stack Scala: Akka HTTP and Scala.js (Blog Series)",
-              "url": "https://www.wix.engineering/blog/full-stack-scala-part-1-akka-http-and-scala-js",
-              "type": "article"
-            },
-            {
               "title": "An Akka, Cats and Cassandra Project in Scala - Part 1 (Rock the JVM)",
               "url": "https://www.youtube.com/watch?v=PPIPGzrc2wo",
               "type": "video"
@@ -1524,11 +1439,6 @@
           "tag": "advanced",
           "description": "Build a big data Spark capstone: Distributed ETL pipeline in Apache Spark processing millions of records with automated unit tests and schema validation.",
           "resources": [
-            {
-              "title": "Databricks - Building an end-to-end streaming data pipeline",
-              "url": "https://www.databricks.com/blog/2018/03/06/how-to-build-an-end-to-end-streaming-data-pipeline-using-apache-spark-structured-streaming-and-apache-kafka.html",
-              "type": "article"
-            },
             {
               "title": "Scala Full Course for Beginners (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=i9o70PMqMGY",

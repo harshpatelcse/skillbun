@@ -118,11 +118,6 @@
           "description": "Deconstruct the Agile Manifesto: 4 core values and 12 principles; moving from rigid plan-driven delivery to adaptive, human-centric collaboration.",
           "resources": [
             {
-              "title": "What is the Agile Manifesto?",
-              "url": "https://www.atlassian.com/agile/agile-manifesto",
-              "type": "article"
-            },
-            {
               "title": "Top 50 Scrum Master Interview Questions | Scrum Master Interview Questions & Answers | Simplilearn (Simplilearn)",
               "url": "https://www.youtube.com/watch?v=eQ6jV0VhCR4",
               "type": "video"
@@ -147,11 +142,6 @@
           "tag": "essential",
           "description": "Embrace empiricism: Hypothesis-driven iterations, rapid feedback loops, learning from failures, and psychological safety in teams.",
           "resources": [
-            {
-              "title": "What is an Agile Mindset?",
-              "url": "https://www.atlassian.com/agile/agile-at-scale/agile-mindset",
-              "type": "article"
-            },
             {
               "title": "The Three Pillars of Empiricism",
               "url": "https://www.scrum.org/resources/blog/three-pillars-empiricism",
@@ -218,11 +208,6 @@
               "type": "article"
             },
             {
-              "title": "What is Kanban? Beginner's Guide",
-              "url": "https://www.atlassian.com/agile/kanban/what-is-kanban",
-              "type": "article"
-            },
-            {
               "title": "Top 50 Scrum Master Interview Questions | Scrum Master Interview Questions & Answers | Simplilearn (Simplilearn)",
               "url": "https://www.youtube.com/watch?v=eQ6jV0VhCR4",
               "type": "video"
@@ -247,11 +232,6 @@
           "tag": "essential",
           "description": "Apply Lean thinking: Eliminating 7 wastes (Muda), value stream mapping, pull systems, optimizing flow efficiency, and continuous delivery.",
           "resources": [
-            {
-              "title": "The Principles of Lean Thinking for Agile Development",
-              "url": "https://www.agilealliance.org/resources/articles/the-principles-of-lean-thinking-for-agile-development/",
-              "type": "article"
-            },
             {
               "title": "Kanban Methodology Full Course (Simplilearn)",
               "url": "https://www.youtube.com/watch?v=jf0tlbt9lx0",
@@ -405,11 +385,6 @@
           "description": "Apply coaching stances: Deciding when to teach, mentor, coach, or facilitate; coaching individuals vs teams vs enterprise leadership.",
           "resources": [
             {
-              "title": "Agile Coaching Fundamentals",
-              "url": "https://www.agilealliance.org/agile-coaching-fundamentals/",
-              "type": "article"
-            },
-            {
               "title": "The Four Stances of a Scrum Master",
               "url": "https://www.scrum.org/resources/blog/four-stances-scrum-master",
               "type": "article"
@@ -474,11 +449,6 @@
           "tag": "essential",
           "description": "Embody servant leadership: Empowering self-managing teams, shielding developers from external interruptions, and fostering ownership.",
           "resources": [
-            {
-              "title": "Servant Leadership in Agile",
-              "url": "https://www.atlassian.com/agile/agile-at-scale/servant-leadership",
-              "type": "article"
-            },
             {
               "title": "Scrum Full Course (Simplilearn)",
               "url": "https://www.youtube.com/watch?v=XU0llRltyFM",
@@ -567,11 +537,6 @@
           "description": "Engage business stakeholders: Transparent communication, managing executive expectations, educating stakeholders on Agile delivery, and sprint reviews.",
           "resources": [
             {
-              "title": "Stakeholder Engagement in Agile",
-              "url": "https://www.productplan.com/glossary/stakeholder-engagement/",
-              "type": "article"
-            },
-            {
               "title": "Scrum Full Course (Simplilearn)",
               "url": "https://www.youtube.com/watch?v=XU0llRltyFM",
               "type": "video"
@@ -602,11 +567,6 @@
               "type": "article"
             },
             {
-              "title": "Coaching the Product Owner",
-              "url": "https://www.leadingagile.com/2012/05/coaching-the-product-owner/",
-              "type": "article"
-            },
-            {
               "title": "Top 50 Scrum Master Interview Questions | Scrum Master Interview Questions & Answers | Simplilearn (Simplilearn)",
               "url": "https://www.youtube.com/watch?v=eQ6jV0VhCR4",
               "type": "video"
@@ -634,11 +594,6 @@
             {
               "title": "Agile Metrics and Reporting",
               "url": "https://www.atlassian.com/agile/project-management/metrics",
-              "type": "article"
-            },
-            {
-              "title": "Agile Forecasting Techniques",
-              "url": "https://www.atlassian.com/agile/project-management/forecasting",
               "type": "article"
             },
             {
@@ -702,16 +657,6 @@
           "description": "Navigate scaling frameworks: Comparing Scaled Agile Framework (SAFe), Large-Scale Scrum (LeSS), Spotify model, and Nexus for multi-team coordination.",
           "resources": [
             {
-              "title": "What is SAFe? The Scaled Agile Framework Explained",
-              "url": "https://www.scaledagileframework.com/what-is-safe/",
-              "type": "article"
-            },
-            {
-              "title": "Large-Scale Scrum (LeSS) Overview",
-              "url": "https://less.works/less/framework/overview",
-              "type": "article"
-            },
-            {
               "title": "What is Nexus?",
               "url": "https://www.scrum.org/resources/what-is-nexus",
               "type": "article"
@@ -741,11 +686,6 @@
           "tag": "advanced",
           "description": "Map value streams: Identifying waste, handoffs, queue delays, measuring process cycle efficiency, and streamlining end-to-end delivery.",
           "resources": [
-            {
-              "title": "Value Stream Mapping in Agile",
-              "url": "https://www.scaledagileframework.com/value-stream-mapping/",
-              "type": "article"
-            },
             {
               "title": "What is Value Stream Mapping?",
               "url": "https://www.lean.org/lexicon/value-stream-mapping",
@@ -854,11 +794,6 @@
           "description": "Coach executive leadership: Overcoming executive resistance, aligning business strategy with Agile execution, and enterprise portfolio management.",
           "resources": [
             {
-              "title": "The Agile Coach Competency Framework",
-              "url": "https://www.agilealliance.org/resources/initiatives/agile-coaching-competency-framework/",
-              "type": "article"
-            },
-            {
               "title": "Kanban Methodology Full Course (Simplilearn)",
               "url": "https://www.youtube.com/watch?v=jf0tlbt9lx0",
               "type": "video"
@@ -884,16 +819,6 @@
           "description": "Adhere to the Agile Coaching Code of Ethical Conduct: Confidentiality, avoiding conflicts of interest, competence boundaries, and professional integrity.",
           "resources": [
             {
-              "title": "Agile Coaching Ethics",
-              "url": "https://www.agilealliance.org/resources/articles/agile-coaching-ethics/",
-              "type": "article"
-            },
-            {
-              "title": "ICAgile Agile Coaching Code of Ethics",
-              "url": "https://www.icagile.com/news/icagile-agile-coaching-code-of-ethics",
-              "type": "article"
-            },
-            {
               "title": "Scrum Full Course (Simplilearn)",
               "url": "https://www.youtube.com/watch?v=XU0llRltyFM",
               "type": "video"
@@ -918,11 +843,6 @@
           "tag": "advanced",
           "description": "Foster Communities of Practice (CoP): Launching internal agile learning meetups, cross-pollinating best practices, and mentoring apprentice Scrum Masters.",
           "resources": [
-            {
-              "title": "Communities of Practice: The Secret Sauce for Agile Success",
-              "url": "https://www.agilealliance.org/resources/articles/communities-of-practice-the-secret-sauce-for-agile-success/",
-              "type": "article"
-            },
             {
               "title": "Top 50 Scrum Master Interview Questions | Scrum Master Interview Questions & Answers | Simplilearn (Simplilearn)",
               "url": "https://www.youtube.com/watch?v=eQ6jV0VhCR4",
@@ -1004,11 +924,6 @@
           "description": "Establish Agile thought leadership: Writing blogs, speaking at Agile conferences, hosting webinars, and active contribution to agile forums.",
           "resources": [
             {
-              "title": "How to Build Your Personal Brand as an Agile Coach",
-              "url": "https://www.agilealliance.org/resources/articles/how-to-build-your-personal-brand-as-an-agile-coach/",
-              "type": "article"
-            },
-            {
               "title": "Top 50 Scrum Master Interview Questions | Scrum Master Interview Questions & Answers | Simplilearn (Simplilearn)",
               "url": "https://www.youtube.com/watch?v=eQ6jV0VhCR4",
               "type": "video"
@@ -1036,11 +951,6 @@
             {
               "title": "Which Scrum Master Certification Should I Get?",
               "url": "https://www.scrum.org/resources/blog/which-scrum-master-certification-should-i-get",
-              "type": "article"
-            },
-            {
-              "title": "Top Agile Coaching Certifications",
-              "url": "https://www.icagile.com/blog/agile-coaching-certifications-what-you-need-to-know",
               "type": "article"
             },
             {

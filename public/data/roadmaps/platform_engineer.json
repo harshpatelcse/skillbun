@@ -95,11 +95,6 @@
           "type": "article"
         },
         {
-          "title": "The Rise of Platform Engineering - A Definitive Guide",
-          "url": "https://learnk8s.io/blog/platform-engineering",
-          "type": "article"
-        },
-        {
           "title": "Platform Engineering Explained (IBM Technology)",
           "url": "https://www.youtube.com/watch?v=ghzsBm8vOms",
           "type": "video"
@@ -122,16 +117,6 @@
           "tag": "essential",
           "description": "Understand the platform engineer role: Differentiating Platform Engineering from traditional DevOps and SysAdmin, reducing developer cognitive load, and defining internal SLOs.",
           "resources": [
-            {
-              "title": "Team Topologies - Platform Teams",
-              "url": "https://teamtopologies.com/key-concepts-extras/platform-team",
-              "type": "article"
-            },
-            {
-              "title": "Platform as a Product: The What, Why, and How",
-              "url": "https://martinfowler.com/articles/platform-as-a-product/",
-              "type": "article"
-            },
             {
               "title": "Kubernetes for Platform Engineers (TechWorld with Nana)",
               "url": "https://www.youtube.com/watch?v=X48VuDVv0do",
@@ -157,11 +142,6 @@
           "tag": "essential",
           "description": "Master operating systems and networking: Linux kernel subsystems, systemd service management, advanced Bash scripting, POSIX tools, DNS resolution, and TCP/IP routing.",
           "resources": [
-            {
-              "title": "Linux Command Line Basics",
-              "url": "https://www.freecodecamp.org/news/linux-commands-cheat-sheet/",
-              "type": "article"
-            },
             {
               "title": "Advanced Bash-Scripting Guide",
               "url": "https://tldp.org/LDP/abs/html/",
@@ -196,11 +176,6 @@
               "title": "Cloud Computing Basics - AWS",
               "url": "https://aws.amazon.com/what-is-cloud-computing/",
               "type": "article"
-            },
-            {
-              "title": "Microsoft Azure Fundamentals (AZ-900) Course",
-              "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals-az-900/",
-              "type": "course"
             },
             {
               "title": "Terraform for Platform Teams (HashiCorp)",
@@ -298,11 +273,6 @@
               "title": "Terraform Documentation",
               "url": "https://www.terraform.io/docs/index.html",
               "type": "article"
-            },
-            {
-              "title": "HashiCorp Certified: Terraform Associate Course",
-              "url": "https://learn.hashicorp.com/collections/terraform/cert-associate",
-              "type": "course"
             },
             {
               "title": "GitOps with ArgoCD (TechWorld with Nana)",
@@ -612,11 +582,6 @@
           "description": "Standardize application packaging: Helm chart authoring, dependency management, Kustomize overlays for multi-environment deployments, and Helmfile orchestration.",
           "resources": [
             {
-              "title": "Kustomize Documentation",
-              "url": "https://kustomize.io/docs/",
-              "type": "article"
-            },
-            {
               "title": "ytt - YAML templating tool",
               "url": "https://carvel.dev/ytt/",
               "type": "article"
@@ -650,11 +615,6 @@
       "tag": "essential",
       "description": "Implement GitOps-driven deployment pipelines: Automated continuous integration, declarative GitOps reconciliation, and automated rollouts.",
       "resources": [
-        {
-          "title": "CI/CD Best Practices for Cloud-Native Applications",
-          "url": "https://www.cncf.io/blog/2021/04/01/ci-cd-best-practices-for-cloud-native-applications/",
-          "type": "article"
-        },
         {
           "title": "What is GitOps? - Weaveworks",
           "url": "https://www.weave.works/blog/what-is-gitops/",
@@ -754,11 +714,6 @@
           "description": "Automate platform tasks: Building CLI tools and Kubernetes plugins using Python and Go, interacting with cloud SDKs and the Kubernetes API client.",
           "resources": [
             {
-              "title": "Python for DevOps (Book/Course)",
-              "url": "https://pythondiscord.com/blog/python-for-devops/",
-              "type": "article"
-            },
-            {
               "title": "Terraform for Platform Teams (HashiCorp)",
               "url": "https://www.youtube.com/watch?v=SLB_c_ayRMo",
               "type": "video"
@@ -787,16 +742,6 @@
       "tag": "essential",
       "description": "Establish unified platform observability: Metrics collection, distributed tracing, centralized logging, and Site Reliability Engineering (SRE) alerting.",
       "resources": [
-        {
-          "title": "Observability vs. Monitoring: What's the Difference?",
-          "url": "https://grafana.com/blog/2023/07/26/observability-vs-monitoring/",
-          "type": "article"
-        },
-        {
-          "title": "The Three Pillars of Observability: Metrics, Logs, and Traces",
-          "url": "https://www.splunk.com/en_us/blog/learn/three-pillars-of-observability.html",
-          "type": "article"
-        },
         {
           "title": "Platform Engineering Explained (IBM Technology)",
           "url": "https://www.youtube.com/watch?v=ghzsBm8vOms",
@@ -963,16 +908,6 @@
           "description": "Optimize Developer Experience (DevEx): Measuring DORA metrics (Deployment Frequency, Lead Time for Changes, Change Failure Rate, Time to Restore Service) and reducing onboarding time.",
           "resources": [
             {
-              "title": "Golden Path to Greatness - Charity Majors",
-              "url": "https://charity.wtf/2020/09/20/the-golden-path-to-greatness/",
-              "type": "article"
-            },
-            {
-              "title": "What is Developer Experience (DevEx)?",
-              "url": "https://platformengineering.org/blog/what-is-developer-experience",
-              "type": "article"
-            },
-            {
               "title": "Kubernetes for Platform Engineers (TechWorld with Nana)",
               "url": "https://www.youtube.com/watch?v=X48VuDVv0do",
               "type": "video"
@@ -1068,11 +1003,6 @@
           "description": "Manage platform as a product: Gathering developer user research, prioritizing developer platform roadmaps, defining deprecation cycles, and tracking internal NPS.",
           "resources": [
             {
-              "title": "The Product-Led Platform Team",
-              "url": "https://www.infoq.com/articles/product-led-platform-team/",
-              "type": "article"
-            },
-            {
               "title": "DORA Metrics: What They Are & How to Measure Them",
               "url": "https://cloud.google.com/blog/products/devops-sre/using-the-dora-four-keys-to-measure-devops-performance",
               "type": "article"
@@ -1150,11 +1080,6 @@
               "type": "article"
             },
             {
-              "title": "Software Supply Chain Security Guide",
-              "url": "https://www.cncf.io/blog/2021/04/06/the-ultimate-guide-to-software-supply-chain-security/",
-              "type": "article"
-            },
-            {
               "title": "GitOps with ArgoCD (TechWorld with Nana)",
               "url": "https://www.youtube.com/watch?v=MeU5_k9ssrs",
               "type": "video"
@@ -1180,8 +1105,8 @@
           "description": "Operationalize SRE practices: Defining Service Level Indicators (SLIs), Service Level Objectives (SLOs), and managing error budgets to balance velocity and stability.",
           "resources": [
             {
-              "title": "Chaos Engineering Principles - Gremlin",
-              "url": "https://www.gremlin.com/community/tutorials/what-is-chaos-engineering/",
+              "title": "Chaos Engineering: the history, principles, and practice",
+              "url": "https://www.gremlin.com/community/tutorials/chaos-engineering-the-history-principles-and-practice",
               "type": "article"
             },
             {
@@ -1209,11 +1134,6 @@
           "tag": "advanced",
           "description": "Engineer resilient platform infrastructure: Automated failovers, multi-zone redundancy, disaster recovery runbooks, and blameless post-mortem culture.",
           "resources": [
-            {
-              "title": "Incident Management Best Practices - PagerDuty",
-              "url": "https://www.pagerduty.com/resources/learn/incident-management-best-practices/",
-              "type": "article"
-            },
             {
               "title": "Designing for Resiliency on AWS",
               "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/designing-for-resiliency.html",
@@ -1284,11 +1204,6 @@
             {
               "title": "Build a Developer Portal: Backstage Getting Started",
               "url": "https://backstage.io/docs/getting-started/",
-              "type": "article"
-            },
-            {
-              "title": "Cloud Native Buildpacks for Reproducible Builds",
-              "url": "https://buildpacks.io/docs/concepts/overview/",
               "type": "article"
             },
             {

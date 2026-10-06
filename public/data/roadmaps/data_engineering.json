@@ -91,8 +91,8 @@
       "description": "Establish an unshakeable data engineering foundation: master Python data pipelines, relational query optimization, Linux systems administration, and version-controlled data repository workflows.",
       "resources": [
         {
-          "title": "The Data Engineering Lifecycle (Databricks)",
-          "url": "https://www.databricks.com/glossary/data-engineering-lifecycle",
+          "title": "Build and Operate a Data Pipeline (Databricks)",
+          "url": "https://docs.databricks.com/aws/en/getting-started/data-pipeline-get-started",
           "type": "article"
         },
         {
@@ -313,13 +313,8 @@
       "description": "Architect enterprise data models and storage layers: dimensional modeling, Lakehouse table formats, and cloud data warehouse architectures.",
       "resources": [
         {
-          "title": "The Data Warehouse Toolkit (Kimball Group)",
-          "url": "https://www.kimballgroup.com/data-warehouse-business-intelligence-books/data-warehouse-toolkit-3rd-edition/",
-          "type": "article"
-        },
-        {
-          "title": "Data Modeling with ERDs",
-          "url": "https://www.lucidchart.com/pages/data-modeling",
+          "title": "The Data Warehouse Toolkit (Kimball Group; Book Overview)",
+          "url": "https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/books/data-warehouse-dw-toolkit/",
           "type": "article"
         },
         {
@@ -353,11 +348,6 @@
             {
               "title": "Introduction to Dimensional Modeling",
               "url": "https://www.kimballgroup.com/data-warehouse-business-intelligence-books/data-warehouse-toolkit-3rd-edition/dimensional-modeling-techniques/",
-              "type": "article"
-            },
-            {
-              "title": "Data Vault Modeling Explained",
-              "url": "https://datavaultalliance.com/what-is-data-vault/",
               "type": "article"
             },
             {
@@ -501,13 +491,8 @@
           "description": "Design focused analytical data marts and query virtualization: Trino / Presto distributed query engines for federated querying across heterogeneous sources without moving data, and semantic layer integration.",
           "resources": [
             {
-              "title": "What are Data Marts?",
-              "url": "https://www.tableau.com/learn/articles/data-mart",
-              "type": "article"
-            },
-            {
-              "title": "Data Virtualization Explained",
-              "url": "https://www.denodo.com/en/data-virtualization-explained",
+              "title": "Data Marts and Their Role in Analytics (AWS)",
+              "url": "https://aws.amazon.com/what-is/data-mart/",
               "type": "article"
             },
             {
@@ -568,13 +553,8 @@
           "description": "Design robust ingestion architectures: evaluating ETL (Extract-Transform-Load) vs modern ELT (Extract-Load-Transform), batch data replication tools (Airbyte, Fivetran), CDC (Change Data Capture with Debezium), and idempotency guarantees.",
           "resources": [
             {
-              "title": "ETL vs ELT - What's the Difference?",
-              "url": "https://www.stitchdata.com/resources/etl-vs-elt/",
-              "type": "article"
-            },
-            {
-              "title": "Introduction to Change Data Capture (CDC)",
-              "url": "https://www.confluent.io/blog/change-data-capture-with-kafka-connect/",
+              "title": "Change Data Capture with Debezium and Kafka Connect",
+              "url": "https://debezium.io/documentation/reference/stable/architecture.html",
               "type": "article"
             },
             {
@@ -678,18 +658,13 @@
           "description": "Optimize file storage and I/O efficiency: columnar binary formats (Apache Parquet, Apache ORC) with dictionary encoding and run-length encoding, row-oriented serialization with Apache Avro, and evaluating compression codecs (Snappy for fast decompression vs ZSTD for high compression ratio).",
           "resources": [
             {
-              "title": "Apache Parquet: A Primer",
-              "url": "https://www.databricks.com/glossary/apache-parquet",
+              "title": "Apache Parquet Format Overview",
+              "url": "https://parquet.apache.org/docs/overview/",
               "type": "article"
             },
             {
               "title": "ORC File Format",
               "url": "https://orc.apache.org/",
-              "type": "article"
-            },
-            {
-              "title": "Comparison of Data Compression Algorithms",
-              "url": "https://en.wikipedia.org/wiki/Comparison_of_data_compression_algorithms",
               "type": "article"
             },
             {
@@ -728,8 +703,8 @@
               "type": "article"
             },
             {
-              "title": "Practical Data Cleaning with Python",
-              "url": "https://towardsdatascience.com/practical-data-cleaning-with-python-9721782252",
+              "title": "Handle and Clean Missing Data with pandas",
+              "url": "https://pandas.pydata.org/docs/user_guide/missing_data.html",
               "type": "article"
             },
             {
@@ -764,11 +739,6 @@
         {
           "title": "Designing Data-Intensive Applications",
           "url": "https://dataintensive.net/",
-          "type": "article"
-        },
-        {
-          "title": "The Log: What every software engineer should know about real-time data's unifying abstraction",
-          "url": "https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying-abstraction",
           "type": "article"
         },
         {
@@ -830,8 +800,8 @@
           "description": "Master stateful stream processing: Apache Flink and Spark Structured Streaming, processing event-time vs processing-time, watermarking to handle late-arriving data, windowing functions (tumbling, sliding, session), checkpointing, and exactly-once processing guarantees.",
           "resources": [
             {
-              "title": "Apache Flink Documentation",
-              "url": "https://flink.apache.org/docs/latest/learn/overview/",
+              "title": "Learn Apache Flink: Stream Processing Overview",
+              "url": "https://nightlies.apache.org/flink/flink-docs-stable/docs/learn-flink/overview/",
               "type": "article"
             },
             {
@@ -949,8 +919,8 @@
           "type": "article"
         },
         {
-          "title": "The Rise of the Data Orchestration Layer",
-          "url": "https://blog.getdbt.com/the-rise-of-the-data-orchestration-layer/",
+          "title": "Data Workflow Orchestration Architecture (Apache Airflow)",
+          "url": "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/overview.html",
           "type": "article"
         },
         {
@@ -982,8 +952,8 @@
               "type": "article"
             },
             {
-              "title": "Managed Airflow (e.g., MWAA, Cloud Composer)",
-              "url": "https://airflow.apache.org/docs/apache-airflow/stable/howto/external-services/cloud-composer.html",
+              "title": "Managed Apache Airflow with Cloud Composer",
+              "url": "https://docs.cloud.google.com/composer/docs/composer-3/composer-overview",
               "type": "article"
             },
             {
@@ -1052,8 +1022,8 @@
               "type": "article"
             },
             {
-              "title": "Implementing CI/CD for dbt",
-              "url": "https://docs.getdbt.com/guides/advanced/cicd",
+              "title": "Continuous Integration for dbt Projects",
+              "url": "https://docs.getdbt.com/docs/deploy/continuous-integration",
               "type": "article"
             },
             {
@@ -1244,11 +1214,6 @@
               "type": "article"
             },
             {
-              "title": "Data Observability Explained",
-              "url": "https://atlan.com/what-is-data-observability/",
-              "type": "article"
-            },
-            {
               "title": "Data Lineage for Analytics",
               "url": "https://www.montecarlodata.com/what-is-data-lineage",
               "type": "article"
@@ -1289,8 +1254,8 @@
               "type": "article"
             },
             {
-              "title": "AWS Security Best Practices",
-              "url": "https://aws.amazon.com/security/security-best-practices/",
+              "title": "Security Pillar - AWS Well-Architected Framework",
+              "url": "https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html",
               "type": "article"
             },
             {
@@ -1324,13 +1289,13 @@
               "type": "article"
             },
             {
-              "title": "Feature Stores for MLOps",
-              "url": "https://www.databricks.com/glossary/feature-store",
+              "title": "Feature Engineering and Feature Store (Databricks)",
+              "url": "https://docs.databricks.com/aws/en/machine-learning/feature-store/",
               "type": "article"
             },
             {
-              "title": "Google Cloud MLOps Reference Architecture",
-              "url": "https://cloud.google.com/architecture/mlops-basics",
+              "title": "MLOps: Continuous delivery and automation pipelines in machine learning",
+              "url": "https://docs.cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning?hl=en",
               "type": "article"
             },
             {
@@ -1353,11 +1318,6 @@
           "tag": "advanced",
           "description": "Build high-performance data serving APIs: developing asynchronous REST and GraphQL data access APIs with FastAPI, integrating Redis caching layers, and implementing token-bucket rate limiting.",
           "resources": [
-            {
-              "title": "API Design Best Practices",
-              "url": "https://www.restapitutorial.com/lessons/restfulresourcedesign.html",
-              "type": "article"
-            },
             {
               "title": "Building REST APIs with Python Flask",
               "url": "https://realpython.com/flask-restful-api/",
@@ -1393,11 +1353,6 @@
           "tag": "advanced",
           "description": "Capstone Project: Architect, Build, and Deploy an Enterprise Real-Time Lakehouse Platform: Change Data Capture from PostgreSQL using Debezium into Apache Kafka, stateful streaming with Spark Structured Streaming into an Apache Iceberg lakehouse, dbt transformations for dimensional analytics, Airflow DAG orchestration, Great Expectations data validation, and complete Terraform IaC provisioning.",
           "resources": [
-            {
-              "title": "Awesome Data Engineering Projects",
-              "url": "https://github.com/hasura/awesome-data-engineering",
-              "type": "article"
-            },
             {
               "title": "UCI Machine Learning Repository",
               "url": "https://archive.ics.uci.edu/",

@@ -91,11 +91,6 @@
       "description": "Establish an unshakeable systems administration foundation for database operations: master Linux kernel I/O scheduling, storage block devices, networking, and virtualization.",
       "resources": [
         {
-          "title": "Storage Basics: HDD vs SSD vs NVMe",
-          "url": "https://www.techtarget.com/searchstorage/tip/HDD-vs-SSD-vs-NVMe-Whats-the-difference",
-          "type": "article"
-        },
-        {
           "title": "Linux for Developers - freeCodeCamp",
           "url": "https://www.youtube.com/watch?v=sWbUDq4S6Y8",
           "type": "video"
@@ -124,11 +119,6 @@
               "type": "article"
             },
             {
-              "title": "Introduction to Systemd",
-              "url": "https://www.redhat.com/sysadmin/systemd-getting-started",
-              "type": "article"
-            },
-            {
               "title": "Linux System Administration Full Course",
               "url": "https://www.youtube.com/watch?v=UCr04qIB7uc",
               "type": "video"
@@ -148,11 +138,6 @@
           "tag": "essential",
           "description": "Automate administrative DBA workflows with Bash and Python: writing automated backup scripts, log rotation, health check probes, and parsing system diagnostic commands.",
           "resources": [
-            {
-              "title": "Linux Performance Monitoring Tools",
-              "url": "https://www.loggly.com/blog/linux-monitoring-tools-commands-you-need-to-know/",
-              "type": "article"
-            },
             {
               "title": "Bash Scripting Tutorial",
               "url": "https://ryanstutorials.net/bash-scripting-tutorial/",
@@ -213,11 +198,6 @@
           "tag": "essential",
           "description": "Understand storage hardware performance: NVMe SSDs, RAID levels (RAID 10 for database write throughput vs RAID 5 write penalties), I/O schedulers (`none`/`mq-deadline`), and storage area networks (SAN/NAS).",
           "resources": [
-            {
-              "title": "Understanding RAID Levels",
-              "url": "https://www.ibm.com/docs/en/STXKQY/raid_levels.html",
-              "type": "article"
-            },
             {
               "title": "Build an Online Store Using AWS, React, and Stripe",
               "url": "https://www.youtube.com/watch?v=JgwI22y_eFA",
@@ -628,11 +608,6 @@
           "description": "Implement comprehensive database observability: tracking cache hit ratios, transaction throughput, replication lag in bytes/seconds, connection saturation, and deadlocks using `pg_stat_statements`, Prometheus `postgres_exporter`, and Grafana dashboards.",
           "resources": [
             {
-              "title": "PostgreSQL Monitoring Tools & Best Practices",
-              "url": "https://www.percona.com/blog/2021/04/21/postgresql-monitoring-tools-best-practices/",
-              "type": "article"
-            },
-            {
               "title": "Introduction to Prometheus (CNCF)",
               "url": "https://prometheus.io/docs/introduction/overview/",
               "type": "article"
@@ -698,8 +673,8 @@
               "type": "article"
             },
             {
-              "title": "Terraform Getting Started Tutorials",
-              "url": "https://learn.hashicorp.com/terraform/aws/getting-started",
+              "title": "Get Started - AWS",
+              "url": "https://developer.hashicorp.com/terraform/tutorials/aws-get-started",
               "type": "course"
             },
             {
@@ -727,11 +702,6 @@
           "tag": "advanced",
           "description": "Plan capacity and scale database workloads: forecasting disk growth, connection pooling sizing formulas, vertical scaling thresholds, and horizontal read scaling with read replicas.",
           "resources": [
-            {
-              "title": "Database Capacity Planning Best Practices",
-              "url": "https://www.bmc.com/blogs/database-capacity-planning/",
-              "type": "article"
-            },
             {
               "title": "PostgreSQL Table Partitioning",
               "url": "https://www.postgresql.org/docs/current/ddl-partitioning.html",
@@ -802,11 +772,6 @@
           "type": "article"
         },
         {
-          "title": "Database Security Best Practices",
-          "url": "https://www.imperva.com/learn/database-security/database-security-best-practices/",
-          "type": "article"
-        },
-        {
           "title": "SQL Performance Tuning Tutorial For Beginners | Learn SQL Performance Tuning For Free",
           "url": "https://www.youtube.com/watch?v=xuxgxdbCPnY",
           "type": "video"
@@ -867,11 +832,6 @@
             {
               "title": "Tuning Your PostgreSQL Server",
               "url": "https://pgtune.leopard.in.ua/",
-              "type": "article"
-            },
-            {
-              "title": "Linux Kernel Tuning for Database Servers",
-              "url": "https://www.percona.com/blog/2014/06/03/linux-kernel-tuning-for-database-servers/",
               "type": "article"
             },
             {
@@ -945,8 +905,8 @@
               "type": "article"
             },
             {
-              "title": "Understanding Data Compliance Regulations",
-              "url": "https://www.verizon.com/business/resources/articles/what-is-data-compliance/",
+              "title": "Data Protection Rules for Businesses and Organisations — European Commission",
+              "url": "https://commission.europa.eu/law/law-topic/data-protection/information-business-and-organisations_en",
               "type": "article"
             },
             {
@@ -1107,13 +1067,8 @@
               "type": "article"
             },
             {
-              "title": "ITIL 4 Foundation Course (Simplilearn)",
-              "url": "https://www.simplilearn.com/itil-4-foundation-certification-training",
-              "type": "course"
-            },
-            {
-              "title": "How to Write a Postmortem",
-              "url": "https://www.atlassian.com/incident-management/postmortem/how-to-write-a-postmortem",
+              "title": "Postmortem Culture: Learning from Failure — Google SRE",
+              "url": "https://sre.google/sre-book/postmortem-culture/",
               "type": "article"
             },
             {
@@ -1204,8 +1159,8 @@
           "description": "Manage analytical data warehouses: columnar architectures, ETL/ELT batch load tuning, and maintaining warehouse storage efficiency.",
           "resources": [
             {
-              "title": "Data Warehousing Concepts",
-              "url": "https://www.geeksforgeeks.org/data-warehousing-concepts/",
+              "title": "What Is a Data Warehouse? — Oracle",
+              "url": "https://www.oracle.com/database/what-is-a-data-warehouse/",
               "type": "article"
             },
             {

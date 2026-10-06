@@ -234,11 +234,6 @@
               "type": "article"
             },
             {
-              "title": "Bias and Fairness in LLMs",
-              "url": "https://blogs.nvidia.com/blog/ai-fairness-bias-large-language-models/",
-              "type": "article"
-            },
-            {
               "title": "AI prompt engineering: A deep dive (Anthropic)",
               "url": "https://www.youtube.com/watch?v=T9aRN5JkmL8",
               "type": "video"
@@ -270,11 +265,6 @@
         {
           "title": "Anthropic Prompt Engineering",
           "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview",
-          "type": "article"
-        },
-        {
-          "title": "Learn Prompting: Advanced Techniques",
-          "url": "https://learnprompting.org/docs/advanced_techniques/cot",
           "type": "article"
         },
         {
@@ -391,11 +381,6 @@
               "type": "article"
             },
             {
-              "title": "LlamaIndex: Agents and Tools",
-              "url": "https://docs.llamaindex.ai/en/stable/module_guides/agents/index.html",
-              "type": "article"
-            },
-            {
               "title": "AI prompt engineering: A deep dive (Anthropic)",
               "url": "https://www.youtube.com/watch?v=T9aRN5JkmL8",
               "type": "video"
@@ -428,11 +413,6 @@
             {
               "title": "Vector Databases: What Are They?",
               "url": "https://www.pinecone.io/learn/vector-database/",
-              "type": "article"
-            },
-            {
-              "title": "Advanced RAG Techniques",
-              "url": "https://www.llamaindex.ai/blog/a-comprehensive-guide-to-advanced-rag",
               "type": "article"
             },
             {
@@ -508,8 +488,8 @@
               "type": "article"
             },
             {
-              "title": "Evaluating LLM Applications: Practical Approaches",
-              "url": "https://www.databricks.com/blog/2023/12/12/practical-approaches-evaluating-llm-applications",
+              "title": "Evaluate and Monitor LLM Applications (MLflow)",
+              "url": "https://mlflow.org/docs/latest/genai/eval-monitor/",
               "type": "article"
             },
             {
@@ -538,13 +518,8 @@
           "description": "Curate production test datasets: Building diverse golden datasets in Promptfoo or DeepEval covering edge cases, multilingual variations, long-tail queries, and adversarial inputs.",
           "resources": [
             {
-              "title": "Best Practices for Building LLM Benchmarks",
-              "url": "https://www.databricks.com/blog/2023/12/05/best-practices-building-llm-benchmarks",
-              "type": "article"
-            },
-            {
-              "title": "Adversarial Prompting: What it is and How to Mitigate it",
-              "url": "https://www.guardrailsai.com/blog/adversarial-prompting-what-it-is-and-how-to-mitigate-it",
+              "title": "Manage Evaluation Datasets for LLM Applications (MLflow)",
+              "url": "https://mlflow.org/docs/latest/genai/datasets/",
               "type": "article"
             },
             {
@@ -612,16 +587,6 @@
           "tag": "advanced",
           "description": "Practice Lab: Iterative prompt optimization: A/B testing prompt variations, measuring win-rate matrices, tracking token latency improvements, and eliminating edge-case hallucinations.",
           "resources": [
-            {
-              "title": "A/B Testing with LLMs",
-              "url": "https://www.giskard.ai/llm-ab-testing-framework/",
-              "type": "article"
-            },
-            {
-              "title": "Iterative Prompt Development (Google)",
-              "url": "https://ai.google.dev/docs/guides/prompt_iterative",
-              "type": "article"
-            },
             {
               "title": "Advanced Prompt Engineering Techniques (DeepLearning.AI)",
               "url": "https://www.youtube.com/watch?v=dOxUroR57xs",
@@ -730,11 +695,6 @@
               "type": "article"
             },
             {
-              "title": "LLM Observability with Weights & Biases",
-              "url": "https://wandb.ai/site/solutions/llm-observability",
-              "type": "article"
-            },
-            {
               "title": "Monitoring LLMs: Why it's critical and how to do it right",
               "url": "https://whylabs.ai/blog/monitoring-llms",
               "type": "article"
@@ -770,8 +730,8 @@
               "type": "article"
             },
             {
-              "title": "Operationalizing LLMs: MLOps and Prompt Engineering",
-              "url": "https://www.databricks.com/blog/2023/11/17/operationalizing-llms-mlops-and-prompt-engineering",
+              "title": "Deploy and Version AI Agents (Databricks)",
+              "url": "https://docs.databricks.com/aws/en/generative-ai/agent-framework/deploy-agent",
               "type": "article"
             },
             {
@@ -799,11 +759,6 @@
           "tag": "advanced",
           "description": "Build a professional prompt engineering portfolio: Documenting systematic prompt optimization case studies with before/after accuracy gains, cost reductions, and reproducible benchmark suites.",
           "resources": [
-            {
-              "title": "How to Build an AI/ML Portfolio",
-              "url": "https://www.freecodecamp.org/news/how-to-build-an-ai-ml-portfolio/",
-              "type": "article"
-            },
             {
               "title": "Documenting Your Generative AI Projects (GitHub README Guide)",
               "url": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes",

@@ -9,6 +9,8 @@ import {
 } from '@/utils/server/workforceEmployees';
 import { generateExtensionLetterPdf } from '@/utils/server/pdf/extensionLetterGenerator';
 import { getActiveTemplateVersion, DOCUMENT_CATEGORIES } from '@/utils/common/docTemplateRegistry';
+import { generateWorkforceId, normalizeWorkforceDbId, WORKFORCE_PREFIXES } from '@/utils/server/workforceId';
+import { validateWorkforceAction } from '@/utils/server/workforceActionValidation.mjs';
 
 export const runtime = 'nodejs';
 export const maxDuration = 30;
@@ -34,7 +36,9 @@ export async function POST(request) {
       return apiError('Payload must be valid JSON.', 400, 'BAD_REQUEST');
     }
 
-    const { employeeId, new_contract_end_date, original_reference_id } = body;
+    const validation = validateWorkforceAction(body, 'extension');
+    if (!validation.isValid) return apiError(validation.error, 400, 'VALIDATION_ERROR');
+    const { employeeId, new_contract_end_date, original_reference_id } = validation.value;
     if (!employeeId || typeof employeeId !== 'string') {
       return apiError('employeeId is required.', 400, 'VALIDATION_ERROR');
     }
@@ -55,28 +59,34 @@ export async function POST(request) {
     const employeeData = doc.data();
     assertWorkforceAction(employeeData, 'extension', new_contract_end_date);
     const activeVersion = getActiveTemplateVersion(DOCUMENT_CATEGORIES.EXTENSION_LETTER);
+    const now = new Date();
 
     const { buffer, filename, referenceId, metadataSnapshot } = await generateExtensionLetterPdf(
       {
         ...employeeData,
+        // Issuing a new extension must not reuse an employee-held legacy offer
+        // snapshot, including its reference, old role, or original issue date.
+        metadata_snapshot: undefined,
+        issued_at: now.toISOString(),
         id: doc.id,
       },
       {
+        referenceId: generateWorkforceId(WORKFORCE_PREFIXES.EXTENSION),
         templateVersion: activeVersion,
         newContractEndDate: new_contract_end_date,
-        originalReferenceId: original_reference_id,
+        originalReferenceId: original_reference_id || employeeData.offer_reference_id || employeeData.original_offer_id || employeeData.metadata_snapshot?.original_reference_id,
       }
     );
 
     // An extension is an issued legal document, not merely a preview download.
     // Keep the immutable render snapshot in the workforce audit trail and align
     // the active contract record with the letter that was issued.
-    const now = new Date();
+    const documentId = normalizeWorkforceDbId(referenceId);
     await transitionWorkforceEmployee(db, doc.ref, {
       action: 'extension', nextStatus: 'EXTENDED', expectedStatus: employeeData.status, newEndDate: new_contract_end_date,
-      patch: { contract_end_date: new Date(`${new_contract_end_date}T00:00:00.000Z`) },
-      document: { ref: db.collection('workforce_docs').doc(referenceId), data: {
-        id: referenceId, employee_id: doc.id, doc_type: 'EXTENSION_LETTER', template_version: activeVersion,
+      patch: { contract_end_date: new Date(`${new_contract_end_date}T00:00:00.000Z`), extension_reference_id: documentId },
+      document: { ref: db.collection('workforce_docs').doc(documentId), data: {
+        id: documentId, display_id: referenceId, employee_id: doc.id, doc_type: 'EXTENSION_LETTER', template_version: activeVersion,
         title: 'Extension of Internship Tenure', metadata_snapshot: metadataSnapshot, issued_by: admin.email || admin.uid, issued_at: now,
       } },
     });

@@ -25,7 +25,7 @@ export default function TermsPage() {
   return (
     <div className="static-page">
       <h1>Terms of Use</h1>
-      <p><em>Effective date: September 28, 2026</em></p>
+      <p><em>Effective date: October 3, 2026</em></p>
 
       <h2>1. Acceptance of the Terms</h2>
       <p>
@@ -57,16 +57,16 @@ export default function TermsPage() {
         Unless otherwise stated, all material on the Platform, including but not limited to the SkillBun wordmark, logos, "bunny" branding motifs, source code, UI/UX designs, algorithms, and aggregated roadmap schemas, is the exclusive intellectual property of Team SkillBun.
       </p>
       <ul>
-        <li><strong>Creative Commons License:</strong> All learning content, including the 3,335 study guide documents available on the Platform, is protected under the <strong>Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License (CC BY-NC-ND 4.0)</strong>. This means you may access the resources for personal, non-commercial education, but you may not alter, transform, or build upon the content, nor distribute or sell it for commercial gain.</li>
-        <li><strong>Encrypted Vault Protection:</strong> Our study guides and quiz question banks are protected by a proprietary multi-layer encryption standard called SkillBun Vault (SBV1). Any attempts to bypass, decrypt, extract, or redistribute this vaulted content without authorization will result in an immediate permanent ban and potential legal action.</li>
+        <li><strong>Creative Commons License:</strong> SkillBun-authored learning content, including the 3,335 study guide documents available on the Platform, is licensed under the <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener noreferrer"><strong>Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License (CC BY-NC-ND 4.0)</strong></a>. You may share unmodified material for non-commercial purposes with appropriate attribution and a link to the license. You may not distribute adapted material under this license. Linked third-party videos, documentation, courses, and books remain subject to their respective owners' terms and licenses.</li>
+        <li><strong>Encrypted Vault Protection:</strong> Our study guides and quiz question banks are protected by a proprietary multi-layer encryption standard called SkillBun Vault (SBV1). Access is provided through authorised Platform features. Unauthorised access or attempts to bypass authentication or security controls may result in account restrictions and legal action. These access controls do not remove rights granted by the cited content license or applicable law.</li>
       </ul>
 
       <h2>5. Academic Integrity &amp; Certification Proctoring</h2>
       <p>
-        SkillBun offers digital certificates to verify roadmap completion and knowledge mastery. To maintain the credibility and academic value of our certifications, the certification exam incorporates strict anti-cheating mechanisms:
+        SkillBun offers digital certificates as records of passing its roadmap assessments. Reaching at least 60% roadmap progress unlocks the exam; passing it does not certify completion of every roadmap topic or professional competence. The certification exam incorporates integrity controls:
       </p>
       <ul>
-        <li>The proctored exam blocks text selection, right-click context menus, copy/paste, and window focus switching.</li>
+        <li>The exam interface blocks text selection, right-click context menus, and copy/paste. It detects window focus loss, displays a warning, and terminates an attempt after the configured violation limit; it cannot prevent switching windows or guarantee that external assistance is detected.</li>
         <li>The certification workspace features user-identifying watermarks (name, email address, and IP address) and LLM-refusal text overlays to deter external assistance.</li>
         <li><strong>Exam Attempt Rules:</strong> Users are restricted to 2 continuous exam attempts. Failing both triggers a mandatory 1-hour study cooldown. A maximum of 3 attempts is permitted per 24-hour window per roadmap.</li>
         <li>Each question must be answered within 45 seconds; the exam requires a score of 70% or higher to pass.</li>
@@ -104,7 +104,7 @@ export default function TermsPage() {
       </p>
       <ul>
         <li>The absolute correctness, completion, or up-to-date nature of study guides, video playlists, or AI-generated recommendations.</li>
-        <li>Guaranteed job placements, college admissions, internships, salaries, or financial outcomes. Salary ranges shown in roadmaps are <strong>indicative market benchmarks</strong> drawn from public industry sources and are not promises of earnings.</li>
+        <li>Guaranteed job placements, college admissions, internships, salaries, or financial outcomes. Salary ranges shown in roadmaps are <strong>SkillBun editorial planning estimates, not a verified salary survey</strong>. Actual offers vary by location, employer, experience, and date; the displayed ranges are not promises of earnings.</li>
         <li>The accuracy of LLM outputs. AI language models are subject to hallucinations, and responses from Bun-Bot should be validated independently.</li>
       </ul>
       <p>

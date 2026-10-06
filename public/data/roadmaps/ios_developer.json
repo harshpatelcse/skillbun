@@ -127,11 +127,6 @@
               "type": "article"
             },
             {
-              "title": "Structures and Classes",
-              "url": "https://docs.swift.org/swift-book/documentation/the-swift-programming-language/structuresandclasses/",
-              "type": "article"
-            },
-            {
               "title": "Protocols",
               "url": "https://docs.swift.org/swift-book/documentation/the-swift-programming-language/protocols/",
               "type": "article"
@@ -207,11 +202,6 @@
               "type": "article"
             },
             {
-              "title": "Debugging with Xcode",
-              "url": "https://developer.apple.com/documentation/xcode/debugging-with-xcode",
-              "type": "article"
-            },
-            {
               "title": "Swift Concurrency Explained (Paul Hudson)",
               "url": "https://www.youtube.com/watch?v=U6lQustiTGE",
               "type": "video"
@@ -242,11 +232,6 @@
               "type": "article"
             },
             {
-              "title": "Managing projects with Git and Xcode",
-              "url": "https://developer.apple.com/documentation/xcode/managing-projects-with-git-and-xcode",
-              "type": "article"
-            },
-            {
               "title": "iOS Development for Beginners - Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=09TeUXjzpKs",
               "type": "video"
@@ -274,11 +259,6 @@
             {
               "title": "Adding Package Dependencies to Your App",
               "url": "https://developer.apple.com/documentation/xcode/adding-package-dependencies-to-your-app",
-              "type": "article"
-            },
-            {
-              "title": "Swift Package Manager Documentation",
-              "url": "https://github.com/apple/swift-package-manager/blob/main/Documentation/Usage.md",
               "type": "article"
             },
             {
@@ -344,16 +324,6 @@
           "description": "Master SwiftUI layout architecture: the declarative view hierarchy, custom `ViewModifier` composition, the `Layout` protocol for custom container positioning, adaptive layouts with `ViewThatFits` and `GeometryReader`, and responsive Grids.",
           "resources": [
             {
-              "title": "Views and Modifiers",
-              "url": "https://developer.apple.com/tutorials/swiftui-concepts/views-and-modifiers",
-              "type": "article"
-            },
-            {
-              "title": "Layout and Presentation",
-              "url": "https://developer.apple.com/documentation/swiftui/layout-and-presentation",
-              "type": "article"
-            },
-            {
               "title": "ViewBuilder in SwiftUI",
               "url": "https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-viewbuilder-attribute",
               "type": "article"
@@ -418,11 +388,6 @@
           "tag": "essential",
           "description": "Master programmatic navigation: `NavigationStack` with type-safe `navigationDestination(for:)`, sheet and full-screen covers, popover presentations, and deep linking from push notifications and widgets.",
           "resources": [
-            {
-              "title": "Navigation and Links",
-              "url": "https://developer.apple.com/documentation/swiftui/navigation-and-links",
-              "type": "article"
-            },
             {
               "title": "Swift Programming Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=8Xg7E9shq0U",
@@ -574,16 +539,6 @@
           "description": "Implement enterprise multi-language support: String Catalogs (`.xcstrings`) with automatic string extraction, localized pluralization rules, date/currency formatting via Foundation `FormatStyle`, and Right-to-Left (RTL) layout mirroring.",
           "resources": [
             {
-              "title": "Internationalization and Localization Guide",
-              "url": "https://developer.apple.com/documentation/Xcode/internationalization",
-              "type": "article"
-            },
-            {
-              "title": "Localizing Your App",
-              "url": "https://developer.apple.com/tutorials/swiftui/localizing-your-app",
-              "type": "course"
-            },
-            {
               "title": "Build your first iOS app with SwiftUI (Paul Hudson)",
               "url": "https://www.youtube.com/watch?v=aP-SQXTtWhY",
               "type": "video"
@@ -608,11 +563,6 @@
           "tag": "advanced",
           "description": "Bridge SwiftUI and legacy UIKit codebases: wrapping UIKit views with `UIViewRepresentable` and view controllers with `UIViewControllerRepresentable`, implementing Coordinators for delegate communication, and embedding SwiftUI views in UIKit via `UIHostingController`.",
           "resources": [
-            {
-              "title": "Integrating with UIKit",
-              "url": "https://developer.apple.com/documentation/swiftui/integrating-with-uikit",
-              "type": "article"
-            },
             {
               "title": "Swift Concurrency Explained (Paul Hudson)",
               "url": "https://www.youtube.com/watch?v=U6lQustiTGE",
@@ -681,16 +631,6 @@
           "description": "Implement scalable iOS architectural patterns: MVVM (Model-View-ViewModel) with `@Observable`, Clean Architecture with Use Cases, and The Composable Architecture (TCA) for deterministic state machines and testability.",
           "resources": [
             {
-              "title": "Swift Architecture: MVVM, Redux, and More",
-              "url": "https://www.raywenderlich.com/books/ios-architecture-patterns/articles/introduction-to-ios-architecture-patterns",
-              "type": "article"
-            },
-            {
-              "title": "Dependency Injection in Swift",
-              "url": "https://www.swiftbysundell.com/articles/dependency-injection-in-swift/",
-              "type": "article"
-            },
-            {
               "title": "Swift Programming Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=8Xg7E9shq0U",
               "type": "video"
@@ -716,18 +656,8 @@
           "description": "Engineer resilient networking with `URLSession`: async/await network calls, background download and upload tasks, SSL/TLS certificate pinning with `URLSessionDelegate`, custom request interceptors for OAuth2 token refresh, and JSON decoding with `Codable`.",
           "resources": [
             {
-              "title": "Fetching URL Content",
-              "url": "https://developer.apple.com/documentation/foundation/url_loading_system/fetching_url_content",
-              "type": "article"
-            },
-            {
               "title": "Encoding and Decoding Custom Types",
               "url": "https://developer.apple.com/documentation/swift/codable",
-              "type": "article"
-            },
-            {
-              "title": "Image Caching Best Practices",
-              "url": "https://www.raywenderlich.com/4474343-image-caching-best-practices",
               "type": "article"
             },
             {
@@ -885,11 +815,6 @@
           "type": "article"
         },
         {
-          "title": "Xcode Cloud Documentation",
-          "url": "https://developer.apple.com/documentation/xcode/xcode_cloud",
-          "type": "article"
-        },
-        {
           "title": "Build your first iOS app with SwiftUI (Paul Hudson)",
           "url": "https://www.youtube.com/watch?v=aP-SQXTtWhY",
           "type": "video"
@@ -918,16 +843,6 @@
               "type": "article"
             },
             {
-              "title": "UI Testing in Xcode",
-              "url": "https://developer.apple.com/documentation/xctest/ui_testing_your_app",
-              "type": "article"
-            },
-            {
-              "title": "Test-Driven Development in iOS with Swift",
-              "url": "https://www.raywenderlich.com/13136774-test-driven-development-in-ios-with-swift",
-              "type": "article"
-            },
-            {
               "title": "Swift Concurrency Explained (Paul Hudson)",
               "url": "https://www.youtube.com/watch?v=U6lQustiTGE",
               "type": "video"
@@ -952,11 +867,6 @@
           "tag": "advanced",
           "description": "Profile and eliminate performance regressions using Xcode Instruments: Time Profiler for CPU hot paths, Allocations for memory footprint, Leaks for retain cycles, Swift Concurrency instrument for actor contention, and MetricKit for production battery and crash telemetry.",
           "resources": [
-            {
-              "title": "Instruments Documentation",
-              "url": "https://developer.apple.com/documentation/xcode/measuring-performance-with-instruments",
-              "type": "article"
-            },
             {
               "title": "iOS Development for Beginners - Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=09TeUXjzpKs",
@@ -1033,11 +943,6 @@
               "type": "article"
             },
             {
-              "title": "Xcode Cloud Documentation",
-              "url": "https://developer.apple.com/documentation/xcode/xcode_cloud",
-              "type": "article"
-            },
-            {
               "title": "Configure a macOS CI Workflow for iOS (GitHub Actions)",
               "url": "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax",
               "type": "article"
@@ -1067,11 +972,6 @@
           "tag": "advanced",
           "description": "Capstone Project: Architect and Deploy a Production Native iOS Application in Swift 6 & SwiftUI: `@Observable` state architecture, SwiftData offline persistence, Background Tasks framework, Apple Pay and StoreKit 2 in-app purchases, Push Notifications (APNs), and automated Fastlane CI/CD deployment to TestFlight.",
           "resources": [
-            {
-              "title": "Your First iOS App (Apple Dev Academy)",
-              "url": "https://developer.apple.com/academy/ios/project/",
-              "type": "course"
-            },
             {
               "title": "Building a Complete App with SwiftUI",
               "url": "https://www.hackingwithswift.com/books/swiftui-book",

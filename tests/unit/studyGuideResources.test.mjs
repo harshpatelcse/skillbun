@@ -125,9 +125,56 @@ test('articles preserve meaningful paths and queries, remove fragments, and keep
   assert.equal(links[2].title, 'example.com');
 });
 
-test('malformed resources and non-HTTP URLs are ignored without throwing', () => {
+test('the general roadmap keeps its career quiz and roadmap page links in the guide resources', async () => {
+  const roadmap = JSON.parse(await fs.readFile(new URL('../../public/data/roadmaps/general.json', import.meta.url), 'utf8'));
+  const resources = [];
+  const visit = value => {
+    if (!value || typeof value !== 'object') return;
+    if (value.type === 'article' && ['/quiz', '/roadmap/general'].includes(value.url)) resources.push(value);
+    Object.values(value).forEach(visit);
+  };
+  visit(roadmap);
+  const { videos, links } = getStudyGuideResources(resources);
+  assert.deepEqual(videos, []);
+  assert.equal(links.length, 2);
+  assert.deepEqual(links.map(link => link.url), ['/quiz', '/roadmap/general']);
+  for (const link of links) {
+    assert.equal(link.host, 'SkillBun');
+    assert.equal(link.key, link.url);
+    assert.equal(link.title, resources.find(resource => resource.url === link.url).title);
+  }
+});
+
+test('internal page links retain queries, deduplicate fragments, and keep vault files out of resource links', () => {
+  const { videos, links } = getStudyGuideResources([
+    { type: 'article', title: 'Career quiz', url: '/quiz?source=guide#first' },
+    { type: 'article', title: 'Duplicate', url: '/quiz?source=guide#second' },
+    { type: 'doc', url: '/data/docs/general/gt_career_self_assessment.md' },
+    { url: '/data/docs/general/gt_career_path_research_planning.md' },
+    { type: 'article', url: '/data/quizzes/general.json' },
+    { url: '/data/quizQuestions.json' },
+    { url: '/%64ata/docs/general/gt_career_self_assessment.md' },
+    { url: '/api/docs/general/gt_career_self_assessment' },
+    { url: '/api/quiz/questions' },
+    { url: '/%61pi/quiz/questions' },
+  ]);
+  assert.deepEqual(videos, []);
+  assert.deepEqual(links, [{ url: '/quiz?source=guide', title: 'Career quiz', host: 'SkillBun', key: '/quiz?source=guide' }]);
+});
+
+test('unsafe relative resource URLs are ignored before browser normalization', () => {
+  const urls = [
+    'quiz', './quiz', '../quiz', '//untrusted.example/quiz', '///untrusted.example/quiz',
+    '/\\untrusted.example/quiz', '/%2f%2funtrusted.example/quiz', '/%5cuntrusted.example/quiz',
+    '/roadmap%2fgeneral', '/roadmap/../quiz', '/roadmap/./general', '/roadmap/%2e%2e/quiz',
+    '/roadmap/.%2e/quiz', '/roadmap/%252e%252e/quiz', '/quiz%00', '/quiz%20', '/quiz%7f', '/quiz%GG',
+  ];
+  assert.deepEqual(getStudyGuideResources(urls.map(url => ({ type: 'article', url }))), { videos: [], links: [] });
+});
+
+test('malformed resources and unsupported URL schemes are ignored without throwing', () => {
   const resources = [null, undefined, false, [], 'https://example.com', {},
-    { url: 12 }, { url: '' }, { url: '/relative' }, { url: '//example.com/path' },
+    { url: 12 }, { url: '' }, { url: 'relative' }, { url: '//example.com/path' },
     { url: 'javascript:alert(1)' }, { url: 'data:text/html,test' }, { url: 'ftp://example.com/file' },
     { url: 'https://' }, { url: 'http:example.com' }, { url: 'https://example.com/a b' },
     { url: 'https://example.com/\npath' }, { url: 'https://example.com\\path' },

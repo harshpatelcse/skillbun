@@ -123,11 +123,6 @@
           "description": "Master Human-Centered Design: User empathy, participatory design workshops, iterative problem-solving cycles, and balancing business viability with user desirability.",
           "resources": [
             {
-              "title": "What is Human-Centered Design?",
-              "url": "https://www.ideou.com/blogs/news/what-is-human-centered-design",
-              "type": "article"
-            },
-            {
               "title": "Design Thinking: A Quick Overview",
               "url": "https://www.interaction-design.org/literature/article/design-thinking-a-quick-overview",
               "type": "article"
@@ -163,11 +158,6 @@
               "type": "article"
             },
             {
-              "title": "Ethics in Design: How to Avoid Dark Patterns",
-              "url": "https://www.uxmatters.com/mt/archives/2019/07/ethics-in-design-how-to-avoid-dark-patterns.php",
-              "type": "article"
-            },
-            {
               "title": "Color Theory for Designers (DesignCourse)",
               "url": "https://www.youtube.com/watch?v=KMS3VwGh3HY",
               "type": "video"
@@ -198,8 +188,8 @@
               "type": "article"
             },
             {
-              "title": "The Ultimate Guide to UX Research",
-              "url": "https://www.smashingmagazine.com/2021/08/ultimate-guide-ux-research/",
+              "title": "When to Use Which UX Research Methods (Nielsen Norman Group)",
+              "url": "https://www.nngroup.com/articles/which-ux-research-methods/",
               "type": "article"
             },
             {
@@ -233,11 +223,6 @@
               "type": "article"
             },
             {
-              "title": "Writing Good Survey Questions",
-              "url": "https://www.nngroup.com/articles/survey-questions/",
-              "type": "article"
-            },
-            {
               "title": "Figma Tutorial for UI Design - Course for Beginners (freeCodeCamp.org)",
               "url": "https://www.youtube.com/watch?v=jwCmIBJ8Jtc",
               "type": "video"
@@ -262,11 +247,6 @@
           "tag": "advanced",
           "description": "Gather quantitative product signals: Analyzing Google Analytics / Mixpanel funnels, cohort retention heatmaps, user surveys (Likert scales), and benchmark surveys.",
           "resources": [
-            {
-              "title": "Introduction to Google Analytics for UX",
-              "url": "https://www.uxmatters.com/mt/archives/2014/10/introduction-to-google-analytics-for-ux.php",
-              "type": "article"
-            },
             {
               "title": "A/B Testing: The Ultimate Guide",
               "url": "https://vwo.com/ab-testing/",
@@ -333,8 +313,8 @@
           "description": "Execute competitive benchmarking: Direct and indirect competitor heuristic audits, feature matrix comparisons, market gap identification, and SWOT analysis.",
           "resources": [
             {
-              "title": "How to Conduct a UX Competitive Analysis",
-              "url": "https://www.smashingmagazine.com/2019/01/ux-competitive-analysis/",
+              "title": "Competitive Usability Evaluations (Nielsen Norman Group)",
+              "url": "https://www.nngroup.com/articles/competitive-usability-evaluations/",
               "type": "article"
             },
             {
@@ -362,16 +342,6 @@
           "tag": "essential",
           "description": "Align with enterprise stakeholders: Conducting executive stakeholder interviews, power-interest matrix mapping, and aligning design outcomes with business OKRs.",
           "resources": [
-            {
-              "title": "How to Interview Stakeholders",
-              "url": "https://www.uxmatters.com/mt/archives/2017/08/how-to-interview-stakeholders.php",
-              "type": "article"
-            },
-            {
-              "title": "Stakeholder Analysis and Mapping",
-              "url": "https://www.mindtools.com/aq7939/stakeholder-analysis",
-              "type": "article"
-            },
             {
               "title": "Figma Tutorial for UI Design - Course for Beginners (freeCodeCamp.org)",
               "url": "https://www.youtube.com/watch?v=jwCmIBJ8Jtc",
@@ -500,8 +470,8 @@
           "description": "Integrate content design into UX: Writing concise microcopy, establishing brand voice and tone guidelines, error message design, and content readability.",
           "resources": [
             {
-              "title": "UX Writing: How to Do It Like a Pro",
-              "url": "https://www.smashingmagazine.com/2021/05/ux-writing-guide/",
+              "title": "Writing Guidelines (GOV.UK Publishing Guidance)",
+              "url": "https://guidance.publishing.service.gov.uk/writing-to-gov-uk-standards/writing-guidelines/",
               "type": "article"
             },
             {
@@ -605,11 +575,6 @@
           "description": "Map user journeys: Hierarchical task analysis (HTA), user flow diagrams, low-fidelity paper wireframes, and rapid divergent ideation sketches.",
           "resources": [
             {
-              "title": "User Flow vs. Journey Map vs. Sitemap",
-              "url": "https://www.nngroup.com/articles/user-flows-vs-journey-maps-vs-sitemaps/",
-              "type": "article"
-            },
-            {
               "title": "Wireframes: The Basics of Good UX Design",
               "url": "https://www.interaction-design.org/literature/article/wireframes-the-basics-of-good-ux-design",
               "type": "article"
@@ -639,11 +604,6 @@
           "tag": "essential",
           "description": "Build low-fidelity wireframes: Low-fidelity digital wireframes in Figma, click-through wireframe prototypes, and validating core navigational paths early.",
           "resources": [
-            {
-              "title": "Low-Fidelity Prototyping: The What, Why, and How",
-              "url": "https://careerfoundry.com/en/blog/ux-design/low-fidelity-prototyping/",
-              "type": "article"
-            },
             {
               "title": "Crazy Eights: A Fast Sketching Exercise",
               "url": "https://designsprintkit.withgoogle.com/methods/sketch/crazy-eights",
@@ -675,13 +635,8 @@
           "description": "Design high-converting accessible forms: Single-column layouts, inline validation, clear field labels, intelligent input masking, and reducing cognitive friction.",
           "resources": [
             {
-              "title": "Form Design: From Foundations to Advanced",
-              "url": "https://www.smashingmagazine.com/2018/08/form-design-foundations-advanced/",
-              "type": "article"
-            },
-            {
-              "title": "Best Practices for Form Design",
-              "url": "https://www.nngroup.com/articles/form-design-best-practices/",
+              "title": "Accessible Forms Tutorial (W3C WAI)",
+              "url": "https://www.w3.org/WAI/tutorials/forms/",
               "type": "article"
             },
             {
@@ -744,16 +699,6 @@
           "tag": "essential",
           "description": "Build interactive high-fidelity prototypes: Figma smart animate, interactive component variants, nested component state flows, and realistic user testing prototypes.",
           "resources": [
-            {
-              "title": "High-Fidelity Prototyping: Best Practices",
-              "url": "https://www.uxpin.com/studio/blog/high-fidelity-prototyping-best-practices/",
-              "type": "article"
-            },
-            {
-              "title": "How to Build a High-Fidelity Prototype (Figma focused)",
-              "url": "https://careerfoundry.com/en/blog/ux-design/how-to-build-a-high-fidelity-prototype-in-figma/",
-              "type": "article"
-            },
             {
               "title": "Design Systems Explained (Figma)",
               "url": "https://www.youtube.com/watch?v=EK-pHkc5EL4",
@@ -887,8 +832,8 @@
           "description": "Apply color theory in UI: 60-30-10 color balance rule, semantic status palettes (success, warning, error, info), dark mode contrast ratios, and HSL color modeling.",
           "resources": [
             {
-              "title": "Color in UI Design: A Practical Guide",
-              "url": "https://www.smashingmagazine.com/2021/08/color-in-ui-design-practical-guide/",
+              "title": "Color Anatomy, Themes and Tokens (Carbon Design System)",
+              "url": "https://carbondesignsystem.com/guidelines/color/overview/",
               "type": "article"
             },
             {
@@ -927,11 +872,6 @@
               "type": "article"
             },
             {
-              "title": "Mastering Icon Design for UI/UX",
-              "url": "https://www.uxpin.com/studio/blog/mastering-icon-design-for-ui-ux/",
-              "type": "article"
-            },
-            {
               "title": "Figma Tutorial for UI Design - Course for Beginners (freeCodeCamp.org)",
               "url": "https://www.youtube.com/watch?v=jwCmIBJ8Jtc",
               "type": "video"
@@ -957,14 +897,9 @@
           "description": "Design responsive multi-device layouts: Mobile-first breakpoints (360px, 768px, 1024px, 1440px), fluid grids, adaptive touch targets (minimum 44x44px), and desktop dashboards.",
           "resources": [
             {
-              "title": "Responsive Design: What It Is and How to Use It",
-              "url": "https://www.nngroup.com/articles/responsive-design/",
-              "type": "article"
-            },
-            {
-              "title": "Mobile-First Design",
-              "url": "https://www.smashingmagazine.com/2010/09/mobile-first-for-the-future-of-web/",
-              "type": "article"
+              "title": "Learn Responsive Design (web.dev)",
+              "url": "https://web.dev/learn/design/",
+              "type": "course"
             },
             {
               "title": "My 5-Step UX/UI Design Process — From Start to Deliver (Faizur Rehman)",
@@ -1061,11 +996,6 @@
           "tag": "essential",
           "description": "Facilitate design critique sessions: Giving and receiving constructive feedback, presenting rationale grounded in user research, and synthesizing feedback into iterations.",
           "resources": [
-            {
-              "title": "How to Give a Design Critique",
-              "url": "https://www.nngroup.com/articles/design-critique/",
-              "type": "article"
-            },
             {
               "title": "The Art of Constructive Feedback in Design",
               "url": "https://uxplanet.org/the-art-of-constructive-feedback-in-design-e5c9b2d3e5e3",
@@ -1254,11 +1184,6 @@
               "type": "article"
             },
             {
-              "title": "Figma Keyboard Shortcuts",
-              "url": "https://help.figma.com/hc/en-us/articles/360040722234-Figma-keyboard-shortcuts",
-              "type": "article"
-            },
-            {
               "title": "Color Theory for Designers (DesignCourse)",
               "url": "https://www.youtube.com/watch?v=KMS3VwGh3HY",
               "type": "video"
@@ -1283,16 +1208,6 @@
           "tag": "essential",
           "description": "Manage collaborative design files: Figma branching, merging design changes, version history checkpoints, and multi-designer file organization.",
           "resources": [
-            {
-              "title": "Collaboration in Figma: Best Practices",
-              "url": "https://www.figma.com/blog/how-we-work-at-figma-a-peek-into-our-design-process/",
-              "type": "article"
-            },
-            {
-              "title": "Figma Version History Guide",
-              "url": "https://help.figma.com/hc/en-us/articles/360039238873-Use-version-history",
-              "type": "article"
-            },
             {
               "title": "Design Systems Explained (Figma)",
               "url": "https://www.youtube.com/watch?v=EK-pHkc5EL4",
@@ -1461,11 +1376,6 @@
               "type": "article"
             },
             {
-              "title": "Designing for Screen Readers",
-              "url": "https://www.nngroup.com/articles/screen-readers-and-accessibility/",
-              "type": "article"
-            },
-            {
               "title": "Figma Tutorial for UI Design - Course for Beginners (freeCodeCamp.org)",
               "url": "https://www.youtube.com/watch?v=jwCmIBJ8Jtc",
               "type": "video"
@@ -1531,11 +1441,6 @@
               "type": "article"
             },
             {
-              "title": "Remote Usability Testing Guide",
-              "url": "https://www.usertesting.com/blog/remote-usability-testing",
-              "type": "article"
-            },
-            {
               "title": "Color Theory for Designers (DesignCourse)",
               "url": "https://www.youtube.com/watch?v=KMS3VwGh3HY",
               "type": "video"
@@ -1560,16 +1465,6 @@
           "tag": "essential",
           "description": "Analyze usability findings: Calculating Single Ease Question (SEQ) scores, severity rating usability issues, and sharing highlight reels with cross-functional teams.",
           "resources": [
-            {
-              "title": "How to Analyze and Present Usability Test Results",
-              "url": "https://www.uxmatters.com/mt/archives/2007/04/how-to-analyze-and-present-usability-test-results.php",
-              "type": "article"
-            },
-            {
-              "title": "Severity Rating for Usability Problems",
-              "url": "https://www.nngroup.com/articles/how-to-rate-severity-for-usability-problems/",
-              "type": "article"
-            },
             {
               "title": "Design Systems Explained (Figma)",
               "url": "https://www.youtube.com/watch?v=EK-pHkc5EL4",
@@ -1631,13 +1526,8 @@
           "description": "Collaborate with engineers and product managers: Negotiating scope, sprint grooming participation, design QA audits in staging, and resolving technical feasibility tradeoffs.",
           "resources": [
             {
-              "title": "Communicating UX: Speak User Experience",
-              "url": "https://www.nngroup.com/articles/communicating-ux/",
-              "type": "article"
-            },
-            {
-              "title": "Stakeholder Management for UX Designers",
-              "url": "https://www.smashingmagazine.com/2017/04/stakeholder-management-ux-designers/",
+              "title": "Share User Research Findings with Stakeholders (GOV.UK Service Manual)",
+              "url": "https://www.gov.uk/service-manual/user-research/sharing-user-research-findings",
               "type": "article"
             },
             {
@@ -1671,8 +1561,8 @@
               "type": "article"
             },
             {
-              "title": "UX Metrics for Post-Launch Evaluation",
-              "url": "https://www.smashingmagazine.com/2019/07/ux-metrics-post-launch-evaluation/",
+              "title": "Choosing UX Metrics from Goals (Nielsen Norman Group)",
+              "url": "https://www.nngroup.com/articles/ux-metrics-goals/",
               "type": "article"
             },
             {
@@ -1710,11 +1600,6 @@
           "type": "course"
         },
         {
-          "title": "The Ultimate Guide to a UX Portfolio",
-          "url": "https://careerfoundry.com/en/blog/ux-design/how-to-create-a-ux-portfolio/",
-          "type": "article"
-        },
-        {
           "title": "Design Systems Explained (Figma)",
           "url": "https://www.youtube.com/watch?v=EK-pHkc5EL4",
           "type": "video"
@@ -1737,11 +1622,6 @@
           "tag": "advanced",
           "description": "Author compelling UX case studies: Structuring narrative (Problem Statement, Business Context, Research Discovery, Iterative Exploration, Final Solution, Measurable Impact).",
           "resources": [
-            {
-              "title": "How to Write a Great UX Case Study",
-              "url": "https://www.nngroup.com/articles/ux-case-studies/",
-              "type": "article"
-            },
             {
               "title": "Figma Tutorial for UI Design - Course for Beginners (freeCodeCamp.org)",
               "url": "https://www.youtube.com/watch?v=jwCmIBJ8Jtc",
@@ -1803,11 +1683,6 @@
           "description": "Optimize design resumes: Highlighting quantifiable product outcomes (e.g. 'reduced checkout drop-off by 24%'), design leadership skills, and ATS keyword alignment.",
           "resources": [
             {
-              "title": "Crafting a UX Designer Resume",
-              "url": "https://careerfoundry.com/en/blog/ux-design/ux-designer-resume/",
-              "type": "article"
-            },
-            {
               "title": "LinkedIn for UX Designers: Tips & Tricks",
               "url": "https://medium.com/design-bootcamp/linkedin-for-ux-designers-tips-tricks-c1f964c4c235",
               "type": "article"
@@ -1837,11 +1712,6 @@
           "tag": "advanced",
           "description": "Master UX design interviews: Presenting portfolio case studies, solving live 45-minute whiteboard design challenges, and answering app critique questions.",
           "resources": [
-            {
-              "title": "UX Interview Questions: The Ultimate Guide",
-              "url": "https://careerfoundry.com/en/blog/ux-design/ux-interview-questions/",
-              "type": "article"
-            },
             {
               "title": "Cracking the UX Whiteboard Challenge",
               "url": "https://uxdesign.cc/cracking-the-ux-whiteboard-challenge-428a95d73c88",
@@ -1878,11 +1748,6 @@
               "type": "article"
             },
             {
-              "title": "Finding a UX Mentor",
-              "url": "https://www.nngroup.com/articles/finding-ux-mentor/",
-              "type": "article"
-            },
-            {
               "title": "Figma Tutorial for UI Design - Course for Beginners (freeCodeCamp.org)",
               "url": "https://www.youtube.com/watch?v=jwCmIBJ8Jtc",
               "type": "video"
@@ -1913,8 +1778,8 @@
               "type": "article"
             },
             {
-              "title": "Why Designers Should Blog",
-              "url": "https://www.smashingmagazine.com/2012/06/why-designers-should-blog/",
+              "title": "Writing Articles to Demonstrate Expertise (Nielsen Norman Group)",
+              "url": "https://www.nngroup.com/articles/write-articles-not-blogs/",
               "type": "article"
             },
             {
@@ -1942,16 +1807,6 @@
           "tag": "advanced",
           "description": "Evaluate design career paths: Comparing agency client delivery, startup generalist breadth, enterprise specialized design systems, and freelance consulting.",
           "resources": [
-            {
-              "title": "Agency vs. In-House UX Design: Which is Right For You?",
-              "url": "https://careerfoundry.com/en/blog/ux-design/agency-vs-in-house-ux-design/",
-              "type": "article"
-            },
-            {
-              "title": "How to Become a Freelance UX Designer",
-              "url": "https://careerfoundry.com/en/blog/ux-design/how-to-become-a-freelance-ux-designer/",
-              "type": "article"
-            },
             {
               "title": "Color Theory for Designers (DesignCourse)",
               "url": "https://www.youtube.com/watch?v=KMS3VwGh3HY",

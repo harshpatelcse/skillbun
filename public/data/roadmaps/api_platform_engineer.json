@@ -91,11 +91,6 @@
       "description": "Master API platform engineering foundations: Establishing API-first design principles, standardized protocols, developer ergonomics, and governance across distributed microservices.",
       "resources": [
         {
-          "title": "What is an API Platform Engineer? (Red Hat)",
-          "url": "https://www.redhat.com/en/topics/api/what-is-an-api-platform-engineer",
-          "type": "article"
-        },
-        {
           "title": "The API Economy Explained (IBM)",
           "url": "https://www.ibm.com/topics/api-economy",
           "type": "article"
@@ -123,11 +118,6 @@
           "tag": "essential",
           "description": "Define the platform engineer's value proposition: Driving developer velocity, reducing integration friction, enforcing security baselines, and treating internal APIs as enterprise products.",
           "resources": [
-            {
-              "title": "The API Platform Engineer: A New Role for the API Economy (Nordic APIs)",
-              "url": "https://nordicapis.com/the-api-platform-engineer-a-new-role-for-the-api-economy/",
-              "type": "article"
-            },
             {
               "title": "HTTP Crash Course & Exploration",
               "url": "https://www.youtube.com/watch?v=iYM2zFP3Zn0",
@@ -192,11 +182,6 @@
               "title": "RESTful API Design Guidelines (Microsoft Azure)",
               "url": "https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design",
               "type": "article"
-            },
-            {
-              "title": "Building REST APIs with Node.js and Express (Mosh Hamedani)",
-              "url": "https://codewithmosh.com/p/building-restful-apis-with-node",
-              "type": "course"
             },
             {
               "title": "REST API Design Guide: Principles and Best Practices",
@@ -293,11 +278,6 @@
       "description": "Establish automated API development toolchains: Linters (Spectral), contract testing frameworks (Pact), mocking engines, and CI/CD validation gates.",
       "resources": [
         {
-          "title": "The API-First Approach (Postman)",
-          "url": "https://www.postman.com/api-platform/api-first-approach/",
-          "type": "article"
-        },
-        {
           "title": "Postman Crash Course | API Testing & Development",
           "url": "https://www.youtube.com/watch?v=VywxIQ2ZXw4",
           "type": "video"
@@ -361,11 +341,6 @@
           "description": "Standardize API design tooling: Stoplight, SwaggerHub, and Redocly for collaborative API linting, versioned contract reviews, and automated developer portal publication.",
           "resources": [
             {
-              "title": "Introduction to Stoplight Studio",
-              "url": "https://stoplight.io/docs/studio/getting-started/",
-              "type": "article"
-            },
-            {
               "title": "SwaggerHub Features",
               "url": "https://swagger.io/tools/swaggerhub/features/",
               "type": "article"
@@ -396,8 +371,8 @@
               "type": "article"
             },
             {
-              "title": "CI/CD Pipeline: A Complete Guide (AWS)",
-              "url": "https://aws.amazon.com/devops/what-is-cicd/",
+              "title": "What Is CI/CD? (AWS)",
+              "url": "https://aws.amazon.com/what-is/ci-cd/",
               "type": "article"
             },
             {
@@ -471,11 +446,6 @@
               "type": "article"
             },
             {
-              "title": "Implementing API Gateways in a CI/CD Pipeline (Kong)",
-              "url": "https://konghq.com/blog/implementing-api-gateways-in-a-ci-cd-pipeline/",
-              "type": "article"
-            },
-            {
               "title": "Git and GitHub for Beginners - Crash Course",
               "url": "https://www.youtube.com/watch?v=RGOj5yH7evk",
               "type": "video"
@@ -500,11 +470,6 @@
           "tag": "advanced",
           "description": "Provide developer sandboxes and mock servers: Deploying Prism, WireMock, and Mockoon to simulate backend services and unblock frontend development before implementation completes.",
           "resources": [
-            {
-              "title": "Mocking APIs for Faster Development and Testing (Postman)",
-              "url": "https://www.postman.com/product/api-mocking/",
-              "type": "article"
-            },
             {
               "title": "JSONPlaceholder - Free fake API for testing and prototyping",
               "url": "https://jsonplaceholder.typicode.com/",
@@ -535,11 +500,6 @@
       "description": "Implement zero-trust API security: Managing tokens, enforcing OWASP API Security Top 10 defenses, rate limiting, and automated lifecycle deprecation.",
       "resources": [
         {
-          "title": "API Security: A Comprehensive Guide (Okta)",
-          "url": "https://www.okta.com/identity-101/api-security/",
-          "type": "article"
-        },
-        {
           "title": "API Security Course for Beginners - Protect your APIs with OWASP Top 10",
           "url": "https://www.youtube.com/watch?v=YYe0FdfdgDU",
           "type": "video"
@@ -562,11 +522,6 @@
           "tag": "essential",
           "description": "Architect authentication and authorization: OAuth 2.0 grant types (Authorization Code + PKCE, Client Credentials), OIDC identity tokens, signed JWT validation, and mTLS mutual authentication.",
           "resources": [
-            {
-              "title": "An Ultimate Guide to API Authentication and Authorization (Auth0)",
-              "url": "https://auth0.com/docs/get-started/apis/api-authentication-authorization",
-              "type": "article"
-            },
             {
               "title": "OAuth 2.0 Simplified (Aaron Parecki)",
               "url": "https://oauth.net/2/",
@@ -598,13 +553,8 @@
           "description": "Defend against OWASP API Top 10 vulnerabilities: Mitigating Broken Object Level Authorization (BOLA/IDOR), Broken Function Level Authorization (BFLA), mass assignment, and SSRF.",
           "resources": [
             {
-              "title": "OWASP API Security Top 10 (2023)",
-              "url": "https://owasp.org/API-Security/editions/2023/en/0x00-introduction/",
-              "type": "article"
-            },
-            {
-              "title": "Common API Security Vulnerabilities and How to Fix Them (Akamai)",
-              "url": "https://www.akamai.com/blog/security/common-api-security-vulnerabilities-how-to-fix-them",
+              "title": "OWASP API Security Top 10 (2023): Introduction",
+              "url": "https://api-security.owasp.org/editions/2023/en/0x03-introduction/",
               "type": "article"
             },
             {
@@ -627,11 +577,6 @@
           "tag": "advanced",
           "description": "Enforce data privacy and compliance: Field-level encryption, PII masking in API responses, automated DLP inspection, and compliance with GDPR, HIPAA, and PCI-DSS standards.",
           "resources": [
-            {
-              "title": "API Security and Data Privacy (Auth0)",
-              "url": "https://auth0.com/blog/api-security-and-data-privacy/",
-              "type": "article"
-            },
             {
               "title": "A Guide to Data Encryption (IBM)",
               "url": "https://www.ibm.com/topics/data-encryption",
@@ -663,8 +608,8 @@
           "description": "Implement API versioning strategies: URI path versioning (`/v1/`), custom header versioning, query parameters, content negotiation (Accept headers), and non-breaking schema expansion.",
           "resources": [
             {
-              "title": "Versioning REST APIs (Microsoft Azure)",
-              "url": "https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-versioning",
+              "title": "REST API Versioning (Microsoft Azure)",
+              "url": "https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design#implement-versioning",
               "type": "article"
             },
             {
@@ -692,11 +637,6 @@
           "tag": "advanced",
           "description": "Execute graceful API deprecations: Communicating sunset timelines via RFC 8594 Sunset and Deprecation headers, developer portal notifications, and tracking legacy client migration.",
           "resources": [
-            {
-              "title": "How to Deprecate an API (Nordic APIs)",
-              "url": "https://nordicapis.com/how-to-deprecate-an-api/",
-              "type": "article"
-            },
             {
               "title": "API Versioning Strategies - REST API Tutorial",
               "url": "https://www.youtube.com/watch?v=42J4KMHUJjE",
@@ -755,13 +695,8 @@
           "description": "Architect enterprise API gateways: Evaluating Kong Gateway, Envoy Proxy, Apigee, and Traefik for TLS termination, plugin architectures, and high-concurrency request routing.",
           "resources": [
             {
-              "title": "API Gateway vs. API Management: What's the Difference? (Kong)",
-              "url": "https://konghq.com/blog/api-gateway-vs-api-management",
-              "type": "article"
-            },
-            {
-              "title": "Building a Serverless API Gateway with AWS Lambda (AWS)",
-              "url": "https://aws.amazon.com/getting-started/hands-on/build-serverless-api-gateway-lambda/",
+              "title": "Get Started with API Gateway and AWS Lambda",
+              "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started.html",
               "type": "article"
             },
             {
@@ -790,16 +725,6 @@
           "description": "Manage live API traffic: Path-based routing, header manipulation, request rewriting, weighted canary releases, and geographical DNS routing.",
           "resources": [
             {
-              "title": "API Management Traffic Control (Red Hat)",
-              "url": "https://www.redhat.com/en/blog/api-management-traffic-control",
-              "type": "article"
-            },
-            {
-              "title": "Advanced Traffic Management with Envoy Proxy",
-              "url": "https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/http/http_filters/router_filter",
-              "type": "article"
-            },
-            {
               "title": "API Gateway Explained",
               "url": "https://www.youtube.com/watch?v=6ULyxuHKxg8",
               "type": "video"
@@ -824,11 +749,6 @@
           "tag": "essential",
           "description": "Enforce distributed rate limiting and throttling: Token bucket, leaky bucket, and fixed/sliding window algorithms backed by Redis clusters to prevent denial of service.",
           "resources": [
-            {
-              "title": "Rate Limiting: How to protect your APIs (Akamai)",
-              "url": "https://www.akamai.com/blog/api-security/rate-limiting-how-to-protect-your-apis",
-              "type": "article"
-            },
             {
               "title": "System Design - Part 11 | Design a Rate Limiter",
               "url": "https://www.youtube.com/watch?v=Rn7L1j63FnI",
@@ -860,11 +780,6 @@
               "type": "article"
             },
             {
-              "title": "Introduction to Pulumi",
-              "url": "https://www.pulumi.com/docs/concepts/introduction/",
-              "type": "article"
-            },
-            {
               "title": "Terraform Course for Beginners - Crash Course",
               "url": "https://www.youtube.com/watch?v=7xngnjfIlK4",
               "type": "video"
@@ -884,11 +799,6 @@
           "tag": "essential",
           "description": "Implement comprehensive API observability: OpenTelemetry distributed tracing across services, W3C Trace Context propagation, RED metrics (Rate, Errors, Duration), and Grafana dashboards.",
           "resources": [
-            {
-              "title": "The Pillars of Observability (Datadog)",
-              "url": "https://www.datadoghq.com/blog/observability-pillars/",
-              "type": "article"
-            },
             {
               "title": "Introduction to OpenTelemetry (Official Documentation)",
               "url": "https://opentelemetry.io/docs/concepts/what-is-opentelemetry/",
@@ -915,8 +825,8 @@
           "description": "Harden API resilience: Circuit breakers (Envoy/Hystrix), automated retries with exponential backoff and jitter, bulkhead isolation, and fallback responses.",
           "resources": [
             {
-              "title": "Resilience Patterns for APIs (AWS)",
-              "url": "https://aws.amazon.com/blogs/compute/resilience-patterns-for-apis/",
+              "title": "Circuit Breaker Pattern for API Resilience (AWS)",
+              "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/circuit-breaker.html",
               "type": "article"
             },
             {
@@ -947,11 +857,6 @@
             {
               "title": "What is a Service Mesh? (Red Hat)",
               "url": "https://www.redhat.com/en/topics/microservices/what-is-a-service-mesh",
-              "type": "article"
-            },
-            {
-              "title": "Istio / API Gateway Integration",
-              "url": "https://istio.io/latest/docs/tasks/traffic-management/ingress/api-gateway/",
               "type": "article"
             },
             {
@@ -1042,16 +947,6 @@
           "description": "Treat APIs as products: Defining Developer Experience (DX) metrics, Time to First Hello World (TTFHW), API SLAs, and tracking user journey telemetry.",
           "resources": [
             {
-              "title": "API Product Management - Building an API (APIMatic)",
-              "url": "https://www.apimatic.io/blog/api-product-management/",
-              "type": "article"
-            },
-            {
-              "title": "The Evolution of API Product Management (Postman)",
-              "url": "https://www.postman.com/company/blog/2021/04/07/evolution-of-api-product-management/",
-              "type": "article"
-            },
-            {
               "title": "What is API Product Management?",
               "url": "https://www.youtube.com/watch?v=T5y0WKmKenQ",
               "type": "video"
@@ -1112,11 +1007,6 @@
           "description": "Drive centralized API governance: Establishing cross-team API review councils, automated linting rule enforcement, and enterprise-wide API taxonomies.",
           "resources": [
             {
-              "title": "API Governance for Dummies (Red Hat)",
-              "url": "https://www.redhat.com/en/resources/api-governance-dummies-ebook",
-              "type": "article"
-            },
-            {
               "title": "Building an API Strategy: The Ultimate Guide (3scale)",
               "url": "https://www.3scale.net/api-management/api-strategy-guide/",
               "type": "article"
@@ -1147,13 +1037,8 @@
           "description": "Foster cross-functional collaboration: Partnering with frontend, mobile, backend, and security teams to align API roadmaps and minimize breaking changes.",
           "resources": [
             {
-              "title": "Effective Collaboration for API Teams (Postman)",
-              "url": "https://www.postman.com/company/blog/2020/09/23/effective-collaboration-for-api-teams/",
-              "type": "article"
-            },
-            {
-              "title": "Working with Cross-Functional Teams (Harvard Business Review)",
-              "url": "https://hbr.org/2015/06/the-secrets-of-great-teamwork",
+              "title": "The Secrets of Great Teamwork — Harvard Business Review",
+              "url": "https://hbr.org/2016/06/the-secrets-of-great-teamwork",
               "type": "article"
             },
             {
@@ -1182,16 +1067,6 @@
           "description": "Gather developer feedback: Hosting developer office hours, monitoring SDK issue trackers, conducting developer surveys, and analyzing API error logs.",
           "resources": [
             {
-              "title": "Building a Thriving API Developer Community (Nordic APIs)",
-              "url": "https://nordicapis.com/building-a-thriving-api-developer-community/",
-              "type": "article"
-            },
-            {
-              "title": "The Importance of API Feedback Loops (Moesif)",
-              "url": "https://www.moesif.com/blog/api-monetization-strategy/api-feedback-loops",
-              "type": "article"
-            },
-            {
               "title": "API Strategy and Developer Experience with Postman API's Kin Lane",
               "url": "https://www.youtube.com/watch?v=8QbncQ3Hr-0",
               "type": "video"
@@ -1216,11 +1091,6 @@
           "tag": "advanced",
           "description": "Analyze API platform metrics: Ingesting access logs into ClickHouse or BigQuery to analyze active API consumers, endpoint usage trends, latency heatmaps, and error spikes.",
           "resources": [
-            {
-              "title": "The Value of API Analytics (Nordic APIs)",
-              "url": "https://nordicapis.com/the-value-of-api-analytics/",
-              "type": "article"
-            },
             {
               "title": "Observability for Microservices Tutorial - Monitoring & Logging",
               "url": "https://www.youtube.com/watch?v=cYAE0ZhT43c",

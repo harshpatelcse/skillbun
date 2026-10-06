@@ -287,8 +287,8 @@
               "type": "course"
             },
             {
-              "title": "Introduction to Databases (Coursera)",
-              "url": "https://www.coursera.org/learn/intro-to-databases",
+              "title": "Introduction to Databases — Meta",
+              "url": "https://www.coursera.org/learn/introduction-to-databases",
               "type": "course"
             },
             {
@@ -414,11 +414,6 @@
           "description": "Version large-scale datasets and models using DVC (Data Version Control): Linking remote S3/GCS blob storage with Git commit metadata to guarantee full data lineage.",
           "resources": [
             {
-              "title": "What is Data Version Control?",
-              "url": "https://dvc.org/blog/what-is-data-version-control",
-              "type": "article"
-            },
-            {
               "title": "Data Lineage in MLOps",
               "url": "https://www.databricks.com/glossary/data-lineage",
               "type": "article"
@@ -454,8 +449,8 @@
               "type": "article"
             },
             {
-              "title": "Versioning and Managing ML Models in Production",
-              "url": "https://towardsdatascience.com/versioning-and-managing-ml-models-in-production-a89c97b83d8e",
+              "title": "Version and Manage Production Models with MLflow Model Registry",
+              "url": "https://mlflow.org/docs/latest/ml/model-registry/",
               "type": "article"
             },
             {
@@ -621,11 +616,6 @@
               "type": "article"
             },
             {
-              "title": "Advanced Dockerfile Best Practices",
-              "url": "https://docs.docker.com/develop/develop-images/optimize-builds/",
-              "type": "article"
-            },
-            {
               "title": "Data Versioning with DVC (DVC Team)",
               "url": "https://www.youtube.com/watch?v=UbL7VUpv1Bs",
               "type": "video"
@@ -691,11 +681,6 @@
           "description": "Design CI/CD pipelines for ML: Automated linting (Ruff), unit testing (PyTest), dataset integrity checks, automated model training triggers, and container image publishing to registry.",
           "resources": [
             {
-              "title": "MLOps CI/CD Best Practices",
-              "url": "https://www.mlopscourses.com/lessons/ci-cd-for-ml-systems",
-              "type": "article"
-            },
-            {
               "title": "MLFlow Tutorial | ML Ops Tutorial (codebasics)",
               "url": "https://www.youtube.com/watch?v=6ngxBkx05Fs",
               "type": "video"
@@ -720,11 +705,6 @@
           "tag": "essential",
           "description": "Implement GitHub Actions workflows: Building automated MLOps pipelines with CML (Continuous Machine Learning) to generate pull request performance comparison reports and deploy models.",
           "resources": [
-            {
-              "title": "GitHub Actions for MLOps (End-to-End)",
-              "url": "https://towardsdatascience.com/github-actions-for-mlops-a-step-by-step-guide-289d1b0d2b1f",
-              "type": "article"
-            },
             {
               "title": "Feature Store for Machine Learning: The Beginner's Guide (+Feast) (Alexander Sergeenko)",
               "url": "https://www.youtube.com/watch?v=0InBN_a4cQQ",
@@ -756,11 +736,6 @@
               "type": "article"
             },
             {
-              "title": "Evidently AI - Model Testing",
-              "url": "https://docs.evidentlyai.com/user-guide/testing-ml-models",
-              "type": "article"
-            },
-            {
               "title": "Data Versioning with DVC (DVC Team)",
               "url": "https://www.youtube.com/watch?v=UbL7VUpv1Bs",
               "type": "video"
@@ -788,11 +763,6 @@
             {
               "title": "ML Model Deployment Strategies",
               "url": "https://neptune.ai/blog/ml-model-deployment-strategies",
-              "type": "article"
-            },
-            {
-              "title": "Canary Deployments for ML Models",
-              "url": "https://mlops.community/articles/canary-deployments-machine-learning/",
               "type": "article"
             },
             {
@@ -863,11 +833,6 @@
           "title": "MLOps Course Resources (Made With ML)",
           "url": "https://madewithml.com/courses/mlops",
           "type": "course"
-        },
-        {
-          "title": "MLOps.community Learning Paths",
-          "url": "https://mlops.community/learning-paths/",
-          "type": "article"
         },
         {
           "title": "Feature Store for Machine Learning: The Beginner's Guide (+Feast) (Alexander Sergeenko)",
@@ -1043,11 +1008,6 @@
               "type": "article"
             },
             {
-              "title": "Feast: An Open Source Feature Store",
-              "url": "https://docs.feast.dev/getting-started/what-is-feast",
-              "type": "article"
-            },
-            {
               "title": "Data Versioning with DVC (DVC Team)",
               "url": "https://www.youtube.com/watch?v=UbL7VUpv1Bs",
               "type": "video"
@@ -1187,16 +1147,6 @@
           "tag": "advanced",
           "description": "Secure ML systems and enforce compliance: Container vulnerability scanning (Trivy), model artifact signing (Cosign), role-based access control (RBAC), and SOC 2 data auditability.",
           "resources": [
-            {
-              "title": "NIST AI Risk Management Framework",
-              "url": "https://www.nist.gov/artificial-intelligence/ai-risk-management-framework",
-              "type": "article"
-            },
-            {
-              "title": "OWASP Top 10 for LLMs",
-              "url": "https://llm.owasp.org/llm-top-10/index.html",
-              "type": "article"
-            },
             {
               "title": "Security Controls for Generative AI (Google Cloud)",
               "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/security-controls",

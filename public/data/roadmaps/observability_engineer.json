@@ -123,11 +123,6 @@
           "description": "Understand observability vs traditional monitoring: Black-box vs white-box monitoring, cardinality challenges, unknown-unknowns detection, and Site Reliability Engineering (SRE) synergy.",
           "resources": [
             {
-              "title": "Observability vs. Monitoring: What's the Difference?",
-              "url": "https://www.splunk.com/en_us/data-insider/observability-vs-monitoring.html",
-              "type": "article"
-            },
-            {
               "title": "OpenTelemetry Explained (IBM Technology)",
               "url": "https://www.youtube.com/watch?v=r8UvWSX3KA8",
               "type": "video"
@@ -152,11 +147,6 @@
           "tag": "essential",
           "description": "Master the three core telemetry pillars: Structured metrics, contextual distributed traces, and high-fidelity event logs. Correlating pillars using trace IDs and exemplar links.",
           "resources": [
-            {
-              "title": "Understanding Metrics, Logs, and Traces",
-              "url": "https://www.dynatrace.com/news/blog/metrics-logs-and-traces/",
-              "type": "article"
-            },
             {
               "title": "Distributed Tracing Tutorial (Jaeger)",
               "url": "https://www.youtube.com/watch?v=Txe4ji4EDUA",
@@ -183,16 +173,6 @@
           "description": "Architect the telemetry data lifecycle: High-throughput ingestion pipelines, sampling strategies (head-based vs tail-based), compression codecs, and tiered storage.",
           "resources": [
             {
-              "title": "Observability Data Pipelines: A Comprehensive Guide",
-              "url": "https://www.splunk.com/en_us/blog/learn/observability-pipelines.html",
-              "type": "article"
-            },
-            {
-              "title": "Introduction to Time-Series Databases",
-              "url": "https://www.influxdata.com/what-is-time-series-database/",
-              "type": "article"
-            },
-            {
               "title": "Observability Full Course (TechWorld with Nana)",
               "url": "https://www.youtube.com/watch?v=7gW5pSM6dlU",
               "type": "video"
@@ -217,11 +197,6 @@
           "tag": "essential",
           "description": "Design enterprise instrumentation strategies: Standardizing semantic conventions, avoiding high-cardinality label explosions, and establishing logging schema standards.",
           "resources": [
-            {
-              "title": "Principles of Observability Data Design",
-              "url": "https://www.honeycomb.io/blog/observability-principles-data-design/",
-              "type": "article"
-            },
             {
               "title": "Instrumenting Your Application for Observability",
               "url": "https://www.blameless.com/resources/instrumenting-your-application-for-observability/",
@@ -290,11 +265,6 @@
               "type": "article"
             },
             {
-              "title": "OpenTelemetry APIs and SDKs",
-              "url": "https://opentelemetry.io/docs/concepts/sdk-api/",
-              "type": "article"
-            },
-            {
               "title": "Observability Full Course (TechWorld with Nana)",
               "url": "https://www.youtube.com/watch?v=7gW5pSM6dlU",
               "type": "video"
@@ -352,11 +322,6 @@
             {
               "title": "OpenTelemetry Collector Documentation",
               "url": "https://opentelemetry.io/docs/collector/",
-              "type": "article"
-            },
-            {
-              "title": "OpenTelemetry Collector Processors and Extensions",
-              "url": "https://opentelemetry.io/docs/collector/processors/",
               "type": "article"
             },
             {
@@ -419,11 +384,6 @@
             {
               "title": "Prometheus Data Model",
               "url": "https://prometheus.io/docs/concepts/data_model/",
-              "type": "article"
-            },
-            {
-              "title": "Prometheus Architecture",
-              "url": "https://prometheus.io/docs/introduction/architecture/",
               "type": "article"
             },
             {
@@ -527,11 +487,6 @@
               "type": "article"
             },
             {
-              "title": "Thanos Documentation",
-              "url": "https://thanos.io/tip/thanos/overview.md/",
-              "type": "article"
-            },
-            {
               "title": "OpenTelemetry Explained (IBM Technology)",
               "url": "https://www.youtube.com/watch?v=r8UvWSX3KA8",
               "type": "video"
@@ -588,11 +543,6 @@
           "tag": "essential",
           "description": "Engineer production Grafana dashboards: Designing intuitive operational views, templating with dynamic dashboard variables, heatmap visualizations, and dashboard usability.",
           "resources": [
-            {
-              "title": "Designing effective Grafana dashboards",
-              "url": "https://grafana.com/docs/grafana/latest/dashboards/design-best-practices/",
-              "type": "article"
-            },
             {
               "title": "Grafana Templating with Variables",
               "url": "https://grafana.com/docs/grafana/latest/dashboards/variables/",
@@ -698,11 +648,6 @@
       "description": "Architect enterprise log management: Ingestion, parsing, structured JSON formatting, full-text indexing, and high-efficiency querying.",
       "resources": [
         {
-          "title": "Introduction to Log Management",
-          "url": "https://www.logz.io/blog/what-is-log-management/",
-          "type": "article"
-        },
-        {
           "title": "Observability Full Course (TechWorld with Nana)",
           "url": "https://www.youtube.com/watch?v=7gW5pSM6dlU",
           "type": "video"
@@ -766,11 +711,6 @@
               "type": "article"
             },
             {
-              "title": "Elasticsearch Logging",
-              "url": "https://www.elastic.co/what-is/elasticsearch-logging",
-              "type": "article"
-            },
-            {
               "title": "Distributed Tracing Tutorial (Jaeger)",
               "url": "https://www.youtube.com/watch?v=Txe4ji4EDUA",
               "type": "video"
@@ -831,16 +771,6 @@
           "description": "Detect log anomalies and patterns: Automated log clustering, regex pattern extraction, error spike detection, and identifying silent failures in production.",
           "resources": [
             {
-              "title": "Log Anomaly Detection with Machine Learning",
-              "url": "https://www.splunk.com/en_us/data-insider/what-is-log-anomaly-detection.html",
-              "type": "article"
-            },
-            {
-              "title": "Introduction to AIOPs for Logs",
-              "url": "https://www.datadoghq.com/blog/aiops-logs/",
-              "type": "article"
-            },
-            {
               "title": "OpenTelemetry Explained (IBM Technology)",
               "url": "https://www.youtube.com/watch?v=r8UvWSX3KA8",
               "type": "video"
@@ -898,8 +828,8 @@
           "description": "Master distributed tracing fundamentals: Spans, Traces, Span Context, Parent-Child relationships, W3C TraceContext headers, and baggage propagation across process boundaries.",
           "resources": [
             {
-              "title": "OpenTelemetry Tracing Concepts",
-              "url": "https://opentelemetry.io/docs/concepts/tracing/",
+              "title": "Distributed Traces, Spans and Context (OpenTelemetry)",
+              "url": "https://opentelemetry.io/docs/concepts/signals/traces/",
               "type": "article"
             },
             {
@@ -1047,11 +977,6 @@
           "type": "article"
         },
         {
-          "title": "Google SRE Workbook: SLOs",
-          "url": "https://sre.google/workbook/slo-budgets/",
-          "type": "article"
-        },
-        {
           "title": "OpenTelemetry Explained (IBM Technology)",
           "url": "https://www.youtube.com/watch?v=r8UvWSX3KA8",
           "type": "video"
@@ -1105,16 +1030,6 @@
           "description": "Eliminate alert fatigue: Applying alerting best practices (alert on symptoms, not causes), symptom-based paging, linking alerts directly to runbooks, and tuning thresholds.",
           "resources": [
             {
-              "title": "Best Practices for Alerting",
-              "url": "https://www.influxdata.com/blog/best-practices-alerting-monitoring-systems/",
-              "type": "article"
-            },
-            {
-              "title": "Writing Effective Runbooks",
-              "url": "https://sre.google/workbook/runbooks/",
-              "type": "article"
-            },
-            {
               "title": "Observability Full Course (TechWorld with Nana)",
               "url": "https://www.youtube.com/watch?v=7gW5pSM6dlU",
               "type": "video"
@@ -1140,11 +1055,6 @@
           "description": "Implement SRE reliability frameworks: Defining Service Level Indicators (SLIs), negotiating Service Level Objectives (SLOs), tracking error budget burn rates, and multi-window burn rate alerts.",
           "resources": [
             {
-              "title": "Implementing SLOs",
-              "url": "https://sre.google/sre-book/implementing-slos/",
-              "type": "article"
-            },
-            {
               "title": "OpenTelemetry Explained (IBM Technology)",
               "url": "https://www.youtube.com/watch?v=r8UvWSX3KA8",
               "type": "video"
@@ -1169,11 +1079,6 @@
           "tag": "essential",
           "description": "Drive incident management: Participating in on-call rotations, running blameless post-mortems, identifying telemetry blind spots, and implementing automated corrective actions.",
           "resources": [
-            {
-              "title": "Blameless Postmortems",
-              "url": "https://www.atlassian.com/incident-management/postmortem/blameless-postmortems",
-              "type": "article"
-            },
             {
               "title": "Incident Management at Google",
               "url": "https://sre.google/sre-book/incident-response/",
@@ -1208,16 +1113,6 @@
       "tag": "advanced",
       "description": "Deploy frontier cloud-native observability technologies: eBPF-based kernel telemetry, Observability-as-Code, and chaos engineering.",
       "resources": [
-        {
-          "title": "The Rise of eBPF",
-          "url": "https://www.solo.io/blog/the-rise-of-ebpf/",
-          "type": "article"
-        },
-        {
-          "title": "Observability as Code Principles",
-          "url": "https://www.datadoghq.com/blog/observability-as-code/",
-          "type": "article"
-        },
         {
           "title": "Observability Full Course (TechWorld with Nana)",
           "url": "https://www.youtube.com/watch?v=7gW5pSM6dlU",
@@ -1271,11 +1166,6 @@
           "tag": "advanced",
           "description": "Manage observability declaratively: Terraform, Grafana Grizzly, and Prometheus Operator CRDs (ServiceMonitors, PrometheusRules) versioned in Git via GitOps.",
           "resources": [
-            {
-              "title": "Grafana Dashboards as Code",
-              "url": "https://grafana.com/blog/2021/04/06/how-to-manage-grafana-dashboards-as-code-with-jsonnet/",
-              "type": "article"
-            },
             {
               "title": "Terraform for Observability Resources",
               "url": "https://www.hashicorp.com/blog/managing-observability-as-code-with-terraform",
@@ -1342,8 +1232,8 @@
           "description": "Validate observability with Chaos Engineering: Running Chaos Mesh or Gremlin experiments to inject latency/pod kills and verifying alert triggering and dashboard accuracy.",
           "resources": [
             {
-              "title": "Chaos Engineering and Observability",
-              "url": "https://www.gremlin.com/community/tutorials/chaos-engineering-and-observability/",
+              "title": "Chaos Engineering Monitoring & Metrics Guide",
+              "url": "https://www.gremlin.com/community/tutorials/chaos-engineering-monitoring-metrics-guide",
               "type": "article"
             },
             {
@@ -1417,11 +1307,6 @@
               "type": "article"
             },
             {
-              "title": "Synthetic Monitoring Explained",
-              "url": "https://www.datadoghq.com/blog/what-is-synthetic-monitoring/",
-              "type": "article"
-            },
-            {
               "title": "Observability Full Course (TechWorld with Nana)",
               "url": "https://www.youtube.com/watch?v=7gW5pSM6dlU",
               "type": "video"
@@ -1484,11 +1369,6 @@
               "type": "article"
             },
             {
-              "title": "Securing your Observability Stack",
-              "url": "https://www.datadoghq.com/blog/observability-security-best-practices/",
-              "type": "article"
-            },
-            {
               "title": "Distributed Tracing Tutorial (Jaeger)",
               "url": "https://www.youtube.com/watch?v=Txe4ji4EDUA",
               "type": "video"
@@ -1513,16 +1393,6 @@
           "tag": "advanced",
           "description": "Control telemetry costs: Implementing dynamic sampling, metric drop rules for unused counters, log retention tiering, and monitoring telemetry ingestion spend.",
           "resources": [
-            {
-              "title": "Optimizing Observability Costs",
-              "url": "https://www.honeycomb.io/blog/observability-cost-optimization/",
-              "type": "article"
-            },
-            {
-              "title": "Data Governance in Observability",
-              "url": "https://www.splunk.com/en_us/data-insider/data-governance-best-practices.html",
-              "type": "article"
-            },
             {
               "title": "Observability Full Course (TechWorld with Nana)",
               "url": "https://www.youtube.com/watch?v=7gW5pSM6dlU",

@@ -123,11 +123,6 @@
               "type": "course"
             },
             {
-              "title": "SDLC and STLC Tutorial",
-              "url": "https://www.guru99.com/sdlc-stlc.html",
-              "type": "article"
-            },
-            {
               "title": "Playwright Tutorial for Beginners (LambdaTest)",
               "url": "https://www.youtube.com/watch?v=wawbt1cATsk",
               "type": "video"
@@ -152,11 +147,6 @@
           "tag": "essential",
           "description": "Design exhaustive test cases: Boundary Value Analysis (BVA), Equivalence Partitioning (EP), Decision Tables, State Transition testing, and bug reporting in Jira.",
           "resources": [
-            {
-              "title": "Atlassian Testing Guide: Test Case Management",
-              "url": "https://www.atlassian.com/continuous-delivery/software-testing/test-case-management",
-              "type": "article"
-            },
             {
               "title": "How to Write a Good Bug Report",
               "url": "https://www.softwaretestinghelp.com/how-to-write-a-good-bug-report/",
@@ -190,11 +180,6 @@
             {
               "title": "Test Planning Best Practices",
               "url": "https://www.guru99.com/test-plan.html",
-              "type": "article"
-            },
-            {
-              "title": "Risk-Based Testing Explained",
-              "url": "https://www.techtarget.com/searchsoftwarequality/definition/risk-based-testing",
               "type": "article"
             },
             {
@@ -395,8 +380,8 @@
               "type": "article"
             },
             {
-              "title": "OWASP API Security Top 10",
-              "url": "https://owasp.org/www-project-api-security/",
+              "title": "OWASP API Security Top 10 (2023)",
+              "url": "https://api-security.owasp.org/editions/2023/en/0x00-header/",
               "type": "article"
             },
             {
@@ -427,11 +412,6 @@
             {
               "title": "OpenAPI Specification",
               "url": "https://spec.openapis.org/oas/latest.html",
-              "type": "article"
-            },
-            {
-              "title": "Pact Contract Testing Introduction",
-              "url": "https://docs.pact.io/what_is_pact",
               "type": "article"
             },
             {
@@ -537,11 +517,6 @@
               "type": "article"
             },
             {
-              "title": "Advanced UI Interactions",
-              "url": "https://www.lambdatest.com/blog/advanced-user-interactions-in-selenium/",
-              "type": "article"
-            },
-            {
               "title": "Playwright Tutorial for Beginners (LambdaTest)",
               "url": "https://www.youtube.com/watch?v=wawbt1cATsk",
               "type": "video"
@@ -569,11 +544,6 @@
             {
               "title": "Page Object Model Explained",
               "url": "https://www.browserstack.com/guide/page-object-model-in-selenium",
-              "type": "article"
-            },
-            {
-              "title": "Test Data Management Strategies",
-              "url": "https://www.testsigma.com/blog/test-data-management/",
               "type": "article"
             },
             {
@@ -647,8 +617,8 @@
               "type": "article"
             },
             {
-              "title": "Responsive Design Testing",
-              "url": "https://developer.mozilla.org/en-US/docs/Web/Guide/Responsive/Testing",
+              "title": "Introduction to Cross-Browser Testing (MDN Web Docs)",
+              "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Testing/Introduction",
               "type": "article"
             },
             {
@@ -889,11 +859,6 @@
           "description": "Execute performance testing with k6 or JMeter: Writing JavaScript load test scenarios, analyzing server bottleneck metrics, and setting performance thresholds in CI.",
           "resources": [
             {
-              "title": "Analyzing k6 Test Results",
-              "url": "https://grafana.com/docs/k6/latest/results/",
-              "type": "article"
-            },
-            {
               "title": "JMeter Listeners for Results Analysis",
               "url": "https://jmeter.apache.org/usermanual/component_reference.html#listeners",
               "type": "article"
@@ -926,11 +891,6 @@
             {
               "title": "Playwright Test Retries",
               "url": "https://playwright.dev/docs/test-retries",
-              "type": "article"
-            },
-            {
-              "title": "How to Deal with Flaky Tests",
-              "url": "https://martinfowler.com/articles/flakyTests.html",
               "type": "article"
             },
             {
@@ -993,16 +953,6 @@
           "tag": "advanced",
           "description": "Monitor production quality: Synthetic monitoring with Playwright probes running continuously in production, and correlating test failures with Datadog/Sentry logs.",
           "resources": [
-            {
-              "title": "OpenTelemetry for Beginners",
-              "url": "https://opentelemetry.io/docs/concepts/getting-started/",
-              "type": "article"
-            },
-            {
-              "title": "Log Management for Testers",
-              "url": "https://www.testlio.com/blog/logging-in-software-testing/",
-              "type": "article"
-            },
             {
               "title": "API Testing with Postman (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=VywxIQ2ZXw4",

@@ -240,11 +240,6 @@
           "description": "Master advanced pointer semantics and interior mutability: unique heap ownership with `Box<T>`, reference counting with `Rc<T>` and atomic `Arc<T>`, runtime borrow checking with `RefCell<T>` and detecting reentrancy panics, copy-on-write optimization with `Cow<'a, T>`, and `Pin<P>` mechanics guaranteeing immovable memory addresses essential for self-referential async futures.",
           "resources": [
             {
-              "title": "The Rustonomicon - Smart Pointers",
-              "url": "https://doc.rust-lang.org/nomicon/smart-pointers.html",
-              "type": "article"
-            },
-            {
               "title": "Rust Tutorial Full Course (Derek Banas)",
               "url": "https://www.youtube.com/watch?v=ygL_xcavzQ4",
               "type": "video"
@@ -594,11 +589,6 @@
           "description": "Engineer high-throughput data processing and ETL pipelines: columnar memory layout and SIMD processing with Apache Arrow / Polars, zero-copy memory-mapped file ingestion using `memmap2`, streaming Parquet/CSV parsing, and building robust Kafka / RabbitMQ consumer pipelines.",
           "resources": [
             {
-              "title": "Tokio-kafka Crate",
-              "url": "https://docs.rs/tokio-kafka/latest/tokio_kafka/",
-              "type": "article"
-            },
-            {
               "title": "Polars User Guide",
               "url": "https://docs.rs/polars/latest/polars/",
               "type": "article"
@@ -715,11 +705,6 @@
           "tag": "advanced",
           "description": "Optimize memory layout and CPU throughput: struct field alignment and layout attributes (`#[repr(C)]`, `#[repr(align(64))]`), SIMD vectorization with portable SIMD (`std::simd`), identifying bottlenecks using `cargo-flamegraph` and Linux `perf`, and rigorous statistical benchmarking with `Criterion.rs`.",
           "resources": [
-            {
-              "title": "dhat-rs Crate",
-              "url": "https://docs.rs/dhat-rs/latest/dhat/",
-              "type": "article"
-            },
             {
               "title": "Criterion Benchmarking",
               "url": "https://bheisler.github.io/criterion.rs/book/",

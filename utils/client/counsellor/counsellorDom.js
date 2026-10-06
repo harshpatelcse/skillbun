@@ -3,7 +3,8 @@
 import DOMPurify from 'dompurify';
 import { marked } from 'marked';
 import { clearHumanProof } from './counsellorState';
-import { RATE_LIMIT_KEY } from './counsellorApi';
+import { RATE_LIMIT_KEY, RATE_LIMIT_MAX, RATE_LIMIT_WINDOW_MS, getRateLimitData } from './counsellorApi';
+import { readProfileSnapshot } from '../../shared/profileStore';
 
 if (typeof marked?.setOptions === 'function') {
   marked.setOptions({
@@ -24,9 +25,7 @@ export function toggleSecurityBanner(show) {
 }
 
 export function getStoredProfile() {
-  const name = localStorage.getItem('sb_name') || '';
-  const degree = localStorage.getItem('sb_degree') || '';
-  const year = localStorage.getItem('sb_year') || '';
+  const { name, degree, year } = readProfileSnapshot();
   return { name, degree, year };
 }
 
@@ -285,24 +284,7 @@ export function updateUsageLimitCard() {
 
   if (!limitCountEl || !limitBarEl || !limitResetEl) return;
 
-  let count = 0;
-  let windowStart = Date.now();
-
-  try {
-    const raw = localStorage.getItem(RATE_LIMIT_KEY);
-    if (raw) {
-      const parsed = JSON.parse(raw);
-      if (parsed) {
-        count = Number.parseInt(parsed.count, 10) || 0;
-        windowStart = Number.parseInt(parsed.windowStart, 10) || Date.now();
-      }
-    }
-  } catch (err) {
-    console.warn('Could not read rate limit for UI:', err);
-  }
-
-  const RATE_LIMIT_MAX = 100;
-  const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000;
+  let { count, windowStart } = getRateLimitData();
   const now = Date.now();
 
   if (now - windowStart > RATE_LIMIT_WINDOW_MS) {

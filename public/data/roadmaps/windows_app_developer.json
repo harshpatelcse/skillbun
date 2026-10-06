@@ -124,11 +124,6 @@
           "description": "Navigate the Windows app landscape: Comparing WinUI 3, WPF, WinForms, and UWP; Win32 APIs vs Windows Runtime (WinRT); and enterprise adoption paths.",
           "resources": [
             {
-              "title": "Why choose Windows App SDK?",
-              "url": "https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/winui/winui3-considerations",
-              "type": "article"
-            },
-            {
               "title": "Learn .NET MAUI - Full Course for Beginners | Build cross-platform apps in C# (James Montemagno)",
               "url": "https://www.youtube.com/watch?v=DuNLR_NJv8U",
               "type": "video"
@@ -159,11 +154,6 @@
               "type": "article"
             },
             {
-              "title": "Create your first WinUI 3 (Windows App SDK) project",
-              "url": "https://learn.microsoft.com/en-us/windows/apps/get-started/create-new-project",
-              "type": "course"
-            },
-            {
               "title": "MVVM Pattern Explained (IAmTimCorey)",
               "url": "https://www.youtube.com/watch?v=AXpTeiWtbC8",
               "type": "video"
@@ -189,16 +179,6 @@
           "description": "Master C# and .NET for Windows: Object-oriented architecture, generics, asynchronous tasks, memory management, and dependency injection.",
           "resources": [
             {
-              "title": "C# fundamentals for absolute beginners",
-              "url": "https://learn.microsoft.com/en-us/shows/c-sharp-fundamentals-for-absolute-beginners/",
-              "type": "course"
-            },
-            {
-              "title": "Introduction to .NET",
-              "url": "https://learn.microsoft.com/en-us/dotnet/fundamentals/get-started",
-              "type": "article"
-            },
-            {
               "title": "WPF Tutorial for Beginners (AngelSix)",
               "url": "https://www.youtube.com/watch?v=Vjldip84CXQ",
               "type": "video"
@@ -223,16 +203,6 @@
           "tag": "essential",
           "description": "Master Extensible Application Markup Language (XAML): Logical trees, visual trees, layout containers (Grid, StackPanel, RelativePanel), and XAML compilation.",
           "resources": [
-            {
-              "title": "XAML overview",
-              "url": "https://learn.microsoft.com/en-us/windows/apps/design/layout/xaml-layout-overview",
-              "type": "article"
-            },
-            {
-              "title": "Introduction to XAML in WinUI 3",
-              "url": "https://learn.microsoft.com/en-us/windows/apps/winui/winui3/xaml-basics/xaml-intro",
-              "type": "article"
-            },
             {
               "title": "Learn .NET MAUI - Full Course for Beginners | Build cross-platform apps in C# (James Montemagno)",
               "url": "https://www.youtube.com/watch?v=DuNLR_NJv8U",
@@ -331,11 +301,6 @@
               "type": "article"
             },
             {
-              "title": "Common UI controls in WinUI 3",
-              "url": "https://learn.microsoft.com/en-us/windows/apps/winui/winui3/xaml-basics/common-controls",
-              "type": "article"
-            },
-            {
               "title": "Learn .NET MAUI - Full Course for Beginners | Build cross-platform apps in C# (James Montemagno)",
               "url": "https://www.youtube.com/watch?v=DuNLR_NJv8U",
               "type": "video"
@@ -361,16 +326,6 @@
           "description": "Theme Windows applications: Resource dictionaries, ThemeResource bindings, supporting seamless Windows Light/Dark mode transitions, and high-contrast modes.",
           "resources": [
             {
-              "title": "Styling and templating for WinUI 3 apps",
-              "url": "https://learn.microsoft.com/en-us/windows/apps/design/style/xaml-styles-themes",
-              "type": "article"
-            },
-            {
-              "title": "Brushes and resources in WinUI 3",
-              "url": "https://learn.microsoft.com/en-us/windows/apps/winui/winui3/xaml-basics/brushes-and-resources",
-              "type": "article"
-            },
-            {
               "title": "MVVM Pattern Explained (IAmTimCorey)",
               "url": "https://www.youtube.com/watch?v=AXpTeiWtbC8",
               "type": "video"
@@ -395,11 +350,6 @@
           "tag": "essential",
           "description": "Design adaptive layouts: VisualStateManager, AdaptiveTriggers, window resizing behaviors, and multi-monitor DPI scaling handling.",
           "resources": [
-            {
-              "title": "Layout panels in WinUI 3",
-              "url": "https://learn.microsoft.com/en-us/windows/apps/winui/winui3/xaml-basics/layout-panels",
-              "type": "article"
-            },
             {
               "title": "Handle windowing and adapting to different screen sizes",
               "url": "https://learn.microsoft.com/en-us/windows/apps/design/layout/responsive-design",
@@ -431,11 +381,6 @@
           "description": "Master the MVVM pattern with CommunityToolkit.Mvvm: Two-way `{x:Bind}` data binding, `ObservableProperty`, `RelayCommand`, and clean separation of view and model.",
           "resources": [
             {
-              "title": "Data binding in WinUI 3",
-              "url": "https://learn.microsoft.com/en-us/windows/apps/winui/winui3/xaml-basics/data-binding-basics",
-              "type": "article"
-            },
-            {
               "title": "MVVM Toolkit for .NET",
               "url": "https://learn.microsoft.com/en-us/windows/communitytoolkit/mvvm/introduction",
               "type": "article"
@@ -466,16 +411,6 @@
           "description": "Manage application lifecycles: Frame navigation, page caching, suspend/resume lifecycle events, and window state persistence.",
           "resources": [
             {
-              "title": "Navigation in WinUI 3 apps",
-              "url": "https://learn.microsoft.com/en-us/windows/apps/winui/winui3/navigation",
-              "type": "article"
-            },
-            {
-              "title": "Application lifecycle",
-              "url": "https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/app-lifecycle",
-              "type": "article"
-            },
-            {
               "title": "MVVM Pattern Explained (IAmTimCorey)",
               "url": "https://www.youtube.com/watch?v=AXpTeiWtbC8",
               "type": "video"
@@ -503,11 +438,6 @@
             {
               "title": "Store and retrieve settings and other app data",
               "url": "https://learn.microsoft.com/en-us/windows/apps/design/app-settings/store-and-retrieve-app-data",
-              "type": "article"
-            },
-            {
-              "title": "SQLite in WinUI 3 apps",
-              "url": "https://learn.microsoft.com/en-us/windows/apps/data/sqlite",
               "type": "article"
             },
             {
@@ -581,11 +511,6 @@
               "type": "article"
             },
             {
-              "title": "Dependency Injection in WinUI 3 Desktop apps",
-              "url": "https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WinUI-3-0/DITutorial",
-              "type": "article"
-            },
-            {
               "title": "MVVM Pattern Explained (IAmTimCorey)",
               "url": "https://www.youtube.com/watch?v=AXpTeiWtbC8",
               "type": "video"
@@ -612,7 +537,7 @@
           "resources": [
             {
               "title": "Asynchronous programming with async and await",
-              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/async-and-await",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/",
               "type": "article"
             },
             {
@@ -681,16 +606,6 @@
           "description": "Mid-Project: Build a multi-window productivity tool using WinUI 3, CommunityToolkit.Mvvm, and local SQLite persistence.",
           "resources": [
             {
-              "title": "Build a WinUI 3 PhotoStore app",
-              "url": "https://learn.microsoft.com/en-us/windows/apps/winui/winui3/quickstart-photos",
-              "type": "course"
-            },
-            {
-              "title": "Expense Tracker Sample WinUI 3",
-              "url": "https://github.com/microsoft/WinUI-Gallery/tree/main/samples/ExpenseTracker",
-              "type": "article"
-            },
-            {
               "title": "MVVM Pattern Explained (IAmTimCorey)",
               "url": "https://www.youtube.com/watch?v=AXpTeiWtbC8",
               "type": "video"
@@ -719,11 +634,6 @@
       "tag": "advanced",
       "description": "Package, distribute, and operate production Windows applications: MSIX packaging, Microsoft Store submission, and system interoperability.",
       "resources": [
-        {
-          "title": "Publish your WinUI 3 app with MSIX",
-          "url": "https://learn.microsoft.com/en-us/windows/apps/publish/overview",
-          "type": "article"
-        },
         {
           "title": "Windows Dev Center",
           "url": "https://developer.microsoft.com/en-us/windows/",
@@ -758,11 +668,6 @@
               "type": "article"
             },
             {
-              "title": "Deploying apps with the Windows App SDK",
-              "url": "https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/deploy-overview",
-              "type": "article"
-            },
-            {
               "title": "Learn .NET MAUI - Full Course for Beginners | Build cross-platform apps in C# (James Montemagno)",
               "url": "https://www.youtube.com/watch?v=DuNLR_NJv8U",
               "type": "video"
@@ -787,11 +692,6 @@
           "tag": "advanced",
           "description": "Distribute via Microsoft Store: Partner Center submission, store certification policies, in-app purchases, and auto-updates.",
           "resources": [
-            {
-              "title": "Publish your Windows app",
-              "url": "https://learn.microsoft.com/en-us/windows/apps/publish/publish-your-app",
-              "type": "article"
-            },
             {
               "title": "Microsoft Store Policies",
               "url": "https://learn.microsoft.com/en-us/windows/apps/publish/store-policies",
@@ -828,11 +728,6 @@
               "type": "article"
             },
             {
-              "title": "Globalization and localization",
-              "url": "https://learn.microsoft.com/en-us/windows/apps/design/globalizing/globalizing-your-app",
-              "type": "article"
-            },
-            {
               "title": "WPF Tutorial for Beginners (AngelSix)",
               "url": "https://www.youtube.com/watch?v=Vjldip84CXQ",
               "type": "video"
@@ -863,11 +758,6 @@
               "type": "article"
             },
             {
-              "title": "Create app widgets",
-              "url": "https://learn.microsoft.com/en-us/windows/apps/design/widgets/create-widgets",
-              "type": "article"
-            },
-            {
               "title": "Learn .NET MAUI - Full Course for Beginners | Build cross-platform apps in C# (James Montemagno)",
               "url": "https://www.youtube.com/watch?v=DuNLR_NJv8U",
               "type": "video"
@@ -892,16 +782,6 @@
           "tag": "advanced",
           "description": "Interoperate with native Windows APIs: Platform Invoke (P/Invoke) to call Win32 C/C++ APIs, C#/WinRT projections, and handling unmanaged memory.",
           "resources": [
-            {
-              "title": "Call Windows Runtime APIs in desktop apps",
-              "url": "https://learn.microsoft.com/en-us/windows/apps/desktop/modernize/api-for-win32",
-              "type": "article"
-            },
-            {
-              "title": "Platform invoke (P/Invoke)",
-              "url": "https://learn.microsoft.com/en-us/dotnet/standard/interop/pinvoke",
-              "type": "article"
-            },
             {
               "title": "MVVM Pattern Explained (IAmTimCorey)",
               "url": "https://www.youtube.com/watch?v=AXpTeiWtbC8",
@@ -963,11 +843,6 @@
           "description": "Secure Windows applications: Windows Hello biometrics authentication, DPAPI (Data Protection API) encryption, and secure token storage.",
           "resources": [
             {
-              "title": "Security for Windows applications",
-              "url": "https://learn.microsoft.com/en-us/windows/apps/security/",
-              "type": "article"
-            },
-            {
               "title": "Microsoft Identity Platform documentation",
               "url": "https://learn.microsoft.com/en-us/azure/active-directory/develop/",
               "type": "article"
@@ -1027,11 +902,6 @@
           "tag": "advanced",
           "description": "Automate Windows CI/CD: GitHub Actions Windows runners, building MSIX packages, signing with Azure Trusted Signing, and releasing via GitHub.",
           "resources": [
-            {
-              "title": "Build your WinUI 3 desktop app with Azure DevOps",
-              "url": "https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/winui/winui3-ci-cd-azure-devops",
-              "type": "article"
-            },
             {
               "title": "GitHub Actions for .NET",
               "url": "https://learn.microsoft.com/en-us/dotnet/devops/github-actions-overview",
@@ -1129,11 +999,6 @@
           "tag": "advanced",
           "description": "Author Windows case studies: Documenting modern WinUI 3 migration, UI performance optimization, and architectural decisions.",
           "resources": [
-            {
-              "title": "How to write a case study (HubSpot)",
-              "url": "https://blog.hubspot.com/marketing/how-to-write-case-study",
-              "type": "article"
-            },
             {
               "title": "How to write a great README for your GitHub project",
               "url": "https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/",

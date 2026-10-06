@@ -551,11 +551,6 @@
           "description": "Master component styling: scoped CSS (`<style scoped>`), deep selectors (`:deep()`), slotted selectors (`:slotted()`), CSS Modules, dynamic CSS variables via `v-bind()` in styles, and modern utility-first styling with Tailwind CSS.",
           "resources": [
             {
-              "title": "Component Style (Vue Guide)",
-              "url": "https://vuejs.org/guide/components/styling.html",
-              "type": "article"
-            },
-            {
               "title": "Tailwind CSS Official Documentation",
               "url": "https://tailwindcss.com/docs",
               "type": "article"
@@ -630,11 +625,6 @@
           "tag": "advanced",
           "description": "Extend Vue core capabilities: authoring custom directives (`mounted`, `updated` hooks for click-outside detection and tooltip positioning), and creating modular Vue Plugins providing global properties, components, or injection keys.",
           "resources": [
-            {
-              "title": "Custom Directives (Vue Guide)",
-              "url": "https://vuejs.org/guide/custom-directives.html",
-              "type": "article"
-            },
             {
               "title": "Plugins (Vue Guide)",
               "url": "https://vuejs.org/guide/reusability/plugins.html",
@@ -776,11 +766,6 @@
               "type": "article"
             },
             {
-              "title": "Vue 3 Animations & Transitions (LearnVue.co)",
-              "url": "https://learnvue.co/tutorials/vue-animations",
-              "type": "article"
-            },
-            {
               "title": "Vue.js Full Course for Beginners (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=FXpIoQ_rT_c",
               "type": "video"
@@ -808,16 +793,6 @@
             {
               "title": "Vuetify Documentation",
               "url": "https://vuetifyjs.com/en/",
-              "type": "article"
-            },
-            {
-              "title": "PrimeVue Documentation",
-              "url": "https://primevue.org/setup/",
-              "type": "article"
-            },
-            {
-              "title": "What is a Design System? (Adobe XD)",
-              "url": "https://xd.adobe.com/ideas/principles/design-systems/what-is-design-system/",
               "type": "article"
             },
             {
@@ -849,11 +824,6 @@
       "tag": "advanced",
       "description": "Implement enterprise testing and accessibility: unit testing, component harness tests, end-to-end automation, and WCAG compliance.",
       "resources": [
-        {
-          "title": "Testing Vue Components (Vue Guide)",
-          "url": "https://vuejs.org/guide/testing/",
-          "type": "article"
-        },
         {
           "title": "Pinia State Management (Vue Mastery)",
           "url": "https://www.youtube.com/watch?v=JGC7aAC-3y8",
@@ -888,11 +858,6 @@
               "type": "article"
             },
             {
-              "title": "Testing Vue 3 with Vitest and Vue Test Utils (Dev.to)",
-              "url": "https://dev.to/lmosh/testing-vue-3-with-vitest-and-vue-test-utils-499m",
-              "type": "article"
-            },
-            {
               "title": "Vue Router Tutorial (Vue Mastery)",
               "url": "https://www.youtube.com/watch?v=juocv4AtrHo",
               "type": "video"
@@ -917,16 +882,6 @@
           "tag": "advanced",
           "description": "Perform integration testing across component workflows: simulating real user input sequences, testing routing transitions, and mocking HTTP network calls with Mock Service Worker (MSW).",
           "resources": [
-            {
-              "title": "Integration Testing for Vue.js (Vue Test Utils)",
-              "url": "https://test-utils.vuejs.org/guide/essentials/mocking-dependencies.html",
-              "type": "article"
-            },
-            {
-              "title": "What is Integration Testing? (BrowserStack)",
-              "url": "https://www.browserstack.com/guide/integration-testing-tutorial",
-              "type": "article"
-            },
             {
               "title": "Vue.js Full Course for Beginners (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=FXpIoQ_rT_c",
@@ -1095,11 +1050,6 @@
               "type": "article"
             },
             {
-              "title": "Deploying Vue Apps (Netlify)",
-              "url": "https://docs.netlify.com/languages/vue/",
-              "type": "article"
-            },
-            {
               "title": "Vue.js in 100 Seconds (Fireship)",
               "url": "https://www.youtube.com/watch?v=nhBVL41-_Cw",
               "type": "video"
@@ -1162,11 +1112,6 @@
             {
               "title": "OWASP Top 10 Web Application Security Risks",
               "url": "https://owasp.org/www-project-top-ten/",
-              "type": "article"
-            },
-            {
-              "title": "Securing Vue.js Applications (Auth0)",
-              "url": "https://auth0.com/blog/securing-vue-applications/",
               "type": "article"
             },
             {
@@ -1265,11 +1210,6 @@
               "type": "article"
             },
             {
-              "title": "Vue SSR Guide (Vue Guide)",
-              "url": "https://vuejs.org/guide/extras/ssr.html",
-              "type": "article"
-            },
-            {
               "title": "Pinia State Management (Vue Mastery)",
               "url": "https://www.youtube.com/watch?v=JGC7aAC-3y8",
               "type": "video"
@@ -1298,11 +1238,6 @@
       "tag": "advanced",
       "description": "Demonstrate Vue 3 engineering mastery: build full-stack portfolio applications, author technical blog posts, and excel in senior Vue/Nuxt technical interviews.",
       "resources": [
-        {
-          "title": "Building a Tech Portfolio (freeCodeCamp.org)",
-          "url": "https://www.freecodecamp.org/news/how-to-build-a-tech-portfolio-and-get-hired/",
-          "type": "article"
-        },
         {
           "title": "Vue Router Tutorial (Vue Mastery)",
           "url": "https://www.youtube.com/watch?v=juocv4AtrHo",
@@ -1362,11 +1297,6 @@
           "description": "Excel in technical frontend interviews: deep explanations of Vue 3 Proxy reactivity vs Vue 2 Object.defineProperty, live coding accessible UI components with `<script setup>`, and whiteboarding Nuxt 3 full-stack architectures.",
           "resources": [
             {
-              "title": "Vue.js Interview Questions (GitHub)",
-              "url": "https://github.com/webpro/vue-next-interview-questions",
-              "type": "article"
-            },
-            {
               "title": "Common JavaScript Interview Questions",
               "url": "https://www.frontendinterviewhandbook.com/javascript-questions/",
               "type": "article"
@@ -1396,16 +1326,6 @@
           "tag": "advanced",
           "description": "Engage with the global Vue ecosystem: contributing to open-source Vue libraries, participating in Vue community discussions, and attending developer conferences.",
           "resources": [
-            {
-              "title": "Vue.js Community Guide",
-              "url": "https://vuejs.org/community/",
-              "type": "article"
-            },
-            {
-              "title": "Participating in Open Source (GitHub)",
-              "url": "https://docs.github.com/en/get-started/on-your-first-day/participating-in-open-source",
-              "type": "article"
-            },
             {
               "title": "Pinia State Management (Vue Mastery)",
               "url": "https://www.youtube.com/watch?v=JGC7aAC-3y8",

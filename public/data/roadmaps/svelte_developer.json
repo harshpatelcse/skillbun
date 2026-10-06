@@ -95,11 +95,6 @@
           "type": "article"
         },
         {
-          "title": "Svelte Tutorial",
-          "url": "https://svelte.dev/tutorial/welcome-to-svelte",
-          "type": "course"
-        },
-        {
           "title": "Svelte Tutorial for Beginners (The Net Ninja)",
           "url": "https://www.youtube.com/watch?v=zojEMeQGGHs",
           "type": "video"
@@ -125,11 +120,6 @@
             {
               "title": "SvelteKit Documentation: Getting Started",
               "url": "https://kit.svelte.dev/docs/creating-a-project",
-              "type": "article"
-            },
-            {
-              "title": "Recommended VS Code extensions for Svelte",
-              "url": "https://svelte.dev/blog/vs-code-extension",
               "type": "article"
             },
             {
@@ -168,16 +158,6 @@
               "type": "course"
             },
             {
-              "title": "Svelte Tutorial: Components",
-              "url": "https://svelte.dev/tutorial/hello-world",
-              "type": "course"
-            },
-            {
-              "title": "Svelte Tutorial: Lifecycle",
-              "url": "https://svelte.dev/tutorial/onmount",
-              "type": "course"
-            },
-            {
               "title": "Svelte Tutorial: Events",
               "url": "https://svelte.dev/tutorial/event-modifiers",
               "type": "course"
@@ -207,11 +187,6 @@
           "tag": "essential",
           "description": "Manage application state: Writable, readable, and derived stores; custom store contracts; context API (`setContext`, `getContext`) for component subtrees; and modern runes `$state` / `$derived`.",
           "resources": [
-            {
-              "title": "Svelte Tutorial: Writable Stores",
-              "url": "https://svelte.dev/tutorial/writable-stores",
-              "type": "course"
-            },
             {
               "title": "Svelte Tutorial: Derived Stores",
               "url": "https://svelte.dev/tutorial/derived-stores",
@@ -290,11 +265,6 @@
             {
               "title": "Svelte Tutorial: Transitions",
               "url": "https://svelte.dev/tutorial/introduction-to-transitions",
-              "type": "course"
-            },
-            {
-              "title": "Svelte Tutorial: Animations",
-              "url": "https://svelte.dev/tutorial/animate",
               "type": "course"
             },
             {
@@ -440,16 +410,6 @@
               "type": "article"
             },
             {
-              "title": "SvelteKit Docs: Prerendering",
-              "url": "https://kit.svelte.dev/docs/prerendering",
-              "type": "article"
-            },
-            {
-              "title": "Understanding SvelteKit Rendering Modes",
-              "url": "https://www.joshuatz.com/posts/2023/sveltekit-rendering-modes-guide/",
-              "type": "article"
-            },
-            {
               "title": "Svelte Tutorial for Beginners #1 - Introduction (Net Ninja)",
               "url": "https://www.youtube.com/watch?v=zojEMeQGGHs",
               "type": "video"
@@ -572,18 +532,8 @@
           "description": "Style Svelte components: Component-scoped CSS, CSS custom properties, global styles (`:global()`), and integrating Tailwind CSS / PostCSS.",
           "resources": [
             {
-              "title": "Svelte Tutorial: Styling",
-              "url": "https://svelte.dev/tutorial/styling",
-              "type": "course"
-            },
-            {
               "title": "Integrating Tailwind CSS with SvelteKit",
               "url": "https://tailwindcss.com/docs/guides/sveltekit",
-              "type": "article"
-            },
-            {
-              "title": "Using Svelte with Sass",
-              "url": "https://dev.to/tomekkaminski/using-svelte-with-sass-52p3",
               "type": "article"
             },
             {
@@ -614,11 +564,6 @@
             {
               "title": "DaisyUI Documentation",
               "url": "https://daisyui.com/docs/",
-              "type": "article"
-            },
-            {
-              "title": "Svelte Material UI Documentation",
-              "url": "https://sveltematerialui.com/docs/getting-started",
               "type": "article"
             },
             {
@@ -654,11 +599,6 @@
             {
               "title": "Auth.js for SvelteKit",
               "url": "https://authjs.dev/reference/sveltekit",
-              "type": "article"
-            },
-            {
-              "title": "Lucia Auth Documentation",
-              "url": "https://lucia-auth.com/getting-started/sveltekit/",
               "type": "article"
             },
             {
@@ -726,11 +666,6 @@
       "description": "Test, optimize, and deploy SvelteKit applications with production-grade reliability.",
       "resources": [
         {
-          "title": "SvelteKit Docs: Deployment",
-          "url": "https://kit.svelte.dev/docs/deploying",
-          "type": "article"
-        },
-        {
           "title": "Svelte Tutorial for Beginners #1 - Introduction (Net Ninja)",
           "url": "https://www.youtube.com/watch?v=zojEMeQGGHs",
           "type": "video"
@@ -761,11 +696,6 @@
             {
               "title": "Vitest Documentation",
               "url": "https://vitest.dev/guide/",
-              "type": "article"
-            },
-            {
-              "title": "Testing SvelteKit components with Vitest and Svelte Testing Library",
-              "url": "https://dev.to/thegeoffstevens/testing-sveltekit-components-with-vitest-and-svelte-testing-library-2319",
               "type": "article"
             },
             {
@@ -869,18 +799,8 @@
           "description": "Optimize SvelteKit performance: Code splitting, asset preloading, image optimization with `@sveltejs/enhanced-img`, and measuring Core Web Vitals.",
           "resources": [
             {
-              "title": "Svelte Performance Guide",
-              "url": "https://www.sveltelab.dev/blog/svelte-performance-optimization-guide",
-              "type": "article"
-            },
-            {
-              "title": "Web Vitals Documentation",
-              "url": "https://web.dev/learn/vitals/",
-              "type": "article"
-            },
-            {
-              "title": "SvelteKit Docs: Optimizing",
-              "url": "https://kit.svelte.dev/docs/optimizing",
+              "title": "Web Vitals (web.dev)",
+              "url": "https://web.dev/articles/vitals",
               "type": "article"
             },
             {
@@ -941,11 +861,6 @@
           "description": "Enforce accessibility and security: Compiler-enforced a11y warnings, keyboard navigation, ARIA attributes, and sanitizing inputs to prevent XSS.",
           "resources": [
             {
-              "title": "Svelte A11y Guide",
-              "url": "https://svelte.dev/docs/accessibility",
-              "type": "article"
-            },
-            {
               "title": "OWASP Top 10 Web Application Security Risks",
               "url": "https://owasp.org/www-project-top-ten/",
               "type": "article"
@@ -980,11 +895,6 @@
           "tag": "advanced",
           "description": "Manage large-scale Svelte monorepos: Turborepo / pnpm workspaces, packaging reusable Svelte component libraries with `@sveltejs/package`, and sharing design tokens.",
           "resources": [
-            {
-              "title": "Monorepos with SvelteKit and Nx",
-              "url": "https://nx.dev/recipes/svelte/sveltekit-standalone-with-nx",
-              "type": "article"
-            },
             {
               "title": "Turborepo Documentation",
               "url": "https://turborepo.org/docs",
@@ -1031,11 +941,6 @@
               "type": "article"
             },
             {
-              "title": "SvelteKit Docs: TypeScript",
-              "url": "https://kit.svelte.dev/docs/typescript",
-              "type": "article"
-            },
-            {
               "title": "Svelte Tutorial for Beginners #1 - Introduction (Net Ninja)",
               "url": "https://www.youtube.com/watch?v=zojEMeQGGHs",
               "type": "video"
@@ -1061,13 +966,8 @@
           "description": "Compile to custom Web Components: Setting `<svelte:options customElement=\"my-element\" />` to distribute framework-agnostic UI widgets across any web project.",
           "resources": [
             {
-              "title": "Svelte Docs: Custom Elements",
-              "url": "https://svelte.dev/docs/custom-elements",
-              "type": "article"
-            },
-            {
-              "title": "Using Web Components with Svelte",
-              "url": "https://css-tricks.com/using-web-components-with-svelte/",
+              "title": "Custom Elements (Svelte Documentation)",
+              "url": "https://svelte.dev/docs/svelte/custom-elements",
               "type": "article"
             },
             {
@@ -1095,11 +995,6 @@
           "tag": "advanced",
           "description": "Build a competitive Svelte portfolio: Highlighting performant full-stack web applications, open-source packages, and technical interview readiness.",
           "resources": [
-            {
-              "title": "How to Build a Powerful Tech Portfolio",
-              "url": "https://www.freecodecamp.org/news/how-to-build-a-powerful-tech-portfolio/",
-              "type": "article"
-            },
             {
               "title": "Cracking the Coding Interview",
               "url": "https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850",
@@ -1130,11 +1025,6 @@
           "tag": "advanced",
           "description": "Build an enterprise SvelteKit capstone: Full-stack SaaS application featuring Svelte 5 Runes, Lucia auth, PostgreSQL database with Drizzle ORM, Stripe payments, and Playwright tests.",
           "resources": [
-            {
-              "title": "Example SvelteKit Fullstack App (GitHub)",
-              "url": "https://github.com/sveltejs/kit/tree/master/examples/hn.svelte.dev",
-              "type": "article"
-            },
             {
               "title": "SvelteKit with Prisma (Official Guide)",
               "url": "https://www.prisma.io/docs/guides/sveltekit",

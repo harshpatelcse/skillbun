@@ -238,11 +238,6 @@
           "description": "Prepare data for machine learning models: handle categorical variables (one-hot, label encoding), numerical scaling (standardization, normalization), manage imbalanced datasets (oversampling, undersampling, SMOTE), split data into training, validation, and test sets. Understand feature scaling importance and basic feature transformation.",
           "resources": [
             {
-              "title": "Feature Scaling for Machine Learning",
-              "url": "https://www.geeksforgeeks.org/feature-scaling-in-machine-learning/",
-              "type": "article"
-            },
-            {
               "title": "Data Cleaning in Pandas | Python Pandas Tutorials (Alex The Analyst)",
               "url": "https://www.youtube.com/watch?v=bDhvCp3_lYw",
               "type": "video"
@@ -441,11 +436,6 @@
           "tag": "advanced",
           "description": "Explore core concepts of Computer Vision: image preprocessing, feature detection (edge, corner), object recognition, and image classification. Understand basic architectures like CNNs for image tasks, transfer learning with pre-trained models (e.g., ResNet, VGG), and practical applications.",
           "resources": [
-            {
-              "title": "OpenCV-Python Tutorials",
-              "url": "https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_gui/py_image_display/py_image_display.html",
-              "type": "article"
-            },
             {
               "title": "Deep Learning for Computer Vision with Python and TensorFlow – Complete Course (freeCodeCamp.org)",
               "url": "https://www.youtube.com/watch?v=IA3WxTTPXqQ",
@@ -762,11 +752,6 @@
           "description": "Preprocess data without data leakage: handle missing data through iterative imputer strategies, robust scaling (RobustScaler, QuantileTransformer), categorical encoding (One-Hot, Target Encoding with out-of-fold validation), and build Scikit-Learn Pipelines.",
           "resources": [
             {
-              "title": "Feature Scaling for Machine Learning",
-              "url": "https://www.geeksforgeeks.org/feature-scaling-in-machine-learning/",
-              "type": "article"
-            },
-            {
               "title": "Data Cleaning in Pandas | Python Pandas Tutorials (Alex The Analyst)",
               "url": "https://www.youtube.com/watch?v=bDhvCp3_lYw",
               "type": "video"
@@ -962,11 +947,6 @@
           "tag": "advanced",
           "description": "Master computer vision fundamentals: image preprocessing and data augmentation pipelines with Albumentations, and transfer learning using pre-trained convolutional backbones (ResNet, ConvNeXt) in PyTorch for image classification.",
           "resources": [
-            {
-              "title": "OpenCV-Python Tutorials",
-              "url": "https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_gui/py_image_display/py_image_display.html",
-              "type": "article"
-            },
             {
               "title": "Deep Learning for Computer Vision with Python and TensorFlow – Complete Course (freeCodeCamp.org)",
               "url": "https://www.youtube.com/watch?v=IA3WxTTPXqQ",

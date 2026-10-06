@@ -103,8 +103,8 @@
           "type": "course"
         },
         {
-          "title": "Mathematics for Machine Learning (Coursera by Imperial College London)",
-          "url": "https://www.coursera.org/specializations/mathematics-for-machine-learning",
+          "title": "Mathematics for Machine Learning (Imperial College London)",
+          "url": "https://www.coursera.org/specializations/mathematics-machine-learning",
           "type": "course"
         },
         {
@@ -483,8 +483,8 @@
               "type": "article"
             },
             {
-              "title": "Understanding Batch Normalization (Towards Data Science)",
-              "url": "https://towardsdatascience.com/understanding-batch-normalization-with-examples-in-pytorch-and-tensorflow-32c45155f41",
+              "title": "Batch Normalization in PyTorch",
+              "url": "https://docs.pytorch.org/docs/2.14/generated/torch.nn.BatchNorm2d.html",
               "type": "article"
             },
             {
@@ -580,16 +580,6 @@
           "description": "Design rigorous multi-variable experiments: Establish baseline controls, isolate hyperparameter sensitivities using factorial designs, and run Bayesian optimization for fair model comparison.",
           "resources": [
             {
-              "title": "The Scientific Method in Machine Learning (Google Research)",
-              "url": "https://ai.google/research/pubs/pub46553/",
-              "type": "article"
-            },
-            {
-              "title": "Designing good experiments in machine learning (Fast.ai forum)",
-              "url": "https://forums.fast.ai/t/designing-good-experiments-in-machine-learning/25838",
-              "type": "article"
-            },
-            {
               "title": "A/B Testing Full Course - Learn to Split Test",
               "url": "https://www.youtube.com/watch?v=eiIhTbFP0ls",
               "type": "video"
@@ -655,11 +645,6 @@
               "type": "article"
             },
             {
-              "title": "Fairness in AI (Google AI Ethics)",
-              "url": "https://ai.google/responsibility/responsible-ai/",
-              "type": "article"
-            },
-            {
               "title": "A/B Testing: Statistical Significance, Test & Sample Size",
               "url": "https://www.youtube.com/watch?v=BmNBxAhatYI",
               "type": "video"
@@ -687,11 +672,6 @@
             {
               "title": "Papers with Code",
               "url": "https://paperswithcode.com/",
-              "type": "article"
-            },
-            {
-              "title": "How to Do Ablation Studies (The Batch, DeepMind)",
-              "url": "https://www.deepmind.com/the-batch/how-to-do-ablation-studies",
               "type": "article"
             },
             {
@@ -959,11 +939,6 @@
           "description": "Master academic writing in LaTeX: Crafting precise mathematical proofs, structuring introduction-methods-results-discussion (IMRAD), designing publication-quality vector figures in Matplotlib/TikZ.",
           "resources": [
             {
-              "title": "Writing a Scientific Paper (Scitable by Nature Education)",
-              "url": "https://www.nature.com/scitable/topicpage/writing-a-scientific-paper-1025/",
-              "type": "article"
-            },
-            {
               "title": "LaTeX Tutorials (Overleaf)",
               "url": "https://www.overleaf.com/learn/latex/tutorials",
               "type": "article"
@@ -1063,11 +1038,6 @@
       "description": "Position yourself for research lab and academia roles: Building an authoritative Google Scholar and GitHub presence, engaging with arXiv sanity feeds, and navigating research scientist interviews.",
       "resources": [
         {
-          "title": "Building a Machine Learning Portfolio (Towards Data Science)",
-          "url": "https://towardsdatascience.com/building-a-machine-learning-portfolio-the-right-way-5c8e4d3a6d7f",
-          "type": "article"
-        },
-        {
           "title": "Top 5 AI/ML Portfolio Projects for Aspiring Data Scientists and ML Engineers",
           "url": "https://www.youtube.com/watch?v=Y3hNeXfa1Aw",
           "type": "video"
@@ -1093,11 +1063,6 @@
             {
               "title": "GitHub Profile README guide",
               "url": "https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme",
-              "type": "article"
-            },
-            {
-              "title": "Personal Website for Researchers Guide",
-              "url": "https://www.gradschool.com.au/the-ultimate-guide-to-personal-websites-for-academics/",
               "type": "article"
             },
             {
@@ -1131,9 +1096,9 @@
               "type": "article"
             },
             {
-              "title": "Machine Learning System Design Interview Guide (Towards Data Science)",
-              "url": "https://towardsdatascience.com/machine-learning-system-design-interview-guide-b79e2c65a046",
-              "type": "article"
+              "title": "Production ML Systems: Design Concepts to Review (Google)",
+              "url": "https://developers.google.com/machine-learning/crash-course/production-ml-systems",
+              "type": "course"
             },
             {
               "title": "Machine Learning Interview Preparation | Common Questions & Tips",

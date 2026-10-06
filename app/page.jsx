@@ -284,7 +284,7 @@ export default function Home() {
                 <article className="sb-moment-card recommendation">
                   <span className="sb-moment-tag" lang={locale}>{t('sections.sampleMoments.recClarity', 'Recommendation clarity')}</span>
                   <h3>{t('sections.sampleMoments.recTitle', 'Not just a career name')}</h3>
-                  <p lang={locale}>{t('sections.sampleMoments.recDesc', 'Fit reason, skills, demand, salary context, and the next step sit together so comparison feels calmer.')}</p>
+                  <p lang={locale}>{t('sections.sampleMoments.recDesc', 'Explore career suggestions, relevant skills, editorial salary estimates, and next steps together.')}</p>
                 </article>
 
                 <article className="sb-moment-card roadmap">
@@ -316,7 +316,7 @@ export default function Home() {
             <div className="sb-capability">
               <span className="sb-capability-kicker">03</span>
               <h3>{t('sections.os.cap3Title', 'Explain career matches')}</h3>
-              <p lang={locale}>{t('sections.os.cap3Desc', 'Recommendations include match strength, skills, demand, salary context, and next steps you can compare.')}</p>
+              <p lang={locale}>{t('sections.os.cap3Desc', 'Compare interest-based career suggestions, skills, editorial salary estimates, and learning steps.')}</p>
             </div>
             <div className="sb-capability">
               <span className="sb-capability-kicker">04</span>
@@ -393,7 +393,7 @@ export default function Home() {
             <div className="sb-result-card sb-result-primary">
               <div className="sb-result-meta">
                 <span lang={locale}>{t('sections.recOutput.topMatch', 'Top Match')}</span>
-                <strong>94%</strong>
+                <strong>{t('sections.recOutput.previewLabel', 'Example')}</strong>
               </div>
               <h3>Full Stack Developer</h3>
               <p>Best fit if you enjoy building visible products, connecting interfaces to data, and learning by shipping projects.</p>
@@ -406,7 +406,7 @@ export default function Home() {
             <div className="sb-result-card">
               <div className="sb-result-meta">
                 <span lang={locale}>{t('sections.recOutput.strongFit', 'Strong Fit')}</span>
-                <strong>88%</strong>
+                <strong>{t('sections.recOutput.previewLabel', 'Example')}</strong>
               </div>
               <h3>Data Analyst</h3>
               <p>Great for students who like finding meaning in numbers, dashboards, and business decisions.</p>
@@ -419,7 +419,7 @@ export default function Home() {
             <div className="sb-result-card">
               <div className="sb-result-meta">
                 <span lang={locale}>{t('sections.recOutput.explore', 'Explore')}</span>
-                <strong>82%</strong>
+                <strong>{t('sections.recOutput.previewLabel', 'Example')}</strong>
               </div>
               <h3>Cybersecurity</h3>
               <p>A solid path if you enjoy puzzles, systems thinking, and protecting users from real-world threats.</p>
@@ -563,7 +563,7 @@ export default function Home() {
               {t('sections.counsellor.tag', 'BunBot AI Advisor')}
             </div>
             <h2 className="section-title" lang={locale}>{t('sections.counsellor.title', 'Your 24/7 AI companion for tech career decisions')}</h2>
-            <p className="section-sub" lang={locale}>{t('sections.counsellor.subtitle', 'Trained on global tech industry realities. Ask follow-up questions about salaries, degree playbooks, roadmap tradeoffs, certifications, and international remote strategies.')}</p>
+            <p className="section-sub" lang={locale}>{t('sections.counsellor.subtitle', 'Guidance grounded in SkillBun’s career catalog. Ask follow-up questions about learning paths, roadmap tradeoffs, certifications, and remote work. Check important decisions against current primary sources.')}</p>
 
             <div className="sb-bot-signal-strip">
               <span className="sb-bot-signal-pill"><PreviewIcon />100+ Roadmaps Sync</span>
@@ -588,7 +588,7 @@ export default function Home() {
                 </div>
                 <div>
                   <strong>Global Salary Insights</strong>
-                  <p>Provides realistic junior to senior salary spectrums across Big Tech, product scale-ups, and remote engineering roles.</p>
+                  <p>Explains editorial salary estimates and career tradeoffs. Actual pay varies by location, experience, employer, and date.</p>
                 </div>
               </div>
               <div className="sb-bot-pillar-card">

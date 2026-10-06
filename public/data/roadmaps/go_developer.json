@@ -460,11 +460,6 @@
           "description": "Master request lifecycle and cancellation with `context.Context`: propagating cancellation signals (`context.WithCancel`), setting strict deadlines and timeouts (`context.WithTimeout`, `context.WithDeadline`), passing request-scoped metadata (`context.WithValue` with unexported key types), listening to `ctx.Done()`, and ensuring goroutines terminate cleanly to prevent memory and goroutine leaks.",
           "resources": [
             {
-              "title": "Go Concurrency Patterns: Context",
-              "url": "https://go.dev/blog/go1.7-context",
-              "type": "article"
-            },
-            {
               "title": "Advanced Go Programming (Anthony GG)",
               "url": "https://www.youtube.com/watch?v=LvgVSSpwND8",
               "type": "video"
@@ -489,11 +484,6 @@
           "tag": "advanced",
           "description": "Implement production concurrency architectures: bounded worker pools to prevent unbounded resource exhaustion, fan-out/fan-in parallel processing pipelines, rate-limiting with token bucket and leaky bucket algorithms (`golang.org/x/time/rate`), the Singleflight pattern (`golang.org/x/sync/singleflight`) to eliminate thundering herds / cache stampedes, error propagation with `errgroup.Group`, and graceful shutdown orchestrating OS signal interception (`os.Interrupt`, `SIGTERM`).",
           "resources": [
-            {
-              "title": "Advanced Go Concurrency Patterns",
-              "url": "https://www.ardanlabs.com/blog/2018/11/goroutine-leaks-the-abandoned-goroutine.html",
-              "type": "article"
-            },
             {
               "title": "Go Programming Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=un6ZyFkqFKo",
@@ -559,11 +549,6 @@
             {
               "title": "Chi Router Documentation",
               "url": "https://go-chi.io/",
-              "type": "article"
-            },
-            {
-              "title": "Gin Web Framework",
-              "url": "https://gin-gonic.com/docs/",
               "type": "article"
             },
             {
@@ -672,11 +657,6 @@
               "type": "article"
             },
             {
-              "title": "Implementing a simple cache in Go",
-              "url": "https://golangbot.com/cache-go/",
-              "type": "article"
-            },
-            {
               "title": "Go Tutorial for Beginners (TechWorld with Nana)",
               "url": "https://www.youtube.com/watch?v=yyUHQIec83I",
               "type": "video"
@@ -707,8 +687,8 @@
               "type": "article"
             },
             {
-              "title": "OWASP Top 10 for Go",
-              "url": "https://owasp.org/www-project-top-ten/2017/01_The_Biggest_Risks/A6-2017-Security_Misconfiguration",
+              "title": "A05:2021 – Security Misconfiguration",
+              "url": "https://top10.owasp.org/2021/A05_2021-Security_Misconfiguration/",
               "type": "article"
             },
             {
@@ -809,11 +789,6 @@
               "type": "article"
             },
             {
-              "title": "Introduction to Service Mesh",
-              "url": "https://www.cncf.io/blog/2021/08/17/an-introduction-to-service-mesh/",
-              "type": "article"
-            },
-            {
               "title": "Go Tutorial for Beginners (TechWorld with Nana)",
               "url": "https://www.youtube.com/watch?v=yyUHQIec83I",
               "type": "video"
@@ -838,11 +813,6 @@
           "tag": "essential",
           "description": "Implement twelve-factor configuration management: reading environment variables with zero external dependencies or using modern libraries like `envconfig` / `koanf`, validating config values at startup (fail-fast principle), integrating with secret stores (HashiCorp Vault, AWS Secrets Manager), and watching dynamic configurations.",
           "resources": [
-            {
-              "title": "Go Config Management Best Practices",
-              "url": "https://www.ardanlabs.com/blog/2022/01/configuration-management-in-go.html",
-              "type": "article"
-            },
             {
               "title": "Viper Documentation",
               "url": "https://github.com/spf13/viper",
@@ -911,11 +881,6 @@
             {
               "title": "Go's net package documentation",
               "url": "https://pkg.go.dev/net",
-              "type": "article"
-            },
-            {
-              "title": "Building a TCP Server in Go",
-              "url": "https://tutorialedge.net/golang/building-a-tcp-server-in-go/",
               "type": "article"
             },
             {
@@ -1071,8 +1036,8 @@
               "type": "article"
             },
             {
-              "title": "Go with AWS Lambda",
-              "url": "https://aws.github.io/aws-lambda-go/",
+              "title": "Building Lambda functions with Go",
+              "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-golang.html",
               "type": "article"
             },
             {
@@ -1128,11 +1093,6 @@
           "description": "Capstone Project: Architect and deploy a high-throughput, distributed event-driven payment processing engine in Go: clean architecture, PostgreSQL storage with `sqlc`, Redis distributed locking for double-spend prevention, Apache Kafka or NATS JetStream for event streaming, gRPC and REST APIs, full test suite with Testcontainers-Go, and zero-allocation hot paths serving 20,000+ RPS.",
           "resources": [
             {
-              "title": "Building a Modern Go Application",
-              "url": "https://www.ardanlabs.com/blog/2021/08/go-microservice-architecture.html",
-              "type": "article"
-            },
-            {
               "title": "Designing Data-Intensive Applications",
               "url": "https://dataintensive.net/",
               "type": "course"
@@ -1162,11 +1122,6 @@
           "tag": "advanced",
           "description": "Profile and optimize production Go services: diagnosing CPU bottlenecks with pprof CPU profiles, identifying memory leaks and high GC churn with heap profiles, mitigating pointer indirection to assist escape analysis, reusing buffers with `sync.Pool`, eliminating string-to-byte allocations, and analyzing GC pause metrics.",
           "resources": [
-            {
-              "title": "Go Performance Tuning",
-              "url": "https://go.dev/doc/diagnose",
-              "type": "article"
-            },
             {
               "title": "Refactoring Techniques (Martin Fowler)",
               "url": "https://martinfowler.com/books/refactoring.html",

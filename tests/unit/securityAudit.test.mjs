@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { validateSchema, validatePlainObject, SQL_INJECTION_PATTERNS } from '../../utils/server/inputValidator.js';
+import { validateSchema, validatePlainObject, validateString, SQL_INJECTION_PATTERNS } from '../../utils/server/inputValidator.js';
 import { generateCertificateId, generateWorkforceId, WORKFORCE_PREFIXES, isValidCertificateId } from '../../utils/server/workforceId.js';
 
 test('SkillBun Security Hardening & Input Defense Suite', async (t) => {
@@ -8,6 +8,9 @@ test('SkillBun Security Hardening & Input Defense Suite', async (t) => {
     const maliciousPayloads = [
       "' or '1'='1",
       "admin' --",
+      "admin' #",
+      '1 --',
+      '1 #',
       "1; DROP TABLE users;",
       "' UNION SELECT null, username, password FROM users--",
       "'; EXEC xp_cmdshell('dir');--",
@@ -17,6 +20,13 @@ test('SkillBun Security Hardening & Input Defense Suite', async (t) => {
     for (const payload of maliciousPayloads) {
       const matched = SQL_INJECTION_PATTERNS.some((pattern) => pattern.test(payload));
       assert.equal(matched, true, `Expected payload to trigger SQL injection defense: ${payload}`);
+    }
+  });
+
+  await t.test('Technical language names survive injection checks in searches and profile fields', () => {
+    for (const value of ['C#', 'F#', 'Learn C#', 'Python or Java', 'C++ and C#', '.NET with F#']) {
+      assert.equal(validateString(value, { rejectSqlInjection: true }).isValid, true, value);
+      assert.equal(validateSchema({ interest: value }, { interest: { type: 'string', required: true } }).isValid, true, value);
     }
   });
 

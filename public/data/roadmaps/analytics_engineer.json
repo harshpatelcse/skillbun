@@ -91,13 +91,8 @@
       "description": "Establish an unshakeable analytics engineering foundation: master the Modern Data Stack (MDS), advanced analytical SQL, cloud data warehouse mechanics, and disciplined version control.",
       "resources": [
         {
-          "title": "What is Analytics Engineering?",
-          "url": "https://www.getdbt.com/analytics-engineering/what-is-analytics-engineering/",
-          "type": "article"
-        },
-        {
-          "title": "The Modern Data Stack: A Comprehensive Guide",
-          "url": "https://www.fivetran.com/blog/the-modern-data-stack-a-comprehensive-guide",
+          "title": "What Is Analytics Engineering? (dbt)",
+          "url": "https://www.getdbt.com/blog/what-is-analytics-engineering",
           "type": "article"
         },
         {
@@ -124,8 +119,8 @@
           "description": "Understand the Analytics Engineer role in modern data organizations: bridging the gap between Data Engineers (infrastructure and ingestion) and Data Analysts/Business Stakeholders (insights and reporting); applying software engineering best practices to data transformation.",
           "resources": [
             {
-              "title": "The Analytics Engineer Explained",
-              "url": "https://www.getdbt.com/analytics-engineering/blog/analytics-engineer-explained/",
+              "title": "The Analytics Engineer Role (dbt)",
+              "url": "https://www.getdbt.com/blog/what-is-analytics-engineering",
               "type": "article"
             },
             {
@@ -159,8 +154,8 @@
               "type": "article"
             },
             {
-              "title": "Common Table Expressions (CTEs) Explained",
-              "url": "https://www.sqlshack.com/learn-sql-common-table-expressions-cte/",
+              "title": "SQL Common Table Expressions (PostgreSQL)",
+              "url": "https://www.postgresql.org/docs/current/queries-with.html",
               "type": "article"
             },
             {
@@ -194,13 +189,13 @@
               "type": "article"
             },
             {
-              "title": "Introduction to Cloud Data Warehousing",
-              "url": "https://www.coursera.org/courses?query=cloud%20data%20warehousing",
+              "title": "Build Data Lakes and Data Warehouses on Google Cloud",
+              "url": "https://www.coursera.org/learn/data-lakes-data-warehouses-gcp",
               "type": "course"
             },
             {
-              "title": "Understanding the Data Lakehouse",
-              "url": "https://databricks.com/discover/data-lakehouse",
+              "title": "What Is a Data Lakehouse? (Databricks)",
+              "url": "https://www.databricks.com/glossary/data-lakehouse",
               "type": "article"
             },
             {
@@ -229,13 +224,13 @@
           "description": "Understand modern ELT ingestion architectures: extracting and loading raw data with Fivetran, Airbyte, or custom connectors; raw schema staging; handling semi-structured JSON payloads; and maintaining ingestion idempotency.",
           "resources": [
             {
-              "title": "ELT vs. ETL: What's the Difference?",
-              "url": "https://www.fivetran.com/blog/elt-vs-etl",
+              "title": "ETL vs. ELT (Fivetran)",
+              "url": "https://www.fivetran.com/learn/etl-vs-elt",
               "type": "article"
             },
             {
-              "title": "Introduction to Airbyte",
-              "url": "https://airbyte.com/blog/introduction-to-airbyte",
+              "title": "Airbyte Data Replication Architecture",
+              "url": "https://docs.airbyte.com/platform/understanding-airbyte/high-level-view",
               "type": "article"
             },
             {
@@ -331,13 +326,13 @@
           "description": "Master dbt Core and dbt Cloud fundamentals: project structure (`dbt_project.yml`, `profiles.yml`), model creation, dependency graphs using the `ref()` function, source definitions using `source()`, and running models with `dbt run`.",
           "resources": [
             {
-              "title": "dbt Docs: Getting Started",
-              "url": "https://docs.getdbt.com/docs/get-started/overview",
+              "title": "Introduction to dbt",
+              "url": "https://docs.getdbt.com/docs/introduction",
               "type": "article"
             },
             {
               "title": "Build Your First dbt Project",
-              "url": "https://docs.getdbt.com/docs/get-started/setup/build-a-project",
+              "url": "https://docs.getdbt.com/guides/manual-install",
               "type": "article"
             },
             {
@@ -361,13 +356,13 @@
           "description": "Implement Ralph Kimball dimensional modeling in dbt: architecting clean multi-layer transformation pipelines (Staging `stg_`, Intermediate `int_`, and Marts `fct_` and `dim_`), surrogate key generation with `dbt_utils.generate_surrogate_key`, and managing Slowly Changing Dimensions with `dbt snapshot` (SCD Type 2 timestamp and check strategies).",
           "resources": [
             {
-              "title": "Modeling Data with dbt",
-              "url": "https://docs.getdbt.com/guides/advanced/modeling/modeling-data-with-dbt",
+              "title": "Structure and Model a dbt Project",
+              "url": "https://docs.getdbt.com/best-practices/how-we-structure/1-guide-overview",
               "type": "article"
             },
             {
-              "title": "The dbt Style Guide",
-              "url": "https://www.getdbt.com/blog/the-dbt-style-guide/",
+              "title": "dbt SQL Style Guide",
+              "url": "https://docs.getdbt.com/best-practices/how-we-style/2-how-we-style-our-sql",
               "type": "article"
             },
             {
@@ -396,13 +391,8 @@
           "description": "Author clean, modular dbt transformations: writing reusable Jinja macros, looping over columns with Jinja control structures, custom schema naming macros, and integrating community packages via `packages.yml` (`dbt-utils`, `dbt-expectations`).",
           "resources": [
             {
-              "title": "SQL PIVOT and UNPIVOT Operators Explained",
-              "url": "https://www.sqlservertutorial.net/sql-server-basics/sql-pivot-unpivot/",
-              "type": "article"
-            },
-            {
-              "title": "Recursive CTEs in SQL",
-              "url": "https://www.sqlshack.com/an-introduction-to-sql-recursive-ctes/",
+              "title": "Recursive Common Table Expressions (PostgreSQL)",
+              "url": "https://www.postgresql.org/docs/current/queries-with.html#QUERIES-WITH-RECURSIVE",
               "type": "article"
             },
             {
@@ -466,18 +456,13 @@
           "description": "Enforce rigorous automated data quality: built-in generic tests (`unique`, `not_null`, `relationships`, `accepted_values`), custom singular SQL tests, advanced statistical assertions with `dbt-expectations`, and configuring test severity thresholds (warn vs error).",
           "resources": [
             {
-              "title": "dbt Docs: Testing Your Data",
-              "url": "https://docs.getdbt.com/docs/guides/data-quality",
+              "title": "Data Tests in dbt",
+              "url": "https://docs.getdbt.com/docs/build/data-tests",
               "type": "article"
             },
             {
-              "title": "Beyond dbt native tests: Building custom data quality checks",
-              "url": "https://www.getdbt.com/blog/beyond-dbt-native-tests/",
-              "type": "article"
-            },
-            {
-              "title": "Introduction to Great Expectations",
-              "url": "https://greatexpectations.io/docs/guides/tutorials/getting_started/",
+              "title": "Write Custom Generic Data Tests in dbt",
+              "url": "https://docs.getdbt.com/best-practices/writing-custom-generic-tests",
               "type": "article"
             },
             {
@@ -545,8 +530,8 @@
       "description": "Master advanced dbt operations: implementing the dbt Semantic Layer (MetricFlow) for defining centralized, reusable business metrics, dbt hooks (pre-hook, post-hook for granting permissions), custom materializations, and exposure definitions.",
       "resources": [
         {
-          "title": "Operationalizing dbt",
-          "url": "https://www.getdbt.com/blog/operationalizing-dbt/",
+          "title": "Deploy and Operate dbt Jobs",
+          "url": "https://docs.getdbt.com/docs/deploy/deployments",
           "type": "article"
         },
         {
@@ -573,18 +558,18 @@
           "description": "Profile and optimize warehouse query costs: analyzing compilation times, tuning incremental model filter conditions, optimizing clustering keys in Snowflake/BigQuery, and eliminating redundant intermediate joins.",
           "resources": [
             {
-              "title": "Optimizing dbt Performance",
-              "url": "https://docs.getdbt.com/guides/advanced/best-practices/optimizing-dbt-performance",
+              "title": "Choose dbt Materializations for Model Performance",
+              "url": "https://docs.getdbt.com/best-practices/materializations/1-guide-overview",
               "type": "article"
             },
             {
-              "title": "Snowflake Query Performance Tuning Best Practices",
-              "url": "https://docs.snowflake.com/en/user-guide/admin-performance-tuning",
+              "title": "Explore Query Performance in Snowflake",
+              "url": "https://docs.snowflake.com/en/user-guide/performance-query-exploring",
               "type": "article"
             },
             {
-              "title": "BigQuery Cost Optimization",
-              "url": "https://cloud.google.com/bigquery/docs/best-practices-cost",
+              "title": "Estimate and control costs",
+              "url": "https://docs.cloud.google.com/bigquery/docs/best-practices-costs?hl=en",
               "type": "article"
             },
             {
@@ -613,13 +598,13 @@
           "description": "Orchestrate dbt pipelines in production: integrating dbt with modern orchestrators (Astronomer Cosmos for Airflow, Dagster Software-Defined Assets, or dbt Cloud Jobs), scheduling hourly/daily runs, and managing execution dependencies.",
           "resources": [
             {
-              "title": "Running dbt with Airflow",
-              "url": "https://docs.astronomer.io/learn/dbt-airflow",
+              "title": "Run dbt Workflows with Apache Airflow",
+              "url": "https://www.astronomer.io/docs/learn/airflow-dbt",
               "type": "article"
             },
             {
-              "title": "dbt Cloud Job Scheduling",
-              "url": "https://docs.getdbt.com/docs/cloud/schedule-a-job",
+              "title": "Create and Schedule dbt Deployment Jobs",
+              "url": "https://docs.getdbt.com/docs/deploy/deploy-jobs",
               "type": "article"
             },
             {
@@ -643,8 +628,8 @@
           "description": "Implement cost-efficient CI/CD with Slim CI: automated GitHub Actions pipelines running dbt Slim CI (`dbt build --select state:modified+`) comparing against production artifacts to run and test only changed models, reducing CI warehouse spend by over 80%.",
           "resources": [
             {
-              "title": "dbt Cloud CI Jobs",
-              "url": "https://docs.getdbt.com/docs/cloud/manage-ci-cd/ci-jobs",
+              "title": "Continuous Integration Jobs in dbt",
+              "url": "https://docs.getdbt.com/docs/deploy/continuous-integration",
               "type": "article"
             },
             {
@@ -683,8 +668,8 @@
               "type": "article"
             },
             {
-              "title": "Alerting on dbt failures with custom checks",
-              "url": "https://www.datafold.com/blog/alerting-on-dbt-failures",
+              "title": "Configure dbt Job Failure Notifications",
+              "url": "https://docs.getdbt.com/docs/deploy/job-notifications",
               "type": "article"
             },
             {
@@ -718,8 +703,8 @@
               "type": "article"
             },
             {
-              "title": "Security Best Practices for Cloud Data Platforms",
-              "url": "https://cloud.google.com/architecture/data-warehouse-security",
+              "title": "BigQuery IAM roles and permissions",
+              "url": "https://docs.cloud.google.com/bigquery/docs/access-control?hl=en",
               "type": "article"
             },
             {
@@ -752,8 +737,8 @@
       "description": "Bridge technical data models with business stakeholders: requirements gathering, semantic layer integration, and technical interview preparation.",
       "resources": [
         {
-          "title": "Communicating Technical Concepts to Non-Technical Audiences",
-          "url": "https://hbr.org/2020/09/how-to-communicate-technical-information-to-a-nontechnical-audience",
+          "title": "Slide Presentations — MIT EECS Communication Lab",
+          "url": "https://mitcommlab.mit.edu/eecs/commkit/slideshow/",
           "type": "article"
         },
         {
@@ -785,13 +770,8 @@
           "description": "Translate ambiguous business questions into rigorous data schemas: conducting stakeholder discovery interviews, defining single sources of truth, documenting data contracts, and mapping entity relationship diagrams.",
           "resources": [
             {
-              "title": "The Art of Asking Good Questions in Data Projects",
-              "url": "https://towardsdatascience.com/the-art-of-asking-good-questions-in-data-science-6f8e7b3c2c1a",
-              "type": "article"
-            },
-            {
-              "title": "Stakeholder Management for Data Professionals",
-              "url": "https://www.linkedin.com/learning/stakeholder-management-for-data-professionals",
+              "title": "Frame Data Problems and Define Success Metrics (Google)",
+              "url": "https://developers.google.com/machine-learning/problem-framing?hl=en",
               "type": "course"
             },
             {
@@ -820,13 +800,8 @@
           "description": "Connect modeled data marts to modern Business Intelligence platforms: Looker (LookML modeling), Tableau, Power BI, or Lightdash; optimizing BI query performance, and eliminating disparate definitions of core KPIs.",
           "resources": [
             {
-              "title": "dbt Exposures and BI Tools",
-              "url": "https://docs.getdbt.com/docs/collaborate/govern/exposures",
-              "type": "article"
-            },
-            {
-              "title": "Understanding the Semantic Layer",
-              "url": "https://atlan.com/blog/what-is-a-semantic-layer/",
+              "title": "dbt Exposures: Document Downstream BI Dependencies",
+              "url": "https://docs.getdbt.com/docs/build/exposures",
               "type": "article"
             },
             {
@@ -855,18 +830,13 @@
           "description": "Communicate insights effectively: building executive dashboards, choosing appropriate visual encodings, and presenting data model changes alongside quantified business impact.",
           "resources": [
             {
-              "title": "Storytelling with Data: A Data Visualization Guide",
-              "url": "https://www.storytellingwithdata.com/blog/2014/1/2/what-is-data-visualization",
-              "type": "article"
-            },
-            {
               "title": "Fundamentals of Data Visualization (Claus O. Wilke)",
               "url": "https://clauswilke.com/dataviz/",
               "type": "course"
             },
             {
-              "title": "The Do's and Don'ts of Data Visualization",
-              "url": "https://hbr.org/2014/07/the-dos-and-donts-of-data-visualization",
+              "title": "Data Visualization Caveats — From Data to Viz",
+              "url": "https://www.data-to-viz.com/caveats.html",
               "type": "article"
             },
             {
@@ -922,11 +892,6 @@
             {
               "title": "Analytics Engineer Interview Questions",
               "url": "https://www.datainterview.com/analytics-engineer-interview-questions",
-              "type": "article"
-            },
-            {
-              "title": "State of Analytics Engineering Report",
-              "url": "https://www.getdbt.com/community/trends/state-of-analytics-engineering/",
               "type": "article"
             },
             {

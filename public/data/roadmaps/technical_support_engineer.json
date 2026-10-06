@@ -128,11 +128,6 @@
               "type": "article"
             },
             {
-              "title": "macOS Support Essentials Course",
-              "url": "https://www.apple.com/macos/support/",
-              "type": "article"
-            },
-            {
               "title": "The Linux Command Line: A Complete Introduction",
               "url": "https://www.linuxcommand.org/tlcl.php",
               "type": "article"
@@ -395,16 +390,6 @@
           "description": "Master professional customer communication: Active listening, empathetic de-escalation of frustrated executives, non-technical translation of technical jargon, and setting clear expectations.",
           "resources": [
             {
-              "title": "Active Listening in Customer Service",
-              "url": "https://www.helpscout.com/blog/active-listening-customer-service/",
-              "type": "article"
-            },
-            {
-              "title": "Empathy in Customer Support",
-              "url": "https://hbr.org/2019/07/why-empathy-is-the-most-important-customer-service-skill",
-              "type": "article"
-            },
-            {
               "title": "Intro to IT | Google IT Support Certificate (Grow with Google)",
               "url": "https://www.youtube.com/watch?v=f_c7PrH3rX8",
               "type": "video"
@@ -429,16 +414,6 @@
           "tag": "essential",
           "description": "Author technical documentation: Writing clear knowledge base articles (KCS - Knowledge-Centered Service), user self-service guides, and incident post-mortems.",
           "resources": [
-            {
-              "title": "Technical Writing for Support Engineers",
-              "url": "https://www.writethedocs.org/guide/technical-writing/",
-              "type": "article"
-            },
-            {
-              "title": "Structuring Support Documentation",
-              "url": "https://docs.microsoft.com/en-us/style-guide/guidance/guidance-for-content-creators",
-              "type": "article"
-            },
             {
               "title": "Networking Fundamentals (NetworkChuck)",
               "url": "https://www.youtube.com/watch?v=qiQR5rTSshw",
@@ -537,11 +512,6 @@
               "type": "article"
             },
             {
-              "title": "Common Software Errors and How to Fix Them",
-              "url": "https://www.howtogeek.com/712313/the-most-common-windows-error-codes-and-what-they-mean/",
-              "type": "article"
-            },
-            {
               "title": "Intro to IT | Google IT Support Certificate (Grow with Google)",
               "url": "https://www.youtube.com/watch?v=f_c7PrH3rX8",
               "type": "video"
@@ -607,11 +577,6 @@
           "description": "Enforce endpoint security: Antivirus/EDR agent status (CrowdStrike, Defender), phishing triage, identifying malware indicators of compromise, and isolating infected endpoints.",
           "resources": [
             {
-              "title": "Introduction to Cybersecurity (IBM)",
-              "url": "https://www.coursera.org/learn/introduction-to-cybersecurity-for-developers",
-              "type": "course"
-            },
-            {
               "title": "NIST Cybersecurity Framework",
               "url": "https://www.nist.gov/cyberframework",
               "type": "article"
@@ -654,11 +619,6 @@
             {
               "title": "SQL Tutorial for Beginners",
               "url": "https://www.w3schools.com/sql/",
-              "type": "article"
-            },
-            {
-              "title": "Understanding System Logs",
-              "url": "https://www.loggly.com/blog/introduction-to-system-logging/",
               "type": "article"
             },
             {
@@ -843,16 +803,6 @@
           "tag": "advanced",
           "description": "Analyze support performance: Mean Time to Detect (MTTD), Mean Time to Resolve (MTTR), Customer Satisfaction (CSAT), ticket backlog volume trends, and agent utilization.",
           "resources": [
-            {
-              "title": "Key Customer Service Metrics",
-              "url": "https://www.zendesk.com/blog/customer-service-metrics/",
-              "type": "article"
-            },
-            {
-              "title": "Data Analytics for Customer Service",
-              "url": "https://www.tableau.com/solutions/customer-service-analytics",
-              "type": "article"
-            },
             {
               "title": "Intro to IT | Google IT Support Certificate (Grow with Google)",
               "url": "https://www.youtube.com/watch?v=f_c7PrH3rX8",

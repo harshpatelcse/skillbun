@@ -95,11 +95,6 @@
           "type": "course"
         },
         {
-          "title": "What is GraphQL? (GraphQL.org)",
-          "url": "https://graphql.org/blog/what-is-graphql/",
-          "type": "article"
-        },
-        {
           "title": "GraphQL Full Course (freeCodeCamp)",
           "url": "https://www.youtube.com/watch?v=ed8SzALpx1Q",
           "type": "video"
@@ -168,11 +163,6 @@
               "type": "article"
             },
             {
-              "title": "GraphQL Schema Design - Best Practices (Hasura)",
-              "url": "https://hasura.io/blog/graphql-schema-design-best-practices/",
-              "type": "article"
-            },
-            {
               "title": "Introduction to GraphQL Schema Definition Language (Howtographql.com)",
               "url": "https://www.howtographql.com/graphql-js/0-introduction/",
               "type": "article"
@@ -205,11 +195,6 @@
             {
               "title": "Directives (GraphQL Docs)",
               "url": "https://graphql.org/learn/schema/#directives",
-              "type": "article"
-            },
-            {
-              "title": "Custom Directives in GraphQL (The Guild)",
-              "url": "https://www.the-guild.dev/blog/graphql-custom-directives",
               "type": "article"
             },
             {
@@ -283,11 +268,6 @@
               "type": "article"
             },
             {
-              "title": "Using GraphiQL and GraphQL Playground",
-              "url": "https://www.graphql-tools.com/docs/graphiql-and-graphql-playground",
-              "type": "article"
-            },
-            {
               "title": "Exploring your GraphQL API with Apollo Studio",
               "url": "https://www.apollographql.com/docs/studio/explorer/",
               "type": "article"
@@ -332,11 +312,6 @@
           "type": "article"
         },
         {
-          "title": "Building a GraphQL API with Node.js and Apollo Server (Dev.to)",
-          "url": "https://dev.to/sahilasingh/building-a-graphql-api-with-node-js-and-apollo-server-2j4j",
-          "type": "article"
-        },
-        {
           "title": "GraphQL vs REST API (Fireship)",
           "url": "https://www.youtube.com/watch?v=PeAOEAmR0D0",
           "type": "video"
@@ -362,11 +337,6 @@
             {
               "title": "Get Started with Apollo Server in Node.js",
               "url": "https://www.apollographql.com/docs/apollo-server/getting-started/",
-              "type": "article"
-            },
-            {
-              "title": "Building a GraphQL API with Express.js and GraphQL.js",
-              "url": "https://www.graphql-tools.com/docs/graphql-express",
               "type": "article"
             },
             {
@@ -400,11 +370,6 @@
           "description": "Evaluate schema design methodologies: Schema-first development (SDL-driven with codegen) vs Code-first / Type-first development with TypeGraphQL, Pothos, or Nexus.",
           "resources": [
             {
-              "title": "GraphQL Code-First with Nexus (The Guild)",
-              "url": "https://www.the-guild.dev/blog/graphql-code-first-with-nexus",
-              "type": "article"
-            },
-            {
               "title": "GraphQL Schema Design: Code-First vs. Schema-First (LogRocket)",
               "url": "https://blog.logrocket.com/graphql-schema-design-code-first-vs-schema-first/",
               "type": "article"
@@ -437,16 +402,6 @@
             {
               "title": "Resolvers (GraphQL Docs)",
               "url": "https://graphql.org/learn/execution/",
-              "type": "article"
-            },
-            {
-              "title": "Data Sources (Apollo Server)",
-              "url": "https://www.apollographql.com/docs/apollo-server/data/data-sources/",
-              "type": "article"
-            },
-            {
-              "title": "GraphQL Resolvers Tutorial (Howtographql.com)",
-              "url": "https://www.howtographql.com/graphql-js/5-implementing-your-graphql-resolvers/",
               "type": "article"
             },
             {
@@ -515,21 +470,6 @@
           "description": "Connect heterogeneous data sources: Relational databases via Prisma/Drizzle ORM, NoSQL stores, internal microservices via REST connectors, and third-party APIs.",
           "resources": [
             {
-              "title": "Building a GraphQL API on Top of REST APIs (Apollo Blog)",
-              "url": "https://www.apollographql.com/blog/community/backend/building-a-graphql-api-on-top-of-rest-apis/",
-              "type": "article"
-            },
-            {
-              "title": "GraphQL and Databases (MongoDB)",
-              "url": "https://www.mongodb.com/graphql",
-              "type": "article"
-            },
-            {
-              "title": "Integrating GraphQL with Microservices (InfoQ)",
-              "url": "https://www.infoq.com/articles/integrating-graphql-microservices/",
-              "type": "article"
-            },
-            {
               "title": "GraphQL Subscriptions Tutorial (Ben Awad)",
               "url": "https://www.youtube.com/watch?v=E3NHd-PkLrQ",
               "type": "video"
@@ -554,11 +494,6 @@
           "tag": "essential",
           "description": "Enforce strict input validation: Validating mutation input types with Zod, Joi, or custom scalar constraints, sanitizing strings against XSS, and handling invalid arguments.",
           "resources": [
-            {
-              "title": "GraphQL Input Validation with Joi (The Guild)",
-              "url": "https://www.the-guild.dev/blog/graphql-input-validation-with-joi",
-              "type": "article"
-            },
             {
               "title": "GraphQL Input Validation (LogRocket)",
               "url": "https://blog.logrocket.com/graphql-input-validation/",
@@ -600,16 +535,6 @@
               "type": "article"
             },
             {
-              "title": "GraphQL Error Handling Best Practices (Hasura)",
-              "url": "https://hasura.io/blog/graphql-error-handling-best-practices/",
-              "type": "article"
-            },
-            {
-              "title": "Handling Errors in GraphQL (Howtographql.com)",
-              "url": "https://www.howtographql.com/graphql-js/7-error-handling/",
-              "type": "article"
-            },
-            {
               "title": "GraphQL Tutorial (The Net Ninja)",
               "url": "https://www.youtube.com/watch?v=Y0lDGjwRYKw",
               "type": "video"
@@ -634,11 +559,6 @@
           "tag": "advanced",
           "description": "Implement real-time GraphQL subscriptions: WebSockets protocol (`graphql-ws`), Server-Sent Events (SSE), Redis Pub/Sub backends for horizontal cluster scaling.",
           "resources": [
-            {
-              "title": "GraphQL Subscriptions Tutorial (Howtographql.com)",
-              "url": "https://www.howtographql.com/graphql-js/9-subscriptions/",
-              "type": "article"
-            },
             {
               "title": "Implementing GraphQL Subscriptions with Apollo Server (LogRocket)",
               "url": "https://blog.logrocket.com/implementing-graphql-subscriptions-apollo-server/",
@@ -673,11 +593,6 @@
       "tag": "essential",
       "description": "Harden and optimize GraphQL APIs: Solving the N+1 query problem, client-side/server-side caching, and query performance tuning.",
       "resources": [
-        {
-          "title": "GraphQL Security Best Practices (Apollo Blog)",
-          "url": "https://www.apollographql.com/blog/community/backend/graphql-security-best-practices/",
-          "type": "article"
-        },
         {
           "title": "Optimizing GraphQL Performance (LogRocket)",
           "url": "https://blog.logrocket.com/optimizing-graphql-performance-nodejs/",
@@ -717,16 +632,6 @@
               "type": "article"
             },
             {
-              "title": "Implementing Auth in GraphQL (Howtographql.com)",
-              "url": "https://www.howtographql.com/graphql-js/8-authentication/",
-              "type": "article"
-            },
-            {
-              "title": "GraphQL Authorization with OIDC and OpenFGA (Auth0)",
-              "url": "https://auth0.com/blog/graphql-authorization-with-oidc-and-openfga/",
-              "type": "article"
-            },
-            {
               "title": "GraphQL Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=ed8SzALpx1Q",
               "type": "video"
@@ -754,11 +659,6 @@
             {
               "title": "Caching (Apollo Server)",
               "url": "https://www.apollographql.com/docs/apollo-server/performance/caching/",
-              "type": "article"
-            },
-            {
-              "title": "GraphQL Caching: The Definitive Guide (Chasemoskal)",
-              "url": "https://chasemoskal.com/articles/graphql-caching-the-definitive-guide",
               "type": "article"
             },
             {
@@ -792,18 +692,8 @@
           "description": "Eliminate the N+1 problem using DataLoader: Batching database queries across concurrent resolver executions, request-scoped memoization caching, and prime keys.",
           "resources": [
             {
-              "title": "Solving N+1 with DataLoader (GraphQL Docs)",
-              "url": "https://graphql.org/blog/dataloader/",
-              "type": "article"
-            },
-            {
               "title": "DataLoader GitHub",
               "url": "https://github.com/graphql/dataloader",
-              "type": "article"
-            },
-            {
-              "title": "Optimizing GraphQL Performance with DataLoader (Apollo Blog)",
-              "url": "https://www.apollographql.com/blog/community/backend/optimizing-graphql-performance-with-dataloader/",
               "type": "article"
             },
             {
@@ -832,21 +722,6 @@
           "description": "Implement Automatic Persisted Queries (APQ): Sending SHA256 query hashes instead of verbose query strings, reducing request payload size and enabling CDN caching.",
           "resources": [
             {
-              "title": "Persisted Queries (Apollo Docs)",
-              "url": "https://www.apollographql.com/docs/apollo-server/performance/persisted-queries/",
-              "type": "article"
-            },
-            {
-              "title": "GraphQL Query Batching (The Guild)",
-              "url": "https://www.the-guild.dev/blog/graphql-query-batching",
-              "type": "article"
-            },
-            {
-              "title": "Apollo Client: Query Batching (Apollo Docs)",
-              "url": "https://www.apollographql.com/docs/react/api/link/batch-http/",
-              "type": "article"
-            },
-            {
               "title": "GraphQL Subscriptions Tutorial (Ben Awad)",
               "url": "https://www.youtube.com/watch?v=E3NHd-PkLrQ",
               "type": "video"
@@ -874,11 +749,6 @@
             {
               "title": "Pagination (GraphQL Docs)",
               "url": "https://graphql.org/learn/pagination/",
-              "type": "article"
-            },
-            {
-              "title": "GraphQL Filtering, Ordering & Pagination (Hasura)",
-              "url": "https://hasura.io/blog/graphql-filtering-ordering-pagination/",
               "type": "article"
             },
             {
@@ -917,16 +787,6 @@
               "type": "article"
             },
             {
-              "title": "File Uploads with Apollo Server (Apollo Docs)",
-              "url": "https://www.apollographql.com/docs/apollo-server/data/file-uploads/",
-              "type": "article"
-            },
-            {
-              "title": "GraphQL File Uploads Tutorial (Howtographql.com)",
-              "url": "https://www.howtographql.com/graphql-js/10-file-uploads/",
-              "type": "article"
-            },
-            {
               "title": "GraphQL Tutorial (The Net Ninja)",
               "url": "https://www.youtube.com/watch?v=Y0lDGjwRYKw",
               "type": "video"
@@ -959,11 +819,6 @@
           "title": "Apollo Federation Official Guide",
           "url": "https://www.apollographql.com/docs/federation/",
           "type": "course"
-        },
-        {
-          "title": "Building a GraphQL API with Lambda & Apollo Server (Serverless.com)",
-          "url": "https://www.serverless.com/blog/graphql-api-with-lambda-apollo-server",
-          "type": "article"
         },
         {
           "title": "Schema Stitching (GraphQL Tools)",
@@ -999,11 +854,6 @@
               "type": "article"
             },
             {
-              "title": "Schema Stitching Explained (The Guild)",
-              "url": "https://www.the-guild.dev/blog/schema-stitching-explained",
-              "type": "article"
-            },
-            {
               "title": "Microservices with GraphQL Federation (Netflix Open Source)",
               "url": "https://netflixtechblog.com/building-microservices-with-graphql-federation-and-apollo-gateway-e42b260021c6",
               "type": "article"
@@ -1034,18 +884,8 @@
           "description": "Deploy serverless GraphQL: Hosting Apollo Server / Yoga on AWS Lambda, Cloudflare Workers, or Vercel Edge with connection-pooled databases (Prisma Accelerate / Neon).",
           "resources": [
             {
-              "title": "Serverless GraphQL with Apollo Server Lambda (Apollo Blog)",
-              "url": "https://www.apollographql.com/blog/community/backend/serverless-graphql-with-apollo-server-lambda/",
-              "type": "article"
-            },
-            {
-              "title": "Building a Serverless GraphQL API with AWS AppSync",
-              "url": "https://aws.amazon.com/appsync/getting-started/",
-              "type": "course"
-            },
-            {
-              "title": "Deploying GraphQL on Serverless (Serverless Guru)",
-              "url": "https://serverless.com/blog/deploying-graphql-on-serverless/",
+              "title": "Getting started: Creating your first GraphQL API in AWS AppSync",
+              "url": "https://docs.aws.amazon.com/appsync/latest/devguide/quickstart.html",
               "type": "article"
             },
             {
@@ -1084,11 +924,6 @@
               "type": "article"
             },
             {
-              "title": "The Evolution of API Gateways to GraphQL (Kong)",
-              "url": "https://konghq.com/blog/evolution-of-api-gateways-to-graphql",
-              "type": "article"
-            },
-            {
               "title": "GraphQL Tutorial (The Net Ninja)",
               "url": "https://www.youtube.com/watch?v=Y0lDGjwRYKw",
               "type": "video"
@@ -1118,18 +953,8 @@
       "description": "Operationalize GraphQL in production: Automated testing, monitoring, security controls, and continuous integration.",
       "resources": [
         {
-          "title": "Apollo Observability Guide",
-          "url": "https://www.apollographql.com/docs/studio/graphs/dashboard/",
-          "type": "article"
-        },
-        {
-          "title": "Continuous Integration and Deployment for GraphQL (The Guild)",
-          "url": "https://www.the-guild.dev/blog/continuous-integration-and-deployment-for-graphql",
-          "type": "article"
-        },
-        {
-          "title": "GraphQL API Security Concerns (OWASP)",
-          "url": "https://owasp.org/www-project-api-security/assets/GraphQL_Security_Considerations.pdf",
+          "title": "GraphQL Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/GraphQL_Cheat_Sheet.html",
           "type": "article"
         },
         {
@@ -1161,16 +986,6 @@
               "type": "article"
             },
             {
-              "title": "How to Test GraphQL APIs (Postman)",
-              "url": "https://www.postman.com/graphql/graphql-testing/",
-              "type": "article"
-            },
-            {
-              "title": "Automated Testing for GraphQL APIs (Apollo Blog)",
-              "url": "https://www.apollographql.com/blog/community/backend/automated-testing-for-graphql-apis/",
-              "type": "article"
-            },
-            {
               "title": "GraphQL Subscriptions Tutorial (Ben Awad)",
               "url": "https://www.youtube.com/watch?v=E3NHd-PkLrQ",
               "type": "video"
@@ -1195,21 +1010,6 @@
           "tag": "advanced",
           "description": "Monitor GraphQL performance: Distributed tracing with OpenTelemetry, field-level execution latency metrics with Apollo Studio or GraphQL Hive, and logging slow queries.",
           "resources": [
-            {
-              "title": "Monitoring (Apollo Server)",
-              "url": "https://www.apollographql.com/docs/apollo-server/monitoring/",
-              "type": "article"
-            },
-            {
-              "title": "GraphQL Metrics, Monitoring & Alerting (Hasura)",
-              "url": "https://hasura.io/blog/graphql-metrics-monitoring-alerting/",
-              "type": "article"
-            },
-            {
-              "title": "Distributed Tracing with GraphQL (Lightstep)",
-              "url": "https://lightstep.com/blog/distributed-tracing-with-graphql",
-              "type": "article"
-            },
             {
               "title": "GraphQL Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=ed8SzALpx1Q",
@@ -1236,21 +1036,6 @@
           "description": "Protect GraphQL against DoS: Enforcing maximum query depth limits (`graphql-depth-limit`), query complexity/cost analysis, and distributed IP/user rate limiting.",
           "resources": [
             {
-              "title": "GraphQL Security: Preventing DOS Attacks (Apollo Blog)",
-              "url": "https://www.apollographql.com/blog/security/graphql-security-preventing-dos-attacks/",
-              "type": "article"
-            },
-            {
-              "title": "Rate Limiting with GraphQL (Hasura)",
-              "url": "https://hasura.io/blog/rate-limiting-with-graphql/",
-              "type": "article"
-            },
-            {
-              "title": "GraphQL Query Depth Limiting (Chillicream Blog)",
-              "url": "https://chillicream.com/blog/2021/04/09/graphql-query-depth-limiting",
-              "type": "article"
-            },
-            {
               "title": "GraphQL Tutorial (The Net Ninja)",
               "url": "https://www.youtube.com/watch?v=Y0lDGjwRYKw",
               "type": "video"
@@ -1275,16 +1060,6 @@
           "tag": "advanced",
           "description": "Automate GraphQL deployment: Continuous integration checking schema changes, validating supergraph composition, and zero-downtime rolling gateway deployments.",
           "resources": [
-            {
-              "title": "Deploying a GraphQL API to AWS with Serverless Framework (Serverless.com)",
-              "url": "https://www.serverless.com/blog/deploying-graphql-api-aws-serverless-framework",
-              "type": "article"
-            },
-            {
-              "title": "GraphQL CI/CD (The Guild)",
-              "url": "https://www.the-guild.dev/blog/continuous-integration-and-deployment-for-graphql",
-              "type": "article"
-            },
             {
               "title": "Dockerizing a GraphQL Application (Hackernoon)",
               "url": "https://hackernoon.com/dockerizing-a-graphql-application-2n1o3zqh",
@@ -1316,21 +1091,6 @@
           "description": "Evolve GraphQL schemas without breaking changes: Deprecating fields gracefully with `@deprecated(reason: \"...\")`, adding nullable fields, and avoiding enum value removals.",
           "resources": [
             {
-              "title": "Schema Versioning (Apollo Docs)",
-              "url": "https://www.apollographql.com/docs/graphos/delivery/schema-versioning/",
-              "type": "article"
-            },
-            {
-              "title": "GraphQL Schema Evolution (Chasemoskal)",
-              "url": "https://chasemoskal.com/articles/graphql-schema-evolution",
-              "type": "article"
-            },
-            {
-              "title": "GraphQL Schema Evolution (The Guild)",
-              "url": "https://www.the-guild.dev/blog/graphql-schema-evolution",
-              "type": "article"
-            },
-            {
               "title": "GraphQL Subscriptions Tutorial (Ben Awad)",
               "url": "https://www.youtube.com/watch?v=E3NHd-PkLrQ",
               "type": "video"
@@ -1356,18 +1116,8 @@
           "description": "Implement schema registries: Using Apollo Studio or GraphQL Hive to enforce schema checks, detect breaking changes on PRs, and track client operation adoption.",
           "resources": [
             {
-              "title": "Apollo GraphOS (Schema Registry)",
-              "url": "https://www.apollographql.com/docs/graphos/schema/graphql-schema-registry/",
-              "type": "article"
-            },
-            {
               "title": "GraphQL Inspector for Schema Checks (The Guild)",
               "url": "https://graphql-inspector.com/",
-              "type": "article"
-            },
-            {
-              "title": "Managing Your GraphQL Schema with a Registry (Chasemoskal)",
-              "url": "https://chasemoskal.com/articles/managing-your-graphql-schema-with-a-registry",
               "type": "article"
             },
             {
@@ -1438,18 +1188,8 @@
           "description": "Select the right frontend client: Comparing Apollo Client, Relay for performance-critical Facebook-scale apps, and Urql for lightweight modular flexibility.",
           "resources": [
             {
-              "title": "Apollo Client vs. Relay (Apollo Blog)",
-              "url": "https://www.apollographql.com/blog/community/frontend/apollo-client-vs-relay-the-definitive-guide/",
-              "type": "article"
-            },
-            {
               "title": "GraphQL Clients Comparison (Urql)",
               "url": "https://formidable.com/blog/2021/graphql-clients/",
-              "type": "article"
-            },
-            {
-              "title": "Relay Official Documentation",
-              "url": "https://relay.dev/docs/getting-started/introduction-to-relay/",
               "type": "article"
             },
             {
@@ -1523,11 +1263,6 @@
               "type": "article"
             },
             {
-              "title": "Local State Management (Apollo Client Docs)",
-              "url": "https://www.apollographql.com/docs/react/local-state/overview/",
-              "type": "article"
-            },
-            {
               "title": "Urql Cache Exchange (Urql Docs)",
               "url": "https://formidable.com/open-source/urql/docs/api/graphcache/",
               "type": "article"
@@ -1560,11 +1295,6 @@
             {
               "title": "Optimistic UI (Apollo Client Docs)",
               "url": "https://www.apollographql.com/docs/react/data/mutations/#optimistic-ui",
-              "type": "article"
-            },
-            {
-              "title": "Optimistic UI with Urql (Urql Docs)",
-              "url": "https://formidable.com/open-source/urql/docs/graphcache/mutations/#optimistic-updates",
               "type": "article"
             },
             {
@@ -1643,16 +1373,6 @@
               "type": "article"
             },
             {
-              "title": "Client-side GraphQL File Uploads (Howtographql.com)",
-              "url": "https://www.howtographql.com/graphql-js/10-file-uploads/#client",
-              "type": "article"
-            },
-            {
-              "title": "Using GraphQL Upload Client (GitHub)",
-              "url": "https://github.com/jaydenseric/graphql-upload-client",
-              "type": "article"
-            },
-            {
               "title": "GraphQL Subscriptions Tutorial (Ben Awad)",
               "url": "https://www.youtube.com/watch?v=E3NHd-PkLrQ",
               "type": "video"
@@ -1681,16 +1401,6 @@
               "title": "GraphQL Code Generator Official Website",
               "url": "https://www.graphql-code-generator.com/",
               "type": "course"
-            },
-            {
-              "title": "Generating React Hooks from GraphQL Operations (The Guild)",
-              "url": "https://www.the-guild.dev/blog/generating-react-hooks-from-graphql-operations",
-              "type": "article"
-            },
-            {
-              "title": "Apollo Client with TypeScript & CodeGen (Apollo Blog)",
-              "url": "https://www.apollographql.com/blog/community/frontend/apollo-client-with-typescript-and-codegen/",
-              "type": "article"
             },
             {
               "title": "GraphQL Full Course (freeCodeCamp)",
@@ -1727,11 +1437,6 @@
           "type": "article"
         },
         {
-          "title": "GraphQL Interview Questions (GeeksforGeeks)",
-          "url": "https://www.geeksforgeeks.org/graphql-interview-questions/",
-          "type": "article"
-        },
-        {
           "title": "GraphQL Tutorial (The Net Ninja)",
           "url": "https://www.youtube.com/watch?v=Y0lDGjwRYKw",
           "type": "video"
@@ -1754,11 +1459,6 @@
           "tag": "advanced",
           "description": "Build an enterprise GraphQL capstone: Federated supergraph with Apollo Router, PostgreSQL backend with DataLoader, Apollo Client frontend with codegen, and CI breaking change checks.",
           "resources": [
-            {
-              "title": "Fullstack GraphQL Tutorial (Howtographql.com)",
-              "url": "https://www.howtographql.com/fullstack-tutorial/",
-              "type": "course"
-            },
             {
               "title": "Real-world GraphQL Examples (GraphQL.org)",
               "url": "https://graphql.org/code/#examples",
@@ -1789,11 +1489,6 @@
           "tag": "advanced",
           "description": "Master GraphQL technical interviews: Explain query execution lifecycle, derive DataLoader batching mechanics, design federated enterprise schemas, and solve query cost defense problems.",
           "resources": [
-            {
-              "title": "How to Create an Awesome Portfolio (freeCodeCamp.org)",
-              "url": "https://www.freecodecamp.org/news/how-to-create-a-portfolio-that-gets-you-hired/",
-              "type": "article"
-            },
             {
               "title": "GraphQL Concepts to Review for Interviews (Official Documentation)",
               "url": "https://graphql.org/learn/",

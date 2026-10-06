@@ -90,11 +90,6 @@
       "description": "Master foundational geospatial data science: Coordinate reference systems, map projections, vector/raster spatial data models, and GIS toolchains.",
       "resources": [
         {
-          "title": "Introduction to Geospatial Data Science (Esri)",
-          "url": "https://www.esri.com/content/dam/esrisites/en-us/media/pdf/training/geospatial-data-science-handbook.pdf",
-          "type": "article"
-        },
-        {
           "title": "What is GIS? (National Geographic)",
           "url": "https://www.nationalgeographic.org/encyclopedia/geographic-information-system-gis/",
           "type": "article"
@@ -123,11 +118,6 @@
           "description": "Understand core GIS principles: Tobler's First Law of Geography, spatial autocorrelation, scale and resolution effects, and Modifiable Areal Unit Problem (MAUP).",
           "resources": [
             {
-              "title": "Concepts in GIS (QGIS)",
-              "url": "https://docs.qgis.org/latest/en/docs/user_manual/introduction/general_info.html",
-              "type": "article"
-            },
-            {
               "title": "QGIS Tutorial for Beginners (Klas Karlsson)",
               "url": "https://www.youtube.com/watch?v=NHolzMgaqwE",
               "type": "video"
@@ -153,11 +143,6 @@
           "description": "Master Coordinate Reference Systems (CRS): Geographic (WGS84 EPSG:4326) vs Projected (Web Mercator EPSG:3857, UTM zones), ellipsoids, datums, and on-the-fly reprojection with PROJ.",
           "resources": [
             {
-              "title": "Understanding Coordinate Reference Systems in GIS",
-              "url": "https://www.esri.com/arcgis-blog/products/arcgis-pro/mapping/understanding-coordinate-systems-in-gis/",
-              "type": "article"
-            },
-            {
               "title": "Introduction to Rasterio | Working with raster files in Python (Tommy's Codebase)",
               "url": "https://www.youtube.com/watch?v=Hxh7DdUtrVY",
               "type": "video"
@@ -182,11 +167,6 @@
           "tag": "essential",
           "description": "Compare spatial data models: Vector geometries (Points, LineStrings, Polygons, MultiPolygons) vs continuous Raster grids (pixels, bands, spatial resolution, bit depth).",
           "resources": [
-            {
-              "title": "Vector and Raster Data Formats",
-              "url": "https://guides.library.duke.edu/gis/gisconcepts",
-              "type": "article"
-            },
             {
               "title": "Learn GIS - QGIS Full Course for Beginners (Matt Forrest)",
               "url": "https://www.youtube.com/watch?v=SovdBaus7pM",
@@ -218,8 +198,8 @@
               "type": "article"
             },
             {
-              "title": "Collecting Geospatial Data with APIs",
-              "url": "https://towardsdatascience.com/accessing-geospatial-data-with-python-913a18032c1c",
+              "title": "Read Geospatial Data from Files and URLs with GeoPandas",
+              "url": "https://geopandas.org/en/stable/docs/user_guide/io.html",
               "type": "article"
             },
             {
@@ -248,11 +228,6 @@
           "description": "Set up a modern geospatial computing environment: Conda / Mamba environments, GDAL/GEOS C++ bindings, Jupyter Lab, and geospatial CLI utilities.",
           "resources": [
             {
-              "title": "Setting up a Python GIS Environment",
-              "url": "https://pygis.io/docs/e_environment_setup.html",
-              "type": "article"
-            },
-            {
               "title": "Introduction to Rasterio | Working with raster files in Python (Tommy's Codebase)",
               "url": "https://www.youtube.com/watch?v=Hxh7DdUtrVY",
               "type": "video"
@@ -278,13 +253,8 @@
           "description": "Master core Python geospatial packages: Shapely (computational geometry), PyProj (coordinate transformations), Fiona (vector file I/O), and GeoPandas.",
           "resources": [
             {
-              "title": "Conda for Python Geospatial Packages",
-              "url": "https://conda-forge.org/feedstock-docs/maintainers/adding_a_recipe.html#geospatial",
-              "type": "article"
-            },
-            {
-              "title": "Essential Python Libraries for Geospatial Analysis",
-              "url": "https://towardsdatascience.com/10-python-libraries-for-geospatial-data-analysis-c533e4b752ec",
+              "title": "Geospatial Analysis in Python with GeoPandas",
+              "url": "https://geopandas.org/en/stable/getting_started/introduction.html",
               "type": "article"
             },
             {
@@ -655,8 +625,8 @@
           "description": "Manipulate raster grids: Resampling techniques (Nearest Neighbor, Bilinear, Cubic), reprojecting rasters to target CRS, and clipping rasters to vector boundaries.",
           "resources": [
             {
-              "title": "Clipping and Mosaicking Rasters with Python",
-              "url": "https://www.earthdatascience.org/courses/use-data-open-source-python/multispectral-remote-sensing/clip-raster-data/",
+              "title": "Clip Rasters with a Shapefile (Rasterio)",
+              "url": "https://rasterio.readthedocs.io/en/stable/topics/masking-by-shapefile.html",
               "type": "article"
             },
             {
@@ -685,13 +655,8 @@
           "description": "Perform map algebra calculations: Computing spectral indices (NDVI, NDWI, NBR), Digital Elevation Model (DEM) slope/aspect terrain analysis, and zonal statistics.",
           "resources": [
             {
-              "title": "Zonal Statistics with Python and Rasterio",
-              "url": "https://www.earthdatascience.org/courses/use-data-open-source-python/multispectral-remote-sensing/calculate-spatial-statistics-from-rasters/",
-              "type": "article"
-            },
-            {
-              "title": "Performing Map Algebra in Python",
-              "url": "https://automating-gis-processes.github.io/CSC/notebooks/L6/map-algebra.html",
+              "title": "Zonal Statistics for Raster Data (rasterstats)",
+              "url": "https://pythonhosted.org/rasterstats/manual.html",
               "type": "article"
             },
             {
@@ -910,11 +875,6 @@
               "type": "course"
             },
             {
-              "title": "Fundamentals of Cartography",
-              "url": "https://www.esri.com/arcgis-blog/products/arcgis-pro/mapping/cartographic-fundamentals/",
-              "type": "article"
-            },
-            {
               "title": "QGIS Tutorial for Beginners (Klas Karlsson)",
               "url": "https://www.youtube.com/watch?v=NHolzMgaqwE",
               "type": "video"
@@ -969,11 +929,6 @@
           "tag": "advanced",
           "description": "Analyze satellite imagery: Optical vs Synthetic Aperture Radar (SAR), multi-spectral bands, spatial/temporal/spectral resolution, and atmospheric correction.",
           "resources": [
-            {
-              "title": "Introduction to Remote Sensing (Coursera)",
-              "url": "https://www.coursera.org/learn/remote-sensing-basics",
-              "type": "course"
-            },
             {
               "title": "Satellite Imagery Analysis with Python (Earthdata Science)",
               "url": "https://www.earthdatascience.org/courses/use-data-open-source-python/multispectral-remote-sensing/",
@@ -1045,11 +1000,6 @@
               "type": "article"
             },
             {
-              "title": "Geographically Weighted Regression (GWR) Tutorial",
-              "url": "https://geodacenter.github.io/workbook/5b_gwr/lab5b.html",
-              "type": "article"
-            },
-            {
               "title": "Introduction to Rasterio | Working with raster files in Python (Tommy's Codebase)",
               "url": "https://www.youtube.com/watch?v=Hxh7DdUtrVY",
               "type": "video"
@@ -1074,16 +1024,6 @@
           "tag": "advanced",
           "description": "Perform spatial interpolation: Inverse Distance Weighting (IDW), Kriging (Ordinary, Universal), variogram modeling, and estimating unobserved continuous surfaces.",
           "resources": [
-            {
-              "title": "Geostatistics with PySAL",
-              "url": "https://pysal.org/explore/explore-geostatistics.html",
-              "type": "article"
-            },
-            {
-              "title": "Spatial Interpolation Methods Explained",
-              "url": "https://www.esri.com/news/arcuser/0400/n_spatinterp.html",
-              "type": "article"
-            },
             {
               "title": "Learn GIS - QGIS Full Course for Beginners (Matt Forrest)",
               "url": "https://www.youtube.com/watch?v=SovdBaus7pM",
@@ -1115,8 +1055,8 @@
               "type": "course"
             },
             {
-              "title": "Deep Learning for Satellite Image Analysis",
-              "url": "https://www.tensorflow.org/tutorials/images/segmentation_with_deeplab",
+              "title": "Image Segmentation with TensorFlow",
+              "url": "https://www.tensorflow.org/tutorials/images/segmentation?hl=en",
               "type": "article"
             },
             {
@@ -1180,16 +1120,6 @@
           "description": "Evaluate spatial models: Spatial accuracy metrics, Intersection over Union (IoU), F1-score, Cohen's Kappa, and spatial error residual mapping.",
           "resources": [
             {
-              "title": "Evaluating Classification Accuracy in Remote Sensing",
-              "url": "https://www.esri.com/arcgis-blog/products/arcgis-image/remote-sensing/evaluating-classification-accuracy/",
-              "type": "article"
-            },
-            {
-              "title": "Spatial Cross-Validation for Geospatial Models",
-              "url": "https://cran.r-project.org/web/packages/sperrorest/vignettes/sperrorest.html",
-              "type": "article"
-            },
-            {
               "title": "Learn GIS - QGIS Full Course for Beginners (Matt Forrest)",
               "url": "https://www.youtube.com/watch?v=SovdBaus7pM",
               "type": "video"
@@ -1219,8 +1149,8 @@
       "description": "Engineer production geospatial data pipelines, cloud infrastructure, geospatial APIs, and MLOps workflows.",
       "resources": [
         {
-          "title": "Building Production-Ready Geospatial Applications (AWS)",
-          "url": "https://aws.amazon.com/blogs/aws/new-amazon-sagemaker-geospatial-capabilities-simplify-building-training-and-deploying-ml-models-using-geospatial-data/",
+          "title": "Amazon SageMaker geospatial capabilities",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/geospatial.html",
           "type": "article"
         },
         {
@@ -1276,16 +1206,6 @@
           "tag": "advanced",
           "description": "Ingest planetary-scale data: SpatioTemporal Asset Catalogs (STAC API) with pystac, querying Earth search endpoints, and streaming Cloud Optimized GeoTIFFs (COGs).",
           "resources": [
-            {
-              "title": "GDAL/OGR Cheatsheet",
-              "url": "https://gdal.org/programs/vector_cmds.html",
-              "type": "article"
-            },
-            {
-              "title": "FME Desktop Training",
-              "url": "https://www.safe.com/training/free/fme-desktop-basic/",
-              "type": "course"
-            },
             {
               "title": "Learn GIS - QGIS Full Course for Beginners (Matt Forrest)",
               "url": "https://www.youtube.com/watch?v=SovdBaus7pM",
@@ -1417,9 +1337,9 @@
               "type": "article"
             },
             {
-              "title": "Applied Earth Data Science with Google Earth Engine (MIT)",
-              "url": "https://mit-sfs.github.io/GEE-Practical/",
-              "type": "course"
+              "title": "Introduction to the Google Earth Engine Python API",
+              "url": "https://developers.google.com/earth-engine/tutorials/community/intro-to-python-api?hl=en",
+              "type": "article"
             },
             {
               "title": "QGIS Tutorial for Beginners (Klas Karlsson)",
@@ -1482,8 +1402,8 @@
           "description": "Deploy serverless spatial computing: AWS Lambda / GCP Cloud Functions processing incoming drone orthomosaics and generating tile pyramids.",
           "resources": [
             {
-              "title": "Running GDAL on AWS Lambda",
-              "url": "https://aws.amazon.com/blogs/aws/run-gdal-on-aws-lambda/",
+              "title": "GDAL on AWS Lambda: Docker images and layers",
+              "url": "https://github.com/lambgeo/docker-lambda",
               "type": "article"
             },
             {
@@ -1516,11 +1436,6 @@
           "tag": "advanced",
           "description": "Secure spatial data: Managing access controls to sensitive GIS layers, differential privacy for location telemetry, and compliance with data sovereignty regulations.",
           "resources": [
-            {
-              "title": "Security Considerations for Geospatial Data",
-              "url": "https://www.gislounge.com/data-security-in-gis/",
-              "type": "article"
-            },
             {
               "title": "Cloud Security Best Practices",
               "url": "https://cloud.google.com/security/best-practices",
@@ -1617,11 +1532,6 @@
               "type": "article"
             },
             {
-              "title": "Introduction to WMS and WFS",
-              "url": "https://geoserver.org/documentation/latest/user_manual/introduction/wms-wfs.html",
-              "type": "article"
-            },
-            {
               "title": "QGIS Tutorial for Beginners (Klas Karlsson)",
               "url": "https://www.youtube.com/watch?v=NHolzMgaqwE",
               "type": "video"
@@ -1682,11 +1592,6 @@
               "type": "course"
             },
             {
-              "title": "Deploying a Geospatial App with Docker and Kubernetes",
-              "url": "https://kubernetes.io/blog/2020/07/22/a-case-for-kubernetes-in-gis-deploying-a-geospatial-app/",
-              "type": "article"
-            },
-            {
               "title": "Learn GIS - QGIS Full Course for Beginners (Matt Forrest)",
               "url": "https://www.youtube.com/watch?v=SovdBaus7pM",
               "type": "video"
@@ -1712,11 +1617,6 @@
           "description": "Monitor spatial services: Tracking tile rendering latency, database spatial query response times, and logging memory utilization during heavy raster operations.",
           "resources": [
             {
-              "title": "Monitoring Geospatial Applications in Production",
-              "url": "https://www.gis-blog.com/monitoring-geospatial-web-services/",
-              "type": "article"
-            },
-            {
               "title": "QGIS Tutorial for Beginners (Klas Karlsson)",
               "url": "https://www.youtube.com/watch?v=NHolzMgaqwE",
               "type": "video"
@@ -1741,11 +1641,6 @@
           "tag": "advanced",
           "description": "Version spatial datasets: DVC (Data Version Control) for raster datasets, tracking pipeline lineage, and cataloging spatial metadata.",
           "resources": [
-            {
-              "title": "Data Version Control (DVC) for Geospatial Data",
-              "url": "https://dvc.org/doc/use-cases/data-versioning",
-              "type": "article"
-            },
             {
               "title": "Introduction to Rasterio | Working with raster files in Python (Tommy's Codebase)",
               "url": "https://www.youtube.com/watch?v=Hxh7DdUtrVY",
@@ -1802,11 +1697,6 @@
           "description": "Review geospatial code: Checking for CRS mismatch bugs, floating-point geometry precision issues, memory leakage in raster loops, and missing spatial indexes.",
           "resources": [
             {
-              "title": "Python Code Review Guidelines",
-              "url": "https://www.geeksforgeeks.org/python-code-review-guidelines/",
-              "type": "article"
-            },
-            {
               "title": "QGIS Tutorial for Beginners (Klas Karlsson)",
               "url": "https://www.youtube.com/watch?v=NHolzMgaqwE",
               "type": "video"
@@ -1834,11 +1724,6 @@
             {
               "title": "ISO 19115 Geospatial Metadata Standard",
               "url": "https://www.iso.org/standard/26020.html",
-              "type": "article"
-            },
-            {
-              "title": "Documenting Geospatial Projects (QGIS)",
-              "url": "https://docs.qgis.org/latest/en/docs/user_manual/working_with_vector/metadata.html",
               "type": "article"
             },
             {
@@ -1871,11 +1756,6 @@
       "description": "Build an elite geospatial data science portfolio: End-to-end cloud projects, interactive cartography, and technical interview readiness.",
       "resources": [
         {
-          "title": "Building a Strong Data Science Portfolio (Towards Data Science)",
-          "url": "https://towardsdatascience.com/building-a-strong-data-science-portfolio-181515233267",
-          "type": "article"
-        },
-        {
           "title": "Learn GIS - QGIS Full Course for Beginners (Matt Forrest)",
           "url": "https://www.youtube.com/watch?v=SovdBaus7pM",
           "type": "video"
@@ -1898,11 +1778,6 @@
           "tag": "advanced",
           "description": "Build an end-to-end geospatial capstone: Automated pipeline downloading Sentinel-2 imagery via STAC, calculating multi-temporal vegetation indices, training a land cover segmentation model, and serving results via an interactive web dashboard.",
           "resources": [
-            {
-              "title": "Example Geospatial Capstone Projects",
-              "url": "https://www.gislounge.com/gis-capstone-project-ideas/",
-              "type": "article"
-            },
             {
               "title": "QGIS Tutorial for Beginners (Klas Karlsson)",
               "url": "https://www.youtube.com/watch?v=NHolzMgaqwE",
@@ -2016,11 +1891,6 @@
             {
               "title": "How to Write a Data Science Case Study",
               "url": "https://www.interviewquery.com/blog/data-science-case-study",
-              "type": "article"
-            },
-            {
-              "title": "Storytelling with Maps (Esri)",
-              "url": "https://www.esri.com/arcgis-blog/products/arcgis-online/mapping/telling-stories-with-maps/",
               "type": "article"
             },
             {

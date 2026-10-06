@@ -95,8 +95,8 @@
           "type": "article"
         },
         {
-          "title": "SANS Incident Handler's Handbook",
-          "url": "https://www.sans.org/white-papers/33908/",
+          "title": "Incident Handler's Handbook",
+          "url": "https://www.sans.org/white-papers/33901/",
           "type": "article"
         },
         {
@@ -123,13 +123,8 @@
           "description": "Execute every phase of the Incident Response lifecycle: Preparation, Detection & Analysis, Containment, Eradication, Recovery, and Post-Incident Activity. Establish enterprise containment and communication playbooks.",
           "resources": [
             {
-              "title": "Understanding the NIST Incident Response Life Cycle",
-              "url": "https://www.sans.org/blog/understanding-the-nist-incident-response-life-cycle/",
-              "type": "article"
-            },
-            {
-              "title": "Incident Response Playbooks: What Are They & How to Create One",
-              "url": "https://www.rapid7.com/fundamentals/incident-response-playbooks/",
+              "title": "Incident Response Recommendations and Considerations for Cybersecurity Risk Management: A CSF 2.0 Community Profile",
+              "url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final",
               "type": "article"
             },
             {
@@ -152,11 +147,6 @@
           "tag": "essential",
           "description": "Enforce strict forensic standards: Adhere to RFC 3227 order of volatility, maintain verifiable cryptographic chain of custody (MD5/SHA256), avoid live evidence contamination, and manage legally defensible exhibits.",
           "resources": [
-            {
-              "title": "ACPO Good Practice Guide for Digital Evidence",
-              "url": "https://www.justice.gov.uk/courts/procedure-rules/civil/pdf/digital-evidence-guidance.pdf",
-              "type": "article"
-            },
             {
               "title": "Digital Forensics: Chain of Custody",
               "url": "https://resources.infosecinstitute.com/topic/digital-forensics-chain-of-custody/",
@@ -188,18 +178,8 @@
           "description": "Build an isolated DFIR lab environment: Deploy SIFT Workstation, REMnux, forensic hardware write-blockers, virtualized analysis networks, and evidence repository servers.",
           "resources": [
             {
-              "title": "Building a DFIR Lab",
-              "url": "https://dfir.blog/building-a-dfir-lab-part-1/",
-              "type": "article"
-            },
-            {
               "title": "FTK Imager User Guide",
               "url": "https://accessdata.com/product-downloads/docs/ftkimager/FTKImager_User_Guide.pdf",
-              "type": "article"
-            },
-            {
-              "title": "KAPE (Kroll Artifact Parser and Extractor) Documentation",
-              "url": "https://www.kroll.com/en/insights/publications/cyber-risk-news/kroll-artifact-parser-extractor-kape",
               "type": "article"
             },
             {
@@ -320,8 +300,8 @@
           "description": "Analyze critical Windows forensic artifacts using Eric Zimmerman tools: Master File Table ($MFT, $LogFile), Registry hives (SYSTEM, SOFTWARE, NTUSER.dat), Shimcache, Amcache, Prefetch, SRUM, and Event Logs (EVTX).",
           "resources": [
             {
-              "title": "Windows Forensic Analysis Toolkit - SANS",
-              "url": "https://www.sans.org/blog/windows-forensic-analysis-toolkit/",
+              "title": "SIFT Workstation",
+              "url": "https://www.sans.org/tools/sift-workstation/",
               "type": "article"
             },
             {
@@ -355,8 +335,8 @@
           "description": "Investigate Linux and macOS endpoints: Analyze `/var/log` artifacts, systemd journals, cron jobs, bash history, auditd logs, Unified Logs (OSLog), LaunchDaemons, LaunchAgents, and extended file attributes.",
           "resources": [
             {
-              "title": "Linux Forensics Quick Reference",
-              "url": "https://www.sans.org/cyber-security-resources/free-sample-chapter/linux-forensics-quick-reference-2015-103325/",
+              "title": "CyLR: Cross-platform live response collection",
+              "url": "https://github.com/orlikoski/CyLR",
               "type": "article"
             },
             {
@@ -390,8 +370,8 @@
               "type": "course"
             },
             {
-              "title": "Digital Forensics and Incident Response: Mastering NTFS",
-              "url": "https://www.sans.org/blog/digital-forensics-and-incident-response-mastering-ntfs/",
+              "title": "The Sleuth Kit: File system forensic documentation",
+              "url": "https://www.sleuthkit.org/sleuthkit/docs.php",
               "type": "article"
             },
             {
@@ -425,8 +405,8 @@
               "type": "article"
             },
             {
-              "title": "Memory Forensics: A Deep Dive",
-              "url": "https://www.sans.org/blog/memory-forensics-a-deep-dive/",
+              "title": "Windows memory analysis tutorial (Volatility 3)",
+              "url": "https://volatility3.readthedocs.io/en/latest/getting-started-windows-tutorial.html",
               "type": "article"
             },
             {
@@ -577,11 +557,6 @@
               "type": "article"
             },
             {
-              "title": "Introduction to Threat Hunting",
-              "url": "https://www.splunk.com/en_us/blog/security/introduction-to-threat-hunting.html",
-              "type": "article"
-            },
-            {
               "title": "MITRE ATT&CK Explained",
               "url": "https://www.youtube.com/watch?v=huPMWB-gCsY",
               "type": "video"
@@ -607,8 +582,8 @@
           "description": "Forensicate cloud and container environments: Collect and analyze AWS CloudTrail, VPC Flow Logs, GuardDuty findings, Azure Activity/Sign-in logs, GCP Audit logs, and inspect ephemeral Kubernetes pod snapshots.",
           "resources": [
             {
-              "title": "AWS Cloud Forensics Guide",
-              "url": "https://aws.amazon.com/blogs/security/how-to-implement-a-forensic-investigation-workflow-in-aws/",
+              "title": "Automated Cloud Digital Forensics and Incident Response (AWS Samples)",
+              "url": "https://github.com/aws-samples/auto-cloud-digital-forensics-incident-response",
               "type": "article"
             },
             {
@@ -631,11 +606,6 @@
           "tag": "advanced",
           "description": "Perform rapid malware triage on collected artifacts: Extract strings, calculate fuzzy hashes (SSDEEP), inspect imported API symbols, unpack compressed payloads, and execute safe dynamic detonation in Cuckoo Sandbox.",
           "resources": [
-            {
-              "title": "Practical Malware Analysis Book",
-              "url": "https://www.nostarch.com/malwareanalysis/",
-              "type": "course"
-            },
             {
               "title": "REMnux: The Linux Toolkit for Reverse-Engineering and Malware Analysis",
               "url": "https://remnux.org/",
@@ -677,8 +647,8 @@
               "type": "course"
             },
             {
-              "title": "PowerShell for Security Professionals",
-              "url": "https://www.sans.org/blog/powershell-for-security-professionals/",
+              "title": "PowerShell security features",
+              "url": "https://learn.microsoft.com/en-us/powershell/scripting/security/security-features",
               "type": "article"
             },
             {
@@ -742,13 +712,8 @@
           "description": "Detect and remediate advanced in-memory threats: Recognize Process Hollowing, Process Doppelgänging, AtomBombing, reflective DLL injection, and credential dumping (LSASS, DPAPI, NTDS.dit).",
           "resources": [
             {
-              "title": "Advanced Persistent Threats: A Practical Guide",
-              "url": "https://www.sans.org/white-papers/37772/",
-              "type": "article"
-            },
-            {
-              "title": "Cyber Threat Intelligence Fundamentals",
-              "url": "https://www.recordedfuture.com/resources/cyber-threat-intelligence-fundamentals",
+              "title": "MITRE ATT&CK: Adversary tactics and techniques",
+              "url": "https://attack.mitre.org/",
               "type": "article"
             },
             {
@@ -809,8 +774,8 @@
           "description": "Author comprehensive forensic incident reports: Craft executive breach summaries, detailed technical timelines, root-cause analyses, chain-of-custody documentation, and regulatory remediation roadmaps.",
           "resources": [
             {
-              "title": "Writing Effective Incident Reports",
-              "url": "https://www.sans.org/blog/writing-effective-incident-reports/",
+              "title": "NIST SP 800-61r3: Incident response and post-incident improvement",
+              "url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final",
               "type": "article"
             },
             {
@@ -873,11 +838,6 @@
           "tag": "advanced",
           "description": "Navigate professional DFIR growth: Master legal expert witness testimony principles, stay current with DFIR research (SANS DFIR Summit, Black Hat), and pursue advanced credentials.",
           "resources": [
-            {
-              "title": "Top DFIR Certifications for Your Career",
-              "url": "https://www.eccouncil.org/cybersecurity-exchange/blogs/top-dfir-certifications/",
-              "type": "article"
-            },
             {
               "title": "Incident Response and Threat Hunting Topics (SANS Course Outline; Paid Course)",
               "url": "https://www.sans.org/cyber-security-courses/advanced-incident-response-threat-hunting-training/",

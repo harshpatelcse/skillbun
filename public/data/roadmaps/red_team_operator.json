@@ -90,11 +90,6 @@
       "description": "Establish an elite Red Team operations foundation: master adversary emulation methodologies, operational security (OPSEC), stealth tradecraft, and isolated threat emulation infrastructure.",
       "resources": [
         {
-          "title": "Introduction to Cybersecurity Fundamentals",
-          "url": "https://www.coursera.org/courses?query=cybersecurity%20fundamentals",
-          "type": "course"
-        },
-        {
           "title": "Ethical Hacking Full Course (Edureka)",
           "url": "https://www.youtube.com/watch?v=dz7Ntp7KQGA",
           "type": "video"
@@ -117,11 +112,6 @@
           "tag": "essential",
           "description": "Understand Red Teaming vs Penetration Testing: threat-informed defense, simulating real-world Advanced Persistent Threats (APTs), assumed-breach scenarios, and the MITRE ATT&CK enterprise matrix.",
           "resources": [
-            {
-              "title": "Red Team vs. Penetration Test: What's the Difference?",
-              "url": "https://www.redscan.com/news/red-team-vs-penetration-test/",
-              "type": "article"
-            },
             {
               "title": "MITRE ATT&CK Enterprise",
               "url": "https://attack.mitre.org/matrices/enterprise/",
@@ -193,11 +183,6 @@
               "type": "article"
             },
             {
-              "title": "Introduction to Cyber Threat Intelligence",
-              "url": "https://www.sans.org/blog/what-is-cyber-threat-intelligence/",
-              "type": "article"
-            },
-            {
               "title": "Metasploit for Beginners (HackerSploit)",
               "url": "https://www.youtube.com/watch?v=8lR27r8Y_ik",
               "type": "video"
@@ -230,11 +215,6 @@
             {
               "title": "Kali Linux Official Documentation",
               "url": "https://www.kali.org/docs/",
-              "type": "article"
-            },
-            {
-              "title": "Building a Windows Domain Lab for Security Testing",
-              "url": "https://www.hackingarticles.in/build-windows-domain-lab-for-pentesting/",
               "type": "article"
             },
             {
@@ -295,11 +275,6 @@
           "description": "Structure enterprise adversary emulation engagements: establishing Rules of Engagement (RoE), defining high-value organizational crown jewels, threat actor profiling, and establishing emergency deconfliction protocols.",
           "resources": [
             {
-              "title": "Creating Effective Rules of Engagement for Security Testing",
-              "url": "https://www.csoonline.com/article/3238644/how-to-create-effective-rules-of-engagement-for-security-testing.html",
-              "type": "article"
-            },
-            {
               "title": "Active Directory Hacking Lab Setup (John Hammond)",
               "url": "https://www.youtube.com/watch?v=xftEuVQ7kY0",
               "type": "video"
@@ -335,11 +310,6 @@
               "type": "article"
             },
             {
-              "title": "Shodan - The Search Engine for the Internet of Things",
-              "url": "https://www.shodan.io/about",
-              "type": "article"
-            },
-            {
               "title": "Metasploit for Beginners (HackerSploit)",
               "url": "https://www.youtube.com/watch?v=8lR27r8Y_ik",
               "type": "video"
@@ -364,16 +334,6 @@
           "tag": "essential",
           "description": "Engineer initial access payloads: custom shellcode runners, bypassing AMSI via in-memory patching, patching ETW to blind security telemetry, and weaponized documents or ISO/LNK containers.",
           "resources": [
-            {
-              "title": "Web Application Penetration Testing Course",
-              "url": "https://portswigger.net/web-security/academy",
-              "type": "course"
-            },
-            {
-              "title": "Client-Side Attacks Explained",
-              "url": "https://owasp.org/www-community/attacks/Client-side_attacks",
-              "type": "article"
-            },
             {
               "title": "Ethical Hacking Full Course (Edureka)",
               "url": "https://www.youtube.com/watch?v=dz7Ntp7KQGA",
@@ -402,11 +362,6 @@
             {
               "title": "Cobalt Strike Documentation",
               "url": "https://www.cobaltstrike.com/help-documentation",
-              "type": "article"
-            },
-            {
-              "title": "Understanding C2 Frameworks for Red Teams",
-              "url": "https://www.blackhillsinfosec.com/understanding-c2-frameworks-for-red-teams/",
               "type": "article"
             },
             {
@@ -524,16 +479,6 @@
       "description": "Master advanced tradecraft: Active Directory Certificate Services (AD CS) exploitation, cloud persistence, strict OPSEC hygiene, and Purple Teaming.",
       "resources": [
         {
-          "title": "Red Team Operations: A Practical Guide (Book)",
-          "url": "https://www.amazon.com/Red-Team-Operations-Practical-Guide/dp/B08V8R3F5X",
-          "type": "course"
-        },
-        {
-          "title": "Purple Teaming: Bridging the Gap Between Offense and Defense",
-          "url": "https://www.sans.org/blog/purple-teaming-bridging-the-gap-between-offense-and-defense/",
-          "type": "article"
-        },
-        {
           "title": "Ethical Hacking Full Course (Edureka)",
           "url": "https://www.youtube.com/watch?v=dz7Ntp7KQGA",
           "type": "video"
@@ -592,16 +537,6 @@
           "description": "Execute cloud adversary operations: pivoting from compromised on-prem workstations to Azure Entra ID via PRT token extraction, abusing AWS IAM instance roles, and moving laterally across hybrid cloud infrastructure.",
           "resources": [
             {
-              "title": "AWS Cloud Pentesting Course",
-              "url": "https://cloudsecurityalliance.org/education/cloud-security-training/",
-              "type": "course"
-            },
-            {
-              "title": "Awesome Cloud Security - Red Team",
-              "url": "https://github.com/ramir3z/awesome-cloud-security#red-team",
-              "type": "article"
-            },
-            {
               "title": "Active Directory Hacking Lab Setup (John Hammond)",
               "url": "https://www.youtube.com/watch?v=xftEuVQ7kY0",
               "type": "video"
@@ -632,11 +567,6 @@
               "type": "article"
             },
             {
-              "title": "Adversary Simulation Red Team Operations",
-              "url": "https://www.specterops.io/what-we-do/adversary-simulation-and-red-teaming",
-              "type": "article"
-            },
-            {
               "title": "Metasploit for Beginners (HackerSploit)",
               "url": "https://www.youtube.com/watch?v=8lR27r8Y_ik",
               "type": "video"
@@ -661,11 +591,6 @@
           "tag": "advanced",
           "description": "Deliver executive and technical debriefings: creating comprehensive attack path timelines, detailing detection gap analysis, and presenting actionable remediation engineering strategies to C-level executives.",
           "resources": [
-            {
-              "title": "Effective Red Team Report Writing",
-              "url": "https://www.sans.org/blog/effective-red-team-report-writing/",
-              "type": "article"
-            },
             {
               "title": "Red Team Report Template Example",
               "url": "https://assets.sans.org/webcasts/summaries/121705_RED_TEAM_REPORT.pdf",
@@ -696,11 +621,6 @@
           "tag": "advanced",
           "description": "Lead collaborative Purple Team exercises: sitting alongside SOC and Detection Engineering teams, executing specific adversary TTPs, validating SIEM correlation rules, and iteratively hardening defensive detection capabilities.",
           "resources": [
-            {
-              "title": "The Ultimate Guide to Purple Teaming",
-              "url": "https://www.attackiq.com/blog/ultimate-guide-purple-teaming/",
-              "type": "article"
-            },
             {
               "title": "Atomic Red Team - Getting Started",
               "url": "https://atomicredteam.io/",
@@ -759,16 +679,6 @@
           "description": "Capstone Project: Execute a Full-Scope Enterprise Adversary Simulation: deploy covert multi-tier C2 infrastructure with CDN redirectors, weaponize an initial access loader with indirect syscalls bypassing EDR, compromise an Active Directory forest via AD CS ESC1, simulate crown jewel exfiltration, and lead a comprehensive Purple Team debrief.",
           "resources": [
             {
-              "title": "Red Team Exercise Playbook Example",
-              "url": "https://github.com/redcanaryco/atomic-red-team/blob/master/red-team-exercise-playbook/README.md",
-              "type": "article"
-            },
-            {
-              "title": "Practical Red Team Labs",
-              "url": "https://www.zeropointsecurity.co.uk/red-team-ops/courses",
-              "type": "course"
-            },
-            {
               "title": "Metasploit for Beginners (HackerSploit)",
               "url": "https://www.youtube.com/watch?v=8lR27r8Y_ik",
               "type": "video"
@@ -793,11 +703,6 @@
           "tag": "advanced",
           "description": "Curate a professional Red Team portfolio: developing and open-sourcing novel offensive security tools (custom loaders, evasion scripts), authoring technical tradecraft research papers, and documenting lab adversary simulations.",
           "resources": [
-            {
-              "title": "How to Build a Cybersecurity Portfolio",
-              "url": "https://www.comparitech.com/blog/information-security/cybersecurity-portfolio/",
-              "type": "article"
-            },
             {
               "title": "Writing Effective Case Studies for Your Portfolio",
               "url": "https://www.interaction-design.org/literature/article/how-to-write-a-case-study-for-your-ux-portfolio-with-examples",
@@ -832,11 +737,6 @@
               "title": "OSCP - Offensive Security Certified Professional",
               "url": "https://www.offensive-security.com/pwk-oscp/",
               "type": "course"
-            },
-            {
-              "title": "Red Team Certifications Guide",
-              "url": "https://www.hackthebox.com/blog/red-team-certifications-guide",
-              "type": "article"
             },
             {
               "title": "Red Team Interview Questions and Answers",

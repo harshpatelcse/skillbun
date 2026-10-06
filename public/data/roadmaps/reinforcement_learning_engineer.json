@@ -889,11 +889,6 @@
           "description": "Learn from fixed demonstration datasets: Distributional shift challenges, out-of-distribution action penalties, Conservative Q-Learning (CQL), and Implicit Q-Learning (IQL).",
           "resources": [
             {
-              "title": "DeepMind Blog: Offline Reinforcement Learning",
-              "url": "https://deepmind.com/blog/article/offline-reinforcement-learning",
-              "type": "article"
-            },
-            {
               "title": "OpenAI Gym Tutorial (Nicholas Renotte)",
               "url": "https://www.youtube.com/watch?v=Mut_u40Sqz4",
               "type": "video"

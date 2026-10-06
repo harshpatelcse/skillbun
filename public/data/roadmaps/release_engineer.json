@@ -722,11 +722,6 @@
           "description": "Drive release incident response: Managing deployment-related outages, blameless post-mortems, identifying pipeline gaps, and implementing preventative guardrails.",
           "resources": [
             {
-              "title": "Site Reliability Engineering (SRE) Incident Management",
-              "url": "https://sre.google/sre-book/chapters/managing-incidents/",
-              "type": "article"
-            },
-            {
               "title": "Postmortem Culture: Learning from Failure (Google SRE Book)",
               "url": "https://sre.google/sre-book/postmortem-culture/",
               "type": "article"

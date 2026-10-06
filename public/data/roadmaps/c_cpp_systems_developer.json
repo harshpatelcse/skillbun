@@ -140,11 +140,6 @@
               "type": "article"
             },
             {
-              "title": "A Tour of C++ (Bjarne Stroustrup)",
-              "url": "https://www.stroustrup.com/tour.html",
-              "type": "course"
-            },
-            {
               "title": "Effective Modern C++ (Scott Meyers)",
               "url": "https://www.oreilly.com/library/view/effective-modern-c/9781491908419/",
               "type": "course"
@@ -382,11 +377,6 @@
               "type": "article"
             },
             {
-              "title": "Google Mock Documentation",
-              "url": "https://github.com/google/googletest/blob/main/googlemock/docs/for_dummies.md",
-              "type": "article"
-            },
-            {
               "title": "Google Test C++ Unit Testing Tutorial",
               "url": "https://www.youtube.com/watch?v=16FI1-d2P4E",
               "type": "video"
@@ -519,11 +509,6 @@
               "type": "article"
             },
             {
-              "title": "The Linux Programming Interface (Michael Kerrisk) - Chapter 59, 60, 61",
-              "url": "https://man7.org/tlpi/html/index.html",
-              "type": "course"
-            },
-            {
               "title": "C++ Network Programming Part 1: Sockets",
               "url": "https://www.youtube.com/watch?v=gntyAFoZp-E",
               "type": "video"
@@ -547,11 +532,6 @@
               "title": "Linux IPC Mechanisms Tutorial",
               "url": "https://www.tldp.org/LDP/lpg/node11.html",
               "type": "article"
-            },
-            {
-              "title": "The Linux Programming Interface (Michael Kerrisk) - Chapter 44-54",
-              "url": "https://man7.org/tlpi/html/index.html",
-              "type": "course"
             },
             {
               "title": "Operating Systems Full Course | Computer Science Basics",
@@ -689,16 +669,6 @@
               "type": "article"
             },
             {
-              "title": "Docker for C++ Development",
-              "url": "https://developers.redhat.com/articles/2021/04/09/docker-containers-c-developers",
-              "type": "article"
-            },
-            {
-              "title": "GitHub Actions for C++",
-              "url": "https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-c-cpp-projects",
-              "type": "article"
-            },
-            {
               "title": "Git and GitHub for Beginners - Crash Course",
               "url": "https://www.youtube.com/watch?v=RGOj5yH7evk",
               "type": "video"
@@ -803,11 +773,6 @@
             {
               "title": "Cracking the Coding Interview",
               "url": "https://www.crackingthecodinginterview.com/",
-              "type": "course"
-            },
-            {
-              "title": "System Design Interview (Alex Xu)",
-              "url": "https://www.amazon.com/System-Design-Interview-insiders-guide/dp/B08CMKFHX6",
               "type": "course"
             },
             {

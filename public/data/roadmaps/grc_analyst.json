@@ -113,16 +113,6 @@
           "description": "Master core cybersecurity concepts for GRC: Confidentiality, Integrity, Availability (CIA triad), defense-in-depth, identity security, network security, and cryptography.",
           "resources": [
             {
-              "title": "The GRC Explained: What it is and Why it Matters",
-              "url": "https://www.risk.net/risk-management/7951566/the-grc-explained-what-it-is-and-why-it-matters",
-              "type": "article"
-            },
-            {
-              "title": "Cybersecurity Fundamentals: Key Concepts",
-              "url": "https://www.suse.com/c/rancher_blog/cybersecurity-fundamentals-key-concepts/",
-              "type": "article"
-            },
-            {
               "title": "Overview - NIST Cybersecurity Framework 2.0 (Optic Cyber)",
               "url": "https://www.youtube.com/watch?v=f-6J7-WqcGE",
               "type": "video"
@@ -163,11 +153,6 @@
               "type": "article"
             },
             {
-              "title": "Understanding SOC 2 Compliance",
-              "url": "https://www.aicpa.org/interestareas/frc/assuranceadvisoryservices/aicpatopexecutivesandsoc2.html",
-              "type": "article"
-            },
-            {
               "title": "Overview - NIST Cybersecurity Framework 2.0 (Optic Cyber)",
               "url": "https://www.youtube.com/watch?v=f-6J7-WqcGE",
               "type": "video"
@@ -192,11 +177,6 @@
           "tag": "essential",
           "description": "Navigate the GRC ecosystem: Role of GRC analyst vs internal auditor vs security engineer; GRC tools (OneTrust, Drata, Vanta, ServiceNow GRC), and compliance lifecycles.",
           "resources": [
-            {
-              "title": "What does a GRC Analyst do?",
-              "url": "https://www.simplilearn.com/what-does-a-grc-analyst-do-article",
-              "type": "article"
-            },
             {
               "title": "Top GRC Software Platforms",
               "url": "https://www.gartner.com/reviews/market/integrated-risk-management-irm/software/top-grc-software",
@@ -265,8 +245,8 @@
           "description": "Design governance structures: Information security steering committees, reporting lines to CISO and Board of Directors, and defining organizational security mandates.",
           "resources": [
             {
-              "title": "Developing an Information Security Governance Program",
-              "url": "https://www.sans.org/blog/developing-an-information-security-governance-program/",
+              "title": "Cybersecurity Framework",
+              "url": "https://www.nist.gov/cyberframework",
               "type": "article"
             },
             {
@@ -294,11 +274,6 @@
           "tag": "essential",
           "description": "Author security policies: Writing Acceptable Use, Access Control, Data Classification, Incident Response, and Password policies with clear employee guidelines.",
           "resources": [
-            {
-              "title": "How to Write a Good Security Policy",
-              "url": "https://www.csoonline.com/article/2117761/how-to-write-a-good-security-policy.html",
-              "type": "article"
-            },
             {
               "title": "Security Policy Template Examples",
               "url": "https://www.sans.org/information-security-policy/",
@@ -370,16 +345,6 @@
           "description": "Test control effectiveness: Design of controls vs operational effectiveness, sampling techniques, testing procedures, and documenting control deficiencies.",
           "resources": [
             {
-              "title": "Control Self-Assessment (CSA) Overview",
-              "url": "https://www.isaca.org/resources/isaca-journal/issues/2005/volume-2/control-self-assessment-an-introduction",
-              "type": "article"
-            },
-            {
-              "title": "Testing Internal Controls: A Comprehensive Guide",
-              "url": "https://www.auditboard.com/blog/testing-internal-controls-guide/",
-              "type": "article"
-            },
-            {
               "title": "Overview - NIST Cybersecurity Framework 2.0 (Optic Cyber)",
               "url": "https://www.youtube.com/watch?v=f-6J7-WqcGE",
               "type": "video"
@@ -409,11 +374,6 @@
       "description": "Master enterprise risk management: Risk identification, qualitative vs quantitative risk analysis, risk treatment, and risk registers.",
       "resources": [
         {
-          "title": "Introduction to Risk Management",
-          "url": "https://www.isaca.org/resources/isaca-journal/issues/2012/volume-3/introduction-to-risk-management",
-          "type": "article"
-        },
-        {
           "title": "Overview - NIST Cybersecurity Framework 2.0 (Optic Cyber)",
           "url": "https://www.youtube.com/watch?v=f-6J7-WqcGE",
           "type": "video"
@@ -436,11 +396,6 @@
           "tag": "essential",
           "description": "Identify and categorize risks: Asset valuation, threat modeling, identifying vulnerabilities, and categorizing risks into operational, compliance, financial, and reputational buckets.",
           "resources": [
-            {
-              "title": "Risk Identification: The First Step in Risk Management",
-              "url": "https://www.projectmanager.com/blog/risk-identification-process-risk-management",
-              "type": "article"
-            },
             {
               "title": "Overview - NIST Cybersecurity Framework 2.0 (Optic Cyber)",
               "url": "https://www.youtube.com/watch?v=f-6J7-WqcGE",
@@ -466,11 +421,6 @@
           "tag": "essential",
           "description": "Analyze risk: Qualitative risk matrices (Likelihood x Impact), quantitative risk analysis using FAIR (Factor Analysis of Information Risk), and calculating Annualized Loss Expectancy (ALE).",
           "resources": [
-            {
-              "title": "Qualitative vs. Quantitative Risk Analysis",
-              "url": "https://www.techtarget.com/searchsecurity/definition/Qualitative-vs-Quantitative-Risk-Analysis",
-              "type": "article"
-            },
             {
               "title": "Risk Matrix Explained",
               "url": "https://www.projectmanager.com/blog/risk-matrix",
@@ -501,11 +451,6 @@
           "tag": "essential",
           "description": "Formulate risk treatment strategies: Risk Acceptance, Avoidance, Mitigation (implementing controls), and Transfer (cyber insurance); defining remediation roadmaps.",
           "resources": [
-            {
-              "title": "Risk Mitigation Strategies in Cybersecurity",
-              "url": "https://www.bmc.com/blogs/risk-mitigation-strategies/",
-              "type": "article"
-            },
             {
               "title": "Overview - NIST Cybersecurity Framework 2.0 (Optic Cyber)",
               "url": "https://www.youtube.com/watch?v=f-6J7-WqcGE",
@@ -561,11 +506,6 @@
           "tag": "advanced",
           "description": "Incorporate threat intelligence into risk models: Utilizing CISA alerts, CVE vulnerability feeds, and MITRE ATT&CK adversary profiles to prioritize emerging risks.",
           "resources": [
-            {
-              "title": "Integrating Threat Intelligence with Risk Management",
-              "url": "https://www.recordedfuture.com/blog/integrating-threat-intelligence-risk-management",
-              "type": "article"
-            },
             {
               "title": "What is Cyber Threat Intelligence (CTI)?",
               "url": "https://www.ibm.com/topics/cyber-threat-intelligence",
@@ -629,11 +569,6 @@
           "description": "Monitor continuous compliance: Tracking control operational status, compliance dashboards, key risk indicators (KRIs), and key performance indicators (KPIs).",
           "resources": [
             {
-              "title": "Continuous Compliance Monitoring: Best Practices",
-              "url": "https://www.logicmanager.com/resources/blog/continuous-compliance-monitoring-best-practices/",
-              "type": "article"
-            },
-            {
               "title": "Overview - NIST Cybersecurity Framework 2.0 (Optic Cyber)",
               "url": "https://www.youtube.com/watch?v=f-6J7-WqcGE",
               "type": "video"
@@ -659,16 +594,6 @@
           "description": "Plan compliance audits: Defining audit scope, audit calendars, notification schedules, and preparing auditee teams for external examinations.",
           "resources": [
             {
-              "title": "Audit Planning: Key Steps for a Successful Audit",
-              "url": "https://www.auditboard.com/blog/audit-planning-steps/",
-              "type": "article"
-            },
-            {
-              "title": "Internal Audit Process Explained",
-              "url": "https://www.protiviti.com/US-en/insights/internal-audit-process-explained",
-              "type": "article"
-            },
-            {
               "title": "Overview - NIST Cybersecurity Framework 2.0 (Optic Cyber)",
               "url": "https://www.youtube.com/watch?v=f-6J7-WqcGE",
               "type": "video"
@@ -693,11 +618,6 @@
           "tag": "essential",
           "description": "Collect defensible audit evidence: Gathering screenshots, system configuration exports, access review logs, policy sign-off attestations, and maintaining evidence integrity.",
           "resources": [
-            {
-              "title": "Collecting Audit Evidence: Types and Techniques",
-              "url": "https://www.rasmussen.edu/degrees/business/blog/types-of-audit-evidence/",
-              "type": "article"
-            },
             {
               "title": "Auditing Evidence: What is it, and How Do Auditors Gather it?",
               "url": "https://www.investopedia.com/articles/forex/11/audit-evidence-gathering.asp",
@@ -759,16 +679,6 @@
           "description": "Leverage continuous compliance automation: Deploying automated compliance platforms (Vanta, Drata, Secureframe) to automatically monitor AWS/GCP controls and GitHub configurations.",
           "resources": [
             {
-              "title": "Continuous Auditing: Benefits and Implementation",
-              "url": "https://www.isaca.org/resources/isaca-journal/issues/2014/volume-5/continuous-auditing-a-primer",
-              "type": "article"
-            },
-            {
-              "title": "The Rise of Continuous Monitoring in GRC",
-              "url": "https://www.logicmanager.com/resources/blog/the-rise-of-continuous-monitoring-in-grc/",
-              "type": "article"
-            },
-            {
               "title": "Overview - NIST Cybersecurity Framework 2.0 (Optic Cyber)",
               "url": "https://www.youtube.com/watch?v=f-6J7-WqcGE",
               "type": "video"
@@ -798,11 +708,6 @@
       "description": "Operate advanced GRC domains: Third-Party Risk Management (TPRM), Business Continuity, cloud compliance, and privacy.",
       "resources": [
         {
-          "title": "Operational GRC: Integrating into Daily Business",
-          "url": "https://grc.com/operational-grc/",
-          "type": "article"
-        },
-        {
           "title": "Overview - NIST Cybersecurity Framework 2.0 (Optic Cyber)",
           "url": "https://www.youtube.com/watch?v=f-6J7-WqcGE",
           "type": "video"
@@ -825,16 +730,6 @@
           "tag": "advanced",
           "description": "Manage third-party vendor risk: Vendor security assessments using SIG (Standardized Information Gathering) questionnaires, SOC 2 report reviews, and vendor tiering.",
           "resources": [
-            {
-              "title": "Introduction to Vendor Risk Management",
-              "url": "https://www.rsam.com/insights/blog/what-is-vendor-risk-management",
-              "type": "article"
-            },
-            {
-              "title": "Third-Party Risk Management Best Practices",
-              "url": "https://www.onspring.com/blog/third-party-risk-management-best-practices/",
-              "type": "article"
-            },
             {
               "title": "Overview - NIST Cybersecurity Framework 2.0 (Optic Cyber)",
               "url": "https://www.youtube.com/watch?v=f-6J7-WqcGE",
@@ -866,11 +761,6 @@
               "type": "article"
             },
             {
-              "title": "Business Continuity vs. Disaster Recovery",
-              "url": "https://www.techtarget.com/searchdisasterrecovery/definition/business-continuity-vs-disaster-recovery",
-              "type": "article"
-            },
-            {
               "title": "Overview - NIST Cybersecurity Framework 2.0 (Optic Cyber)",
               "url": "https://www.youtube.com/watch?v=f-6J7-WqcGE",
               "type": "video"
@@ -896,8 +786,8 @@
           "description": "Manage security awareness programs: Developing employee phishing simulations, annual security training compliance tracking, and security culture measurement.",
           "resources": [
             {
-              "title": "Designing an Effective Security Awareness Program",
-              "url": "https://www.sans.org/security-awareness-training/elements-of-a-successful-program/",
+              "title": "Building a Cybersecurity and Privacy Learning Program",
+              "url": "https://csrc.nist.gov/pubs/sp/800/50/r1/final",
               "type": "article"
             },
             {
@@ -926,16 +816,6 @@
           "description": "Implement Integrated Risk Management (IRM): Deploying ServiceNow GRC / Archer platforms, workflow automation, and centralized risk telemetry.",
           "resources": [
             {
-              "title": "Benefits of Integrated GRC",
-              "url": "https://www.logicmanager.com/resources/blog/integrated-risk-management-benefits/",
-              "type": "article"
-            },
-            {
-              "title": "What is an Integrated Risk Management (IRM) Platform?",
-              "url": "https://www.rsa.com/en-us/blog/what-is-integrated-risk-management-irm",
-              "type": "article"
-            },
-            {
               "title": "Overview - NIST Cybersecurity Framework 2.0 (Optic Cyber)",
               "url": "https://www.youtube.com/watch?v=f-6J7-WqcGE",
               "type": "video"
@@ -960,11 +840,6 @@
           "tag": "advanced",
           "description": "Govern cloud environments: Cloud Security Posture Management (CSPM), AWS Well-Architected Framework security pillar, and Shared Responsibility models.",
           "resources": [
-            {
-              "title": "Cloud GRC: Governance, Risk, and Compliance in the Cloud",
-              "url": "https://www.proofpoint.com/us/blog/cloud-security/cloud-grc-governance-risk-and-compliance-cloud",
-              "type": "article"
-            },
             {
               "title": "Managing Cloud Risk and Compliance",
               "url": "https://www.gartner.com/en/articles/managing-cloud-risk-and-compliance-the-challenge-and-the-opportunity",
@@ -996,16 +871,6 @@
           "description": "Enforce data privacy governance: Data Protection Impact Assessments (DPIA), Record of Processing Activities (ROPA), cross-border data transfer safeguards, and GDPR/CCPA alignment.",
           "resources": [
             {
-              "title": "GDPR Compliance Checklist",
-              "url": "https://gdpr.eu/gdpr-checklist/",
-              "type": "article"
-            },
-            {
-              "title": "What is Privacy by Design?",
-              "url": "https://iapp.org/news/a/what-is-privacy-by-design/",
-              "type": "article"
-            },
-            {
               "title": "Overview - NIST Cybersecurity Framework 2.0 (Optic Cyber)",
               "url": "https://www.youtube.com/watch?v=f-6J7-WqcGE",
               "type": "video"
@@ -1034,11 +899,6 @@
       "tag": "advanced",
       "description": "Build a competitive GRC portfolio: Risk assessment reports, policy documentation packages, audit simulation case studies, and career advancement.",
       "resources": [
-        {
-          "title": "Building a Cybersecurity Portfolio",
-          "url": "https://www.freecodecamp.org/news/how-to-build-a-cybersecurity-portfolio/",
-          "type": "article"
-        },
         {
           "title": "Overview - NIST Cybersecurity Framework 2.0 (Optic Cyber)",
           "url": "https://www.youtube.com/watch?v=f-6J7-WqcGE",
@@ -1093,11 +953,6 @@
           "description": "Build an enterprise GRC capstone: Conduct end-to-end SOC 2 Type II audit simulation for a cloud SaaS company: draft Information Security Policy, complete risk assessment with risk register, collect audit evidence, and author corrective action plan.",
           "resources": [
             {
-              "title": "GRC Case Study Examples",
-              "url": "https://www.logicmanager.com/resources/case-studies/grc-case-studies/",
-              "type": "article"
-            },
-            {
               "title": "Overview - NIST Cybersecurity Framework 2.0 (Optic Cyber)",
               "url": "https://www.youtube.com/watch?v=f-6J7-WqcGE",
               "type": "video"
@@ -1123,11 +978,6 @@
           "description": "Master GRC technical interviews: Explaining differences between SOC 1 vs SOC 2 vs ISO 27001, walking through third-party risk evaluations, and defending risk treatment decisions.",
           "resources": [
             {
-              "title": "Common GRC Analyst Interview Questions",
-              "url": "https://www.simplilearn.com/cybersecurity-grc-analyst-interview-questions-article",
-              "type": "article"
-            },
-            {
               "title": "Overview - NIST Cybersecurity Framework 2.0 (Optic Cyber)",
               "url": "https://www.youtube.com/watch?v=f-6J7-WqcGE",
               "type": "video"
@@ -1152,11 +1002,6 @@
           "tag": "advanced",
           "description": "Target industry credentials: CRISC, CISA, CISM, CompTIA Security+, ISO 27001 Lead Auditor, and continuing professional education.",
           "resources": [
-            {
-              "title": "Top GRC Certifications for Your Career",
-              "url": "https://www.simplilearn.com/top-grc-certifications-article",
-              "type": "article"
-            },
             {
               "title": "ISACA Certifications Overview",
               "url": "https://www.isaca.org/credentialing/certifications",

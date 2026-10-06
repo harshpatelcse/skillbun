@@ -87,8 +87,8 @@
       "description": "Establish an unshakeable data visualization foundation: master visual perception theory, visual encoding channels, color science, and the grammar of graphics.",
       "resources": [
         {
-          "title": "What is Data Visualization? The Ultimate Guide",
-          "url": "https://www.tableau.com/learn/articles/what-is-data-visualization",
+          "title": "Data Visualization: Types, Examples and Principles (Tableau)",
+          "url": "https://www.tableau.com/learn/articles/data-visualization",
           "type": "article"
         },
         {
@@ -125,8 +125,8 @@
               "type": "article"
             },
             {
-              "title": "Understanding Data Granularity for Effective Analytics",
-              "url": "https://www.tableau.com/about/blog/2015/5/understanding-data-granularity-effective-analytics",
+              "title": "Data Aggregation and Level of Detail in Tableau",
+              "url": "https://help.tableau.com/current/pro/desktop/en-us/calculations_aggregation.htm",
               "type": "article"
             },
             {
@@ -195,8 +195,8 @@
           "description": "Master visual encoding hierarchies: ranking encodings by perceptual accuracy (position along common scale, length, angle, area, color saturation, color hue), and perceptually uniform color palettes (Viridis, ColorBrewer) ensuring accessibility for color vision deficiencies.",
           "resources": [
             {
-              "title": "A Complete Guide to The 12 Types of Charts",
-              "url": "https://towardsdatascience.com/a-complete-guide-to-the-12-types-of-charts-and-how-to-choose-the-right-one-for-your-data-62c6ad22b826",
+              "title": "Choose the Right Chart Type (Tableau)",
+              "url": "https://help.tableau.com/current/pro/desktop/en-us/what_chart_example.htm",
               "type": "article"
             },
             {
@@ -235,11 +235,6 @@
           "description": "Survey the visualization ecosystem: declarative grammars (Vega-Lite), programmatic web libraries (D3.js, Observable Plot), GPU-accelerated libraries (deck.gl, Three.js), and enterprise BI suites.",
           "resources": [
             {
-              "title": "Top 10 Data Visualization Tools",
-              "url": "https://www.geeksforgeeks.org/top-10-data-visualization-tools/",
-              "type": "article"
-            },
-            {
               "title": "Setting Up Your Python Environment for Data Science",
               "url": "https://www.youtube.com/watch?v=NDFMa5FSQuI",
               "type": "video"
@@ -269,8 +264,8 @@
       "description": "Master data preparation, chart architecture, dashboard UX design, and narrative storytelling.",
       "resources": [
         {
-          "title": "Mastering Power BI",
-          "url": "https://www.edx.org/course/mastering-power-bi",
+          "title": "Power BI Training — Microsoft Learn",
+          "url": "https://learn.microsoft.com/en-us/training/powerplatform/power-bi",
           "type": "course"
         },
         {
@@ -297,13 +292,13 @@
           "description": "Conduct visual exploratory data analysis: detecting outliers, skewness, multimodal distributions, and correlation clusters using Seaborn, Plotly, and Altair.",
           "resources": [
             {
-              "title": "Exploratory Data Analysis with Python and Pandas",
-              "url": "https://www.learndatasci.com/tutorials/exploratory-data-analysis-python-pandas/",
+              "title": "Calculate Summary Statistics with pandas",
+              "url": "https://pandas.pydata.org/docs/getting_started/intro_tutorials/06_calculate_statistics.html",
               "type": "article"
             },
             {
-              "title": "The Role of Visualization in Exploratory Data Analysis",
-              "url": "https://www.tableau.com/blog/exploratory-data-analysis-visualization",
+              "title": "Explore Relationships with Statistical Visualization (seaborn)",
+              "url": "https://seaborn.pydata.org/tutorial/relational.html",
               "type": "article"
             },
             {
@@ -367,13 +362,13 @@
           "description": "Design specialized and advanced chart types: Sankey diagrams, chord diagrams, treemaps, Voronoi tessellations, waterfall charts, and Ridgeline density plots.",
           "resources": [
             {
-              "title": "Effective Use of Color in Data Visualization",
-              "url": "https://blog.datawrapper.de/which-color-scale-to-use-in-data-visualizations/",
+              "title": "Choose Color Scales for Data Visualization (Datawrapper)",
+              "url": "https://blog.datawrapper.de/which-color-scale-to-use-in-data-vis/",
               "type": "article"
             },
             {
-              "title": "Data Visualization with Color Blind Friendly Palettes",
-              "url": "https://www.tableau.com/about/blog/2016/5/how-design-colorblind-friendly-dashboards-53538",
+              "title": "Create Custom Color Palettes in Tableau",
+              "url": "https://help.tableau.com/current/pro/desktop/en-us/formatting_create_custom_colors.htm",
               "type": "article"
             },
             {
@@ -412,8 +407,8 @@
               "type": "article"
             },
             {
-              "title": "Responsive Dashboard Design Principles",
-              "url": "https://www.infogram.com/blog/responsive-design-principles-for-data-visualization/",
+              "title": "Create Dashboard Layouts for Different Devices (Tableau)",
+              "url": "https://help.tableau.com/current/pro/desktop/en-us/dashboards_dsd_create.htm",
               "type": "article"
             },
             {
@@ -442,19 +437,14 @@
           "description": "Master data storytelling and scrollytelling: structuring visual narrative arcs, step-by-step explanatory annotations, and scroll-driven animations with Scrollama.js.",
           "resources": [
             {
-              "title": "Storytelling with Data: A Data Visualization Guide for Business Professionals",
-              "url": "https://www.amazon.com/Storytelling-Data-Visualization-Business-Professionals/dp/1119002196",
-              "type": "course"
+              "title": "Storytelling with Data — Books by Cole Nussbaumer Knaflic",
+              "url": "https://www.storytellingwithdata.com/books",
+              "type": "book"
             },
             {
               "title": "How to tell a story with data",
               "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/how-to-tell-a-story-with-data",
               "type": "article"
-            },
-            {
-              "title": "Presenting Data Effectively: Communicating Your Findings for Maximum Impact",
-              "url": "https://www.amazon.com/Presenting-Data-Effectively-Communicating-Findings/dp/032196174X",
-              "type": "course"
             },
             {
               "title": "Data Storytelling: How to Tell a Story with Data",
@@ -482,8 +472,8 @@
           "description": "Ensure full accessibility (a11y) in visual graphics: WCAG 2.1 contrast compliance, ARIA attributes on SVG marks, keyboard navigation across data points, and screen-reader accessible tabular fallbacks.",
           "resources": [
             {
-              "title": "A Guide to Data Visualization Accessibility",
-              "url": "https://www.tableau.com/about/blog/2020/6/guide-data-visualization-accessibility",
+              "title": "Build Accessible Dashboards in Tableau",
+              "url": "https://help.tableau.com/current/pro/desktop/en-us/accessibility_dashboards.htm",
               "type": "article"
             },
             {
@@ -492,8 +482,8 @@
               "type": "article"
             },
             {
-              "title": "Color Accessibility Workflows",
-              "url": "https://www.smashingmagazine.com/2021/04/color-accessibility-workflows/",
+              "title": "Accessible Use of Color (W3C WCAG)",
+              "url": "https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html",
               "type": "article"
             },
             {
@@ -592,11 +582,6 @@
               "type": "article"
             },
             {
-              "title": "Building Interactive Charts with D3.js and React",
-              "url": "https://www.freecodecamp.org/news/building-interactive-charts-with-d3-js-and-react/",
-              "type": "article"
-            },
-            {
               "title": "Learn D3.js - Full Tutorial for Beginners",
               "url": "https://www.youtube.com/watch?v=bp2GF8XcJdY",
               "type": "video"
@@ -622,13 +607,8 @@
               "type": "article"
             },
             {
-              "title": "Creating Custom Tableau Visualizations",
-              "url": "https://www.tableau.com/blog/2019-02/tableau-tips-creating-custom-viz",
-              "type": "article"
-            },
-            {
-              "title": "Power BI Custom Visuals Development",
-              "url": "https://docs.microsoft.com/en-us/power-bi/developer/visuals/walkthrough-developing-power-bi-visual",
+              "title": "Tutorial: Develop a Power BI circle card visual",
+              "url": "https://learn.microsoft.com/en-us/power-bi/developer/visuals/develop-circle-card",
               "type": "article"
             },
             {
@@ -657,18 +637,13 @@
           "description": "Validate visualization correctness: pixel-level visual regression testing with Playwright, verifying numerical accuracy against source data, and auditing cross-browser responsive SVG viewBox scaling.",
           "resources": [
             {
-              "title": "How to Test Your Data Visualizations for Clarity and Accuracy",
-              "url": "https://towardsdatascience.com/how-to-test-your-data-visualizations-for-clarity-and-accuracy-4654b0d0b81c",
+              "title": "Data Profiling and Quality Checks in Power Query",
+              "url": "https://learn.microsoft.com/en-us/power-query/data-profiling-tools",
               "type": "article"
             },
             {
-              "title": "Data Validation in Power BI",
-              "url": "https://www.sqlshack.com/data-validation-in-power-bi/",
-              "type": "article"
-            },
-            {
-              "title": "User Acceptance Testing (UAT) Best Practices",
-              "url": "https://www.smartsheet.com/content/user-acceptance-testing",
+              "title": "Types of Software Testing, Including Acceptance Testing — Atlassian",
+              "url": "https://www.atlassian.com/continuous-delivery/software-testing/types-of-software-testing",
               "type": "article"
             },
             {
@@ -701,8 +676,8 @@
       "description": "Deploy, optimize, and govern production data visualization systems: performance engineering and enterprise governance.",
       "resources": [
         {
-          "title": "Best Practices for Publishing Data Sources and Workbooks",
-          "url": "https://help.tableau.com/current/server/en-us/publish_best_practices.htm",
+          "title": "Publish Tableau Workbooks to Server or Cloud",
+          "url": "https://help.tableau.com/current/pro/desktop/en-us/publish_workbooks_howto.htm",
           "type": "article"
         },
         {
@@ -734,13 +709,8 @@
           "description": "Enforce enterprise data governance in visual tools: handling confidential metrics, ensuring PII redaction, and maintaining documented metric calculation definitions.",
           "resources": [
             {
-              "title": "Data Governance in the Age of Self-Service BI",
-              "url": "https://www.tableau.com/learn/articles/data-governance-self-service-bi",
-              "type": "article"
-            },
-            {
-              "title": "Ethics in Data Visualization",
-              "url": "https://www.tableau.com/about/blog/2020/7/ethics-data-visualization",
+              "title": "Data and Content Governance (Tableau Blueprint)",
+              "url": "https://help.tableau.com/current/blueprint/en-us/bp_governance.htm",
               "type": "article"
             },
             {
@@ -774,13 +744,13 @@
               "type": "article"
             },
             {
-              "title": "Optimize Power BI performance",
-              "url": "https://docs.microsoft.com/en-us/power-bi/guidance/powerbi-performance-optimization-overview",
+              "title": "Optimization guide for Power BI",
+              "url": "https://learn.microsoft.com/en-us/power-bi/guidance/power-bi-optimization",
               "type": "article"
             },
             {
-              "title": "SQL Performance Tuning for BI Dashboards",
-              "url": "https://www.sqlshack.com/sql-performance-tuning-tips-for-bi-dashboards/",
+              "title": "SQL Query Performance and EXPLAIN (PostgreSQL)",
+              "url": "https://www.postgresql.org/docs/current/performance-tips.html",
               "type": "article"
             },
             {
@@ -844,8 +814,8 @@
           "description": "Collaborate in engineering teams: version-controlling D3 codebases, managing design tokens with Figma tokens, and standardizing enterprise component chart libraries.",
           "resources": [
             {
-              "title": "Using Git with Data Visualization Projects",
-              "url": "https://towardsdatascience.com/using-git-with-data-visualization-projects-f2e1e0d3c4a2",
+              "title": "Version Control for Data Projects with Git (GitHub)",
+              "url": "https://docs.github.com/en/get-started/using-git/about-git",
               "type": "article"
             },
             {
@@ -879,8 +849,8 @@
           "description": "Lead design reviews with executive stakeholders: gathering visual requirements, iterative wireframing, and demonstrating decision-making impact through visual clarity.",
           "resources": [
             {
-              "title": "Communicating Data Insights Effectively",
-              "url": "https://hbr.org/2014/10/communicating-data-insights-effectively",
+              "title": "Figure Design — MIT EECS Communication Lab",
+              "url": "https://mitcommlab.mit.edu/eecs/commkit/figure-design/",
               "type": "article"
             },
             {
@@ -889,9 +859,9 @@
               "type": "article"
             },
             {
-              "title": "The Art of Asking Good Questions in Data Projects",
-              "url": "https://towardsdatascience.com/the-art-of-asking-good-questions-in-data-projects-d2a8c9b2f34d",
-              "type": "article"
+              "title": "Frame Data Problems and Define Success Metrics (Google)",
+              "url": "https://developers.google.com/machine-learning/problem-framing?hl=en",
+              "type": "course"
             },
             {
               "title": "What is Stakeholder Management? (+ How to do it)",
@@ -923,11 +893,6 @@
       "description": "Build an elite public visualization portfolio, author case studies, and excel in technical data visualization interviews.",
       "resources": [
         {
-          "title": "Building a Killer Data Visualization Portfolio",
-          "url": "https://www.tableau.com/blog/2019/1/how-build-killer-data-visualization-portfolio",
-          "type": "article"
-        },
-        {
           "title": "20 Data Visualization Portfolios that Stand Out",
           "url": "https://medium.com/nightingale/20-data-visualization-portfolios-that-stand-out-c3e061730043",
           "type": "article"
@@ -956,11 +921,6 @@
           "description": "Curate a distinctive visualization portfolio: publishing interactive web graphics on GitHub/Observable, writing detailed explanatory case studies, and demonstrating bespoke D3.js craftsmanship.",
           "resources": [
             {
-              "title": "How to create an awesome data viz portfolio",
-              "url": "https://www.tableau.com/blog/how-create-awesome-data-viz-portfolio",
-              "type": "article"
-            },
-            {
               "title": "Data Visualization Portfolio Examples",
               "url": "https://www.youtube.com/watch?v=lqubRp-Aolw",
               "type": "video"
@@ -986,13 +946,8 @@
           "description": "Author a Technical Visualization Case Study: document the redesign of a congested, unreadable enterprise dashboard into a high-impact, accessible visual tool, detailing cognitive load reduction, stakeholder feedback, and adoption metrics.",
           "resources": [
             {
-              "title": "How to Write a Data Science Case Study",
-              "url": "https://towardsdatascience.com/how-to-write-a-data-science-case-study-f9e0a2b5e0c5",
-              "type": "article"
-            },
-            {
-              "title": "The Complete Guide to Case Study Creation",
-              "url": "https://blog.hubspot.com/marketing/case-study-template",
+              "title": "How to Write a Case Study — HubSpot",
+              "url": "https://blog.hubspot.com/blog/tabid/6307/bid/33282/the-ultimate-guide-to-creating-compelling-case-studies.aspx",
               "type": "article"
             },
             {
@@ -1048,11 +1003,6 @@
             {
               "title": "Data Visualization Interview Questions",
               "url": "https://www.geeksforgeeks.org/data-visualization-interview-questions/",
-              "type": "article"
-            },
-            {
-              "title": "Top Data Visualization Trends",
-              "url": "https://www.tableau.com/blog/2023-data-trends",
               "type": "article"
             },
             {

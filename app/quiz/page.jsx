@@ -1,6 +1,7 @@
 'use client';
 import { useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '../components/AuthProvider';
 import { mountQuizRuntime } from '@/utils/client/quizRuntime';
@@ -96,7 +97,7 @@ export default function QuizPage() {
     <>
       <div className="quiz-wrapper">
         <div id="welcomeScreen" className="quiz-welcome">
-            <div className="welcome-bunny">👋</div>
+            <div className="welcome-bunny"><Image src="/logo.png" alt="SkillBun Logo" width={64} height={64} /></div>
             <h1>Hey <span id="userName">{name.split(' ')[0]}</span>!</h1>
             <p>Let's find your perfect tech career path. I'll ask you <strong>10 questions</strong> that adapt based on your answers.</p>
             <div className="welcome-profile" id="welcomeProfile">

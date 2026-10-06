@@ -1,10 +1,24 @@
 import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { apiError, requireWorkforceAdmin } from '@/utils/server/workforceEmployees';
+import { validateSchema, validatePlainObject } from '@/utils/server/inputValidator';
 import { generateOfferLetterPdf } from '@/utils/server/pdf/offerLetterGenerator';
 import { generateExtensionLetterPdf } from '@/utils/server/pdf/extensionLetterGenerator';
 
 export const runtime = 'nodejs';
 export const maxDuration = 30;
+
+const previewText = maxLength => ({ type: 'string', maxLength, allowEmpty: true });
+const employeeSchema = {
+  salutation: { type: 'enum', allowedValues: ['Mr.', 'Ms.'] },
+  full_name: previewText(100), parent_name: previewText(100),
+  personal_email: previewText(254), current_address: previewText(300), permanent_address: previewText(300),
+  course_degree: previewText(100), college_name: previewText(150),
+  department: previewText(100), designation: previewText(100),
+  // The studio intentionally accepts both ISO dates and readable date labels.
+  joining_date: previewText(80), contract_end_date: previewText(80),
+  stipend_amount: { validator: value => ({ isValid: typeof value === 'number' && Number.isFinite(value) && value >= 0, value, error: 'Stipend must be a non-negative number.' }) },
+  stipend_currency: { type: 'enum', allowedValues: ['INR'] },
+};
 
 export async function POST(request) {
   try {
@@ -18,7 +32,20 @@ export async function POST(request) {
       return apiError('Payload must be valid JSON.', 400, 'BAD_REQUEST');
     }
 
-    const { docType = 'OFFER_PACK', employee = {}, referenceId, newContractEndDate } = body;
+    const objectCheck = validatePlainObject(body, { fieldName: 'PDF preview payload', maxKeys: 4 });
+    if (!objectCheck.isValid) return apiError(objectCheck.error, 400, 'VALIDATION_ERROR');
+    if (Object.hasOwn(body, 'employee') && !validatePlainObject(body.employee).isValid) {
+      return apiError('Employee must be a JSON object.', 400, 'VALIDATION_ERROR');
+    }
+    const checked = validateSchema(body, {
+      docType: { type: 'enum', allowedValues: ['OFFER_PACK', 'EXTENSION_LETTER'], defaultValue: 'OFFER_PACK' },
+      employee: { defaultValue: {}, validator: value => validateSchema(value, employeeSchema, { fieldName: 'Preview employee', allowUnknown: false }) },
+      referenceId: { type: 'string', maxLength: 128, pattern: /^[A-Za-z0-9_/-]*$/, allowEmpty: true },
+      newContractEndDate: previewText(80),
+    }, { fieldName: 'PDF preview payload', allowUnknown: false, maxKeys: 4 });
+    if (!checked.isValid) return apiError(checked.error, 400, 'VALIDATION_ERROR');
+
+    const { docType, employee, referenceId, newContractEndDate } = checked.value;
 
     const mockEmployee = {
       salutation: employee.salutation || 'Mr.',

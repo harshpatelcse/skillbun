@@ -91,13 +91,13 @@
       "description": "Establish an uncompromised Security Operations Center (SOC) foundation: master enterprise operating system telemetry, network packet inspection, cloud security boundaries, and defense-in-depth principles.",
       "resources": [
         {
-          "title": "CompTIA Network+ Certification Course",
-          "url": "https://www.professormesser.com/network-plus/n10-008/n10-008-video/n10-008-training-course/",
+          "title": "Professor Messer’s CompTIA N10-009 Network+ Training Course",
+          "url": "https://www.professormesser.com/network-plus/n10-009/n10-009-video/n10-009-training-course/",
           "type": "course"
         },
         {
-          "title": "CompTIA Security+ Certification Course",
-          "url": "https://www.professormesser.com/security-plus/sy0-601/sy0-601-video/sy0-601-training-course/",
+          "title": "Professor Messer’s CompTIA SY0-701 Security+ Training Course",
+          "url": "https://www.professormesser.com/security-plus/sy0-701/sy0-701-video/sy0-701-comptia-security-plus-course/",
           "type": "course"
         },
         {
@@ -129,18 +129,8 @@
           "description": "Master underlying OS and network telemetry: Windows Event Logging architecture, Linux `/var/log` syslog mechanics, TCP/IP handshakes, DNS query logs, DHCP lease assignments, and deep packet inspection using Wireshark.",
           "resources": [
             {
-              "title": "TCP/IP Fundamentals for Security Analysts",
-              "url": "https://www.sans.org/blog/tcp-ip-fundamentals-for-security-analysts/",
-              "type": "article"
-            },
-            {
               "title": "Windows Event Log Documentation",
               "url": "https://learn.microsoft.com/en-us/windows/win32/eventlog/event-logging",
-              "type": "article"
-            },
-            {
-              "title": "Linux Logging Explained",
-              "url": "https://www.loggly.com/blog/linux-logging-explained/",
               "type": "article"
             },
             {
@@ -184,11 +174,6 @@
               "type": "article"
             },
             {
-              "title": "Azure Security Best Practices",
-              "url": "https://learn.microsoft.com/en-us/azure/security/fundamentals/best-practices-security",
-              "type": "article"
-            },
-            {
               "title": "Google Cloud Security Overview",
               "url": "https://cloud.google.com/security",
               "type": "article"
@@ -221,16 +206,6 @@
             {
               "title": "CIA Triad Explained",
               "url": "https://www.cloudflare.com/learning/security/what-is-the-cia-triad/",
-              "type": "article"
-            },
-            {
-              "title": "Introduction to Security Controls",
-              "url": "https://www.cisa.gov/resources-tools/resources/cybersecurity-framework",
-              "type": "article"
-            },
-            {
-              "title": "Understanding Identity and Access Management (IAM)",
-              "url": "https://www.okta.com/identity-101/what-is-iam/",
               "type": "article"
             },
             {
@@ -273,11 +248,6 @@
           "type": "article"
         },
         {
-          "title": "What is Threat Intelligence?",
-          "url": "https://www.recordedfuture.com/what-is-threat-intelligence",
-          "type": "article"
-        },
-        {
           "title": "What is SIEM? | Security Information and Event Management Explained (The ByteWise)",
           "url": "https://www.youtube.com/watch?v=9cbFRJLsKG0",
           "type": "video"
@@ -300,16 +270,6 @@
           "tag": "essential",
           "description": "Deconstruct modern enterprise attack vectors: spear-phishing campaigns, credential stuffing, living-off-the-land binaries (LOLBins), software supply chain compromises, and unpatched public-facing vulnerabilities.",
           "resources": [
-            {
-              "title": "Malware Analysis Fundamentals Course",
-              "url": "https://www.cybrary.it/course/malware-analysis-fundamentals/",
-              "type": "course"
-            },
-            {
-              "title": "Phishing Attacks: How They Work and How to Stop Them",
-              "url": "https://www.imperva.com/learn/application-security/phishing-attacks/",
-              "type": "article"
-            },
             {
               "title": "DDoS Attack Types Explained",
               "url": "https://www.cloudflare.com/learning/ddos/what-is-a-ddos-attack/",
@@ -340,11 +300,6 @@
           "tag": "essential",
           "description": "Utilize Cyber Threat Intelligence (CTI) in SOC workflows: Indicators of Compromise (IoCs) vs Tactics, Techniques, and Procedures (TTPs), David Bianco's Pyramid of Pain, and threat intelligence feeds (AlienVault OTX, MISP).",
           "resources": [
-            {
-              "title": "Using MITRE ATT&CK in Your SOC",
-              "url": "https://www.splunk.com/en_us/blog/security/using-mitre-attack-in-your-soc.html",
-              "type": "article"
-            },
             {
               "title": "STIX/TAXII Standards Overview",
               "url": "https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=cti",
@@ -383,11 +338,6 @@
             {
               "title": "The Cyber Kill Chain",
               "url": "https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html",
-              "type": "article"
-            },
-            {
-              "title": "Unified Kill Chain Overview",
-              "url": "https://www.sans.org/blog/unified-kill-chain-a-framework-for-cyber-incident-response/",
               "type": "article"
             },
             {
@@ -498,11 +448,6 @@
               "type": "article"
             },
             {
-              "title": "Introduction to EDR Tools",
-              "url": "https://www.crowdstrike.com/cybersecurity-101/endpoint-security/what-is-edr/",
-              "type": "article"
-            },
-            {
               "title": "AWS CloudTrail Event History",
               "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-history.html",
               "type": "article"
@@ -535,11 +480,6 @@
             {
               "title": "Introduction to rsyslog",
               "url": "https://www.rsyslog.com/doc/",
-              "type": "article"
-            },
-            {
-              "title": "Elastic Beats Documentation",
-              "url": "https://www.elastic.co/beats/reference/current/",
               "type": "article"
             },
             {
@@ -613,16 +553,6 @@
           "description": "Hands-on SIEM Lab: query and investigate multi-stage simulated intrusions in Splunk / Elastic Security, build analytical dashboards, and correlate endpoint process executions with outbound network beacons.",
           "resources": [
             {
-              "title": "Splunk Boss of the SOC (BOTS) Practice",
-              "url": "https://www.splunk.com/en_us/training/cyber-security-games/bots-capture-the-flag.html",
-              "type": "article"
-            },
-            {
-              "title": "Azure Sentinel Hands-on Labs",
-              "url": "https://github.com/Azure/Azure-Sentinel/tree/master/Workbooks/Labs",
-              "type": "article"
-            },
-            {
               "title": "What is SIEM? | Security Information and Event Management Explained (The ByteWise)",
               "url": "https://www.youtube.com/watch?v=9cbFRJLsKG0",
               "type": "video"
@@ -657,11 +587,6 @@
           "type": "article"
         },
         {
-          "title": "SANS Incident Handler's Handbook",
-          "url": "https://www.sans.org/blog/the-incident-handlers-handbook/",
-          "type": "article"
-        },
-        {
           "title": "The Only Networking Guide You Need for Ethical Hacking (Hack to root)",
           "url": "https://www.youtube.com/watch?v=niJ0yI-qHdE",
           "type": "video"
@@ -684,16 +609,6 @@
           "tag": "essential",
           "description": "Execute disciplined alert triage: determining true positives vs false positives, assessing business impact, prioritizing severity, and documenting findings within ticketing platforms (TheHive, ServiceNow).",
           "resources": [
-            {
-              "title": "SOC Alert Triage Best Practices",
-              "url": "https://socprime.com/blog/soc-alert-triage-best-practices/",
-              "type": "article"
-            },
-            {
-              "title": "Security Onion Alert Triage Tutorial",
-              "url": "https://docs.securityonion.net/en/2.4/soca.html",
-              "type": "article"
-            },
             {
               "title": "Cybersecurity SOC Analyst Lab - Email Analysis (Phishing) (MyDFIR)",
               "url": "https://www.youtube.com/watch?v=k7HeshxhwPk",
@@ -719,11 +634,6 @@
           "tag": "essential",
           "description": "Execute standard operating playbooks: responding to malware outbreaks, credential theft, unauthorized access, and phishing emails (analyzing raw RFC 822 email headers, verifying SPF, DKIM, DMARC alignments, and safely extracting attachments).",
           "resources": [
-            {
-              "title": "Splunk Security Playbooks",
-              "url": "https://www.splunk.com/en_us/blog/security/security-playbooks.html",
-              "type": "article"
-            },
             {
               "title": "TheHive Project - Case Management",
               "url": "https://thehive-project.org/",
@@ -760,16 +670,6 @@
               "type": "article"
             },
             {
-              "title": "Practical Windows Forensics for Analysts",
-              "url": "https://www.sans.org/blog/practical-windows-forensics/",
-              "type": "article"
-            },
-            {
-              "title": "Leveraging EDR for Incident Response",
-              "url": "https://www.crowdstrike.com/cybersecurity-101/endpoint-security/edr-for-incident-response/",
-              "type": "article"
-            },
-            {
               "title": "The Only Networking Guide You Need for Ethical Hacking (Hack to root)",
               "url": "https://www.youtube.com/watch?v=niJ0yI-qHdE",
               "type": "video"
@@ -795,16 +695,6 @@
           "description": "Collect forensic triage artifacts: gathering volatile memory, prefetch files, shimcache, and Amcache artifacts using forensic triage tools (KAPE, Velociraptor) while maintaining the chain of custody.",
           "resources": [
             {
-              "title": "Introduction to Digital Forensics",
-              "url": "https://www.cybrary.it/course/digital-forensics-fundamentals/",
-              "type": "course"
-            },
-            {
-              "title": "Volatile Data Collection Techniques",
-              "url": "https://www.sans.org/blog/incident-response-volatile-data-collection/",
-              "type": "article"
-            },
-            {
               "title": "Cybersecurity SOC Analyst Lab - Email Analysis (Phishing) (MyDFIR)",
               "url": "https://www.youtube.com/watch?v=k7HeshxhwPk",
               "type": "video"
@@ -829,21 +719,6 @@
           "tag": "essential",
           "description": "Author professional Incident Reports: executive summaries, technical timelines of adversarial actions, root-cause analysis, and actionable containment and remediation recommendations.",
           "resources": [
-            {
-              "title": "Incident Reporting Best Practices",
-              "url": "https://www.sentinelone.com/cybersecurity-101/incident-report/",
-              "type": "article"
-            },
-            {
-              "title": "Practical Incident Handling & Forensics (Course)",
-              "url": "https://www.sans.org/cyber-security-courses/digital-forensics-incident-response-starter/",
-              "type": "course"
-            },
-            {
-              "title": "Creating Effective Incident Timelines",
-              "url": "https://dfir.training/dfir-resources/blogs/the-art-of-the-incident-timeline/",
-              "type": "article"
-            },
             {
               "title": "What is SIEM? | Security Information and Event Management Explained (The ByteWise)",
               "url": "https://www.youtube.com/watch?v=9cbFRJLsKG0",
@@ -884,11 +759,6 @@
           "type": "article"
         },
         {
-          "title": "SANS FOR508: Advanced Incident Response, Threat Hunting, and Digital Forensics",
-          "url": "https://www.sans.org/cyber-security-courses/advanced-incident-response-threat-hunting-forensics/",
-          "type": "course"
-        },
-        {
           "title": "The Only Networking Guide You Need for Ethical Hacking (Hack to root)",
           "url": "https://www.youtube.com/watch?v=niJ0yI-qHdE",
           "type": "video"
@@ -922,11 +792,6 @@
               "type": "article"
             },
             {
-              "title": "Behavioral Detections for Security Operations",
-              "url": "https://www.splunk.com/en_us/blog/security/behavioral-detections.html",
-              "type": "article"
-            },
-            {
               "title": "Cybersecurity SOC Analyst Lab - Email Analysis (Phishing) (MyDFIR)",
               "url": "https://www.youtube.com/watch?v=k7HeshxhwPk",
               "type": "video"
@@ -954,16 +819,6 @@
             {
               "title": "Threat Hunting with Elastic Security",
               "url": "https://www.elastic.co/security-labs",
-              "type": "article"
-            },
-            {
-              "title": "Cyber Threat Hunting (Book)",
-              "url": "https://www.amazon.com/Cyber-Threat-Hunting-Advanced-Analytics/dp/1119565757",
-              "type": "article"
-            },
-            {
-              "title": "The Threat Hunter's Playbook",
-              "url": "https://www.sans.org/blog/the-threat-hunters-playbook/",
               "type": "article"
             },
             {
@@ -997,16 +852,6 @@
               "type": "article"
             },
             {
-              "title": "Digital Forensics & Incident Response Fundamentals",
-              "url": "https://www.cybrary.it/course/dfir-fundamentals/",
-              "type": "course"
-            },
-            {
-              "title": "SANS SEC504: Hacker Tools, Techniques, Exploits, and Incident Handling",
-              "url": "https://www.sans.org/cyber-security-courses/hacker-tools-techniques-exploits-incident-handling/",
-              "type": "course"
-            },
-            {
               "title": "The Only Networking Guide You Need for Ethical Hacking (Hack to root)",
               "url": "https://www.youtube.com/watch?v=niJ0yI-qHdE",
               "type": "video"
@@ -1034,11 +879,6 @@
             {
               "title": "Nessus Vulnerability Scanner Documentation",
               "url": "https://docs.tenable.com/nessus/",
-              "type": "article"
-            },
-            {
-              "title": "Vulnerability Management Process Guide",
-              "url": "https://www.cisa.gov/resources-tools/resources/vulnerability-management-guide",
               "type": "article"
             },
             {
@@ -1077,16 +917,6 @@
               "type": "article"
             },
             {
-              "title": "Demisto (Cortex XSOAR) Introduction",
-              "url": "https://docs.paloaltonetworks.com/cortex/cortex-xsoar/6-10/cortex-xsoar-admin/get-started",
-              "type": "article"
-            },
-            {
-              "title": "IBM Security SOAR (Resilient) Documentation",
-              "url": "https://www.ibm.com/docs/en/spp/2.1.0?topic=getting-started-getting-started-soar",
-              "type": "article"
-            },
-            {
               "title": "What is SIEM? | Security Information and Event Management Explained (The ByteWise)",
               "url": "https://www.youtube.com/watch?v=9cbFRJLsKG0",
               "type": "video"
@@ -1119,11 +949,6 @@
             {
               "title": "Azure Defender for Cloud Documentation",
               "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/",
-              "type": "article"
-            },
-            {
-              "title": "Container Security Best Practices",
-              "url": "https://cloud.google.com/container-registry/docs/best-practices",
               "type": "article"
             },
             {
@@ -1264,11 +1089,6 @@
               "type": "course"
             },
             {
-              "title": "Creating a Cybersecurity Portfolio",
-              "url": "https://cybersecuritynews.com/cybersecurity-portfolio/",
-              "type": "article"
-            },
-            {
               "title": "Cybersecurity SOC Analyst Lab - Email Analysis (Phishing) (MyDFIR)",
               "url": "https://www.youtube.com/watch?v=k7HeshxhwPk",
               "type": "video"
@@ -1293,16 +1113,6 @@
           "tag": "advanced",
           "description": "Communicate effectively under pressure: managing high-stress incident conference calls, translating technical indicators into business risk for leadership, and conducting post-incident blameless retrospectives.",
           "resources": [
-            {
-              "title": "Communication Skills for Cybersecurity Professionals",
-              "url": "https://www.sans.org/blog/communication-skills-for-cybersecurity-professionals/",
-              "type": "article"
-            },
-            {
-              "title": "Critical Thinking in Cybersecurity",
-              "url": "https://www.isc2.org/articles/Critical-Thinking-in-Cybersecurity",
-              "type": "article"
-            },
             {
               "title": "What is SIEM? | Security Information and Event Management Explained (The ByteWise)",
               "url": "https://www.youtube.com/watch?v=9cbFRJLsKG0",
@@ -1336,11 +1146,6 @@
             {
               "title": "Microsoft SC-200: Microsoft Security Operations Analyst",
               "url": "https://learn.microsoft.com/en-us/certifications/exams/sc-200/",
-              "type": "article"
-            },
-            {
-              "title": "SOC Analyst Interview Questions and Answers",
-              "url": "https://www.simplilearn.com/tutorials/cyber-security-tutorial/soc-analyst-interview-questions",
               "type": "article"
             },
             {

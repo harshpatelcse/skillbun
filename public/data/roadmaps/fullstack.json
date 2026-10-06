@@ -209,8 +209,8 @@
               "type": "article"
             },
             {
-              "title": "React Router Official Documentation",
-              "url": "https://reactrouter.com/en/main",
+              "title": "React Router: Choosing a Mode",
+              "url": "https://reactrouter.com/start/modes",
               "type": "article"
             },
             {
@@ -552,11 +552,6 @@
           "description": "Introduction to containerization with Docker (Dockerfiles, building images, running containers, Docker Compose for multi-service applications). Understanding Continuous Integration/Continuous Deployment (CI/CD) pipelines using tools like GitHub Actions (workflows, jobs, steps). Covers environment management, secret handling, and deploying full-stack applications to platforms like Vercel, Render, Railway, or basic concepts of cloud providers (e.g., AWS EC2/ECS, DigitalOcean Droplets, Azure App Service).",
           "resources": [
             {
-              "title": "GitHub Actions Documentation - About workflows",
-              "url": "https://docs.github.com/en/actions/learn-github-actions/understanding-workflows",
-              "type": "article"
-            },
-            {
               "title": "Deploy Next.js with Vercel",
               "url": "https://vercel.com/docs/deployments/overview",
               "type": "article"
@@ -767,8 +762,8 @@
               "type": "article"
             },
             {
-              "title": "React Router Official Documentation",
-              "url": "https://reactrouter.com/en/main",
+              "title": "React Router: Choosing a Mode",
+              "url": "https://reactrouter.com/start/modes",
               "type": "article"
             },
             {
@@ -1103,11 +1098,6 @@
           "tag": "essential",
           "description": "Deploy fullstack applications to production cloud infrastructure. Author multi-stage Dockerfiles for minimal, non-root container images, automate testing and deployment with GitHub Actions CI/CD, and deploy containerized services to cloud platforms (Vercel, AWS, Railway).",
           "resources": [
-            {
-              "title": "GitHub Actions Documentation - About workflows",
-              "url": "https://docs.github.com/en/actions/learn-github-actions/understanding-workflows",
-              "type": "article"
-            },
             {
               "title": "Deploy Next.js with Vercel",
               "url": "https://vercel.com/docs/deployments/overview",

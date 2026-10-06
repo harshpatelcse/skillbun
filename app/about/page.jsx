@@ -27,7 +27,7 @@ export default function AboutPage() {
   return (
     <div className="static-page">
       <h1>About SkillBun</h1>
-      <p><em>Last updated: September 30, 2026</em></p>
+      <p><em>Last updated: October 3, 2026</em></p>
 
       <p>
         SkillBun is an AI-powered career discovery and skill verification platform designed for computer science, software engineering, and tech students worldwide.
@@ -58,6 +58,9 @@ export default function AboutPage() {
       <h2>100% Free Policy</h2>
       <p>
         SkillBun is <strong>100% Completely Free</strong> for all students. We believe high-quality career guidance and skill verification should be universally accessible. All 100+ roadmaps, study guides, AI quizzes, Bun-Bot counsellor chats, and digital certificates are 100% free without subscriptions, paywalls, or credit card requirements.
+      </p>
+      <p>
+        Linked third-party courses, books, and vendor certification exams may have their own prices, prerequisites, or access restrictions. SkillBun does not control those providers' terms.
       </p>
 
       <h2>Our Technology & Ethics</h2>

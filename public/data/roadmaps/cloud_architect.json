@@ -122,13 +122,13 @@
           "description": "Evaluate strategic cloud computing models: trade-offs between Public, Private, Hybrid, and Multi-Cloud architectures; comparing IaaS, PaaS, Serverless (FaaS), and Container-as-a-Service (CaaS); and assessing business agility vs vendor lock-in risks.",
           "resources": [
             {
-              "title": "What is IaaS, PaaS, and SaaS?",
-              "url": "https://azure.microsoft.com/en-us/overview/what-is-iaas-paas-saas/",
+              "title": "Types of cloud computing",
+              "url": "https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/types-of-cloud-computing",
               "type": "article"
             },
             {
-              "title": "Cloud Computing Models Explained",
-              "url": "https://aws.amazon.com/compare/the-cloud-models/",
+              "title": "Types of Cloud Computing",
+              "url": "https://aws.amazon.com/types-of-cloud-computing/",
               "type": "article"
             },
             {
@@ -188,12 +188,7 @@
             },
             {
               "title": "Azure Compute Services",
-              "url": "https://azure.microsoft.com/en-us/products/compute",
-              "type": "article"
-            },
-            {
-              "title": "Containers vs. Serverless vs. VMs",
-              "url": "https://www.redhat.com/en/topics/cloud-native-development/containers-vs-serverless-vs-vms",
+              "url": "https://azure.microsoft.com/en-us/products/category/compute",
               "type": "article"
             },
             {
@@ -222,8 +217,8 @@
               "type": "article"
             },
             {
-              "title": "Azure Database Solutions",
-              "url": "https://azure.microsoft.com/en-us/products/databases",
+              "title": "Azure databases",
+              "url": "https://azure.microsoft.com/en-us/products/category/databases",
               "type": "article"
             },
             {
@@ -247,8 +242,8 @@
               "type": "article"
             },
             {
-              "title": "Azure Virtual Network Fundamentals",
-              "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-vnet-fields",
+              "title": "What is Azure Virtual Network?",
+              "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview",
               "type": "article"
             },
             {
@@ -376,8 +371,8 @@
           "type": "article"
         },
         {
-          "title": "Google Cloud Network Design",
-          "url": "https://cloud.google.com/architecture/network-design-patterns",
+          "title": "Best practices and reference architectures for VPC design",
+          "url": "https://docs.cloud.google.com/architecture/best-practices-vpc-design?hl=en",
           "type": "article"
         },
         {
@@ -404,8 +399,8 @@
               "type": "article"
             },
             {
-              "title": "Google Cloud Hybrid Connectivity",
-              "url": "https://cloud.google.com/network-connectivity/docs/overview",
+              "title": "NCC overview",
+              "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/overview?hl=en",
               "type": "article"
             },
             {
@@ -499,8 +494,8 @@
               "type": "article"
             },
             {
-              "title": "Azure Security for applications",
-              "url": "https://learn.microsoft.com/en-us/azure/security/fundamentals/app-layer",
+              "title": "Develop secure applications on Azure",
+              "url": "https://learn.microsoft.com/en-us/azure/security/develop/secure-develop",
               "type": "article"
             },
             {
@@ -564,8 +559,8 @@
           "description": "Automate network infrastructure and policies: Infrastructure as Code for network provisioning, automated routing table updates, declarative network policy enforcement, and continuous network connectivity validation.",
           "resources": [
             {
-              "title": "Automating AWS Network with Terraform",
-              "url": "https://developer.hashicorp.com/terraform/tutorials/aws/network",
+              "title": "AWS VPC resource configuration (HashiCorp Terraform)",
+              "url": "https://github.com/hashicorp/terraform-provider-aws/blob/main/website/docs/r/vpc.html.markdown",
               "type": "article"
             },
             {
@@ -641,13 +636,13 @@
               "type": "article"
             },
             {
-              "title": "Azure BCDR (Business Continuity & Disaster Recovery)",
-              "url": "https://docs.microsoft.com/en-us/azure/architecture/framework/resiliency/backup-recover",
+              "title": "Architecture strategies for disaster recovery",
+              "url": "https://learn.microsoft.com/en-us/azure/well-architected/reliability/disaster-recovery",
               "type": "article"
             },
             {
-              "title": "Google Cloud Disaster Recovery Planning Guide",
-              "url": "https://cloud.google.com/architecture/disaster-recovery-planning-guide",
+              "title": "Disaster recovery planning guide",
+              "url": "https://docs.cloud.google.com/architecture/dr-scenarios-planning-guide?hl=en",
               "type": "article"
             },
             {
@@ -671,13 +666,13 @@
               "type": "article"
             },
             {
-              "title": "Azure Performance Efficiency",
-              "url": "https://docs.microsoft.com/en-us/azure/architecture/framework/performance/overview",
+              "title": "Performance Efficiency design principles",
+              "url": "https://learn.microsoft.com/en-us/azure/well-architected/performance-efficiency/principles",
               "type": "article"
             },
             {
-              "title": "Google Cloud Performance Best Practices",
-              "url": "https://cloud.google.com/architecture/performance-optimization",
+              "title": "Well-Architected Framework: Performance optimization pillar",
+              "url": "https://docs.cloud.google.com/architecture/framework/performance-optimization?hl=en",
               "type": "article"
             },
             {
@@ -706,18 +701,8 @@
           "description": "Architect enterprise observability platforms: distributed request tracing with OpenTelemetry (OTel), correlating metrics, logs, and traces, real-time service dependency graph visualization, and automated anomaly detection.",
           "resources": [
             {
-              "title": "Introduction to Distributed Tracing",
-              "url": "https://opentelemetry.io/docs/concepts/tracing/",
-              "type": "article"
-            },
-            {
-              "title": "Datadog Cloud Monitoring Course",
-              "url": "https://learn.datadoghq.com/course/cloud-monitoring",
-              "type": "course"
-            },
-            {
-              "title": "Grafana Observability Course",
-              "url": "https://grafana.com/docs/grafana/latest/getting-started/getting-started-observability/",
+              "title": "Distributed Traces, Spans and Context (OpenTelemetry)",
+              "url": "https://opentelemetry.io/docs/concepts/signals/traces/",
               "type": "article"
             },
             {
@@ -791,13 +776,13 @@
               "type": "article"
             },
             {
-              "title": "Implementing SRE on AWS",
-              "url": "https://aws.amazon.com/builders-library/implementing-sre-on-aws/",
+              "title": "What is Site Reliability Engineering (SRE)?",
+              "url": "https://aws.amazon.com/what-is/sre/",
               "type": "article"
             },
             {
-              "title": "What is SRE? (Microsoft Azure)",
-              "url": "https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-sre",
+              "title": "Site reliability engineering documentation",
+              "url": "https://learn.microsoft.com/en-us/azure/site-reliability-engineering/",
               "type": "article"
             },
             {
@@ -858,8 +843,8 @@
           "description": "Apply proven cloud architectural design patterns: Microservices vs Modular Monolith, Event-Driven Architecture (EDA), CQRS (Command Query Responsibility Segregation), Event Sourcing, Strangler Fig pattern for legacy decomposition, and the Saga pattern for distributed transactions.",
           "resources": [
             {
-              "title": "AWS Architecture Blog - Design Patterns",
-              "url": "https://aws.amazon.com/blogs/architecture/tag/design-patterns/",
+              "title": "Cloud design patterns, architectures, and implementations",
+              "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/introduction.html",
               "type": "article"
             },
             {
@@ -903,8 +888,8 @@
               "type": "course"
             },
             {
-              "title": "AWS CI/CD Solutions",
-              "url": "https://aws.amazon.com/devops/cicd/",
+              "title": "What is Continuous Delivery?",
+              "url": "https://aws.amazon.com/devops/continuous-delivery/",
               "type": "article"
             },
             {
@@ -938,8 +923,8 @@
           "description": "Formulate cloud migration and modernization roadmaps: application portfolio assessment using the 7 R's (Rehost, Replatform, Refactor, Repurchase, Retain, Retire, Relocate), database migration with Change Data Capture (CDC), and phased cutover strategies.",
           "resources": [
             {
-              "title": "AWS Cloud Migration Strategies",
-              "url": "https://aws.amazon.com/cloud-migration/six-strategies/",
+              "title": "About the migration strategies",
+              "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/large-migration-guide/migration-strategies.html",
               "type": "article"
             },
             {
@@ -980,11 +965,6 @@
             {
               "title": "The C4 Model for Software Architecture",
               "url": "https://c4model.com/",
-              "type": "article"
-            },
-            {
-              "title": "Communicating Architecture with Diagrams",
-              "url": "https://www.infoq.com/articles/communicate-architecture-diagrams/",
               "type": "article"
             },
             {
@@ -1058,8 +1038,8 @@
               "type": "article"
             },
             {
-              "title": "Azure Solution Architectures",
-              "url": "https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/",
+              "title": "Browse Azure Architectures",
+              "url": "https://learn.microsoft.com/en-us/azure/architecture/browse/",
               "type": "article"
             },
             {

@@ -531,11 +531,6 @@
           "description": "Perform network requests to consume RESTful APIs using popular libraries like Retrofit and OkHttp. Learn about JSON serialization/deserialization with Moshi or Gson. Implement robust error handling, manage network state awareness, and ensure secure handling of API keys and sensitive data.",
           "resources": [
             {
-              "title": "Retrofit Documentation",
-              "url": "https://square.github.io/retrofit/",
-              "type": "article"
-            },
-            {
               "title": "Consuming REST APIs in Android using Retrofit (Mitch Tabian)",
               "url": "https://codingwithmitch.com/courses/android-rest-api/consuming-rest-apis-android-retrofit/",
               "type": "article"
@@ -596,13 +591,8 @@
           "description": "Schedule and manage deferrable, guaranteed background tasks using WorkManager. Understand how to define constraints, differentiate between one-time and periodic work, chain tasks, and observe work status for complex background operations that need to persist system reboots.",
           "resources": [
             {
-              "title": "WorkManager basics",
-              "url": "https://developer.android.com/guide/background/getting-started",
-              "type": "article"
-            },
-            {
-              "title": "Mastering Android Background Tasks with WorkManager (Mindorks)",
-              "url": "https://blog.mindorks.com/mastering-android-background-tasks-with-workmanager-tutorial",
+              "title": "Getting Started with WorkManager (Android Developers)",
+              "url": "https://developer.android.com/develop/background-work/background-tasks/persistent/getting-started",
               "type": "article"
             },
             {
@@ -645,9 +635,9 @@
               "type": "article"
             },
             {
-              "title": "Test your ViewModel",
-              "url": "https://developer.android.com/training/dependency-injection/test-dependencies",
-              "type": "article"
+              "title": "Write Unit Tests for a ViewModel (Android Developers)",
+              "url": "https://developer.android.com/codelabs/basic-android-kotlin-compose-test-viewmodel",
+              "type": "course"
             },
             {
               "title": "Test at scale with Gradle managed devices (Android Developers)",
@@ -780,13 +770,13 @@
           "description": "Prepare Android applications for production release. Understand different build configurations (debug vs. release), sign your app bundle (AAB), and manage multiple APKs. Navigate the Google Play Console for store listings, track management (alpha/beta/production), and managing app updates.",
           "resources": [
             {
-              "title": "Launch Checklist",
-              "url": "https://developer.android.com/distribute/best-practices/launch/launch-checklist",
+              "title": "Publish Your Android App (Android Developers)",
+              "url": "https://developer.android.com/studio/publish?hl=en",
               "type": "article"
             },
             {
-              "title": "Upload your app to Google Play Console",
-              "url": "https://developer.android.com/distribute/console/overview",
+              "title": "Create and Set Up Your App in Play Console (Google Play Help)",
+              "url": "https://support.google.com/googleplay/android-developer/answer/9859152",
               "type": "article"
             },
             {
@@ -1282,11 +1272,6 @@
           "description": "Build resilient network layers with Retrofit 2 and OkHttp: configure interceptors (logging, auth token injection, automatic 401 token refresh), parse JSON with Kotlinx Serialization, handle network timeouts, and model network errors into domain Result types.",
           "resources": [
             {
-              "title": "Retrofit Documentation",
-              "url": "https://square.github.io/retrofit/",
-              "type": "article"
-            },
-            {
               "title": "Consuming REST APIs in Android using Retrofit (Mitch Tabian)",
               "url": "https://codingwithmitch.com/courses/android-rest-api/consuming-rest-apis-android-retrofit/",
               "type": "article"
@@ -1347,13 +1332,8 @@
           "description": "Execute reliable background tasks with WorkManager: enforce constraints (network unmetered, device charging), schedule periodic work, handle expedited work requests, manage unique work policies (KEEP, REPLACE), and adapt to aggressive OEM battery optimization restrictions.",
           "resources": [
             {
-              "title": "WorkManager basics",
-              "url": "https://developer.android.com/guide/background/getting-started",
-              "type": "article"
-            },
-            {
-              "title": "Mastering Android Background Tasks with WorkManager (Mindorks)",
-              "url": "https://blog.mindorks.com/mastering-android-background-tasks-with-workmanager-tutorial",
+              "title": "Getting Started with WorkManager (Android Developers)",
+              "url": "https://developer.android.com/develop/background-work/background-tasks/persistent/getting-started",
               "type": "article"
             },
             {
@@ -1393,9 +1373,9 @@
               "type": "article"
             },
             {
-              "title": "Test your ViewModel",
-              "url": "https://developer.android.com/training/dependency-injection/test-dependencies",
-              "type": "article"
+              "title": "Write Unit Tests for a ViewModel (Android Developers)",
+              "url": "https://developer.android.com/codelabs/basic-android-kotlin-compose-test-viewmodel",
+              "type": "course"
             },
             {
               "title": "Test at scale with Gradle managed devices (Android Developers)",
@@ -1528,13 +1508,13 @@
           "description": "Deploy applications to the Google Play Store: build optimized Android App Bundles (AAB), sign releases with Play App Signing, manage staged rollout percentages, configure internal testing tracks, and adhere to target SDK privacy and permission mandates.",
           "resources": [
             {
-              "title": "Launch Checklist",
-              "url": "https://developer.android.com/distribute/best-practices/launch/launch-checklist",
+              "title": "Publish Your Android App (Android Developers)",
+              "url": "https://developer.android.com/studio/publish?hl=en",
               "type": "article"
             },
             {
-              "title": "Upload your app to Google Play Console",
-              "url": "https://developer.android.com/distribute/console/overview",
+              "title": "Create and Set Up Your App in Play Console (Google Play Help)",
+              "url": "https://support.google.com/googleplay/android-developer/answer/9859152",
               "type": "article"
             },
             {

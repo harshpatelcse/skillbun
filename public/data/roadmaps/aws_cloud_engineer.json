@@ -116,8 +116,8 @@
           "description": "Understand cloud computing models from an engineering perspective: IaaS, PaaS, SaaS, total cost of ownership (TCO) vs capital expense (CapEx), cloud migration patterns (the 6 R's: Rehost, Replatform, Repurchase, Refactor, Retire, Retain), and the AWS Well-Architected Framework pillars.",
           "resources": [
             {
-              "title": "Introduction to Cloud Computing - AWS Training",
-              "url": "https://aws.amazon.com/training/digital/cloud-computing-basics/",
+              "title": "AWS Cloud Practitioner Essentials",
+              "url": "https://skillbuilder.aws/learn/94T2BEN85A/aws-cloud-practitioner-essentials/8D79F3AVR7",
               "type": "course"
             },
             {
