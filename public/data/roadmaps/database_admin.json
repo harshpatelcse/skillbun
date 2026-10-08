@@ -431,11 +431,6 @@
               "type": "article"
             },
             {
-              "title": "PostgreSQL VACUUM Deep Dive",
-              "url": "https://www.cybertec-postgresql.com/en/postgresql-vacuum-deep-dive/",
-              "type": "article"
-            },
-            {
               "title": "SQL Tutorial - Full Database Course for Beginners",
               "url": "https://www.youtube.com/watch?v=HXV3zeQKqGY",
               "type": "video"
@@ -535,11 +530,6 @@
             {
               "title": "pgBackRest User Guide",
               "url": "https://pgbackrest.org/user-guide.html",
-              "type": "article"
-            },
-            {
-              "title": "Point-in-Time Recovery (PITR) in PostgreSQL",
-              "url": "https://www.cybertec-postgresql.com/en/postgresql-point-in-time-recovery-pitr-explained/",
               "type": "article"
             },
             {
@@ -930,11 +920,6 @@
           "description": "Audit database operations: deploying `pgaudit` for detailed session and DDL/DML audit logging, database vulnerability scanning, and monitoring failed connection attempts.",
           "resources": [
             {
-              "title": "PostgreSQL Audit Logging with pgaudit",
-              "url": "https://www.cybertec-postgresql.com/en/postgresql-security-audit-logging-with-pgaudit/",
-              "type": "article"
-            },
-            {
               "title": "OWASP Top 10 for Web Application Security",
               "url": "https://owasp.org/www-project-top-ten/",
               "type": "article"
@@ -1213,11 +1198,6 @@
           "tag": "advanced",
           "description": "Master NewSQL and Distributed SQL engines: CockroachDB, YugabyteDB, and Google Cloud Spanner; understanding distributed transactions, Raft consensus per range/tablet, and multi-region data placement.",
           "resources": [
-            {
-              "title": "CockroachDB Fundamentals",
-              "url": "https://www.cockroachlabs.com/docs/stable/cockroachdb-feature-overview.html",
-              "type": "article"
-            },
             {
               "title": "YugabyteDB Documentation",
               "url": "https://docs.yugabyte.com/",

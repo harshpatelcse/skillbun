@@ -1186,11 +1186,6 @@
           "description": "Hands-on Drill: Audit an insecure API endpoint and systematically remediate vulnerabilities: enforce strict input validation with Zod/Pydantic, parameterize SQL queries to prevent SQLi, implement rate limiting with a sliding-window Redis token bucket, enforce JWT role verification with RS256, sanitize error responses to RFC 7807 standards, and record distributed traces.",
           "resources": [
             {
-              "title": "Building a Robust API with Error Handling (Flask Example)",
-              "url": "https://realpython.com/python-api-development/#error-handling",
-              "type": "article"
-            },
-            {
               "title": "API Security Tutorial for Beginners | Best Practices & Real-World Examples",
               "url": "https://www.youtube.com/watch?v=6WZ6S-qmtqY",
               "type": "video"

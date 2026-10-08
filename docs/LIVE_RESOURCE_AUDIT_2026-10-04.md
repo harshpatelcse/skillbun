@@ -31,7 +31,20 @@ All **31 focused tests passed** across resource safety, global roadmap standards
 
 This continuation checked local integrity and reconciled the report. The external availability evidence and unresolved counts below remain dated **4 October**; a new catalog-wide network crawl, signed-in guide read, regional playback, and editorial review of every lesson were not performed.
 
-11 originally missing roadmap URLs remain preserved because follow-up responses or host controls were inconclusive. Across the surviving catalog, 516 URLs remain blocked or otherwise unverified; surviving guide citations have 308 such URLs. These are not claimed broken or fixed. HTTP success does not prove content completeness, enrollment access, regional playback, or factual accuracy. The one inconclusive playlist remains linked.
+At the end of the 4 October check, 11 originally missing roadmap URLs remained preserved because follow-up responses or host controls were inconclusive. The catalog had 516 blocked/unverified URLs, and guide citations had 308; the groups overlap. These historical counts are superseded by the 6 October follow-up below. HTTP success does not prove content completeness, enrollment access, regional playback, or factual accuracy.
+
+## External follow-up and repairs — 6 October 2026
+
+Rechecked all **542 unique URLs** represented by the two unresolved lists. **56 were reachable**, **89 returned 404/410 on two GET requests**, **281 were host-restricted**, **100 were inconclusive**, and **16 were deferred after their host returned 429**. No challenge or rate-limit bypass was used.
+
+- Migrated **5 catalog entries** to checked OpenCV, Solidity and portfolio-case-study destinations.
+- Retired **80 missing supplementary entries across the affected catalog**, retaining each topic's encrypted guide and a freshly checked external option. The catalog now contains **14,478 resource entries** across the same 100 topic trees.
+- Corrected/unlinked **44 hyperlink occurrences in 42 guides**. Teaching text, headings and fenced examples remain; two intentionally illustrative URLs inside code examples were preserved and excluded from repair work.
+- Authenticated all **3,335 guides and the manifest** and compared every decrypted guide with its source. Only **42 guide ciphertexts** changed; **3,293 ciphertexts and the manifest** were preserved. All **34 focused resource/vault tests passed**.
+
+**397 unique URLs still require external verification**: 383 occur in the current catalog and 227 in guide citations, with overlap. They remain explicitly restricted, rate-limited or inconclusive. Their destinations were not removed on that basis. The durable audit JSON contains the full dated follow-up, HTTP evidence, changes, retained alternatives and unresolved list under `followUp`.
+
+For another bounded check, run `node scripts/recheck-resource-links.mjs`; it reads the latest unresolved list and writes local diagnostic results to `.codex-tmp/resource-follow-up.json`. Review results before updating content or the durable audit. The checker does not edit teaching content or use service credentials.
 
 The durable [audit data](audits/live-resource-audit-2026-10-04.json) records every migrated/retired resource, retained learning alternative, guide link change, and unresolved URL for follow-up. No production AI credentials, remote account writes, bulk AI generation, or paid services were used.
 

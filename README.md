@@ -12,7 +12,7 @@ The application uses Next.js App Router, React, Firebase Auth/Firestore, and sha
 - Projects is a catalog of practice blueprints, without project submissions or grading.
 - Admin tools cover students, analytics, reviewed email drafts/dispatch, credentials, workforce documents, and milestones.
 
-Some features are incomplete or need production verification, particularly the code playground and full-site translations. Resumable student-account erasure and certificate privacy/integrity fixes require the updated Firestore rules at deployment. Read [Current feature status](docs/CURRENT_STATUS.md) before treating a feature as production-ready.
+The code playground supports isolated JavaScript/Python execution and static HTML/CSS previews; unsupported runtimes are labelled explicitly. Full-site translation remains partial. Certificate privacy/integrity rules are deployed. Release 2.10.68 includes account-deletion validation and certification startup fixes awaiting production verification; reset-email delivery is confirmed, while new-signup OTP and certificate/workforce journeys still require verification. Read [Current feature status](docs/CURRENT_STATUS.md) for the dated evidence and remaining limits.
 
 ## Run locally
 

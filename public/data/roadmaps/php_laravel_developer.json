@@ -622,11 +622,6 @@
           "description": "Harden Laravel security: CSRF protection, signed URLs, content security policy (CSP), password hashing (Argon2id), and environment secret protection.",
           "resources": [
             {
-              "title": "Laravel Security Documentation",
-              "url": "https://laravel.com/docs/master/security",
-              "type": "article"
-            },
-            {
               "title": "OWASP Top 10",
               "url": "https://owasp.org/www-project-top-ten/",
               "type": "article"

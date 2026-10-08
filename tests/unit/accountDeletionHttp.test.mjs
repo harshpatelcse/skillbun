@@ -25,6 +25,7 @@ function setup(overrides = {}) {
   const run = async ({ headers = {}, path = '/api/account', method = 'DELETE', target, body } = {}) => {
     const response = await handle(new Request(`${origin}${path}`, {
       method, headers: { authorization: 'Bearer token', origin, ...headers }, body,
+      ...(body instanceof ReadableStream ? { duplex: 'half' } : {}),
     }), target);
     return { response, data: await response.json() };
   };
@@ -40,6 +41,49 @@ test('self erasure derives identity from token and opts into deletion-only authe
   assert.equal(app.calls.erase[0].uid, 'student');
   assert.equal(app.calls.erase[0].expectedEmail, '');
   assert.match(response.headers.get('cache-control'), /no-store/);
+});
+
+test('bodyless DELETE accepts empty HTTP adapter streams and explicit zero-length bodies', async () => {
+  for (const body of ['', new ReadableStream({ start(controller) { controller.close(); } }), new ReadableStream({ start(controller) { controller.enqueue(new Uint8Array()); controller.close(); } })]) {
+    const app = setup();
+    const { response, data } = await app.run({ body });
+    assert.equal(response.status, 200);
+    assert.equal(data.status, 'complete');
+    assert.equal(app.calls.erase.length, 1);
+  }
+});
+
+test('a nonempty streamed DELETE is rejected and cancelled without consuming the rest', async () => {
+  let cancelled = false;
+  const body = new ReadableStream({
+    start(controller) { controller.enqueue(new TextEncoder().encode('{')); },
+    cancel() { cancelled = true; },
+  });
+  const app = setup();
+  const { response, data } = await app.run({ body });
+  assert.equal(response.status, 400);
+  assert.equal(data.code, 'INVALID_PAYLOAD');
+  assert.equal(app.calls.erase.length, 0);
+  assert.equal(cancelled, true);
+});
+
+test('a failing DELETE body stream never authorizes erasure', async () => {
+  const app = setup();
+  const body = new ReadableStream({ start(controller) { controller.error(new Error('Synthetic transport failure')); } });
+  const { response } = await app.run({ body });
+  assert.equal(response.status, 503);
+  assert.equal(app.calls.erase.length, 0);
+});
+
+test('a stalled DELETE body times out without starting erasure', { timeout: 10_000 }, async () => {
+  let cancelled = false;
+  const body = new ReadableStream({ cancel() { cancelled = true; } });
+  const app = setup();
+  const { response, data } = await app.run({ body });
+  assert.equal(response.status, 503);
+  assert.equal(data.code, 'DELETION_FAILED');
+  assert.equal(app.calls.erase.length, 0);
+  assert.equal(cancelled, true);
 });
 
 test('missing, malformed and revoked tokens cannot erase any account', async () => {

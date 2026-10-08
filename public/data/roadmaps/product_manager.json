@@ -972,11 +972,6 @@
           "description": "Master behavioral and technical interviews: STAR method leadership stories, explaining technical architecture tradeoffs to engineers, and executive interviews.",
           "resources": [
             {
-              "title": "System Design Interview Prep for PMs",
-              "url": "https://www.productschool.com/blog/product-management-interview-system-design/",
-              "type": "article"
-            },
-            {
               "title": "Product Management Responsibilities to Review (Atlassian)",
               "url": "https://www.atlassian.com/agile/product-management",
               "type": "article"

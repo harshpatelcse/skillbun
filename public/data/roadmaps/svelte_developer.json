@@ -188,16 +188,6 @@
           "description": "Manage application state: Writable, readable, and derived stores; custom store contracts; context API (`setContext`, `getContext`) for component subtrees; and modern runes `$state` / `$derived`.",
           "resources": [
             {
-              "title": "Svelte Tutorial: Derived Stores",
-              "url": "https://svelte.dev/tutorial/derived-stores",
-              "type": "course"
-            },
-            {
-              "title": "Svelte Tutorial: Context API",
-              "url": "https://svelte.dev/tutorial/context-api",
-              "type": "course"
-            },
-            {
               "title": "Svelte Stores Tutorial (The Net Ninja)",
               "url": "https://www.youtube.com/watch?v=1Df-9EKvZr0",
               "type": "video"
@@ -262,11 +252,6 @@
           "tag": "essential",
           "description": "Create fluid UI animations: Built-in transitions (`fade`, `fly`, `slide`), spring/tweened motion stores, crossfade for shared element transitions, and reduced-motion accessibility.",
           "resources": [
-            {
-              "title": "Svelte Tutorial: Transitions",
-              "url": "https://svelte.dev/tutorial/introduction-to-transitions",
-              "type": "course"
-            },
             {
               "title": "Svelte Motion Library",
               "url": "https://svelte.dev/docs/svelte#module-svelte_motion",
@@ -434,16 +419,6 @@
           "tag": "essential",
           "description": "Build server endpoints: Handling raw HTTP methods (`GET`, `POST`, `PUT`, `DELETE`) in `+server.js`, streaming responses, and building internal RESTful APIs.",
           "resources": [
-            {
-              "title": "SvelteKit Docs: Server",
-              "url": "https://kit.svelte.dev/docs/server",
-              "type": "article"
-            },
-            {
-              "title": "SvelteKit Docs: Request and Response",
-              "url": "https://kit.svelte.dev/docs/helpers#request-and-response",
-              "type": "article"
-            },
             {
               "title": "SvelteKit Tutorial (Joy of Code)",
               "url": "https://www.youtube.com/watch?v=obmiLi3bhkQ",
@@ -930,11 +905,6 @@
           "tag": "essential",
           "description": "Leverage Svelte ecosystem: Full-stack TypeScript integration, Svelte Inspector for DOM debugging, and community extensions.",
           "resources": [
-            {
-              "title": "Svelte with ESLint and Prettier",
-              "url": "https://www.sitepoint.com/svelte-eslint-prettier-setup/",
-              "type": "article"
-            },
             {
               "title": "Storybook for Svelte",
               "url": "https://storybook.js.org/docs/svelte/get-started/install",

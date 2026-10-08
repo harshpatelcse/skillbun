@@ -4,7 +4,7 @@ The CRM recommends a relevant lifecycle category from recorded student activity.
 
 ## Recommendation rules
 
-- By default, suppress marketing for unsubscribed students, missing email addresses, and students sent a marketing email within 72 hours. The separate admin Force Send option can explicitly override unsubscribe/frequency suppression; it is not applied by the recommendation engine.
+- Suppress marketing for students without explicit consent, unsubscribed students, missing email addresses, and students sent a marketing email within 72 hours. The separate admin Force Send option can override frequency/eligibility checks, but **never consent or unsubscribe suppression**. The production send route rechecks the unsubscribe record and profile consent and returns 409 when the recipient is not opted in. Preview/test delivery is a separate controlled workflow; it must not be used to bypass a real recipient's preference.
 - Acknowledge a real roadmap certificate issued within the last 14 days, once per recorded certificate event. Older history without event IDs is conservatively matched by category and roadmap.
 - Recommend exam review only for a confirmed completed unsuccessful exam within seven days. An exam start or attempt counter is not proof of failure.
 - Recommend certification preparation at verified 60% roadmap completion; the actual exam page still enforces attempts and cooldowns. Passed exams and issued certificates suppress that roadmap's exam invitation.

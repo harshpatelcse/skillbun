@@ -195,11 +195,6 @@
               "type": "article"
             },
             {
-              "title": "Conducting User Research for Content",
-              "url": "https://xd.adobe.com/ideas/principles/content-design/how-to-do-user-research-for-content/",
-              "type": "article"
-            },
-            {
               "title": "User Interviews for Content Strategy",
               "url": "https://www.nngroup.com/articles/user-interviews/",
               "type": "article"
@@ -362,11 +357,6 @@
           "description": "Structure product content: Navigational labeling, taxonomies, hierarchy, and structuring complex workflows with intuitive mental models.",
           "resources": [
             {
-              "title": "Content Inventories and Audits in Information Architecture",
-              "url": "https://www.contentstrategyalliance.com/what-is-content-strategy/content-inventories-audits/",
-              "type": "article"
-            },
-            {
               "title": "Designing a Great User Experience with Information Architecture",
               "url": "https://www.interaction-design.org/literature/topics/information-architecture",
               "type": "article"
@@ -476,11 +466,6 @@
           "tag": "essential",
           "description": "Write for end-to-end user flows: Onboarding sequences, multi-step checkout funnels, permission request rationale, and transactional notification copy.",
           "resources": [
-            {
-              "title": "Mapping Content to User Journeys",
-              "url": "https://www.contentstrategyalliance.com/what-is-content-strategy/user-journeys-content/",
-              "type": "article"
-            },
             {
               "title": "UX Writing: How To Write Microcopy (With Examples)",
               "url": "https://www.youtube.com/watch?v=ylx67a1v7_M",
@@ -815,11 +800,6 @@
           "tag": "essential",
           "description": "Collaborate cross-functionally: Embedding content designers in product squads, pairing with product managers on specs, and partnering with legal/compliance teams.",
           "resources": [
-            {
-              "title": "Content Designer & Product Designer Collaboration",
-              "url": "https://xd.adobe.com/ideas/principles/content-design/content-designer-product-designer-collaboration/",
-              "type": "article"
-            },
             {
               "title": "What is Scrum? In 8 Minutes",
               "url": "https://www.youtube.com/watch?v=iJ_sl6J8PRg",

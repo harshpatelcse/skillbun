@@ -670,11 +670,6 @@
           "description": "Analyze drivetrains: Differential drive, Ackermann steering, omnidirectional Mecanum wheels, harmonic drives, planetary gearboxes, and BLDC motor selection.",
           "resources": [
             {
-              "title": "Robot Actuators: Types, Working & Applications",
-              "url": "https://www.engineersgarage.com/robot-actuators-types-working-applications/",
-              "type": "article"
-            },
-            {
               "title": "Drivetrain Design Principles (various resources)",
               "url": "https://www.google.com/search?q=robot+drivetrain+design+principles",
               "type": "article"

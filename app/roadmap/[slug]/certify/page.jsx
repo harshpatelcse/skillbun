@@ -4,9 +4,8 @@ import { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import { useAuth } from '../../../components/AuthProvider';
 import { getFirebaseServices } from '@/utils/client/firebaseClient';
-import { readStoredRoadmapProgress } from '@/utils/shared/progressStore';
 import { startCertificationQuestionTimer } from '@/utils/client/certificationTimer.mjs';
-import { doc, getDoc, setDoc, collection, serverTimestamp, query, where, getDocs } from 'firebase/firestore';
+import { doc, getDoc, getDocFromServer, setDoc, collection, serverTimestamp, query, where, getDocs } from 'firebase/firestore';
 import { trackEvent } from '@/lib/analytics';
 import styles from './certify.module.css';
 
@@ -169,13 +168,13 @@ function CertificationSession({ slug, user, profile, authLoading }) {
   }, []);
 
   // Attempts checking logic memoized to prevent recreation issues
-  const checkAttemptsLimit = useCallback(async () => {
+  const checkAttemptsLimit = useCallback(async (isActive = isCurrentSession) => {
     const services = getFirebaseServices();
     if (!services.configured || !user) return;
 
     const docRef = doc(services.db, 'users', user.uid, 'quizAttempts', slug);
     const snapshot = await getDoc(docRef);
-    if (!isCurrentSession()) return;
+    if (!isActive()) return;
 
     if (snapshot.exists()) {
       const data = snapshot.data();
@@ -214,11 +213,11 @@ function CertificationSession({ slug, user, profile, authLoading }) {
   }, [slug, user, isCurrentSession]);
 
   // Captcha token handler
-  const handleTurnstileCallback = useCallback(async (token) => {
+  const handleTurnstileCallback = useCallback(async (token, isActive = isCurrentSession) => {
     if (!user) return;
     try {
       const idToken = await user.getIdToken();
-      if (!isCurrentSession()) return;
+      if (!isActive()) return;
       const response = await fetch('/api/human/verify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${idToken}` },
@@ -226,7 +225,7 @@ function CertificationSession({ slug, user, profile, authLoading }) {
         signal: AbortSignal.timeout(12000),
       });
       const data = await response.json();
-      if (!isCurrentSession()) return;
+      if (!isActive()) return;
       if (response.ok && data.humanToken && Number.isFinite(data.expiresAt)) {
         setCaptchaToken(data.humanToken);
         setCaptchaExpiresAt(data.expiresAt);
@@ -236,7 +235,7 @@ function CertificationSession({ slug, user, profile, authLoading }) {
         setCaptchaError(typeof data.error === 'string' ? data.error : data.error?.message || 'Human proof validation failed.');
       }
     } catch (err) {
-      if (!isCurrentSession()) return;
+      if (!isActive()) return;
       setCaptchaError('Failed to verify captcha.');
     }
   }, [user, isCurrentSession]);
@@ -357,22 +356,43 @@ function CertificationSession({ slug, user, profile, authLoading }) {
       return;
     }
 
+    const controller = new AbortController();
+    const isActive = () => !controller.signal.aborted && isCurrentSession();
+    // Firestore reads cannot be aborted, so bound the whole load as well as fetches.
+    const loadTimeout = setTimeout(() => {
+      if (isActive()) {
+        setError('Loading certification timed out. Please check your connection and try again.');
+        setLoading(false);
+      }
+      controller.abort();
+    }, 20000);
+
     const loadQuizData = async () => {
       try {
+        setLoading(true);
+        setError('');
+        setProgressInsufficient(false);
         // 1. Fetch roadmap detail to verify title and progress
-        const roadmapRes = await fetch(`/data/roadmaps/${slug}.json`);
+        const roadmapRes = await fetch(`/data/roadmaps/${slug}.json`, { signal: controller.signal });
+        if (!isActive()) return;
         if (!roadmapRes.ok) {
           setError('Roadmap not found.');
           setLoading(false);
           return;
         }
         const roadmapData = await roadmapRes.json();
-        if (!isCurrentSession()) return;
+        if (!isActive()) return;
         setRoadmapTitle(roadmapData.title);
 
         // 1b. Verify 60% progress before allowing quiz access
         if (process.env.NODE_ENV !== 'development') {
-          const storedProgress = readStoredRoadmapProgress(slug);
+          // Auth can settle before the shared browser cache has hydrated. Read
+          // the signed-in student's cloud record, as the start endpoint does.
+          const services = getFirebaseServices();
+          const progressSnapshot = await getDocFromServer(doc(services.db, 'users', user.uid, 'roadmapProgress', slug));
+          if (!isActive()) return;
+          const completedNodeIds = progressSnapshot.exists() ? progressSnapshot.data().completedNodeIds : [];
+          const storedProgress = Array.isArray(completedNodeIds) ? completedNodeIds : [];
           const tree = normalizeRoadmapTree(roadmapData);
           const allNodes = flattenTree(tree);
           const totalNodes = allNodes.length;
@@ -385,18 +405,19 @@ function CertificationSession({ slug, user, profile, authLoading }) {
         }
 
         // 4. Fetch Turnstile Site Key from Config API
-        const configRes = await fetch('/api/config');
+        const configRes = await fetch('/api/config', { signal: controller.signal });
+        if (!isActive()) return;
         if (configRes.ok) {
           const configData = await configRes.json();
-          if (!isCurrentSession()) return;
+          if (!isActive()) return;
           const captcha = configData?.captcha || {};
           if (captcha.enabled && captcha.siteKey) {
             setSiteKey(captcha.siteKey);
           }
           if (process.env.NODE_ENV === 'development') {
-            await handleTurnstileCallback('bypass-captcha-dev');
+            await handleTurnstileCallback('bypass-captcha-dev', isActive);
           } else if (!captcha.enabled) {
-            await handleTurnstileCallback('');
+            await handleTurnstileCallback('', isActive);
           } else if (!captcha.siteKey) {
             throw new Error('Human verification is not configured.');
           }
@@ -405,8 +426,9 @@ function CertificationSession({ slug, user, profile, authLoading }) {
         }
 
         // 5. Fetch Attempts history from Firestore
-        await checkAttemptsLimit();
-        if (!isCurrentSession()) return;
+        if (!isActive()) return;
+        await checkAttemptsLimit(isActive);
+        if (!isActive()) return;
 
         // 6. Check if user is already certified for this roadmap
         const services = getFirebaseServices();
@@ -415,7 +437,7 @@ function CertificationSession({ slug, user, profile, authLoading }) {
             const certsRef = collection(services.db, 'certificates');
             const q = query(certsRef, where('uid', '==', user.uid), where('roadmapSlug', '==', slug), where('is_revoked', '==', false));
             const querySnapshot = await getDocs(q);
-            if (!isCurrentSession()) return;
+            if (!isActive()) return;
             if (!querySnapshot.empty) {
               setIsAlreadyCertified(true);
               setExistingCertId(querySnapshot.docs[0].id);
@@ -424,21 +446,26 @@ function CertificationSession({ slug, user, profile, authLoading }) {
           }
         }
       } catch (err) {
-        if (!isCurrentSession()) return;
+        if (!isActive()) return;
         console.error(err);
         setError('Failed to load quiz metadata.');
       } finally {
-        if (isCurrentSession()) setLoading(false);
+        clearTimeout(loadTimeout);
+        if (isActive()) setLoading(false);
       }
     };
 
     loadQuizData();
 
     // Fetch IP for watermark
-    fetch('https://api.ipify.org?format=json')
+    fetch('https://api.ipify.org?format=json', { signal: controller.signal })
       .then((r) => r.json())
-      .then((data) => { if (isCurrentSession()) setIpAddress(data.ip || '127.0.0.1'); })
+      .then((data) => { if (isActive()) setIpAddress(data.ip || '127.0.0.1'); })
       .catch(() => {});
+    return () => {
+      controller.abort();
+      clearTimeout(loadTimeout);
+    };
   }, [slug, user, authLoading, checkAttemptsLimit, handleTurnstileCallback, isCurrentSession, router]);
 
   // Load Turnstile script dynamically

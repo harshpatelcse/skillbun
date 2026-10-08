@@ -189,11 +189,6 @@
           "description": "Master robust error handling and I/O architectures: checked vs unchecked runtime exceptions, try-with-resources with `AutoCloseable`, custom domain exception hierarchies, and Java NIO.2 non-blocking I/O (`Path`, `Files`, `ByteBuffer`, `FileChannel`, `AsynchronousSocketChannel`, and selector event demultiplexing).",
           "resources": [
             {
-              "title": "NIO.2 File API in Java",
-              "url": "https://www.baeldung.com/java-nio-2",
-              "type": "article"
-            },
-            {
               "title": "Concurrency vs Parallelism (Defog Tech)",
               "url": "https://www.youtube.com/watch?v=FChZP09Ba4E",
               "type": "video"
@@ -291,11 +286,6 @@
             {
               "title": "JVM Architecture Explained",
               "url": "https://www.baeldung.com/jvm-architecture",
-              "type": "article"
-            },
-            {
-              "title": "Java Garbage Collection Handbook",
-              "url": "https://www.baeldung.com/java-garbage-collection-handbook",
               "type": "article"
             },
             {
@@ -431,11 +421,6 @@
               "type": "article"
             },
             {
-              "title": "JPA Tutorial",
-              "url": "https://www.baeldung.com/jpa",
-              "type": "article"
-            },
-            {
               "title": "Spring Boot REST API Tutorial (Amigoscode)",
               "url": "https://www.youtube.com/watch?v=9SGDpanrc8U",
               "type": "video"
@@ -495,11 +480,6 @@
             {
               "title": "Spring Framework Documentation",
               "url": "https://docs.spring.io/spring-framework/reference/",
-              "type": "article"
-            },
-            {
-              "title": "Spring IoC Container Tutorial",
-              "url": "https://www.baeldung.com/spring-ioc-container-tutorial",
               "type": "article"
             },
             {
@@ -638,11 +618,6 @@
               "type": "article"
             },
             {
-              "title": "Spring Data JPA Tutorial",
-              "url": "https://www.baeldung.com/spring-data-jpa-tutorial",
-              "type": "article"
-            },
-            {
               "title": "Java Full Course for Beginners (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=GdzRzWymT4c",
               "type": "video"
@@ -700,11 +675,6 @@
           "description": "Implement enterprise security with Spring Security 6: Security Filter Chain configuration, stateless JWT authentication (access and refresh tokens with RS256 signing), OAuth2 Resource Server integration, Method-level authorization (`@PreAuthorize`), password hashing with BCrypt / Argon2, and CORS and CSRF defense.",
           "resources": [
             {
-              "title": "Spring Security with JWT Tutorial",
-              "url": "https://www.baeldung.com/spring-security-jwt",
-              "type": "article"
-            },
-            {
               "title": "Spring Security OAuth2",
               "url": "https://www.baeldung.com/spring-security-oauth-auth-server",
               "type": "article"
@@ -737,11 +707,6 @@
             {
               "title": "Spring Kafka Tutorial",
               "url": "https://www.baeldung.com/spring-kafka",
-              "type": "article"
-            },
-            {
-              "title": "Event-Driven Architecture with Spring",
-              "url": "https://www.baeldung.com/spring-event-driven-architecture",
               "type": "article"
             },
             {
@@ -812,11 +777,6 @@
             {
               "title": "Building an API Gateway with Spring Cloud Gateway",
               "url": "https://www.baeldung.com/spring-cloud-gateway",
-              "type": "article"
-            },
-            {
-              "title": "Spring Cloud Netflix Eureka for Service Discovery",
-              "url": "https://www.baeldung.com/spring-cloud-eureka-intro",
               "type": "article"
             },
             {
@@ -1124,11 +1084,6 @@
           "description": "Implement enterprise observability for Spring Boot: Spring Boot Actuator health endpoints (`/health/liveness`, `/health/readiness`), structured JSON logging with Logback/Logstash, application metrics collection with Micrometer and Prometheus, and distributed tracing with OpenTelemetry, Micrometer Tracing, and Jaeger/Tempo.",
           "resources": [
             {
-              "title": "Spring Boot and Centralized Logging",
-              "url": "https://www.baeldung.com/spring-boot-centralized-logging",
-              "type": "article"
-            },
-            {
               "title": "Monitoring Spring Boot with Prometheus and Grafana",
               "url": "https://www.baeldung.com/spring-boot-prometheus-grafana",
               "type": "article"
@@ -1158,11 +1113,6 @@
           "tag": "advanced",
           "description": "Deploy and operate Spring Boot on cloud platforms: AWS ECS/EKS or Google Cloud Run, configuring managed databases (AWS RDS PostgreSQL), IAM role-based identity delegation, and integrating cloud secrets managers.",
           "resources": [
-            {
-              "title": "Deploy Spring Boot to AWS EC2",
-              "url": "https://www.baeldung.com/spring-boot-aws-ec2",
-              "type": "article"
-            },
             {
               "title": "Deploying to Google Cloud Platform",
               "url": "https://cloud.google.com/docs/tutorials",
@@ -1225,11 +1175,6 @@
           "tag": "advanced",
           "description": "Master software architectural patterns in Java: SOLID design principles, Gang of Four patterns (Factory, Builder, Strategy, Observer, Decorator), and Domain-Driven Design (DDD) tactical patterns (Entities, Value Objects, Aggregates, Repositories, Domain Events).",
           "resources": [
-            {
-              "title": "Design Patterns in Java",
-              "url": "https://www.baeldung.com/java-design-patterns",
-              "type": "article"
-            },
             {
               "title": "Domain Driven Design Reference",
               "url": "https://www.domainlanguage.com/ddd/reference/",

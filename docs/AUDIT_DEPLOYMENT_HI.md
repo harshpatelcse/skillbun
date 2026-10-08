@@ -1,6 +1,21 @@
 # SkillBun audit fixes — simple deployment guide
 
-Release continuation: `2.10.67`, 6 October 2026. Is release mein storage/account isolation, C# search validation, BunBot context/CAPTCHA cleanup, truthful product copy, workforce PDF snapshot/validation aur learning resources ke targeted fixes hain. `www.skillbun.tech` redirect aur Firestore rules deployment ka pehle ka evidence neeche dated context mein retained hai; nayi application deployment ka actual revision/status verify karna zaroori hai.
+## Latest local continuation — 8 October 2026
+
+Ye changes release `2.10.68` aur matching lockfile mein included hain. Git push ko production deployment proof mat samjho; Vercel par isi revision ka Ready status aur live checks separately verify karo. Certification startup cloud progress read karta hai aur stalled metadata load 20 seconds mein controlled error deta hai; server exam safeguards unchanged hain.
+
+1. **Deletion fix release karo.** Live test mein fresh login ke baad bhi empty DELETE request `Unexpected account deletion parameters` se reject hui. Local fix empty stream accept karta hai; nonempty/failed/stalled stream reject hoti hai. Validated application release ke baad approved disposable account se fresh login karke deletion dobara check karo. Is run mein account delete nahi hua.
+2. **Dependency patch included hai.** Next aur uske companion packages `16.3.8` par hain; `source-map-js` `1.2.2` par hai. Runtime dependency audit clean hai. Full audit ke 5 `braces` entries sirf existing lint chain ke hain; current unpatched tooling ko suppress karne ke liye framework downgrade mat karo.
+3. **Rules dobara deploy karna required nahi.** Production rule source local file se match hai, aur local emulator ke 22 tests pass hain. Local rules testing ke liye Node 22, Java 21+, Firebase CLI 15.29.0 aur `npm run test:rules` use karo. CI setup included hai. Koi naya production env variable ya credential required nahi.
+4. **Backup/retention decision pending hai.** Cloud mein 7 indexes READY hain, lekin TTL policies aur backup schedules absent hain; PITR aur database delete protection disabled hain. Backup schedule/retention, PITR aur restore-test budget owner decide kare. Optional TTL candidates `emailSignupChallenges.deleteAfter` aur `serverRateLimits.expiresAt` hain; TTL deletes incur usage. **`accountDeletions` markers par TTL mat lagao**: stale sessions/in-flight writers ko block karna zaroori hai. No automatic retention deletion or paid feature was enabled.
+5. **Free-first auth policy preserve karo.** Email provider enabled aur no blocking function current selected setup ke hisaab se correct hai. Identity Platform upgrade/function deployment optional paid decision hai. Google signup bachane ke liye global signup ya email login disable mat karo.
+6. **Remaining live checks:** Google popup + new OTP inbox, eligible exam/mint/PDF/QR, approved admin/intern workforce flow, production RAG performance, analytics consent network checks, Search Console/Bing ownership and sitemap acceptance. Reset-email delivery user-confirmed hai; guide opening aur below-60% exam rejection live pass hain. IAM least-privilege/backup restore/secret custody ko local tests se complete mat mark karo.
+
+Search Console mein current browser account ko `skillbun.tech` property access denied mila; property picker mein accessible site nahi thi. Existing verified owner account se login karke sitemap/indexing result check karna hoga. Nayi ownership verification ya access grant is audit mein perform nahi hua.
+
+Neeche 6 October release ka historical deployment record hai; usko latest local fix ki deployment proof mat samjho.
+
+Release continuation: `2.10.67`, 6 October 2026. Is release mein storage/account isolation, C# search validation, BunBot context/CAPTCHA cleanup, truthful product copy, workforce PDF snapshot/validation aur learning resources ke targeted fixes hain. Commit `095aa3ba` ka GitHub CI pass hai; Vercel deployment `dpl_ForpUFhwaTpRvb6SJD9oCRFQUvrr` Production Ready aur `skillbun.tech`/`www.skillbun.tech` aliases par verified hai. Post-deployment logs mein 448/448 read-only checks aur 100/100 roadmap JSON matches pass hain. Ye dated release evidence hai; subsequent changes ki deployment separately verify karni hai.
 
 ## Is continuation ke liye user-side steps
 

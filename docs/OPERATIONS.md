@@ -16,6 +16,12 @@ npm run dev
 
 Reuse an already-running repository server. The normal URL is `http://localhost:3000`; use the actual URL/port printed by Next.js. Avoid simultaneous dev/build processes writing the same `.next` directory. After a local build check, restart one dev server for preview.
 
+## Executable Firestore rules checks
+
+Use Node.js 22, Java 21 or newer on `PATH`, and Firebase CLI 15.29.0 (`npm install --global firebase-tools@15.29.0`). After `npm ci`, run `npm run test:rules`. The separate GitHub CI job installs these prerequisites and executes the same suite.
+
+The runner uses `firebase.emulator.json`, binds to loopback, forces the non-production project `demo-skillbun-rules`, and writes generated emulator logs under ignored `.codex-tmp/firestore-rules/`. The suite refuses to initialize without a loopback emulator and the exact demo project. It needs no production credentials and never deploys rules. Its synthetic owner, admin, intern, unverified and deletion-marked identities exercise profile metadata protection, progress validation, private certificates, server-only exam/OTP/erasure state and workforce permissions. These checks supplement the ordinary `npm test` suite.
+
 ## Configuration map
 
 | Area | Configuration / requirement |

@@ -149,11 +149,6 @@
           "description": "Differentiate raw data, telemetry, and actionable threat intelligence. Define concrete deliverables and SLAs for executive leadership, SOC detection engineers, vulnerability management teams, and incident response units.",
           "resources": [
             {
-              "title": "The Threat Intelligence Analyst Role: A Day in the Life",
-              "url": "https://www.sans.org/blog/a-day-in-the-life-of-a-threat-intelligence-analyst/",
-              "type": "article"
-            },
-            {
               "title": "What are Yara Rules (and How Cybersecurity Analysts Use Them) (Simply Cyber - Gerald Auger, PhD)",
               "url": "https://www.youtube.com/watch?v=BM23_H2GGMA",
               "type": "video"

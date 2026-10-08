@@ -2017,11 +2017,6 @@
           "description": "Capstone Project: Architect and Deploy an Enterprise Executive Analytics Platform: multi-source data ingestion, clean Kimball star schema, complex DAX time-intelligence measures, VertiPaq performance optimization with DAX Studio, Dynamic RLS security, and deployment pipeline automation.",
           "resources": [
             {
-              "title": "Sample Power BI End-to-End Project (Data Camp)",
-              "url": "https://www.datacamp.com/projects/2324",
-              "type": "article"
-            },
-            {
               "title": "Learn Power BI in 7 Hours | Full Beginner to Advanced Course with Dashboard Project (2025)",
               "url": "https://www.youtube.com/watch?v=KdC5R7oPCAI",
               "type": "video"

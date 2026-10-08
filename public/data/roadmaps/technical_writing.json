@@ -741,11 +741,6 @@
           "description": "Author troubleshooting guides: Problem-Cause-Solution structures, error message glossaries, diagnostic step trees, and actionable FAQs.",
           "resources": [
             {
-              "title": "Writing Effective Troubleshooting Guides",
-              "url": "https://technicalwriting.io/writing-effective-troubleshooting-guides/",
-              "type": "article"
-            },
-            {
               "title": "Docs as Code: Write for Developers as a Developer (Wizeline Academy)",
               "url": "https://www.youtube.com/watch?v=fvVusHA5ISw",
               "type": "video"
@@ -773,11 +768,6 @@
             {
               "title": "Microcopy: The Complete Guide",
               "url": "https://www.uxdesign.cc/microcopy-the-complete-guide-1b83d7890f5b",
-              "type": "article"
-            },
-            {
-              "title": "Writing for UX",
-              "url": "https://xd.adobe.com/ideas/principles/user-experience/writing-for-ux/",
               "type": "article"
             },
             {

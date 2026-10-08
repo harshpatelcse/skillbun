@@ -10,7 +10,7 @@ Public pages load the sanitized verification API, while raw ownership fields rem
 
 Student-earned roadmap credentials use the authenticated server flow: `/api/certify/start` → `/api/certify/submit` → `/api/certify/mint`. Eligibility, answers, grading, quotas, and minting are server-authoritative. Firestore clients cannot write exam attempts or certificates.
 
-The admin Certificate Studio has a separate privileged manual issuance path, including roadmap credentials, that does not run the student's exam flow. **Known integrity gaps:** its POST accepts a custom ID and uses an unconditional write, so an existing credential can be overwritten; its PATCH can change issued identity, title and score fields. These paths do not fully enforce the historical snapshot contract below. Add collision-safe creation and define controlled correction/revocation policy before claiming all records are immutable. Sources: `app/api/admin/certificates/route.js` and `app/api/admin/certificates/[id]/route.js`.
+The admin Certificate Studio has a separate privileged manual issuance path, including roadmap credentials, that does not run the student's exam flow. POST accepts a validated custom ID but creates the record transactionally only after checking both the document ID and existing public aliases. A collision returns 409 instead of overwriting a credential. PATCH accepts only a boolean `is_revoked`; identity, title, score and template fields are immutable. Corrections require revocation and issuance under a new ID. Sources: `utils/server/certificateIntegrity.mjs`, `app/api/admin/certificates/route.js` and `app/api/admin/certificates/[id]/route.js`.
 
 The registry in [`docTemplateRegistry.js`](../utils/common/docTemplateRegistry.js) governs these categories:
 
@@ -46,15 +46,15 @@ For any approved future template:
 
 Corporate display IDs can contain slashes, for example `SKB/2026/HR-OFF/8K29DF`. Firestore document keys use the canonical hyphen form `SKB-2026-HR-OFF-8K29DF`; never pass display slashes as a document ID. Use the existing ID helpers and stored `display_id`, preserving older academic-ID formats. Do not convert every hyphen back to a slash indiscriminately.
 
-Public verification should resolve a canonical ID with a single-document lookup. A fallback collection query is subject to owner/admin list permissions; it is not an anonymous lookup guarantee. Keep ownership fields and internal consumers in sync if public-data access changes.
+Public pages use `/api/certificates/verify?id=...`. Its server-side lookup resolves canonical, display and supported legacy IDs with bounded queries and explicit ambiguity handling. The response includes only allowlisted public rendering fields. Raw Firestore reads require owner/admin authorization; public pages must not query raw certificate records through the client SDK.
 
-The detailed page displays revocation and unsupported-version states. **Known gap:** the `/certificate` search result currently labels any located record authentic without checking revocation. The detailed page's revocation check does not fix that search result. Public Firestore reads also expose all fields stored on the record, including email/UID; a sanitized public view requires coordinated API, rules, and client work.
+Both `/certificate` search and the detailed page distinguish revoked credentials from active credentials. The detailed page also shows unsupported-version errors. Email, UID, employee/attempt IDs and administrative metadata are excluded from public API responses. Application and matching privacy rules are deployed; controlled owner/admin and real-record print checks remain listed in [Current status](CURRENT_STATUS.md).
 
 ## QR implementation
 
 [`QRCodeSvg.jsx`](../app/components/QRCodeSvg.jsx) uses the installed `qrcode` package to construct an SVG with high error correction and the official logo in its center. It does not use `qrcode.react`. Keep the existing size and placement of each released template; QR sizes differ between layouts.
 
-The current certificate page builds QR/share destinations with `https://skillbun.vercel.app/certificate/<canonical-id>`. The intended canonical site is `https://skillbun.tech`; verify that the legacy host redirects correctly before publishing credentials. Existing URL generation is documented here without changing released templates.
+The certificate page builds QR/share destinations from the current browser origin, with `https://skillbun.tech` as the server-rendering fallback, followed by `/certificate/<canonical-id>`. Production credentials should be opened and exported on the canonical `skillbun.tech` host. Local previews deliberately retain their local origin. Existing URL generation is documented here without changing released templates.
 
 ## Verification before release
 

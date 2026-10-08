@@ -228,11 +228,6 @@
           "description": "Evaluate architectural tradeoffs: GraphQL vs REST vs gRPC regarding network roundtrips, schema contracts, caching simplicity, CDN edge caching, and attack surfaces.",
           "resources": [
             {
-              "title": "GraphQL vs REST (LogRocket)",
-              "url": "https://blog.logrocket.com/graphql-vs-rest-api-developers-guide/",
-              "type": "article"
-            },
-            {
               "title": "GraphQL vs. REST: A Definitive Guide (Apigee)",
               "url": "https://apigee.com/api-management/api-design/graphql-vs-rest-a-definitive-guide",
               "type": "article"
@@ -370,11 +365,6 @@
           "description": "Evaluate schema design methodologies: Schema-first development (SDL-driven with codegen) vs Code-first / Type-first development with TypeGraphQL, Pothos, or Nexus.",
           "resources": [
             {
-              "title": "GraphQL Schema Design: Code-First vs. Schema-First (LogRocket)",
-              "url": "https://blog.logrocket.com/graphql-schema-design-code-first-vs-schema-first/",
-              "type": "article"
-            },
-            {
               "title": "GraphQL Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=ed8SzALpx1Q",
               "type": "video"
@@ -440,11 +430,6 @@
               "type": "article"
             },
             {
-              "title": "Building a GraphQL Middleware (LogRocket)",
-              "url": "https://blog.logrocket.com/building-graphql-middleware-javascript/",
-              "type": "article"
-            },
-            {
               "title": "GraphQL vs REST API (Fireship)",
               "url": "https://www.youtube.com/watch?v=PeAOEAmR0D0",
               "type": "video"
@@ -494,11 +479,6 @@
           "tag": "essential",
           "description": "Enforce strict input validation: Validating mutation input types with Zod, Joi, or custom scalar constraints, sanitizing strings against XSS, and handling invalid arguments.",
           "resources": [
-            {
-              "title": "GraphQL Input Validation (LogRocket)",
-              "url": "https://blog.logrocket.com/graphql-input-validation/",
-              "type": "article"
-            },
             {
               "title": "Sanitizing GraphQL Input (Apigee)",
               "url": "https://apigee.com/api-management/api-design/secure-graphql-api-sanitizing-input",
@@ -560,11 +540,6 @@
           "description": "Implement real-time GraphQL subscriptions: WebSockets protocol (`graphql-ws`), Server-Sent Events (SSE), Redis Pub/Sub backends for horizontal cluster scaling.",
           "resources": [
             {
-              "title": "Implementing GraphQL Subscriptions with Apollo Server (LogRocket)",
-              "url": "https://blog.logrocket.com/implementing-graphql-subscriptions-apollo-server/",
-              "type": "article"
-            },
-            {
               "title": "GraphQL vs REST API (Fireship)",
               "url": "https://www.youtube.com/watch?v=PeAOEAmR0D0",
               "type": "video"
@@ -593,11 +568,6 @@
       "tag": "essential",
       "description": "Harden and optimize GraphQL APIs: Solving the N+1 query problem, client-side/server-side caching, and query performance tuning.",
       "resources": [
-        {
-          "title": "Optimizing GraphQL Performance (LogRocket)",
-          "url": "https://blog.logrocket.com/optimizing-graphql-performance-nodejs/",
-          "type": "article"
-        },
         {
           "title": "GraphQL Authorization with Shield.js (Graphy)",
           "url": "https://graphql-shield.com/",
@@ -1298,11 +1268,6 @@
               "type": "article"
             },
             {
-              "title": "Implementing Optimistic UI in GraphQL (LogRocket)",
-              "url": "https://blog.logrocket.com/implementing-optimistic-ui-graphql/",
-              "type": "article"
-            },
-            {
               "title": "GraphQL Tutorial (The Net Ninja)",
               "url": "https://www.youtube.com/watch?v=Y0lDGjwRYKw",
               "type": "video"
@@ -1335,11 +1300,6 @@
             {
               "title": "GraphQL Errors in Urql (Urql Docs)",
               "url": "https://formidable.com/open-source/urql/docs/basics/errors/",
-              "type": "article"
-            },
-            {
-              "title": "Handling GraphQL Errors on the Client (LogRocket)",
-              "url": "https://blog.logrocket.com/handling-graphql-errors-client/",
               "type": "article"
             },
             {

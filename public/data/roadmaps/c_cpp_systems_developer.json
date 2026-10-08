@@ -554,11 +554,6 @@
           "description": "Profile and eliminate performance bottlenecks from software to silicon: Linux `perf` CPU sampling, generating interactive FlameGraphs, analyzing hardware performance counters (instructions per cycle, branch misses, L1/L3 cache misses), cache line profiling with Cachegrind, SIMD vectorization (AVX2/AVX-512 intrinsics using `_mm256_*`), branchless programming, and optimizing data layout (Structure of Arrays vs Array of Structures).",
           "resources": [
             {
-              "title": "Optimizing C++ Code (Agner Fog)",
-              "url": "https://www.agner.org/optimize/optimizing_c++.pdf",
-              "type": "article"
-            },
-            {
               "title": "Linux Performance Analysis (Brendan Gregg)",
               "url": "https://www.brendangregg.com/linuxperf.html",
               "type": "article"

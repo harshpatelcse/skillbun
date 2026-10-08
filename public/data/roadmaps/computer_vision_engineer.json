@@ -197,8 +197,8 @@
           "description": "Implement digital image preprocessing: Color space conversions (RGB, HSV, LAB), contrast limited adaptive histogram equalization (CLAHE), bilateral filtering, and edge detection (Sobel, Canny).",
           "resources": [
             {
-              "title": "Image Basics in OpenCV",
-              "url": "https://docs.opencv.org/4.x/d1/dee/tutorial_py_image_display.html",
+              "title": "Getting Started with Images in OpenCV",
+              "url": "https://docs.opencv.org/4.x/dc/d2e/tutorial_py_image_display.html",
               "type": "article"
             },
             {
@@ -718,8 +718,8 @@
           "description": "Track objects across multi-frame video: ByteTrack, DeepSORT, optical flow (Lucas-Kanade, RAFT), Kalman filter trajectory smoothing, and handling visual occlusions.",
           "resources": [
             {
-              "title": "OpenCV Video Analysis and Object Tracking",
-              "url": "https://docs.opencv.org/4.x/d7/d9f/tutorial_py_table_of_contents_video.html",
+              "title": "Getting Started with Videos in OpenCV",
+              "url": "https://docs.opencv.org/4.x/dd/d43/tutorial_py_video_display.html",
               "type": "article"
             },
             {
@@ -808,8 +808,8 @@
           "description": "Implement 3D visual reconstruction: Monocular depth estimation, point cloud processing with Open3D, Structure from Motion (SfM with COLMAP), and 3D Gaussian Splatting for novel view synthesis.",
           "resources": [
             {
-              "title": "OpenCV 3D Reconstruction",
-              "url": "https://docs.opencv.org/4.x/da/de9/tutorial_py_depthmap.html",
+              "title": "Depth Map from Stereo Images",
+              "url": "https://docs.opencv.org/4.x/dd/d53/tutorial_py_depthmap.html",
               "type": "article"
             },
             {

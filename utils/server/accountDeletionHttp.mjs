@@ -18,6 +18,28 @@ function failure(message, status, code, retryable = false) {
   return reply({ success: false, error: message, code, retryable }, status);
 }
 
+async function hasPayload(request) {
+  // Next's HTTP adapter can supply an empty stream for a bodyless DELETE.
+  // Reject actual bytes without buffering an arbitrarily large payload.
+  if (!request.body) return false;
+  const reader = request.body.getReader();
+  let deadline;
+  const timeout = new Promise((_, reject) => {
+    deadline = setTimeout(() => reject(new Error('Deletion body did not finish.')), 5000);
+  });
+  try {
+    while (true) {
+      const { done, value } = await Promise.race([reader.read(), timeout]);
+      if (done) return false;
+      if (value?.byteLength > 0) return true;
+    }
+  } finally {
+    clearTimeout(deadline);
+    void reader.cancel().catch(() => {});
+    reader.releaseLock();
+  }
+}
+
 export function createAccountDeletionHandler({
   getAuth, getDb, isAdmin, checkRateLimit, deleteAccount, allowedOrigins,
   production = process.env.NODE_ENV === 'production', now = Date.now,
@@ -61,7 +83,7 @@ export function createAccountDeletionHandler({
         }
       }
       const allowedKeys = adminRequest ? new Set(['email', 'adminEmail']) : new Set();
-      if ([...url.searchParams.keys()].some(key => !allowedKeys.has(key)) || url.searchParams.getAll('email').length > 1 || request.body) {
+      if ([...url.searchParams.keys()].some(key => !allowedKeys.has(key)) || url.searchParams.getAll('email').length > 1 || await hasPayload(request)) {
         return failure('Unexpected account deletion parameters.', 400, 'INVALID_PAYLOAD');
       }
       let expectedEmail = '';

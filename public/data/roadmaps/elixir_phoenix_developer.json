@@ -1481,11 +1481,6 @@
           "description": "Deploy Phoenix to production: Fly.io, Gigalixir, AWS ECS, or Kubernetes; containerizing releases with multi-stage Alpine Dockerfiles.",
           "resources": [
             {
-              "title": "Deploying Elixir to Fly.io",
-              "url": "https://fly.io/docs/elixir/getting-started/elixir-on-fly/",
-              "type": "article"
-            },
-            {
               "title": "Phoenix Releases and Docker Deployment",
               "url": "https://hexdocs.pm/phoenix/releases.html",
               "type": "article"

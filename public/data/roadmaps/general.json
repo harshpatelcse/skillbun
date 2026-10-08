@@ -389,11 +389,6 @@
           "description": "Explore the server-side: setting up a basic web server (e.g., using Flask/Node.js Express), routing requests, and interacting with simple databases (e.g., SQLite, PostgreSQL) for data storage and retrieval.",
           "resources": [
             {
-              "title": "Introduction to Databases and SQL",
-              "url": "https://www.datacamp.com/courses/introduction-to-databases-in-python",
-              "type": "course"
-            },
-            {
               "title": "Learn Flask for Python - Full Tutorial (freeCodeCamp.org)",
               "url": "https://www.youtube.com/watch?v=Z1RJmh_OqeA",
               "type": "video"
@@ -989,11 +984,6 @@
           "tag": "essential",
           "description": "Explore backend web development: designing RESTful APIs, handling HTTP request methods, querying relational databases with SQL (tables, keys, queries), NoSQL document storage, and server-side data persistence.",
           "resources": [
-            {
-              "title": "Introduction to Databases and SQL",
-              "url": "https://www.datacamp.com/courses/introduction-to-databases-in-python",
-              "type": "course"
-            },
             {
               "title": "Learn Flask for Python - Full Tutorial (freeCodeCamp.org)",
               "url": "https://www.youtube.com/watch?v=Z1RJmh_OqeA",

@@ -322,11 +322,6 @@
           "description": "Wrangle and shape data for visual rendering: wide-to-long unpivoting, hierarchical nesting, computing aggregations, and utilizing DuckDB-Wasm for high-speed client-side SQL transformations.",
           "resources": [
             {
-              "title": "Data Wrangling with Python",
-              "url": "https://www.datacamp.com/courses/data-wrangling-with-pandas",
-              "type": "course"
-            },
-            {
               "title": "Transforming Data in Power BI with Power Query Editor",
               "url": "https://docs.microsoft.com/en-us/power-bi/transform-model/desktop-query-overview",
               "type": "article"
@@ -541,11 +536,6 @@
           "tag": "advanced",
           "description": "Master programmatic web visualization: D3.js v7, WebGL GPU acceleration, and interactive client-side rendering.",
           "resources": [
-            {
-              "title": "Data Visualization with Python: Matplotlib, Seaborn, and Plotly",
-              "url": "https://www.datacamp.com/courses/data-visualization-with-python",
-              "type": "course"
-            },
             {
               "title": "ggplot2: Elegant Graphics for Data Analysis",
               "url": "https://r4ds.had.co.nz/data-visualisation.html",

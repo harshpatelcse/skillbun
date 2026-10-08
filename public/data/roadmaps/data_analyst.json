@@ -808,11 +808,6 @@
           "description": "Excel in Data Analyst interviews: live SQL technical challenges (aggregations, window functions, joins), business case analysis (diagnosing sudden KPI drops), defending statistical methodologies, and behavioral storytelling.",
           "resources": [
             {
-              "title": "Data Analyst Interview Questions (CareerFoundry)",
-              "url": "https://careerfoundry.com/en/blog/data-analytics/data-analyst-interview-questions/",
-              "type": "article"
-            },
-            {
               "title": "Ace the Data Science Interview — Author Website",
               "url": "https://www.acethedatascienceinterview.com/",
               "type": "book"

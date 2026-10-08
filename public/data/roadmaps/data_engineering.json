@@ -1111,11 +1111,6 @@
           "type": "article"
         },
         {
-          "title": "Azure Data Platform",
-          "url": "https://azure.microsoft.com/en-us/solutions/data-platform",
-          "type": "article"
-        },
-        {
           "title": "Data Engineering Course for Beginners",
           "url": "https://www.youtube.com/watch?v=PHsC_t0j1dU",
           "type": "video"
@@ -1318,11 +1313,6 @@
           "tag": "advanced",
           "description": "Build high-performance data serving APIs: developing asynchronous REST and GraphQL data access APIs with FastAPI, integrating Redis caching layers, and implementing token-bucket rate limiting.",
           "resources": [
-            {
-              "title": "Building REST APIs with Python Flask",
-              "url": "https://realpython.com/flask-restful-api/",
-              "type": "article"
-            },
             {
               "title": "GraphQL Introduction",
               "url": "https://graphql.org/learn/",

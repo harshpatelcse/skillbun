@@ -104,6 +104,161 @@ function deferred() {
 
 const settle = () => new Promise(resolve => setImmediate(resolve));
 
+async function certificationPageRuntime({ cachedProgress = [], cloudProgress = ['one', 'two', 'three'], progressError, roadmapResponse, attemptsResponse } = {}) {
+  const source = await fs.readFile(new URL('../../app/roadmap/[slug]/certify/page.jsx', import.meta.url), 'utf8');
+  const normalizers = source.slice(source.indexOf('function flattenTree('), source.indexOf('export default function CertifyPage'));
+  const session = source.slice(source.indexOf('function CertificationSession('), source.indexOf('  if (loading) {'));
+  const values = [];
+  const effects = [];
+  const timeouts = new Map();
+  const requests = [];
+  const reads = [];
+  const destinations = [];
+  let hookIndex = 0;
+  let timeoutId = 0;
+  let mounted = false;
+  const user = { uid: 'student-a', getIdToken: async () => 'session-token' };
+  const currentRoadmap = { title: 'Synthetic Roadmap', format: 'tree', tree: ['one', 'two', 'three', 'four', 'five'].map(id => ({ id })) };
+  const readDocument = async path => {
+    reads.push(path);
+    if (path.includes('/roadmapProgress/')) {
+      if (progressError) throw progressError;
+      return { exists: () => cloudProgress !== null, data: () => ({ completedNodeIds: cloudProgress }) };
+    }
+    return attemptsResponse || { exists: () => false };
+  };
+  const dependencies = {
+    useRouter: () => ({ push: path => destinations.push(path) }),
+    useState(initial) {
+      const index = hookIndex++;
+      if (!(index in values)) values[index] = typeof initial === 'function' ? initial() : initial;
+      return [values[index], value => { values[index] = typeof value === 'function' ? value(values[index]) : value; }];
+    },
+    useRef(initial) {
+      const index = hookIndex++;
+      if (!(index in values)) values[index] = { current: initial };
+      return values[index];
+    },
+    useMemo: fn => fn(),
+    useCallback: fn => fn,
+    useEffect: fn => { if (!mounted) effects.push(fn); },
+    getFirebaseServices: () => ({ configured: true, auth: { currentUser: user }, db: {} }),
+    readStoredRoadmapProgress: () => cachedProgress,
+    doc: (_db, ...parts) => parts.join('/'),
+    getDoc: readDocument,
+    getDocFromServer: readDocument,
+    collection: (_db, ...parts) => parts.join('/'),
+    query: (...parts) => parts,
+    where: (...parts) => parts,
+    getDocs: async () => ({ empty: true }),
+    process: { env: { NODE_ENV: 'production' } },
+    console: { error() {} },
+    setTimeout: (fn, ms) => { const id = ++timeoutId; timeouts.set(id, { fn, ms }); return id; },
+    clearTimeout: id => timeouts.delete(id),
+    fetch: async (url, options) => {
+      requests.push({ url, ...options });
+      if (url.startsWith('/data/roadmaps/')) return roadmapResponse || { ok: true, json: async () => currentRoadmap };
+      if (url === '/api/config') return { ok: true, json: async () => ({ captcha: { enabled: true, siteKey: 'test-key' } }) };
+      if (url.startsWith('https://api.ipify.org')) return { json: async () => ({ ip: '127.0.0.1' }) };
+      throw new Error(`Unexpected request: ${url}`);
+    },
+  };
+  const renderSession = new Function(...Object.keys(dependencies), `${normalizers}\n${session}\nreturn { loading, error, progressInsufficient, roadmapTitle, siteKey }; }; return CertificationSession;`)(...Object.values(dependencies));
+  const render = () => {
+    hookIndex = 0;
+    return renderSession({ slug: 'fullstack', user, profile: {}, authLoading: false });
+  };
+  render();
+  mounted = true;
+  // Run the real mount guard and metadata effect, without unrelated exam timers.
+  const cleanups = effects
+    .filter(fn => /sessionActiveRef.current = true|const loadQuizData/.test(fn.toString()))
+    .map(fn => fn());
+  await settle();
+  return {
+    render, reads, requests, destinations, timeouts,
+    cleanup: () => cleanups.forEach(fn => fn?.()),
+    expire: async () => {
+      for (const [id, timer] of [...timeouts]) {
+        timeouts.delete(id);
+        timer.fn();
+      }
+      await settle();
+    },
+  };
+}
+
+test('certification accepts cloud progress on a fresh browser before the shared cache hydrates', async () => {
+  const page = await certificationPageRuntime();
+  assert.equal(page.render().progressInsufficient, false);
+  assert.equal(page.render().siteKey, 'test-key');
+  assert.equal(page.render().loading, false);
+  assert.ok(page.reads.includes('users/student-a/roadmapProgress/fullstack'));
+  page.cleanup();
+});
+
+test('certification does not accept stale browser progress over the current cloud record', async () => {
+  const page = await certificationPageRuntime({ cachedProgress: ['one', 'two', 'three'], cloudProgress: ['one'] });
+  assert.equal(page.render().progressInsufficient, true);
+  assert.equal(page.render().loading, false);
+  assert.equal(page.requests.some(request => request.url === '/api/config'), false);
+  page.cleanup();
+});
+
+test('certification treats a missing cloud progress record as zero completion', async () => {
+  const page = await certificationPageRuntime({ cloudProgress: null });
+  assert.equal(page.render().progressInsufficient, true);
+  assert.equal(page.render().loading, false);
+  page.cleanup();
+});
+
+test('certification distinguishes a failed cloud read from insufficient progress', async () => {
+  const page = await certificationPageRuntime({ progressError: new Error('Offline') });
+  assert.equal(page.render().progressInsufficient, false);
+  assert.ok(page.render().error);
+  assert.equal(page.render().loading, false);
+  page.cleanup();
+});
+
+test('certification exits metadata loading if a request never resolves and ignores a late success', async () => {
+  const pending = deferred();
+  const page = await certificationPageRuntime({ roadmapResponse: pending.promise });
+  assert.equal(page.render().loading, true);
+  await page.expire();
+  assert.equal(page.render().loading, false);
+  assert.match(page.render().error, /timed out/i);
+  assert.equal(page.requests[0].signal?.aborted, true);
+  pending.resolve({ ok: true, json: async () => ({ title: 'Late Roadmap', format: 'tree', tree: [] }) });
+  await settle();
+  assert.equal(page.render().roadmapTitle, '');
+  assert.equal(page.requests.some(request => request.url === '/api/config'), false);
+  page.cleanup();
+});
+
+test('certification metadata timeout also covers Firestore reads that cannot be aborted', async () => {
+  const pending = deferred();
+  const page = await certificationPageRuntime({ cachedProgress: ['one', 'two', 'three'], attemptsResponse: pending.promise });
+  assert.equal(page.render().loading, true);
+  await page.expire();
+  assert.equal(page.render().loading, false);
+  assert.match(page.render().error, /timed out/i);
+  pending.resolve({ exists: () => false });
+  await settle();
+  assert.match(page.render().error, /timed out/i);
+  page.cleanup();
+});
+
+test('leaving certification cancels metadata fetches and removes the loading deadline', async () => {
+  const pending = deferred();
+  const page = await certificationPageRuntime({ roadmapResponse: pending.promise });
+  page.cleanup();
+  assert.equal(page.requests[0].signal?.aborted, true);
+  assert.equal(page.timeouts.size, 0);
+  pending.resolve({ ok: false });
+  await settle();
+  assert.equal(page.render().error, '');
+});
+
 async function quizRuntime({ captchaEnabled = false, questionLoader, synchronousCaptcha = false } = {}) {
   const elements = new Map();
   const makeElement = () => ({

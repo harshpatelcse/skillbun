@@ -325,11 +325,6 @@
           "description": "Configure dynamic IP routing protocols: Interior Gateway Protocols (OSPFv2/OSPFv3 multi-area, EIGRP metrics), and Exterior Gateway Protocols (BGP peering, path attributes AS-PATH, MED, Local Pref).",
           "resources": [
             {
-              "title": "OSPF Explained in Detail (NetworkLessons.com)",
-              "url": "https://networklessons.com/ospf/ospf-explained",
-              "type": "article"
-            },
-            {
               "title": "Cloudflare BGP Guide",
               "url": "https://www.cloudflare.com/learning/security/glossary/what-is-bgp/",
               "type": "article"

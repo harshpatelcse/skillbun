@@ -613,11 +613,6 @@
           "description": "Configure enterprise storage: Software RAID with `mdadm`, Network File System (NFS) exports, iSCSI initiator/target configurations, and exploring ZFS storage pools.",
           "resources": [
             {
-              "title": "Understanding and Using NFS in Linux",
-              "url": "https://linuxconfig.org/understanding-and-using-nfs-in-linux",
-              "type": "article"
-            },
-            {
               "title": "How to Use the ip Command in Linux: A Beginner’s Guide (Learn Linux TV)",
               "url": "https://www.youtube.com/watch?v=wHfIFZlDxtU",
               "type": "video"
@@ -789,11 +784,6 @@
           "tag": "advanced",
           "description": "Audit system security: Linux Audit Framework (`auditd`), writing `audit.rules` to monitor file integrity and privileged command execution, and OpenSCAP compliance scanning.",
           "resources": [
-            {
-              "title": "Linux Auditd Tutorial",
-              "url": "https://linuxconfig.org/how-to-configure-audit-daemon-on-linux",
-              "type": "article"
-            },
             {
               "title": "Linux Full Course (freeCodeCamp)",
               "url": "https://www.youtube.com/watch?v=sWbUDq4S6Y8",

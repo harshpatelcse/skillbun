@@ -402,11 +402,6 @@
       "description": "Execute core spatial data processing: Vector analytics with GeoPandas, raster manipulation with Rasterio/GDAL, and spatial SQL databases (PostGIS).",
       "resources": [
         {
-          "title": "Geospatial Analysis with Python (Datacamp)",
-          "url": "https://www.datacamp.com/courses/geospatial-analysis-with-python",
-          "type": "course"
-        },
-        {
           "title": "Python for GIS and Geospatial Analysis (Udemy)",
           "url": "https://www.udemy.com/course/python-for-gis-and-geospatial-analysis/",
           "type": "course"
@@ -1232,11 +1227,6 @@
           "description": "Orchestrate spatial workflows: Building directed acyclic graphs in Apache Airflow or Prefect to automate daily satellite imagery downloads, preprocessing, and database updates.",
           "resources": [
             {
-              "title": "Building Data Pipelines with Apache Airflow (Datacamp)",
-              "url": "https://www.datacamp.com/courses/building-data-pipelines-with-apache-airflow",
-              "type": "course"
-            },
-            {
               "title": "Geospatial Data Processing with Prefect",
               "url": "https://medium.com/@prefect/geospatial-data-processing-with-prefect-and-dask-a-powerful-combination-for-big-data-57e0c3d4f40f",
               "type": "article"
@@ -1587,11 +1577,6 @@
           "description": "Containerize GIS services: Multi-stage Dockerfiles with optimized GDAL/PROJ builds, non-root users, and deploying spatial microservices on Kubernetes.",
           "resources": [
             {
-              "title": "Docker for Data Scientists (Datacamp)",
-              "url": "https://www.datacamp.com/courses/docker-for-data-scientists",
-              "type": "course"
-            },
-            {
               "title": "Learn GIS - QGIS Full Course for Beginners (Matt Forrest)",
               "url": "https://www.youtube.com/watch?v=SovdBaus7pM",
               "type": "video"
@@ -1922,11 +1907,6 @@
               "title": "Geospatial Data Analysis Topics to Review (GeoPandas)",
               "url": "https://geopandas.org/en/stable/docs/user_guide.html",
               "type": "article"
-            },
-            {
-              "title": "Cracking the Data Science Interview (Course)",
-              "url": "https://www.datacamp.com/courses/cracking-the-data-science-interview",
-              "type": "course"
             },
             {
               "title": "Learn GIS - QGIS Full Course for Beginners (Matt Forrest)",

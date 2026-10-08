@@ -243,11 +243,6 @@
           "description": "Program automated art tools: Python scripting for DCC applications (Maya, Blender, Houdini), object-oriented programming, and CLI tool building.",
           "resources": [
             {
-              "title": "Python Basics for Artists",
-              "url": "https://realpython.com/python-for-beginners/",
-              "type": "article"
-            },
-            {
               "title": "Intro to Python for Tech Artists (cgcircuitLLC)",
               "url": "https://www.youtube.com/watch?v=EtyLKNV5z-0",
               "type": "video"

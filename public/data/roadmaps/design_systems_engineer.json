@@ -118,11 +118,6 @@
           "description": "Understand core design system principles: Atomic design methodology (atoms, molecules, organisms), single source of truth, component consistency, and cross-platform token scaling.",
           "resources": [
             {
-              "title": "Design Systems Glossary",
-              "url": "https://zeroheight.com/blog/design-system-glossary/",
-              "type": "article"
-            },
-            {
               "title": "What is a Design System? (Everything You Need to Know)",
               "url": "https://www.youtube.com/watch?v=YLo6g58vUm0",
               "type": "video"
@@ -739,11 +734,6 @@
               "type": "article"
             },
             {
-              "title": "Measuring Design System Adoption and Impact",
-              "url": "https://zeroheight.com/blog/measuring-design-system-adoption-and-impact/",
-              "type": "article"
-            },
-            {
               "title": "Design System Tutorial for Beginners | Frontend Master | Traversy Media",
               "url": "https://www.youtube.com/watch?v=lRaL-8qZ0mM",
               "type": "video"
@@ -871,8 +861,8 @@
               "type": "article"
             },
             {
-              "title": "Writing a Great Portfolio Case Study",
-              "url": "https://careerfoundry.com/en/blog/ux-design/writing-a-great-portfolio-case-study/",
+              "title": "How to Craft an Outstanding Case Study for Your UX Portfolio",
+              "url": "https://careerfoundry.com/en/blog/ux-design/ux-case-study/",
               "type": "article"
             },
             {

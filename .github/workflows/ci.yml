@@ -11,6 +11,29 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  firestore-rules:
+    name: Firestore Rules Emulator
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Install test dependencies and Firebase CLI
+        run: |
+          npm ci
+          npm install --global firebase-tools@15.29.0
+        env:
+          ONNXRUNTIME_NODE_INSTALL: skip
+      - name: Execute rules against synthetic demo data
+        run: npm run test:rules
+
   audit-and-verify:
     name: Lint, Test & Build
     runs-on: ubuntu-latest
