@@ -392,7 +392,7 @@ export default function WorkforcePage() {
   const [loading, setLoading] = useState(true)
   const [submitting, setSubmitting] = useState(false)
   const [activeTab, setActiveTab] = useState('ALL')
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useState(() => typeof window === 'undefined' ? '' : new URLSearchParams(window.location.search).get('q') || '')
   const [sortBy, setSortBy] = useState('full_name')
   const [modal, setModal] = useState(null)
   const [form, setForm] = useState(EMPTY_FORM)

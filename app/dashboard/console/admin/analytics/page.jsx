@@ -259,7 +259,7 @@ export default function AnalyticsDashboardPage() {
   const { isAdmin, isFounder, role, checking } = useAdminAccess(user, authLoading);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState(() => typeof window === 'undefined' ? '' : new URLSearchParams(window.location.search).get('q') || '');
   const [activeTab, setActiveTab] = useState(() => {
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);

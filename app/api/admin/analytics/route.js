@@ -64,6 +64,16 @@ async function computeAdminAnalytics() {
   let orphanedCertificatesCount = 0;
   let authUsersMap = {};
   let unsubscribedEmailsMap = {};
+  // Empty results only mean zero records when their source scan completed.
+  const dataAvailability = {
+    auth: false,
+    users: false,
+    certificates: false,
+    progress: false,
+    examOutcomes: false,
+    subscriptions: false,
+  };
+  let progressReadFailed = false;
 
   // 1. Fetch Firebase Auth Users metadata (lastSignInTime, creationTime)
   try {
@@ -87,6 +97,7 @@ async function computeAdminAnalytics() {
         });
         pageToken = listUsersResult.pageToken;
       } while (pageToken);
+      dataAvailability.auth = true;
     }
   } catch (authErr) {
     console.warn('[SkillBun server operation]', { code: authErr?.code || 'INTERNAL_ERROR' });
@@ -105,6 +116,7 @@ async function computeAdminAnalytics() {
             unsubscribedAt: uData.unsubscribedAt || null,
           };
         });
+        dataAvailability.subscriptions = true;
       } catch (unsubErr) {
         console.warn('[SkillBun server operation]', { code: unsubErr?.code || 'INTERNAL_ERROR' });
       }
@@ -170,7 +182,7 @@ async function computeAdminAnalytics() {
                 };
               })
             )
-            .catch(() => []),
+            .catch(() => { progressReadFailed = true; return []; }),
           db
             .collection('users')
             .doc(uid)
@@ -187,7 +199,7 @@ async function computeAdminAnalytics() {
                 };
               })
             )
-            .catch(() => []),
+            .catch(() => { progressReadFailed = true; return []; }),
         ]);
 
         return {
@@ -242,6 +254,7 @@ async function computeAdminAnalytics() {
           });
         }
       });
+      dataAvailability.users = true;
 
       // Exclude Orphaned Certificates from the dashboard (certificates belonging to deleted users
       // that no longer exist in usersList). This is a read path and must never mutate data, so
@@ -263,12 +276,14 @@ async function computeAdminAnalytics() {
       try {
         const outcomes = await db.collection('examAttempts').select('uid', 'roadmapSlug', 'status', 'passed', 'submittedAt').get();
         examOutcomes = outcomes.docs.map(d => ({ ...d.data(), id: d.id, submittedAt: emailTime(d.data().submittedAt) }));
+        dataAvailability.examOutcomes = true;
       } catch { /* Unknown exam results never imply a failed exam. */ }
 
       await Promise.all(usersList.map(async u => {
         u.progress = await enrichEmailProgress(u.progress);
         u.examOutcomes = examOutcomes.filter(exam => exam.uid === u.uid);
       }));
+      dataAvailability.progress = !progressReadFailed;
 
       // Link valid certificates back to their respective active users
       usersList.forEach((u) => {
@@ -277,6 +292,7 @@ async function computeAdminAnalytics() {
           (c) => c.uid === u.uid || (c.email && userEmailLower && c.email === userEmailLower)
         );
       });
+      dataAvailability.certificates = true;
     }
   } catch (err) {
     console.warn('[SkillBun server operation]', { code: err?.code || 'INTERNAL_ERROR' });
@@ -285,6 +301,7 @@ async function computeAdminAnalytics() {
   return {
     success: true,
     timestamp: new Date().toISOString(),
+    dataAvailability,
     stats: {
       totalStudents: usersList.length,
       totalCertificates: certsList.length,
