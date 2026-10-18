@@ -288,7 +288,7 @@ export async function POST(request) {
       const unsub = await db.collection('unsubscribes').doc(targetEmail.toLowerCase()).get();
       const user = await getFirebaseAdminAuth().getUserByEmail(targetEmail.toLowerCase()).catch(() => null);
       const profile = user ? (await db.collection('users').doc(user.uid).get()).data() : null;
-      if (unsub.exists || profile?.isUnsubscribed === true || profile?.marketingConsent !== true) return NextResponse.json({ error: 'The recipient has not opted in to marketing emails.', isUnsubscribed: true }, { status: 409 });
+      if (unsub.exists || profile?.isUnsubscribed === true || profile?.marketingConsent === false) return NextResponse.json({ error: 'The recipient has unsubscribed from marketing emails.', isUnsubscribed: true }, { status: 409 });
     }
 
     // Sign on the server once; browser/admin previews never receive signing keys.

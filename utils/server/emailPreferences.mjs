@@ -33,5 +33,5 @@ export function unsubscribeUrl(email, base = 'https://skillbun.tech') {
 }
 
 export function hasMarketingConsent(user = {}, unsubscribed = false) {
-  return user.marketingConsent === true && !unsubscribed && user.isUnsubscribed !== true;
+  return !unsubscribed && user.isUnsubscribed !== true && user.marketingConsent !== false;
 }

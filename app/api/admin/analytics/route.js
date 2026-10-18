@@ -142,7 +142,7 @@ async function computeAdminAnalytics() {
       // Fetch all real user documents from Firestore with selective field projection
       const usersSnap = await db
         .collection('users')
-        .select('name', 'displayName', 'fullName', 'email', 'degree', 'year', 'current_year', 'interest', 'interest_area', 'providers', 'sentEmailHistory', 'createdAt', 'updatedAt', 'emailVerified', 'role', 'status')
+        .select('name', 'displayName', 'fullName', 'email', 'degree', 'year', 'current_year', 'interest', 'interest_area', 'providers', 'sentEmailHistory', 'createdAt', 'updatedAt', 'emailVerified', 'role', 'status', 'marketingConsent', 'isUnsubscribed')
         .get();
       const processedUids = new Set();
       const activeUserUids = new Set();
@@ -160,8 +160,8 @@ async function computeAdminAnalytics() {
         if (userEmailLower) activeUserEmails.add(userEmailLower);
 
         const unsubMeta = unsubscribedEmailsMap[userEmailLower];
-        const isUnsubscribed = Boolean(unsubMeta);
-        const unsubscribedAt = isUnsubscribed ? unsubMeta.unsubscribedAt : null;
+        const isUnsubscribed = Boolean(unsubMeta || uData.isUnsubscribed === true || uData.marketingConsent === false);
+        const unsubscribedAt = isUnsubscribed ? (unsubMeta?.unsubscribedAt || null) : null;
 
         // Fetch user's roadmap progress and quiz attempts concurrently
         const [progressList, quizAttemptsList] = await Promise.all([
@@ -211,8 +211,8 @@ async function computeAdminAnalytics() {
           interest: uData.interest || uData.interest_area || 'N/A',
           providers: Array.isArray(uData.providers) && uData.providers.length > 0 ? uData.providers : (authMeta.providers || []),
           createdAt: uData.createdAt ? new Date(uData.createdAt.toDate?.() || uData.createdAt).toISOString() : (authMeta.creationTime || null),
-          lastSignInTime: authMeta.lastSignInTime || null,
           isUnsubscribed,
+          marketingConsent: !isUnsubscribed,
           unsubscribedAt,
           progress: progressList,
           quizAttempts: quizAttemptsList,

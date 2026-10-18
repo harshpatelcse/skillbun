@@ -57,6 +57,10 @@ export function getHuggingFaceApiKey() {
   return getFirstNonEmpty(process.env.HUGGINGFACE_API_KEY)
 }
 
+export function getHuggingFaceModel() {
+  return getFirstNonEmpty(process.env.HUGGINGFACE_MODEL, 'Qwen/Qwen2.5-Coder-32B-Instruct')
+}
+
 export function getOpenRouterApiKey() {
   return getFirstNonEmpty(process.env.OPENROUTER_API_KEY)
 }

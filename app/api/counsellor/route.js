@@ -5,6 +5,7 @@ import {
   getCounsellorAiProvider,
   getGroqApiKey,
   getHuggingFaceApiKey,
+  getHuggingFaceModel,
   getOpenRouterApiKey,
   getTokenRouterApiKey,
   getOllamaBaseUrl,
@@ -224,7 +225,7 @@ async function fetchHuggingFaceResponse(apiKey, contents, preparedMessages) {
         ...(apiKey ? { Authorization: `Bearer ${apiKey}` } : {}),
       },
       body: JSON.stringify({
-        model: 'Qwen/Qwen2.5-Coder-32B-Instruct',
+        model: getHuggingFaceModel(),
         messages,
         temperature: 0.75,
         max_tokens: 2048,

@@ -71,9 +71,11 @@ test('unsubscribe capabilities are email-bound, expire, reject tampering and can
   assert.equal(verifyUnsubscribeToken(token, 'other@example.org', 1001), false);
   assert.equal(verifyUnsubscribeToken(`${token}x`, 'student@example.org', 1001), false);
   assert.equal(verifyUnsubscribeToken(token, 'student@example.org', 1000 + 90 * 86400000), false);
-  assert.equal(hasMarketingConsent({}), false);
+  assert.equal(hasMarketingConsent({ marketingConsent: false }), false);
+  assert.equal(hasMarketingConsent({ isUnsubscribed: true }), false);
   assert.equal(hasMarketingConsent({ marketingConsent: true }, true), false);
   assert.equal(hasMarketingConsent({ marketingConsent: true }), true);
+  assert.equal(hasMarketingConsent({}), true);
 });
 
 test('preference API rejects other-user changes and unsigned requests; signed links only disable marketing', async () => {

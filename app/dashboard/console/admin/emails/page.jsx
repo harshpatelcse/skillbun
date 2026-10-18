@@ -8,6 +8,7 @@ import { prepareEmailPreview, isEmailDocument } from '@/utils/shared/emailConten
 import { buildBaseEmailWrapper, escapeHtml, RETENTION_TEMPLATES } from '@/utils/server/retentionEmails';
 import styles from './emails.module.css';
 import EmailDraftLibrary from './EmailDraftLibrary';
+import BulkRetentionCampaign from '../analytics/BulkRetentionCampaign';
 
 function Icon({ name, size = 16, className = '', style = {} }) {
   const common = {
@@ -319,6 +320,11 @@ export default function AdminEmailsPage() {
   const { user, authLoading } = useAuth();
   const { isAdmin, checking } = useAdminAccess(user, authLoading);
 
+  // Studio Mode state: 'campaigns' | 'templates' | 'ai_drafts'
+  const [activeStudioTab, setActiveStudioTab] = useState('campaigns');
+  const [studentsList, setStudentsList] = useState([]);
+  const [studentsLoading, setStudentsLoading] = useState(true);
+
   // Template & Category state
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedTemplateId, setSelectedTemplateId] = useState('welcome_v1');
@@ -478,6 +484,32 @@ export default function AdminEmailsPage() {
       isMounted = false;
     };
   }, [user, isAdmin, selectedTemplateId, simName, simEmail, simRoadmap, simProgress, simRoadmapSlug, simDegree]);
+
+  // Load registered students for bulk campaigns
+  useEffect(() => {
+    let isMounted = true;
+    if (user && isAdmin) {
+      const fetchStudents = async () => {
+        setStudentsLoading(true);
+        try {
+          const token = await user.getIdToken();
+          const res = await fetch('/api/admin/analytics', {
+            headers: { Authorization: `Bearer ${token}` },
+          });
+          const data = await res.json();
+          if (isMounted && data.users && Array.isArray(data.users)) {
+            setStudentsList(data.users);
+          }
+        } catch (err) {
+          console.error('Failed to load students for campaigns:', err);
+        } finally {
+          if (isMounted) setStudentsLoading(false);
+        }
+      };
+      fetchStudents();
+    }
+    return () => { isMounted = false; };
+  }, [user, isAdmin]);
 
   // Insert variable tag at cursor
   const handleInsertVariable = (variableTag) => {
@@ -667,26 +699,79 @@ export default function AdminEmailsPage() {
         </div>
       </div>
 
-      <EmailDraftLibrary user={user} />
-
-      {/* Category Pills */}
-      <div className={styles.categoryTabs}>
-        {CATEGORIES.map((cat) => (
-          <button
-            key={cat}
-            type="button"
-            onClick={() => setSelectedCategory(cat)}
-            className={`${styles.categoryTab} ${selectedCategory === cat ? styles.categoryTabActive : ''}`}
-          >
-            {cat}
-          </button>
-        ))}
+      {/* Studio Mode Selector Tabs */}
+      <div className={styles.modeTabs}>
+        <button
+          type="button"
+          onClick={() => setActiveStudioTab('campaigns')}
+          className={`${styles.modeTab} ${activeStudioTab === 'campaigns' ? styles.modeTabActive : ''}`}
+        >
+          <Icon name="send" size={15} /> Student Retention Campaigns
+        </button>
+        <button
+          type="button"
+          onClick={() => setActiveStudioTab('templates')}
+          className={`${styles.modeTab} ${activeStudioTab === 'templates' ? styles.modeTabActive : ''}`}
+        >
+          <Icon name="clipboard" size={15} /> Template Catalog & Visual Editor
+        </button>
+        <button
+          type="button"
+          onClick={() => setActiveStudioTab('ai_drafts')}
+          className={`${styles.modeTab} ${activeStudioTab === 'ai_drafts' ? styles.modeTabActive : ''}`}
+        >
+          <Icon name="zap" size={15} /> AI Email Draft Library
+        </button>
       </div>
 
-      {/* 2-Column Main Studio */}
-      <div className={styles.studioLayout}>
-        {/* Left Column: Template Catalog & In-Browser Editor */}
-        <div className={styles.editorPanel}>
+      {/* MODE 1: Student Retention Campaigns */}
+      {activeStudioTab === 'campaigns' && (
+        <div style={{ marginBottom: '2.5rem' }}>
+          <div style={{ background: 'var(--card-bg)', border: '1px solid var(--border)', borderRadius: '14px', padding: '1.25rem 1.5rem', marginBottom: '1.5rem' }}>
+            <h2 style={{ margin: '0 0 0.4rem 0', fontSize: '1.15rem', color: 'var(--green)', fontFamily: 'var(--font-fredoka), sans-serif', display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
+              <Icon name="send" size={18} /> Automated Student Retention Engine
+            </h2>
+            <p style={{ margin: 0, fontSize: '0.88rem', color: 'var(--muted)', lineHeight: '1.5' }}>
+              Diagnoses each student&apos;s latest learning progress, certifications, and activity timestamps to deliver personalized lifecycle emails (Welcome, Continue Learning, Exam Nudge, Certificate Congratulations) with automatic 72-hour frequency caps.
+            </p>
+          </div>
+
+          <BulkRetentionCampaign
+            students={studentsList}
+            user={user}
+            loading={studentsLoading}
+          />
+        </div>
+      )}
+
+      {/* MODE 3: AI Draft Library */}
+      {activeStudioTab === 'ai_drafts' && (
+        <div style={{ marginBottom: '2rem' }}>
+          <EmailDraftLibrary user={user} defaultOpen />
+        </div>
+      )}
+
+      {/* MODE 2: Template Catalog & Visual Editor */}
+      {activeStudioTab === 'templates' && (
+        <>
+          {/* Category Pills */}
+          <div className={styles.categoryTabs}>
+            {CATEGORIES.map((cat) => (
+              <button
+                key={cat}
+                type="button"
+                onClick={() => setSelectedCategory(cat)}
+                className={`${styles.categoryTab} ${selectedCategory === cat ? styles.categoryTabActive : ''}`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
+          {/* 2-Column Main Studio */}
+          <div className={styles.studioLayout}>
+            {/* Left Column: Template Catalog & In-Browser Editor */}
+            <div className={styles.editorPanel}>
           {/* Template Catalog */}
           <div className={styles.cardSection}>
             <div className={styles.sectionHeader}>
@@ -1030,6 +1115,8 @@ export default function AdminEmailsPage() {
           </div>
         </div>
       </div>
-    </div>
-  );
+      </>
+    )}
+  </div>
+);
 }

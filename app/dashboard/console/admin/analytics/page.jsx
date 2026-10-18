@@ -280,6 +280,7 @@ export default function AnalyticsDashboardPage() {
   const [preparedTemplates, setPreparedTemplates] = useState({});
   const [sendingEmailKey, setSendingEmailKey] = useState(null);
   const [resettingSentCounters, setResettingSentCounters] = useState(false);
+  const [showQuickCampaign, setShowQuickCampaign] = useState(false);
 
   const userEmail = (user?.email || '').trim().toLowerCase();
 
@@ -1154,15 +1155,81 @@ export default function AnalyticsDashboardPage() {
         {/* TAB 1: Registered Students Table */}
         {activeTab === 'users' && (
           <div>
-            <BulkRetentionCampaign
-              students={usersList}
-              user={user}
-              loading={loading}
-              blocked={Boolean(sendingEmailKey && sendingEmailKey !== 'bulk')}
-              onEmailSent={handleBulkEmailSent}
-              onBusyChange={isBusy => setSendingEmailKey(current => isBusy ? 'bulk' : current === 'bulk' ? null : current)}
-            />
-            <EmailDraftLibrary user={user} defaultOpen />
+            <div
+              style={{
+                background: 'var(--card-bg)',
+                border: '1px solid var(--border)',
+                borderRadius: '12px',
+                padding: '1rem 1.25rem',
+                marginBottom: '1.25rem',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                flexWrap: 'wrap',
+                gap: '0.85rem',
+              }}
+            >
+              <div>
+                <strong style={{ color: 'var(--green)', fontSize: '0.95rem', display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
+                  <Icon name="mail" size={16} /> Automated Student Retention Campaigns
+                </strong>
+                <p style={{ margin: '0.25rem 0 0', fontSize: '0.82rem', color: 'var(--muted)' }}>
+                  Bulk retention campaigns, template editing, and AI draft variations now live in the dedicated Mail & Campaigns Studio.
+                </p>
+              </div>
+              <div style={{ display: 'flex', gap: '0.65rem', flexWrap: 'wrap' }}>
+                <Link
+                  href="/dashboard/console/admin/emails"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.4rem',
+                    padding: '0.45rem 0.9rem',
+                    background: 'var(--green)',
+                    color: '#000',
+                    fontWeight: '700',
+                    fontSize: '0.82rem',
+                    borderRadius: '8px',
+                    textDecoration: 'none',
+                  }}
+                >
+                  <Icon name="mail" size={14} /> Open Mail & Campaigns Studio
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => setShowQuickCampaign(!showQuickCampaign)}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.4rem',
+                    padding: '0.45rem 0.85rem',
+                    background: 'var(--surface-raised)',
+                    color: 'var(--text)',
+                    border: '1px solid var(--border)',
+                    fontWeight: '700',
+                    fontSize: '0.82rem',
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                  }}
+                >
+                  {showQuickCampaign ? 'Hide Quick Campaign' : 'Show Quick Campaign Here'}
+                </button>
+              </div>
+            </div>
+
+            {showQuickCampaign && (
+              <>
+                <BulkRetentionCampaign
+                  students={usersList}
+                  user={user}
+                  loading={loading}
+                  blocked={Boolean(sendingEmailKey && sendingEmailKey !== 'bulk')}
+                  onEmailSent={handleBulkEmailSent}
+                  onBusyChange={isBusy => setSendingEmailKey(current => isBusy ? 'bulk' : current === 'bulk' ? null : current)}
+                />
+                <EmailDraftLibrary user={user} defaultOpen />
+              </>
+            )}
             {loading ? (
               <div style={{ padding: '3rem', textAlign: 'center', color: 'var(--muted)' }}>
                 <p>Loading real student records from database...</p>

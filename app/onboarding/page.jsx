@@ -336,7 +336,7 @@ function OnboardingForm() {
         ) : (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', marginTop: '1.25rem' }}>
             <label style={{ display: 'flex', gap: '0.65rem', alignItems: 'flex-start', color: 'var(--text)', fontSize: '0.9rem' }}>
-              <input type="checkbox" name="marketingConsent" disabled={saving} />
+              <input type="checkbox" name="marketingConsent" defaultChecked disabled={saving} />
               <span>Send me optional learning reminders and SkillBun updates by email. I can unsubscribe anytime. Essential account messages are separate.</span>
             </label>
             <button

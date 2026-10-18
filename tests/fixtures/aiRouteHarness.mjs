@@ -14,6 +14,7 @@ export async function loadAiRoute(route, overrides = {}) {
     getOpenRouterApiKey: () => 'test-openrouter',
     getTokenRouterApiKey: () => '',
     getHuggingFaceApiKey: () => '',
+    getHuggingFaceModel: () => 'Qwen/Qwen2.5-Coder-32B-Instruct',
     getOllamaBaseUrl: () => '',
     getCounsellorAiProvider: () => 'auto',
     getGeminiTimeoutMs: () => 20000,

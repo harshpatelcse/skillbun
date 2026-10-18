@@ -473,3 +473,39 @@
   text-align: center;
   margin: 10vh auto;
 }
+
+/* Studio Mode Tabs */
+.modeTabs {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.modeTab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.15rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface-raised);
+  color: var(--text);
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modeTab:hover {
+  border-color: var(--green);
+  background: var(--card-bg);
+}
+
+.modeTabActive {
+  background: var(--green);
+  color: #000;
+  border-color: var(--green);
+}
