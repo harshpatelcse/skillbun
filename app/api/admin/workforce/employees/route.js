@@ -1,3 +1,4 @@
+import { readBoundedJson } from '@/utils/server/requestBody.mjs'
 import { FieldPath } from 'firebase-admin/firestore'
 import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 
@@ -111,7 +112,7 @@ export async function POST(request) {
 
     let body
     try {
-      body = await request.json()
+      body = await readBoundedJson(request)
     } catch {
       return apiError('Payload must be valid JSON.', 400, 'BAD_REQUEST')
     }

@@ -33,6 +33,8 @@ export function getTransporter() {
     host: host || 'smtppro.zoho.in',
     port: smtpPort,
     secure: isSecure,
+    // Submission ports must fail if STARTTLS is unavailable or stripped.
+    requireTLS: true,
     auth: { user, pass },
     pool: false,
     connectionTimeout: 7000,

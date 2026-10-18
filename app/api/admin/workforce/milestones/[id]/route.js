@@ -1,3 +1,4 @@
+import { readBoundedJson } from '@/utils/server/requestBody.mjs';
 import { isActiveWorkforceMember } from '@/utils/server/workforcePolicy.mjs';
 import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
@@ -29,7 +30,7 @@ export async function PATCH(request, { params }) {
 
     let body = {};
     try {
-      body = await request.json();
+      body = await readBoundedJson(request);
     } catch {
       return apiError('Payload must be valid JSON.', 400, 'BAD_REQUEST');
     }

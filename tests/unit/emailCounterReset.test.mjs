@@ -1,3 +1,4 @@
+import { readBoundedJson } from '../../utils/server/requestBody.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
@@ -51,7 +52,7 @@ function setup({ records = [], admin = true, invalidToken = false, authConfigure
     },
   };
   const handler = vm.runInNewContext(`${routeSource}\nPOST;`, {
-    NextResponse: { json: (body, options = {}) => ({ status: options.status || 200, body }) },
+    readBoundedJson, NextResponse: { json: (body, options = {}) => ({ status: options.status || 200, body }) },
     getFirebaseAdminAuth: () => authConfigured ? { verifyIdToken: async () => {
       if (invalidToken) throw new Error('Invalid token');
       return { uid: 'admin-user' };
@@ -69,13 +70,10 @@ function setup({ records = [], admin = true, invalidToken = false, authConfigure
     writes, batches, invalidations,
     get databaseCalls() { return databaseCalls; },
     get collectionReads() { return collectionReads; },
-    post: (body, { authorization = 'Bearer admin-token', malformed = false } = {}) => handler({
-      headers: new Headers(authorization ? { authorization } : {}),
-      json: async () => {
-        if (malformed) throw new SyntaxError('Malformed JSON');
-        return body;
-      },
-    }),
+    post: (body, { authorization = 'Bearer admin-token', malformed = false } = {}) => handler(new Request('https://skillbun.tech/api/admin/emails/reset', {
+      method: 'POST', headers: authorization ? { authorization } : {},
+      body: malformed ? '{' : JSON.stringify(body),
+    })),
   };
 }
 

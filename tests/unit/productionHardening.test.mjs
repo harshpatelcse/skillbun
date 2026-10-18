@@ -1,3 +1,4 @@
+import { readBoundedJson } from '../../utils/server/requestBody.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
@@ -205,6 +206,44 @@ test('Mint rejects foreign owners, mismatched roadmaps, incomplete exams and inv
   await assert.rejects(mint(db, { uid: 'intruder' }), { status: 403 });
   await assert.rejects(mint(db, { roadmapSlug: 'other' }), /match roadmap/);
 });
+
+test('distinct passing attempts cannot mint duplicate active roadmap certificates', async () => {
+  const otherId = 'att_other_123456';
+  const passing = { status: 'COMPLETED', passed: true, score: 100 };
+  for (const concurrent of [true, false]) {
+    const historyPath = 'users/student/quizAttempts/web';
+    const db = database({
+      [attemptPath]: fixture(passing),
+      [`examAttempts/${otherId}`]: fixture({ ...passing, attemptId: otherId }),
+      [historyPath]: { attempts: [100, 200], consecutiveFailures: 0 },
+    });
+    if (concurrent) {
+      const results = await Promise.allSettled([mint(db), mint(db, { attemptId: otherId, certId: 'cert-two' })]);
+      assert.equal(results.filter(result => result.status === 'fulfilled').length, 1);
+      assert.equal(results.find(result => result.status === 'rejected').reason.status, 409);
+    } else {
+      await mint(db);
+      await assert.rejects(mint(db, { attemptId: otherId, certId: 'cert-two' }), { status: 409 });
+    }
+    assert.ok(db.read('certificates/cert-one'));
+    assert.equal(db.read('certificates/cert-two'), undefined);
+    assert.deepEqual(db.read(historyPath).attempts, [100, 200]);
+    assert.equal(db.read(historyPath).lastMintedCertId, 'cert-one');
+  }
+});
+
+test('legacy active certificates block minting while revoked and unrelated records do not', async () => {
+  for (const is_revoked of [undefined, null, false, true]) {
+    const db = database({
+      [attemptPath]: fixture({ status: 'COMPLETED', passed: true, score: 100 }),
+      'certificates/legacy': { uid: 'student', roadmapSlug: 'web', is_revoked },
+      'certificates/other-roadmap': { uid: 'student', roadmapSlug: 'other' },
+      'certificates/other-student': { uid: 'other-student', roadmapSlug: 'web' },
+    });
+    if (is_revoked === true) assert.equal((await mint(db)).success, true);
+    else await assert.rejects(mint(db), { status: 409 });
+  }
+});
 test('Source guardrails keep answer records private and revocation checks enabled', async () => {
   const rules = await readFile(new URL('../../firestore.rules', import.meta.url), 'utf8');
   const section = rules.split('match /examAttempts/')[1]?.split('\n    }')[0];
@@ -218,7 +257,8 @@ test('exam eligibility separates start quota from actual failed-grade cooldowns'
     .replace(/^import[\s\S]*?from ['"][^'"]+['"];?\r?\n/gm, '').replace(/^export /gm, '');
   const now = 10_000_000;
   let history = { attempts: [now - 1000, now - 2000], lastAttemptAt: now - 1000 };
-  const snapshot = (path) => path === 'certificates' ? { empty: true, docs: [] }
+  let certificates = [];
+  const snapshot = (path) => path === 'certificates' ? { empty: certificates.length === 0, docs: certificates }
     : path.endsWith('/roadmapProgress/web') ? { exists: true, data: () => ({ completedNodeIds: ['a', 'b', 'c'] }) }
     : { exists: true, data: () => history };
   const collection = name => ({
@@ -240,6 +280,15 @@ test('exam eligibility separates start quota from actual failed-grade cooldowns'
   assert.equal((await check()).eligible, true);
   history = { ...history, attempts: [now - 1000, now - 2000, now - 3000] };
   assert.equal((await check()).reason, 'DAILY_LIMIT_EXCEEDED');
+  history = { attempts: [] };
+  for (const is_revoked of [undefined, null, false]) {
+    certificates = [{ id: 'legacy-cert', data: () => ({ roadmapSlug: 'web', is_revoked }) }];
+    const result = await check();
+    assert.equal(result.reason, 'ALREADY_CERTIFIED');
+    assert.equal(result.certId, 'legacy-cert');
+  }
+  certificates = [{ id: 'revoked-cert', data: () => ({ roadmapSlug: 'web', is_revoked: true }) }];
+  assert.equal((await check()).eligible, true);
 });
 
 test('certification start rejects missing or foreign human proof before reading question banks', async () => {
@@ -248,7 +297,7 @@ test('certification start rejects missing or foreign human proof before reading 
   let bankReads = 0;
   let databaseReads = 0;
   const start = vm.runInNewContext(`${source}; POST;`, {
-    console, NextResponse: { json: Response.json },
+    console, readBoundedJson, NextResponse: { json: Response.json },
     process: { env: { NODE_ENV: 'production' } }, StudentEligibilityError, assertAdultStudent: async () => {},
     getFirebaseAdminAuth: () => ({ verifyIdToken: async () => ({ uid: 'student', email: 'student@example.test' }) }),
     getClientAddress: () => '127.0.0.1',
@@ -293,7 +342,7 @@ test('parallel exam starts reserve only one active attempt, while expired attemp
       Date: FixedDate, process: { env: { NODE_ENV: 'production' } }, getFirebaseAdminFirestore: () => db,
     });
     const start = vm.runInNewContext(`${strip(startSource)}; POST;`, {
-      Date: FixedDate, console, NextResponse: { json: Response.json },
+      Date: FixedDate, console, readBoundedJson, NextResponse: { json: Response.json },
       EXAM_TIMING_PROTOCOL, QUESTION_DURATION_MS, StudentEligibilityError, assertAdultStudent: async () => {},
       process: { env: { NODE_ENV: 'production' } },
       assertAccountActive: async () => {}, getFirebaseAdminFirestore: () => db, verifyExamEligibility,

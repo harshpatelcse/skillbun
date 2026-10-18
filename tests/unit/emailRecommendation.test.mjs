@@ -1,3 +1,4 @@
+import { readBoundedText } from '../../utils/server/requestBody.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
@@ -215,7 +216,7 @@ test('draft endpoint checks auth before AI/storage and blocks ineligible student
   let source = await fs.readFile(new URL('../../app/api/admin/emails/drafts/route.js', import.meta.url), 'utf8');
   source = source.replace(/import[\s\S]*?from\s*['"][^'"]+['"];\s*/g, '').replace(/export const (runtime|maxDuration) = [^;]+;/g, '').replaceAll('export async function', 'async function');
   let allowed = false, generations = 0;
-  const handlers = new Function('NextResponse', 'requireWorkforceAdmin', 'getFirebaseAdminFirestore', 'getFirebaseAdminAuth', 'loadEmailStudent', 'recommendEmail', 'createSavedDraft', source + '; return {GET,POST};')({ json: Response.json }, async () => allowed ? { uid: 'admin' } : { response: Response.json({}, { status: 401 }) }, () => ({}), () => ({}), async () => student({ isUnsubscribed: true }), recommendEmail, async () => { generations++; });
+  const handlers = new Function('readBoundedText', 'NextResponse', 'requireWorkforceAdmin', 'getFirebaseAdminFirestore', 'getFirebaseAdminAuth', 'loadEmailStudent', 'recommendEmail', 'createSavedDraft', source + '; return {GET,POST};')(readBoundedText, { json: Response.json }, async () => allowed ? { uid: 'admin' } : { response: Response.json({}, { status: 401 }) }, () => ({}), () => ({}), async () => student({ isUnsubscribed: true }), recommendEmail, async () => { generations++; });
   const request = () => new Request('http://localhost/api/admin/emails/drafts', { method: 'POST', body: JSON.stringify({ uid: 'student' }) });
   assert.equal((await handlers.POST(request())).status, 401);
   allowed = true;
@@ -226,12 +227,12 @@ test('draft rate limits include their reset time for resumable campaigns', async
   let source = await fs.readFile(new URL('../../app/api/admin/emails/drafts/route.js', import.meta.url), 'utf8');
   source = source.replace(/import[\s\S]*?from\s*['"][^'"]+['"];\s*/g, '').replace(/export const (runtime|maxDuration) = [^;]+;/g, '').replaceAll('export async function', 'async function');
   const handlers = new Function(
-    'NextResponse', 'requireWorkforceAdmin', 'getFirebaseAdminFirestore', 'getFirebaseAdminAuth', 'checkServerRateLimit',
+    'readBoundedText', 'NextResponse', 'requireWorkforceAdmin', 'getFirebaseAdminFirestore', 'getFirebaseAdminAuth', 'checkServerRateLimit',
     'draftCollection', 'createSavedDraft', 'findUnsentDraft', 'getSavedDraft', 'loadEmailStudent', 'recommendEmail',
     'renderSavedEmail', 'generateRetentionEmailHtml',
     source + '; return {POST};',
   )(
-    { json: Response.json }, async () => ({ uid: 'admin' }), () => ({}), () => ({}),
+    readBoundedText, { json: Response.json }, async () => ({ uid: 'admin' }), () => ({}), () => ({}),
     async () => ({ allowed: false, retryAfterMs: 125000 }), () => ({}), async () => ({}), async () => null,
     async () => null, async () => ({ uid: 'student', email: 'student@example.com', sentEmailHistory: [] }),
     () => ({ eligible: true, category: 'welcome', id: '', label: 'Welcome', needsGeneration: true }), () => null, () => null,

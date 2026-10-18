@@ -97,7 +97,10 @@ service cloud.firestore {
     }
 
     match /users/{uid} {
-      allow read, delete: if signedInAs(uid) || isAdmin();
+      allow read: if signedInAs(uid) || isAdmin();
+      // Erasure uses the authenticated server workflow. Direct deletion would
+      // let owners recreate their profile without protected server metadata.
+      allow delete: if false;
       allow create: if !exists(/databases/$(database)/documents/accountDeletions/$(uid)) &&
         ((signedInAs(uid) && request.resource.data.keys().hasOnly(userProfileKeys()) && validUserProfile(uid)) || isAdmin());
       allow update: if !exists(/databases/$(database)/documents/accountDeletions/$(uid)) &&

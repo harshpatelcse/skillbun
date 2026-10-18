@@ -1,5 +1,6 @@
 import { assertAdultStudent, StudentEligibilityError } from '@/utils/server/studentEligibility.mjs';
 import { NextResponse } from 'next/server'
+import { PRIVATE_RESPONSE_HEADERS } from '@/utils/server/privateResponse.mjs'
 import { getFirebaseAdminAuth, getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin'
 import { checkServerRateLimit } from '@/utils/server/rateLimitStore'
 import { getClientAddress } from '@/utils/server/requestUtils'
@@ -183,7 +184,7 @@ export async function GET(request, { params }) {
       status: 200,
       headers: {
         'Content-Type': 'text/markdown; charset=utf-8',
-        'Cache-Control': 'private, max-age=3600',
+        ...PRIVATE_RESPONSE_HEADERS,
         'X-Content-Type-Options': 'nosniff',
       },
     })

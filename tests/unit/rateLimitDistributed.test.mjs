@@ -10,7 +10,7 @@ const source = (await readFile(new URL('../../utils/server/rateLimitStore.js', i
   .replace(/^import .*\r?\n/gm, '')
   .replace(/^export /gm, '');
 
-function setup({ redis = false, firestore = false, firestoreFailure = false } = {}) {
+function setup({ redis = false, firestore = false, firestoreFailure = false, environment = 'production' } = {}) {
   const controls = { redis, firestore, firestoreFailure };
   const records = new Map();
   const requests = [];
@@ -37,7 +37,7 @@ function setup({ redis = false, firestore = false, firestoreFailure = false } = 
   };
   const check = vm.runInNewContext(`${source}\ncheckServerRateLimit;`, {
     crypto, AbortController, setTimeout, clearTimeout,
-    process: { env: { NODE_ENV: 'production' } },
+    process: { env: { NODE_ENV: environment } },
     console: { warn() {}, error() {} },
     isRedisConfigured: () => Boolean(controls.redis),
     getUpstashRedisRestUrl: () => 'https://limiter.invalid',
@@ -81,13 +81,21 @@ test('requiring shared rate limits rejects transaction failure instead of granti
   assert.equal(app.records.size, 0);
 });
 
-test('existing callers retain the bounded memory fallback when shared enforcement is not requested', async () => {
+test('offline development retains the bounded memory fallback', async () => {
   for (const options of [{}, { firestore: true, firestoreFailure: true }]) {
-    const app = setup(options);
+    const app = setup({ ...options, environment: 'development' });
     assert.equal((await app.check()).allowed, true);
     const denied = await app.check();
     assert.equal(denied.allowed, false);
     assert.equal(denied.retryAfterMs, 60_000);
+  }
+});
+
+test('production callers default to shared enforcement during a backend outage', async () => {
+  for (const options of [{}, { redis: 'down', firestore: true, firestoreFailure: true }]) {
+    const app = setup(options);
+    await assert.rejects(app.check(), /Distributed rate limiting is unavailable/);
+    assert.equal(app.records.size, 0);
   }
 });
 

@@ -1,3 +1,4 @@
+import { readBoundedJson } from '@/utils/server/requestBody.mjs';
 import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import { apiError, requireWorkforceAdmin } from '@/utils/server/workforceEmployees';
@@ -129,7 +130,7 @@ export async function PATCH(request) {
 
     let body;
     try {
-      body = await request.json();
+      body = await readBoundedJson(request);
     } catch {
       return apiError('Invalid JSON body.', 400, 'BAD_REQUEST');
     }

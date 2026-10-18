@@ -1,3 +1,4 @@
+import { readBoundedJson } from '@/utils/server/requestBody.mjs'
 import { passwordResetOrigin, canonicalPasswordResetLink } from '@/utils/server/passwordResetOrigin.mjs'
 import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 
@@ -57,7 +58,7 @@ export async function POST(request) {
   try {
     let rawBody
     try {
-      rawBody = await request.json()
+      rawBody = await readBoundedJson(request)
     } catch {
       return NextResponse.json({ error: 'Payload must be valid JSON.' }, { status: 400 })
     }

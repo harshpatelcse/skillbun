@@ -1,3 +1,4 @@
+import { readBoundedJson } from '@/utils/server/requestBody.mjs';
 import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { apiError, requireWorkforceAdmin } from '@/utils/server/workforceEmployees';
 import { validateSchema, validatePlainObject } from '@/utils/server/inputValidator';
@@ -27,7 +28,7 @@ export async function POST(request) {
 
     let body = {};
     try {
-      body = await request.json();
+      body = await readBoundedJson(request);
     } catch {
       return apiError('Payload must be valid JSON.', 400, 'BAD_REQUEST');
     }

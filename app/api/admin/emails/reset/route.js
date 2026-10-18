@@ -1,3 +1,4 @@
+import { readBoundedJson } from '@/utils/server/requestBody.mjs';
 import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { getFirebaseAdminAuth, getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import { isUserAuthorizedAdmin } from '@/utils/server/workforceEmployees';
@@ -34,7 +35,7 @@ export async function POST(request) {
 
     let body;
     try {
-      body = await request.json();
+      body = await readBoundedJson(request);
     } catch {
       return NextResponse.json({ error: 'A valid JSON reset request is required' }, { status: 400 });
     }

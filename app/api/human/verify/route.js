@@ -1,3 +1,4 @@
+import { readBoundedJson } from '@/utils/server/requestBody.mjs'
 import { NextResponse } from 'next/server'
 import { isIP } from 'node:net'
 
@@ -42,8 +43,13 @@ function jsonResponse(body, options = {}) {
 
 export async function POST(request) {
   const clientAddress = getClientAddress(request)
-  const limit = await checkServerRateLimit({ namespace: 'humanVerify', subject: clientAddress,
-    limits: [{ name: 'minute', windowMs: 60000, maxRequests: 30 }], increment: true })
+  let limit
+  try {
+    limit = await checkServerRateLimit({ namespace: 'humanVerify', subject: clientAddress,
+      limits: [{ name: 'minute', windowMs: 60000, maxRequests: 30 }], increment: true })
+  } catch {
+    return jsonResponse({ error: 'Verification protection is temporarily unavailable.' }, { status: 503 })
+  }
   if (!limit.allowed) return jsonResponse({ error: 'Too many verification requests.' }, {
     status: 429, headers: { 'Retry-After': String(Math.max(1, Math.ceil(limit.retryAfterMs / 1000))) },
   })
@@ -51,7 +57,7 @@ export async function POST(request) {
   const isLocal = process.env.NODE_ENV === 'development'
   let body = {}
   try {
-    if (request.body !== null) body = await request.json()
+    if (request.body !== null) body = await readBoundedJson(request)
   } catch {
     return jsonResponse({ error: 'Payload must be valid JSON.' }, { status: 400 })
   }

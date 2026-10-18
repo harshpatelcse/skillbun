@@ -1,3 +1,4 @@
+import { readBoundedJson } from '@/utils/server/requestBody.mjs';
 import { assertWorkforceCertificate, WorkforcePolicyError } from '@/utils/server/workforcePolicy.mjs';
 import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { mintExamCertificate, ExamError } from '@/utils/server/certificationState.mjs';
@@ -64,7 +65,7 @@ export async function POST(request) {
     // 3. Parse Request Payload
     let rawBody;
     try {
-      rawBody = await request.json();
+      rawBody = await readBoundedJson(request);
     } catch {
       return NextResponse.json({ error: 'Payload must be valid JSON.' }, { status: 400 });
     }

@@ -1,3 +1,4 @@
+import { readBoundedJson } from '@/utils/server/requestBody.mjs';
 import { unsubscribeUrl } from '@/utils/server/emailPreferences.mjs';
 import { emailHtmlToText, isEmailDocument } from '@/utils/shared/emailContent';
 import { loadEmailRoadmapContext } from '@/utils/server/emailRoadmapContext';
@@ -42,7 +43,7 @@ export async function POST(request) {
   try {
     let body = {};
     try {
-      body = await request.json();
+      body = await readBoundedJson(request, { maxBytes: 1_000_000 });
     } catch {
       return NextResponse.json({ error: 'Payload must be valid JSON.' }, { status: 400 });
     }

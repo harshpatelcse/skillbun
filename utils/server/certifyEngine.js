@@ -135,17 +135,19 @@ export async function verifyExamEligibility({ uid, slug, roadmapData, transactio
   // 1. Check if user already holds an active certificate for this roadmap
   const certsSnap = await read(db
     .collection('certificates')
-    .where('uid', '==', uid)
-    .where('roadmapSlug', '==', slug)
-    .where('is_revoked', '==', false)
-    .limit(1));
+    .where('uid', '==', uid));
+  // Legacy certificates may omit is_revoked; public verification treats them as active.
+  const activeCertificate = certsSnap.docs.find(document => {
+    const certificate = document.data();
+    return certificate.roadmapSlug === slug && (certificate.is_revoked == null || certificate.is_revoked === false);
+  });
 
-  if (!certsSnap.empty) {
+  if (activeCertificate) {
     return {
       eligible: false,
       reason: 'ALREADY_CERTIFIED',
       error: 'You have already earned a verified certificate for this roadmap.',
-      certId: certsSnap.docs[0].id,
+      certId: activeCertificate.id,
     };
   }
 

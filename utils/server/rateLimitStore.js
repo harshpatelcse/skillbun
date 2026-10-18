@@ -186,7 +186,7 @@ function checkMemoryRateLimit({ namespace, subject, limits, now = Date.now(), in
  * 2. Falls back to Firestore transactions if available
  * 3. Falls back to In-Memory store if Firestore is not initialized (e.g. offline dev/testing)
  */
-export async function checkServerRateLimit({ namespace, subject, limits, now = Date.now(), increment = true, requireDistributed = false }) {
+export async function checkServerRateLimit({ namespace, subject, limits, now = Date.now(), increment = true, requireDistributed = process.env.NODE_ENV === 'production' }) {
   if (!namespace || !subject || !Array.isArray(limits) || limits.length === 0) {
     throw new Error('Rate limit configuration is invalid.')
   }
@@ -265,8 +265,8 @@ export async function checkServerRateLimit({ namespace, subject, limits, now = D
       return { allowed: true }
     })
   } catch (firestoreError) {
-    // Signup must not gain a fresh allowance on each serverless instance when
-    // shared stores are down. Existing callers retain their current fallback.
+    // Production callers must not gain a fresh allowance on each serverless
+    // instance when shared stores are down. Offline development retains memory.
     if (requireDistributed) throw new Error('Distributed rate limiting is unavailable.', { cause: firestoreError })
     console.warn('Firestore rate limit fallback failed, using memory store:', firestoreError?.message)
     return checkMemoryRateLimit({ namespace, subject, limits, now, increment })

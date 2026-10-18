@@ -1,3 +1,4 @@
+import { readBoundedJson } from '../../utils/server/requestBody.mjs';
 import { passwordResetOrigin, canonicalPasswordResetLink } from '../../utils/server/passwordResetOrigin.mjs';
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
@@ -15,7 +16,7 @@ function setup({ missingUser = false, mailFailure = false } = {}) {
   const incrementFlags = [];
   const handler = vm.runInNewContext(`${source}; POST;`, {
     passwordResetOrigin, canonicalPasswordResetLink, URL, console: { error() {} }, process: { env: { NODE_ENV: 'production' } },
-    NextResponse: { json: Response.json }, validateSchema,
+    readBoundedJson, NextResponse: { json: Response.json }, validateSchema,
     getAppOrigin: () => 'https://skillbun.tech', getAllowedAppOrigins: () => ['https://skillbun.tech'],
     getClientAddress: () => '127.0.0.1', hashRateLimitSubject: () => 'email-hash',
     checkServerRateLimit: async ({ increment }) => {

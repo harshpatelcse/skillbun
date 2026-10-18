@@ -1,3 +1,4 @@
+import { readBoundedJson } from '../../utils/server/requestBody.mjs';
 import { isActiveWorkforceMember, assertWorkforceAction, transitionWorkforceEmployee, finishWorkforceAction, WorkforcePolicyError } from '../../utils/server/workforcePolicy.mjs';
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
@@ -87,7 +88,7 @@ test('PDF studio rejects malformed and unbounded inputs before rendering, preser
     return { referenceId: options.referenceId, filename: 'synthetic.pdf', buffer: Buffer.from('synthetic-pdf') };
   };
   const requireWorkforceAdmin = vm.runInNewContext(`${guardSource}; requireWorkforceAdmin;`, {
-    URL, process: { env: { NODE_ENV: 'production' } }, NextResponse: { json: Response.json },
+    URL, process: { env: { NODE_ENV: 'production' } }, readBoundedJson, NextResponse: { json: Response.json },
     validateFirestoreId, validateSchema, validateString, validateWorkforceCredentials,
     getFirebaseAdminAuth: () => ({ verifyIdToken: async () => {
       if (denied) throw new Error('Synthetic invalid session');
@@ -97,7 +98,7 @@ test('PDF studio rejects malformed and unbounded inputs before rendering, preser
     getClientAddress: () => '127.0.0.1',
   });
   const post = vm.runInNewContext(`${source}; POST;`, {
-    console, Date, NextResponse: { json: Response.json }, apiError,
+    console, Date, readBoundedJson, NextResponse: { json: Response.json }, apiError,
     validateSchema, validatePlainObject,
     requireWorkforceAdmin,
     generateOfferLetterPdf: generate, generateExtensionLetterPdf: generate,
@@ -138,7 +139,7 @@ async function extensionFixture(employeeOverrides = {}) {
     return name === 'employees' ? { get: async () => doc } : { path: `${name}/${id}` };
   } }) };
   const post = vm.runInNewContext(`${source}; POST;`, {
-    console, Date, Response, URL, NextResponse: { json: Response.json }, apiError,
+    console, Date, Response, URL, readBoundedJson, NextResponse: { json: Response.json }, apiError,
     getFirebaseAdminFirestore: () => db, requireWorkforceAdmin: async () => ({ uid: 'admin' }), enforceEmployeeRateLimit: async () => null,
     validateEmployeeId: validateFirestoreId, validateWorkforceAction, normalizeWorkforceDbId, generateWorkforceId, WORKFORCE_PREFIXES,
     assertWorkforceAction, WorkforcePolicyError, generateExtensionLetterPdf,
@@ -225,7 +226,7 @@ async function offerFixture(seed) {
     },
   };
   const post = vm.runInNewContext(`${source}; POST;`, {
-    console: { warn() {}, error() {} }, Date, Response, URL, NextResponse: { json: Response.json }, apiError,
+    console: { warn() {}, error() {} }, Date, Response, URL, readBoundedJson, NextResponse: { json: Response.json }, apiError,
     getFirebaseAdminFirestore: () => db, requireWorkforceAdmin: async () => ({ uid: 'admin' }), enforceEmployeeRateLimit: async () => null,
     validateEmployeeId: validateFirestoreId, validateSchema, validatePlainObject, formatWorkforceDisplayId, isValidWorkforceId, normalizeWorkforceDbId,
     DOCUMENT_CATEGORIES, getActiveTemplateVersion, UnsupportedTemplateVersionError,
@@ -352,7 +353,7 @@ test('workforce credential revocation strictly validates payload and normalizes 
   const db = fakeDb({ [key]: { name: 'Synthetic Intern', score: 100, template_version: 'v1', is_revoked: false } });
   const invalidations = [];
   const patch = vm.runInNewContext(`${source}; PATCH;`, {
-    console, NextResponse: { json: Response.json }, apiError,
+    console, readBoundedJson, NextResponse: { json: Response.json }, apiError,
     requireWorkforceAdmin: async () => ({ email: 'harsh@skillbun.tech' }),
     getFirebaseAdminFirestore: () => db, CertificateMutationError, changeCertificateRevocation,
     invalidateCacheTag: async tag => invalidations.push(tag),
@@ -380,7 +381,7 @@ test('milestone mutation verifies assignment within its write transaction and bi
   const db = fakeDb({ [key]: { ...create, employee_email: 'assigned@example.test' }, 'employees/employee-1': { personal_email: 'assigned@example.test', status: 'ACTIVE' }, 'employees/employee-2': { personal_email: 'NEXT@example.test', status: 'ACTIVE' } });
   let caller = { uid: 'intern', email: 'former@example.test', isIntern: true, isAdmin: false };
   const patch = vm.runInNewContext(`${source}; PATCH;`, {
-    console, NextResponse: { json: Response.json }, apiError,
+    console, readBoundedJson, NextResponse: { json: Response.json }, apiError,
     isActiveWorkforceMember, authenticateMilestoneCaller: async () => caller,
     getFirebaseAdminFirestore: () => db, enforceEmployeeRateLimit: async () => null,
     validateMilestoneId: id => ({ isValid: true, value: id.trim() }), validateMilestonePayload,
@@ -442,7 +443,7 @@ async function activationHarness({ encryptionFailure = false } = {}) {
     add: async data => { assert.equal(name, 'workforce_docs'); logs.push(data); },
   }) };
   const post = vm.runInNewContext(`${source}; POST;`, {
-    assertWorkforceAction, transitionWorkforceEmployee, finishWorkforceAction, WorkforcePolicyError, console: { warn() {}, error() {} }, NextResponse: { json: Response.json }, apiError,
+    assertWorkforceAction, transitionWorkforceEmployee, finishWorkforceAction, WorkforcePolicyError, console: { warn() {}, error() {} }, readBoundedJson, NextResponse: { json: Response.json }, apiError,
     requireWorkforceAdmin: async () => ({ uid: 'admin', email: 'harsh@skillbun.tech' }),
     enforceEmployeeRateLimit: async () => null, validateEmployeeId: value => ({ isValid: true, value }), validateWorkforceAction,
     getFirebaseAdminFirestore: () => db,
@@ -566,7 +567,7 @@ test('document revocation accepts only a safe ID and boolean, preserving the iss
   let reads = 0;
   let stored = { metadata_snapshot: issued, is_revoked: false };
   const patch = vm.runInNewContext(`${source}; PATCH;`, {
-    console, apiError, NextResponse: { json: Response.json }, validateSchema, validateWorkforceDocumentId,
+    console, apiError, readBoundedJson, NextResponse: { json: Response.json }, validateSchema, validateWorkforceDocumentId,
     requireWorkforceAdmin: async () => ({ uid: 'admin', email: 'harsh@skillbun.tech' }), invalidateCacheTag: async () => {},
     getFirebaseAdminFirestore: () => ({ collection: () => ({ doc: id => ({
       get: async () => { reads++; return { exists: id === key }; },

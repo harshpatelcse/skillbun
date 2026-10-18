@@ -1,3 +1,4 @@
+import { readBoundedJson } from '../../utils/server/requestBody.mjs';
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { readFile } from 'node:fs/promises';
@@ -5,7 +6,7 @@ import vm from 'node:vm';
 import crypto from 'node:crypto';
 import { createUnsubscribeToken, verifyUnsubscribeToken, hasMarketingConsent } from '../../utils/server/emailPreferences.mjs';
 import { passwordResetOrigin, canonicalPasswordResetLink } from '../../utils/server/passwordResetOrigin.mjs';
-import { PrivateResponse } from '../../utils/server/privateResponse.mjs';
+import { PrivateResponse, PRIVATE_RESPONSE_HEADERS } from '../../utils/server/privateResponse.mjs';
 import { logSafeError } from '../../utils/server/safeDiagnostics.mjs';
 import { applyStrictBrandMasking } from '../../utils/server/brandMasking.mjs';
 import { assertAdultStudent, StudentEligibilityError } from '../../utils/server/studentEligibility.mjs';
@@ -16,6 +17,28 @@ import { loadAiRoute } from '../fixtures/aiRouteHarness.mjs';
 
 const strippedSource = async path => (await readFile(new URL(`../../${path}`, import.meta.url), 'utf8'))
   .replace(/^import[\s\S]*?from ['"][^'"]+['"];?\r?\n/gm, '').replace(/^export /gm, '');
+
+test('authenticated guide responses cannot be reused from browser or CDN caches', async () => {
+  const source = await strippedSource('app/api/docs/[slug]/[topicId]/route.js');
+  let decryptions = 0;
+  const get = vm.runInNewContext(`${source}; decryptSBV1 = decryptSynthetic; GET;`, {
+    Buffer, NextResponse: class extends Response { static json = Response.json; }, PRIVATE_RESPONSE_HEADERS,
+    process: { cwd: () => '/synthetic', env: { DOCS_ENCRYPTION_KEY: 'ab'.repeat(32) } },
+    console, createHash: crypto.createHash, join: (...parts) => parts.join('/'), existsSync: () => true,
+    getFirebaseAdminAuth: () => ({ verifyIdToken: async () => ({ uid: 'student' }) }),
+    getFirebaseAdminFirestore: () => ({}), assertAdultStudent: async () => {}, StudentEligibilityError,
+    getClientAddress: () => '127.0.0.1', checkServerRateLimit: async () => ({ allowed: true }),
+    decryptSynthetic: () => { decryptions++; return '# Synthetic authenticated guide'; },
+  });
+  const context = { params: Promise.resolve({ slug: 'web', topicId: 'topic' }) };
+  const guest = await get(new Request('https://skillbun.tech/api/docs/web/topic'), context);
+  assert.equal(guest.status, 401);
+  assert.equal(decryptions, 0);
+  const response = await get(new Request('https://skillbun.tech/api/docs/web/topic', { headers: { authorization: 'Bearer synthetic' } }), context);
+  assert.equal(response.status, 200);
+  assert.equal(await response.text(), '# Synthetic authenticated guide');
+  for (const [header, value] of Object.entries(PRIVATE_RESPONSE_HEADERS)) assert.equal(response.headers.get(header), value);
+});
 
 function database(seed = {}) {
   const records = new Map(Object.entries(seed));
@@ -57,7 +80,7 @@ test('preference API rejects other-user changes and unsigned requests; signed li
   const db = database({ 'users/student': { marketingConsent: true } });
   const source = await strippedSource('app/api/unsubscribe/route.js');
   const handlers = vm.runInNewContext(`${source}; ({ GET, POST });`, {
-    URL, Response, Date, process: { env: { NODE_ENV: 'production' } }, NextResponse: PrivateResponse,
+    URL, Response, Date, process: { env: { NODE_ENV: 'production' } }, readBoundedJson, NextResponse: PrivateResponse,
     validateEmail, validateSchema, verifyUnsubscribeToken, hasMarketingConsent,
     getFirebaseAdminAuth: () => ({ verifyIdToken: async token => ({ uid: token, email: token === 'student' ? 'student@example.org' : 'other@example.org', email_verified: true }) }),
     getFirebaseAdminFirestore: () => db, getClientAddress: () => '192.0.2.10', logSafeError: () => 'synthetic-request',
@@ -88,7 +111,7 @@ test('preferences reject unverified or revoked owners without reads or writes; s
   let claim = false, authError = null, storageCalls = 0, quotaCalls = 0;
   const source = await strippedSource('app/api/unsubscribe/route.js');
   const handlers = vm.runInNewContext(`${source}; ({ GET, POST });`, {
-    URL, Response, Date, process: { env: { NODE_ENV: 'production' } }, NextResponse: PrivateResponse,
+    URL, Response, Date, process: { env: { NODE_ENV: 'production' } }, readBoundedJson, NextResponse: PrivateResponse,
     validateEmail, validateSchema, verifyUnsubscribeToken, hasMarketingConsent,
     getFirebaseAdminAuth: () => ({ verifyIdToken: async () => {
       if (authError) throw Object.assign(new Error('Synthetic authentication rejection'), { code: authError });
@@ -235,7 +258,7 @@ test('workforce certificate ownership resolves the recipient instead of falling 
   const employee = { status: 'COMPLETED', full_name: 'Synthetic Intern', personal_email: 'intern@example.org' };
   const db = database({ 'employees/intern': employee });
   const handler = vm.runInNewContext(`${source}; POST;`, {
-    NextResponse: PrivateResponse, Date, console, process: { env: {} },
+    readBoundedJson, NextResponse: PrivateResponse, Date, console, process: { env: {} },
     ExamError: class extends Error {}, mintExamCertificate: () => assert.fail('This is the workforce branch'),
     assertWorkforceCertificate, WorkforcePolicyError, validateSchema, validateFirestoreId,
     getFirebaseAdminAuth: () => ({ verifyIdToken: async () => ({ uid: 'issuer', email: 'admin@example.org' }), getUserByEmail: async () => ({ uid: 'recipient', emailVerified: true, disabled: false }) }),
@@ -263,7 +286,7 @@ async function offboardingHarness({ smtpError, synchronizeRecipients = false } =
   const recipientsReady = new Promise(resolve => { releaseRecipients = resolve; });
   const source = await strippedSource('app/api/admin/workforce/terminate/route.js');
   const post = vm.runInNewContext(`${source}; POST;`, {
-    NextResponse: PrivateResponse, Date, console: { error: (...args) => logs.push(args), log: (...args) => logs.push(args) },
+    readBoundedJson, NextResponse: PrivateResponse, Date, console: { error: (...args) => logs.push(args), log: (...args) => logs.push(args) },
     isWorkforceTransitionAllowed, assertWorkforceCertificate, WorkforcePolicyError, validateWorkforceAction,
     getFirebaseAdminFirestore: () => db,
     getFirebaseAdminAuth: () => ({ getUserByEmail: async () => {

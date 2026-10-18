@@ -131,6 +131,16 @@ export async function mintExamCertificate(db, { uid, email, attemptId, roadmapSl
     if (attempt.status !== 'COMPLETED' || attempt.passed !== true || !Number.isInteger(attempt.score) || attempt.score < 70 || attempt.score > 100) throw new ExamError('A completed passing exam is required.');
     if (attempt.minted) throw new ExamError('A certificate has already been issued for this attempt.');
     if (!attempt.certName || !attempt.roadmapTitle) throw new ExamError('Exam record is missing credential details.', 500);
+    // Distinct passing attempts must contend on the same student/roadmap guard.
+    // Start also reads/writes this document, so it cannot race certificate issuance.
+    const historyRef = db.collection('users').doc(uid).collection('quizAttempts').doc(roadmapSlug);
+    await transaction.get(historyRef);
+    const certificates = await transaction.get(db.collection('certificates').where('uid', '==', uid));
+    const existing = certificates.docs.find(document => {
+      const certificate = document.data();
+      return certificate.roadmapSlug === roadmapSlug && (certificate.is_revoked == null || certificate.is_revoked === false);
+    });
+    if (existing) throw new ExamError('You have already earned a verified certificate for this roadmap.', 409);
     const templateVersion = getActiveTemplateVersion(DOCUMENT_CATEGORIES.ROADMAP_CERT);
     transaction.create(certRef, {
       id: certId, uid, email, name: attempt.certName, roadmapSlug,
@@ -138,6 +148,7 @@ export async function mintExamCertificate(db, { uid, email, attemptId, roadmapSl
       cert_type: 'ROADMAP', template_version: templateVersion, is_revoked: false, createdAt: now,
     });
     transaction.update(attemptRef, { minted: true, certId, mintedAt: now, updatedAt: now });
+    transaction.set(historyRef, { lastMintedCertId: certId, updatedAt: now }, { merge: true });
     return { success: true, certId, cert_type: 'ROADMAP', score: attempt.score, message: 'Verified certificate minted successfully.' };
   });
 }

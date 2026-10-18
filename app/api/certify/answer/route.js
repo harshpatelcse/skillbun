@@ -1,3 +1,4 @@
+import { readBoundedJson } from '@/utils/server/requestBody.mjs';
 import { NextResponse } from 'next/server';
 import { getFirebaseAdminAuth, getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
 import { checkServerRateLimit } from '@/utils/server/rateLimitStore';
@@ -24,7 +25,7 @@ export async function POST(request) {
     if (limit.unavailable) return respond({ error: 'Exam service temporarily unavailable.' }, 503);
     if (!limit.allowed) return respond({ error: 'Too many answer requests. Please wait.' }, 429, { 'Retry-After': String(Math.max(1, Math.ceil(limit.retryAfterMs / 1000))) });
     let body;
-    try { body = await request.json(); } catch { return respond({ error: 'Payload must be valid JSON.' }, 400); }
+    try { body = await readBoundedJson(request); } catch { return respond({ error: 'Payload must be valid JSON.' }, 400); }
     const checked = validateSchema(body, {
       attemptId: { type: 'string', required: true, pattern: /^att_[A-Za-z0-9_-]{6,116}$/, maxLength: 120 },
       questionIndex: { type: 'integer', required: true, min: 0, max: 9 },

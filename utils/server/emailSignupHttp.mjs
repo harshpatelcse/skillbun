@@ -1,6 +1,7 @@
 import { isIP } from 'node:net';
 import { EmailSignupError } from './emailSignup.mjs';
 import { validateSchema } from './inputValidator.js';
+import { readBoundedJson } from './requestBody.mjs';
 
 const MAX_BODY_BYTES = 20_000;
 const emailRule = { type: 'email', required: true, label: 'Email address' };
@@ -54,29 +55,13 @@ async function readBody(request) {
   if (!request.headers.get('content-type')?.toLowerCase().startsWith('application/json')) {
     throw new EmailSignupError('INVALID_CONTENT_TYPE', 'Send a JSON request.', 415);
   }
-  if (Number(request.headers.get('content-length')) > MAX_BODY_BYTES) {
-    throw new EmailSignupError('PAYLOAD_TOO_LARGE', 'Signup request is too large.', 413);
-  }
-  const reader = request.body?.getReader();
-  if (!reader) throw new EmailSignupError('INVALID_PAYLOAD', 'Payload must be valid JSON.');
-  const chunks = [];
-  let bytes = 0;
   try {
-    while (true) {
-      const { value, done } = await reader.read();
-      if (done) break;
-      bytes += value.byteLength;
-      if (bytes > MAX_BODY_BYTES) {
-        await reader.cancel();
-        throw new EmailSignupError('PAYLOAD_TOO_LARGE', 'Signup request is too large.', 413);
-      }
-      chunks.push(value);
-    }
-    return JSON.parse(Buffer.concat(chunks).toString('utf8'));
+    return await readBoundedJson(request, { maxBytes: MAX_BODY_BYTES });
   } catch (error) {
-    if (error instanceof EmailSignupError) throw error;
+    if (error.status === 413) throw new EmailSignupError('PAYLOAD_TOO_LARGE', 'Signup request is too large.', 413);
+    if (error.status === 408) throw new EmailSignupError('REQUEST_TIMEOUT', 'Signup request timed out.', 408);
     throw new EmailSignupError('INVALID_PAYLOAD', 'Payload must be valid JSON.');
-  } finally { reader.releaseLock(); }
+  }
 }
 
 export function createEmailSignupHandlers({ getService, captchaEnabled, verifyHumanProof, allowedOrigins, production = process.env.NODE_ENV === 'production' }) {

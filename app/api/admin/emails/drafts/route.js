@@ -1,3 +1,4 @@
+import { readBoundedText } from '@/utils/server/requestBody.mjs';
 import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs';
 import { requireWorkforceAdmin } from '@/utils/server/workforceEmployees';
 import { getFirebaseAdminAuth, getFirebaseAdminFirestore } from '@/utils/server/firebaseAdmin';
@@ -38,10 +39,12 @@ export async function POST(request) {
   const admin = await requireWorkforceAdmin(request);
   if (admin.response) return admin.response;
   try {
-    const raw = await request.text();
-    if (raw.length > 2048) return NextResponse.json({ error: 'Request is too large.' }, { status: 400 });
     let body;
-    try { body = JSON.parse(raw); } catch { return NextResponse.json({ error: 'Invalid JSON.' }, { status: 400 }); }
+    try {
+      const raw = await readBoundedText(request, { maxBytes: 8192 });
+      if (raw.length > 2048) return NextResponse.json({ error: 'Request is too large.' }, { status: 400 });
+      body = JSON.parse(raw);
+    } catch (error) { return NextResponse.json({ error: 'Request must be bounded, valid JSON.' }, { status: [408, 413].includes(error.status) ? error.status : 400 }); }
     if (!body || typeof body !== 'object' || Array.isArray(body)) return NextResponse.json({ error: 'Invalid request.' }, { status: 400 });
     const db = getFirebaseAdminFirestore();
     if (!db) return NextResponse.json({ error: 'Email library storage is unavailable.' }, { status: 503 });

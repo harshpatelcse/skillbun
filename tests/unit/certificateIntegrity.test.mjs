@@ -1,3 +1,4 @@
+import { readBoundedJson } from '../../utils/server/requestBody.mjs';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
@@ -113,7 +114,7 @@ async function loadIssueRoute({ db = fakeDb(), admin = true, allowed = true } = 
     .replace(/import[\s\S]*?from\s*['"][^'"]+['"];\s*/g, '').replace(/export /g, '');
   let recipientLookups = 0;
   const dependencies = {
-    NextResponse: { json: Response.json },
+    readBoundedJson, NextResponse: { json: Response.json },
     getFirebaseAdminAuth: () => ({
       verifyIdToken: async () => ({ uid: 'admin', email: 'harsh@skillbun.tech' }),
       getUserByEmail: async email => { recipientLookups++; return { uid: 'verified-recipient', email, emailVerified: true }; },

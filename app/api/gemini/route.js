@@ -1,3 +1,4 @@
+import { readBoundedText } from '@/utils/server/requestBody.mjs'
 import { assertAdultStudent, StudentEligibilityError } from '@/utils/server/studentEligibility.mjs'
 import { applyStrictBrandMasking } from '@/utils/server/brandMasking.mjs'
 import { PrivateResponse as NextResponse } from '@/utils/server/privateResponse.mjs'
@@ -219,16 +220,15 @@ export async function POST(request) {
       return NextResponse.json({ error: 'Human verification required.' }, { status: 403 })
     }
 
-    const rawBody = await request.text()
-    if (rawBody.length > MAX_BODY_CHARS) {
-      return NextResponse.json({ error: 'Conversation payload is too large.' }, { status: 400 })
-    }
-
     let body
     try {
+      const rawBody = await readBoundedText(request, { maxBytes: MAX_BODY_CHARS * 4 })
+      if (rawBody.length > MAX_BODY_CHARS) {
+        return NextResponse.json({ error: 'Conversation payload is too large.' }, { status: 400 })
+      }
       body = JSON.parse(rawBody)
-    } catch {
-      return NextResponse.json({ error: 'Payload must be valid JSON.' }, { status: 400 })
+    } catch (error) {
+      return NextResponse.json({ error: 'Payload must be bounded, valid JSON.' }, { status: [408, 413].includes(error.status) ? error.status : 400 })
     }
 
     const validationError = validatePayload(body)

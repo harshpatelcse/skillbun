@@ -1,3 +1,4 @@
+import { readBoundedJson } from '../../utils/server/requestBody.mjs';
 import { unsubscribeUrl } from '../../utils/server/emailPreferences.mjs';
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
@@ -181,10 +182,10 @@ test('the admin resolve route returns retry timing for an active dispatch', asyn
     .replace(/export const runtime = 'nodejs';/, '')
     .replace('export async function POST', 'async function POST');
   const post = new Function(
-    'NextResponse', 'getFirebaseAdminAuth', 'getFirebaseAdminFirestore', 'isUserAuthorizedAdmin',
+    'readBoundedJson', 'NextResponse', 'getFirebaseAdminAuth', 'getFirebaseAdminFirestore', 'isUserAuthorizedAdmin',
     'checkServerRateLimit', 'getClientAddress', 'resolveEmailDispatch', source + '; return POST;',
   )(
-    { json: Response.json },
+    readBoundedJson, { json: Response.json },
     () => ({ verifyIdToken: async () => ({ uid: 'admin', email: 'admin@example.com' }) }),
     () => ({}), async () => true, async () => ({ allowed: true }), () => '127.0.0.1',
     async args => { resolvedArgs = args; return resolutionResult; },
@@ -213,7 +214,7 @@ test('the send route holds an SMTP-timeout recipient for review instead of sendi
     .replace(/export const runtime = 'nodejs';/, '')
     .replace('export async function POST', 'async function POST');
   const names = [
-    'NextResponse', 'getFirebaseAdminAuth', 'getFirebaseAdminFirestore', 'isUserAuthorizedAdmin',
+    'readBoundedJson', 'NextResponse', 'getFirebaseAdminAuth', 'getFirebaseAdminFirestore', 'isUserAuthorizedAdmin',
     'checkServerRateLimit', 'getClientAddress', 'loadEmailRoadmapContext', 'loadEmailStudent',
     'getSavedDraft', 'recommendEmail', 'renderSavedEmail', 'generateRetentionEmailHtml',
     'emailHtmlToText', 'isEmailDocument', 'buildBaseEmailWrapper', 'buildOfferDispatchEmail',
@@ -223,7 +224,7 @@ test('the send route holds an SMTP-timeout recipient for review instead of sendi
     'resolveEmailDispatch', 'unsubscribeUrl',
   ];
   const values = [
-    { json: Response.json },
+    readBoundedJson, { json: Response.json },
     () => ({ verifyIdToken: async () => ({ uid: 'admin', email: 'admin@example.com' }), getUserByEmail: async () => ({ uid: 'student-1' }) }),
     () => db,
     async () => true,

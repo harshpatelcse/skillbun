@@ -1,3 +1,4 @@
+import { readBoundedText } from '../../utils/server/requestBody.mjs';
 import { assertAdultStudent, StudentEligibilityError } from '../../utils/server/studentEligibility.mjs';
 import { applyStrictBrandMasking } from '../../utils/server/brandMasking.mjs';
 import fs from 'node:fs/promises';
@@ -6,7 +7,7 @@ import { fetchTokenRouterCompletion } from '../../utils/server/tokenRouter.js';
 // Execute the actual route with explicit service doubles, without Next's import aliases.
 export async function loadAiRoute(route, overrides = {}) {
   const deps = {
-    NextResponse: { json: Response.json },
+    readBoundedText, NextResponse: { json: Response.json },
     applyStrictBrandMasking, assertAdultStudent, StudentEligibilityError,
     getFirebaseAdminFirestore: () => ({ collection: () => ({ doc: () => ({ get: async () => ({ exists: true, data: () => ({ ageBand: '18-plus' }) }) }) }) }),
     getGroqApiKey: () => 'test-groq',

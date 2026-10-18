@@ -1,3 +1,4 @@
+import { readBoundedJson } from '../../utils/server/requestBody.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import crypto from 'node:crypto';
@@ -15,7 +16,7 @@ const routeSource = stripImports(await readFile(new URL('../../app/api/human/ver
 function setup(overrides = {}) {
   const calls = { captcha: [], auth: [], limits: [] };
   const deps = {
-    NextResponse: { json: Response.json }, isIP, ...proof, validateSchema,
+    readBoundedJson, NextResponse: { json: Response.json }, isIP, ...proof, validateSchema,
     process: { env: { NODE_ENV: 'production' } },
     console: { warn() {} },
     getTurnstileSecretKey: () => 'test-captcha-secret',
@@ -58,6 +59,13 @@ test('human verification binds fresh challenges to the verified identity and pre
     assert.equal(verified.payload.uid, uid);
     assert.equal(app.calls.captcha.length, 1);
   }
+});
+
+test('human proof issuance fails closed when distributed protection is unavailable', async () => {
+  const app = setup({ checkServerRateLimit: async () => { throw new Error('Distributed rate limiting is unavailable.'); } });
+  assert.equal((await app.request({ body: { token: 'turnstile-token' } })).status, 503);
+  assert.equal(app.calls.captcha.length, 0);
+  assert.equal(app.calls.auth.length, 0);
 });
 
 test('only the same identity can reuse a cached human proof without a new challenge', async () => {

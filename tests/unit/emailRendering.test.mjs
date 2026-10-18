@@ -1,3 +1,4 @@
+import { readBoundedJson } from '../../utils/server/requestBody.mjs';
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import fs from 'node:fs/promises';
@@ -158,8 +159,8 @@ test('admin send uses actual text, preserves zero, keeps auth and rejects workfo
     doc: id => ({ get: async () => ({ exists: name === 'users' && id === 'student', data: () => ({ marketingConsent }) }) }),
     where: () => ({ get: async () => ({ docs: [] }) }),
   }) };
-  const names = ['NextResponse', 'getFirebaseAdminAuth', 'getFirebaseAdminFirestore', 'isUserAuthorizedAdmin', 'checkServerRateLimit', 'getClientAddress', 'loadEmailRoadmapContext', 'generateRetentionEmailHtml', 'emailHtmlToText', 'isEmailDocument', 'getTransporter', 'getPasswordResetFrom', 'unsubscribeUrl'];
-  const values = [{ json: Response.json }, () => ({ verifyIdToken: async () => ({ uid: 'admin', email: 'admin@example.com' }), getUserByEmail: async () => ({ uid: 'student' }) }), () => db, async () => true, async () => ({ allowed: true }), () => '127.0.0.1', loadEmailRoadmapContext, generateRetentionEmailHtml, emailHtmlToText, isEmailDocument, () => ({ sendMail: async mail => { sent.push(mail); return { messageId: 'sample' }; } }), () => 'SkillBun <noreply@skillbun.tech>', unsubscribeUrl];
+  const names = ['readBoundedJson', 'NextResponse', 'getFirebaseAdminAuth', 'getFirebaseAdminFirestore', 'isUserAuthorizedAdmin', 'checkServerRateLimit', 'getClientAddress', 'loadEmailRoadmapContext', 'generateRetentionEmailHtml', 'emailHtmlToText', 'isEmailDocument', 'getTransporter', 'getPasswordResetFrom', 'unsubscribeUrl'];
+  const values = [readBoundedJson, { json: Response.json }, () => ({ verifyIdToken: async () => ({ uid: 'admin', email: 'admin@example.com' }), getUserByEmail: async () => ({ uid: 'student' }) }), () => db, async () => true, async () => ({ allowed: true }), () => '127.0.0.1', loadEmailRoadmapContext, generateRetentionEmailHtml, emailHtmlToText, isEmailDocument, () => ({ sendMail: async mail => { sent.push(mail); return { messageId: 'sample' }; } }), () => 'SkillBun <noreply@skillbun.tech>', unsubscribeUrl];
   const post = new Function(...names, source + '; return POST;')(...values);
   const request = (body, auth = true) => new Request('http://localhost/api/admin/emails/send', { method: 'POST', headers: { 'Content-Type': 'application/json', ...(auth ? { authorization: 'Bearer synthetic' } : {}) }, body: JSON.stringify(body) });
   assert.equal((await post(request({}, false))).status, 401);

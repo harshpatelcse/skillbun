@@ -2,6 +2,9 @@ import { after, before, beforeEach, test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { initializeTestEnvironment, assertFails, assertSucceeds } from '@firebase/rules-unit-testing';
+import { initializeApp as initializeAdminApp, deleteApp as deleteAdminApp } from 'firebase-admin/app';
+import { getFirestore as getAdminFirestore } from 'firebase-admin/firestore';
+import { mintExamCertificate } from '../../utils/server/certificationState.mjs';
 import {
   collection, deleteDoc, doc, getDoc, getDocs, query, serverTimestamp,
   setDoc, Timestamp, updateDoc, where, setLogLevel,
@@ -14,6 +17,7 @@ assert.match(emulator, /^(127\.0\.0\.1|localhost):\d+$/, 'Run npm run test:rules
 assert.equal(process.env.GCLOUD_PROJECT, projectId, 'Rules tests require the isolated demo project.');
 const [host, port] = emulator.split(':');
 let environment;
+let adminApp;
 const verified = (uid, email = `${uid}@example.test`, claims = {}) => environment.authenticatedContext(uid, {
   email, email_verified: true, ...claims,
 }).firestore();
@@ -25,12 +29,16 @@ const profile = uid => ({ uid, name: 'Synthetic Student', email: `${uid}@example
 
 before(async () => {
   setLogLevel('silent');
+  adminApp = initializeAdminApp({ projectId }, 'isolated-certification-emulator');
   environment = await initializeTestEnvironment({
     projectId,
     firestore: { host, port: Number(port), rules: await readFile(new URL('../../firestore.rules', import.meta.url), 'utf8') },
   });
 });
-after(async () => { await environment?.cleanup(); });
+after(async () => {
+  await environment?.cleanup();
+  if (adminApp) await deleteAdminApp(adminApp);
+});
 beforeEach(async () => {
   await environment.clearFirestore();
   await environment.withSecurityRulesDisabled(async context => {
@@ -70,6 +78,8 @@ test('owner cannot change or remove server-owned profile metadata', async () => 
     await assertFails(updateDoc(ref(owner(), 'users/student'), patch));
   }
   await assertFails(setDoc(ref(owner(), 'users/student'), profile('student')));
+  await assertFails(deleteDoc(ref(owner(), 'users/student')));
+  await assertFails(deleteDoc(ref(admin(), 'users/student')));
 });
 
 test('profile creation enforces owner identity and allowed keys', async () => {
@@ -219,4 +229,22 @@ test('unverified founder/claim and inactive registry identities are not admins',
 test('ordinary users cannot self-promote through the admin registry', async () => {
   await assertFails(setDoc(ref(owner(), 'admins/student@example.test'), { active: true }));
   await assertFails(getDocs(collection(owner(), 'admins')));
+});
+
+test('real Firestore transactions serialize mints from different passing attempts', async () => {
+  const db = getAdminFirestore(adminApp);
+  const attempts = ['att_parallel_a', 'att_parallel_b'];
+  await Promise.all(attempts.map(attemptId => db.collection('examAttempts').doc(attemptId).set({
+    attemptId, uid: 'student', roadmapSlug: 'web', roadmapTitle: 'Synthetic Web',
+    certName: 'Synthetic Student', status: 'COMPLETED', passed: true, score: 80, minted: false,
+  })));
+  const results = await Promise.allSettled(attempts.map((attemptId, index) => mintExamCertificate(db, {
+    uid: 'student', email: 'student@example.test', roadmapSlug: 'web', attemptId, certId: `synthetic-mint-${index}`,
+  })));
+  assert.equal(results.filter(result => result.status === 'fulfilled').length, 1);
+  assert.equal(results.find(result => result.status === 'rejected').reason.status, 409);
+  const certificates = await db.collection('certificates').where('roadmapSlug', '==', 'web').get();
+  assert.equal(certificates.size, 1);
+  const history = await db.doc('users/student/quizAttempts/web').get();
+  assert.equal(history.data().lastMintedCertId, certificates.docs[0].id);
 });
