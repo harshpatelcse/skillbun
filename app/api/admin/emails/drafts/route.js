@@ -76,6 +76,7 @@ export async function POST(request) {
     if (!body.draftId && student?.sentEmailHistory.some(log => (typeof log === 'string' ? log : log.templateId) === draft.id)) return NextResponse.json({ error: 'The AI repeated an existing variation. Create another variation from the library.' }, { status: 409 });
     return NextResponse.json({ draft, recommendation, templateId: draft.id, preview: renderSavedEmail(draft, { ...student, ...recommendation }) });
   } catch (error) {
+    console.error('[Admin Email Draft Error]:', error);
     const safe = /^(Configure the existing|AI drafting|A variation|Please choose|Invalid student)/.test(error.message);
     return NextResponse.json({ error: safe ? error.message : 'Could not prepare and save this draft. Please try again.' }, { status: 503 });
   }

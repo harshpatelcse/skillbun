@@ -14,6 +14,7 @@ export async function loadEmailStudent(db, auth, uid) {
   ]);
   const data = profile.data() || {};
   const email = account.email || data.email || '';
+  const unsub = email ? await db.collection('unsubscribes').doc(email.toLowerCase()).get() : null;
   const isUnsubscribed = Boolean(unsub?.exists || data.isUnsubscribed === true || data.marketingConsent === false);
   return { uid, name: data.name || data.displayName || account.displayName || 'Student', email, degree: data.degree || '', createdAt: emailTime(account.metadata?.creationTime || data.createdAt), lastSignInTime: emailTime(account.metadata?.lastSignInTime), isUnsubscribed, marketingConsent: !isUnsubscribed, sentEmailHistory: data.sentEmailHistory || [], progress: await enrichEmailProgress(progress.docs.map(p => ({ ...p.data(), slug: p.id }))), certificates: certs.docs.map(c => ({ ...c.data(), id: c.id })), examOutcomes: exams.docs.map(e => ({ ...e.data(), id: e.id })) };
 }
